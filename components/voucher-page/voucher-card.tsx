@@ -27,7 +27,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
     voucher.name
   )}`
   const voucherURL = `/vouchers/${voucher.category}/${nameToUrl(voucher.name)}`
-  console.log("Voucher URL:", voucherURL)
+
   return (
     <div>
       <div className={styles.voucher_card}>

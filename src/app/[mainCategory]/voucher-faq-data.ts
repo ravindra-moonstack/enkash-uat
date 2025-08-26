@@ -387,100 +387,121 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
     ],
   },
 
-  "apparels-vouchers": {
-    faqData: [
-      {
-        question: "How to use an eGift Card on Flipkart?",
-        answer: [
-          {
-            heading:
-              'Log in to your Flipkart account. During checkout, choose "Gift Cards/eVoucher". Enter the voucher number and PIN. Click "Submit" to apply.',
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What is the Flipkart Channel eGift Card?",
-        answer: [
-          {
-            heading:
-              "The Flipkart E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I redeem my eGift Card?",
-        answer: [
-          {
-            heading:
-              "Visit the Flipkart website and app to redeem the Gift Card.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How to add a card in Flipkart?",
-        answer: [
-          {
-            heading:
-              "Log in to the Flipkart website or app. You can add the gift card using its number and PIN under the gift card section.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How to use Flipkart e-gift card?",
-        answer: [
-          {
-            heading:
-              "Flipkart Gift Card can be used to buy items available on the website and app.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How to transfer my Flipkart gift card to another account?",
-        answer: [
-          {
-            heading:
-              "You can gift this Flipkart brand voucher to your near and dear ones. You cannot transfer it.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I order online with a Flipkart gift card?",
-        answer: [
-          {
-            heading:
-              "Yes, Flipkart gift cards can be redeemed online on the website and app. You can order everything available on the Flipkart website and app against the gift card value.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I transfer Flipkart gift cards to cash?",
-        answer: [
-          {
-            heading:
-              "No, Flipkart brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What if my Flipkart Gift Card expires?",
-        answer: [
-          {
-            heading:
-              "You cannot use the Flipkart Gift Card after its expiry date.",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
+ "apparels-vouchers": {
+  faqData: [
+    {
+      question: "What is an apparel gift card?",
+      answer: [
+        {
+          heading:
+            "An apparel gift card is a prepaid card that can be used to purchase clothing, footwear, and accessories from a specific brand or multiple brands.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "Where can I use an apparel gift card?",
+      answer: [
+        {
+          heading:
+            "It depends on the type of gift card. Some are brand-specific while others work across multiple fashion retailers.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "Are apparel gift cards physical or digital?",
+      answer: [
+        {
+          heading:
+            "They can be both. Physical cards are plastic, while digital gift cards can be sent via email or SMS.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "How long is the validity of an apparel gift card?",
+      answer: [
+        {
+          heading:
+            "The gift card’s validity varies from brand to brand, usually ranging from 6 months to 3 years. Always check the terms before purchase.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "Can I use an apparel gift card online and in-store?",
+      answer: [
+        {
+          heading:
+            "Most gift cards can be used both online and in physical stores, but some may have restrictions.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "Can I use multiple gift cards for one purchase?",
+      answer: [
+        {
+          heading:
+            "It depends on the brand’s policy. Some allow combining multiple cards, while others may limit usage to one per transaction.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "How can I check the balance on my apparel gift card?",
+      answer: [
+        {
+          heading:
+            "You can check the balance on the retailer’s website, in-store, or by calling customer service.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "Can I reload or top up an apparel gift card?",
+      answer: [
+        {
+          heading:
+            "Most apparel gift cards are non-reloadable, meaning you cannot add more money once the balance is used.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "Can I return an item purchased with a gift card?",
+      answer: [
+        {
+          heading:
+            "Yes, but the refund is usually credited back to the gift card or provided as store credit.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "Can I exchange an apparel gift card for cash?",
+      answer: [
+        {
+          heading:
+            "No, gift cards are typically non-refundable and cannot be exchanged for cash.",
+          bullets: [],
+        },
+      ],
+    },
+    {
+      question: "Can I transfer my gift card to someone else?",
+      answer: [
+        {
+          heading:
+            "Yes, most apparel gift cards are transferable unless specified otherwise.",
+          bullets: [],
+        },
+      ],
+    },
+  ],
+},
+
   "health-and-wellness-vouchers": {
     faqData: [
       {

@@ -132,19 +132,19 @@ const cardsData = [
   {
     title: "Login",
     description:
-      "Login to EnKash with your registered number or create an account if you are not registered",
+      "Login to EnKash with your registered number or create an account if you are not registered.",
     icon: scrollIconOne,
   },
   {
     title: "Upload Invoices",
     description:
-      "Upload the invoices and select the invoice number against which you want to use the smart payment collection feature",
+      "Upload the invoices and select the invoice number against which you want to use the smart payment collection feature.",
     icon: scrollIconTwo,
   },
   {
     title: "Dispatch",
     description:
-      "Click on “Dispatch Invoices,” and all your customers will receive their invoices in one click",
+      "Click on “Dispatch Invoices,” and all your customers will receive their invoices in one click.",
     icon: scrollIconThree,
   },
 ]
@@ -386,7 +386,7 @@ const allInOnePolicyData = [
     icon: taskIconOne,
     title: "Streamlined Payment Reminders",
     description:
-      "Automate payment reminders to ensure timely follow-ups with your customers. With EnKash, you eliminate manual tracking and reduce delays, improving your collection cycle while freeing up resources to focus on strategic growth.",
+      "Automate payment reminders to ensure timely follow-ups with your customers. With EnKash, you eliminate manual tracking and reduce delays, improving your collection cycle while freeing up resources to focus on strategic growth. Stay proactive and maintain strong relationships by never missing a payment reminder.",
     image: paymentLinkImage,
     buttonUrl: "/sales/",
     maxImageHeight: "243px",
@@ -405,7 +405,7 @@ const allInOnePolicyData = [
     icon: taskIconThree,
     title: "Enhanced Reconciliation Accuracy",
     description:
-      "Monitor your payment collections in real-time with EnKash’s advanced tracking tools. Automated reconciliation reduces discrepancies and provides a clear financial picture, saving your team hours of manual effort.",
+      "Monitor your payment collections in real-time with EnKash’s advanced tracking tools. Automated reconciliation reduces discrepancies and provides a clear financial picture, saving your team hours of manual effort. Gain actionable insights to improve decision-making and maintain accuracy across all transactions.",
     image: shareImage,
     buttonUrl: "/sales/",
     maxImageHeight: "305px",
@@ -414,7 +414,7 @@ const allInOnePolicyData = [
     icon: taskIconFour,
     title: "Improved Customer Experience",
     description:
-      "EnKash empowers your team to focus on building better relationships by automating repetitive tasks. Offer your customers a smoother, hassle-free payment experience with prompt notifications and accurate invoices.",
+      "EnKash empowers your team to focus on building better relationships by automating repetitive tasks. Offer your customers a smoother, hassle-free payment experience with prompt notifications and accurate invoices. Prioritize customer satisfaction, strengthen loyalty, and enhance your reputation with an optimized collection process.",
     image: paymentOptionImage,
     buttonUrl: "/sales/",
     maxImageHeight: "305px",
@@ -459,13 +459,6 @@ const managementCardData = [
     linkUrl: "/auto-collect",
   },
   {
-    titleHtml: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
-    cardImage: invoices,
-    linkUrl: "/invoices",
-  },
-  {
     titleHtml: "Instant Settlement",
     description:
       "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
@@ -477,7 +470,7 @@ const managementCardData = [
     description:
       "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
     cardImage: reminder,
-    linkUrl: "/reminder-engine",
+    linkUrl: "/collection-reminder",
   },
 ]
 

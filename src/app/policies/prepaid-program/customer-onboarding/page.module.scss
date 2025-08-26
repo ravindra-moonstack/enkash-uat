@@ -9,7 +9,7 @@
 
   @include for-laptops {
     background-position: center right;
-      padding: 112px 20px 100px 20px;
+      padding: 112px 0px 100px ;
     background-size: contain;
   }
   background-position: bottom;
@@ -31,7 +31,7 @@
   }
 
   .inner_container {
-    padding: 10px 15px;
+    padding: 20px;
     @include for-laptops {
       padding: 30px 40px;
     }

@@ -1,16 +1,18 @@
 import Image from "next/image"
-import styles from "./page.module.scss"
-import { DynamicHeading, CustomBreadcrumb } from "@/components"
-import { scrollIconOne, aboutBannerBottomIcon, careerCardIcon } from "."
-
-import OurStoryCard from "@/components/AboutOurStoryCard/AboutOurStoryCard"
-import LeadersSection from "@/components/AboutLeadersCard/AboutLeadersCard"
-import InvestorsLogos from "@/components/InvestorsLogos/InvestorsLogos"
-import EmployeeSlider from "@/components/EmployeeSlider/EmployeeSlider"
-import CareersCard from "@/components/AboutCareersCard/AboutCareersCard"
-import LocationTabsMap from "@/components/LocationTabsMap/LocationTabsMap"
-import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
+import styles from "./page.module.scss"
+import {
+  DynamicHeading,
+  CustomBreadcrumb,
+  OurStoryCard,
+  LeadersSection,
+  InvestorsLogos,
+  EmployeeSlider,
+  CareersCard,
+  LocationTabsMap,
+} from "@/components"
+import { scrollIconOne, aboutBannerBottomIcon, careerCardIcon } from "."
+import generateMetaData from "@/common/utils/metaData"
 
 const bannerOurContent = [
   {

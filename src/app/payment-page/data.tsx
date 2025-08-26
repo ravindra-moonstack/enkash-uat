@@ -11,7 +11,6 @@ import {
   fraudProtection,
   fraudProtectionIcon,
   instant,
-  invoices,
   notificationImage,
   optimizedIcon,
   paymentButton,

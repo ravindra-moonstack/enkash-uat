@@ -2,7 +2,10 @@
 @use "./../../styles/mixin" as *;
 
 .becomePartnerSteps {
-    padding: 0 20px;
+    @include for-laptops{
+
+        padding: 0 20px;
+    }
 }
 
 .content {

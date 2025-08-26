@@ -21,7 +21,7 @@ import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
-import BankAffiliatePartnershipForm from "@/components/Bank_and_Affiliate_Partnerships_Form/bankAffiliatePartnershipForm"
+import BankAffiliatePartnershipForm from "@/components/bankAffiliatePartnershipForm/bankAffiliatePartnershipForm"
 
 export const metadata: Metadata = generateMetaData({
   title: " Join EnKash Bharat Connect Partnership Program",

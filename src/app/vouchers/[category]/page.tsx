@@ -40,7 +40,7 @@ export async function generateMetadata({
   }
 
   const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.webp`
-  console.log("OG Image URL:", imageUrl)
+
 
   return {
     title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
@@ -90,7 +90,7 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
   let isActive: boolean = false
 
   if (!localVoucher) {
-    console.log("local voucher not found")
+ 
     return null
   }
 
@@ -109,8 +109,7 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
     )
 
     const apiData = await apiResponse.json()
-    console.log(apiData)
-    console.log("API Response JSON:", JSON.stringify(apiData, null, 2))
+   
 
     apiData.payload.data.forEach((product: any) => {
       if (
@@ -144,9 +143,7 @@ const CategoryPage = async ({
     (voucher) => voucher.urlName === voucherName
   )
 
-  if (!localVoucherData) {
-    console.log("No voucher present")
-  }
+
 
   const voucherData = await fetchVoucher(voucherName)
 
@@ -308,7 +305,7 @@ const CategoryPage = async ({
               </div>
             </div>
 
-            <div className={` mb-4 ${styles.mid_container}`}>
+            <div className={`mb-md-4 ${styles.mid_container}`}>
               <div className={styles.detail_section}>
                 {/* How to Buy Section */}
                 <div>
@@ -324,7 +321,7 @@ const CategoryPage = async ({
                       className="f-7 "
                     />
                   </div>
-                  <div className={`mb-4 ${styles.description}`}>
+                  <div className={`mb-md-4 ${styles.description}`}>
                     <div className={`mb-3`}>
                       Purchasing a {voucherData.name} from the EnKash platform
                       is quite simple. Here are detailed steps on how to do it:
@@ -542,7 +539,7 @@ const CategoryPage = async ({
                   </div>
                 </div>
               </div>
-              <div className={`mb-4 ${styles.description}`}>
+              <div className={`mb-md-4 ${styles.description}`}>
                 <div className={styles.need_container}>
                   <div className={styles.need_img}>
                     <Image src={individualNeed} alt="Individuals" />

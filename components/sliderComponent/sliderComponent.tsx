@@ -1,5 +1,5 @@
 "use client"
-import Slider from "react-slick"
+import Slider, { Settings } from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import styles from "./sliderComponent.module.scss"
@@ -7,6 +7,7 @@ import CustomBreadcrumb from "../breadcrumb/breadbrumb"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 import Image, { StaticImageData } from "next/image"
+import { useMemo } from "react"
 
 interface BreadcrumbItem {
   name: string
@@ -38,17 +39,20 @@ export default function SliderComponent({
   slides,
   title,
 }: SliderComponentProps) {
-  const settings = {
-    dots: true,
-    fade: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 1000, 
-    autoplay: true, 
-    autoplaySpeed: 2000, 
-    cssEase: "linear",
-  }
+  const settings: Settings = useMemo(
+    () => ({
+      dots: true,
+      fade: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      speed: 1000,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      cssEase: "linear",
+    }),
+    []
+  )
 
   return (
     <div className={styles.sliderComponent}>
@@ -132,7 +136,7 @@ export default function SliderComponent({
                           src={slide.rightImage}
                           alt="slide visual"
                           style={{
-                            maxHeight: slide.rightImageMaxHeight ?? "400px", 
+                            maxHeight: slide.rightImageMaxHeight ?? "400px",
                             marginTop: slide.rightImageMarginTop ?? "0px",
                           }}
                           className="w-100 mh-550 object-fit-contain "

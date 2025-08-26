@@ -7,13 +7,11 @@ const faqData = [
     answerHTML: (
       <div className="my-2">
         <h4>
-          Electronic National Automated Clearing House or e-NACH is a way to{" "}
+          Electronic National Automated Clearing House or e-NACH is a way to
           <a href="http://enkash.com/" target="_blank">
             automate recurring payments
-          </a>{" "}
-          for businesses and customers. It allows businesses to collect payments
-          from customers on a recurring basis without the need for physical
-          paperwork.
+          </a>
+          like electricity bills, insurance premiums, SIPs, telephone bills, and other utility bills with a bank account.
         </h4>
       </div>
     ),
@@ -131,10 +129,10 @@ const faqData = [
         <h4>
           A payment model where customers authorize the payment of funds from
           their accounts automatically at regular intervals for goods, services,
-          or{" "}
+          or
           <Link href="http://enkash.com/utility-bill-payment/" target="_blank">
             bill payments
-          </Link>{" "}
+          </Link>
           on an ongoing basis is called recurring payments.
         </h4>
       </div>
@@ -152,13 +150,13 @@ const faqData = [
         </h4>
         <h4>
           NACH enables repetitive transactions that take place in bulk. It can
-          be further used for{" "}
+          be further used for
           <Link
             href="https://www.enkash.com/olympus/receivables/bulk-collect/"
             target="_blank"
           >
             payment collection
-          </Link>{" "}
+          </Link>
           like electricity bills, water bills, insurance premium payments, and
           other utility bills. To automate these recurring payments, NPCI
           introduced the Electronic National Automated Clearing House, or
