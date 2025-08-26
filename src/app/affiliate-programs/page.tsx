@@ -18,7 +18,7 @@ import {
   PartnershipSection,
   BankAffiliatePartnershipForm,
   BankSolutions,
-  ProductsSection
+  ProductsSection,
 } from "@/components"
 import { coBrandImage, containerScreen, GalaxyTabImage, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
