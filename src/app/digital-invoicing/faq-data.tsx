@@ -1,17 +1,13 @@
 import Link from "next/link"
 
-
-
 const faqData = [
   {
-    question:
-      "Why opt for automated invoicing?",
+    question: "Why opt for automated invoicing?",
     answer: [
       {
         heading:
           "Automated invoicing reduces the time and cost associated with manual invoicing, helps enhance accuracy, and ensures prompt payments. It also eliminates the risk of human errors during manual data entry and calculations.",
       },
-
     ],
   },
   {
@@ -24,7 +20,8 @@ const faqData = [
     ],
   },
   {
-    question: "How does optimizing invoicing processes contribute to improved collections?",
+    question:
+      "How does optimizing invoicing processes contribute to improved collections?",
     answer: [
       {
         heading:
@@ -33,16 +30,18 @@ const faqData = [
     ],
   },
   {
-    question: "What's the significance of providing multiple payment options in invoicing?",
+    question:
+      "What's the significance of providing multiple payment options in invoicing?",
     answer: [
       {
-        heading: "Providing customers with multiple payment options is crucial for improving convenience and satisfaction. It increases the likelihood of receiving timely payments and offers customers the flexibility to choose the payment method that suits them best.",
+        heading:
+          "Providing customers with multiple payment options is crucial for improving convenience and satisfaction. It increases the likelihood of receiving timely payments and offers customers the flexibility to choose the payment method that suits them best.",
       },
-
     ],
   },
   {
-    question: "In what ways does automated invoice processing enhance invoice management?",
+    question:
+      "In what ways does automated invoice processing enhance invoice management?",
     answer: [
       {
         heading:
@@ -66,30 +65,36 @@ const faqData = [
         heading:
           "The digital invoicing process scans and sends invoices. It streamlines the invoicing workflow by extracting relevant data using Optical Character Recognition (OCR), recording the same, and sending it to customers electronically.",
       },
-
     ],
   },
   {
-    question: "How can I assess and select an automated invoice processing software?",
+    question:
+      "How can I assess and select an automated invoice processing software?",
     answer: [
       {
         heading:
           "Evaluating an automated invoice processing software requires considering factors like efficiency and cost reduction. Olympus's invoice feature excels in these aspects by eliminating manual efforts, reducing the likelihood of human error, and reducing costs associated with manual invoicing.",
       },
-
     ],
   },
   {
-    question: "What strategies can I employ to improve the digitization of invoices?",
+    question:
+      "What strategies can I employ to improve the digitization of invoices?",
     answer: [],
     answerHTML: (
       <div className="my-2">
         <p>
           To
-          <Link className="mx-1" href="https://www.enkash.com/resources/blog/e-invoicing-under-gst/" target="_blank">
+          <Link
+            className="mx-1"
+            href="https://www.enkash.com/resources/blog/e-invoicing-under-gst/"
+            target="_blank"
+          >
             digitize invoices
           </Link>
-          more effectively, you need streamlined processes and cost reduction. Olympus's invoice feature supports this by electronically storing and organizing invoices, making them easy to access. This feature also helps reduce labor, printing, and mailing invoice costs.
+          {`more effectively, you need streamlined processes and cost reduction. Olympus's invoice feature supports this by electronically storing and
+          organizing invoices, making them easy to access. This feature also
+          helps reduce labor, printing, and mailing invoice costs.`}
         </p>
       </div>
     ),

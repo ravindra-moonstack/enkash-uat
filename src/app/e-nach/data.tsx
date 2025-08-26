@@ -37,7 +37,6 @@ import {
   fraudProtection,
   fraudProtectionIcon,
   instant,
-  invoices,
   notificationImage,
   paymentButton,
   paymentLink,
@@ -455,41 +454,47 @@ const allInOnePolicies = [
 const managementCards = [
   {
     titleHtml: "Payment Gateway",
-    description: "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction",
+    description:
+      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction",
     cardImage: paymentLink,
     linkUrl: "/payment-gateway",
   },
   {
     titleHtml: "Payment Page",
-    description: "Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online.",
+    description:
+      "Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online.",
     cardImage: paymentPage,
     linkUrl: "/payment-page",
   },
   {
     titleHtml: "Payment Button",
-    description: "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
+    description:
+      "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
     cardImage: paymentButton,
     linkUrl: "/payment-button",
   },
   {
     titleHtml: "UPI Payments",
-    description: "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
+    description:
+      "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
     cardImage: upiPayments,
     linkUrl: "/upi-payments",
   },
   {
     titleHtml: "Auto Collect",
-    description: "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
+    description:
+      "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
     cardImage: autoCollect,
     linkUrl: "/auto-collect",
   },
   {
     titleHtml: "Instant Settlement",
-    description: "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
+    description:
+      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
     cardImage: instant,
     linkUrl: "/instant-settlement",
   },
-];
+]
 const stackcardData = [
   {
     color: "#fff",
@@ -530,5 +535,5 @@ export {
   savingData,
   allInOnePolicies,
   managementCards,
-  stackcardData
+  stackcardData,
 }
