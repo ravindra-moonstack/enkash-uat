@@ -171,6 +171,36 @@ const BankSolutions = dynamic(() => import("./partnerships/BankSolutions"), {
   ssr: true,
 })
 
+const CareersHero = dynamic(
+  () => import("./CareersHeroSlider/CareersHeroSlider"),
+  {
+    ssr: true,
+  }
+)
+const CareersPaycheck = dynamic(
+  () => import("./CareersPaycheck/CareersPaycheck"),
+  {
+    ssr: true,
+  }
+)
+const CoreValuesData = dynamic(
+  () => import("./CoreValuesData/CoreValuesData"),
+  {
+    ssr: true,
+  }
+)
+const YourOpportunityCareers = dynamic(
+  () => import("./YourOpportunityCareers/YourOpportunityCareers"),
+  {
+    ssr: true,
+  }
+)
+const CareersTestimonialSlider = dynamic(
+  () => import("./CareersTestimonialSlider/CareersTestimonialSlider"),
+  {
+    ssr: true,
+  }
+)
 export {
   Header,
   Footer,
@@ -223,4 +253,9 @@ export {
   PartnershipSection,
   BankAffiliatePartnershipForm,
   BankSolutions,
+  CareersHero,
+  CareersPaycheck,
+  CoreValuesData,
+  YourOpportunityCareers,
+  CareersTestimonialSlider
 }
