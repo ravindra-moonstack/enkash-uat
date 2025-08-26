@@ -7,7 +7,7 @@
   background-size: cover;
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding: 100px 20px 0;
+  padding: 110px 20px 0;
   background-image: url(/images/collectPaymentBg.webp);
   @include for-laptops {
     padding: 112px 20px 0;
@@ -192,7 +192,7 @@
     }
   }
   .list_button {
-    padding: 20px 40px 20px;
+    padding: 20px 48px 20px;
     @include for-laptops {
       padding: 20px 97px 20px;
     }
