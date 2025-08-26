@@ -72,7 +72,7 @@ const EasyStepCard = ({
               },
             ]}
             headingTag="p"
-            className="mb-0"
+            className="mb-0 "
           />
          
         </div>

@@ -45,13 +45,13 @@
   }
 }
 .scrollCardButton {
-  padding: 20px 40px 20px;
+  padding: 20px 48px 20px;
   @include for-laptops {
     padding: 20px 86px;
   }
 }
 .scrollCardButton--scroll {
-  padding: 20px 40px 20px;
+  padding: 0px 48px 20px;
   @include for-laptops {
     padding: 20px 97px;
   }
