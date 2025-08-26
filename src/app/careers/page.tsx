@@ -1,15 +1,6 @@
 import styles from "./page.module.scss"
-import { DynamicHeading, CareersHero, CareersPaycheck , CoreValuesData, YourOpportunityCareers} from "@/components"
-import { HomePageRewardsVouchersSlide } from "./data"
-import CareersTestimonialSlider from "@/components/CareersTestimonialSlider/CareersTestimonialSlider"
-import {
-  CoreValuesIcon1,
-  CoreValuesIcon2,
-  CoreValuesIcon3,
-  CoreValuesIcon4,
-  CoreValuesIcon5,
-} from "."
-import HiringProcessModal from "@/components/HiringProcessModal/HiringProcessModal"
+import { DynamicHeading, CareersHero, CareersPaycheck , CoreValuesData, YourOpportunityCareers, CareersTestimonialSlider, HiringProcessModal} from "@/components"
+import { coreValues, HomePageRewardsVouchersSlide, jobs } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 export const metadata: Metadata = generateMetaData({
@@ -21,63 +12,7 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-const coreValues = [
-  {
-    icon: CoreValuesIcon1,
-    title: "Agility & Innovation",
-    description: "Stay fast, adapt smart, and think bold to build what’s next.",
-    maxwidth: "530px",
-  },
-  {
-    icon: CoreValuesIcon2,
-    title: "Ownership & Empowerment",
-    description:
-      "Act like an owner, decide with confidence, and deliver with impact.",
-    maxwidth: "500px",
-  },
-  {
-    icon: CoreValuesIcon3,
-    title: "Resilience & Commitment",
-    description:
-      "Face challenges head-on, stay true to our mission, and never quit.",
-    maxwidth: "480px",
-  },
-  {
-    icon: CoreValuesIcon4,
-    title: "Performance & Rewards",
-    description: "Great work gets noticed, celebrated, and rewarded.",
-    maxwidth: "360px",
-  },
-  {
-    icon: CoreValuesIcon5,
-    title: "Calculated Risk Taking",
-    description: "Experiment fearlessly, backed by insight and responsibility.",
-    maxwidth: "360px",
-  },
-]
-const jobs = [
-  {
-    title: "Engineering Manager",
-    description: "Ship product and lead our engineering teams",
-    department: "Product",
-    location: "Gurgaon, India",
-    applyLink: "https://example.com/apply/engineering-manager",
-  },
-  {
-    title: "Frontend Developer",
-    description: "Build delightful UI experiences with React and Next.js",
-    department: "Engineering",
-    location: "Bangalore, India",
-    applyLink: "https://example.com/apply/frontend-developer",
-  },
-  {
-    title: "Product Designer",
-    description: "Design intuitive experiences and interfaces",
-    department: "Design",
-    location: "Remote",
-    applyLink: "https://example.com/apply/product-designer",
-  },
-]
+
 
 const Careers = (): React.JSX.Element => {
   return (

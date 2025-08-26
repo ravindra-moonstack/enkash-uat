@@ -18,10 +18,10 @@ import {
   PartnershipSection,
   BankAffiliatePartnershipForm,
   BankSolutions,
+  ProductsSection
 } from "@/components"
 import { coBrandImage, containerScreen, GalaxyTabImage, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
-import ProductsSection from "@/components/ourProductsSection"
 import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({

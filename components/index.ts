@@ -127,7 +127,7 @@ const TabPoliciesWrapper = dynamic(
   () => import("./tabPoliciesWrapper/tabPoliciesWrapper"),
   { ssr: true }
 )
-const ourProductsSection = dynamic(() => import("./ourProductsSection/index"), {
+const ProductsSection = dynamic(() => import("./ourProductsSection/index"), {
   ssr: true,
 })
 const SalesForm = dynamic(() => import("./sales-form/salesForm"), { ssr: true })
@@ -190,13 +190,19 @@ const CoreValuesData = dynamic(
   }
 )
 const YourOpportunityCareers = dynamic(
-  () => import("./YourOpportunityCareers/YourOpportunityCareers"),
+  () => import("./YourOpportunityCareers"),
   {
     ssr: true,
   }
 )
 const CareersTestimonialSlider = dynamic(
   () => import("./CareersTestimonialSlider/CareersTestimonialSlider"),
+  {
+    ssr: true,
+  }
+)
+const HiringProcessModal = dynamic(
+  () => import("./HiringProcessModal/HiringProcessModal"),
   {
     ssr: true,
   }
@@ -241,7 +247,7 @@ export {
   PartnerShipForm,
   BpHeroSection,
   TabPoliciesWrapper,
-  ourProductsSection,
+  ProductsSection,
   SalesForm,
   OurStoryCard,
   LeadersSection,
@@ -257,5 +263,6 @@ export {
   CareersPaycheck,
   CoreValuesData,
   YourOpportunityCareers,
-  CareersTestimonialSlider
+  CareersTestimonialSlider,
+  HiringProcessModal,
 }
