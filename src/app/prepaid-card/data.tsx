@@ -484,7 +484,7 @@ const progressData = [
       "Give your drivers the power to pay without the risk of cash misuse. Track fuel, tolls, and repair spends in real-time.",
     icon: tabIconFour,
     bgImage: bg4,
-    url: "/fleet-card",
+    url: "/fuel-card",
   },
   {
     itemArray: ["Payroll Card"],
@@ -493,7 +493,7 @@ const progressData = [
       "Pay employees and gig workers instantly: no bank hassles, no KYC delays. Load salaries, bonuses, or incentives directly to payroll cards.",
     icon: tabIconFive,
     bgImage: bg5,
-    url: "/payroll-card",
+    url: "/payroll",
   },
 ]
 

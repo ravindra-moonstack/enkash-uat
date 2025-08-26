@@ -108,7 +108,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "Effortlessly allocate, track, and optimize your marketing budgets. Designed specifically for marketing professionals, this solution ensures precision, control, and real-time visibility over your campaigns’ spend.",
+                      "Effortlessly allocate, track, and optimize your marketing budgets. Designed specifically for marketing professionals, it ensures precision, control and real-time visibility.",
                     color: "color-black subHeading",
                   },
                 ]}

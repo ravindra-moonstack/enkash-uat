@@ -79,7 +79,7 @@ const CorporateCards = (): React.JSX.Element => {
                         color: "color-white d-block text-center italic f-2",
                       },
                       {
-                        title: "You’ll Ever Need",
+                        title: "You’ll Ever Need.",
                         color: "color-white d-block text-center",
                       },
                     ]}
@@ -92,7 +92,7 @@ const CorporateCards = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "More control, more flexibility, and more security, like no one else.",
+                          "More control, more flexibility & more security.",
                         color: "color-white d-block text-center subHeading",
                       },
                     ]}
@@ -103,7 +103,7 @@ const CorporateCards = (): React.JSX.Element => {
 
                 <div className="mt-3 pointer-auto">
                   <RectangleButton
-                    title="Talk to us"
+                    title="Talk to Us"
                     theme="blue"
                     url={salesUrl}
                   />
@@ -291,7 +291,7 @@ const CorporateCards = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Move beyond raw data. Leverage our advanced analytics to turn into actionable business insights",
+                          "Move beyond raw data. Leverage our advanced analytics to turn into actionable business insights.",
                         color: "color-grey-100 subHeading",
                       },
                     ]}
@@ -368,7 +368,7 @@ const CorporateCards = (): React.JSX.Element => {
                       color: "color-black",
                     },
                     {
-                      title: " Our PPI License",
+                      title: " Our PPI License.",
                       color: "color-equity-blue ",
                     },
                   ]}
@@ -549,7 +549,7 @@ const CorporateCards = (): React.JSX.Element => {
                   content={[
                     {
                       title:
-                        "Connect Corporate Cards with Expense Management for a Unified Experience ",
+                        "Connect Corporate Cards with Expense Management for a Unified Experience. ",
                       color: "color-alternate-grey subHeading",
                     },
                   ]}
@@ -566,11 +566,13 @@ const CorporateCards = (): React.JSX.Element => {
                 />
               </div>
             </div>
+            <div className={`${styles.onePlatformSectionCard}`}>
             <AllProducts
               title="All Features"
               subtitle="Combine all use cases"
               data={mergedCards}
             />
+            </div>
           </div>
 
           <div className={`${styles.eight_row} `}>

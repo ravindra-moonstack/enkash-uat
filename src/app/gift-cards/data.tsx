@@ -178,7 +178,7 @@ const allProductSections = [
       {
         title: "Multiple Denominations ",
         description:
-          "Gift cards are available in multiple denominations of up to Rs.10,000; one can choose the card value per their requirement. Limits are configurable based on your choice.",
+          "Gift cards are available in multiple denominations of up to Rs.10,000; Limits are configurable based on choice.",
         image: sliderThreeIcon,
         link: "/payment-button/",
       },
@@ -225,7 +225,7 @@ const stackcardData = [
     color: "#eee",
     icon: costControlSavingsIcon,
     title: "Easy Distribution",
-    description: "These gift cards can be easily distributed on the occasion",
+    description: "These gift cards can be easily distributed on the occasion.",
     image: costControlSavings,
     buttonUrl: "/sales",
   },
@@ -234,7 +234,7 @@ const stackcardData = [
     icon: wideAcceptanceNetworkIcon,
     title: "Multiple Denominations",
     description:
-      "Available in multiple denominations of up to Rs.10,000, ensuring the option to choose the card value as per your requirements",
+      "Available in multiple denominations of up to Rs.10,000, ensuring the option to choose the card value as per your requirements.",
     image: wideAcceptanceNetwork,
     buttonUrl: "/sales",
   },

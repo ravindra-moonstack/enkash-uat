@@ -47,7 +47,7 @@ const CollectPayment = (): React.JSX.Element => {
                 { name: "Home", url: "/" },
                 { name: "Products", url: "/products" },
                 {
-                  name: "Collect PaymentS",
+                  name: "Collect Payments",
                   url: "/products/collect-payments",
                 },
               ]}

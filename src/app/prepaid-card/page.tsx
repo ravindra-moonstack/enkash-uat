@@ -18,7 +18,7 @@ import generateMetaData from "@/common/utils/metaData"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
-  title: "EnKah Corporate Prepaid Cards for Business Payments",
+  title: "EnKash Corporate Prepaid Cards for Business Payments",
   description:
     "Empower your teams with EnKash’s corporate prepaid cards. Control spending, track expenses in real-time, and manage business payments effortlessly and securely.",
   alternates: {
@@ -110,7 +110,7 @@ const PrepaidCard = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-        <div className=" col-12 pt-5 ">
+        <div className={`${styles.lottie_containerOuter} col-12`}>
           <div className={styles.lottie_container}>
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
@@ -138,7 +138,7 @@ const PrepaidCard = (): React.JSX.Element => {
             cards={cards}
             heading={[
               {
-                title: "Why Businesses Love Us ",
+                title: "Why Businesses Love Us? ",
                 color: "color-black",
               },
             ]}
@@ -153,7 +153,7 @@ const PrepaidCard = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Step into the world of smarter, safer, and seamless spending",
+                    "Step into the World of Smarter, Safer & Seamless Spending",
                   color: "color-white",
                 },
               ]}
