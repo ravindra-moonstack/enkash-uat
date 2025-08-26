@@ -35,7 +35,6 @@ import options from "./img/options.png"
 import {
   autoCollect,
   instant,
-  invoices,
   notificationImage,
   paymentButton,
   paymentLink,
@@ -47,9 +46,7 @@ import {
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
-  secureImage,
   shareImage,
-  taskIconFive,
   taskIconFour,
   taskIconOne,
   taskIconThree,

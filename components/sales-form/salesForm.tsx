@@ -106,14 +106,7 @@ const SalesForm: React.FC = () => {
     }
   }, [])
 
-  const {
-    errors,
-    values,
-    touched,
-    handleSubmit,
-    getFieldProps,
-    setFieldValue,
-  } = useFormik({
+  const { errors, touched, handleSubmit, getFieldProps } = useFormik({
     initialValues: salesInitialValue,
     validationSchema: salesValidation,
     onSubmit: () => {

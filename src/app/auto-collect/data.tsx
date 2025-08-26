@@ -34,7 +34,6 @@ import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
   instant,
-  invoices,
   notificationImage,
   paymentButton,
   paymentLink,

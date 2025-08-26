@@ -15,21 +15,20 @@ const YourOpportunityCareers: FC<YourOpportunityCareersProps> = ({
   description,
   department,
   location,
-  applyLink,
 }) => {
   return (
     <div className={`${styles.careerCard}`}>
       <div className={`${styles.careerCardTitleDesc}`}>
-         <DynamicHeading
-                content={[
-                  {
-                    title: title,
-                    color: "color-white subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className="mb-2"
-              />
+        <DynamicHeading
+          content={[
+            {
+              title: title,
+              color: "color-white subHeading",
+            },
+          ]}
+          headingTag="p"
+          className="mb-2"
+        />
         <p className="mb-0 f-3">{description}</p>
       </div>
       <div className={`${styles.careerCardDepartmentLocation}`}>
