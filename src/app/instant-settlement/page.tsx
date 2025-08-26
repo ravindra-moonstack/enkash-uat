@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicies, cardsData, managementCards } from "./data"
+import { allInOnePolicies, cardsData, managementCards, stackcardData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -11,6 +11,7 @@ import {
   ManagementCard,
   AllInOnePolicy,
   FaqSection,
+  CardStacking,
 } from "@/components"
 import {
   blueArrow,
@@ -20,6 +21,7 @@ import {
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
+  activationIcon,
 } from "."
 
 import { Metadata } from "next"
@@ -37,7 +39,21 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/instant-settlement")
 
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const InstantSettlement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -82,7 +98,7 @@ const InstantSettlement = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Accelerate business cash flow with Instant Settlements",
+                          "Accelerate Business Cash Flow with Instant Settlements",
                         color: "color-black",
                       },
                     ]}
@@ -121,13 +137,6 @@ const InstantSettlement = (): React.JSX.Element => {
                         url={salesUrl}
                       />
                     </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -158,7 +167,7 @@ const InstantSettlement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Instant Payments Settlement for Better Cash Flow",
+                  title: "Instant Payment Settlement for Better Cash Flow",
                   color: "color-white",
                 },
               ]}
@@ -173,16 +182,7 @@ const InstantSettlement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={realTimeIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -204,7 +204,7 @@ const InstantSettlement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={hundredPercentIcon} alt="icon" />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -226,7 +226,7 @@ const InstantSettlement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={realTimeIcon} alt="icon" />
+                <Image src={hundredPercentIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -269,9 +269,8 @@ const InstantSettlement = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -358,13 +357,26 @@ const InstantSettlement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Access Cash Flow Faster Than Your Competitors",
+                color: "color-black",
+              },
+            ]}
+          />
+        </div>
+      </div>
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <DynamicHeading
               content={[
                 {
-                  title: "Collect payments faster with reminders!",
+                  title: "Get paid faster today!",
                   color: "color-white",
                 },
               ]}
@@ -392,7 +404,7 @@ const InstantSettlement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {

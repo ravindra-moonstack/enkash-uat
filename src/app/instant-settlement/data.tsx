@@ -34,6 +34,8 @@ import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
   autoCollect,
+  fraudProtection,
+  fraudProtectionIcon,
   invoices,
   notificationImage,
   paymentButton,
@@ -42,12 +44,16 @@ import {
   paymentLinkImage,
   paymentOptionImage,
   qrCodes,
+  realTimeExpense,
+  realTimeExpenseIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
   secureImage,
   shareImage,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   taskIconFive,
   taskIconFour,
   taskIconOne,
@@ -139,7 +145,7 @@ const cardsData = [
   },
   {
     title: "Choose Settlement Preferences",
-    description: "Select preferred settlement method and frequency",
+    description: "Select preferred settlement method and frequency. (instant, daily, or custom)",
     icon: scrollIconTwo,
   },
   {
@@ -469,13 +475,6 @@ const managementCards = [
     linkUrl: "/auto-collect",
   },
   {
-    titleHtml: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
-    cardImage: invoices,
-    linkUrl: "/digital-invoicing",
-  },
-  {
     titleHtml: "UPI Payments",
     description:
       "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
@@ -487,7 +486,34 @@ const managementCards = [
     description:
       "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
     cardImage: reminder,
-    linkUrl: "/reminder-engine",
+    linkUrl: "/collection-reminder",
+  },
+]
+
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Instant Funds",
+    description: `With EnKash’s instant payment settlement process, you receive funds instantly after every successful transaction.`,
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Easy Access",
+    description: `EnKash enables you to access your funds 24/7, 365 days a year, even on weekends and holidays.`,
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Full Control",
+    description: `Gain complete control over your cash flow, allowing you to invest, pay suppliers, or manage expenses instantly. Eliminate cash flow gaps and seize time-sensitive deals with readily available funds.`,
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
   },
 ]
 export {
@@ -504,4 +530,5 @@ export {
   savingData,
   allInOnePolicies,
   managementCards,
+  stackcardData
 }
