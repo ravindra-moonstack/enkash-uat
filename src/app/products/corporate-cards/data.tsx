@@ -127,7 +127,7 @@ const cardData = [
   },
   {
     icon: realTimeTrakingIcon,
-    title: "Real-time tracking & controls",
+    title: "Real-time Tracking & Controls",
   },
   {
     icon: securityIcon,
@@ -224,24 +224,24 @@ const spendAnalyticsData = [
 const rbiData = [
   {
     title: "Instant ",
-    description: "Instant card issuance without routing requests through banks",
+    description: "Instant card issuance without routing requests through banks.",
     icon: instantIcon,
   },
   {
     title: " Fast",
-    description: "Faster onboarding and fewer compliance hurdles",
+    description: "Faster onboarding and fewer compliance hurdles.",
     icon: onboardingIcon,
   },
   {
     title: "No Delays",
-    description: "No third-party delays or dependencies",
+    description: "No third-party delays or dependencies.",
     icon: noThidPartyIcon,
   },
   {
     title: "Customizable ",
 
     description:
-      "DIY control over how your cards are issued, used, and managed",
+      "DIY control over how your cards are issued, used, and managed.",
     icon: diyControlIcon,
   },
 ]

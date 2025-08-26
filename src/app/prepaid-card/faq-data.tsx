@@ -69,7 +69,7 @@ export const faqData = [
     answer: [
       {
         heading:
-          "Yes. EnKash prepaid cards are PCI-DSS certified and fully compliant with RBI guidelines, making them safe, auditable, and tax-efficient, especially for benefits like meals or reimbursements.",
+          "Yes. EnKash prepaid cards are PPI license approved and fully compliant with RBI guidelines, making them safe, auditable, and tax-efficient, especially for benefits like meals or reimbursements.",
       },
     ],
   },

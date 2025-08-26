@@ -5,11 +5,11 @@
     justify-content: center;
     padding-bottom: 50px;
     flex-wrap: wrap;
-    // gap: 20px;
+    gap: 20px;
     @include for-laptops{
         padding-bottom: 90px;
         flex-wrap: nowrap;
-        
+        gap: 0;
     }
 
     .investerLogos{

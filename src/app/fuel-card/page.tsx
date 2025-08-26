@@ -113,7 +113,7 @@ const FuelCards = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-        <div className=" col-12 pt-5 ">
+        <div className={`${styles.lottie_containerOuter} col-12`}>
           <div className={styles.lottie_container}>
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
