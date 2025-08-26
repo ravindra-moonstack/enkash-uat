@@ -38,7 +38,7 @@ import PaymentGatewayCare from "@/components/homePagePaymentBox/PaymentGatewayCa
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 import PrepaidCardHome from "@/components/prepaidCardHome/PrepaidCardHome"
 import HomePageRewardsVouchers from "@/components/HomePageRewardsVouchers/HomePageRewardsVouchers "
-import HomeReceivablesPayables from "@/components/HomeReceivablesPayables/HomeReceivablesPayables"
+import HomeReceivablesPayables from "@/components/HomeReceivablesPayables"
 import Counter from "@/components/HomeCounter/HomeCounter"
 import HomePageSlider from "@/components/homePageSlider/HomePAgeSlider"
 import BuiltforBuildersSection from "@/components/BuiltforBuildersCard/BuiltforBuildersSection"
@@ -93,7 +93,7 @@ const HomePage = (): React.JSX.Element => {
                     theme="outline-blue"
                     actionImage=""
                     hoverImage=""
-                    url="/sales?source=home"
+                    url="/sales?source=homepage"
                   />
                 </div>
               </div>

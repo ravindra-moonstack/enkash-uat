@@ -4,6 +4,7 @@ import { DynamicHeading } from "@/components"
 import notFoundImg from "@/public/images/not-found.webp"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
+
 export const metadata: Metadata = generateMetaData({
   title: "404 Page",
   description:
@@ -12,6 +13,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/not-found/",
   },
 })
+
 export default function NotFound() {
   return (
     <div className={`${styles.notFound}`}>

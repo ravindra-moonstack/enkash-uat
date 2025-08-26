@@ -228,7 +228,7 @@ const VirtualCards = (): React.JSX.Element => {
                 ))}
               </div>
             </div>
-            <div className={`col-md-6 col-12 d-flex `}>
+            <div className={`col-md-6 col-12 d-flex mt-4 mt-md-0`}>
               <div>
                 <Image
                   src={instantActionImg}

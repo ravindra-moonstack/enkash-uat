@@ -11,9 +11,9 @@ const contactOptions = [
     value: "payment_collection",
     label: "Looking for Payment Collection Solution",
   },
-  { value: "make_payments", label: "Looking for a solution to make Payments" },
+  { value: "make_payments", label: "Looking for a solution to Make Payments" },
   { value: "expense_management", label: "Looking for Expense Management" },
-  { value: "corporate_jobs", label: "Looking for Corporate Jobs" },
+  { value: "corporate_jobs", label: "Looking for Corporate Cards" },
   { value: "job_opportunities", label: "Exploring Job Opportunities" },
   { value: "customer_support", label: "Need Customer Support" },
   { value: "partnership", label: "Interested In Partnership Opportunities" },
@@ -57,7 +57,7 @@ const ContactForm: React.FC = () => {
 
       <div className={styles.contactFormWrapper}>
         <form
-          action="https://forms.zohopublic.in/Enkash/form/WebsiteLetsConnect/formperma/ya7rxfABr3dsLPI9Cdv2mwNzv4AEHz92m6N4jgOTEiQ/htmlRecords/submit"
+              action={process.env.ZOHO_CONTACT_URL}
           name="form"
           method="POST"
           acceptCharset="UTF-8"

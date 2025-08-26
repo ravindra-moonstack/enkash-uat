@@ -3,12 +3,8 @@ import "../../styles/_base.scss"
 import "./globals.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Inter } from "next/font/google"
-// import ScrollToTop from "@/components/scroll-to-top/ScrollToTop"
-// import SmoothWrapper from "@/components/smoothWrapper/page"
-// import { Suspense } from "react"
-// import LenisProvider from "../provider/LenisProvider"
 import LayoutClientWrapper from "@/components/layoutWrapper/layoutWrapper"
-// import Loading from "./loading"
+import { WebVitals } from "@/components/web-vitals"
 
 export const dynamic = "force-dynamic"
 
@@ -35,12 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        {/* <Suspense fallback={<Loading />}> */}
-        {/* <LenisProvider> */}
+        <WebVitals />
         <LayoutClientWrapper>{children}</LayoutClientWrapper>
-        {/* </LenisProvider> */}
-        {/* </Suspense> */}
-        {/* <ScrollToTop /> */}
       </body>
     </html>
   )

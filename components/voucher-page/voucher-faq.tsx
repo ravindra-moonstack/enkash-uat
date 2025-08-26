@@ -19,7 +19,7 @@ const VoucherFaqComponent: React.FC<VoucherFaqComponentProps> = ({
   }
 
   const faqData = VoucherFaqData[voucherName]
-  console.log("faqData:", VoucherFaqData)
+
   return (
     <div>
       {faqData?.faqData.map((item, index) => (
