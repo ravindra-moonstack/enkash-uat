@@ -36,7 +36,6 @@ import {
   autoCollect,
   fraudProtection,
   fraudProtectionIcon,
-  invoices,
   notificationImage,
   paymentButton,
   paymentGatewayImg,
@@ -145,7 +144,8 @@ const cardsData = [
   },
   {
     title: "Choose Settlement Preferences",
-    description: "Select preferred settlement method and frequency. (instant, daily, or custom)",
+    description:
+      "Select preferred settlement method and frequency. (instant, daily, or custom)",
     icon: scrollIconTwo,
   },
   {
@@ -530,5 +530,5 @@ export {
   savingData,
   allInOnePolicies,
   managementCards,
-  stackcardData
+  stackcardData,
 }
