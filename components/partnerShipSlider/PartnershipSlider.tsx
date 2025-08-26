@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-import { useRef } from "react"
-import Slider from "react-slick"
+import { useRef, useMemo} from "react"
+import Slider, { Settings } from "react-slick"
 import styles from "./PartnershipSlider.module.scss"
 import Link from "next/link"
 import Image from "next/image"
@@ -25,7 +25,8 @@ interface PartnershipSliderProps {
 const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
   const sliderRef = useRef<Slider>(null)
 
-  const settings = {
+ const settings: Settings = useMemo(
+  () => ({
     dots: true,
     arrows: false,
     infinite: true,
@@ -35,7 +36,7 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     adaptiveHeight: false,
-    Draggable: true,
+    draggable: true, // 👈 lowercase, TS + react-slick correct
     pauseOnHover: true,
     responsive: [
       {
@@ -53,7 +54,9 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
         },
       },
     ],
-  }
+  }),
+  [] // static config, so no deps
+)
 
   return (
     <div className={styles.partnershipSlider}>
