@@ -402,7 +402,7 @@ const eNACH = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
