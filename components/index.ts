@@ -160,7 +160,7 @@ const BottomCtaSection = dynamic(
   { ssr: true }
 )
 const PartnershipSection = dynamic(
-  () => import("./partnerShipSlider/PartnershipSlider"),
+  () => import("./partnerShipSlider/PartnershipSection"),
   { ssr: true }
 )
 const BankAffiliatePartnershipForm = dynamic(
@@ -190,7 +190,7 @@ const CoreValuesData = dynamic(
   }
 )
 const YourOpportunityCareers = dynamic(
-  () => import("./YourOpportunityCareers/YourOpportunityCareers"),
+  () => import("./YourOpportunityCareers"),
   {
     ssr: true,
   }
@@ -257,5 +257,5 @@ export {
   CareersPaycheck,
   CoreValuesData,
   YourOpportunityCareers,
-  CareersTestimonialSlider
+  CareersTestimonialSlider,
 }

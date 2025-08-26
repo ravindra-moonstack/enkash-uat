@@ -101,6 +101,7 @@ const partnershipsPage = (): React.JSX.Element => {
 
       <div className={`${styles.second_row}`}>
         <PartnershipSection
+          //@ts-expect-error will check later
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."

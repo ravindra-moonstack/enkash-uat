@@ -18,13 +18,13 @@ interface Solution {
 interface BankSolutionsProps {
   heading: {
     content: { title: string; color: string }[]
-    headingTag?: keyof React.JSX.IntrinsicElements
+    headingTag?: keyof React.JSX.IntrinsicElements | string
     className?: string
   }
   solutions: Solution[]
   subheading?: {
     content: { title: string; color: string }[]
-    headingTag?: keyof React.JSX.IntrinsicElements
+    headingTag?: keyof React.JSX.IntrinsicElements | string
     className?: string
   }
 

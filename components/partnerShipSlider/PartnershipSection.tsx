@@ -3,6 +3,7 @@
 import type React from "react"
 import Image from "next/image"
 import PartnershipSlider from "./PartnershipSlider"
+
 import "./PartnershipSection.scss"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
@@ -25,8 +26,8 @@ interface HeadingContent {
   color?: string
 }
 
-interface PartnershipSectionProps {
-  backgroundImage: string
+export interface PartnershipSectionProps {
+  backgroundImage?: string
   heading: HeadingContent[]
   description: string
   buttons?: ButtonData[] // can be 0, 1, or 2 buttons
@@ -34,7 +35,7 @@ interface PartnershipSectionProps {
 }
 
 const PartnershipSection: React.FC<PartnershipSectionProps> = ({
-  backgroundImage,
+  backgroundImage = "",
   heading,
   description,
   buttons = [],
