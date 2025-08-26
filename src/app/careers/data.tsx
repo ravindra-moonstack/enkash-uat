@@ -1,5 +1,11 @@
-import { RectangleButtonTheme } from "@/components/buttons/rectangle-button/rectangle-button"
-import { parksIcon1, parksIcon2, parksIcon3, parksIcon4, parksIcon5, parksIcon6, } from "."
+import {
+  parksIcon1,
+  parksIcon2,
+  parksIcon3,
+  parksIcon4,
+  parksIcon5,
+  parksIcon6,
+} from "."
 
 const HomePageRewardsVouchersSlide = [
   {
@@ -8,7 +14,6 @@ const HomePageRewardsVouchersSlide = [
     description:
       "We reward great work with performance-based bonuses and competitive pay packages.",
     cardImage: parksIcon1,
-   
   },
   {
     title: "Health & Wellness",
@@ -16,7 +21,6 @@ const HomePageRewardsVouchersSlide = [
     description:
       "Comprehensive health insurance, paid sick leave, and proactive wellness initiatives for all.",
     cardImage: parksIcon2,
-   
   },
   {
     title: "Learning & Development",
@@ -24,7 +28,6 @@ const HomePageRewardsVouchersSlide = [
     description:
       "Upskill through internal hackathons, mentorship, and hands-on learning opportunities.",
     cardImage: parksIcon3,
-   
   },
   {
     title: "Paid Time Off",
@@ -32,7 +35,6 @@ const HomePageRewardsVouchersSlide = [
     description:
       "We offer generous leave policy and encourage you to rest, recharge, and reset.",
     cardImage: parksIcon4,
-   
   },
   {
     title: "Employee Stock Options",
@@ -40,7 +42,6 @@ const HomePageRewardsVouchersSlide = [
     description:
       "Ownership opportunities through ESOPs for key roles driving our growth.",
     cardImage: parksIcon5,
-   
   },
   {
     title: "Career Growth Path",
@@ -48,10 +49,6 @@ const HomePageRewardsVouchersSlide = [
     description:
       "Accelerated career paths with internal promotions and leadership-driven advancement.",
     cardImage: parksIcon6,
-   
   },
 ]
-export{
-  HomePageRewardsVouchersSlide,
-  
-}
+export { HomePageRewardsVouchersSlide }

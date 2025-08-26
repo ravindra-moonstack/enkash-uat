@@ -19,7 +19,6 @@ const HomeReceivablesPayables: React.FC<HomeReceivablesPayablesProps> = ({
   topIcon,
   bottomIcon,
   url,
-  borderColors, // Default border color
 }) => {
   return (
     <>
