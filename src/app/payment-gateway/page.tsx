@@ -35,6 +35,7 @@ import generateMetaData from "@/common/utils/metaData"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import { Metadata } from "next"
 
+
 export const metadata: Metadata = generateMetaData({
   title: "Best Payment Gateway in India for SMBs and Startups",
   description:
