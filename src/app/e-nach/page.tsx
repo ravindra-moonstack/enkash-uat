@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicies, cardsData, managementCards } from "./data"
+import { allInOnePolicies, cardsData, managementCards, stackcardData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -11,6 +11,7 @@ import {
   ManagementCard,
   AllInOnePolicy,
   FaqSection,
+  CardStacking,
 } from "@/components"
 import {
   blueArrow,
@@ -20,6 +21,7 @@ import {
   mealCardImage,
   activationIcon,
   hundredPercentIcon,
+  creationIcon,
 } from "."
 
 import { Metadata } from "next"
@@ -37,7 +39,21 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/e-nach")
 
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const eNACH = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -95,7 +111,7 @@ const eNACH = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Effortlessly automate recurring collections with EnKash eNACH mandate. Set up fast, secure digital mandates and seamlessly collect large recurring payments",
+                          "Effortlessly automate recurring collections with EnKash eNACH mandate. Set up fast, secure digital mandates and seamlessly collect large recurring payments.",
                         color: "color-black subHeading",
                       },
                     ]}
@@ -118,13 +134,6 @@ const eNACH = (): React.JSX.Element => {
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -167,26 +176,17 @@ const eNACH = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
+
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={creationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -203,12 +203,12 @@ const eNACH = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={`d-flex ${styles.outerCard}`}>
-                <Image src={hundredPercentIcon} alt="icon" />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -225,12 +225,12 @@ const eNACH = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={activationIcon} alt="icon" />
+                <Image src={hundredPercentIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -268,9 +268,8 @@ const eNACH = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -352,6 +351,19 @@ const eNACH = (): React.JSX.Element => {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Meal Cards that your Employees Deserve",
+                color: "color-black",
+              },
+            ]}
+          />
         </div>
       </div>
       <div className={`${styles.fifth_row} `}>
