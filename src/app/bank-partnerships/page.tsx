@@ -9,7 +9,14 @@ import {
 } from "./data"
 import FaqSection from "@/components/faqSection/faqSection"
 import { ThirdfaqData } from "./faq-data"
-import { BecomePartnerSteps, BpHeroSection, BottomCtaSection, PartnershipSection, BankSolutions, PartnerShipForm} from "@/components"
+import {
+  BecomePartnerSteps,
+  BpHeroSection,
+  BottomCtaSection,
+  PartnershipSection,
+  BankSolutions,
+  PartnerShipForm,
+} from "@/components"
 import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import generateMetaData from "@/common/utils/metaData"

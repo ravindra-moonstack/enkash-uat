@@ -1,4 +1,4 @@
-import React from "react"
+import React, { JSX } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -15,7 +15,7 @@ interface StepData {
 interface BecomePartnerStepsProps {
   heading: {
     content: { title: string; color: string }[]
-    headingTag?: keyof React.JSX.IntrinsicElements
+    headingTag?: keyof JSX.IntrinsicElements | string
     className?: string
   }
   steps: StepData[]
