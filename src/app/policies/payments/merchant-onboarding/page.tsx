@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Discover our transparent process for verifying and onboarding payment merchants.",
   alternates: {
-    canonical: "https://www.enkash.com/policies/payments/merchant-onboarding",
+    canonical: `${process.env.URL}/policies/payments/merchant-onboarding`,
   },
 })
 

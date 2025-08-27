@@ -117,7 +117,7 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
 };
 
 export const generateVoucherSchema = (voucher: Voucher): string => {
-  const baseUrl = "https://www.enkash.com";
+  const baseUrl = process.env.URL;
 
   const schema = {
     "@context": "https://schema.org",

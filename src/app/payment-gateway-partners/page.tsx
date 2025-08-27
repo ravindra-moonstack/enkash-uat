@@ -32,7 +32,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Partner with EnKash to offer integrated payment gateway solutions. Expand your reach, boost transaction success rates, and deliver frictionless payment experiences to businesses.",
   alternates: {
-    canonical: "https://www.enkash.com/payment-gateway-partners/",
+    canonical: `${process.env.URL}/payment-gateway-partners/`,
   },
 })
 

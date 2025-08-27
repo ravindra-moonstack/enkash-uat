@@ -11,7 +11,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Get an overview of our quick, compliant customer onboarding procedure for all services.",
   alternates: {
-    canonical: "https://www.enkash.com/policies/customer-onboarding",
+    canonical: `${process.env.URL}/policies/customer-onboarding`,
   },
 })
 

@@ -29,7 +29,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Pay office, warehouse, or commercial rent digitally via EnKash. Use credit cards or bank transfers, track due dates, and automate monthly rent payments easily.",
   alternates: {
-    canonical: "https://www.enkash.com/rent-payment/",
+    canonical: "${process.env.URL}/rent-payment/",
   },
 })
 const salesUrl = getSalesUrl("/rent-payment")

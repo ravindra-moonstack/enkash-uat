@@ -38,7 +38,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Track, analyze, and optimize your accounts payable with EnKash Payable Analytics. Improve cash flow planning, spot delays, and make informed financial decisions.",
   alternates: {
-    canonical: "https://www.enkash.com/payable-analytics/",
+    canonical: `${process.env.URL}/payable-analytics/`,
   },
 })
 const salesUrl = getSalesUrl("/payable-analytics")

@@ -3,13 +3,14 @@ import styles from "./page.module.scss"
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
 import { CustomBreadcrumb, DynamicHeading } from "@/components"
+import Link from "next/link"
 
 export const metadata: Metadata = generateMetaData({
   title: "Terms and Conditions (Platform): EnKash",
   description:
     "Know the usage guidelines for accessing and operating on the EnKash platform.",
   alternates: {
-    canonical: "https://www.enkash.com/policies/platform/tnc",
+    canonical: `${process.env.URL}/policies/platform/tnc`,
   },
 })
 
@@ -73,9 +74,9 @@ const CustomerOnboarding = () => {
                       <p>
                         These terms including annexures and links herein, apply
                         to your use of{" "}
-                        <a href="https://www.enkash.com" target="_blank">
+                        <Link href={`${process.env.URL}/`} target="_blank">
                           www.EnKash.com
-                        </a>
+                        </Link>
                         , any other linked pages, API keys, features, content or
                         application services (including but without limitation
                         to any mobile application, mobile site services) (

@@ -21,7 +21,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Boost employee engagement with EnKash Rewards. Design custom reward programs, send instant digital vouchers, and simplify recognition across teams and departments.",
   alternates: {
-    canonical: "https://www.enkash.com/rewards/",
+    canonical: `${process.env.URL}/rewards/`,
   },
 })
 const salesUrl = getSalesUrl("/rewards")
@@ -73,11 +73,7 @@ const Rewards = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-5 mt-3">
-              <RectangleButton
-                title="Talk to Us"
-                theme="blue"
-                url={salesUrl}
-              />
+              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">

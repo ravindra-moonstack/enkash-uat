@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Reward employees with instant, customizable digital cards using EnKash. Simplify recognition, boost morale, and manage all rewards from one smart platform.",
   alternates: {
-    canonical: "https://www.enkash.com/employee-rewards/",
+    canonical: `${process.env.URL}/employee-rewards/`,
   },
 })
 const salesUrl = getSalesUrl("/employee-rewards")

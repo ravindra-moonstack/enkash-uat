@@ -39,7 +39,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Generate dynamic or static QR codes for fast, secure, and contactless UPI payments. Perfect for retail, delivery, and offline collections—no hardware needed.",
   alternates: {
-    canonical: "https://www.enkash.com/qr-code/",
+    canonical: `${process.env.URL}/qr-code/`,
   },
 })
 const salesUrl = getSalesUrl("/qr-code")

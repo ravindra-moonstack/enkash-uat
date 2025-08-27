@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify procurement with EnKash Purchase Cards. Set spending controls, track purchases in real time, and manage vendor payments with ease and transparency.",
   alternates: {
-    canonical: "https://www.enkash.com/purchase-card/",
+    canonical: `${process.env.URL}/purchase-card/`,
   },
 })
 const salesUrl = getSalesUrl("/purchase-card")

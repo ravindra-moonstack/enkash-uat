@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Offer tax-free meal allowances with EnKash Meal Cards. Easy to manage, accepted at food outlets and online—boost employee satisfaction and streamline HR processes.",
   alternates: {
-    canonical: "https://www.enkash.com/meal-card/",
+    canonical: `${process.env.URL}/meal-card/`,
   },
 })
 const salesUrl = getSalesUrl("/meal-card")

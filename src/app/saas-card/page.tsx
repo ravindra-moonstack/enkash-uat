@@ -30,7 +30,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Manage all your software subscriptions with EnKash SaaS Card. Control costs, ensure compliance, and boost operational efficiency.",
   alternates: {
-    canonical: "https://www.enkash.com/saas-card/",
+    canonical: `${process.env.URL}/saas-card/`,
   },
 })
 const salesUrl = getSalesUrl("/saas-card")

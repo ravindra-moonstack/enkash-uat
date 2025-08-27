@@ -21,7 +21,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Send digital gift vouchers instantly. Reward employees, engage customers, and manage incentives with ease using a wide range of branded voucher options.",
   alternates: {
-    canonical: "https://www.enkash.com/products/vouchers",
+    canonical: `${process.env.URL}/products/vouchers`,
   },
 })
 const salesUrl = getSalesUrl("/vouchers")

@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Get powerful insights into your business spends with EnKash Expense Analytics. Track patterns, control budgets, and make data-driven financial decisions.",
   alternates: {
-    canonical: "https://www.enkash.com/expense-analytics-and-insights/",
+    canonical: `${process.env.URL}/expense-analytics-and-insights/`,
   },
 })
 const salesUrl = getSalesUrl("/expense-analytics-and-insights")

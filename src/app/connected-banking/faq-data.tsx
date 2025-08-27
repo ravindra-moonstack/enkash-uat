@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 
 const faqData = [
@@ -39,25 +38,20 @@ const faqData = [
     ],
   },
   {
-    question:
-      "Is this available for all businesses?",
+    question: "Is this available for all businesses?",
     answer: [],
-     answerHTML: (
+    answerHTML: (
       <div className="my-2">
         <p>
           Yes. From funded startups to enterprise-grade businesses.
-          <Link
-            href="https://www.enkash.com/sales/"
-            target="_blank"
-          >
+          <Link href={`${process.env.URL}/sales/`} target="_blank">
             Talk to our team
           </Link>{" "}
-         to find your best fit.
+          to find your best fit.
         </p>
       </div>
     ),
   },
-  
 ]
 
 export const SecondfaqData = [

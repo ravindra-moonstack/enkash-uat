@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Boost partner performance with EnKash Channel Incentives. Automate payouts, track performance, and motivate resellers, agents, or dealers with ease.",
   alternates: {
-    canonical: "https://www.enkash.com/channel-incentives/",
+    canonical: `${process.env.URL}/channel-incentives/`,
   },
 })
 const salesUrl = getSalesUrl("/channel-incentives")
