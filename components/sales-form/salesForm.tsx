@@ -1,134 +1,75 @@
 "use client"
-
-import React, { useEffect, useState } from "react"
-import styles from "./salesForm.module.scss"
-import { DynamicHeading } from "@/components"
+import React, { useState } from "react"
 import Link from "next/link"
-import CategoryMultiSelect from "../categoryMultiSelect/categoryMultiSelect"
-import CategoryWithOther from "../categoryWithOther/categoryWithOther"
 import { useFormik } from "formik"
-import { salesInitialValue, salesValidation } from "./formik"
+import axios from "axios"
+import { useRouter } from "next/navigation"
 
-const options = [
-  { value: "Google search", label: "Google Search" },
-  { value: "Social media", label: "Social media" },
-  { value: "Word of mouth/ Referral", label: "Word of mouth / Referral" },
-  { value: "Used EnKash Before", label: "Used EnKash Before" },
-]
+import styles from "./salesForm.module.scss"
 
-const categoryOptions = [
-  {
-    value: "Collect Payments",
-    label: "Collect Payments",
-    children: [
-      { value: "Payment Gateway", label: "Payment Gateway" },
-      { value: "UPI Payments", label: "UPI Payments" },
-      { value: "Payment Link/button", label: "Payment Link/Button" },
-      { value: "AR Automation", label: "AR Automation" },
-      { value: "Collect Payments Other", label: "Other" },
-    ],
-  },
-  {
-    value: "Make Payments",
-    label: "Make Payments",
-    children: [
-      { value: "Utility Bill Payment", label: "Utility Bill Payment" },
-      { value: "Vendor Payment", label: "Vendor Payment" },
-      { value: "Bulk Payments", label: "Bulk Payments" },
-      { value: "Rental Payments", label: "Rental Payments" },
-      { value: "AP Automation", label: "AP Automation" },
-      { value: "Make Payments Other", label: "Other" },
-    ],
-  },
-  {
-    value: "Corporate Cards",
-    label: "Corporate Cards",
-    children: [
-      { value: "Secured Credit Card", label: "Secured Credit Card" },
-      { value: "Unsecured Credit Card", label: "Unsecured Credit Card" },
-      { value: "Gift Cards", label: "Gift Cards" },
-      { value: "Employee Cards", label: "Employee Cards" },
-      { value: "T&E Cards", label: "T&E Cards" },
-      { value: "Meal Cards", label: "Meal Cards" },
-      { value: "Corporate Cards Other", label: "Other" },
-    ],
-  },
-  {
-    value: "Manage Expenses",
-    label: "Manage Expenses",
-  },
-  {
-    value: "Rewards",
-    label: "Rewards",
-    children: [
-      { value: "Employee Rewards", label: "Employee Rewards" },
-      { value: "Channel Incentives", label: "Channel Incentives" },
-    ],
-  },
-  { value: "Something Else", label: "Something Else" },
-]
+// components
+import { DynamicHeading } from "@/components"
+import ErrorText from "../ErrorText"
+import CategoryMultiSelect from "../categoryMultiSelect"
+import CategoryWithOther from "../categoryWithOther/categoryWithOther"
+import {
+  salesInitialValue,
+  salesValidation,
+  TSalesInitialValueProp,
+} from "./formik"
+import { categoryOptions, options } from "./data"
 
 const SalesForm: React.FC = () => {
   //
 
+  const router = useRouter()
+
   const [showOtherInput, setShowOtherInput] = useState(false)
 
-  useEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      window.zf_SetDateAndMonthRegexBasedOnDateFormate
-    ) {
-      const dateAndMonthRegexFormateArray =
-        window.zf_SetDateAndMonthRegexBasedOnDateFormate("dd-MMM-yyyy")
+  const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
+    useFormik({
+      initialValues: salesInitialValue,
+      validationSchema: salesValidation,
+      onSubmit: (values) => {
+        onSubmitForm(values)
+      },
+    })
 
-      window.zf_DateRegex = new RegExp(dateAndMonthRegexFormateArray[0])
-      window.zf_MonthYearRegex = new RegExp(dateAndMonthRegexFormateArray[1])
-      window.zf_MandArray = [
-        "SingleLine",
-        "Email",
-        "SingleLine1",
-        "PhoneNumber_countrycode",
-        "MultipleChoice",
-      ]
-      window.zf_FieldArray = [
-        "SingleLine",
-        "Email",
-        "SingleLine1",
-        "PhoneNumber_countrycode",
-        "MultipleChoice",
-        "MultipleChoice1",
-        "Website",
-        "Dropdown5",
-        "MultiLine",
-      ]
-      window.isSalesIQIntegrationEnabled = false
-      window.salesIQFieldsArray = []
+  const onSubmitForm = async (values: TSalesInitialValueProp) => {
+    try {
+      //  action={process.env.ZOHO_SALES_URL}
+
+      const formData = new FormData()
+
+      Object.entries(values).forEach(([key, value]) => {
+        // If value is an array (e.g. for multi-select), append each item separately
+        if (Array.isArray(value)) {
+          value.forEach((val) => formData.append(key, val))
+        } else if (value !== undefined && value !== null) {
+          formData.append(key, value)
+        }
+      })
+
+      const { data } = await axios.post(
+        process.env.ZOHO_SALES_URL || "",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            "Accept-Charset": "UTF-8",
+          },
+        }
+      )
+      console.log(data, "success")
+      router.push("/confirmation-sales")
+    } catch (error) {
+      console.log(error)
     }
-  }, [])
-
-  const { errors, touched, handleSubmit, getFieldProps } = useFormik({
-    initialValues: salesInitialValue,
-    validationSchema: salesValidation,
-    onSubmit: () => {
-      //
-    },
-  })
+  }
 
   return (
     <div className={styles.contactFormWrapper}>
-      <form
-            action={process.env.ZOHO_SALES_URL}
-        name="form"
-        method="POST"
-        acceptCharset="UTF-8"
-        encType="multipart/form-data"
-        id="form"
-        onSubmit={handleSubmit}
-      >
-        <input type="hidden" name="zf_referrer_name" value="" />
-        <input type="hidden" name="zf_redirect_url" value="" />
-        <input type="hidden" name="zc_gad" value="" />
-
+      <form action="#" onSubmit={handleSubmit} className="">
         <DynamicHeading
           content={[{ title: "New to EnKash? ", color: "color-dark-grey " }]}
           headingTag="h5"
@@ -151,9 +92,11 @@ const SalesForm: React.FC = () => {
               placeholder="Name*"
               {...getFieldProps("SingleLine")}
             />
-            {errors.SingleLine && touched.SingleLine && (
-              <p>{errors.SingleLine}</p>
-            )}
+            <ErrorText<TSalesInitialValueProp>
+              errors={errors}
+              touched={touched}
+              field="SingleLine"
+            />
           </div>
 
           <div>
@@ -162,7 +105,11 @@ const SalesForm: React.FC = () => {
               placeholder="Business Email ID*"
               {...getFieldProps("Email")}
             />
-            {errors.Email && touched.Email && <p>{errors.Email}</p>}
+            <ErrorText<TSalesInitialValueProp>
+              errors={errors}
+              touched={touched}
+              field="Email"
+            />
           </div>
 
           <div>
@@ -171,9 +118,11 @@ const SalesForm: React.FC = () => {
               placeholder="Company Name*"
               {...getFieldProps("SingleLine1")}
             />
-            {errors.SingleLine1 && touched.SingleLine1 && (
-              <p>{errors.SingleLine1}</p>
-            )}
+            <ErrorText<TSalesInitialValueProp>
+              errors={errors}
+              touched={touched}
+              field="SingleLine1"
+            />
           </div>
 
           <div>
@@ -183,10 +132,11 @@ const SalesForm: React.FC = () => {
               id="international_PhoneNumber_countrycode"
               {...getFieldProps("PhoneNumber_countrycode")}
             />
-            {errors.PhoneNumber_countrycode &&
-              touched.PhoneNumber_countrycode && (
-                <p>{errors.PhoneNumber_countrycode}</p>
-              )}
+            <ErrorText<TSalesInitialValueProp>
+              errors={errors}
+              touched={touched}
+              field="PhoneNumber_countrycode"
+            />
           </div>
         </div>
 
@@ -196,12 +146,14 @@ const SalesForm: React.FC = () => {
           placeholder="What are you looking for?*"
           onChange={(vals) => {
             setShowOtherInput(vals.includes("Something Else"))
-            // setFieldValue("MultipleChoice", vals)
+            setFieldValue("MultipleChoice", vals)
           }}
         />
-        {errors.MultipleChoice && touched.MultipleChoice && (
-          <p>{JSON.stringify(errors.MultipleChoice)}</p>
-        )}
+        <ErrorText<TSalesInitialValueProp>
+          errors={errors}
+          touched={touched}
+          field="MultipleChoice"
+        />
 
         {showOtherInput && (
           <input
@@ -213,12 +165,18 @@ const SalesForm: React.FC = () => {
         )}
 
         <div className={styles.grid}>
-          <input
-            type="text"
-            name="Website"
-            placeholder="Website or App Link*"
-            id="Website_error"
-          />
+          <div>
+            <input
+              type="text"
+              placeholder="Website or App Link"
+              {...getFieldProps("Website")}
+            />
+            <ErrorText<TSalesInitialValueProp>
+              errors={errors}
+              touched={touched}
+              field="Website"
+            />
+          </div>
 
           <CategoryWithOther
             name="Dropdown5"
@@ -227,10 +185,17 @@ const SalesForm: React.FC = () => {
           />
         </div>
 
-        <textarea
-          name="MultiLine"
-          placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
-        />
+        <div>
+          <textarea
+            placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
+            {...getFieldProps("MultiLine")}
+          />
+          <ErrorText<TSalesInitialValueProp>
+            errors={errors}
+            touched={touched}
+            field="MultiLine"
+          />
+        </div>
 
         <p className={styles.privacy}>
           By submitting this form, you are agreeing to our{" "}
