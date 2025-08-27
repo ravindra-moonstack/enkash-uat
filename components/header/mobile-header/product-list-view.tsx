@@ -1,17 +1,21 @@
-import styles from "./mobile-header.module.scss"
 import { Fragment, useState } from "react"
-import { forwardArrowBlue } from ".."
 import Image from "next/image"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import { useRouter } from "next/navigation"
+
+import styles from "./mobile-header.module.scss"
+
+import { forwardArrowBlue } from ".."
+import RectangleButton from "@/components/buttons/rectangle-button"
 
 interface ProductListViewProps {
   products: any[]
-  setCurrentStep: (step: number) => void
-  currentStep: number
-  signupUrl: any
 }
 
 const ProductListView = ({ products }: ProductListViewProps) => {
+  //
+
+  const router = useRouter()
+
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
     null
   )
@@ -33,7 +37,7 @@ const ProductListView = ({ products }: ProductListViewProps) => {
                       if (item.children && item.children.length > 0) {
                         setSelectedItemIndex(index)
                       } else {
-                        window.location.href = item.link
+                        router.push(item.link)
                       }
                     }}
                   >
@@ -83,7 +87,9 @@ const ProductListView = ({ products }: ProductListViewProps) => {
                     <li
                       key={child.name}
                       className="py-4 px-4 align-items-center"
-                      onClick={() => (window.location.href = child.link)}
+                      onClick={() => {
+                        router.push(child.link)
+                      }}
                     >
                       <div className="d-flex flex-column">
                         <div className={styles.title}>{child.name}</div>

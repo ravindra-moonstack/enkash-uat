@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image"
 import styles from "./all-in-one-policy.module.scss"
 import RectangleButton, {
   RectangleButtonTheme,
-} from "../buttons/rectangle-button/rectangle-button"
+} from "../buttons/rectangle-button"
 import { blueArrow, whiteArrow } from "./index"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
@@ -17,7 +17,7 @@ interface AllInOnePolicyProps {
   buttonUrl: string
   reverse?: boolean
   maxImageHeight?: string
-  buttonTheme?: RectangleButtonTheme 
+  buttonTheme?: RectangleButtonTheme
   buttonText?: string
   buttonActionIcon?: StaticImageData
   buttonHoverIcon?: StaticImageData
@@ -88,8 +88,9 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
 
       {/* Image Block */}
       <div
-        className={`col-md-4 col-12 d-flex justify-content-end ${reverse ? "order-md-1" : "order-md-2"
-          } ${styles.third_container}`}
+        className={`col-md-4 col-12 d-flex justify-content-end ${
+          reverse ? "order-md-1" : "order-md-2"
+        } ${styles.third_container}`}
       >
         <Image
           src={image}

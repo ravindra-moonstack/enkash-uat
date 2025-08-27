@@ -3,7 +3,7 @@ import React from "react"
 import Image, { StaticImageData } from "next/image"
 import styles from "./steps-section.module.scss"
 import { DynamicHeading, RectangleButton, StepCard } from ".."
-import { RectangleButtonTheme } from "../buttons/rectangle-button/rectangle-button"
+import { RectangleButtonTheme } from "../buttons/rectangle-button"
 import { useSalesUrl } from "@/common/utils/useSalesUrl"
 
 interface StepItem {
