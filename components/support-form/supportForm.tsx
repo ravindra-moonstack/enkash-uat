@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+import React, { useState } from "react"
 import Link from "next/link"
 import { useFormik } from "formik"
 import { useRouter } from "next/navigation"
@@ -25,6 +25,8 @@ const SupportForm: React.FC = () => {
 
   const router = useRouter()
 
+  const [loading, setLoading] = useState<boolean>(false)
+
   const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
     useFormik({
       initialValues: supportInitialValue,
@@ -36,6 +38,7 @@ const SupportForm: React.FC = () => {
 
   const onSubmitForm = async (values: TSupportInitialValueProp) => {
     try {
+      setLoading(true)
       const formData = new FormData()
 
       Object.entries(values).forEach(([key, value]) => {
@@ -57,8 +60,10 @@ const SupportForm: React.FC = () => {
           },
         }
       )
+      setLoading(false)
       router.push("/confirmation-support")
     } catch (error) {
+      setLoading(false)
       throw error
     }
   }
@@ -169,8 +174,8 @@ const SupportForm: React.FC = () => {
               privacy policy
             </Link>
           </p>
-          <button type="submit" className={styles.submitBtn}>
-            Submit
+          <button type="submit" disabled={loading} className={styles.submitBtn}>
+            {loading ? "..." : "Submit"}
           </button>
         </form>
       </div>

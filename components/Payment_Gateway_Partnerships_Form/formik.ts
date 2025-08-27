@@ -5,8 +5,6 @@ export type TPaymentInitialValueProp = {
   SingleLine1: string
   Email: string
   PhoneNumber_countrycode: string
-  MultipleChoice: string
-  Website: string
   MultiLine: string
   Dropdown5: string
   Dropdown6: string
@@ -17,8 +15,6 @@ const paymentInitialValue: TPaymentInitialValueProp = {
   SingleLine1: "",
   Email: "",
   PhoneNumber_countrycode: "",
-  MultipleChoice: "",
-  Website: "",
   MultiLine: "",
   Dropdown5: "",
   Dropdown6: "",
@@ -34,8 +30,6 @@ const paymentValidation = Yup.object({
     .required("Please enter phone number")
     .max(13)
     .min(10, "Please enter valid mobile number"),
-  MultipleChoice: Yup.array().required("Please select category"),
-  Website: Yup.string().url("Please enter valid url"),
   MultiLine: Yup.string().max(500, "Text exceeds"),
   Dropdown5: Yup.string(),
   Dropdown6: Yup.string(),
