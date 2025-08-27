@@ -38,7 +38,7 @@ const cards = stackcardData.map((item, index) => ({
   content: (
     <AllInOnePolicy
       key={index}
-      buttonText="Get Started"
+      buttonText={item?.buttonText || "Get Started"}
       icon={item.icon}
       title={item.title}
       description={item.description}
@@ -64,7 +64,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
                       url: "/products/expense-management",
                     },
                     {
-                      name: "Expense Analytics",
+                      name: "Insights",
                       url: "/expense-analytics-and-insights",
                     },
                   ]}
@@ -91,7 +91,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Dig deep into insights",
+                        title: "Dig deep into insights ",
                         color: "color-equity-blue",
                       },
                       {
@@ -275,7 +275,6 @@ const ExpenseAnalytics = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -314,6 +313,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

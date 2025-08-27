@@ -1,7 +1,7 @@
 import styles from "./faq.module.scss"
 import Image from "next/image"
 import arrowDown from "./img/arrow-down.svg"
-import { KeyboardEvent } from "react"
+import { KeyboardEvent, useRef } from "react"
 
 export interface FAQProps {
   question: string
@@ -23,15 +23,34 @@ const FAQ = ({
   answerHTML,
   onToggleAnswerVisibility,
 }: FAQProps) => {
-  //
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Enter" || e.key === " ") {
       if (onToggleAnswerVisibility) onToggleAnswerVisibility()
     }
   }
+  const handleMouseEnter = () => {
+    timerRef.current = setTimeout(() => {
+      if (onToggleAnswerVisibility) {
+        onToggleAnswerVisibility()
+      }
+    }, 300)
+  }
 
-  // handle click (instant toggle if clicked)
+  const handleMouseLeave = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current)
+      timerRef.current = null
+    }
+
+    if (answerVisible && onToggleAnswerVisibility) {
+      timerRef.current = setTimeout(() => {
+        onToggleAnswerVisibility()
+        timerRef.current = null
+      }, 200)
+    }
+  }
   const handleClick = () => {
     if (onToggleAnswerVisibility) {
       onToggleAnswerVisibility()
@@ -45,16 +64,18 @@ const FAQ = ({
         style={
           answerVisible
             ? {
-                background: "#F6F6F6",
-                padding: "20px",
-                borderRadius: "12px",
-                transition: "all 0.3s ease",
-              }
+              background: "#F6F6F6",
+              padding: "20px",
+              borderRadius: "12px",
+              transition: "all 0.3s ease",
+            }
             : {}
         }
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         onKeyDown={handleKeyDown}
         onClick={handleClick}
-        tabIndex={0} // for accessibility, allows keyboard focus
+        tabIndex={0}
         role="button"
         aria-expanded={answerVisible}
       >
@@ -67,17 +88,14 @@ const FAQ = ({
           <Image
             src={arrowDown}
             alt="faq arrow icon"
-            className={`${answerVisible ? styles.rotated : styles.normal} ${
-              styles.arrow
-            }`}
-            // Remove onClick here, handled by parent div
+            className={`${answerVisible ? styles.rotated : styles.normal} ${styles.arrow
+              }`}
             draggable={false}
           />
         </div>
         <div
-          className={`${styles.answer} ${
-            answerVisible ? styles.visible : styles.reverse_visible
-          }`}
+          className={`${styles.answer} ${answerVisible ? styles.visible : styles.reverse_visible
+            }`}
         >
           {!answerHTML &&
             answer !== undefined &&

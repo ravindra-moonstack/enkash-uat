@@ -39,7 +39,7 @@ const cards = stackcardData.map((item, index) => ({
   content: (
     <AllInOnePolicy
       key={index}
-      buttonText="Get Started"
+      buttonText={item.buttonText || "Get Started"}
       icon={item.icon}
       title={item.title}
       description={item.description}
@@ -110,7 +110,7 @@ const PettyCash = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "From chaos to clarity—automate petty cash and close the books faster",
+                          "Go digital with petty cash. Simplify small payments, track expenses in real-time, and stay audit-ready with ease.",
                         color: "color-black subHeading",
                       },
                     ]}
