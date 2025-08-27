@@ -1,7 +1,7 @@
 "use client"
 
 import styles from "./mobile-talk-to-sales.module.scss"
-import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import RectangleButton from "../buttons/rectangle-button"
 import { usePathname } from "next/navigation"
 
 const TalkToSales = () => {

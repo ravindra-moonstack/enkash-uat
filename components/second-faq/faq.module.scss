@@ -81,10 +81,11 @@
     max-height: 800px;
     background: #f6f6f6; // ✅ correct syntax
     padding: 10px 20px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 99;
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // z-index: 99;
+    margin-bottom: 10px;
     padding: 10px 20px;
     border-radius: 0px 0px 12px 12px;
 

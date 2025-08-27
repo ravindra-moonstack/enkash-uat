@@ -18,7 +18,7 @@ import {
 
 import CustomBreadcrumb from "../breadcrumb/breadbrumb"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
-import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import RectangleButton from "../buttons/rectangle-button"
 
 const CareersHero: React.FC = () => {
   // Backgrounds for desktop & mobile

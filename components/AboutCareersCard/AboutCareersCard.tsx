@@ -1,11 +1,11 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./AboutCareersCard.module.scss";
-import DynamicHeading from "../dynamicHeading/dynamic-heading";
-import RectangleButton from "../buttons/rectangle-button/rectangle-button";
+import React from "react"
+import Image from "next/image"
+import styles from "./AboutCareersCard.module.scss"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
+import RectangleButton from "../buttons/rectangle-button"
 
 interface CareersCardProps {
-  icon: string;
+  icon: string
 }
 
 const CareersCard: React.FC<CareersCardProps> = ({ icon }) => {
@@ -58,10 +58,14 @@ const CareersCard: React.FC<CareersCardProps> = ({ icon }) => {
       </div>
 
       <div className={`${styles.buttonSection}`}>
-        <RectangleButton title="View Open Roles" theme="outline-blue" url="/careers" />
+        <RectangleButton
+          title="View Open Roles"
+          theme="outline-blue"
+          url="/careers"
+        />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CareersCard;
+export default CareersCard

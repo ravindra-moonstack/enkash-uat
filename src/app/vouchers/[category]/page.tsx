@@ -16,7 +16,7 @@ import OccasionVoucher from "@/components/voucher-page/occasion-voucher"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import { linkifyText, nameToUrl } from "@/common/utils/stringUtils"
 import VoucherFaqComponent from "@/components/voucher-page/voucher-faq"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import RectangleButton from "@/components/buttons/rectangle-button"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import { blueArrow } from "."
 
