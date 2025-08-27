@@ -8,9 +8,10 @@ const faqData = [
       <div className="my-2">
         <h4>
           Electronic National Automated Clearing House or e-NACH is a way to
-          <a href="http://enkash.com/" target="_blank">
+          <Link target="_blank" href={`${process.env.URL}`}>
+            {" "}
             automate recurring payments
-          </a>
+          </Link>
           like electricity bills, insurance premiums, SIPs, telephone bills, and
           other utility bills with a bank account.
         </h4>

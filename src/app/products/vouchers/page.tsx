@@ -71,11 +71,7 @@ const Vouchers = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-4 mt-3">
-              <RectangleButton
-                title="Talk to Sales"
-                theme="blue"
-                url={salesUrl}
-              />
+              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12">
