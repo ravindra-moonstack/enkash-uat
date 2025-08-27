@@ -57,9 +57,17 @@ const WebHeader = ({}: props) => {
               <Image src={enkashBlueLogo} alt="logo" width={98} />
             </Link>
 
-            <ul style={{ position: "relative" }}>
+            <ul
+              role="menubar"
+              aria-label="Main navigation"
+              className="position-relative"
+            >
               {navBarTopTtitle.map((item, index) => (
                 <li
+                  role="menuitem"
+                  aria-haspopup="true"
+                  aria-expanded={hoveredIndex === index}
+                  aria-controls={item.link}
                   ref={(el) => {
                     itemRefs.current[index] = el
                   }}
