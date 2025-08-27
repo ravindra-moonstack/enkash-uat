@@ -47,7 +47,7 @@ const stepCards = [
   {
     title: "Submit Categories",
     description:
-      "Select a category or category groups to submit multiple categories",
+      "Select a category or category groups to submit multiple categories.",
     ctaColor: "blue",
     source: "expense_management",
     cardImage: stepCardImgTwo,

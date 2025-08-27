@@ -494,7 +494,7 @@ const managementCards = [
     cardImage: instant,
     linkUrl: "/instant-settlement",
   },
-]
+];
 const stackcardData = [
   {
     color: "#fff",

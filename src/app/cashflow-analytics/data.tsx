@@ -33,9 +33,17 @@ import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
+  autoCollect,
+  instant,
+  invoices,
   notificationImage,
+  paymentButton,
+  paymentGatewayImg,
+  paymentLink,
   paymentLinkImage,
   paymentOptionImage,
+  qrCodes,
+  reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
@@ -409,7 +417,44 @@ const policies = [
     reverse: true,
   },
 ];
-
+const managementCards = [
+  {
+    titleHtml: "Payment Gateway",
+    description: "A no-code solution to effortlessly collect payments across various channels, guaranteeing you never miss a transaction.",
+    cardImage: paymentGatewayImg,
+    linkUrl: "/payment-gateway",  
+  }, 
+  {
+    titleHtml: "Payment Button",
+    description: "Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description: "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
+    cardImage: qrCodes,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description: "Easily accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  }, 
+  {
+    titleHtml: "Instant Settlement",
+    description: "Get instant access to your funds, skip traditional settlement cycles, and take full control of your cash flow.",
+    cardImage: instant,
+    linkUrl: "/instant-settlement",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description: "Eliminate manual reminders and automate your business collections effortlessly for smoother cash flow management.",
+    cardImage: reminder,
+    linkUrl: "/collection-reminder",
+  },
+];
 export {
   blogData,
   dataSets,
@@ -422,5 +467,6 @@ export {
   rankData,
   supportData,
   savingData,
-  policies
+  policies,
+  managementCards
 }

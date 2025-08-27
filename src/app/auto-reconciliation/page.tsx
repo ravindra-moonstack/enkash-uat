@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicies, cardsData } from "./data"
+import { allInOnePolicies, cardsData, managementCards, stackcardData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -10,6 +10,8 @@ import {
   RectangleButton,
   AllInOnePolicy,
   FaqSection,
+  CardStacking,
+  ManagementCard,
 } from "@/components"
 import {
   blueArrow,
@@ -19,6 +21,7 @@ import {
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
+  activationIcon,
 } from "."
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
@@ -35,7 +38,21 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/auto-reconciliation")
 
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const AutoReconciliation = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -110,7 +127,7 @@ const AutoReconciliation = (): React.JSX.Element => {
                     className={styles.group_logo}
                   />
                   <div
-                    className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
+                    className={`${styles.first_row_button} d-flex flex-row align-items-center`}
                   >
                     <div>
                       <RectangleButton
@@ -118,14 +135,7 @@ const AutoReconciliation = (): React.JSX.Element => {
                         theme="blue"
                         url={salesUrl}
                       />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
-                      />
-                    </div>
+                    </div> 
                   </div>
                 </div>
               </div>
@@ -167,30 +177,21 @@ const AutoReconciliation = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
+            
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+                
                 <DynamicHeading
                   content={[
                     {
-                      title: "Real-Time Matching",
+                      title: "Data Tracking ",
                       color: "color-white",
                     },
                   ]}
@@ -208,11 +209,11 @@ const AutoReconciliation = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+                
                 <DynamicHeading
                   content={[
                     {
-                      title: "Zero Errors",
+                      title: "24/7 Availability",
                       color: "color-white",
                     },
                   ]}
@@ -230,11 +231,11 @@ const AutoReconciliation = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+                
                 <DynamicHeading
                   content={[
                     {
-                      title: "Multi-Channel Integration",
+                      title: "Visual Dashboards",
                       color: "color-white",
                     },
                   ]}
@@ -355,7 +356,19 @@ const AutoReconciliation = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+<div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Zero Manual Work With Automated Reconciliation",
+                color: "color-black",
+              },
+            ]}
+          />
+        </div>
+      </div>
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -383,6 +396,46 @@ const AutoReconciliation = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
+      <div className={styles.other_products}>
+        <div className="max-w-auto">
+          <div
+            className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}
+          >
+            <DynamicHeading
+              content={[
+                {
+                  title: "Check out ",
+                  color: "color-black",
+                },
+                {
+                  title: "other collection products",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: " at EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
+          </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <ManagementCard
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
