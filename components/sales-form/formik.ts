@@ -1,10 +1,13 @@
 import * as Yup from "yup"
+
 export type TSalesInitialValueProp = {
   SingleLine: string
   SingleLine1: string
   Email: string
   PhoneNumber_countrycode: string
   MultipleChoice: string
+  Website: string
+  MultiLine: string
 }
 
 const salesInitialValue: TSalesInitialValueProp = {
@@ -13,6 +16,8 @@ const salesInitialValue: TSalesInitialValueProp = {
   Email: "",
   PhoneNumber_countrycode: "",
   MultipleChoice: "",
+  Website: "",
+  MultiLine: "",
 }
 
 const salesValidation = Yup.object({
@@ -22,7 +27,9 @@ const salesValidation = Yup.object({
     .email("Please enter valid email")
     .required("Please enter email"),
   PhoneNumber_countrycode: Yup.string().required("Please enter phone number"),
-  MultipleChoice: Yup.array().required("Please enter category"),
+  MultipleChoice: Yup.array().required("Please select category"),
+  Website: Yup.string().url("Please enter valid url"),
+  MultiLine: Yup.string(),
 })
 
 export { salesInitialValue, salesValidation }
