@@ -37,8 +37,6 @@ const SalesForm: React.FC = () => {
 
   const onSubmitForm = async (values: TSalesInitialValueProp) => {
     try {
-      //  action={process.env.ZOHO_SALES_URL}
-
       const formData = new FormData()
 
       Object.entries(values).forEach(([key, value]) => {
@@ -50,20 +48,15 @@ const SalesForm: React.FC = () => {
         }
       })
 
-      const { data } = await axios.post(
-        process.env.ZOHO_SALES_URL || "",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            "Accept-Charset": "UTF-8",
-          },
-        }
-      )
-      console.log(data, "success")
+      const {} = await axios.post(process.env.ZOHO_SALES_URL || "", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "Accept-Charset": "UTF-8",
+        },
+      })
       router.push("/confirmation-sales")
     } catch (error) {
-      console.log(error)
+      throw error
     }
   }
 

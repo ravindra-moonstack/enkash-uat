@@ -724,7 +724,7 @@ const FooterV2 = () => {
                     <li>
                       <Link
                         target="_blank"
-                        href="https://www.enkash.com/resources/customer-stories/"
+                        href={`${process.env.URL}resources/customer-stories/`}
                       >
                         Case Studies
                       </Link>
@@ -752,7 +752,9 @@ const FooterV2 = () => {
                       <Link href="/careers">Careers</Link>
                     </li>
                     <li>
-                      <Link href="https://www.enkash.com/resources/media-coverage/">
+                      <Link
+                        href={`${process.env.URL}/resources/media-coverage/`}
+                      >
                         Media Coverage
                       </Link>
                     </li>
@@ -840,7 +842,8 @@ const FooterV2 = () => {
             Corporate cards, payments, and other related services are provided
             by RBI-licensed banks and/or in accordance with RBI regulations
             and/or compliance maintained by banks and regulated entities. EnKash
-            is not a bank and does not hold or claim to hold a banking license.{" "}
+            is not a bank and does not hold or claim to hold a banking
+            license.{" "}
           </div>
         </div>
       </div>

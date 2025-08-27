@@ -6,7 +6,7 @@ import { BreadcrumbProps } from "@/src/types/common"
 
 const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
   items,
-  domain = "https://www.enkash.com/",
+  domain = process.env.URL,
   linkColor,
 }) => {
   const schemaMarkup = {
