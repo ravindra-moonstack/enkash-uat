@@ -20,7 +20,7 @@ const supportInitialValue: TSupportInitialValueProp = {
 
 const supportValidation = Yup.object({
   SingleLine: Yup.string().required("Please enter name"),
-  SingleLine1: Yup.string().required("Please enter name"),
+  SingleLine1: Yup.string().required("Please enter company name"),
   PhoneNumber_countrycode: Yup.string()
     .required("Please enter phone number")
     .max(13)
