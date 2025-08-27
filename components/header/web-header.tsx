@@ -34,10 +34,6 @@ const WebHeader = ({}: props) => {
     }
   }, [])
 
-  useEffect(() => {
-    console.log(hoveredIndex)
-  }, [hoveredIndex])
-
   const getArrowImageSource = (index: number) => {
     if (hoveredIndex === index) {
       return arrowDownBlack

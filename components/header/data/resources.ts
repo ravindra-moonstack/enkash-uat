@@ -4,7 +4,7 @@ const resourseProducts = [
   {
     name: "Resources",
     description: "Flexible prepaid card solutions",
-    link: "https://www.enkash.com/resources/",
+    link: `${process.env.URL}/resources/`,
     subProducts: [
       {
         subtitle: "Default",
@@ -18,7 +18,7 @@ const resourseProducts = [
             name: "Blogs",
             description: "Trends, tips, and strategies",
             imageSrcHovered: blogsFilled,
-            link: "https://www.enkash.com/resources/blogs/",
+            link: `${process.env.URL}/resources/blogs/`,
           },
 
           {

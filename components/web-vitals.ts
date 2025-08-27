@@ -1,10 +1,9 @@
 "use client"
 
-import { NextWebVitalsMetric } from "next/app"
 import { useReportWebVitals } from "next/web-vitals"
 
-const logWebVitals = (metric: NextWebVitalsMetric) => {
-  console.log(metric)
+const logWebVitals = () => {
+  //
 }
 
 export function WebVitals() {
