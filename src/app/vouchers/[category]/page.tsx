@@ -26,6 +26,7 @@ export async function generateMetadata({
   params: Promise<{ category: string }>
 }) {
   const { category } = await params
+  
   const voucher: Voucher = VoucherData[category]
 
   if (!voucher) {
@@ -183,9 +184,6 @@ const CategoryPage = async ({
                         <div className={styles.discount_}>
                           Up to <span>{voucherData.discount}%</span> OFF
                         </div>
-                        {/* <div className={`${styles.brand_name}`}>
-                          {voucherData.brandName}
-                        </div> */}
                       </div>
 
                       <div

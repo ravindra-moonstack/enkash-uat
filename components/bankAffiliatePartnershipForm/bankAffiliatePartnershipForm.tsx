@@ -2,9 +2,8 @@
 
 import React, { useEffect } from "react"
 import styles from "./bankAffiliatePartnershipForm.module.scss"
-import { DynamicHeading } from "@/components"
 import Link from "next/link"
-import MultiSelect from "../multiSelect/multiSelect"
+import CategoryWithOther from "../categoryWithOther/categoryWithOther"
 
 const Businessoptions = [
   { value: "Bank Partnership", label: "Bank Partnership" },
@@ -69,14 +68,6 @@ const BankAffiliatePartnershipForm: React.FC = () => {
         <input type="hidden" name="zf_redirect_url" value="" />
         <input type="hidden" name="zc_gad" value="" />
 
-        <DynamicHeading
-          content={[
-            { title: "Bank and Affiliate  ", color: "color-black " },
-            { title: "Partnerships", color: "color-dark-grey " },
-          ]}
-          headingTag="h3"
-          className="text-center "
-        />
         <p className={styles.subtitle}>We just need a few quick details</p>
 
         <div className={styles.grid}>
@@ -91,7 +82,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
           />
         </div>
 
-        <MultiSelect
+        <CategoryWithOther
           name="MultipleChoice"
           options={Businessoptions}
           placeholder="I am looking for *"
