@@ -5,5 +5,6 @@ namespace NodeJS {
     ZOHO_SUPPORT_URL: string
     ZOHO_CONTACT_URL: string
     ZOHO_AFFILIATE_URL: string
+    URL: string
   }
 }

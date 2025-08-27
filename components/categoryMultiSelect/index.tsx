@@ -17,6 +17,7 @@ interface CategoryMultiSelectProps {
 }
 
 const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
+  name,
   options,
   placeholder = "What are you looking for? (dropdown)*",
   onChange,
@@ -57,6 +58,7 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
           newSelected.push(value)
         }
 
+        // Keep parent in sync
         options.forEach((cat) => {
           if (cat.children?.some((c) => c.value === value)) {
             const allChildren = cat.children.map((c) => c.value)
@@ -74,17 +76,11 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
           }
         })
       }
+      onChange?.(newSelected)
 
       return newSelected
     })
   }
-
-  // 🔹 Trigger onChange whenever selected updates
-  useEffect(() => {
-    if (onChange) {
-      onChange(selected)
-    }
-  }, [selected, onChange])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -159,7 +155,6 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     }}
                     onClick={(e) => e.stopPropagation()}
                   />
-
                   <span>{cat.label}</span>
                 </div>
 
@@ -176,7 +171,6 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     <label key={child.value} className={styles.option}>
                       <input
                         type="checkbox"
-                        name="MultipleChoice1"
                         checked={selected.includes(child.value)}
                         onChange={() => toggleOption(child.value)}
                       />
@@ -190,21 +184,8 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
         </div>
       )}
 
-      {/* Parent categories */}
-      {selected
-        .filter((v) => options.some((cat) => cat.value === v))
-        .map((val) => (
-          <input key={val} type="hidden" name="MultipleChoice" value={val} />
-        ))}
-
-      {/* Child categories */}
-      {selected
-        .filter((v) =>
-          options.some((cat) => cat.children?.some((c) => c.value === v))
-        )
-        .map((val) => (
-          <input key={val} type="hidden" name="MultipleChoice1" value={val} />
-        ))}
+      {/* ✅ Single hidden input for form submission */}
+      <input type="hidden" name={name} value={JSON.stringify(selected)} />
     </div>
   )
 }
