@@ -2,6 +2,7 @@ import styles from "./faq.module.scss"
 import Image from "next/image"
 import arrowDown from "./img/arrow-down.svg"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
+import {KeyboardEvent, useRef } from "react"
 
 export interface FAQProps {
   question: string
@@ -22,7 +23,36 @@ const SECONDFAQ = ({
   answerHTML,
   onToggleAnswerVisibility,
 }: FAQProps) => {
-  const handleToggle = () => {
+
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      if (onToggleAnswerVisibility) onToggleAnswerVisibility()
+    }
+  }
+  const handleMouseEnter = () => {
+    timerRef.current = setTimeout(() => {
+      if (onToggleAnswerVisibility) {
+        onToggleAnswerVisibility()
+      }
+    }, 100)
+  }
+
+  const handleMouseLeave = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current)
+      timerRef.current = null
+    }
+
+    if (answerVisible && onToggleAnswerVisibility) {
+      timerRef.current = setTimeout(() => {
+        onToggleAnswerVisibility()
+        timerRef.current = null
+      }, 0)
+    }
+  }
+  const handleClick = () => {
     if (onToggleAnswerVisibility) {
       onToggleAnswerVisibility()
     }
@@ -42,9 +72,10 @@ const SECONDFAQ = ({
               }
             : {}
         }
-        onMouseEnter={handleToggle}
-        onMouseLeave={handleToggle}
-        onClick={handleToggle}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onKeyDown={handleKeyDown}
+        onClick={handleClick}
         tabIndex={0} 
         role="button"
         aria-expanded={answerVisible}
