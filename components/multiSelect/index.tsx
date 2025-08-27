@@ -13,21 +13,27 @@ interface MultiSelectProps {
   name: string
   options: Option[]
   placeholder?: string
+  onChange: (selected: string[]) => void
 }
 
 const MultiSelect: React.FC<MultiSelectProps> = ({
-  name,
   options,
   placeholder = "Select options...",
+  onChange = () => {},
 }) => {
   const [selected, setSelected] = useState<string[]>([])
   const [open, setOpen] = useState(false)
   const wrapperRef = useRef<HTMLDivElement>(null)
 
   const toggleOption = (value: string) => {
-    setSelected((prev) =>
-      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
-    )
+    setSelected((prev) => {
+      const updated = prev.includes(value)
+        ? prev.filter((v) => v !== value)
+        : [...prev, value]
+
+      onChange(updated) // ✅ Call onChange with updated selection
+      return updated
+    })
   }
 
   // ✅ Close dropdown on outside click
@@ -90,9 +96,6 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
           ))}
         </div>
       )}
-
-      {/* Hidden input for form submission */}
-      <input type="hidden" name={name} value={selected.join(", ")} />
     </div>
   )
 }
