@@ -41,7 +41,7 @@ const partnershipsPage = (): React.JSX.Element => {
         breadcrumbs={{
           items: [
             { name: "Home", url: "/" },
-            { name: "Partnerships", url: "/partnerships" },
+            { name: "Partnerships", url: "#" },
             { name: "Co-branded Products", url: "/co-branded-card-partners" },
           ],
           linkColor: "white",
@@ -76,9 +76,7 @@ const partnershipsPage = (): React.JSX.Element => {
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="If you are a startup owner, an influencer and an enterprise, or an employer, these co-branded products have been designed for you."
-          buttons={[
-            { title: "Explore ", theme: "blue", url: "#partnership-form" },
-          ]}
+          
           slideData={slideData}
         />
       </div>
@@ -101,6 +99,7 @@ const partnershipsPage = (): React.JSX.Element => {
         <BottomCtaSection
           headingPart1="The Smartest Way to"
           headingPart2="Co-Brand Your Card"
+          buttonHref="#partnership-form"
         />
       </div>
       <FaqSection faqData={faqData} />

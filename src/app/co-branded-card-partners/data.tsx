@@ -66,14 +66,14 @@ const slideData = [
         icon: ItemIcon.src,
         title: "Co-Branded Products, Made Simple",
         description:
-            "From day one, we’re in your corner. Our expert team makes onboarding a breeze. Consider us your on-call growth partner.",
+            "Banks and payment partners can launch co-branded cards easily with EnKash’s real-time tech stack, handling onboarding, controls, compliance, and growth.",
     },
     {
         id: 6,
         icon: ItemIcon.src,
         title: "Real People, Real Support",
         description:
-            "With years of building business-first financial solutions, we offer proven expertise, trusted tools, and an ecosystem-grown platform for partners.",
+            "From day one, we’re in your corner. Our expert team makes onboarding a breeze. Consider us your on-call growth partner.",
     },
     {
         id: 7,
@@ -127,8 +127,8 @@ const productsData = [
         image: coBrandImage.src,
         alt: "Corporate Expense Cards",
         button: {
-            connectUrl: "/products/corporate-cards",
-            connectText: "Explore Cards",
+            connectUrl: "/products/rewards",
+            connectText: "Explore Rewards",
             blueArrow: blueArrow.src,
         },
         align: "flex-start",
@@ -154,8 +154,8 @@ const productsData = [
         image: Purchasecard.src,
         alt: "Marketplace/Vendor Cards",
         button: {
-            connectUrl: "/products/corporate-cards",
-            connectText: "Explore Cards",
+            connectUrl: "/purchase-card",
+            connectText: "Explore Purchase Cards",
             blueArrow: blueArrow.src,
         },
         align: "flex-start",

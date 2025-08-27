@@ -1,31 +1,94 @@
 export const faqData = [
   {
     question:
-      "How does EnKash’s expense management platform help with budgets and advances?",
+      "What is an expense management platform, and how does it work?",
     answer: [
       {
         heading:
-          "Create budgets on a departmental or category level, track and optimize expenses, and increase savings regularly. Use data from past budgets and actual expenses for each department, along with the information from department heads on their plan for the financial period ahead, to create a realistic budget.",
+          "An expense management platform automates how companies capture, approve, track, and reconcile employee and business expenses. It eliminates manual processes and ensures compliance with policies and tax regulations.",
       },
     ],
   },
   {
     question:
-      "What is the role of hierarchy and controls in managing expenses?",
+      "Why should businesses use an automated expense management system?",
     answer: [
       {
         heading:
-          "Setting up hierarchies and controls ensures that expenses are monitored, checked, and approved before the payout is completed. With the platform, it is easy to choose from the various options or create a hierarchy that suits the departmental structure, the expense type, and the urgency of spends.",
+          "Manual expense processes are time-consuming, error-prone, and hard to audit. An automated system like EnKash ensures faster reimbursements, better policy control, GST compliance, and real-time spend visibility.",
       },
     ],
   },
   {
     question:
-      "How does expense management platform help improve reimbursements?",
+      "How does EnKash help with GST compliance?",
     answer: [
       {
         heading:
-          "Fast-track and optimize the entire reimbursement process with a better spend overview. In most businesses, employees often have to make payments for official purposes, and these need to be reimbursed. Since reimbursing official employee payments requires checking and verifying the paperwork and approving the expense, it can be time-consuming.",
+          "EnKash auto-captures GST breakup (CGST, SGST, IGST), validates GSTINs, and stores input credit data, making your tax filings audit-ready and accurate.",
+      },
+    ],
+  },
+  {
+    question: "Can employees submit expenses via WhatsApp or email?",
+    answer: [
+      {
+        heading:
+          "Yes. EnKash allows expense submission through WhatsApp and email. Just snap a receipt and send it; it’s perfect for on-the-go teams.",
+      },
+    ],
+  },
+  {
+    question: "Does EnKash support mileage and travel reimbursements?",
+    answer: [
+      {
+        heading:
+          "Yes. Employees can log kilometers or use GPS for business travel. The system auto-calculates mileage claims and per diem allowances based on company policy.",
+      },
+    ],
+  },
+  {
+    question: "What types of expenses can be managed with EnKash?",
+    answer: [
+      {
+        heading:
+          "EnKash supports travel, meals, lodging, office supplies, petty cash, fuel, entertainment, vendor advances, multi-currency spends, and more across all departments and roles.",
+      },
+    ],
+  },
+  {
+    question: "Is the platform suitable for startups, SMEs, and large enterprises?",
+    answer: [
+      {
+        heading:
+          "Yes. EnKash is scalable - from lean startups to multi-location enterprises. You can customize policies, workflows, and integrations to match your size and complexity.",
+      },
+    ],
+  },
+  {
+    question: "What is OCR in expense management?",
+    answer: [
+      {
+        heading:
+          "OCR (Optical Character Recognition) automatically reads receipts and invoices, extracting details like merchant name, GSTIN, amount, and tax, reducing manual entry errors.",
+      },
+    ],
+  },
+  {
+    question: "How to track expenses for small Business?",
+    answer: [
+      {
+        heading:
+          "Small businesses can track expenses effectively by using tools like spreadsheets or expense management software. Start by categorizing expenses (e.g., rent, travel, utilities), saving all receipts, and recording transactions regularly. Using digital solutions helps automate tracking, generate reports, and ensure better control over cash flow and tax compliance.",
+      },
+    ],
+  },
+  {
+    question: "Can I set different expense limits or policies for different departments or roles?",
+    answer: [
+      {
+        heading:
+          "Absolutely. You can configure role-based, department-level, and geography-specific policies with custom approval workflows and budgets.",
       },
     ],
   },
@@ -34,16 +97,16 @@ export const faqData = [
     answer: [
       {
         heading:
-          "Expense management software is a complete solution that helps you manage the entire process from receipt to reimbursement. You can track all types of expenses that your business and employees incur. It will help you track advances provided, expenses incurred, receipt management, policy checks, approvals, and reimbursement. Plus, it enables you to collate expenses into reports & insights per stakeholders’ needs.",
+          "Expense management software is a tool that helps businesses track, manage, and control employee and company expenses efficiently, reducing manual work and improving cost visibility.",
       },
     ],
   },
   {
-    question: "How do you manage expense reports?",
+    question: "What is the price of the expense management system?",
     answer: [
       {
         heading:
-          "EnKash's expense management software simplifies expense report management by capturing expense-related information at every stage. It parses through information from receipts and invoices, matches them with expense details, and stores them securely in the cloud. It also allows users to sort expenses by type, department, or other criteria to generate reports as needed. Additionally, it hosts a deep insights dashboard for all types of reporting across departments, categories, cost centres for defined intervals.",
+          "Talk to our sales team today for pricing details and to explore tailored plans designed for your business needs.",
       },
     ],
   },

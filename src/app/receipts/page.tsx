@@ -43,6 +43,7 @@ const cards = stackcardData.map(
         image={image}
         buttonUrl={salesUrl}
         maxImageHeight="300px"
+        buttonText="Learn More"
       />
     ),
   })
@@ -200,13 +201,13 @@ const Receipts = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className="text-center mb-3">
+          {/* <div className="text-center mb-3">
             <RectangleButton
               title={"Three Easy Steps"}
               theme="outline-blue-small"
               className="border_radius"
             />
-          </div>
+          </div> */}
 
           <div className={`${styles.title} text-center pb-4 pb-md-5`}>
             <DynamicHeading
@@ -240,27 +241,7 @@ const Receipts = (): React.JSX.Element => {
       </div>
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <div className="text-center mb-3">
-            <button
-              className="bg-white text-black "
-              style={{
-                borderRadius: "40px",
-                padding: "10px 20px",
-                border: "1px solid #EAECF0",
-              }}
-            >
-              <Image
-                src={fastenUpOr}
-                alt="icon"
-                className="me-2"
-                style={{
-                  width: "20px",
-                  height: "20px",
-                }}
-              />
-              <span>FASTEN UP OR</span>
-            </button>
-          </div>
+       
           <>
             <CardStacking
               cards={cards}
@@ -305,8 +286,6 @@ const Receipts = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
-
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
@@ -344,6 +323,8 @@ const Receipts = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      <FaqSection faqData={faqData} />
+
     </div>
   )
 }

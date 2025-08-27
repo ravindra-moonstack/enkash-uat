@@ -190,7 +190,7 @@ const intantActionData = [
   {
     title: "Alerts",
     description:
-      "Employees will be notified via SMS, WhatsApp, and e-mail about rewards and the redemption process.",
+      " Employees will be notified via SMS, WhatsApp and email about the card updates.",
     icon: thirdIcon,
   },
   {
@@ -484,7 +484,7 @@ const progressData = [
       "Give your drivers the power to pay without the risk of cash misuse. Track fuel, tolls, and repair spends in real-time.",
     icon: tabIconFour,
     bgImage: bg4,
-    url: "/fuel-card",
+    url: "/sales",
   },
   {
     itemArray: ["Payroll Card"],
@@ -493,7 +493,7 @@ const progressData = [
       "Pay employees and gig workers instantly: no bank hassles, no KYC delays. Load salaries, bonuses, or incentives directly to payroll cards.",
     icon: tabIconFive,
     bgImage: bg5,
-    url: "/payroll",
+    url: "/sales",
   },
 ]
 

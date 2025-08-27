@@ -104,8 +104,8 @@ const HomePageRewardsVouchersSlide = [
 const adidasData = [
   {
     image: AdiadsBg,
-    title1: "Read, how Adidas Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
+    title1: "How Adidas boosted employee ",
+    title2: "engagement with EnKash Rewards",
     description:
       "“This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards, including shopping vouchers, food, electronics, travel, and experiences. This flexibility has boosted engagement, performance, and retention.”",
     name: "Anisha Chandran",
@@ -117,8 +117,8 @@ const adidasData = [
   },
   {
     image: delMonteBg,
-    title1: "Read, how Del Monte Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
+    title1: "How Del Monte automated ",
+    title2: "R&R and strengthened team engagement with EnKash",
     description:
       "“The EnKash Reward automation has significantly enhanced our R&R program. The flexibility in reward redemption options, combined with the automated process, has streamlined our operations. We've noticed a rise in team engagement, and it's helping foster stronger relationships within the organization.”",
     name: "Swati Rawat",
@@ -130,8 +130,8 @@ const adidasData = [
   },
   {
     image: bigBg,
-    title1: "Read, how Big FM Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
+    title1: "How BIG FM simplified ",
+    title2: "corporate gifting with EnKash",
     description:
       "“EnKash has been a fantastic partner for our gifting needs at BIG FM. What truly sets them apart is their quick TATs, prompt response & unwavering support, ensuring a seamless experience from start to finish. Their commitment to service excellence truly stands out, making Enkash our go-to choice for hassle-free gifting solutions.”",
     name: "Roopa Mahesh Kumar",
@@ -143,8 +143,8 @@ const adidasData = [
   },
   {
     image: vianetBg,
-    title1: "Read, how vianet Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
+    title1: "How Vianet improved ",
+    title2: "financial decisions with EnKash",
     description:
       "“One of the key benefits of EnKash was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management.”",
     name: "Deep Sehgal",
@@ -156,8 +156,8 @@ const adidasData = [
   },
   {
     image: honeycombBg,
-    title1: "Read, how Honeycomb Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
+    title1: "How Honeycomb Creative streamlined ",
+    title2: "budget allocation with EnKash Virtual Cards",
     description:
       "“In integrated marketing communications, agencies need to allocate budgets for different verticals. Through EnKash’s virtual cards, we were able to manage our budget allocation for various departments, streamline approvals seamlessly, and gain real-time visibility of all our department-wise expenses to our finance department”",
     name: "Noufel Anamala",
