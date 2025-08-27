@@ -25,7 +25,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Pay GST directly from EnKash with complete visibility. Automate reminders, track due dates, and manage all your tax payments securely from a single dashboard.",
   alternates: {
-    canonical: "https://www.enkash.com/gst-payment/",
+    canonical: `${process.env.URL}/gst-payment/`,
   },
 })
 const salesUrl = getSalesUrl("/gst-payment")

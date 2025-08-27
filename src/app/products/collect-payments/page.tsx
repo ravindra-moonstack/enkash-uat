@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "From payment gateway, payment button, payment link, UPI payments, and more. Everything the merchants need fot payment collection.",
   alternates: {
-    canonical: "https://www.enkash.com/collect-payments/",
+    canonical: `${process.env.URL}/collect-payments/`,
   },
 })
 const salesUrl = getSalesUrl("/collect-payments")

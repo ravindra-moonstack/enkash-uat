@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Enable automated recurring debit via eNACH mandates. EnKash helps businesses simplify collections, reduce payment failures, and improve cash flow predictability.",
   alternates: {
-    canonical: "https://www.enkash.com/e-nach/",
+    canonical: `${process.env.URL}/e-nach/`,
   },
 })
 const salesUrl = getSalesUrl("/e-nach")

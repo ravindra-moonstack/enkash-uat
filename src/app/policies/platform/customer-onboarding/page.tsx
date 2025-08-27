@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Understand our verification steps for a smooth start on the EnKash platform.",
   alternates: {
-    canonical: "https://www.enkash.com/policies/platform/customer-onboarding",
+    canonical: `${process.env.URL}/policies/platform/customer-onboarding`,
   },
 })
 

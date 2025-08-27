@@ -25,14 +25,14 @@ const resourseProducts = [
             name: "Case Studies",
             description: "Real wins, proven impact",
             imageSrcHovered: casestudies,
-            link: "https://www.enkash.com/resources/customer-stories/",
+            link: `${process.env.URL}/resources/customer-stories/`,
           },
 
           {
             name: "Videos",
             description: "Stories, solutions, and demos",
             imageSrcHovered: vedioFilled,
-            link: "https://www.enkash.com/resources/videos/",
+            link: `${process.env.URL}/resources/videos/`,
           },
         ],
         footerText: "Effortless recognition, and endless rewards in one place",

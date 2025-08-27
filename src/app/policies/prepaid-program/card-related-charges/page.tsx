@@ -10,7 +10,7 @@ export const metadata: Metadata = generateMetaData({
     "Check details of applicable fees and charges for EnKash-issued cards.",
   alternates: {
     canonical:
-      "https://www.enkash.com/policies/prepaid-program/card-related-charges",
+      `${process.env.URL}/policies/prepaid-program/card-related-charges`,
   },
 })
 

@@ -37,7 +37,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify vendor, utility, and tax payments with EnKash. Make fast, secure payouts via UPI, cards, or bank transfers—all from one powerful payment dashboard.",
   alternates: {
-    canonical: "https://www.enkash.com/make-payments/",
+    canonical: `${process.env.URL}/make-payments/`,
   },
 })
 const salesUrl = getSalesUrl("/make-payments")

@@ -11,7 +11,8 @@ const faqData = [
           <a href="http://enkash.com/" target="_blank">
             automate recurring payments
           </a>
-          like electricity bills, insurance premiums, SIPs, telephone bills, and other utility bills with a bank account.
+          like electricity bills, insurance premiums, SIPs, telephone bills, and
+          other utility bills with a bank account.
         </h4>
       </div>
     ),
@@ -151,10 +152,7 @@ const faqData = [
         <h4>
           NACH enables repetitive transactions that take place in bulk. It can
           be further used for
-          <Link
-            href="https://www.enkash.com/olympus/receivables/bulk-collect/"
-            target="_blank"
-          >
+          <Link href={`${process.env.URL}/bulk-collect/`} target="_blank">
             payment collection
           </Link>
           like electricity bills, water bills, insurance premium payments, and

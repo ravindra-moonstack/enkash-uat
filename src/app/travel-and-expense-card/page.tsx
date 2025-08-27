@@ -43,7 +43,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Control and track travel expenses with EnKash T&E Cards. Set budgets, manage employee spends, and automate reconciliation for seamless business travel workflows.",
   alternates: {
-    canonical: "https://www.enkash.com/travel-and-expense-card/",
+    canonical: `${process.env.URL}/travel-and-expense-card/`,
   },
 })
 const salesUrl = getSalesUrl("/travel-and-expense-card")

@@ -29,7 +29,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Automate and streamline approval workflows with EnKash. Manage finance operations with ease, ensure compliance, and boost team efficiency with customizable workflows.",
   alternates: {
-    canonical: "https://www.enkash.com/workflow-management/",
+    canonical: `${process.env.URL}/workflow-management/`,
   },
 })
 const salesUrl = getSalesUrl("/workflow-management")

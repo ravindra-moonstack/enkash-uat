@@ -52,7 +52,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
   alternates: {
-    canonical: "https://www.enkash.com/",
+    canonical: `${process.env.URL}`,
   },
 })
 const HomePage = (): React.JSX.Element => {

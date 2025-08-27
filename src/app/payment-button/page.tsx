@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Easily embed EnKash Payment Buttons on your website or app. Enable fast, secure payments via UPI, cards & net banking—no complex integration needed.",
   alternates: {
-    canonical: "https://www.enkash.com/payment-button/",
+    canonical: `${process.env.URL}/payment-button/`,
   },
 })
 const salesUrl = getSalesUrl("/payment-button")

@@ -34,7 +34,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Manage corporate cards in real-time with EnKash. Instantly issue, block, or set limits on cards to gain full control over business spends and enhance security",
   alternates: {
-    canonical: "https://www.enkash.com/instant-card-management/",
+    canonical: `${process.env.URL}/instant-card-management/`,
   },
 })
 const salesUrl = getSalesUrl("/instant-card-management")

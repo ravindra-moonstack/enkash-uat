@@ -32,7 +32,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Boost on-time collections with EnKash’s automated collection reminders. Send timely payment nudges via SMS, email, or WhatsApp and reduce manual follow-ups.",
   alternates: {
-    canonical: "https://www.enkash.com/collection-reminder/",
+    canonical: `${process.env.URL}/collection-reminder/`,
   },
 })
 const salesUrl = getSalesUrl("/collection-reminder")

@@ -32,7 +32,7 @@ const faqData = [
         </p>
         <p>
           Automating the{" "}
-          <Link href="https://www.enkash.com/" target="_blank">
+          <Link href={`${process.env.URL}/`} target="_blank">
             accounting reconciliation process
           </Link>{" "}
           makes it easier for them to manage audits and plan cash flows.
@@ -138,7 +138,7 @@ const faqData = [
       <div className="my-2">
         <p>
           <Link
-            href="https://www.enkash.com/resources/blog/e-invoicing-under-gst/"
+            href={`${process.env.URL}/resources/blog/e-invoicing-under-gst/`}
             target="_blank"
           >
             EnKash collection analytics
@@ -172,19 +172,12 @@ const faqData = [
           Days Sales Outstanding (DSO) management is crucial for businesses
           because it provides insight into the average time it takes for a
           company to collect payments from its customers. A lower DSO indicates
-          that a business is efficient in{" "}
-          <Link
-            href="https://www.enkash.com/olympus/receivables/"
-            target="_blank"
-          >
-            collecting receivables,
-          </Link>{" "}
-          contributing to improved cash flow. Efficient DSO management allows
-          businesses to optimize working capital, reduce the risk of bad debts,
-          and enhance overall financial stability. It also helps in assessing
-          the effectiveness of credit and collection policies, enabling
-          businesses to make informed decisions to improve their cash conversion
-          cycle.
+          that a business is efficient in collecting receivables, contributing
+          to improved cash flow. Efficient DSO management allows businesses to
+          optimize working capital, reduce the risk of bad debts, and enhance
+          overall financial stability. It also helps in assessing the
+          effectiveness of credit and collection policies, enabling businesses
+          to make informed decisions to improve their cash conversion cycle.
         </p>
       </div>
     ),

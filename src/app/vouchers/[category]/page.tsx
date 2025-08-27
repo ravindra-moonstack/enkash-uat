@@ -26,7 +26,7 @@ export async function generateMetadata({
   params: Promise<{ category: string }>
 }) {
   const { category } = await params
-  
+
   const voucher: Voucher = VoucherData[category]
 
   if (!voucher) {
@@ -35,18 +35,18 @@ export async function generateMetadata({
       description:
         "The voucher you are looking for is not available, explore more in Bolt section.",
       alternates: {
-        canonical: `https://www.enkash.com/bolt/voucher/404`,
+        canonical: `${process.env.URL}/bolt/voucher/404`,
       },
     }
   }
 
-  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.webp`
+  const imageUrl = `${process.env.URL}/images/voucher-bg/${voucher.urlName}.webp`
 
   return {
     title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
     description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
     alternates: {
-      canonical: `https://www.enkash.com/voucher/${voucher.urlName}`,
+      canonical: `${process.env.URL}/voucher/${voucher.urlName}`,
     },
     openGraph: {
       title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,

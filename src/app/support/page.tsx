@@ -12,7 +12,7 @@ export const metadata: Metadata = generateMetaData({
   title: "EnKash Support Center | Get Help with Products & Services",
   description:
     "Need assistance with EnKash? Access FAQs, user guides, and expert support for payments, cards, expenses, integrations, and more—all in one place.",
-  alternates: { canonical: "https://www.enkash.com/support/" },
+  alternates: { canonical: `${process.env.URL}/support/` },
 })
 
 const Suppport = () => {
