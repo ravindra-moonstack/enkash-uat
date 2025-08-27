@@ -52,7 +52,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
           },
         }
       )
-      router.push("/confirmation-sales")
+      router.push("/confirmation-partnerships")
     } catch (error) {
       throw error
     }
