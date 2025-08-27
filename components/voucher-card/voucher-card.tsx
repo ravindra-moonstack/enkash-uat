@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image"
 import styles from "./voucher-card.module.scss"
 import { ReactNode } from "react"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
-import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import RectangleButton from "../buttons/rectangle-button"
 import { whiteArrow } from "."
 
 export interface CardProps {

@@ -41,10 +41,9 @@ const AllInOnePolicy = dynamic(
 const CardStacking = dynamic(() => import("./cardStacking/cardStacking"), {
   ssr: true,
 })
-const RectangleButton = dynamic(
-  () => import("./buttons/rectangle-button/rectangle-button"),
-  { ssr: true }
-)
+const RectangleButton = dynamic(() => import("./buttons/rectangle-button"), {
+  ssr: true,
+})
 const CTASection = dynamic(() => import("./CTASection/CTASection"), {
   ssr: true,
 })

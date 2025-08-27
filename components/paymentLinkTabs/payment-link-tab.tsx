@@ -6,7 +6,7 @@ import Heading from "../heading/heading"
 import styles from "./payment-link-tab.module.scss"
 import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
-import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import RectangleButton from "../buttons/rectangle-button"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import { usePathname } from "next/navigation"
 
@@ -265,8 +265,9 @@ const PaymentLinkTab = ({
 
                   {/* Dropdown content */}
                   <div
-                    className={`${styles.dropdownContent} ${isOpen ? styles.show : ""
-                      }`}
+                    className={`${styles.dropdownContent} ${
+                      isOpen ? styles.show : ""
+                    }`}
                   >
                     {/* small bg image above text */}
                     <div className={styles.dropdownBg}>

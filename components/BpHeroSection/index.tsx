@@ -6,7 +6,7 @@ import styles from "./style.module.scss"
 import CustomBreadcrumb from "../breadcrumb/breadbrumb"
 import RectangleButton, {
   RectangleButtonTheme,
-} from "../buttons/rectangle-button/rectangle-button"
+} from "../buttons/rectangle-button"
 import { StaticImageData } from "next/image"
 import { BreadcrumbProps } from "@/src/types/common"
 
@@ -43,7 +43,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
       className={`${styles.first_row}`}
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        ...customCSS
+        ...customCSS,
       }}
     >
       <div className={styles.box_white}>

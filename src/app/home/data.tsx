@@ -1,4 +1,4 @@
-import { RectangleButtonTheme } from "@/components/buttons/rectangle-button/rectangle-button"
+import { RectangleButtonTheme } from "@/components/buttons/rectangle-button"
 import {
   AdiadsBg,
   Adiadslogo,
@@ -57,7 +57,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon1,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url: '/e-commerce-vouchers'
+    url: "/e-commerce-vouchers",
   },
   {
     titleHtml: "Food & Beverages ",
@@ -67,7 +67,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon2,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url: '/food-and-beverages-vouchers'
+    url: "/food-and-beverages-vouchers",
   },
 
   {
@@ -78,7 +78,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon3,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url: '/health-and-wellness-vouchers'
+    url: "/health-and-wellness-vouchers",
   },
   {
     titleHtml: "Music & Movies ",
@@ -88,7 +88,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon4,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url: '/movie-and-music-vouchers'
+    url: "/movie-and-music-vouchers",
   },
   {
     titleHtml: "Apparel ",
@@ -98,7 +98,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon5,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url: '/apparels-vouchers'
+    url: "/apparels-vouchers",
   },
 ]
 const adidasData = [
@@ -175,7 +175,7 @@ const scrollCardsData = [
       "Track and manage small-ticket expenses across branches in real time.",
     url: "/petty-cash",
     icon: "",
-    hoverClass: "scrollCardHover"
+    hoverClass: "scrollCardHover",
   },
   {
     title: "Budget & Advances",
@@ -183,7 +183,7 @@ const scrollCardsData = [
       "Set budgets, issue advances, and monitor usage against spending limits.",
     url: "/budget-and-advances",
     icon: "",
-    hoverClass: "scrollCardHover"
+    hoverClass: "scrollCardHover",
   },
   {
     title: "Reimbursements",
@@ -191,7 +191,7 @@ const scrollCardsData = [
       "Enable fast, policy-aligned reimbursements with built-in approvals.",
     url: "/reimbursements",
     icon: "",
-    hoverClass: "scrollCardHover"
+    hoverClass: "scrollCardHover",
   },
   {
     title: "Scan & Drop Receipts",
@@ -199,7 +199,7 @@ const scrollCardsData = [
       "Snap receipts and auto-extract data for quick claim submissions.",
     url: "/receipts",
     icon: "",
-    hoverClass: "scrollCardHover"
+    hoverClass: "scrollCardHover",
   },
   {
     title: "Spend Analytics",
@@ -207,7 +207,7 @@ const scrollCardsData = [
       "Get deep insights into spends with smart, real-time analytics.",
     url: "/expense-analytics-and-insights",
     icon: "",
-    hoverClass: "scrollCardHover"
+    hoverClass: "scrollCardHover",
   },
 ]
 
@@ -440,7 +440,7 @@ const rewardData = [
     icon: rewardIcon,
     image: rewardImg1,
     overlayColorClass: "homePagerewards1",
-    url: "/employee-rewards"
+    url: "/employee-rewards",
   },
 
   {
@@ -451,7 +451,7 @@ const rewardData = [
     icon: rewardIcon,
     image: rewardImg2,
     overlayColorClass: "homePagerewards2",
-    url: "/channel-incentives"
+    url: "/channel-incentives",
   },
   {
     title: "Exclusive",
@@ -461,7 +461,7 @@ const rewardData = [
     icon: rewardIcon,
     image: rewardImg3,
     overlayColorClass: "homePagerewards3",
-    url: "/offers"
+    url: "/offers",
   },
 ]
 const ctaButtonData = [
