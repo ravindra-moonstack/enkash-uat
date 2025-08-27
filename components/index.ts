@@ -208,8 +208,7 @@ const HiringProcessModal = dynamic(
   }
 )
 const PaymentGatewayPartnershipForm = dynamic(
-  () =>
-    import("./Payment_Gateway_Partnerships_Form/paymentGatewayPartnershipForm"),
+  () => import("./Payment_Gateway_Partnerships_Form"),
   {
     ssr: true,
   }
