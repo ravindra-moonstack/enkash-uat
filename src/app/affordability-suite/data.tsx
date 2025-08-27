@@ -8,7 +8,6 @@ import crouselIconSix from "./img/crouselIconSix.svg"
 import {
   autoCollect,
   instant,
-  invoices,
   paymentButton,
   paymentGateway,
   paymentLink,
@@ -162,7 +161,7 @@ const managementCardsData = [
       "Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale.",
     cardImage: autoCollect,
     linkUrl: "/auto-collect",
-  }, 
+  },
   {
     titleHtml: "Instant Settlement",
     description:

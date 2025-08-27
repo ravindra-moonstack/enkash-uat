@@ -47,7 +47,10 @@ const BulkCollect = (): React.JSX.Element => {
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
-                    { name: "Collect Payments", url: "/products/collect-payments" },
+                    {
+                      name: "Collect Payments",
+                      url: "/products/collect-payments",
+                    },
                     {
                       name: "Bulk Collect",
                       url: "/bulk-collect",
@@ -252,8 +255,9 @@ const BulkCollect = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
-                  }`}
+                className={` mt-md-5 ${
+                  showScroll ? "overflow-auto scrollbar-thin" : ""
+                }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",

@@ -18,7 +18,7 @@ import {
   CardStacking,
   FaqSection,
 } from "@/components"
-import { blueArrow, groupIcon, paymentSummary, whiteArrow, fastenUpOr } from "."
+import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
@@ -238,7 +238,6 @@ const Reimbursements = (): React.JSX.Element => {
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-   
           <>
             <CardStacking
               cards={cards}
@@ -320,7 +319,6 @@ const Reimbursements = (): React.JSX.Element => {
         </div>
       </div>
       <FaqSection faqData={faqData} />
-
     </div>
   )
 }

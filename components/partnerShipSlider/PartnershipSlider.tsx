@@ -4,7 +4,6 @@ import type React from "react"
 import { useRef, useMemo } from "react"
 import Slider, { Settings } from "react-slick"
 import styles from "./PartnershipSlider.module.scss"
-import Link from "next/link"
 import Image from "next/image"
 
 interface SlideData {

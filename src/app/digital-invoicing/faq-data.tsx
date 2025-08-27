@@ -92,10 +92,9 @@ const faqData = [
           >
             digitize invoices
           </Link>
-          more effectively, you need streamlined processes and cost reduction.
-          Olympus's invoice feature supports this by electronically storing and
-          organizing invoices, making them easy to access. This feature also
-          helps reduce labor, printing, and mailing invoice costs.
+          {
+            "more effectively, you need streamlined processes and cost reduction. Olympus's invoice feature supports this by electronically storing and organizing invoices, making them easy to access. This feature also helps reduce labor, printing, and mailing invoice costs."
+          }
         </p>
       </div>
     ),
