@@ -145,7 +145,7 @@ const MobileHeader = ({ utmSource }: Props) => {
               <RectangleButton
                 title="Log In"
                 theme="outline-blue"
-                url={`https://home.enkash.com/login?source=nav-bar`}
+                url={`${process.env.HOME_URL}?source=nav-bar`}
                 width="100%"
               />
             </div>

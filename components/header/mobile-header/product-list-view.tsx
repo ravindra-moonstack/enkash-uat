@@ -65,7 +65,7 @@ const ProductListView = ({ products }: ProductListViewProps) => {
             <RectangleButton
               title="Log In"
               theme="outline-blue"
-              url={"https://home.enkash.com/login"}
+              url={`${process.env.HOME_URL}`}
             />
           </div>
         </div>

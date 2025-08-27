@@ -135,7 +135,7 @@ const SubProductListView = ({
           <RectangleButton
             title="Log In"
             theme="outline-blue"
-            url="https://home.enkash.com/login"
+            url=""
           />
         </div>
       </div>
