@@ -29,7 +29,7 @@ interface SubProductListViewProps {
 const SubProductListView = ({
   navTitle,
   sections,
-  signupUrl,
+
   setCurrentStep,
 }: SubProductListViewProps) => {
   return (
@@ -141,7 +141,6 @@ const SubProductListView = ({
         <div
           className={`d-flex justify-content-center ${styles.buttons_container}`}
         >
-          <RectangleButton title="Talk to Sales" theme="blue" url={signupUrl} />
           <RectangleButton title="Log In" theme="outline-blue" url="" />
         </div>
       </div>
