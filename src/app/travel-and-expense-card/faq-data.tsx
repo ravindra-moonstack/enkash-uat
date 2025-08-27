@@ -48,11 +48,11 @@ const faqData: FAQDataItem[] = [
   },
   {
     question:
-      "How can travel and expense cards assist me in managing my traveling expenses?",
+      "How does a Travel and Expense Card improve business travel and expense management?",
     answer: [
       {
         heading:
-          "Travel and Expense cards serve as an effective tool for maximizing control over your entire travel expenditure. These cards offer a multi-faceted approach to optimization: first, you can establish limits and approval policies to prevent overspending. Additionally, you'll benefit from comprehensive spend visibility.",
+          "EnKash’s Travel and Expense Cards are built to simplify business travel and expense workflows by offering real-time control and automated policy compliance. You can set spending limits, approve requests faster, and ensure your teams travel within budget.",
       },
     ],
   },

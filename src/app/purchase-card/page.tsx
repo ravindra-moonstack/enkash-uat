@@ -65,7 +65,7 @@ const PurchesCards = (): React.JSX.Element => {
                 { name: "Home", url: "/" },
                 { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
-                  name: "Purches Card",
+                  name: "Purchase Cards",
                   url: "/corporate-cards/purchase-card",
                 },
               ]}
@@ -106,7 +106,7 @@ const PurchesCards = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "Say goodbye to time-consuming paperwork and complicated approval workflows. Empower your team to make purchases within preset limits while you monitor, manage, and optimize spending in real time.",
+                      "Skip the paperwork; set limits, approve fast, and track team spending in real time.",
                     color: "color-white subHeading",
                   },
                 ]}
@@ -216,7 +216,7 @@ const PurchesCards = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Ready to bring efficiency, control, and savings to your procurement process?",
+                    "Ready to bring Efficiency, Control & Savings to your Procurement Process?",
                   color: "color-white",
                 },
               ]}

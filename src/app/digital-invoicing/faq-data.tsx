@@ -86,14 +86,16 @@ const faqData = [
         <p>
           To
           <Link
-            href={`${process.env.URL}/resources/blog/e-invoicing-under-gst/`}
+            className="mx-1"
+            href="https://www.enkash.com/resources/blog/e-invoicing-under-gst/"
             target="_blank"
           >
             digitize invoices
           </Link>
-          {`more effectively, you need streamlined processes and cost reduction. Olympus's invoice feature supports this by electronically storing and
+          more effectively, you need streamlined processes and cost reduction.
+          Olympus's invoice feature supports this by electronically storing and
           organizing invoices, making them easy to access. This feature also
-          helps reduce labor, printing, and mailing invoice costs.`}
+          helps reduce labor, printing, and mailing invoice costs.
         </p>
       </div>
     ),

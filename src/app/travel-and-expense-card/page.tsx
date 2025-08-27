@@ -71,7 +71,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Travel Expense Card",
+                  title: "Travel & Expense Card",
                   color: "color-white underline",
                 },
               ]}
@@ -83,7 +83,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Travel and Expense Card: ",
+                    title: "Travel and Expense Card ",
                     color: "color-white italic f-3 d-block",
                   },
                   {
@@ -101,7 +101,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "Ensure seamless travel experiences while empowering your team, saving costs, and enhancing compliance—all with one smart solution.",
+                      "Ensure seamless business travel experiences while empowering your team, saving costs, and enhancing compliance—all with one smart solution. Our T&E card solution gives you the control and convenience your business needs. ",
                     color: "color-white subHeading",
                   },
                 ]}
@@ -134,7 +134,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
         <StepsSection
           heading={[
             {
-              text: "How To Get Started with Travel Expense Cards  ",
+              text: "How To Get Started with Travel and Expense Cards  ",
               colorClass: "color-black",
             },
           ]}
@@ -479,7 +479,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Discover the EnKash difference - Secure, Scalable and Seamless.",
+                    "Issue Travel Cards Instantly for Seamless Management",
                   color: "color-white",
                 },
               ]}

@@ -38,7 +38,7 @@ const cards = stackcardData.map((item, index) => ({
   content: (
     <AllInOnePolicy
       key={index}
-      buttonText="Get Started"
+      buttonText="Learn More"
       icon={item.icon}
       title={item.title}
       description={item.description}
@@ -202,11 +202,11 @@ const Reimbursements = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className="text-center mb-3">
-            <RectangleButton
+            {/* <RectangleButton
               title={"Three Easy Steps"}
               theme="outline-blue-small"
               className="border_radius"
-            />
+            /> */}
           </div>
 
           <div className={`${styles.title} text-center pb-4 pb-md-5`}>
@@ -238,27 +238,7 @@ const Reimbursements = (): React.JSX.Element => {
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <div className="text-center mb-3">
-            <button
-              className="bg-white text-black "
-              style={{
-                borderRadius: "40px",
-                padding: "10px 20px",
-                border: "1px solid #EAECF0",
-              }}
-            >
-              <Image
-                src={fastenUpOr}
-                alt="icon"
-                className="me-2"
-                style={{
-                  width: "20px",
-                  height: "20px",
-                }}
-              />
-              <span>FASTEN UP OR</span>
-            </button>
-          </div>
+   
           <>
             <CardStacking
               cards={cards}
@@ -306,15 +286,13 @@ const Reimbursements = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
-
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
-                  title: "EnKash’s innovative solutions fort ",
+                  title: "EnKash’s innovative solutions for ",
                   color: "color-black",
                 },
                 {
@@ -341,6 +319,8 @@ const Reimbursements = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      <FaqSection faqData={faqData} />
+
     </div>
   )
 }

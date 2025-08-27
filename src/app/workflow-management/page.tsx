@@ -19,6 +19,7 @@ import {
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
+  activationIcon,
 } from "."
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
@@ -117,14 +118,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                         theme="blue"
                         url={salesUrl}
                       />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
-                      />
-                    </div>
+                    </div> 
                   </div>
                 </div>
               </div>
@@ -155,7 +149,7 @@ const WorkflowManagement = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Transform workflow management & optimize your business",
+                    "Transform Workflow Management & Optimize Your Business",
                   color: "color-white",
                 },
               ]}
@@ -170,16 +164,7 @@ const WorkflowManagement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={hundredPercentIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -201,7 +186,7 @@ const WorkflowManagement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={hundredPercentIcon} alt="icon" />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -320,11 +305,11 @@ const WorkflowManagement = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Upgrade your workflows and ",
+                        title: "Upgrade Your Workflows and",
                         color: "color-black",
                       },
                       {
-                        title: " boost efficienc",
+                        title: " Boost Efficiency",
                         color: "color-equity-blue",
                       },
                     ]}

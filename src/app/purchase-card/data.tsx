@@ -290,6 +290,7 @@ const cardType = [
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
+    linkUrl: "/sales",
   },
   {
     titleHtml: "Virtual Card",
@@ -318,6 +319,7 @@ const cardType = [
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
+    linkUrl: "/sales",
   },
 ]
 
@@ -416,7 +418,7 @@ const stackcardData = [
     icon: fraudProtectionIcon,
     title: "Increase Control & Reduce Costs",
     description:
-      "Set custom spending limits and enforce purchase policies directly through EnKash’s easy-to-use platform. Track every transaction in real time, enabling you to control expenses, avoid budget overruns, and prevent fraud. The ability to set merchant category restrictions ensures that your team only makes relevant purchases, keeping your expenses in check. With a corporate purchase card, businesses can enforce spend policies without slowing down procurement cycles",
+      "Set custom spending limits and enforce purchase policies directly through EnKash’s easy-to-use platform. Track every transaction in real time, enabling you to control expenses, avoid budget overruns, and prevent fraud. The ability to set merchant category restrictions ensures that your team only makes relevant purchases, keeping your expenses in check. With a corporate purchase card, businesses can enforce spend policies without slowing down procurement cycles.",
     image: fraudProtection,
     buttonUrl: "/sales",
   },

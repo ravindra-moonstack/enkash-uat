@@ -90,6 +90,7 @@ const PartnerShipForm: React.FC<PartnerShipFormProps> = ({
           {/* Right Section */}
           <div className={styles.rightSection}>{formComponent}</div>
         </div>
+        {/* </div> */}
       </div>
     </div>
   )

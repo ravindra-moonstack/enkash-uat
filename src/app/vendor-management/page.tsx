@@ -144,7 +144,7 @@ const VendorManagement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Step-by-Step Guide to",
+                  title: "Step-by-Step Guide for",
                   color: "color-black",
                 },
                 {
@@ -220,7 +220,7 @@ const VendorManagement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Focus on what truly matters—your business growth.",
+                  title: "Focus on What Truly Matters - Your Business Growth",
                   color: "color-white",
                 },
               ]}
