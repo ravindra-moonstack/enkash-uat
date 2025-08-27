@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixin" as *;
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
 
 .first_row {
   background-repeat: no-repeat;
@@ -7,8 +7,8 @@
   background-size: cover;
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding: 90px 20px 0px;
-  background-image: url(./img/first-row-bg.jpg);
+  padding: 110px 20px 0px;
+  background-image: url(/images/expenceBg.webp);
   @include for-laptops {
     padding: 112px 20px 0;
   }
@@ -213,9 +213,9 @@
 
 .other_products {
   background-color: white;
-  padding: 0px 20px 26px;
+  padding: 50px 20px 26px;
   @include for-laptops {
-    padding: 0px 20px 66px;
+    padding: 90px 20px 66px;
   }
 }
 

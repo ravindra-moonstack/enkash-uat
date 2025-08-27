@@ -4,7 +4,7 @@ const resourseProducts = [
   {
     name: "Resources",
     description: "Flexible prepaid card solutions",
-    link: "/cards",
+    link: `${process.env.NEXT_PUBLIC_URL}/resources/`,
     subProducts: [
       {
         subtitle: "Default",
@@ -18,21 +18,21 @@ const resourseProducts = [
             name: "Blogs",
             description: "Trends, tips, and strategies",
             imageSrcHovered: blogsFilled,
-            link: "https://www.enkash.com/resources/",
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/blogs/`,
           },
 
           {
             name: "Case Studies",
             description: "Real wins, proven impact",
             imageSrcHovered: casestudies,
-            link: "https://www.enkash.com/resources/media-coverage/",
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/customer-stories/`,
           },
 
           {
             name: "Videos",
             description: "Stories, solutions, and demos",
             imageSrcHovered: vedioFilled,
-            link: "https://www.enkash.com/resources/videos/",
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/videos/`,
           },
         ],
         footerText: "Effortless recognition, and endless rewards in one place",
@@ -46,7 +46,7 @@ const resourseProducts = [
   {
     name: "For Developers",
     description: "Flexible prepaid card solutions",
-    link: "/solutions",
+    link: "https://docs.enkash.com/",
     payableProducts: [
       {
         subtitle: "Default",
@@ -58,30 +58,20 @@ const resourseProducts = [
         list: [
           {
             name: "Payment Gateway",
-            link: "/payment-gateway",
+            link: "https://docs.enkash.com/folder-1769236",
           },
           {
-            name: "Corporate Cards",
-            link: "/corporate-cards",
+            name: "Prepaid Card",
+            link: "https://docs.enkash.com/folder-1769242",
           },
           {
-            name: "Expense Managment",
-            link: "/expense-managment",
-          },
-
-          {
-            name: "Employee Rewards",
-            link: "/employee-rewards",
+            name: "Expense Management",
+            link: "https://docs.enkash.com/expense-management",
           },
 
           {
-            name: "Channel Incentives",
-            link: "/channel-incentives",
-          },
-
-          {
-            name: "Vouchers",
-            link: "/vouchers",
+            name: "Rewards",
+            link: "https://docs.enkash.com/doc-1039810",
           },
         ],
         footerText:

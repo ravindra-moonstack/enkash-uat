@@ -1,4 +1,4 @@
-type FAQ = {
+export type FAQ = {
   question: string
   answer: {
     heading: string
@@ -1455,7 +1455,7 @@ const VoucherData: Record<string, Voucher> = {
     urlName: "healthkart",
     brandName: "HealthKart",
     category: "health-and-wellness",
-    discount: 10, // Up to 10% off
+    discount: 10,
     backgroundImg: "hehe",
     descriptionTitle: "HealthKart Gift Card",
     description:

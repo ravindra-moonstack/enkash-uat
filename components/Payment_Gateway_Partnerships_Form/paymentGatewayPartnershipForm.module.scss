@@ -1,0 +1,117 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixin" as *;
+.contactFormWrapper {
+  max-width: 700px;
+  margin:  auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    text-align: center;
+    margin-bottom: 0px;
+    color: #555;
+    font-size: 1rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .grid {
+      display: grid;
+      gap: 16px;
+          @include for-laptops {
+         grid-template-columns: 1fr 1fr;
+    }
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s;
+	  color: #576675;
+    background-color: $color-white;
+      &:focus {
+        border-color: #1c5af4;
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+select {
+  appearance: none;
+  -webkit-appearance: none; /* Safari fix */
+  -moz-appearance: none; /* Firefox fix */
+  background-color: #fff;
+
+  // encoded inline SVG arrow in blue (#1c5af4)
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231c5af4' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 26px auto;
+
+  padding-right: 40px; /* make room for arrow */
+  font-weight: 500;
+  color: #576675;
+  cursor: pointer;
+}
+
+	select option {
+  font-weight: 700; // bold text inside dropdown
+}
+  }
+
+  .privacy {
+    font-size: 0.85rem;
+    color: #5B5B5B;
+    text-align: left;
+	font-style: italic;
+  .privacyLink{
+    text-decoration: none;
+  }
+  }
+
+  .submitBtn {
+    background: #1c5af4;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+	    width: 280px;
+    margin: auto;
+
+     &:hover {
+      background-color: $color-dark-blue;
+      color: $color-white;
+    }
+  }
+
+  .optionTitle{
+	font-weight: 700;
+	color: $color-grey-300;
+  }
+}

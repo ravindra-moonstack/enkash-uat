@@ -1,0 +1,182 @@
+@use "./../../styles/variables" as *;
+@use "./../../styles/mixin" as *;
+
+
+.section {
+    padding: 40px 16px 200px;
+    background-image: url("./img/ourBg.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-clip: border-box;
+
+    @include for-laptops {
+        padding: 50px 20px 320px;
+    }
+
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 5px;
+    
+    @include for-laptops {
+        padding: 0 12px;
+        max-width: 1000px;
+    }
+}
+
+.grid {
+    display: grid;
+    margin-top: 48px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+
+    @include for-laptops {
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); // ✅ sab equal ho jayenge
+        gap: 32px; // default laptop gap
+        margin-top: 156px;
+    }
+
+    @include for-laptops {
+        &:has(> :nth-child(2):last-child) {
+            gap: 56px;
+        }
+    }
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0px 0px 88px 0px #0000001A;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include for-laptops {
+        padding: 24px;
+    }
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    @include for-laptops {
+        width: max-content;
+        margin-right: -10px;
+        margin-top: -150px;
+        height: 280px;
+        margin-bottom: 32px;
+    }
+    img{
+        width: auto;
+        height: 100%;
+    }
+
+}
+
+.cardImage,
+.dashboardImage {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.dashboardImage {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 95%;
+
+    @include for-laptops {
+        max-width: 90%;
+    }
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 0 10px 10px;
+}
+
+.accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 25px;
+    background-color: #00BF9E;
+}
+
+.cardTitle {
+    color: #2B2B2B;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0;
+
+    @include for-laptops {
+        font-size: 22.6px;
+        line-height: 27px;
+    }
+}
+
+.description {
+    flex: 1;
+    color: #2B2B2B;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    padding-left: 10px;
+
+    @include for-laptops {
+        font-size: 16px;
+        line-height: 25.6px;
+        margin-bottom: 20px;
+    }
+}
+
+.buttonContainer {
+    width: max-content;
+
+    .connectWithUs {
+        a {
+            box-shadow: 0px 4px 44px 0px #0000001F;
+            border: 2px solid #fff;
+            background-color: #fff;
+            color: #1C5AF4;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 16px;
+            border-radius: 8px;
+            align-items: center;
+            font-size: 14px;
+
+            @include for-laptops {
+                padding: 8px 20px;
+                font-size: 16px;
+                justify-content: center;
+            }
+        }
+    }
+
+}

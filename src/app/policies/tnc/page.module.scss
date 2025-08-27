@@ -1,0 +1,66 @@
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
+.policy {
+  padding: 110px 20px 46px;
+  @include for-laptops {
+    padding: 112px 20px 50px;
+  }
+  .policyBox {
+    border-radius: 12px;
+    background-color: $color-white;
+    padding: 20px;
+    box-shadow: 0px 0px 29.66px 0px #0000000d;
+    @include for-laptops {
+      padding: 32px 118px 65px 118px;
+    }
+    .policyBoxTitle {
+      padding: 14px;
+      border: 12px;
+      border-radius: 12px;
+      box-shadow: 0px 0px 29.66px 0px #0000000d;
+    }
+
+    .cardList {
+      margin: 12px;
+      gap: 20px;
+      @include for-laptops {
+        margin: 32px;
+        gap: 0px;
+      }
+    }
+  }
+  .tabBar {
+    margin-bottom: 20px;
+  }
+
+  .tab {
+    position: relative;
+    height: 6px; // just a thin bar
+  }
+
+  .activeTab {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 100%; // full col width (same as card)
+      background: #1c5af4;
+      border-radius: 2px;
+      animation: stepLine 0.3s steps(3) forwards;
+    }
+  }
+  @keyframes stepLine {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+   a {
+    color: inherit; 
+    text-decoration: none; 
+  }
+}

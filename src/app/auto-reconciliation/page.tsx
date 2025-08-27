@@ -1,57 +1,61 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicies, cardsData, managementCards, stackcardData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  AllInOnePolicy,
+  FaqSection,
+  CardStacking,
+  ManagementCard,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  reduceFrauds,
   realTimeIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
   hundredPercentIcon,
-  paymentGatewayImg,
+  activationIcon,
 } from "."
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+export const metadata: Metadata = generateMetaData({
+  title: "Automatic Reconciliation: Simplify Payment Matching & Reporting",
+  description:
+    "Automate payment reconciliation with EnKash. Match collections across sources, eliminate manual errors, and speed up financial reporting with real-time accuracy.",
+  alternates: {
+    canonical: `${process.env.URL}/auto-reconciliationr/`,
+  },
+})
+const salesUrl = getSalesUrl("/auto-reconciliation")
 
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const AutoReconciliation = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto mb-5">
           <div className="d-flex flex-column flex-md-row">
@@ -123,22 +127,15 @@ const AutoReconciliation = (): React.JSX.Element => {
                     className={styles.group_logo}
                   />
                   <div
-                    className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
+                    className={`${styles.first_row_button} d-flex flex-row align-items-center`}
                   >
                     <div>
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
+                    </div> 
                   </div>
                 </div>
               </div>
@@ -180,30 +177,21 @@ const AutoReconciliation = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
+            
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+                
                 <DynamicHeading
                   content={[
                     {
-                      title: "Real-Time Matching",
+                      title: "Data Tracking ",
                       color: "color-white",
                     },
                   ]}
@@ -221,11 +209,11 @@ const AutoReconciliation = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+                
                 <DynamicHeading
                   content={[
                     {
-                      title: "Zero Errors",
+                      title: "24/7 Availability",
                       color: "color-white",
                     },
                   ]}
@@ -243,11 +231,11 @@ const AutoReconciliation = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+                
                 <DynamicHeading
                   content={[
                     {
-                      title: "Multi-Channel Integration",
+                      title: "Visual Dashboards",
                       color: "color-white",
                     },
                   ]}
@@ -281,9 +269,8 @@ const AutoReconciliation = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={`${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={`${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -309,7 +296,7 @@ const AutoReconciliation = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -351,50 +338,35 @@ const AutoReconciliation = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Multi-Bank Reconciliation"
-                description="Automatically map transactions with bank statements using names, dates, and amounts. Effortlessly reconcile unmatched transactions, review mappings, and update transactions in your ERP."
-                image={paymentLinkImage}
-                buttonUrl="/sales/"
-                maxImageHeight="243px"
-              />
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Track and Control"
-                description="Manage records of vendor, rental, utilities, and tax payments from end to end, and easily track the payment status directly on the platform."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Enhance Customer Experience"
-                description="Improve overall customer experience by optimizing collection reminders via the platform with real-time updates of payments and dues."
-                image={shareImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Accelerate Audits"
-                description="Access detailed transaction history, ensuring clear audit trails for enhanced accountability and compliance. Maintain thorough records of transactions and changes, promoting transparency and traceability"
-                image={paymentOptionImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Reduce Frauds"
-                description="Gain a clear view of all the transactions, easily identify duplicate invoices, and flag suspicious transactions. Enhancing security and reducing the risk of fraud"
-                image={reduceFrauds}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
+              <div className={styles.allInOnePolicy}>
+                {allInOnePolicies.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+<div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Zero Manual Work With Automated Reconciliation",
+                color: "color-black",
+              },
+            ]}
+          />
         </div>
       </div>
       <div className={`${styles.fifth_row} `}>
@@ -417,90 +389,26 @@ const AutoReconciliation = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <FaqSection faqData={faqData} />
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
+          <div
+            className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}
+          >
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
-                  title: "other payment products",
+                  title: "other collection products",
                   color: "color-equity-blue",
                 },
                 {
@@ -512,83 +420,22 @@ const AutoReconciliation = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentGatewayImg}
-                linkUrl="/payment-gateway"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Link"
-                description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
-                cardImage={paymentLink}
-                linkUrl="/payment-link"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly."
-                cardImage={qrCodes}
-                linkUrl="/qr-codes"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-                linkUrl="/reminder-engine"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <ManagementCard
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

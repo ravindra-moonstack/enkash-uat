@@ -5,10 +5,29 @@ import crouselIconFour from "./img/crouselIconFour.svg"
 import crouselIconFive from "./img/crouselIconFive.svg"
 
 import {
+  bg1,
+  bg2,
+  bg3,
+  bg4,
+  bg5,
+  notificationImage,
+  paymentLinkImage,
+  paymentOptionImage,
   scrollIconFour,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
+  secureImage,
+  shareImage,
+  tabIconFive,
+  tabIconFour,
+  tabIconOne,
+  tabIconThree,
+  tabIconTwo,
+  taskIconFour,
+  taskIconOne,
+  taskIconThree,
+  taskIconTwo,
 } from "."
 
 const cardsData = [
@@ -80,4 +99,102 @@ const allProductSections = [
   },
 ]
 
-export { cardsData, allProductSections }
+const allInOnePolicyData = [
+  {
+    icon: taskIconOne,
+    title: "Instant Access to 400+ Brands",
+    description:
+      "From e-commerce giants to luxury fashion, gourmet dining to health essentials—you’ll find every major category covered through our curated gift voucher collection.",
+    image: paymentLinkImage,
+    buttonUrl: "/employee-rewards/",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Flexible Denominations",
+    description:
+      "Pick the value that fits your budget and purpose. Choose from multiple denominations so you can personalize gifting or budget-friendly perks.",
+    image: shareImage,
+    buttonUrl: "/channel-incentives/",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Bulk Ordering Benefits",
+    description:
+      "Need to distribute vouchers at scale? Enjoy exclusive discounts on bulk orders for employee rewards, customer promotions, or festive gifting.",
+    image: paymentOptionImage,
+    buttonUrl: "/gift-cards/",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconFour,
+    title: "Smart Distribution & Auto-Alerts",
+    description:
+      "Each voucher comes with automated alerts on WhatsApp and email, complete with redemption instructions. No guesswork, no manual follow-ups.",
+    image: notificationImage,
+    buttonUrl: "/offers/",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "One Dashboard. Total Control.",
+    description:
+      "Track, manage, and analyze voucher usage from a single interface. Customize campaigns, set expiry dates, and view real-time redemption insights.",
+    image: secureImage,
+    buttonUrl: "/gift-cards/",
+    maxImageHeight: "243px",
+  },
+]
+
+const categoriesData = [
+  {
+    itemArray: ["E-commerce"],
+    title: "E-commerce",
+    description:
+      "Access a wide range of online shopping platforms. From electronics to everyday essentials, get everything you need—conveniently and affordably.",
+    icon: tabIconOne,
+    bgImage: bg4,
+    url: "/e-commerce-vouchers",
+  },
+  {
+    itemArray: ["Food & Beverages"],
+    title: "Food & Beverages",
+    description:
+      "Whether it’s a gourmet meal, a quick bite, or your daily staples, savor irresistible savings every time you eat in or dine out.",
+    icon: tabIconTwo,
+    bgImage: bg1,
+    url: "/food-and-beverages-vouchers",
+  },
+  {
+    itemArray: ["Apparels & Fashion"],
+    title: "Apparels & Fashion",
+    description:
+      "Stay stylish without overspending. Explore discounted options across fashion staples, premium labels, and seasonal collections.",
+    icon: tabIconThree,
+    bgImage: bg2,
+    url: "/apparels-vouchers",
+  },
+  {
+    itemArray: ["Movies & Music"],
+    title: "Movies & Music",
+    description:
+      "Dive into your favorite entertainment - be it movies, concerts, or streaming—while saving big on unforgettable experiences.",
+    icon: tabIconFour,
+    bgImage: bg3,
+    url: "/movie-and-music-vouchers",
+  },
+  {
+    itemArray: ["Health & Wellness"],
+    title: "Health & Wellness",
+    description:
+      "Make your well-being a priority with value-driven vouchers for healthcare, fitness, wellness services, and daily health needs.",
+    icon: tabIconFive,
+    bgImage: bg5,
+    url: "/health-and-wellness-vouchers",
+  },
+]
+
+export { cardsData, allProductSections, allInOnePolicyData, categoriesData }

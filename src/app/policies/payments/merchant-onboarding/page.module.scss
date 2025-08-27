@@ -1,0 +1,56 @@
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
+
+.parent_container {
+ padding: 100px 20px 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+
+  @include for-laptops {
+    background-position: center right;
+      padding: 112px 0px 100px ;
+    background-size: contain;
+  }
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+
+  .gradient {
+    display: none;
+    @include for-laptops {
+      display: block;
+    }
+    z-index: -1;
+    position: absolute;
+    top: -150px;
+    z-index: -1;
+  }
+
+  .inner_container {
+    padding: 20px 20px;
+    @include for-laptops {
+      padding: 30px 40px;
+    }
+    margin-top: 48px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1019607843);
+
+    border-radius: 10px;
+    margin-bottom: 10px;
+    .sectionTitle{
+      margin-bottom: 80px;
+    }
+  }
+
+  h5 {
+    margin-top: 20px !important;
+  }
+
+  h1 {
+    font-weight: 600;
+  }
+}

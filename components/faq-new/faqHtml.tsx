@@ -22,23 +22,22 @@ const FAQHtml: React.FC<FAQHtmlProps> = ({ faqData }) => {
 
   return (
 
-      <div
-        className={`${styles.faq_wrapper} ${
-          isScrollable ? styles.scrollable : ""
+    <div
+      className={`${styles.faq_wrapper} ${isScrollable ? styles.scrollable : ""
         }`}
-      >
-        {faqData.map((item, index) => (
-          <FAQ
-            key={index}
-            index={index}
-            question={item.question}
-            answerHTML={item.answerHTML}
-            answer={item.answer}
-            answerVisible={index === openFAQIndex}
-            onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
-          />
-        ))}
-      </div>
+    >
+      {faqData.map((item, index) => (
+        <FAQ
+          key={index}
+          index={index}
+          question={item.question}
+          answerHTML={item.answerHTML}
+          answer={item.answer}
+          answerVisible={index === openFAQIndex}
+          onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
+        />
+      ))}
+    </div>
 
   )
 }

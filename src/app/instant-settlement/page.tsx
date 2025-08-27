@@ -1,57 +1,62 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicies, cardsData, managementCards, stackcardData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  ManagementCard,
+  AllInOnePolicy,
+  FaqSection,
+  CardStacking,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  secureImage,
   realTimeIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
   hundredPercentIcon,
-  paymentGatewayImg,
+  activationIcon,
 } from "."
 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Instant Payment Settlement for Merchants",
+  description:
+    "Access your funds instantly with EnKash’s Instant Settlement solution. Improve cash flow, reduce wait times, and gain 24/7 control over your business payments.",
+  alternates: {
+    canonical: `${process.env.URL}/instant-settlement/`,
+  },
+})
+const salesUrl = getSalesUrl("/instant-settlement")
 
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const InstantSettlement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -93,7 +98,7 @@ const InstantSettlement = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Accelerate business cash flow with Instant Settlements",
+                          "Accelerate Business Cash Flow with Instant Settlements",
                         color: "color-black",
                       },
                     ]}
@@ -129,14 +134,7 @@ const InstantSettlement = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -169,7 +167,7 @@ const InstantSettlement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Instant Payments Settlement for Better Cash Flow",
+                  title: "Instant Payment Settlement for Better Cash Flow",
                   color: "color-white",
                 },
               ]}
@@ -184,16 +182,7 @@ const InstantSettlement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={realTimeIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -215,7 +204,7 @@ const InstantSettlement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={hundredPercentIcon} alt="icon" />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -237,7 +226,7 @@ const InstantSettlement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={realTimeIcon} alt="icon" />
+                <Image src={hundredPercentIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -280,9 +269,8 @@ const InstantSettlement = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -308,7 +296,7 @@ const InstantSettlement = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -353,51 +341,33 @@ const InstantSettlement = (): React.JSX.Element => {
                   />
                 </div>
               </div>
-
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Customized Settlements"
-                description="Empower yourself to decide when your customer payments should be transferred to your bank account. With a customized payment settlement process, you have full control to settle the needed amount within a few seconds."
-                image={paymentLinkImage}
-                buttonUrl="/sales/"
-                maxImageHeight="243px"
-              />
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Simplified Budgeting"
-                description="Faster access to capital empowers you to make quicker decisions, invest in inventory, and seize strategic opportunities without delays."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Enhanced Relations"
-                description="Pay vendors/suppliers faster, build stronger relationships, potentially secure better deals, and avoid late fees."
-                image={shareImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Super Fast Settlements"
-                description="Instantly get your customer payments straight into your bank account every day with same-day settlements, which are settled at T+O, for a quick and consistent cash flow experience."
-                image={paymentOptionImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Increased Efficiency"
-                description="Eliminate the need to track settlement schedules and manage cash flow fluctuations, freeing up valuable time and resources for other business-critical tasks."
-                image={secureImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
+              {allInOnePolicies.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse}
+                />
+              ))}
             </div>
           </div>
+        </div>
+      </div>
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Access Cash Flow Faster Than Your Competitors",
+                color: "color-black",
+              },
+            ]}
+          />
         </div>
       </div>
       <div className={`${styles.fifth_row} `}>
@@ -406,7 +376,7 @@ const InstantSettlement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Collect payments faster with reminders!",
+                  title: "Get paid faster today!",
                   color: "color-white",
                 },
               ]}
@@ -420,78 +390,13 @@ const InstantSettlement = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -499,7 +404,7 @@ const InstantSettlement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
@@ -515,83 +420,22 @@ const InstantSettlement = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentGatewayImg}
-                linkUrl="/payment-gateway"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Link"
-                description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
-                cardImage={paymentLink}
-                linkUrl="/payment-link"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly."
-                cardImage={qrCodes}
-                linkUrl="/qr-codes"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-                linkUrl="/reminder-engine"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <ManagementCard
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

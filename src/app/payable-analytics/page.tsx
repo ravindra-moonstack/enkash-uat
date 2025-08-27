@@ -1,10 +1,17 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { cardsData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  ScrollableCardsSection,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -21,33 +28,24 @@ import {
   taskIconFour,
   realTimeIcon,
   activationIcon,
-  paymentLink,
-  paymentButton,
-  qrCodes,
-  autoCollect,
-  invoices,
-  instant,
-  reminder,
-  paymentGateway,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import ManagementCard from "@/components/management-card/management-card"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+export const metadata: Metadata = generateMetaData({
+  title: "Account Payable Analytics: Gain Real-Time Insights on Payables",
+  description:
+    "Track, analyze, and optimize your accounts payable with EnKash Payable Analytics. Improve cash flow planning, spot delays, and make informed financial decisions.",
+  alternates: {
+    canonical: `${process.env.URL}/payable-analytics/`,
+  },
+})
+const salesUrl = getSalesUrl("/payable-analytics")
 
 const PayableAnalytics = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -125,14 +123,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -277,7 +268,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -318,7 +309,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                   title="Seamless Data Access"
                   description="Easily connect or import data from files, product databases, and external sources—so you can analyze everything in one place without the hassle."
                   image={paymentLinkImage}
-                  buttonUrl="/sales"
+                  buttonUrl={salesUrl}
                   maxImageHeight="243px"
                 />
 
@@ -327,7 +318,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                   title="Secure Data Sharing"
                   description="Access and share data confidently with the right stakeholders while keeping your security and privacy fully intact."
                   image={shareImage}
-                  buttonUrl="/sales"
+                  buttonUrl={salesUrl}
                   maxImageHeight="305px"
                   reverse
                 />
@@ -337,7 +328,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                   title="Visualize Data with Ease"
                   description="Get actionable insights through interactive, easy-to-understand visual reports that make data analysis both intuitive and impactful."
                   image={paymentOptionImage}
-                  buttonUrl="/sales"
+                  buttonUrl={salesUrl}
                   maxImageHeight="243px"
                 />
 
@@ -346,7 +337,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                   title="Predict with AI Power"
                   description="Leverage AI to forecast trends, run smart analyses, and set intelligent alerts so you can make proactive, data-driven decisions for your business."
                   image={notificationImage}
-                  buttonUrl="/sales"
+                  buttonUrl={salesUrl}
                   maxImageHeight="259px"
                   reverse
                 />
@@ -376,170 +367,12 @@ const PayableAnalytics = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
-
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Check out our ",
-                  color: "color-black",
-                },
-                {
-                  title: "other payment products",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: " at EnKash",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentGateway}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Link"
-                description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
-                cardImage={paymentLink}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
-                cardImage={qrCodes}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

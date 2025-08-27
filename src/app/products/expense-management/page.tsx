@@ -1,20 +1,14 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import Link from "next/link"
 import React from "react"
 import { allProductSections, cardData, cardsData, stackcardData } from "./data"
 import { faqData, SecondfaqData } from "./faq-data"
 import {
-  Header,
-  Footer,
-  FAQHtml,
   ContentShowcase,
   AllInOnePolicy,
-  SplineAnimation,
   DynamicHeading,
   EnkashWay,
   LottieDynamicLoadComponent,
-  TalkToSales,
   AllProducts,
   SecondFaqHtml,
   CustomBreadcrumb,
@@ -24,6 +18,7 @@ import {
   FeatureSpotlight,
   SmartPolicySection,
   CTASection,
+  FaqSection,
 } from "@/components"
 
 import {
@@ -54,7 +49,19 @@ import bg3 from "./img/bg2.jpg"
 import bg4 from "./img/bg1.jpg"
 import bg5 from "./img/bg6.jpg"
 import bg6 from "./img/bg5.jpg"
-// import Loading from "../../loading"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Expense Management Suite: Automate & Track Business Spending",
+  description:
+    "Automate and control business expenses with EnKash. Track spending in real-time, set budgets, manage reimbursements, and streamline finance workflows on one platform.",
+  alternates: {
+    canonical: `${process.env.URL}/expense-management/`,
+  },
+})
+const salesUrl = getSalesUrl("/expense-management")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item: any) => ({
@@ -65,21 +72,16 @@ const cards = stackcardData.map((item: any) => ({
       title={item.title}
       description={item.description}
       image={item.image}
-      buttonUrl={item.buttonUrl}
+      buttonUrl={salesUrl}
       maxImageHeight="300px"
+      buttonText="Learn More"
     />
   ),
 }))
 const ExpenseManagement = (): React.JSX.Element => {
   return (
-    // <Suspense fallback={<Loading />}>
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-      <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className={`${styles.spline_background}`}>
-          <SplineAnimation />
-        </div>
         <div className="max-w-auto  position-relative no-pointer">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -99,11 +101,11 @@ const ExpenseManagement = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Create, Track & Submit Expenses.",
+                    title: "Create, Track & Submit Expenses ",
                     color: "color-black d-block text-center",
                   },
                   {
-                    title: "Now on WhatsApp",
+                    title: "Now on WhatsApp.",
                     color: "color-equity-blue d-block text-center",
                   },
                 ]}
@@ -124,7 +126,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               />
             </div>
             <div className="mt-3 pointer-auto text-center">
-              <RectangleButton title="Talk to us" theme="blue" url="/sales/" />
+              <RectangleButton title="Talk to us" theme="blue" url={salesUrl} />
             </div>
           </div>
 
@@ -153,6 +155,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           data={integrationData}
           imageSrc={advanceAi}
           imageAlt="card background"
+          buttonUrl={salesUrl}
           reverse
         />
         <ContentShowcase
@@ -162,6 +165,8 @@ const ExpenseManagement = (): React.JSX.Element => {
           imageSrc={receipt}
           imageAlt="card background"
           bgColor="bg-color-soft-mint"
+          buttonUrl='/budget-and-advances'
+          buttonTitle="Learn More"
         />
         <ContentShowcase
           heading="UPI- Based Petty Cash"
@@ -169,15 +174,19 @@ const ExpenseManagement = (): React.JSX.Element => {
           data={dashboardData}
           imageSrc={upi}
           imageAlt="card background"
+          buttonUrl="/petty-cash"
+          buttonTitle="Learn More"
           reverse
         />
         <ContentShowcase
-          heading="Employee Reimbursements with Smart Wallets."
+          heading="Employee Reimbursements with Smart Wallets"
           subheading="Automate category-wise allowances, get instant access to funds, and breeze through compliance."
           data={rankData}
           imageSrc={walletExpense}
           imageAlt="card background"
           bgColor="bg-color-soft-mint"
+          buttonUrl="/reimbursements"
+          buttonTitle="Learn More"
         />
       </div>
 
@@ -217,28 +226,23 @@ const ExpenseManagement = (): React.JSX.Element => {
       <div className={`${styles.card_stacking_row} bg_white_index`}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
-            <div className={`${styles.title} text-center px-md-5`}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Spend Analytics & Insights: ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "Turn Every Rupee Spent ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "into Actionable Insight",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Spend Analytics & Insights: ",
+                  color: "color-black",
+                },
+                {
+                  title: "Turn Every Rupee Spent ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "into Actionable Insight",
+                  color: "color-black",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -311,7 +315,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         className={`${styles.sixth_row} bg_white_index row d-flex bg-white `}
       >
         <EnkashWay
-          sectionHeading="One Platform, Every Use Case, Total Control"
+          sectionHeading="One Platform. Every Use Case. Total Control."
           progressItemPadding="15px 12px"
           progressData={[
             {
@@ -370,80 +374,13 @@ const ExpenseManagement = (): React.JSX.Element => {
         <CTASection
           title="Build a leaner, smarter, & future-ready finance team"
           buttonText="Get Started Today"
-          buttonUrl="/sales/?source=expense_management"
+          buttonUrl={salesUrl}
           actionImage={blueArrow}
           hoverImage={whiteArrow}
         />
       </div>
 
-      <div className={`${styles.faq_new_row} bg_white_index relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="f-4"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
     // </Suspense>
   )

@@ -1,46 +1,44 @@
-"use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData } from "./data"
+import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  ScrollableCardsSection,
+  AllProducts,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-} from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import AllProducts from "@/components/all-products/all-products"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+} from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Invoice Management System: Automate, Track & Reconcile Invoices ",
+  description:
+    "Digitize your invoice workflow with EnKash. Create, share, approve, and reconcile invoices faster—streamline accounts payable and improve cash flow visibility.",
+  alternates: {
+    canonical: `${process.env.URL}/invoice-management/`,
+  },
+})
+const salesUrl = getSalesUrl("/invoice-management")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const InvoiceManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -118,14 +116,7 @@ const InvoiceManagement = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -178,7 +169,7 @@ const InvoiceManagement = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -216,53 +207,18 @@ const InvoiceManagement = (): React.JSX.Element => {
               </div>
 
               <div className={styles.allInOnePolicy}>
-                <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="Centralized Dashboard for Complete Control"
-                  description="Manage all vendor invoices from a single, intuitive platform designed for maximum efficiency. With end-to-end visibility of the invoice lifecycle, track the status of every invoice to stay on top of your financial obligations."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="Flexible Approval Processes for Business Needs"
-                  description="Design workflows that align perfectly with your organizational structure. Easily assign roles, set authorization levels, and create tailored approval hierarchies that ensure compliance without compromising on speed or accuracy."
-                  image={shareImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Cash Flow Optimization for Timely Decisions"
-                  description="Utilize EnKash’s facilitated credit lines to enhance liquidity and maintain smooth operations. Extend payment deadlines strategically while strengthening relationships with vendors through consistent and timely payment processes.
-"
-                  image={paymentOptionImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Effortless ERP System Integration"
-                  description="Sync EnKash with major ERP platforms like Tally, SAP, and Zoho for seamless data flow. Avoid duplications, save time, and ensure data accuracy with synchronized invoice and payment records that simplify reconciliation."
-                  image={notificationImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFive}
-                  title="Detailed Insights Through Advanced Reporting"
-                  description="Access real-time invoice statuses and generate comprehensive reports with ease. Use actionable data to refine your financial planning, identify trends, and make well-informed decisions for your business growth."
-                  image={optimizedIcon}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
+                {allInOnePolicyData.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -318,80 +274,13 @@ const InvoiceManagement = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6 "
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

@@ -2,19 +2,20 @@
 @use "../../styles/mixin" as *;
 .cardStacking {
   overflow: hidden;
-  padding: 24px 0px 50px;
+  padding: 0px 0px 50px;
   min-height: max-content;
   @include for-laptops {
-    min-height: 100vh;
-    padding: 48px 20px;
+    // min-height: 100vh;
+    padding:0px  20px 48px;
   }
 
   .stackCard {
     border-radius: 12px;
     margin-bottom: 20px;
+    margin-top: 20px;
     position: relative;
     width: calc(100% + 20px);
-    min-height: 450px;
+    min-height: 350px;
     padding: 20px 10px;
     transform-origin: 50% -160%;
     border-top: 5px solid #d9d9d9;
@@ -38,4 +39,15 @@
       }
     }
   }
+
+
+}
+  .title {
+  position: sticky;
+  top: 15px; // some offset from top
+
+  z-index: 10; // above cards
+  padding-bottom: 10px; // spacing
+  margin-bottom: 1rem;
+
 }

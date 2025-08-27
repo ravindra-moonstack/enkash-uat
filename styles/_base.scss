@@ -82,6 +82,10 @@
   background: $light-gradient;
 }
 
+.bg-color-black-30 {
+  background: $color-black-30;
+}
+
 /* Text Color Classes */
 .color-deep-indigo {
   color: $color-deep-indigo;
@@ -198,6 +202,10 @@
   color: $color-grey-200;
 }
 
+.color-dim-grey {
+  color: $color-dim-grey;
+}
+
 .bg-black-200 {
   background-color: $color-black-200;
 }
@@ -294,6 +302,9 @@ body {
   &::-webkit-scrollbar-thumb {
     background: linear-gradient(90deg, #61d6ff, transparent);
   }
+
+
+  
 }
 
 /* Other Classes */
@@ -408,4 +419,8 @@ body {
 
 .pointer-auto {
   pointer-events: auto;
+}
+
+.cardsSliderMargin{
+  margin-top: 140px;
 }

@@ -1,9 +1,18 @@
-"use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData, cardType } from "./data"
+import { cardsData, cardType, stackcardData } from "./data"
 import faqData from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  CardStacking,
+  RewardsCarousel,
+  ScrollableCardsSection,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -12,116 +21,40 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
-  stackCardSixIcon,
-  stackCardSixImg,
+  customizableIcon,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import RewardsCarousel from "@/components/rewards-carousel/rewards-carousel"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import CardStacking from "@/components/cardStacking/cardStacking"
-import Link from "next/link"
-
+export const metadata: Metadata = generateMetaData({
+  title: "Offers: Exclusive Deals on Business Payments & Cards",
+  description:
+    "Unlock exclusive EnKash offers on business payments, cards, rewards, and partner deals. Save more while you manage expenses smarter across all business needs.",
+  alternates: {
+    canonical: `${process.env.URL}/offers/`,
+  },
+})
+const salesUrl = getSalesUrl("/offers")
 const mergedCards = cardType.flatMap((section) => section.items)
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={realTimeExpenseIcon}
-          title="Maximize Savings"
-          description="Unlock significant savings on various business products with exclusive discounts on our partnered services."
-          image={realTimeExpense}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={fraudProtectionIcon}
-          title="Top Partnered Deals"
-          description="Explore the finest corporate deals and offers from our esteemed partner brands like AWS, ClearTax, Canva, and more."
-          image={fraudProtection}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={streamlinedReimbursementIcon}
-          title="Effortless Process"
-          description="Enjoy a seamless experience with just a few clicks, making it quick and easy to access exclusive deals and offers."
-          image={streamlinedReimbursement}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={costControlSavingsIcon}
-          title="Regularly Updated Offers"
-          description="Stay ahead of the curve with the best deals for your business needs."
-          image={costControlSavings}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={wideAcceptanceNetworkIcon}
-          title="Get Real-time Insights"
-          description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
-          image={wideAcceptanceNetwork}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-]
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const Offers = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -198,14 +131,7 @@ const Offers = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -213,7 +139,9 @@ const Offers = (): React.JSX.Element => {
               </div>
             </div>
             <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div className={`${styles.right_img} position-relative w-100 h-100 d-flex`} >
+              <div
+                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
+              >
                 <Image
                   src={paymentSummary}
                   alt="card visual"
@@ -232,7 +160,7 @@ const Offers = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Offers for Your Business",
+                  title: "Irresistible Offers for Your Business",
                   color: "color-white",
                 },
               ]}
@@ -242,26 +170,15 @@ const Offers = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={customizableIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
@@ -346,7 +263,7 @@ const Offers = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -364,30 +281,23 @@ const Offers = (): React.JSX.Element => {
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <>
-            <div className={`${styles.title} text-center px-0 px-md-5`}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Exclusive  on partnered services ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "discounts and benefits ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "on partnered services",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
-          </>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Exclusive ",
+                color: "color-black",
+              },
+              {
+                title: "discounts and benefits ",
+                color: "color-equity-blue",
+              },
+              {
+                title: "on partnered services",
+                color: "color-black",
+              },
+            ]}
+          />
         </div>
       </div>
 
@@ -429,7 +339,7 @@ const Offers = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Unlock exclusive deals on a wide range of business products!",
+                    "Unlock Exclusive Deals On A Wide Range Of Business Products",
                   color: "color-white",
                 },
               ]}
@@ -443,80 +353,13 @@ const Offers = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-5"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

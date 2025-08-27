@@ -27,14 +27,7 @@
     padding-top: 112px;
     padding-bottom: 40px;
   }
-  .spline_background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-  }
+
   .bannerImages {
     min-height: 150px;
 
@@ -198,9 +191,14 @@
 .fifth_row {
   position: relative;
   text-align: center;
-  padding: 50px 20px 16px;
+  padding: 00px 20px 16px;
   @include for-laptops {
-    padding: 90px 20px 22px;
+    padding: 00px 20px 22px;
+  }
+  .onePlatformSectionCard{
+    h5{
+      min-height: 67px;
+    }
   }
 }
 
@@ -210,7 +208,7 @@
     padding: 162px 20px 90px;
   }
   .list_button {
-    padding-left: 40px;
+    padding-left: 48px;
     margin-top: 20px;
     @include for-laptops {
       margin-top: 20px;
@@ -281,7 +279,7 @@
 .other_products {
   padding: 0px 20px 50px;
   @include for-laptops {
-    padding: 0px 20px 90px;
+    padding: 0px 20px 66px;
   }
 }
 
@@ -333,13 +331,7 @@
     }
   }
 
-  .spline_background {
-    position: absolute;
-    // top: 0%;
-    bottom: -43%;
-    right: -52%;
-    width: 1500px;
-  }
+ 
 }
 
 .card_stacking_row {

@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
 import {
@@ -12,9 +11,6 @@ import {
 } from "./data"
 
 import {
-  Header,
-  FAQHtml,
-  Footer,
   RectangleButton,
   PolicyCard,
   LogoSlider,
@@ -24,7 +20,7 @@ import {
   CustomBreadcrumb,
   LottieDynamicLoadComponent,
   DynamicHeading,
-  TalkToSales,
+  FaqSection,
 } from "@/components"
 
 import {
@@ -38,30 +34,28 @@ import {
 } from "."
 
 import faqData from "./faq-data"
-import gsap from "gsap"
-import { ScrollSmoother } from "gsap/ScrollSmoother"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
-import Link from "next/link"
-import Spline from "@splinetool/react-spline"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP)
+export const metadata: Metadata = generateMetaData({
+  title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
+  description:
+    "Empower your teams with EnKash corporate cards. Set spend limits, track transactions in real time, and manage all business expenses on one powerful platform.",
+  alternates: {
+    canonical: `${process.env.URL}/corporate-cards/`,
+  },
+})
+const salesUrl = getSalesUrl("/corporate-cards")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const CorporateCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <TalkToSales />
-
           <div className={`${styles.first_row}`}>
-            <div className={`${styles.spline_background}`}>
-              <Spline scene="https://prod.spline.design/YeyN2NhsGe5UwlYK/scene.splinecode" />
-            </div>
             <div className="max-w-auto position-relative no-pointer ">
               <div className="d-flex">
                 <CustomBreadcrumb
@@ -85,7 +79,7 @@ const CorporateCards = (): React.JSX.Element => {
                         color: "color-white d-block text-center italic f-2",
                       },
                       {
-                        title: "You’ll Ever Need",
+                        title: "You’ll Ever Need.",
                         color: "color-white d-block text-center",
                       },
                     ]}
@@ -98,7 +92,7 @@ const CorporateCards = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "More control, more flexibility, and more security, like no one else.",
+                          "More control, more flexibility & more security.",
                         color: "color-white d-block text-center subHeading",
                       },
                     ]}
@@ -109,9 +103,9 @@ const CorporateCards = (): React.JSX.Element => {
 
                 <div className="mt-3 pointer-auto">
                   <RectangleButton
-                    title="Talk to us"
+                    title="Talk to Us"
                     theme="blue"
-                    url="/sales/"
+                    url={salesUrl}
                   />
                 </div>
               </div>
@@ -250,7 +244,7 @@ const CorporateCards = (): React.JSX.Element => {
                       theme="border-gray"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}
-                      url="/sales"
+                      url={salesUrl}
                       className="d-flex justify-content-between align-items-center"
                     />
                   </div>
@@ -269,9 +263,6 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.action_row} bg-black-200 row-padding`}>
-            <div className={`${styles.spline_background}`}>
-              <Spline scene="https://prod.spline.design/NHBqMdtpnmCisTkz/scene.splinecode" />
-            </div>
             <div className="max-w-auto">
               <div className={`${styles.title} text-start pb-5`}>
                 <div className="flex-column  pb-3">
@@ -300,7 +291,7 @@ const CorporateCards = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Move beyond raw data. Leverage our advanced analytics to turn into actionable business insights",
+                          "Move beyond raw data. Leverage our advanced analytics to turn into actionable business insights.",
                         color: "color-grey-100 subHeading",
                       },
                     ]}
@@ -377,7 +368,7 @@ const CorporateCards = (): React.JSX.Element => {
                       color: "color-black",
                     },
                     {
-                      title: " Our PPI License",
+                      title: " Our PPI License.",
                       color: "color-equity-blue ",
                     },
                   ]}
@@ -558,7 +549,7 @@ const CorporateCards = (): React.JSX.Element => {
                   content={[
                     {
                       title:
-                        "Connect Corporate Cards with Expense Management for a Unified Experience ",
+                        "Connect Corporate Cards with Expense Management for a Unified Experience. ",
                       color: "color-alternate-grey subHeading",
                     },
                   ]}
@@ -575,11 +566,13 @@ const CorporateCards = (): React.JSX.Element => {
                 />
               </div>
             </div>
+            <div className={`${styles.onePlatformSectionCard}`}>
             <AllProducts
               title="All Features"
               subtitle="Combine all use cases"
               data={mergedCards}
             />
+            </div>
           </div>
 
           <div className={`${styles.eight_row} `}>
@@ -602,81 +595,14 @@ const CorporateCards = (): React.JSX.Element => {
                   theme="outline-blue"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url="/sales"
+                  url={salesUrl}
                   iconSize={15}
                 />
               </div>
             </div>
           </div>
 
-          <div className={`${styles.faq_new_row}  relative`}>
-            <div className={`${styles.faqSection} text-start max-w-auto `}>
-              <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Frequently Asked Questions (",
-                      color: "color-black",
-                    },
-                    {
-                      title: "FAQs",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: ")",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
-              </div>
-              <div className="d-flex flex-column flex-md-row justify-content-between">
-                <div>
-                  <div>
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Have more questions?",
-                          color: "color-dark-grey subHeading",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0"
-                    />
-                  </div>
-                  <div className="mt-3 d-none d-md-block">
-                    <div className="connectWithUs">
-                      <Link href="/contact-us">
-                        <DynamicHeading
-                          content={[
-                            {
-                              title: "Connect with us",
-                              color: "color-equity-blue ",
-                            },
-                          ]}
-                          headingTag="p"
-                          className="mb-0 f-5"
-                        />
-                        <Image
-                          src={blueArrow}
-                          alt="blue Arrow"
-                          width={15}
-                          height={15}
-                          className="ms-2"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className={`${styles.faqData}`}>
-                  <FAQHtml faqData={faqData} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <Footer />
+          <FaqSection faqData={faqData} />
         </div>
       </div>
     </div>

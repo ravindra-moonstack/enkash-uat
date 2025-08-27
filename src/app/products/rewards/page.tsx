@@ -1,44 +1,35 @@
-"use client"
-import Image from "next/image"
-
 import styles from "./page.module.scss"
-import { allProductSections } from "./data"
+import { allProductSections, policiesData } from "./data"
 import faqData from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
 import {
-  blueArrow,
-  paymentSummary,
-  whiteArrow,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-} from "."
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  LottieDynamicLoadComponent,
+  AllProducts,
+  FaqSection,
+} from "@/components"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import AllProducts from "@/components/all-products/all-products"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
-import Link from "next/link"
-
+export const metadata: Metadata = generateMetaData({
+  title: "Reward Program to Drive Employee & Customer Loyalty",
+  description:
+    "Boost employee engagement with EnKash Rewards. Design custom reward programs, send instant digital vouchers, and simplify recognition across teams and departments.",
+  alternates: {
+    canonical: `${process.env.URL}/rewards/`,
+  },
+})
+const salesUrl = getSalesUrl("/rewards")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const Rewards = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto">
           <div className="d-flex">
@@ -82,11 +73,7 @@ const Rewards = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-5 mt-3">
-              <RectangleButton
-                title="Talk to Sales"
-                theme="blue"
-                url="/sales"
-              />
+              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
@@ -120,45 +107,20 @@ const Rewards = (): React.JSX.Element => {
                 />
               </div>
             </div>
-
             <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Employee Rewards"
-                description="Motivate and retain your workforce with meaningful recognition. EnKash helps businesses set up customized rewards programs that enhance employee morale and performance. Offer digital gift cards, brand vouchers, and exclusive perks."
-                image={paymentLinkImage}
-                buttonUrl="/employee-rewards/"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Channel Incentives"
-                description="Drive channel partner engagement and boost sales with structured channel incentives. EnKash enables businesses to automate reward distribution, ensuring timely payouts and transparent tracking for channel partners."
-                image={shareImage}
-                buttonUrl="/channel-incentives/"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Gift Cards"
-                description="Simplify gifting with EnKash’s versatile gift card solutions. Give your employees and partners the freedom to choose from a wide range of brands and categories, ensuring a truly personal reward experience."
-                image={paymentOptionImage}
-                buttonUrl="/gift-cards/"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Exclusive Offers"
-                description="Unlock special discounts and partner offers from leading brands. Help your employees and stakeholders save on essential services while enhancing their benefits package."
-                image={notificationImage}
-                buttonUrl="/offers/"
-                maxImageHeight="259px"
-                reverse
-              />
+              {policiesData.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={policy.buttonUrl}
+                  buttonText="Explore More"
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -189,75 +151,7 @@ const Rewards = (): React.JSX.Element => {
           data={mergedCards}
         />
       </div>
-
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black ",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue ",
-                },
-                {
-                  title: ")",
-                  color: "color-black ",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="m-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

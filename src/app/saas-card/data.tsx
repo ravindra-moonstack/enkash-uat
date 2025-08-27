@@ -16,7 +16,6 @@ import slideThird from "./img/cardLimit.png"
 import slideFourth from "./img/block-unblock.png"
 import slideFifth from "./img/approvals.png"
 
-
 import sliderOne from "./img/reconcile.svg"
 import sliderTwo from "./img/workflow.svg"
 import sliderThree from "./img/audit-expence.svg"
@@ -29,14 +28,21 @@ import fourthIcon from "./img/icon-four.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
   fleetCardImg,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
-  sassCardImg,
-  termsAndConCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   virtualCardImg,
 } from "."
+import { payrollCardImg } from "../fuel-card"
 
 const dataSets = [
   {
@@ -260,44 +266,51 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: purchesCardImg,
+    linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "Meal Card",
     description:
       "Access meal cards to give monthly access to food across multiple online, dine-in, and food delivery apps, along with a tax-saving facility.",
-    cardImage:  mealCardImg,
+    cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
 
   {
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: sassCardImg,
+    cardImage: payrollCardImg,
+     linkUrl:'/sales',
   },
   {
     titleHtml: "Virtual Card",
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
-    cardImage: termsAndConCardImg,
+    cardImage: virtualCardImg,
+    linkUrl: "/virtual-card",
   },
 
   {
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
-    cardImage: virtualCardImg,
+    cardImage: purchesCardImg,
+    linkUrl: "/purches-card",
   },
   {
     titleHtml: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
+     linkUrl:'/sales',
   },
 ]
 
@@ -356,7 +369,7 @@ const allProductSections = [
         description:
           "Define custom policies, monitor spends, and manage approvals seamlessly with a dashboard that's always within reach.",
         image: sliderTwo,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Vendor Locking",
@@ -368,11 +381,50 @@ const allProductSections = [
       {
         title: "Subscription Management ",
         description:
-          "Keep a track of active tools, renewal dates, and eliminate duplicate or unused SaaS for efficient management",
+          "Keep a track of active tools, renewal dates, and eliminate duplicate or unused SaaS for efficient management.",
         image: sliderFour,
         link: "/auto-collect/",
       },
     ],
+  },
+]
+
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Seamless Integration with Your SaaS Stack",
+    description:
+      "EnKash works effortlessly with all leading, IT-approved tools, giving you unified control and valuable insights across your entire SaaS ecosystem.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Single Dashboard Management",
+    description:
+      "Stay on top of all your recurring expenses from a single platform. Your subscription spend, past payments, renewal dates, and automated reminders can be managed from the same dashboard.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Smarter Decisions, Backed by Data",
+    description:
+      "EnKash SaaS Cards give real-time insights into all your SaaS spends, enabling faster, more informed decisions that drive your business forward.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Complete Control, Zero Surprises",
+    description:
+      "With EnKash, effortlessly monitor, analyze, and manage your corporate SaaS expenses while ensuring every spend stays compliant with your internal policies.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
   },
 ]
 
@@ -388,4 +440,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
+  stackcardData,
 }

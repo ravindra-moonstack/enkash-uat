@@ -36,7 +36,7 @@ import {
 const ReceivableProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/collect-payments",
+    subtitleLink: "/products/collect-payments",
     currentHeading: {
       name: "Collect Payments",
       description: "Get paid faster with customized PG solutions",
@@ -73,11 +73,11 @@ const ReceivableProducts = [
         link: "/instant-settlement",
       },
       {
-        name: "Payment Link",
+        name: "Payment Links",
         description: "Send embedded payment links via multiple channels",
         imageSrc: paymentLinks,
         imageSrcHovered: paymentLinksFilled,
-        link: "/payment-link",
+        link: "/payment-links",
       },
       {
         name: "UPI Payments",
@@ -161,39 +161,7 @@ const ReceivableProducts = [
         link: "/auto-reconciliation",
       },
 
-      // {
-      //   name: "UPI Auto Pay",
-      //   description: "Coming Soon",
-      //   imageSrc: paymentGateway,
-      //   imageSrcHovered: paymentGatewayFilled,
-      //   link: "/payment-gateway",
-      //   new: false,
-      // },
-      // {
-      //   name: "Static QR Codes",
-      //   description: "Coming Soon",
-      //   imageSrc: paymentGateway,
-      //   imageSrcHovered: paymentGatewayFilled,
-      //   link: "/payment-gateway",
-      //   new: false,
-      // },
-      // {
-      //   name: "Virtual UPI ID",
-      //   description: "Coming Soon",
-      //   imageSrc: paymentGateway,
-      //   imageSrcHovered: paymentGatewayFilled,
-      //   link: "/payment-gateway",
-      //   new: false,
-      // },
 
-      // {
-      //   name: "UPI Mandate",
-      //   description: "Coming Soon",
-      //   imageSrc: paymentGateway,
-      //   imageSrcHovered: paymentGatewayFilled,
-      //   link: "/payment-gateway",
-      //   new: false,
-      // },
     ],
     footerText: "Effortlessly streamline your business collections",
     footerMobileText: "Explore More",

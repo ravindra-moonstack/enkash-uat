@@ -32,7 +32,7 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import { notificationImage, paymentLinkImage, paymentOptionImage, scrollIconOne, scrollIconThree, scrollIconTwo, shareImage, taskIconFour, taskIconOne, taskIconThree, taskIconTwo } from "."
 
 const dataSets = [
   {
@@ -361,6 +361,47 @@ const projects = [
   },
 ]
 
+const workflowPolicies = [
+  {
+    icon: taskIconOne,
+    title: "Integration with Existing Tools",
+    description:
+      "Seamlessly connect with CRMs, ERPs, email platforms, payment gateways, and more.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Task Assignment & Routing",
+    description:
+      "Automatically assign tasks to the right people based on roles, rules, or logic.",
+    image: notificationImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Approval Flows & Accessibility",
+    description:
+      "Customizable multi-level approvals for payments, documents, requests, etc. Define user roles, visibility rules, and access levels for data security and accountability.",
+    image: shareImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+  },
+  {
+    icon: taskIconFour,
+    title: "Predict with AI Power",
+    description:
+      "Leverage AI to forecast trends, run smart analysis, and set intelligent alerts so you can make proactive, data-driven decisions for your business.",
+    image: paymentOptionImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+];
+
 export {
   blogData,
   dataSets,
@@ -373,4 +414,5 @@ export {
   rankData,
   supportData,
   savingData,
+  workflowPolicies
 }

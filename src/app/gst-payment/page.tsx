@@ -1,42 +1,38 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicyData, cardsData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
-  blueArrow,
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  ScrollableCardsSection,
+  FaqSection,
+} from "@/components"
+import {
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+export const metadata: Metadata = generateMetaData({
+  title: "GST Payments: Automate, Track & Pay Your Taxes ",
+  description:
+    "Pay GST directly from EnKash with complete visibility. Automate reminders, track due dates, and manage all your tax payments securely from a single dashboard.",
+  alternates: {
+    canonical: `${process.env.URL}/gst-payment/`,
+  },
+})
+const salesUrl = getSalesUrl("/gst-payment")
 
 const PayableAnalytics = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -113,14 +109,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -169,7 +158,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -205,118 +194,24 @@ const PayableAnalytics = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <div className={styles.allInOnePolicy}>
+              {allInOnePolicyData.map((item, index) => (
                 <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="Never Miss a GST Payment Deadline Again"
-                  description="Stay on top of your GST payment deadlines with automatic reminders that alert you well in advance. The intuitive approval flow ensures that all payments are processed on time, preventing last-minute confusion or delays. You’ll never have to worry about missing a crucial deadline, reducing the risk of fines and penalties."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={item.maxImageHeight}
+                  reverse={item.reverse}
                 />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="Clear and Concise Approval Process"
-                  description="With EnKash, every payment goes through a well-structured approval workflow, ensuring that only valid payments are made. Our system ensures that all checks and validations are carried out before any transaction is approved. This transparent process reduces the risk of unauthorized payments and helps maintain a high level of compliance across your organization."
-                  image={shareImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Centralized Monitoring"
-                  description="Gain full visibility into your GST payments with a centralized dashboard that consolidates data from across your company. This feature allows you to track payments, approval statuses, and records from one convenient location, providing a complete picture of your tax liabilities and streamlining your tax management process."
-                  image={paymentOptionImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Audit-Ready Records"
-                  description="EnKash automatically converts your GST challans into digital records that are organized and easily accessible. This ensures that you are always audit-ready, with records available for future reference. By maintaining a clear digital trail, you can avoid the hassle of paper records and reduce the time spent on audits, making the process more efficient and organized."
-                  image={notificationImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} w-100 text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

@@ -1,0 +1,25 @@
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
+ .action_row {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 20px;
+
+  @include for-laptops {
+    padding: 90px 20px;
+  }
+
+  .list_button {
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include for-laptops {
+      padding-left: 90px;
+    }
+  }
+
+  img {
+    height: auto;
+  }
+}

@@ -27,7 +27,7 @@ const loyaltyLoungeProducts = [
         subtitle: "Default",
         subtitleLink: "/products/vouchers",
         currentHeading: {
-          name: "Rewards ",
+          name: "Vouchers ",
           description: "Build exciting rewards, incentives & offers",
         },
         list: [

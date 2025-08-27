@@ -11,41 +11,20 @@ const faqData = [
     ],
   },
   {
-    question: "What is an e-NACH mandate?",
+    question: "How can collection analytics benefit my business?",
     answer: [],
     answerHTML: (
       <div className="my-2">
         <p>
-          With collection analytics, businesses can analyze historical data and
-          gain insights into patterns, trends, and potential risks related to{" "}
+          With collection analytics, businesses can analyze historical data and gain insights into patterns, trends, and potential risks related to
           <Link
             href="https://www.enkash.com/olympus/receivables//"
             target="_blank"
+            className="mx-1"
           >
-            business accounts receivable
-          </Link>{" "}
-          .This process can benefit your business by improving efficiency in
-          debt recovery, reducing bad debt, and enhancing overall cash flow
-          management.
-        </p>
-      </div>
-    ),
-  },
-  {
-    question: "What is an e-NACH mandate?",
-    answer: [],
-    answerHTML: (
-      <div className="my-2">
-        <p>
-          With collection analytics, businesses can analyze historical data and
-          gain insights into patterns, trends, and potential risks related to{" "}
-          <Link
-            href="https://www.enkash.com/olympus/receivables/"
-            target="_blank"
-          >
-            business accounts receivable
-          </Link>{" "}
-          .This process can benefit your business by improving efficiency in
+            business accounts receivable.
+          </Link>
+          This process can benefit your business by improving efficiency in
           debt recovery, reducing bad debt, and enhancing overall cash flow
           management.
         </p>
@@ -61,13 +40,13 @@ const faqData = [
         <p>
           Top reasons to automate invoice processing: Collection analytics
           software utilizes historical data, customer payment patterns, and
-          various metrics to create models that{" "}
+          various metrics to create models that
           <Link
             href="https://www.enkash.com/olympus/receivables/bulk-collect/"
             target="_blank"
           >
             predict future payment
-          </Link>{" "}
+          </Link>
           behavior. These models consider factors such as payment history,
           average DSO, etc to assess the likelihood of timely payments. This
           predictive capability allows businesses to proactively manage
@@ -113,11 +92,11 @@ const faqData = [
       <div className="my-2">
         <p>
           <Link
-            href="https://www.enkash.com/resources/blog/e-invoicing-under-gst/"
+            href={`${process.env.URL}/resources/blog/e-invoicing-under-gst/`}
             target="_blank"
           >
             EnKash collection analytics
-          </Link>{" "}
+          </Link>
           is crucial for businesses as it empowers them to predict and manage
           customer payment behavior effectively, leading to reduced bad debt,
           improved cash flow, and overall financial stability. It provides a
@@ -147,13 +126,13 @@ const faqData = [
           Days Sales Outstanding (DSO) management is crucial for businesses
           because it provides insight into the average time it takes for a
           company to collect payments from its customers. A lower DSO indicates
-          that a business is efficient in{" "}
+          that a business is efficient in
           <Link
             href="https://www.enkash.com/olympus/receivables/"
             target="_blank"
           >
             collecting receivables,
-          </Link>{" "}
+          </Link>
           contributing to improved cash flow. Efficient DSO management allows
           businesses to optimize working capital, reduce the risk of bad debts,
           and enhance overall financial stability. It also helps in assessing
