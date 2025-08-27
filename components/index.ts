@@ -164,7 +164,7 @@ const PartnershipSection = dynamic(
   { ssr: true }
 )
 const BankAffiliatePartnershipForm = dynamic(
-  () => import("./bankAffiliatePartnershipForm/bankAffiliatePartnershipForm"),
+  () => import("./bankAffiliatePartnershipForm"),
   { ssr: true }
 )
 const BankSolutions = dynamic(() => import("./partnerships/BankSolutions"), {

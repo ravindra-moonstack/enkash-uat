@@ -9,12 +9,21 @@ import {
   stepsData,
 } from "./data"
 import faqData from "./faq-data"
-import { BecomePartnerSteps, BpHeroSection, BankSolutions,PartnershipSection, BottomCtaSection, FaqSection, ProductsSection, PartnerShipForm} from "@/components"
+import {
+  BecomePartnerSteps,
+  BpHeroSection,
+  BankSolutions,
+  PartnershipSection,
+  BottomCtaSection,
+  FaqSection,
+  ProductsSection,
+  PartnerShipForm,
+} from "@/components"
 import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
-import BankAffiliatePartnershipForm from "@/components/bankAffiliatePartnershipForm/bankAffiliatePartnershipForm"
+import BankAffiliatePartnershipForm from "@/components/bankAffiliatePartnershipForm"
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",
   description:
