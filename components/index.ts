@@ -207,6 +207,19 @@ const HiringProcessModal = dynamic(
     ssr: true,
   }
 )
+const PaymentGatewayPartnershipForm = dynamic(
+  () =>
+    import("./Payment_Gateway_Partnerships_Form/paymentGatewayPartnershipForm"),
+  {
+    ssr: true,
+  }
+)
+const BuiltforBuildersSection = dynamic(
+  () => import("./BuiltforBuildersCard/BuiltforBuildersSection"),
+  {
+    ssr: true,
+  }
+)
 export {
   Header,
   Footer,
@@ -265,4 +278,6 @@ export {
   YourOpportunityCareers,
   CareersTestimonialSlider,
   HiringProcessModal,
+  PaymentGatewayPartnershipForm,
+  BuiltforBuildersSection,
 }
