@@ -1,6 +1,9 @@
-import styles from "./footer-v2.module.scss"
 import Image from "next/image"
 import React from "react"
+import Link from "next/link"
+
+import styles from "./footer-v2.module.scss"
+
 import {
   FaFacebookF,
   FaXTwitter,
@@ -11,9 +14,10 @@ import {
   FaEnvelope,
 } from "react-icons/fa6"
 import { locationPin, pci, enkashBlueLogo, ppi, ppa, sovSvg } from "."
-import Link from "next/link"
 
-const FooterV2 = () => {
+const FooterV2 = (): React.JSX.Element => {
+  //
+
   return (
     <div className={` ${styles.footer}`}>
       <div className={`max-w-auto  ${styles.footer_padding}`}>
@@ -831,7 +835,7 @@ const FooterV2 = () => {
             </div>
 
             <p className={`${styles.footer_copy_right} d-none d-md-block`}>
-              Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All right
+              Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All rights
               reserved.
             </p>
           </div>

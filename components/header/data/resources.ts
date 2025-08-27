@@ -18,21 +18,21 @@ const resourseProducts = [
             name: "Blogs",
             description: "Trends, tips, and strategies",
             imageSrcHovered: blogsFilled,
-            link: `${process.env.URL}/resources/blogs/`,
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/blogs/`,
           },
 
           {
             name: "Case Studies",
             description: "Real wins, proven impact",
             imageSrcHovered: casestudies,
-            link: `${process.env.URL}/resources/customer-stories/`,
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/customer-stories/`,
           },
 
           {
             name: "Videos",
             description: "Stories, solutions, and demos",
             imageSrcHovered: vedioFilled,
-            link: `${process.env.URL}/resources/videos/`,
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/videos/`,
           },
         ],
         footerText: "Effortless recognition, and endless rewards in one place",
