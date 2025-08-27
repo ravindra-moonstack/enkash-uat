@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Define roles, set spending limits, and establish approval workflows with EnKash. Ensure policy compliance and full control over business expenses across teams.",
   alternates: {
-    canonical: "https://www.enkash.com/hierarchy-and-controls/",
+    canonical: `${process.env.URL}/hierarchy-and-controls/`,
   },
 })
 const salesUrl = getSalesUrl("/hierarchy-and-controls")

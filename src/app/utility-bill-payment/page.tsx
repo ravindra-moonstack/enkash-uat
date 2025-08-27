@@ -27,7 +27,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Manage and pay utility, vendor, credit card, and GST bills in one place with EnKash. Schedule, track, and automate business bill payments for better control.",
   alternates: {
-    canonical: "https://www.enkash.com/utility-bill-payment/",
+    canonical: `${process.env.URL}/utility-bill-payment/`,
   },
 })
 const salesUrl = getSalesUrl("/utility-bill-payment")

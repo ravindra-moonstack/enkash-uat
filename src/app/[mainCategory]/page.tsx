@@ -88,7 +88,7 @@ export async function generateMetadata({
       description:
         "The category you are looking for is not available, explore more in Bolt section.",
       alternates: {
-        canonical: `https://www.enkash.com/bolt/category/404`,
+        canonical: `${process.env.URL}/bolt/category/404`,
       },
     }
   }
@@ -104,7 +104,7 @@ export async function generateMetadata({
     alternates: {
       canonical:
         categoryMeta?.canonical ||
-        `https://www.enkash.com/bolt/category/${categoryData.name}`,
+        `${process.env.URL}/bolt/category/${categoryData.name}`,
     },
   }
 }

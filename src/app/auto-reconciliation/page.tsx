@@ -29,7 +29,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Automate payment reconciliation with EnKash. Match collections across sources, eliminate manual errors, and speed up financial reporting with real-time accuracy.",
   alternates: {
-    canonical: "https://www.enkash.com/auto-reconciliationr/",
+    canonical: `${process.env.URL}/auto-reconciliationr/`,
   },
 })
 const salesUrl = getSalesUrl("/auto-reconciliation")

@@ -11,7 +11,7 @@ export const metadata: Metadata = generateMetaData({
   title: "Thank You for Contacting Us",
   description:
     "We’ve got your message! The EnKash team will be in touch shortly to answer your query or request.",
-  alternates: { canonical: "https://www.enkash.com/confirmation-contact-us/" },
+  alternates: { canonical: `${process.env.URL}/confirmation-contact-us/` },
 })
 const ConfirmationContactUs = () => {
   return (

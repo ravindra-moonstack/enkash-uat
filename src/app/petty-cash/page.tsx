@@ -29,7 +29,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Go cashless with EnKash Petty Cash solution. Assign, track, and reconcile small business expenses in real time.",
   alternates: {
-    canonical: "https://www.enkash.com/petty-cash/",
+    canonical: `${process.env.URL}/petty-cash/`,
   },
 })
 const salesUrl = getSalesUrl("/petty-cash")

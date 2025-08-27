@@ -11,7 +11,7 @@ export const metadata: Metadata = generateMetaData({
   title: "Thank You for Contact Our Sales Team",
   description:
     "Thanks for connecting! Our sales team will reach out soon to show how EnKash can power your business payments.",
-  alternates: { canonical: "https://www.enkash.com/confirmation-sales/" },
+  alternates: { canonical: `${process.env.URL}/confirmation-sales/` },
 })
 const ConfirmationSales = () => {
   return (

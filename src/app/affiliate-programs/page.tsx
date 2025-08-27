@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./page.module.scss"
-import { Metadata } from "next"
+import BankSolutions from "@/components/partnerships/BankSolutions"
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -8,28 +8,24 @@ import {
   slideData,
   stepsData,
 } from "./data"
+import PartnershipSection from "@/components/partnerShipSlider/PartnershipSection"
+import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
+import FaqSection from "@/components/faqSection/faqSection"
 import faqData from "./faq-data"
-import {
-  BecomePartnerSteps,
-  BpHeroSection,
-  FaqSection,
-  PartnerShipForm,
-  BottomCtaSection,
-  PartnershipSection,
-  BankAffiliatePartnershipForm,
-  BankSolutions,
-  ProductsSection,
-} from "@/components"
+import PartnerShipForm from "@/components/partnerShip-form"
+import { BecomePartnerSteps, BpHeroSection , BankAffiliatePartnershipForm} from "@/components"
 import { coBrandImage, containerScreen, GalaxyTabImage, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
+import ProductsSection from "@/components/ourProductsSection"
 import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",
   description:
     "Partner with EnKash as an affiliate and earn rewards for every successful business referral. Promote smart spend and payment solutions with India’s leading fintech platform..",
   alternates: {
-    canonical: "https://www.enkash.com/affiliate-programs/",
+    canonical: `${process.env.URL}/affiliate-programs/`,
   },
 })
 const productsData = [
@@ -104,6 +100,10 @@ const partnershipsPage = (): React.JSX.Element => {
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
+          // buttons={[
+          //     { title: "Explore Cards", theme: "blue", url: "/products/corporate-cards" },
+          //     { title: "Explore Payment Gateway", theme: "blue", url: "/payment-gateway" }
+          // ]}
           slideData={slideData}
         />
       </div>

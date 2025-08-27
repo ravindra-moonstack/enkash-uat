@@ -10,7 +10,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Lost? The page you’re looking for isn’t here. Head to EnKash’s homepage to find the right business solution.",
   alternates: {
-    canonical: "https://www.enkash.com/not-found/",
+    canonical: `${process.env.URL}/not-found/`,
   },
 })
 
@@ -96,7 +96,7 @@ export default function NotFound() {
                       {
                         title: "Explore Our Blogs",
                         color: "color-dim-grey ",
-                        link: "https://www.enkash.com/resources/blog/",
+                        link: `${process.env.URL}/resources/blog/`,
                       },
                     ]}
                     headingTag="p"

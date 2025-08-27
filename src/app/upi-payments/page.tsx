@@ -36,7 +36,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Accept instant UPI payments with EnKash. Enable QR-based, link-based, and app-based UPI collections to streamline business transactions and boost cash flow.",
   alternates: {
-    canonical: "https://www.enkash.com/upi-payments/",
+    canonical: `${process.env.URL}/upi-payments/`,
   },
 })
 const salesUrl = getSalesUrl("/upi-payments")

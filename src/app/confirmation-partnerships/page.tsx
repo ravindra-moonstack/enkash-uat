@@ -10,7 +10,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Thanks for your interest in EnKash partnerships! Our team will connect soon to explore collaboration opportunities.",
   alternates: {
-    canonical: "https://www.enkash.com/confirmation-partnerships/",
+    canonical: `${process.env.URL}/confirmation-partnerships/`,
   },
 })
 const ConfirmationPartner = () => {

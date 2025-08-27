@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaData({
   title: "Thank You for Your Support Request",
   description:
     "Your support request is logged! Our team will contact you soon to resolve your issue quickly and efficiently.",
-  alternates: { canonical: "https://www.enkash.com/confirmation-support/" },
+  alternates: { canonical: `${process.env.URL}/confirmation-support/` },
 })
 const ConfirmationSupport = () => {
   return (

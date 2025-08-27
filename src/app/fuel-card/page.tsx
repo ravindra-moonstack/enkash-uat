@@ -24,7 +24,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify fuel expense management with EnKash Fuel Cards. Set usage limits, monitor spending in real time, and reduce fuel fraud for your business fleet.",
   alternates: {
-    canonical: "https://www.enkash.com/fuel-card/",
+    canonical: `${process.env.URL}/fuel-card/`,
   },
 })
 const salesUrl = getSalesUrl("/fuel-card")

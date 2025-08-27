@@ -30,7 +30,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Unlock better financial decisions with EnKash's Cashflow Analytics. Get real-time visibility, track inflows & outflows, and optimize working capital with smart insights.",
   alternates: {
-    canonical: "https://www.enkash.com/cashflow-analytics/",
+    canonical: `${process.env.URL}/cashflow-analytics/`,
   },
 })
 const salesUrl = getSalesUrl("/cashflow-analytics")

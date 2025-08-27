@@ -1,7 +1,5 @@
 import React from "react"
 import styles from "./page.module.scss"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import BankSolutions from "@/components/partnerships/BankSolutions"
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -10,26 +8,31 @@ import {
   slideData,
   stepsData,
 } from "./data"
-import PartnershipSection from "@/components/partnerShipSlider/PartnershipSection"
-import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
-import FaqSection from "@/components/faqSection/faqSection"
 import faqData from "./faq-data"
-import PartnerShipForm from "@/components/partnerShip-form"
-import { BecomePartnerSteps, BpHeroSection } from "@/components"
+import {
+  BecomePartnerSteps,
+  BpHeroSection,
+  PaymentGatewayPartnershipForm,
+  BuiltforBuildersSection,
+  PartnerShipForm,
+  FaqSection,
+  BottomCtaSection,
+  PartnershipSection,
+  BankSolutions,
+  DynamicHeading,
+} from "@/components"
 import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import Link from "next/link"
-import BuiltforBuildersSection from "@/components/BuiltforBuildersCard/BuiltforBuildersSection"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
-import BankAffiliatePartnershipForm from "@/components/bankAffiliatePartnershipForm/bankAffiliatePartnershipForm"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Gateway Partnerships",
   description:
     "Partner with EnKash to offer integrated payment gateway solutions. Expand your reach, boost transaction success rates, and deliver frictionless payment experiences to businesses.",
   alternates: {
-    canonical: "https://www.enkash.com/payment-gateway-partners/",
+    canonical: `${process.env.URL}/payment-gateway-partners/`,
   },
 })
 
@@ -187,7 +190,7 @@ const partnershipsPage = (): React.JSX.Element => {
             { id: 2, text: "Fast activation for your clients" },
             { id: 3, text: "Dedicated support for accelerated growth" },
           ]}
-          formComponent={<BankAffiliatePartnershipForm />}
+          formComponent={<PaymentGatewayPartnershipForm />}
         />
       </div>
     </div>

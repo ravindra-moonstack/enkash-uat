@@ -41,7 +41,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
   alternates: {
-    canonical: "https://www.enkash.com/payment-gateway/",
+    canonical: `${process.env.URL}/payment-gateway/`,
   },
 })
 const salesUrl = getSalesUrl("/payment-gateway")

@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify employee reimbursements with EnKash. Submit, approve, and settle expense claims digitally—boost transparency, compliance, and employee satisfaction.",
   alternates: {
-    canonical: "https://www.enkash.com/reimbursements/",
+    canonical: `${process.env.URL}/reimbursements/`,
   },
 })
 const salesUrl = getSalesUrl("/reimbursements")

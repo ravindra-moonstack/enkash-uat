@@ -21,7 +21,7 @@ const faqData: FAQDataItem[] = [
           consolidating expenses scattered across platforms. These purpose-based
           cards enable businesses to manage{" "}
           <Link
-            href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
+            href={`${process.env.URL}/resources/blog/enkash-corporate-cards-for-digital-marketers/`}
             target="_blank"
           >
             digital marketing expenses
@@ -62,7 +62,7 @@ const faqData: FAQDataItem[] = [
         <h4>
           Companies can issue this{" "}
           <Link
-            href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
+            href={`${process.env.URL}/resources/blog/enkash-corporate-cards-for-digital-marketers/`}
             target="_blank"
           >
             corporate card for digital marketing

@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Generate and manage digital receipts for every business transaction with EnKash. Automate collections, track payment status, and improve cash flow visibility.",
   alternates: {
-    canonical: "https://www.enkash.com/receipts/",
+    canonical: `${process.env.URL}/receipts/`,
   },
 })
 const salesUrl = getSalesUrl("/receipts")
