@@ -288,7 +288,7 @@ const integrationData = [
   {
     title: "Email & App Uploads",
     description:
-      "Forward receipts via email or upload through the mobile app—EnKash extracts and processes them instantly..",
+      "Forward receipts via email or upload through the mobile app—EnKash extracts and processes them instantly.",
     icon: mailIcon,
   },
   {
@@ -319,13 +319,13 @@ const paymentMethodData = [
     icon: autoCalculateIcon,
   },
   {
-    title: "Policy-Aware Routing & Approval:",
+    title: "Policy-Aware Routing & Approval",
     description:
       "Every travel request and per diem is validated against policies, with real-time flagging of exceptions and automated routing to approvers.",
     icon: awareIcon,
   },
   {
-    title: "Integrated Budget Control:",
+    title: "Integrated Budget Control",
     description:
       "Finance teams gain full visibility into projected travel spends, helping them control budgets, ensure compliance, and streamline reimbursements.",
     icon: integreatedControlIcon,
@@ -334,25 +334,25 @@ const paymentMethodData = [
 
 const dashboardData = [
   {
-    title: "Digital Wallets for Teams & Branches:",
+    title: "Digital Wallets for Teams & Branches",
     description:
       "Auto-assign digital wallets to control everyday spends across teams, instantly.",
     icon: walletlIcon,
   },
   {
-    title: "Controlled & Pre-Approved Limits:",
+    title: "Controlled & Pre-Approved Limits",
     description:
       "Set spending caps, and usage rules to prevent misuse or overspending.",
     icon: controlIcon,
   },
   {
-    title: "Real-Time UPI Tracking:",
+    title: "Real-Time UPI Tracking",
     description:
       "Every transaction is instantly recorded, no manual logging, no missed entries.",
     icon: trackIcon,
   },
   {
-    title: "From Cash to Compliant:",
+    title: "From Cash to Compliant",
     description:
       "Convert untraceable cash into fully accountable digital transactions with complete audit trails.",
     icon: cashIcon,
@@ -361,25 +361,25 @@ const dashboardData = [
 
 const rankData = [
   {
-    title: "Tax-Saving, Pre-Configured Wallets:",
+    title: "Tax-Saving, Pre-Configured Wallets",
     description:
       "Get smart wallets with pre-set monthly limits for categories like travel and meals—aligned with your company’s policies.",
     icon: taxSaveIcon,
   },
   {
-    title: "Instant Access, No Bank Transfers:",
+    title: "Instant Access, No Bank Transfers",
     description:
       "Once your claim is approved, funds are instantly added to your wallet, ready to use via EnKash cards.",
     icon: instantAcessIcon,
   },
   {
-    title: "Auto-Verified, OCR-Backed Claims:",
+    title: "Auto-Verified, OCR-Backed Claims",
     description:
       "Just scan your receipts, AI-powered OCR takes care of accurate and fast claim validation.",
     icon: verifiedIcon,
   },
   {
-    title: "Full Visibility & Year-Round Compliance:",
+    title: "Full Visibility & Year-Round Compliance",
     description:
       "Track your balances, limits, and spends in real-time while staying compliant and audit-ready.",
     icon: visibilityIcon,

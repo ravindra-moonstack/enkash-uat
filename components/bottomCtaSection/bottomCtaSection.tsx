@@ -17,7 +17,7 @@ const BottomCtaSection: React.FC<BottomCtaSectionProps> = ({
   headingPart2 = "When 1 Can Do It All?",
   subText = "Make the Switch Today!",
   buttonText = "Get Started",
-  buttonHref = "/sales?source=home",
+  buttonHref = "/sales?source=homepage",
 }) => {
   return (
     <div className={`${styles.bottomCtaSection}`}>

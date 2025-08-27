@@ -47,8 +47,8 @@ const partnershipsPage = (): React.JSX.Element => {
         breadcrumbs={{
           items: [
             { name: "Home", url: "/" },
-            { name: "Partnerships", url: "/partnerships" },
-            { name: "PG Partnerships", url: "/payment-gateway-partners" },
+            { name: "Partnerships", url: "#" },
+            { name: "Payment Gateway", url: "/payment-gateway-partners" },
           ],
           linkColor: "white",
         }}
@@ -80,7 +80,7 @@ const partnershipsPage = (): React.JSX.Element => {
         <PartnershipSection
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
-          description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
+          description="Whether you're a tech innovator, service provider, or business enabler, EnKash’s payment gateway partner program is tailored for you."
           buttons={[
             { title: "Explore ", theme: "blue", url: "#partnership-form" },
           ]}

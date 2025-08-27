@@ -33,19 +33,36 @@ import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
+  autoCollect,
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  instant,
   notificationImage,
+  paymentButton,
+  paymentGatewayImg,
+  paymentLink,
   paymentLinkImage,
   paymentOptionImage,
+  qrCodes,
+  realTimeExpense,
+  realTimeExpenseIcon,
   reduceFrauds,
+  reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
   shareImage,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   taskIconFive,
   taskIconFour,
   taskIconOne,
   taskIconThree,
   taskIconTwo,
+  TravelIcon,
+  TravelImage,
 } from "."
 
 const dataSets = [
@@ -130,7 +147,7 @@ const cardsData = [
     icon: scrollIconOne,
   },
   {
-    title: "Customise Reconciliation Rules",
+    title: "Customize Reconciliation Rules",
     description:
       "Define rules to match transactions, invoices, and payments automatically based on your business needs.",
     icon: scrollIconTwo,
@@ -424,7 +441,92 @@ const allInOnePolicies = [
     maxImageHeight: "305px",
   },
 ]
-
+const stackcardData = [
+  {
+    color: "#fff", 
+    icon: realTimeExpenseIcon,
+    title: "Accuracy",
+    description: `EnKash's automated system significantly improves accuracy by minimizing human intervention. The advanced algorithms ensure precise data extraction and validation, contributing to a more reliable reconciliation process.`,
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Visibility",
+    description: `With EnKash, get clear visibility into your cash flow status and ensure all your business payments are processed on time, fostering better relationships.`,
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Cost Efficiency",
+    description: `With EnKash, you can make the whole process more cost-effective, as it reduces the reliance on manual labour. The streamlined process leads to operational efficiency, minimising the risk of costly errors.`,
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Integration",
+    description: `EnKash offers seamless integration with various accounting and ERP systems. This interoperability ensures a smooth flow of information across different platforms, enhancing overall efficiency and connectivity.`,
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: TravelIcon,
+    title: "Scalability",
+    description: `EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency.`,
+    image: TravelImage,
+    buttonUrl: "/sales",
+  },
+]
+const managementCards = [
+  {
+    titleHtml: "Payment Gateway",
+    description: "A no-code solution to effortlessly collect payments across various channels, guaranteeing you never miss a transaction.",
+    cardImage: paymentGatewayImg,
+    linkUrl: "/payment-gateway",
+  },
+  {
+    titleHtml: "Payment Link",
+    description: "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
+    cardImage: paymentLink,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "Payment Button",
+    description: "Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description: "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
+    cardImage: qrCodes,
+    linkUrl: "/qr-code",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description: "Easily accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Instant Settlement",
+    description: "Get instant access to your funds, skip traditional settlement cycles, and take full control of your cash flow.",
+    cardImage: instant,
+    linkUrl: "/instant-settlement",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description: "Eliminate manual reminders and automate your business collections effortlessly for smoother cash flow management.",
+    cardImage: reminder,
+    linkUrl: "/collection-reminder",
+  },
+];
 export {
   blogData,
   dataSets,
@@ -437,5 +539,5 @@ export {
   rankData,
   supportData,
   savingData,
-  allInOnePolicies,
+  allInOnePolicies,stackcardData,managementCards
 }

@@ -37,7 +37,7 @@ const cards = stackcardData.map((item, index) => ({
   content: (
     <AllInOnePolicy
       key={index}
-      buttonText="Get Started"
+      buttonText="Learn More"
       icon={item.icon}
       title={item.title}
       description={item.description}
@@ -275,8 +275,6 @@ const BudgetAndAdvances = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
-
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
@@ -310,6 +308,8 @@ const BudgetAndAdvances = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
+      <FaqSection faqData={faqData} />
     </div>
   )
 }
