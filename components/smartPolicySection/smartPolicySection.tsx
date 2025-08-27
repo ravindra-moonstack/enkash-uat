@@ -21,7 +21,7 @@ const SmartPolicySection = ({
   approvedImage,
   showScroll = true,
   buttonTitle = "Explore Policy Controls",
-  buttonUrl = "/policies/privacy-policy",
+  buttonUrl = "/approval-flows",
   buttonIcon,
 }: SmartPolicySectionProps) => {
   return (
