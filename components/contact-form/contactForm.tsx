@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+import React, { useState } from "react"
 import Script from "next/script"
 import styles from "./contactForm.module.scss"
 import { DynamicHeading } from "@/components"
@@ -21,6 +21,8 @@ const ContactForm: React.FC = () => {
 
   const router = useRouter()
 
+  const [loading, setLoading] = useState<boolean>(false)
+
   const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
     useFormik({
       initialValues: contactInitialValue,
@@ -32,6 +34,7 @@ const ContactForm: React.FC = () => {
 
   const onSubmitForm = async (values: TContactInitialValueProp) => {
     try {
+      setLoading(true)
       const formData = new FormData()
 
       Object.entries(values).forEach(([key, value]) => {
@@ -53,8 +56,10 @@ const ContactForm: React.FC = () => {
           },
         }
       )
+      setLoading(false)
       router.push("/confirmation-contact-us")
     } catch (error) {
+      setLoading(false)
       throw error
     }
   }
@@ -138,15 +143,15 @@ const ContactForm: React.FC = () => {
             name="MultiLine"
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
           />
-      
+
           <p className={styles.privacy}>
             By submitting this form, you are agreeing to our{" "}
             <Link href="/privacy-policy" className={styles.privacyLink}>
               privacy policy
             </Link>
           </p>
-          <button type="submit" className={styles.submitBtn}>
-            Submit
+          <button type="submit" disabled={loading} className={styles.submitBtn}>
+            {loading ? "..." : "Submit"}
           </button>
         </form>
       </div>

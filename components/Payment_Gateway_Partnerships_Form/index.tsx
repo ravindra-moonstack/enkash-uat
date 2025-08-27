@@ -62,7 +62,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
         }
       )
       setLoading(false)
-      router.push("/confirmation-sales")
+      router.push("/confirmation-partnerships")
     } catch (error) {
       setLoading(false)
       throw error
@@ -191,7 +191,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
         </p>
 
         <button type="submit" disabled={loading} className={styles.submitBtn}>
-          {loading ? "Loading" : "Submit"}
+          {loading ? "..." : "Submit"}
         </button>
       </form>
     </div>
