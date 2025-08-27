@@ -3,6 +3,7 @@
 import { useState } from "react"
 import styles from "../button.module.scss"
 import Image, { StaticImageData } from "next/image"
+import { useRouter } from "next/navigation"
 
 // ✅ Extract a shared type so you can reuse it anywhere:
 export type RectangleButtonTheme =
@@ -39,11 +40,15 @@ const RectangleButton = ({
   className,
   hoverImage,
 }: ButtonProps) => {
-  const [isHovered, setIsHovered] = useState(false)
+  //
+
+  const [isHovered, setIsHovered] = useState<boolean>(false)
+
+  const router = useRouter()
 
   const handleClick = () => {
     if (typeof url === "string") {
-      window.location.href = url //
+      router.push(url)
     } else if (typeof url === "function") {
       url()
     }

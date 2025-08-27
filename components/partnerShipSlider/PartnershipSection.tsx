@@ -6,7 +6,7 @@ import PartnershipSlider from "./PartnershipSlider"
 
 import "./PartnershipSection.scss"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
-import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import RectangleButton from "../buttons/rectangle-button"
 
 interface SlideData {
   id: number

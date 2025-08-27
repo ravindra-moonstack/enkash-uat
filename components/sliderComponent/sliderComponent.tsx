@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css"
 import styles from "./sliderComponent.module.scss"
 import CustomBreadcrumb from "../breadcrumb/breadbrumb"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
-import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import RectangleButton from "../buttons/rectangle-button"
 import Image, { StaticImageData } from "next/image"
 import { useMemo } from "react"
 

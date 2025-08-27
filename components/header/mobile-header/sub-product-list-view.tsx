@@ -2,7 +2,7 @@ import Image from "next/image"
 import styles from "./mobile-header.module.scss"
 import { Fragment } from "react"
 import Link from "next/link"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import RectangleButton from "@/components/buttons/rectangle-button"
 import { blueArrowUp } from ".."
 
 interface SubProductListViewProps {
@@ -51,7 +51,8 @@ const SubProductListView = ({
         {sections.map((section, secIndex) => {
           // Define background color based on index
           let backgroundColor = "#FFFFFF" // default (2nd)
-          if (secIndex === 0) backgroundColor = "#F6FCFF" // first
+          if (secIndex === 0)
+            backgroundColor = "#F6FCFF" // first
           else if (secIndex === 2) backgroundColor = "#F0F0F0" // third
 
           return (
@@ -132,11 +133,7 @@ const SubProductListView = ({
           className={`d-flex justify-content-center ${styles.buttons_container}`}
         >
           <RectangleButton title="Talk to Sales" theme="blue" url={signupUrl} />
-          <RectangleButton
-            title="Log In"
-            theme="outline-blue"
-            url=""
-          />
+          <RectangleButton title="Log In" theme="outline-blue" url="" />
         </div>
       </div>
     </div>

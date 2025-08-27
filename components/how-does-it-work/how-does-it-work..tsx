@@ -4,7 +4,7 @@ import { Key, useEffect, useState } from "react"
 import styles from "./how-does-it-work.module.scss"
 import Image from "next/image"
 import blueArrow from "./blue-arrrow.svg"
-import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import RectangleButton from "../buttons/rectangle-button"
 import { whiteArrow } from "../all-in-one-policy"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import { useSalesUrl } from "@/common/utils/useSalesUrl"
@@ -107,8 +107,9 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
             {dataSets.map((_: any, index: Key) => (
               <span
                 key={index}
-                className={`${styles.bar} ${currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
-                  } cursor-pointer`}
+                className={`${styles.bar} ${
+                  currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
+                } cursor-pointer`}
                 onClick={() => handleSpanClick(index as number)}
               />
             ))}

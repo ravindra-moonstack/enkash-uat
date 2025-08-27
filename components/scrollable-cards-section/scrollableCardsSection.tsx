@@ -3,7 +3,7 @@
 import * as React from "react"
 import styles from "./scrollable-cards-section.module.scss"
 import PolicyCard from "../policyCard/policyCard"
-import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import RectangleButton from "../buttons/rectangle-button"
 
 interface CardData {
   url?: string
