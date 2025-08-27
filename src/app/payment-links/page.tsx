@@ -444,7 +444,7 @@ const PaymentLinks = (): React.JSX.Element => {
               subtitleOne: "Event Tickets",
               descriptionOne:
                 " Event organizers can use payment links to sell tickets online, providing a convenient and secure payment option.",
-              subtitleTwo: "Workshop or Class Registration: ",
+              subtitleTwo: "Workshop or Class Registration ",
               descriptionTwo:
                 " Payment links can be used to collect registration fees for workshops, classes, or other events.",
               icon: registrationFeesIcon,

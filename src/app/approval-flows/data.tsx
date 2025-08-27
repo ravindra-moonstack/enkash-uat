@@ -112,6 +112,7 @@ const stackcardData = [
     description:
       "With EnKash, policies can be created on the platform as per the company's requirements and can be viewed easily on the dashboard.",
     image: realTimeExpense,
+    buttonText: "Learn More",
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "300px",
   },
@@ -119,6 +120,7 @@ const stackcardData = [
     color: "#eee",
     icon: fraudProtectionIcon,
     title: "Policy Enforcement",
+    buttonText: "Learn More",
     description:
       "Built-in policy enforcement and tracking features for different departments and employee grades to ensure adherence to spending policies.",
     image: fraudProtection,

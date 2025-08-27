@@ -120,6 +120,7 @@ const stackcardData = [
     description:
       "Ensure confidentiality and compliance of your financial data with our robust encryption and security measures.",
     image: realTimeExpense,
+    buttonText: "Learn More",
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "300px",
   },

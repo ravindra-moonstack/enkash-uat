@@ -35,14 +35,12 @@ import options from "./img/options.png"
 import {
   autoCollect,
   instant,
-  invoices,
   notificationImage,
   paymentButton,
   paymentGatewayImg,
   paymentLink,
   paymentLinkImage,
   paymentOptionImage,
-  paymentPage,
   qrCodes,
   reminder,
   scrollIconOne,
@@ -451,12 +449,6 @@ const managementCards = [
     description: "Easily accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
     cardImage: autoCollect,
     linkUrl: "/auto-collect",
-  },
-  {
-    titleHtml: "Invoices",
-    description: "Automate recurring invoicing, track sales, and payments, and create bulk invoices with embedded payment links.",
-    cardImage: invoices,
-    linkUrl: "/invoices",
   },
   {
     titleHtml: "Instant Settlement",

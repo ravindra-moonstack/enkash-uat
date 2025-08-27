@@ -57,8 +57,8 @@ const allProductSections = [
     subtitle: "Manage every spend effortlessly",
     items: [
       {
-        title: "Automated Reminders ",
-        description: "Never miss a due date with timely alerts.",
+        title: "Automated Workflows",
+        description: "Save hours with automated invoice uploads, approval workflows, and payment processing.",
         image: crouselIconOne,
       },
       {
