@@ -21,7 +21,7 @@ import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
-import PaymentGatewayPartnershipForm from "@/components/Payment_Gateway_Partnerships_Form/paymentGatewayPartnershipForm"
+import PaymentGatewayPartnershipForm from "@/components/Payment_Gateway_Partnerships_Form"
 export const metadata: Metadata = generateMetaData({
   title: "Partner with Us: Bank Partnerships",
   description:
