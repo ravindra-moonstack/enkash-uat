@@ -58,7 +58,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Automate and control business expenses with EnKash. Track spending in real-time, set budgets, manage reimbursements, and streamline finance workflows on one platform.",
   alternates: {
-    canonical: "https://www.enkash.com/expense-management/",
+    canonical: `${process.env.URL}/expense-management/`,
   },
 })
 const salesUrl = getSalesUrl("/expense-management")

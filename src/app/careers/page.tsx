@@ -8,7 +8,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Build your career with EnKash. Explore open roles in product, engineering, sales, and more. Join us in shaping the future of B2B payments and financial automation.",
   alternates: {
-    canonical: "https://www.enkash.com/careers",
+    canonical: `${process.env.URL}/careers`,
   },
 })
 

@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Send instant payouts without collecting bank details. With EnKash Express Pay, use mobile numbers or UPI IDs to pay vendors, partners, or gig workers seamlessly.",
   alternates: {
-    canonical: "https://www.enkash.com/bulk-pay/",
+    canonical: `${process.env.URL}/bulk-pay/`,
   },
 })
 const salesUrl = getSalesUrl("/bulk-pay")

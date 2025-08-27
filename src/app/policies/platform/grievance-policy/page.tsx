@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "See how we resolve platform-related queries with efficiency and transparency.",
   alternates: {
-    canonical: "https://www.enkash.com/policies/platform/grievance-policy",
+    canonical: `${process.env.URL}/policies/platform/grievance-policy`,
   },
 })
 

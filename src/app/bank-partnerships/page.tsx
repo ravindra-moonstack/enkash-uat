@@ -27,7 +27,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Collaborate with EnKash to offer innovative payment, card, and spend management solutions. Partner with us to enhance customer experience and drive digital banking growth.",
   alternates: {
-    canonical: "https://www.enkash.com/bank-partnerships/",
+    canonical: `${process.env.URL}/bank-partnerships/`,
   },
 })
 const partnershipsPage = (): React.JSX.Element => {

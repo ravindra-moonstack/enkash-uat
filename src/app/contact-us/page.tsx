@@ -18,7 +18,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Have questions about EnKash products or services? Reach out to our team for sales inquiries, support, or partnership opportunities. We’re here to help your business grow.",
   alternates: {
-    canonical: "https://www.enkash.com/contact-us/",
+    canonical: `${process.env.URL}/contact-us/`,
   },
 })
 

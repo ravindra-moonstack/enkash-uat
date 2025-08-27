@@ -9,7 +9,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Learn how EnKash addresses complaints with a fair, timely, and transparent resolution process.",
   alternates: {
-    canonical: "https://www.enkash.com/policies/grievance-policy",
+    canonical: `${process.env.URL}/policies/grievance-policy`,
   },
 })
 const tabs = [{ key: "payments" }, { key: "prepaid" }, { key: "platform" }]

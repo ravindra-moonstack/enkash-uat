@@ -41,7 +41,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Create and distribute digital gift cards with EnKash. Personalize rewards for employees, clients, or partners—perfect for festive gifting and engagement programs.",
   alternates: {
-    canonical: "https://www.enkash.com/gift-cards/",
+    canonical: `${process.env.URL}/gift-cards/`,
   },
 })
 const salesUrl = getSalesUrl("/gift-cards")

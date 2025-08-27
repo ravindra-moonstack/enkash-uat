@@ -22,7 +22,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Streamline vendor payouts with EnKash. Automate payments, track due dates, and simplify reconciliation—save time and reduce errors in your accounts payable.",
   alternates: {
-    canonical: "https://www.enkash.com/vendor-payment/",
+    canonical: `${process.env.URL}/vendor-payment/`,
   },
 })
 const salesUrl = getSalesUrl("/vendor-payment")
@@ -157,8 +157,9 @@ const VendorPayment = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
-                  }`}
+                className={` mt-md-5 ${
+                  showScroll ? "overflow-auto scrollbar-thin" : ""
+                }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",

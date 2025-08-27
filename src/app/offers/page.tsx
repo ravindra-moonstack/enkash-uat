@@ -32,7 +32,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Unlock exclusive EnKash offers on business payments, cards, rewards, and partner deals. Save more while you manage expenses smarter across all business needs.",
   alternates: {
-    canonical: "https://www.enkash.com/offers/",
+    canonical: `${process.env.URL}/offers/`,
   },
 })
 const salesUrl = getSalesUrl("/offers")

@@ -10,7 +10,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Review our policies governing the use of EnKash products and services.",
   alternates: {
-    canonical: "https://www.enkash.com/policies/tnc",
+    canonical: `${process.env.URL}/policies/tnc`,
   },
 })
 const tabs = [{ key: "payments" }, { key: "prepaid" }, { key: "platform" }]

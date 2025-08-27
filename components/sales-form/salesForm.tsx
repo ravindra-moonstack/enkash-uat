@@ -2,7 +2,6 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import { useFormik } from "formik"
-import axios from "axios"
 import { useRouter } from "next/navigation"
 
 import styles from "./salesForm.module.scss"
@@ -18,6 +17,7 @@ import {
   TSalesInitialValueProp,
 } from "./formik"
 import { categoryOptions, options } from "./data"
+import axios from "axios"
 
 const SalesForm: React.FC = () => {
   //

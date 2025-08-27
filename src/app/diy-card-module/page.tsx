@@ -35,7 +35,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Design, issue, and manage physical or virtual cards on demand with EnKash’s DIY Card Module. Customize controls, set limits, and enable smart expense tracking.",
   alternates: {
-    canonical: "https://www.enkash.com/diy-card-module/",
+    canonical: `${process.env.URL}/diy-card-module/`,
   },
 })
 const salesUrl = getSalesUrl("/diy-card-module")

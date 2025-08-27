@@ -29,7 +29,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Digitize your invoice workflow with EnKash. Create, share, approve, and reconcile invoices faster—streamline accounts payable and improve cash flow visibility.",
   alternates: {
-    canonical: "https://www.enkash.com/invoice-management/",
+    canonical: `${process.env.URL}/invoice-management/`,
   },
 })
 const salesUrl = getSalesUrl("/invoice-management")

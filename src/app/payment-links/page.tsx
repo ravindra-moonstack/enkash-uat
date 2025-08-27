@@ -44,7 +44,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Create and share secure payment links in seconds—no coding needed. Accept UPI, cards, and net banking with EnKash’s powerful payment link solution.",
   alternates: {
-    canonical: "https://www.enkash.com/payment-links/",
+    canonical: `${process.env.URL}/payment-links/`,
   },
 })
 const salesUrl = getSalesUrl("/payment-links")

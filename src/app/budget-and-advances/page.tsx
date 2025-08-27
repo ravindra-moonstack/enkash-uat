@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Allocate budgets, issue advances, and monitor usage in real-time with EnKash. Gain complete control over employee spends and ensure policy-compliant expenses.",
   alternates: {
-    canonical: "https://www.enkash.com/budget-and-advances/",
+    canonical: `${process.env.URL}/budget-and-advances/`,
   },
 })
 const salesUrl = getSalesUrl("/budget-and-advances")

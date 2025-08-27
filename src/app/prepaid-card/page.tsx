@@ -22,7 +22,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Empower your teams with EnKash’s corporate prepaid cards. Control spending, track expenses in real-time, and manage business payments effortlessly and securely.",
   alternates: {
-    canonical: "https://www.enkash.com/prepaid-card/",
+    canonical: `${process.env.URL}/prepaid-card/`,
   },
 })
 const salesUrl = getSalesUrl("/prepaid-card")
