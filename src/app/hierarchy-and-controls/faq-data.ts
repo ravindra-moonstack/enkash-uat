@@ -1,60 +1,115 @@
 const faqData = [
   {
-    question: "What is Affordability Suite?",
+    question: "What is department management?",
     answer: [
       {
         heading:
-          "EnKash’s affordability suite is a set of offers designed to make purchases flexible via EMI options, cashback, discounts, and exchange deals.",
+          "Department management involves establishing approval hierarchies within different departments based on the criticality of expenses and the urgency of payment decisions. It enables effective control over how various departments handle their business expenses while maintaining the integrity of approval processes and associated documentation.",
       },
     ],
   },
   {
-    question: "Who is eligible to use the Affordability Suite?",
+    question: "Why is effective department management vital for your business?",
     answer: [
       {
         heading:
-          "Any registered business on the EnKash platform can access affordability options, subject to eligibility based on payment methods or partner terms.",
+          "Efficient department management with expense ensures that all departments can manage their payments and expenses without overloading the central finance team. Expense management and customizable roles provide the necessary checks and approvals, meeting internal controls & auditing requirements seamlessly.",
       },
     ],
   },
   {
-    question: "What payment options are available with Affordability Suite?",
+    question: "Does the department management module help improve the finance team’s performance? If yes, how?",
     answer: [
       {
         heading:
-          "You can access no-cost EMI, credit/debit card offers, and pay-later options depending on your bank, card, or transaction size.",
+          "Yes, it enhances the finance team's performance by eliminating the repetitive tasks of checking payment requests, chasing approvals, and collecting invoices. With the easy onboarding of employees on Expense, the finance team's workload is reduced, making the internal controls and auditing process quicker and more efficient.",
       },
     ],
   },
   {
     question:
-      "How do I know if my transaction qualifies for affordability offers?",
+      "Why should every business consider streamlining department management?",
     answer: [
       {
         heading:
-          "Simply proceed to checkout and select your payment method, and eligible affordability options will be displayed automatically.",
+          "Businesses can benefit from EnKash's department management module in several ways:",
       },
-    ],
-  },
-  {
-    question: "How can my customer use PayLater?",
-    answer: [
       {
-        heading:
-          "Customers can use PayLater as a payment option at EnKash’s checkout. However, before making a payment, customers would have to be registered with one of EnKash’s PayLater partners.",
-      },
-    ],
-  },
-  {
-    question: "What is the difference between Cardless EMI & PayLater?",
-    answer: [
-      {
-        heading:
-          "Cardless EMI and PayLater are both flexible payment options, but they differ in how they work:",
         bullets: [
-          "Cardless EMI allows customers to convert their purchases into EMIs without using a debit or credit card. It’s usually linked to a customer’s mobile number and requires approval from a lending partner or BNPL provider at checkout.",
-          "PayLater lets customers defer the full payment to a later date—typically 15 to 30 days—without splitting it into installments. It's more like a short-term credit line.",
+          "Quick approvals: All expense-related issues can be resolved at the first level of approval",
+          "Easy Onboarding: A user-friendly onboarding process that is easy to follow and assess when required",
+          "Transparency: Ensures that the internal controls &  auditing and reconciliation process occurs without delays",
+          "Efficiency: Expenses are supported by the correct approval, reducing the risk of overspending",
         ],
+      },
+    ],
+  },
+  {
+    question: "How does the department management module reduce business fraud?",
+    answer: [
+      {
+        heading:
+          "EnKash’s department management module acts as a safeguard against business fraud. Ensuring that teams do not exceed their budgets and that all expenses are monitored and approved effectively reduces unnecessary expenses and financial discrepancies.",
+      },
+    ],
+  },
+  {
+    question: "Seeking Further Understanding of Hierarchy and Control? Explore the Comprehensive Guide",
+    answer: [
+      {
+        heading:
+          "Hierarchy and control within an organization are critical elements that define the structure, authority, and decision-making processes. Understanding hierarchy in a company is crucial as it defines the flow of authority and responsibility. In practice, countless businesses exemplify various forms of hierarchy, each tailored to their unique needs.",
+      },
+    ],
+  },
+  {
+    question: "What is the role of approval hierarchies in expense management?",
+    answer: [
+      {
+        heading:
+          "Approval hierarchies provide a defined structure to determine how expense reports will be reviewed and approved within the organization. Businesses can initiate a transparent process for managing expenses with approval hierarchies and reduce the risk of unauthorized expenses.",
+      },
+    ],
+  },
+  {
+    question:
+      "What are the benefits of expense approval hierarchies?",
+    answer: [
+      {
+        heading:
+          "Here are some benefits of expense approval system:",
+      },
+      {
+        bullets: [
+          "Accountability: The immediate manager reviews an expense report, which is then sent to the next level for further review and approval",
+          "Transparency: This gives insights into spend patterns and helps make better budget and saving decisions",
+          "Decision-making: Businesses can define the authority levels and associated spend limits, allowing the employees to make decisions within the limits",
+        ],
+      },
+    ],
+  }, {
+    question:
+      "How do approval hierarchies help reduce financial risk management?",
+    answer: [
+      {
+        heading:
+          "Approval hierarchies help reduce financial risk management in the following ways:",
+      },
+      {
+        bullets: [
+          "Multiple individuals review and verify the expense claims, leaving no room for errors",
+          "Since expenses are accessible to multiple departments, there is less opportunity to manipulate the documents",
+          "Businesses can impose spend guidelines and prevent non-compliant expenses by stopping reimbursement if there is overspending",
+          "The approvers in the hierarchy process are accountable for approved expenses",
+        ],
+      },
+    ],
+  }, {
+    question: "How do approval hierarchies impact decision decision-making in businesses?",
+    answer: [
+      {
+        heading:
+          "The expense approval system enables managers to make expense-related decisions. The organizations can define the approval hierarchy and fast-track decision-making. A well-defined hierarchy ensures there are no unnecessary delays at work since managers have the authority to approve if they believe a particular expense is necessary and requires immediate action.",
       },
     ],
   },
