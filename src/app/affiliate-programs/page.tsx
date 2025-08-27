@@ -67,7 +67,7 @@ const partnershipsPage = (): React.JSX.Element => {
         breadcrumbs={{
           items: [
             { name: "Home", url: "/" },
-            { name: "Partnerships", url: "/partnerships" },
+            { name: "Partnerships", url: "#" },
             { name: "Affiliate Program", url: "/affiliate-programs" },
           ],
           linkColor: "white",

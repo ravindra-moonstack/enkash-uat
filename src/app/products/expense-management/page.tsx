@@ -74,6 +74,7 @@ const cards = stackcardData.map((item: any) => ({
       image={item.image}
       buttonUrl={salesUrl}
       maxImageHeight="300px"
+      buttonText="Learn More"
     />
   ),
 }))
@@ -100,11 +101,11 @@ const ExpenseManagement = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Create, Track & Submit Expenses.",
+                    title: "Create, Track & Submit Expenses ",
                     color: "color-black d-block text-center",
                   },
                   {
-                    title: "Now on WhatsApp",
+                    title: "Now on WhatsApp.",
                     color: "color-equity-blue d-block text-center",
                   },
                 ]}
@@ -164,7 +165,8 @@ const ExpenseManagement = (): React.JSX.Element => {
           imageSrc={receipt}
           imageAlt="card background"
           bgColor="bg-color-soft-mint"
-          buttonUrl={salesUrl}
+          buttonUrl='/budget-and-advances'
+          buttonTitle="Learn More"
         />
         <ContentShowcase
           heading="UPI- Based Petty Cash"
@@ -172,17 +174,19 @@ const ExpenseManagement = (): React.JSX.Element => {
           data={dashboardData}
           imageSrc={upi}
           imageAlt="card background"
-          buttonUrl={salesUrl}
+          buttonUrl="/petty-cash"
+          buttonTitle="Learn More"
           reverse
         />
         <ContentShowcase
-          heading="Employee Reimbursements with Smart Wallets."
+          heading="Employee Reimbursements with Smart Wallets"
           subheading="Automate category-wise allowances, get instant access to funds, and breeze through compliance."
           data={rankData}
           imageSrc={walletExpense}
           imageAlt="card background"
           bgColor="bg-color-soft-mint"
-          buttonUrl={salesUrl}
+          buttonUrl="/reimbursements"
+          buttonTitle="Learn More"
         />
       </div>
 
@@ -311,7 +315,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         className={`${styles.sixth_row} bg_white_index row d-flex bg-white `}
       >
         <EnkashWay
-          sectionHeading="One Platform, Every Use Case, Total Control"
+          sectionHeading="One Platform. Every Use Case. Total Control."
           progressItemPadding="15px 12px"
           progressData={[
             {

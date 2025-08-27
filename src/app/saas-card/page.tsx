@@ -73,7 +73,7 @@ const SaasCards = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Saas Card",
+                  title: "SaaS Card",
                   color: "color-white underline",
                 },
               ]}

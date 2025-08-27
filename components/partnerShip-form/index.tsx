@@ -27,7 +27,7 @@ const PartnerShipForm: React.FC<PartnerShipFormProps> = ({
 }) => {
   return (
     <div className={`${styles.partnerform} max-w-auto`}>
-      <div className={styles.content}>
+      {/* <div className={styles.content}> */}
         {/* Left Section */}
         <div className="row">
           <div className="col-md-6 col-12">
@@ -93,7 +93,7 @@ const PartnerShipForm: React.FC<PartnerShipFormProps> = ({
             <div className={styles.rightSection}>{formComponent}</div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </div>
   )
 }

@@ -38,7 +38,7 @@ const bankSolutions = [
     {
         title: "Supply Chain Finance",
         content:
-            "Empower your corporate clients to unlock working capital and optimize cash flow through dynamic discounting and flexible supply chain financing seamlessly delivered via your banking infrastructure..",
+            "Empower your corporate clients to unlock working capital and optimize cash flow through dynamic discounting and flexible supply chain financing seamlessly delivered via your banking infrastructure.",
     },
     {
         title: "Cashback Reconciliation & Automation    ",
@@ -94,7 +94,7 @@ const stepsData = [
     {
         stepNumber: "Step 1",
         title: "Connect with Us",
-        description: "Mail us or fill the form below for our team to reach out to us.",
+        description: "Mail us or fill the form below for our team to reach out to you.",
     },
     {
         stepNumber: "Step 2",

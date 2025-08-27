@@ -394,7 +394,7 @@ const workflowPolicies = [
     icon: taskIconFour,
     title: "Predict with AI Power",
     description:
-      "Leverage AI to forecast trends, run smart analyses, and set intelligent alerts so you can make proactive, data-driven decisions for your business.",
+      "Leverage AI to forecast trends, run smart analysis, and set intelligent alerts so you can make proactive, data-driven decisions for your business.",
     image: paymentOptionImage,
     buttonUrl: "/sales/",
     maxImageHeight: "305px",
