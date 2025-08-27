@@ -24,6 +24,8 @@ const SalesForm: React.FC = () => {
 
   const router = useRouter()
 
+  const [loading, setLoading] = useState<boolean>(false)
+
   const [showOtherInput, setShowOtherInput] = useState(false)
 
   const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
@@ -37,6 +39,7 @@ const SalesForm: React.FC = () => {
 
   const onSubmitForm = async (values: TSalesInitialValueProp) => {
     try {
+      setLoading(true)
       const formData = new FormData()
 
       Object.entries(values).forEach(([key, value]) => {
@@ -54,8 +57,10 @@ const SalesForm: React.FC = () => {
           "Accept-Charset": "UTF-8",
         },
       })
+      setLoading(false)
       router.push("/confirmation-sales")
     } catch (error) {
+      setLoading(false)
       throw error
     }
   }
@@ -202,8 +207,8 @@ const SalesForm: React.FC = () => {
           </Link>
         </p>
 
-        <button type="submit" className={styles.submitBtn}>
-          Submit
+        <button type="submit" disabled={loading} className={styles.submitBtn}>
+          {loading ? "..." : "Submit"}
         </button>
       </form>
     </div>
