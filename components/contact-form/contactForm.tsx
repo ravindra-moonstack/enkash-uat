@@ -53,7 +53,7 @@ const ContactForm: React.FC = () => {
           },
         }
       )
-      router.push("/confirmation-contact")
+      router.push("/confirmation-contact-us")
     } catch (error) {
       throw error
     }
@@ -130,7 +130,7 @@ const ContactForm: React.FC = () => {
             options={contactOptions}
             placeholder="How can we help you?*"
             onChange={(data) => {
-              setFieldValue("contactReasons", data.join(","))
+              setFieldValue("contactReasons", data)
             }}
           />
 
@@ -138,7 +138,7 @@ const ContactForm: React.FC = () => {
             name="MultiLine"
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
           />
-
+      
           <p className={styles.privacy}>
             By submitting this form, you are agreeing to our{" "}
             <Link href="/privacy-policy" className={styles.privacyLink}>

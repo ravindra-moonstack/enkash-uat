@@ -57,7 +57,7 @@ const SupportForm: React.FC = () => {
           },
         }
       )
-      router.push("/confirmation-sales")
+      router.push("/confirmation-support")
     } catch (error) {
       throw error
     }
@@ -117,8 +117,8 @@ const SupportForm: React.FC = () => {
               <input
                 type="text"
                 required
-                name="SingleLine1"
                 placeholder="Company Name*"
+                {...getFieldProps("SingleLine1")}
               />
               <ErrorText<TSupportInitialValueProp>
                 errors={errors}
@@ -147,7 +147,7 @@ const SupportForm: React.FC = () => {
             options={contactOptions}
             placeholder="How can we help you?*"
             onChange={(data) => {
-              setFieldValue("MultipleChoice", data.join(","))
+              setFieldValue("MultipleChoice", data)
             }}
           />
 
