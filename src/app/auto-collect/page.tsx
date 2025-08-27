@@ -1,58 +1,43 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicies, cardsData, managementCards } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
-  blueArrow,
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  ManagementCard,
+  AllInOnePolicy,
+  FaqSection,
+} from "@/components"
+import {
   groupIcon,
   paymentSummary,
-  paymentLink,
-  paymentPage,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
-  whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  secureImage,
   activationIcon,
   realTimeIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
   hundredPercentIcon,
 } from "."
-
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
 const showScroll = cardsData.length > 3
+export const metadata: Metadata = generateMetaData({
+  title: "Auto Collect: Automate Incoming Payments with Virtual Accounts",
+  description:
+    "Automate receivables with EnKash Auto Collect. Use virtual accounts and UPI IDs to track, reconcile, and manage payments faster with zero manual effort.",
+  alternates: {
+    canonical: `${process.env.URL}/auto-collect/`,
+  },
+})
+const salesUrl = getSalesUrl("/auto-collect")
 
 const AutoCollect = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -108,7 +93,7 @@ const AutoCollect = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "No more outstanding invoices and manual follow-ups. Embrace automation and efficiency with EnKash’s Bulk Payment Collection solution.",
+                          "Automate reconciliation for all incoming NEFT, RTGS, IMPS, and UPI payments using EnKash Customer Identifiers and Virtual UPI IDs. Receive real-time alerts and enjoy seamless multi-bank support.",
                         color: "color-black subHeading",
                       },
                     ]}
@@ -130,14 +115,7 @@ const AutoCollect = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -276,9 +254,8 @@ const AutoCollect = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -304,7 +281,7 @@ const AutoCollect = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -350,118 +327,26 @@ const AutoCollect = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Payment Collection Across Multiple Modes"
-                description="EnKash Auto-Collect supports various payment methods including UPI, NEFT, IMPS, and RTGS. Whether it’s branch-specific payments or individual customer transfers, EnKash makes the process frictionless, helping your business grow faster."
-                image={paymentLinkImage}
-                buttonUrl="/sales/"
-                maxImageHeight="243px"
-              />
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Real-Time Notifications for Every Transaction"
-                description="Stay informed with instant alerts every time a payment is made. Real-time webhook updates and our dashboard ensure complete transparency and keep your financial operations running smoothly."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Zero Cost Setup for Virtual Accounts"
-                description="Create unlimited virtual accounts and payment addresses at no additional cost. Eliminate the manual efforts of assigning account numbers, and let our automation simplify your financial workflows."
-                image={shareImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Tailored for Your Business Needs"
-                description="Whether you’re managing multiple branches, customer touchpoints, or financial services, EnKash Auto-Collect provides flexible virtual accounts tailored to each business unit, department, or individual customer."
-                image={paymentOptionImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Advanced Security & Compliance"
-                description="Rest easy knowing that every transaction is secure. EnKash adheres to industry-leading compliance standards and encryption protocols to protect your data and funds."
-                image={secureImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
+              <div className={styles.allInOnePolicy}>
+                {allInOnePolicies.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -469,11 +354,11 @@ const AutoCollect = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
-                  title: "other payment products",
+                  title: "other collection products",
                   color: "color-equity-blue",
                 },
                 {
@@ -485,83 +370,20 @@ const AutoCollect = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentLink}
-                linkUrl="/payment-gateway"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Page"
-                description="Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online."
-                cardImage={paymentPage}
-                linkUrl="/payment-page"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="UPI Payments"
-                description="UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles."
-                cardImage={qrCodes}
-                linkUrl="/upi-payments"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-                linkUrl="/reminder-engine"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map((card, index) => (
+              <div key={index} className="col-12 col-md-4">
+                <ManagementCard
+                  titleHtml={card.titleHtml}
+                  description={card.description}
+                  cardImage={card.cardImage}
+                  linkUrl={card.linkUrl}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

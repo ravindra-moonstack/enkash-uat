@@ -32,7 +32,26 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
-import {  scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import {
+  autoCollect,
+  instant,
+  notificationImage,
+  paymentButton,
+  paymentGatewayImg,
+  paymentLink,
+  paymentLinkImage,
+  paymentOptionImage,
+  qrCodes,
+  reminder,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  shareImage,
+  taskIconFour,
+  taskIconOne,
+  taskIconThree,
+  taskIconTwo,
+} from "."
 
 const dataSets = [
   {
@@ -111,20 +130,22 @@ const blogData = [
 const cardsData = [
   {
     title: "Integrate Payment Data",
-    description: "Connect your payment systems, bank accounts, and invoicing tools to EnKash for seamless data flow.",
+    description:
+      "Connect your payment systems, bank accounts, and invoicing tools to EnKash for seamless data flow.",
     icon: scrollIconOne,
   },
   {
     title: "Customize Analytics Dashboard",
-    description: "Set up personalized filters and segmentation to track and analyze collections by customer, region, or payment status.",
+    description:
+      "Set up personalized filters and segmentation to track and analyze collections by customer, region, or payment status.",
     icon: scrollIconTwo,
   },
   {
     title: "Review & Optimize",
-    description: "Access real-time insights, identify trends, and adjust your collection strategy based on actionable data.",
+    description:
+      "Access real-time insights, identify trends, and adjust your collection strategy based on actionable data.",
     icon: scrollIconThree,
   },
-
 ]
 
 const integrationData = [
@@ -157,26 +178,28 @@ const integrationData = [
 const paymentMethodData = [
   {
     title: "Bulk QR Code Generation",
-    description: "Upload payment details in bulk using our dashboard to generate multiple QR codes instantly.",
+    description:
+      "Upload payment details in bulk using our dashboard to generate multiple QR codes instantly.",
     icon: cards,
   },
   {
     title: "Custom Split Settlements",
-    description:"Define and automate revenue sharing across branches, franchises, or departments.",
+    description:
+      "Define and automate revenue sharing across branches, franchises, or departments.",
     icon: upi,
   },
   {
     title: "Real-Time Notifications",
-    description:"Get instant updates on successful payments via email, SMS, or webhook notifications.",
+    description:
+      "Get instant updates on successful payments via email, SMS, or webhook notifications.",
     icon: netBanking,
   },
   {
     title: "Advanced Analytics",
-    description:"Monitor performance metrics like daily transactions, total revenue, and settlement reports from a centralized dashboard.",
+    description:
+      "Monitor performance metrics like daily transactions, total revenue, and settlement reports from a centralized dashboard.",
     icon: digital,
   },
-
-
 ]
 
 const dashboardData = [
@@ -357,6 +380,90 @@ const projects = [
   },
 ]
 
+const allInOnePolicies = [
+  {
+    icon: taskIconOne,
+    title: "Customizable Dashboards",
+    description:
+      "Tailor your collection analytics dashboard to show reports on the basis of week, month, or custom date range, ensuring relevance and clarity.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Visibility And Monitoring",
+    description:
+      "Effortlessly track your collection process with complete visibility by monitoring invoice status, outstanding amounts, total collections, and overdue payments for prompt follow-ups.",
+    image: notificationImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Automated Reporting",
+    description:
+      "Receive comprehensive downloadable reports automatically, eliminating the need for manual compilation and reducing the risk of errors.",
+    image: shareImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+  },
+  {
+    icon: taskIconFour,
+    title: "DSO Tracking",
+    description:
+      "Measure and manage Days Sales Outstanding (DSO) efficiently to gain insights into the average time it takes to collect payments. Improve your receivables management with a clear understanding of payment cycle trends, helping you optimize your cash flow further.",
+    image: paymentOptionImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+]
+const managementCards = [
+  {
+    titleHtml: "Payment Gateway",
+    description: "A no-code solution to effortlessly collect payments across various channels, guaranteeing you never miss a transaction.",
+    cardImage: paymentGatewayImg,
+    linkUrl: "/payment-gateway",
+  },
+  {
+    titleHtml: "Payment Link",
+    description: "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
+    cardImage: paymentLink,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "Payment Button",
+    description: "Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description: "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
+    cardImage: qrCodes,
+    linkUrl: "/qr-code",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description: "Easily accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Instant Settlement",
+    description: "Get instant access to your funds, skip traditional settlement cycles, and take full control of your cash flow.",
+    cardImage: instant,
+    linkUrl: "/instant-settlement",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description: "Eliminate manual reminders and automate your business collections effortlessly for smoother cash flow management.",
+    cardImage: reminder,
+    linkUrl: "/collection-reminder",
+  },
+];
 export {
   blogData,
   dataSets,
@@ -369,4 +476,6 @@ export {
   rankData,
   supportData,
   savingData,
+  allInOnePolicies,
+  managementCards
 }

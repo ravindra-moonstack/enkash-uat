@@ -2,7 +2,7 @@ import Image from "next/image"
 import styles from "./mobile-header.module.scss"
 import { Fragment } from "react"
 import Link from "next/link"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import RectangleButton from "@/components/buttons/rectangle-button"
 import { blueArrowUp } from ".."
 
 interface SubProductListViewProps {
@@ -29,7 +29,7 @@ interface SubProductListViewProps {
 const SubProductListView = ({
   navTitle,
   sections,
-  signupUrl,
+
   setCurrentStep,
 }: SubProductListViewProps) => {
   return (
@@ -51,7 +51,8 @@ const SubProductListView = ({
         {sections.map((section, secIndex) => {
           // Define background color based on index
           let backgroundColor = "#FFFFFF" // default (2nd)
-          if (secIndex === 0) backgroundColor = "#F6FCFF" // first
+          if (secIndex === 0)
+            backgroundColor = "#F6FCFF" // first
           else if (secIndex === 2) backgroundColor = "#F0F0F0" // third
 
           return (
@@ -67,36 +68,45 @@ const SubProductListView = ({
               {section.products.map((productGroup, prodIndex) => (
                 <div key={prodIndex}>
                   <div className="list">
-                    {productGroup.list.map((item) => (
-                      <Link
-                        href={item.link}
-                        key={item.name}
-                        onClick={() => setCurrentStep(0)}
-                      >
-                        <Fragment>
-                          <li className="d-flex justify-content-start py-3">
-                            <div
-                              className="me-4"
-                              style={{ width: 24, height: 24 }}
-                            >
-                              {item.imageSrcHovered ? (
-                                <Image
-                                  src={item.imageSrcHovered}
-                                  alt={item.name}
-                                  width={24}
-                                  height={24}
-                                />
-                              ) : null}
-                            </div>
-                            <div className="d-flex flex-column color-grey-900">
-                              <div className={styles.sub_title}>
-                                {item.name}
+                    {productGroup.list.map((item) => {
+                      const externalUrls = ["docs."]
+
+                      const isExternal = externalUrls?.some((_item) =>
+                        item.link?.includes(_item)
+                      )
+
+                      return (
+                        <Link
+                          target={isExternal ? "_blank" : "_self"}
+                          href={item.link}
+                          key={item.name}
+                          onClick={() => setCurrentStep(0)}
+                        >
+                          <Fragment>
+                            <li className="d-flex justify-content-start py-3">
+                              <div
+                                className="me-4"
+                                style={{ width: 24, height: 24 }}
+                              >
+                                {item.imageSrcHovered ? (
+                                  <Image
+                                    src={item.imageSrcHovered}
+                                    alt={item.name}
+                                    width={24}
+                                    height={24}
+                                  />
+                                ) : null}
                               </div>
-                            </div>
-                          </li>
-                        </Fragment>
-                      </Link>
-                    ))}
+                              <div className="d-flex flex-column color-grey-900">
+                                <div className={styles.sub_title}>
+                                  {item.name}
+                                </div>
+                              </div>
+                            </li>
+                          </Fragment>
+                        </Link>
+                      )
+                    })}
                   </div>
                 </div>
               ))}
@@ -108,7 +118,8 @@ const SubProductListView = ({
                   "Payable & Receivable+",
                   "Prepaid Cards",
                   "Credit Cards",
-                  "Cards", // makes sure "Cards" only uses the special block above
+                  "Cards",
+                  "Partnership",
                 ].includes(section.title) && (
                   <div className={styles.exploreProduct}>
                     <Link href={section.products[0].subtitleLink}>
@@ -130,12 +141,7 @@ const SubProductListView = ({
         <div
           className={`d-flex justify-content-center ${styles.buttons_container}`}
         >
-          <RectangleButton title="Talk to Sales" theme="blue" url={signupUrl} />
-          <RectangleButton
-            title="Log In"
-            theme="outline-blue"
-            url="https://home.enkash.com/login"
-          />
+          <RectangleButton title="Log In" theme="outline-blue" url="" />
         </div>
       </div>
     </div>

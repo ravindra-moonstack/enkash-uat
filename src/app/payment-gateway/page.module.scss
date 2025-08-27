@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixin" as *;
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
 
 .first_row {
   background-repeat: no-repeat;
@@ -9,17 +9,16 @@
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 90px;
-
-  background-image: url(./img/first-row-bg.svg);
+  padding-top: 110px;
+  background-image: url(/images/collectPaymentBg.webp);
   @include for-laptops {
     padding-left: 70px;
     padding-right: 70px;
-    padding-top: 104px;
+    padding-top: 112px;
   }
   .group_logo {
-    width: 174px;
-    height: 30px;
+    width: 260px;
+    height: auto;
     @include for-laptops {
       width: 366px;
       height: 62px;
@@ -163,13 +162,14 @@
       }
     }
   }
-  .section:nth-child(3),.section:nth-child(5){
+  .section:nth-child(3),
+  .section:nth-child(5) {
     padding: 50px 30px;
     @include for-laptops {
       padding-top: 48px;
     }
   }
-  .section:nth-child(7){
+  .section:nth-child(7) {
     padding: 50px 30px;
     overflow: hidden;
     @include for-laptops {
@@ -367,7 +367,7 @@
   padding: 50px 20px;
   @include for-laptops {
     padding: 90px 20px 0;
-    margin-bottom:50px ;
+    margin-bottom: 50px;
   }
 
   .section {
@@ -478,5 +478,18 @@
   padding: 0 20px 26px;
   @include for-laptops {
     padding: 0px 20px 66px;
+  }
+}
+
+//to make scroll work
+.spline_container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+
+  canvas {
+    pointer-events: none;
   }
 }

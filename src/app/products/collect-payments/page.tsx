@@ -1,25 +1,17 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardData, dataSets } from "./data"
-
-import { Header, Heading, Footer, FAQHtml } from "@/components"
-
+import { allInOnePolicyData, cardData, dataSets } from "./data"
 import {
-  motherCardImg,
-  paymentGatwayImg,
-  paymentGatwayIcon,
-  paymentLinkIcon,
-  paymentLinkImg,
-  paymentButtonIcon,
-  paymentButtonImg,
-  paymentPageIcon,
-  upiIcon,
-  upiImg,
-  paymentPageImg,
-  qrCodeIcon,
-  qrCodeImg,
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  HowDoesItWork,
+  PolicyCard,
+  FaqSection,
+} from "@/components"
+import {
   instantSettelmentIcon,
   instantSettelmentImg,
   affordabilityImg,
@@ -29,24 +21,24 @@ import {
   CollectpaymentGif,
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-// import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import PolicyCard from "@/components/policyCard/policyCard"
 import faqData from "./faq-data"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import Spline from "@splinetool/react-spline"
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Simplify Online Payment Collections with EnKash",
+  description:
+    "From payment gateway, payment button, payment link, UPI payments, and more. Everything the merchants need fot payment collection.",
+  alternates: {
+    canonical: `${process.env.URL}/collect-payments/`,
+  },
+})
+const salesUrl = getSalesUrl("/collect-payments")
 
 const CollectPayment = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-      <TalkToSales />
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto">
           <div className="d-flex">
@@ -55,7 +47,7 @@ const CollectPayment = (): React.JSX.Element => {
                 { name: "Home", url: "/" },
                 { name: "Products", url: "/products" },
                 {
-                  name: "Collect Payment",
+                  name: "Collect Payments",
                   url: "/products/collect-payments",
                 },
               ]}
@@ -79,7 +71,7 @@ const CollectPayment = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "No more chasing, no more delays - Payment Collection Solutions for Businesses Who Want to Make Money",
+                      "No more chasing, no more delays - Payment Collection Solutions for Merchants Who Want to Make Money",
                     color: "color-white subHeading",
                   },
                 ]}
@@ -89,11 +81,7 @@ const CollectPayment = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-5 mt-3">
-              <RectangleButton
-                title="Talk to us"
-                theme="blue"
-                url="/sales/?source=expense_management"
-              />
+              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
@@ -122,23 +110,12 @@ const CollectPayment = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Built for CFOs, Loved by Teams",
+                  title: "Payments Rolling In Automatically, Every Time.",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
               className="f-5"
-            />
-            <DynamicHeading
-              content={[
-                {
-                  title:
-                    "From instant issuance to granular controls - corporate cards that do more.",
-                  color: "color-white ",
-                },
-              ]}
-              headingTag="p"
-              className="mt-3"
             />
           </div>
           <div className={`d-flex  flex-wrap  ${styles.section}`}>
@@ -197,56 +174,11 @@ const CollectPayment = (): React.JSX.Element => {
                 </div>
               </div>
               <div
-                className={` ${styles.all_in_section_inner} d-flex flex-column gap-3`}
+                className={`${styles.all_in_section_inner} d-flex flex-column gap-3`}
               >
-                <AllInOnePolicy
-                  icon={paymentGatwayIcon}
-                  title="Payment Gateway"
-                  description="A high-performance gateway that enables businesses to accept payments through multiple methods such as credit cards, debit cards, UPI, net banking, and digital wallets, ensuring seamless transactions with exceptional success rates and security."
-                  image={paymentGatwayImg}
-                  buttonUrl="/sales/?source=expense_management"
-                />
-
-                <AllInOnePolicy
-                  icon={paymentLinkIcon}
-                  title="Payment Links"
-                  description="Generate and share secure payment links instantly via SMS, email, WhatsApp, or social media, allowing businesses to collect payments from customers without requiring a website, ensuring quick and hassle-free transactions.."
-                  image={paymentLinkImg}
-                  buttonUrl="/sales/?source=expense_management"
-                  reverse
-                />
-                <AllInOnePolicy
-                  icon={paymentButtonIcon}
-                  title="Payment Button"
-                  description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-                  image={paymentButtonImg}
-                  buttonUrl="/sales/?source=expense_management"
-                />
-
-                <AllInOnePolicy
-                  icon={paymentPageIcon}
-                  title="Payment Page"
-                  description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-                  image={paymentPageImg}
-                  buttonUrl="/sales/?source=expense_management"
-                  reverse
-                />
-                <AllInOnePolicy
-                  icon={upiIcon}
-                  title="UPI Payments"
-                  description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-                  image={upiImg}
-                  buttonUrl="/sales/?source=expense_management"
-                />
-
-                <AllInOnePolicy
-                  icon={qrCodeIcon}
-                  title="QR Code Payments"
-                  description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-                  image={qrCodeImg}
-                  buttonUrl="/sales/?source=expense_management"
-                  reverse
-                />
+                {allInOnePolicyData.map((item, i) => (
+                  <AllInOnePolicy key={i} {...item} buttonUrl={item.buttonUrl} buttonText="Learn more" />
+                ))}
               </div>
             </div>
           </div>
@@ -260,7 +192,7 @@ const CollectPayment = (): React.JSX.Element => {
           className="position-absolute top-0 start-0 w-100"
           style={{ height: "600px", backgroundColor: "black" }}
         >
-          <Spline scene="https://prod.spline.design/ukQwfbMk8aMlhZus/scene.splinecode" />
+          {/* <Spline scene="https://prod.spline.design/ukQwfbMk8aMlhZus/scene.splinecode" /> */}
         </div>
 
         {/* Foreground content */}
@@ -284,8 +216,6 @@ const CollectPayment = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-
-            <div></div>
           </div>
 
           <div className={styles.how_it_workssection}>
@@ -327,11 +257,12 @@ const CollectPayment = (): React.JSX.Element => {
               />
               <div className={` ${styles.list_button}`}>
                 <RectangleButton
-                  title="Try Now"
+                  title="Learn more"
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url={"/sales/?source=expense_management"}
+                  url={"/instant-settlement"}
+                  className={styles.try_button}
                 />
               </div>
             </div>
@@ -345,7 +276,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className="row align-items-center pt-4 ">
-            {/* On mobile: order-2, on md+: order-1 */}
+            
             <div className="col-12 col-md-6 order-2 order-md-1">
               <Image
                 src={affordabilityImg}
@@ -354,7 +285,7 @@ const CollectPayment = (): React.JSX.Element => {
               />
             </div>
 
-            {/* On mobile: order-1, on md+: order-2 */}
+
             <div className="col-12 col-md-6 order-1 order-md-2">
               <PolicyCard
                 icon={affordabilityIcon}
@@ -365,11 +296,12 @@ const CollectPayment = (): React.JSX.Element => {
               />
               <div className={` ${styles.list_button}`}>
                 <RectangleButton
-                  title="Try Now"
+                  title="Learn more"
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url={"/sales/?source=expense_management"}
+                  className={styles.try_button}
+                  url={"/affordability-suite"}
                 />
               </div>
             </div>
@@ -384,7 +316,7 @@ const CollectPayment = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "You Focus on Your Business. Let Us Focus on Payment Collection",
+                    "You Focus on Your Business. Let Us Focus on Payment Collection.",
                   color: "color-white",
                 },
               ]}
@@ -395,7 +327,7 @@ const CollectPayment = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "We ensure accepting payment is effortless, no matter where your customers are or how they choose to pay.Explore Our Solutions",
+                    "Wherever your customers are, however they pay. you get paid.",
                   color: "color-white subHeading",
                 },
               ]}
@@ -410,80 +342,13 @@ const CollectPayment = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions",
-                      color: "color-dark-grey subHeding",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

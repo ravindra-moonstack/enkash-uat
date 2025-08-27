@@ -7,7 +7,21 @@ import herarchy from "./img/herarchy.webp"
 import insight from "./img/insights.webp"
 import scanAndDrops from "./img/scan-and-drops.webp"
 import reimbursements from "./img/reimbursement.webp"
-import { stepCardImgOne, stepCardImgThree, stepCardImgTwo } from "."
+import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  realTimeExpense,
+  realTimeExpenseIcon,
+  stackCardThreeIcon,
+  stackCardThreeImg,
+  stepCardImgOne,
+  stepCardImgThree,
+  stepCardImgTwo,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
+} from "."
 
 const cardData = [
   {
@@ -60,36 +74,95 @@ const expenseManagementData = [
     description:
       "Get advances cleared as per the defined expense budget to get going without any hindrance.",
     cardImage: advance,
+    linkUrl: "/budget-and-advances",
   },
   {
     whiteTitle: "Reimbursements",
     description:
       "Businesses repay the amount to employees or partners for expenses incurred on their behalf.",
     cardImage: reimbursements,
+    linkUrl: "/reimbursements",
   },
   {
     whiteTitle: "Scan & Drop Receipts",
     description:
       "Scan and upload expense receipts digitally for quick and efficient reimbursement.",
     cardImage: scanAndDrops,
+    linkUrl: "/receipts",
   },
   {
     whiteTitle: "Hierarchy and Control",
     description: "Define hierarchies for better control and transparency.",
     cardImage: herarchy,
+    linkUrl: "/hierarchy-and-controls",
   },
   {
     whiteTitle: "Insights",
     description:
       "Make use of deep, data-driven understandings for informed decision-making.",
     cardImage: insight,
+    linkUrl: "/expense-analytics-and-insights",
   },
   {
     whiteTitle: "Policy and Approval Flow",
     description:
       "A set of guidelines or rules that outline the procedures for seeking and granting official authorization for expenses. ",
     cardImage: policyApproval,
+    linkUrl: "/approval-flows",
   },
 ]
 
-export { cardData, expenseManagementData, stepCards }
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Security & Compliance",
+    description:
+      "Ensure confidentiality and compliance of your financial data with our robust encryption and security measures.",
+    image: realTimeExpense,
+    buttonText: "Learn More",
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Customizable Dashboards",
+    description:
+      "Grant varied access, like admin and finance teams, and customize dashboards for tailored insights based on status, payment mode, category, segments, etc.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: stackCardThreeIcon,
+    title: "AI-Powered Insights",
+    description:
+      "Get actionable insights into employee expense patterns, identify cost-saving opportunities, and optimize budgets with AI-driven analytics.",
+    image: stackCardThreeImg,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Policy Violation",
+    description:
+      "Easily analyze policies with the highest violations and get a comprehensive overview of expenses deviating from policy norms, allowing for proactive corrective actions.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Real-time Tracking",
+    description:
+      "Monitor expenses in real-time, allowing for proactive decision-making and cost control, leading to improved bottom-line results.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+]
+export { cardData, expenseManagementData, stepCards, stackcardData }

@@ -31,7 +31,6 @@ import approve from "./img/approve.svg"
 
 import {
   clockIcon,
-  digitalCardImg,
   fuelCardImg,
   mealCardImg,
   multiCardIcon,
@@ -128,7 +127,7 @@ const cardData = [
   },
   {
     icon: realTimeTrakingIcon,
-    title: "Real-time tracking & controls",
+    title: "Real-time Tracking & Controls",
   },
   {
     icon: securityIcon,
@@ -225,24 +224,24 @@ const spendAnalyticsData = [
 const rbiData = [
   {
     title: "Instant ",
-    description: "Instant card issuance without routing requests through banks",
+    description: "Instant card issuance without routing requests through banks.",
     icon: instantIcon,
   },
   {
     title: " Fast",
-    description: "Faster onboarding and fewer compliance hurdles",
+    description: "Faster onboarding and fewer compliance hurdles.",
     icon: onboardingIcon,
   },
   {
     title: "No Delays",
-    description: "No third-party delays or dependencies",
+    description: "No third-party delays or dependencies.",
     icon: noThidPartyIcon,
   },
   {
     title: "Customizable ",
 
     description:
-      "DIY control over how your cards are issued, used, and managed",
+      "DIY control over how your cards are issued, used, and managed.",
     icon: diyControlIcon,
   },
 ]
@@ -363,7 +362,7 @@ const allProductSections = [
         title: "Auto-capture receipts",
         description: "and match them with transactions",
         image: autoCapture,
-        link: "/payment-links/",
+        link: "/receipts/",
       },
       {
         title: "View, approve, and audit expenses",
@@ -387,7 +386,7 @@ const allProductSections = [
         title: "Set policy-driven workflows",
         description: "that apply at the swipe level",
         image: workflow,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Track and approve spends",

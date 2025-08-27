@@ -1,106 +1,55 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardData, expenseManagementData, stepCards } from "./data"
-import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
-  blueArrow,
-  groupIcon,
-  paymentSummary,
-  whiteArrow,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
-} from "."
+  cardData,
+  expenseManagementData,
+  stackcardData,
+  stepCards,
+} from "./data"
+import faqData from "./faq-data"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  ManagementCard,
+  EasyStepCard,
+  CardStacking,
+  FaqSection,
+} from "@/components"
+import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import ManagementCard from "@/components/management-card/management-card"
-import EasyStepCard from "@/components/easy-step-card/easy-step-card"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import CardStacking from "@/components/cardStacking/cardStacking"
-import Link from "next/link"
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={realTimeExpenseIcon}
-          title="Define Budgets "
-          description="Enterprises can create their budgets as per their expenses and allocate them as per their business finances and goals during specific periods."
-          image={realTimeExpense}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
+export const metadata: Metadata = generateMetaData({
+  title: "Budgets & Advances: Control & Track Business Spending",
+  description:
+    "Allocate budgets, issue advances, and monitor usage in real-time with EnKash. Gain complete control over employee spends and ensure policy-compliant expenses.",
+  alternates: {
+    canonical: `${process.env.URL}/budget-and-advances/`,
   },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={fraudProtectionIcon}
-          title="Allocate To Specific Users"
-          description="Budgets can be created for specific users to keep spending in check. Individual spending can be tracked and compared with a defined budget ensuring your financial plans are not disturbed."
-          image={fraudProtection}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={streamlinedReimbursementIcon}
-          title="Spending Aligned With Budgets"
-          description="Easily check whether the spending is aligned with the defined budget from the dashboard."
-          image={streamlinedReimbursement}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={costControlSavingsIcon}
-          title="Auto-fill Budgets"
-          description="Enter the budget amount for each category. Enter it initially for the first period and then auto-fill the values for other periods. Fill in fixed values, and adjust the amount by percentage."
-          image={costControlSavings}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-]
+})
+const salesUrl = getSalesUrl("/budget-and-advances")
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      // buttonText="Learn More"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const BudgetAndAdvances = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -181,7 +130,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -280,28 +229,23 @@ const BudgetAndAdvances = (): React.JSX.Element => {
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
-            <div className={`${styles.title} text-center `}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Unlock  ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "Savings ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "on Every Mile",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Unlock  ",
+                  color: "color-black",
+                },
+                {
+                  title: "Savings ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "on Every Mile",
+                  color: "color-black",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -325,75 +269,8 @@ const BudgetAndAdvances = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
-          </div>
-        </div>
-      </div>
-
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
           </div>
         </div>
       </div>
@@ -424,6 +301,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
                   description={card.description}
                   cardImage={card.cardImage}
                   theme="dark"
+                  linkUrl={card.linkUrl}
                 />
               </div>
             ))}
@@ -431,7 +309,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
         </div>
       </div>
 
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

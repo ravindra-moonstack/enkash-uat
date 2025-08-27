@@ -1,0 +1,116 @@
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
+
+.talk_to_sales {
+  background-image: url(./img/backgroundImg.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 50px 20px 20px;
+  z-index: 2;
+  position: relative;
+  @include for-laptops {
+    padding: 90px 20px 20px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      0deg,
+      #000000 0%,
+      #000000 -1.06%,
+      #000000 1.51%,
+      rgba(0, 0, 0, 0.77) 6.74%,
+      rgba(0, 0, 0, 0.33) 26.46%,
+      rgba(0, 0, 0, 0) 45.45%
+    );
+    z-index: -1;
+  }
+  .logo {
+    padding-bottom: 32px;
+    img {
+      width: 100px;
+      height: 45px;
+    }
+    @include for-laptops {
+      padding-bottom: 41px;
+      img {
+        width: 150px;
+        height: 56px;
+      }
+    }
+  }
+  .contactInfoCard {
+    background: $color-white;
+    position: relative;
+    z-index: 2;
+    border-radius: 12px;
+    box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.1),
+      0px 30px 40px rgba(0, 0, 0, 0.09), 0px 67px 40px rgba(0, 0, 0, 0.05);
+    padding: 43px 30px;
+    ul {
+      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+  .logoSlider {
+    background-color: $color-white;
+    margin-top: 36px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.location {
+  position: relative;
+  background: $color-black;
+  padding: 20px;
+
+  .greyLine {
+    height: 2px;
+    background: $color-dark-grey;
+    position: relative;
+    z-index: 9;
+  }
+
+  .trunstedBrands {
+    z-index: 2;
+    position: relative;
+  }
+  .officeLocation {
+    z-index: 9;
+    position: relative;
+    margin-top: 60px;
+    @include for-laptops {
+      padding: 64px 135px 0px 135px;
+    }
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9;
+    p {
+      font-size: 8px;
+      @include for-laptops {
+        font-size: 16px;
+      }
+    }
+    .termsCond {
+      display: flex;
+      gap: 8px;
+      a{
+        text-decoration: none !important;
+      }
+      @include for-laptops {
+        gap: 32px;
+      }
+    }
+  }
+}

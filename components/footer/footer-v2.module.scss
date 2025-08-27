@@ -103,10 +103,11 @@
 }
 
 .footer_padding {
-  padding: 20px 0px;
+  padding: 50px 20px 20px;
 
   @include for-laptops {
     padding-top: 76px;
+     padding: 20px 0px;
   }
 
   .footer_section {
@@ -129,6 +130,10 @@
       @include for-laptops {
         font-size: 14px;
         padding-top: 0px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
       }
     }
   }
@@ -175,9 +180,10 @@
 
 .social_icons_row {
   gap: 6px;
-
+  flex-wrap: wrap;
   @include for-laptops {
     width: 50%;
+      flex-wrap: nowrap;
   }
 
   a {
@@ -285,6 +291,16 @@
   }
 }
 
+.callIcon{
+  width: 16px;
+  height: 16px;
+  color: $color-black;
+  margin-right: 8px;
+   @include for-laptops {
+    width: 20px;
+  height: 20px;
+  }
+}
 .new_badge {
   display: flex;
   align-items: center;
@@ -316,6 +332,7 @@
   .title {
     font-size: 8px;
     color: $color-electric-green;
+    font-weight: 500;
     text-transform: uppercase;
     @include for-laptops {
       font-size: 16px;
@@ -447,8 +464,25 @@
 
 .info_div_one {
   padding-top: 24px;
+  padding-bottom: 10px;
   @include for-laptops {
     padding-top: 0px;
+  }
+  .soc_logo{
+
+    img {
+      object-fit: contain;
+    }
+
+   
+  }
+  .pci_logo{
+
+    img {
+      object-fit: contain;
+    }
+
+   
   }
 }
 

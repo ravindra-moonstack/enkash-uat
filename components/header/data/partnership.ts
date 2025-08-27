@@ -4,11 +4,10 @@ const partnershipProducts = [
   {
     name: "Partnership",
     description: "Flexible prepaid card solutions",
-    link: "/partnership",
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/loyalty-lounge",
+        subtitleLink: "/partnership",
         currentHeading: {
           name: "Partnerships ",
           description: "Build exciting rewards, incentives & offers",
@@ -17,30 +16,30 @@ const partnershipProducts = [
           {
             name: "For Banks",
             description: "Launch modern banking products faster",
-            link: "/for-banks",
+            link: "/bank-partnerships",
             imageSrc: bank,
             imageSrcHovered: bank,
           },
           {
             name: "Affiliate Program",
             description: "Refer. Earn. Grow together.",
-            link: "/affiliate",
+            link: "/affiliate-programs",
             imageSrc: affiliate,
             imageSrcHovered: affiliate,
             children: [
               {
                 name: "Co-branded Cards",
-                link: "/affiliate/co-branded-cards",
+                link: "/co-branded-card-partners",
                 imageSrc: coBrand,
               },
               {
                 name: "Payment Gateway",
-                link: "/affiliate/payment-gateway",
+                link: "/payment-gateway-partners",
                 imageSrc: coBrand,
               },
               {
                 name: "Bharat Connect",
-                link: "/affiliate/bharat-connect",
+                link: "/bharat-connect-partnership",
                 imageSrc: coBrand,
               },
             ],

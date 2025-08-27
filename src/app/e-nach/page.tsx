@@ -1,58 +1,62 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicies, cardsData, managementCards, stackcardData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  ManagementCard,
+  AllInOnePolicy,
+  FaqSection,
+  CardStacking,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  paymentPage,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  secureImage,
-  playIntegrationImage,
   activationIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  taskIconSix,
   hundredPercentIcon,
+  creationIcon,
 } from "."
 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import { upiPayments } from "@/components/header"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: " eNACH Solution for Recurring Payments",
+  description:
+    "Enable automated recurring debit via eNACH mandates. EnKash helps businesses simplify collections, reduce payment failures, and improve cash flow predictability.",
+  alternates: {
+    canonical: `${process.env.URL}/e-nach/`,
+  },
+})
+const salesUrl = getSalesUrl("/e-nach")
 
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const eNACH = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -107,7 +111,7 @@ const eNACH = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Effortlessly automate recurring collections with EnKash eNACH mandate. Set up fast, secure digital mandates and seamlessly collect large recurring payments",
+                          "Effortlessly automate recurring collections with EnKash eNACH mandate. Set up fast, secure digital mandates and seamlessly collect large recurring payments.",
                         color: "color-black subHeading",
                       },
                     ]}
@@ -129,14 +133,7 @@ const eNACH = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -179,30 +176,43 @@ const eNACH = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
+
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={creationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
                       title: "Quick Mandate Creation",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
+              </div>
+            </div>
+            <div
+              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
+            >
+              <div className={`d-flex ${styles.outerCard}`}>
+                <Image src={activationIcon} alt="icon" />
+              </div>
+              <div
+                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
+              >
+
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Easy Subscription Management",
                       color: "color-white",
                     },
                   ]}
@@ -220,29 +230,7 @@ const eNACH = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Easy Subscription Management",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-            </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={activationIcon} alt="icon" />
-              </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -280,9 +268,8 @@ const eNACH = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -308,7 +295,7 @@ const eNACH = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -350,59 +337,33 @@ const eNACH = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Instant Digital Mandate Creation"
-                description="Eliminate paperwork and delays—register mandates digitally for faster processing and hassle-free automation."
-                image={paymentLinkImage}
-                buttonUrl="/sales/"
-                maxImageHeight="243"
-              />
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Smart Payment Retries for Higher Success Rates"
-                description="Reduce revenue loss with automatic retries on failed payments, ensuring uninterrupted cash flow and improved collection efficiency."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Bulk Subscription Management Made Easy"
-                description="Set up, track, and manage multiple mandates at scale directly to handle larger payments from a single dashboard—saving time and effort."
-                image={shareImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305"
-              />
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="One-Time Authentication, Lifetime Convenience"
-                description="Secure recurring payments with a simple one-time authentication, offering a frictionless experience for both businesses and customers."
-                image={paymentOptionImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Customizable Checkout for a Branded Experience"
-                description="Choose between a quick plug-and-play checkout or fully customize it with your brand’s identity, colors, and elements for better engagement."
-                image={secureImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305"
-              />
-              <AllInOnePolicy
-                icon={taskIconSix}
-                title="Plug & Play Integration"
-                description="It provides customers a hassle-free and smooth authentication as compared to physical NACH and can be easily integrated via plug and play method."
-                image={playIntegrationImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305"
-                reverse
-              />
+              {allInOnePolicies.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse}
+                />
+              ))}
             </div>
           </div>
+        </div>
+      </div>
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Meal Cards that your Employees Deserve",
+                color: "color-black",
+              },
+            ]}
+          />
         </div>
       </div>
       <div className={`${styles.fifth_row} `}>
@@ -425,78 +386,13 @@ const eNACH = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="pb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -506,7 +402,7 @@ const eNACH = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
@@ -522,72 +418,22 @@ const eNACH = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction"
-                cardImage={paymentLink}
-                linkUrl="/payment-gateway"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Page"
-                description="Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online."
-                cardImage={paymentPage}
-                linkUrl="/payment-page"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="UPI Payments"
-                description="UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles."
-                cardImage={upiPayments}
-                linkUrl="/upi-payments"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <ManagementCard
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

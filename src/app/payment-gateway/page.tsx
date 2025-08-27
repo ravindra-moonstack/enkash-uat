@@ -1,4 +1,3 @@
-
 import Image from "next/image"
 import styles from "./page.module.scss"
 import {
@@ -11,7 +10,14 @@ import {
   supportData,
 } from "./data"
 import faqData from "./faq-data"
-import { Header,  FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -23,37 +29,31 @@ import {
   support,
   leftHand,
   acceleratedGrowthImg,
-  paymentLink,
-  paymentPage,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
 } from "."
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { Metadata } from "next"
 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Best Payment Gateway in India for SMBs and Startups",
+  description:
+    "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
+  alternates: {
+    canonical: `${process.env.URL}/payment-gateway/`,
+  },
+})
+const salesUrl = getSalesUrl("/payment-gateway")
 
 const PaymentGateway = (): React.JSX.Element => {
-  
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-      <TalkToSales />
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
-              <div className="d-flex">
+              <div className="d-flex pt-1">
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
@@ -122,14 +122,14 @@ const PaymentGateway = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/payment-gateway"
                       />
                     </div>
                   </div>
@@ -177,7 +177,6 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
@@ -196,7 +195,6 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
@@ -227,7 +225,6 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
@@ -258,7 +255,6 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
@@ -274,6 +270,7 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.third_row}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center`}>
@@ -284,7 +281,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   color: "color-equity-blue",
                 },
                 {
-                  title: "Trusted by Business/Organisations",
+                  title: "Trusted by Merchants",
                   color: "color-black",
                 },
               ]}
@@ -334,7 +331,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started  Today "
                   theme="outline-blue"
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -408,9 +405,9 @@ const PaymentGateway = (): React.JSX.Element => {
                 </div>
                 <div className={`${styles.list_button}`}>
                   <RectangleButton
-                    title="Get Started  Today "
+                    title="Get Started Today "
                     theme="outline-blue"
-                    url="/sales/?source=expense_management"
+                    url={salesUrl}
                   />
                 </div>
               </div>
@@ -461,9 +458,9 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started  Today "
+                  title="Get Started Today "
                   theme="outline-blue"
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -537,9 +534,9 @@ const PaymentGateway = (): React.JSX.Element => {
                 </div>
                 <div className={`${styles.list_button}`}>
                   <RectangleButton
-                    title="Get Started  Today "
+                    title="Get Started Today "
                     theme="outline-blue"
-                    url="/sales/?source=expense_management"
+                    url={salesUrl}
                   />
                 </div>
               </div>
@@ -591,9 +588,9 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started  Today "
+                  title="Get Started Today "
                   theme="outline-blue"
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -667,9 +664,9 @@ const PaymentGateway = (): React.JSX.Element => {
                 </div>
                 <div className={`${styles.list_button}`}>
                   <RectangleButton
-                    title="Get Started  Today "
+                    title="Get Started Today "
                     theme="outline-blue"
-                    url="/sales/?source=expense_management"
+                    url={salesUrl}
                   />
                 </div>
               </div>
@@ -756,176 +753,17 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
           <div className={`${styles.get_started_button} `}>
             <RectangleButton
-              title="Get Started  Today "
+              title="Get Started Today "
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start pb-2 pb-md-5 `}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div
-            className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}
-          >
-            <DynamicHeading
-              content={[
-                {
-                  title: "Check out our ",
-                  color: "color-black",
-                },
-                {
-                  title: "other payment products",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: " at EnKash",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Payment Link"
-                description="Collect payments across WhatsApp, SMS, Facebook, Twitter, and other platforms with no-code payment links."
-                cardImage={paymentLink}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Payment Page"
-                description="Create custom-branded Payment Pages in minutes to accept payments online—no tech effort needed."
-                cardImage={paymentPage}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Payment Button"
-                description="Integrate a pre-designed payment button to your website with a simple plug-and-play solution."
-                cardImage={paymentButton}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="QR Codes"
-                description="Secure, contactless payment with QR codes to enable businesses to accept instant transactions."
-                cardImage={qrCodes}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Invoices"
-                description="Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links."
-                cardImage={invoices}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Instant Settlement"
-                description="Access your funds instantly, skip standard settlement cycles, and gain better control over your cash flow."
-                cardImage={instant}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Reminder Engine"
-                description="Eliminate manual reminders and effortlessly automate your business collections for smoother cash flow."
-                cardImage={reminder}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

@@ -1,8 +1,8 @@
 "use client"
 
-import React from "react"
+import React, { useMemo } from "react"
 import Image from "next/image"
-import Slider from "react-slick"
+import Slider, { Settings } from "react-slick"
 import styles from "./banking-slider.module.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -38,25 +38,27 @@ const logos = [
 ]
 
 const BankLogoSlider = () => {
-  const sliderSettings = {
-    infinite: true,
-    speed: 5000,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
-    slidesToShow: 10,
-    slidesToScroll: 1,
-    arrows: false,
-    pauseOnHover: true,
-    centerMode: true,
-    centerPadding: "40px",
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 8 } },
-      { breakpoint: 768, settings: { slidesToShow: 4 } },
-      { breakpoint: 480, settings: { slidesToShow: 3 } },
-    ],
-  }
-
+  const sliderSettings: Settings = useMemo(
+    () => ({
+      infinite: true,
+      speed: 5000,
+      autoplay: true,
+      autoplaySpeed: 0,
+      cssEase: "linear",
+      slidesToShow: 10,
+      slidesToScroll: 1,
+      arrows: false,
+      pauseOnHover: true,
+      centerMode: true,
+      centerPadding: "40px",
+      responsive: [
+        { breakpoint: 1024, settings: { slidesToShow: 8 } },
+        { breakpoint: 768, settings: { slidesToShow: 4 } },
+        { breakpoint: 480, settings: { slidesToShow: 3 } },
+      ],
+    }),
+    [] 
+  )
   return (
     <div className={`col-12 ${styles.banking_wrapper}`}>
       <div className={`${styles.title} text-center  pb-3 `}>

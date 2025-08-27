@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image"
 import styles from "./all-in-one-policy.module.scss"
 import RectangleButton, {
   RectangleButtonTheme,
-} from "../buttons/rectangle-button/rectangle-button"
+} from "../buttons/rectangle-button"
 import { blueArrow, whiteArrow } from "./index"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
@@ -17,7 +17,7 @@ interface AllInOnePolicyProps {
   buttonUrl: string
   reverse?: boolean
   maxImageHeight?: string
-  buttonTheme?: RectangleButtonTheme // ✅ type-safe!
+  buttonTheme?: RectangleButtonTheme
   buttonText?: string
   buttonActionIcon?: StaticImageData
   buttonHoverIcon?: StaticImageData
@@ -32,7 +32,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   reverse = false,
   maxImageHeight,
   buttonTheme = "outline-blue",
-  buttonText = "Try Now",
+  buttonText = "Get Started",
   buttonActionIcon = blueArrow,
   buttonHoverIcon = whiteArrow,
 }) => {
@@ -50,7 +50,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
 
           {/* Title and Description */}
           <div className="d-flex flex-column text-start gap-2 gap-md-3">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: title,
@@ -61,17 +61,16 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
               className="f-5"
             />
             {description && (
-               <DynamicHeading
-              content={[
-                {
-                  title: description,
-                  color: "color-grey-200",
-                },
-              ]}
-              headingTag="p"
-              className="mb-0"
-            />
-             
+              <DynamicHeading
+                content={[
+                  {
+                    title: description,
+                    color: "color-grey-200",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-0"
+              />
             )}
           </div>
         </div>

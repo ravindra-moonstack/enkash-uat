@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import RectangleButton from "@/components/buttons/rectangle-button"
 import PolicyCard from "@/components/policyCard/policyCard"
 import styles from "./contentShowcase.module.scss"
 import { JSX, memo } from "react"

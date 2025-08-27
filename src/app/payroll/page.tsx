@@ -1,51 +1,40 @@
-"use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicyData, cardsData } from "./data"
 import faqData from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  ScrollableCardsSection,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  taskIconSix,
-  secureImage,
-  advancedImage,
-  taskIconSeven,
-  taskIconEight,
-  taskIconNine,
-  designedIcon,
-  payrollImg,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+export const metadata: Metadata = generateMetaData({
+  title: "Payroll Management: Automate Salaries, Payouts & Compliance ",
+  description:
+    "Automate salary disbursals, contractor payouts, and compliance with EnKash Payroll. Ensure timely, error-free payments with full visibility and control.",
+  alternates: {
+    canonical: `${process.env.URL}/payroll/`,
+  },
+})
+const salesUrl = getSalesUrl("/payroll")
 
 const Payroll = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -122,14 +111,7 @@ const Payroll = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -182,7 +164,7 @@ const Payroll = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -218,91 +200,18 @@ const Payroll = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <div className={styles.allInOnePolicy}>
+              {allInOnePolicyData.map((item, index) => (
                 <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="Comprehensive Employee Data Management"
-                  description="Effortlessly handle employee information with EnKash’s HR payroll software, allowing easy uploads, seamless validation, and bulk salary disbursements—all while ensuring compliance. EnKash ensures compliance with regulatory standards, reducing errors and streamlining onboarding processes—all within a user-friendly interface."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={item.maxImageHeight}
+                  reverse={item.reverse}
                 />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="Secure Salary Account Validation"
-                  description="Validate salary account details using the penny-drop method, minimizing payment errors and bolstering financial security. Ensure every transaction is accurate and hassle-free."
-                  image={shareImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Multi-Branch Salary Disbursement"
-                  description="Manage payroll across multiple branches effortlessly from a single dashboard. With just a click, initiate accurate salary disbursements for all employees, regardless of location."
-                  image={paymentOptionImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Seamless ERP Integration"
-                  description="Integrate EnKash’s payroll software seamlessly with your existing ERP systems and banking partners. This integration enables a unified and efficient workflow tailored to your business needs."
-                  image={notificationImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFive}
-                  title="Flexible Payment Solutions"
-                  description="Handle payments for full-time employees, contractors, and interns, covering both regular and off-cycle payroll. Additionally, reimburse employee expenses alongside payroll for added convenience."
-                  image={optimizedIcon}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
-                <AllInOnePolicy
-                  icon={taskIconSix}
-                  title="Configurable Approval Workflows"
-                  description="Define approval hierarchies with customizable rules. Automate payroll information routing to designated approvers, ensuring prompt approvals and reduced delays."
-                  image={secureImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconSeven}
-                  title="Advanced Reporting and Analytics"
-                  description="Access real-time insights into payroll trends and employee expenses. Generate comprehensive, customizable reports to support data-driven decisions and strategic planning."
-                  image={advancedImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconEight}
-                  title="Designed for Startups and SMEs"
-                  description="Simple and reliable payroll software for small businesses. Easily onboard employees, run accurate payroll, and stay compliant—without the spreadsheet hassle."
-                  image={designedIcon}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconNine}
-                  title="Streamline HR Payroll Operations"
-                  description="A powerful HR payroll solution to automate compliance, simplify salary disbursement, and reduce manual work, ensuring smooth, secure payroll operations."
-                  image={payrollImg}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -327,80 +236,12 @@ const Payroll = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
-
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6 "
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

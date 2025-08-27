@@ -6,16 +6,26 @@ import crouselIconFive from "./img/crouselIconFive.svg"
 
 
 import {
+  notificationImage,
+  optimizedIcon,
+  paymentLinkImage,
+  paymentOptionImage,
   scrollIconFour,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
+  shareImage,
+  taskIconFive,
+  taskIconFour,
+  taskIconOne,
+  taskIconThree,
+  taskIconTwo,
 } from "."
 
 const cardsData = [
   {
     title: "Sign Up and Upload",
-    description: "Create your account and add invoices ",
+    description: "Create your account and add invoices.",
     icon: scrollIconOne,
   },
   {
@@ -80,4 +90,56 @@ const allProductSections = [
   },
 ]
 
-export { cardsData, allProductSections }
+
+const allInOnePolicyData = [
+  {
+    icon: taskIconOne,
+    title: "Centralized Dashboard for Complete Control",
+    description:
+      "Manage all vendor invoices from a single, intuitive platform designed for maximum efficiency. With end-to-end visibility of the invoice lifecycle, track the status of every invoice to stay on top of your financial obligations.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Flexible Approval Processes for Business Needs",
+    description:
+      "Design workflows that align perfectly with your organizational structure. Easily assign roles, set authorization levels, and create tailored approval hierarchies that ensure compliance without compromising on speed or accuracy.",
+    image: shareImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Cash Flow Optimization for Timely Decisions",
+    description:
+      "Utilize EnKash’s facilitated credit lines to enhance liquidity and maintain smooth operations. Extend payment deadlines strategically while strengthening relationships with vendors through consistent and timely payment processes.",
+    image: paymentOptionImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconFour,
+    title: "Effortless ERP System Integration",
+    description:
+      "Sync EnKash with major ERP platforms like Tally, SAP, and Zoho for seamless data flow. Avoid duplications, save time, and ensure data accuracy with synchronized invoice and payment records that simplify reconciliation.",
+    image: notificationImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconFive,
+    title: "Detailed Insights Through Advanced Reporting",
+    description:
+      "Access real-time invoice statuses and generate comprehensive reports with ease. Use actionable data to refine your financial planning, identify trends, and make well-informed decisions for your business growth.",
+    image: optimizedIcon,
+    buttonUrl: "/sales",
+    maxImageHeight: "259px",
+  },
+];
+
+
+export { cardsData, allProductSections, allInOnePolicyData }

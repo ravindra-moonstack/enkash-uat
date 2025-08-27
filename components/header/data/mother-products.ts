@@ -76,11 +76,11 @@ export const motherProducts = [
             link: "/auto-collect",
           },
           {
-            name: "Payment Link",
+            name: "Payment Links",
             description: "Create & send links to get paid",
             imageSrc: paymentLinks,
             imageSrcHovered: paymentLinksFilled,
-            link: "/payment-link",
+            link: "/payment-links",
           },
           {
             name: "Subscriptions",
@@ -137,7 +137,7 @@ export const motherProducts = [
             description: "Multiple QRs for payment collection",
             imageSrc: qrCode,
             imageSrcHovered: qrCodeFilled,
-            link: "/qr-codes",
+            link: "/qr-code",
           },
         ],
         footerText: "Effortlessly streamline your business collections",
@@ -151,7 +151,7 @@ export const motherProducts = [
   {
     name: "Make Payments",
     description: "Manage all types of business payments",
-
+   link: "/products/make-payments",
     payableProducts: [
       {
         subtitle: "Default",
@@ -166,7 +166,7 @@ export const motherProducts = [
             description: "Auto-fetch & pay utility bills",
             imageSrc: billPayments,
             imageSrcHovered: billPaymentsFilled,
-            link: "/business-bill-payment",
+            link: "/utility-bill-payment",
           },
           {
             name: "Vendor Payment",
@@ -180,7 +180,7 @@ export const motherProducts = [
             description: "Never miss the rent deadline",
             imageSrc: rentalPayments,
             imageSrcHovered: rentalPaymentsFilled,
-            link: "/rental-payment",
+            link: "/rent-payment",
           },
           {
             name: "Payroll Processing",
@@ -195,7 +195,7 @@ export const motherProducts = [
             description: "Mass payments in one click",
             imageSrc: bulkPayout,
             imageSrcHovered: bulkPayoutFilled,
-            link: "/express-pay",
+            link: "/bulk-pay",
           },
           {
             name: "GST Payment",

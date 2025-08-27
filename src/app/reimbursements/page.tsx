@@ -1,126 +1,56 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardData, expenseManagementData, stepCards } from "./data"
-import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
-  blueArrow,
-  groupIcon,
-  paymentSummary,
-  whiteArrow,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
-  stackCardThreeImg,
-  stackCardThreeIcon,
-  stackCardsixImg,
-  stackCardsixIicon,
-  fastenUpOr,
-} from "."
+  cardData,
+  expenseManagementData,
+  stackcardData,
+  stepCards,
+} from "./data"
+import faqData from "./faq-data"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  ManagementCard,
+  EasyStepCard,
+  CardStacking,
+  FaqSection,
+} from "@/components"
+import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import ManagementCard from "@/components/management-card/management-card"
-import EasyStepCard from "@/components/easy-step-card/easy-step-card"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import CardStacking from "@/components/cardStacking/cardStacking"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={realTimeExpenseIcon}
-          title="Automated processes:"
-          description=" Reimburse expenses using a digitized end-to-end solution that automates checking, approvals, invoice generation, and submission to ensure speed and accuracy."
-          image={realTimeExpense}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
+export const metadata: Metadata = generateMetaData({
+  title: "Automate Reimbursements for Easy Claim Submission & Approval",
+  description:
+    "Simplify employee reimbursements with EnKash. Submit, approve, and settle expense claims digitally—boost transparency, compliance, and employee satisfaction.",
+  alternates: {
+    canonical: `${process.env.URL}/reimbursements/`,
   },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={fraudProtectionIcon}
-          title="OCR Technology:"
-          description=" Automatically scan and collect details from receipts using OCR technology, eliminating the need for manual entry."
-          image={fraudProtection}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={stackCardThreeIcon}
-          title="WhatsApp Integration:"
-          description="Seamless WhatsApp integration to approve/reject expenses at one go without logging into the dashboard"
-          image={stackCardThreeImg}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={streamlinedReimbursementIcon}
-          title="Alerts:"
-          description="Track spending made on behalf of the business by employees in real-time."
-          image={streamlinedReimbursement}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={costControlSavingsIcon}
-          title="Insightful data:"
-          description="Benefit from a complete overview of reimbursement and plan your business’ cash flow accordingly."
-          image={costControlSavings}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-]
+})
+const salesUrl = getSalesUrl("/reimbursements")
+
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Learn More"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const Reimbursements = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -201,7 +131,7 @@ const Reimbursements = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -272,11 +202,11 @@ const Reimbursements = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className="text-center mb-3">
-            <RectangleButton
+            {/* <RectangleButton
               title={"Three Easy Steps"}
               theme="outline-blue-small"
               className="border_radius"
-            />
+            /> */}
           </div>
 
           <div className={`${styles.title} text-center pb-4 pb-md-5`}>
@@ -308,50 +238,24 @@ const Reimbursements = (): React.JSX.Element => {
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <div className="text-center mb-3">
-            <button
-              className="bg-white text-black "
-              style={{
-                borderRadius: "40px",
-                padding: "10px 20px",
-                border: "1px solid #EAECF0",
-              }}
-            >
-              <Image
-                src={fastenUpOr}
-                alt="icon"
-                className="me-2"
-                style={{
-                  width: "20px",
-                  height: "20px",
-                }}
-              />
-              <span>FASTEN UP OR</span>
-            </button>
-          </div>
           <>
-            <div className={`${styles.title} text-center pb-md-5 pb-0 px-md-5`}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Streamline ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "your reimbursement process ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "with automated solutions",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Streamline ",
+                  color: "color-black",
+                },
+                {
+                  title: "your reimbursement process ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "with automated solutions",
+                  color: "color-black",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -375,75 +279,8 @@ const Reimbursements = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
-          </div>
-        </div>
-      </div>
-
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
           </div>
         </div>
       </div>
@@ -454,7 +291,7 @@ const Reimbursements = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "EnKash’s innovative solutions fort ",
+                  title: "EnKash’s innovative solutions for ",
                   color: "color-black",
                 },
                 {
@@ -474,14 +311,14 @@ const Reimbursements = (): React.JSX.Element => {
                   description={card.description}
                   cardImage={card.cardImage}
                   theme="dark"
+                  linkUrl={card.linkUrl}
                 />
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

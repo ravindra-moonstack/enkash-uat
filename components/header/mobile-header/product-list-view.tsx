@@ -1,49 +1,50 @@
-import styles from "./mobile-header.module.scss"
 import { Fragment, useState } from "react"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+
+import styles from "./mobile-header.module.scss"
 
 import { forwardArrowBlue } from ".."
-import Image from "next/image"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import RectangleButton from "@/components/buttons/rectangle-button"
 
 interface ProductListViewProps {
-  childProducts: any[]
   products: any[]
-  setCurrentStep: (step: number) => void
-  currentStep: number
-  signupUrl: any
 }
 
-const ProductListView = ({
-  products,
-  childProducts,
+const ProductListView = ({ products }: ProductListViewProps) => {
+  //
 
-  signupUrl,
-}: ProductListViewProps) => {
-  const [selectedItemIndex, setSelectedItemIndex] = useState(null)
+  const router = useRouter()
+
+  const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
+    null
+  )
+
   return (
-    <div className={`w-100 absolute z-10 `}>
+    <div className="w-100 absolute z-10">
+      {/* First Level */}
       {selectedItemIndex == null && (
-        <div className={`${styles.mobile_modal} `}>
+        <div className={styles.mobile_modal}>
           <div className="list">
             <div className={styles.line}></div>
             <ul>
-              {products.map((item: any, index: any) => (
+              {products.map((item: any, index: number) => (
                 <Fragment key={index}>
                   <li
                     key={item.name}
-                    className={`py-4 px-4 align-items-center`}
+                    className="py-4 px-4 align-items-center d-flex justify-content-between"
                     onClick={() => {
-                      if (childProducts.length === 0) {
-                        window.location.href = item.link
-                      } else {
+                      if (item.children && item.children.length > 0) {
                         setSelectedItemIndex(index)
+                      } else {
+                        router.push(item.link)
                       }
                     }}
                   >
                     <div className="d-flex flex-column">
                       <div className={styles.title}>
                         {item.name}
-                        {item.name == "Receivables" && (
+                        {item.name === "Receivables" && (
                           <sup className={styles.sup}>#</sup>
                         )}
                       </div>
@@ -63,76 +64,45 @@ const ProductListView = ({
             </ul>
           </div>
           <div
-            className={`d-flex   justify-content-center ${styles.buttons_container}`}
+            className={`d-flex justify-content-center ${styles.buttons_container}`}
           >
-            <RectangleButton
-              title="Talk to Sales"
-              theme="blue"
-              url={signupUrl}
-            />
-            {/* <span className="mx-2"></span> */}
-
             <RectangleButton
               title="Log In"
               theme="outline-blue"
-              url={"https://home.enkash.com/login"}
+              url={`${process.env.HOME_URL}`}
             />
           </div>
         </div>
       )}
 
-      {/* {selectedItemIndex === 0 && (
-        <div>
-          <SubProductListView
-            setSelectedItemIndex={selectedItemIndex}
-            products={childProducts[0]}
-            setCurrentStep={setCurrentStep}
-            signupUrl={signupUrl}
-          />
+      {/* Second Level - Children */}
+      {selectedItemIndex !== null && products[selectedItemIndex]?.children && (
+        <div className={styles.mobile_modal}>
+          <div className="list">
+            <div className={styles.line}></div>
+            <ul>
+              {products[selectedItemIndex].children.map(
+                (child: any, childIndex: number) => (
+                  <Fragment key={childIndex}>
+                    <li
+                      key={child.name}
+                      className="py-4 px-4 align-items-center"
+                      onClick={() => {
+                        router.push(child.link)
+                      }}
+                    >
+                      <div className="d-flex flex-column">
+                        <div className={styles.title}>{child.name}</div>
+                      </div>
+                    </li>
+                    <div className={styles.line}></div>
+                  </Fragment>
+                )
+              )}
+            </ul>
+          </div>
         </div>
       )}
-
-      {selectedItemIndex === 1 && (
-        <SubProductListView
-          setSelectedItemIndex={selectedItemIndex}
-          products={childProducts[1]}
-          setCurrentStep={setCurrentStep}
-          signupUrl={signupUrl}
-        />
-      )}
-
-      {selectedItemIndex === 2 && (
-        <SubProductListView
-          setSelectedItemIndex={selectedItemIndex}
-          products={childProducts[2]}
-          setCurrentStep={setCurrentStep}
-          signupUrl={signupUrl}
-        />
-      )}
-      {selectedItemIndex === 3 && (
-        <SubProductListView
-          setSelectedItemIndex={selectedItemIndex}
-          products={childProducts[3]}
-          setCurrentStep={setCurrentStep}
-          signupUrl={signupUrl}
-        />
-      )}
-      {selectedItemIndex === 4 && (
-        <SubProductListView
-          setSelectedItemIndex={selectedItemIndex}
-          products={childProducts[4]}
-          setCurrentStep={setCurrentStep}
-          signupUrl={signupUrl}
-        />
-      )}
-      {selectedItemIndex === 5 && (
-        <SubProductListView
-          setSelectedItemIndex={selectedItemIndex}
-          products={childProducts[5]}
-          setCurrentStep={setCurrentStep}
-          signupUrl={signupUrl}
-        />
-      )} */}
     </div>
   )
 }

@@ -1,12 +1,18 @@
-"use client"
-import Image from "next/image"
 import styles from "./page.module.scss"
 import { allProductSections, cardData } from "./data"
 import faqData from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  AllProducts,
+  LottieDynamicLoadComponent,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
-  paymentSummary,
   whiteArrow,
   paymentLinkImage,
   shareImage,
@@ -22,26 +28,24 @@ import {
   invoiceImg,
   optimizedImg,
 } from "."
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import AllProducts from "@/components/all-products/all-products"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
-import Link from "next/link"
-
+export const metadata: Metadata = generateMetaData({
+  title: "Fast, Easy and Secure Business Payments with EnKash",
+  description:
+    "Simplify vendor, utility, and tax payments with EnKash. Make fast, secure payouts via UPI, cards, or bank transfers—all from one powerful payment dashboard.",
+  alternates: {
+    canonical: `${process.env.URL}/make-payments/`,
+  },
+})
+const salesUrl = getSalesUrl("/make-payments")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const PaymentPage = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto">
           <div className="d-flex">
@@ -62,7 +66,7 @@ const PaymentPage = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "The Control Tower for All Your Business Payments.",
+                    title: "The Control Tower for All Your Business Payments",
                     color: "color-white ",
                   },
                 ]}
@@ -86,9 +90,9 @@ const PaymentPage = (): React.JSX.Element => {
 
             <div className="mt-md-5 mt-3 mb-3 mb-md-0">
               <RectangleButton
-                title="Talk to Sales"
+                title="Talk to Us"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -112,7 +116,7 @@ const PaymentPage = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Make Business Payments: Faster, Leaner, Smarter.",
+                  title: "Make Business Payments Faster, Leaner & Smarter",
                   color: "color-white ",
                 },
               ]}
@@ -144,7 +148,7 @@ const PaymentPage = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="h6"
-                  className="f-4 "
+                  className="f-4 text-center d-block"
                 />
               </div>
             ))}
@@ -191,18 +195,17 @@ const PaymentPage = (): React.JSX.Element => {
                   title="Manage All Your Rents Without Lifting a Finger"
                   description="Manage and track rental payments across locations with automated TDS handling, complete records, and seamless scheduling. Free yourself from spreadsheets and stay compliant without chasing paperwork or due dates."
                   image={shareImage}
-                  buttonUrl="/rental-payments"
+                  buttonUrl="/rent-payment"
                   maxImageHeight="305px"
                   buttonText="Explore Rental Payments"
                   reverse
                 />
-
                 <AllInOnePolicy
                   icon={taskIconThree}
                   title="Never Miss Another Utility Bill Payment"
                   description="Never miss a utility payment again. Schedule electricity, internet, phone, and other bills with smart reminders and approvals. EnKash keeps you organized, audit-ready, and always on top of your bills."
                   image={paymentOptionImage}
-                  buttonUrl="/bill-payments"
+                  buttonUrl="/utility-bill-payment"
                   buttonText="Explore Bill Payments"
                   maxImageHeight="264px"
                 />
@@ -212,7 +215,7 @@ const PaymentPage = (): React.JSX.Element => {
                   title="Disburse Hundreds of Payments in One Click"
                   description="Make mass payouts to vendors, freelancers, gig workers, and more — instantly, through your preferred payment mode. Upload once, disburse in one click. It’s payout efficiency, redefined for scale."
                   image={notificationImage}
-                  buttonUrl="/bulk-payouts"
+                  buttonUrl="/bulk-pay"
                   buttonText="Explore Bulk Payouts"
                   maxImageHeight="264px"
                   reverse
@@ -223,7 +226,7 @@ const PaymentPage = (): React.JSX.Element => {
                   title="Make Every GST Tax Payment On Time"
                   description="Ensure timely and compliant tax payments without the manual load. Automate GST and statutory dues with proper documentation, built-in checks, and a clear audit trail. Stay compliant and stress-free."
                   image={optimizedImg}
-                  buttonUrl="/gst-payments"
+                  buttonUrl="/gst-payment"
                   buttonText="Explore GST Payments"
                   maxImageHeight="259px"
                 />
@@ -233,7 +236,7 @@ const PaymentPage = (): React.JSX.Element => {
                   title="Pay Your Teams Right, Every Time"
                   description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
                   image={secureImage}
-                  buttonUrl="/explore-payroll"
+                  buttonUrl="/payroll"
                   buttonText="Explore Payroll"
                   maxImageHeight="264px"
                   reverse
@@ -242,7 +245,7 @@ const PaymentPage = (): React.JSX.Element => {
                 <AllInOnePolicy
                   icon={taskIconSix}
                   title="Bring Order to Invoice Chaos"
-                  description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
+                  description="Digitize, validate, and approve invoices without the chaos. Cut down processing time, reduce errors, and gain full visibility with smart workflows tailored to your accounts payable process."
                   image={invoiceImg}
                   buttonUrl="/invoice-management"
                   buttonText="Explore Invoice Management"
@@ -295,80 +298,13 @@ const PaymentPage = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black ",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue ",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

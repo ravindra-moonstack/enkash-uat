@@ -1,3 +1,4 @@
+
 import {
   vendorPayment,
   vendorPaymentFilled,
@@ -24,10 +25,12 @@ import {
 const payableProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/make-payments",
+      link: "/products/make-payments",
+    subtitleLink: "/products/make-payments",
     currentHeading: {
       name: "Make Payments",
       description: "Manage all types of business payments",
+    
     },
     list: [
       {
@@ -42,14 +45,14 @@ const payableProducts = [
         description: "Auto fetch & auto pay utility bills on time",
         imageSrc: billPayments,
         imageSrcHovered: billPaymentsFilled,
-        link: "/business-bill-payment",
+        link: "/utility-bill-payment",
       },
       {
         name: "Express Pay",
         description: "Pay multiple vendors & bills with a single click",
         imageSrc: bulkPayout,
         imageSrcHovered: bulkPayoutFilled,
-        link: "/express-pay",
+        link: "/bulk-pay",
       },
       {
         name: "GST Payment",

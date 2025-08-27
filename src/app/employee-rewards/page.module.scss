@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixin" as *;
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
 
 .first_row {
   background-repeat: no-repeat;
@@ -7,9 +7,8 @@
   background-size: cover;
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
-
-  padding: 90px 20px 0px 20px;
-  background-image: url(./img/rewardsBg.jpg);
+  padding: 100px 20px 0px 20px;
+  background-image: url(/images/rewardsBg.webp);
   @include for-laptops {
 
     padding: 112px 20px 0px;

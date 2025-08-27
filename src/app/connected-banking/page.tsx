@@ -1,50 +1,46 @@
-"use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData, paymentMethodData } from "./data"
+import { cardsData, paymentMethodData, payoutPolicies } from "./data"
 import faqData from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  AllInOnePolicy,
+  FeatureCard,
+  FaqSection,
+} from "@/components"
+
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  MaintainCompleteControl,
-  reduceFrauds,
-  secureImage,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  taskIconSix,
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import FeatureCard from "@/components/featureCard/feature-card"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
 import BankLogoSlider from "@/components/banking-slider/banking-slider"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Connected Banking: For Faster Payouts",
+  description:
+    "Simplify business banking with EnKash’s Seamless Banking solution. Enable faster transactions, smooth integrations, and unified banking on one smart platform.",
+  alternates: {
+    canonical: `${process.env.URL}/connected-banking/`,
+  },
+})
+const salesUrl = getSalesUrl("/connected-banking")
 
 const showScroll = cardsData.length > 3
 
 const ConnectedBanking = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -121,16 +117,9 @@ const ConnectedBanking = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
+                    </div> 
                   </div>
                 </div>
               </div>
@@ -200,7 +189,7 @@ const ConnectedBanking = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -242,65 +231,18 @@ const ConnectedBanking = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Initiate payouts directly from your bank accounts"
-                description="Forget wallet loading and fund transfers. With EnKash, your payouts happen directly from your connected bank accounts, giving you complete control over cash flow without any operational delays or intermediaries."
-                image={paymentLinkImage}
-                buttonUrl="/sales/"
-                maxImageHeight="243px"
-              />
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Link multiple bank accounts"
-                description="Connect all your current accounts from different banks on a single dashboard. Distribute payout load, minimize dependency on a single bank, reduce downtime risks, and improve liquidity management across your business operations."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title=" Access 24x7 payment rails"
-                description="Make payouts anytime—day or night, weekends or holidays. EnKash supports UPI, IMPS, NEFT, and RTGS round-the-clock, ensuring your vendors, customers, or employees get paid without delay."
-                image={shareImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Get real-time balance visibility"
-                description="See up-to-date balances across all your linked accounts instantly. Make smarter financial decisions with accurate visibility into available funds before initiating payouts or planning high-value transactions."
-                image={paymentOptionImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Automate reconciliation"
-                description="Say goodbye to manual downloads and spreadsheet matching. EnKash fetches direct bank files and automates reconciliation, making your accounting faster, more accurate, and audit-ready without any manual effort."
-                image={secureImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
-              <AllInOnePolicy
-                icon={taskIconSix}
-                title="Enable smart routing"
-                description="Intelligently route each payout from the most optimal account based on pre-set rules or available balance. Maximize fund utilization and avoid failed transactions due to insufficient funds in a single account."
-                image={reduceFrauds}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Maintain complete control"
-                description="With EnKash, your money stays in your bank. No wallet dependencies or fund transfers- just a secure, compliant layer that enables real-time visibility, control, and automation over all your payouts."
-                image={MaintainCompleteControl}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
+              {payoutPolicies.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -357,79 +299,13 @@ const ConnectedBanking = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

@@ -1,0 +1,130 @@
+@use "./../../styles/mixin" as *;
+
+.leaderCardSection {
+  max-width: 1100px;
+  margin: auto;
+  .cards {
+    padding: 20px;
+    background: #d9d9d9;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    .cardImage {
+      background: #ededed;
+      height: 300px;
+      display: flex;
+      align-items: end;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: top center;
+        @include for-laptops{
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+          object-position: bottom center;
+          
+        }
+      }
+    }
+    .cardHeadding {
+      padding: 10px 0;
+      h4 {
+        span {
+          color: #333333 !important;
+        }
+      }
+    }
+    .roles {
+      p {
+        margin: 0;
+        color: #333;
+      }
+    }
+  }
+}
+
+.leaderPopupOuter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999999;
+  transform: translate(-50% , -50%);
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  height: max-content;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  .leaderPopupinner {
+    background: linear-gradient(
+      165deg,
+      rgba(77, 77, 77, 1) 0%,
+      rgba(29, 29, 29, 1) 100%
+    );
+    border-radius: 16px;
+    padding: 20px;
+    position: relative;
+    max-height: 90vh;
+    overflow: auto;
+    @include for-laptops {
+      padding: 50px;
+      overflow: visible;
+      max-height: max-content;
+    }
+    .popupContentBox {
+      .popupClose {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        .closeButton {
+          border: none;
+          background: transparent;
+          color: #fff;
+        }
+      }
+      .popupLeftSide {
+        background: #5b5b5b;
+        color: #d9d9d9;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        .cardImage {
+          background: #4d4d4d;
+          height: 300px;
+          width: 100%;
+          overflow: hidden;
+          img {
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            object-position: bottom center;
+          }
+        }
+        h5 {
+          text-align: center;
+          margin-top: 10px;
+          margin-bottom: 5px;
+          span {
+            color: #d9d9d9;
+          }
+        }
+      }
+    }
+  }
+  .popupRightContent {
+    padding-top: 20px;
+    padding-left:0 ;
+    @include for-laptops{
+      padding-left: 50px; 
+      padding-top:0 ;
+    }
+    p {
+      line-height: 28px;
+      color: #d9d9d9;
+    }
+  }
+}

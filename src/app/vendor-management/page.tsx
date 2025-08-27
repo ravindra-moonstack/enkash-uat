@@ -1,43 +1,40 @@
-"use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { cardsData, policies } from "./data"
 import faqData from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  ScrollableCardsSection,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+export const metadata: Metadata = generateMetaData({
+  title: "Vendor Management: Simplify Vendor Onboarding & Payments",
+  description:
+    "Streamline vendor onboarding, document collection, and payment workflows with EnKash. Centralize data, reduce errors, and boost vendor relationship efficiency.",
+  alternates: {
+    canonical: `${process.env.URL}/vendor-management/`,
+  },
+})
+const salesUrl = getSalesUrl("/vendor-management")
 
 const VendorManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -74,7 +71,7 @@ const VendorManagement = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
+                <div className="pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
@@ -92,7 +89,7 @@ const VendorManagement = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Gain complete control of vendor relationships with powerful vendor management solution. From onboarding to payments and compliance our platform empowers businesses to work faster, reduce risks, and maintain healthy supplier partnerships.",
+                          "Gain complete control of vendor relationships with a powerful vendor management solution. From onboarding to payments and compliance, our platform empowers businesses to work faster, reduce risks, and maintain healthy supplier partnerships.",
                         color: "color-black subHeading",
                       },
                     ]}
@@ -114,14 +111,7 @@ const VendorManagement = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -154,7 +144,7 @@ const VendorManagement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Step-by-Step Guide to",
+                  title: "Step-by-Step Guide for",
                   color: "color-black",
                 },
                 {
@@ -174,7 +164,7 @@ const VendorManagement = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -208,54 +198,18 @@ const VendorManagement = (): React.JSX.Element => {
               </div>
             </div>
 
-            <div className={styles.allInOnePolicy}>
+            {policies.map((item, index) => (
               <AllInOnePolicy
-                icon={taskIconOne}
-                title="Instant Vendor Onboarding"
-                description="Quickly onboard new vendors with minimal effort using EnKash’s one-click invite feature. Collect essential details like PAN, GST, and bank account information through intuitive, pre-set templates. Say goodbye to manual data entry and enjoy a faster, error-free onboarding process that sets up your vendor relationships for success."
-                image={paymentLinkImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                image={item.image}
+                buttonUrl={salesUrl}
+                maxImageHeight={item.maxImageHeight}
+                reverse={item.reverse}
               />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Effortless Invoice Management"
-                description="Simplify invoice handling with EnKash’s centralized dashboard. Easily upload single or bulk invoices and manage them efficiently from a unified platform. Track invoice statuses in real time, reduce errors, and ensure timely processing. This streamlined approach not only saves time but also fosters better vendor relationships and financial accuracy."
-                image={shareImage}
-                buttonUrl="/sales"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Flexible Payment Options"
-                description="Offer your vendors a variety of payment methods, including UPI, virtual cards, and traditional bank transfers. With EnKash, you can track payment statuses in real-time, ensuring transparency and maintaining trust. Timely payments enhance vendor satisfaction, while flexible options make transactions convenient for all parties involved."
-                image={paymentOptionImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Advanced Reporting & Insights"
-                description="Unlock actionable insights into your vendor management with EnKash’s comprehensive reporting tools. Monitor vendor performance metrics, analyze payment histories, and identify trends that impact your supply chain. Use this data to make informed decisions and optimize operations for better financial outcomes and efficiency."
-                image={notificationImage}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Customizable Approval Workflows"
-                description="Design approval workflows that match your organizational requirements. EnKash allows you to set role-based access, define thresholds, and create flexible hierarchies. Streamline decision-making processes while maintaining strict compliance, ensuring every transaction and vendor activity aligns with your internal policies and business goals."
-                image={optimizedIcon}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-              />
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -266,7 +220,7 @@ const VendorManagement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Focus on what truly matters—your business growth.",
+                  title: "Focus on What Truly Matters - Your Business Growth",
                   color: "color-white",
                 },
               ]}
@@ -280,80 +234,13 @@ const VendorManagement = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-5"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }
