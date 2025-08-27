@@ -39,7 +39,7 @@ const cardData = [
 
 const stepCards = [
   {
-    title: "Upload receipts: ",
+    title: "Upload receipts ",
     description: "Go to “Add Expense” and upload your receipt.",
     ctaColor: "equity-blue",
     source: "expense_management",
@@ -47,7 +47,7 @@ const stepCards = [
     steps: "01",
   },
   {
-    title: "Click Create:",
+    title: "Click Create",
     description: "The expense will be forwarded to the manager for approval.",
     ctaColor: "blue",
     source: "expense_management",
@@ -55,7 +55,7 @@ const stepCards = [
     steps: "02",
   },
   {
-    title: "Know Status: ",
+    title: "Know Status ",
     description:
       " View all expenses in the `Expenses` tab with their respective status.",
     ctaColor: "blue",
@@ -105,7 +105,7 @@ const stackcardData = [
   {
     color: "#fff",
     icon: realTimeExpenseIcon,
-    title: "Automated processes:",
+    title: "Automated processes",
     description:
       "Reimburse expenses using a digitized end-to-end solution that automates checking, approvals, invoice generation, and submission to ensure speed and accuracy.",
     image: realTimeExpense,
@@ -115,7 +115,7 @@ const stackcardData = [
   {
     color: "#eee",
     icon: fraudProtectionIcon,
-    title: "OCR Technology:",
+    title: "OCR Technology",
     description:
       "Automatically scan and collect details from receipts using OCR technology, eliminating the need for manual entry.",
     image: fraudProtection,
@@ -125,7 +125,7 @@ const stackcardData = [
   {
     color: "#eee",
     icon: stackCardThreeIcon,
-    title: "WhatsApp Integration:",
+    title: "WhatsApp Integration",
     description:
       "Seamless WhatsApp integration to approve/reject expenses at one go without logging into the dashboard.",
     image: stackCardThreeImg,
@@ -135,7 +135,7 @@ const stackcardData = [
   {
     color: "#fff",
     icon: streamlinedReimbursementIcon,
-    title: "Alerts:",
+    title: "Alerts",
     description:
       "Track spending made on behalf of the business by employees in real-time.",
     image: streamlinedReimbursement,
@@ -145,7 +145,7 @@ const stackcardData = [
   {
     color: "#eee",
     icon: costControlSavingsIcon,
-    title: "Insightful data:",
+    title: "Insightful data",
     description:
       "Benefit from a complete overview of reimbursement and plan your business’ cash flow accordingly.",
     image: costControlSavings,

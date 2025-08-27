@@ -110,7 +110,7 @@ const allInOnePolicyData = [
     icon: taskIconTwo,
     title: "Buy Now, Pay Later",
     description:
-      "Drive customer acquisition and loyalty by letting them enjoy your product or service now and pay later. No upfront pressure, just seamless access.",
+      "Drive customer acquisition and loyalty by letting them enjoy your product or service now and pay later. With EnKash, you can integrate multiple pay-later providers, allowing users to delay payments while you still get paid instantly.",
     image: shareImage,
     buttonUrl: "/sales",
     maxImageHeight: "305px",
@@ -162,14 +162,7 @@ const managementCardsData = [
       "Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale.",
     cardImage: autoCollect,
     linkUrl: "/auto-collect",
-  },
-  {
-    titleHtml: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
-    cardImage: invoices,
-    linkUrl: "/digital-invoicing/",
-  },
+  }, 
   {
     titleHtml: "Instant Settlement",
     description:

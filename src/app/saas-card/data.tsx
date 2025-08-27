@@ -288,6 +288,7 @@ const cardType = [
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
+     linkUrl:'/sales',
   },
   {
     titleHtml: "Virtual Card",
@@ -309,6 +310,7 @@ const cardType = [
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
+     linkUrl:'/sales',
   },
 ]
 
@@ -379,7 +381,7 @@ const allProductSections = [
       {
         title: "Subscription Management ",
         description:
-          "Keep a track of active tools, renewal dates, and eliminate duplicate or unused SaaS for efficient management",
+          "Keep a track of active tools, renewal dates, and eliminate duplicate or unused SaaS for efficient management.",
         image: sliderFour,
         link: "/auto-collect/",
       },

@@ -74,7 +74,7 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
               </div>
               <h3 className={styles.slideTitle}>{slide.title}</h3>
               <p className={styles.slideDescription}>{slide.description}</p>
-              <div className={styles.customButtons}>
+              {/* <div className={styles.customButtons}>
                 <Link href={slide.button?.url || "#partnership-form"}>
                   {slide.button?.text || "Become a Partner"}
                   <svg
@@ -91,7 +91,7 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
                     />
                   </svg>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}

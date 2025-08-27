@@ -34,6 +34,15 @@ const faqData: FAQDataItem[] = [
       },
     ],
   },
+  {
+    question: "What is a P-card Payment?",
+    answer: [
+      {
+        heading:
+          "A P-Card payment refers to a transaction made using a Purchase Card (P-Card)—a type of company-issued payment card used to streamline business purchases. P-Cards allow employees to buy goods and services directly without going through the traditional procurement process. This method helps reduce paperwork, speeds up approvals, and improves expense tracking and control.",
+      },
+    ],
+  },
 ]
 
 export default faqData

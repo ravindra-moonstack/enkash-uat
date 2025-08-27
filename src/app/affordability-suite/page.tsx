@@ -24,9 +24,9 @@ import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
-  title: "Account Payable Analytics: Gain Real-Time Insights on Payables",
+  title: "EnKash Affordability Suite | Boost Conversions with EMI, Pay Later & More",
   description:
-    "Track, analyze, and optimize your accounts payable with EnKash Payable Analytics. Improve cash flow planning, spot delays, and make informed financial decisions.",
+    "Increase sales with Affordability Suite. Offer EMIs, Pay Later, and flexible payment options to enhance customer experience and drive higher conversions.",
   alternates: {
     canonical: `${process.env.URL}affordability-suite/`,
   },
@@ -45,8 +45,8 @@ const Payroll = (): React.JSX.Element => {
                   items={[
                     { name: "Home", url: "/" },
                     {
-                      name: "Make Payments",
-                      url: "/products/make-payments",
+                      name: "Collect Payments",
+                      url: "/products/collect-payments",
                     },
                     {
                       name: "Affordability Suite",
@@ -115,14 +115,7 @@ const Payroll = (): React.JSX.Element => {
                         theme="blue"
                         url={salesUrl}
                       />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
-                      />
-                    </div>
+                    </div> 
                   </div>
                 </div>
               </div>
@@ -253,7 +246,7 @@ const Payroll = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {

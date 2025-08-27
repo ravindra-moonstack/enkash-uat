@@ -39,7 +39,7 @@ const cardData = [
 
 const stepCards = [
   {
-    title: "Scan receipts:",
+    title: "Scan receipts",
     description:
       " Go to Drop Receipts as visible on the top and store all your receipts on the go.",
     ctaColor: "equity-blue",
@@ -48,7 +48,7 @@ const stepCards = [
     steps: "01",
   },
   {
-    title: "Upload on the go:",
+    title: "Upload on the go",
     description: " Upload receipts as and when you spend.",
     ctaColor: "blue",
     source: "expense_management",
@@ -56,7 +56,7 @@ const stepCards = [
     steps: "02",
   },
   {
-    title: "Reimburse:",
+    title: "Reimburse",
     description: "Link them to expenses anytime as per your convenience.",
     ctaColor: "blue",
     source: "expense_management",
@@ -118,7 +118,7 @@ const stackcardData = [
     icon: fraudProtectionIcon,
     title: "WhatsApp Integration",
     description:
-      "Make it easy for employees to submit receipts on the go using WhatsApp.",
+      "Employees receive a WhatsApp alert after an online transaction. They can simply drop the receipt in reply, and it gets auto-linked to the expense.",
     image: fraudProtection,
     buttonUrl: "/sales",
     maxImageHeight: "300px",
