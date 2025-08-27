@@ -5,7 +5,7 @@ import Script from "next/script"
 import styles from "./contactForm.module.scss"
 import { DynamicHeading } from "@/components"
 import Link from "next/link"
-import MultiSelect from "../multiSelect/multiSelect"
+import MultiSelect from "../multiSelect"
 const contactOptions = [
   {
     value: "payment_collection",
@@ -57,7 +57,7 @@ const ContactForm: React.FC = () => {
 
       <div className={styles.contactFormWrapper}>
         <form
-              action={process.env.ZOHO_CONTACT_URL}
+          action={process.env.ZOHO_CONTACT_URL}
           name="form"
           method="POST"
           acceptCharset="UTF-8"
