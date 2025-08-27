@@ -4,7 +4,7 @@ import Script from "next/script"
 import styles from "./contactForm.module.scss"
 import { DynamicHeading } from "@/components"
 import Link from "next/link"
-import MultiSelect from "../multiSelect/multiSelect"
+import MultiSelect from "../multiSelect"
 import { contactOptions } from "./data"
 import {
   contactInitialValue,
@@ -21,7 +21,7 @@ const ContactForm: React.FC = () => {
 
   const router = useRouter()
 
-  const { errors, touched, handleSubmit, getFieldProps } =
+  const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
     useFormik({
       initialValues: contactInitialValue,
       validationSchema: contactValidation,
@@ -129,6 +129,9 @@ const ContactForm: React.FC = () => {
             name="contactReasons"
             options={contactOptions}
             placeholder="How can we help you?*"
+            onChange={(data) => {
+              setFieldValue("contactReasons", data.join(","))
+            }}
           />
 
           <textarea

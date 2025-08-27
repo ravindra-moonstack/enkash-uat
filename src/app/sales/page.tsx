@@ -12,6 +12,7 @@ import { testimonialData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import { getLoginUrl, getSupportUrl } from "@/common/utils/getSalesUrl"
+import { headers } from "next/headers"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash Sales Get our Payment & Spend Solutions",
@@ -25,7 +26,13 @@ export const metadata: Metadata = generateMetaData({
 const loginUrl = getLoginUrl("/sales")
 const supportUrl = getSupportUrl("/sales")
 
-const Sales = () => {
+async function Sales() {
+  //
+
+  const headersList = await headers()
+
+  const csrfToken = headersList.get("X-CSRF-Token") || "missing"
+
   return (
     <>
       <div className={`${styles.talk_to_sales} `}>
@@ -146,7 +153,7 @@ const Sales = () => {
             </div>
 
             <div className="col-md-7 col-12">
-              <SalesForm />
+              <SalesForm token={csrfToken} />
             </div>
 
             <div>

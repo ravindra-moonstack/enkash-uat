@@ -94,7 +94,8 @@ const SalesForm: React.FC = () => {
 
           <div>
             <input
-              type="text"
+              type="email"
+              required
               placeholder="Business Email ID*"
               {...getFieldProps("Email")}
             />
@@ -108,6 +109,7 @@ const SalesForm: React.FC = () => {
           <div>
             <input
               type="text"
+              required
               placeholder="Company Name*"
               {...getFieldProps("SingleLine1")}
             />
@@ -121,6 +123,8 @@ const SalesForm: React.FC = () => {
           <div>
             <input
               type="text"
+              required
+              maxLength={13}
               placeholder="Contact No.*"
               id="international_PhoneNumber_countrycode"
               {...getFieldProps("PhoneNumber_countrycode")}
@@ -181,6 +185,7 @@ const SalesForm: React.FC = () => {
         <div>
           <textarea
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
+            maxLength={500}
             {...getFieldProps("MultiLine")}
           />
           <ErrorText<TSalesInitialValueProp>

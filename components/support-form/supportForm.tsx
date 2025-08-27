@@ -1,71 +1,72 @@
 "use client"
-
-import React, { useEffect } from "react"
-import styles from "./supportForm.module.scss"
-import { DynamicHeading } from "@/components"
+import React from "react"
 import Link from "next/link"
-import MultiSelect from "../multiSelect/multiSelect"
-const contactOptions = [
-  {
-    value: "Login/Password",
-    label: "Login/Password",
-  },
-  { value: "Payment/Refund", label: "Payment/Refund" },
-  { value: "Card Activationt", label: "Card Activation" },
-  {
-    value: "Purchasing Voucher",
-    label: "Purchasing Voucher",
-  },
-  { value: "Report a Fraud", label: "Report a Fraud" },
-  { value: "Exploring EnKash", label: "Exploring EnKash" },
-  { value: "Something Else", label: "Something Else" },
-]
-const SupportForm: React.FC = () => {
-  useEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      window.zf_SetDateAndMonthRegexBasedOnDateFormate
-    ) {
-      const dateAndMonthRegexFormateArray =
-        window.zf_SetDateAndMonthRegexBasedOnDateFormate("dd-MMM-yyyy")
+import { useFormik } from "formik"
+import { useRouter } from "next/navigation"
+import axios from "axios"
 
-      window.zf_DateRegex = new RegExp(dateAndMonthRegexFormateArray[0])
-      window.zf_MonthYearRegex = new RegExp(dateAndMonthRegexFormateArray[1])
-      window.zf_MandArray = [
-        "SingleLine",
-        "Email",
-        "SingleLine1",
-        "PhoneNumber_countrycode",
-        "MultipleChoice",
-      ]
-      window.zf_FieldArray = [
-        "SingleLine",
-        "Email",
-        "SingleLine1",
-        "PhoneNumber_countrycode",
-        "MultipleChoice",
-        "MultiLine",
-      ]
-      window.isSalesIQIntegrationEnabled = false
-      window.salesIQFieldsArray = []
+import styles from "./supportForm.module.scss"
+
+// components
+import { DynamicHeading } from "@/components"
+import MultiSelect from "../multiSelect"
+import ErrorText from "../ErrorText"
+
+// helpers
+import {
+  supportInitialValue,
+  supportValidation,
+  TSupportInitialValueProp,
+} from "./formik"
+import { contactOptions } from "./data"
+
+const SupportForm: React.FC = () => {
+  //
+
+  const router = useRouter()
+
+  const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
+    useFormik({
+      initialValues: supportInitialValue,
+      validationSchema: supportValidation,
+      onSubmit: (values) => {
+        onSubmitForm(values)
+      },
+    })
+
+  const onSubmitForm = async (values: TSupportInitialValueProp) => {
+    try {
+      const formData = new FormData()
+
+      Object.entries(values).forEach(([key, value]) => {
+        // If value is an array (e.g. for multi-select), append each item separately
+        if (Array.isArray(value)) {
+          value.forEach((val) => formData.append(key, val))
+        } else if (value !== undefined && value !== null) {
+          formData.append(key, value)
+        }
+      })
+
+      const {} = await axios.post(
+        process.env.ZOHO_SUPPORT_URL || "",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            "Accept-Charset": "UTF-8",
+          },
+        }
+      )
+      router.push("/confirmation-sales")
+    } catch (error) {
+      throw error
     }
-  }, [])
+  }
 
   return (
     <>
       <div className={styles.contactFormWrapper}>
-        <form
-          action={process.env.ZOHO_SUPPORT_URL}
-          name="form"
-          method="POST"
-          acceptCharset="UTF-8"
-          encType="multipart/form-data"
-          id="form"
-          onSubmit={() => window.zf_ValidateAndSubmit?.() ?? true}
-        >
-          <input type="hidden" name="zf_referrer_name" value="" />
-          <input type="hidden" name="zf_redirect_url" value="" />
-          <input type="hidden" name="zc_gad" value="" />
+        <form action="#" onSubmit={handleSubmit}>
           <DynamicHeading
             content={[
               {
@@ -80,32 +81,87 @@ const SupportForm: React.FC = () => {
             headingTag="h1"
             className="text-center "
           />
+
           <p className={styles.subtitle}>We just need a few quick details</p>
+
           <div className={styles.grid}>
-            <input type="text" name="SingleLine" placeholder="Name*" />
+            <div className="">
+              <input
+                type="text"
+                required
+                placeholder="Name*"
+                {...getFieldProps("SingleLine")}
+              />
+              <ErrorText<TSupportInitialValueProp>
+                errors={errors}
+                touched={touched}
+                field="SingleLine"
+              />
+            </div>
 
-            <input type="text" name="Email" placeholder="Business Email ID*" />
+            <div className="">
+              <input
+                type="email"
+                required
+                placeholder="Business Email ID*"
+                {...getFieldProps("Email")}
+              />
+              <ErrorText<TSupportInitialValueProp>
+                errors={errors}
+                touched={touched}
+                field="Email"
+              />
+            </div>
 
-            <input type="text" name="SingleLine1" placeholder="Company Name*" />
+            <div className="">
+              <input
+                type="text"
+                required
+                name="SingleLine1"
+                placeholder="Company Name*"
+              />
+              <ErrorText<TSupportInitialValueProp>
+                errors={errors}
+                touched={touched}
+                field="SingleLine1"
+              />
+            </div>
 
-            <input
-              type="text"
-              name="PhoneNumber_countrycode"
-              placeholder="Contact No.*"
-              id="international_PhoneNumber_countrycode"
-            />
+            <div className="">
+              <input
+                type="text"
+                required
+                placeholder="Contact No.*"
+                {...getFieldProps("PhoneNumber_countrycode")}
+              />
+              <ErrorText<TSupportInitialValueProp>
+                errors={errors}
+                touched={touched}
+                field="PhoneNumber_countrycode"
+              />
+            </div>
           </div>
 
           <MultiSelect
             name="MultipleChoice"
             options={contactOptions}
             placeholder="How can we help you?*"
+            onChange={(data) => {
+              setFieldValue("MultipleChoice", data.join(","))
+            }}
           />
 
-          <textarea
-            name="MultiLine"
-            placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
-          />
+          <div>
+            <textarea
+              name="MultiLine"
+              placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
+            />
+            <ErrorText<TSupportInitialValueProp>
+              errors={errors}
+              touched={touched}
+              field="PhoneNumber_countrycode"
+            />
+          </div>
 
           <p className={styles.privacy}>
             By submitting this form, you are agreeing to our{" "}
