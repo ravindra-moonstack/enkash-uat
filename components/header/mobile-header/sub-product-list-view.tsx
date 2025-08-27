@@ -68,36 +68,45 @@ const SubProductListView = ({
               {section.products.map((productGroup, prodIndex) => (
                 <div key={prodIndex}>
                   <div className="list">
-                    {productGroup.list.map((item) => (
-                      <Link
-                        href={item.link}
-                        key={item.name}
-                        onClick={() => setCurrentStep(0)}
-                      >
-                        <Fragment>
-                          <li className="d-flex justify-content-start py-3">
-                            <div
-                              className="me-4"
-                              style={{ width: 24, height: 24 }}
-                            >
-                              {item.imageSrcHovered ? (
-                                <Image
-                                  src={item.imageSrcHovered}
-                                  alt={item.name}
-                                  width={24}
-                                  height={24}
-                                />
-                              ) : null}
-                            </div>
-                            <div className="d-flex flex-column color-grey-900">
-                              <div className={styles.sub_title}>
-                                {item.name}
+                    {productGroup.list.map((item) => {
+                      const externalUrls = ["docs."]
+
+                      const isExternal = externalUrls?.some((_item) =>
+                        item.link?.includes(_item)
+                      )
+
+                      return (
+                        <Link
+                          target={isExternal ? "_blank" : "_self"}
+                          href={item.link}
+                          key={item.name}
+                          onClick={() => setCurrentStep(0)}
+                        >
+                          <Fragment>
+                            <li className="d-flex justify-content-start py-3">
+                              <div
+                                className="me-4"
+                                style={{ width: 24, height: 24 }}
+                              >
+                                {item.imageSrcHovered ? (
+                                  <Image
+                                    src={item.imageSrcHovered}
+                                    alt={item.name}
+                                    width={24}
+                                    height={24}
+                                  />
+                                ) : null}
                               </div>
-                            </div>
-                          </li>
-                        </Fragment>
-                      </Link>
-                    ))}
+                              <div className="d-flex flex-column color-grey-900">
+                                <div className={styles.sub_title}>
+                                  {item.name}
+                                </div>
+                              </div>
+                            </li>
+                          </Fragment>
+                        </Link>
+                      )
+                    })}
                   </div>
                 </div>
               ))}

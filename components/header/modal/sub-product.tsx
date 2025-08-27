@@ -132,91 +132,100 @@ const SubProduct = (props: any) => {
                   ></div>
                 ) : null}
 
-                {activeGroup.list.map((product: any, index: any) => (
-                  <div
-                    className={`${styles.sub_product_row_wrapper} position-relative d-flex gap-3 p-1`}
-                    onMouseEnter={() => sethoveredProductIndex(index)}
-                    onMouseLeave={() => sethoveredProductIndex(null)}
-                    ref={refs[index]}
-                    key={product.name}
-                  >
-                    <Link
-                      href={product.link}
-                      onClick={(e) => {
-                        if (product?.comingSoon) e.preventDefault()
-                      }}
+                {activeGroup.list.map((product: any, index: any) => {
+                  const externalUrls = ["docs."]
+
+                  const isExternal = externalUrls?.some((item) =>
+                    product.link?.includes(item)
+                  )
+
+                  return (
+                    <div
+                      className={`${styles.sub_product_row_wrapper} position-relative d-flex gap-3 p-1`}
+                      onMouseEnter={() => sethoveredProductIndex(index)}
+                      onMouseLeave={() => sethoveredProductIndex(null)}
+                      ref={refs[index]}
+                      key={product.name}
                     >
-                      <div
-                        className={`${styles.sub_product_row} d-flex ${
-                          hoveredProductIndex === index
-                            ? styles.color_highlight
-                            : ""
-                        }`}
-                        onClick={handleItemClick}
+                      <Link
+                        target={isExternal ? "_blank" : "_self"}
+                        href={product.link}
+                        onClick={(e) => {
+                          if (product?.comingSoon) e.preventDefault()
+                        }}
                       >
-                        {product.imageSrcHovered && (
-                          <div>
-                            <Image
-                              src={product.imageSrcHovered}
-                              alt={product.name}
-                              width={19}
-                              height={19}
-                            />
-                          </div>
-                        )}
-
-                        <div className="d-flex flex-column ms-3">
-                          <div
-                            className={`d-flex align-items-center justify-content-between ${
-                              styles.sub_product_name
-                            } ${
-                              motherProductName === "For Developers"
-                                ? styles.underline
-                                : ""
-                            }`}
-                          >
-                            {product.name}
-                            {product?.new && (
-                              <div className={styles.new_badge}>NEW</div>
-                            )}
-                            {product.children && (
+                        <div
+                          className={`${styles.sub_product_row} d-flex ${
+                            hoveredProductIndex === index
+                              ? styles.color_highlight
+                              : ""
+                          }`}
+                          onClick={handleItemClick}
+                        >
+                          {product.imageSrcHovered && (
+                            <div>
                               <Image
-                                src={dropdownArrow}
-                                alt="arrow"
-                                width={12}
-                                height={12}
-                                className={`ms-2 ${styles.dropdown_arrow}`}
+                                src={product.imageSrcHovered}
+                                alt={product.name}
+                                width={19}
+                                height={19}
                               />
-                            )}
-                          </div>
+                            </div>
+                          )}
 
-                          <div className={styles.sub_product_description}>
-                            {product.description}
+                          <div className="d-flex flex-column ms-3">
+                            <div
+                              className={`d-flex align-items-center justify-content-between ${
+                                styles.sub_product_name
+                              } ${
+                                motherProductName === "For Developers"
+                                  ? styles.underline
+                                  : ""
+                              }`}
+                            >
+                              {product.name}
+                              {product?.new && (
+                                <div className={styles.new_badge}>NEW</div>
+                              )}
+                              {product.children && (
+                                <Image
+                                  src={dropdownArrow}
+                                  alt="arrow"
+                                  width={12}
+                                  height={12}
+                                  className={`ms-2 ${styles.dropdown_arrow}`}
+                                />
+                              )}
+                            </div>
+
+                            <div className={styles.sub_product_description}>
+                              {product.description}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
+                      </Link>
 
-                    {/* ✅ Right-side dropdown for children */}
-                    {hoveredProductIndex === index && product.children && (
-                      <div className={styles.child_dropdown}>
-                        {product.children.map((child: any) => (
-                          <Link href={child.link} key={child.name}>
-                            <div className={styles.child_item}>
-                              <Image
-                                src={child.imageSrc}
-                                alt={child.name}
-                                width={21}
-                                height={21}
-                              />
-                              <span className="ms-2">{child.name}</span>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                      {/* ✅ Right-side dropdown for children */}
+                      {hoveredProductIndex === index && product.children && (
+                        <div className={styles.child_dropdown}>
+                          {product.children.map((child: any) => (
+                            <Link href={child.link} key={child.name}>
+                              <div className={styles.child_item}>
+                                <Image
+                                  src={child.imageSrc}
+                                  alt={child.name}
+                                  width={21}
+                                  height={21}
+                                />
+                                <span className="ms-2">{child.name}</span>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>
