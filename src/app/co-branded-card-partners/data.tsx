@@ -127,8 +127,8 @@ const productsData = [
         image: coBrandImage.src,
         alt: "Corporate Expense Cards",
         button: {
-            connectUrl: "/products/rewards",
-            connectText: "Explore Rewards",
+            connectUrl: "/products/corporate-cards",
+            connectText: "Explore Cards",
             blueArrow: blueArrow.src,
         },
         align: "flex-start",
@@ -141,8 +141,8 @@ const productsData = [
         image: GalaxyTabImage.src,
         alt: "Gift/Reward Cards",
         button: {
-            connectUrl: "/products/corporate-cards",
-            connectText: "Explore Cards",
+            connectUrl: "/products/rewards",
+            connectText: "Explore Rewards",
             blueArrow: blueArrow.src,
         },
         align: "flex-start",
