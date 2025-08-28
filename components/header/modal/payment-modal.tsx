@@ -9,7 +9,7 @@ const PaymentModal = ({
   onLinkClick?: () => void
   modalLeft: number
 }) => {
-  const [hoveredProductIndex] = useState<number>(0) // default open index
+  const [hoveredProductIndex] = useState<number>(0) 
 
   const [prevHoveredProductIndex] = useState<null | number>(null)
 
@@ -17,7 +17,6 @@ const PaymentModal = ({
     const mother = motherProducts.find((item) => item.name === motherName)
     if (!mother) return []
 
-    // Normalize both keys to return subproducts
     return mother.subProducts || mother.payableProducts || []
   }
 

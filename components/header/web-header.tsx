@@ -95,7 +95,7 @@ const WebHeader = ({}: props) => {
                   className={styles.arrow}
                   style={{
                     left: `calc(${modalLeft}px - 8px)`,
-                    top: "132%",
+                    top: "126%",
                     position: "absolute",
                     zIndex: 0,
                   }}

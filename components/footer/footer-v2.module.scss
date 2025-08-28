@@ -107,7 +107,7 @@
 
   @include for-laptops {
     padding-top: 76px;
-     padding: 20px 0px;
+    padding: 20px 0px;
   }
 
   .footer_section {
@@ -183,7 +183,8 @@
   flex-wrap: wrap;
   @include for-laptops {
     width: 50%;
-      flex-wrap: nowrap;
+    flex-wrap: nowrap;
+   
   }
 
   a {
@@ -291,14 +292,14 @@
   }
 }
 
-.callIcon{
+.callIcon {
   width: 16px;
   height: 16px;
   color: $color-black;
   margin-right: 8px;
-   @include for-laptops {
+  @include for-laptops {
     width: 20px;
-  height: 20px;
+    height: 20px;
   }
 }
 .new_badge {
@@ -468,21 +469,15 @@
   @include for-laptops {
     padding-top: 0px;
   }
-  .soc_logo{
-
+  .soc_logo {
     img {
       object-fit: contain;
     }
-
-   
   }
-  .pci_logo{
-
+  .pci_logo {
     img {
       object-fit: contain;
     }
-
-   
   }
 }
 

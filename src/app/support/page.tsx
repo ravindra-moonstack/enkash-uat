@@ -7,6 +7,7 @@ import { locationData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import SupportForm from "@/components/support-form/supportForm"
+import Link from "next/link"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Support Center | Get Help with Products & Services",
@@ -21,7 +22,13 @@ const Suppport = () => {
       <div className={styles.talk_to_sales}>
         <div className="max-w-auto">
           <div className={styles.logo}>
-            <Image src={logo} alt="card visual" className={styles.group_logo} />
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="card visual"
+                className={styles.group_logo}
+              />
+            </Link>
           </div>
 
           <div className="row">

@@ -12,6 +12,7 @@ import { contactData, locationData, testimonialData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import ContactForm from "@/components/contact-form/contactForm"
+import Link from "next/link"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash | Get Support or Speak to Our Team",
@@ -28,7 +29,13 @@ const ContactUs = () => {
       <div className={styles.talk_to_sales}>
         <div className="max-w-auto">
           <div className={styles.logo}>
-            <Image src={logo} alt="card visual" className={styles.group_logo} />
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="card visual"
+                className={styles.group_logo}
+              />
+            </Link>
           </div>
 
           <div className="row">
@@ -147,7 +154,7 @@ const ContactUs = () => {
                   {
                     title: "Terms & Condition",
                     color: "color-grey-100",
-                     link: "/policies/tnc",
+                    link: "/policies/tnc",
                   },
                 ]}
                 headingTag="p"
@@ -158,7 +165,7 @@ const ContactUs = () => {
                   {
                     title: "Privacy Policy",
                     color: "color-grey-100",
-                      link: "/policies/privacy-policy",
+                    link: "/policies/privacy-policy",
                   },
                 ]}
                 headingTag="p"
