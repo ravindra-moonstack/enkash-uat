@@ -58,7 +58,7 @@ const productsData = [
 ]
 const partnershipsPage = (): React.JSX.Element => {
   return (
-    <div className={`color-white`}>
+    <div className={`color-black`}>
       <BpHeroSection
         breadcrumbs={{
           items: [
@@ -66,15 +66,14 @@ const partnershipsPage = (): React.JSX.Element => {
             { name: "Partnerships", url: "#" },
             { name: "Affiliate Program", url: "/affiliate-programs" },
           ],
-          linkColor: "white",
         }}
         backgroundImage={containerScreen.src}
-        mainHeading={[{ title: "Affiliate Program", color: "underline" }]}
+        mainHeading={[{ title: "Affiliate Program", color: "underline " }]}
         subHeading={[
           {
             title:
               "Grow with India’s Leading Spend & Payments Management Platform",
-            color: "color-white",
+            color: "color-black",
           },
         ]}
         button={{
