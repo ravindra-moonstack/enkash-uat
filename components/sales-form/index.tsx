@@ -57,8 +57,9 @@ const SalesForm: React.FC = () => {
           "Accept-Charset": "UTF-8",
         },
       })
-      setLoading(false)
+
       router.push("/confirmation-sales")
+      setLoading(false)
     } catch (error) {
       setLoading(false)
       throw error
