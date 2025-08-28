@@ -2,7 +2,7 @@ import styles from "./faq.module.scss"
 import Image from "next/image"
 import arrowDown from "./img/arrow-down.svg"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
-import {KeyboardEvent, useRef } from "react"
+import { KeyboardEvent, useRef } from "react"
 
 export interface FAQProps {
   question: string
@@ -36,7 +36,7 @@ const SECONDFAQ = ({
       if (onToggleAnswerVisibility) {
         onToggleAnswerVisibility()
       }
-    }, 100)
+    }, 300)
   }
 
   const handleMouseLeave = () => {
@@ -49,7 +49,7 @@ const SECONDFAQ = ({
       timerRef.current = setTimeout(() => {
         onToggleAnswerVisibility()
         timerRef.current = null
-      }, 0)
+      }, 100)
     }
   }
   const handleClick = () => {
@@ -65,18 +65,18 @@ const SECONDFAQ = ({
         style={
           answerVisible
             ? {
-                background: "#F6F6F6",
+              background: "#F6F6F6",
 
-                borderRadius: "12px 12px 0px 0px",
-                transition: "all 0.3s ease",
-              }
+              borderRadius: "12px 12px 0px 0px",
+              transition: "all 0.3s ease",
+            }
             : {}
         }
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onKeyDown={handleKeyDown}
         onClick={handleClick}
-        tabIndex={0} 
+        tabIndex={0}
         role="button"
         aria-expanded={answerVisible}
       >
@@ -84,10 +84,9 @@ const SECONDFAQ = ({
           <Image
             src={arrowDown}
             alt="faq arrow icon"
-            className={`${answerVisible ? styles.rotated : styles.normal} ${
-              styles.arrow
-            }`}
-       
+            className={`${answerVisible ? styles.rotated : styles.normal} ${styles.arrow
+              }`}
+
             draggable={false}
           />
           <DynamicHeading
@@ -103,9 +102,8 @@ const SECONDFAQ = ({
         </div>
 
         <div
-          className={`${styles.answer} ${
-            answerVisible ? styles.visible : styles.reverse_visible
-          }`}
+          className={`${styles.answer} ${answerVisible ? styles.visible : styles.reverse_visible
+            }`}
         >
           {!answerHTML &&
             answer !== undefined &&

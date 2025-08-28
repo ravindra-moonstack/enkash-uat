@@ -446,6 +446,7 @@ const PaymentButton = (): React.JSX.Element => {
                   titleHtml={card.titleHtml}
                   description={card.description}
                   cardImage={card.cardImage}
+                  linkUrl={card.linkUrl}
                 />
               </div>
             ))}

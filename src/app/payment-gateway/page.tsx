@@ -4,6 +4,7 @@ import {
   acceleratedGrowthData,
   dashboardData,
   integrationData,
+  managementCardData,
   paymentMethodData,
   rankData,
   savingData,
@@ -17,6 +18,7 @@ import {
   PolicyCard,
   RectangleButton,
   FaqSection,
+  ManagementCard,
 } from "@/components"
 import {
   blueArrow,
@@ -244,7 +246,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 <DynamicHeading
                   content={[
                     {
-                      title: "100+",
+                      title: "100%",
                       color: "color-white",
                     },
                   ]}
@@ -764,6 +766,42 @@ const PaymentGateway = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
+      <div className={styles.other_products}>
+        <div className="max-w-auto">
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Check out ",
+                  color: "color-black",
+                },
+                {
+                  title: "other collection products",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: " at EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
+          </div>
+          <div className="row g-3 pb-4">
+            {managementCardData.map((card, index) => (
+              <div className="col-12 col-md-4" key={index}>
+                <ManagementCard
+                  titleHtml={card.titleHtml}
+                  description={card.description}
+                  cardImage={card.cardImage}
+                  linkUrl={card.linkUrl}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
