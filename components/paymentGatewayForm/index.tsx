@@ -48,8 +48,8 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
         }
       })
 
-      const { } = await axios.post(
-        process.env.ZOHO_PARTNERSHIP_URL || "",
+      const {} = await axios.post(
+        process.env.NEXT_PUBLIC_ZOHO_PARTNERSHIP_URL || "",
         formData,
         {
           headers: {
