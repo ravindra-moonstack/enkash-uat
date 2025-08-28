@@ -359,7 +359,7 @@ const eNACH = (): React.JSX.Element => {
             cards={cards}
             heading={[
               {
-                title: "Meal Cards that your Employees Deserve",
+                title: "Activate eNACH & Keep the Cash Flowing",
                 color: "color-black",
               },
             ]}

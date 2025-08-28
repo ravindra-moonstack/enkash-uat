@@ -183,7 +183,7 @@ const intantActionData = [
   {
     title: "Alerts",
     description:
-      "Employees will be notified via SMS, WhatsApp, and e-mail about rewards and the redemption process.",
+      "Employees will be notified via SMS, WhatsApp and email about the card updates.",
     icon: thirdIcon,
   },
   {
@@ -281,7 +281,7 @@ const cardType = [
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
-    linkUrl:'/sales'
+    linkUrl:'/sales/?source=meal-card'
   },
   {
     titleHtml: "Virtual Card",
@@ -310,7 +310,7 @@ const cardType = [
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
-    linkUrl:'/sales'
+    linkUrl:'/sales/?source=meal-card'
   },
 ]
 

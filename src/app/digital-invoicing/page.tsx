@@ -381,7 +381,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
-      <div className={styles.other_products}>
+      {/* <div className={styles.other_products}>
         <div className="max-w-auto">
           <div
             className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}
@@ -420,7 +420,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

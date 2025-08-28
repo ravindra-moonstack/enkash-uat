@@ -204,7 +204,7 @@ const MealCards = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Discover the EnKash difference - Secure, Scalable and Seamless.",
+                    "Hassle-Free Meals, Happier Employees",
                   color: "color-block",
                 },
               ]}

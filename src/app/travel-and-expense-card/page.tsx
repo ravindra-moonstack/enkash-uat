@@ -60,7 +60,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
                 { name: "Home", url: "/" },
                 { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
-                  name: "Travel Expense Card",
+                  name: "Travel & Expense Card",
                   url: "/corporate-cards/travel-and-expense-card",
                 },
               ]}
