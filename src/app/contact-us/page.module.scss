@@ -116,3 +116,9 @@
     }
   }
 }
+.contactForm {
+  margin-top: 60px;
+  @include for-laptops {
+    margin-top: 0;
+  }
+}

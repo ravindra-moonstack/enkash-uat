@@ -100,10 +100,7 @@ const partnershipsPage = (): React.JSX.Element => {
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
-          // buttons={[
-          //     { title: "Explore Cards", theme: "blue", url: "/products/corporate-cards" },
-          //     { title: "Explore Payment Gateway", theme: "blue", url: "/payment-gateway" }
-          // ]}
+      
           slideData={slideData}
         />
       </div>

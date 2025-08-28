@@ -59,8 +59,9 @@ const ContactForm: React.FC = () => {
           },
         }
       )
-      setLoading(false)
+
       router.push("/confirmation-contact-us")
+      setLoading(false)
     } catch (error) {
       setLoading(false)
       throw error
@@ -141,7 +142,7 @@ const ContactForm: React.FC = () => {
           <textarea
             name="MultiLine"
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
-            minLength={500}
+            maxLength={500}
           />
           <ErrorText errors={errors} touched={touched} field="MultiLine" />
         </div>

@@ -54,8 +54,9 @@ const BankAffiliatePartnershipForm: React.FC = () => {
           },
         }
       )
-      setLoading(false)
+
       router.push("/confirmation-partnerships")
+      setLoading(false)
     } catch (error) {
       setLoading(false)
       throw error

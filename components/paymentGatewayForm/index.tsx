@@ -8,7 +8,6 @@ import { useFormik } from "formik"
 import "../../styles/_forms.scss"
 
 // components
-import { DynamicHeading } from "@/components"
 import CategoryWithOther from "../categoryWithOther/categoryWithOther"
 import ErrorText from "../ErrorText"
 
@@ -59,8 +58,9 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
           },
         }
       )
-      setLoading(false)
+
       router.push("/confirmation-partnerships")
+      setLoading(false)
     } catch (error) {
       setLoading(false)
       throw error
@@ -70,14 +70,6 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
   return (
     <div className={"contactFormWrapper"}>
       <form action="#" onSubmit={handleSubmit}>
-        <DynamicHeading
-          content={[
-            { title: "Payment Gateway ", color: "color-black " },
-            { title: "Partnerships", color: "color-dark-grey " },
-          ]}
-          headingTag="h2"
-          className="text-center "
-        />
         <p className={"subtitle"}>We just need a few quick details</p>
 
         <div className={"grid"}>

@@ -59,8 +59,8 @@ const SupportForm: React.FC = () => {
           },
         }
       )
-      setLoading(false)
       router.push("/confirmation-support")
+      setLoading(false)
     } catch (error) {
       setLoading(false)
       throw error
