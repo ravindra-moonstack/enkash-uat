@@ -74,7 +74,8 @@
   background-size: cover;
   padding: 50px 20px;
   position: relative;
-  background: linear-gradient(90deg, rgba(6, 99, 252, 0) 0%, #0663fc 100%),
+  background:
+    linear-gradient(90deg, rgba(6, 99, 252, 0) 0%, #0663fc 100%),
     url(./img/secongBg.png);
 
   @include for-laptops {
@@ -100,7 +101,7 @@
       max-width: 200px;
       min-width: 200px;
       flex: 1 1 200px;
-      background: white;
+      background: $color-white;
       border-radius: 12px;
       padding: 10px;
       gap: 10px;
@@ -183,7 +184,7 @@
 }
 
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;
@@ -212,10 +213,10 @@
 }
 
 .other_products {
-  background-color: white;
-  padding: 0px 20px 26px;
+  background: $color-white;
+  padding: 50px 20px 0px;
   @include for-laptops {
-    padding: 0px 20px 66px;
+    padding: 90px 20px 0px;
   }
 }
 
@@ -226,7 +227,7 @@
   }
   .section {
     padding: 50px 20px 0px;
-    background: #f6f6f6;
+    background: $color-cultured;
     @include for-laptops {
       padding: 90px 20px;
     }

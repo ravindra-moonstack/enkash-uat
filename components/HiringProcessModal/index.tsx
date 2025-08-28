@@ -1,11 +1,13 @@
 "use client"
-
-import { useState } from "react"
+import React, { useState } from "react"
 import { Modal, Button } from "react-bootstrap"
-import  styles  from "./HiringProcessModal.module.scss"
 
-const HiringProcessModal = () => {
-  const [show, setShow] = useState(false)
+import styles from "./HiringProcessModal.module.scss"
+
+const HiringProcessModal = (): React.JSX.Element => {
+  //
+
+  const [show, setShow] = useState<boolean>(false)
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -14,7 +16,8 @@ const HiringProcessModal = () => {
   const hiringSteps = [
     {
       title: "Apply Online",
-      description: "Submit your application through our Careers page — we read every one.",
+      description:
+        "Submit your application through our Careers page — we read every one.",
     },
     {
       title: "HR Screening",
@@ -54,13 +57,20 @@ const HiringProcessModal = () => {
       </Button>
 
       {/* Popup Modal */}
-      <Modal show={show} className="careersPagepopupbox" onHide={handleClose} centered size="lg">
+      <Modal
+        show={show}
+        className="careersPagepopupbox"
+        onHide={handleClose}
+        centered
+        size="lg"
+      >
         <Modal.Header closeButton>
           <Modal.Title>Our Hiring Process</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p className="text-muted">
-            We keep things simple, transparent, and human. Here’s what you can expect:
+            We keep things simple, transparent, and human. Here’s what you can
+            expect:
           </p>
 
           <ol className="list-group list-group-numbered">

@@ -14,7 +14,7 @@ const faqData: FAQDataItem[] = [
     answer: [],
     answerHTML: (
       <div>
-        <h4>
+       
           Digital marketing promotes products or services using digital channels
           like search engines, social media, email, and websites. Digital
           marketing cards serve as financial control tools in this landscape,
@@ -29,7 +29,7 @@ const faqData: FAQDataItem[] = [
           efficiently in a centralized place, simplifying financial oversight
           and offering a comprehensive view of their digital marketing
           activities.
-        </h4>
+        
       </div>
     ),
   },

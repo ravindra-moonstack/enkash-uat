@@ -12,6 +12,7 @@ import { testimonialData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import { getLoginUrl, getSupportUrl } from "@/common/utils/getSalesUrl"
+import Link from "next/link"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash Sales Get our Payment & Spend Solutions",
@@ -35,11 +36,13 @@ async function Sales() {
           <div className="row">
             <div className="col-md-5 col-12">
               <div className={`${styles.logo} `}>
-                <Image
-                  src={logo}
-                  alt="card visual"
-                  className={styles.group_logo}
-                />
+                <Link href="/">
+                  <Image
+                    src={logo}
+                    alt="card visual"
+                    className={styles.group_logo}
+                  />
+                </Link>
               </div>
               <div>
                 <ul>
@@ -147,7 +150,7 @@ async function Sales() {
               </div>
             </div>
 
-            <div className="col-md-7 col-12">
+            <div className={`${styles.salesForm} col-md-7 col-12 `}>
               <SalesForm />
             </div>
 

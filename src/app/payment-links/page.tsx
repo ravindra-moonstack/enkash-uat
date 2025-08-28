@@ -199,7 +199,7 @@ const PaymentLinks = (): React.JSX.Element => {
                 <DynamicHeading
                   content={[
                     {
-                      title: "Transaction Success Rate",
+                      title: "100+ Payment Options",
                       color: "color-white",
                     },
                   ]}
@@ -431,10 +431,10 @@ const PaymentLinks = (): React.JSX.Element => {
               title: "Online Sales",
               subtitleOne: "Direct Sales",
               descriptionOne:
-                " Businesses can easily create and share payment links for individual products or services, enabling customers to purchase directly through a simple link.",
+                " Merchants can easily create and share payment links for individual products or services, enabling customers to purchase directly through a simple link.",
               subtitleTwo: "Social Media Sales",
               descriptionTwo:
-                "Payment links are ideal for businesses selling through platforms like Instagram or Facebook, where customers can easily click and pay without leaving the platform.",
+                "Payment links are ideal for merchants selling through platforms like Instagram or Facebook, where customers can easily click and pay without leaving the platform.",
               icon: onlinSellsIcon,
               bgImage: bg3,
             },

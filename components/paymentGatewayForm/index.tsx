@@ -1,15 +1,13 @@
 "use client"
-
 import React, { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import axios from "axios"
 import { useFormik } from "formik"
 
-import styles from "./paymentGatewayPartnershipForm.module.scss"
+import "../../styles/_forms.scss"
 
 // components
-import { DynamicHeading } from "@/components"
 import CategoryWithOther from "../categoryWithOther/categoryWithOther"
 import ErrorText from "../ErrorText"
 
@@ -40,29 +38,14 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
   const onSubmitForm = async (values: TPaymentInitialValueProp) => {
     try {
       setLoading(true)
-      const formData = new FormData()
 
-      Object.entries(values).forEach(([key, value]) => {
-        // If value is an array (e.g. for multi-select), append each item separately
-        if (Array.isArray(value)) {
-          value.forEach((val) => formData.append(key, val))
-        } else if (value !== undefined && value !== null) {
-          formData.append(key, value)
-        }
+      const {} = await axios.post("/api/zoho", {
+        url: process.env.NEXT_PUBLIC_ZOHO_PARTNERSHIP_URL,
+        data: values,
       })
 
-      const {} = await axios.post(
-        process.env.ZOHO_PARTNERSHIP_URL || "",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            "Accept-Charset": "UTF-8",
-          },
-        }
-      )
-      setLoading(false)
       router.push("/confirmation-partnerships")
+      setLoading(false)
     } catch (error) {
       setLoading(false)
       throw error
@@ -70,19 +53,11 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
   }
 
   return (
-    <div className={styles.contactFormWrapper}>
+    <div className={"contactFormWrapper"}>
       <form action="#" onSubmit={handleSubmit}>
-        <DynamicHeading
-          content={[
-            { title: "Payment Gateway ", color: "color-black " },
-            { title: "Partnerships", color: "color-dark-grey " },
-          ]}
-          headingTag="h2"
-          className="text-center "
-        />
-        <p className={styles.subtitle}>We just need a few quick details</p>
+        <p className={"subtitle"}>We just need a few quick details</p>
 
-        <div className={styles.grid}>
+        <div className={"grid"}>
           <div className="">
             <input
               type="text"
@@ -99,7 +74,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
 
           <div className="">
             <input
-              type="text"
+              type="email"
               required
               placeholder="Business Email ID*"
               {...getFieldProps("Email")}
@@ -128,6 +103,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
           <div className="">
             <input
               type="text"
+              required
               placeholder="Contact No.*"
               {...getFieldProps("PhoneNumber_countrycode")}
             />
@@ -139,7 +115,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
           </div>
         </div>
 
-        <div>
+        <div className="">
           <CategoryWithOther
             name="Dropdown5"
             options={options}
@@ -155,7 +131,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
           />
         </div>
 
-        <div>
+        <div className="">
           <CategoryWithOther
             name="Dropdown6"
             options={Businessoptions}
@@ -171,7 +147,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
           />
         </div>
 
-        <div>
+        <div className="">
           <textarea
             name="MultiLine"
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
@@ -183,14 +159,14 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
           />
         </div>
 
-        <p className={styles.privacy}>
+        <p className={"privacy"}>
           By submitting this form, you are agreeing to our{" "}
-          <Link href="/privacy-policy" className={styles.privacyLink}>
+          <Link href="/privacy-policy" className={"privacyLink"}>
             privacy policy
           </Link>
         </p>
 
-        <button type="submit" disabled={loading} className={styles.submitBtn}>
+        <button type="submit" disabled={loading} className={"submitBtn"}>
           {loading ? "..." : "Submit"}
         </button>
       </form>

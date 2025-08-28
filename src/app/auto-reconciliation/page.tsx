@@ -1,6 +1,11 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicies, cardsData, managementCards, stackcardData } from "./data"
+import {
+  allInOnePolicies,
+  cardsData,
+  managementCards,
+  stackcardData,
+} from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -135,7 +140,7 @@ const AutoReconciliation = (): React.JSX.Element => {
                         theme="blue"
                         url={salesUrl}
                       />
-                    </div> 
+                    </div>
                   </div>
                 </div>
               </div>
@@ -177,7 +182,6 @@ const AutoReconciliation = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
@@ -187,7 +191,6 @@ const AutoReconciliation = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                
                 <DynamicHeading
                   content={[
                     {
@@ -209,7 +212,6 @@ const AutoReconciliation = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                
                 <DynamicHeading
                   content={[
                     {
@@ -231,7 +233,6 @@ const AutoReconciliation = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                
                 <DynamicHeading
                   content={[
                     {
@@ -269,8 +270,9 @@ const AutoReconciliation = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={`${showScroll ? "overflow-auto scrollbar-thin" : ""
-                  }`}
+                className={`${
+                  showScroll ? "overflow-auto scrollbar-thin" : ""
+                }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -356,7 +358,7 @@ const AutoReconciliation = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-<div className={styles.card_stacking_row}>
+      <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <CardStacking
             cards={cards}

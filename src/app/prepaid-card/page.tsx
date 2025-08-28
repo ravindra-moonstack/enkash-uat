@@ -51,7 +51,7 @@ const PrepaidCard = (): React.JSX.Element => {
             <CustomBreadcrumb
               items={[
                 { name: "Home", url: "/" },
-                { name: "Corporate Cards ", url: "/corporate-cards" },
+                { name: "Corporate Cards ", url: "/products/corporate-cards" },
                 {
                   name: "Prepaid Cards",
                   url: "/corporate-cards/prepaid-card",
@@ -129,7 +129,7 @@ const PrepaidCard = (): React.JSX.Element => {
         subTitle="Empower your teams with prepaid business cards that simplify purchases, improve tracking, and eliminate manual reimbursements."
         progressData={progressData.map((item) => ({
           ...item,
-        }))}
+        }))} 
       />
 
       <div className={styles.card_stacking_row}>

@@ -90,7 +90,7 @@ const HomePage = (): React.JSX.Element => {
                 <div className={`${styles.banner_button}`}>
                   <RectangleButton
                     title="Connect with Us"
-                    theme="outline-blue"
+                    theme="blue"
                     actionImage=""
                     hoverImage=""
                     url="/sales?source=homepage"

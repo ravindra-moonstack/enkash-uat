@@ -52,8 +52,8 @@ export default function ProductsSection({
                   src={product.image}
                   alt={product.alt}
                   className={styles.cardImage}
-                  width={100}
-                  height={100}
+                  width={200}
+                  height={300}
                 />
               </div>
 

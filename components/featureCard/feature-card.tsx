@@ -22,7 +22,7 @@ const FeatureCard = ({
   description,
   cardImage,
   title2 = "",
-  padding = "40px 30px",
+  padding = "40px 29px",
   hoverClass = "",
 }: CardProps) => {
   const CardContent = (

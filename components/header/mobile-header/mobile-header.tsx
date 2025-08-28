@@ -107,15 +107,7 @@ const MobileHeader = ({ utmSource }: Props) => {
 
   return (
     <div className={styles.mobile_header}>
-      <div
-        className="w-100 fixed z-10"
-        style={{
-          maxHeight: "90vh",
-          overflowY: "scroll",
-          backgroundColor: "white",
-          borderRadius: "12px",
-        }}
-      >
+      <div className={`w-100 fixed z-10 ${styles.mobile_header_box}`}>
         <Hamburger setCurrentStep={setCurrentStep} currentStep={currentStep} />
 
         {currentStep === 1 && (

@@ -52,9 +52,8 @@
   background-size: cover;
   padding: 50px 20px;
   position: relative;
-  background-image: linear-gradient(0deg,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)),
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     // black with 50% opacity
     linear-gradient(90deg, rgba(97, 115, 247, 0) 0%, #6173f7 100%),
     url("./img/secongBg.png");
@@ -83,7 +82,7 @@
       max-width: 300px; // Still limits on larger screens
       min-width: 200px; // Optional: prevent it from getting too small
       flex: 1 1 200px; // allows cards to shrink and wrap
-      background: white;
+      background: $color-white;
       border-radius: 20px;
       padding: 20px;
       gap: 20px;
@@ -138,7 +137,7 @@
     .how_it_workssection {
       pointer-events: visible;
       padding: 0;
-      @include for-laptops{
+      @include for-laptops {
         // padding: 20px;
       }
     }
@@ -219,8 +218,8 @@
       margin-bottom: 20px;
       margin-left: 66px;
     }
-    button{
-      text-wrap:nowrap;
+    button {
+      text-wrap: nowrap;
     }
   }
 
@@ -228,7 +227,6 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-
   }
 }
 
@@ -330,7 +328,7 @@
 }
 
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;
@@ -396,7 +394,7 @@
 }
 
 .third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: white;
+  background: $color-white;
   border: 1px solid transparent;
   border-radius: 20px;
 }
