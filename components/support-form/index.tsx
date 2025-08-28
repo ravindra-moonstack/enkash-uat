@@ -50,7 +50,7 @@ const SupportForm: React.FC = () => {
       })
 
       const {} = await axios.post(
-        process.env.ZOHO_SUPPORT_URL || "",
+        process.env.NEXT_PUBLIC_ZOHO_SUPPORT_URL || "",
         formData,
         {
           headers: {

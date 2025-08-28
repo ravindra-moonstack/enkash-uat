@@ -50,12 +50,16 @@ const SalesForm: React.FC = () => {
         }
       })
 
-      const {} = await axios.post(process.env.ZOHO_SALES_URL || "", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          "Accept-Charset": "UTF-8",
-        },
-      })
+      const {} = await axios.post(
+        process.env.NEXT_PUBLIC_ZOHO_SALES_URL || "",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            "Accept-Charset": "UTF-8",
+          },
+        }
+      )
 
       router.push("/confirmation-sales")
       setLoading(false)
