@@ -37,7 +37,7 @@ const salesUrl = getSalesUrl("/saas-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const cards = stackcardData.map(
-  ({ color, icon, title, description, image,  }) => ({
+  ({ color, icon, title, description, image, }) => ({
     color,
     content: (
       <AllInOnePolicy
@@ -122,7 +122,7 @@ const SaasCards = (): React.JSX.Element => {
         </div>
         <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
-            {" "}
+
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
         </div>

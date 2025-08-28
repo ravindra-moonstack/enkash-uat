@@ -50,7 +50,7 @@ const SalesForm: React.FC = () => {
         }
       })
 
-      const {} = await axios.post(process.env.ZOHO_SALES_URL || "", formData, {
+      const { } = await axios.post(process.env.ZOHO_SALES_URL || "", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Accept-Charset": "UTF-8",
@@ -216,7 +216,7 @@ const SalesForm: React.FC = () => {
         </div>
 
         <p className={"privacy"}>
-          By submitting this form, you are agreeing to our{" "}
+          By submitting this form, you are agreeing to our
           <Link href="/privacy-policy" className={"privacyLink"}>
             privacy policy
           </Link>

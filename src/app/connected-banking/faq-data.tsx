@@ -46,7 +46,7 @@ const faqData = [
           Yes. From funded startups to enterprise-grade businesses.
           <Link href={`${process.env.URL}/sales/`} target="_blank">
             Talk to our team
-          </Link>{" "}
+          </Link>
           to find your best fit.
         </p>
       </div>

@@ -39,7 +39,7 @@ const FooterV2 = (): React.JSX.Element => {
               className={`d-flex flex-column  gap-3 gap-md-4 ${styles.logi_bg}`}
             >
               <div>
-                {" "}
+
                 <hr className={`${styles.custom_hr}`} />
                 <div>
                   <p className={styles.logo_container_info}>
@@ -235,9 +235,9 @@ const FooterV2 = (): React.JSX.Element => {
                     provided by RBI-licensed banks and/or in accordance with RBI
                     regulations and/or compliance maintained by banks and
                     regulated entities. EnKash is not a bank and does not hold
-                    or claim to hold a banking license.{" "}
+                    or claim to hold a banking license.
                     <div className="color-alternate-grey">
-                      *Powered by Banks/REs. 
+                      *Powered by Banks/REs.
                     </div>
                   </div>
                 </div>
@@ -416,7 +416,7 @@ const FooterV2 = (): React.JSX.Element => {
                     provided by RBI-licensed banks and/or in accordance with RBI
                     regulations and/or compliance maintained by banks and
                     regulated entities. EnKash is not a bank and does not hold
-                    or claim to hold a banking license.{" "}
+                    or claim to hold a banking license.
                   </div>
                 </div>
 
@@ -445,7 +445,7 @@ const FooterV2 = (): React.JSX.Element => {
 
                 <div className="d-flex flex-column ">
                   <div className={`col-6`}>
-                    {" "}
+
                     <ul>
                       <li className="d-flex">
                         <Link href="/payment-gateway">Payment Gateway</Link>
@@ -710,7 +710,7 @@ const FooterV2 = (): React.JSX.Element => {
               </div>
 
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
-                {/* col-1 resources */}{" "}
+                {/* col-1 resources */}
                 <div className="">
                   <Link target="_blank" href="http://www.enkash.com/resources">
                     <h4 className={`${styles.title}`}>Resources</h4>
@@ -780,12 +780,12 @@ const FooterV2 = (): React.JSX.Element => {
                   <ul>
                     <li>
                       <Link href="/policies/grievance-policy">
-                        Grievance & Redressal{" "}
+                        Grievance & Redressal
                       </Link>
                     </li>
                     <li>
                       <Link href="/policies/merchant-onboarding">
-                        Merchant Onboarding{" "}
+                        Merchant Onboarding
                       </Link>
                     </li>
                     <li>
@@ -847,7 +847,7 @@ const FooterV2 = (): React.JSX.Element => {
             by RBI-licensed banks and/or in accordance with RBI regulations
             and/or compliance maintained by banks and regulated entities. EnKash
             is not a bank and does not hold or claim to hold a banking
-            license.{" "}
+            license.
           </div>
         </div>
       </div>
@@ -856,7 +856,7 @@ const FooterV2 = (): React.JSX.Element => {
         <div
           className={`d-flex justify-content-center align-items-center mx-5 mb-3 `}
         >
-          {" "}
+
           <Image
             className={styles.footer_location_pin}
             src={locationPin}
@@ -874,7 +874,7 @@ const FooterV2 = (): React.JSX.Element => {
 
       <div className={`${styles.locations_row}`}>
         <div className="d-none d-md-flex  max-w-auto justify-content-end align-items-center">
-          {" "}
+
           <Image
             className={styles.footer_location_pin}
             src={locationPin}

@@ -49,7 +49,7 @@ const ContactForm: React.FC = () => {
         }
       })
 
-      const {} = await axios.post(
+      const { } = await axios.post(
         process.env.ZOHO_CONTACT_URL || "",
         formData,
         {
@@ -148,7 +148,7 @@ const ContactForm: React.FC = () => {
         </div>
 
         <p className={"privacy"}>
-          By submitting this form, you are agreeing to our{" "}
+          By submitting this form, you are agreeing to our
           <Link href="/privacy-policy" className={"privacyLink"}>
             privacy policy
           </Link>

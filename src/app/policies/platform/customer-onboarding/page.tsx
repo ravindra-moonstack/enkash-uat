@@ -84,7 +84,7 @@ const CustomerOnboarding = () => {
                             solutions.
                           </li>
                           <li>
-                            <strong>Officially Valid Document (OVD)</strong>{" "}
+                            <strong>Officially Valid Document (OVD)</strong>
                             means the passport, the driving license, proof of
                             possession of Aadhaar number, the Voter&apos;s
                             Identity Card issued by the Election Commission of
