@@ -125,7 +125,7 @@ const DiyCardModule = (): React.JSX.Element => {
         </div>
         <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
-            {" "}
+
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
         </div>

@@ -220,7 +220,7 @@ const SalesForm: React.FC = () => {
         </div>
 
         <p className={"privacy"}>
-          By submitting this form, you are agreeing to our{" "}
+          By submitting this form, you are agreeing to our
           <Link href="/privacy-policy" className={"privacyLink"}>
             privacy policy
           </Link>
