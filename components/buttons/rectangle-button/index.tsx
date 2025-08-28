@@ -5,7 +5,7 @@ import styles from "../button.module.scss"
 import Image, { StaticImageData } from "next/image"
 import { useRouter } from "next/navigation"
 
-// ✅ Extract a shared type so you can reuse it anywhere:
+
 export type RectangleButtonTheme =
   | "blue"
   | "green"
@@ -40,7 +40,7 @@ const RectangleButton = ({
   className,
   hoverImage,
 }: ButtonProps) => {
-  //
+
 
   const [isHovered, setIsHovered] = useState<boolean>(false)
 

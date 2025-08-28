@@ -46,8 +46,10 @@
     position: relative;
     z-index: 2;
     border-radius: 12px;
-    box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.1),
-      0px 30px 40px rgba(0, 0, 0, 0.09), 0px 67px 40px rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0px 7px 40px rgba(0, 0, 0, 0.1),
+      0px 30px 40px rgba(0, 0, 0, 0.09),
+      0px 67px 40px rgba(0, 0, 0, 0.05);
     padding: 43px 30px;
     ul {
       gap: 12px;
@@ -105,12 +107,18 @@
     .termsCond {
       display: flex;
       gap: 8px;
-      a{
+      a {
         text-decoration: none !important;
       }
       @include for-laptops {
         gap: 32px;
       }
     }
+  }
+}
+.contactForm {
+  margin-top: 60px;
+  @include for-laptops {
+    margin-top: 0;
   }
 }
