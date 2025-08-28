@@ -218,6 +218,19 @@ const BuiltforBuildersSection = dynamic(
     ssr: true,
   }
 )
+const UtilityBillPayments = dynamic(
+  () => import("./UtilityBillPayments/UtilityBillPayments"),
+  {
+    ssr: true,
+  }
+)
+const PartnerSection = dynamic(
+  () => import("./partnerSectionData/partnerSectionData"),
+  {
+    ssr: true,
+  }
+)
+
 export {
   Header,
   Footer,
@@ -278,4 +291,6 @@ export {
   HiringProcessModal,
   PaymentGatewayPartnershipForm,
   BuiltforBuildersSection,
+  UtilityBillPayments,
+  PartnerSection
 }

@@ -1,12 +1,18 @@
 import React from "react"
 import Image from "next/image"
-import { DynamicHeading, LogoSlider, SupportCard } from "@/components"
+import Link from "next/link"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
+
+// components
+import SupportForm from "@/components/support-form"
+import { DynamicHeading, LogoSlider, SupportCard } from "@/components"
 import { location, logo } from "."
+
+// helpers
 import { locationData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
-import { Metadata } from "next"
-import SupportForm from "@/components/support-form"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Support Center | Get Help with Products & Services",
@@ -15,13 +21,21 @@ export const metadata: Metadata = generateMetaData({
   alternates: { canonical: `${process.env.URL}/support/` },
 })
 
-const Suppport = () => {
+const Suppport = (): React.JSX.Element => {
+  //
+
   return (
     <>
       <div className={styles.talk_to_sales}>
         <div className="max-w-auto">
           <div className={styles.logo}>
-            <Image src={logo} alt="card visual" className={styles.group_logo} />
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="card visual"
+                className={styles.group_logo}
+              />
+            </Link>
           </div>
 
           <div className="row">
