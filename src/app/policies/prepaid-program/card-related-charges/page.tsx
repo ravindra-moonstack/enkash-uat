@@ -184,7 +184,7 @@ const CardRelatedCharges = () => {
                         <p>
                           For the latest version of these terms or any queries
                           regarding applicable charges, cardholders may contact
-                          us at:{" "}
+                          us at:
                           <a className="c17" href="mailto:support@enkash.com">
                             support@enkash.com
                           </a>
