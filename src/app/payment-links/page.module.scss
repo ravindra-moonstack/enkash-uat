@@ -1,6 +1,6 @@
 @use "/styles/variables" as *;
 @use "/styles/mixin" as *;
- 
+
 .first_row {
   background-repeat: no-repeat;
   background-position: center;
@@ -21,13 +21,13 @@
       height: 62px;
     }
   }
- 
+
   .image-container {
     position: relative;
     width: 100%;
     height: 100%;
     max-height: 400px;
- 
+
     @include for-laptops {
       max-height: 500px;
     }
@@ -42,14 +42,14 @@
       }
     }
   }
- 
+
   .subtitle {
     color: $color-equity-blue;
     border-bottom: 2px solid $color-equity-blue;
     font-size: 24px;
     font-weight: 400;
   }
- 
+
   .first_row_title {
     padding-top: 16px;
     padding-bottom: 0px;
@@ -62,7 +62,7 @@
     padding-top: 16px;
     gap: 12px;
     justify-content: center;
- 
+
     @include for-laptops {
       padding-top: 48px;
       gap: 26px;
@@ -70,13 +70,13 @@
     }
   }
 }
- 
+
 .second_row {
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
   padding: 50px 20px;
   @include for-laptops {
-   padding: 50px 20px;
+    padding: 50px 20px;
   }
   .section {
     margin: auto;
@@ -96,7 +96,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
- 
+
       .outerCard {
         padding-top: 5px;
         padding-bottom: 5px;
@@ -114,19 +114,19 @@
           }
         }
       }
- 
+
       .innerCard {
         box-shadow: 0px 0px 29.66px 0px rgba(0, 0, 0, 0.05);
         width: 100%;
         padding: 4px;
         text-align: center;
       }
- 
+
       // 👇 Responsive widths
       @include for-laptops {
         width: 300px;
       }
- 
+
       @include for-tablet {
         width: 180px;
       }
@@ -136,23 +136,22 @@
       flex-wrap: wrap;
     }
   }
- 
+
   .inner-content {
-    background: white; /* inner background */
+    background: $color-white; /* inner background */
     padding: 11px 14px;
     border-radius: 10px; /* slightly smaller radius */
   }
 }
- 
+
 .third_row {
   width: 100%;
   padding: 50px 20px;
- 
+
   @include for-laptops {
     padding: 90px 20px;
   }
- 
- 
+
   .section {
     margin-bottom: 50px;
   }
@@ -164,22 +163,22 @@
       margin-bottom: 30px;
     }
   }
-  .scrollCard:last-child{
-     margin-bottom: 0px;
+  .scrollCard:last-child {
+    margin-bottom: 0px;
   }
- 
+
   .first_container,
   .second_container,
   .third_container {
     position: relative;
     z-index: 2;
- 
+
     .card_bg {
       position: absolute;
       z-index: 2;
       top: -100px;
       left: -50px;
- 
+
       @include for-laptops {
         top: -50px;
         left: 200px;
@@ -187,7 +186,7 @@
     }
   }
   .list_button {
-    padding-left: 48px ;
+    padding-left: 48px;
     padding-top: 20px;
     margin-bottom: 20px !important;
     @include for-laptops {
@@ -197,27 +196,27 @@
   :global(img) {
     height: auto;
   }
- 
+
   .approvedImage {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: 1;
     display: none;
- 
+
     @include for-laptops {
       right: 40px;
       display: block;
     }
   }
 }
- 
+
 .fourth_row {
-  padding: 0px 20px ;
+  padding: 0px 20px;
   @include for-laptops {
     padding: 0px 20px;
   }
- 
+
   .section {
     gap: 20px;
     padding: 50px 20px;
@@ -228,14 +227,13 @@
     }
   }
 }
- 
+
 .sixth_row {
   padding: 50px 20px;
   @include for-laptops {
     padding: 90px 20px;
   }
 
- 
   .card_grid {
     display: flex;
     flex-wrap: wrap;
@@ -243,19 +241,18 @@
     justify-content: center;
   }
 
- 
   .card_grid > div {
     flex: 1 1 260px;
     max-width: 300px;
     min-width: 240px;
   }
 }
- 
+
 .fifth_row {
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 50px 20px ;
+  padding: 50px 20px;
   @include for-laptops {
     padding: 90px 20px;
   }
@@ -268,7 +265,7 @@
     }
   }
 }
- 
+
 .seventh_row {
   .container {
     @include for-laptops {
@@ -303,7 +300,7 @@
     }
   }
 }
- 
+
 .eigth_row {
   background-color: #f1f1f1;
   position: relative;
@@ -311,23 +308,21 @@
   text-align: center;
   padding: 50px 20px;
 
- 
   @include for-laptops {
     padding: 90px 20px 0;
   }
- 
+
   .faqSection {
     @include for-laptops {
       width: 100%;
     }
   }
- 
+
   .faq_bg {
     img {
       display: none;
       pointer-events: none;
 
- 
       @include for-laptops {
         display: block;
         width: 100%;
@@ -336,7 +331,7 @@
     }
   }
 }
- 
+
 .ninth_row {
   position: relative;
   padding: 36px;
@@ -349,52 +344,52 @@
   h1 {
     font-size: 110px;
     color: black;
- 
+
     span {
       background-color: $color-bluish-purple;
       color: white;
     }
   }
 }
- 
+
 .third_row .scrollbar-thin::-webkit-scrollbar {
   width: 12px;
 }
- 
+
 .third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: white;
+  background: $color-white;
   border: 1px solid transparent;
   border-radius: 20px;
 }
- 
+
 .third_row .scrollbar-thin::-webkit-scrollbar-thumb {
   background-color: #3b82f6;
   border-radius: 9999px;
   border: 1px solid transparent;
 }
- 
+
 /* Firefox */
 .third_row .scrollbar-thin {
   scrollbar-width: auto;
   scrollbar-color: #3b82f6 transparent;
 }
- 
+
 .bg-color-soft-mint {
   background-color: $color-soft-mint;
 }
- 
+
 .new_row {
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
- 
+
   position: relative;
   padding: 50px 20px;
   @include for-laptops {
     padding: 90px 20px;
   }
 }
- 
+
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;
@@ -402,7 +397,7 @@
   @include for-laptops {
     padding: 90px 20px;
   }
- 
+
   .faq_bg {
     img {
       position: absolute;
@@ -413,7 +408,7 @@
       }
     }
   }
- 
+
   .faqData {
     width: 100%;
     @include for-laptops {
@@ -421,9 +416,9 @@
     }
   }
 }
- 
+
 .other_products {
-  background-color: white;
+  background: $color-white;
   padding: 0px 20px 50px;
   @include for-laptops {
     padding: 0px 20px 66px;

@@ -1,7 +1,8 @@
-import styles from "./faq.module.scss"
-import Image from "next/image"
-import arrowDown from "./img/arrow-down.svg"
 import { KeyboardEvent, useRef } from "react"
+import Image from "next/image"
+
+import styles from "./faq.module.scss"
+import arrowDown from "./img/arrow-down.svg"
 
 export interface FAQProps {
   question: string
@@ -23,6 +24,8 @@ const FAQ = ({
   answerHTML,
   onToggleAnswerVisibility,
 }: FAQProps) => {
+  //
+
   const timerRef = useRef<NodeJS.Timeout | null>(null)
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -60,17 +63,7 @@ const FAQ = ({
   return (
     <div className={styles.faq_row}>
       <div
-        className={`${styles.faq_inner_row} `}
-        style={
-          answerVisible
-            ? {
-              background: "#F6F6F6",
-              padding: "20px",
-              borderRadius: "12px",
-              transition: "all 0.3s ease",
-            }
-            : {}
-        }
+        className={`${styles.faq_inner_row} ${answerVisible && "activeClass"} `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onKeyDown={handleKeyDown}
@@ -88,14 +81,16 @@ const FAQ = ({
           <Image
             src={arrowDown}
             alt="faq arrow icon"
-            className={`${answerVisible ? styles.rotated : styles.normal} ${styles.arrow
-              }`}
+            className={`${answerVisible ? styles.rotated : styles.normal} ${
+              styles.arrow
+            }`}
             draggable={false}
           />
         </div>
         <div
-          className={`${styles.answer} ${answerVisible ? styles.visible : styles.reverse_visible
-            }`}
+          className={`${styles.answer} ${
+            answerVisible ? styles.visible : styles.reverse_visible
+          }`}
         >
           {!answerHTML &&
             answer !== undefined &&

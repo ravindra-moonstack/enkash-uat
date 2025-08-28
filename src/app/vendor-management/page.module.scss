@@ -20,7 +20,7 @@
   }
   .group_logo {
     width: 260px;
-    height:auto;
+    height: auto;
     @include for-laptops {
       width: 366px;
       height: 62px;
@@ -116,21 +116,20 @@
         left: 200px;
       }
     }
-   
   }
- :global(img) {
-      object-fit: contain !important;
-      height: auto;
-      @include for-laptops {
-      }
+  :global(img) {
+    object-fit: contain !important;
+    height: auto;
+    @include for-laptops {
     }
-    :global(button) {
-      margin-left: 0;
-      @include for-laptops {
-        margin-top: 20px;
-        margin-left: 14px;
-      }
+  }
+  :global(button) {
+    margin-left: 0;
+    @include for-laptops {
+      margin-top: 20px;
+      margin-left: 14px;
     }
+  }
   .approvedImage {
     position: absolute;
     bottom: 0;
@@ -195,7 +194,7 @@
 }
 
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;

@@ -201,7 +201,7 @@ const CareersTestimonialSlider = dynamic(
   }
 )
 const HiringProcessModal = dynamic(
-  () => import("./HiringProcessModal/HiringProcessModal"),
+  () => import("./HiringProcessModal"),
   {
     ssr: true,
   }

@@ -42,9 +42,8 @@ const SupportForm: React.FC = () => {
       const formData = new FormData()
 
       Object.entries(values).forEach(([key, value]) => {
-        // If value is an array (e.g. for multi-select), append each item separately
         if (Array.isArray(value)) {
-          value.forEach((val) => formData.append(key, val))
+          formData.append(key, value.join(", "))
         } else if (value !== undefined && value !== null) {
           formData.append(key, value)
         }

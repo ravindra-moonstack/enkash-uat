@@ -1,7 +1,6 @@
 @use "/styles/variables" as *;
 @use "/styles/mixin" as *;
 
-
 .first_row {
   background-repeat: no-repeat;
   background-position: center;
@@ -9,7 +8,7 @@
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 100px 20px 0px;
-  background-image: url(./img/first-row-bg.jpg);;
+  background-image: url(./img/first-row-bg.jpg);
   @include for-laptops {
     padding: 112px 20px 0;
   }
@@ -21,13 +20,13 @@
       height: 62px;
     }
   }
- 
+
   .image-container {
     position: relative;
     width: 100%;
     height: 100%;
     max-height: 400px;
- 
+
     @include for-laptops {
       max-height: 500px;
     }
@@ -42,14 +41,14 @@
       }
     }
   }
- 
+
   .subtitle {
     color: $color-equity-blue;
     border-bottom: 2px solid $color-equity-blue;
     font-size: 24px;
     font-weight: 400;
   }
- 
+
   .first_row_title {
     padding-top: 16px;
     padding-bottom: 0px;
@@ -61,7 +60,7 @@
   .first_row_button {
     padding-top: 16px;
     gap: 12px;
- 
+
     @include for-laptops {
       padding-top: 48px;
       gap: 26px;
@@ -75,7 +74,8 @@
   background-size: cover;
   padding: 36px;
   position: relative;
-  background: linear-gradient(90deg, rgba(6, 99, 252, 0) 0%, #0663fc 100%),
+  background:
+    linear-gradient(90deg, rgba(6, 99, 252, 0) 0%, #0663fc 100%),
     url(./img/secongBg.png);
 
   @include for-laptops {
@@ -101,7 +101,7 @@
       max-width: 200px;
       min-width: 200px;
       flex: 1 1 200px;
-      background: white;
+      background: $color-white;
       border-radius: 12px;
       padding: 10px;
       gap: 10px;
@@ -157,7 +157,6 @@
     padding: 90px 20px 0px;
   }
 
-
   .subtitle {
     padding-bottom: 24px;
     @include for-laptops {
@@ -185,7 +184,7 @@
 }
 
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;
@@ -193,7 +192,7 @@
   @include for-laptops {
     padding: 90px 20px;
   }
- 
+
   .faq_bg {
     img {
       position: absolute;
@@ -204,7 +203,7 @@
       }
     }
   }
- 
+
   .faqData {
     width: 100%;
     @include for-laptops {
@@ -212,24 +211,24 @@
     }
   }
 }
- 
+
 .other_products {
-  background-color: white;
+  background: $color-white;
   padding: 0px 20px 26px;
   @include for-laptops {
     padding: 0px 20px 66px;
   }
 }
 
-.card_stacking_row{
+.card_stacking_row {
   padding: 0px 20px;
-  @include for-laptops{
+  @include for-laptops {
     padding: 90px 20px;
   }
-  .section{
+  .section {
     padding: 50px 20px 0px;
-    background: #F6F6F6;
-    @include for-laptops{
+    background: $color-cultured;
+    @include for-laptops {
       padding: 90px 20px;
     }
   }

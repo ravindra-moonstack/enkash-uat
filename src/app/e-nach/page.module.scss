@@ -86,7 +86,7 @@
 
   .section {
     padding: 50px 20px 0px;
-    background: #f6f6f6;
+    background: $color-cultured;
 
     @include for-laptops {
       padding: 90px 0px 50px;
@@ -169,7 +169,7 @@
   }
 
   .inner-content {
-    background: white;
+    background: $color-white;
     /* inner background */
     padding: 11px 14px;
     border-radius: 10px;
@@ -265,7 +265,6 @@
     @include for-laptops {
       padding: 90px 100px 74px;
     }
-
   }
 }
 
@@ -283,7 +282,7 @@
     justify-content: center;
   }
 
-  .card_grid>div {
+  .card_grid > div {
     flex: 1 1 260px;
     max-width: 300px;
     min-width: 240px;
@@ -412,7 +411,7 @@
 }
 
 .third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: white;
+  background: $color-white;
   border: 1px solid transparent;
   border-radius: 20px;
 }
@@ -445,7 +444,7 @@
 }
 
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;
@@ -477,7 +476,7 @@
 }
 
 .other_products {
-  background-color: white;
+  background: $color-white;
   padding: 0px 20px 26px;
 
   @include for-laptops {
