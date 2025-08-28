@@ -4,7 +4,6 @@ import approvedIcon from "./img/approved.svg"
 import advance from "./img/advanced.webp"
 import policyApproval from "./img/policy-approval.webp"
 import insight from "./img/insights.webp"
-import hierarchy from "./img/herarchy.webp"
 import scanAndDrops from "./img/scan-and-drops.webp"
 import reimbursements from "./img/reimbursement.webp"
 import {
@@ -21,8 +20,6 @@ import {
   stepCardImgOne,
   stepCardImgThree,
   stepCardImgTwo,
-  streamlinedReimbursement,
-  streamlinedReimbursementIcon,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "."
