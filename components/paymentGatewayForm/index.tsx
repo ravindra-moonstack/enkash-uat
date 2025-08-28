@@ -60,8 +60,9 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
           },
         }
       )
-      setLoading(false)
+
       router.push("/confirmation-partnerships")
+      setLoading(false)
     } catch (error) {
       setLoading(false)
       throw error
