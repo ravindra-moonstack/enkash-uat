@@ -416,11 +416,11 @@ const managementCardData = [
     linkUrl: "auto-collect",
   },
   {
-    titleHtml: "Invoices",
+    titleHtml: "Bulk Collect",
     description:
-      "Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links.",
+      "Collect multiple payments in one go with instant tracking and automated reminders.",
     cardImage: invoices,
-    linkUrl: "digital-invoicing",
+    linkUrl: "/bulk-collect",
   },
   {
     titleHtml: "Instant Settlement",
@@ -437,7 +437,6 @@ const managementCardData = [
     linkUrl: "collection-reminder",
   },
 ]
-
 export {
   blogData,
   dataSets,

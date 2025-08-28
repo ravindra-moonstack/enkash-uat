@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicies, cardsData, managementCards } from "./data"
+import { allInOnePolicies, cardsData, managementCards, stackcardData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -11,6 +11,7 @@ import {
   AllInOnePolicy,
   FaqSection,
   ManagementCard,
+  CardStacking,
 } from "@/components"
 import {
   blueArrow,
@@ -38,7 +39,21 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/collection-reminder")
 
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const CollectionReminders = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -247,9 +262,8 @@ const CollectionReminders = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -329,6 +343,24 @@ const CollectionReminders = (): React.JSX.Element => {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Collection Reminders for",
+                color: "color-black",
+              },
+              {
+                title: " All Business Types ",
+                color: "color-equity-blue",
+              },
+            ]}
+          />
         </div>
       </div>
       <div className={`${styles.fifth_row} `}>

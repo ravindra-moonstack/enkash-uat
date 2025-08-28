@@ -51,7 +51,7 @@ const cardsData = [
   },
   {
     title: "Collect",
-    description: "Accept payments from your customers",
+    description: "Accept payments from your customers.",
     icon: scrollIconThree,
   },
 ]

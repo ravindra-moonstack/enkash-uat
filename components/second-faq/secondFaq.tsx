@@ -38,7 +38,7 @@ const SECONDFAQ = ({
       if (onToggleAnswerVisibility) {
         onToggleAnswerVisibility()
       }
-    }, 100)
+    }, 300)
   }
 
   const handleMouseLeave = () => {
@@ -51,7 +51,7 @@ const SECONDFAQ = ({
       timerRef.current = setTimeout(() => {
         onToggleAnswerVisibility()
         timerRef.current = null
-      }, 0)
+      }, 100)
     }
   }
   const handleClick = () => {
@@ -94,9 +94,8 @@ const SECONDFAQ = ({
         </div>
 
         <div
-          className={`${styles.answer} ${
-            answerVisible ? styles.visible : styles.reverse_visible
-          }`}
+          className={`${styles.answer} ${answerVisible ? styles.visible : styles.reverse_visible
+            }`}
         >
           {!answerHTML &&
             answer !== undefined &&

@@ -55,6 +55,7 @@ const dataSets = [
     imageMaxHeight: "283px",
     subtitle:
       "Automate the collection of payments through virtual accounts and UPI IDs, ensuring faster and error-free reconciliations while eliminating manual efforts and improving operational efficiency for merchants handling high transaction volumes.",
+    linkUrl: "/auto-collect"
   },
   {
     iconSrc: iconTwo,
@@ -64,6 +65,7 @@ const dataSets = [
     imageMaxHeight: "221px",
     subtitle:
       "Set up automated recurring payments effortlessly, enabling merchants to offer subscription-based services while ensuring seamless and timely payments, reducing manual intervention, and enhancing customer retention rates.",
+    linkUrl: "/subscriptions"
   },
   {
     iconSrc: iconThree,
@@ -73,6 +75,7 @@ const dataSets = [
     imageMaxHeight: "377px",
     subtitle:
       "Simplify recurring payments and mandate-based transactions for businesses managing loans, insurance, and other financial services by enabling automated deductions from customer accounts with full compliance and security.",
+    linkUrl: "/e-nach"
   },
 ]
 
