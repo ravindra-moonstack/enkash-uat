@@ -1,78 +1,25 @@
 import { notFound } from "next/navigation"
+
 import styles from "./page.module.scss"
+
+// components
 import { CategoryData } from "../vouchers/data/category-data"
 import VoucherCard from "@/components/voucher-card/voucher-card"
-import VoucherData, { Voucher } from "../vouchers/data/voucher-data"
 import { nameToUrl } from "@/common/utils/stringUtils"
-import SliderComponent from "@/components/sliderComponent/sliderComponent"
-import { VOUCHER_DATA } from "./data"
-import { blueArrow, whiteArrow } from "../affordability-suite"
-import VoucherFaqComponent from "./voucher-faq"
-import { CATEGORY_META } from "./categoryMeta"
 import { CTASection } from "@/components"
+import SliderComponent from "@/components/sliderComponent/sliderComponent"
+import VoucherFaqComponent from "./voucher-faq"
 import VoucherFaqSection from "@/components/voucherFaq/voucherFaqSection"
 import NotFound from "../not-found"
 
-const VALID_CATEGORIES: string[] = [
-  "e-commerce-vouchers",
-  "food-and-beverages-vouchers",
-  "health-and-wellness-vouchers",
-  "apparels-vouchers",
-  "movie-and-music-vouchers",
-]
+// helpers
+import { VOUCHER_DATA, CATEGORY_META, VALID_CATEGORIES } from "./data"
+import { blueArrow, whiteArrow } from "../affordability-suite"
+import fetchVouchers from "@/src/helpers/vouchers"
 
 const getDiscountValue = (raw: string | number | undefined): number => {
   if (!raw) return 0
   return typeof raw === "string" ? parseFloat(raw) : raw
-}
-
-const fetchVouchers = async (
-  categoryName: string
-): Promise<{
-  validVouchers: Voucher[]
-  apiDiscounts: Record<string, string>
-}> => {
-  const localVouchers: Voucher[] = Object.values(VoucherData).filter(
-    (voucher) => voucher.category === categoryName
-  )
-
-  try {
-    const apiResponse = await fetch(
-      "https://marketplaces.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({}),
-        next: { revalidate: 3600 },
-      }
-    )
-
-    const apiData = await apiResponse.json()
-    const products = apiData.payload.data || []
-
-    const apiDiscounts: Record<string, string> = {}
-    products.forEach((product: any) => {
-      apiDiscounts[nameToUrl(product.brand)] = product.discount
-    })
-
-    const validVouchers = localVouchers.filter((localVoucher) =>
-      products.some(
-        (product: any) =>
-          nameToUrl(product.brand) === localVoucher.urlName &&
-          product.active &&
-          product.enabled
-      )
-    )
-
-    validVouchers.forEach((voucher) => {
-      voucher.discount = parseFloat(apiDiscounts[voucher.urlName])
-    })
-
-    return { validVouchers, apiDiscounts }
-  } catch (error) {
-    console.error("Error fetching vouchers:", error)
-    return { validVouchers: [], apiDiscounts: {} }
-  }
 }
 
 export async function generateMetadata({
@@ -128,24 +75,28 @@ const MainCategoryPage = async ({
   const { apiDiscounts } = await fetchVouchers(mainCategory)
 
   // Apply discounts dynamically
-  const slidesWithDiscount = pageData.slides.map((slide) => ({
-    ...slide,
-    discount: getDiscountValue(
-      apiDiscounts[nameToUrl(slide.brandName)] || slide.discount
-    ),
-  }))
+  const slidesWithDiscount = pageData.slides
+    .map((slide) => ({
+      ...slide,
+      discount: getDiscountValue(
+        apiDiscounts[nameToUrl(slide.brandName)] || slide.discount
+      ),
+    }))
+    .filter((item) => item.discount !== 0)
 
-  const voucherCardsWithDiscount = pageData.voucherCards.map((card) => {
-    const brandKey = card.brandName ? nameToUrl(card.brandName) : ""
-    const discountFromApi = brandKey ? apiDiscounts[brandKey] : undefined
+  const voucherCardsWithDiscount = pageData.voucherCards
+    .map((card) => {
+      const brandKey = card.brandName ? nameToUrl(card.brandName) : ""
+      const discountFromApi = brandKey ? apiDiscounts[brandKey] : undefined
 
-    return {
-      ...card,
-      discount: discountFromApi
-        ? `${getDiscountValue(discountFromApi)}%`
-        : `${getDiscountValue(card.discount)}%`,
-    }
-  })
+      return {
+        ...card,
+        discount: discountFromApi
+          ? `${getDiscountValue(discountFromApi)}%`
+          : `${getDiscountValue(card.discount)}%`,
+      }
+    })
+    .filter((item) => item.discount !== "0%")
 
   return (
     <div className={`color-black ${styles.home_container}`}>

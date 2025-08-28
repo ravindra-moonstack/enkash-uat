@@ -1,8 +1,8 @@
 "use client"
-
-import { VoucherFaqData } from "@/src/app/[mainCategory]/voucher-faq-data"
-import styles from "./page.module.scss"
 import { useState } from "react"
+
+import { VoucherFaqData } from "./voucher-faq-data"
+import styles from "./page.module.scss"
 import FAQ from "@/components/faq-new/faq"
 
 interface VoucherFaqComponentProps {
@@ -18,10 +18,8 @@ const VoucherFaqComponent: React.FC<VoucherFaqComponentProps> = ({
     setOpenFAQIndex((prevIndex) => (prevIndex === index ? null : index))
   }
 
-  // 👇 Pehle voucher ke data le lo
   const faqData = VoucherFaqData[voucherName]
 
-  // 👇 Ab length check karo
   const isScrollable = faqData?.faqData?.length > 5
 
   return (
