@@ -142,7 +142,7 @@ const VendorPayment = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Pay, Approve, Reconcile - ",
+                  title: "Approve, Pay, reconcile - ",
                   color: "color-equity-blue",
                 },
                 {
@@ -157,11 +157,10 @@ const VendorPayment = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
-                  maxHeight: "400px",
+                  maxHeight: "400px", 
                   direction: showScroll ? "rtl" : "ltr",
                 }}
               >
