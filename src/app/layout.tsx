@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     images: "/og-image.png",
   },
+  icons: "/favicon.svg",
 }
 
 export default function RootLayout({
