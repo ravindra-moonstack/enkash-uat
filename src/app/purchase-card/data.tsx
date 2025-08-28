@@ -290,7 +290,7 @@ const cardType = [
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
-    linkUrl: "/sales",
+    linkUrl: "/sales/?source=prepaid-card",
   },
   {
     titleHtml: "Virtual Card",
@@ -304,7 +304,7 @@ const cardType = [
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
     cardImage: termsAndConCardImg,
-    linkUrl: "/digital-marketing-card",
+    linkUrl: "/travel-and-expense-card",
   },
   {
     titleHtml: "Meal Card",
@@ -319,7 +319,7 @@ const cardType = [
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
-    linkUrl: "/sales",
+    linkUrl: "/sales/?source=prepaid-card",
   },
 ]
 

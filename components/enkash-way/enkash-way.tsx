@@ -17,12 +17,14 @@ interface EnkashWayProps {
     url?: string
     icon: StaticImageData
     bgImage?: string | StaticImageData
+    buttonText?:string
   }[]
   sectionHeading: string
   secondHeading?: string
   secondHeadingColor?: "black" | "white" | "secondry-black"
   subTitle?: string
   progressItemPadding?: string
+   buttonText?:string
 }
 
 const EnkashWay = ({
@@ -30,6 +32,7 @@ const EnkashWay = ({
   sectionHeading,
   secondHeading,
   subTitle,
+  buttonText = "Get Started",
   progressItemPadding,
 }: EnkashWayProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0)
@@ -169,7 +172,7 @@ const EnkashWay = ({
                 {selectedItem.url && (
                   <div className={`${styles.list_button}`}>
                     <RectangleButton
-                      title="Learn More"
+                      title={selectedItem.buttonText? selectedItem.buttonText : "Learn More"}
                       theme="border-gray"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}

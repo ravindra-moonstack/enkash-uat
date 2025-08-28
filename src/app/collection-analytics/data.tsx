@@ -34,6 +34,10 @@ import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
   autoCollect,
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
   instant,
   notificationImage,
   paymentButton,
@@ -42,17 +46,55 @@ import {
   paymentLinkImage,
   paymentOptionImage,
   qrCodes,
+  realTimeExpense,
+  realTimeExpenseIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
   shareImage,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   taskIconFour,
   taskIconOne,
   taskIconThree,
   taskIconTwo,
 } from "."
 
+const stackcardData = [
+  {
+    color: "#fff", 
+    icon: realTimeExpenseIcon,
+    title: "Data Collection",
+    description: `EnKash automates the entire data collection process by pulling real-time data directly from the dashboard, reducing manual errors, and collating all the data in a centralized system, simplifying analysis and reporting.`,
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=collection-analytics",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Accessibility",
+    description: `With EnKash, you can grant role-based access to a user-friendly dashboard, enabling cross-functional teams like finance, sales, and operations teams to readily access relevant AR information for a 360° view.`,
+    image: fraudProtection,
+    buttonUrl: "/sales/?source=collection-analytics",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "DSO Management ",
+    description: `Get up-to-the-minute tracking of payment statuses, and implement proactive strategies for reducing DSO. By leveraging real-time insights, EnKash enables organizations to maintain a healthier cash flow position.`,
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales?source=collection-analytics",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Real-Time Insights ",
+    description: `With EnKash, businesses can get access to a comprehensive dashboard that provides real-time insights into AR metrics, ultimately enabling proactive collection management and quick identification of discrepancies for faster resolutions.`,
+    image: costControlSavings,
+    buttonUrl: "/sales/?source=collection-analytics",
+  },
+]
 const dataSets = [
   {
     imageSrc: iconOne,
@@ -477,5 +519,6 @@ export {
   supportData,
   savingData,
   allInOnePolicies,
-  managementCards
+  managementCards,
+  stackcardData
 }
