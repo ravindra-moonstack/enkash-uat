@@ -51,6 +51,10 @@ const WebHeader = ({}: props) => {
         }`}
         onMouseLeave={closeAllModals}
       >
+        <a href="#main" className="skip">
+          Skip to main content
+        </a>
+
         <nav className="d-flex justify-content-between">
           <div className="d-flex">
             <Link href="/" className={styles.logo_container}>
