@@ -36,7 +36,6 @@ import options from "./img/options.png"
 import {
   autoCollect,
   instant,
-  invoices,
   notificationImage,
   optimizedIcon,
   paymentButton,
