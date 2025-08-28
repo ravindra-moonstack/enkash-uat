@@ -18,8 +18,13 @@ export const metadata: Metadata = {
   title: "Enkash",
   description:
     "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more",
-  icons: {
-    icon: "/favicon.svg",
+  openGraph: {
+    title: "Enkash",
+    description:
+      "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more",
+    url: process.env.NEXT_PUBLIC_URL,
+    type: "website",
+    images: "/og-image.png",
   },
 }
 
