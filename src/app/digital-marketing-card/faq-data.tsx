@@ -14,22 +14,22 @@ const faqData: FAQDataItem[] = [
     answer: [],
     answerHTML: (
       <div>
-       
-          Digital marketing promotes products or services using digital channels
-          like search engines, social media, email, and websites. Digital
-          marketing cards serve as financial control tools in this landscape,
-          consolidating expenses scattered across platforms. These purpose-based
-          cards enable businesses to manage{" "}
-          <Link
-            href={`${process.env.URL}/resources/blog/enkash-corporate-cards-for-digital-marketers/`}
-            target="_blank"
-          >
-            digital marketing expenses
-          </Link>{" "}
-          efficiently in a centralized place, simplifying financial oversight
-          and offering a comprehensive view of their digital marketing
-          activities.
-        
+
+        Digital marketing promotes products or services using digital channels
+        like search engines, social media, email, and websites. Digital
+        marketing cards serve as financial control tools in this landscape,
+        consolidating expenses scattered across platforms. These purpose-based
+        cards enable businesses to manage
+        <Link
+          href={`${process.env.URL}/resources/blog/enkash-corporate-cards-for-digital-marketers/`}
+          target="_blank"
+        >
+          digital marketing expenses
+        </Link>
+        efficiently in a centralized place, simplifying financial oversight
+        and offering a comprehensive view of their digital marketing
+        activities.
+
       </div>
     ),
   },
@@ -60,13 +60,13 @@ const faqData: FAQDataItem[] = [
     answerHTML: (
       <div>
         <h4>
-          Companies can issue this{" "}
+          Companies can issue this
           <Link
             href={`${process.env.URL}/resources/blog/enkash-corporate-cards-for-digital-marketers/`}
             target="_blank"
           >
             corporate card for digital marketing
-          </Link>{" "}
+          </Link>
           purposes and establish specific spending limits for distinct
           categories of expenditures. For instance, you can set limits for
           campaign-related expenses and subscription renewals based on your

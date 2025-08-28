@@ -108,7 +108,7 @@ const CustomerOnboarding = () => {
                           </li>
 
                           <li>
-                            <strong>Officially Valid Document (OVD)</strong>{" "}
+                            <strong>Officially Valid Document (OVD)</strong>
                             <br />
                             Means the passport, the driving license, proof of
                             possession of Aadhaar number, the Voter&apos;s
@@ -120,7 +120,7 @@ const CustomerOnboarding = () => {
                           </li>
 
                           <li>
-                            <strong>Politically Exposed Persons (PEPs)</strong>{" "}
+                            <strong>Politically Exposed Persons (PEPs)</strong>
                             <br />
                             Means individuals who are or have been entrusted
                             with prominent public functions in a foreign country
@@ -146,7 +146,7 @@ const CustomerOnboarding = () => {
                             <strong>
                               Video based Customer Identification Process
                               (V-CIP)
-                            </strong>{" "}
+                            </strong>
                             <br />A method of customer identification with
                             facial recognition and customer due diligence by an
                             authorised official of the Company by undertaking
@@ -182,7 +182,7 @@ const CustomerOnboarding = () => {
                           </li>
 
                           <li>
-                            <strong>Closed System Payment Instruments</strong>{" "}
+                            <strong>Closed System Payment Instruments</strong>
                             <br />
                             These are payment instruments issued by a person for
                             facilitating the purchase of goods and services from
@@ -196,7 +196,7 @@ const CustomerOnboarding = () => {
                           <li>
                             <strong>
                               Semi-Closed System Payment Instruments
-                            </strong>{" "}
+                            </strong>
                             <br />
                             These are payment instruments which can be used for
                             purchase of goods and services, including financial
@@ -208,7 +208,7 @@ const CustomerOnboarding = () => {
                           </li>
 
                           <li>
-                            <strong>Open System Payment Instruments</strong>{" "}
+                            <strong>Open System Payment Instruments</strong>
                             <br />
                             These are payment instruments which can be used for
                             purchase of goods and services, including financial
@@ -278,7 +278,7 @@ const CustomerOnboarding = () => {
                             <strong>Customer Due Diligence Process</strong>
                             <ol type="1" className="list-decimal ml-6">
                               <li>
-                                <strong>Customer Registration:</strong>{" "}
+                                <strong>Customer Registration:</strong>
                                 Obtaining the requisite organization/individual
                                 details as listed in Annexure I...
                               </li>
@@ -301,14 +301,14 @@ const CustomerOnboarding = () => {
                                   <li>
                                     <strong>
                                       Termination requested by the customer:
-                                    </strong>{" "}
+                                    </strong>
                                     In case the customer wishes to culminate his
                                     contract...
                                   </li>
                                   <li>
                                     <strong>
                                       EnKash chooses to terminate:
-                                    </strong>{" "}
+                                    </strong>
                                     Customer has indulged in fraudulent or
                                     illegal activity...
                                   </li>

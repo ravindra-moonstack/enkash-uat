@@ -73,7 +73,7 @@ const CustomerOnboarding = () => {
 
                       <p>
                         These terms including annexures and links herein, apply
-                        to your use of{" "}
+                        to your use of
                         <Link href={`${process.env.URL}/`} target="_blank">
                           www.EnKash.com
                         </Link>
@@ -83,13 +83,13 @@ const CustomerOnboarding = () => {
                         <strong>“Website”</strong>) owned and operated by
                         <strong>
                           Nehat Tech Solutions Private Limited
-                        </strong>{" "}
-                        (‘EnKash’) which is the holding company of{" "}
+                        </strong>
+                        (‘EnKash’) which is the holding company of
                         <strong>
                           Nehat Business Services Private Limited (‘NBSPL’)
                         </strong>
                         , a company incorporated under the provisions of the
-                        Companies Act, 2013 and having its registered office at{" "}
+                        Companies Act, 2013 and having its registered office at
                         <em>
                           91, Springboard 175, Kagalwala House, 2nd Floor,
                           Kalina, Santacruz (E), Mumbai, Maharashtra, India -
@@ -156,7 +156,7 @@ const CustomerOnboarding = () => {
                         </p>
 
                         <p>
-                          You acknowledge and agree that all references to{" "}
+                          You acknowledge and agree that all references to
                           <strong>“EnKash”</strong> shall mean the EnKash
                           affiliate for the Specific Terms of Use. You further
                           agree that any claims relating to or arising from the
@@ -197,7 +197,7 @@ const CustomerOnboarding = () => {
                       <h5 className="c15 mt-6">1. PROPRIETARY RIGHTS</h5>
                       <div className="container mt-4">
                         <p>
-                          <strong>1.1.</strong> You acknowledge and agree that{" "}
+                          <strong>1.1.</strong> You acknowledge and agree that
                           <strong>EnKash</strong> owns all rights, title and
                           interest in and to the Services, including any
                           intellectual property rights which subsist in the
@@ -547,7 +547,7 @@ const CustomerOnboarding = () => {
                       <p className="c3">
                         <span className="c15">
                           By using the Website, You hereby consent to the use of
-                          Your information as we have outlined in our{" "}
+                          Your information as we have outlined in our
                           <a href="/policies/privacy-policy" target="_blank">
                             Privacy Policy
                           </a>

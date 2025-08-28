@@ -44,7 +44,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
         }
       })
 
-      const {} = await axios.post(
+      const { } = await axios.post(
         process.env.ZOHO_AFFILIATE_URL || "",
         formData,
         {
@@ -156,7 +156,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
         </div>
 
         <p className={"privacy"}>
-          By submitting this form, you are agreeing to our{" "}
+          By submitting this form, you are agreeing to our
           <Link href="/privacy-policy" className={"privacyLink"}>
             privacy policy
           </Link>

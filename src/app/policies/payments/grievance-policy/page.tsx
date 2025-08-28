@@ -186,7 +186,7 @@ const grievancePolicy = () => {
                         <li className="c3">
                           <span className="c15">
                             Email – Customers can choose to send their complaint
-                            via email to{" "}
+                            via email to
                             <a
                               className="c17"
                               href="mailto:grievanceofficer@enkash.com"
@@ -260,7 +260,7 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          Contact information:{" "}
+                          Contact information:
                           <a
                             className="c17"
                             href="mailto:grievanceofficer@enkash.com"
@@ -280,7 +280,7 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          Contact information:{" "}
+                          Contact information:
                           <a
                             className="c17"
                             href="mailto:nodalofficer@enkash.com"
@@ -625,7 +625,7 @@ const grievancePolicy = () => {
                         </li>
                         <li className="c26">
                           <span className="c0">
-                            Number and type of complaints escalated;{" "}
+                            Number and type of complaints escalated;
                           </span>
                         </li>
                         <li className="c6">
@@ -681,7 +681,7 @@ const grievancePolicy = () => {
                         <li className="c26">
                           <span className="c0">
                             The overall performance of the grievance redressal
-                            mechanism, and{" "}
+                            mechanism, and
                           </span>
                         </li>
                         <li className="c6">
