@@ -51,7 +51,7 @@ const PrepaidCard = (): React.JSX.Element => {
             <CustomBreadcrumb
               items={[
                 { name: "Home", url: "/" },
-                { name: "Corporate Cards ", url: "/corporate-cards" },
+                { name: "Corporate Cards ", url: "/products/corporate-cards" },
                 {
                   name: "Prepaid Cards",
                   url: "/corporate-cards/prepaid-card",

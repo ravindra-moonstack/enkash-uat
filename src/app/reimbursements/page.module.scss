@@ -213,9 +213,9 @@
 
 .other_products {
   background-color: white;
-  padding: 50px 20px 26px;
+  padding: 50px 20px 0px;
   @include for-laptops {
-    padding: 90px 20px 66px;
+    padding: 90px 20px 0px;
   }
 }
 
