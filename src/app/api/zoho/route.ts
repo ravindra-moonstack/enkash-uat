@@ -1,3 +1,4 @@
+
 import axios from "axios"
 
 export async function POST(request: Request) {
@@ -13,7 +14,8 @@ export async function POST(request: Request) {
     if (Array.isArray(value)) {
       formData.append(key, value.join(", "))
     } else if (value !== undefined && value !== null) {
-      //@ts-ignore
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-expect-error
       formData.append(key, value)
     }
   })
@@ -27,6 +29,7 @@ export async function POST(request: Request) {
     })
 
     return Response.json(response.data)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error: any) {
     return Response.json({ error: "Zoho submission failed" })
   }
