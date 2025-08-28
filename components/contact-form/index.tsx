@@ -50,7 +50,7 @@ const ContactForm: React.FC = () => {
       })
 
       const {} = await axios.post(
-        process.env.ZOHO_CONTACT_URL || "",
+        process.env.NEXT_PUBLIC_ZOHO_CONTACT_URL || "",
         formData,
         {
           headers: {
