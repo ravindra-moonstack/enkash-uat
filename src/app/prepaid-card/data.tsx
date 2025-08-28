@@ -457,7 +457,7 @@ const progressData = [
       "Enable tax-saving meal benefits for employees with preloaded, compliant meal cards accepted at food outlets, canteens, and online platforms.",
     icon: tabIconOne,
     bgImage: bg1,
-    url: "/meal-card",
+    url: "/meal-card", 
   },
   {
     itemArray: ["Fuel Card"],
@@ -466,7 +466,7 @@ const progressData = [
       "Optimize your fuel spends with cards restricted to fuel merchants only. Get complete visibility and prevent fuel misuse at the pump.",
     icon: tabIcontwo,
     bgImage: bg2,
-    url: "/fuel-card",
+    url: "/fuel-card", 
   },
   {
     itemArray: ["Digital Marketing Card"],
@@ -484,7 +484,8 @@ const progressData = [
       "Give your drivers the power to pay without the risk of cash misuse. Track fuel, tolls, and repair spends in real-time.",
     icon: tabIconFour,
     bgImage: bg4,
-    url: "/sales",
+    url: "/sales/?source=prepaid-card",
+    buttonText :"Get Started"
   },
   {
     itemArray: ["Payroll Card"],
@@ -493,7 +494,8 @@ const progressData = [
       "Pay employees and gig workers instantly: no bank hassles, no KYC delays. Load salaries, bonuses, or incentives directly to payroll cards.",
     icon: tabIconFive,
     bgImage: bg5,
-    url: "/sales",
+    url: "/sales/?source=prepaid-card",
+    buttonText :"Get Started"
   },
 ]
 

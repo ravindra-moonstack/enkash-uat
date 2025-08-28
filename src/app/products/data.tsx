@@ -94,7 +94,7 @@ const policiesData = [
   },
   {
     icon: taskIconTwo,
-    title: "Make Business Payments Without the Hassle",
+    title: "Make Business Payments Without Any Hassle",
     description:
       "Say goodbye to fragmented banking portals and manual errors. We empower you to handle all your business payouts from a single dashboard, with advanced controls and automated workflows.",
     image: shareImage,

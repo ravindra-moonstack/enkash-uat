@@ -2,12 +2,16 @@
 
 import React, { memo, useState } from "react"
 import Image, { StaticImageData } from "next/image"
+
 import styles from "./enkash-way.module.scss"
+
 import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
+
 import RectangleButton from "../buttons/rectangle-button"
-import { blueArrow, whiteArrow } from "."
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
+
+import { blueArrow, whiteArrow } from "."
 
 interface EnkashWayProps {
   progressData: {
@@ -17,12 +21,14 @@ interface EnkashWayProps {
     url?: string
     icon: StaticImageData
     bgImage?: string | StaticImageData
+    buttonText?: string
   }[]
   sectionHeading: string
   secondHeading?: string
   secondHeadingColor?: "black" | "white" | "secondry-black"
   subTitle?: string
   progressItemPadding?: string
+  buttonText?: string
 }
 
 const EnkashWay = ({
@@ -167,7 +173,11 @@ const EnkashWay = ({
               {selectedItem.url && (
                 <div className={`${styles.list_button}`}>
                   <RectangleButton
-                    title="Learn More"
+                    title={
+                      selectedItem.buttonText
+                        ? selectedItem.buttonText
+                        : "Learn More"
+                    }
                     theme="border-gray"
                     actionImage={blueArrow}
                     hoverImage={whiteArrow}

@@ -253,7 +253,7 @@ const GiftCards = (): React.JSX.Element => {
                   color: "color-black",
                 },
                 {
-                  title: "The Freedom To Choose ",
+                  title: "The Freedom To Choose. ",
                   color: "color-equity-blue",
                 },
               ]}

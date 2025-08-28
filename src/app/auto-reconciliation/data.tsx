@@ -147,7 +147,7 @@ const cardsData = [
     icon: scrollIconOne,
   },
   {
-    title: "Customize Reconciliation Rules",
+    title: "Customise Reconciliation Rules",
     description:
       "Define rules to match transactions, invoices, and payments automatically based on your business needs.",
     icon: scrollIconTwo,
