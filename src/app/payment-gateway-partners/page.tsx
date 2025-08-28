@@ -86,9 +86,6 @@ const partnershipsPage = (): React.JSX.Element => {
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="Whether you're a tech innovator, service provider, or business enabler, EnKash’s payment gateway partner program is tailored for you."
-          buttons={[
-            { title: "Explore ", theme: "blue", url: "#partnership-form" },
-          ]}
           slideData={slideData}
         />
       </div>

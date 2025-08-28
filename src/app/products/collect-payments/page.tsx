@@ -10,6 +10,7 @@ import {
   HowDoesItWork,
   PolicyCard,
   FaqSection,
+  LottieDynamicLoadComponent,
 } from "@/components"
 import {
   instantSettelmentIcon,
@@ -18,7 +19,6 @@ import {
   affordabilityIcon,
   blueArrow,
   whiteArrow,
-  CollectpaymentGif,
 } from "."
 
 import faqData from "./faq-data"
@@ -86,13 +86,10 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
             <div className={styles.lottie_container}>
-              <div>
-                <Image
-                  src={CollectpaymentGif}
-                  alt="card background"
-                  className="position-relative w-100 h-100"
-                />
-              </div>
+              <LottieDynamicLoadComponent
+                animationName={"CollectPaymentAnimation"}
+                loop={true}
+              />
             </div>
           </div>
         </div>
@@ -177,7 +174,12 @@ const CollectPayment = (): React.JSX.Element => {
                 className={`${styles.all_in_section_inner} d-flex flex-column gap-3`}
               >
                 {allInOnePolicyData.map((item, i) => (
-                  <AllInOnePolicy key={i} {...item} buttonUrl={item.buttonUrl} buttonText="Learn more" />
+                  <AllInOnePolicy
+                    key={i}
+                    {...item}
+                    buttonUrl={item.buttonUrl}
+                    buttonText="Learn more"
+                  />
                 ))}
               </div>
             </div>
@@ -219,7 +221,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className={styles.how_it_workssection}>
-            <HowDoesItWork dataSets={dataSets} />
+            <HowDoesItWork dataSets={dataSets} ctaText="Explore More" />
           </div>
         </div>
       </div>
@@ -276,7 +278,6 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className="row align-items-center pt-4 ">
-            
             <div className="col-12 col-md-6 order-2 order-md-1">
               <Image
                 src={affordabilityImg}
@@ -284,7 +285,6 @@ const CollectPayment = (): React.JSX.Element => {
                 className="w-100 mh-550 object-fit-contain"
               />
             </div>
-
 
             <div className="col-12 col-md-6 order-1 order-md-2">
               <PolicyCard
@@ -327,7 +327,7 @@ const CollectPayment = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Wherever your customers are, however they pay. you get paid.",
+                    "Wherever your customers are, however they pay, you get paid.",
                   color: "color-white subHeading",
                 },
               ]}

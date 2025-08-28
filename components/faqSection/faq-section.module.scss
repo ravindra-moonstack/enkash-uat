@@ -1,7 +1,7 @@
 @use "/styles/variables" as *;
 @use "/styles/mixin" as *;
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;

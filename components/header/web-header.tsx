@@ -51,6 +51,10 @@ const WebHeader = ({}: props) => {
         }`}
         onMouseLeave={closeAllModals}
       >
+        <a href="#main" className="skip">
+          Skip to main content
+        </a>
+
         <nav className="d-flex justify-content-between">
           <div className="d-flex">
             <Link href="/" className={styles.logo_container}>
@@ -95,7 +99,7 @@ const WebHeader = ({}: props) => {
                   className={styles.arrow}
                   style={{
                     left: `calc(${modalLeft}px - 8px)`,
-                    top: "132%",
+                    top: "126%",
                     position: "absolute",
                     zIndex: 0,
                   }}

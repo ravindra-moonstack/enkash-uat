@@ -51,7 +51,7 @@ const BulkPay = (): React.JSX.Element => {
                       url: "/products/make-payments",
                     },
                     {
-                      name: "Bulk Payout",
+                      name: "Bulk Pay",
                       url: "/bulk-pay",
                     },
                   ]}

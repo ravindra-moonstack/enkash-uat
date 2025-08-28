@@ -1,5 +1,6 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixin" as *;
+@use "./variables" as *;
+@use "./mixin" as *;
+
 .contactFormWrapper {
   max-width: 700px;
   margin: auto;
@@ -42,13 +43,16 @@
       padding: 12px 14px;
       border: 1px solid #d9d9d9;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 12px;
       outline: none;
       transition: border 0.2s;
       color: #576675;
       background-color: $color-white;
       &:focus {
         border-color: #1c5af4;
+      }
+      @include for-laptops {
+        font-size: 14px;
       }
     }
 
@@ -107,6 +111,10 @@
     &:hover {
       background-color: $color-dark-blue;
       color: $color-white;
+    }
+
+    &:disabled {
+      opacity: 50%;
     }
   }
 

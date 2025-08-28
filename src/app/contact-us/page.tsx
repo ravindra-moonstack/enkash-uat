@@ -1,17 +1,23 @@
 import React from "react"
+import { Metadata } from "next"
 import Image from "next/image"
+import Link from "next/link"
+
+import styles from "./page.module.scss"
+
+// components
 import {
   DynamicHeading,
   LocationCard,
   LogoSlider,
   TestimonialSlider,
 } from "@/components"
-import styles from "./page.module.scss"
+import ContactForm from "@/components/contact-form"
+
+// helpers
 import { location, logo } from "."
 import { contactData, locationData, testimonialData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
-import { Metadata } from "next"
-import ContactForm from "@/components/contact-form/contactForm"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash | Get Support or Speak to Our Team",
@@ -22,13 +28,21 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-const ContactUs = () => {
+const ContactUs = (): React.JSX.Element => {
+  //
+
   return (
     <>
       <div className={styles.talk_to_sales}>
         <div className="max-w-auto">
           <div className={styles.logo}>
-            <Image src={logo} alt="card visual" className={styles.group_logo} />
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="card visual"
+                className={styles.group_logo}
+              />
+            </Link>
           </div>
 
           <div className="row">
@@ -88,7 +102,7 @@ const ContactUs = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-7 col-12">
+            <div className={`${styles.contactForm} col-md-7 col-12 `}>
               {" "}
               <ContactForm />
             </div>
@@ -147,7 +161,7 @@ const ContactUs = () => {
                   {
                     title: "Terms & Condition",
                     color: "color-grey-100",
-                     link: "/policies/tnc",
+                    link: "/policies/tnc",
                   },
                 ]}
                 headingTag="p"
@@ -158,7 +172,7 @@ const ContactUs = () => {
                   {
                     title: "Privacy Policy",
                     color: "color-grey-100",
-                      link: "/policies/privacy-policy",
+                    link: "/policies/privacy-policy",
                   },
                 ]}
                 headingTag="p"

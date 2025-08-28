@@ -8,3 +8,5 @@ export const makePaymentAnimation = () =>
   import("../../src/app/products/make-payments/img/lottie/banner.json")
 export const homeAnimation = () =>
   import("../../src/app/home/img/lottie/bsnner.json")
+export const collectPaymentAnimation = () =>
+  import("../../src/app/products/collect-payments/lottie/banner.json")

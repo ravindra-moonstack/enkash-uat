@@ -20,7 +20,6 @@ import {
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
-
 } from "."
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
@@ -262,8 +261,9 @@ const DigitalInvoicing = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={`  ${showScroll ? "overflow-auto scrollbar-thin" : ""
-                  }`}
+                className={`  ${
+                  showScroll ? "overflow-auto scrollbar-thin" : ""
+                }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",

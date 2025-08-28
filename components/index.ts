@@ -129,7 +129,7 @@ const TabPoliciesWrapper = dynamic(
 const ProductsSection = dynamic(() => import("./ourProductsSection/index"), {
   ssr: true,
 })
-const SalesForm = dynamic(() => import("./sales-form/salesForm"), { ssr: true })
+const SalesForm = dynamic(() => import("./sales-form"), { ssr: true })
 const OurStoryCard = dynamic(
   () => import("./AboutOurStoryCard/AboutOurStoryCard"),
   { ssr: true }
@@ -201,13 +201,13 @@ const CareersTestimonialSlider = dynamic(
   }
 )
 const HiringProcessModal = dynamic(
-  () => import("./HiringProcessModal/HiringProcessModal"),
+  () => import("./HiringProcessModal"),
   {
     ssr: true,
   }
 )
 const PaymentGatewayPartnershipForm = dynamic(
-  () => import("./Payment_Gateway_Partnerships_Form"),
+  () => import("./paymentGatewayForm"),
   {
     ssr: true,
   }
@@ -218,6 +218,19 @@ const BuiltforBuildersSection = dynamic(
     ssr: true,
   }
 )
+const UtilityBillPayments = dynamic(
+  () => import("./UtilityBillPayments/UtilityBillPayments"),
+  {
+    ssr: true,
+  }
+)
+const PartnerSection = dynamic(
+  () => import("./partnerSectionData/partnerSectionData"),
+  {
+    ssr: true,
+  }
+)
+
 export {
   Header,
   Footer,
@@ -278,4 +291,6 @@ export {
   HiringProcessModal,
   PaymentGatewayPartnershipForm,
   BuiltforBuildersSection,
+  UtilityBillPayments,
+  PartnerSection
 }

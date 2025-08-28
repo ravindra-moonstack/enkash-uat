@@ -5,7 +5,7 @@ import { useFormik } from "formik"
 import { useRouter } from "next/navigation"
 import axios from "axios"
 
-import styles from "./supportForm.module.scss"
+import "../../styles/_forms.scss"
 
 // components
 import { DynamicHeading } from "@/components"
@@ -39,29 +39,12 @@ const SupportForm: React.FC = () => {
   const onSubmitForm = async (values: TSupportInitialValueProp) => {
     try {
       setLoading(true)
-      const formData = new FormData()
-
-      Object.entries(values).forEach(([key, value]) => {
-        // If value is an array (e.g. for multi-select), append each item separately
-        if (Array.isArray(value)) {
-          value.forEach((val) => formData.append(key, val))
-        } else if (value !== undefined && value !== null) {
-          formData.append(key, value)
-        }
+      const {} = await axios.post("/api/zoho", {
+        url: process.env.NEXT_PUBLIC_ZOHO_SUPPORT_URL,
+        data: values,
       })
-
-      const {} = await axios.post(
-        process.env.ZOHO_SUPPORT_URL || "",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            "Accept-Charset": "UTF-8",
-          },
-        }
-      )
-      setLoading(false)
       router.push("/confirmation-support")
+      setLoading(false)
     } catch (error) {
       setLoading(false)
       throw error
@@ -70,7 +53,7 @@ const SupportForm: React.FC = () => {
 
   return (
     <>
-      <div className={styles.contactFormWrapper}>
+      <div className={"contactFormWrapper"}>
         <form action="#" onSubmit={handleSubmit}>
           <DynamicHeading
             content={[
@@ -87,9 +70,9 @@ const SupportForm: React.FC = () => {
             className="text-center "
           />
 
-          <p className={styles.subtitle}>We just need a few quick details</p>
+          <p className={"subtitle"}>We just need a few quick details</p>
 
-          <div className={styles.grid}>
+          <div className={"grid"}>
             <div className="">
               <input
                 type="text"
@@ -147,34 +130,42 @@ const SupportForm: React.FC = () => {
             </div>
           </div>
 
-          <MultiSelect
-            name="MultipleChoice"
-            options={contactOptions}
-            placeholder="How can we help you?*"
-            onChange={(data) => {
-              setFieldValue("MultipleChoice", data)
-            }}
-          />
-
-          <div>
-            <textarea
-              name="MultiLine"
-              placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
+          <div className="">
+            <MultiSelect
+              name="MultipleChoice"
+              options={contactOptions}
+              placeholder="How can we help you?*"
+              onChange={(data) => {
+                setFieldValue("MultipleChoice", data)
+              }}
             />
             <ErrorText<TSupportInitialValueProp>
               errors={errors}
               touched={touched}
-              field="PhoneNumber_countrycode"
+              field="MultipleChoice"
             />
           </div>
 
-          <p className={styles.privacy}>
+          <div className="">
+            <textarea
+              maxLength={500}
+              placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
+              {...getFieldProps("MultiLine")}
+            />
+            <ErrorText<TSupportInitialValueProp>
+              errors={errors}
+              touched={touched}
+              field="MultiLine"
+            />
+          </div>
+
+          <p className={"privacy"}>
             By submitting this form, you are agreeing to our{" "}
-            <Link href="/privacy-policy" className={styles.privacyLink}>
+            <Link href="/privacy-policy" className={"privacyLink"}>
               privacy policy
             </Link>
           </p>
-          <button type="submit" disabled={loading} className={styles.submitBtn}>
+          <button type="submit" disabled={loading} className={"submitBtn"}>
             {loading ? "..." : "Submit"}
           </button>
         </form>

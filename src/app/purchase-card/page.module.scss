@@ -7,7 +7,7 @@
   background-size: cover, cover;
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 100px 20px 0;
-  background-image:  url(/images/PurchaseCardBg.webp);
+  background-image: url(/images/PurchaseCardBg.webp);
   @include for-laptops {
     padding: 112px 20px 0;
   }
@@ -36,10 +36,10 @@
   .lottie_container {
     display: flex;
     justify-content: center;
-  img {
+    img {
       z-index: 1;
-      max-width: 100%; 
-      height: auto; 
+      max-width: 100%;
+      height: auto;
       max-height: 430px;
       margin-bottom: -111px;
       max-width: 287px;
@@ -99,7 +99,7 @@
   padding: 0px 20px;
   .section {
     padding: 50px 20px 0px;
-    background: #f6f6f6;
+    background: $color-cultured;
     @include for-laptops {
       padding: 90px 20px;
     }
@@ -118,7 +118,7 @@
 }
 
 .third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: white;
+  background: $color-white;
   border: 1px solid transparent;
   border-radius: 20px;
 }
@@ -134,4 +134,3 @@
   scrollbar-width: auto;
   scrollbar-color: #3b82f6 transparent;
 }
-

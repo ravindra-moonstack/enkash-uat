@@ -11,9 +11,11 @@ import { useSalesUrl } from "@/common/utils/useSalesUrl"
 
 interface howDoesItWorkProps {
   dataSets: any
+  ctaText?: string
+
 }
 
-const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
+const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
   const salesUrl = useSalesUrl()
 
   const [currentData, setCurrentData] = useState(0)
@@ -75,12 +77,12 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
                   </div>
                   <div className="mt-3 mt-md-5">
                     <RectangleButton
-                      title="Get Started"
+                      title={ctaText || "Get Started"}
                       theme="border-black"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}
                       iconSize={15}
-                      url={salesUrl}
+                      url={dataSets[currentData]?.linkUrl || salesUrl}
                     />
                   </div>
                 </div>
@@ -107,9 +109,8 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
             {dataSets.map((_: any, index: Key) => (
               <span
                 key={index}
-                className={`${styles.bar} ${
-                  currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
-                } cursor-pointer`}
+                className={`${styles.bar} ${currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
+                  } cursor-pointer`}
                 onClick={() => handleSpanClick(index as number)}
               />
             ))}

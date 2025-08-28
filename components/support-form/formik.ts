@@ -7,6 +7,11 @@ export type TSupportInitialValueProp = {
   PhoneNumber_countrycode: string
   MultipleChoice: string
   MultiLine: string
+  Dropdown: string
+  Dropdown1: string
+  Dropdown2: string
+  Dropdown3: string
+  Dropdown4: string
 }
 
 const supportInitialValue: TSupportInitialValueProp = {
@@ -16,6 +21,11 @@ const supportInitialValue: TSupportInitialValueProp = {
   PhoneNumber_countrycode: "",
   MultipleChoice: "",
   MultiLine: "",
+  Dropdown: "Landing Page",
+  Dropdown1: "Marketing",
+  Dropdown2: "Website Sales Leads",
+  Dropdown3: "-Select-",
+  Dropdown4: "-Select-",
 }
 
 const supportValidation = Yup.object({

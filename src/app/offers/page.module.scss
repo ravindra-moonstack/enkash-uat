@@ -12,7 +12,6 @@
   background-image: url(/images/rewardsBg.webp);
 
   @include for-laptops {
-
     padding: 112px 20px 0px;
   }
 
@@ -151,7 +150,7 @@
   }
 
   .inner-content {
-    background: white;
+    background: $color-white;
     /* inner background */
     padding: 11px 14px;
     border-radius: 10px;
@@ -166,7 +165,6 @@
   @include for-laptops {
     padding: 90px 20px 90px;
   }
-
 
   .section {
     margin-bottom: 50px;
@@ -305,7 +303,7 @@
 }
 
 .third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: white;
+  background: $color-white;
   border: 1px solid transparent;
   border-radius: 20px;
 }
@@ -341,7 +339,7 @@
 }
 
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;
@@ -400,13 +398,12 @@
   }
 }
 
-
 .card_stacking_row {
   padding: 0px 20px;
 
   .section {
     padding: 50px 20px 0px;
-    background: #f6f6f6;
+    background: $color-cultured;
 
     @include for-laptops {
       padding: 90px 0px 50px;

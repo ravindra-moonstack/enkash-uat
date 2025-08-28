@@ -104,6 +104,7 @@ const Rewards = (): React.JSX.Element => {
                   buttonUrl={policy.buttonUrl}
                   maxImageHeight={policy.maxImageHeight}
                   reverse={policy.reverse}
+                  buttonText="Explore more"
                 />
               ))}
             </div>

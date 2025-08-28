@@ -13,7 +13,7 @@ import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
 import FaqSection from "@/components/faqSection/faqSection"
 import faqData from "./faq-data"
 import PartnerShipForm from "@/components/partnerShip-form"
-import { BecomePartnerSteps, BpHeroSection , BankAffiliatePartnershipForm} from "@/components"
+import { BecomePartnerSteps, BpHeroSection, BankAffiliatePartnershipForm } from "@/components"
 import { coBrandImage, containerScreen, GalaxyTabImage, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import ProductsSection from "@/components/ourProductsSection"
@@ -58,7 +58,7 @@ const productsData = [
 ]
 const partnershipsPage = (): React.JSX.Element => {
   return (
-    <div className={`color-white`}>
+    <div className={`color-black`}>
       <BpHeroSection
         breadcrumbs={{
           items: [
@@ -66,15 +66,14 @@ const partnershipsPage = (): React.JSX.Element => {
             { name: "Partnerships", url: "#" },
             { name: "Affiliate Program", url: "/affiliate-programs" },
           ],
-          linkColor: "white",
         }}
         backgroundImage={containerScreen.src}
-        mainHeading={[{ title: "Affiliate Program", color: "underline" }]}
+        mainHeading={[{ title: "Affiliate Program", color: "underline " }]}
         subHeading={[
           {
             title:
               "Grow with India’s Leading Spend & Payments Management Platform",
-            color: "color-white",
+            color: "color-black",
           },
         ]}
         button={{
@@ -100,10 +99,7 @@ const partnershipsPage = (): React.JSX.Element => {
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
-          // buttons={[
-          //     { title: "Explore Cards", theme: "blue", url: "/products/corporate-cards" },
-          //     { title: "Explore Payment Gateway", theme: "blue", url: "/payment-gateway" }
-          // ]}
+      
           slideData={slideData}
         />
       </div>

@@ -8,6 +8,11 @@ export type TSalesInitialValueProp = {
   MultipleChoice: string
   Website: string
   MultiLine: string
+  Dropdown1: string
+  Dropdown2: string
+  Dropdown3: string
+  Dropdown4: string
+  Dropdown5: string
 }
 
 const salesInitialValue: TSalesInitialValueProp = {
@@ -18,6 +23,11 @@ const salesInitialValue: TSalesInitialValueProp = {
   MultipleChoice: "",
   Website: "",
   MultiLine: "",
+  Dropdown2: "Website Sales Leads",
+  Dropdown1: "Marketing",
+  Dropdown3: "-Select-",
+  Dropdown4: "-Select-",
+  Dropdown5: "",
 }
 
 const salesValidation = Yup.object({

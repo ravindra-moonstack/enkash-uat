@@ -76,10 +76,12 @@
 
     opacity: 0;
 
-    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out,
+    transition:
+      max-height 0.4s ease-in-out,
+      opacity 0.4s ease-in-out,
       padding 0.4s ease-in-out;
     max-height: 800px;
-    background: #f6f6f6; // ✅ correct syntax
+    background: $color-cultured;
     padding: 10px 20px;
     // position: absolute;
     // left: 0;

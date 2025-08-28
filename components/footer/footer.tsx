@@ -128,7 +128,7 @@ const FooterV2 = (): React.JSX.Element => {
                   <div className={`${styles.info_header_two}`}>
                     <h4 className={`${styles.title}`}>Help and Support</h4>
                   </div>
-                  <div className={`d-flex ${styles.info_body}`}>
+                  <div className={`d-flex mb-md-1 ${styles.info_body}`}>
                     <div className={` ${styles.info_body_two}`}>
                       <ul>
                         <li>
@@ -173,7 +173,7 @@ const FooterV2 = (): React.JSX.Element => {
                   >
                     <div className={` ${styles.info_body_three}`}>
                       <div
-                        className={`d-flex justify-content-between pt-3 ${styles.social_icons_row}`}
+                        className={`d-flex justify-content-between  ${styles.social_icons_row}`}
                       >
                         <Link
                           href="https://www.linkedin.com/company/enkashbusiness"
@@ -296,14 +296,14 @@ const FooterV2 = (): React.JSX.Element => {
                     className={`col-6  ${styles.info_div} ${styles.info_div_three}`}
                   >
                     <div className={` ${styles.info_header_three}`}>
-                      <h4 className={`${styles.title}`}>CONNECT US ON</h4>
+                      <h4 className={`${styles.title}`}>FIND US ON</h4>
                     </div>
                     <div
                       className={`d-flex  justify-content-start ${styles.info_body}`}
                     >
                       <div className={` ${styles.info_body_three}`}>
                         <div
-                          className={`d-flex justify-content-between py-3 ${styles.social_icons_row}`}
+                          className={`d-flex justify-content-between  ${styles.social_icons_row}`}
                         >
                           <Link
                             href="https://www.linkedin.com/company/enkashbusiness"
@@ -432,7 +432,7 @@ const FooterV2 = (): React.JSX.Element => {
               <Image
                 src={enkashBlueLogo}
                 alt="logo"
-                width={75}
+                width={100}
                 className="me-3 mb-3"
               />
             </Link>
