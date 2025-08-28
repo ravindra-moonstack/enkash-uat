@@ -35,8 +35,12 @@
       right: 20px;
       img {
         height: 60px;
-        max-width: 150px;
         object-fit: contain;
+        max-width: 100px;
+        @include for-laptops{
+          max-width: 150px;
+
+        }
       }
     }
   }

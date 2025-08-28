@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
 import styles from "./AboutLeadersCard.module.scss"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
@@ -41,10 +41,10 @@ const leaders: Leader[] = [
     image: naveen.src,
     bio: [
       {
-        line: "With over 25 years of expertise in cards, payments, and financial technology, Naveen Bindal, cofounder of EnKash, has evolved as a business leader, guiding the company to a leadership position in spend management and payments since 2018. ",
+        line: "With over 25 years of expertise in cards, payments, and financial technology, Naveen Bindal, cofounder of EnKash, has evolved as a business leader, guiding the company to a leadership position in spend management and payments since 2018. ",
       },
       {
-        line: "Leveraging his technical and domain knowledge, Naveen has expanded EnKash’s business model across multiple industries, fueling growth through a SaaS-plus-transaction-processing approach. Before EnKash, Naveen held key roles, including a decade at FirstData (now Fiserv) across multiple countries, Global CTO at PayU, where he developed a global payment gateway spanning 16 countries with over 400 payment methods, and Head of Product & Technology at Citrus Pay, advancing India’s digital payments ecosystem. His experience at Citibank and DBS Bank in Singapore further sharpened his financial infrastructure expertise. ",
+        line: "Leveraging his technical and domain knowledge, Naveen has expanded EnKash’s business model across multiple industries, fueling growth through a SaaS-plus-transaction-processing approach. Before EnKash, Naveen held key roles, including a decade at FirstData (now Fiserv) across multiple countries, Global CTO at PayU, where he developed a global payment gateway spanning 16 countries with over 400 payment methods, and Head of Product & Technology at Citrus Pay, advancing India’s digital payments ecosystem. His experience at Citibank and DBS Bank in Singapore further sharpened his financial infrastructure expertise. ",
       },
       {
         line: "At EnKash, he drives innovation and scalability, enabling SMEs and startups with seamless corporate credit cards and expense management solutions, while pursuing a vision to streamline business payments and enhance financial accessibility in the evolving fintech landscape.",
@@ -73,6 +73,17 @@ const leaders: Leader[] = [
 
 const LeadersSection: React.FC = () => {
   const [selectedLeader, setSelectedLeader] = useState<Leader | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768)
+    checkScreen()
+    window.addEventListener("resize", checkScreen)
+    return () => window.removeEventListener("resize", checkScreen)
+  }, [])
+
+  const handleOpen = (leader: Leader) => setSelectedLeader(leader)
+  const handleClose = () => setSelectedLeader(null)
 
   return (
     <div className={`${styles.aboutLeaderSectionInner}`}>
@@ -98,8 +109,9 @@ const LeadersSection: React.FC = () => {
           {leaders.map((leader, index) => (
             <div className="col-md-4 px-md-4 mb-4 mb-md-0" key={index}>
               <div
-                onMouseEnter={() => setSelectedLeader(leader)}
-                onMouseLeave={() => setSelectedLeader(null)}
+                onMouseEnter={() => !isMobile && handleOpen(leader)}
+                onMouseLeave={() => !isMobile && handleClose()}
+                onClick={() => isMobile && handleOpen(leader)}
                 className={`${styles.cards}`}
               >
                 <div className={`${styles.cardImage}`}>
@@ -122,12 +134,31 @@ const LeadersSection: React.FC = () => {
                   <p>{leader.role}</p>
                 </div>
 
-                {/* Popup inside the card for hover */}
+                {/* Popup inside the card */}
                 {selectedLeader?.name === leader.name && (
-                  <div className={`${styles.leaderPopupOuter}`}>
+                  <div
+                    className={`${styles.leaderPopupOuter}`}
+                    onClick={(e) => e.stopPropagation()} // prevent card click from firing under popup
+                  >
                     <div
                       className={`${styles.leaderPopupinner} animate-slideUp`}
+                      onClick={(e) => e.stopPropagation()} // safety: clicks inside don't bubble
                     >
+                      {/* Close button for mobile */}
+                      {isMobile && (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleClose()
+                          }}
+                          className={styles.closeBtn}
+                          aria-label="Close"
+                        >
+                          ×
+                        </button>
+                      )}
+
                       <div className={`${styles.popupContentBox}`}>
                         <div className="max-w-auto">
                           <div className="row ">
