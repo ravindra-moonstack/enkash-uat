@@ -45,7 +45,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
       })
 
       const {} = await axios.post(
-        process.env.ZOHO_AFFILIATE_URL || "",
+        process.env.NEXT_PUBLIC_ZOHO_AFFILIATE_URL || "",
         formData,
         {
           headers: {
