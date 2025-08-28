@@ -9,7 +9,6 @@ const Businessoptions = [
     label: "Co-branded Cards Partnership",
   },
   { value: "Bharat Connect Partnership", label: "Bharat Connect Partnership" },
-  { value: "MultipleChoice", label: "MultipleChoice" },
 ]
 
 export { Businessoptions }

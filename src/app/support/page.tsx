@@ -6,7 +6,7 @@ import { location, logo } from "."
 import { locationData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
-import SupportForm from "@/components/support-form/supportForm"
+import SupportForm from "@/components/support-form"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Support Center | Get Help with Products & Services",

@@ -129,7 +129,7 @@ const TabPoliciesWrapper = dynamic(
 const ProductsSection = dynamic(() => import("./ourProductsSection/index"), {
   ssr: true,
 })
-const SalesForm = dynamic(() => import("./sales-form/salesForm"), { ssr: true })
+const SalesForm = dynamic(() => import("./sales-form"), { ssr: true })
 const OurStoryCard = dynamic(
   () => import("./AboutOurStoryCard/AboutOurStoryCard"),
   { ssr: true }
@@ -207,7 +207,7 @@ const HiringProcessModal = dynamic(
   }
 )
 const PaymentGatewayPartnershipForm = dynamic(
-  () => import("./Payment_Gateway_Partnerships_Form"),
+  () => import("./paymentGatewayForm"),
   {
     ssr: true,
   }
