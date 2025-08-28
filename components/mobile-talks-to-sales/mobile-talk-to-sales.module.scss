@@ -1,8 +1,11 @@
+@use "../../styles/mixin" as *;
+@use "../../styles/variables" as *;
+
 .mobile_talk_sales {
   z-index: 999;
   position: fixed;
   bottom: 0px;
-  background: white;
+  background: $color-white;
   width: 100%;
   padding: 8px 60px;
   display: flex;

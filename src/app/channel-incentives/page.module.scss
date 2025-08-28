@@ -135,7 +135,7 @@
   }
 
   .inner-content {
-    background: white; /* inner background */
+    background: $color-white; /* inner background */
     padding: 11px 14px;
     border-radius: 10px; /* slightly smaller radius */
   }
@@ -148,7 +148,6 @@
   @include for-laptops {
     padding: 90px 20px 90px;
   }
-
 
   .section {
     margin-bottom: 50px;
@@ -180,7 +179,7 @@
       }
     }
   }
-  img{
+  img {
     width: 100%;
     height: auto;
     @include for-laptops {
@@ -272,7 +271,7 @@
 }
 
 .third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: white;
+  background: $color-white;
   border: 1px solid transparent;
   border-radius: 20px;
 }
@@ -307,7 +306,7 @@
 }
 
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;
@@ -343,7 +342,7 @@
   padding: 50px 20px;
 
   @include for-laptops {
-   padding: 90px 20px 0;
+    padding: 90px 20px 0;
   }
 
   .faq_bg {
@@ -365,7 +364,7 @@
 
   .section {
     padding: 50px 20px 0px;
-    background: #f6f6f6;
+    background: $color-cultured;
     @include for-laptops {
       padding: 90px 0px 50px;
     }

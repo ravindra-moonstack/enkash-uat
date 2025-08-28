@@ -1,8 +1,9 @@
-import styles from "./faq.module.scss"
+import { KeyboardEvent, useRef } from "react"
 import Image from "next/image"
+
+import styles from "./faq.module.scss"
 import arrowDown from "./img/arrow-down.svg"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
-import {KeyboardEvent, useRef } from "react"
 
 export interface FAQProps {
   question: string
@@ -23,6 +24,7 @@ const SECONDFAQ = ({
   answerHTML,
   onToggleAnswerVisibility,
 }: FAQProps) => {
+  //
 
   const timerRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -61,22 +63,12 @@ const SECONDFAQ = ({
   return (
     <div className={styles.faq_row}>
       <div
-        className={`${styles.faq_inner_row} `}
-        style={
-          answerVisible
-            ? {
-                background: "#F6F6F6",
-
-                borderRadius: "12px 12px 0px 0px",
-                transition: "all 0.3s ease",
-              }
-            : {}
-        }
+        className={`${styles.faq_inner_row} ${answerVisible && "activeClass"} `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onKeyDown={handleKeyDown}
         onClick={handleClick}
-        tabIndex={0} 
+        tabIndex={0}
         role="button"
         aria-expanded={answerVisible}
       >
@@ -87,7 +79,6 @@ const SECONDFAQ = ({
             className={`${answerVisible ? styles.rotated : styles.normal} ${
               styles.arrow
             }`}
-       
             draggable={false}
           />
           <DynamicHeading
@@ -112,9 +103,7 @@ const SECONDFAQ = ({
             answer.length > 0 &&
             answer.map((item, index) => (
               <div key={index} className="mb-4">
-                {item.heading && (
-                  <p className={`mb-0`}>{item.heading}</p>
-                )}
+                {item.heading && <p className={`mb-0`}>{item.heading}</p>}
                 {item.bullets && item.bullets.length > 0 && (
                   <ul>
                     {item.bullets.map((bullet, bulletIndex) => (

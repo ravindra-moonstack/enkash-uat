@@ -30,9 +30,9 @@
         left: 0;
         transform: translate(0%, 36%);
         padding: 0px 20px;
-          @include for-laptops {
-       bottom: 0;
-      }
+        @include for-laptops {
+          bottom: 0;
+        }
       }
     }
     .maintain {

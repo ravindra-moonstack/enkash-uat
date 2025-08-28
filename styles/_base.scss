@@ -302,9 +302,6 @@ body {
   &::-webkit-scrollbar-thumb {
     background: linear-gradient(90deg, #61d6ff, transparent);
   }
-
-
-  
 }
 
 /* Other Classes */
@@ -362,7 +359,7 @@ body {
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
-  background: white; /* transparent track */
+  background: $color-white; /* transparent track */
   border: 1px solid transparent;
   border-radius: 20px;
 }
@@ -421,6 +418,6 @@ body {
   pointer-events: auto;
 }
 
-.cardsSliderMargin{
+.cardsSliderMargin {
   margin-top: 140px;
 }

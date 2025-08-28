@@ -16,8 +16,10 @@
 
   &:hover {
     transform: scale(1.02);
-    box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.1),
-      0px 30px 40px rgba(0, 0, 0, 0.09), 0px 67px 40px rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0px 7px 40px rgba(0, 0, 0, 0.1),
+      0px 30px 40px rgba(0, 0, 0, 0.09),
+      0px 67px 40px rgba(0, 0, 0, 0.05);
   }
 
   @include for-laptops {
@@ -26,7 +28,7 @@
 }
 
 .light {
-  background: white;
+  background: $color-white;
 
   .description {
     color: $color-main-grey;
@@ -37,8 +39,8 @@
   // }
 }
 .description {
-//   font-size: 18px;
-//   font-weight: 500;
+  //   font-size: 18px;
+  //   font-weight: 500;
   color: #ffffff;
   // line-height: 28px;
   // span {

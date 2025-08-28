@@ -7,7 +7,7 @@
   background-size: cover, cover;
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 100px 20px 0;
-  background-image:  url(/images/mealCardBg.webp);
+  background-image: url(/images/mealCardBg.webp);
   @include for-laptops {
     padding: 112px 20px 0;
   }
@@ -37,10 +37,10 @@
     display: flex;
     justify-content: center;
 
-   img {
+    img {
       z-index: 1;
-      max-width: 100%; 
-      height: auto; 
+      max-width: 100%;
+      height: auto;
       max-height: 430px;
       margin-bottom: -111px;
       max-width: 287px;
@@ -70,11 +70,8 @@
   background-size: cover;
   padding: 56px 36px;
   position: relative;
-  background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     // black with 50% opacity
     linear-gradient(90deg, rgba(97, 115, 247, 0) 0%, #6173f7 100%),
     url("./img/secongBg.png");
@@ -102,7 +99,7 @@
       max-width: 300px; // Still limits on larger screens
       min-width: 200px; // Optional: prevent it from getting too small
       flex: 1 1 200px; // allows cards to shrink and wrap
-      background: white;
+      background: $color-white;
       border-radius: 20px;
       padding: 20px;
       gap: 20px;
@@ -300,7 +297,7 @@
 }
 
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;
@@ -352,8 +349,8 @@
 
   .section {
     padding: 50px 20px 0px;
-    background: #f6f6f6;
-    
+    background: $color-cultured;
+
     @include for-laptops {
       padding: 90px 0px 50px;
     }
@@ -371,7 +368,7 @@
 }
 
 .third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: white;
+  background: $color-white;
   border: 1px solid transparent;
   border-radius: 20px;
 }

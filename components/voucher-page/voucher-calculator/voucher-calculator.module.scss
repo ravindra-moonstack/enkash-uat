@@ -6,7 +6,7 @@
   padding: 30px 15px;
   border-radius: 18px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background: $color-white;
   @include for-laptops {
     padding: 30px 80px;
   }
@@ -132,7 +132,7 @@
       height: 20px;
       width: 20px;
       border-radius: 6px;
-      background: white;
+      background: $color-white;
       color: $color-equity-blue;
       text-align: center;
       display: flex;

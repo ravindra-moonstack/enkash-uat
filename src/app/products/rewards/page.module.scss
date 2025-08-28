@@ -10,7 +10,6 @@
   padding: 100px 20px 0px 20px;
   background-image: url(./img/rewardsBg.jpg);
   @include for-laptops {
-
     padding: 112px 70px 0px 70px;
   }
   .lottie_container {
@@ -89,7 +88,7 @@
   }
 
   .inner-content {
-    background: white; /* inner background */
+    background: $color-white; /* inner background */
     padding: 11px 14px;
     border-radius: 10px; /* slightly smaller radius */
   }
@@ -164,7 +163,7 @@
   @include for-laptops {
     padding: 90px 20px;
   }
- 
+
   .section {
     padding: 50px 8px;
     background-color: $color-sky-hint;
@@ -352,7 +351,7 @@
   padding: 0 0px;
   padding-top: 0px;
   @include for-laptops {
-  padding: 0 0px;
+    padding: 0 0px;
   }
 }
 
@@ -361,7 +360,7 @@
 }
 
 .third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: white;
+  background: $color-white;
   border: 1px solid transparent;
   border-radius: 20px;
 }
@@ -396,7 +395,7 @@
 }
 
 .faq_new_row {
-  background-color: white;
+  background: $color-white;
   position: relative;
   display: flex;
   text-align: center;
@@ -425,7 +424,7 @@
 }
 
 .other_products {
-  background-color: white;
+  background: $color-white;
   padding: 20px;
   @include for-laptops {
     padding: 0px 90px 90px 90px;
