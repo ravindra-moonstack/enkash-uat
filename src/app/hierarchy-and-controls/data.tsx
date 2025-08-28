@@ -96,14 +96,6 @@ const expenseManagementData = [
   },
 
   {
-    whiteTitle: "Hierarchy & Control",
-    description:
-      "Optimize organizational hierarchy and control for quick and efficient expense management.",
-    cardImage: hierarchy,
-    linkUrl: "/hierarchy-and-controls",
-  },
-
-  {
     whiteTitle: "Insights",
     description:
       "Make use of deep, data-driven understandings for informed decision-making.",
@@ -129,7 +121,6 @@ const stackcardData = [
     image: realTimeExpense,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "300px",
-    buttonText: "Learn More",
   },
   {
     color: "#eee",
@@ -140,7 +131,6 @@ const stackcardData = [
     image: fraudProtection,
     buttonUrl: "/sales",
     maxImageHeight: "300px",
-    buttonText: "Learn More",
   },
   {
     color: "#eee",
@@ -152,16 +142,16 @@ const stackcardData = [
     buttonUrl: "/sales",
     maxImageHeight: "300px",
   },
-  {
-    color: "#fff",
-    icon: streamlinedReimbursementIcon,
-    title: "Better Resource Management",
-    description:
-      "The AI and ML-powered technology allows setting automated rules for expense tracking, approval, and categorization, helping reduce the burden on managers and accounting teams.",
-    image: streamlinedReimbursement,
-    buttonUrl: "/sales/?source=expense_management",
-    maxImageHeight: "300px",
-  },
+  // {
+  //   color: "#fff",
+  //   icon: streamlinedReimbursementIcon,
+  //   title: "Better Resource Management",
+  //   description:
+  //     "The AI and ML-powered technology allows setting automated rules for expense tracking, approval, and categorization, helping reduce the burden on managers and accounting teams.",
+  //   image: streamlinedReimbursement,
+  //   buttonUrl: "/sales/?source=expense_management",
+  //   maxImageHeight: "300px",
+  // },
   {
     color: "#eee",
     icon: costControlSavingsIcon,

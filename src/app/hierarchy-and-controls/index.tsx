@@ -15,7 +15,7 @@ export { default as fraudProtection } from "./img/fraud-protection.webp"
 export { default as streamlinedReimbursement } from "./img/streamlined-reimbursement.webp"
 export { default as costControlSavings } from "./img/cost-control-savings.webp"
 export { default as wideAcceptanceNetwork } from "./img/wide-acceptance-network.webp"
-export { default as stackCardsixImg } from "./img/wide-acceptance-network.webp"
+export { default as stackCardsixImg } from "./img/stackCardsixImg.webp"
 export { default as stackCardThreeImg } from "./img/stack-card-three-img.webp"
 // export { default as stackCardsixImg } from "./img/stack-card-six-img.webp"
 
