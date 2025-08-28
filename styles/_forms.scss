@@ -43,13 +43,16 @@
       padding: 12px 14px;
       border: 1px solid #d9d9d9;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 12px;
       outline: none;
       transition: border 0.2s;
       color: #576675;
       background-color: $color-white;
       &:focus {
         border-color: #1c5af4;
+      }
+      @include for-laptops {
+        font-size: 14px;
       }
     }
 

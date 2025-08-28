@@ -102,7 +102,7 @@ const ContactUs = (): React.JSX.Element => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-7 col-12">
+            <div className={`${styles.contactForm} col-md-7 col-12 `}>
               {" "}
               <ContactForm />
             </div>
