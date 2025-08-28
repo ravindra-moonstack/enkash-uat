@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicies, cardsData, managementCards } from "./data"
+import { allInOnePolicies, cardsData, managementCards,stackcardData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -25,6 +25,7 @@ import {
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import CardStacking from "@/components/cardStacking/cardStacking"
 
 export const metadata: Metadata = generateMetaData({
   title: "Collection Analytics: Track & Optimize Your Payment Data",
@@ -36,7 +37,21 @@ export const metadata: Metadata = generateMetaData({
 })
 const salesUrl = getSalesUrl("/collection-analytics")
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const CollectionAnalytics = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -334,6 +349,23 @@ const CollectionAnalytics = (): React.JSX.Element => {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+         <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Optimize your recovery",
+                color: "color-black",
+              },
+              {
+                title: "  process with Analytics",
+                color: "color-equity-blue",
+              },
+            ]}
+          />
         </div>
       </div>
       <div className={`${styles.fifth_row} `}>

@@ -48,6 +48,16 @@ const faqData: FAQDataItem[] = [
   },
   {
     question:
+      "How can travel and expense cards assist me in managing my traveling expenses?",
+    answer: [
+      {
+        heading:
+          "Travel and Expense cards serve as an effective tool for maximizing control over your entire travel expenditure. These cards offer a multi-faceted approach to optimization: first, you can establish limits and approval policies to prevent overspending. Additionally, you'll benefit from comprehensive spend visibility.",
+      },
+    ],
+  },
+  {
+    question:
       "How does a Travel and Expense Card improve business travel and expense management?",
     answer: [
       {
