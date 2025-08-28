@@ -221,7 +221,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className={styles.how_it_workssection}>
-            <HowDoesItWork dataSets={dataSets} />
+            <HowDoesItWork dataSets={dataSets} ctaText="Explore More" />
           </div>
         </div>
       </div>
@@ -327,7 +327,7 @@ const CollectPayment = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Wherever your customers are, however they pay. you get paid.",
+                    "Wherever your customers are, however they pay, you get paid.",
                   color: "color-white subHeading",
                 },
               ]}

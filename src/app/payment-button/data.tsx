@@ -482,13 +482,6 @@ const managementCardData = [
     linkUrl: "/auto-collect",
   },
   {
-    titleHtml: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
-    cardImage: invoices,
-    linkUrl: "/digital-invoicing",
-  },
-  {
     titleHtml: "Instant Settlement",
     description:
       "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",

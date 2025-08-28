@@ -34,6 +34,10 @@ import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
   autoCollect,
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
   instant,
   notificationImage,
   paymentButton,
@@ -41,17 +45,23 @@ import {
   paymentLinkImage,
   paymentOptionImage,
   qrCodes,
+  realTimeExpense,
+  realTimeExpenseIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
   secureImage,
   shareImage,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   taskIconFive,
   taskIconFour,
   taskIconOne,
   taskIconThree,
   taskIconTwo,
+  TravelIcon,
+  TravelImage,
 } from "."
 
 const dataSets = [
@@ -466,6 +476,48 @@ const managementCards = [
     linkUrl: "/collection-reminder",
   },
 ];
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Choice of Reminders",
+    description: `Businesses can send either of the two types of reminders — invoice reminders and automatic reminders. While invoice reminders can be sent to specific customers by looking at their payment patterns and timeline. Automatic reminders can be sent as and when the customer is onboarded.`,
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=upi-payments",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Absolute Visibility",
+    description: `Enterprises can view the customer’s payment history and pattern to understand their payment behaviour.`,
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Embedded Links",
+    description: `Payment reminders are sent to the customer with embedded links. This encourages then to pay instantly. `,
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=upi-payments",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Total Control",
+    description: `Enterprises can control when to send the reminders and which channel for payment collection — email, SMS, or WhatsApp.`,
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: TravelIcon,
+    title: "Single Click Reminders",
+    description: `Using invoice reminders, businesses can select and dispatch multiple reminders using a single click.`,
+    image: TravelImage,
+    buttonUrl: "/sales",
+  },
+]
 export {
   blogData,
   dataSets,
@@ -479,5 +531,6 @@ export {
   supportData,
   savingData,
   allInOnePolicies,
-  managementCards
+  managementCards,
+  stackcardData
 }

@@ -58,6 +58,7 @@ const partnershipsPage = (): React.JSX.Element => {
           theme: "blue",
           url: "#partnership-form",
         }}
+        customCSS={{ backgroundPosition: "top center" }}
       />
       <div className={`${styles.boxContainer}`}>
         <BankSolutions
