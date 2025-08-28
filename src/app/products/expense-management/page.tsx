@@ -74,7 +74,7 @@ const cards = stackcardData.map((item: any) => ({
       image={item.image}
       buttonUrl={salesUrl}
       maxImageHeight="300px"
-      buttonText="Learn More"
+      // buttonText="Learn More"
     />
   ),
 }))

@@ -43,7 +43,6 @@ const cards = stackcardData.map(
         image={image}
         buttonUrl={salesUrl}
         maxImageHeight="300px"
-        // buttonText="Learn More"
       />
     ),
   })
