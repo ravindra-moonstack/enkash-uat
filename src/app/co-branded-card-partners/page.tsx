@@ -76,7 +76,7 @@ const partnershipsPage = (): React.JSX.Element => {
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="If you are a startup owner, an influencer and an enterprise, or an employer, these co-branded products have been designed for you."
-          
+
           slideData={slideData}
         />
       </div>

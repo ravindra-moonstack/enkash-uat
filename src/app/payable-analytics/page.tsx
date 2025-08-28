@@ -28,6 +28,7 @@ import {
   taskIconFour,
   realTimeIcon,
   activationIcon,
+  hundredPercentIcon,
 } from "."
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import generateMetaData from "@/common/utils/metaData"
@@ -171,16 +172,7 @@ const PayableAnalytics = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={realTimeIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -224,7 +216,7 @@ const PayableAnalytics = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={realTimeIcon} alt="icon" />
+                <Image src={hundredPercentIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -276,7 +268,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 mh-550 object-fit-contain"
+                  className="w-100 mh-440 object-fit-contain"
                 />
               </div>
             </div>
