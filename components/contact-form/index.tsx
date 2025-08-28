@@ -2,36 +2,41 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import { useFormik } from "formik"
-import axios from "axios"
 import { useRouter } from "next/navigation"
+import axios from "axios"
 
 import "../../styles/_forms.scss"
 
 // components
-import ErrorText from "../ErrorText"
-import CategoryWithOther from "../categoryWithOther/categoryWithOther"
+import { DynamicHeading } from "@/components"
+import MultiSelect from "../multiSelect"
+
+// helpers
+import { contactOptions } from "./data"
 import {
-  bankAffiliateInitialValue,
-  TBankAffiliateInitialValueProp,
+  contactInitialValue,
+  contactValidation,
+  TContactInitialValueProp,
 } from "./formik"
-import { Businessoptions } from "./data"
+import ErrorText from "../ErrorText"
 
-const BankAffiliatePartnershipForm: React.FC = () => {
+const ContactForm: React.FC = () => {
   //
-
-  const [loading, setLoading] = useState<boolean>(false)
 
   const router = useRouter()
 
-  const { errors, touched, getFieldProps, handleSubmit, setFieldValue } =
+  const [loading, setLoading] = useState<boolean>(false)
+
+  const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
     useFormik({
-      initialValues: bankAffiliateInitialValue,
+      initialValues: contactInitialValue,
+      validationSchema: contactValidation,
       onSubmit: (values) => {
         onSubmitForm(values)
       },
     })
 
-  const onSubmitForm = async (values: TBankAffiliateInitialValueProp) => {
+  const onSubmitForm = async (values: TContactInitialValueProp) => {
     try {
       setLoading(true)
       const formData = new FormData()
@@ -46,7 +51,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
       })
 
       const {} = await axios.post(
-        process.env.ZOHO_AFFILIATE_URL || "",
+        process.env.ZOHO_CONTACT_URL || "",
         formData,
         {
           headers: {
@@ -56,7 +61,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
         }
       )
       setLoading(false)
-      router.push("/confirmation-partnerships")
+      router.push("/confirmation-contact-us")
     } catch (error) {
       setLoading(false)
       throw error
@@ -66,49 +71,44 @@ const BankAffiliatePartnershipForm: React.FC = () => {
   return (
     <div className={"contactFormWrapper"}>
       <form action="#" onSubmit={handleSubmit}>
+        <DynamicHeading
+          content={[
+            {
+              title: "Let's Connect",
+              color: "color-black ",
+            },
+          ]}
+          headingTag="h1"
+          className="text-center "
+        />
         <p className={"subtitle"}>We just need a few quick details</p>
-
         <div className={"grid"}>
-          <div className="">
+          <div>
             <input
               type="text"
               required
               placeholder="Name*"
               {...getFieldProps("SingleLine")}
             />
-            <ErrorText<TBankAffiliateInitialValueProp>
-              errors={errors}
-              touched={touched}
-              field="SingleLine"
-            />
+            <ErrorText errors={errors} touched={touched} field="SingleLine" />
           </div>
-
-          <div className="">
+          <div>
             <input
-              type="text"
+              type="email"
               required
               placeholder="Business Email ID*"
               {...getFieldProps("Email")}
             />
-            <ErrorText<TBankAffiliateInitialValueProp>
-              errors={errors}
-              touched={touched}
-              field="Email"
-            />
+            <ErrorText errors={errors} touched={touched} field="SingleLine" />
           </div>
-
-          <div className="">
+          <div>
             <input
               type="text"
               required
               placeholder="Company Name*"
               {...getFieldProps("SingleLine1")}
             />
-            <ErrorText<TBankAffiliateInitialValueProp>
-              errors={errors}
-              touched={touched}
-              field="SingleLine1"
-            />
+            <ErrorText errors={errors} touched={touched} field="SingleLine1" />
           </div>
 
           <div className="">
@@ -118,7 +118,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
               placeholder="Contact No.*"
               {...getFieldProps("PhoneNumber_countrycode")}
             />
-            <ErrorText<TBankAffiliateInitialValueProp>
+            <ErrorText
               errors={errors}
               touched={touched}
               field="PhoneNumber_countrycode"
@@ -127,32 +127,24 @@ const BankAffiliatePartnershipForm: React.FC = () => {
         </div>
 
         <div className="">
-          <CategoryWithOther
-            name="MultipleChoice"
-            options={Businessoptions}
-            placeholder="I am looking for *"
+          <MultiSelect
+            name="contactReasons"
+            options={contactOptions}
+            placeholder="How can we help you?*"
             onChange={(data) => {
-              setFieldValue("MultipleChoice", data)
+              setFieldValue("contactReasons", data)
             }}
           />
-          <ErrorText<TBankAffiliateInitialValueProp>
-            errors={errors}
-            touched={touched}
-            field="MultipleChoice"
-          />
+          <ErrorText errors={errors} touched={touched} field="contactReasons" />
         </div>
 
         <div className="">
           <textarea
+            name="MultiLine"
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
-            {...getFieldProps("MultiLine")}
-            maxLength={500}
+            minLength={500}
           />
-          <ErrorText<TBankAffiliateInitialValueProp>
-            errors={errors}
-            touched={touched}
-            field="MultiLine"
-          />
+          <ErrorText errors={errors} touched={touched} field="MultiLine" />
         </div>
 
         <p className={"privacy"}>
@@ -161,7 +153,6 @@ const BankAffiliatePartnershipForm: React.FC = () => {
             privacy policy
           </Link>
         </p>
-
         <button type="submit" disabled={loading} className={"submitBtn"}>
           {loading ? "..." : "Submit"}
         </button>
@@ -170,4 +161,4 @@ const BankAffiliatePartnershipForm: React.FC = () => {
   )
 }
 
-export default BankAffiliatePartnershipForm
+export default ContactForm

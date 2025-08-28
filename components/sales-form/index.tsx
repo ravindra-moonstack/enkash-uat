@@ -3,8 +3,9 @@ import React, { useState } from "react"
 import Link from "next/link"
 import { useFormik } from "formik"
 import { useRouter } from "next/navigation"
+import axios from "axios"
 
-import styles from "./salesForm.module.scss"
+import "../../styles/_forms.scss"
 
 // components
 import { DynamicHeading } from "@/components"
@@ -17,7 +18,6 @@ import {
   TSalesInitialValueProp,
 } from "./formik"
 import { categoryOptions, options } from "./data"
-import axios from "axios"
 
 const SalesForm: React.FC = () => {
   //
@@ -66,7 +66,7 @@ const SalesForm: React.FC = () => {
   }
 
   return (
-    <div className={styles.contactFormWrapper}>
+    <div className={"contactFormWrapper"}>
       <form action="#" onSubmit={handleSubmit} className="">
         <DynamicHeading
           content={[{ title: "New to EnKash? ", color: "color-dark-grey " }]}
@@ -81,12 +81,14 @@ const SalesForm: React.FC = () => {
           headingTag="h1"
           className="text-center "
         />
-        <p className={styles.subtitle}>We just need a few quick details</p>
 
-        <div className={styles.grid}>
-          <div>
+        <p className={"subtitle"}>We just need a few quick details</p>
+
+        <div className={"grid"}>
+          <div className="">
             <input
               type="text"
+              required
               placeholder="Name*"
               {...getFieldProps("SingleLine")}
             />
@@ -97,7 +99,7 @@ const SalesForm: React.FC = () => {
             />
           </div>
 
-          <div>
+          <div className="">
             <input
               type="email"
               required
@@ -111,7 +113,7 @@ const SalesForm: React.FC = () => {
             />
           </div>
 
-          <div>
+          <div className="">
             <input
               type="text"
               required
@@ -125,7 +127,7 @@ const SalesForm: React.FC = () => {
             />
           </div>
 
-          <div>
+          <div className="">
             <input
               type="text"
               required
@@ -142,34 +144,37 @@ const SalesForm: React.FC = () => {
           </div>
         </div>
 
-        <CategoryMultiSelect
-          name="MultipleChoice"
-          options={categoryOptions}
-          placeholder="What are you looking for?*"
-          onChange={(vals) => {
-            setShowOtherInput(vals.includes("Something Else"))
-            setFieldValue("MultipleChoice", vals)
-          }}
-        />
-        <ErrorText<TSalesInitialValueProp>
-          errors={errors}
-          touched={touched}
-          field="MultipleChoice"
-        />
+        <div>
+          <CategoryMultiSelect
+            name="MultipleChoice"
+            options={categoryOptions}
+            placeholder="What are you looking for?*"
+            onChange={(vals) => {
+              setShowOtherInput(vals.includes("Something Else"))
+              setFieldValue("MultipleChoice", vals)
+            }}
+          />
+          <ErrorText<TSalesInitialValueProp>
+            errors={errors}
+            touched={touched}
+            field="MultipleChoice"
+          />
+        </div>
 
         {showOtherInput && (
           <input
             type="text"
-            name="SomethingElseInput"
             placeholder="Please specify*"
-            className={styles.otherInput}
+            maxLength={500}
+            className={"otherInput"}
+            {...getFieldProps("SomethingElseInput")}
           />
         )}
 
-        <div className={styles.grid}>
+        <div className={"grid"}>
           <div>
             <input
-              type="text"
+              type="url"
               placeholder="Website or App Link"
               {...getFieldProps("Website")}
             />
@@ -180,11 +185,21 @@ const SalesForm: React.FC = () => {
             />
           </div>
 
-          <CategoryWithOther
-            name="Dropdown5"
-            options={options}
-            placeholder="Select how you heard about us*"
-          />
+          <div className="">
+            <CategoryWithOther
+              name="Dropdown5"
+              options={options}
+              placeholder="Select how you heard about us*"
+              onChange={(data) => {
+                setFieldValue("Dropdown5", data)
+              }}
+            />
+            <ErrorText<TSalesInitialValueProp>
+              errors={errors}
+              touched={touched}
+              field="Dropdown5"
+            />
+          </div>
         </div>
 
         <div>
@@ -200,14 +215,14 @@ const SalesForm: React.FC = () => {
           />
         </div>
 
-        <p className={styles.privacy}>
+        <p className={"privacy"}>
           By submitting this form, you are agreeing to our{" "}
-          <Link href="/privacy-policy" className={styles.privacyLink}>
+          <Link href="/privacy-policy" className={"privacyLink"}>
             privacy policy
           </Link>
         </p>
 
-        <button type="submit" disabled={loading} className={styles.submitBtn}>
+        <button type="submit" disabled={loading} className={"submitBtn"}>
           {loading ? "..." : "Submit"}
         </button>
       </form>

@@ -11,7 +11,7 @@ import { location, logo } from "."
 import { contactData, locationData, testimonialData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
-import ContactForm from "@/components/contact-form/contactForm"
+import ContactForm from "@/components/contact-form"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash | Get Support or Speak to Our Team",
