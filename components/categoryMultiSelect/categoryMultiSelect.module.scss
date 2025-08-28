@@ -1,3 +1,6 @@
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
+
 .inputBox {
   display: flex;
   align-items: center;
@@ -7,6 +10,10 @@
   cursor: pointer;
   position: relative; // allow arrow to stay fixed at right
   justify-content: space-between;
+  font-size: 12px;
+       @include for-laptops {
+     font-size: 14px;
+  }
 }
 
 .inputContent {

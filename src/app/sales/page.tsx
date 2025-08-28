@@ -150,7 +150,7 @@ async function Sales() {
               </div>
             </div>
 
-            <div className="col-md-7 col-12">
+            <div className={`${styles.salesForm}col-md-7 col-12 `}>
               <SalesForm />
             </div>
 
