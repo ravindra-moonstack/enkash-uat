@@ -4,7 +4,7 @@ const resourseProducts = [
   {
     name: "Resources",
     description: "Flexible prepaid card solutions",
-    link: `${process.env.URL}/resources/`,
+    link: `${process.env.NEXT_PUBLIC_URL}/resources/`,
     subProducts: [
       {
         subtitle: "Default",
