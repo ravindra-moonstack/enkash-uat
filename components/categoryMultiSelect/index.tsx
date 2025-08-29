@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, useMemo } from "react"
 import styles from "./categoryMultiSelect.module.scss"
 
 interface Option {
@@ -32,6 +32,16 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
       prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
     )
   }
+
+  const displayValues = useMemo(() => {
+    return options
+      .filter(
+        (cat) =>
+          selected.includes(cat.value) ||
+          cat.children?.some((child) => selected.includes(child.value))
+      )
+      .map((cat) => cat.value)
+  }, [options, selected])
 
   const toggleOption = (value: string) => {
     const category = options.find((cat) => cat.value === value)
@@ -76,7 +86,7 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
           }
         })
       }
-      onChange?.(newSelected)
+      onChange?.([...newSelected, ...displayValues])
 
       return newSelected
     })
@@ -94,18 +104,6 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
-
-  const getDisplayValues = () => {
-    return options
-      .filter(
-        (cat) =>
-          selected.includes(cat.value) ||
-          cat.children?.some((child) => selected.includes(child.value))
-      )
-      .map((cat) => cat.value)
-  }
-
-  const displayValues = getDisplayValues()
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
@@ -145,6 +143,7 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
               >
                 <div className={styles.categoryHeaderLabel}>
                   <input
+                    id={cat.value}
                     type="checkbox"
                     checked={selected.includes(cat.value)}
                     onChange={() => {
@@ -155,7 +154,7 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     }}
                     onClick={(e) => e.stopPropagation()}
                   />
-                  <span>{cat.label}</span>
+                  <label htmlFor={cat.value}>{cat.label}</label>
                 </div>
 
                 {cat.children && (
@@ -168,8 +167,13 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
               {openCategories.includes(cat.value) && cat.children && (
                 <div className={styles.subOptions}>
                   {cat.children.map((child) => (
-                    <label key={child.value} className={styles.option}>
+                    <label
+                      htmlFor={cat.value}
+                      key={child.value}
+                      className={styles.option}
+                    >
                       <input
+                        id={cat.value}
                         type="checkbox"
                         checked={selected.includes(child.value)}
                         onChange={() => toggleOption(child.value)}

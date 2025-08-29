@@ -140,7 +140,7 @@ const PaymentLinkTab = ({
                     />
 
                     <div className="d-flex flex-column gap-1">
-                      {" "}
+
                       <DynamicHeading
                         content={[
                           {
@@ -265,9 +265,8 @@ const PaymentLinkTab = ({
 
                   {/* Dropdown content */}
                   <div
-                    className={`${styles.dropdownContent} ${
-                      isOpen ? styles.show : ""
-                    }`}
+                    className={`${styles.dropdownContent} ${isOpen ? styles.show : ""
+                      }`}
                   >
                     {/* small bg image above text */}
                     <div className={styles.dropdownBg}>
@@ -298,7 +297,7 @@ const PaymentLinkTab = ({
                         />
 
                         <div className="d-flex flex-column gap-1">
-                          {" "}
+
                           <DynamicHeading
                             content={[
                               {
@@ -378,7 +377,7 @@ const PaymentLinkTab = ({
                 weight="5"
               />
               <div className="d-flex flex-column gap-1">
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {

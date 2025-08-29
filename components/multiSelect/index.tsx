@@ -85,9 +85,14 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
       {open && (
         <div className={styles.dropdown}>
           {options.map((opt) => (
-            <label key={opt.value} className={styles.option}>
+            <label
+              key={opt.value}
+              htmlFor={opt.value}
+              className={styles.option}
+            >
               <input
                 type="checkbox"
+                id={opt.value}
                 checked={selected.includes(opt.value)}
                 onChange={() => toggleOption(opt.value)}
               />

@@ -129,7 +129,7 @@ const MerchantOnboarding = () => {
                             <b>
                               Video based Customer Identification Process
                               (V-CIP)”:
-                            </b>{" "}
+                            </b>
                             A method of customer identification with facial
                             recognition and customer due diligence by an
                             authorised official of the Company by undertaking

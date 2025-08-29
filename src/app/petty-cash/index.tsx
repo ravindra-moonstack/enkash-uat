@@ -4,6 +4,14 @@ export { default as blueArrow } from "./img/blue-arrrow.svg"
 export { default as groupIcon } from "./img/groupIcon.png"
 export { default as paymentSummary } from "./img/heroImg.webp"
 
+export { default as paymentLink } from "./img/payment-link.svg"
+export { default as paymentPage } from "./img/payment-page.svg"
+export { default as qrCodes } from "./img/qrCode.svg"
+export { default as paymentButton } from "./img/pazment-button.svg"
+export { default as autoCollect } from "./img/auto-collect.svg"
+export { default as instant } from "./img/instant-settlement.svg"
+export { default as paymentGatewayImg } from "./img/payment-gateway-img.svg"
+export { default as reminder } from "./img/remineder-engien.svg"
 // .........
 
 export { default as stepCardImgOne } from "./img/stepCardImgOne.webp"

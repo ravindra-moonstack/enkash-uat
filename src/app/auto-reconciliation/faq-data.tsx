@@ -28,13 +28,13 @@ const faqData = [
         <p>
           As inferred above, the process of reconciliation can be long-drawn and
           detail-oriented, taking a lot of effort and time from the finance team
-          when done manually.{" "}
+          when done manually.
         </p>
         <p>
-          Automating the{" "}
+          Automating the
           <Link href={process.env.URL} target="_blank">
             accounting reconciliation process
-          </Link>{" "}
+          </Link>
           makes it easier for them to manage audits and plan cash flows.
         </p>
       </div>
@@ -142,7 +142,7 @@ const faqData = [
             target="_blank"
           >
             EnKash collection analytics
-          </Link>{" "}
+          </Link>
           is crucial for businesses as it empowers them to predict and manage
           customer payment behavior effectively, leading to reduced bad debt,
           improved cash flow, and overall financial stability. It provides a

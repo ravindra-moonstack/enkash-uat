@@ -38,7 +38,7 @@ const SECONDFAQ = ({
       if (onToggleAnswerVisibility) {
         onToggleAnswerVisibility()
       }
-    }, 300)
+    }, 100)
   }
 
   const handleMouseLeave = () => {
@@ -76,9 +76,8 @@ const SECONDFAQ = ({
           <Image
             src={arrowDown}
             alt="faq arrow icon"
-            className={`${answerVisible ? styles.rotated : styles.normal} ${
-              styles.arrow
-            }`}
+            className={`${answerVisible ? styles.rotated : styles.normal} ${styles.arrow
+              }`}
             draggable={false}
           />
           <DynamicHeading

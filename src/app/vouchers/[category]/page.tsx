@@ -152,8 +152,8 @@ const CategoryPage = async ({
 
   const boltUTM = voucherData
     ? `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
-        voucherData.name.toLowerCase()
-      )}`
+      voucherData.name.toLowerCase()
+    )}`
     : "https://bolt.enkash.com/"
 
   const breadcrumbItems = [
@@ -187,13 +187,12 @@ const CategoryPage = async ({
                       </div>
 
                       <div
-                        className={`${styles.voucher_name} ${
-                          voucherData.name.length > 30
+                        className={`${styles.voucher_name} ${voucherData.name.length > 30
                             ? voucherData.name.length > 33
                               ? styles.voucher_name_widest
                               : styles.voucher_name_wide
                             : ""
-                        }`}
+                          }`}
                       >
                         {voucherData.name.replace("-", "\u2011")}
                       </div>
@@ -354,7 +353,7 @@ const CategoryPage = async ({
                     <ul>
                       <li>
                         <div>
-                          Go to bolt.enkash.com or{" "}
+                          Go to bolt.enkash.com or
                           <a href="https://bolt.enkash.com/" target="_blank">
                             click here
                           </a>
@@ -459,7 +458,7 @@ const CategoryPage = async ({
                               __html: linkifyText(sanitizeStep(step)),
                             }}
                           ></div>
-                          {}
+                          { }
                         </li>
                       ))}
                     </ul>
@@ -496,7 +495,7 @@ const CategoryPage = async ({
                               __html: linkifyText(sanitizeStep(step)),
                             }}
                           ></div>
-                          {}
+                          { }
                         </li>
                       ))}
                     </ul>
@@ -566,7 +565,7 @@ const CategoryPage = async ({
                     />
 
                     <div className={`mb-4 ml-2 ${styles.description}`}>
-                      Enterprises can save big annually with an exclusive 
+                      Enterprises can save big annually with an exclusive
                       {voucherData.name}s for their employees.
                     </div>
                   </div>
