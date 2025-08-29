@@ -314,6 +314,19 @@ const PettyCash = (): React.JSX.Element => {
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
+          <div className={`${styles.heading} text-center`}>
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "No More Manual Petty Cash Management",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5 "
+            />
+          </div>
           <div className={`${styles.get_started_button} `}>
             <RectangleButton
               title="Try Yourself "
