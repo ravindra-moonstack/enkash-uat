@@ -11,10 +11,13 @@ export async function POST(request: Request) {
 
   Object.entries(values.data).forEach(([key, value]) => {
     if (Array.isArray(value)) {
-      formData.append(key, value.join(", "))
+      value.forEach((item) => {
+        if (item !== undefined && item !== null) {
+          formData.append(key, String(item)) // Make sure item is stringified
+        }
+      })
     } else if (value !== undefined && value !== null) {
-      //@ts-ignore
-      formData.append(key, value)
+      formData.append(key, String(value))
     }
   })
 
@@ -27,7 +30,10 @@ export async function POST(request: Request) {
     })
 
     return Response.json(response.data)
-  } catch (error: any) {
-    return Response.json({ error: "Zoho submission failed" })
+  } catch (error) {
+    return Response.json(
+      { message: "Zoho submission failed", error: JSON.stringify(error) },
+      { status: 400 }
+    )
   }
 }
