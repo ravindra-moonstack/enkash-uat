@@ -295,7 +295,7 @@ const Reimbursements = (): React.JSX.Element => {
                   color: "color-black",
                 },
                 {
-                  title: "expense managemen",
+                  title: "expense management",
                   color: "color-equity-blue",
                 },
               ]}

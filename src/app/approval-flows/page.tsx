@@ -37,7 +37,7 @@ const cards = stackcardData.map((item, index) => ({
   content: (
     <AllInOnePolicy
       key={index}
-      buttonText={item?.buttonText || "Get Started"}
+      buttonText= "Get Started"
       icon={item.icon}
       title={item.title}
       description={item.description}
