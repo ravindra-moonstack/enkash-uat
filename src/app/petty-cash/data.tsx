@@ -16,12 +16,19 @@ import pettyIconSeven from "./img/pettyIconSeven.svg"
 import pettyIconEight from "./img/pettyIconEight.svg"
 
 import {
+  autoCollect,
   costControlSavings,
   costControlSavingsIcon,
   fraudProtection,
   fraudProtectionIcon,
+  instant,
+  paymentButton,
+  paymentGatewayImg,
+  paymentLink,
+  qrCodes,
   realTimeExpense,
   realTimeExpenseIcon,
+  reminder,
   stackCardThreeIcon,
   stackCardThreeImg,
   stepCardImgOne,
@@ -199,6 +206,57 @@ const stackcardData = [
   },
 ]
 
+const managementCards = [
+  {
+    titleHtml: "Payment Gateway",
+    description:
+      "A no-code solution to effortlessly collect payments across various channels, guaranteeing you never miss a transaction.",
+    cardImage: paymentGatewayImg,
+    linkUrl: "/payment-gateway",
+  },
+  {
+    titleHtml: "Payment Link",
+    description:
+      "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
+    cardImage: paymentLink,
+    linkUrl: "/payment-page",
+  },
+  {
+    titleHtml: "Payment Button",
+    description:
+      "Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description:
+      "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
+    cardImage: qrCodes,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description:
+      "Easily accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Instant Settlement",
+    description:
+      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
+    cardImage: instant,
+    linkUrl: "/instant-settlement",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description:
+      "Eliminate manual reminders and automate your business collections effortlessly for smoother cash flow management.",
+    cardImage: reminder,
+    linkUrl: "/collection-reminder",
+  },
+]
 export {
   cardData,
   expenseManagementData,
@@ -206,4 +264,5 @@ export {
   dashboardData,
   analyticData,
   stackcardData,
+  managementCards
 }

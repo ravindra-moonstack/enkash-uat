@@ -62,7 +62,7 @@ const AutoReconciliation = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
-        <div className="max-w-auto mb-5">
+        <div className="max-w-auto mb-1">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
               <div className="d-flex">
@@ -270,9 +270,8 @@ const AutoReconciliation = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={`${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={`${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
