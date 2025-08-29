@@ -6,6 +6,7 @@ import policyApproval from "./img/policy-approval.webp"
 import insight from "./img/insights.webp"
 import scanAndDrops from "./img/scan-and-drops.webp"
 import reimbursements from "./img/reimbursement.webp"
+import pettyCash from "./img/pettyCash.webp"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -91,6 +92,13 @@ const expenseManagementData = [
     cardImage: scanAndDrops,
     linkUrl: "/receipts",
   },
+  {
+    whiteTitle: "Petty Cash",
+    description:
+      "Manage small, day-to-day business expenses seamlessly with digital petty cash controls. Track usage, set limits, and ensure every transaction is accounted for.",
+    cardImage: pettyCash,
+    linkUrl: "/petty-cash",
+  },
 
   {
     whiteTitle: "Insights",
@@ -139,16 +147,6 @@ const stackcardData = [
     buttonUrl: "/sales",
     maxImageHeight: "300px",
   },
-  // {
-  //   color: "#fff",
-  //   icon: streamlinedReimbursementIcon,
-  //   title: "Better Resource Management",
-  //   description:
-  //     "The AI and ML-powered technology allows setting automated rules for expense tracking, approval, and categorization, helping reduce the burden on managers and accounting teams.",
-  //   image: streamlinedReimbursement,
-  //   buttonUrl: "/sales/?source=expense_management",
-  //   maxImageHeight: "300px",
-  // },
   {
     color: "#eee",
     icon: costControlSavingsIcon,

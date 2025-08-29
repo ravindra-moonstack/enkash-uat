@@ -20,6 +20,7 @@ import {
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
+  activationIcon,
 
 } from "."
 import { Metadata } from "next"
@@ -120,7 +121,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                         theme="blue"
                         url={salesUrl}
                       />
-                    </div> 
+                    </div>
                   </div>
                 </div>
               </div>
@@ -161,26 +162,17 @@ const CashflowAnalytics = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
+
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -202,7 +194,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -224,7 +216,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {

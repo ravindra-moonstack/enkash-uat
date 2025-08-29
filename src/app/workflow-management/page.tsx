@@ -118,7 +118,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                         theme="blue"
                         url={salesUrl}
                       />
-                    </div> 
+                    </div>
                   </div>
                 </div>
               </div>
@@ -159,7 +159,7 @@ const WorkflowManagement = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
+
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
@@ -169,7 +169,7 @@ const WorkflowManagement = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -191,7 +191,7 @@ const WorkflowManagement = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -213,7 +213,7 @@ const WorkflowManagement = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -250,9 +250,8 @@ const WorkflowManagement = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",

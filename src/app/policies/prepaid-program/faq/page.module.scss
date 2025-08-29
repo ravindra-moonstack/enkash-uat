@@ -16,13 +16,14 @@
 
   .gradient {
     display: none;
-    @include for-laptops {
-      display: block;
-    }
+  
     z-index: -1;
     position: absolute;
     top: -150px;
     z-index: -1;
+      @include for-laptops {
+      display: block;
+    }
   }
 
   .inner_container {

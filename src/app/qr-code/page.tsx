@@ -179,7 +179,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
+
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
@@ -467,7 +467,7 @@ const QrCode = (): React.JSX.Element => {
                   linkUrl={card.linkUrl}
                 />
               </div>
-            ))}{" "}
+            ))}
           </div>
         </div>
       </div>

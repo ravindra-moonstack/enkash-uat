@@ -88,11 +88,11 @@ const expenseManagementData = [
     link: "/hierarchy-and-controls",
   },
   {
-    whiteTitle: "Insights",
+    whiteTitle: "Petty Cash",
     description:
-      "Make use of deep, data-driven understandings for informed decision-making.",
+      "Manage small, day-to-day business expenses seamlessly with digital petty cash controls. Track usage, set limits, and ensure every transaction is accounted for.",
     cardImage: insight,
-    link: "/expense-analytics-and-insights/",
+    link: "/petty-cash/",
   },
 
   {
@@ -112,19 +112,17 @@ const stackcardData = [
     description:
       "With EnKash, policies can be created on the platform as per the company's requirements and can be viewed easily on the dashboard.",
     image: realTimeExpense,
-    buttonText: "Learn More",
-    buttonUrl: "/sales/?source=expense_management",
+    buttonUrl: "/sales/?source=approval-flows",
     maxImageHeight: "300px",
   },
   {
     color: "#eee",
     icon: fraudProtectionIcon,
     title: "Policy Enforcement",
-    buttonText: "Learn More",
     description:
       "Built-in policy enforcement and tracking features for different departments and employee grades to ensure adherence to spending policies.",
     image: fraudProtection,
-    buttonUrl: "/sales",
+    buttonUrl: "/sales/?source=approval-flows",
     maxImageHeight: "300px",
   },
   {
@@ -134,7 +132,7 @@ const stackcardData = [
     description:
       "When an employee submits expenses exceeding policy limits, a warning is sent to the submitters and approvers. The approver can then reject the expense or request a correction.",
     image: stackCardThreeImg,
-    buttonUrl: "/sales",
+    buttonUrl: "/sales/?source=approval-flows",
     maxImageHeight: "300px",
   },
   {
@@ -144,7 +142,7 @@ const stackcardData = [
     description:
       "Automated and customizable workflows streamline the approval process, ensuring faster decision-making and reduced bottlenecks.",
     image: streamlinedReimbursement,
-    buttonUrl: "/sales/?source=expense_management",
+    buttonUrl: "/sales/?source=approval-flows",
     maxImageHeight: "300px",
   },
   {
@@ -154,7 +152,7 @@ const stackcardData = [
     description:
       "Role-based access control ensures that the designated people have the appropriate level of authority, enhancing security and transparency.",
     image: costControlSavings,
-    buttonUrl: "/sales",
+    buttonUrl: "/sales/?source=approval-flows",
     maxImageHeight: "300px",
   },
   {
@@ -164,7 +162,7 @@ const stackcardData = [
     description:
       "Real-time visibility into the approval status of transactions provides transparency and accountability at every step.",
     image: wideAcceptanceNetwork,
-    buttonUrl: "/sales",
+    buttonUrl: "/sales/?source=approval-flows",
     maxImageHeight: "300px",
   },
 ]

@@ -113,27 +113,27 @@ const ContactForm: React.FC = () => {
 
         <div className="">
           <MultiSelect
-            name="contactReasons"
+            name="MultipleChoice"
             options={contactOptions}
             placeholder="How can we help you?*"
             onChange={(data) => {
-              setFieldValue("contactReasons", data)
+              setFieldValue("MultipleChoice", data)
             }}
           />
-          <ErrorText errors={errors} touched={touched} field="contactReasons" />
+          <ErrorText errors={errors} touched={touched} field="MultipleChoice" />
         </div>
 
         <div className="">
           <textarea
-            name="MultiLine"
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
             maxLength={500}
+            {...getFieldProps("MultiLine")}
           />
           <ErrorText errors={errors} touched={touched} field="MultiLine" />
         </div>
 
         <p className={"privacy"}>
-          By submitting this form, you are agreeing to our{" "}
+          By submitting this form, you are agreeing to our
           <Link href="/privacy-policy" className={"privacyLink"}>
             privacy policy
           </Link>

@@ -112,7 +112,7 @@ const PrepaidCard = (): React.JSX.Element => {
         </div>
         <div className={`${styles.lottie_containerOuter} col-12`}>
           <div className={styles.lottie_container}>
-            {" "}
+
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
         </div>
@@ -129,7 +129,7 @@ const PrepaidCard = (): React.JSX.Element => {
         subTitle="Empower your teams with prepaid business cards that simplify purchases, improve tracking, and eliminate manual reimbursements."
         progressData={progressData.map((item) => ({
           ...item,
-        }))} 
+        }))}
       />
 
       <div className={styles.card_stacking_row}>
