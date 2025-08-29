@@ -6,10 +6,13 @@
 
 
   .careerBannerImage {
-    height: 700px;
     position: relative;
     z-index: 1;
+    height: 500px;
+    @include for-laptops{
+      height: 700px;
 
+}
     &::after {
       content: "";
       position: absolute;
