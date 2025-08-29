@@ -22,7 +22,7 @@ const VoucherFaqSection: React.FC<FaqSectionProps> = ({
   mainTitle = "Frequently Asked Questions (",
   highlightTitle = "FAQs",
   subTitle = "Have more questions?",
-  buttonText = "Get started today",
+  buttonText = "Contact with us",
   FaqContent,
 }) => {
   const pathname = usePathname()
@@ -44,7 +44,6 @@ const VoucherFaqSection: React.FC<FaqSectionProps> = ({
           />
         </div>
 
-     
         <div className="d-flex flex-column flex-md-row justify-content-between">
           <div>
             {subTitle && (
@@ -59,7 +58,7 @@ const VoucherFaqSection: React.FC<FaqSectionProps> = ({
             {buttonText && (
               <div className="mt-3 d-none d-md-block">
                 <RectangleButton
-                  title="Get started today"
+                  title="Contact with us"
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
