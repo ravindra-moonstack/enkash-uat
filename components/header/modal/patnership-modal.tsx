@@ -1,17 +1,33 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
+
 import styles from "./modal.module.scss"
+
+// components
 import SubProduct from "./sub-product"
 import partnershipProducts from "../data/partnership"
 
-const PartnershipModal = ({
-  onLinkClick,
-}: {
+type TPartnershipModalProp = {
   onLinkClick?: () => void
   modalLeft: number
-}) => {
+}
+
+const PartnershipModal = ({
+  onLinkClick,
+}: TPartnershipModalProp): React.JSX.Element => {
+  //
+
   const [prevHoveredProductIndex] = useState<null | number>(null)
+
+  const onMouseLeave = useCallback(() => {
+    setTimeout(() => {
+      if (onLinkClick) {
+        onLinkClick()
+      }
+    }, 500)
+  }, [onLinkClick])
+
   return (
-    <div>
+    <div onMouseLeave={onMouseLeave}>
       <div className={styles.container}>
         <div className="d-flex gap-3">
           {partnershipProducts.map((mother, i) => {
