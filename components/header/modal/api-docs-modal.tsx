@@ -1,9 +1,10 @@
+import React, { useState, useMemo, createRef } from "react"
 import Image from "next/image"
-import { useState, useMemo, createRef } from "react"
+import Link from "next/link"
+
 import styles from "./modal.module.scss"
 import apiDocs from "../data/api-docs"
 import { solutionModalEmptyStateImg } from ".."
-import Link from "next/link"
 
 type ApiDocItem = {
   name: string
@@ -11,12 +12,13 @@ type ApiDocItem = {
   link: string
 }
 
-const ApiDocsModal = () => {
+const ApiDocsModal = (): React.JSX.Element => {
+  //
+
   const [hoveredResourceIndex, setHoveredResourceIndex] = useState<
     number | null
   >(null)
 
-  // SAFE way to create refs with useMemo + createRef (not useRef inside map)
   const refs = useMemo(() => apiDocs.map(() => createRef<HTMLDivElement>()), [])
 
   return (

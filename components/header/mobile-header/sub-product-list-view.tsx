@@ -1,26 +1,18 @@
 import Image from "next/image"
-import styles from "./mobile-header.module.scss"
 import { Fragment } from "react"
 import Link from "next/link"
+
+import styles from "./mobile-header.module.scss"
+
 import RectangleButton from "@/components/buttons/rectangle-button"
 import { blueArrowUp } from ".."
+import { TSubProduct } from "@/src/types/navbar"
 
 interface SubProductListViewProps {
-  navTitle: string // 👈 NEW
+  navTitle: string
   sections: {
     title: string
-    products: {
-      subtitle: string
-      subtitleLink: string
-      currentHeading: { name: string; description: string }
-      list: {
-        name: string
-        description?: string
-        link: string
-        imageSrc?: any
-        imageSrcHovered?: any
-      }[]
-    }[]
+    products?: TSubProduct[]
   }[]
   signupUrl: string
   setCurrentStep: (step: number) => void
@@ -29,9 +21,10 @@ interface SubProductListViewProps {
 const SubProductListView = ({
   navTitle,
   sections,
-
   setCurrentStep,
 }: SubProductListViewProps) => {
+  //
+
   return (
     <div className={`w-100 absolute z-10 `}>
       <div className={styles.mobile_sub_product_modal}>
@@ -47,28 +40,23 @@ const SubProductListView = ({
           </div>
         </div>
 
-        {/* Section Mapping */}
         {sections.map((section, secIndex) => {
-          // Define background color based on index
-          let backgroundColor = "#FFFFFF" // default (2nd)
-          if (secIndex === 0)
-            backgroundColor = "#F6FCFF" // first
-          else if (secIndex === 2) backgroundColor = "#F0F0F0" // third
+          let backgroundColor = "#FFFFFF"
+          if (secIndex === 0) backgroundColor = "#F6FCFF"
+          else if (secIndex === 2) backgroundColor = "#F0F0F0"
 
           return (
             <div
               key={secIndex}
               className={`mb-2 relative ${styles.nav_sub_child_product}`}
-              style={{
-                backgroundColor,
-              }}
+              style={{ backgroundColor }}
             >
-              <div className={styles.sub_product_title}>{section.title}</div>
+              <div className={styles.sub_product_title}>{section?.title}</div>
 
-              {section.products.map((productGroup, prodIndex) => (
+              {section?.products?.map((productGroup, prodIndex) => (
                 <div key={prodIndex}>
                   <div className="list">
-                    {productGroup.list.map((item) => {
+                    {productGroup?.list?.map((item) => {
                       const externalUrls = ["docs."]
 
                       const isExternal = externalUrls?.some((_item) =>
@@ -111,7 +99,7 @@ const SubProductListView = ({
                 </div>
               ))}
 
-              {section.products[0]?.subtitleLink &&
+              {section.products?.[0]?.subtitleLink &&
                 ![
                   "For Developers",
                   "Resources",
@@ -137,7 +125,6 @@ const SubProductListView = ({
           </div>
         )}
 
-        {/* CTA Buttons */}
         <div
           className={`d-flex justify-content-center ${styles.buttons_container}`}
         >
