@@ -133,7 +133,7 @@ const MainCategoryPage = async ({
         mainTitle="Frequently Asked Questions ("
         highlightTitle="FAQs"
         subTitle="Have more questions?"
-        buttonText="Get started today"
+        buttonText="Contact with us"
         FaqContent={<VoucherFaqComponent voucherName={mainCategory} />}
       />
     </div>

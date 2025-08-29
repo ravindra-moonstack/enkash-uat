@@ -37,7 +37,6 @@ import generateMetaData from "@/common/utils/metaData"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import { Metadata } from "next"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Best Payment Gateway in India for SMBs and Startups",
   description:
@@ -59,10 +58,13 @@ const PaymentGateway = (): React.JSX.Element => {
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
-                    { name: "Products", url: "/products" },
+                    {
+                      name: "Collect Payments",
+                      url: "/products/collect-payments",
+                    },
                     {
                       name: "Payment Gateway",
-                      url: "/products/payment-gateway",
+                      url: "/payment-gateway",
                     },
                   ]}
                 />
