@@ -10,7 +10,6 @@ import {
   RectangleButton,
   AllInOnePolicy,
   FaqSection,
-  ManagementCard,
 } from "@/components"
 import {
   blueArrow,
