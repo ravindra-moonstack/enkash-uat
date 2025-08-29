@@ -353,8 +353,12 @@ const PaymentPage = (): React.JSX.Element => {
             cards={cards}
             heading={[
               {
-                title: "EnKash Payment Pages - Built for Every Business Need",
+                title: "EnKash Payment Pages -",
                 color: "color-black",
+              },
+              {
+                title: " Built for Every Business Need",
+                color: "color-equity-blue",
               },
             ]}
           />
