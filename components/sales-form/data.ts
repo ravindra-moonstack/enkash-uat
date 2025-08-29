@@ -14,7 +14,6 @@ const categoryOptions = [
       { value: "UPI Payments", label: "UPI Payments" },
       { value: "Payment Link/button", label: "Payment Link/Button" },
       { value: "AR Automation", label: "AR Automation" },
-      { value: "Collect Payments Other", label: "Other" },
     ],
   },
   {
@@ -26,7 +25,6 @@ const categoryOptions = [
       { value: "Bulk Payments", label: "Bulk Payments" },
       { value: "Rental Payments", label: "Rental Payments" },
       { value: "AP Automation", label: "AP Automation" },
-      { value: "Make Payments Other", label: "Other" },
     ],
   },
   {
@@ -39,7 +37,6 @@ const categoryOptions = [
       { value: "Employee Cards", label: "Employee Cards" },
       { value: "T&E Cards", label: "Travel and Expense Cards" },
       { value: "Meal Cards", label: "Meal Cards" },
-      { value: "Corporate Cards Other", label: "Other" },
     ],
   },
   {

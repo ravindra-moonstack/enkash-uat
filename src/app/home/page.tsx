@@ -206,7 +206,7 @@ const HomePage = (): React.JSX.Element => {
                     height={38}
                   />
                   <Image
-                    src="/svgs/lock.svg"
+                    src="/svgs/viewsIcon.svg"
                     alt="lock"
                     width={42}
                     height={38}
@@ -757,11 +757,11 @@ const HomePage = (): React.JSX.Element => {
                         <DynamicHeading
                           content={[
                             {
-                              title: "SOC 2 Compliance ",
+                              title: "PCI DSS ",
                               color: "color-black",
                             },
                             {
-                              title: "Compliance ",
+                              title: "Certification",
                               color: "color-black d-block",
                             },
                           ]}
