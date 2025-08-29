@@ -1,9 +1,7 @@
 import HomePage from "./home/page"
 
-export default function Home() {
-  return (
-    <>
-      <HomePage />
-    </>
-  )
+const Home = (): React.JSX.Element => {
+  return <HomePage />
 }
+
+export default Home
