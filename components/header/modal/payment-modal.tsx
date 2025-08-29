@@ -1,17 +1,18 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
 import styles from "./modal.module.scss"
 import motherProducts from "../data/mother-products"
 import SubProduct from "./sub-product"
 
-const PaymentModal = ({
-  onLinkClick,
-}: {
-  onLinkClick?: () => void
-  modalLeft: number
-}) => {
+const PaymentModal = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   //
-
+  const onMouseLeave = useCallback(() => {
+    setTimeout(() => {
+      if (onLinkClick) {
+        onLinkClick()
+      }
+    }, 500)
+  }, [onLinkClick])
   const [hoveredProductIndex] = useState<number>(0)
 
   const [prevHoveredProductIndex] = useState<null | number>(null)
@@ -29,6 +30,7 @@ const PaymentModal = ({
       aria-labelledby={`menu-item`}
       tabIndex={-1}
       className={`max-w-auto  ${styles.container}`}
+      onMouseLeave={onMouseLeave}
     >
       <div className="d-flex gap-3">
         {motherProducts.map((mother, i) => {
