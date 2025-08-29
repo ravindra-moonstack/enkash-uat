@@ -1,14 +1,21 @@
 import Image from "next/image"
+import Link from "next/link"
+
 import { hamnburgerIcon, enkashBlueLogo, crossMenu, callIcon } from ".."
 import styles from "./mobile-header.module.scss"
-import Link from "next/link"
+import React from "react"
 
 interface HamburgerProps {
   currentStep: number
   setCurrentStep: (step: number) => void
 }
 
-const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
+const Hamburger = ({
+  currentStep,
+  setCurrentStep,
+}: HamburgerProps): React.JSX.Element => {
+  //
+
   const resetState = () => {
     setCurrentStep(0)
   }

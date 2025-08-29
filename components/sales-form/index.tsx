@@ -11,7 +11,7 @@ import "../../styles/_forms.scss"
 import { DynamicHeading } from "@/components"
 import ErrorText from "../ErrorText"
 import CategoryMultiSelect from "../categoryMultiSelect"
-import CategoryWithOther from "../categoryWithOther/categoryWithOther"
+import CategoryWithOther from "../single-select"
 import {
   salesInitialValue,
   salesValidation,
