@@ -86,7 +86,19 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
           }
         })
       }
-      onChange?.([...newSelected, ...displayValues])
+
+      const finalSelected = [
+        ...new Set([
+          ...newSelected,
+          ...options
+            .filter((cat) =>
+              cat.children?.some((child) => newSelected.includes(child.value))
+            )
+            .map((cat) => cat.value),
+        ]),
+      ]
+
+      onChange?.(finalSelected)
 
       return newSelected
     })

@@ -200,12 +200,9 @@ const CareersTestimonialSlider = dynamic(
     ssr: true,
   }
 )
-const HiringProcessModal = dynamic(
-  () => import("./HiringProcessModal"),
-  {
-    ssr: true,
-  }
-)
+const HiringProcessModal = dynamic(() => import("./HiringProcessModal"), {
+  ssr: true,
+})
 const PaymentGatewayPartnershipForm = dynamic(
   () => import("./paymentGatewayForm"),
   {
@@ -292,5 +289,5 @@ export {
   PaymentGatewayPartnershipForm,
   BuiltforBuildersSection,
   UtilityBillPayments,
-  PartnerSection
+  PartnerSection,
 }

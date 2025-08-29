@@ -1,10 +1,13 @@
-import Image from "next/image"
-import styles from "./sub-product.module.scss"
 import { useRef, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
+
+import styles from "./sub-product.module.scss"
 import { dropdownArrow } from ".."
 
 const SubProduct = (props: any) => {
+  //
+
   const [activeSubtitle, setActiveSubtitle] = useState(
     props.subProducts[0].subtitle
   )
@@ -48,6 +51,7 @@ const SubProduct = (props: any) => {
       props.onLinkClick()
     }
   }
+
   const motherProductName = props.motherProductName
 
   return (
