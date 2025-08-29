@@ -750,7 +750,7 @@ const FooterV2 = (): React.JSX.Element => {
                   </div>
                   <ul>
                     <li>
-                      <Link href="/about">About Us</Link>
+                      <Link href="/about-us">About Us</Link>
                     </li>
                     <li>
                       <Link href="/careers">Careers</Link>

@@ -6,6 +6,7 @@ import policyApproval from "./img/policy-approval.webp"
 import insight from "./img/insights.webp"
 import scanAndDrops from "./img/scan-and-drops.webp"
 import reimbursements from "./img/reimbursement.webp"
+import pettyCash from "./img/pettyCash.webp"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -90,6 +91,13 @@ const expenseManagementData = [
       "Scan and upload expense receipts digitally for quick and efficient reimbursement.",
     cardImage: scanAndDrops,
     linkUrl: "/receipts",
+  },
+  {
+    whiteTitle: "Petty Cash",
+    description:
+      "Manage small, day-to-day business expenses seamlessly with digital petty cash controls. Track usage, set limits, and ensure every transaction is accounted for.",
+    cardImage: pettyCash,
+    linkUrl: "/petty-cash",
   },
 
   {
