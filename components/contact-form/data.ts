@@ -1,13 +1,31 @@
- export const contactOptions = [
+export const contactOptions = [
   {
-    value: "payment_collection",
+    value: "Looking for Payment Collection Solution",
     label: "Looking for Payment Collection Solution",
   },
-  { value: "make_payments", label: "Looking for a solution to Make Payments" },
-  { value: "expense_management", label: "Looking for Expense Management" },
-  { value: "corporate_jobs", label: "Looking for Corporate Cards" },
-  { value: "job_opportunities", label: "Exploring Job Opportunities" },
-  { value: "customer_support", label: "Need Customer Support" },
-  { value: "partnership", label: "Interested In Partnership Opportunities" },
-  { value: "marketing_team", label: "Want to Connect to Marketing Team" },
+  {
+    value: "Looking for a solution to Make Payments",
+    label: "Looking for a solution to Make Payments",
+  },
+  {
+    value: "Looking for Expense Management",
+    label: "Looking for Expense Management",
+  },
+  {
+    value: "Looking for Corporate Cards",
+    label: "Looking for Corporate Cards",
+  },
+  {
+    value: "Exploring Job Opportunities",
+    label: "Exploring Job Opportunities",
+  },
+  { value: "Need Customer Support", label: "Need Customer Support" },
+  {
+    value: "Interested In Partnership Opportunities",
+    label: "Interested In Partnership Opportunities",
+  },
+  {
+    value: "Want to Connect to Marketing Team",
+    label: "Want to Connect to Marketing Team",
+  },
 ]
