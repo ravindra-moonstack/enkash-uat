@@ -39,26 +39,10 @@ const SupportForm: React.FC = () => {
   const onSubmitForm = async (values: TSupportInitialValueProp) => {
     try {
       setLoading(true)
-      const formData = new FormData()
-
-      Object.entries(values).forEach(([key, value]) => {
-        if (Array.isArray(value)) {
-          formData.append(key, value.join(", "))
-        } else if (value !== undefined && value !== null) {
-          formData.append(key, value)
-        }
+      const {} = await axios.post("/api/zoho", {
+        url: process.env.NEXT_PUBLIC_ZOHO_SUPPORT_URL,
+        data: values,
       })
-
-      const {} = await axios.post(
-        process.env.NEXT_PUBLIC_ZOHO_SUPPORT_URL || "",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            "Accept-Charset": "UTF-8",
-          },
-        }
-      )
       router.push("/confirmation-support")
       setLoading(false)
     } catch (error) {
