@@ -1,12 +1,10 @@
 import React from "react"
 import "./globals.css"
-
+import Image from "next/image"
 const Loading = () => {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
-      <div className="spinner-border text-primary" role="status">
-        <span className="loader"></span>
-      </div>
+      <Image src="/images/loader.gif" alt="funny gif" width={75} height={75} />
     </div>
   )
 }
