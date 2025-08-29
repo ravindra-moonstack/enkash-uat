@@ -160,11 +160,11 @@ const WebHeader = ({}: props) => {
 
         <div className="max-width-auto">
           {hoveredIndex === 0 && modalLeft !== null && (
-            <PaymentModal onLinkClick={closeAllModals} modalLeft={modalLeft} />
+            <PaymentModal onLinkClick={closeAllModals}  />
           )}
 
           {hoveredIndex === 1 && modalLeft !== null && (
-            <CardModal onLinkClick={closeAllModals} modalLeft={modalLeft} />
+            <CardModal onLinkClick={closeAllModals}  />
           )}
 
           {hoveredIndex === 2 && modalLeft !== null && (

@@ -1,19 +1,22 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import styles from "./modal.module.scss"
 import cardsProducts from "../data/cards-products"
 import SubProduct from "./sub-product"
 import Link from "next/link"
 
-const CardModal = ({
-  onLinkClick,
-}: {
-  onLinkClick?: () => void
-  modalLeft: number
-}) => {
+const CardModal = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   const [prevHoveredProductIndex] = useState<null | number>(null)
 
+  const onMouseLeave = useCallback(() => {
+    setTimeout(() => {
+      if (onLinkClick) {
+        onLinkClick()
+      }
+    }, 500)
+  }, [onLinkClick])
+
   return (
-    <div className={styles.cardModal}>
+    <div className={styles.cardModal} onMouseLeave={onMouseLeave}>
       <div className={` ${styles.container}`}>
         <div className="d-flex gap-3 justify-content-center">
           {cardsProducts.map((mother, i) => {
