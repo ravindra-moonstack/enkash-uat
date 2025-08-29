@@ -113,14 +113,14 @@ const ContactForm: React.FC = () => {
 
         <div className="">
           <MultiSelect
-            name="contactReasons"
+            name="MultipleChoice"
             options={contactOptions}
             placeholder="How can we help you?*"
             onChange={(data) => {
-              setFieldValue("contactReasons", data)
+              setFieldValue("MultipleChoice", data)
             }}
           />
-          <ErrorText errors={errors} touched={touched} field="contactReasons" />
+          <ErrorText errors={errors} touched={touched} field="MultipleChoice" />
         </div>
 
         <div className="">
