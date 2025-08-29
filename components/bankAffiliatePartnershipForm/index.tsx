@@ -9,7 +9,7 @@ import "../../styles/_forms.scss"
 
 // components
 import ErrorText from "../ErrorText"
-import CategoryWithOther from "../categoryWithOther/categoryWithOther"
+import CategoryWithOther from "../single-select"
 import {
   bankAffiliateInitialValue,
   TBankAffiliateInitialValueProp,
