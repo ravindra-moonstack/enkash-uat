@@ -33,17 +33,9 @@ import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
-  autoCollect,
-  instant,
-  invoices,
   notificationImage,
-  paymentButton,
-  paymentGatewayImg,
-  paymentLink,
   paymentLinkImage,
   paymentOptionImage,
-  qrCodes,
-  reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
