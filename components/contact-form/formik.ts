@@ -5,7 +5,7 @@ export type TContactInitialValueProp = {
   SingleLine1: string
   Email: string
   PhoneNumber_countrycode: string
-  contactReasons: string
+  MultipleChoice: string
   MultiLine: string
   Dropdown: string
   Dropdown1: string
@@ -19,7 +19,7 @@ const contactInitialValue: TContactInitialValueProp = {
   SingleLine1: "",
   Email: "",
   PhoneNumber_countrycode: "",
-  contactReasons: "",
+  MultipleChoice: "",
   MultiLine: "",
   Dropdown: "Landing Page",
   Dropdown1: "Marketing",
@@ -35,7 +35,7 @@ const contactValidation = Yup.object({
     .email("Please enter valid email")
     .required("Please enter email"),
   PhoneNumber_countrycode: Yup.string().required("Please enter phone number"),
-  contactReasons: Yup.array().required("Please select category"),
+  MultipleChoice: Yup.array().required("Please select category"),
   MultiLine: Yup.string().max(500, "Text exceeds"),
 })
 
