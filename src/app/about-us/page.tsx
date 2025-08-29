@@ -34,7 +34,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Learn about EnKash’s mission, leadership, and journey in transforming B2B payments. Discover how we empower businesses with smarter spend and finance automation solutions.",
   alternates: {
-    canonical: `${process.env.URL}/about`,
+    canonical: `${process.env.URL}/about-us`,
   },
 })
 
@@ -52,7 +52,7 @@ const About = (): React.JSX.Element => {
                       { name: "Home", url: "/" },
                       {
                         name: "About Us",
-                        url: "/about",
+                        url: "/about-us",
                       },
                     ]}
                   />
