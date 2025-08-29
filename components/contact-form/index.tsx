@@ -125,9 +125,9 @@ const ContactForm: React.FC = () => {
 
         <div className="">
           <textarea
-            name="MultiLine"
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
             maxLength={500}
+            {...getFieldProps("MultiLine")}
           />
           <ErrorText errors={errors} touched={touched} field="MultiLine" />
         </div>
