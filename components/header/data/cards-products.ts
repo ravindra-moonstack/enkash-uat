@@ -13,7 +13,8 @@ import {
   purchaseCardFilled,
   giftFilled,
 } from "../../header"
-export const cardsProducts = [
+
+const cardsProducts = [
   {
     name: "Prepaid Cards",
     description: "Flexible prepaid card solutions",
