@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useRef, useEffect } from "react"
-import styles from "./categoryWithOther.module.scss"
+import styles from "./single.module.scss"
 
 interface Props {
   name: string
@@ -10,31 +10,22 @@ interface Props {
   onChange?: (val: string) => void
 }
 
-const CategoryWithOther: React.FC<Props> = ({
-  name,
+const SingleSelect: React.FC<Props> = ({
   options,
   placeholder = "Please select...",
-  otherPlaceholder = "Please specify...",
   onChange,
 }) => {
-  const [open, setOpen] = useState(false)
-  const [selected, setSelected] = useState("")
-  const [otherText, setOtherText] = useState("")
+  //
+
+  const [open, setOpen] = useState<boolean>(false)
+  const [selected, setSelected] = useState<string>("")
   const wrapperRef = useRef<HTMLDivElement>(null)
 
   const handleSelect = (value: string) => {
     setSelected(value)
     setOpen(false)
-    if (value !== "other") {
-      onChange?.(value) // notify parent
-    }
+    onChange?.(value)
   }
-
-  useEffect(() => {
-    if (selected === "other") {
-      onChange?.(otherText) // notify parent when "Other" changes
-    }
-  }, [otherText, selected, onChange])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -56,16 +47,13 @@ const CategoryWithOther: React.FC<Props> = ({
         <div className={styles.inputContent}>
           {selected ? (
             <span className={styles.tag}>
-              {selected === "other"
-                ? otherText || "Other"
-                : options.find((opt) => opt.value === selected)?.label}
+              {options.find((opt) => opt.value === selected)?.label}
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation()
                   setSelected("")
-                  setOtherText("")
-                  onChange?.("") // reset
+                  onChange?.("")
                 }}
               >
                 ✕
@@ -90,32 +78,10 @@ const CategoryWithOther: React.FC<Props> = ({
               {opt.label}
             </div>
           ))}
-          <div className={styles.option} onClick={() => handleSelect("other")}>
-            Other
-          </div>
         </div>
       )}
-
-      {/* If "Other" is selected → input box show */}
-      {selected === "other" && (
-        <input
-          type="text"
-          placeholder={otherPlaceholder}
-          className={styles.textInput}
-          value={otherText}
-          onChange={(e) => setOtherText(e.target.value)}
-          required
-        />
-      )}
-
-      {/* Hidden input for forms */}
-      <input
-        type="hidden"
-        name={`${name}_value`}
-        value={selected === "other" ? otherText : selected}
-      />
     </div>
   )
 }
 
-export default CategoryWithOther
+export default SingleSelect
