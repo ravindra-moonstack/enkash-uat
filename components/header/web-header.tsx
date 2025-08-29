@@ -7,16 +7,20 @@ import styles from "./header.module.scss"
 // components
 import navBarTopTtitle from "./data/nav-bar"
 import { enkashBlueLogo, arrowDownBlack, arrowDownWhite } from "."
-import ResourcesModal from "./modal/resources-modal"
 import PaymentModal from "./modal/payment-modal"
-import CardModal from "./modal/card-modal"
-import ExpensesModal from "./modal/expenses-modal"
-import LoyaltyModal from "./modal/loyalty-modal"
-import PartnershipModal from "./modal/patnership-modal"
 
 // helpers
 import { useHeaderHover } from "@/src/hooks/useHeaderHover"
 import { useActiveTab } from "@/src/hooks/useActiveTab"
+import CommonModal from "./modal/common-modal"
+import {
+  expenseProducts,
+  loyaltyLoungeProducts,
+  resourseProducts,
+  partnershipProducts,
+  cardsProducts,
+} from "./data"
+import { useMemo } from "react"
 
 interface props {
   utmSource?: string
@@ -42,6 +46,44 @@ const WebHeader = ({}: props) => {
       : isHeaderBgWhite
         ? arrowDownBlack
         : arrowDownWhite
+
+  const modalsConfig =
+    useMemo(
+      () => [
+        {
+          component: PaymentModal,
+          props: { onLinkClick: closeAllModals },
+        },
+        {
+          component: CommonModal,
+          props: {
+            onLinkClick: closeAllModals,
+            data: cardsProducts!,
+            isCorporate: true,
+          },
+        },
+        {
+          component: CommonModal,
+          props: { onLinkClick: closeAllModals, data: expenseProducts },
+        },
+        {
+          component: CommonModal,
+          props: { onLinkClick: closeAllModals, data: loyaltyLoungeProducts },
+        },
+        {
+          component: CommonModal,
+          props: { onLinkClick: closeAllModals, data: resourseProducts },
+        },
+        {
+          component: CommonModal,
+          props: { onLinkClick: closeAllModals, data: partnershipProducts },
+        },
+      ],
+      [closeAllModals]
+    ) ?? []
+
+  const modalEntry = hoveredIndex !== null ? modalsConfig[hoveredIndex] : null
+  const ModalComponent = modalEntry?.component
 
   return (
     <div className={styles.header_wrapper}>
@@ -159,34 +201,8 @@ const WebHeader = ({}: props) => {
         </nav>
 
         <div className="max-width-auto">
-          {hoveredIndex === 0 && modalLeft !== null && (
-            <PaymentModal onLinkClick={closeAllModals}  />
-          )}
-
-          {hoveredIndex === 1 && modalLeft !== null && (
-            <CardModal onLinkClick={closeAllModals}  />
-          )}
-
-          {hoveredIndex === 2 && modalLeft !== null && (
-            <ExpensesModal onLinkClick={closeAllModals} modalLeft={modalLeft} />
-          )}
-
-          {hoveredIndex === 3 && modalLeft !== null && (
-            <LoyaltyModal onLinkClick={closeAllModals} modalLeft={modalLeft} />
-          )}
-
-          {hoveredIndex === 4 && modalLeft !== null && (
-            <ResourcesModal
-              onLinkClick={closeAllModals}
-              modalLeft={modalLeft}
-            />
-          )}
-
-          {hoveredIndex === 5 && modalLeft !== null && (
-            <PartnershipModal
-              onLinkClick={closeAllModals}
-              modalLeft={modalLeft}
-            />
+          {ModalComponent && modalLeft !== null && (
+            <ModalComponent {...modalEntry.props} key={"asdfasdf"} />
           )}
         </div>
       </header>
