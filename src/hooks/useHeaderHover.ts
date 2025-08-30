@@ -1,6 +1,8 @@
 import { useState, useRef } from "react"
 
 export const useHeaderHover = () => {
+  //
+
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [isHeaderBgWhite, setIsHeaderBgWhite] = useState<boolean>(false)
   const [modalLeft, setModalLeft] = useState<number | null>(null)
