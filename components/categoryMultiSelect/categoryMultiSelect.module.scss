@@ -11,8 +11,8 @@
   position: relative; // allow arrow to stay fixed at right
   justify-content: space-between;
   font-size: 12px;
-       @include for-laptops {
-     font-size: 14px;
+  @include for-laptops {
+    font-size: 14px;
   }
 }
 
@@ -46,16 +46,17 @@
       border: none;
       cursor: pointer;
       font-size: 14px;
+      color: black;
     }
   }
 }
 
-  .arrow {
-    font-size: 0.7rem;
-    color: #1c5af4; 
-    margin-left: 8px;
-    user-select: none;
-  }
+.arrow {
+  font-size: 0.7rem;
+  color: #1c5af4;
+  margin-left: 8px;
+  user-select: none;
+}
 .wrapper {
   input {
     width: auto !important;
