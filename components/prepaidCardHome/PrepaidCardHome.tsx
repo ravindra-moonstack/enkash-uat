@@ -24,7 +24,7 @@ const PrepaidCardHome: React.FC<PrepaidCardHomeProps> = ({
   return (
     <>
       <div className={`${styles.makePaymentsBoxOuterBox}`}>
-        <Link href={url} className={`${styles.makePaymentsBoxLinks} `} style={{ borderImage:borderColors || "linear-gradient(-90deg, #a1a1a100 0%, #b3b3b3 100%) 1" }}>
+        <Link href={url} className={`${styles.makePaymentsBoxLinks} `} style={{ borderColor:borderColors || "#4D5761" }}>
           <div className={`${styles.makePaymentsBoxInnerBox}`}>
             <div className={`${styles.makePaymentContent}`}>
               {/* Title & Subtitle */}
