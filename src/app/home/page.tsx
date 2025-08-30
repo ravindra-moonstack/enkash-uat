@@ -757,7 +757,7 @@ const HomePage = (): React.JSX.Element => {
                         <DynamicHeading
                           content={[
                             {
-                              title: "SOC 2 Compliance ",
+                              title: "SOC 2 ",
                               color: "color-black",
                             },
                             {
