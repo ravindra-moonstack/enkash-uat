@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react"
 
-import styles from "./modal.module.scss"
+import styles from "./common.module.scss"
 import motherProducts from "../data/mother-products"
 import SubProduct from "./sub-product"
 
@@ -13,6 +13,7 @@ const PaymentModal = ({ onLinkClick }: { onLinkClick?: () => void }) => {
       }
     }, 500)
   }, [onLinkClick])
+
   const [hoveredProductIndex] = useState<number>(0)
 
   const [prevHoveredProductIndex] = useState<null | number>(null)

@@ -29,7 +29,7 @@ export { default as autoCollect } from "./img/auto-collect.svg"
 export { default as instant } from "./img/instant-settlement.svg"
 export { default as reminder } from "./img/remineder-engien.svg"
 export { default as paymentGateway } from "./img/payment-gateway.svg"
-// .........
+
 
 export { default as mealCardImage } from "./img/collect-payment.webp"
 export { default as paymentLinkImage } from "./img/payment-link.webp"

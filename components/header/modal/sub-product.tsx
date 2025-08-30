@@ -55,7 +55,13 @@ const SubProduct = (props: any) => {
   const motherProductName = props.motherProductName
 
   return (
-    <div className={`d-flex flex-column  ${styles.container}`}>
+    <div
+      className={`d-flex flex-column  ${styles.container}`}
+      style={{
+        backgroundColor: props?.backgroundColor ?? "",
+      
+      }}
+    >
       {hasActiveGroup && (
         <>
           <div className={`mb-3 ${styles.motherProduct}`}>
