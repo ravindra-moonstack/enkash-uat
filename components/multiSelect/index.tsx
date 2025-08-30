@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import styles from "./multiselect.module.scss"
 
-// Type definition for an option
+
 interface Option {
   value: string
   label: string
@@ -31,12 +31,11 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
         ? prev.filter((v) => v !== value)
         : [...prev, value]
 
-      onChange(updated) // ✅ Call onChange with updated selection
+      onChange(updated) 
       return updated
     })
   }
 
-  // ✅ Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
