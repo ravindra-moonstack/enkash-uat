@@ -160,8 +160,6 @@ const ReceivableProducts = [
         imageSrcHovered: autoReconciliationFilled,
         link: "/auto-reconciliation",
       },
-
-
     ],
     footerText: "Effortlessly streamline your business collections",
     footerMobileText: "Explore More",

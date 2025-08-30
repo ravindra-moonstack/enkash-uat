@@ -1,3 +1,4 @@
+import { TProductCategory } from "@/src/types/navbar"
 import {
   digitalMarketingCard,
   digitalMarketingCardFilled,
@@ -14,11 +15,12 @@ import {
   giftFilled,
 } from "../../header"
 
-const cardsProducts = [
+const cardsProducts: TProductCategory[] = [
   {
     name: "Prepaid Cards",
     description: "Flexible prepaid card solutions",
     link: "/prepaid-card",
+    backgroundColor: "#f6fcff",
     subProducts: [
       {
         subtitle: "Default",
@@ -76,9 +78,9 @@ const cardsProducts = [
   },
   {
     name: "Credit Cards",
-    subtitle: " Corporate Cards",
     description: "Flexible credit card solutions",
-    payableProducts: [
+    backgroundColor: "#f9f9f9",
+    subProducts: [
       {
         subtitle: "Default",
         subtitleLink: "/cards",

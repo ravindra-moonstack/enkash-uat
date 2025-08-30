@@ -1,10 +1,12 @@
+import { TProductCategory } from "@/src/types/navbar"
 import { blogsFilled, casestudies, vedioFilled } from ".."
 
-const resourseProducts = [
+const resourseProducts: TProductCategory[] = [
   {
     name: "Resources",
     description: "Flexible prepaid card solutions",
     link: `${process.env.NEXT_PUBLIC_URL}/resources/`,
+    backgroundColor: "#f6fcff",
     subProducts: [
       {
         subtitle: "Default",
@@ -47,7 +49,8 @@ const resourseProducts = [
     name: "For Developers",
     description: "Flexible prepaid card solutions",
     link: "https://docs.enkash.com/",
-    payableProducts: [
+    backgroundColor: "#f9f9f9",
+    subProducts: [
       {
         subtitle: "Default",
         subtitleLink: "/bolt",
