@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from "react"
+import Link from "next/link"
 
-import styles from "./modal.module.scss"
+import styles from "./common.module.scss"
 import SubProduct from "./sub-product"
 import { TProductCategory } from "@/src/types/navbar"
-import Link from "next/link"
 
 type TCommonModalProp = {
   onLinkClick: () => void
@@ -16,6 +16,8 @@ const CommonModal = ({
   data,
   isCorporate,
 }: TCommonModalProp): React.JSX.Element => {
+  //
+
   const [prevHoveredProductIndex] = useState<null | number>(null)
 
   const onMouseLeave = useCallback(() => {
@@ -27,7 +29,10 @@ const CommonModal = ({
   }, [onLinkClick])
 
   return (
-    <div className={` ${styles.container}`} onMouseLeave={onMouseLeave}>
+    <div
+      className={`${styles.container} ${isCorporate && styles.cardModal}`}
+      onMouseLeave={onMouseLeave}
+    >
       <div className="d-flex gap-3 justify-content-center">
         {data?.map((mother, i) => {
           const subProducts = mother.subProducts || []
@@ -35,9 +40,8 @@ const CommonModal = ({
           if (!subProducts || subProducts.length === 0) return null
 
           return (
-            <>
+            <div key={i}>
               <SubProduct
-                key={i}
                 subProducts={subProducts}
                 index={i}
                 hoveredProductIndex={i}
@@ -45,6 +49,7 @@ const CommonModal = ({
                 onLinkClick={onLinkClick}
                 motherProductName={mother.name}
                 parentLink={mother.link}
+                backgroundColor={mother?.backgroundColor}
               />
               {isCorporate && (
                 <div className={styles.exploreProduct}>
@@ -53,7 +58,7 @@ const CommonModal = ({
                   </Link>
                 </div>
               )}
-            </>
+            </div>
           )
         })}
       </div>
