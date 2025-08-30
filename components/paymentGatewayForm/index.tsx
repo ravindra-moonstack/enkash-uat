@@ -8,7 +8,7 @@ import { useFormik } from "formik"
 import "../../styles/_forms.scss"
 
 // components
-import CategoryWithOther from "../categoryWithOther/categoryWithOther"
+import CategoryWithOther from "../single-select"
 import ErrorText from "../ErrorText"
 
 // helpers
