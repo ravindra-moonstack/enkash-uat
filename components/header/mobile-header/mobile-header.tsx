@@ -1,19 +1,26 @@
 "use client"
-
+import { Fragment, useEffect, useMemo, useState } from "react"
 import Image from "next/image"
+
 import styles from "./mobile-header.module.scss"
 import { arrowDown } from ".."
+
+// components
 import navBarTopTtitle from "@/components/header/data/nav-bar"
-import { Fragment, useEffect, useState } from "react"
 import Hamburger from "./hamburger"
 import motherProducts from "@/components/header/data/mother-products"
-import cardsProducts from "../data/cards-products"
-import xpenzProducts from "../data/ofex-products"
 import loyaltyLoungeProducts from "../data/loaylty-lounge-products"
 import RectangleButton from "@/components/buttons/rectangle-button"
 import SubProductListView from "./sub-product-list-view"
-import resourseProducts from "../data/resources"
-import partnershipProducts from "../data/partnership"
+import {
+  resourseProducts,
+  partnershipProducts,
+  expenseProducts,
+  cardsProducts,
+} from "../data"
+import { TSubProduct } from "@/src/types/navbar"
+
+// helpers
 
 interface Props {
   utmSource?: string
@@ -36,74 +43,93 @@ const MobileHeader = ({ utmSource }: Props) => {
     }
   }, [currentStep])
 
-  const getSubProductSections = () => {
-    switch (selectedItemIndex) {
-      case 0:
-        return [
+  const sectionConfig: {
+    title: string
+    sections: {
+      title: string
+      products?: TSubProduct[]
+    }[]
+  }[] = useMemo(() => {
+    return [
+      {
+        title: "Payments",
+        sections: [
           {
             title: "Collect Payments",
-            products: motherProducts[0].subProducts || [],
+            products: motherProducts[0]?.subProducts,
           },
           {
             title: "Make Payments",
-            products: motherProducts[1].payableProducts || [],
+            products: motherProducts[1]?.payableProducts,
           },
           {
             title: "Payable & Receivable+",
-            products: motherProducts[2].payableProducts || [],
+            products: motherProducts[2]?.payableProducts,
           },
-        ]
-      case 1:
-        return [
+        ],
+      },
+      {
+        title: "Cards",
+        sections: [
           {
             title: "Prepaid Cards",
-            products: cardsProducts[0].subProducts || [],
+            products: cardsProducts[0]?.subProducts,
           },
           {
             title: "Credit Cards",
-            products: cardsProducts[1].payableProducts || [],
+            products: cardsProducts[1]?.payableProducts,
           },
-        ]
-      case 2:
-        return [
-          {
-            title: "Expenses",
-            products: xpenzProducts[0].subProducts || [],
-          },
-        ]
-      case 3:
-        return [
+        ],
+      },
+      {
+        title: "Expenses",
+        sections: [
+          { title: "Expenses", products: expenseProducts[0]?.subProducts },
+        ],
+      },
+      {
+        title: "Loyalty Lounge",
+        sections: [
           {
             title: "Brand Vouchers",
-            products: loyaltyLoungeProducts[0].subProducts || [],
+            products: loyaltyLoungeProducts[0]?.subProducts,
           },
           {
             title: "Rewards System",
-            products: loyaltyLoungeProducts[1].subProducts || [],
+            products: loyaltyLoungeProducts[1]?.subProducts,
           },
-        ]
-      case 4:
-        return [
+        ],
+      },
+      {
+        title: "Resources",
+        sections: [
           {
             title: "Resources",
-            products: resourseProducts[0].subProducts || [],
+            products: resourseProducts[0]?.subProducts,
           },
           {
             title: "For Developer",
-            products: resourseProducts[1].payableProducts || [],
+            products: resourseProducts[1]?.payableProducts,
           },
-        ]
-      case 5:
-        return [
+        ],
+      },
+      {
+        title: "Partnerships",
+        sections: [
           {
             title: "Partnerships",
-            products: partnershipProducts[0].subProducts || [],
+            products: partnershipProducts[0]?.subProducts,
           },
-        ]
-      default:
-        return []
-    }
-  }
+        ],
+      },
+    ]
+  }, [])
+
+  const subProductSections = useMemo(() => {
+    return selectedItemIndex !== null
+      ? sectionConfig[selectedItemIndex]?.sections || []
+      : []
+  }, [sectionConfig, selectedItemIndex])
 
   return (
     <div className={styles.mobile_header}>
@@ -137,7 +163,7 @@ const MobileHeader = ({ utmSource }: Props) => {
               <RectangleButton
                 title="Log In"
                 theme="outline-blue"
-                url={`${process.env.HOME_URL}?source=nav-bar`}
+                url={`${process.env.HOME_URL ?? ""}?source=nav-bar`}
                 width="100%"
               />
             </div>
@@ -147,7 +173,7 @@ const MobileHeader = ({ utmSource }: Props) => {
         {currentStep === 2 && selectedItemIndex !== null && (
           <SubProductListView
             navTitle={navBarTopTtitle[selectedItemIndex!]?.name || ""}
-            sections={getSubProductSections()}
+            sections={subProductSections}
             setCurrentStep={setCurrentStep}
             signupUrl={signupUrl}
           />

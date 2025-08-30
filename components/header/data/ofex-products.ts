@@ -12,7 +12,7 @@ import {
   pettyCash,
 } from "../../header"
 
-const xpenzProducts = [
+const expenseProducts = [
   {
     name: "Expense Managment",
     description: "Flexible prepaid card solutions",
@@ -88,4 +88,4 @@ const xpenzProducts = [
   },
 ]
 
-export default xpenzProducts
+export default expenseProducts
