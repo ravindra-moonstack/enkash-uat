@@ -1,18 +1,18 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-
 import styles from "./header.module.scss"
-
 // components
 import navBarTopTtitle from "./data/nav-bar"
 import { enkashBlueLogo, arrowDownBlack, arrowDownWhite } from "."
 import PaymentModal from "./modal/payment-modal"
+import CommonModal from "./modal/common-modal"
 
 // helpers
 import { useHeaderHover } from "@/src/hooks/useHeaderHover"
 import { useActiveTab } from "@/src/hooks/useActiveTab"
-import CommonModal from "./modal/common-modal"
+
+// data
 import {
   expenseProducts,
   loyaltyLoungeProducts,
@@ -26,8 +26,6 @@ interface props {
 }
 
 const WebHeader = ({}: props) => {
-  //
-
   const {
     hoveredIndex,
     isHeaderBgWhite,
@@ -48,154 +46,203 @@ const WebHeader = ({}: props) => {
 
   return (
     <div className={styles.header_wrapper}>
+      {/* Skip Link for Accessibility */}
+      <a href="#main" className="sr-only sr-only-focusable skip" tabIndex={0}>
+        Skip to main content
+      </a>
+
       <header
-        className={`w-full absolute z-10 d-flex flex-column mx-auto ${styles.header} ${
+        className={`w-full absolute z-10 ${styles.header} ${
           isHeaderBgWhite ? styles.bg_white : styles.bg_blue
         }`}
         onMouseLeave={closeAllModals}
+        role="banner"
+        aria-label="Primary"
       >
-        <a href="#main" className="skip">
-          Skip to main content
-        </a>
-
-        <nav className="d-flex justify-content-between">
-          <div className="d-flex">
-            <Link href="/" className={styles.logo_container}>
-              <Image src={enkashBlueLogo} alt="logo" width={98} />
-            </Link>
-
-            <ul
-              role="menubar"
-              aria-label="Main navigation"
-              className="position-relative"
-            >
-              {navBarTopTtitle.map((item, index) => (
-                <li
-                  role="menuitem"
-                  aria-haspopup="true"
-                  aria-expanded={hoveredIndex === index}
-                  aria-controls={item.link}
-                  ref={(el) => {
-                    itemRefs.current[index] = el
-                  }}
-                  key={item.name}
-                  className={`d-flex justify-content-center align-items-center cursor-pointer gap-1 ${
-                    hoveredIndex === index
-                      ? styles.opacity_selected
-                      : styles.opacity_normal
-                  }`}
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onClick={closeAllModals}
-                >
-                  <span className={styles.link}>{item.name}</span>
-                  <Image
-                    src={getArrowImageSource(index)}
-                    alt="arrow down icon"
-                    height={16}
-                    width={16}
-                  />
-                </li>
-              ))}
-
-              {hoveredIndex !== null && modalLeft !== null && (
-                <div
-                  className={styles.arrow}
-                  style={{
-                    left: `calc(${modalLeft}px - 8px)`,
-                    top: "126%",
-                    position: "absolute",
-                    zIndex: 0,
-                  }}
-                />
-              )}
-            </ul>
-          </div>
-
-          <div
-            className={`d-flex align-items-center gap-4 ${styles.nav_right}`}
+        <div className="container">
+          <nav
+            className="position-relative mb-0"
+            role="navigation"
+            aria-label="Main navigation"
           >
-            <Link href={`/support/?source=nav-bar`} target="_blank">
-              <button
-                className={`${styles.button_getStarted} ${
-                  active === "get-support" ? styles.active : ""
-                }`}
-                onClick={() => setActive("get-support")}
-              >
-                Get Support
-              </button>
-            </Link>
-
-            <div className={styles.button_switch_wrapper}>
-              <Link
-                target="_blank"
-                href={`${process.env.NEXT_PUBLIC_HOME_URL}?source=nav-bar`}
-              >
-                <button
-                  className={`${styles.button} ${styles.login} ${
-                    activeTab === "login" ? styles.active : ""
-                  }`}
-                  onMouseEnter={() => setActiveTab("login")}
+            <div className="row align-items-center">
+              {/* Logo and Main Menu */}
+              <div className="col-12 col-md-auto d-flex align-items-center">
+                <Link
+                  href="/"
+                  className={styles.logo_container}
+                  aria-label="Enkash Home"
                 >
-                  Login
-                </button>
-              </Link>
+                  <Image src={enkashBlueLogo} alt="logo" width={98} />
+                </Link>
 
-              <Link href={`/sales/?source=nav-bar`} target="_blank">
-                <button
-                  className={`${styles.button} ${styles.sales} ${
-                    activeTab === "sales" ? styles.active : ""
-                  }`}
-                  onMouseEnter={() => setActiveTab("sales")}
+                {/* Main Nav */}
+                <ul
+                  role="menubar"
+                  aria-label="Main menu"
+                  className={`d-flex align-items-center mb-0 ${styles.menu}`}
                 >
-                  Talk to Sales
-                </button>
-              </Link>
+                  {navBarTopTtitle.map((item, index) => (
+                    <li
+                      key={item.name}
+                      className={`${styles.menu_item} ${styles[`menu_item_${index}`]} ${
+                        hoveredIndex === index ? styles.opacity_selected : ""
+                      }`}
+                      ref={(el) => {
+                        itemRefs.current[index] = el
+                      }}
+                      id={`menuitem_${index}${styles.box}`}
+                      role="none"
+                      // ✅ Close submenu when parent loses focus
+                      onBlur={(e) => {
+                        if (!e.currentTarget.contains(e.relatedTarget)) {
+                          closeAllModals()
+                        }
+                      }}
+                    >
+                      {/* Parent Button */}
+                      <button
+                        className={styles.link}
+                        type="button"
+                        id={`menuitem-${index}`}
+                        role="menuitem"
+                        aria-haspopup="true"
+                        aria-expanded={hoveredIndex === index}
+                        aria-controls={`navbar-submenu-${index}`}
+                        tabIndex={0}
+                        onMouseEnter={() => handleMouseEnter(index)}
+                        onFocus={() => handleMouseEnter(index)}
+                        onClick={() => handleMouseEnter(index)}
+                      >
+                        <span>{item.name}</span>
+                        <Image
+                          src={getArrowImageSource(index)}
+                          alt=""
+                          role="presentation"
+                          height={16}
+                          width={16}
+                        />
+                      </button>
 
-              <span
-                className={styles.slider}
-                style={{
-                  left: activeTab === "login" ? "0" : "calc(50% + 4px)",
-                }}
-              />
+                      {/* Submenu Inside Parent */}
+                      {hoveredIndex === index && modalLeft !== null && (
+                        <div
+                          id={`navbar-submenu-${index}`}
+                          role="menu"
+                          aria-labelledby={`menuitem-${index}`}
+                          className={styles.submenu_wrapper}
+                        >
+                          {index === 0 && (
+                            <PaymentModal onLinkClick={closeAllModals} />
+                          )}
+                          {index === 1 && (
+                            <CommonModal
+                              onLinkClick={closeAllModals}
+                              data={cardsProducts}
+                              isCorporate
+                            />
+                          )}
+                          {index === 2 && (
+                            <CommonModal
+                              onLinkClick={closeAllModals}
+                              data={expenseProducts}
+                            />
+                          )}
+                          {index === 3 && (
+                            <CommonModal
+                              onLinkClick={closeAllModals}
+                              data={loyaltyLoungeProducts}
+                            />
+                          )}
+                          {index === 4 && (
+                            <CommonModal
+                              onLinkClick={closeAllModals}
+                              data={resourseProducts}
+                            />
+                          )}
+                          {index === 5 && (
+                            <CommonModal
+                              onLinkClick={closeAllModals}
+                              data={partnershipProducts}
+                            />
+                          )}
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right Side Navigation */}
+              <div className="col-12 col-md d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+                <Link
+                  href={`/support/?source=nav-bar`}
+                  target="_blank"
+                  aria-label="Open support page in new tab"
+                >
+                  <button
+                    className={`${styles.button_getStarted} ${
+                      active === "get-support" ? styles.active : ""
+                    }`}
+                    onClick={() => setActive("get-support")}
+                    aria-current={active === "get-support" ? "page" : undefined}
+                    type="button"
+                  >
+                    Get Support
+                  </button>
+                </Link>
+
+                <div
+                  className={styles.button_switch_wrapper + " ms-3"}
+                  role="group"
+                  aria-label="Login and Sales"
+                >
+                  <Link
+                    target="_blank"
+                    href={`${process.env.HOME_URL}?source=nav-bar`}
+                    aria-label="Login page"
+                  >
+                    <button
+                      className={`${styles.button} ${styles.login} ${
+                        activeTab === "login" ? styles.active : ""
+                      }`}
+                      onMouseEnter={() => setActiveTab("login")}
+                      aria-current={activeTab === "login" ? "page" : undefined}
+                      type="button"
+                    >
+                      Login
+                    </button>
+                  </Link>
+
+                  <Link
+                    href={`/sales/?source=nav-bar`}
+                    target="_blank"
+                    aria-label="Talk to Sales page in new tab"
+                  >
+                    <button
+                      className={`${styles.button} ${styles.sales} ${
+                        activeTab === "sales" ? styles.active : ""
+                      }`}
+                      onMouseEnter={() => setActiveTab("sales")}
+                      aria-current={activeTab === "sales" ? "page" : undefined}
+                      type="button"
+                    >
+                      Talk to Sales
+                    </button>
+                  </Link>
+
+                  <span
+                    className={styles.slider}
+                    style={{
+                      left: activeTab === "login" ? "0" : "calc(50% + 4px)",
+                    }}
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </nav>
-
-        <div className="max-width-auto">
-          {hoveredIndex === 0 && modalLeft !== null && (
-            <PaymentModal onLinkClick={closeAllModals} />
-          )}
-
-          {hoveredIndex === 1 && modalLeft !== null && (
-            <CommonModal
-              onLinkClick={closeAllModals}
-              data={cardsProducts}
-              isCorporate
-            />
-          )}
-
-          {hoveredIndex === 2 && modalLeft !== null && (
-            <CommonModal onLinkClick={closeAllModals} data={expenseProducts} />
-          )}
-
-          {hoveredIndex === 3 && modalLeft !== null && (
-            <CommonModal
-              onLinkClick={closeAllModals}
-              data={loyaltyLoungeProducts}
-            />
-          )}
-
-          {hoveredIndex === 4 && modalLeft !== null && (
-            <CommonModal onLinkClick={closeAllModals} data={resourseProducts} />
-          )}
-
-          {hoveredIndex === 5 && modalLeft !== null && (
-            <CommonModal
-              onLinkClick={closeAllModals}
-              data={partnershipProducts}
-            />
-          )}
-        </div>
+          </nav>
+        </div>  
       </header>
     </div>
   )
