@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
 
-import "../../styles/_base.scss"
-import "../../styles/_variables.scss"
+import "../styles/_base.scss"
+import "../styles/_variables.scss"
 import "./globals.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import { Inter } from "next/font/google"
-import LayoutClientWrapper from "@/components/layoutWrapper/layoutWrapper"
-import { WebVitals } from "@/components/web-vitals"
+import LayoutClientWrapper from "@/src/components/layout-wrapper"
+import { WebVitals } from "@/src/components/web-vitals"
 
 export const dynamic = "force-dynamic"
 

@@ -1,4 +1,4 @@
-import { RectangleButtonTheme } from "@/components/buttons/rectangle-button"
+import { RectangleButtonTheme } from "@/src/components/buttons/rectangle-button"
 import {
   AdiadsBg,
   Adiadslogo,

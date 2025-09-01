@@ -12,7 +12,7 @@ import {
   FaqSection,
   StepsSection,
   HowDoesItWork,
-} from "@/components"
+} from "@/src/components"
 
 import {
   circles,
@@ -25,8 +25,8 @@ import {
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Meal Card: Tax-Saving Digital Benefit for Employees",
@@ -122,7 +122,6 @@ const MealCards = (): React.JSX.Element => {
         </div>
         <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
-
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
         </div>
@@ -203,8 +202,7 @@ const MealCards = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title:
-                    "Hassle-Free Meals, Happier Employees",
+                  title: "Hassle-Free Meals, Happier Employees",
                   color: "color-block",
                 },
               ]}

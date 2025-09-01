@@ -8,9 +8,9 @@ import {
   AllInOnePolicy,
   AllProducts,
   SalesForm,
-} from "@/components"
+} from "@/src/components"
 
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({

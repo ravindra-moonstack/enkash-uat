@@ -1,0 +1,75 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.card_body {
+  // width: 84vw;
+  height: 100%;
+  border-radius: 15px;
+  padding: 32px 0;
+  white-space: normal;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.4s ease;
+    box-shadow:
+      0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+      0px 7px 40px 0px rgba(0, 0, 0, 0.1),
+      0px 30px 40px 0px rgba(0, 0, 0, 0.09),
+      0px 67px 40px 0px rgba(0, 0, 0, 0.05),
+      0px 120px 48px 0px rgba(0, 0, 0, 0.01),
+      0px 187px 52px 0px rgba(0, 0, 0, 0);
+  }
+
+  @include for-laptops {
+    padding: 32px;
+  }
+  .image_wrapper {
+    text-align: center;
+    display: flex;
+    align-items: end;
+    height: auto;
+    @include for-laptops {
+      height: 265px;
+    }
+    img {
+      max-height: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.action_container:hover {
+  img {
+    width: auto;
+  }
+}
+
+.description {
+  color: $color-main-grey;
+}
+.card_image {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+.cta_link {
+  margin-top: 24px;
+  text-align: left;
+
+  .color-white {
+    color: white;
+  }
+
+  .color-cyan-blue {
+    color: #00f0ff;
+  }
+}
+
+.steps {
+  border-top: 1px solid black;
+  padding-top: 20px;
+}

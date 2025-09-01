@@ -2,7 +2,7 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { payment } from "."
-import { DynamicHeading, TabPoliciesWrapper } from "@/components"
+import { DynamicHeading, TabPoliciesWrapper } from "@/src/components"
 
 const tabs = [{ key: "payments" }]
 

@@ -1,5 +1,5 @@
-@use "/styles/variables" as *;
-@use "/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
 
 .parent_container {
   padding: 100px 20px 40px 20px;
@@ -9,36 +9,35 @@
 
   @include for-laptops {
     background-position: center right;
-       padding: 112px 0px 100px ;
+    padding: 112px 0px 100px;
     background-size: contain;
   }
 
-
   .gradient {
     display: none;
-  
+
     z-index: -1;
     position: absolute;
     top: -150px;
     z-index: -1;
-      @include for-laptops {
+    @include for-laptops {
       display: block;
     }
   }
 
   .inner_container {
     padding: 20px;
-   
+
     margin-top: 48px;
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1019607843);
 
     border-radius: 10px;
     margin-bottom: 10px;
-     @include for-laptops {
+    @include for-laptops {
       padding: 30px 40px;
     }
-    .sectionTitle{
+    .sectionTitle {
       margin-bottom: 80px;
     }
   }

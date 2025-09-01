@@ -20,14 +20,14 @@ import {
   StepsSection,
   Heading,
   AllProducts,
-} from "@/components"
+} from "@/src/components"
 
 import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Instant Card Management Platform for Businesses",
@@ -124,7 +124,6 @@ const InstantCardManagement = (): React.JSX.Element => {
         </div>
         <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
-
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
         </div>

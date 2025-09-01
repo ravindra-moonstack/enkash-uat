@@ -1,0 +1,238 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.mobile_header {
+  position: fixed;
+  top: 21px;
+  left: 20px;
+  right: 20px;
+  width: calc(100% - 40px);
+  border-radius: 12px;
+  z-index: 999;
+  align-items: center;
+
+  .mobile_header_box {
+    box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.1);
+    max-height: 90vh;
+    overflow-y: scroll;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+.main_padding {
+  padding: 20px;
+  background-color: $color-white;
+  border-radius: 8px;
+
+  .mobile_navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .mobile_right_icon {
+      background: $color-silver-grey;
+      height: 32px;
+      width: 32px;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      border-radius: 4px;
+    }
+  }
+}
+
+.mobile_navbar_top {
+  padding: 20px;
+}
+
+.mobile_modal {
+  background-color: $color-white;
+  padding: 8px;
+  height: 100%;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    color: $color-black-100;
+    border-bottom: 1px dashed $color-black-16;
+    .title {
+      font-size: 14px;
+      line-height: 30px;
+    }
+
+    .sub_product_title {
+      font-size: 12px;
+      color: $color-slate-grey;
+      text-transform: uppercase;
+    }
+    .description {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size: inherit;
+  }
+}
+
+.mobile_sub_product_modal {
+  background-color: $color-white;
+  padding: 8px;
+  height: 100%;
+
+  .nav_title {
+    font-size: 16px;
+    color: $color-grey-600;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    color: $color-black-100;
+
+    .title {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    .sub_product_title {
+      font-size: 12px;
+      color: $color-slate-grey;
+      text-transform: uppercase;
+    }
+    .description {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size: inherit;
+  }
+
+  .nav_sub_child_product {
+    padding: 10px 24px;
+    border-radius: 8px;
+
+    .sub_product_title {
+      font-size: 12px;
+      color: $color-slate-grey;
+      text-transform: uppercase;
+    }
+  }
+}
+.exploreProduct {
+  h4 {
+    font-size: 12px;
+    color: $color-electric-green;
+    text-align: end;
+    text-decoration: underline;
+  }
+}
+.underline_text {
+  font-size: 25px;
+  line-height: 30px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+
+  a {
+    text-decoration: none;
+  }
+  .sup {
+    text-decoration: none;
+  }
+}
+
+.line {
+  background-color: $color-alt-grey;
+  height: 2px;
+}
+
+.buttons_container {
+  flex-grow: 4;
+  flex-direction: column;
+  padding: 8px 32px 24px 32px;
+  gap: 12px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.olympus_footer_bg {
+  background: url(../img/olympus-footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.freedom_footer_bg {
+  background: url(../img/freedom-footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.xpenz_footer_bg {
+  background: url(../img/xpenz-footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.loyalty_footer_bg {
+  background: url(../img/loyalty-footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.footer {
+  height: 75px;
+  color: $color-electric-green;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 23px;
+  background-color: $color-equity-blue;
+  .explore {
+    cursor: pointer;
+    color: $color-electric-green;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.enkash_logo {
+  width: 100px;
+  height: auto;
+}
+
+.secondary_button {
+  border-radius: 20px;
+  border: 2px solid $color-equity-blue;
+  background-color: $color-indi-volt;
+  color: $color-white;
+  padding: 3px 20px;
+}
+.active {
+  color: $color-black;
+  background-color: $color-white;
+}
+
+.powered {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: $color-secondry-grey;
+}

@@ -11,7 +11,7 @@ import {
   AllInOnePolicy,
   ScrollableCardsSection,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -30,8 +30,8 @@ import {
   activationIcon,
   hundredPercentIcon,
 } from "."
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -167,7 +167,6 @@ const PayableAnalytics = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
@@ -177,7 +176,6 @@ const PayableAnalytics = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -199,7 +197,6 @@ const PayableAnalytics = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -221,7 +218,6 @@ const PayableAnalytics = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {

@@ -17,7 +17,7 @@ import {
   FaqSection,
   CardStacking,
   ManagementCard,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -28,9 +28,9 @@ import {
   hundredPercentIcon,
   activationIcon,
 } from "."
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automatic Reconciliation: Simplify Payment Matching & Reporting",
@@ -270,8 +270,9 @@ const AutoReconciliation = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={`${showScroll ? "overflow-auto scrollbar-thin" : ""
-                  }`}
+                className={`${
+                  showScroll ? "overflow-auto scrollbar-thin" : ""
+                }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",

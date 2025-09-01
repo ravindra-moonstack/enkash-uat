@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
 
 .CoreValuesDataSection {
   padding: 50px 20px;
@@ -13,7 +13,7 @@
 
   .CoreValuesDataSectionOuter {
     background: #fff;
-    padding: 20px 20px ;
+    padding: 20px 20px;
     position: relative;
     border-radius: 20px;
     z-index: 1;
@@ -30,56 +30,53 @@
       height: 460px;
       display: none;
     }
-    @include for-laptops{
+    @include for-laptops {
       padding: 50px 50px 30px;
       &::after {
         display: block;
       }
     }
-    .content{
-        max-width: 400px;
-        p{
-            span{
-
-                color: #A5A5A5;
-            }
+    .content {
+      max-width: 400px;
+      p {
+        span {
+          color: #a5a5a5;
         }
+      }
     }
   }
 }
 
-.perksPayCheck{
-    padding: 50px 20px;
-    @include for-laptops{
-        padding: 90px 20px 70px;
-    }
+.perksPayCheck {
+  padding: 50px 20px;
+  @include for-laptops {
+    padding: 90px 20px 70px;
+  }
 
-    .rewardsBottomSliderBox{
-     @include for-laptops{
-
-         padding-right: 27px;
-        }
+  .rewardsBottomSliderBox {
+    @include for-laptops {
+      padding-right: 27px;
     }
-    .rewardsBottomSliderContentBox{
-        max-width: 1200px;
-        margin: auto;
-        .rewardsBottomSliderBox{
-          height: 100%;
-        }
+  }
+  .rewardsBottomSliderContentBox {
+    max-width: 1200px;
+    margin: auto;
+    .rewardsBottomSliderBox {
+      height: 100%;
     }
+  }
 }
 
-
-.yourOpportunitySection{
-  background-image: url('./img/yourOpportunitySectionBg.webp');
+.yourOpportunitySection {
+  background-image: url("./img/yourOpportunitySectionBg.webp");
   padding: 550px 20px 90px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.VoicesEnKashSection{
+.VoicesEnKashSection {
   padding: 0px 20px 0px;
-  @include for-laptops{
+  @include for-laptops {
     padding: 0px 20px 90px;
   }
 }
