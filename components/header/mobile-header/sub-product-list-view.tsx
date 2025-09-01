@@ -128,7 +128,12 @@ const SubProductListView = ({
         <div
           className={`d-flex justify-content-center ${styles.buttons_container}`}
         >
-          <RectangleButton title="Log In" theme="outline-blue" url="" />
+          <RectangleButton
+            title="Log In"
+            theme="outline-blue"
+            url={`${process.env.NEXT_PUBLIC_HOME_URL}`}
+            openInNewTab
+          />
         </div>
       </div>
     </div>
