@@ -2,11 +2,11 @@
 @use "../../../styles/variables" as *;
 
 .container {
-  padding: 10px;
+  // padding: 10px;
   position: relative;
   display: flex;
   gap: 10px;
-  margin-top: 10px;
+  // margin-top: 10px;
   border-radius: 12px;
   background: $color-white;
   width: fit-content;
@@ -165,8 +165,7 @@
 }
 
 .exploreProduct {
-  h4 {
-    font-size: 12px;
+  a {
     color: $color-electric-green;
     text-align: end;
     text-decoration: underline;
@@ -176,12 +175,16 @@
     right: 17px;
     position: absolute;
     font-weight: 500;
+    display: block;
+    h4 {
+      font-size: 12px;
+    }
   }
 }
 
-.cardModal {
-  margin-right: 144px;
-}
+// .cardModal {
+//   margin-right: 144px;
+// }
 .cardModal {
   opacity: 1;
   transform: translateY(0);
@@ -200,19 +203,19 @@
   transform: translateY(-8px); // 👈 slight slide-up effect
 }
 
-.cardModal {
-  margin-right: 144px;
-}
+// .cardModal {
+//   margin-right: 144px;
+// }
 
-.container:nth-child(1) {
-  background-color: $color-sky-hint; // blue
-  color: white;
-}
+// .container:nth-child(1) {
+//   background-color: $color-sky-hint; // blue
+//   color: white;
+// }
 
-.container:nth-child(2) {
-  background-color: $color-silver-grey; // grey
-}
+// .container:nth-child(2) {
+//   background-color: $color-silver-grey; // grey
+// }
 
-.container:nth-child(3) {
-  background-color: $color-white; // white
-}
+// .container:nth-child(3) {
+//   background-color: $color-white; // white
+// }
