@@ -5,7 +5,6 @@ import styles from "../button.module.scss"
 import Image, { StaticImageData } from "next/image"
 import { useRouter } from "next/navigation"
 
-
 export type RectangleButtonTheme =
   | "blue"
   | "green"
@@ -27,6 +26,7 @@ export interface ButtonProps {
   iconSize?: number
   className?: string
   hoverImage?: StaticImageData | string
+  openInNewTab?: boolean // ✅ new prop
 }
 
 const RectangleButton = ({
@@ -39,16 +39,18 @@ const RectangleButton = ({
   iconSize = 20,
   className,
   hoverImage,
+  openInNewTab = false,
 }: ButtonProps) => {
-
-
   const [isHovered, setIsHovered] = useState<boolean>(false)
-
   const router = useRouter()
 
   const handleClick = () => {
     if (typeof url === "string") {
-      router.push(url)
+      if (openInNewTab) {
+        window.open(url, "_blank", "noopener,noreferrer")
+      } else {
+        router.push(url)
+      }
     } else if (typeof url === "function") {
       url()
     }
