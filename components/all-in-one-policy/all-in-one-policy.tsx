@@ -1,12 +1,10 @@
-// components/policy-section-item/PolicySectionItem.tsx
-
 import React from "react"
 import Image, { StaticImageData } from "next/image"
+
 import styles from "./all-in-one-policy.module.scss"
-import RectangleButton, {
-  RectangleButtonTheme,
-} from "../buttons/rectangle-button"
-import { blueArrow, whiteArrow } from "./index"
+
+// components
+import CommonButton, { ButtonTheme } from "../buttons"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 interface AllInOnePolicyProps {
@@ -17,10 +15,8 @@ interface AllInOnePolicyProps {
   buttonUrl: string
   reverse?: boolean
   maxImageHeight?: string
-  buttonTheme?: RectangleButtonTheme
+  buttonTheme?: ButtonTheme
   buttonText?: string
-  buttonActionIcon?: StaticImageData
-  buttonHoverIcon?: StaticImageData
 }
 
 const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
@@ -33,8 +29,6 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   maxImageHeight,
   buttonTheme = "outline-blue",
   buttonText = "Get Started",
-  buttonActionIcon = blueArrow,
-  buttonHoverIcon = whiteArrow,
 }) => {
   return (
     <div className={`row align-items-center mb-3 ${styles.section}`}>
@@ -74,14 +68,14 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
             )}
           </div>
         </div>
+        {/*  */}
 
         <div className={styles.list_button}>
-          <RectangleButton
+          <CommonButton
             title={buttonText}
             theme={buttonTheme}
-            actionImage={buttonActionIcon}
-            hoverImage={buttonHoverIcon}
             url={buttonUrl}
+            arrow
           />
         </div>
       </div>
