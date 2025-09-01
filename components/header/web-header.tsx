@@ -128,7 +128,7 @@ const WebHeader = ({}: props) => {
             <div className={styles.button_switch_wrapper}>
               <Link
                 target="_blank"
-                href={`${process.env.HOME_URL}?source=nav-bar`}
+                href={`${process.env.NEXT_PUBLIC_HOME_URL}?source=nav-bar`}
               >
                 <button
                   className={`${styles.button} ${styles.login} ${
