@@ -726,7 +726,7 @@ const FooterV2 = (): React.JSX.Element => {
                     <li>
                       <Link
                         target="_blank"
-                        href={`${process.env.URL}resources/customer-stories/`}
+                        href={`${process.env.URL}/resources/customer-stories/`}
                       >
                         Case Studies
                       </Link>
