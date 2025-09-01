@@ -26,4 +26,5 @@ export type TProductCategory = {
   description?: string
   link?: string
   subProducts?: TSubProduct[]
+  backgroundColor?: string
 }

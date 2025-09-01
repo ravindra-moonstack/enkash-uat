@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useRef, useState } from "react"
-import styles from "./modal.module.scss"
+
+import styles from "./common.module.scss"
 import solutions from "../data/solutions"
 import { solutionModalEmptyStateImg } from ".."
 

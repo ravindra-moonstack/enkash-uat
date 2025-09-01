@@ -1,4 +1,3 @@
-
 import {
   vendorPayment,
   vendorPaymentFilled,
@@ -25,12 +24,11 @@ import {
 const payableProducts = [
   {
     subtitle: "Default",
-      link: "/products/make-payments",
+    link: "/products/make-payments",
     subtitleLink: "/products/make-payments",
     currentHeading: {
       name: "Make Payments",
       description: "Manage all types of business payments",
-    
     },
     list: [
       {

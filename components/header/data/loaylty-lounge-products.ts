@@ -1,3 +1,4 @@
+import { TProductCategory } from "@/src/types/navbar"
 import {
   offers,
   offersFilled,
@@ -17,11 +18,12 @@ import {
   healthFilled,
 } from "../../header"
 
-const loyaltyLoungeProducts = [
+const loyaltyLoungeProducts: TProductCategory[] = [
   {
     name: "Brand Vouchers",
     description: "Flexible prepaid card solutions",
     link: "/products/vouchers",
+    backgroundColor: "#f6fcff",
     subProducts: [
       {
         subtitle: "Default",
@@ -79,6 +81,7 @@ const loyaltyLoungeProducts = [
     name: "Rewards System",
     description: "Flexible prepaid card solutions",
     link: "/products/rewards",
+    backgroundColor: "#f9f9f9",
     subProducts: [
       {
         subtitle: "Default",

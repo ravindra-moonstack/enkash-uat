@@ -27,10 +27,12 @@ interface Props {
 }
 
 const MobileHeader = ({ utmSource }: Props) => {
+  //
+
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
     null
   )
-  const [currentStep, setCurrentStep] = useState(0)
+  const [currentStep, setCurrentStep] = useState<number>(0)
 
   const signupUrl =
     utmSource !== "" ? `/sales/?source=${utmSource}` : "/sales/?source"
@@ -77,7 +79,7 @@ const MobileHeader = ({ utmSource }: Props) => {
           },
           {
             title: "Credit Cards",
-            products: cardsProducts[1]?.payableProducts,
+            products: cardsProducts[1]?.subProducts,
           },
         ],
       },
@@ -109,7 +111,7 @@ const MobileHeader = ({ utmSource }: Props) => {
           },
           {
             title: "For Developer",
-            products: resourseProducts[1]?.payableProducts,
+            products: resourseProducts[1]?.subProducts,
           },
         ],
       },

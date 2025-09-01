@@ -20,7 +20,6 @@ import {
   partnershipProducts,
   cardsProducts,
 } from "./data"
-import { useMemo } from "react"
 
 interface props {
   utmSource?: string
@@ -46,44 +45,6 @@ const WebHeader = ({}: props) => {
       : isHeaderBgWhite
         ? arrowDownBlack
         : arrowDownWhite
-
-  const modalsConfig =
-    useMemo(
-      () => [
-        {
-          component: PaymentModal,
-          props: { onLinkClick: closeAllModals },
-        },
-        {
-          component: CommonModal,
-          props: {
-            onLinkClick: closeAllModals,
-            data: cardsProducts!,
-            isCorporate: true,
-          },
-        },
-        {
-          component: CommonModal,
-          props: { onLinkClick: closeAllModals, data: expenseProducts },
-        },
-        {
-          component: CommonModal,
-          props: { onLinkClick: closeAllModals, data: loyaltyLoungeProducts },
-        },
-        {
-          component: CommonModal,
-          props: { onLinkClick: closeAllModals, data: resourseProducts },
-        },
-        {
-          component: CommonModal,
-          props: { onLinkClick: closeAllModals, data: partnershipProducts },
-        },
-      ],
-      [closeAllModals]
-    ) ?? []
-
-  const modalEntry = hoveredIndex !== null ? modalsConfig[hoveredIndex] : null
-  const ModalComponent = modalEntry?.component
 
   return (
     <div className={styles.header_wrapper}>
@@ -201,8 +162,38 @@ const WebHeader = ({}: props) => {
         </nav>
 
         <div className="max-width-auto">
-          {ModalComponent && modalLeft !== null && (
-            <ModalComponent {...modalEntry.props} key={"asdfasdf"} />
+          {hoveredIndex === 0 && modalLeft !== null && (
+            <PaymentModal onLinkClick={closeAllModals} />
+          )}
+
+          {hoveredIndex === 1 && modalLeft !== null && (
+            <CommonModal
+              onLinkClick={closeAllModals}
+              data={cardsProducts}
+              isCorporate
+            />
+          )}
+
+          {hoveredIndex === 2 && modalLeft !== null && (
+            <CommonModal onLinkClick={closeAllModals} data={expenseProducts} />
+          )}
+
+          {hoveredIndex === 3 && modalLeft !== null && (
+            <CommonModal
+              onLinkClick={closeAllModals}
+              data={loyaltyLoungeProducts}
+            />
+          )}
+
+          {hoveredIndex === 4 && modalLeft !== null && (
+            <CommonModal onLinkClick={closeAllModals} data={resourseProducts} />
+          )}
+
+          {hoveredIndex === 5 && modalLeft !== null && (
+            <CommonModal
+              onLinkClick={closeAllModals}
+              data={partnershipProducts}
+            />
           )}
         </div>
       </header>
