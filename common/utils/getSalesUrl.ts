@@ -21,7 +21,7 @@ export function getSalesUrl(pathname?: string): string {
  */
 export function getLoginUrl(pathname?: string): string {
   const slug = getLastSlug(pathname)
-  return `${process.env.HOME_URL}?source=${slug}`
+  return `${process.env.NEXT_PUBLIC_HOME_URL}?source=${slug}`
 }
 
 /**
