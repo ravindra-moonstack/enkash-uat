@@ -30,17 +30,17 @@ const CommonModal = ({
 
   return (
     <div
-      className={`${styles.container} ${isCorporate && styles.cardModal}`}
+      className={`${styles.container} ${isCorporate && styles.cardModal} w-100`}
       onMouseLeave={onMouseLeave}
     >
-      <div className="d-flex gap-3 justify-content-center">
+      <div className="d-flex gap-3 justify-content-center w-100">
         {data?.map((mother, i) => {
           const subProducts = mother.subProducts || []
 
           if (!subProducts || subProducts.length === 0) return null
 
           return (
-            <div key={i}>
+            <div key={i} className="w-100">
               <SubProduct
                 subProducts={subProducts}
                 index={i}

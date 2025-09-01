@@ -6,8 +6,6 @@ import styles from "./sub-product.module.scss"
 import { dropdownArrow } from ".."
 
 const SubProduct = (props: any) => {
-  //
-
   const [activeSubtitle, setActiveSubtitle] = useState(
     props.subProducts[0].subtitle
   )
@@ -59,7 +57,6 @@ const SubProduct = (props: any) => {
       className={`d-flex flex-column  ${styles.container}`}
       style={{
         backgroundColor: props?.backgroundColor ?? "",
-      
       }}
     >
       {hasActiveGroup && (
@@ -151,7 +148,7 @@ const SubProduct = (props: any) => {
 
                   return (
                     <div
-                      className={`${styles.sub_product_row_wrapper} position-relative d-flex gap-3 p-1`}
+                      className={`${styles.sub_product_row_wrapper} position-relative p-1`}
                       onMouseEnter={() => sethoveredProductIndex(index)}
                       onMouseLeave={() => sethoveredProductIndex(null)}
                       ref={refs[index]}
@@ -162,6 +159,12 @@ const SubProduct = (props: any) => {
                         href={product.link}
                         onClick={(e) => {
                           if (product?.comingSoon) e.preventDefault()
+                        }}
+                        onFocus={() => sethoveredProductIndex(index)} // ✅ focus works
+                        onBlur={(e) => {
+                          if (!e.currentTarget.contains(e.relatedTarget)) {
+                            sethoveredProductIndex(null) // ✅ blur works
+                          }
                         }}
                       >
                         <div
@@ -185,9 +188,7 @@ const SubProduct = (props: any) => {
 
                           <div className="d-flex flex-column ms-3">
                             <div
-                              className={`d-flex align-items-center justify-content-between ${
-                                styles.sub_product_name
-                              } ${
+                              className={`d-flex align-items-center justify-content-between ${styles.sub_product_name} ${
                                 motherProductName === "For Developers"
                                   ? styles.underline
                                   : ""
@@ -215,7 +216,6 @@ const SubProduct = (props: any) => {
                         </div>
                       </Link>
 
-                      {/* ✅ Right-side dropdown for children */}
                       {hoveredProductIndex === index && product.children && (
                         <div className={styles.child_dropdown}>
                           {product.children.map((child: any) => (
