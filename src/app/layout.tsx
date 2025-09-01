@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 
+import "../../styles/_base.scss"
+import "../../styles/_variables.scss"
 import "./globals.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
