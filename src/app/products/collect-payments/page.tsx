@@ -17,9 +17,9 @@ import {
   instantSettelmentImg,
   affordabilityImg,
   affordabilityIcon,
-  blueArrow,
-  whiteArrow,
 } from "."
+
+import CommonButton from "@/components/buttons/index"
 
 import faqData from "./faq-data"
 import generateMetaData from "@/common/utils/metaData"
@@ -258,13 +258,11 @@ const CollectPayment = (): React.JSX.Element => {
                 }
               />
               <div className={` ${styles.list_button}`}>
-                <RectangleButton
+                <CommonButton
                   title="Learn more"
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
                   url={"/instant-settlement"}
-                  className={styles.try_button}
+                  arrow
                 />
               </div>
             </div>
@@ -295,13 +293,11 @@ const CollectPayment = (): React.JSX.Element => {
                 }
               />
               <div className={` ${styles.list_button}`}>
-                <RectangleButton
+                <CommonButton
                   title="Learn more"
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  className={styles.try_button}
                   url={"/affordability-suite"}
+                  arrow
                 />
               </div>
             </div>
@@ -337,13 +333,13 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
-              title="Explore Our Solutions "
-              theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
-              url={salesUrl}
-            />
+            
+            <CommonButton
+                  title="Explore Our Solutions "
+                  theme="outline-blue"
+                  url={salesUrl}
+                  arrow
+                />
           </div>
         </div>
       </div>
