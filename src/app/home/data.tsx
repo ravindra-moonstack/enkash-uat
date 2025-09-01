@@ -419,7 +419,7 @@ const prepaidCardsDataSecond = [
     url: "/purchase-card",
     topIcon: prepaidTop5,
     bottomIcon: prepaidBottom1,
-    borderColors: "linear-gradient(-90deg, #00A2FF00 0%, #1C5AF4 100%) 1",
+    borderColors: " #1C5AF4 ",
   },
   {
     title: "Travel & Expense Card",
@@ -427,7 +427,7 @@ const prepaidCardsDataSecond = [
     url: "/travel-and-expense-card",
     topIcon: prepaidTop5,
     bottomIcon: prepaidBottom2,
-    borderColors: "linear-gradient(-90deg, #00A2FF00 0%, #1C5AF4 100%) 1",
+    borderColors: " #1C5AF4 ",
   },
 ]
 

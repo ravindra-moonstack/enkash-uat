@@ -2,7 +2,7 @@ import React, { useState, useMemo, createRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import styles from "./modal.module.scss"
+import styles from "./common.module.scss"
 import apiDocs from "../data/api-docs"
 import { solutionModalEmptyStateImg } from ".."
 

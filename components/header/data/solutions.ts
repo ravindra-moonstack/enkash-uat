@@ -1,4 +1,4 @@
-export const solutions = [
+const solutions = [
   {
     name: "Customized Reporting",
     description:
@@ -43,6 +43,6 @@ export const solutions = [
     description: "Manage access to your cards from anywhere, anytime",
     link: "/solutions/instant-card-management",
   },
-];
+]
 
-export default solutions;
+export default solutions
