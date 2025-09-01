@@ -306,7 +306,7 @@ const cardType = [
     description:
       "Centralize and manage software subscriptions easily with cards made for recurring SaaS payments and renewals.",
     cardImage: sassCardImg,
-    linkUrl: "/sass-card",
+    linkUrl: "/saas-card",
   },
 ]
 
