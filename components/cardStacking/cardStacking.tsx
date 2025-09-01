@@ -56,7 +56,7 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards, heading }) => {
     if (titleRef.current) {
       ScrollTrigger.create({
         trigger: titleRef.current,
-        start: "top 100px",
+        start: "top 110px",
         end: () => lastST.start,
         pin: true,
         pinSpacing: false,
