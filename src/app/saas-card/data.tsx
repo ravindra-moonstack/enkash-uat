@@ -288,7 +288,7 @@ const cardType = [
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
-     linkUrl:'/sales/?source=saas-card',
+    linkUrl: "/sales/?source=saas-card",
   },
   {
     titleHtml: "Virtual Card",
@@ -303,14 +303,14 @@ const cardType = [
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
     cardImage: purchesCardImg,
-    linkUrl: "/purches-card",
+    linkUrl: "/purchase-card",
   },
   {
     titleHtml: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
-     linkUrl:'/sales/?source=saas-card',
+    linkUrl: "/sales/?source=saas-card",
   },
 ]
 
