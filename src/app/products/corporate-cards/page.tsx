@@ -21,7 +21,7 @@ import {
   LottieDynamicLoadComponent,
   DynamicHeading,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 
 import {
   blueArrow,
@@ -35,8 +35,8 @@ import {
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
@@ -567,11 +567,11 @@ const CorporateCards = (): React.JSX.Element => {
               </div>
             </div>
             <div className={`${styles.onePlatformSectionCard}`}>
-            <AllProducts
-              title="All Features"
-              subtitle="Combine all use cases"
-              data={mergedCards}
-            />
+              <AllProducts
+                title="All Features"
+                subtitle="Combine all use cases"
+                data={mergedCards}
+              />
             </div>
           </div>
 

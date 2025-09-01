@@ -61,7 +61,7 @@ import {
   taskIconThree,
   taskIconTwo,
 } from "."
-import { upiPayments } from "@/components/header"
+import { upiPayments } from "@/src/components/header"
 
 const dataSets = [
   {
@@ -494,7 +494,7 @@ const managementCards = [
     cardImage: instant,
     linkUrl: "/instant-settlement",
   },
-];
+]
 const stackcardData = [
   {
     color: "#fff",

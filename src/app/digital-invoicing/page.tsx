@@ -10,7 +10,7 @@ import {
   RectangleButton,
   AllInOnePolicy,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -21,8 +21,8 @@ import {
   hundredPercentIcon,
 } from "."
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "E Invoicing Solution: Automate Billing & Get Paid Faster",

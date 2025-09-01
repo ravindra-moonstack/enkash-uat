@@ -36,7 +36,7 @@ import complience from "./img/complienceIcon.svg"
 import audit from "./img/auditIcon.svg"
 import signOn from "./img/sign-on-icon.svg"
 import key from "./img/key-icon.svg"
-import { approve } from "@/components/all-products"
+import { approve } from "@/src/components/all-products"
 import {
   costControlSavings,
   costControlSavingsIcon,

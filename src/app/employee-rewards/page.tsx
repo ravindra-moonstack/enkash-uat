@@ -13,7 +13,7 @@ import {
   RewardsCarousel,
   SecondFaqHtml,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -25,8 +25,8 @@ import {
   faqBg,
   extensiveIcon,
 } from "."
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 export const metadata: Metadata = generateMetaData({
   title: "Employee Rewards: Recognise Employee Achievements",
@@ -176,7 +176,6 @@ const EmployeeRewards = (): React.JSX.Element => {
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
-
               <div className={` d-flex ${styles.outerCard}`}>
                 <Image src={extensiveIcon} alt="icon" />
               </div>

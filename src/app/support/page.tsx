@@ -6,13 +6,13 @@ import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 // components
-import SupportForm from "@/components/support-form"
-import { DynamicHeading, LogoSlider, SupportCard } from "@/components"
+import SupportForm from "@/src/components/support-form"
+import { DynamicHeading, LogoSlider, SupportCard } from "@/src/components"
 import { location, logo } from "."
 
 // helpers
 import { locationData } from "./data"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Support Center | Get Help with Products & Services",

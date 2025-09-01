@@ -1,67 +1,63 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixin" as *;
-
-
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
 
 .boxContainer {
-    margin-top: -200px;
-    margin-bottom: 63px;
+  margin-top: -200px;
+  margin-bottom: 63px;
 
-    @include for-laptops {
-        margin-top: -270px;
-        margin-bottom: 63px;
-    }
+  @include for-laptops {
+    margin-top: -270px;
+    margin-bottom: 63px;
+  }
 }
 
 .second_row {
-    background-repeat: no-repeat, no-repeat;
-    background-size: cover, cover;
-    width: 100%;
-    box-shadow: 0px 0px 77px 0px #0000001a;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  width: 100%;
+  box-shadow: 0px 0px 77px 0px #0000001a;
 }
 
-
 .third_row {
-    padding: 50px 20px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 34px;
-
+  padding: 50px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
 }
 
 .steps_container {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .cta_section {
-    margin-top: -250px;
+  margin-top: -250px;
 }
 
 .BuiltforBuildersSection {
-    background-image: url("./img/BuiltforBuildersMobile.webp");
-    // background-color: #fff;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: -150px 0 0;
-    padding: 170px 20px 150px;
+  background-image: url("./img/BuiltforBuildersMobile.webp");
+  // background-color: #fff;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: -150px 0 0;
+  padding: 170px 20px 150px;
 
-    @include for-laptops {
-        background-image: url("./img/BuiltforBuilders.webp");
-        padding: 375px 20px 285px;
-        margin-top: -166px;
+  @include for-laptops {
+    background-image: url("./img/BuiltforBuilders.webp");
+    padding: 375px 20px 285px;
+    margin-top: -166px;
+  }
+
+  .customButtons {
+    a {
+      text-decoration: none;
+      color: #1c5af4;
+      display: inline-block;
+      margin-top: 20px;
+
+      svg {
+        margin-left: 7px;
+      }
     }
-
-    .customButtons {
-        a {
-            text-decoration: none;
-            color: #1c5af4;
-            display: inline-block;
-            margin-top: 20px;
-
-            svg {
-                margin-left: 7px;
-            }
-        }
-    }
+  }
 }

@@ -3,7 +3,7 @@ import { useState } from "react"
 
 import { VoucherFaqData } from "./voucher-faq-data"
 import styles from "./page.module.scss"
-import FAQ from "@/components/faq-new/faq"
+import FAQ from "@/src/components/faq-new/faq"
 
 interface VoucherFaqComponentProps {
   voucherName: string

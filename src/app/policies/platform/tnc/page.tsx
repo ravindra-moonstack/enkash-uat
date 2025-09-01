@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/components"
+import generateMetaData from "@/src/common/utils/metaData"
+import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import Link from "next/link"
 
 export const metadata: Metadata = generateMetaData({
@@ -81,9 +81,7 @@ const CustomerOnboarding = () => {
                         application services (including but without limitation
                         to any mobile application, mobile site services) (
                         <strong>“Website”</strong>) owned and operated by
-                        <strong>
-                          Nehat Tech Solutions Private Limited
-                        </strong>
+                        <strong>Nehat Tech Solutions Private Limited</strong>
                         (‘EnKash’) which is the holding company of
                         <strong>
                           Nehat Business Services Private Limited (‘NBSPL’)

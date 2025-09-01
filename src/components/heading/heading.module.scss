@@ -1,0 +1,176 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.h0 {
+  display: inline;
+  font-size: 35px;
+  line-height: 50px;
+  margin-bottom: 0;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 100px;
+    line-height: 100px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 90px;
+    line-height: 90px;
+  }
+}
+
+.h1 {
+  display: inline;
+  font-size: 28px;
+  margin-bottom: 0;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 56px;
+    line-height: 80px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 57px;
+  }
+}
+
+.h2 {
+  display: inline;
+  font-size: 21px;
+  margin-bottom: 0;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 48px;
+    line-height: 70px;
+    letter-spacing: -0.04em;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 52px;
+  }
+}
+
+.h3 {
+  display: inline;
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 0;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.04em;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 21px;
+  }
+}
+
+.h4 {
+  display: inline;
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 24px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 18px;
+  }
+}
+
+.h5 {
+  display: inline;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 0;
+  white-space: normal;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 20px;
+    letter-spacing: -0.04em;
+    line-height: 26px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 16px;
+  }
+}
+
+.h6 {
+  display: inline;
+  font-size: 9px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: normal;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 18px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 14px;
+  }
+}
+
+.h7 {
+  display: inline;
+  font-size: 12px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: normal;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 12px;
+  }
+}
+
+.bannerHeading {
+  display: inline;
+  font-size: 24px;
+  line-height: 13px;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: normal;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 38px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 36px;
+  }
+}
+
+.f-2 {
+  font-weight: 200;
+}
+
+.f-3 {
+  font-weight: 300;
+}
+.f-4 {
+  font-weight: 400;
+}
+
+.f-5 {
+  font-weight: 500;
+}
+
+.f-6 {
+  font-weight: 600;
+}
+
+.f-7 {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
