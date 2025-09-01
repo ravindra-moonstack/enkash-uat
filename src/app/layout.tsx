@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more",
     url: process.env.NEXT_PUBLIC_URL,
     type: "website",
-    images: "/og-image.png",
+    images: [`${process.env.NEXT_PUBLIC_URL}/og-image.png`],
   },
   icons: "/favicon.svg",
 }

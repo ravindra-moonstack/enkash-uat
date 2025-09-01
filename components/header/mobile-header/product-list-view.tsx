@@ -69,7 +69,8 @@ const ProductListView = ({ products }: ProductListViewProps) => {
             <RectangleButton
               title="Log In"
               theme="outline-blue"
-              url={`${process.env.HOME_URL}`}
+              url={`${process.env.NEXT_PUBLIC_HOME_URL}`}
+              openInNewTab 
             />
           </div>
         </div>

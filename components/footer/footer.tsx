@@ -39,7 +39,6 @@ const FooterV2 = (): React.JSX.Element => {
               className={`d-flex flex-column  gap-3 gap-md-4 ${styles.logi_bg}`}
             >
               <div>
-
                 <hr className={`${styles.custom_hr}`} />
                 <div>
                   <p className={styles.logo_container_info}>
@@ -445,7 +444,6 @@ const FooterV2 = (): React.JSX.Element => {
 
                 <div className="d-flex flex-column ">
                   <div className={`col-6`}>
-
                     <ul>
                       <li className="d-flex">
                         <Link href="/payment-gateway">Payment Gateway</Link>
@@ -728,7 +726,7 @@ const FooterV2 = (): React.JSX.Element => {
                     <li>
                       <Link
                         target="_blank"
-                        href={`${process.env.URL}resources/customer-stories/`}
+                        href={`${process.env.URL}/resources/customer-stories/`}
                       >
                         Case Studies
                       </Link>
@@ -846,8 +844,7 @@ const FooterV2 = (): React.JSX.Element => {
             Corporate cards, payments, and other related services are provided
             by RBI-licensed banks and/or in accordance with RBI regulations
             and/or compliance maintained by banks and regulated entities. EnKash
-            is not a bank and does not hold or claim to hold a banking
-            license.
+            is not a bank and does not hold or claim to hold a banking license.
           </div>
         </div>
       </div>
@@ -856,36 +853,61 @@ const FooterV2 = (): React.JSX.Element => {
         <div
           className={`d-flex justify-content-center align-items-center mx-5 mb-3 `}
         >
-
           <Image
             className={styles.footer_location_pin}
             src={locationPin}
             alt="Enkash Office Location"
             width={10}
           />
-          <p>Gurgaon</p>
+          <p>
+            {" "}
+            <a href="https://maps.app.goo.gl/HJb25CCTqaw8K6LY6" target="_blank">
+              Gurgaon
+            </a>
+          </p>
           <div className={styles.vr}></div>
-          <p>Mumbai</p>
+          <a href="https://maps.app.goo.gl/T6HMae1X11dCCCmx6" target="_blank">
+            Mumbai
+          </a>
           <div className={styles.vr}></div>
-          <p> Pune</p>
+
+          <p>
+            {" "}
+            <a href="https://maps.app.goo.gl/T6HMae1X11dCCCmx6">Pune</a>
+          </p>
         </div>
         <div className={styles.lineBlue}></div>
       </div>
 
       <div className={`${styles.locations_row}`}>
         <div className="d-none d-md-flex  max-w-auto justify-content-end align-items-center">
-
           <Image
             className={styles.footer_location_pin}
             src={locationPin}
             alt="Enkash Office Location"
             width={20}
           />
-          <p>Gurgaon</p>
+          <p>
+            {" "}
+            <a href="https://maps.app.goo.gl/HJb25CCTqaw8K6LY6" target="_blank">
+              Gurgaon
+            </a>
+          </p>
           <div className={`${styles.ar}`}></div>
-          <p>Mumbai</p>
+          <p>
+            {" "}
+            <a href="https://maps.app.goo.gl/T6HMae1X11dCCCmx6" target="_blank">
+              Mumbai
+            </a>
+          </p>
           <div className={`${styles.ar}`}></div>
-          <p> Pune</p>
+
+          <p>
+            {" "}
+            <a href="https://maps.app.goo.gl/BoF64LK6f9qSiQ18A" target="_blank">
+              Pune
+            </a>
+          </p>
         </div>
       </div>
     </div>

@@ -165,8 +165,9 @@ const MobileHeader = ({ utmSource }: Props) => {
               <RectangleButton
                 title="Log In"
                 theme="outline-blue"
-                url={`${process.env.HOME_URL ?? ""}?source=nav-bar`}
+                url={`${process.env.NEXT_PUBLIC_HOME_URL ?? ""}?source=nav-bar`}
                 width="100%"
+                openInNewTab
               />
             </div>
           </div>

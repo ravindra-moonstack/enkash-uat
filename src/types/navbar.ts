@@ -1,4 +1,5 @@
 export type TProductFeatureItem = {
+  children?: any
   name: string
   description?: string
   imageSrc?: string // or StaticImageData
@@ -13,7 +14,7 @@ export type TSubProduct = {
     name: string
     description: string
   }
-  list: TProductFeatureItem[]
+  list?: TProductFeatureItem[]
   footerText?: string
   footerMobileText: string
   footerImg?: string
