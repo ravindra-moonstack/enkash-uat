@@ -25,7 +25,7 @@ export interface ButtonProps {
   iconSize?: number
   className?: string
   image?: StaticImageData | string
-  openInNewTab?: boolean // ✅ new prop
+  openInNewTab?: boolean 
   arrow?: boolean
 }
 

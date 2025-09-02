@@ -62,6 +62,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
             <input
               type="text"
               required
+              autoComplete="name"
               placeholder="Name*"
               {...getFieldProps("SingleLine")}
             />
@@ -76,6 +77,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
             <input
               type="email"
               required
+              autoComplete="email"
               placeholder="Business Email ID*"
               {...getFieldProps("Email")}
             />
@@ -104,6 +106,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
             <input
               type="text"
               required
+              autoComplete="tel"
               placeholder="Contact No.*"
               {...getFieldProps("PhoneNumber_countrycode")}
             />
