@@ -1,4 +1,4 @@
-import { DynamicHeading, RectangleButton } from "@/src/components"
+import { DynamicHeading } from "@/src/components"
 import React from "react"
 import styles from "./page.module.scss"
 import generateMetaData from "@/src/common/utils/metaData"
@@ -32,13 +32,23 @@ const GrievancePolicy = () => {
           </div>
         </div>
         <div className={styles.policyBox}>
-          <div className={`${styles.ctaButtonSection}`}>
+          <ul>
             {ctaButtonData.map((item, index) => (
-              <div className={`${styles.ctaButtonBox}`} key={index}>
-                <RectangleButton {...item} />
-              </div>
+              <li key={index}>
+                <DynamicHeading
+                  content={[
+                    {
+                      title: item.title,
+                      color: "color-equity-blue",
+                      link: item.url,
+                    },
+                  ]}
+                  headingTag="p"
+                  className="f-5"
+                />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>
