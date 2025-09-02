@@ -116,7 +116,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
                 className=""
               />
             </div>
-            <div className={styles.button_wrapper}>
+            <div className={`${styles.button_wrapper} justify-content-center d-flex`}>
               <RectangleButton
                 title="Get Started"
                 theme="blue"

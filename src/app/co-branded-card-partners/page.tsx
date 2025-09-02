@@ -23,7 +23,9 @@ import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/src/components/all-in-one-policy"
 import { Metadata } from "next"
 import generateMetaData from "@/src/common/utils/metaData"
-import BankAffiliatePartnershipForm from "@/src/components/bankAffiliatePartnershipForm"
+import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
+
+
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",
   description:
