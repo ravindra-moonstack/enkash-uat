@@ -1,16 +1,15 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/components"
+import generateMetaData from "@/src/common/utils/metaData"
+import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 
 export const metadata: Metadata = generateMetaData({
   title: "Card Related Charges: EnKash",
   description:
     "Check details of applicable fees and charges for EnKash-issued cards.",
   alternates: {
-    canonical:
-      `${process.env.URL}/policies/prepaid-program/card-related-charges`,
+    canonical: `${process.env.URL}/policies/prepaid-program/card-related-charges`,
   },
 })
 
@@ -18,7 +17,7 @@ const CardRelatedCharges = () => {
   return (
     <>
       <div className={styles.parent_container}>
-        <div className="max-w-auto  position-relative no-pointer">
+        <div className="max-w-auto  position-relative ">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
@@ -200,6 +199,7 @@ const CardRelatedCharges = () => {
               </div>
             </div>
           </div>
+          <p className="text-center">***** END OF POLICY *****</p>
         </div>
       </div>
     </>

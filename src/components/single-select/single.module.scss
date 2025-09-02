@@ -1,0 +1,86 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.inputBox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 12px;
+  outline: none;
+  transition: border 0.2s;
+  color: #576675;
+  background-color: #ffffff;
+  @include for-laptops {
+    font-size: 14px;
+  }
+}
+
+.inputContent {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  border-radius: 4px;
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  button {
+    margin-left: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+}
+
+.arrow {
+  font-size: 0.7rem;
+  color: #1c5af4;
+  margin-left: 8px;
+  user-select: none;
+}
+
+.dropdown {
+  margin-top: 50px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  color: $color-black;
+}
+
+.option {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+
+  &:hover {
+    background: #f7f7f7;
+  }
+}
+
+.textInput {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  font-size: 1rem;
+}

@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { payment, platform, prepaid } from "."
-import { DynamicHeading, TabPoliciesWrapper } from "@/components"
-import generateMetaData from "@/common/utils/metaData"
+import { DynamicHeading, TabPoliciesWrapper } from "@/src/components"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -22,7 +22,6 @@ const cards = [
       "Understand our payment terms for secure, compliant, and transparent transactions.",
     titleHtml: "Payments",
     cardImage: payment,
-    buttonUrl: "/policies/payments/tnc",
   },
   {
     key: "prepaid",
@@ -30,7 +29,6 @@ const cards = [
       "Review prepaid usage terms to ensure smooth and compliant transactions.",
     titleHtml: "Prepaid Program",
     cardImage: prepaid,
-    buttonUrl: "/policies/prepaid-program/tnc",
   },
   {
     key: "platform",

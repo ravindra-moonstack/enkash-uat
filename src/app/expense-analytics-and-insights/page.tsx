@@ -17,10 +17,10 @@ import {
   EasyStepCard,
   CardStacking,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -38,7 +38,7 @@ const cards = stackcardData.map((item, index) => ({
   content: (
     <AllInOnePolicy
       key={index}
-      buttonText= "Get Started"
+      buttonText="Get Started"
       icon={item.icon}
       title={item.title}
       description={item.description}
@@ -274,7 +274,6 @@ const ExpenseAnalytics = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

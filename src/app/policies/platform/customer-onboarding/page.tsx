@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/components"
+import generateMetaData from "@/src/common/utils/metaData"
+import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Platform Customer Onboarding Policy",
@@ -17,7 +17,7 @@ const CustomerOnboarding = () => {
   return (
     <>
       <div className={styles.parent_container}>
-        <div className="max-w-auto  position-relative no-pointer">
+        <div className="max-w-auto  position-relative ">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
@@ -520,6 +520,7 @@ const CustomerOnboarding = () => {
               </div>
             </div>
           </div>
+          <p className="text-center">***** END OF POLICY *****</p>
         </div>
       </div>
     </>

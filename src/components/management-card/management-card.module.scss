@@ -1,0 +1,119 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.card_body {
+  position: relative;
+  height: 100%;
+  border-radius: 20px;
+  border: 2px solid $color-pale-aqua;
+  padding-top: 40px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 0px;
+  white-space: normal;
+  transition: all 0.3s ease;
+  // cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow:
+      0px 7px 40px rgba(0, 0, 0, 0.1),
+      0px 30px 40px rgba(0, 0, 0, 0.09),
+      0px 67px 40px rgba(0, 0, 0, 0.05);
+  }
+
+  @include for-laptops {
+    padding: 40px 40px 0px;
+  }
+}
+
+.light {
+  background: $color-white;
+
+  .description {
+    color: $color-main-grey;
+  }
+
+  // .description span {
+  //   font-weight: 700;
+  // }
+}
+.description {
+  //   font-size: 18px;
+  //   font-weight: 500;
+  color: #ffffff;
+  // line-height: 28px;
+  // span {
+  //   font-weight: 700;
+  // }
+}
+
+.dark {
+  background: linear-gradient(
+    180deg,
+    rgba(28, 90, 244, 0.88) 0%,
+    rgba(1, 2, 5, 0.88) 100%
+  );
+
+  .titleHtml,
+  .description {
+    color: white;
+  }
+
+  .description span {
+    color: #00f0ff;
+    font-weight: 700;
+  }
+}
+
+.titleHtml {
+  // font-size: 16px;
+  // line-height: 40px;
+  // font-weight: 600;
+  color: $color-black;
+  // @include for-laptops {
+  //   font-size: 28px;
+  // }
+}
+
+.whiteTitleHtml {
+  // font-size: 16px;
+  // line-height: 40px;
+  // font-weight: 600;
+  color: $color-white;
+  // @include for-laptops {
+  //   font-size: 28px;
+  // }
+}
+
+.description {
+  // font-size: 12px;
+  // font-weight: 500;
+  color: $color-main-grey;
+  // span {
+  //   font-weight: 700;
+  // }
+  // @include for-laptops {
+  //   font-size: 18px;
+  // }
+}
+
+.card_image {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.titleHtml {
+  // font-size: 28px;
+  // font-weight: 600;
+  color: $color-black;
+}
+.card_link {
+  color: inherit; // or any custom color
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none; // remove underline on hover too
+    color: inherit; // or a hover color
+  }
+}

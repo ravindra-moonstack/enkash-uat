@@ -8,9 +8,9 @@ import {
   AllInOnePolicy,
   AllProducts,
   SalesForm,
-} from "@/components"
+} from "@/src/components"
 
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -59,10 +59,12 @@ const Rewards = (): React.JSX.Element => {
               />
             </div>
 
-            <div className=" mt-3">
-              <a href="#salesForm">
-                <RectangleButton title="Talk to Us" theme="blue" />
-              </a>
+            <div className=" mt-3 justify-content-center d-flex">
+              <RectangleButton
+                title="Talk to Us"
+                theme="blue"
+                url={"#salesForm"}
+              />
             </div>
           </div>
         </div>

@@ -11,10 +11,10 @@ import {
   AllProducts,
   AllInOnePolicy,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import { blueArrow, groupIcon, paymentSummary, mealCardImage } from "."
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -157,10 +157,11 @@ const VendorPayment = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
-                  }`}
+                className={` mt-md-5 ${
+                  showScroll ? "overflow-auto scrollbar-thin" : ""
+                }`}
                 style={{
-                  maxHeight: "400px", 
+                  maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
                 }}
               >

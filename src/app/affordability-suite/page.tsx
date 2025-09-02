@@ -11,7 +11,7 @@ import {
   ScrollableCardsSection,
   ManagementCard,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -19,12 +19,13 @@ import {
   whiteArrow,
   mealCardImage,
 } from "."
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
-  title: "EnKash Affordability Suite | Boost Conversions with EMI, Pay Later & More",
+  title:
+    "EnKash Affordability Suite | Boost Conversions with EMI, Pay Later & More",
   description:
     "Increase sales with Affordability Suite. Offer EMIs, Pay Later, and flexible payment options to enhance customer experience and drive higher conversions.",
   alternates: {
@@ -115,7 +116,7 @@ const Payroll = (): React.JSX.Element => {
                         theme="blue"
                         url={salesUrl}
                       />
-                    </div> 
+                    </div>
                   </div>
                 </div>
               </div>

@@ -9,7 +9,7 @@ import {
   RectangleButton,
   AllInOnePolicy,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -18,10 +18,10 @@ import {
   mealCardImage,
 } from "."
 
-import AllProducts from "@/components/all-products/all-products"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import AllProducts from "@/src/components/all-products/all-products"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section/scrollableCardsSection"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({

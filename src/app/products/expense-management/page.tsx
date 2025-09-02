@@ -19,7 +19,7 @@ import {
   SmartPolicySection,
   CTASection,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 
 import {
   faqBg,
@@ -49,9 +49,9 @@ import bg3 from "./img/bg2.jpg"
 import bg4 from "./img/bg1.jpg"
 import bg5 from "./img/bg6.jpg"
 import bg6 from "./img/bg5.jpg"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Management Suite: Automate & Track Business Spending",
@@ -125,7 +125,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                 className="f-4 text-center"
               />
             </div>
-            <div className="mt-3 pointer-auto text-center">
+            <div className="mt-3 pointer-auto justify-content-center d-flex">
               <RectangleButton title="Talk to us" theme="blue" url={salesUrl} />
             </div>
           </div>
@@ -165,7 +165,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           imageSrc={receipt}
           imageAlt="card background"
           bgColor="bg-color-soft-mint"
-          buttonUrl='/budget-and-advances'
+          buttonUrl="/budget-and-advances"
           buttonTitle="Learn More"
         />
         <ContentShowcase

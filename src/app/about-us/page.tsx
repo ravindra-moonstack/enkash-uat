@@ -10,9 +10,9 @@ import {
   EmployeeSlider,
   CareersCard,
   LocationTabsMap,
-} from "@/components"
+} from "@/src/components"
 import { scrollIconOne, aboutBannerBottomIcon, careerCardIcon } from "."
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 
 const bannerOurContent = [
   {
