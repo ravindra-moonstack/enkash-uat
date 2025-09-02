@@ -199,18 +199,6 @@ const FooterV2 = (): React.JSX.Element => {
                           href="https://twitter.com/EnkashBusiness"
                           target="_blank"
                           rel="noreferrer noopener"
-                          style={{
-                            width: "28px",
-                            height: "28px",
-                            padding: "0",
-                            fontSize: "16px",
-                            borderRadius: "6px",
-                            background: "black",
-                            display: "flex",
-                            color: "#fff",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
                         >
                           <FaXTwitter />
                         </Link>
@@ -329,18 +317,6 @@ const FooterV2 = (): React.JSX.Element => {
                             href="https://twitter.com/EnkashBusiness"
                             target="_blank"
                             rel="noreferrer noopener"
-                            style={{
-                              width: "28px",
-                              height: "28px",
-                              padding: "0",
-                              fontSize: "16px",
-                              borderRadius: "6px",
-                              background: "black",
-                              display: "flex",
-                              color: "#fff",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            }}
                           >
                             <FaXTwitter />
                           </Link>
