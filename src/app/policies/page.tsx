@@ -5,11 +5,11 @@ import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 import { ctaButtonData } from "./data"
 export const metadata: Metadata = generateMetaData({
-  title: "Grievance and Redressal Policy: EnKash",
+  title: "EnKash Policies: Privacy, Security, Refunds & Compliance",
   description:
-    "Learn how EnKash addresses complaints with a fair, timely, and transparent resolution process.",
+    "Explore EnKash’s official policies, like privacy, terms of service, refunds, and compliance. Built on transparency and trust to ensure secure and seamless experiences.",
   alternates: {
-    canonical: `${process.env.URL}/policies/grievance-policy`,
+    canonical: `${process.env.URL}/policies/`,
   },
 })
 

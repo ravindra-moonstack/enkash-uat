@@ -22,7 +22,6 @@ const cards = [
       "Understand our payment terms for secure, compliant, and transparent transactions.",
     titleHtml: "Payments",
     cardImage: payment,
-    buttonUrl: "/policies/payments/tnc",
   },
   {
     key: "prepaid",
@@ -30,7 +29,6 @@ const cards = [
       "Review prepaid usage terms to ensure smooth and compliant transactions.",
     titleHtml: "Prepaid Program",
     cardImage: prepaid,
-    buttonUrl: "/policies/prepaid-program/tnc",
   },
   {
     key: "platform",
