@@ -39,7 +39,7 @@ const GrievancePolicy = () => {
                   content={[
                     {
                       title: item.title,
-                      color: "color-equity-blue",
+                      color: "color-black",
                       link: item.url,
                     },
                   ]}
