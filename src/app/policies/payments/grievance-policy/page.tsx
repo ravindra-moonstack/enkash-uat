@@ -28,7 +28,7 @@ const grievancePolicy = () => {
                   url: "/policies/payments",
                 },
                 {
-                  name: " Grievance Policy",
+                  name: " Grievance and Redressal policy",
                   url: "/policies/payments/grievance-policy",
                 },
               ]}
@@ -45,7 +45,7 @@ const grievancePolicy = () => {
                       <DynamicHeading
                         content={[
                           {
-                            title: "Grievance Policy (Payment)",
+                            title: "Grievance and Redressal policy (Payment)",
                             color: "color-equity-blue",
                           },
                         ]}
@@ -858,6 +858,7 @@ const grievancePolicy = () => {
               </div>
             </div>
           </div>
+          <p className="text-center">***** END OF POLICY *****</p>
         </div>
       </div>
     </>

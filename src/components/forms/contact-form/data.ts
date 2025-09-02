@@ -12,8 +12,8 @@ export const contactOptions = [
     label: "Looking for Expense Management",
   },
   {
-    value: "Looking for Corporate Jobs",
-    label: "Looking for Corporate Jobs",
+    value: "Looking for Corporate Cards",
+    label: "Looking for Corporate Cards",
   },
   {
     value: "Exploring Job Opportunities",
