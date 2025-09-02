@@ -91,7 +91,7 @@ const HomePage = (): React.JSX.Element => {
                   className="text-center mb-4 text-uppercase"
                 />
               </div>
-              <div className={`${styles.banner_button}`}>
+              <div className={`${styles.banner_button} d-flex justify-content-center`}>
                 <RectangleButton
                   title="Connect with Us"
                   theme="blue"

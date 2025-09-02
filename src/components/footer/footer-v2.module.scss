@@ -5,13 +5,16 @@
   z-index: 1;
   position: relative;
   background-image: url("./img/footerBg.svg");
+
   li {
     list-style-type: none;
     align-items: center;
   }
+
   ul {
     padding-inline-start: 0px;
   }
+
   a {
     font-size: 12px;
     line-height: 16px;
@@ -20,17 +23,20 @@
     color: #5b5b5b;
     white-space: nowrap;
     letter-spacing: -0.5px;
+
     @include for-laptops {
       font-size: 16px;
       line-height: 28px;
     }
   }
+
   .locations_row {
     background: #fff;
     align-items: end;
     justify-content: end;
     border-bottom: 10px solid $color-equity-blue;
     padding: 16px;
+
     @include for-laptops {
       flex-direction: row;
     }
@@ -42,6 +48,7 @@
     .sub_title {
       font-size: 9px;
       margin-bottom: 20px;
+
       @include for-laptops {
         margin-bottom: 0;
         font-size: 12px;
@@ -51,6 +58,7 @@
     @include for-laptops {
       padding: 24px;
     }
+
     p {
       color: #5b5b5b;
       font-size: 10px;
@@ -58,6 +66,7 @@
       padding: 0 8px;
       border-right: 2px solid #1c5af4;
       padding-right: 8px;
+
       @include for-laptops {
         padding: right 0px;
         border-right: none;
@@ -68,16 +77,19 @@
         padding: 0 16px;
       }
     }
+
     h4 {
       font-size: 18px;
       font-weight: 700;
       color: #5b5b5b;
     }
+
     .footer_location_p {
       padding: 0;
       font-size: 14 !important;
     }
   }
+
   .ar {
     background-color: $color-equity-blue;
     border-right: 2px solid $color-equity-blue;
@@ -91,6 +103,7 @@
   padding: 200px 90px 50px 90px;
   background-color: $color-white;
   padding-top: 50px;
+
   @include for-laptops {
     padding-top: 50px;
     padding-bottom: 70px;
@@ -114,6 +127,7 @@
     background-color: #ffff;
     border-radius: 16px;
     padding: 20px;
+
     @include for-laptops {
       padding: 10px;
     }
@@ -127,6 +141,7 @@
       text-align: center;
       justify-content: center;
       margin-bottom: 0px;
+
       @include for-laptops {
         font-size: 14px;
         padding-top: 0px;
@@ -142,6 +157,17 @@
 .footer_links_col {
   width: 100%; // fallback
   text-align: left;
+
+  a {
+    &:hover {
+      color: #1c5af4;
+    }
+
+    &:visited {
+      color: #1c5af4;
+    }
+  }
+
   @media (max-width: 767px) {
     width: 46%; // 2 columns on mobile (with a small gap)
   }
@@ -158,6 +184,7 @@
   white-space: nowrap;
   font-weight: 700;
   text-transform: uppercase;
+
   @include for-laptops {
     font-size: 16px;
     line-height: 32px;
@@ -170,6 +197,7 @@
     font-size: 12px;
     line-height: 16px;
     white-space: nowrap;
+
     @include for-laptops {
       font-size: 16px;
       line-height: 200%;
@@ -183,6 +211,7 @@
   padding: 0 !important;
   flex-wrap: wrap;
   justify-content: start !important;
+
   @include for-laptops {
     width: 50%;
     flex-wrap: nowrap;
@@ -200,6 +229,10 @@
     align-items: center;
     justify-content: center;
 
+    &:hover {
+      background: #1c5af4;
+    }
+
     svg {
       width: 28px;
     }
@@ -212,6 +245,7 @@
   padding-bottom: 16px;
   text-align: right;
   color: $color-electric-green;
+
   @include for-laptops {
     padding-top: 45px;
     font-size: 14px;
@@ -267,6 +301,7 @@
   img {
     height: 25px;
     width: auto;
+
     @include for-laptops {
       height: 50px;
     }
@@ -277,6 +312,7 @@
   font-size: 10px;
   color: black;
   white-space: nowrap;
+
   @include for-laptops {
     font-size: 15px;
     line-height: 32px;
@@ -298,11 +334,13 @@
   height: 16px;
   color: $color-black;
   margin-right: 8px;
+
   @include for-laptops {
     width: 20px;
     height: 20px;
   }
 }
+
 .new_badge {
   display: flex;
   align-items: center;
@@ -315,6 +353,7 @@
   font-weight: 700;
   text-wrap: nowrap;
   height: 10px;
+
   @include for-laptops {
     height: 14px;
   }
@@ -322,6 +361,7 @@
 
 .light_bg {
   border-radius: 10px;
+
   @include for-laptops {
     padding: 24px;
   }
@@ -331,11 +371,13 @@
   display: flex;
   flex-direction: column;
   gap: 27px;
+
   .title {
     font-size: 8px;
     color: $color-electric-green;
     font-weight: 500;
     text-transform: uppercase;
+
     @include for-laptops {
       font-size: 16px;
     }
@@ -347,10 +389,12 @@
     .info_body_one {
       padding-left: 25px;
       padding-top: 5px;
+
       @include for-laptops {
         padding-left: 50px;
         padding-top: 10px;
       }
+
       .soc_logo,
       .pci_logo {
         border-radius: 5px;
@@ -381,10 +425,23 @@
   .info_body_two {
     ul {
       margin-bottom: 0;
+
       li {
         display: flex;
-        color: black;
         margin-bottom: 10px;
+
+        a {
+          color: black;
+
+          &:hover {
+
+            span,
+            svg {
+              color: #1c5af4 !important;
+            }
+          }
+        }
+
         @include for-laptops {
           margin-bottom: 0;
         }
@@ -400,6 +457,7 @@
       background-color: transparent;
       width: 100%;
     }
+
     .info_body_three {
       width: 192px;
       display: flex;
@@ -418,11 +476,13 @@
   padding: 20px 0px;
   width: 100%;
   background: $color-white;
+
   p {
     margin: 0;
     color: #5b5b5b;
     font-size: 10px;
   }
+
   .vr {
     background-color: #1c5af4;
     border-right: 2px solid #1c5af4;
@@ -430,6 +490,7 @@
     margin: 0 10px;
     width: 1px;
   }
+
   .lineBlue {
     background-color: #1c5af4;
     width: 100%;
@@ -452,11 +513,14 @@
   .logo_container_info {
     font-size: 9px;
     color: #97a3b7;
+
     @include for-laptops {
       font-size: 12px;
     }
+
     p {
       margin-bottom: 8px;
+
       @include for-laptops {
         margin-bottom: 16px;
       }
@@ -467,14 +531,17 @@
 .info_div_one {
   padding-top: 24px;
   padding-bottom: 10px;
+
   @include for-laptops {
     padding-top: 0px;
   }
+
   .soc_logo {
     img {
       object-fit: contain;
     }
   }
+
   .pci_logo {
     img {
       object-fit: contain;
@@ -485,6 +552,7 @@
 .custom_hr {
   border-top: 2px dashed $color-grey-100 !important;
   display: block;
+
   @include for-laptops {
     display: none;
   }
