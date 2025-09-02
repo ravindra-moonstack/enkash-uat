@@ -12,12 +12,12 @@ import {
   AllInOnePolicy,
   StepsSection,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
 
 import faqData from "./faq-data"
-import generateMetaData from "@/common/utils/metaData"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Fuel Card for Fleet & Employee Travel Management",
@@ -104,7 +104,7 @@ const FuelCards = (): React.JSX.Element => {
                 className=""
               />
             </div>
-            <div className={styles.button_wrapper}>
+            <div className={`${styles.button_wrapper} justify-content-center d-flex`}>
               <RectangleButton
                 title="Get Started"
                 theme="blue"
@@ -115,7 +115,6 @@ const FuelCards = (): React.JSX.Element => {
         </div>
         <div className={`${styles.lottie_containerOuter} col-12`}>
           <div className={styles.lottie_container}>
-
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
         </div>

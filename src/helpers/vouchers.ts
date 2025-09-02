@@ -1,4 +1,4 @@
-import { nameToUrl } from "@/common"
+import { nameToUrl } from "@/src/common"
 import VoucherData, { Voucher } from "../app/vouchers/data/voucher-data"
 
 const fetchVouchers = async (

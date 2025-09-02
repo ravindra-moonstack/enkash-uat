@@ -17,17 +17,16 @@ import {
   PartnershipSection,
   BottomCtaSection,
   FaqSection,
-} from "@/components"
+  BankAffiliatePartnershipForm,
+} from "@/src/components"
 import { containerScreen, participantBg } from "."
-import { blueArrow } from "@/components/all-in-one-policy"
-import generateMetaData from "@/common/utils/metaData"
-
-import BankAffiliatePartnershipForm from "@/components/bankAffiliatePartnershipForm"
+import { blueArrow } from "@/src/components/all-in-one-policy"
+import generateMetaData from "@/src/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: " Join EnKash Bharat Connect Partnership Program",
   description:
-    "Join EnKash’s Bharat Connect Partnership to digitize financial operations for businesses in Tier 2 & 3 cities. Drive fintech adoption and enable smart payment solutions.",
+    "Join EnKash's Bharat Connect Partnership to digitize financial operations for businesses in Tier 2 & 3 cities. Drive fintech adoption and enable smart payment solutions.",
   alternates: {
     canonical: `${process.env.URL}/bharat-connect-partnership/`,
   },
@@ -85,9 +84,6 @@ const partnershipsPage = (): React.JSX.Element => {
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="If you're in product & tech, business & partnerships, or finance, Bharat Connect will make your work smarter, faster, and hassle-free."
-          buttons={[
-            { title: "Explore ", theme: "blue", url: "#partnership-form" },
-          ]}
           slideData={slideData}
         />
       </div>
@@ -105,8 +101,7 @@ const partnershipsPage = (): React.JSX.Element => {
       <div className={`${styles.cta_section}`}>
         <BottomCtaSection
           headingPart1="Streamline Business Processes by"
-          headingPart2="Partnering with Bharat Connect  
-"
+          headingPart2="Partnering with Bharat Connect"
           buttonHref="#partnership-form"
         />
       </div>

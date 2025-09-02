@@ -11,20 +11,20 @@ import {
   PolicyCard,
   FaqSection,
   LottieDynamicLoadComponent,
-} from "@/components"
+} from "@/src/components"
 import {
   instantSettelmentIcon,
   instantSettelmentImg,
   affordabilityImg,
   affordabilityIcon,
-  blueArrow,
-  whiteArrow,
 } from "."
 
+import CommonButton from "@/src/components/buttons/index"
+
 import faqData from "./faq-data"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Simplify Online Payment Collections with EnKash",
@@ -80,7 +80,7 @@ const CollectPayment = (): React.JSX.Element => {
               />
             </div>
 
-            <div className="mt-md-5 mt-3">
+            <div className="mt-md-5 mt-3 justify-content-center d-flex">
               <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
@@ -258,13 +258,11 @@ const CollectPayment = (): React.JSX.Element => {
                 }
               />
               <div className={` ${styles.list_button}`}>
-                <RectangleButton
+                <CommonButton
                   title="Learn more"
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
                   url={"/instant-settlement"}
-                  className={styles.try_button}
+                  arrow
                 />
               </div>
             </div>
@@ -295,13 +293,11 @@ const CollectPayment = (): React.JSX.Element => {
                 }
               />
               <div className={` ${styles.list_button}`}>
-                <RectangleButton
+                <CommonButton
                   title="Learn more"
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  className={styles.try_button}
                   url={"/affordability-suite"}
+                  arrow
                 />
               </div>
             </div>
@@ -337,12 +333,11 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommonButton
               title="Explore Our Solutions "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
               url={salesUrl}
+              arrow
             />
           </div>
         </div>

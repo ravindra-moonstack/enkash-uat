@@ -1,0 +1,27 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.policyCard {
+  gap: 7px;
+  padding: 10px 0;
+  border-radius: 10px;
+  max-width: 500px;
+  @include for-laptops {
+    gap: 20px;
+    padding: 24px 21px;
+  }
+
+  Img {
+    width: 32px;
+    height: 32px;
+
+    @include for-laptops {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &:hover {
+    background: #eeeeee;
+  }
+}

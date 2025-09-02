@@ -20,7 +20,7 @@ import {
   StepsSection,
   AllProducts,
   StepCard,
-} from "@/components"
+} from "@/src/components"
 
 import {
   blueArrow,
@@ -35,8 +35,8 @@ import {
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Travel & Expense Card: Simplify Business Travel Spending",
@@ -109,7 +109,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
                 className=""
               />
             </div>
-            <div className={styles.button_wrapper}>
+            <div className={`${styles.button_wrapper} justify-content-center d-flex`}>
               <RectangleButton
                 title="Get Started"
                 theme="blue"
@@ -120,7 +120,6 @@ const TravelExpenseCard = (): React.JSX.Element => {
         </div>
         <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
-
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
         </div>
@@ -478,8 +477,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title:
-                    "Issue Travel Cards Instantly for Seamless Management",
+                  title: "Issue Travel Cards Instantly for Seamless Management",
                   color: "color-white",
                 },
               ]}

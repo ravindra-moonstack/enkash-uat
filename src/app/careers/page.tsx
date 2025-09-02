@@ -1,7 +1,15 @@
 import styles from "./page.module.scss"
-import { DynamicHeading, CareersHero, CareersPaycheck , CoreValuesData, YourOpportunityCareers, CareersTestimonialSlider, HiringProcessModal} from "@/components"
+import {
+  DynamicHeading,
+  CareersHero,
+  CareersPaycheck,
+  CoreValuesData,
+  YourOpportunityCareers,
+  CareersTestimonialSlider,
+  HiringProcessModal,
+} from "@/src/components"
 import { coreValues, HomePageRewardsVouchersSlide, jobs } from "./data"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 export const metadata: Metadata = generateMetaData({
   title: "Careers at EnKash: Join the Best Fintech Company",
@@ -11,8 +19,6 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/careers`,
   },
 })
-
-
 
 const Careers = (): React.JSX.Element => {
   return (

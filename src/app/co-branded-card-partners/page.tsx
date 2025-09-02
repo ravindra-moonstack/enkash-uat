@@ -18,12 +18,13 @@ import {
   FaqSection,
   ProductsSection,
   PartnerShipForm,
-} from "@/components"
+  BankAffiliatePartnershipForm,
+} from "@/src/components"
 import { containerScreen, participantBg } from "."
-import { blueArrow } from "@/components/all-in-one-policy"
+import { blueArrow } from "@/src/components/all-in-one-policy"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import BankAffiliatePartnershipForm from "@/components/bankAffiliatePartnershipForm"
+import generateMetaData from "@/src/common/utils/metaData"
+
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",
   description:
@@ -77,7 +78,6 @@ const partnershipsPage = (): React.JSX.Element => {
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="If you are a startup owner, an influencer and an enterprise, or an employer, these co-branded products have been designed for you."
-
           slideData={slideData}
         />
       </div>

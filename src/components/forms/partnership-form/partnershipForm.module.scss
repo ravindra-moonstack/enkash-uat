@@ -1,0 +1,92 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.partnerform {
+  overflow: hidden;
+  padding: 0 20px;
+  padding-bottom: 50px;
+
+  .content {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .leftSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 16px;
+        font-weight: 500;
+        color: #4b5157;
+        font-family: "Inter", sans-serif;
+        letter-spacing: -0.33px;
+      }
+
+      .checkmark {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .checkmark svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  @include for-laptops {
+    padding-bottom: 90px;
+
+    .content {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .leftSection {
+      // max-width: 430px;
+    }
+
+    .features {
+      gap: 24px;
+
+      .feature {
+        gap: 6px;
+
+        span {
+          font-size: 16x;
+        }
+
+        .checkmark {
+          width: 30px;
+          height: 30px;
+        }
+
+        .checkmark svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
