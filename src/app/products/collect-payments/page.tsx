@@ -80,7 +80,7 @@ const CollectPayment = (): React.JSX.Element => {
               />
             </div>
 
-            <div className="mt-md-5 mt-3">
+            <div className="mt-md-5 mt-3 justify-content-center d-flex">
               <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>

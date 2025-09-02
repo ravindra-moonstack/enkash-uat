@@ -125,7 +125,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                 className="f-4 text-center"
               />
             </div>
-            <div className="mt-3 pointer-auto text-center">
+            <div className="mt-3 pointer-auto justify-content-center d-flex">
               <RectangleButton title="Talk to us" theme="blue" url={salesUrl} />
             </div>
           </div>
