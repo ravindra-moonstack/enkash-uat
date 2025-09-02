@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./page.module.scss"
-import BankSolutions from "@/components/partnerships/BankSolutions"
+import BankSolutions from "@/src/components/partnerships/BankSolutions"
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -8,16 +8,20 @@ import {
   slideData,
   stepsData,
 } from "./data"
-import PartnershipSection from "@/components/partnerShipSlider/PartnershipSection"
-import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
-import FaqSection from "@/components/faqSection/faqSection"
+import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
+import BottomCtaSection from "@/src/components/bottom-cta-section/bottomCtaSection"
+import FaqSection from "@/src/components/faq-section/faqSection"
 import faqData from "./faq-data"
-import PartnerShipForm from "@/components/partnerShip-form"
-import { BecomePartnerSteps, BpHeroSection, BankAffiliatePartnershipForm } from "@/components"
+import PartnerShipForm from "@/src/components/forms/partnership-form"
+import {
+  BecomePartnerSteps,
+  BpHeroSection,
+  BankAffiliatePartnershipForm,
+} from "@/src/components"
 import { coBrandImage, containerScreen, GalaxyTabImage, participantBg } from "."
-import { blueArrow } from "@/components/all-in-one-policy"
-import ProductsSection from "@/components/ourProductsSection"
-import generateMetaData from "@/common/utils/metaData"
+import { blueArrow } from "@/src/components/all-in-one-policy"
+import ProductsSection from "@/src/components/our-products-section"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -99,7 +103,6 @@ const partnershipsPage = (): React.JSX.Element => {
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
-      
           slideData={slideData}
         />
       </div>

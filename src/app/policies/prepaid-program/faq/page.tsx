@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/components"
+import generateMetaData from "@/src/common/utils/metaData"
+import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 
 export const metadata: Metadata = generateMetaData({
   title: "FAQ for Prepaid Instruments: EnKash",
@@ -148,6 +148,7 @@ const Faq = () => {
               </div>
             </div>
           </div>
+          <p className="text-center">***** END OF POLICY *****</p>
         </div>
       </div>
     </>

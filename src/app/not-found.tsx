@@ -1,8 +1,8 @@
 import styles from "./not-found.module.scss"
 import Image from "next/image"
-import { DynamicHeading } from "@/components"
+import { DynamicHeading } from "@/src/components"
 import notFoundImg from "@/public/images/not-found.webp"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({

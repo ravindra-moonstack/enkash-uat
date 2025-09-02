@@ -17,11 +17,11 @@ import {
   EasyStepCard,
   CardStacking,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Scan and Drop Receipts for Faster Employee Expense Creation",

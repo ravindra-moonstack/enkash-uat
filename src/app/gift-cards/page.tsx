@@ -20,7 +20,7 @@ import {
   FaqSection,
   Heading,
   StepsSection,
-} from "@/components"
+} from "@/src/components"
 
 import {
   blueArrow,
@@ -31,10 +31,10 @@ import {
 } from "."
 
 import faqData from "./faq-data"
-import AllProducts from "@/components/all-products/all-products"
+import AllProducts from "@/src/components/all-products/all-products"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Gift Cards for Business: Reward Employees & Partners",
@@ -122,7 +122,7 @@ const GiftCards = (): React.JSX.Element => {
                 className=""
               />
             </div>
-            <div className={styles.button_wrapper}>
+            <div className={`${styles.button_wrapper} justify-content-center d-flex`}>
               <RectangleButton
                 title="Get Started"
                 theme="blue"
@@ -133,7 +133,6 @@ const GiftCards = (): React.JSX.Element => {
         </div>
         <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
-
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
         </div>

@@ -19,7 +19,7 @@ import {
   RectangleButton,
   FaqSection,
   ManagementCard,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -33,8 +33,8 @@ import {
   acceleratedGrowthImg,
   whiteArrow,
 } from "."
-import generateMetaData from "@/common/utils/metaData"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
