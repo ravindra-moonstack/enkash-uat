@@ -20,11 +20,11 @@ import {
   PartnershipSection,
   BankSolutions,
   DynamicHeading,
-} from "@/components"
+} from "@/src/components"
 import { containerScreen, participantBg } from "."
-import { blueArrow } from "@/components/all-in-one-policy"
+import { blueArrow } from "@/src/components/all-in-one-policy"
 import Link from "next/link"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -67,7 +67,6 @@ const partnershipsPage = (): React.JSX.Element => {
           url: "#partnership-form",
         }}
         customCSS={{ backgroundPosition: "top center" }}
-
       />
       <div className={`${styles.boxContainer}`}>
         <BankSolutions

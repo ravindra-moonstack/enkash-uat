@@ -11,19 +11,19 @@ import {
   LogoSlider,
   FeatureCard,
   LottieDynamicLoadComponent,
-} from "@/components"
+} from "@/src/components"
 
-import UtilityBillPayments from "@/components/UtilityBillPayments/UtilityBillPayments"
-import PartnerSection from "@/components/partnerSectionData/partnerSectionData"
-import PaymentGatewayCare from "@/components/homePagePaymentBox/PaymentGatewayCard"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import PrepaidCardHome from "@/components/prepaidCardHome/PrepaidCardHome"
-import HomePageRewardsVouchers from "@/components/HomePageRewardsVouchers/HomePageRewardsVouchers "
-import HomeReceivablesPayables from "@/components/HomeReceivablesPayables"
-import Counter from "@/components/HomeCounter/HomeCounter"
-import HomePageSlider from "@/components/homePageSlider/HomePAgeSlider"
-import BuiltforBuildersSection from "@/components/BuiltforBuildersCard/BuiltforBuildersSection"
-import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
+import UtilityBillPayments from "@/src/components/utility-bill-payments"
+import PartnerSection from "@/src/components/partner-section-data"
+import PaymentGatewayCare from "@/src/components/home-page-payment-box"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section/scrollableCardsSection"
+import PrepaidCardHome from "@/src/components/prepaid-card-home/PrepaidCardHome"
+import HomePageRewardsVouchers from "@/src/components/home-page-rewards-vouchers"
+import HomeReceivablesPayables from "@/src/components/home-receivables-payables"
+import Counter from "@/src/components/home-counter"
+import HomePageSlider from "@/src/components/home-page-slider/HomePAgeSlider"
+import BuiltforBuildersSection from "@/src/components/builtfor-builders-card/BuiltforBuildersSection"
+import BottomCtaSection from "@/src/components/bottom-cta-section/bottomCtaSection"
 
 // helpers
 import {
@@ -50,7 +50,7 @@ import {
   rewardData,
   ctaButtonData,
 } from "./data"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "The Best Payments and Spend Management Platform",

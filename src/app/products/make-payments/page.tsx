@@ -10,7 +10,7 @@ import {
   AllProducts,
   LottieDynamicLoadComponent,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   whiteArrow,
@@ -29,8 +29,8 @@ import {
   optimizedImg,
 } from "."
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Fast, Easy and Secure Business Payments with EnKash",
@@ -89,11 +89,7 @@ const PaymentPage = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-5 mt-3 mb-3 mb-md-0">
-              <RectangleButton
-                title="Talk to Us"
-                theme="blue"
-                url={salesUrl}
-              />
+              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12">

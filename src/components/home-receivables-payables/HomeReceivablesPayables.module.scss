@@ -1,0 +1,38 @@
+.makePaymentsBoxOuterBox {
+  background: #fff;
+  border-radius: 10px;
+
+  position: relative;
+  height: 100%;
+  .makePaymentsBoxLinks {
+    text-decoration: none;
+    padding: 30px;
+    display: block;
+    .headings {
+      position: relative;
+    }
+    .headings::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: #00bf9e;
+    }
+    :global(p) {
+      line-height: 160%;
+      max-width: 288px;
+    }
+    &:hover {
+      box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+  }
+
+  .makePaymentsBoxImage {
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+  }
+}

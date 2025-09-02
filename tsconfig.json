@@ -28,7 +28,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/homePagePaymentBox/PaymentGatewayCard.tsx",
     "environment.d.ts"
   ],
   "exclude": ["node_modules"]

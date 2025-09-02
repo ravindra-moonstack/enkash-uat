@@ -1,6 +1,11 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { analyticData, dashboardData, managementCards, stackcardData } from "./data"
+import {
+  analyticData,
+  dashboardData,
+  managementCards,
+  stackcardData,
+} from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -12,7 +17,7 @@ import {
   PolicyCard,
   FaqSection,
   ManagementCard,
-} from "@/components"
+} from "@/src/components"
 import {
   analytics,
   blueArrow,
@@ -21,8 +26,8 @@ import {
   whiteArrow,
   zeroLeakage,
 } from "."
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -319,8 +324,7 @@ const PettyCash = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title:
-                    "No More Manual Petty Cash Management",
+                  title: "No More Manual Petty Cash Management",
                   color: "color-white",
                 },
               ]}

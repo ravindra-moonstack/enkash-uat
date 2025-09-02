@@ -10,14 +10,14 @@ import {
   zigZagGrey,
   zigZagTop,
 } from "../index"
-import VoucherCard from "@/components/voucher-page/voucher-card"
-import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator"
-import OccasionVoucher from "@/components/voucher-page/occasion-voucher"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import { linkifyText, nameToUrl } from "@/common/utils/stringUtils"
-import VoucherFaqComponent from "@/components/voucher-page/voucher-faq"
-import RectangleButton from "@/components/buttons/rectangle-button"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import VoucherCard from "@/src/components/voucher-page/voucher-card"
+import SavingsCalculator from "@/src/components/voucher-page/voucher-calculator/voucher-calculator"
+import OccasionVoucher from "@/src/components/voucher-page/occasion-voucher"
+import CustomBreadcrumb from "@/src/components/breadcrumb/breadbrumb"
+import { linkifyText, nameToUrl } from "@/src/common/utils/stringUtils"
+import VoucherFaqComponent from "@/src/components/voucher-page/voucher-faq"
+import RectangleButton from "@/src/components/buttons/rectangle-button"
+import DynamicHeading from "@/src/components/dynamic-heading/dynamic-heading"
 import { blueArrow } from "."
 
 export async function generateMetadata({
@@ -152,8 +152,8 @@ const CategoryPage = async ({
 
   const boltUTM = voucherData
     ? `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
-      voucherData.name.toLowerCase()
-    )}`
+        voucherData.name.toLowerCase()
+      )}`
     : "https://bolt.enkash.com/"
 
   const breadcrumbItems = [
@@ -187,12 +187,13 @@ const CategoryPage = async ({
                       </div>
 
                       <div
-                        className={`${styles.voucher_name} ${voucherData.name.length > 30
+                        className={`${styles.voucher_name} ${
+                          voucherData.name.length > 30
                             ? voucherData.name.length > 33
                               ? styles.voucher_name_widest
                               : styles.voucher_name_wide
                             : ""
-                          }`}
+                        }`}
                       >
                         {voucherData.name.replace("-", "\u2011")}
                       </div>
@@ -458,7 +459,7 @@ const CategoryPage = async ({
                               __html: linkifyText(sanitizeStep(step)),
                             }}
                           ></div>
-                          { }
+                          {}
                         </li>
                       ))}
                     </ul>
@@ -495,7 +496,7 @@ const CategoryPage = async ({
                               __html: linkifyText(sanitizeStep(step)),
                             }}
                           ></div>
-                          { }
+                          {}
                         </li>
                       ))}
                     </ul>

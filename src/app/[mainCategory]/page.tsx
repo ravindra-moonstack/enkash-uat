@@ -4,12 +4,12 @@ import styles from "./page.module.scss"
 
 // components
 import { CategoryData } from "../vouchers/data/category-data"
-import VoucherCard from "@/components/voucher-card/voucher-card"
-import { nameToUrl } from "@/common/utils/stringUtils"
-import { CTASection } from "@/components"
-import SliderComponent from "@/components/sliderComponent/sliderComponent"
+import VoucherCard from "@/src/components/voucher-card/voucher-card"
+import { nameToUrl } from "@/src/common/utils/stringUtils"
+import { CTASection } from "@/src/components"
+import SliderComponent from "@/src/components/slider-component"
 import VoucherFaqComponent from "./voucher-faq"
-import VoucherFaqSection from "@/components/voucherFaq/voucherFaqSection"
+import VoucherFaqSection from "@/src/components/voucher-faq"
 import NotFound from "../not-found"
 
 // helpers
