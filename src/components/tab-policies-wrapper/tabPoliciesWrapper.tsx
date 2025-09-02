@@ -13,7 +13,7 @@ interface Card {
   description: string
   titleHtml: string
   cardImage: string | StaticImageData
-  buttonUrl: string
+  buttonUrl?: string
 }
 
 interface TabPoliciesWrapperProps {

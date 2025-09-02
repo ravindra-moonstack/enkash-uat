@@ -73,7 +73,7 @@ const CustomerOnboarding = () => {
 
                       <p>
                         These terms including annexures and links herein, apply
-                        to your use of
+                        to your use of{" "}
                         <Link href={`${process.env.URL}/`} target="_blank">
                           www.EnKash.com
                         </Link>
@@ -1313,6 +1313,7 @@ const CustomerOnboarding = () => {
               </div>
             </div>
           </div>
+          <p className="text-center">***** END OF POLICY *****</p>
         </div>
       </div>
     </>

@@ -148,6 +148,7 @@ const Faq = () => {
               </div>
             </div>
           </div>
+          <p className="text-center">***** END OF POLICY *****</p>
         </div>
       </div>
     </>

@@ -179,7 +179,7 @@ const SalesForm: React.FC = () => {
             <CategoryWithOther
               name="Dropdown5"
               options={options}
-              placeholder="Select how you heard about us*"
+              placeholder="How you heard about us"
               onChange={(data) => {
                 setFieldValue("Dropdown5", data)
               }}
@@ -206,7 +206,7 @@ const SalesForm: React.FC = () => {
         </div>
 
         <p className={"privacy"}>
-          By submitting this form, you are agreeing to our
+          By submitting this form, you are agreeing to our{" "}
           <Link href="/privacy-policy" className={"privacyLink"}>
             privacy policy
           </Link>
