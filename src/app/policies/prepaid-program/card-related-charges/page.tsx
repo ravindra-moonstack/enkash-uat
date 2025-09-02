@@ -17,7 +17,7 @@ const CardRelatedCharges = () => {
   return (
     <>
       <div className={styles.parent_container}>
-        <div className="max-w-auto  position-relative no-pointer">
+        <div className="max-w-auto  position-relative ">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[

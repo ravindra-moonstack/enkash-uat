@@ -50,6 +50,15 @@
         }
       }
     }
+    ul {
+      li {
+        cursor: pointer;
+        :hover {
+          text-decoration: underline;
+          color: black;
+        }
+      }
+    }
   }
   .tabBar {
     margin-bottom: 20px;
