@@ -19,7 +19,7 @@ import {
   FeatureCard,
   FaqSection,
   CardStacking,
-} from "@/components"
+} from "@/src/components"
 import {
   groupIcon,
   paymentSummary,
@@ -28,8 +28,8 @@ import {
   realTimeIcon,
 } from "."
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "UPI Payments: Fast, Secure, and Instant Online Payment",
@@ -180,7 +180,6 @@ const UpiPayments = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
@@ -199,7 +198,6 @@ const UpiPayments = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -221,7 +219,6 @@ const UpiPayments = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -243,7 +240,6 @@ const UpiPayments = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -277,8 +273,9 @@ const UpiPayments = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
-                  }`}
+                className={` mt-md-5 ${
+                  showScroll ? "overflow-auto scrollbar-thin" : ""
+                }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",

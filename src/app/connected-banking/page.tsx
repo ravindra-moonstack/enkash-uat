@@ -11,7 +11,7 @@ import {
   AllInOnePolicy,
   FeatureCard,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 
 import {
   blueArrow,
@@ -21,10 +21,10 @@ import {
   mealCardImage,
 } from "."
 
-import BankLogoSlider from "@/components/banking-slider/banking-slider"
+import BankLogoSlider from "@/src/components/banking-slider/banking-slider"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Connected Banking: For Faster Payouts",
@@ -119,7 +119,7 @@ const ConnectedBanking = (): React.JSX.Element => {
                         theme="blue"
                         url={salesUrl}
                       />
-                    </div> 
+                    </div>
                   </div>
                 </div>
               </div>

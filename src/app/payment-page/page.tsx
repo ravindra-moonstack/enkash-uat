@@ -1,6 +1,12 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicyData, allProductSections, cardsData, managementCardData, stackcardData } from "./data"
+import {
+  allInOnePolicyData,
+  allProductSections,
+  cardsData,
+  managementCardData,
+  stackcardData,
+} from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -13,7 +19,7 @@ import {
   AllProducts,
   FaqSection,
   CardStacking,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -23,9 +29,9 @@ import {
   activationIcon,
   realTimeIcon,
 } from "."
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Page: Create Custom Branded Checkout Pages",
@@ -177,7 +183,6 @@ const PaymentPage = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-
             <div className={` ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
                 <DynamicHeading
@@ -192,7 +197,6 @@ const PaymentPage = (): React.JSX.Element => {
                 />
               </div>
               <div className={`py-2 text-center ${styles.innerCard}`}>
-
                 <DynamicHeading
                   content={[
                     {
@@ -210,7 +214,6 @@ const PaymentPage = (): React.JSX.Element => {
                 <Image src={activationIcon} alt="icon" />
               </div>
               <div className={`py-2 text-center ${styles.innerCard}`}>
-
                 <DynamicHeading
                   content={[
                     {
@@ -228,7 +231,6 @@ const PaymentPage = (): React.JSX.Element => {
                 <Image src={realTimeIcon} alt="icon" />
               </div>
               <div className={`py-2 text-center ${styles.innerCard}`}>
-
                 <DynamicHeading
                   content={[
                     {
@@ -262,8 +264,9 @@ const PaymentPage = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
-                  }`}
+                className={` mt-md-5 ${
+                  showScroll ? "overflow-auto scrollbar-thin" : ""
+                }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",

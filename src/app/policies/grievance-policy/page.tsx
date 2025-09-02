@@ -1,8 +1,8 @@
 import { payment, prepaid, platform } from "."
-import { DynamicHeading, TabPoliciesWrapper } from "@/components"
+import { DynamicHeading, TabPoliciesWrapper } from "@/src/components"
 import React from "react"
 import styles from "./page.module.scss"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 export const metadata: Metadata = generateMetaData({
   title: "Grievance and Redressal Policy: EnKash",
@@ -29,7 +29,6 @@ const cards = [
       "Resolve prepaid card disputes promptly with our transparent escalation process.",
     titleHtml: "Prepaid Program",
     cardImage: prepaid,
-    buttonUrl: "/policies/prepaid-program/grievance-policy",
   },
   {
     key: "platform",
@@ -50,7 +49,8 @@ const GrievancePolicy = () => {
             <DynamicHeading
               content={[
                 {
-                  title: "Select from the below to read the grievance policy",
+                  title:
+                    "Select from the below to read the Grievance and Redressal policy",
                   color: "color-equity-blue",
                 },
               ]}

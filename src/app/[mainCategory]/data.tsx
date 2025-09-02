@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image"
-import { Slide } from "@/components/sliderComponent/sliderComponent"
+import { Slide } from "@/src/components/slider-component"
 
 import amazonePrime from "./img/e-commerce/amazon-prime.webp"
 

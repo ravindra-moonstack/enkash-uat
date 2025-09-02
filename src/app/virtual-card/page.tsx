@@ -19,7 +19,7 @@ import {
   AllProducts,
   FaqSection,
   StepsSection,
-} from "@/components"
+} from "@/src/components"
 
 import {
   blueArrow,
@@ -30,9 +30,9 @@ import {
 } from "."
 
 import faqData from "./faq-data"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Virtual Corporate Card for Secure and Instant Payments",
@@ -119,7 +119,7 @@ const VirtualCards = (): React.JSX.Element => {
                 className=" mb-3"
               />
             </div>
-            <div className={styles.button_wrapper}>
+            <div className={`${styles.button_wrapper} justify-content-center d-flex`}>
               <RectangleButton
                 title="Get Started"
                 theme="blue"
@@ -130,7 +130,6 @@ const VirtualCards = (): React.JSX.Element => {
         </div>
         <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
-
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
         </div>
