@@ -499,7 +499,7 @@ const stackcardData = [
   {
     color: "#fff",
     icon: realTimeExpenseIcon,
-    title: "content missing!!",
+    title: "Track Every Transaction",
     description: `e-NACH keeps track of all recurring payments helping save big on penalties and lapsing of services.`,
     image: realTimeExpense,
     buttonUrl: "/sales/?source=expense_management",
@@ -507,7 +507,7 @@ const stackcardData = [
   {
     color: "#eee",
     icon: fraudProtectionIcon,
-    title: "Heading 1",
+    title: "Schedule As Convenient",
     description: `e-NACH gives the choice to schedule payment as per convenience for recurring payments.`,
     image: fraudProtection,
     buttonUrl: "/sales",
@@ -515,7 +515,7 @@ const stackcardData = [
   {
     color: "#fff",
     icon: streamlinedReimbursementIcon,
-    title: "Heading 1",
+    title: "Secure Transaction",
     description: `e-NACH transactions are digitally authorized and encrypted, helping reduce the risk of data breaches.`,
     image: streamlinedReimbursement,
     buttonUrl: "/sales/?source=expense_management",
