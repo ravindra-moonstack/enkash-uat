@@ -1,5 +1,4 @@
-import { FAQProps } from "../../../components/faq-new/faq"
-
+import { FAQProps } from "../../components/faq-new/faq"
 
 // ✅ Create a type that excludes `index` & `answerVisible` & `onToggleAnswerVisibility`
 type FAQDataItem = Omit<
@@ -95,7 +94,6 @@ const faqData: FAQDataItem[] = [
       },
     ],
   },
-
 ]
 
 export default faqData

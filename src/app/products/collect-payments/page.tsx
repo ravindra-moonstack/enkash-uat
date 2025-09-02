@@ -11,7 +11,7 @@ import {
   PolicyCard,
   FaqSection,
   LottieDynamicLoadComponent,
-} from "@/components"
+} from "@/src/components"
 import {
   instantSettelmentIcon,
   instantSettelmentImg,
@@ -19,12 +19,12 @@ import {
   affordabilityIcon,
 } from "."
 
-import CommonButton from "@/components/buttons/index"
+import CommonButton from "@/src/components/buttons/index"
 
 import faqData from "./faq-data"
-import generateMetaData from "@/common/utils/metaData"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Simplify Online Payment Collections with EnKash",
@@ -333,13 +333,12 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            
             <CommonButton
-                  title="Explore Our Solutions "
-                  theme="outline-blue"
-                  url={salesUrl}
-                  arrow
-                />
+              title="Explore Our Solutions "
+              theme="outline-blue"
+              url={salesUrl}
+              arrow
+            />
           </div>
         </div>
       </div>

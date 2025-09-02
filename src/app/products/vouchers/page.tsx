@@ -9,10 +9,10 @@ import {
   AllInOnePolicy,
   EnkashWay,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import { paymentSummary } from "."
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 import { allInOnePolicyData, categoriesData } from "./data"
 
@@ -112,7 +112,6 @@ const Vouchers = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-
             <div className={` d-flex flex-column text-center ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
                 <DynamicHeading
@@ -129,7 +128,6 @@ const Vouchers = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column text-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -158,7 +156,6 @@ const Vouchers = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column text-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -187,7 +184,6 @@ const Vouchers = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column text-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {

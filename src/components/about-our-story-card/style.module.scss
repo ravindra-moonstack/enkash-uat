@@ -1,0 +1,15 @@
+@use "@/src/styles/mixin" as *;
+
+.AboutOurStoryCard {
+  text-align: start;
+  color: #000;
+  @include for-laptops {
+    padding: 0 30px;
+  }
+  .content {
+    p {
+      color: #2b2b2b;
+      line-height: 28px;
+    }
+  }
+}

@@ -10,7 +10,7 @@ import {
   AllInOnePolicy,
   ScrollableCardsSection,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -18,8 +18,8 @@ import {
   whiteArrow,
   mealCardImage,
 } from "."
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
-import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/common/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({

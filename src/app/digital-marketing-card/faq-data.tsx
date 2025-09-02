@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { FAQProps } from "../../../components/faq-new/faq"
+import { FAQProps } from "../../components/faq-new/faq"
 
 // ✅ Create a type that excludes `index` & `answerVisible` & `onToggleAnswerVisibility`
 type FAQDataItem = Omit<
@@ -14,7 +14,6 @@ const faqData: FAQDataItem[] = [
     answer: [],
     answerHTML: (
       <div>
-
         Digital marketing promotes products or services using digital channels
         like search engines, social media, email, and websites. Digital
         marketing cards serve as financial control tools in this landscape,
@@ -26,10 +25,8 @@ const faqData: FAQDataItem[] = [
         >
           digital marketing expenses
         </Link>
-        efficiently in a centralized place, simplifying financial oversight
-        and offering a comprehensive view of their digital marketing
-        activities.
-
+        efficiently in a centralized place, simplifying financial oversight and
+        offering a comprehensive view of their digital marketing activities.
       </div>
     ),
   },

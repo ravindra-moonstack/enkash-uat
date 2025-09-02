@@ -1,16 +1,15 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
-import generateMetaData from "@/common/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/components"
+import generateMetaData from "@/src/common/utils/metaData"
+import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Platform Customer Onboarding Policy",
   description:
     "Understand our verification steps for a smooth start on the EnKash platform.",
   alternates: {
-    canonical:
-      `${process.env.URL}/policies/prepaid-program/customer-onboarding`,
+    canonical: `${process.env.URL}/policies/prepaid-program/customer-onboarding`,
   },
 })
 

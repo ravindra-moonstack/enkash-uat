@@ -1,5 +1,5 @@
-@use "/styles/variables" as *;
-@use "/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
 
 .first_row {
   background-repeat: no-repeat;
@@ -8,9 +8,8 @@
   background-color: #ffffff;
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 100px 20px 0px 20px;
-   background-image: url(/images/collectPaymentBg.webp);
+  background-image: url(/images/collectPaymentBg.webp);
   @include for-laptops {
-
     padding: 112px 70px 0px 70px;
   }
   .lottie_container {
@@ -25,7 +24,7 @@
       }
     }
   }
-  .logoSlider{
+  .logoSlider {
     margin-top: 63px;
   }
 }
@@ -35,9 +34,9 @@
   padding-top: 0px;
   @include for-laptops {
     padding: 90px 20px;
-      padding-top: 0px;
+    padding-top: 0px;
   }
- 
+
   .section {
     padding: 50px 8px;
     background-color: $color-sky-hint;
@@ -64,13 +63,13 @@
   padding: 0 0px;
   padding-top: 0px;
   @include for-laptops {
-  padding: 0 0px;
+    padding: 0 0px;
   }
 }
 
-.sales_form{
+.sales_form {
   padding: 0px 20px 50px 20px;
-   @include for-laptops {
+  @include for-laptops {
     padding: 90px 20px;
   }
 }

@@ -17,12 +17,12 @@ import {
   PartnershipSection,
   BottomCtaSection,
   FaqSection,
-} from "@/components"
+} from "@/src/components"
 import { containerScreen, participantBg } from "."
-import { blueArrow } from "@/components/all-in-one-policy"
-import generateMetaData from "@/common/utils/metaData"
+import { blueArrow } from "@/src/components/all-in-one-policy"
+import generateMetaData from "@/src/common/utils/metaData"
 
-import BankAffiliatePartnershipForm from "@/components/bankAffiliatePartnershipForm"
+import BankAffiliatePartnershipForm from "@/src/components/bankAffiliatePartnershipForm"
 
 export const metadata: Metadata = generateMetaData({
   title: " Join EnKash Bharat Connect Partnership Program",
