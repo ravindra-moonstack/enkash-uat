@@ -101,7 +101,7 @@ const CorporateCards = (): React.JSX.Element => {
                   />
                 </div>
 
-                <div className="mt-3 pointer-auto">
+                <div className={`justify-content-center d-flex mt-3 pointer-auto`}>
                   <RectangleButton
                     title="Talk to Us"
                     theme="blue"
@@ -557,7 +557,7 @@ const CorporateCards = (): React.JSX.Element => {
                   className="f-4 mb-0"
                 />
               </div>
-              <div className="pt-4">
+              <div className="pt-4  justify-content-center d-flex">
                 <RectangleButton
                   title={"Explore Our Expense Management Suite"}
                   theme="blue"
