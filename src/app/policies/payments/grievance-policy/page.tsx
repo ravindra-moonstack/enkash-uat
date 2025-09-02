@@ -17,7 +17,7 @@ const grievancePolicy = () => {
   return (
     <>
       <div className={styles.parent_container}>
-        <div className="max-w-auto  position-relative no-pointer">
+        <div className="max-w-auto  position-relative">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
@@ -28,7 +28,7 @@ const grievancePolicy = () => {
                   url: "/policies/payments",
                 },
                 {
-                  name: " Grievance and Redressal policy",
+                  name: "Grievance and Redressal policy",
                   url: "/policies/payments/grievance-policy",
                 },
               ]}
