@@ -7,12 +7,13 @@ import styles from "./page.module.scss"
 
 // components
 import {
+  ContactForm,
   DynamicHeading,
   LocationCard,
   LogoSlider,
   TestimonialSlider,
 } from "@/src/components"
-import ContactForm from "@/src/components/contact-form"
+
 
 // helpers
 import { location, logo } from "."

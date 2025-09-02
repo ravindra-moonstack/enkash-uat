@@ -141,6 +141,7 @@ const ProductsSection = dynamic(() => import("./our-products-section/index"), {
 })
 
 const SalesForm = dynamic(() => import("./forms/sales-form"), { ssr: true })
+
 const OurStoryCard = dynamic(() => import("./about-our-story-card"), {
   ssr: true,
 })
@@ -241,6 +242,14 @@ const PartnerSection = dynamic(() => import("./partner-section-data"), {
   ssr: true,
 })
 
+const SupportForm = dynamic(() => import("../components/forms/support-form"), {
+  ssr: true,
+})
+
+const ContactForm = dynamic(() => import("../components/forms/contact-form"), {
+  ssr: true,
+})
+
 export {
   Header,
   Footer,
@@ -303,4 +312,6 @@ export {
   BuiltforBuildersSection,
   UtilityBillPayments,
   PartnerSection,
+  SupportForm,
+  ContactForm,
 }
