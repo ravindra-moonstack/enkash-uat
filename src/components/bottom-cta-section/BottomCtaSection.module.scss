@@ -1,5 +1,5 @@
-
 @use "../../styles/mixin" as *;
+
 .bottomCtaSection {
   .getStartedBox {
     background-image: url("./img/banner.webp");
@@ -8,23 +8,24 @@
     background-repeat: no-repeat;
     padding: 50px 20px;
     border-radius: 10px;
-    @include for-laptops{
+
+    @include for-laptops {
       padding: 50px;
     }
 
     .getStartedBoxInner {
-      background: linear-gradient(
-        -90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 1) 70%
-      );
+      background: linear-gradient(-90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 70%);
       padding: 20px 20px 30px;
       border-radius: 10px;
       max-width: 700px;
-       @include for-laptops{
-      padding: 50px;
+
+      @include for-laptops {
+        padding: 50px;
+      }
     }
-    }
+
     .content {
       :global(p)::before {
         content: "";
@@ -37,19 +38,33 @@
       }
     }
   }
-  .buttons{
+
+  .buttons {
     padding-top: 20px;
-    .ctaButton{
-        background: #fff;
-        padding: 10px 20px;
-        border-radius: 8px;
-        color:#1C5AF4;
-        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
-        text-decoration: none;
-        font-weight: bold;
-        svg{
-            margin-left: 8px;
+
+    .ctaButton {
+      background: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #1C5AF4;
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+
+
+      svg {
+        margin-left: 8px;
+      }
+
+      &:hover {
+        background: #1C5AF4;
+        color: #fff;
+
+        svg {
+          color: #fff;
         }
+      }
     }
   }
 }
