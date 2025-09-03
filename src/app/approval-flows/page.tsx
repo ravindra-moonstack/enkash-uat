@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
 import {
   cardData,
@@ -21,7 +23,6 @@ import {
 import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Approval System: Streamline & Automate Approvals",
@@ -31,6 +32,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/approval-flows/`,
   },
 })
+
 const salesUrl = getSalesUrl("/approval-flows")
 const cards = stackcardData.map((item, index) => ({
   color: item.color,
@@ -47,7 +49,10 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const ApprovalFlows = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>

@@ -11,6 +11,7 @@ const dataSets = [
       "Issue cards instantly and refill balances as needed without delays. This feature ensures employees have continuous access to meal benefits without interruptions, improving their overall experience and satisfaction.",
   },
 ]
+
 const bankSolutions = [
   {
     title: "Startups & Founders",
@@ -38,6 +39,7 @@ const bankSolutions = [
       "Amplify your benefits by becoming an affiliate. Refer other businesses in your network and earn while enabling them to experience the same control, efficiency, and growth you do.",
   },
 ]
+
 const slideData = [
   {
     id: 1,
@@ -68,6 +70,7 @@ const slideData = [
       "Stay in control with transparent, real-time dashboards that let you monitor clicks, conversions, and commissions at a glance. Easily track your referral performance, optimise campaigns, and get paid without delays.",
   },
 ]
+
 const stepsData = [
   {
     stepNumber: "Step 1",
@@ -102,6 +105,7 @@ const BankSolutionHeading = {
   headingTag: "h2",
   className: "f-6 mb-3 mb-md-3",
 }
+
 export {
   dataSets,
   imaCard,
