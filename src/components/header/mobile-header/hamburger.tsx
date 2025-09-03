@@ -36,12 +36,12 @@ const Hamburger = ({
             />
           </Link>
           <div className="d-flex gap-2">
-            <div className={`${styles.mobile_right_icon}`}>
+            <div title="Support" className={`${styles.mobile_right_icon}`}>
               <Link href="tel:8530490475">
                 <Image src={callIcon} alt="call  icon" />
               </Link>
             </div>
-            <div className={`${styles.mobile_right_icon}`}>
+            <div title="Menu" className={`${styles.mobile_right_icon}`}>
               <Image
                 src={hamnburgerIcon}
                 alt="hamburger menu icon"
