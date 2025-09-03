@@ -35,7 +35,7 @@
 
 .BuiltforBuildersSection {
   background-image: url("./img/BuiltforBuildersMobile.webp");
-  // background-color: #fff;
+  // background-color: $color-white;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,7 +51,7 @@
   .customButtons {
     a {
       text-decoration: none;
-      color: #1c5af4;
+      color: $color-equity-blue;
       display: inline-block;
       margin-top: 20px;
 

@@ -1,5 +1,5 @@
-@use "../../../styles/mixin" as *;
-@use "../../../styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .container {
   // padding: 10px;
@@ -41,10 +41,12 @@
   line-height: 30px;
   font-weight: 600;
   color: $color-indi-volt;
+
   @include for-window-zoomed-screens {
     font-size: 18px;
     line-height: 27px;
   }
+
   sup {
     font-size: 10px;
   }
@@ -66,11 +68,9 @@
 .box_shadow_left {
   height: 100%;
   width: 20px;
-  background: radial-gradient(
-    70% 401.51% at -38.04% 47.74%,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: radial-gradient(70% 401.51% at -38.04% 47.74%,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0) 100%);
 }
 
 .resource_modal_blog_title {
@@ -91,6 +91,7 @@
 
 .resource_arrow_icon {
   cursor: pointer;
+
   img {
     width: 40px;
     transition: width 0.3s ease-in-out;
@@ -110,6 +111,7 @@
 
 .resource_latest_read_container {
   cursor: pointer;
+
   img {
     width: 60px;
     transition: width 0.3s ease-in-out;
@@ -176,6 +178,7 @@
     position: absolute;
     font-weight: 500;
     display: block;
+
     h4 {
       font-size: 12px;
     }

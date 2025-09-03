@@ -1,16 +1,22 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
 .makePaymentsBoxOuterBox {
-  background: #fff;
+  background: $color-white;
   border-radius: 10px;
 
   position: relative;
   height: 100%;
+
   .makePaymentsBoxLinks {
     text-decoration: none;
     padding: 30px;
     display: block;
+
     .headings {
       position: relative;
     }
+
     .headings::before {
       content: "";
       position: absolute;
@@ -18,12 +24,14 @@
       top: 0;
       width: 2px;
       height: 100%;
-      background-color: #00bf9e;
+      background-color: $color-electric-green;
     }
+
     :global(p) {
       line-height: 160%;
       max-width: 288px;
     }
+
     &:hover {
       box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.25);
       border-radius: 10px;

@@ -1,16 +1,8 @@
 import imaCard from "./img/containerScreen.webp"
 import ItemIcon from "./img/itemIcon.svg"
+import { coBrandImage, GalaxyTabImage } from "."
+import { blueArrow } from "../home"
 
-const dataSets = [
-  {
-    // iconSrc: iconOne,
-    // imageSrc: autoCollect,
-    altText: "Auto Collect ",
-    title: "Instant Issuance & Reload",
-    subtitle:
-      "Issue cards instantly and refill balances as needed without delays. This feature ensures employees have continuous access to meal benefits without interruptions, improving their overall experience and satisfaction.",
-  },
-]
 const bankSolutions = [
   {
     title: "Startups & Founders",
@@ -38,6 +30,7 @@ const bankSolutions = [
       "Amplify your benefits by becoming an affiliate. Refer other businesses in your network and earn while enabling them to experience the same control, efficiency, and growth you do.",
   },
 ]
+
 const slideData = [
   {
     id: 1,
@@ -68,6 +61,7 @@ const slideData = [
       "Stay in control with transparent, real-time dashboards that let you monitor clicks, conversions, and commissions at a glance. Easily track your referral performance, optimise campaigns, and get paid without delays.",
   },
 ]
+
 const stepsData = [
   {
     stepNumber: "Step 1",
@@ -102,12 +96,40 @@ const BankSolutionHeading = {
   headingTag: "h2",
   className: "f-6 mb-3 mb-md-3",
 }
+const productsData = [
+  {
+    id: 1,
+    title: "Co-branded Products",
+    description:
+      "EnKash Co-branded Cards and Virtual Wallets empower businesses with smart, scalable, and fully controlled spending solutions. Our cards offer real-time visibility, customizable limits, and seamless integration with your finance workflows. Simplify your financial operations and gain full control without compromising on flexibility or speed.",
+    image: coBrandImage.src,
+    alt: "Co-branded Products Illustration",
+    button: {
+      connectText: "Explore Corporate Cards",
+      connectUrl: "/products/corporate-cards",
+      blueArrow: blueArrow.src,
+    },
+  },
+  {
+    id: 2,
+    title: "Payment Gateway",
+    description:
+      "EnKash Payment Gateway is an advanced solution designed specifically for Indian SMBs and startups. It empowers businesses of all sizes to accept payments seamlessly, securely, and at scale, giving them a fair chance to compete in a rapidly growing digital economy.",
+    image: GalaxyTabImage.src,
+    alt: "Payment Gateway Dashboard",
+    button: {
+      connectUrl: "/payment-gateway",
+      connectText: "Explore Payment Gateway",
+      blueArrow: blueArrow.src,
+    },
+  },
+]
 export {
-  dataSets,
   imaCard,
   bankSolutions,
   slideData,
   headingData,
   stepsData,
   BankSolutionHeading,
+  productsData,
 }

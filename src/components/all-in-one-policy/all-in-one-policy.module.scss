@@ -3,7 +3,7 @@
 
 .card_body {
   height: 100%;
-  background: linear-gradient(180deg, #353535 0%, #000000 100%);
+  background: linear-gradient(180deg, #353535 0%, $color-black 100%);
 
   border-radius: 20px;
   border: 2px solid $color-pale-aqua;
@@ -14,6 +14,7 @@
   white-space: normal;
   transition: all 0.3s ease;
   cursor: pointer;
+
   &:hover {
     transform: scale(1.02);
     transition: all 0.4s ease;
@@ -44,6 +45,7 @@
 .action_container {
   position: absolute;
   cursor: pointer;
+
   // bottom: 30px;
   @include for-laptops {
     // bottom: 50px;
@@ -61,16 +63,19 @@
 .description {
   font-size: 10px;
   font-weight: 500;
-  color: #ffffff;
+  color: $color-white;
   line-height: 16px;
+
   span {
     font-weight: 700;
   }
+
   @include for-laptops {
     font-size: 18px;
     line-height: 28px;
   }
 }
+
 .card_image {
   max-width: 100%;
   object-fit: contain;
@@ -92,14 +97,17 @@
 .titleHtml {
   font-size: 16px;
   font-weight: 600;
+
   @include for-laptops {
     font-size: 28px;
   }
 }
+
 .list_button {
   margin-top: 24px;
   margin-bottom: 24px;
   padding-left: 40px;
+
   @include for-laptops {
     margin-left: 66px;
     padding-left: 0;
@@ -109,18 +117,22 @@
 
 .policyCard {
   gap: 7px;
+
   @include for-laptops {
     gap: 20px;
   }
+
   Img {
     width: 32px;
     height: 32px;
+
     @include for-laptops {
       width: 46px;
       height: 46px;
     }
   }
 }
+
 .maxHeight {
   max-height: clamp(200px, 40vh, 500px);
 }

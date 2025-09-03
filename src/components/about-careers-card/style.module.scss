@@ -1,18 +1,22 @@
 @use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .AboutCareersCard {
   text-align: start;
   color: #000;
+
   @include for-laptops {
     padding: 0 30px;
   }
+
   .subTitle {
     margin: 10px 0;
     font-weight: 500;
   }
+
   .content {
     p {
-      color: #2b2b2b;
+      color: $color-grey-200;
       line-height: 28px;
     }
   }

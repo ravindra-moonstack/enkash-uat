@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 import styles from "./voucher-page.module.scss"
 import { Voucher } from "@/src/app/vouchers/data/voucher-data"
-import { nameToUrl } from "@/src/common/utils/stringUtils"
+import { nameToUrl } from "@/src/utils/stringUtils"
 
 interface VoucherCardProps {
   voucher: Voucher

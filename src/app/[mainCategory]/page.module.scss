@@ -3,12 +3,13 @@
 
 .first_row {
   .voucher_card {
-    background-color: #ffffff;
+    background-color: $color-white;
     margin-top: -38px;
-    box-shadow: 0px -46px 100px 65px #fff;
+    box-shadow: 0px -46px 100px 65px $color-white;
     z-index: 2;
     position: relative;
     padding: 50px 20px;
+
     @include for-laptops {
       margin-top: -118px;
     }
@@ -21,13 +22,16 @@
   position: relative;
   margin-top: 50px;
   padding: 20px;
+
   @include for-laptops {
     padding: 58px;
   }
+
   .get_started_button {
     padding: 6px;
     border: 2px solid $color-bolt-green;
     border-radius: 12px;
+
     @include for-laptops {
       padding: 11px 14px;
     }
@@ -40,6 +44,7 @@
   display: flex;
   text-align: center;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
@@ -49,6 +54,7 @@
       position: absolute;
       bottom: 0;
       display: none;
+
       @include for-laptops {
         display: flex;
       }
@@ -57,6 +63,7 @@
 
   .faqData {
     width: 100%;
+
     @include for-laptops {
       width: 70%;
     }

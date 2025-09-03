@@ -10,10 +10,6 @@ export { default as stepCardImgOne } from "./img/stepCardImgOne.webp"
 export { default as stepCardImgTwo } from "./img/stepCardImgTwo.webp"
 export { default as stepCardImgThree } from "./img/stepCardImgThree.webp"
 
-
-
-
-
 export { default as realTimeExpense } from "./img/real-time-expense.webp"
 export { default as fraudProtection } from "./img/fraud-protection.webp"
 export { default as streamlinedReimbursement } from "./img/streamlined-reimbursement.webp"
@@ -25,4 +21,3 @@ export { default as fraudProtectionIcon } from "./img/fraud-protection-icon.svg"
 export { default as streamlinedReimbursementIcon } from "./img/streamlined-reimbursement-icon.svg"
 export { default as costControlSavingsIcon } from "./img/cost-control-savings-icon.svg"
 export { default as wideAcceptanceNetworkIcon } from "./img/wide-acceptance-network-icon.svg"
-

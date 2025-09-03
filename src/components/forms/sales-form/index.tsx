@@ -79,6 +79,7 @@ const SalesForm: React.FC = () => {
               type="text"
               required
               placeholder="Name*"
+              autoComplete="name"
               {...getFieldProps("SingleLine")}
             />
             <ErrorText<TSalesInitialValueProp>
@@ -93,6 +94,7 @@ const SalesForm: React.FC = () => {
               type="email"
               required
               placeholder="Business Email ID*"
+              autoComplete="email"
               {...getFieldProps("Email")}
             />
             <ErrorText<TSalesInitialValueProp>
@@ -122,6 +124,7 @@ const SalesForm: React.FC = () => {
               required
               maxLength={13}
               placeholder="Contact No.*"
+              autoComplete="tel"
               id="international_PhoneNumber_countrycode"
               {...getFieldProps("PhoneNumber_countrycode")}
             />

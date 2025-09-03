@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+
 import {
   allInOnePolicies,
   cardsData,
@@ -28,9 +31,8 @@ import {
   hundredPercentIcon,
   activationIcon,
 } from "."
-import generateMetaData from "@/src/common/utils/metaData"
-import { Metadata } from "next"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automatic Reconciliation: Simplify Payment Matching & Reporting",
@@ -40,9 +42,11 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/auto-reconciliationr/`,
   },
 })
+
 const salesUrl = getSalesUrl("/auto-reconciliation")
 
 const showScroll = cardsData.length > 3
+
 const cards = stackcardData.map((item, index) => ({
   color: item.color,
   content: (
@@ -58,7 +62,10 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const AutoReconciliation = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>

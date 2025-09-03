@@ -1,8 +1,12 @@
-@use "./../../styles/mixin" as * ;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+
 .EmployeeSliderOuter {
   overflow: hidden;
+
   .employeeSlide {
     padding: 0 20px;
+
     .employeeSlideImg {
       img {
         width: 100%;

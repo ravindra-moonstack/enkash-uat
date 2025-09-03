@@ -1,4 +1,6 @@
-const faqData = [
+import { FAQProps } from "@/src/types/faq"
+
+const faqData: FAQProps[] = [
   {
     question: "Who can partner with Bharat Connect?",
     answer: [
@@ -31,5 +33,6 @@ const faqData = [
       },
     ],
   },
-];
-export default faqData;
+]
+
+export default faqData

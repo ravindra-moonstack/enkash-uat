@@ -17,7 +17,7 @@ import { location, logo } from "."
 
 // helpers
 import { locationData } from "./data"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Support Center | Get Help with Products & Services",

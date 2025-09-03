@@ -35,7 +35,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
     try {
       setLoading(true)
 
-      const {} = await axios.post("/api/zoho", {
+      const { } = await axios.post("/api/zoho", {
         url: process.env.NEXT_PUBLIC_ZOHO_AFFILIATE_URL,
         data: values,
       })
@@ -58,6 +58,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
             <input
               type="text"
               required
+              autoComplete="name"
               placeholder="Name*"
               {...getFieldProps("SingleLine")}
             />
@@ -72,6 +73,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
             <input
               type="text"
               required
+              autoComplete="email"
               placeholder="Business Email ID*"
               {...getFieldProps("Email")}
             />
@@ -100,6 +102,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
             <input
               type="text"
               required
+              autoComplete="tel"
               placeholder="Contact No.*"
               {...getFieldProps("PhoneNumber_countrycode")}
             />

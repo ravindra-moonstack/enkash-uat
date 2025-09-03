@@ -1,5 +1,5 @@
-@use "../../../styles/mixin" as *;
-@use "../../../styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .container {
   // height: 470px;
@@ -122,7 +122,7 @@
   line-height: 150%;
   margin-top: 3px;
   letter-spacing: 0;
-  color: #a5a5a5;
+  color: $color-dark-grey;
 }
 
 .box_shadow_left {
@@ -274,7 +274,7 @@
 }
 
 .child_dropdown {
-  background: #fff;
+  background: $color-white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 12px;
@@ -311,5 +311,5 @@
 
 .underline {
   text-decoration: underline;
-  color: #a5a5a5;
+  color: $color-dark-grey;
 }

@@ -199,7 +199,7 @@ const WebHeader = ({}: props) => {
                 >
                   <Link
                     target="_blank"
-                    href={`${process.env.HOME_URL}?source=nav-bar`}
+                    href={`${process.env.NEXT_PUBLIC_HOME_URL}?source=nav-bar`}
                     aria-label="Login page"
                   >
                     <button
@@ -242,7 +242,7 @@ const WebHeader = ({}: props) => {
               </div>
             </div>
           </nav>
-        </div>  
+        </div>
       </header>
     </div>
   )

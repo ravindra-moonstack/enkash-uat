@@ -2,7 +2,7 @@ import { payment, prepaid, platform } from "."
 import { DynamicHeading, TabPoliciesWrapper } from "@/src/components"
 import React from "react"
 import styles from "./page.module.scss"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 export const metadata: Metadata = generateMetaData({
   title: "Grievance and Redressal Policy: EnKash",

@@ -41,7 +41,14 @@ const SingleSelect: React.FC<Props> = ({
   }, [])
 
   return (
-    <div ref={wrapperRef} className={styles.wrapper}>
+    <div
+      ref={wrapperRef}
+      tabIndex={0}
+      role="button"
+      aria-expanded={open}
+      aria-haspopup="listbox"
+      className={styles.wrapper}
+    >
       {/* Custom styled box */}
       <div className={styles.inputBox} onClick={() => setOpen((prev) => !prev)}>
         <div className={styles.inputContent}>
@@ -68,14 +75,14 @@ const SingleSelect: React.FC<Props> = ({
 
       {/* Dropdown */}
       {open && (
-        <div className={styles.dropdown}>
+        <div tabIndex={0} role="menu" className={styles.dropdown}>
           {options.map((opt) => (
             <div
               key={opt.value}
               className={styles.option}
               onClick={() => handleSelect(opt.value)}
             >
-              {opt.label}
+              <label htmlFor={opt.label}>{opt.label}</label>
             </div>
           ))}
         </div>

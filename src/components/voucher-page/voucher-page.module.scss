@@ -17,6 +17,7 @@
 
 .category_button {
   text-decoration: none;
+
   button {
     display: flex;
     justify-content: center;
@@ -69,6 +70,7 @@
     font-weight: 700;
     color: white;
     font-style: italic;
+
     strong {
       color: $color-bolt-green;
     }
@@ -86,7 +88,7 @@
     left: 50%;
     top: 170px;
     transform: translateX(-50%);
-    background: #1c5af4;
+    background: $color-equity-blue;
     padding: 5px 15px;
     color: white;
     border-radius: 5px;
@@ -101,6 +103,7 @@
     text-align: center;
     color: $color-bolt-title-grey;
     text-decoration: none;
+
     a {
       color: $color-bolt-title-grey;
       text-decoration: none;

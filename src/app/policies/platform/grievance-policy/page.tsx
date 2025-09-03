@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 
 export const metadata: Metadata = generateMetaData({
@@ -377,9 +377,9 @@ const grievancePolicy = () => {
                                     <span className="c27">
                                       <a
                                         className="c17"
-                                        href="mailto:support@enkash.com"
+                                        href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                                       >
-                                        support@enkash.com
+                                        {process.env.NEXT_PUBLIC_EMAIL}
                                       </a>
                                     </span>
                                   </li>

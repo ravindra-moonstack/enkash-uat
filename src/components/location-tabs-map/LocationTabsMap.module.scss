@@ -1,4 +1,5 @@
-@use "./../../styles/mixin" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .container {
   display: flex;
@@ -21,35 +22,38 @@
   cursor: pointer;
   transition: 0.2s;
   box-shadow: 0 0 55px 0 rgba(0, 0, 0, 0.11);
-  border: 1.5px solid #fff;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.33) 0%,
-    rgba(211, 238, 251, 1) 100%
-  );
-  background: #fff;
+  border: 1.5px solid $color-white;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.33) 0%,
+      rgba(211, 238, 251, 1) 100%);
+  background: $color-white;
+
   .tabTitle {
-    color: #2b2b2b;
+    color: $color-grey-200;
   }
+
   .tabSubtitle {
     color: #858585;
     font-style: italic;
   }
+
   &:hover {
-    border-color: #a5a5a5;
+    border-color: $color-dark-grey;
+
     svg {
       path {
-        fill: #1c5af4;
+        fill: $color-equity-blue;
       }
     }
   }
 }
 
 .active {
-  border-color: #a5a5a5;
+  border-color: $color-dark-grey;
+
   svg {
     path {
-      fill: #1c5af4;
+      fill: $color-equity-blue;
     }
   }
 }
@@ -72,13 +76,16 @@
 .mapWrapper {
   flex: 1;
   width: 100%;
-  @include for-laptops{
+
+  @include for-laptops {
 
     width: calc(64% - 10px);
   }
+
   iframe {
     height: 300px;
     border-radius: 12px;
+
     @include for-laptops {
       height: 450px;
     }
@@ -92,20 +99,25 @@
   gap: 20px;
   align-items: flex-start;
   flex-wrap: wrap;
+
   @include for-laptops {
-  flex-wrap: no;
+    flex-wrap: no;
   }
+
   .tabs {
     width: 100%;
     margin-bottom: 20px;
+
     @include for-laptops {
       margin: 0;
       width: calc(33% - 10px);
     }
+
     h2 {
       margin-bottom: 30px;
+
       span {
-        color: #5b5b5b;
+        color: $color-alternate-grey;
         font-weight: 400;
       }
     }

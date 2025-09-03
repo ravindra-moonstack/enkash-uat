@@ -2,7 +2,7 @@ import styles from "./not-found.module.scss"
 import Image from "next/image"
 import { DynamicHeading } from "@/src/components"
 import notFoundImg from "@/public/images/not-found.webp"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -96,7 +96,7 @@ export default function NotFound() {
                       {
                         title: "Explore Our Blogs",
                         color: "color-dim-grey ",
-                        link: `${process.env.URL}/resources/blog/`,
+                        link: `${process.env.URL}/resources/blogs/`,
                       },
                     ]}
                     headingTag="p"
