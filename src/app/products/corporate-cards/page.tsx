@@ -38,7 +38,6 @@ import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
   description:
@@ -99,34 +98,28 @@ const CorporateCards = (): React.JSX.Element => {
               />
             </div>
 
-                <div
-                  className={`justify-content-center d-flex mt-3 pointer-auto`}
-                >
-                  <RectangleButton
-                    title="Talk to Us"
-                    theme="blue"
-                    url={salesUrl}
-                  />
-                </div>
-              </div>
-              <div
-                className={`col-12 d-flex justify-content-center align-items-center no-pointer`}
-              >
-                <div className={styles.bannerImages}>
-                  <div className={styles.lottie_container}>
-                    <LottieDynamicLoadComponent
-                      animationName={"CorporateCardLottie"}
-                      loop={true}
-                    />
-                  </div>
-                </div>
+            <div className={`justify-content-center d-flex mt-3 pointer-auto`}>
+              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
+            </div>
+          </div>
+          <div
+            className={`col-12 d-flex justify-content-center align-items-center no-pointer`}
+          >
+            <div className={styles.bannerImages}>
+              <div className={styles.lottie_container}>
+                <LottieDynamicLoadComponent
+                  animationName={"CorporateCardLottie"}
+                  loop={true}
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <LogoSlider />
+      <div>
+        <LogoSlider />
+      </div>
 
       <div className={styles.second_row}>
         <div className="max-m-auto">
