@@ -5,6 +5,7 @@ import {
   BankSolutionHeading,
   bankSolutions,
   headingData,
+  productsData,
   slideData,
   stepsData,
 } from "./data"
@@ -18,7 +19,7 @@ import {
   BpHeroSection,
   BankAffiliatePartnershipForm,
 } from "@/src/components"
-import { coBrandImage, containerScreen, GalaxyTabImage, participantBg } from "."
+import {   containerScreen, participantBg } from "."
 import { blueArrow } from "@/src/components/all-in-one-policy"
 import ProductsSection from "@/src/components/our-products-section"
 import generateMetaData from "@/src/utils/metaData"
@@ -32,34 +33,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/affiliate-programs/`,
   },
 })
-const productsData = [
-  {
-    id: 1,
-    title: "Co-branded Products",
-    description:
-      "EnKash Co-branded Cards and Virtual Wallets empower businesses with smart, scalable, and fully controlled spending solutions. Our cards offer real-time visibility, customizable limits, and seamless integration with your finance workflows. Simplify your financial operations and gain full control without compromising on flexibility or speed.",
-    image: coBrandImage.src,
-    alt: "Co-branded Products Illustration",
-    button: {
-      connectText: "Explore Corporate Cards",
-      connectUrl: "/products/corporate-cards",
-      blueArrow: blueArrow.src,
-    },
-  },
-  {
-    id: 2,
-    title: "Payment Gateway",
-    description:
-      "EnKash Payment Gateway is an advanced solution designed specifically for Indian SMBs and startups. It empowers businesses of all sizes to accept payments seamlessly, securely, and at scale, giving them a fair chance to compete in a rapidly growing digital economy.",
-    image: GalaxyTabImage.src,
-    alt: "Payment Gateway Dashboard",
-    button: {
-      connectUrl: "/payment-gateway",
-      connectText: "Explore Payment Gateway",
-      blueArrow: blueArrow.src,
-    },
-  },
-]
+
 const partnershipsPage = (): React.JSX.Element => {
   return (
     <div className={`color-black`}>
