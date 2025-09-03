@@ -1,6 +1,8 @@
 import React from "react"
 import { Metadata } from "next"
+
 import styles from "./page.module.scss"
+
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -33,6 +35,8 @@ export const metadata: Metadata = generateMetaData({
 })
 
 const partnershipsPage = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white  `}>
       <BpHeroSection
@@ -124,4 +128,5 @@ const partnershipsPage = (): React.JSX.Element => {
     </div>
   )
 }
+
 export default partnershipsPage

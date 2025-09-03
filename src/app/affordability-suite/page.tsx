@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
 import { allInOnePolicyData, cardsData, managementCardsData } from "./data"
 import faqData from "./faq-data"
@@ -21,7 +23,6 @@ import {
 } from "."
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -32,9 +33,12 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}affordability-suite/`,
   },
 })
+
 const salesUrl = getSalesUrl("/affordability-suite")
 
 const Payroll = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>

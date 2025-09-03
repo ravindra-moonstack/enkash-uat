@@ -7,5 +7,5 @@ export interface FAQProps {
   }[]
   answerVisible?: boolean
   onToggleAnswerVisibility?: () => void
-  index: number
+  index?: number
 }

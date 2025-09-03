@@ -145,14 +145,14 @@ const FooterV2 = (): React.JSX.Element => {
                         </li>
                         <li>
                           <Link
-                            href="mailto:support@enkash.com"
+                            href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                             target="_blank"
                             rel="noreferrer noopener"
                             className={`${styles.support_text}`}
                           >
                             <FaEnvelope className={`${styles.callIcon}`} />
                             <span className={`${styles.support_text}`}>
-                              support@enkash.com
+                              {process.env.NEXT_PUBLIC_EMAIL}
                             </span>
                           </Link>
                         </li>
@@ -262,7 +262,7 @@ const FooterV2 = (): React.JSX.Element => {
                           </li>
                           <li>
                             <Link
-                              href="mailto:support@enkash.com"
+                              href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                               target="_blank"
                               rel="noreferrer noopener"
                               className={`ms-md-3 ms-2  ${styles.support_text}`}
@@ -271,7 +271,7 @@ const FooterV2 = (): React.JSX.Element => {
                               <span
                                 className={`ms-md-3 ms-2 ${styles.support_text}`}
                               >
-                                support@enkash.com
+                                {process.env.NEXT_PUBLIC_EMAIL}
                               </span>
                             </Link>
                           </li>

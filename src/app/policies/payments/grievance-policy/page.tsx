@@ -377,9 +377,9 @@ const grievancePolicy = () => {
                                     <span className="c27">
                                       <a
                                         className="c17"
-                                        href="mailto:support@enkash.com"
+                                        href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                                       >
-                                        support@enkash.com
+                                        {process.env.NEXT_PUBLIC_EMAIL}
                                       </a>
                                     </span>
                                   </li>
