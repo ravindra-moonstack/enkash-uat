@@ -1,5 +1,6 @@
-@use "./../../styles/variables" as *;
-@use "./../../styles/mixin" as *;
+@use "./@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .partnershipSlider {
     position: relative;
@@ -59,7 +60,7 @@
                     width: 8px;
                     height: 8px;
                     border-radius: 50%;
-                    background: #A5A5A5;
+                    background: $color-dark-grey;
                     border: none;
                     cursor: pointer;
                     transition: all 0.3s ease;
@@ -95,7 +96,7 @@
     .customButtons {
         a {
             text-decoration: none;
-            color: #1c5af4;
+            color: $color-equity-blue;
             display: inline-block;
             margin-top: 20px;
             font-weight: 500; // optional
@@ -132,7 +133,7 @@
 }
 
 .slideCard {
-    background: #FFFFFF;
+    background: $color-white;
     border-radius: 10px;
     padding: 34px 20px 30px 27px;
     width: 100%;
@@ -154,7 +155,7 @@
     img {
         width: 32px;
         height: 32px;
-        color: #1C5AF4;
+        color: $color-equity-blue;
         object-fit: cover;
     }
 }
@@ -169,7 +170,7 @@
 
 .slideDescription {
     font-size: 16px;
-    color: #2B2B2B;
+    color: $color-grey-200;
     line-height: 21.77px;
     flex: 1;
     font-weight: 400;
@@ -178,7 +179,7 @@
 .customButtons {
     a {
         text-decoration: none;
-        color: #1c5af4;
+        color: $color-equity-blue;
         display: inline-block;
         margin-top: 20px;
         font-weight: 500; // optional

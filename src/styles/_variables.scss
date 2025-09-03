@@ -23,12 +23,10 @@ $color-rainy-blue: #61d6ff;
 $color-white: #ffffff;
 $color-bluish-purple: #6173f7;
 $primary-gradient: linear-gradient(270deg, #1c5af4 14.05%, #0a0d33 83.93%);
-$secondry-gradient: linear-gradient(303.75deg, #61d6ff 20.29%, #0b0b28 103.31%);
-$light-gradient: linear-gradient(
-  270deg,
-  #30f37e -0.74%,
-  rgba(48, 243, 126, 0) 88.06%
-);
+$secondry-gradient: linear-gradient(303.75deg, $color-cyan-blue 20.29%, #0b0b28 103.31%);
+$light-gradient: linear-gradient(270deg,
+    #30f37e -0.74%,
+    rgba(48, 243, 126, 0) 88.06%);
 $color-bolt-light: #cfe2fd;
 $color-bolt-title-grey: #2e2e2e;
 $color-bolt-green: #70ff9b;

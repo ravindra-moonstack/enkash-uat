@@ -1,29 +1,36 @@
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+
 .coloctPaymentBoxInnerBox {
   // background: rgba(255, 255, 255, 0.8);
   border-radius: 16px;
   padding: 32px 10px 32px;
-  // border: 2px solid #fff;
-  :global(h5){
+
+  // border: 2px solid $color-white;
+  :global(h5) {
     position: relative;
-    &::after{
-       content: "";
-    width: 1px;
-    height: 100%;
-    margin-left: -16px;
-    position: absolute;
-    background: #1C5AF4;
-    left: 0;
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      margin-left: -16px;
+      position: absolute;
+      background: $color-equity-blue;
+      left: 0;
     }
   }
-  :global(p){
-    color:#ADBDCC !important;
+
+  :global(p) {
+    color: #ADBDCC !important;
   }
-  
+
   .coloctPaymentBoxInnerLink {
     text-decoration: none;
-    color: #fff;
+    color: $color-white;
   }
 }
+
 .coloctPaymentBoxInnerBox:hover {
   box-shadow: 0 0 44px 0 #00000055;
 }

@@ -9,13 +9,16 @@
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 100px 20px 0;
   background-image: url(/images/collectPaymentBg.webp);
+
   @include for-laptops {
     padding: 112px 20px 0;
   }
+
   .group_logo {
     max-width: 250px;
     width: 100%;
     height: auto;
+
     @include for-laptops {
       width: 366px;
       height: 62px;
@@ -32,10 +35,12 @@
       max-height: 500px;
     }
   }
+
   .right_img {
     Img {
       height: auto;
       padding-top: 32px;
+
       @include for-laptops {
         height: 625px;
         padding-top: 0px;
@@ -52,6 +57,7 @@
 
   .first_row_title {
     padding-top: 16px;
+
     @include for-laptops {
       padding-top: 48px;
       padding-bottom: 20px;
@@ -70,12 +76,14 @@
 }
 
 .second_row {
-  background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
+  background: linear-gradient(180deg, #1c5af4 0%, $color-cyan-blue 77%, #18187f 100%);
   position: relative;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
+
   .section {
     margin: auto;
     gap: 10px;
@@ -98,6 +106,7 @@
         img {
           height: 22px;
           width: 22px;
+
           @include for-laptops {
             height: 51px;
             width: 51px;
@@ -121,6 +130,7 @@
         width: 180px;
       }
     }
+
     @include for-laptops {
       gap: 65px;
       flex-wrap: wrap;
@@ -128,9 +138,11 @@
   }
 
   .inner-content {
-    background: $color-white; /* inner background */
+    background: $color-white;
+    /* inner background */
     padding: 11px 14px;
-    border-radius: 10px; /* slightly smaller radius */
+    border-radius: 10px;
+    /* slightly smaller radius */
   }
 }
 
@@ -145,9 +157,11 @@
   .section {
     margin-bottom: 50px;
   }
+
   .scrollCard {
     // margin-left: 10px;
     margin-bottom: 20px;
+
     @include for-laptops {
       margin-left: 20px;
       margin-bottom: 50px;
@@ -185,14 +199,18 @@
       display: block;
     }
   }
+
   img {
     height: auto;
+
     @include for-laptops {
       height: initial;
     }
   }
+
   .list_button {
     padding: 20px 40px 20px;
+
     @include for-laptops {
       padding: 20px 97px 20px;
     }
@@ -201,6 +219,7 @@
 
 .fourth_row {
   padding: 0px 20px 0px;
+
   @include for-laptops {
     padding: 0px 20px 0px;
   }
@@ -210,6 +229,7 @@
     padding: 50px 20px 20px;
 
     background-color: $color-sky-hint;
+
     @include for-laptops {
       gap: 50px;
       padding: 90px 100px 70px;
@@ -219,8 +239,8 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      @include for-laptops {
-      }
+
+      @include for-laptops {}
     }
   }
 }
@@ -231,9 +251,11 @@
   background-size: cover;
   position: relative;
   height: 100vh;
+
   @include for-laptops {
     padding: 32px;
   }
+
   // background-image: url(./img/enkashWayBg.svg);
 
   .blur_bg {
@@ -243,36 +265,41 @@
     width: 800px;
     height: 1150px;
   }
+
   .progress_bar {
     height: 4px;
     border-radius: 12px;
     padding-left: 50px;
     padding-right: 50px;
-    background: linear-gradient(
-      90deg,
-      $color-equity-blue 15%,
-      $color-black 30%
-    );
+    background: linear-gradient(90deg,
+        $color-equity-blue 15%,
+        $color-black 30%);
+
     @include for-laptops {
       height: 8px;
     }
   }
+
   .progress_items {
     margin-right: 30px;
+
     @include for-laptops {
       margin-right: 0;
     }
   }
+
   .progress_container {
     @include for-laptops {
       justify-content: space-evenly;
     }
   }
+
   .arrow {
     transform: rotate(90deg);
     height: 30px;
     width: 30px;
     margin-top: -10px;
+
     @include for-laptops {
       height: 50px;
       width: 50px;
@@ -287,13 +314,16 @@
   border-radius: 12px;
   position: relative;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 58px 20px;
   }
+
   .get_started_button {
     padding: 6px;
     border: 2px solid $color-bolt-green;
     border-radius: 12px;
+
     @include for-laptops {
       padding: 11px 14px;
     }
@@ -306,29 +336,35 @@
       padding-left: 150px;
       padding-right: 150px;
     }
+
     @include for-window-zoomed-screens {
       padding-left: 100px;
       padding-right: 100px;
     }
   }
+
   .left_row {
     padding: 40px;
     margin-top: -20px;
     border-radius: 10px;
     border: 2px solid $color-night-blue;
+
     @include for-laptops {
       padding: 40px;
       width: 50%;
       margin-top: 0px;
     }
   }
+
   .right_row {
     margin-top: -10px;
+
     @include for-laptops {
       margin-left: -20px;
       margin-top: 0;
       width: 50%;
     }
+
     img {
       height: 100%;
     }
@@ -358,6 +394,7 @@
       bottom: 0;
       display: none;
       pointer-events: none;
+
       @include for-laptops {
         display: block; // ✅ Changed from flex to block
         height: 37.5rem;
@@ -369,12 +406,14 @@
 .ninth_row {
   position: relative;
   padding: 20px;
+
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
     padding-left: 80px;
     padding-right: 80px;
   }
+
   h1 {
     font-size: 110px;
     color: black;
@@ -391,6 +430,7 @@
   text-align: center;
   padding: 0px 20px 16px;
   padding-top: 0px;
+
   @include for-laptops {
     padding: 0px 20px 46px;
   }
@@ -427,6 +467,7 @@
 
   position: relative;
   padding: 20px;
+
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -441,6 +482,7 @@
   display: flex;
   text-align: center;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
@@ -450,6 +492,7 @@
       position: absolute;
       bottom: 0;
       display: none;
+
       @include for-laptops {
         display: flex;
       }
@@ -458,6 +501,7 @@
 
   .faqData {
     width: 100%;
+
     @include for-laptops {
       width: 70%;
     }
@@ -467,6 +511,7 @@
 .other_products {
   background: $color-white;
   padding: 0 20px 50px;
+
   @include for-laptops {
     padding: 0px 20px 90px;
   }

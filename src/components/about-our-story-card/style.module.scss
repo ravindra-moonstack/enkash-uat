@@ -1,14 +1,17 @@
 @use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .AboutOurStoryCard {
   text-align: start;
   color: #000;
+
   @include for-laptops {
     padding: 0 30px;
   }
+
   .content {
     p {
-      color: #2b2b2b;
+      color: $color-grey-200;
       line-height: 28px;
     }
   }

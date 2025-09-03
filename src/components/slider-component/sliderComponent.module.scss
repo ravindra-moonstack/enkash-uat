@@ -1,28 +1,33 @@
-@use "../../styles/mixin" as *;
-@use "../../styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .sliderComponent {
   position: relative;
+
   .breadcrumb {
     z-index: 9;
 
     // position: absolute;
     top: 115px;
     left: 162px;
+
     .first_row_title {
       padding: 20px;
       text-align: center;
+
       @include for-laptops {
         padding: 48px 0px 20px;
         text-align: start;
       }
     }
   }
+
   .right_img {
     img {
       height: auto;
     }
   }
+
   :global(.slick-dots) {
     display: block;
     z-index: 999;
@@ -37,6 +42,7 @@
     background: $color-white;
     content: "-";
   }
+
   :global(.slick-dots li .slick-active) {
     width: 23px;
     height: 6px;
@@ -44,19 +50,23 @@
     background: $color-white;
     content: "-";
   }
+
   :global(.slick-slide) {
     margin: 0 !important;
   }
 }
+
 .voucherSlider {
   padding: 112px 20px 50px;
   position: relative;
   z-index: 1;
   min-height: 850px;
+
   @include for-laptops {
     padding: 112px 20px 120px;
     min-height: 750px;
   }
+
   // &:after{
   //   position: absolute;
   //   height: 100px;

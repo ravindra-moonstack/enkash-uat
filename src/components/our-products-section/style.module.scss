@@ -1,5 +1,6 @@
-@use "./../../styles/variables" as *;
-@use "./../../styles/mixin" as *;
+@use "./@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 
 .section {
@@ -20,7 +21,7 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 0 5px;
-    
+
     @include for-laptops {
         padding: 0 12px;
         max-width: 1000px;
@@ -48,7 +49,7 @@
 }
 
 .card {
-    background: #ffffff;
+    background: $color-white;
     border-radius: 8px;
     padding: 18px;
     box-shadow: 0px 0px 88px 0px #0000001A;
@@ -75,7 +76,8 @@
         height: 280px;
         margin-bottom: 32px;
     }
-    img{
+
+    img {
         width: auto;
         height: 100%;
     }
@@ -118,11 +120,11 @@
     top: 0;
     width: 2px;
     height: 25px;
-    background-color: #00BF9E;
+    background-color: $color-electric-green;
 }
 
 .cardTitle {
-    color: #2B2B2B;
+    color: $color-grey-200;
     font-family: Inter;
     font-size: 18px;
     font-weight: 500;
@@ -137,7 +139,7 @@
 
 .description {
     flex: 1;
-    color: #2B2B2B;
+    color: $color-grey-200;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -159,9 +161,9 @@
     .connectWithUs {
         a {
             box-shadow: 0px 4px 44px 0px #0000001F;
-            border: 2px solid #fff;
-            background-color: #fff;
-            color: #1C5AF4;
+            border: 2px solid $color-white;
+            background-color: $color-white;
+            color: $color-equity-blue;
             font-weight: 700;
             text-decoration: none;
             display: flex;

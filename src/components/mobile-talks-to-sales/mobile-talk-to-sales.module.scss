@@ -1,5 +1,5 @@
-@use "../../styles/mixin" as *;
-@use "../../styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .mobile_talk_sales {
   z-index: 999;
@@ -10,6 +10,7 @@
   padding: 8px 60px;
   display: flex;
   justify-content: center;
+
   button {
     display: flex;
     justify-content: center;

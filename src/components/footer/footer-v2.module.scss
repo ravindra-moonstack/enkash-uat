@@ -1,5 +1,5 @@
-@use "../../styles/mixin" as *;
-@use "../../styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .footer {
   z-index: 1;
@@ -20,7 +20,7 @@
     line-height: 16px;
     text-decoration: none;
     font-weight: 500;
-    color: #5b5b5b;
+    color: $color-alternate-grey;
     white-space: nowrap;
     letter-spacing: -0.5px;
 
@@ -31,7 +31,7 @@
   }
 
   .locations_row {
-    background: #fff;
+    background: $color-white;
     align-items: end;
     justify-content: end;
     border-bottom: 10px solid $color-equity-blue;
@@ -60,11 +60,11 @@
     }
 
     p {
-      color: #5b5b5b;
+      color: $color-alternate-grey;
       font-size: 10px;
       margin: 0;
       padding: 0 8px;
-      border-right: 2px solid #1c5af4;
+      border-right: 2px solid $color-equity-blue;
       padding-right: 8px;
 
       @include for-laptops {
@@ -81,7 +81,7 @@
     h4 {
       font-size: 18px;
       font-weight: 700;
-      color: #5b5b5b;
+      color: $color-alternate-grey;
     }
 
     .footer_location_p {
@@ -161,12 +161,12 @@
   a {
     &:hover {
       @include for-laptops {
-        color: #1c5af4;
+        color: $color-equity-blue;
       }
     }
 
     // &:visited {
-    //   color: #1c5af4;
+    //   color: $color-equity-blue;
     // }
   }
 
@@ -227,12 +227,12 @@
     border-radius: 6px;
     background: black;
     display: flex;
-    color: #fff;
+    color: $color-white;
     align-items: center;
     justify-content: center;
 
     &:hover {
-      background: #1c5af4;
+      background: $color-equity-blue;
     }
 
     svg {
@@ -262,7 +262,7 @@
   text-align: left;
   font-size: 9px;
 
-  color: #a5a5a5;
+  color: $color-dark-grey;
 
   @include for-laptops {
     padding: 48px 0;
@@ -281,7 +281,7 @@
   line-height: 9px;
   display: flex;
   flex-direction: column;
-  color: #b5bbcb;
+  color: $color-quick-silver;
   white-space: nowrap;
   text-underline-offset: 2px;
 
@@ -436,6 +436,7 @@
           color: black;
 
           &:hover {
+
             span,
             svg {
               color: #1c5af4 !important;
@@ -480,20 +481,20 @@
 
   p {
     margin: 0;
-    color: #5b5b5b;
+    color: $color-alternate-grey;
     font-size: 10px;
   }
 
   .vr {
-    background-color: #1c5af4;
-    border-right: 2px solid #1c5af4;
+    background-color: $color-equity-blue;
+    border-right: 2px solid $color-equity-blue;
     height: 20px;
     margin: 0 10px;
     width: 1px;
   }
 
   .lineBlue {
-    background-color: #1c5af4;
+    background-color: $color-equity-blue;
     width: 100%;
     height: 8px;
   }
@@ -506,7 +507,7 @@
   gap: 24px;
 
   @include for-laptops {
-    background-color: #f6fcff;
+    background-color: $color-sky-hint;
     max-width: 259px;
     padding: 21px;
   }

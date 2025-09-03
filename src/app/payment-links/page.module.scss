@@ -85,7 +85,7 @@
 }
 
 .second_row {
-  background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
+  background: linear-gradient(180deg, #1c5af4 0%, $color-cyan-blue 77%, #18187f 100%);
   position: relative;
   padding: 50px 20px;
 
@@ -159,7 +159,8 @@
   }
 
   .inner-content {
-    background: $color-white; /* inner background */
+    background: $color-white;
+    /* inner background */
     padding: 11px 14px;
     border-radius: 10px;
     /* slightly smaller radius */
@@ -187,6 +188,7 @@
       margin-bottom: 30px;
     }
   }
+
   .scrollCard:last-child {
     margin-bottom: 0px;
   }
@@ -240,6 +242,7 @@
 
 .fourth_row {
   padding: 0px 20px;
+
   @include for-laptops {
     padding: 0px 20px;
   }
@@ -270,7 +273,7 @@
     justify-content: center;
   }
 
-  .card_grid > div {
+  .card_grid>div {
     flex: 1 1 260px;
     max-width: 300px;
     min-width: 240px;
@@ -282,6 +285,7 @@
   border-radius: 12px;
   position: relative;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
