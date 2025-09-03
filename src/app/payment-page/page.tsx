@@ -29,9 +29,9 @@ import {
   activationIcon,
   realTimeIcon,
 } from "."
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Page: Create Custom Branded Checkout Pages",

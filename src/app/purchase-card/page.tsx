@@ -25,8 +25,8 @@ import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Purchase Card: Streamline Business Procurement & Spending",
@@ -114,7 +114,9 @@ const PurchesCards = (): React.JSX.Element => {
                 className=""
               />
             </div>
-            <div className={`${styles.button_wrapper} justify-content-center d-flex`}>
+            <div
+              className={`${styles.button_wrapper} justify-content-center d-flex`}
+            >
               <RectangleButton
                 title="Get Started"
                 theme="blue"

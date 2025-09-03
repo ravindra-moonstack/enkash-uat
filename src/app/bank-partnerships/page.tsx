@@ -20,7 +20,7 @@ import {
 } from "@/src/components"
 import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/src/components/all-in-one-policy"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
