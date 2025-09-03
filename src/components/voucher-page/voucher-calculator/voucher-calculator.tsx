@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import styles from "./voucher-calculator.module.scss"
 import { whiteCart } from ".."
 import Image from "next/image"
-import { titleCae } from "@/src/common/utils/stringUtils"
+import { titleCae } from "@/src/utils/stringUtils"
 
 interface VoucherOption {
   mrp: number

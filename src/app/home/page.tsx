@@ -50,7 +50,7 @@ import {
   rewardData,
   ctaButtonData,
 } from "./data"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "The Best Payments and Spend Management Platform",
@@ -91,7 +91,9 @@ const HomePage = (): React.JSX.Element => {
                   className="text-center mb-4 text-uppercase"
                 />
               </div>
-              <div className={`${styles.banner_button} d-flex justify-content-center`}>
+              <div
+                className={`${styles.banner_button} d-flex justify-content-center`}
+              >
                 <RectangleButton
                   title="Connect with Us"
                   theme="blue"

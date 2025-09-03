@@ -35,8 +35,8 @@ import {
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 
 export const metadata: Metadata = generateMetaData({
@@ -99,19 +99,27 @@ const CorporateCards = (): React.JSX.Element => {
               />
             </div>
 
-            <div className={`justify-content-center d-flex mt-3 pointer-auto`}>
-              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
-            </div>
-          </div>
-          <div
-            className={`col-12 d-flex justify-content-center align-items-center no-pointer`}
-          >
-            <div className={styles.bannerImages}>
-              <div className={styles.lottie_container}>
-                <LottieDynamicLoadComponent
-                  animationName={"CorporateCardLottie"}
-                  loop={true}
-                />
+                <div
+                  className={`justify-content-center d-flex mt-3 pointer-auto`}
+                >
+                  <RectangleButton
+                    title="Talk to Us"
+                    theme="blue"
+                    url={salesUrl}
+                  />
+                </div>
+              </div>
+              <div
+                className={`col-12 d-flex justify-content-center align-items-center no-pointer`}
+              >
+                <div className={styles.bannerImages}>
+                  <div className={styles.lottie_container}>
+                    <LottieDynamicLoadComponent
+                      animationName={"CorporateCardLottie"}
+                      loop={true}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
