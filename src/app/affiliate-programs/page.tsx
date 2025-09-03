@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./page.module.scss"
-import BankSolutions from "@/src/components/partnerships/BankSolutions"
+
+// data
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -9,19 +10,26 @@ import {
   slideData,
   stepsData,
 } from "./data"
-import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
-import BottomCtaSection from "@/src/components/bottom-cta-section/bottomCtaSection"
-import FaqSection from "@/src/components/faq-section/faqSection"
 import faqData from "./faq-data"
-import PartnerShipForm from "@/src/components/forms/partnership-form"
+
+// component
 import {
   BecomePartnerSteps,
   BpHeroSection,
   BankAffiliatePartnershipForm,
+  BankSolutions,
+  PartnershipSection,
+  BottomCtaSection,
+  FaqSection,
+  PartnerShipForm,
+  ProductsSection,
 } from "@/src/components"
-import {   containerScreen, participantBg } from "."
+
+// helpers
+import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/src/components/all-in-one-policy"
-import ProductsSection from "@/src/components/our-products-section"
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 
@@ -60,6 +68,7 @@ const partnershipsPage = (): React.JSX.Element => {
           url: "#partnership-form",
         }}
       />
+
       <div className={`${styles.boxContainer}`}>
         <BankSolutions
           solutions={bankSolutions}
@@ -80,6 +89,7 @@ const partnershipsPage = (): React.JSX.Element => {
           slideData={slideData}
         />
       </div>
+
       <div className={`${styles.third_row} ${styles.steps_container}`}>
         <BecomePartnerSteps
           heading={headingData}
@@ -91,7 +101,9 @@ const partnershipsPage = (): React.JSX.Element => {
           }}
         />
       </div>
+
       <ProductsSection sectionTitle="Our Products" products={productsData} />
+
       <div className={`${styles.cta_section}`}>
         <BottomCtaSection
           headingPart1="Unlock High-Earning Potential"
@@ -99,7 +111,9 @@ const partnershipsPage = (): React.JSX.Element => {
           buttonHref="#partnership-form"
         />
       </div>
+
       <FaqSection faqData={faqData} />
+
       <div id="partnership-form">
         <PartnerShipForm
           heading={[
@@ -115,6 +129,7 @@ const partnershipsPage = (): React.JSX.Element => {
           formComponent={<BankAffiliatePartnershipForm />}
         />
       </div>
+      
     </div>
   )
 }

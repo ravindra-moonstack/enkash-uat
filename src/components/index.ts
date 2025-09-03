@@ -252,6 +252,10 @@ const ContactForm = dynamic(() => import("./forms/contact-form"), {
   ssr: true,
 })
 
+const CommanButton = dynamic(() => import("./buttons/index"), {
+  ssr: true,
+})
+
 export {
   Header,
   Footer,
@@ -316,4 +320,5 @@ export {
   PartnerSection,
   SupportForm,
   ContactForm,
+  CommanButton,
 }

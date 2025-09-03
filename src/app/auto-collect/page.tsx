@@ -1,5 +1,7 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+
+// data
 import { allInOnePolicies, cardsData, managementCards } from "./data"
 import faqData from "./faq-data"
 import {
@@ -12,6 +14,8 @@ import {
   AllInOnePolicy,
   FaqSection,
 } from "@/src/components"
+
+// helpers
 import {
   groupIcon,
   paymentSummary,
@@ -21,6 +25,8 @@ import {
   hundredPercentIcon,
 } from "."
 import { Metadata } from "next"
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 

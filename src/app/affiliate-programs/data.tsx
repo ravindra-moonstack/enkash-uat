@@ -1,17 +1,7 @@
 import imaCard from "./img/containerScreen.webp"
 import ItemIcon from "./img/itemIcon.svg"
-import { coBrandImage,  GalaxyTabImage } from "."
+import { coBrandImage, GalaxyTabImage } from "."
 import { blueArrow } from "../home"
-const dataSets = [
-  {
-    // iconSrc: iconOne,
-    // imageSrc: autoCollect,
-    altText: "Auto Collect ",
-    title: "Instant Issuance & Reload",
-    subtitle:
-      "Issue cards instantly and refill balances as needed without delays. This feature ensures employees have continuous access to meal benefits without interruptions, improving their overall experience and satisfaction.",
-  },
-]
 
 const bankSolutions = [
   {
@@ -135,7 +125,6 @@ const productsData = [
   },
 ]
 export {
-  dataSets,
   imaCard,
   bankSolutions,
   slideData,
