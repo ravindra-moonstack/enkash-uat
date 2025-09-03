@@ -1,7 +1,8 @@
 import Image from "next/image"
 import { Metadata } from "next"
-
 import styles from "./page.module.scss"
+
+// data
 import {
   cardData,
   expenseManagementData,
@@ -9,6 +10,8 @@ import {
   stepCards,
 } from "./data"
 import faqData from "./faq-data"
+
+// component
 import {
   DynamicHeading,
   LogoSlider,
@@ -20,6 +23,8 @@ import {
   CardStacking,
   FaqSection,
 } from "@/src/components"
+
+// helpers
 import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"

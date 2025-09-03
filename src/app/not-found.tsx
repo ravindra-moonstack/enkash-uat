@@ -96,7 +96,7 @@ export default function NotFound() {
                       {
                         title: "Explore Our Blogs",
                         color: "color-dim-grey ",
-                        link: `${process.env.URL}/resources/blog/`,
+                        link: `${process.env.URL}/resources/blogs/`,
                       },
                     ]}
                     headingTag="p"

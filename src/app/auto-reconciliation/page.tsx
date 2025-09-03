@@ -1,7 +1,8 @@
 import Image from "next/image"
 import { Metadata } from "next"
-
 import styles from "./page.module.scss"
+
+
 import {
   allInOnePolicies,
   cardsData,
