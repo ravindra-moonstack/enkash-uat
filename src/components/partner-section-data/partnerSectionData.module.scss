@@ -1,4 +1,5 @@
-@use "./../../styles/mixin" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .partner_section_inner {
   background: rgba(255, 255, 255, 0.84);
@@ -36,7 +37,7 @@
         rgba(255, 255, 255, 0) 0%,
         rgb(255, 255, 255) 100%);
     padding: 5px 10px;
-    color: #1c5af4;
+    color: $color-equity-blue;
     font-size: 16px;
     font-weight: 700;
     border-radius: 8px;
@@ -68,7 +69,7 @@
     }
 
     .buttons {
-      border: 2px solid #1c5af4;
+      border: 2px solid $color-equity-blue;
       border-radius: 5px;
       padding: 8px 16px;
       text-decoration: none;
@@ -82,11 +83,11 @@
       }
 
       &:hover {
-        background: #1c5af4;
-        color: #fff;
+        background: $color-equity-blue;
+        color: $color-white;
 
         :global(path) {
-          stroke: #fff;
+          stroke: $color-white;
         }
       }
     }

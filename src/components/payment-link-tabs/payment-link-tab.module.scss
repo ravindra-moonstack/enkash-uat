@@ -1,5 +1,5 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
 
 .sixth_row {
   position: relative;
@@ -12,15 +12,16 @@
 
 .sixth_row_mobile {
   background-color: $color-soft-mint;
-  
+
 }
 
 .tab_section {
   position: relative;
   z-index: 1;
-padding: 50px 20px;
+  padding: 50px 20px;
+
   @include for-laptops {
-    padding:90px 20px;
+    padding: 90px 20px;
     // padding-bottom: 50px;
   }
 }
@@ -104,6 +105,7 @@ padding: 50px 20px;
     opacity: 0;
     transform: translateX(-90px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0px);
@@ -115,6 +117,7 @@ padding: 50px 20px;
     opacity: 0;
     transform: translateX(90px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0px);
@@ -126,6 +129,7 @@ padding: 50px 20px;
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0px);
@@ -136,6 +140,7 @@ padding: 50px 20px;
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -230,6 +235,7 @@ padding: 50px 20px;
   .new_way_text {
     right: 24px;
     color: $color-white;
+
     @include for-laptops {
       padding-right: 30px;
     }

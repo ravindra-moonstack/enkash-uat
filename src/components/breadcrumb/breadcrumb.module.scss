@@ -1,11 +1,12 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixin" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .breadcrumb {
   background-image: url("/images/assets/breadcrum-bg.svg");
   background-repeat: no-repeat;
   background-position: 100%;
-padding-top:0 ;
+  padding-top: 0;
+
   @include for-laptops {
     height: auto;
     padding-top: 10px;
@@ -43,7 +44,7 @@ padding-top:0 ;
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
-  padding: 10px 0 0 ;
+  padding: 10px 0 0;
   margin: 0;
 }
 
@@ -52,7 +53,7 @@ padding-top:0 ;
   align-items: center;
   text-wrap: nowrap !important;
   font-size: 12px !important;
-  color: #5b5b5b;
+  color: $color-alternate-grey;
 
   @include for-laptops {
     font-size: 16px !important;
@@ -94,7 +95,7 @@ padding-top:0 ;
 
 .separator {
   margin: 0 2px;
-  color: #a5a5a5;
+  color: $color-dark-grey;
 
   @include for-laptops {
     margin: 0 8px;

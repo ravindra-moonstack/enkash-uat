@@ -11,6 +11,7 @@
   position: relative;
   justify-content: space-between;
   font-size: 12px;
+
   @include for-laptops {
     font-size: 14px;
   }
@@ -33,7 +34,7 @@
   gap: 6px;
 
   .tag {
-    background: #f0f0f0;
+    background: $color-light-shade-grey ;
     border-radius: 4px;
     padding: 2px 6px;
     display: flex;
@@ -53,14 +54,16 @@
 
 .arrow {
   font-size: 0.7rem;
-  color: #1c5af4;
+  color: $color-equity-blue;
   margin-left: 8px;
   user-select: none;
 }
+
 .wrapper {
   input {
     width: auto !important;
   }
+
   .inputBox {
     display: flex;
     justify-content: space-between;
@@ -75,12 +78,14 @@
       font-size: 0.95rem;
       cursor: pointer;
       justify-content: space-between;
+
       .categoryHeaderLabel {
         display: flex;
         gap: 8px;
       }
     }
   }
+
   .subOptions {
     display: grid;
     align-items: center;

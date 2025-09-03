@@ -1,6 +1,6 @@
-@use './../../styles/mixin' as *;
+@use './@/src/styles/mixin' as *;
 
-.coreValueItem{
+.coreValueItem {
     color: #000;
     line-height: 28px;
     margin-bottom: 20px;

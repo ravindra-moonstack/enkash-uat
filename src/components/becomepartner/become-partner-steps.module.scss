@@ -1,5 +1,6 @@
-@use "./../../styles/variables" as *;
-@use "./../../styles/mixin" as *;
+@use "./@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .becomePartnerSteps {
   @include for-laptops {
@@ -18,10 +19,10 @@
     .connectWithUs {
       a {
         box-shadow: 0px 4px 44px 0px #0000001f;
-        border: 2px solid #fff;
-        background-color: #fff;
+        border: 2px solid $color-white;
+        background-color: $color-white;
         font-weight: 700;
-        color: #1c5af4;
+        color: $color-equity-blue;
         text-decoration: none;
         display: flex;
         justify-content: space-between;
@@ -37,17 +38,16 @@
     width: 100%;
     grid-template-columns: 1fr;
     gap: 20px;
+
     a {
       color: $color-alternate-grey;
     }
   }
 
   .stepCard {
-    background: linear-gradient(
-      148.03deg,
-      rgba(255, 255, 255, 0.0594) 1.57%,
-      rgba(211, 238, 251, 0.18) 98.66%
-    );
+    background: linear-gradient(148.03deg,
+        rgba(255, 255, 255, 0.0594) 1.57%,
+        rgba(211, 238, 251, 0.18) 98.66%);
     border-radius: 12px;
     padding: 33px 13px 27px 28px;
     box-shadow: 0px 0px 55px 0px #0000001c;
@@ -59,7 +59,7 @@
   .stepNumber {
     font-size: 16px;
     font-weight: 600;
-    color: #1c5af4;
+    color: $color-equity-blue;
     margin-bottom: 6px;
     line-height: 19px;
     padding: 8px 11px 7px;
@@ -71,7 +71,7 @@
   .stepTitle {
     font-size: 20px;
     font-weight: 500;
-    color: #2b2b2b;
+    color: $color-grey-200;
     line-height: 40.19px;
     font-family: "Inter", sans-serif;
   }
@@ -110,7 +110,7 @@
     .stepNumber {
       font-size: 16px;
       font-weight: 600;
-      color: #1c5af4;
+      color: $color-equity-blue;
       margin-bottom: 6px;
       line-height: 19px;
       padding: 8px 11px 7px;
@@ -122,7 +122,7 @@
     .stepTitle {
       font-size: 20px;
       font-weight: 500;
-      color: #2b2b2b;
+      color: $color-grey-200;
       line-height: 40.19px;
       font-family: "Inter", sans-serif;
     }

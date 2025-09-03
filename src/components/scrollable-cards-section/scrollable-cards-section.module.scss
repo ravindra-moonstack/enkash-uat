@@ -3,11 +3,15 @@
 
 .scrollBoxOuter {
   max-height: max-content !important;
+
   @include for-laptops {
     max-height: 400px !important;
+
     &::-webkit-scrollbar {
-      width: 8px; /* vertical scrollbar width */
-      height: 8px; /* horizontal scrollbar height */
+      width: 8px;
+      /* vertical scrollbar width */
+      height: 8px;
+      /* horizontal scrollbar height */
     }
 
     /* Scrollbar track (background) */
@@ -18,16 +22,17 @@
 
     /* Scrollbar thumb (the draggable part) */
     &::-webkit-scrollbar-thumb {
-      background: #2563eb;
+      background: $color-crayola;
       border-radius: 10px;
     }
 
     /* Scrollbar thumb on hover */
     &::-webkit-scrollbar-thumb:hover {
-      background: #2563eb;
+      background: $color-crayola;
     }
   }
 }
+
 .scrollCard {
   margin-bottom: 20px;
 
@@ -44,14 +49,18 @@
     }
   }
 }
+
 .scrollCardButton {
   padding: 20px 48px 20px;
+
   @include for-laptops {
     padding: 20px 86px;
   }
 }
+
 .scrollCardButton--scroll {
   padding: 0px 48px 20px;
+
   @include for-laptops {
     padding: 20px 97px;
   }

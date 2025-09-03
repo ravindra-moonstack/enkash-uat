@@ -1,4 +1,5 @@
-@use "./../../styles/mixin" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .investerLogosOuter {
   display: flex;
@@ -6,6 +7,7 @@
   padding-bottom: 50px;
   flex-wrap: wrap;
   gap: 20px;
+
   @include for-laptops {
     padding-bottom: 90px;
     flex-wrap: nowrap;
@@ -14,18 +16,22 @@
 
   .investerLogos {
     padding: 0 30px;
+
     @include for-laptops {
-      border-right: 1px solid #d9d9d9;
+      border-right: 1px solid $color-grey-100;
     }
+
     &:last-child {
       border-right: none;
     }
+
     img {
       max-width: 200px;
       width: auto;
       max-height: 50px;
       object-fit: contain;
       object-position: center;
+
       @include for-laptops {
         max-width: auto;
       }

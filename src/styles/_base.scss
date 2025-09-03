@@ -118,6 +118,7 @@
 .color-baby-blue {
   color: $color-baby-blue;
 }
+
 .color-cyan-blue {
   color: $color-cyan-blue;
 }
@@ -209,13 +210,16 @@
 .bg-black-200 {
   background-color: $color-black-200;
 }
+
 /* Padding Classes */
 
 .row-padding {
   padding: 20px;
+
   @include for-laptops {
     padding: 90px 90px;
   }
+
   @include for-window-zoomed-screens {
     padding: 80px 60px;
   }
@@ -223,9 +227,11 @@
 
 .row-padding-bottom-none {
   padding: 36px 25px 0px 25px;
+
   @include for-laptops {
     padding: 110px 90px 0px 90px;
   }
+
   @include for-window-zoomed-screens {
     padding: 80px 60px 0px 60px;
   }
@@ -233,9 +239,11 @@
 
 .row-padding-top-none {
   padding: 0px 25px 36px 25px;
+
   @include for-laptops {
     padding: 0px 90px 80px 90px;
   }
+
   @include for-window-zoomed-screens {
     padding: 0px 60px 50px 60px;
   }
@@ -243,9 +251,11 @@
 
 .row-padding-x-only {
   padding: 0px 25px;
+
   @include for-laptops {
     padding: 0px 90px;
   }
+
   @include for-window-zoomed-screens {
     padding: 0px 60px;
   }
@@ -255,6 +265,7 @@
 
 .mobile-header {
   display: block;
+
   @include for-laptops {
     display: none;
   }
@@ -262,6 +273,7 @@
 
 .desktop-header {
   display: none;
+
   @include for-laptops {
     display: block;
     position: fixed;
@@ -282,6 +294,7 @@ html body {
 body {
   overflow-x: scroll;
 }
+
 /* Common Vertical scroll*/
 
 .scroll_container {
@@ -293,14 +306,15 @@ body {
 
   &::-webkit-scrollbar {
     height: 6px;
-    background: #092093;
+    background: $color-night-blue ;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #61d6ff 30%, transparent 30%);
+    background: linear-gradient(90deg, $color-cyan-blue 30%, transparent 30%);
   }
+
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #61d6ff, transparent);
+    background: linear-gradient(90deg, $color-cyan-blue , transparent);
   }
 }
 
@@ -330,10 +344,12 @@ body {
   margin-bottom: 0;
   line-height: normal;
   margin-left: 2px;
+
   @include for-window-zoomed-screens {
     display: inline;
     font-size: 14px;
   }
+
   @include for-laptops {
     display: inline;
     font-size: 17px;
@@ -346,37 +362,44 @@ body {
   margin-bottom: 0;
   line-height: normal;
   margin-left: 2px;
+
   @include for-laptops {
     font-size: 35px;
   }
+
   @include for-window-zoomed-screens {
     font-size: 30px;
   }
 }
 
 .scrollbar-thin::-webkit-scrollbar {
-  width: 12px; /* wider scrollbar */
+  width: 12px;
+  /* wider scrollbar */
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
-  background: $color-white; /* transparent track */
+  background: $color-white;
+  /* transparent track */
   border: 1px solid transparent;
   border-radius: 20px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: #3b82f6; /* blue */
+  background-color: #3b82f6;
+  /* blue */
   border-radius: 9999px;
   border: 1px solid transparent;
 }
 
 /* Firefox */
 .scrollbar-thin {
-  scrollbar-width: auto; /* use default scrollbar width */
+  scrollbar-width: auto;
+  /* use default scrollbar width */
 }
 
 .gap-32 {
   gap: 8px;
+
   @include for-laptops {
     gap: 32px;
   }
@@ -404,12 +427,13 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: transparent;
-    border: 2px solid #a5a5a5;
+    border: 2px solid $color-dark-grey;
     padding: 8px 20px;
     border-radius: 8px;
     align-items: center;
   }
 }
+
 .no-pointer {
   pointer-events: none;
 }
