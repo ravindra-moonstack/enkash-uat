@@ -4,7 +4,7 @@ import Image from "next/image"
 
 import styles from "./how-does-it-work.module.scss"
 import DynamicHeading from "../dynamic-heading/dynamic-heading"
-import { useSalesUrl } from "@/src/common/utils/useSalesUrl"
+import { useSalesUrl } from "@/src/utils/useSalesUrl"
 import CommanButton from "@/src/components/buttons/index"
 interface howDoesItWorkProps {
   dataSets: any

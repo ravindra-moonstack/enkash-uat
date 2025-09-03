@@ -23,8 +23,8 @@ import {
 
 import BankLogoSlider from "@/src/components/banking-slider/banking-slider"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
-import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Connected Banking: For Faster Payouts",

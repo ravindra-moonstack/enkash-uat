@@ -33,8 +33,8 @@ import {
 import faqData from "./faq-data"
 import AllProducts from "@/src/components/all-products/all-products"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Gift Cards for Business: Reward Employees & Partners",
@@ -122,7 +122,9 @@ const GiftCards = (): React.JSX.Element => {
                 className=""
               />
             </div>
-            <div className={`${styles.button_wrapper} justify-content-center d-flex`}>
+            <div
+              className={`${styles.button_wrapper} justify-content-center d-flex`}
+            >
               <RectangleButton
                 title="Get Started"
                 theme="blue"

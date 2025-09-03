@@ -35,8 +35,8 @@ import {
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
@@ -101,7 +101,9 @@ const CorporateCards = (): React.JSX.Element => {
                   />
                 </div>
 
-                <div className={`justify-content-center d-flex mt-3 pointer-auto`}>
+                <div
+                  className={`justify-content-center d-flex mt-3 pointer-auto`}
+                >
                   <RectangleButton
                     title="Talk to Us"
                     theme="blue"

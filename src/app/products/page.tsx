@@ -10,7 +10,7 @@ import {
   SalesForm,
 } from "@/src/components"
 
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
