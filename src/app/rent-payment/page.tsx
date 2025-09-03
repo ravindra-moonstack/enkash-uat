@@ -20,8 +20,8 @@ import {
 
 import AllProducts from "@/src/components/all-products/all-products"
 import ScrollableCardsSection from "@/src/components/scrollable-cards-section/scrollableCardsSection"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
-import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({

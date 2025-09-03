@@ -78,6 +78,7 @@ const SupportForm: React.FC = () => {
                 type="text"
                 required
                 placeholder="Name*"
+                autoComplete="text"
                 {...getFieldProps("SingleLine")}
               />
               <ErrorText<TSupportInitialValueProp>
@@ -92,6 +93,7 @@ const SupportForm: React.FC = () => {
                 type="email"
                 required
                 placeholder="Business Email ID*"
+                autoComplete="email"
                 {...getFieldProps("Email")}
               />
               <ErrorText<TSupportInitialValueProp>
@@ -120,6 +122,7 @@ const SupportForm: React.FC = () => {
                 type="text"
                 required
                 placeholder="Contact No.*"
+                autoComplete="tel"
                 {...getFieldProps("PhoneNumber_countrycode")}
               />
               <ErrorText<TSupportInitialValueProp>

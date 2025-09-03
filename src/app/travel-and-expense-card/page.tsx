@@ -35,8 +35,8 @@ import {
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Travel & Expense Card: Simplify Business Travel Spending",
@@ -109,7 +109,9 @@ const TravelExpenseCard = (): React.JSX.Element => {
                 className=""
               />
             </div>
-            <div className={`${styles.button_wrapper} justify-content-center d-flex`}>
+            <div
+              className={`${styles.button_wrapper} justify-content-center d-flex`}
+            >
               <RectangleButton
                 title="Get Started"
                 theme="blue"

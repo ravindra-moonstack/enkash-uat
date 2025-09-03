@@ -23,7 +23,7 @@ import {
 import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/src/components/all-in-one-policy"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",

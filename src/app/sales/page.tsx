@@ -9,9 +9,9 @@ import {
 import styles from "./page.module.scss"
 import { help, login, logo, support } from "."
 import { testimonialData } from "./data"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
-import { getLoginUrl, getSupportUrl } from "@/src/common/utils/getSalesUrl"
+import { getLoginUrl, getSupportUrl } from "@/src/utils/getSalesUrl"
 import Link from "next/link"
 
 export const metadata: Metadata = generateMetaData({

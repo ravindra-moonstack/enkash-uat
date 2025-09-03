@@ -2,7 +2,7 @@ import React from "react"
 import styles from "./page.module.scss"
 import { infoIcon } from "."
 import { DynamicHeading } from "@/src/components"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 import CorporateCard from "@/src/components/corporate-card/corporate-card"
 

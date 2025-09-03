@@ -12,7 +12,7 @@ import {
   LocationTabsMap,
 } from "@/src/components"
 import { scrollIconOne, aboutBannerBottomIcon, careerCardIcon } from "."
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 
 const bannerOurContent = [
   {

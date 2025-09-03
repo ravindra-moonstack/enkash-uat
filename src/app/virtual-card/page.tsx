@@ -30,9 +30,9 @@ import {
 } from "."
 
 import faqData from "./faq-data"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Virtual Corporate Card for Secure and Instant Payments",
@@ -119,7 +119,9 @@ const VirtualCards = (): React.JSX.Element => {
                 className=" mb-3"
               />
             </div>
-            <div className={`${styles.button_wrapper} justify-content-center d-flex`}>
+            <div
+              className={`${styles.button_wrapper} justify-content-center d-flex`}
+            >
               <RectangleButton
                 title="Get Started"
                 theme="blue"
