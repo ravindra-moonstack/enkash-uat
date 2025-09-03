@@ -160,7 +160,9 @@
 
   a {
     &:hover {
-      color: #1c5af4;
+      @include for-laptops {
+        color: #1c5af4;
+      }
     }
 
     // &:visited {
@@ -434,7 +436,6 @@
           color: black;
 
           &:hover {
-
             span,
             svg {
               color: #1c5af4 !important;
