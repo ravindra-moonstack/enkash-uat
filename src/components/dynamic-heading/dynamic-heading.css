@@ -53,7 +53,7 @@
 }
 
 .bgBlue {
-  background-color: #1c5af4;
+  background-color: $color-equity-blue;
 }
 
 p {

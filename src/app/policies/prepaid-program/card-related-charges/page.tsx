@@ -1,7 +1,8 @@
 import React from "react"
-import styles from "./page.module.scss"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
+
+import styles from "./page.module.scss"
+import generateMetaData from "@/src/utils/metaData"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 
 export const metadata: Metadata = generateMetaData({
@@ -184,8 +185,11 @@ const CardRelatedCharges = () => {
                           For the latest version of these terms or any queries
                           regarding applicable charges, cardholders may contact
                           us at:
-                          <a className="c17" href="mailto:support@enkash.com">
-                            support@enkash.com
+                          <a
+                            className="c17"
+                            href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
+                          >
+                            {process.env.NEXT_PUBLIC_EMAIL}
                           </a>
                         </p>
                         <p>

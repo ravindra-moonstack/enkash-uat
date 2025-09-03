@@ -9,32 +9,36 @@
   padding: 50px 20px 20px;
   z-index: 2;
   position: relative;
+
   @include for-laptops {
     padding: 70px 20px 20px;
   }
+
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      0deg,
-      #000000 0%,
-      #000000 -1.06%,
-      #000000 0.51%,
-      rgba(0, 0, 0, 0.77) 23.74%,
-      rgba(0, 0, 0, 0.33) 44.46%,
-      rgba(0, 0, 0, 0) 53.45%
-    );
+    background: linear-gradient(0deg,
+        $color-black 0%,
+        $color-black -1.06%,
+        $color-black 0.51%,
+        rgba(0, 0, 0, 0.77) 23.74%,
+        rgba(0, 0, 0, 0.33) 44.46%,
+        rgba(0, 0, 0, 0) 53.45%);
     z-index: -1;
   }
+
   .logo {
     padding-bottom: 32px;
+
     img {
       width: 75px;
       height: 20px;
     }
+
     @include for-laptops {
       padding-bottom: 41px;
+
       img {
         width: 150px;
         height: 46px;
@@ -52,6 +56,7 @@
       0px 30px 40px rgba(0, 0, 0, 0.09),
       0px 67px 40px rgba(0, 0, 0, 0.05);
     padding: 43px 30px;
+
     ul {
       gap: 12px;
       display: flex;
@@ -60,35 +65,43 @@
       padding-left: 0;
     }
   }
+
   .logoSlider {
     background-color: $color-white;
     border-radius: 12px;
     position: relative;
     z-index: 2;
   }
+
   .copyright {
     display: flex;
     justify-content: space-between;
     position: relative;
     z-index: 9;
+
     p {
       font-size: 8px;
+
       @include for-laptops {
         font-size: 16px;
       }
     }
+
     .termsCond {
       display: flex;
       gap: 8px;
+
       @include for-laptops {
         gap: 32px;
       }
+
       a {
         color: inherit !important;
         text-decoration: none !important;
       }
     }
   }
+
   .greyLine {
     height: 2px;
     background: $color-dark-grey;

@@ -1,10 +1,11 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
 
 .sixth_row {
   position: relative;
   overflow: hidden;
-width: 100%;
+  width: 100%;
+
   @media (max-width: 767px) {
     background: none !important; // remove background on mobile
   }
@@ -36,6 +37,7 @@ width: 100%;
 .sixth_row_mobile {
   background-color: $color-soft-mint;
   width: 100%;
+
   .tab_section {
     background-color: $color-soft-mint;
   }
@@ -130,6 +132,7 @@ width: 100%;
     opacity: 0;
     transform: translateX(-90px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0px);
@@ -141,6 +144,7 @@ width: 100%;
     opacity: 0;
     transform: translateX(90px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0px);
@@ -152,6 +156,7 @@ width: 100%;
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0px);
@@ -162,6 +167,7 @@ width: 100%;
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -256,6 +262,7 @@ width: 100%;
   .new_way_text {
     right: 24px;
     color: $color-white;
+
     @include for-laptops {
       padding-right: 30px;
     }

@@ -23,8 +23,8 @@ import {
   activationIcon,
 } from "."
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Get Real-time Cashflow Analysis for Collected Payment",

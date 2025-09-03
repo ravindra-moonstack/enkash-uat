@@ -14,11 +14,10 @@ import {
   TestimonialSlider,
 } from "@/src/components"
 
-
 // helpers
 import { location, logo } from "."
 import { contactData, locationData, testimonialData } from "./data"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash | Get Support or Speak to Our Team",

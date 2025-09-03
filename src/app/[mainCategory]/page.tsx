@@ -5,7 +5,7 @@ import styles from "./page.module.scss"
 // components
 import { CategoryData } from "../vouchers/data/category-data"
 import VoucherCard from "@/src/components/voucher-card/voucher-card"
-import { nameToUrl } from "@/src/common/utils/stringUtils"
+import { nameToUrl } from "@/src/utils/stringUtils"
 import { CTASection } from "@/src/components"
 import SliderComponent from "@/src/components/slider-component"
 import VoucherFaqComponent from "./voucher-faq"

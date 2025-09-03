@@ -1,6 +1,8 @@
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+// components
 import {
   DynamicHeading,
   CustomBreadcrumb,
@@ -11,23 +13,13 @@ import {
   CareersCard,
   LocationTabsMap,
 } from "@/src/components"
-import { scrollIconOne, aboutBannerBottomIcon, careerCardIcon } from "."
-import generateMetaData from "@/src/common/utils/metaData"
 
-const bannerOurContent = [
-  {
-    title: "Our Mission",
-    description:
-      "To power every modern business with technology that makes finance faster, smarter, and easier than ever.",
-    icon: scrollIconOne,
-  },
-  {
-    title: "Our Vision",
-    description:
-      "To be the force behind a world where every business can scale without financial friction.",
-    icon: scrollIconOne,
-  },
-]
+// helpers
+import {  aboutBannerBottomIcon, careerCardIcon } from "."
+import generateMetaData from "@/src/utils/metaData"
+import { bannerOurContent } from "./data"
+
+
 
 export const metadata: Metadata = generateMetaData({
   title: "About EnKash: India’s Leading Spend Management & Payments Platform ",

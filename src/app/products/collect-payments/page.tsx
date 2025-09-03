@@ -22,9 +22,9 @@ import {
 import CommonButton from "@/src/components/buttons/index"
 
 import faqData from "./faq-data"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
   title: "Simplify Online Payment Collections with EnKash",

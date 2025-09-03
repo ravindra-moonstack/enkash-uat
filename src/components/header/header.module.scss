@@ -26,6 +26,7 @@
   margin-right: auto;
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
+
   @include for-tablet {
     padding: 24px 16px 24px 16px;
   }
@@ -39,6 +40,7 @@
     margin-bottom: 0px;
     align-items: center;
     gap: 16px;
+
     @include for-tablet {
       gap: 10px;
     }
@@ -47,6 +49,7 @@
   li {
     text-align: center;
     letter-spacing: normal;
+
     // cursor: pointer;
     .link {
       font-size: 13px;
@@ -56,6 +59,7 @@
       border: none;
       color: #000;
       letter-spacing: -0.04em;
+
       img {
         margin-top: -4px;
         margin-left: 4px;
@@ -64,9 +68,11 @@
       }
     }
   }
+
   .logo_container {
     padding: 5px;
     margin-right: 30px;
+
     img {
       width: 120px;
       height: auto;
@@ -87,6 +93,7 @@
     margin: auto;
     width: -webkit-fill-available;
     box-shadow: 0 0px 40px -4px rgba(0, 0, 0, 0.08);
+
     @include for-tablet {
       max-width: 1120px;
     }
@@ -120,6 +127,7 @@
     color: $color-white;
     padding: 3px 20px;
   }
+
   .active {
     color: $color-black;
     background-color: $color-white;
@@ -138,6 +146,7 @@
     opacity 0.3s;
   cursor: pointer;
 }
+
 .navItems {
   color: black;
   position: relative;
@@ -164,7 +173,7 @@
   border-radius: 12px;
   width: fit-content;
   overflow: hidden;
-  background-color: #fff;
+  background-color: $color-white;
 
   .button {
     padding: 10px 23px 10px 35px;
@@ -173,16 +182,18 @@
     border: none;
     border-radius: 12px;
     background-color: transparent;
-    color: #2563eb; // Blue text for inactive
+    color: $color-crayola; // Blue text for inactive
     cursor: pointer;
     position: relative;
     z-index: 2;
     transition: color 0.3s ease;
+
     &.active {
-      color: #fff;
+      color: $color-white;
     }
+
     &:hover {
-      color: #fff;
+      color: $color-white;
     }
   }
 
@@ -198,10 +209,11 @@
     left: 0;
   }
 
-  .login.active ~ .slider {
+  .login.active~.slider {
     left: 0;
   }
-  .sales.active ~ .slider {
+
+  .sales.active~.slider {
     left: calc(50% + 4px);
   }
 }
@@ -215,10 +227,11 @@
   .link {
     color: $color-equity-blue !important;
     position: relative;
+
     &::after {
       border-left: 8px solid rgba(0, 0, 0, 0);
       border-right: 8px solid rgba(0, 0, 0, 0);
-      border-bottom: 8px solid #1c5af4;
+      border-bottom: 8px solid $color-equity-blue;
       transition: left 0.2s;
       position: absolute;
       content: "";
@@ -260,7 +273,7 @@
 // }
 
 // .bg_white {
-//   background: #fff;
+//   background: $color-white;
 // }
 
 // .bg_blue {
@@ -301,7 +314,7 @@
   position: absolute;
   top: 100%;
   left: 50%;
-  background: #fff;
+  background: $color-white;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 20;
@@ -314,31 +327,37 @@
     min-width: 1200px;
   }
 }
+
 .menu_item_1 {
   .submenu_wrapper {
     min-width: 560px;
   }
 }
+
 .menu_item_2 {
   .submenu_wrapper {
     min-width: 560px;
   }
 }
+
 .menu_item_3 {
   .submenu_wrapper {
     min-width: 560px;
   }
 }
+
 .menu_item_4 {
   .submenu_wrapper {
     min-width: 560px;
   }
 }
+
 .menu_item_5 {
   .submenu_wrapper {
     min-width: 340px;
   }
 }
+
 .menu_item_6 {
   .submenu_wrapper {
     min-width: 560px;

@@ -73,6 +73,7 @@ const ContactForm: React.FC = () => {
               type="text"
               required
               placeholder="Name*"
+              autoComplete="name"
               {...getFieldProps("SingleLine")}
             />
             <ErrorText errors={errors} touched={touched} field="SingleLine" />
@@ -82,6 +83,7 @@ const ContactForm: React.FC = () => {
               type="email"
               required
               placeholder="Business Email ID*"
+              autoComplete="email"
               {...getFieldProps("Email")}
             />
             <ErrorText errors={errors} touched={touched} field="SingleLine" />
@@ -101,6 +103,7 @@ const ContactForm: React.FC = () => {
               type="text"
               required
               placeholder="Contact No.*"
+              autoComplete="tel"
               {...getFieldProps("PhoneNumber_countrycode")}
             />
             <ErrorText

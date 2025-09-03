@@ -1,7 +1,12 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+// data
 import { allInOnePolicyData, cardsData, managementCardsData } from "./data"
 import faqData from "./faq-data"
+
+// component
 import {
   DynamicHeading,
   LogoSlider,
@@ -11,17 +16,13 @@ import {
   ScrollableCardsSection,
   ManagementCard,
   FaqSection,
+  CommanButton,
 } from "@/src/components"
-import {
-  blueArrow,
-  groupIcon,
-  paymentSummary,
-  whiteArrow,
-  mealCardImage,
-} from "."
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
-import generateMetaData from "@/src/common/utils/metaData"
-import { Metadata } from "next"
+
+// helpers
+import { groupIcon, paymentSummary, mealCardImage } from "."
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -32,9 +33,10 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}affordability-suite/`,
   },
 })
+
 const salesUrl = getSalesUrl("/affordability-suite")
 
-const Payroll = (): React.JSX.Element => {
+const AffordabilitySuite = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -138,8 +140,9 @@ const Payroll = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-        <LogoSlider />
       </div>
+      
+      <LogoSlider />
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
@@ -228,12 +231,11 @@ const Payroll = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
-              title="Get Started Today "
+            <CommanButton
+              title="Get Started Today"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
               url={salesUrl}
+              arrow
             />
           </div>
         </div>
@@ -276,4 +278,4 @@ const Payroll = (): React.JSX.Element => {
   )
 }
 
-export default Payroll
+export default AffordabilitySuite

@@ -1,27 +1,36 @@
 import React from "react"
 import styles from "./page.module.scss"
-import BankSolutions from "@/src/components/partnerships/BankSolutions"
+
+// data
 import {
   BankSolutionHeading,
   bankSolutions,
   headingData,
+  productsData,
   slideData,
   stepsData,
 } from "./data"
-import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
-import BottomCtaSection from "@/src/components/bottom-cta-section/bottomCtaSection"
-import FaqSection from "@/src/components/faq-section/faqSection"
 import faqData from "./faq-data"
-import PartnerShipForm from "@/src/components/forms/partnership-form"
+
+// component
 import {
   BecomePartnerSteps,
   BpHeroSection,
   BankAffiliatePartnershipForm,
+  BankSolutions,
+  PartnershipSection,
+  BottomCtaSection,
+  FaqSection,
+  PartnerShipForm,
+  ProductsSection,
 } from "@/src/components"
-import { coBrandImage, containerScreen, GalaxyTabImage, participantBg } from "."
+
+// helpers
+import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/src/components/all-in-one-policy"
-import ProductsSection from "@/src/components/our-products-section"
-import generateMetaData from "@/src/common/utils/metaData"
+
+// utils
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
@@ -32,34 +41,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/affiliate-programs/`,
   },
 })
-const productsData = [
-  {
-    id: 1,
-    title: "Co-branded Products",
-    description:
-      "EnKash Co-branded Cards and Virtual Wallets empower businesses with smart, scalable, and fully controlled spending solutions. Our cards offer real-time visibility, customizable limits, and seamless integration with your finance workflows. Simplify your financial operations and gain full control without compromising on flexibility or speed.",
-    image: coBrandImage.src,
-    alt: "Co-branded Products Illustration",
-    button: {
-      connectText: "Explore Corporate Cards",
-      connectUrl: "/products/corporate-cards",
-      blueArrow: blueArrow.src,
-    },
-  },
-  {
-    id: 2,
-    title: "Payment Gateway",
-    description:
-      "EnKash Payment Gateway is an advanced solution designed specifically for Indian SMBs and startups. It empowers businesses of all sizes to accept payments seamlessly, securely, and at scale, giving them a fair chance to compete in a rapidly growing digital economy.",
-    image: GalaxyTabImage.src,
-    alt: "Payment Gateway Dashboard",
-    button: {
-      connectUrl: "/payment-gateway",
-      connectText: "Explore Payment Gateway",
-      blueArrow: blueArrow.src,
-    },
-  },
-]
+
 const partnershipsPage = (): React.JSX.Element => {
   return (
     <div className={`color-black`}>
@@ -86,6 +68,7 @@ const partnershipsPage = (): React.JSX.Element => {
           url: "#partnership-form",
         }}
       />
+
       <div className={`${styles.boxContainer}`}>
         <BankSolutions
           solutions={bankSolutions}
@@ -106,6 +89,7 @@ const partnershipsPage = (): React.JSX.Element => {
           slideData={slideData}
         />
       </div>
+
       <div className={`${styles.third_row} ${styles.steps_container}`}>
         <BecomePartnerSteps
           heading={headingData}
@@ -117,7 +101,9 @@ const partnershipsPage = (): React.JSX.Element => {
           }}
         />
       </div>
+
       <ProductsSection sectionTitle="Our Products" products={productsData} />
+
       <div className={`${styles.cta_section}`}>
         <BottomCtaSection
           headingPart1="Unlock High-Earning Potential"
@@ -125,7 +111,9 @@ const partnershipsPage = (): React.JSX.Element => {
           buttonHref="#partnership-form"
         />
       </div>
+
       <FaqSection faqData={faqData} />
+
       <div id="partnership-form">
         <PartnerShipForm
           heading={[
@@ -141,6 +129,7 @@ const partnershipsPage = (): React.JSX.Element => {
           formComponent={<BankAffiliatePartnershipForm />}
         />
       </div>
+      
     </div>
   )
 }

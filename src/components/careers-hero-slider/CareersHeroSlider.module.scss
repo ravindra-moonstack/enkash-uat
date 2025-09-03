@@ -1,4 +1,5 @@
-@use "./../../styles/mixin" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
 
 .careerBannerOuter {
   position: relative;
@@ -9,10 +10,12 @@
     position: relative;
     z-index: 1;
     height: 500px;
-    @include for-laptops{
+
+    @include for-laptops {
       height: 700px;
 
-}
+    }
+
     &::after {
       content: "";
       position: absolute;

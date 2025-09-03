@@ -7,16 +7,18 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   @include for-laptops {
     padding: 90px 20px;
   }
 
   .CoreValuesDataSectionOuter {
-    background: #fff;
+    background: $color-white;
     padding: 20px 20px;
     position: relative;
     border-radius: 20px;
     z-index: 1;
+
     &::after {
       position: absolute;
       bottom: -90px;
@@ -30,17 +32,21 @@
       height: 460px;
       display: none;
     }
+
     @include for-laptops {
       padding: 50px 50px 30px;
+
       &::after {
         display: block;
       }
     }
+
     .content {
       max-width: 400px;
+
       p {
         span {
-          color: #a5a5a5;
+          color: $color-dark-grey;
         }
       }
     }
@@ -49,6 +55,7 @@
 
 .perksPayCheck {
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px 70px;
   }
@@ -58,9 +65,11 @@
       padding-right: 27px;
     }
   }
+
   .rewardsBottomSliderContentBox {
     max-width: 1200px;
     margin: auto;
+
     .rewardsBottomSliderBox {
       height: 100%;
     }
@@ -74,8 +83,10 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .VoicesEnKashSection {
   padding: 0px 20px 0px;
+
   @include for-laptops {
     padding: 0px 20px 90px;
   }

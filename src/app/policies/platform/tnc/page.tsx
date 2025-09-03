@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import Link from "next/link"
 

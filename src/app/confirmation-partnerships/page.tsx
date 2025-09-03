@@ -4,7 +4,7 @@ import React from "react"
 import styles from "./page.module.scss"
 import reachOutImg from "@/public/images/SubtractImg.webp"
 import { Metadata } from "next"
-import generateMetaData from "@/src/common/utils/metaData"
+import generateMetaData from "@/src/utils/metaData"
 export const metadata: Metadata = generateMetaData({
   title: "Thank You for Your Interest in Partnering with Us",
   description:

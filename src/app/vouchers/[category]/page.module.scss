@@ -3,14 +3,17 @@
 
 .web_only {
   display: none;
+
   @include for-laptops {
     display: block;
   }
 }
+
 .mobile_only {
   display: block;
   display: flex;
   justify-content: center;
+
   @include for-laptops {
     display: none;
   }
@@ -23,6 +26,7 @@
   padding-right: 25px;
   padding-top: 36px;
   padding-bottom: 36px;
+
   @include for-laptops {
     padding-left: 70px;
     padding-right: 30px;
@@ -35,11 +39,13 @@
     margin-top: 20px;
     height: auto;
     padding: 40px 0;
+
     @include for-laptops {
       padding: 0 20px; //remove this also
       margin-top: -60px;
       width: 650px;
     }
+
     img {
       width: 100%;
       height: auto;
@@ -52,6 +58,7 @@
   background-color: $color-white;
   padding-top: 0;
   padding-bottom: 0;
+
   @include for-laptops {
     padding-top: 110px;
     padding-bottom: 0px;
@@ -65,6 +72,7 @@
   padding-right: 25px;
   padding-top: 36px;
   padding-bottom: 36px;
+
   @include for-laptops {
     padding-left: 70px;
     padding-right: 30px;
@@ -97,9 +105,11 @@
   background-size: cover, cover;
 
   padding: 75px 20px 0px 20px;
+
   @include for-laptops {
     padding: 75px 20px 20px 20px;
   }
+
   .voucher_detail_container {
     color: black;
     display: flex;
@@ -129,9 +139,11 @@
       padding: 0px 30px;
       margin: -10px -30px 15px;
     }
+
     a {
       display: flex;
       text-decoration: none;
+
       img {
         width: 25px;
         height: auto;
@@ -149,6 +161,7 @@
     @include for-laptops {
       height: 380px;
     }
+
     @include for-tablet {
       height: 320px;
     }
@@ -162,9 +175,11 @@
       font-weight: 700;
       font-style: italic;
       color: $color-white;
+
       span {
         color: $color-bolt-green;
       }
+
       @include for-tablet {
         top: 88px;
       }
@@ -190,10 +205,12 @@
       box-shadow:
         0 8px 16px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
       img {
         width: auto;
         height: 100%;
       }
+
       @include for-tablet {
         top: 108px;
         right: 66px;
@@ -209,9 +226,11 @@
       max-width: 300px;
       color: #18187f;
     }
+
     .voucher_name_wide {
       max-width: 380px;
     }
+
     .voucher_name_widest {
       max-width: 450px;
     }
@@ -226,11 +245,13 @@
       box-shadow:
         0 8px 16px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
       &:hover {
         box-shadow:
           0 12px 20px 0 rgba(0, 0, 0, 0.25),
           0 8px 30px 0 rgba(0, 0, 0, 0.22);
       }
+
       a {
         font-size: 18px;
         text-decoration: none;
@@ -243,6 +264,7 @@
 
 .top_container_detail {
   padding: 26px 20px;
+
   @include for-laptops {
     padding: 66px 20px;
   }
@@ -250,13 +272,16 @@
 
 .detail_section {
   color: $color-bolt-title-grey;
+
   .description_title {
     font-weight: 600;
     font-size: 22px;
   }
+
   @include for-laptops {
     padding: 0 80px;
   }
+
   a {
     color: $color-black;
   }
@@ -269,10 +294,12 @@
   padding: 50px 20px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
+
   .bottom_zigzag {
     position: absolute;
     bottom: -23px;
     left: -30px;
+
     img {
       height: 53px;
       width: auto;
@@ -283,14 +310,16 @@
 .bottom_container {
   width: 100%;
   position: relative;
-  background-color: #f9f9f9;
+  background-color: $color-silver-grey;
   padding: 50px 20px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
+
   .bottom_zigzag {
     position: absolute;
     bottom: -23px;
     left: -30px;
+
     img {
       height: 53px;
       width: auto;
@@ -304,6 +333,7 @@
   display: flex;
   text-align: center;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
@@ -313,6 +343,7 @@
       position: absolute;
       bottom: 0;
       display: none;
+
       @include for-laptops {
         display: flex;
       }
@@ -321,6 +352,7 @@
 
   .faqData {
     width: 100%;
+
     @include for-laptops {
       width: 70%;
     }
@@ -334,6 +366,7 @@
   padding: 0px;
   max-width: 800px;
   margin: 30px auto;
+
   @include for-laptops {
     padding: 20px;
   }
@@ -344,6 +377,7 @@
     align-items: center;
     position: relative;
     width: 33%;
+
     @include for-laptops {
       width: 100%;
       flex: 1;
@@ -359,6 +393,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+
     img {
       width: 100%;
       height: auto;
@@ -388,6 +423,7 @@
     color: #333;
     margin: 16px 0 0;
     max-width: 190px; // Adjust as needed to match the image
+
     @include for-laptops {
       font-size: 16px;
     }
@@ -400,6 +436,7 @@
     width: 39%;
     height: 2px;
     background-color: #007bff;
+
     @include for-laptops {
       right: -24%;
       width: 50%;
@@ -416,15 +453,18 @@
 .need_container {
   display: flex;
   padding: 20px 0px;
+
   @include for-laptops {
     padding: 20px 100px 0;
   }
 
   .need_img {
     width: 100px;
+
     @include for-laptops {
       width: 50px;
     }
+
     img {
       width: 100%;
       height: auto;
@@ -433,6 +473,7 @@
 
   .need_content {
     padding: 0px 0px 0px 20px;
+
     @include for-laptops {
       padding: 0 20px;
     }
@@ -477,6 +518,7 @@
 
     .logoImg {
       width: 75px;
+
       img {
         width: 100%;
         height: auto;
@@ -488,6 +530,7 @@
     max-width: 100px;
     max-height: 40px;
     object-fit: contain;
+
     img {
       width: 100%;
       height: auto;

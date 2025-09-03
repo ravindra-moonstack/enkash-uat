@@ -35,8 +35,8 @@ import bg2 from "./img/bg4.jpg"
 import bg3 from "./img/bg3.jpg"
 import bg4 from "./img/bg2.jpg"
 import bg5 from "./img/bg1.jpg"
-import { getSalesUrl } from "@/src/common/utils/getSalesUrl"
-import generateMetaData from "@/src/common/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({

@@ -1,20 +1,19 @@
 "use client"
-
 import { Key, useEffect, useState } from "react"
-import styles from "./how-does-it-work.module.scss"
 import Image from "next/image"
-import blueArrow from "./blue-arrrow.svg"
-import RectangleButton from "../buttons/rectangle-button"
-import { whiteArrow } from "../all-in-one-policy"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
-import { useSalesUrl } from "@/src/common/utils/useSalesUrl"
 
+import styles from "./how-does-it-work.module.scss"
+import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import { useSalesUrl } from "@/src/utils/useSalesUrl"
+import CommanButton from "@/src/components/buttons/index"
 interface howDoesItWorkProps {
   dataSets: any
   ctaText?: string
 }
 
 const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
+  //
+
   const salesUrl = useSalesUrl()
 
   const [currentData, setCurrentData] = useState(0)
@@ -75,13 +74,11 @@ const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
                     />
                   </div>
                   <div className="mt-3 mt-md-5">
-                    <RectangleButton
+                    <CommanButton
                       title={ctaText || "Get Started"}
                       theme="border-black"
-                      actionImage={blueArrow}
-                      hoverImage={whiteArrow}
-                      iconSize={15}
                       url={dataSets[currentData]?.linkUrl || salesUrl}
+                      arrow
                     />
                   </div>
                 </div>
