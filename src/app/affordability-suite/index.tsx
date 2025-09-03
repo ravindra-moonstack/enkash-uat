@@ -1,4 +1,6 @@
 export { default as greenArrow } from "./img/green-arrow.svg"
+export { default as whiteArrow } from "./img/white-arrow.png"
+
 export { default as acceleratedGrowthImg } from "./img/acceleratedGrowthImg.svg"
 export { default as heavyLiftingIconOne } from "./img/heavy-lifting-icon-one.svg"
 export { default as heavyLiftingIconTwo } from "./img/heavy-lifting-icon-two.svg"

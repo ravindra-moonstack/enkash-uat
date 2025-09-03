@@ -25,7 +25,7 @@ interface props {
   utmSource?: string
 }
 
-const WebHeader = ({ }: props) => {
+const WebHeader = ({}: props) => {
   const {
     hoveredIndex,
     isHeaderBgWhite,
@@ -52,8 +52,9 @@ const WebHeader = ({ }: props) => {
       </a>
 
       <header
-        className={`w-full absolute z-10 ${styles.header} ${isHeaderBgWhite ? styles.bg_white : styles.bg_blue
-          }`}
+        className={`w-full absolute z-10 ${styles.header} ${
+          isHeaderBgWhite ? styles.bg_white : styles.bg_blue
+        }`}
         onMouseLeave={closeAllModals}
         role="banner"
         aria-label="Primary"
@@ -84,8 +85,9 @@ const WebHeader = ({ }: props) => {
                   {navBarTopTtitle.map((item, index) => (
                     <li
                       key={item.name}
-                      className={`${styles.menu_item} ${styles[`menu_item_${index}`]} ${hoveredIndex === index ? styles.opacity_selected : ""
-                        }`}
+                      className={`${styles.menu_item} ${styles[`menu_item_${index}`]} ${
+                        hoveredIndex === index ? styles.opacity_selected : ""
+                      }`}
                       ref={(el) => {
                         itemRefs.current[index] = el
                       }}
@@ -179,8 +181,9 @@ const WebHeader = ({ }: props) => {
                   aria-label="Open support page in new tab"
                 >
                   <button
-                    className={`${styles.button_getStarted} ${active === "get-support" ? styles.active : ""
-                      }`}
+                    className={`${styles.button_getStarted} ${
+                      active === "get-support" ? styles.active : ""
+                    }`}
                     onClick={() => setActive("get-support")}
                     aria-current={active === "get-support" ? "page" : undefined}
                     type="button"
@@ -196,12 +199,13 @@ const WebHeader = ({ }: props) => {
                 >
                   <Link
                     target="_blank"
-                    href={`${process.env.HOME_URL}?source=nav-bar`}
+                    href={`${process.env.NEXT_PUBLIC_HOME_URL}?source=nav-bar`}
                     aria-label="Login page"
                   >
                     <button
-                      className={`${styles.button} ${styles.login} ${activeTab === "login" ? styles.active : ""
-                        }`}
+                      className={`${styles.button} ${styles.login} ${
+                        activeTab === "login" ? styles.active : ""
+                      }`}
                       onMouseEnter={() => setActiveTab("login")}
                       aria-current={activeTab === "login" ? "page" : undefined}
                       type="button"
@@ -216,8 +220,9 @@ const WebHeader = ({ }: props) => {
                     aria-label="Talk to Sales page in new tab"
                   >
                     <button
-                      className={`${styles.button} ${styles.sales} ${activeTab === "sales" ? styles.active : ""
-                        }`}
+                      className={`${styles.button} ${styles.sales} ${
+                        activeTab === "sales" ? styles.active : ""
+                      }`}
                       onMouseEnter={() => setActiveTab("sales")}
                       aria-current={activeTab === "sales" ? "page" : undefined}
                       type="button"
