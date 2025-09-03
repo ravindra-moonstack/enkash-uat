@@ -178,6 +178,7 @@ const FooterV2 = (): React.JSX.Element => {
                           href="https://www.linkedin.com/company/enkashbusiness"
                           target="_blank"
                           rel="noreferrer noopener"
+                          title="Linkedin"
                         >
                           <FaLinkedinIn />
                         </Link>
@@ -185,6 +186,7 @@ const FooterV2 = (): React.JSX.Element => {
                           href="https://www.youtube.com/@enkashbusiness"
                           target="_blank"
                           rel="noreferrer noopener"
+                          title="Youtube"
                         >
                           <FaYoutube />
                         </Link>
@@ -192,6 +194,7 @@ const FooterV2 = (): React.JSX.Element => {
                           href="https://www.instagram.com/Enkashbusiness"
                           target="_blank"
                           rel="noreferrer noopener"
+                          title="Instagram"
                         >
                           <FaInstagram />
                         </Link>
@@ -199,6 +202,7 @@ const FooterV2 = (): React.JSX.Element => {
                           href="https://twitter.com/EnkashBusiness"
                           target="_blank"
                           rel="noreferrer noopener"
+                          title="Twitter"
                         >
                           <FaXTwitter />
                         </Link>
@@ -206,6 +210,7 @@ const FooterV2 = (): React.JSX.Element => {
                           href="https://www.facebook.com/Enkashbusiness"
                           target="_blank"
                           rel="noreferrer noopener"
+                          title="Facebook"
                         >
                           <FaFacebookF />
                         </Link>
@@ -296,6 +301,7 @@ const FooterV2 = (): React.JSX.Element => {
                             href="https://www.linkedin.com/company/enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
+                            title="Linkedin"
                           >
                             <FaLinkedinIn />
                           </Link>
@@ -303,6 +309,7 @@ const FooterV2 = (): React.JSX.Element => {
                             href="https://www.youtube.com/@enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
+                            title="Youtube"
                           >
                             <FaYoutube />
                           </Link>
@@ -310,6 +317,7 @@ const FooterV2 = (): React.JSX.Element => {
                             href="https://www.instagram.com/Enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
+                            title="Instagram"
                           >
                             <FaInstagram />
                           </Link>
@@ -317,6 +325,7 @@ const FooterV2 = (): React.JSX.Element => {
                             href="https://twitter.com/EnkashBusiness"
                             target="_blank"
                             rel="noreferrer noopener"
+                            title="Twitter"
                           >
                             <FaXTwitter />
                           </Link>
@@ -324,6 +333,7 @@ const FooterV2 = (): React.JSX.Element => {
                             href="https://www.facebook.com/Enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
+                            title="Facebook"
                           >
                             <FaFacebookF />
                           </Link>
