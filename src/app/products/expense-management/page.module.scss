@@ -2,7 +2,7 @@
 @use "@/src/styles/mixin" as *;
 
 .first_row {
-  box-shadow: 0px 0px 77px 0px #0000001a;
+  box-shadow: 0px 0px 77px 0px $color-black-1a;
   padding: 90px 20px 0px;
   position: relative;
 
@@ -339,11 +339,11 @@
   }
   h1 {
     font-size: 2rem;
-    color: black;
+    color: $color-black;
 
     span {
       background-color: $color-equity-blue;
-      color: white;
+      color: $color-white;
     }
     @include for-laptops {
       font-size: 5.125rem;
