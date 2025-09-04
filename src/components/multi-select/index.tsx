@@ -1,8 +1,7 @@
 "use client"
 
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, useId } from "react"
 import styles from "./multiselect.module.scss"
-
 
 interface Option {
   value: string
@@ -14,9 +13,11 @@ interface MultiSelectProps {
   options: Option[]
   placeholder?: string
   onChange: (selected: string[]) => void
+  label?: string // accessible label for the input
 }
 
 const MultiSelect: React.FC<MultiSelectProps> = ({
+  name,
   options,
   placeholder = "Select options...",
   onChange = () => {},
@@ -24,6 +25,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   const [selected, setSelected] = useState<string[]>([])
   const [open, setOpen] = useState(false)
   const wrapperRef = useRef<HTMLDivElement>(null)
+  const inputId = useId()
 
   const toggleOption = (value: string) => {
     setSelected((prev) => {
@@ -31,7 +33,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
         ? prev.filter((v) => v !== value)
         : [...prev, value]
 
-      onChange(updated) 
+      onChange(updated)
       return updated
     })
   }
@@ -51,11 +53,35 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
     }
   }, [])
 
+  // handle keyboard toggle (Enter / Space) and navigation
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault()
+      setOpen((prev) => !prev)
+    }
+    if (e.key === "Escape") {
+      setOpen(false)
+    }
+  }
+
   return (
-    <div ref={wrapperRef} className={styles.multiSelectWrapper}>
+    <div
+      ref={wrapperRef}
+      className={styles.multiSelectWrapper}
+      role="combobox"
+      aria-haspopup="listbox"
+      aria-expanded={open}
+      aria-owns={`${inputId}-listbox`}
+      aria-controls={`${inputId}-listbox`}
+    >
       <div
         className={styles.multiSelectInput}
+        tabIndex={0}
+        role="button"
+        aria-labelledby={`${inputId}-label`}
+        aria-describedby={`${inputId}-helper`}
         onClick={() => setOpen((prev) => !prev)}
+        onKeyDown={handleKeyDown}
       >
         {selected.length > 0 ? (
           <div className={styles.tags}>
@@ -64,6 +90,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
                 {options.find((o) => o.value === val)?.label}
                 <button
                   type="button"
+                  aria-label={`Remove ${options.find((o) => o.value === val)?.label}`}
                   onClick={(e) => {
                     e.stopPropagation()
                     toggleOption(val)
@@ -77,21 +104,31 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
         ) : (
           <span className={styles.placeholder}>{placeholder}</span>
         )}
-
-        <span className={styles.arrow}>{open ? "▲" : "▼"}</span>
+        <span className={styles.arrow} aria-hidden="true">
+          {open ? "▲" : "▼"}
+        </span>
       </div>
 
       {open && (
-        <div className={styles.dropdown}>
+        <div
+          id={`${inputId}-listbox`}
+          role="listbox"
+          className={styles.dropdown}
+          aria-multiselectable="true"
+        >
           {options.map((opt) => (
             <label
               key={opt.value}
-              htmlFor={opt.value}
+              htmlFor={`${inputId}-${opt.value}`}
+              role="option"
+              aria-selected={selected.includes(opt.value)}
               className={styles.option}
             >
               <input
                 type="checkbox"
-                id={opt.value}
+                id={`${inputId}-${opt.value}`}
+                name={name}
+                value={opt.value}
                 checked={selected.includes(opt.value)}
                 onChange={() => toggleOption(opt.value)}
               />
