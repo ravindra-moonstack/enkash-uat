@@ -68,9 +68,11 @@
 .box_shadow_left {
   height: 100%;
   width: 20px;
-  background: radial-gradient(70% 401.51% at -38.04% 47.74%,
-      rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0) 100%);
+  background: radial-gradient(
+    70% 401.51% at -38.04% 47.74%,
+    rgba(0, 0, 0, 0.2) 0%,
+    $color-black-00 100%
+  );
 }
 
 .resource_modal_blog_title {
@@ -212,7 +214,7 @@
 
 // .container:nth-child(1) {
 //   background-color: $color-sky-hint; // blue
-//   color: white;
+//   color:$color-white;
 // }
 
 // .container:nth-child(2) {
