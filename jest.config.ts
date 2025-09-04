@@ -25,7 +25,7 @@ const config: Config = {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
+  // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
@@ -204,8 +204,10 @@ const config: Config = {
   // Whether to use watchman for file crawling
   // watchman: true,
 
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  // setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!src/**/*.d.ts"],
+  testPathIgnorePatterns: ["/node_modules/", "/tests/playwright/"],
+  verbose: true,
 }
 
 export default createJestConfig(config)
