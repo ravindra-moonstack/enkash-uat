@@ -4,7 +4,7 @@ import { StaticImageData } from "next/image"
 import { usePathname } from "next/navigation"
 
 import styles from "./CTASection.module.scss"
-import { DynamicHeading, RectangleButton } from ".."
+import { CommanButton, DynamicHeading } from ".."
 
 interface CTASectionProps {
   title: string
@@ -20,8 +20,7 @@ const CTASection: React.FC<CTASectionProps> = ({
   title,
   buttonText,
   buttonUrl = "/sales", // default path
-  actionImage,
-  hoverImage,
+
   background = "linear-gradient(180deg, #1c5af4 0%, #10348e 100%)",
   className = "",
 }) => {
@@ -47,13 +46,14 @@ const CTASection: React.FC<CTASectionProps> = ({
           />
         </div>
         <div className={styles.get_started_button}>
-          <RectangleButton
+         
+             <CommanButton
             title={buttonText}
             theme="outline-blue"
-            actionImage={actionImage}
-            hoverImage={hoverImage}
+            arrow
             url={finalUrl}
           />
+          
         </div>
       </div>
     </div>
