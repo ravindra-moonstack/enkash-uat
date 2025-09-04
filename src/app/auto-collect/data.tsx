@@ -53,8 +53,8 @@ import {
   taskIconThree,
   taskIconTwo,
 } from "."
-import UpiPayments from "../upi-payments/img/heroImg.webp"
 
+import UpiPayments from "../upi-payments/img/heroImg.webp"
 const dataSets = [
   {
     imageSrc: iconOne,
