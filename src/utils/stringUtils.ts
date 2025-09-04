@@ -16,15 +16,6 @@ export const nameToUrl = (name: string): string => {
     .replace(/^-+|-+$/g, "") // Remove hyphens from the start and end
 }
 
-export const toCamelCase = (str: string): string => {
-  return str
-    .toLowerCase()
-    .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) =>
-      index === 0 ? match.toLowerCase() : match.toUpperCase()
-    )
-    .replace(/[^a-zA-Z0-9]/g, "")
-}
-
 export const titleCae = (str: string): string => {
   return str.replace(/\b\w/g, (char) => char.toUpperCase())
 }

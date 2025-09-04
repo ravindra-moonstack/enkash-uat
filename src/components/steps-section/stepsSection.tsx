@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image"
 import styles from "./steps-section.module.scss"
 import { DynamicHeading, RectangleButton, StepCard } from ".."
 import { RectangleButtonTheme } from "../buttons/rectangle-button"
-import { useSalesUrl } from "@/src/utils/useSalesUrl"
+import { useSalesUrl } from "@/src/utils/salesUrl"
 
 interface StepItem {
   icon: string
