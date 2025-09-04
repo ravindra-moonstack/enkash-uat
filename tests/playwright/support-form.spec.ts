@@ -12,23 +12,14 @@ test("submits the support form using field name selectors", async ({
   await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210") // Contact No.
 
   // Handle multiselect (assuming it uses a div or input with name="MultipleChoice")
-  //   const multiSelect = page.locator('[name="MultipleChoice"]') // Adjust if custom component
-  //   await multiSelect.click()
-  //   await page.getByText("Sales", { exact: true }).click() // Replace "Sales" with actual option
+  const multiSelect = page.getByRole("combobox") // Adjust if custom component
+  await multiSelect.click()
+  await page.getByText("Sales", { exact: true }).click() // Replace "Sales" with actual option
 
   // Fill textarea using name
   await page
     .locator('textarea[name="MultiLine"]')
     .fill("Need help with onboarding and product features.")
-
-  // Intercept API call if you want to mock it (optional)
-  await page.route("/api/zoho", async (route) => {
-    await route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      body: JSON.stringify({ success: true }),
-    })
-  })
 
   // Submit the form
   await page.getByRole("button", { name: "Submit" }).click()
@@ -36,4 +27,3 @@ test("submits the support form using field name selectors", async ({
   // Expect to be redirected to the confirmation page
   await expect(page).toHaveURL(/\/confirmation-support/)
 })
-    

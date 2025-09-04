@@ -251,7 +251,7 @@ const SupportForm = dynamic(() => import("./forms/support-form"), {
 const ContactForm = dynamic(() => import("./forms/contact-form"), {
   ssr: true,
 })
-const ShimmerImage = dynamic(() => import("./shimmer-image/page"), {
+const ShimmerImage = dynamic(() => import("./shimmer-image"), {
   ssr: true,
 })
 
