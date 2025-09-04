@@ -3,20 +3,20 @@
 @use "@/src/styles/variables" as *;
 
 .first_row {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-clip: border-box;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0px 0px 77px 0px #0000001a;
-    padding: 112px 20px 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-clip: border-box;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 77px 0px $color-black-1a;
+  padding: 112px 20px 300px;
 
-    @include for-laptops {
-        padding: 112px 20px 425px;
-    }
+  @include for-laptops {
+    padding: 112px 20px 425px;
+  }
 }
 
 .box_white {
-    background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat, no-repeat;
 }

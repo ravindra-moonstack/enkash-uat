@@ -42,7 +42,7 @@
 
 .container:nth-child(1) {
   background-color: $color-sky-hint; // blue
-  color: white;
+  color: $color-white;
 }
 
 .container:nth-child(2) {
@@ -73,7 +73,7 @@
 }
 
 .sub_product_row {
-  color: black;
+  color: $color-black;
   cursor: pointer;
 
   border-radius: 8px;
@@ -128,9 +128,11 @@
 .box_shadow_left {
   height: 100%;
   width: 20px;
-  background: radial-gradient(70% 401.51% at -38.04% 47.74%,
-      rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0) 100%);
+  background: radial-gradient(
+    70% 401.51% at -38.04% 47.74%,
+    rgba(0, 0, 0, 0.2) 0%,
+    $color-black-00 100%
+  );
 }
 
 .footer {
@@ -260,7 +262,7 @@
   padding: 0px 6px;
   margin-left: 5px;
   border-radius: 10px;
-  color: white;
+  color: $color-white;
   font-size: 10px;
   font-weight: 500;
 
