@@ -118,8 +118,30 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
   }, [])
 
   return (
-    <div ref={wrapperRef} className={styles.wrapper}>
-      <div className={styles.inputBox} onClick={() => setOpen((prev) => !prev)}>
+    // eslint-disable-next-line jsx-a11y/role-supports-aria-props
+    <div
+      ref={wrapperRef}
+      className={styles.wrapper}
+      role="combobox"
+      aria-haspopup="listbox"
+      aria-expanded={open}
+      aria-multiselectable="true"
+    >
+      {/* Input Box */}
+      <div
+        className={styles.inputBox}
+        tabIndex={0}
+        onClick={() => setOpen((prev) => !prev)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault()
+            setOpen((prev) => !prev)
+          }
+          if (e.key === "Escape") setOpen(false)
+        }}
+        aria-controls={`${name}-dropdown`}
+        aria-label={placeholder}
+      >
         <div className={styles.inputContent}>
           {displayValues.length > 0 ? (
             <div className={styles.tags}>
@@ -128,6 +150,7 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                   {options.find((o) => o.value === val)?.label}
                   <button
                     type="button"
+                    aria-label={`Remove ${options.find((o) => o.value === val)?.label}`}
                     onClick={(e) => {
                       e.stopPropagation()
                       toggleOption(val)
@@ -145,17 +168,25 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
         <span className={styles.arrow}>{open ? "▲" : "▼"}</span>
       </div>
 
+      {/* Dropdown */}
       {open && (
-        <div className={styles.dropdown}>
+        <div
+          id={`${name}-dropdown`}
+          role="listbox"
+          aria-multiselectable="true"
+          className={styles.dropdown}
+        >
           {options.map((cat) => (
             <div key={cat.value} className={styles.category}>
               <div
                 className={styles.categoryHeader}
                 onClick={() => toggleCategory(cat.value)}
+                role="option"
+                aria-selected={selected.includes(cat.value)}
               >
                 <div className={styles.categoryHeaderLabel}>
                   <input
-                    id={cat.value}
+                    id={`${name}-${cat.value}`}
                     type="checkbox"
                     checked={selected.includes(cat.value)}
                     onChange={() => {
@@ -166,11 +197,14 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     }}
                     onClick={(e) => e.stopPropagation()}
                   />
-                  <label htmlFor={cat.value}>{cat.label}</label>
+                  <label htmlFor={`${name}-${cat.value}`}>{cat.label}</label>
                 </div>
 
                 {cat.children && (
-                  <span className={styles.arrow}>
+                  <span
+                    className={styles.arrow}
+                    aria-label={`Toggle ${cat.label} sub-options`}
+                  >
                     {openCategories.includes(cat.value) ? "▲" : "▼"}
                   </span>
                 )}
@@ -180,12 +214,12 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                 <div className={styles.subOptions}>
                   {cat.children.map((child) => (
                     <label
-                      htmlFor={cat.value}
+                      htmlFor={`${name}-${child.value}`}
                       key={child.value}
                       className={styles.option}
                     >
                       <input
-                        id={cat.value}
+                        id={`${name}-${child.value}`}
                         type="checkbox"
                         checked={selected.includes(child.value)}
                         onChange={() => toggleOption(child.value)}
@@ -200,7 +234,7 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
         </div>
       )}
 
-      {/* ✅ Single hidden input for form submission */}
+      {/* Hidden input for form submission */}
       <input type="hidden" name={name} value={JSON.stringify(selected)} />
     </div>
   )
