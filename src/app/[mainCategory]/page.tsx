@@ -14,7 +14,6 @@ import NotFound from "../not-found"
 
 // helpers
 import { VOUCHER_DATA, CATEGORY_META, VALID_CATEGORIES } from "./data"
-import { blueArrow, whiteArrow } from "../affordability-suite"
 import fetchVouchers from "@/src/helpers/vouchers"
 
 const getDiscountValue = (raw: string | number | undefined): number => {
@@ -125,8 +124,7 @@ const MainCategoryPage = async ({
           "Discover the EnKash difference - Secure, Scalable and Seamless."
         }
         buttonText={"Get Started"}
-        actionImage={blueArrow}
-        hoverImage={whiteArrow}
+       
         background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
       />
       <VoucherFaqSection

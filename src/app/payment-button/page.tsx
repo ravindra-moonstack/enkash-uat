@@ -23,7 +23,7 @@ import {
   realTimeIcon,
 } from "."
 
-import { faqBg } from "../digital-marketing-card"
+import faqBg from "./img/faq-bg.webp"
 import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
