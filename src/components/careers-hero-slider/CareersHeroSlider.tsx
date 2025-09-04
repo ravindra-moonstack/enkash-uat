@@ -116,7 +116,9 @@ const CareersHero: React.FC = () => {
                   />
                 </div>
 
-                <div className={`${styles.bannerButton} text-center`}>
+                <div
+                  className={`${styles.bannerButton} d-flex justify-content-center`}
+                >
                   <RectangleButton
                     title="Explore Open Roles"
                     theme="blue"
