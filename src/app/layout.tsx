@@ -9,8 +9,6 @@ import { Inter } from "next/font/google"
 import LayoutClientWrapper from "@/src/components/layout-wrapper"
 import { WebVitals } from "@/src/components/web-vitals"
 
-export const dynamic = "force-dynamic"
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
