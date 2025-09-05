@@ -1,40 +1,51 @@
 import { test, expect } from "@playwright/test"
 
+const zohoSupportUrl = process.env.NEXT_PUBLIC_ZOHO_SUPPORT_URL!
+
 test("submits the support form using field name selectors", async ({
   page,
 }) => {
-  // 👇 no hardcoding, just relative path
   await page.goto("/support")
 
-  // Fill inputs using their 'name' attributes
-  await page.locator('input[name="SingleLine"]').fill("John Doe") // Name
-  await page.locator('input[name="Email"]').fill("john.doe@example.com") // Email
-  await page.locator('input[name="SingleLine1"]').fill("Doe Enterprises") // Company Name
-  await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210") // Contact No.
+  // Fill text fields
+  await page.locator('input[name="SingleLine"]').fill("John Doe")
+  await page.locator('input[name="Email"]').fill("john.doe@example.com")
+  await page.locator('input[name="SingleLine1"]').fill("Doe Enterprises")
+  await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210")
 
-  // ✅ Handle checkbox
-  await page
-    .locator('input[name="MultipleChoice"][value="Collect Payments"]')
-    .check()
+  // ✅ MultiSelect (open → click the label instead of .check())
+  const multiSelect = page.getByRole("combobox")
+  await multiSelect.click()
+  await page.getByText("Exploring EnKash", { exact: true }).click()
 
-  // Fill textarea using name
+  // Fill textarea
   await page
     .locator('textarea[name="MultiLine"]')
     .fill("Need help with onboarding and product features.")
 
-  // ✅ Intercept API call (flexible)
-  await page.route("**/api/zoho", async (route) => {
-    await route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      body: JSON.stringify({ status: "success" }),
-    })
+  // ✅ Intercept Zoho form submission
+  await page.route(zohoSupportUrl, async (route) => {
+    if (route.request().method() === "POST") {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ status: "success" }),
+      })
+    } else {
+      await route.continue()
+    }
   })
 
-  // Click submit
-  await page.getByRole("button", { name: "Submit" }).click()
+  // ✅ Wait for POST + click submit
+  const [request] = await Promise.all([
+    page.waitForRequest(
+      (req) => req.url().includes("zoho") && req.method() === "POST"
+    ),
+    page.getByRole("button", { name: /submit/i }).click(),
+  ])
 
-  // ✅ Either expect redirect OR success message
-  // await expect(page).toHaveURL(/confirmation-support/);
+  expect(request.url()).toContain("zoho")
+
+  // Assert thank-you message
   await expect(page.getByText(/thank you/i)).toBeVisible()
 })
