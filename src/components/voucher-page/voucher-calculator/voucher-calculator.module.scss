@@ -5,7 +5,7 @@
   margin: 0px;
   padding: 30px 15px;
   border-radius: 18px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px $color-black-03;
   background: $color-white;
   @include for-laptops {
     padding: 30px 80px;
@@ -113,7 +113,7 @@
     .cartButton {
       position: relative;
       background-color: $color-equity-blue;
-      color: white;
+      color: $color-white;
       border: none;
       border-radius: 8px;
       width: 40px;
@@ -150,7 +150,7 @@
 
     tbody tr {
       border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px $color-black-03;
       margin: 15px 0px;
     }
 

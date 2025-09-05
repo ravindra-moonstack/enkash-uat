@@ -3,218 +3,211 @@
 @use "@/src/styles/variables" as *;
 
 .bankSolutions {
+  // 🔹 Mobile-first styles here
+  padding: 0 20px;
 
-    // 🔹 Mobile-first styles here 
-    padding: 0 20px;
+  .bankContainer {
+    width: 100%;
+    text-align: left;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    box-shadow: 0px 0px 77px 0px $color-black-1a;
+    padding: 30px 15px;
 
-    .bankContainer {
+    .solutionsList {
+      margin-top: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      .solutionItem {
         width: 100%;
-        text-align: left;
-        background-color: #F7F7F7;
-        border-radius: 12px;
-        box-shadow: 0px 0px 77px 0px #0000001A;
-        padding: 30px 15px;
 
-        .solutionsList {
-            margin-top: 22px;
+        .solutionHeader {
+          padding-left: 11px;
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.5px;
+            height: 25px;
+            background-color: $color-electric-green;
+          }
+
+          &:hover {
+            .arrow {
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
+
+          .titleContainer {
             display: flex;
-            flex-direction: column;
-            gap: 18px;
+            align-items: center;
 
-            .solutionItem {
-                width: 100%;
-
-                .solutionHeader {
-                    padding-left: 11px;
-                    display: flex;
-                    justify-content: space-between;
-                    position: relative;
-                    align-items: center;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 1.5px;
-                        height: 25px;
-                        background-color: $color-electric-green;
-                    }
-
-                    &:hover {
-                        .arrow {
-                            svg {
-                                transform: rotate(180deg);
-                            }
-                        }
-                    }
-
-                    .titleContainer {
-                        display: flex;
-                        align-items: center;
-
-                        .title {
-                            font-size: 16px;
-                            color: $color-grey-200;
-                            font-weight: 500;
-                            line-height: 28px;
-                            font-family: "Inter", sans-serif;
-                        }
-                    }
-
-                    .arrow {
-                        color: $color-equity-blue;
-                        transition: transform 0.3s ease;
-                        font-size: 12px;
-                        width: 28px;
-                        height: 28px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        svg {
-                            width: 10px;
-                        }
-                    }
-                }
-
-                .solutionContent {
-                    padding: 0px 25px 0px 12px;
-                    background-color: #f8f9fa;
-                    animation: slideDown 0.3s ease-out;
-                    display: none;
-                    transition: all 0.3s ease-in-out;
-
-                    p {
-                        margin: 0;
-                        color: #666;
-                        line-height: 1.4;
-                        font-size: 14px;
-                    }
-                }
-
-                &:hover {
-                    .solutionContent {
-                        display: block;
-                    }
-                }
-
-                .customButtons {
-                    a {
-                        text-decoration: none;
-                        color: $color-equity-blue;
-                        display: inline-block;
-                        margin-top: 20px;
-                        font-weight: 500; // optional
-                        font-size: 14px; // optional
-
-                        svg {
-                            margin-left: 7px;
-                            vertical-align: middle; // keeps arrow aligned
-                        }
-                    }
-                }
+            .title {
+              font-size: 16px;
+              color: $color-grey-200;
+              font-weight: 500;
+              line-height: 28px;
+              font-family: "Inter", sans-serif;
             }
+          }
+
+          .arrow {
+            color: $color-equity-blue;
+            transition: transform 0.3s ease;
+            font-size: 12px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+              width: 10px;
+            }
+          }
         }
 
+        .solutionContent {
+          padding: 0px 25px 0px 12px;
+          background-color: #f8f9fa;
+          animation: slideDown 0.3s ease-out;
+          display: none;
+          transition: all 0.3s ease-in-out;
 
-        .buttonContainer {
-            margin-top: 30px;
-            width: 100%;
-
-            .connectWithUs {
-                a {
-                    box-shadow: 0px 4px 44px 0px #0000001F;
-                    border: 2px solid $color-white;
-                    font-weight: 700;
-                    background-color: $color-white;
-                    color: $color-equity-blue;
-                    text-decoration: none;
-                    display: flex;
-                    justify-content: center;
-                    padding: 10px 16px;
-                    border-radius: 8px;
-                    align-items: center;
-                    font-size: 14px;
-                }
-            }
+          p {
+            margin: 0;
+            color: #666;
+            line-height: 1.4;
+            font-size: 14px;
+          }
         }
+
+        &:hover {
+          .solutionContent {
+            display: block;
+          }
+        }
+
+        .customButtons {
+          a {
+            text-decoration: none;
+            color: $color-equity-blue;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 500; // optional
+            font-size: 14px; // optional
+
+            svg {
+              margin-left: 7px;
+              vertical-align: middle; // keeps arrow aligned
+            }
+          }
+        }
+      }
     }
 
+    .buttonContainer {
+      margin-top: 30px;
+      width: 100%;
 
-    // ✅ Laptop styles remain unchanged
-    @include for-laptops {
-        .bankContainer {
-            padding: 50px 100px;
-
-            .solutionsList {
-                margin-top: 32px;
-                display: flex;
-                flex-direction: column;
-                gap: 18px;
-
-                .solutionItem {
-                    width: 100%;
-
-                    .solutionHeader {
-
-                        &::before {
-                            height: 30px;
-                        }
-
-                        .titleContainer {
-
-                            .title {
-                                font-size: 20px;
-                                line-height: 34px;
-                            }
-                        }
-
-                        .arrow {
-                            font-size: 14px;
-                            width: 32px;
-                            height: 32px;
-
-                            svg {
-                                width: 12px;
-                            }
-                        }
-                    }
-
-                    .solutionContent {
-                        padding: 0px 55.5px 0px 12px;
-                        background-color: #f8f9fa;
-
-                    }
-
-                }
-            }
+      .connectWithUs {
+        a {
+          box-shadow: 0px 4px 44px 0px #0000001f;
+          border: 2px solid $color-white;
+          font-weight: 700;
+          background-color: $color-white;
+          color: $color-equity-blue;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          padding: 10px 16px;
+          border-radius: 8px;
+          align-items: center;
+          font-size: 14px;
         }
-
-        .buttonContainer {
-            margin-top: 50px;
-
-            .connectWithUs {
-                a {
-                    background-color: $color-white;
-                    padding: 8px 20px;
-                    width: max-content;
-                }
-            }
-        }
+      }
     }
+  }
+
+  // ✅ Laptop styles remain unchanged
+  @include for-laptops {
+    .bankContainer {
+      padding: 50px 100px;
+
+      .solutionsList {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        .solutionItem {
+          width: 100%;
+
+          .solutionHeader {
+            &::before {
+              height: 30px;
+            }
+
+            .titleContainer {
+              .title {
+                font-size: 20px;
+                line-height: 34px;
+              }
+            }
+
+            .arrow {
+              font-size: 14px;
+              width: 32px;
+              height: 32px;
+
+              svg {
+                width: 12px;
+              }
+            }
+          }
+
+          .solutionContent {
+            padding: 0px 55.5px 0px 12px;
+            background-color: #f8f9fa;
+          }
+        }
+      }
+    }
+
+    .buttonContainer {
+      margin-top: 50px;
+
+      .connectWithUs {
+        a {
+          background-color: $color-white;
+          padding: 8px 20px;
+          width: max-content;
+        }
+      }
+    }
+  }
 }
 
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        max-height: 0;
-    }
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
 
-    to {
-        opacity: 1;
-        max-height: 200px;
-    }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
 }

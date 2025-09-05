@@ -38,7 +38,7 @@
   :global(.slick-dots li button:before) {
     width: 23px;
     height: 4px;
-    color: white;
+    color: $color-white;
     background: $color-white;
     content: "-";
   }
@@ -46,7 +46,7 @@
   :global(.slick-dots li .slick-active) {
     width: 23px;
     height: 6px;
-    color: white;
+    color: $color-white;
     background: $color-white;
     content: "-";
   }
