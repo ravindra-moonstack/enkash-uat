@@ -135,7 +135,7 @@
     .footer_copy_right {
       font-size: 9px;
       font-weight: 400;
-      color: black;
+      color: $color-black;
       display: flex;
       padding-top: 24px;
       text-align: center;
@@ -180,7 +180,7 @@
 }
 
 .title {
-  color: black;
+  color: $color-black;
   font-size: 14px;
   line-height: 16px;
   white-space: nowrap;
@@ -225,7 +225,7 @@
     padding: 0;
     font-size: 16px;
     border-radius: 6px;
-    background: black;
+    background: $color-black;
     display: flex;
     color: $color-white;
     align-items: center;
@@ -312,7 +312,7 @@
 
 .support_text {
   font-size: 10px;
-  color: black;
+  color: $color-black;
   white-space: nowrap;
 
   @include for-laptops {
@@ -433,10 +433,9 @@
         margin-bottom: 10px;
 
         a {
-          color: black;
+          color: $color-black;
 
           &:hover {
-
             span,
             svg {
               color: #1c5af4 !important;

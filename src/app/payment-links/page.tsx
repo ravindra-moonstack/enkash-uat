@@ -29,7 +29,7 @@ import {
   invoiceIcon,
 } from "."
 
-import { faqBg } from "../digital-marketing-card"
+import faqBg from "./img/faq-bg.webp"
 import bg1 from "./img/bg5.jpg"
 import bg2 from "./img/bg4.jpg"
 import bg3 from "./img/bg3.jpg"
