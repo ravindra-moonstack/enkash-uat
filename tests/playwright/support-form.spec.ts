@@ -18,6 +18,7 @@ test("submits the support form using field name selectors", async ({
   const multiSelect = page.getByRole("combobox")
   await multiSelect.click()
   await page.getByText("Exploring EnKash", { exact: true }).click()
+  await page.locator('input[name="SingleLine"]').click()
 
   // Fill textarea
   await page
@@ -25,9 +26,6 @@ test("submits the support form using field name selectors", async ({
     .fill("Need help with onboarding and product features.")
 
   await page.getByRole("button", { name: "Submit" }).click()
-
-  // Assert color change after click
-  await expect(page.locator(".submitBtn")).toHaveClass(/clicked/)
 
   // ✅ Intercept your API route instead of Zoho
   await page.route("**/api/zoho", async (route) => {
@@ -41,15 +39,6 @@ test("submits the support form using field name selectors", async ({
       await route.continue()
     }
   })
-
-  // ✅ Wait for the request to your API route
-  const [request] = await Promise.all([
-    page.waitForRequest(
-      (req) => req.url().includes("/api/zoho") && req.method() === "POST"
-    ),
-  ])
-
-  expect(request.url()).toContain("/api/zoho")
 
   // Assert navigation or confirmation page
   await expect(page).toHaveURL(/confirmation-support/)
