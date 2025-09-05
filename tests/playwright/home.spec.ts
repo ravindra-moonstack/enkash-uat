@@ -7,6 +7,16 @@ test("Website loads properly", async ({ page }) => {
   await expect(page).toBeDefined()
 })
 
+test("has main heading", async ({ page }) => {
+  await page.goto("https://enkash.com/")
+
+  // ✅ Check the H1 heading text
+  const heading = page.getByRole("heading", {
+    name: /Unifying Payments. Simplifying Spends/i,
+  })
+  await expect(heading).toBeVisible()
+})
+
 test("Connect with Us button navigates or opens contact form", async ({
   page,
 }) => {

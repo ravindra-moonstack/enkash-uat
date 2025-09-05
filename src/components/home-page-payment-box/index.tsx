@@ -19,8 +19,9 @@ const PaymentGatewayCare: React.FC<PaymentGatewayCareProps> = ({
 }) => {
   return (
     <>
-      <div className={`${styles.coloctPaymentBoxInnerBox}`}>
-        <Link href={url} className={`${styles.coloctPaymentBoxInnerLink}`}>
+      {" "}
+      <Link href={url} className={`${styles.coloctPaymentBoxInnerLink}`}>
+        <div className={`${styles.coloctPaymentBoxInnerBox}`}>
           {/* Title & Subtitle */}
           <div className="">
             <Image
@@ -51,8 +52,8 @@ const PaymentGatewayCare: React.FC<PaymentGatewayCareProps> = ({
             headingTag="p"
             className="mb-0 f-4"
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </>
   )
 }
