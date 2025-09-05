@@ -44,6 +44,18 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+  async rewrites() {
+    return [
+      {
+        source: "/resources/blogs",
+        destination: "https://blogs.enkash.com/blogs/",
+      },
+      {
+        source: "/resources/:path*",
+        destination: "https://blogs.enkash.com/:path*",
+      },
+    ]
+  },
 }
 
 module.exports = withBundleAnalyzerConfigured(nextConfig)
