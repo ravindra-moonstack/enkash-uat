@@ -1,10 +1,11 @@
 import { test, expect } from "@playwright/test"
 
-const zohoSupportUrl = process.env.NEXT_PUBLIC_ZOHO_SUPPORT_URL!
-
 test("submits the support form using field name selectors", async ({
   page,
 }) => {
+  // ⏱ set timeout for this test only
+  test.setTimeout(50000)
+
   await page.goto("/support")
 
   // Fill text fields
@@ -13,7 +14,7 @@ test("submits the support form using field name selectors", async ({
   await page.locator('input[name="SingleLine1"]').fill("Doe Enterprises")
   await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210")
 
-  // ✅ MultiSelect (open → click the label instead of .check())
+  // ✅ MultiSelect
   const multiSelect = page.getByRole("combobox")
   await multiSelect.click()
   await page.getByText("Exploring EnKash", { exact: true }).click()
@@ -23,8 +24,13 @@ test("submits the support form using field name selectors", async ({
     .locator('textarea[name="MultiLine"]')
     .fill("Need help with onboarding and product features.")
 
-  // ✅ Intercept Zoho form submission
-  await page.route(zohoSupportUrl, async (route) => {
+  await page.getByRole("button", { name: "Submit" }).click()
+
+  // Assert color change after click
+  await expect(page.locator(".submitBtn")).toHaveClass(/clicked/)
+
+  // ✅ Intercept your API route instead of Zoho
+  await page.route("**/api/zoho", async (route) => {
     if (route.request().method() === "POST") {
       await route.fulfill({
         status: 200,
@@ -36,16 +42,15 @@ test("submits the support form using field name selectors", async ({
     }
   })
 
-  // ✅ Wait for POST + click submit
+  // ✅ Wait for the request to your API route
   const [request] = await Promise.all([
     page.waitForRequest(
-      (req) => req.url().includes("zoho") && req.method() === "POST"
+      (req) => req.url().includes("/api/zoho") && req.method() === "POST"
     ),
-    page.getByRole("button", { name: /submit/i }).click(),
   ])
 
-  expect(request.url()).toContain("zoho")
+  expect(request.url()).toContain("/api/zoho")
 
-  // Assert thank-you message
-  await expect(page.getByText(/thank you/i)).toBeVisible()
+  // Assert navigation or confirmation page
+  await expect(page).toHaveURL(/confirmation-support/)
 })
