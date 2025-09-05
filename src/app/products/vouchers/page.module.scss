@@ -6,7 +6,7 @@
   background-position: center;
   background-size: cover;
   background-color: #ffffff;
-  box-shadow: 0px 0px 77px 0px #0000001a;
+  box-shadow: 0px 0px 77px 0px $color-black-1a;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 110px;
@@ -34,10 +34,12 @@
 }
 
 .second_row {
-  background: linear-gradient(to bottom right,
-      #1c5af4 0%,
-      $color-cyan-blue 75%,
-      $color-cyan-blue 100%);
+  background: linear-gradient(
+    to bottom right,
+    #1c5af4 0%,
+    $color-cyan-blue 75%,
+    $color-cyan-blue 100%
+  );
 
   position: relative;
   padding: 50px 20px;
@@ -64,9 +66,9 @@
     .card {
       width: calc(100% / 3 - 5px);
       max-width: 100%;
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: $color-white-1a;
       border-radius: 10px;
-      box-shadow: 0px 0px 29.66px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 0px 29.66px 0px $color-black-0d;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -92,7 +94,7 @@
       }
 
       .innerCard {
-        box-shadow: 0px 0px 29.66px 0px rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 0px 29.66px 0px $color-black-0d;
         width: 100%;
         padding: 4px;
         text-align: center;
@@ -250,9 +252,11 @@
     border-radius: 12px;
     padding-left: 50px;
     padding-right: 50px;
-    background: linear-gradient(90deg,
-        $color-equity-blue 15%,
-        $color-black 30%);
+    background: linear-gradient(
+      90deg,
+      $color-equity-blue 15%,
+      $color-black 30%
+    );
 
     @include for-laptops {
       height: 8px;
@@ -395,11 +399,11 @@
 
   h1 {
     font-size: 110px;
-    color: black;
+    color: $color-black;
 
     span {
       background-color: $color-bluish-purple;
-      color: white;
+      color: $color-white;
     }
   }
 }

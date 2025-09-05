@@ -1,15 +1,14 @@
 @use "@/src/styles/mixin" as *;
 @use "@/src/styles/variables" as *;
 
-.coloctPaymentBoxInnerBox {
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 16px;
-  padding: 32px;
-  border: 2px solid $color-white;
-
-  .coloctPaymentBoxInnerLink {
-    text-decoration: none;
-    color: #000;
+.coloctPaymentBoxInnerLink {
+  text-decoration: none;
+  color: #000;
+  .coloctPaymentBoxInnerBox {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 32px;
+    border: 2px solid $color-white;
   }
 }
 

@@ -220,7 +220,7 @@ const HomePage = (): React.JSX.Element => {
           <div className={`${styles.collectPaymentsBoxSection}`}>
             <div className="row">
               {cardsData.map((item, index) => (
-                <div className="col-md-4" key={index}>
+                <div className="col-12 col-sm-6 col-lg-4" key={index}>
                   <div className={`${styles.collectPaymentBox}`}>
                     <PaymentGatewayCare {...item} />
                   </div>
