@@ -1,7 +1,6 @@
 import React, { memo } from "react"
-import Image from "next/image"
 import styles from "./smartPolicySection.module.scss"
-import { DynamicHeading, PolicyCard, RectangleButton } from ".."
+import { DynamicHeading, PolicyCard, RectangleButton, ShimmerImage } from ".."
 
 interface SmartPolicySectionProps {
   heading: { title: string; color: string }[]
@@ -71,7 +70,7 @@ const SmartPolicySection = ({
       </div>
 
       <div className={styles.approvedImage}>
-        <Image src={approvedImage} alt="approved" />
+        <ShimmerImage src={approvedImage} alt="approved" />
       </div>
     </div>
   )

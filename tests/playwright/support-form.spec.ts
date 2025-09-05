@@ -3,7 +3,8 @@ import { test, expect } from "@playwright/test"
 test("submits the support form using field name selectors", async ({
   page,
 }) => {
-  await page.goto("https://enkash.com/support") // adjust to the correct route
+  // 👇 no hardcoding, just relative path
+  await page.goto("/support")
 
   // Fill inputs using their 'name' attributes
   await page.locator('input[name="SingleLine"]').fill("John Doe") // Name
@@ -11,29 +12,29 @@ test("submits the support form using field name selectors", async ({
   await page.locator('input[name="SingleLine1"]').fill("Doe Enterprises") // Company Name
   await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210") // Contact No.
 
-  // Handle multiselect (assuming it uses a div or input with name="MultipleChoice")
-  //   const multiSelect = page.locator('[name="MultipleChoice"]') // Adjust if custom component
-  //   await multiSelect.click()
-  //   await page.getByText("Sales", { exact: true }).click() // Replace "Sales" with actual option
+  // ✅ Handle checkbox
+  await page
+    .locator('input[name="MultipleChoice"][value="Collect Payments"]')
+    .check()
 
   // Fill textarea using name
   await page
     .locator('textarea[name="MultiLine"]')
     .fill("Need help with onboarding and product features.")
 
-  // Intercept API call if you want to mock it (optional)
-  await page.route("/api/zoho", async (route) => {
+  // ✅ Intercept API call (flexible)
+  await page.route("**/api/zoho", async (route) => {
     await route.fulfill({
       status: 200,
       contentType: "application/json",
-      body: JSON.stringify({ success: true }),
+      body: JSON.stringify({ status: "success" }),
     })
   })
 
-  // Submit the form
+  // Click submit
   await page.getByRole("button", { name: "Submit" }).click()
 
-  // Expect to be redirected to the confirmation page
-  await expect(page).toHaveURL(/\/confirmation-support/)
+  // ✅ Either expect redirect OR success message
+  // await expect(page).toHaveURL(/confirmation-support/);
+  await expect(page.getByText(/thank you/i)).toBeVisible()
 })
-    

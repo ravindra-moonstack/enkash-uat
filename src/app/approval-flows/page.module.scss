@@ -5,8 +5,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #ffffff73;
-  box-shadow: 0px 0px 77px 0px #0000001a;
+  background-color: $color-white-73;
+  box-shadow: 0px 0px 77px 0px $color-black-1a;
   padding: 100px 20px 0px;
   background-image: url(/images/expenceBg.webp);
   @include for-laptops {
@@ -76,7 +76,7 @@
   position: relative;
   background:
     linear-gradient(90deg, rgba(6, 99, 252, 0) 0%, #0663fc 100%),
-    url(./img/secongBg.png);
+    url("./img/secongBg.png");
 
   @include for-laptops {
     padding: 90px 20px;

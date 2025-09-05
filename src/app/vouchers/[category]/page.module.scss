@@ -90,7 +90,7 @@
 }
 
 .voucher_detail_container {
-  color: black;
+  color: $color-black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,7 +111,7 @@
   }
 
   .voucher_detail_container {
-    color: black;
+    color: $color-black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -196,7 +196,7 @@
     .voucher_image {
       border-radius: 21px;
       overflow: hidden;
-      border: solid 3px white;
+      border: solid 3px $color-white;
       width: 326px;
       height: 205px;
       position: absolute;
@@ -401,7 +401,7 @@
   }
 
   .icon {
-    color: white;
+    color: $color-white;
     font-size: 20px;
   }
 
@@ -513,7 +513,7 @@
     transition: box-shadow 0.3s ease;
 
     &:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px $color-black-03;
     }
 
     .logoImg {
