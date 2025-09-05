@@ -1,5 +1,4 @@
 import React, { memo } from "react"
-import Image from "next/image"
 import styles from "./smartPolicySection.module.scss"
 import { DynamicHeading, PolicyCard, RectangleButton, ShimmerImage } from ".."
 
