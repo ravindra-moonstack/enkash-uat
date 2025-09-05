@@ -44,15 +44,33 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/resource",
+        destination: "/resources",
+        permanent: true,
+      },
+    ]
+  },
   async rewrites() {
     return [
       {
-        source: "/resources/blogs",
+        source: "/resources",
         destination: "https://blogs.enkash.com/blogs/",
       },
       {
+        source: "/resources/",
+        destination: "https://blogs.enkash.com/",
+      },
+      {
+        source: "/resources/blog/:path*",
+        destination: "https://blogs.enkash.com/blog/:path*/",
+      },
+      {
         source: "/resources/:path*",
-        destination: "https://blogs.enkash.com/:path*",
+        destination: "https://blogs.enkash.com/:path*/",
       },
     ]
   },
