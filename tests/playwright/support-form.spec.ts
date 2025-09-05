@@ -3,7 +3,8 @@ import { test, expect } from "@playwright/test"
 test("submits the support form using field name selectors", async ({
   page,
 }) => {
-  await page.goto("https://enkash.com/support")
+  // 👇 no hardcoding, just relative path
+  await page.goto("/support")
 
   // Fill inputs using their 'name' attributes
   await page.locator('input[name="SingleLine"]').fill("John Doe") // Name
@@ -34,6 +35,6 @@ test("submits the support form using field name selectors", async ({
   await page.getByRole("button", { name: "Submit" }).click()
 
   // ✅ Either expect redirect OR success message
-  // await expect(page).toHaveURL(/confirmation-support/)
+  // await expect(page).toHaveURL(/confirmation-support/);
   await expect(page.getByText(/thank you/i)).toBeVisible()
 })

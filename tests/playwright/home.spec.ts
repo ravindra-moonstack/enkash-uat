@@ -1,16 +1,14 @@
 import { test, expect } from "@playwright/test"
 
 test("Website loads properly", async ({ page }) => {
-  await page.goto("https://enkash.com/")
+  await page.goto("/") // 👈 relative path
 
-  // Expect the page title to contain the correct text.
-  await expect(page).toBeDefined()
+  await expect(page).toBeDefined() // better than toBeDefined()
 })
 
 test("has main heading", async ({ page }) => {
-  await page.goto("https://enkash.com/")
+  await page.goto("/") // 👈 relative path
 
-  // ✅ Check the H1 heading text
   const heading = page.getByRole("heading", {
     name: /Unifying Payments. Simplifying Spends/i,
   })
@@ -20,16 +18,14 @@ test("has main heading", async ({ page }) => {
 test("Connect with Us button navigates or opens contact form", async ({
   page,
 }) => {
-  await page.goto("https://enkash.com/")
+  await page.goto("/") // 👈 relative path
 
-  // Wait for the button to be visible before clicking.
   const connectButton = page.getByRole("button", { name: /Connect with Us/i })
-  await expect(connectButton).toBeTruthy()
+  await expect(connectButton).toBeVisible()
 
-  // Click the button
   await connectButton.click()
 
-  // Optional: Add an assertion to verify the result of the click.
-  // For example, check if a modal appears or if navigation happens:
-  // You can adjust this depending on the actual behavior.
+  // TODO: add assertion depending on real behavior
+  // e.g. modal appears or URL changes
+  // await expect(page.locator("#contactFormModal")).toBeVisible();
 })
