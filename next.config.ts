@@ -58,23 +58,23 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/resources",
-        destination: "https://blogs.enkash.com/blogs/",
+        destination: "https://letsbloggers.com/enkash/blogs/",
       },
       {
         source: "/resources/",
-        destination: "https://blogs.enkash.com/",
+        destination: "https://letsbloggers.com/enkash/",
       },
       {
         source: "/resources/blog/:path*",
-        destination: "https://blogs.enkash.com/blog/:path*/",
+        destination: "https://letsbloggers.com/enkash/blog/:path*/",
       },
       {
         source: "/resources/:path*",
-        destination: "https://blogs.enkash.com/:path*/",
+        destination: "https://letsbloggers.com/enkash/:path*/",
       },
       {
         source: "/resources/:path*",
-        destination: "https://blogs.enkash.com/:path*",
+        destination: "https://letsbloggers.com/enkash/:path*",
       },
     ]
   },
