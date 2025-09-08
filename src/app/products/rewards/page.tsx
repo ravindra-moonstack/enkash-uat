@@ -1,20 +1,25 @@
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import { allProductSections, policiesData } from "./data"
 import faqData from "./faq-data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
   AllInOnePolicy,
   LottieDynamicLoadComponent,
   AllProducts,
   FaqSection,
+  CommanButton,
 } from "@/src/components"
 
+// utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Reward Program to Drive Employee & Customer Loyalty",
@@ -73,7 +78,7 @@ const Rewards = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-5 mt-3 justify-content-center d-flex">
-              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
+              <CommanButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
