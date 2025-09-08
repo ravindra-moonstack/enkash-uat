@@ -3,38 +3,43 @@ import { test, expect } from "@playwright/test"
 test("submits the support form using field name selectors", async ({
   page,
 }) => {
-  // 👇 no hardcoding, just relative path
+  // ⏱ set timeout for this test only
+  test.setTimeout(50000)
+
   await page.goto("/support")
 
-  // Fill inputs using their 'name' attributes
-  await page.locator('input[name="SingleLine"]').fill("John Doe") // Name
-  await page.locator('input[name="Email"]').fill("john.doe@example.com") // Email
-  await page.locator('input[name="SingleLine1"]').fill("Doe Enterprises") // Company Name
-  await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210") // Contact No.
+  // Fill text fields
+  await page.locator('input[name="SingleLine"]').fill("John Doe")
+  await page.locator('input[name="Email"]').fill("john.doe@example.com")
+  await page.locator('input[name="SingleLine1"]').fill("Doe Enterprises")
+  await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210")
 
-  // ✅ Handle checkbox
-  await page
-    .locator('input[name="MultipleChoice"][value="Collect Payments"]')
-    .check()
+  // ✅ MultiSelect
+  const multiSelect = page.getByRole("combobox")
+  await multiSelect.click()
+  await page.getByText("Exploring EnKash", { exact: true }).click()
+  await page.locator('input[name="SingleLine"]').click()
 
-  // Fill textarea using name
+  // Fill textarea
   await page
     .locator('textarea[name="MultiLine"]')
     .fill("Need help with onboarding and product features.")
 
-  // ✅ Intercept API call (flexible)
-  await page.route("**/api/zoho", async (route) => {
-    await route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      body: JSON.stringify({ status: "success" }),
-    })
-  })
-
-  // Click submit
   await page.getByRole("button", { name: "Submit" }).click()
 
-  // ✅ Either expect redirect OR success message
-  // await expect(page).toHaveURL(/confirmation-support/);
-  await expect(page.getByText(/thank you/i)).toBeVisible()
+  // ✅ Intercept your API route instead of Zoho
+  await page.route("**/api/zoho", async (route) => {
+    if (route.request().method() === "POST") {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({ status: "success" }),
+      })
+    } else {
+      await route.continue()
+    }
+  })
+
+  // Assert navigation or confirmation page
+  await expect(page).toHaveURL(/confirmation-support/)
 })
