@@ -1,49 +1,18 @@
-import crouselIconOne from "./img/crouselIconOne.svg"
-import crouselIconTwo from "./img/crouselIconTwo.svg"
-import crouselIconThree from "./img/crouselIconThree.svg"
-import crouselIconFour from "./img/crouselIconFour.svg"
-import crouselIconFive from "./img/crouselIconFive.svg"
-
 import {
   notificationImage,
   paymentLinkImage,
   paymentOptionImage,
-  scrollIconFour,
-  scrollIconOne,
-  scrollIconThree,
-  scrollIconTwo,
   shareImage,
   taskIconFour,
   taskIconOne,
   taskIconThree,
   taskIconTwo,
+  crouselIconOne,
+  crouselIconTwo,
+  crouselIconThree,
+  crouselIconFour,
+  crouselIconFive,
 } from "."
-
-const cardsData = [
-  {
-    title: "Onboard in Minutes",
-    description: "Sign up and link your business locations to our platform.",
-    icon: scrollIconOne,
-  },
-  {
-    title: "Add and Auto-Fetch Bills",
-    description:
-      "Add utility bill details or let EnKash auto-fetch them for you.",
-    icon: scrollIconTwo,
-  },
-  {
-    title: "Pay in One Click",
-    description:
-      "Make single or bulk payments instantly with robust security measures.",
-    icon: scrollIconThree,
-  },
-  {
-    title: "Track & Reconcile",
-    description:
-      "Monitor all payment statuses and reconcile them effortlessly.",
-    icon: scrollIconFour,
-  },
-]
 
 const allProductSections = [
   {
@@ -129,4 +98,4 @@ const policiesData = [
   },
 ]
 
-export { cardsData, allProductSections, policiesData }
+export { allProductSections, policiesData }

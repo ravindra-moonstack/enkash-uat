@@ -1,17 +1,25 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import { allInOnePolicyData, cardData, dataSets } from "./data"
+import faqData from "./faq-data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
   AllInOnePolicy,
   HowDoesItWork,
   PolicyCard,
   FaqSection,
   LottieDynamicLoadComponent,
+  CommanButton,
 } from "@/src/components"
+
+// helpers
 import {
   instantSettelmentIcon,
   instantSettelmentImg,
@@ -19,11 +27,8 @@ import {
   affordabilityIcon,
 } from "."
 
-import CommonButton from "@/src/components/buttons/index"
-
-import faqData from "./faq-data"
+// utils
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
@@ -81,7 +86,7 @@ const CollectPayment = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-5 mt-3 justify-content-center d-flex">
-              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
+              <CommanButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
@@ -95,9 +100,7 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div>
-        <LogoSlider />
-      </div>
+      <LogoSlider />
 
       <div className={styles.second_row}>
         <div className="max-m-auto">
@@ -186,18 +189,10 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      
       <div
         className={`${styles.fourth_row} row d-flex row-padding-x-only position-relative`}
       >
-        {/* Spline background */}
-        <div
-          className="position-absolute top-0 start-0 w-100"
-          style={{ height: "600px", backgroundColor: "black" }}
-        >
-          {/* <Spline scene="https://prod.spline.design/ukQwfbMk8aMlhZus/scene.splinecode" /> */}
-        </div>
-
-        {/* Foreground content */}
         <div
           className={`${styles.text_container} max-w-auto position-relative`}
         >
@@ -258,7 +253,7 @@ const CollectPayment = (): React.JSX.Element => {
                 }
               />
               <div className={` ${styles.list_button}`}>
-                <CommonButton
+                <CommanButton
                   title="Learn more"
                   theme="border-gray"
                   url={"/instant-settlement"}
@@ -293,7 +288,7 @@ const CollectPayment = (): React.JSX.Element => {
                 }
               />
               <div className={` ${styles.list_button}`}>
-                <CommonButton
+                <CommanButton
                   title="Learn more"
                   theme="border-gray"
                   url={"/affordability-suite"}
@@ -333,7 +328,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <CommonButton
+            <CommanButton
               title="Explore Our Solutions "
               theme="outline-blue"
               url={salesUrl}

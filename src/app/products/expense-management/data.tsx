@@ -1,43 +1,37 @@
-import iconOne from "./img/icon-one.svg"
-import iconTwo from "./img/icon-two.svg"
-import iconThree from "./img/icon-three.svg"
-import iconFour from "./img/icon-four.svg"
-import iconFive from "./img/icon-five.svg"
-import iconSix from "./img/icon-six.svg"
-import policyIcon from "./img/policyIcon.svg"
-import whatsappIcon from "./img/whatapp.svg"
-import mailIcon from "./img/mail.svg"
-import scannIcon from "./img/scanner.svg"
-import realTimeIcon from "./img/realTime.svg"
-import travelIcon from "./img/travel.svg"
-import autoCalculateIcon from "./img/autoCalculate.svg"
-import awareIcon from "./img/securty.svg"
-import integreatedControlIcon from "./img/integreatedControl.svg"
-import walletlIcon from "./img/wallet.svg"
-import controlIcon from "./img/control.svg"
-import trackIcon from "./img/track.svg"
-import cashIcon from "./img/cash.svg"
-import taxSaveIcon from "./img/taxSave.svg"
-import instantAcessIcon from "./img/instantAcess.svg"
-import verifiedIcon from "./img/verified.svg"
-import visibilityIcon from "./img/visibility.svg"
-
-import corporateCard from "./img/coprate-card.png"
-import automaticCard from "./img/automaticCard.svg"
-import gstCard from "./img/gst.png"
-import expenseCard from "./img/expenseCard.svg"
-import exchangeCard from "./img/exchangeCard.svg"
-import trackingCard from "./img/tracking.svg"
-import disrubsmentCard from "./img/disbruesment.svg"
-import customExpenseCard from "./img/customExpense.svg"
-
-import encruption from "./img/encruption.svg"
-import complience from "./img/complienceIcon.svg"
-import audit from "./img/auditIcon.svg"
-import signOn from "./img/sign-on-icon.svg"
-import key from "./img/key-icon.svg"
-import { approve } from "@/src/components/all-products"
 import {
+  policyIcon,
+  whatsappIcon,
+  mailIcon,
+  scannIcon,
+  realTimeIcon,
+  travelIcon,
+  autoCalculateIcon,
+  awareIcon,
+  integreatedControlIcon,
+  walletlIcon,
+  controlIcon,
+  trackIcon,
+  cashIcon,
+  taxSaveIcon,
+  instantAcessIcon,
+  verifiedIcon,
+  visibilityIcon,
+
+  corporateCard,
+  automaticCard,
+  gstCard,
+  expenseCard,
+  exchangeCard,
+  trackingCard,
+  disrubsmentCard,
+  customExpenseCard,
+
+  encruption,
+  complience,
+  audit,
+  signOn,
+  key,
+
   costControlSavings,
   costControlSavingsIcon,
   fraudProtection,
@@ -56,80 +50,9 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "."
+import { approve } from "@/src/components/all-products"
 
-const dataSets = [
-  {
-    imageSrc: iconOne,
-    altText: "Allocates hierarchy ",
-    heading:
-      "Allocates hierarchy : roles It supports and allocates customized approval hierarchy aligned to the company’s policies.",
-  },
-  {
-    imageSrc: iconTwo,
-    altText: "Setting up of budgets",
-    heading:
-      "Setting up of budgets : The automated expense management platform helps define budgets for all departments & projects as per employee allocation",
-  },
-  {
-    imageSrc: iconThree,
-    altText: "Simplified expense submission",
-    heading:
-      "Simplified expense submission: A user-friendly interface ensuring that employees can effortlessly submit expenses from their mobile devices at any time and from any location",
-  },
-  {
-    imageSrc: iconFour,
-    altText: "Automated approval workflow",
-    heading:
-      "Automated approval workflow: On-click approval process based on predefined budgets or policies",
-  },
-  {
-    imageSrc: iconFive,
-    altText: "Faster expense tracking",
-    heading:
-      "Faster expense tracking: AI-powered WhatsApp bot helps report expenses and enables managers to give on-the-go approvals",
-  },
-  {
-    imageSrc: iconSix,
-    altText: "Real-time visibility",
-    heading:
-      "Real-time visibility:  Managers can access up-to-date reports and dashboards that offer insights into spending patterns, budget utilization, and cost centers",
-  },
-]
 
-const blogData = [
-  {
-    image:
-      "https://blogs.enkash.com/wp-content/uploads/2022/09/blog_25.a957f315.jpg",
-    imageAlt: "Spend Management Platform: An Expense Management Strategy",
-    title: "Spend Management Platform: An Expense Management Strategy",
-    date: "Aug 03, 2023",
-    description:
-      "When you think about working capital management or spend management platform, you think of managing expenses that are incurred in your business over a quarter of a year...",
-    link: "/resources/blog/spend-management-software-for-smarter-spends/",
-  },
-  {
-    image:
-      "https://blogs.enkash.com/wp-content/uploads/2023/04/Insights-with-expense-management.jpg",
-    imageAlt:
-      "Gain Valuable Insights into Your Finances with Expense Management",
-    title: "Gain Valuable Insights into Your Finances with Expense Management",
-    date: "Apr 07, 2023",
-    description:
-      "Managing expenses is an essential aspect of personal and professional financial management. Keeping track of expenses can provide valuable insights into your finances, including where...",
-    link: "/resources/blog/importance-of-expense-management/",
-  },
-  {
-    image:
-      "https://blogs.enkash.com/wp-content/uploads/2023/02/Improve-your-cash-flow-with-the-best-expense-management-software.jpg",
-    imageAlt:
-      "Improve Your Cash Flow with The Best Expense Management Software",
-    title: "Improve Your Cash Flow with The Best Expense Management Software",
-    date: "Feb 22, 2023",
-    description:
-      "The foundation for any business’s efficient operation consists of creating precise budget, keeping close check on the business expenses, and streamlining cash flow. We cannot overstate...",
-    link: "/resources/blog/best-expense-management-software/",
-  },
-]
 
 const cardsData = [
   {
@@ -173,57 +96,6 @@ const cardsData = [
     description:
       "Set rules for travel spend, routes, and booking classes. Route requests through multi-level approvals and sync approved trips with bookings—all while staying policy-compliant.",
     icon: policyIcon,
-  },
-]
-
-const projects = [
-  {
-    title: "Matthias Leidinger",
-    description:
-      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
-    src: "rock.jpg",
-    link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj6aSLQx6QJuytN_V1FK-AxPwT-DL8HQj2JwTKY-v-rOlDkKQbJWeB3ao&s",
-    color: "#BBACAF",
-  },
-  {
-    title: "Clément Chapillon",
-    description:
-      "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément Chapillon describes his latest highly captivating project Les rochers fauves (French for ‘The tawny rocks’).",
-    src: "tree.jpg",
-    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
-    color: "#977F6D",
-  },
-  {
-    title: "Zissou",
-    description:
-      "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
-    src: "water.jpg",
-    link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-    color: "#C2491D",
-  },
-  {
-    title: "Matthias Leidinger",
-    description:
-      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
-    src: "rock.jpg",
-    link: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
-    color: "#BBACAF",
-  },
-  {
-    title: "Clément Chapillon",
-    description:
-      "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément Chapillon describes his latest highly captivating project Les rochers fauves (French for ‘The tawny rocks’).",
-    src: "tree.jpg",
-    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
-    color: "#977F6D",
-  },
-  {
-    title: "Zissou",
-    description:
-      "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
-    src: "water.jpg",
-    link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-    color: "#C2491D",
   },
 ]
 
@@ -485,39 +357,6 @@ const stackcardData = [
   },
 ]
 
-// const intantActionData = [
-//   {
-//     title: "Live Account Overview",
-//     description:
-//       "Track balances, credit limits, billing cycles, and dues in real-time.",
-//     icon: overviewIcon,
-//   },
-//   {
-//     title: "Granular Card Controls",
-//     description:
-//       "Set custom limits, manage usage channels, and block or reissue cards with just a click.",
-//     icon: controlIcon,
-//   },
-//   {
-//     title: "Transaction Intelligence",
-//     description:
-//       "Drill down into each transaction by category, user, time, and channel.",
-//     icon: intelligenceIcon,
-//   },
-//   {
-//     title: "Statement Clarity",
-//     description:
-//       "Download detailed, filterable statements for individual or consolidated accounts.",
-//     icon: statementIcon,
-//   },
-//   {
-//     title: "One-Click Settlements",
-//     description:
-//       "Make payments across cards with flexible split options by total, minimum due, or custom logic.",
-//     icon: oneClickIcon,
-//   },
-// ]
-
 const allProductSections = [
   {
     title: "Reconciliation & Policy",
@@ -592,10 +431,7 @@ const allProductSections = [
 ]
 
 export {
-  blogData,
-  dataSets,
   cardsData,
-  projects,
   cardData,
   dashboardData,
   integrationData,
