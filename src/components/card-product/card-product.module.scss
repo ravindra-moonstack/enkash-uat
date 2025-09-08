@@ -16,6 +16,10 @@
   text-align: start;
   max-width: 100vw;
   cursor: pointer;
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
 
   &:hover {
     transform: scale(1.02);
@@ -66,9 +70,11 @@
 .description {
   font-size: 10px;
   font-weight: 500;
-  color: $color-white;
+  color: $color-white !important;
   line-height: 16px;
-
+  a {
+    color: inherit;
+  }
   span {
     font-weight: 700;
   }
@@ -115,5 +121,17 @@
       text-decoration: none; // remove underline on hover too
       color: inherit; // or a hover color
     }
+  }
+}
+.link {
+  color: inherit;
+  text-decoration: none;
+  a {
+    color: inherit !important; // or any custom color
+    text-decoration: none !important;  
+  }
+
+  &:hover {
+    text-decoration: none; // optional: hover pe bhi underline na ho
   }
 }
