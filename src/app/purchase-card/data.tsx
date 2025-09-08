@@ -1,15 +1,3 @@
-
-import sliderOne from "./img/sliderOne.svg"
-import sliderTwo from "./img/sliderTwo.svg"
-import sliderThree from "./img/sliderThree.svg"
-import sliderFour from "./img/sliderFour.svg"
-import sliderFive from "./img/sliderFive.svg"
-import firstIcon from "./img/icon-one.svg"
-import secondIcon from "./img/icon-two.svg"
-import thirdIcon from "./img/icon-three.svg"
-import fourthIcon from "./img/icon-four.svg"
-
-
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -28,10 +16,17 @@ import {
   virtualCardImg,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
+  payrollCardImg,
+  sliderOne,
+  sliderTwo,
+  sliderThree,
+  sliderFour,
+  sliderFive,
+  firstIcon,
+  secondIcon,
+  thirdIcon,
+fourthIcon
 } from "."
-import { payrollCardImg } from "../fuel-card"
-
-
 
 const intantActionData = [
   {
@@ -216,7 +211,6 @@ const stackcardData = [
 ]
 
 export {
-
   intantActionData,
   cardType,
   allProductSections,
