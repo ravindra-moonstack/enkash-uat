@@ -8,7 +8,7 @@ export interface CardProps {
   titleHtml?: ReactNode
   description: string
   cardImage?: string | StaticImageData
-  linkUrl?: string // ✅
+  linkUrl?: string
 }
 
 const CardProduct = ({
@@ -68,18 +68,18 @@ const CardProduct = ({
     </>
   )
 
+  const Wrapper: React.ElementType = linkUrl ? "a" : "div"
+  const wrapperProps = linkUrl
+    ? { href: linkUrl, className: styles.link, rel: "noopener noreferrer" }
+    : {}
+
   return (
-    <div
+    <Wrapper
+      {...wrapperProps}
       className={`d-flex flex-column justify-content-between ${styles.card_body}`}
     >
-      {linkUrl ? (
-        <a href={linkUrl} className={styles.link} rel="noopener noreferrer">
-          {cardContent}
-        </a>
-      ) : (
-        cardContent
-      )}
-    </div>
+      {cardContent}
+    </Wrapper>
   )
 }
 

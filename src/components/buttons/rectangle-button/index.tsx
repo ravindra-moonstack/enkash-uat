@@ -72,6 +72,7 @@ const RectangleButton = ({
       style={{ width: width || "auto" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      role="button"
     >
       {title}
       {iconToShow && (
