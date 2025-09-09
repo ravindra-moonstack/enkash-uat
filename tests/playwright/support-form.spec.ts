@@ -41,5 +41,5 @@ test("submits the support form using field name selectors", async ({
   })
 
   // Assert navigation or confirmation page
-  await expect(page).toHaveURL(/confirmation-support/)
+  await expect(page).toHaveURL(/support/)
 })

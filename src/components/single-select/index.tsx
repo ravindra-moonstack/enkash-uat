@@ -11,6 +11,7 @@ interface Props {
 }
 
 const SingleSelect: React.FC<Props> = ({
+  name,
   options,
   placeholder = "Please select...",
   onChange,
@@ -45,10 +46,12 @@ const SingleSelect: React.FC<Props> = ({
       ref={wrapperRef}
       tabIndex={0}
       role="button"
+      aria-label={name}
       aria-expanded={open}
       aria-haspopup="listbox"
       className={styles.wrapper}
     >
+      <input type="hidden" name={name} value={selected} />
       {/* Custom styled box */}
       <div className={styles.inputBox} onClick={() => setOpen((prev) => !prev)}>
         <div className={styles.inputContent}>
