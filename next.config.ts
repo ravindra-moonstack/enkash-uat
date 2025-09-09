@@ -68,10 +68,10 @@ const nextConfig: NextConfig = {
         source: "/resources/blog/:path*",
         destination: "https://blogs.enkash.com/blog/:path*/",
       },
-      {
-        source: "/resources/:path*",
-        destination: "https://blogs.enkash.com/:path*/",
-      },
+      // {
+      //   source: "/resources/:path*",
+      //   destination: "https://blogs.enkash.com/:path*/",
+      // },
       {
         source: "/resources/:path*",
         destination: "https://blogs.enkash.com/:path*",
