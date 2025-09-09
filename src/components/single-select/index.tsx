@@ -79,6 +79,7 @@ const SingleSelect: React.FC<Props> = ({
           {options.map((opt) => (
             <div
               key={opt.value}
+              role="menuitem"
               className={styles.option}
               onClick={() => handleSelect(opt.value)}
             >

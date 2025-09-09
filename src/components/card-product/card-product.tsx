@@ -27,7 +27,7 @@ const CardProduct = ({
               content={[
                 {
                   title: String(titleHtml),
-                  color: "color-white",
+                  color: "color-white ",
                 },
               ]}
               headingTag="h4"
@@ -40,7 +40,7 @@ const CardProduct = ({
               content={[
                 {
                   title: whiteTitle,
-                  color: "color-white",
+                  color: "color-white ",
                 },
               ]}
               headingTag="h4"
@@ -50,7 +50,16 @@ const CardProduct = ({
         )}
 
         <div>
-          <p className="mb-0 mt-2">{description}</p>
+          <DynamicHeading
+            content={[
+              {
+                title: description,
+                color: "color-white ",
+              },
+            ]}
+            headingTag="p"
+            className="mb-0 mt-2 "
+          />
         </div>
       </div>
 
