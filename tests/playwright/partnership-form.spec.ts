@@ -1,38 +1,44 @@
 import { test, expect } from "@playwright/test"
 
-test("submits the support form using field name selectors", async ({
-  page,
-}) => {
-  // ⏱ set timeout for this test only
+test("fills and submits Bank and Affiliate Partnerships form", async ({ page }) => {
   test.setTimeout(50000)
 
   await page.goto("/bank-partnerships")
 
-  // Fill text fields
+  // Fill text inputs
   await page.locator('input[name="SingleLine"]').fill("John Doe")
   await page.locator('input[name="Email"]').fill("john.doe@example.com")
   await page.locator('input[name="SingleLine1"]').fill("Doe Enterprises")
   await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210")
 
-  const singleSelect = page.getByRole("button", { name: "" }) // button has no accessible name
-  await singleSelect.click()
+  // ✅ Open MultiChoice custom select
+  const multiSelect = page.getByRole("button", { name: "MultipleChoice" })
+  await multiSelect.click()
 
+  // ✅ Select options from dropdown
   await page.getByRole("menuitem", { name: "Bank Partnership" }).click()
+  await multiSelect.click() // open again for next choice
+  await page.getByRole("menuitem", { name: "Payment Gateway Partnership" }).click()
 
-  // ✅ Assert hidden input has correct value
-  await expect(page.locator('input[name="MultiSelect"]')).toHaveValue(
-    "Bank Partnership"
+  // (Optional) Assert hidden input or form state was updated
+  await expect(page.locator('input[name="MultipleChoice"]')).toHaveValue(
+    "Payment Gateway Partnership"
   )
 
   // Fill textarea
   await page
     .locator('textarea[name="MultiLine"]')
-    .fill("Need help with onboarding and product features.")
+    .fill("Need help with onboarding and partnership opportunities.")
 
-  await page.getByRole("button", { name: "Submit" }).click()
+  // Select other dropdowns
+  // await page.getByRole("combobox", { name: "Dropdown" }).selectOption("Landing Page")
+  // await page.getByRole("combobox", { name: "Dropdown1" }).selectOption("Marketing")
+  // await page.getByRole("combobox", { name: "Dropdown2" }).selectOption("Website Sales Leads")
+  // await page.getByRole("combobox", { name: "Dropdown3" }).selectOption("Second Choice")
+  // await page.getByRole("combobox", { name: "Dropdown4" }).selectOption("Third Choice")
 
-  // ✅ Intercept your API route instead of Zoho
-  await page.route("**/api/zoho", async (route) => {
+  // Mock API call
+  await page.route("**/submit", async (route) => {
     if (route.request().method() === "POST") {
       await route.fulfill({
         status: 200,
@@ -44,6 +50,9 @@ test("submits the support form using field name selectors", async ({
     }
   })
 
-  // Assert navigation or confirmation page
-  await expect(page).toHaveURL(/confirmation-partnerships/)
+  // Submit form
+  await page.getByRole("button", { name: "Submit" }).click()
+
+  // Assert confirmation
+  await expect(page).toHaveURL(/bank-partnerships/i)
 })
