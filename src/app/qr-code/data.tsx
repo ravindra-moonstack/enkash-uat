@@ -59,7 +59,6 @@ const cardsData = [
   },
 ]
 
-
 const paymentMethodData = [
   {
     title: "Bulk QR Code Generation",
@@ -86,7 +85,6 @@ const paymentMethodData = [
     icon: digital,
   },
 ]
-
 
 const allInOnePolicyData = [
   {
@@ -189,6 +187,7 @@ const managementCardData = [
     linkUrl: "/collection-reminder",
   },
 ]
+
 const stackcardData = [
   {
     color: "#fff",

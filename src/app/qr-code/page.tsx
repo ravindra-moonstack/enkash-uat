@@ -371,6 +371,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <CardStacking
@@ -384,6 +385,7 @@ const QrCode = (): React.JSX.Element => {
           />
         </div>
       </div>
+      
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-md-5 pb-4`}>

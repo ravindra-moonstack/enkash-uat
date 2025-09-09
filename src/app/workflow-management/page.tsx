@@ -1,27 +1,33 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import { cardsData, workflowPolicies } from "./data"
 import faqData from "./faq-data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
   PolicyCard,
-  RectangleButton,
+  CommanButton,
   AllInOnePolicy,
   FaqSection,
 } from "@/src/components"
+
+// helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
   activationIcon,
 } from "."
-import { Metadata } from "next"
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -113,7 +119,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -142,6 +148,7 @@ const WorkflowManagement = (): React.JSX.Element => {
         </div>
         <LogoSlider />
       </div>
+
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
@@ -225,6 +232,7 @@ const WorkflowManagement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-4`}>
@@ -271,7 +279,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommanButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -290,6 +298,7 @@ const WorkflowManagement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
@@ -331,6 +340,7 @@ const WorkflowManagement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -347,16 +357,16 @@ const WorkflowManagement = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
         </div>
       </div>
+
       <FaqSection faqData={faqData} />
     </div>
   )
