@@ -17,15 +17,10 @@ import {
   PolicyCard,
   FaqSection,
   StepsSection,
+  CommanButton,
 } from "@/src/components"
 
-import {
-  blueArrow,
-  whiteArrow,
-  mealCardImage,
-  heroCardImg,
-  instantActionImg,
-} from "."
+import { mealCardImage, heroCardImg, instantActionImg } from "."
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
@@ -149,8 +144,6 @@ const DigitalMarketingCard = (): React.JSX.Element => {
         button={{
           title: "Get started",
           theme: "border-gray",
-          actionImage: blueArrow,
-          hoverImage: whiteArrow,
         }}
         image={{
           src: mealCardImage,
@@ -217,11 +210,10 @@ const DigitalMarketingCard = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommanButton
                   title="Try for Yourself "
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
+                  arrow
                   url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />

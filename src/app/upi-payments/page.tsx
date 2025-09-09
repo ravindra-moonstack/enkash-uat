@@ -1,5 +1,9 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+
+// data
 import {
   allInOnePolicyData,
   cardsData,
@@ -8,18 +12,24 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
   PolicyCard,
-  RectangleButton,
+  CommanButton,
   ManagementCard,
   AllInOnePolicy,
   FeatureCard,
   FaqSection,
   CardStacking,
+
 } from "@/src/components"
+
+
+// helpers
 import {
   groupIcon,
   paymentSummary,
@@ -27,7 +37,9 @@ import {
   activationIcon,
   realTimeIcon,
 } from "."
-import { Metadata } from "next"
+
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -56,6 +68,7 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const UpiPayments = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -134,7 +147,7 @@ const UpiPayments = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -298,7 +311,7 @@ const UpiPayments = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommanButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -361,6 +374,7 @@ const UpiPayments = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <CardStacking
@@ -374,6 +388,7 @@ const UpiPayments = (): React.JSX.Element => {
           />
         </div>
       </div>
+
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-4`}>

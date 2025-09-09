@@ -1,28 +1,35 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
+  CommanButton,
   AllInOnePolicy,
   FaqSection,
+  AllProducts,
+  ScrollableCardsSection
 } from "@/src/components"
+
+// helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
 } from "."
 
-import AllProducts from "@/src/components/all-products/all-products"
-import ScrollableCardsSection from "@/src/components/scrollable-cards-section/scrollableCardsSection"
+
+// utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Rent Payments: Pay Office & Property Rent Digitally",
@@ -112,7 +119,7 @@ const RantPayment = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -225,6 +232,7 @@ const RantPayment = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center max-w-auto`}>
           <div className={``}>
@@ -266,11 +274,10 @@ const RantPayment = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

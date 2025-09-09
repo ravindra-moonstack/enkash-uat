@@ -1,11 +1,3 @@
-import clockIcon from "./img/clockIcon.svg"
-import integrationIcon from "./img/integration.svg"
-import approvedIcon from "./img/approved.svg"
-import policyApproval from "./img/policy-approval.webp"
-import herarchy from "./img/herarchy.webp"
-import insight from "./img/insights.webp"
-import advance from "./img/advanced.webp"
-import reimbursements from "./img/reimbursement.webp"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -20,6 +12,15 @@ import {
   stepCardImgTwo,
   streamlinedReimbursement,
   streamlinedReimbursementIcon,
+  clockIcon,
+  integrationIcon,
+  approvedIcon,
+  policyApproval,
+  herarchy,
+  insight,
+  advance,
+  reimbursements
+
 } from "."
 
 const cardData = [
