@@ -1,5 +1,8 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import {
   allProductSections,
   cardData,
@@ -9,9 +12,10 @@ import {
   rbiData,
   spendAnalyticsData,
 } from "./data"
+import faqData from "./faq-data"
 
+// components
 import {
-  RectangleButton,
   PolicyCard,
   LogoSlider,
   FeatureCard,
@@ -21,20 +25,19 @@ import {
   LottieDynamicLoadComponent,
   DynamicHeading,
   FaqSection,
+  CommanButton,
 } from "@/src/components"
 
+// helpers
 import {
-  blueArrow,
   spendAnalylicsImg,
   rbiLogo,
   corporateCard,
   corporateCardIcon,
-  whiteArrow,
   onePlatform,
 } from "."
 
-import faqData from "./faq-data"
-import { Metadata } from "next"
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -99,7 +102,7 @@ const CorporateCards = (): React.JSX.Element => {
             </div>
 
             <div className={`justify-content-center d-flex mt-3 pointer-auto`}>
-              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
+              <CommanButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div
@@ -117,9 +120,7 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div>
-        <LogoSlider />
-      </div>
+      <LogoSlider />
 
       <div className={styles.second_row}>
         <div className="max-m-auto">
@@ -230,11 +231,10 @@ const CorporateCards = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommanButton
                   title="Try Now"
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
+                  arrow
                   url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
@@ -462,11 +462,10 @@ const CorporateCards = (): React.JSX.Element => {
               </ul>
 
               <div className="ml-4">
-                <RectangleButton
+                <CommanButton
                   title="Explore More"
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
+                  arrow
                   url="/prepaid-card"
                   className="d-flex justify-content-between align-items-center"
                 />
@@ -549,7 +548,7 @@ const CorporateCards = (): React.JSX.Element => {
             />
           </div>
           <div className="pt-4  justify-content-center d-flex">
-            <RectangleButton
+            <CommanButton
               title={"Explore Our Expense Management Suite"}
               theme="blue"
               width="auto"
@@ -581,13 +580,11 @@ const CorporateCards = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Talk to Us"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
-              iconSize={15}
             />
           </div>
         </div>

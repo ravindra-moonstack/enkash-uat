@@ -53,7 +53,6 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
     }
   }, [])
 
-  // handle keyboard toggle (Enter / Space) and navigation
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault()
@@ -70,6 +69,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
       className={styles.multiSelectWrapper}
       role="combobox"
       aria-haspopup="listbox"
+      aria-label={placeholder}
       aria-expanded={open}
       aria-owns={`${inputId}-listbox`}
       aria-controls={`${inputId}-listbox`}

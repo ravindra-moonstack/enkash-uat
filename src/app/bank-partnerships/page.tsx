@@ -7,7 +7,7 @@ import {
   slideData,
   stepsData,
 } from "./data"
-import FaqSection from "@/src/components/faq-section/faqSection"
+
 import { ThirdfaqData } from "./faq-data"
 import {
   BecomePartnerSteps,
@@ -17,6 +17,7 @@ import {
   BankSolutions,
   PartnerShipForm,
   BankAffiliatePartnershipForm,
+  FaqSection
 } from "@/src/components"
 import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/src/components/all-in-one-policy"

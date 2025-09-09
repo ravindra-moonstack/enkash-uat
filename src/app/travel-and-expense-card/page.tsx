@@ -1,5 +1,8 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import {
   allProductSections,
   cardType,
@@ -9,9 +12,11 @@ import {
   spendAnalyticsData,
   unmatchControlData,
 } from "./data"
+import faqData from "./faq-data"
 
+// components
 import {
-  RectangleButton,
+  CommanButton,
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -22,9 +27,9 @@ import {
   StepCard,
 } from "@/src/components"
 
+
+// helpers
 import {
-  blueArrow,
-  whiteArrow,
   mealCardImage,
   instantActionImg,
   heroCardImg,
@@ -33,8 +38,7 @@ import {
   unmatchedControlImg,
 } from "."
 
-import faqData from "./faq-data"
-import { Metadata } from "next"
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -112,11 +116,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div>
+    
         <StepsSection
           heading={[
             {
@@ -143,15 +143,13 @@ const TravelExpenseCard = (): React.JSX.Element => {
           button={{
             title: "Get Started",
             theme: "border-gray",
-            actionImage: blueArrow,
-            hoverImage: whiteArrow,
           }}
           image={{
             src: mealCardImage,
             alt: "card background",
           }}
         />
-      </div>
+    
 
       <div className={`${styles.third_row} bg-highlite`}>
         <div className="max-w-auto">
@@ -218,11 +216,10 @@ const TravelExpenseCard = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommanButton
                   title="Get started "
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
+                  arrow
                   url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
@@ -295,11 +292,10 @@ const TravelExpenseCard = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommanButton
                   title="Get started "
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
+                  arrow
                   url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
@@ -354,11 +350,10 @@ const TravelExpenseCard = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommanButton
                   title="Get started "
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
+                  arrow
                   url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
@@ -431,11 +426,10 @@ const TravelExpenseCard = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommanButton
                   title="Get started "
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
+                  arrow
                   url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
@@ -489,20 +483,19 @@ const TravelExpenseCard = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Try for Yourself"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div>
+
         <FaqSection faqData={faqData} />
-      </div>
+     
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

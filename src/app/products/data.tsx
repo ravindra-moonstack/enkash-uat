@@ -8,10 +8,6 @@ import {
   optimizedIcon,
   paymentLinkImage,
   paymentOptionImage,
-  scrollIconFour,
-  scrollIconOne,
-  scrollIconThree,
-  scrollIconTwo,
   secureImage,
   shareImage,
   taskIconFive,
@@ -22,31 +18,7 @@ import {
   taskIconTwo,
 } from "."
 
-const cardsData = [
-  {
-    title: "Onboard in Minutes",
-    description: "Sign up and link your business locations to our platform.",
-    icon: scrollIconOne,
-  },
-  {
-    title: "Add and Auto-Fetch Bills",
-    description:
-      "Add utility bill details or let EnKash auto-fetch them for you.",
-    icon: scrollIconTwo,
-  },
-  {
-    title: "Pay in One Click",
-    description:
-      "Make single or bulk payments instantly with robust security measures.",
-    icon: scrollIconThree,
-  },
-  {
-    title: "Track & Reconcile",
-    description:
-      "Monitor all payment statuses and reconcile them effortlessly.",
-    icon: scrollIconFour,
-  },
-]
+
 
 const allProductSections = [
   {
@@ -142,4 +114,4 @@ const policiesData = [
   },
 ]
 
-export { cardsData, allProductSections, policiesData }
+export {allProductSections, policiesData }

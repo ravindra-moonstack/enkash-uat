@@ -1,34 +1,3 @@
-import iconOne from "./img/icon-one.svg"
-import iconTwo from "./img/icon-two.svg"
-import iconThree from "./img/icon-three.svg"
-import iconFour from "./img/icon-four.svg"
-import iconFive from "./img/icon-five.svg"
-import iconSix from "./img/icon-six.svg"
-import policyIcon from "./img/policyIcon.svg"
-import overviewIcon from "./img/overview.svg"
-import controlIcon from "./img/control.svg"
-import intelligenceIcon from "./img/intelligence.svg"
-import statementIcon from "./img/statement.svg"
-import oneClickIcon from "./img/oneClick.svg"
-import identifyIcon from "./img/identify.svg"
-import detectIcon from "./img/detect.svg"
-import monitorIcon from "./img/monitor.svg"
-import customizeIcon from "./img/customize.svg"
-import instantIcon from "./img/instant-card.svg"
-import onboardingIcon from "./img/onboarding.svg"
-import noThidPartyIcon from "./img/noThidParty.svg"
-import diyControlIcon from "./img/diy-control.svg"
-import slideFirst from "./img/card-use-img.svg"
-import slideSecond from "./img/cardUsage.png"
-import slideThird from "./img/cardLimit.png"
-import slideFourth from "./img/block-unblock.png"
-import slideFifth from "./img/approvals.png"
-import autoCapture from "./img/auto-capture.svg"
-import auditExpense from "./img/audit-expence.svg"
-import reconcile from "./img/reconcile.svg"
-import workflow from "./img/workflow.svg"
-import approve from "./img/approve.svg"
-
 import {
   clockIcon,
   fuelCardImg,
@@ -40,81 +9,26 @@ import {
   securityIcon,
   termsAndConCardImg,
   virtualCardImg,
+  overviewIcon,
+  controlIcon,
+  intelligenceIcon,
+  statementIcon,
+  oneClickIcon,
+  identifyIcon,
+  detectIcon,
+  monitorIcon,
+  customizeIcon,
+  instantIcon,
+  onboardingIcon,
+  noThidPartyIcon,
+  diyControlIcon,
+  autoCapture,
+  auditExpense,
+  reconcile,
+  workflow,
+  approve,
 } from "."
 
-const dataSets = [
-  {
-    imageSrc: iconOne,
-    altText: "Allocates hierarchy ",
-    heading:
-      "Allocates hierarchy : roles It supports and allocates customized approval hierarchy aligned to the company’s policies.",
-  },
-  {
-    imageSrc: iconTwo,
-    altText: "Setting up of budgets",
-    heading:
-      "Setting up of budgets : The automated expense management platform helps define budgets for all departments & projects as per employee allocation",
-  },
-  {
-    imageSrc: iconThree,
-    altText: "Simplified expense submission",
-    heading:
-      "Simplified expense submission: A user-friendly interface ensuring that employees can effortlessly submit expenses from their mobile devices at any time and from any location",
-  },
-  {
-    imageSrc: iconFour,
-    altText: "Automated approval workflow",
-    heading:
-      "Automated approval workflow: On-click approval process based on predefined budgets or policies",
-  },
-  {
-    imageSrc: iconFive,
-    altText: "Faster expense tracking",
-    heading:
-      "Faster expense tracking: AI-powered WhatsApp bot helps report expenses and enables managers to give on-the-go approvals",
-  },
-  {
-    imageSrc: iconSix,
-    altText: "Real-time visibility",
-    heading:
-      "Real-time visibility:  Managers can access up-to-date reports and dashboards that offer insights into spending patterns, budget utilization, and cost centers",
-  },
-]
-
-const blogData = [
-  {
-    image:
-      "https://blogs.enkash.com/wp-content/uploads/2022/09/blog_25.a957f315.jpg",
-    imageAlt: "Spend Management Platform: An Expense Management Strategy",
-    title: "Spend Management Platform: An Expense Management Strategy",
-    date: "Aug 03, 2023",
-    description:
-      "When you think about working capital management or spend management platform, you think of managing expenses that are incurred in your business over a quarter of a year...",
-    link: "/resources/blog/spend-management-software-for-smarter-spends/",
-  },
-  {
-    image:
-      "https://blogs.enkash.com/wp-content/uploads/2023/04/Insights-with-expense-management.jpg",
-    imageAlt:
-      "Gain Valuable Insights into Your Finances with Expense Management",
-    title: "Gain Valuable Insights into Your Finances with Expense Management",
-    date: "Apr 07, 2023",
-    description:
-      "Managing expenses is an essential aspect of personal and professional financial management. Keeping track of expenses can provide valuable insights into your finances, including where...",
-    link: "/resources/blog/importance-of-expense-management/",
-  },
-  {
-    image:
-      "https://blogs.enkash.com/wp-content/uploads/2023/02/Improve-your-cash-flow-with-the-best-expense-management-software.jpg",
-    imageAlt:
-      "Improve Your Cash Flow with The Best Expense Management Software",
-    title: "Improve Your Cash Flow with The Best Expense Management Software",
-    date: "Feb 22, 2023",
-    description:
-      "The foundation for any business’s efficient operation consists of creating precise budget, keeping close check on the business expenses, and streamlining cash flow. We cannot overstate...",
-    link: "/resources/blog/best-expense-management-software/",
-  },
-]
 
 const cardData = [
   {
@@ -132,40 +46,6 @@ const cardData = [
   {
     icon: securityIcon,
     title: "100% RBI-compliant",
-  },
-]
-
-const cardsData = [
-  {
-    title: "Fast Performance",
-    description:
-      "Our app loads quickly and smoothly for a better user experience.",
-    icon: policyIcon,
-  },
-  {
-    title: "Secure",
-    description: "Top-notch security features keep your data safe and private.",
-    icon: policyIcon,
-  },
-  {
-    title: "24/7 Support",
-    description: "We provide around-the-clock assistance whenever you need it.",
-    icon: policyIcon,
-  },
-  {
-    title: "Customizable",
-    description: "Easily tailor the app to fit your unique workflow and needs.",
-    icon: policyIcon,
-  },
-  {
-    title: "Cloud Sync",
-    description: "Access your data anywhere with secure cloud synchronization.",
-    icon: policyIcon,
-  },
-  {
-    title: "Intuitive Design",
-    description: "A clean and simple interface that’s easy to navigate.",
-    icon: policyIcon,
   },
 ]
 
@@ -310,48 +190,7 @@ const cardType = [
   },
 ]
 
-const slideUpData = [
-  {
-    title: "Set Your Rules",
-    description:
-      "Define spending rules based on individual users, departments, or specific vendors. Set limits, track usage, and ensure policy compliance at every level.",
-    src: slideFirst,
-    link: "",
-    icon: onboardingIcon,
-  },
-  {
-    title: "Channel-level Controls",
-    description:
-      "Enable or disable specific transaction channels such as POS, online (e-commerce), or contactless payments. Prevent misuse by controlling how and where each card is used.",
-    src: slideSecond,
-    link: "",
-    icon: onboardingIcon,
-  },
-  {
-    title: "Define Your Limits",
-    description:
-      "Set automated daily, weekly, or monthly spend caps for each card. Avoid overspending and enforce company-wide financial discipline without constant manual intervention.",
-    src: slideThird,
-    link: "",
-    icon: onboardingIcon,
-  },
-  {
-    title: "Block/Unblock at Your Convenience",
-    description:
-      "Lost or compromised card? Instantly block or reactivate it from the dashboard with one click, no paperwork, no support tickets, no delay.",
-    src: slideFourth,
-    link: "",
-    icon: onboardingIcon,
-  },
-  {
-    title: "Simplify Approval Flows",
-    description:
-      "Establish flexible approval workflows with role-based access. Enable maker-checker setups to maintain internal controls and ensure complete accountability on every transaction.",
-    src: slideFifth,
-    link: "",
-    icon: onboardingIcon,
-  },
-]
+
 
 const allProductSections = [
   {
@@ -399,15 +238,11 @@ const allProductSections = [
 ]
 
 export {
-  blogData,
-  dataSets,
-  cardsData,
   intantActionData,
   spendAnalyticsData,
   rbiData,
   corporateCardData,
   cardData,
   cardType,
-  slideUpData,
   allProductSections,
 }

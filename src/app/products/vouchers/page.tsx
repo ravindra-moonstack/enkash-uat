@@ -1,20 +1,28 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+import { allInOnePolicyData, categoriesData } from "./data"
+
+// data
 import faqData from "./faq-data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
   AllInOnePolicy,
   EnkashWay,
   FaqSection,
+  CommanButton,
 } from "@/src/components"
+
+// helpers
 import { paymentSummary } from "."
+
+// utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
-import { allInOnePolicyData, categoriesData } from "./data"
 
 export const metadata: Metadata = generateMetaData({
   title: "Grab 400+ Brand Gift Vouchers for Best Discounts",
@@ -71,7 +79,7 @@ const Vouchers = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-4 mt-3 justify-content-center d-flex">
-              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
+              <CommanButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12">

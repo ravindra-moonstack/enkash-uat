@@ -1,7 +1,3 @@
-import convenient from "./img/convenient.svg"
-import settlementIcon from "./img/settlementIcon.svg"
-import flexibility from "./img/flexibility.svg"
-
 import {
   autoCollect,
   costControlSavings,
@@ -31,6 +27,9 @@ import {
   taskIconTwo,
   TravelIcon,
   TravelImage,
+  convenient,
+  settlementIcon,
+  flexibility,
 } from "."
 
 const cardsData = [
@@ -206,4 +205,10 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
 ]
-export { cardsData, paymentMethodData, allInOnePolicyData, managementCardsData, stackcardData }
+export {
+  cardsData,
+  paymentMethodData,
+  allInOnePolicyData,
+  managementCardsData,
+  stackcardData,
+}
