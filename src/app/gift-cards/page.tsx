@@ -10,7 +10,7 @@ import {
 } from "./data"
 
 import {
-  RectangleButton,
+  CommanButton,
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -22,13 +22,7 @@ import {
   StepsSection,
 } from "@/src/components"
 
-import {
-  blueArrow,
-  whiteArrow,
-  mealCardImage,
-  instantActionImg,
-  heroCardImg,
-} from "."
+import { mealCardImage, instantActionImg, heroCardImg } from "."
 
 import faqData from "./faq-data"
 import AllProducts from "@/src/components/all-products/all-products"
@@ -125,11 +119,7 @@ const GiftCards = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
@@ -191,8 +181,6 @@ const GiftCards = (): React.JSX.Element => {
         button={{
           title: "Get Started",
           theme: "border-gray",
-          actionImage: blueArrow,
-          hoverImage: whiteArrow,
         }}
         image={{
           src: mealCardImage,
@@ -232,8 +220,6 @@ const GiftCards = (): React.JSX.Element => {
         button={{
           title: "Get Started",
           theme: "border-gray",
-          actionImage: blueArrow,
-          hoverImage: whiteArrow,
         }}
         image={{
           src: instantActionImg,
@@ -286,11 +272,10 @@ const GiftCards = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

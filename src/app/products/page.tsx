@@ -1,17 +1,24 @@
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import { allProductSections, policiesData } from "./data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
+  CommanButton,
   AllInOnePolicy,
   AllProducts,
   SalesForm,
 } from "@/src/components"
 
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Platform: Comprehensive Product Suite",
@@ -60,7 +67,7 @@ const Rewards = (): React.JSX.Element => {
             </div>
 
             <div className=" mt-3 justify-content-center d-flex">
-              <RectangleButton
+              <CommanButton
                 title="Talk to Us"
                 theme="blue"
                 url={"#salesForm"}
@@ -143,6 +150,7 @@ const Rewards = (): React.JSX.Element => {
           data={mergedCards}
         />
       </div>
+
       <div id="salesForm" className={`${styles.sales_form}`}>
         <SalesForm />
       </div>

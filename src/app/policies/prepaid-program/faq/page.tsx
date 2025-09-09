@@ -29,7 +29,7 @@ const Faq = () => {
                 },
                 {
                   name: "Faq",
-                  url: "/policies/prepaid-program/faq",
+                  url: "/policies/prepaid-program/FAQ",
                 },
               ]}
             />

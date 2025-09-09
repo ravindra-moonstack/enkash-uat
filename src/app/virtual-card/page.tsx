@@ -1,5 +1,8 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import {
   allProductSections,
   cardType,
@@ -7,8 +10,12 @@ import {
   spendAnalyticsData,
   stackcardData,
 } from "./data"
+import faqData from "./faq-data"
+
+
+// components
 import {
-  RectangleButton,
+  CommanButton,
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -21,17 +28,17 @@ import {
   StepsSection,
 } from "@/src/components"
 
+
+// helpers
 import {
-  blueArrow,
-  whiteArrow,
   mealCardImage,
   instantActionImg,
   heroCardImg,
 } from "."
 
-import faqData from "./faq-data"
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
@@ -122,7 +129,7 @@ const VirtualCards = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
+              <CommanButton
                 title="Get Started"
                 theme="blue"
                 url={salesUrl}
@@ -141,7 +148,6 @@ const VirtualCards = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div>
         <StepsSection
           heading={[
             {
@@ -153,15 +159,14 @@ const VirtualCards = (): React.JSX.Element => {
           button={{
             title: "Get Started",
             theme: "border-gray",
-            actionImage: blueArrow,
-            hoverImage: whiteArrow,
+         
           }}
           image={{
             src: mealCardImage,
             alt: "card background",
           }}
         />
-      </div>
+   
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
@@ -270,9 +275,9 @@ const VirtualCards = (): React.JSX.Element => {
         />
       </div>
 
-      <div>
+     
         <FaqSection faqData={faqData} />
-      </div>
+     
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

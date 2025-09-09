@@ -1,19 +1,23 @@
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+// data
 import { allProductSections, cardData } from "./data"
 import faqData from "./faq-data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
   AllInOnePolicy,
   AllProducts,
   LottieDynamicLoadComponent,
   FaqSection,
+  CommanButton,
 } from "@/src/components"
+
+// helpers
 import {
-  blueArrow,
-  whiteArrow,
   paymentLinkImage,
   shareImage,
   paymentOptionImage,
@@ -28,7 +32,8 @@ import {
   invoiceImg,
   optimizedImg,
 } from "."
-import { Metadata } from "next"
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -43,7 +48,7 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/make-payments")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const PaymentPage = (): React.JSX.Element => {
+const MakePayment = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>
@@ -89,7 +94,7 @@ const PaymentPage = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-5 mt-3 mb-3 mb-md-0 justify-content-center d-flex">
-              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
+              <CommanButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12">
@@ -101,9 +106,8 @@ const PaymentPage = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-        <div>
-          <LogoSlider />
-        </div>
+
+        <LogoSlider />
       </div>
 
       <div className={styles.second_row}>
@@ -252,6 +256,7 @@ const PaymentPage = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center `}>
           <div className={``}>
@@ -289,11 +294,10 @@ const PaymentPage = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started  Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
@@ -305,4 +309,4 @@ const PaymentPage = (): React.JSX.Element => {
   )
 }
 
-export default PaymentPage
+export default MakePayment

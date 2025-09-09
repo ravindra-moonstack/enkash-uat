@@ -1,13 +1,19 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import {
   allProductSections,
   cardType,
   intantActionData,
   stackcardData,
 } from "./data"
+import faqData from "./faq-data"
+
+// components
 import {
-  RectangleButton,
+  CommanButton,
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -18,10 +24,11 @@ import {
   StepsSection,
   AllProducts,
 } from "@/src/components"
-import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
 
-import faqData from "./faq-data"
-import { Metadata } from "next"
+// helpers
+import { mealCardImage, heroCardImg } from "."
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -51,6 +58,7 @@ const cards = stackcardData.map(
     ),
   })
 )
+
 const SaasCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
@@ -114,11 +122,7 @@ const SaasCards = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
@@ -128,31 +132,28 @@ const SaasCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
-      <div>
-        <StepsSection
-          heading={[
-            {
-              text: "How To Get Started with SaaS Cards  ",
-              colorClass: "color-black",
-            },
-          ]}
-          steps={intantActionData}
-          button={{
-            title: "Get started",
-            theme: "border-gray",
-            actionImage: blueArrow,
-            hoverImage: whiteArrow,
-          }}
-          image={{
-            src: mealCardImage,
-            alt: "card background",
-          }}
-        />
-      </div>
+      <StepsSection
+        heading={[
+          {
+            text: "How To Get Started with SaaS Cards  ",
+            colorClass: "color-black",
+          },
+        ]}
+        steps={intantActionData}
+        button={{
+          title: "Get started",
+          theme: "border-gray",
+        }}
+        image={{
+          src: mealCardImage,
+          alt: "card background",
+        }}
+      />
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
@@ -215,20 +216,17 @@ const SaasCards = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Try for Yourself"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div>
-        <FaqSection faqData={faqData} />
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

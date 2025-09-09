@@ -9,7 +9,7 @@ import {
 } from "./data"
 
 import {
-  RectangleButton,
+  CommanButton,
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -22,7 +22,7 @@ import {
   AllProducts,
 } from "@/src/components"
 
-import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
+import { mealCardImage, heroCardImg } from "."
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
@@ -37,6 +37,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/instant-card-management/`,
   },
 })
+
 const salesUrl = getSalesUrl("/instant-card-management")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
@@ -116,11 +117,7 @@ const InstantCardManagement = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
@@ -187,8 +184,6 @@ const InstantCardManagement = (): React.JSX.Element => {
         button={{
           title: "Get Started",
           theme: "border-gray",
-          actionImage: blueArrow,
-          hoverImage: whiteArrow,
         }}
         image={{
           src: mealCardImage,
@@ -258,11 +253,10 @@ const InstantCardManagement = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
