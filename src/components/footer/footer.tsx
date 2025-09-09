@@ -787,6 +787,11 @@ const FooterV2 = (): React.JSX.Element => {
                         Privacy Policy
                       </Link>
                     </li>
+                    <li>
+                      <Link href="/policies/prepaid-program/faq">
+                        FAQs for PPI
+                      </Link>
+                    </li>
                   </ul>
                 </div>
                 <div className="mt-3">
