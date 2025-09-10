@@ -152,10 +152,10 @@ const SubProduct = (props: any) => {
                         onClick={(e) => {
                           if (product?.comingSoon) e.preventDefault()
                         }}
-                        onFocus={() => sethoveredProductIndex(index)} // ✅ focus works
+                        onFocus={() => sethoveredProductIndex(index)} 
                         onBlur={(e) => {
                           if (!e.currentTarget.contains(e.relatedTarget)) {
-                            sethoveredProductIndex(null) // ✅ blur works
+                            sethoveredProductIndex(null)
                           }
                         }}
                       >

@@ -45,7 +45,7 @@ const CustomerOnboarding = () => {
                       <DynamicHeading
                         content={[
                           {
-                            title: "Prepaid instruments terms and conditions",
+                            title: "Terms and Conditions (Prepaid Program)",
                             color: "color-equity-blue",
                           },
                         ]}
@@ -55,7 +55,7 @@ const CustomerOnboarding = () => {
                     </div>
                     <div className="word-to-html-null mb-5">
                       <h5 className="c15 mt-6 pb-4">
-                        Last Updated On: 25th August 2025
+                        Last Updated On: 10th June 2025
                       </h5>
                       <p>
                         These terms and conditions (
@@ -907,7 +907,7 @@ const CustomerOnboarding = () => {
                         className="f-5 text-center"
                       />
                     </div>
-                    {/* Hindi section converted to HTML/JSX */}
+                  
                     <section id="ppi-hindi">
                       <div className="container my-4">
                         <p>
@@ -1451,7 +1451,7 @@ const CustomerOnboarding = () => {
           </div>
         </div>
 
-        <p className="text-center">***** END OF POLICY *****</p>
+        <p className="text-center">***** नीति का अंत *****</p>
       </div>
     </>
   )
