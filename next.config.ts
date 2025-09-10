@@ -58,7 +58,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/resources",
-        destination: "https://blogs.enkash.com/blogs",
+        destination: "https://blogs.enkash.com/blog",
       },
       // {
       //   source: "/resources/",

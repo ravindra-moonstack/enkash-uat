@@ -11,7 +11,7 @@ export type TProductFeatureItem = {
 export type TSubProduct = {
   subtitle?: string
   subtitleLink?: string
-  subtitleTarget?: "_self" | "_blank"
+  subtitleTarget?: string
   currentHeading: {
     name: string
     description: string
@@ -22,7 +22,7 @@ export type TSubProduct = {
   footerImg?: string
   footerLink?: string
   parentLink?: string
-  parentTarget?: "_self" | "_blank"
+  parentTarget?: string
 }
 
 export type TProductCategory = {

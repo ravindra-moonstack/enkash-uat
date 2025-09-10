@@ -63,7 +63,15 @@ const SubProduct = (props: any) => {
         <>
           <div className={`mb-3 ${styles.motherProduct}`}>
             {props.parentLink ? (
-              <Link href={props.parentLink}>
+              <Link
+                href={props.parentLink}
+                target={props.parentLink === "/resources" ? "_blank" : "_self"}
+                rel={
+                  props.parentLink === "/resources"
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+              >
                 <h4 className="fw-bold mb-1">{motherProductName}</h4>
               </Link>
             ) : (
