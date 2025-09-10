@@ -5,11 +5,13 @@ export type TProductFeatureItem = {
   imageSrc?: string // or StaticImageData
   imageSrcHovered?: string // or StaticImageData
   link: string
+  target?: "_self" | "_blank"
 }
 
 export type TSubProduct = {
   subtitle?: string
   subtitleLink?: string
+  subtitleTarget?: "_self" | "_blank"
   currentHeading: {
     name: string
     description: string
@@ -20,6 +22,7 @@ export type TSubProduct = {
   footerImg?: string
   footerLink?: string
   parentLink?: string
+  parentTarget?: "_self" | "_blank"
 }
 
 export type TProductCategory = {
@@ -28,4 +31,5 @@ export type TProductCategory = {
   link?: string
   subProducts?: TSubProduct[]
   backgroundColor?: string
+  target?: string
 }
