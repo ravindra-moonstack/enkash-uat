@@ -46,6 +46,7 @@ const resourseProducts: TProductCategory[] = [
         footerImg: "loyalty_footer_bg",
         footerLink: "/loyalty-lounge",
         parentLink: "/loyalty-lounge",
+        parentTarget: "_blank",
       },
     ],
   },

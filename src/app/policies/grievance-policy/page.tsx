@@ -29,6 +29,7 @@ const cards = [
       "Resolve prepaid card disputes promptly with our transparent escalation process.",
     titleHtml: "Prepaid Program",
     cardImage: prepaid,
+    buttonUrl: "/policies/prepaid-program/grievance-policy",
   },
   {
     key: "platform",
