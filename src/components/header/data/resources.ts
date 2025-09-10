@@ -7,7 +7,7 @@ const resourseProducts: TProductCategory[] = [
     description: "Flexible prepaid card solutions",
     link: `https://www.enkash.com/resources/`,
     backgroundColor: "#f6fcff",
-    target: "_blank",
+
     subProducts: [
       {
         subtitle: "Default",
