@@ -1,5 +1,8 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import {
   allInOnePolicyData,
   cardsData,
@@ -8,29 +11,33 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
   PolicyCard,
-  RectangleButton,
+  CommanButton,
   ManagementCard,
   AllInOnePolicy,
   FeatureCard,
   FaqSection,
   CardStacking,
 } from "@/src/components"
+
+// helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   activationIcon,
   realTimeIcon,
   hundredPercentIcon,
 } from "."
-import { Metadata } from "next"
+
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -136,7 +143,7 @@ const QrCode = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -299,7 +306,7 @@ const QrCode = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommanButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -364,6 +371,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <CardStacking
@@ -377,6 +385,7 @@ const QrCode = (): React.JSX.Element => {
           />
         </div>
       </div>
+      
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-md-5 pb-4`}>
@@ -425,11 +434,10 @@ const QrCode = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started  Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

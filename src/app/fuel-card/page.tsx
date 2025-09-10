@@ -13,7 +13,7 @@ import {
   StepsSection,
   FaqSection,
 } from "@/src/components"
-import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
+import { mealCardImage, heroCardImg } from "."
 
 import faqData from "./faq-data"
 import generateMetaData from "@/src/utils/metaData"
@@ -136,8 +136,6 @@ const FuelCards = (): React.JSX.Element => {
           button={{
             title: "Get Started",
             theme: "border-gray",
-            actionImage: blueArrow,
-            hoverImage: whiteArrow,
           }}
           image={{
             src: mealCardImage,

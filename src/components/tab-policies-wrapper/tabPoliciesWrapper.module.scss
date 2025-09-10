@@ -25,7 +25,7 @@
     width: 100%;
     background: $color-equity-blue;
     border-radius: 2px;
-    animation: stepLine 0.3s steps(3) forwards;
+    animation: stepLine 0.3s ease-in-out forwards;
   }
 }
 

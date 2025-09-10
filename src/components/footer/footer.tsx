@@ -712,7 +712,7 @@ const FooterV2 = (): React.JSX.Element => {
                     <li>
                       <Link
                         target="_blank"
-                        href={`${process.env.URL}/resources/customer-stories/`}
+                        href="http://www.enkash.com/resources/customer-stories"
                       >
                         Case Studies
                       </Link>
@@ -740,9 +740,7 @@ const FooterV2 = (): React.JSX.Element => {
                       <Link href="/careers">Careers</Link>
                     </li>
                     <li>
-                      <Link
-                        href={`${process.env.URL}/resources/media-coverage/`}
-                      >
+                      <Link href="http://www.enkash.com/resources/media-coverage">
                         Media Coverage
                       </Link>
                     </li>
@@ -785,6 +783,11 @@ const FooterV2 = (): React.JSX.Element => {
                     <li>
                       <Link href="/policies/privacy-policy">
                         Privacy Policy
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/policies/prepaid-program/faq">
+                        FAQs for PPI
                       </Link>
                     </li>
                   </ul>

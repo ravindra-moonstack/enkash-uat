@@ -1,29 +1,10 @@
-import crouselIconOne from "./img/crouselIconOne.svg"
-import crouselIconTwo from "./img/crouselIconTwo.svg"
-import crouselIconThree from "./img/crouselIconThree.svg"
-import crouselIconFour from "./img/crouselIconFour.svg"
-import crouselIconFive from "./img/crouselIconFive.svg"
-
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
-
-const cardsData = [
-  {
-    title: "Create",
-    description:
-      "Select a payment page template or customize the page according to your brand guidelines",
-    icon: scrollIconOne,
-  },
-  {
-    title: "Integrate",
-    description: "Plug the page into your payment collection process.",
-    icon: scrollIconTwo,
-  },
-  {
-    title: "Collect",
-    description: "Accept payments from your customers",
-    icon: scrollIconThree,
-  },
-]
+import {
+  crouselIconOne,
+  crouselIconTwo,
+  crouselIconThree,
+  crouselIconFour,
+  crouselIconFive,
+} from "."
 
 const cardData = [
   {
@@ -81,4 +62,4 @@ const allProductSections = [
   },
 ]
 
-export { cardsData, allProductSections, cardData }
+export { allProductSections, cardData }
