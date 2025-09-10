@@ -24,12 +24,12 @@ const grievancePolicy = () => {
                 { name: "Home", url: "/" },
                 { name: "Policies", url: "/policies" },
                 {
-                  name: "Prepaid Programe",
+                  name: "Prepaid Program",
                   url: "/policies/prepaid-programe",
                 },
                 {
-                  name: "Grievance and Redressal policy",
-                  url: "/policies/prepaid-programe/grievance-policy",
+                  name: "Grievance and Redressal Policy",
+                  url: "/policies/prepaid-program/grievance-policy",
                 },
               ]}
             />
@@ -46,7 +46,7 @@ const grievancePolicy = () => {
                         content={[
                           {
                             title:
-                              "Grievance and Redressal policy (Prepaid Programe)",
+                              "Grievance and Redressal Policy (Prepaid Program)",
                             color: "color-equity-blue",
                           },
                         ]}
@@ -56,7 +56,7 @@ const grievancePolicy = () => {
                     </div>
                     <div className="word-to-html-null mb-5">
                       <h5 className="c15 mt-6 pb-4">
-                        Last Updated On: 25th August 2025
+                        Last Updated On: 28th August 2025
                       </h5>
                       <h5 className="c15 mt-6">1. Introduction</h5>
                       <p className="c3 c9">
