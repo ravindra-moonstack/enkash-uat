@@ -76,6 +76,23 @@ const nextConfig: NextConfig = {
         source: "/resources/:path*",
         destination: "https://blogs.enkash.com/:path*",
       },
+
+      {
+        source: "/resources/wp-admin/:path*",
+        destination: "https://blogs.enkash.com/wp-admin/:path*",
+      },
+      {
+        source: "/resources/wp-login.php",
+        destination: "https://blogs.enkash.com/wp-login.php",
+      },
+      {
+        source: "/resources/wp-content/:path*",
+        destination: "https://blogs.enkash.com/wp-content/:path*",
+      },
+      {
+        source: "/resources/wp-includes/:path*",
+        destination: "https://blogs.enkash.com/wp-includes/:path*",
+      },
     ]
   },
 }
