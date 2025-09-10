@@ -22,6 +22,22 @@ test("fills and submits Sales form", async ({ page }) => {
 
   await page.click("body", { position: { x: 10, y: 10 } })
 
+  await page.locator('input[name="Website"]').fill("https://www.enkash.com/")
+
+  const selectBox = page.getByRole("button", { name: "Dropdown5" })
+  await selectBox.click()
+
+ 
+  await page.getByRole("menuitem", { name: "Google search" }).click()
+  await selectBox.click() 
+  await page
+    .getByRole("menuitem", { name: "Social media" })
+    .click()
+
+ 
+  await expect(page.locator('input[name="Dropdown5"]')).toHaveValue(
+    "Social media"
+  )
   await page
     .locator('textarea[name="MultiLine"]')
     .fill("Need help with onboarding and partnership opportunities.")
