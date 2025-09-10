@@ -7,6 +7,7 @@ const resourseProducts: TProductCategory[] = [
     description: "Flexible prepaid card solutions",
     link: `/resources`,
     backgroundColor: "#f6fcff",
+    target: "_blank",
     subProducts: [
       {
         subtitle: "Default",
@@ -21,6 +22,7 @@ const resourseProducts: TProductCategory[] = [
             description: "Trends, tips, and strategies",
             imageSrcHovered: blogsFilled,
             link: `/resources/blogs`,
+            target: "_blank",
           },
 
           {
@@ -28,6 +30,7 @@ const resourseProducts: TProductCategory[] = [
             description: "Real wins, proven impact",
             imageSrcHovered: casestudies,
             link: `/resources/customer-stories`,
+            target: "_blank",
           },
 
           {
@@ -35,6 +38,7 @@ const resourseProducts: TProductCategory[] = [
             description: "Stories, solutions, and demos",
             imageSrcHovered: vedioFilled,
             link: `/resources/videos`,
+            target: "_blank",
           },
         ],
         footerText: "Effortless recognition, and endless rewards in one place",

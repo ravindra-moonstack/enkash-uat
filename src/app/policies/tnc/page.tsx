@@ -29,7 +29,7 @@ const cards = [
       "Review prepaid usage terms to ensure smooth and compliant transactions.",
     titleHtml: "Prepaid Program",
     cardImage: prepaid,
-    buttonUrl: "/policies/prepaid/tnc",
+    buttonUrl: "/policies/prepaid-program/tnc",
   },
   {
     key: "platform",
