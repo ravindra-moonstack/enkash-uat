@@ -144,8 +144,6 @@ const MealCards = (): React.JSX.Element => {
         button={{
           title: "Get Started",
           theme: "border-gray",
-          actionImage: blueArrow,
-          hoverImage: whiteArrow,
         }}
         image={{
           src: mealCardImage,

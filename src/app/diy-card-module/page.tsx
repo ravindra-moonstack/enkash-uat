@@ -7,7 +7,6 @@ import {
   stackcardData,
 } from "./data"
 import {
-  RectangleButton,
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -16,11 +15,10 @@ import {
   AllInOnePolicy,
   FaqSection,
   StepsSection,
+  CommanButton,
 } from "@/src/components"
 
 import {
-  blueArrow,
-  whiteArrow,
   mealCardImage,
   heroCardImg,
   instantActionImg,
@@ -117,7 +115,7 @@ const DiyCardModule = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
+              <CommanButton
                 title="Get Started"
                 theme="blue"
                 url={salesUrl}
@@ -147,8 +145,6 @@ const DiyCardModule = (): React.JSX.Element => {
         button={{
           title: "Get started",
           theme: "border-gray",
-          actionImage: blueArrow,
-          hoverImage: whiteArrow,
         }}
         image={{
           src: mealCardImage,
@@ -189,8 +185,6 @@ const DiyCardModule = (): React.JSX.Element => {
         button={{
           title: "Get Started",
           theme: "border-gray",
-          actionImage: blueArrow,
-          hoverImage: whiteArrow,
         }}
         image={{
           src: instantActionImg,
@@ -215,11 +209,10 @@ const DiyCardModule = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     type: "website",
     images: [`${process.env.NEXT_PUBLIC_URL}/og-image.png`],
   },
-  icons: "/favicon.svg",
 }
 
 export default function RootLayout({

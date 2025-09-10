@@ -8,7 +8,7 @@ export interface CardProps {
   titleHtml?: ReactNode
   description: string
   cardImage?: string | StaticImageData
-  linkUrl?: string // ✅
+  linkUrl?: string
 }
 
 const CardProduct = ({
@@ -27,7 +27,7 @@ const CardProduct = ({
               content={[
                 {
                   title: String(titleHtml),
-                  color: "color-white",
+                  color: "color-white ",
                 },
               ]}
               headingTag="h4"
@@ -40,7 +40,7 @@ const CardProduct = ({
               content={[
                 {
                   title: whiteTitle,
-                  color: "color-white",
+                  color: "color-white ",
                 },
               ]}
               headingTag="h4"
@@ -50,7 +50,16 @@ const CardProduct = ({
         )}
 
         <div>
-          <p className="mb-0 mt-2">{description}</p>
+          <DynamicHeading
+            content={[
+              {
+                title: description,
+                color: "color-white ",
+              },
+            ]}
+            headingTag="p"
+            className="mb-0 mt-2 "
+          />
         </div>
       </div>
 
@@ -68,18 +77,18 @@ const CardProduct = ({
     </>
   )
 
+  const Wrapper: React.ElementType = linkUrl ? "a" : "div"
+  const wrapperProps = linkUrl
+    ? { href: linkUrl, className: styles.link, rel: "noopener noreferrer" }
+    : {}
+
   return (
-    <div
+    <Wrapper
+      {...wrapperProps}
       className={`d-flex flex-column justify-content-between ${styles.card_body}`}
     >
-      {linkUrl ? (
-        <a href={linkUrl} className={styles.link} rel="noopener noreferrer">
-          {cardContent}
-        </a>
-      ) : (
-        cardContent
-      )}
-    </div>
+      {cardContent}
+    </Wrapper>
   )
 }
 

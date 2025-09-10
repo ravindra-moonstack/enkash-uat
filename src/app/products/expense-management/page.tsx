@@ -1,8 +1,21 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
 import React from "react"
-import { allProductSections, cardData, cardsData, stackcardData } from "./data"
+
+// data
+import {
+  allProductSections,
+  cardData,
+  cardsData,
+  stackcardData,
+  dashboardData,
+  integrationData,
+  paymentMethodData,
+  rankData,
+} from "./data"
 import { faqData, SecondfaqData } from "./faq-data"
+
+// components
 import {
   ContentShowcase,
   AllInOnePolicy,
@@ -21,6 +34,8 @@ import {
   FaqSection,
 } from "@/src/components"
 
+
+// helper
 import {
   faqBg,
   blueArrow,
@@ -36,19 +51,16 @@ import {
   logisticIcon,
   consultancyIcon,
   pharmacyIcon,
+  bg1,
+  bg2,
+  bg3,
+  bg4,
+  bg5,
+  bg6,
 } from "."
-import {
-  dashboardData,
-  integrationData,
-  paymentMethodData,
-  rankData,
-} from "./data"
-import bg1 from "./img/bg4.jpg"
-import bg2 from "./img/bg3.jpg"
-import bg3 from "./img/bg2.jpg"
-import bg4 from "./img/bg1.jpg"
-import bg5 from "./img/bg6.jpg"
-import bg6 from "./img/bg5.jpg"
+
+
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -74,7 +86,6 @@ const cards = stackcardData.map((item: any) => ({
       image={item.image}
       buttonUrl={salesUrl}
       maxImageHeight="300px"
-      // buttonText="Learn More"
     />
   ),
 }))
@@ -382,7 +393,7 @@ const ExpenseManagement = (): React.JSX.Element => {
 
       <FaqSection faqData={faqData} />
     </div>
-    // </Suspense>
+
   )
 }
 

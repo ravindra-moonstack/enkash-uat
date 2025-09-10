@@ -2,7 +2,7 @@
 import React from "react"
 import Image, { StaticImageData } from "next/image"
 import styles from "./steps-section.module.scss"
-import { DynamicHeading, RectangleButton, StepCard } from ".."
+import { CommanButton, DynamicHeading, StepCard } from ".."
 import { RectangleButtonTheme } from "../buttons/rectangle-button"
 import { useSalesUrl } from "@/src/utils/salesUrl"
 
@@ -18,8 +18,6 @@ interface StepsSectionProps {
   button: {
     title: string
     theme?: RectangleButtonTheme
-    actionImage: string | StaticImageData
-    hoverImage: string | StaticImageData
   }
   image: {
     src: string | StaticImageData
@@ -74,11 +72,10 @@ const StepsSection: React.FC<StepsSectionProps> = ({
 
             {/* Button */}
             <div className={styles.list_button}>
-              <RectangleButton
+              <CommanButton
                 title={button.title}
                 theme={button.theme}
-                actionImage={button.actionImage}
-                hoverImage={button.hoverImage}
+                arrow
                 url={buttonUrl} // ✅ now uses fallback logic
                 className="d-flex justify-content-between align-items-center"
               />

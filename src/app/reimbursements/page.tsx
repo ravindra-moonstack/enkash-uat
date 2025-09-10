@@ -1,5 +1,8 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+// data
 import {
   cardData,
   expenseManagementData,
@@ -7,21 +10,26 @@ import {
   stepCards,
 } from "./data"
 import faqData from "./faq-data"
+
+// components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
+  CommanButton,
   AllInOnePolicy,
   ManagementCard,
   EasyStepCard,
   CardStacking,
   FaqSection,
 } from "@/src/components"
-import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
+
+// helpers
+import { groupIcon, paymentSummary } from "."
+
+// utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate Reimbursements for Easy Claim Submission & Approval",
@@ -38,7 +46,6 @@ const cards = stackcardData.map((item, index) => ({
   content: (
     <AllInOnePolicy
       key={index}
-      // buttonText="Learn More"
       icon={item.icon}
       title={item.title}
       description={item.description}
@@ -51,6 +58,7 @@ const cards = stackcardData.map((item, index) => ({
 const Reimbursements = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -128,7 +136,7 @@ const Reimbursements = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -201,14 +209,6 @@ const Reimbursements = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className="text-center mb-3">
-            {/* <RectangleButton
-              title={"Three Easy Steps"}
-              theme="outline-blue-small"
-              className="border_radius"
-            /> */}
-          </div>
-
           <div className={`${styles.title} text-center pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
@@ -259,6 +259,7 @@ const Reimbursements = (): React.JSX.Element => {
           </>
         </div>
       </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -274,11 +275,10 @@ const Reimbursements = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
@@ -318,6 +318,7 @@ const Reimbursements = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <FaqSection faqData={faqData} />
     </div>
   )

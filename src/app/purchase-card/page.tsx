@@ -1,15 +1,19 @@
 import Image from "next/image"
-
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+// data
 import {
   allProductSections,
   cardType,
   intantActionData,
   stackcardData,
 } from "./data"
+import faqData from "./faq-data"
 
+// components
 import {
-  RectangleButton,
+  CommanButton,
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -21,10 +25,10 @@ import {
   AllProducts,
 } from "@/src/components"
 
-import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
+// helpers
+import { mealCardImage, heroCardImg } from "."
 
-import faqData from "./faq-data"
-import { Metadata } from "next"
+// utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -117,11 +121,7 @@ const PurchesCards = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
@@ -136,27 +136,23 @@ const PurchesCards = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div>
-        <StepsSection
-          heading={[
-            {
-              text: "How Does a Purchase Card Work  ",
-              colorClass: "color-black",
-            },
-          ]}
-          steps={intantActionData}
-          button={{
-            title: "Get Started",
-            theme: "border-gray",
-            actionImage: blueArrow,
-            hoverImage: whiteArrow,
-          }}
-          image={{
-            src: mealCardImage,
-            alt: "card background",
-          }}
-        />
-      </div>
+      <StepsSection
+        heading={[
+          {
+            text: "How Does a Purchase Card Work  ",
+            colorClass: "color-black",
+          },
+        ]}
+        steps={intantActionData}
+        button={{
+          title: "Get Started",
+          theme: "border-gray",
+        }}
+        image={{
+          src: mealCardImage,
+          alt: "card background",
+        }}
+      />
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
@@ -227,11 +223,10 @@ const PurchesCards = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
