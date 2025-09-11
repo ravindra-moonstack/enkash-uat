@@ -11,7 +11,7 @@ const resourseProducts: TProductCategory[] = [
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/loyalty-lounge",
+        subtitleLink: "https://www.enkash.com/resources/",
         currentHeading: {
           name: "Rewards ",
           description: "Build exciting rewards, incentives & offers",
@@ -55,7 +55,7 @@ const resourseProducts: TProductCategory[] = [
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/bolt",
+        subtitleLink: "https://docs.enkash.com/",
         currentHeading: {
           name: "Vouchers",
           description: "Shop smart and unlock exclusive savings",
