@@ -5,13 +5,13 @@ const resourseProducts: TProductCategory[] = [
   {
     name: "Resources",
     description: "Flexible prepaid card solutions",
-    link: `https://www.enkash.com/resources/`,
+    link: `${process.env.NEXT_PUBLIC_URL}/resources/`,
     backgroundColor: "#f6fcff",
 
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "https://www.enkash.com/resources/",
+        subtitleLink: `${process.env.NEXT_PUBLIC_URL}/resources/`,
         currentHeading: {
           name: "Rewards ",
           description: "Build exciting rewards, incentives & offers",
@@ -21,21 +21,21 @@ const resourseProducts: TProductCategory[] = [
             name: "Blogs",
             description: "Trends, tips, and strategies",
             imageSrcHovered: blogsFilled,
-            link: `https://www.enkash.com/resources/blogs`,
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/blogs`,
           },
 
           {
             name: "Case Studies",
             description: "Real wins, proven impact",
             imageSrcHovered: casestudies,
-            link: `https://www.enkash.com/resources/customer-stories`,
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/customer-stories`,
           },
 
           {
             name: "Videos",
             description: "Stories, solutions, and demos",
             imageSrcHovered: vedioFilled,
-            link: `https://www.enkash.com/resources/videos`,
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/videos`,
           },
         ],
         footerText: "Effortless recognition, and endless rewards in one place",
