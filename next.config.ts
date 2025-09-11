@@ -1,5 +1,6 @@
 import type { NextConfig } from "next"
 import withBundleAnalyzer from "@next/bundle-analyzer"
+import mappedUrls from "./src/helpers/redirection-urls"
 
 const withBundleAnalyzerConfigured = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
@@ -45,15 +46,9 @@ const nextConfig: NextConfig = {
     ]
   },
 
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: "/resource",
-  //       destination: "/resources",
-  //       permanent: true,
-  //     },
-  //   ]
-  // },
+  async redirects() {
+    return mappedUrls
+  },
   // async rewrites() {
   //   return [
   //     {
