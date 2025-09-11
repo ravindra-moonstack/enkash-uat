@@ -7,7 +7,7 @@ const partnershipProducts = [
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/partnership",
+
         currentHeading: {
           name: "Partnerships ",
           description: "Build exciting rewards, incentives & offers",

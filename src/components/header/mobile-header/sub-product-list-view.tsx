@@ -51,7 +51,18 @@ const SubProductListView = ({
               className={`mb-2 relative ${styles.nav_sub_child_product}`}
               style={{ backgroundColor }}
             >
-              <div className={styles.sub_product_title}>{section?.title}</div>
+              {section?.products?.[0]?.subtitleLink ? (
+                <Link
+                  href={section.products[0].subtitleLink}
+                  onClick={() => setCurrentStep(0)}
+                >
+                  <div className={styles.sub_product_title}>
+                    {section?.title}
+                  </div>
+                </Link>
+              ) : (
+                <div className={styles.sub_product_title}>{section?.title}</div>
+              )}
 
               {section?.products?.map((productGroup, prodIndex) => (
                 <div key={prodIndex}>
