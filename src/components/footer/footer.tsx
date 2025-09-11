@@ -696,23 +696,26 @@ const FooterV2 = (): React.JSX.Element => {
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 {/* col-1 resources */}
                 <div className="">
-                  <Link target="_blank" href="http://www.enkash.com/resources">
-                    <h4 className={`${styles.title}`}>Resources</h4>
+                  <Link
+                    href={`${process.env.NEXT_PUBLIC_URL}/resources`}
+                    rel="noopener noreferrer"
+                  >
+                    <h4 className={styles.title}>Resources</h4>
                   </Link>
 
                   <ul>
                     <li>
                       <Link
-                        target="_blank"
-                        href="http://www.enkash.com/resources/blogs"
+                        href={`${process.env.NEXT_PUBLIC_URL}/resources/blogs`}
+                        rel="noopener noreferrer"
                       >
                         Blogs
                       </Link>
                     </li>
                     <li>
                       <Link
-                        target="_blank"
-                        href="http://www.enkash.com/resources/customer-stories"
+                        href={`${process.env.NEXT_PUBLIC_URL}/resources/customer-stories`}
+                        rel="noopener noreferrer"
                       >
                         Case Studies
                       </Link>
@@ -720,8 +723,8 @@ const FooterV2 = (): React.JSX.Element => {
 
                     <li>
                       <Link
-                        target="_blank"
-                        href="http://www.enkash.com/resources/videos"
+                        href={`${process.env.NEXT_PUBLIC_URL}/resources/videos`}
+                        rel="noopener noreferrer"
                       >
                         Videos
                       </Link>
@@ -740,7 +743,10 @@ const FooterV2 = (): React.JSX.Element => {
                       <Link href="/careers">Careers</Link>
                     </li>
                     <li>
-                      <Link href="http://www.enkash.com/resources/media-coverage">
+                      <Link
+                        href={`${process.env.NEXT_PUBLIC_URL}/resources/media-coverage`}
+                        rel="noopener noreferrer"
+                      >
                         Media Coverage
                       </Link>
                     </li>
