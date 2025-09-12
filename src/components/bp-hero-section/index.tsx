@@ -1,9 +1,9 @@
 "use client"
 
 import type React from "react"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 import styles from "./style.module.scss"
-import CustomBreadcrumb from "../breadcrumb/breadbrumb"
+import CustomBreadcrumb from "../breadcrumb"
 import RectangleButton, {
   RectangleButtonTheme,
 } from "../buttons/rectangle-button"

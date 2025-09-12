@@ -27,8 +27,7 @@ import {
   reconcile,
   workflow,
   approve,
-} from "."
-
+} from "./img"
 
 const cardData = [
   {
@@ -104,7 +103,8 @@ const spendAnalyticsData = [
 const rbiData = [
   {
     title: "Instant ",
-    description: "Instant card issuance without routing requests through banks.",
+    description:
+      "Instant card issuance without routing requests through banks.",
     icon: instantIcon,
   },
   {
@@ -189,8 +189,6 @@ const cardType = [
     linkUrl: "/saas-card",
   },
 ]
-
-
 
 const allProductSections = [
   {

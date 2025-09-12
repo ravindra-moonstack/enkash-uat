@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image, { StaticImageData } from "next/image"
 import styles from "./management-card.module.scss"
 import { ReactNode } from "react"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 export interface CardProps {
   whiteTitle?: string

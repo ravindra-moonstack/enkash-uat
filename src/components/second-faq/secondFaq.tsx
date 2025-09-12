@@ -3,7 +3,7 @@ import Image from "next/image"
 
 import styles from "./faq.module.scss"
 import arrowDown from "./img/arrow-down.svg"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 export interface FAQProps {
   question: string

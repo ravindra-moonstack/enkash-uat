@@ -35,7 +35,7 @@ import {
   corporateCard,
   corporateCardIcon,
   onePlatform,
-} from "."
+} from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"

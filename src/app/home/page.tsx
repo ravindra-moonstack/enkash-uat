@@ -21,7 +21,7 @@ import PrepaidCardHome from "@/src/components/prepaid-card-home/PrepaidCardHome"
 import HomePageRewardsVouchers from "@/src/components/home-page-rewards-vouchers"
 import HomeReceivablesPayables from "@/src/components/home-receivables-payables"
 import Counter from "@/src/components/home-counter"
-import HomePageSlider from "@/src/components/home-page-slider/HomePAgeSlider"
+import HomePageSlider from "@/src/components/home-page-slider"
 import BuiltforBuildersSection from "@/src/components/builtfor-builders-card/BuiltforBuildersSection"
 import BottomCtaSection from "@/src/components/bottom-cta-section/bottomCtaSection"
 

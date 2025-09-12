@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import styles from "./LocationTabsMap.module.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 interface Location {
   name: string

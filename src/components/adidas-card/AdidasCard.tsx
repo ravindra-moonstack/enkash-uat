@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import styles from "./AdidasCard.module.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 interface AdidasCardProps {
   image: string

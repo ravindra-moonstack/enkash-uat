@@ -9,7 +9,7 @@ import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
 
 import RectangleButton from "../buttons/rectangle-button"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 import { blueArrow, whiteArrow } from "."
 

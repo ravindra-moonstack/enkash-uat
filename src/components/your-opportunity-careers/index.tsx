@@ -1,6 +1,6 @@
 import { FC } from "react"
 import styles from "./YourOpportunityCareers.module.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 export interface YourOpportunityCareersProps {
   title: string

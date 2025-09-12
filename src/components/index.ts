@@ -1,19 +1,16 @@
 import dynamic from "next/dynamic"
 const Header = dynamic(() => import("./header/header"), { ssr: true })
-const Footer = dynamic(() => import("./footer/footer"), { ssr: true })
-const Heading = dynamic(() => import("./heading/heading"), { ssr: true })
+const Footer = dynamic(() => import("./footer"), { ssr: true })
+const Heading = dynamic(() => import("./heading"), { ssr: true })
 const FAQHtml = dynamic(() => import("./faq-new/faqHtml"), { ssr: true })
 
-const DynamicHeading = dynamic(
-  () => import("./dynamic-heading/dynamic-heading"),
-  { ssr: true }
-)
+const DynamicHeading = dynamic(() => import("./dynamic-heading"), { ssr: true })
 const LottieDynamicLoadComponent = dynamic(
   () => import("./lottie-client/lottie-dynamic-load-client"),
   { ssr: true }
 )
 
-const CustomBreadcrumb = dynamic(() => import("./breadcrumb/breadbrumb"), {
+const CustomBreadcrumb = dynamic(() => import("./breadcrumb"), {
   ssr: true,
 })
 
@@ -22,14 +19,14 @@ const TalkToSales = dynamic(
   { ssr: true }
 )
 
-const AllProducts = dynamic(() => import("./all-products/all-products"), {
+const AllProducts = dynamic(() => import("./all-products"), {
   ssr: true,
 })
 
 const CardProduct = dynamic(() => import("./card-product/card-product"), {
   ssr: true,
 })
-const LogoSlider = dynamic(() => import("./logo-slider/logo-slider"), {
+const LogoSlider = dynamic(() => import("./logo-slider"), {
   ssr: true,
 })
 const PolicyCard = dynamic(() => import("./policy-card"), {
@@ -73,10 +70,9 @@ const ManagementCard = dynamic(
   () => import("./management-card/management-card"),
   { ssr: true }
 )
-const TestimonialSlider = dynamic(
-  () => import("./testimonial-slider/testimonialSlider"),
-  { ssr: true }
-)
+const TestimonialSlider = dynamic(() => import("./testimonial-slider"), {
+  ssr: true,
+})
 const LocationCard = dynamic(() => import("./locationCard/location-card"), {
   ssr: true,
 })
@@ -107,7 +103,7 @@ const StepsSection = dynamic(() => import("./steps-section/stepsSection"), {
   ssr: true,
 })
 
-const FaqSection = dynamic(() => import("./faq-section/faqSection"), {
+const FaqSection = dynamic(() => import("./faq-section"), {
   ssr: true,
 })
 
@@ -131,10 +127,9 @@ const BpHeroSection = dynamic(() => import("./bp-hero-section/index"), {
   ssr: true,
 })
 
-const TabPoliciesWrapper = dynamic(
-  () => import("./tab-policies-wrapper/tabPoliciesWrapper"),
-  { ssr: true }
-)
+const TabPoliciesWrapper = dynamic(() => import("./tab-policies-wrapper"), {
+  ssr: true,
+})
 
 const ProductsSection = dynamic(() => import("./our-products-section/index"), {
   ssr: true,
@@ -148,18 +143,14 @@ const OurStoryCard = dynamic(() => import("./about-our-story-card"), {
   ssr: true,
 })
 
-const LeadersSection = dynamic(
-  () => import("./about-leaders-card/about-leaders-card"),
-  { ssr: true }
-)
+const LeadersSection = dynamic(() => import("./about-leaders-card"), {
+  ssr: true,
+})
 const InvestorsLogos = dynamic(
   () => import("./investors-logos/InvestorsLogos"),
   { ssr: true }
 )
-const EmployeeSlider = dynamic(
-  () => import("./employee-slider/EmployeeSlider"),
-  { ssr: true }
-)
+const EmployeeSlider = dynamic(() => import("./employee-slider"), { ssr: true })
 
 const CareersCard = dynamic(() => import("./about-careers-card"), { ssr: true })
 
@@ -186,19 +177,13 @@ const BankSolutions = dynamic(() => import("./partnerships/BankSolutions"), {
   ssr: true,
 })
 
-const CareersHero = dynamic(
-  () => import("./careers-hero-slider/CareersHeroSlider"),
-  {
-    ssr: true,
-  }
-)
+const CareersHero = dynamic(() => import("./careers-hero-slider"), {
+  ssr: true,
+})
 
-const CareersPaycheck = dynamic(
-  () => import("./careers-paycheck/CareersPaycheck"),
-  {
-    ssr: true,
-  }
-)
+const CareersPaycheck = dynamic(() => import("./careers-paycheck"), {
+  ssr: true,
+})
 
 const CoreValuesData = dynamic(() => import("./core-values-data"), {
   ssr: true,
@@ -212,7 +197,7 @@ const YourOpportunityCareers = dynamic(
 )
 
 const CareersTestimonialSlider = dynamic(
-  () => import("./careers-testimonial-slider/CareersTestimonialSlider"),
+  () => import("./careers-testimonial-slider"),
   {
     ssr: true,
   }
@@ -324,5 +309,5 @@ export {
   SupportForm,
   ContactForm,
   CommanButton,
-  ShimmerImage
+  ShimmerImage,
 }

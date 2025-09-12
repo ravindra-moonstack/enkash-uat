@@ -13,11 +13,11 @@ import {
 import VoucherCard from "@/src/components/voucher-page/voucher-card"
 import SavingsCalculator from "@/src/components/voucher-page/voucher-calculator/voucher-calculator"
 import OccasionVoucher from "@/src/components/voucher-page/occasion-voucher"
-import CustomBreadcrumb from "@/src/components/breadcrumb/breadbrumb"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
 import { linkifyText, nameToUrl } from "@/src/utils/stringUtils"
 import VoucherFaqComponent from "@/src/components/voucher-page/voucher-faq"
 import RectangleButton from "@/src/components/buttons/rectangle-button"
-import DynamicHeading from "@/src/components/dynamic-heading/dynamic-heading"
+import DynamicHeading from "@/src/components/dynamic-heading"
 import { blueArrow } from "."
 
 export async function generateMetadata({

@@ -2,7 +2,7 @@
 
 import React from "react"
 import styles from "./BottomCtaSection.module.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 interface BottomCtaSectionProps {
   headingPart1?: string

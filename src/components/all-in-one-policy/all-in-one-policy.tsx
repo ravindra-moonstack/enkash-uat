@@ -5,7 +5,7 @@ import styles from "./all-in-one-policy.module.scss"
 
 // components
 import CommonButton, { ButtonTheme } from "../buttons"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 interface AllInOnePolicyProps {
   icon: StaticImageData

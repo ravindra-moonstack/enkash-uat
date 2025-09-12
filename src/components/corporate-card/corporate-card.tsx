@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image"
 import styles from "./corporate-card.module.scss"
 import { ReactNode } from "react"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 import Link from "next/link"
 
 export interface CardProps {
