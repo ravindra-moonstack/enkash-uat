@@ -14,11 +14,6 @@ const CustomBreadcrumb = dynamic(() => import("./breadcrumb"), {
   ssr: true,
 })
 
-const TalkToSales = dynamic(
-  () => import("./mobile-talks-to-sales/mobile-talk-to-sales"),
-  { ssr: true }
-)
-
 const AllProducts = dynamic(() => import("./all-products"), {
   ssr: true,
 })
@@ -32,14 +27,13 @@ const LogoSlider = dynamic(() => import("./logo-slider"), {
 const PolicyCard = dynamic(() => import("./policy-card"), {
   ssr: true,
 })
-const FeatureCard = dynamic(() => import("./feature-card/feature-card"), {
+const FeatureCard = dynamic(() => import("./feature-card"), {
   ssr: true,
 })
 const StepCard = dynamic(() => import("./step-card/stepCard"), { ssr: true })
-const AllInOnePolicy = dynamic(
-  () => import("./all-in-one-policy/all-in-one-policy"),
-  { ssr: true }
-)
+const AllInOnePolicy = dynamic(() => import("./all-in-one-policy"), {
+  ssr: true,
+})
 const CardStacking = dynamic(() => import("./card-stacking"), {
   ssr: true,
 })
@@ -66,10 +60,7 @@ const ContentShowcase = dynamic(
 const SecondFaqHtml = dynamic(() => import("./second-faq/secondFaqHtml"), {
   ssr: true,
 })
-const ManagementCard = dynamic(
-  () => import("./management-card/management-card"),
-  { ssr: true }
-)
+const ManagementCard = dynamic(() => import("./management-card"), { ssr: true })
 const TestimonialSlider = dynamic(() => import("./testimonial-slider"), {
   ssr: true,
 })
@@ -252,7 +243,6 @@ export {
   DynamicHeading,
   LottieDynamicLoadComponent,
   CustomBreadcrumb,
-  TalkToSales,
   AllProducts,
   CardProduct,
   LogoSlider,

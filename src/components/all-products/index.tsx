@@ -1,7 +1,7 @@
 import React, { memo } from "react"
 import styles from "./all-products.module.scss"
 import Marquee from "react-fast-marquee"
-import FeatureCard from "../feature-card/feature-card"
+import FeatureCard from "../feature-card"
 
 export type AllProductsDataProp = {
   title: string

@@ -1,4 +1,3 @@
-import { blueArrow } from "@/src/components/all-in-one-policy"
 import { coBrandImage, GalaxyTabImage, Purchasecard } from "."
 import imaCard from "./img/containerScreen.webp"
 import ItemIcon from "./img/itemIcon.svg"
@@ -129,7 +128,7 @@ const productsData = [
     button: {
       connectUrl: "/products/corporate-cards",
       connectText: "Explore Cards",
-      blueArrow: blueArrow.src,
+      blueArrow: "/images/blue-arrow.svg",
     },
     align: "flex-start",
   },
@@ -143,7 +142,7 @@ const productsData = [
     button: {
       connectUrl: "/products/rewards",
       connectText: "Explore Rewards",
-      blueArrow: blueArrow.src,
+      blueArrow: "/images/blue-arrow.svg",
     },
     align: "flex-start",
   },
@@ -156,7 +155,7 @@ const productsData = [
     button: {
       connectUrl: "/purchase-card",
       connectText: "Explore Purchase Cards",
-      blueArrow: blueArrow.src,
+      blueArrow: "/images/blue-arrow.svg",
     },
     align: "flex-start",
   },
