@@ -1,8 +1,9 @@
+import React, { ReactNode } from "react"
 import Image, { StaticImageData } from "next/image"
-import styles from "./feature-card.module.scss"
-import { ReactNode } from "react"
-import DynamicHeading from "../dynamic-heading"
 import Link from "next/link"
+
+import styles from "./feature-card.module.scss"
+import DynamicHeading from "../dynamic-heading"
 
 export interface CardProps {
   whiteTitle?: string
@@ -24,7 +25,9 @@ const FeatureCard = ({
   title2 = "",
   padding = "40px 29px",
   hoverClass = "",
-}: CardProps) => {
+}: CardProps): React.JSX.Element => {
+  //
+
   const CardContent = (
     <div
       className={`d-flex flex-column text-start ${styles.card_body} ${hoverClass}`}

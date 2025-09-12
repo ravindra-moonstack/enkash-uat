@@ -1,7 +1,8 @@
 import Link from "next/link"
+import React, { ReactNode } from "react"
 import Image, { StaticImageData } from "next/image"
+
 import styles from "./management-card.module.scss"
-import { ReactNode } from "react"
 import DynamicHeading from "../dynamic-heading"
 
 export interface CardProps {
@@ -20,7 +21,9 @@ const ManagementCard = ({
   cardImage,
   theme = "light",
   linkUrl,
-}: CardProps) => {
+}: CardProps): React.JSX.Element => {
+  //
+
   const cardContent = (
     <div
       className={`d-flex flex-column justify-content-between ${

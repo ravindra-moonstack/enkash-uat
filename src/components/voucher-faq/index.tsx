@@ -1,11 +1,10 @@
 "use client"
-
 import React from "react"
+import { usePathname } from "next/navigation"
+
 import styles from "./voucherFaqSection.module.scss"
 import DynamicHeading from "../dynamic-heading"
-import { RectangleButton } from ".."
-import { blueArrow, whiteArrow } from "../all-in-one-policy"
-import { usePathname } from "next/navigation"
+import { CommanButton } from ".."
 
 interface FaqSectionProps {
   mainTitle?: string
@@ -24,7 +23,9 @@ const VoucherFaqSection: React.FC<FaqSectionProps> = ({
   subTitle = "Have more questions?",
   buttonText = "Contact with us",
   FaqContent,
-}) => {
+}): React.JSX.Element => {
+  //
+
   const pathname = usePathname()
   const lastSlug = pathname?.split("/").filter(Boolean).pop() || "default"
   const connectUrl = `/contact-us?source=${lastSlug}`
@@ -57,11 +58,10 @@ const VoucherFaqSection: React.FC<FaqSectionProps> = ({
             )}
             {buttonText && (
               <div className="mt-3 d-none d-md-block">
-                <RectangleButton
+                <CommanButton
                   title="Contact with us"
                   theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
+                  arrow
                   iconSize={15}
                   url={connectUrl}
                 />

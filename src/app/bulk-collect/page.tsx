@@ -19,7 +19,7 @@ import {
   activationIcon,
   realTimeIcon,
   smartIcon,
-} from "."
+} from "./img"
 import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"

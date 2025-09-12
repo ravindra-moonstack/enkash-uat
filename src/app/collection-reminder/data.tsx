@@ -62,7 +62,7 @@ import {
   taskIconTwo,
   TravelIcon,
   TravelImage,
-} from "."
+} from "./img"
 
 const dataSets = [
   {

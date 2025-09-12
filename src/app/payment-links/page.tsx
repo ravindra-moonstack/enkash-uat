@@ -27,7 +27,7 @@ import {
   onlinSellsIcon,
   feeCancelIcon,
   invoiceIcon,
-} from "."
+} from "./img"
 
 import faqBg from "./img/faq-bg.webp"
 import bg1 from "./img/bg5.jpg"

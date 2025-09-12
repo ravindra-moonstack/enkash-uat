@@ -1,8 +1,12 @@
 import React from "react"
-import styles from "./page.module.scss"
 import { Metadata } from "next"
+
+import styles from "./page.module.scss"
 import generateMetaData from "@/src/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
+
+// components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payments Grievance and Redressal Policy: EnKash",
@@ -13,7 +17,9 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-const grievancePolicy = () => {
+const GrievancePolicy = (): React.JSX.Element => {
+  //
+
   return (
     <>
       <div className={styles.parent_container}>
@@ -865,4 +871,4 @@ const grievancePolicy = () => {
   )
 }
 
-export default grievancePolicy
+export default GrievancePolicy

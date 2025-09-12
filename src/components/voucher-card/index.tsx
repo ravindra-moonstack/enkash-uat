@@ -1,9 +1,9 @@
+import React, { ReactNode } from "react"
 import Image, { StaticImageData } from "next/image"
+
 import styles from "./voucher-card.module.scss"
-import { ReactNode } from "react"
 import DynamicHeading from "../dynamic-heading"
-import RectangleButton from "../buttons/rectangle-button"
-import { whiteArrow } from "."
+import { CommanButton } from ".."
 
 export interface CardProps {
   titleHtml?: ReactNode
@@ -20,7 +20,9 @@ const VoucherCard = ({
   cardImage,
   discount,
   buttonUrl,
-}: CardProps) => {
+}: CardProps): React.JSX.Element => {
+  //
+
   return (
     <div className={`d-flex flex-column text-start ${styles.card_body}`}>
       <div className="d-flex flex-column flex-grow-1">
@@ -84,11 +86,10 @@ const VoucherCard = ({
             />
           </div>
           <div className="col-6 text-end">
-            <RectangleButton
+            <CommanButton
               title={"Buy Now"}
               url={buttonUrl}
-              actionImage={whiteArrow}
-              hoverImage={whiteArrow}
+              arrow
               iconSize={9}
               theme="small-blue"
             />

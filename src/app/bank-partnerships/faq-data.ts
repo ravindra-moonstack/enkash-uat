@@ -18,11 +18,11 @@ const faqData = [
     ],
   },
   {
-    question:
-      "How can I create an EnKash QR Code?",
+    question: "How can I create an EnKash QR Code?",
     answer: [
       {
-        heading: "Sign up on our platform, access the dashboard, and generate codes in seconds.",
+        heading:
+          "Sign up on our platform, access the dashboard, and generate codes in seconds.",
       },
     ],
   },
@@ -39,12 +39,10 @@ const faqData = [
     question: "What is the price of setting up EnKash QR Code?",
     answer: [
       {
-        heading:
-          "Connect with our team to get the pricing details.",
+        heading: "Connect with our team to get the pricing details.",
       },
     ],
   },
-
 ]
 
 export const SecondfaqData = [
@@ -132,7 +130,8 @@ export const ThirdfaqData = [
     ],
   },
   {
-    question: "What are the key offerings we can provide to our clients via EnKash?",
+    question:
+      "What are the key offerings we can provide to our clients via EnKash?",
     answer: [
       {
         heading:
@@ -141,7 +140,8 @@ export const ThirdfaqData = [
     ],
   },
   {
-    question: "What onboarding and support does EnKash provide to bank partners?",
+    question:
+      "What onboarding and support does EnKash provide to bank partners?",
     answer: [
       {
         heading:

@@ -1,6 +1,8 @@
 "use client"
 import { usePathname } from "next/navigation"
-import { Header, Footer, TalkToSales } from "@/src/components"
+import TalkToSales from "../mobile-talks-to-sales"
+import Header from "../header/header"
+import Footer from "../footer"
 
 export default function LayoutClientWrapper({
   children,

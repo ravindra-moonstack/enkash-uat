@@ -27,7 +27,6 @@ import {
 
 // helpers
 import { containerScreen, participantBg } from "."
-import { blueArrow } from "@/src/components/all-in-one-policy"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
@@ -76,7 +75,7 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: blueArrow.src,
+            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
@@ -97,7 +96,7 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: blueArrow.src,
+            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
@@ -129,7 +128,6 @@ const partnershipsPage = (): React.JSX.Element => {
           formComponent={<BankAffiliatePartnershipForm />}
         />
       </div>
-      
     </div>
   )
 }
