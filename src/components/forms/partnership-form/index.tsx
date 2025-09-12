@@ -2,7 +2,7 @@
 
 import type React from "react"
 import styles from "./partnershipForm.module.scss"
-import DynamicHeading from "../../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../../dynamic-heading"
 
 interface Feature {
   id: number

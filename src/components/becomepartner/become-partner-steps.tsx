@@ -2,7 +2,7 @@ import React, { JSX } from "react"
 import Link from "next/link"
 import Image from "next/image"
 
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 import styles from "./become-partner-steps.module.scss"
 
 interface StepData {

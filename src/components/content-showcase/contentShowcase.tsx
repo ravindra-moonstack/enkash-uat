@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image"
-import DynamicHeading from "@/src/components/dynamic-heading/dynamic-heading"
+import DynamicHeading from "@/src/components/dynamic-heading"
 import RectangleButton from "@/src/components/buttons/rectangle-button"
 import PolicyCard from "@/src/components/policy-card"
 import styles from "./contentShowcase.module.scss"

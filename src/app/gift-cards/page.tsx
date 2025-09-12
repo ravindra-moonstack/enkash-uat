@@ -25,7 +25,7 @@ import {
 import { mealCardImage, instantActionImg, heroCardImg } from "."
 
 import faqData from "./faq-data"
-import AllProducts from "@/src/components/all-products/all-products"
+import AllProducts from "@/src/components/all-products"
 import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"

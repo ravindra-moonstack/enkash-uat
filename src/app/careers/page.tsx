@@ -1,16 +1,20 @@
-import styles from "./page.module.scss"
-import {
-  DynamicHeading,
-  CareersHero,
-  CareersPaycheck,
-  CoreValuesData,
-  YourOpportunityCareers,
-  CareersTestimonialSlider,
-  HiringProcessModal,
-} from "@/src/components"
-import { coreValues, HomePageRewardsVouchersSlide, jobs } from "./data"
-import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
+
+import styles from "./page.module.scss"
+
+// components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import HiringProcessModal from "@/src/components/hiring-process-modal"
+import CareersTestimonialSlider from "@/src/components/careers-testimonial-slider"
+import YourOpportunityCareers from "@/src/components/your-opportunity-careers"
+import CareersHero from "@/src/components/careers-hero-slider"
+import CareersPaycheck from "@/src/components/careers-paycheck"
+import CoreValuesData from "@/src/components/core-values-data"
+
+import { coreValues, HomePageRewardsVouchersSlide, jobs } from "./data"
+
+import generateMetaData from "@/src/utils/metaData"
+
 export const metadata: Metadata = generateMetaData({
   title: "Careers at EnKash: Join the Best Fintech Company",
   description:
@@ -21,6 +25,8 @@ export const metadata: Metadata = generateMetaData({
 })
 
 const Careers = (): React.JSX.Element => {
+  //
+
   return (
     <>
       <div className={`color-white ${styles.home_container}`}>

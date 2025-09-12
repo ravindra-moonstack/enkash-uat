@@ -1,5 +1,0 @@
-export { default as autoCapture } from "./img/auto-capture.svg"
-export { default as auditExpence } from "./img/audit-expence.svg"
-export { default as reconcile } from "./img/reconcile.svg"
-export { default as workflow } from "./img/workflow.svg"
-export { default as approve } from "./img/approve.svg"

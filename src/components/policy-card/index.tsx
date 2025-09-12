@@ -2,7 +2,7 @@ import Link from "next/link"
 import React from "react"
 import Image, { StaticImageData } from "next/image"
 import styles from "./policyCard.module.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 interface CardProps {
   icon: string | StaticImageData

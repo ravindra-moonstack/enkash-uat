@@ -3,10 +3,11 @@ import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 // components
+
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import OurStoryCard from "@/src/components/about-our-story-card"
 import {
-  DynamicHeading,
-  CustomBreadcrumb,
-  OurStoryCard,
   LeadersSection,
   InvestorsLogos,
   EmployeeSlider,
@@ -15,22 +16,22 @@ import {
 } from "@/src/components"
 
 // helpers
-import {  aboutBannerBottomIcon, careerCardIcon } from "."
+import { aboutBannerBottomIcon, careerCardIcon } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { bannerOurContent } from "./data"
 
-
-
 export const metadata: Metadata = generateMetaData({
-  title: "About EnKash: India’s Leading Spend Management & Payments Platform ",
+  title: "About EnKash: India's Leading Spend Management & Payments Platform ",
   description:
-    "Learn about EnKash’s mission, leadership, and journey in transforming B2B payments. Discover how we empower businesses with smarter spend and finance automation solutions.",
+    "Learn about EnKash's mission, leadership, and journey in transforming B2B payments. Discover how we empower businesses with smarter spend and finance automation solutions.",
   alternates: {
     canonical: `${process.env.URL}/about-us`,
   },
 })
 
 const About = (): React.JSX.Element => {
+  //
+
   return (
     <>
       <div className={`color-white ${styles.home_container}`}>

@@ -1,7 +1,7 @@
 import React from "react"
 import Image, { StaticImageData } from "next/image"
 import styles from "./testimonialCard.module.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 interface CardProps {
   icon: string | StaticImageData

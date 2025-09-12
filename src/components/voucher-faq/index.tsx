@@ -2,7 +2,7 @@
 
 import React from "react"
 import styles from "./voucherFaqSection.module.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 import { RectangleButton } from ".."
 import { blueArrow, whiteArrow } from "../all-in-one-policy"
 import { usePathname } from "next/navigation"
