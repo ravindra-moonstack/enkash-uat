@@ -1,5 +1,6 @@
 import type { NextConfig } from "next"
 import withBundleAnalyzer from "@next/bundle-analyzer"
+import mappedUrls from "./src/helpers/redirection-urls"
 
 const withBundleAnalyzerConfigured = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
@@ -46,38 +47,32 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    return [
-      {
-        source: "/resource",
-        destination: "/resources",
-        permanent: true,
-      },
-    ]
+    return mappedUrls
   },
-  async rewrites() {
-    return [
-      {
-        source: "/resources",
-        destination: "https://blogs.enkash.com/blog",
-      },
-      // {
-      //   source: "/resources/",
-      //   destination: "https://blogs.enkash.com/",
-      // },
-      {
-        source: "/resources/blog/:path*",
-        destination: "https://blogs.enkash.com/blog/:path*",
-      },
-      // {
-      //   source: "/resources/:path*",
-      //   destination: "https://blogs.enkash.com/:path*/",
-      // },
-      {
-        source: "/resources/:path*",
-        destination: "https://blogs.enkash.com/:path*",
-      },
-    ]
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/resources",
+  //       destination: "https://blogs.enkash.com/blog",
+  //     },
+  //     // {
+  //     //   source: "/resources/",
+  //     //   destination: "https://blogs.enkash.com/",
+  //     // },
+  //     {
+  //       source: "/resources/blog/:path*",
+  //       destination: "https://blogs.enkash.com/blog/:path*",
+  //     },
+  //     // {
+  //     //   source: "/resources/:path*",
+  //     //   destination: "https://blogs.enkash.com/:path*/",
+  //     // },
+  //     {
+  //       source: "/resources/:path*",
+  //       destination: "https://blogs.enkash.com/:path*",
+  //     },
+  //   ]
+  // },
 }
 
 module.exports = withBundleAnalyzerConfigured(nextConfig)

@@ -12,7 +12,7 @@ interface ProductListViewProps {
 }
 
 const ProductListView = ({ products }: ProductListViewProps) => {
-  //
+
 
   const router = useRouter()
 

@@ -87,7 +87,8 @@ const faqData = [
           To
           <Link
             className="mx-1"
-            href="https://www.enkash.com/resources/blog/e-invoicing-under-gst/"
+            href={`${process.env.NEXT_PUBLIC_URL}/digital-invoicing`}
+            rel="noopener noreferrer"
             target="_blank"
           >
             digitize invoices

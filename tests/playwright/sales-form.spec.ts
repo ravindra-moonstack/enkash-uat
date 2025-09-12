@@ -1,20 +1,20 @@
 import { test, expect } from "@playwright/test"
 
-test("fills and submits Contact Us form", async ({ page }) => {
+test("fills and submits Sales form", async ({ page }) => {
   test.setTimeout(50000)
 
-  await page.goto("/contact-us")
+  await page.goto("/sales")
 
   await page.locator('input[name="SingleLine"]').fill("John Doe")
   await page.locator('input[name="Email"]').fill("john.doe@example.com")
   await page.locator('input[name="SingleLine1"]').fill("Doe Enterprises")
   await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210")
 
-  const multiSelect = page.getByText("How can we help you?*")
+  const multiSelect = page.getByText("What are you looking for?*")
   await multiSelect.click()
 
   const firstOption = page.getByRole("checkbox", {
-    name: "Looking for Payment Collection Solution",
+    name: "Collect Payments",
   })
   await firstOption.check()
 
@@ -22,6 +22,22 @@ test("fills and submits Contact Us form", async ({ page }) => {
 
   await page.click("body", { position: { x: 10, y: 10 } })
 
+  await page.locator('input[name="Website"]').fill("https://www.enkash.com/")
+
+  const selectBox = page.getByRole("button", { name: "Dropdown5" })
+  await selectBox.click()
+
+ 
+  await page.getByRole("menuitem", { name: "Google search" }).click()
+  await selectBox.click() 
+  await page
+    .getByRole("menuitem", { name: "Social media" })
+    .click()
+
+ 
+  await expect(page.locator('input[name="Dropdown5"]')).toHaveValue(
+    "Social media"
+  )
   await page
     .locator('textarea[name="MultiLine"]')
     .fill("Need help with onboarding and partnership opportunities.")
@@ -44,5 +60,5 @@ test("fills and submits Contact Us form", async ({ page }) => {
 
   await submitButton.click({ timeout: 10000 })
 
-  await expect(page).toHaveURL(/contact-us/i)
+  await expect(page).toHaveURL(/sales/i)
 })

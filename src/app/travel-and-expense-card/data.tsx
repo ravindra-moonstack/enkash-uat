@@ -25,7 +25,7 @@ import {
   secondIcon,
   thirdIcon,
   fourthIcon,
-} from ".";
+} from "."
 
 const intantActionData = [
   {
@@ -155,7 +155,7 @@ const cardType = [
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
-     linkUrl: "/sales/?source=travel-and-expense-card",
+    linkUrl: "/sales/?source=travel-and-expense-card",
   },
   {
     titleHtml: "Virtual Card",
@@ -183,7 +183,7 @@ const cardType = [
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
-     linkUrl: "/sales/?source=travel-and-expense-card",
+    linkUrl: "/sales/?source=travel-and-expense-card",
   },
 ]
 

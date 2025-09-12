@@ -41,7 +41,7 @@ const FaqSectionWithSource = ({
             content={[
               {
                 title: "Have more questions?",
-                color: "color-dark-grey subHeading",
+                color: "color-grey-200 subHeading",
               },
             ]}
             headingTag="p"
