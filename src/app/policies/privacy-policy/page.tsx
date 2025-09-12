@@ -54,7 +54,7 @@ const grievancePolicy = () => {
 
                       <div className="word-to-html-null">
                         <h5 className="c15 mt-6 pb-4">
-                          Last Updated on 22<sup>nd</sup> April, 2023
+                          Last Updated on 7<sup>th</sup> April, 2025
                         </h5>
                         <p className="c5">
                           <span className="c1"></span>
