@@ -169,6 +169,7 @@ const UpiPayments = (): React.JSX.Element => {
                     maxHeight: "672px",
                   }}
                   className="w-100 mh-550 object-fit-contain"
+                  priority
                 />
               </div>
             </div>
