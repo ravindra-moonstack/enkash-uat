@@ -49,30 +49,30 @@ const nextConfig: NextConfig = {
   async redirects() {
     return mappedUrls
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/resources",
-  //       destination: "https://blogs.enkash.com/blog",
-  //     },
-  //     // {
-  //     //   source: "/resources/",
-  //     //   destination: "https://blogs.enkash.com/",
-  //     // },
-  //     {
-  //       source: "/resources/blog/:path*",
-  //       destination: "https://blogs.enkash.com/blog/:path*",
-  //     },
-  //     // {
-  //     //   source: "/resources/:path*",
-  //     //   destination: "https://blogs.enkash.com/:path*/",
-  //     // },
-  //     {
-  //       source: "/resources/:path*",
-  //       destination: "https://blogs.enkash.com/:path*",
-  //     },
-  //   ]
-  // },
+  async rewrites() {
+    return [
+      {
+        source: "/resources",
+        destination: "https://blogs.enkash.com/blog",
+      },
+      // {
+      //   source: "/resources/",
+      //   destination: "https://blogs.enkash.com/",
+      // },
+      {
+        source: "/resources/blog/:path*",
+        destination: "https://blogs.enkash.com/blog/:path*",
+      },
+      // {
+      //   source: "/resources/:path*",
+      //   destination: "https://blogs.enkash.com/:path*/",
+      // },
+      {
+        source: "/resources/:path*",
+        destination: "https://blogs.enkash.com/:path*",
+      },
+    ]
+  },
 }
 
 module.exports = withBundleAnalyzerConfigured(nextConfig)
