@@ -24,7 +24,7 @@ const cardsProducts: TProductCategory[] = [
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/collect-payments",
+        subtitleLink: "/prepaid-card",
         currentHeading: {
           name: "Collect Payments",
           description: "Tax-saving food benefit card",
@@ -83,7 +83,7 @@ const cardsProducts: TProductCategory[] = [
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/cards",
+
         currentHeading: {
           name: "Cards",
           description: "Manage all types of business payments",

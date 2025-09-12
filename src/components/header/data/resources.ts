@@ -5,13 +5,13 @@ const resourseProducts: TProductCategory[] = [
   {
     name: "Resources",
     description: "Flexible prepaid card solutions",
-    link: `/resources`,
+    link: `${process.env.NEXT_PUBLIC_URL}/resources/`,
     backgroundColor: "#f6fcff",
-    target: "_blank",
+
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/loyalty-lounge",
+        subtitleLink: `${process.env.NEXT_PUBLIC_URL}/resources/`,
         currentHeading: {
           name: "Rewards ",
           description: "Build exciting rewards, incentives & offers",
@@ -21,24 +21,21 @@ const resourseProducts: TProductCategory[] = [
             name: "Blogs",
             description: "Trends, tips, and strategies",
             imageSrcHovered: blogsFilled,
-            link: `/resources/blogs`,
-            target: "_blank",
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/blogs`,
           },
 
           {
             name: "Case Studies",
             description: "Real wins, proven impact",
             imageSrcHovered: casestudies,
-            link: `/resources/customer-stories`,
-            target: "_blank",
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/customer-stories`,
           },
 
           {
             name: "Videos",
             description: "Stories, solutions, and demos",
             imageSrcHovered: vedioFilled,
-            link: `/resources/videos`,
-            target: "_blank",
+            link: `${process.env.NEXT_PUBLIC_URL}/resources/videos`,
           },
         ],
         footerText: "Effortless recognition, and endless rewards in one place",
@@ -58,7 +55,7 @@ const resourseProducts: TProductCategory[] = [
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/bolt",
+        subtitleLink: "https://docs.enkash.com/",
         currentHeading: {
           name: "Vouchers",
           description: "Shop smart and unlock exclusive savings",

@@ -39,14 +39,14 @@ const PaymentLinkTab = ({
     setOpenIndexes((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     )
-    setSelectedItemIndex(index) // also update background
+    setSelectedItemIndex(index)
   }
 
   const currentBgImage =
     typeof selectedItem?.bgImage === "string"
       ? selectedItem.bgImage
       : selectedItem?.bgImage?.src || ""
-  const pathname = usePathname() // ✅ moved inside component
+  const pathname = usePathname()
   const lastSlug = pathname.split("/").filter(Boolean).pop() || "website"
   return (
     <>
@@ -71,7 +71,6 @@ const PaymentLinkTab = ({
             />
           </div>
           <div>
-            {/* Tab Selectors */}
             <div
               className={`d-flex mt-md-5 mt-3  ${styles.progress_container}`}
             >
@@ -106,7 +105,6 @@ const PaymentLinkTab = ({
 
             <div className={styles.progress_bar}></div>
 
-            {/* Selected Content */}
             <div
               style={{
                 backgroundImage: `url(${currentBgImage})`,
@@ -202,7 +200,6 @@ const PaymentLinkTab = ({
       {/* ///for mobile... */}
       <div className={`d-md-none d-block  ${styles.sixth_row_mobile}`}>
         <div className={styles.tab_section}>
-          {/* Heading */}
           <div className="d-flex flex-column text-center">
             <DynamicHeading
               content={[
@@ -220,7 +217,6 @@ const PaymentLinkTab = ({
             />
           </div>
 
-          {/* Tabs */}
           <div
             className={`d-flex flex-column mt-md-5 mt-4 gap-3 ${styles.progress_container}`}
           >
@@ -262,13 +258,11 @@ const PaymentLinkTab = ({
                     />
                   </div>
 
-                  {/* Dropdown content */}
                   <div
                     className={`${styles.dropdownContent} ${
                       isOpen ? styles.show : ""
                     }`}
                   >
-                    {/* small bg image above text */}
                     <div className={styles.dropdownBg}>
                       <Image
                         src={bgSrc}
@@ -356,7 +350,6 @@ const PaymentLinkTab = ({
             })}
           </div>
 
-          {/* Desktop selected content */}
           <div
             className={`${styles.desktopContent} mt-5 px-3 d-flex align-items-start gap-3`}
           >

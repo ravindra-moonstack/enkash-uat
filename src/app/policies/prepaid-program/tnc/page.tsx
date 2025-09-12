@@ -73,7 +73,11 @@ const CustomerOnboarding = () => {
                         and Conditions for issuance of prepaid instruments
                         mentioned herein, along with the General Terms and
                         Conditions specified on our website{" "}
-                        <a href="https://www.enkash.com/" target="_blank">
+                        <a
+                          href={`${process.env.NEXT_PUBLIC_URL}`}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
                           https://www.enkash.com/
                         </a>{" "}
                         and amended from time to time.
@@ -840,7 +844,7 @@ const CustomerOnboarding = () => {
                         <p>
                           • We shall communicate the amended Terms and
                           Conditions by hosting them on our website{" "}
-                          <a href="https://www.enkash.com/">
+                          <a href={`${process.env.NEXT_PUBLIC_URL}`}>
                             https://www.enkash.com/
                           </a>{" "}
                           or in any other manner as decided by us
@@ -907,7 +911,7 @@ const CustomerOnboarding = () => {
                         className="f-5 text-center"
                       />
                     </div>
-                  
+
                     <section id="ppi-hindi">
                       <div className="container my-4">
                         <p>
@@ -926,7 +930,7 @@ const CustomerOnboarding = () => {
                           नियम और शर्त को स्पष्ट रूप से पढ़ा, समझा और स्वीकार
                           किया है, साथ ही हमारी वेबसाइट{" "}
                           <a
-                            href="https://www.enkash.com/"
+                            href={`${process.env.NEXT_PUBLIC_URL}`}
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -1396,7 +1400,7 @@ const CustomerOnboarding = () => {
                         <p>
                           • संशोधित नियम हमारी वेबसाइट{" "}
                           <a
-                            href="https://www.enkash.com/"
+                            href={`${process.env.NEXT_PUBLIC_URL}`}
                             target="_blank"
                             rel="noreferrer"
                           >

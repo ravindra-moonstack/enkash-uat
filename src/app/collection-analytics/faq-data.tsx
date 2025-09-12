@@ -16,17 +16,11 @@ const faqData = [
     answerHTML: (
       <div className="my-2">
         <p>
-          With collection analytics, businesses can analyze historical data and gain insights into patterns, trends, and potential risks related to
-          <Link
-            href="https://www.enkash.com/olympus/receivables//"
-            target="_blank"
-            className="mx-1"
-          >
-            business accounts receivable.
-          </Link>
-          This process can benefit your business by improving efficiency in
-          debt recovery, reducing bad debt, and enhancing overall cash flow
-          management.
+          With collection analytics, businesses can analyze historical data and
+          gain insights into patterns, trends, and potential risks related to
+          business accounts receivable. This process can benefit your business
+          by improving efficiency in debt recovery, reducing bad debt, and
+          enhancing overall cash flow management.
         </p>
       </div>
     ),
@@ -42,7 +36,8 @@ const faqData = [
           software utilizes historical data, customer payment patterns, and
           various metrics to create models that
           <Link
-            href="https://www.enkash.com/olympus/receivables/bulk-collect/"
+            href={`${process.env.NEXT_PUBLIC_URL}/bulk-collect`}
+            rel="noopener noreferrer"
             target="_blank"
           >
             predict future payment
@@ -126,19 +121,12 @@ const faqData = [
           Days Sales Outstanding (DSO) management is crucial for businesses
           because it provides insight into the average time it takes for a
           company to collect payments from its customers. A lower DSO indicates
-          that a business is efficient in
-          <Link
-            href="https://www.enkash.com/olympus/receivables/"
-            target="_blank"
-          >
-            collecting receivables,
-          </Link>
-          contributing to improved cash flow. Efficient DSO management allows
-          businesses to optimize working capital, reduce the risk of bad debts,
-          and enhance overall financial stability. It also helps in assessing
-          the effectiveness of credit and collection policies, enabling
-          businesses to make informed decisions to improve their cash conversion
-          cycle.
+          that a business is efficient in collecting receivables, contributing
+          to improved cash flow. Efficient DSO management allows businesses to
+          optimize working capital, reduce the risk of bad debts, and enhance
+          overall financial stability. It also helps in assessing the
+          effectiveness of credit and collection policies, enabling businesses
+          to make informed decisions to improve their cash conversion cycle.
         </p>
       </div>
     ),
