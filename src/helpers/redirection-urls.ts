@@ -141,10 +141,6 @@ const url: {
   { source: "/policies/payments", destination: "/policies" },
   { source: "/policies/platform", destination: "/policies" },
   { source: "/policies/prepaid-program", destination: "/policies" },
-  {
-    source: "/policies/privacy-policy",
-    destination: "/policies/privacy-policy",
-  },
 
   // ✅ Solutions redirects
   { source: "/solutions/apis-modules", destination: "/" },
