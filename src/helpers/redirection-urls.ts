@@ -2,7 +2,10 @@ const url: {
   source: string
   destination: string
 }[] = [
-  { source: "/resource", destination: "/resources" },
+  {
+    source: "/resource",
+    destination: "/resources",
+  },
   { source: "/bolt/category/404", destination: "/products/vouchers/" },
   { source: "/bolt/category/apparels", destination: "/apparels-vouchers/" },
   { source: "/bolt/category/e-commerce", destination: "/e-commerce-vouchers/" },
