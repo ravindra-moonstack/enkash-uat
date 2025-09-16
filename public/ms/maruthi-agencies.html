@@ -1,0 +1,138 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maruthi Agencies - Footwear Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Maruthi Agencies</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#home" class="hover:underline">Home</a></li>
+                    <li><a href="#about" class="hover:underline">About Us</a></li>
+                    <li><a href="#products" class="hover:underline">Products</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-blue-100 py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4">Welcome to Maruthi Agencies</h2>
+            <p class="text-lg mb-6">Your trusted partner for quality footwear solutions in Chennai since 1998.</p>
+            <a href="#products" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Explore Our Products</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
+            <p class="text-lg text-gray-700">
+                Established in 1998, Maruthi Agencies has emerged as a well-recognized name in the footwear industry in Chennai, Tamil Nadu. As a leading manufacturer, trader, and wholesaler, we specialize in offering a diverse range of high-quality footwear, including gents sandals, men's sports shoes, gents slippers, ladies slippers, and ladies canvas shoes. Under the leadership of Mr. H. Jitendar, we are committed to delivering exceptional products that meet the needs of our valued clients. Our dedication to quality, customer satisfaction, and competitive pricing has earned us a strong reputation and a loyal clientele across the region.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="bg-gray-200 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="text-xl font-semibold mb-2">Gents Sandals</h3>
+                    <p>Comfortable and stylish sandals for men, perfect for all occasions.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="text-xl font-semibold mb-2">Men's Sports Shoes</h3>
+                    <p>Durable and trendy sports shoes designed for performance and comfort.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="text-xl font-semibold mb-2">Ladies Slippers</h3>
+                    <p>Elegant and comfortable slippers for women, blending style and ease.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+                    <p><strong>Address:</strong> Umpherson Street, Chennai, Tamil Nadu, 600001, India</p>
+                    <p><strong>Email:</strong> info@maruthiagencies.com</p>
+                    <p><strong>Phone:</strong> +91-1234567890</p>
+                    <p><strong>GSTIN:</strong> 33ADKPR8358R1ZH</p>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded shadow">
+                        <h3 class="text-xl font-semibold mb-4">Send Us a Message</h3>
+                        <div class="space-y-4">
+                            <input type="text" placeholder="Your Name" class="w-full p-2 border rounded">
+                            <input type="email" placeholder="Your Email" class="w-full p-2 border rounded">
+                            <textarea placeholder="Your Message" class="w-full p-2 border rounded h-32"></textarea>
+                            <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Maruthi Agencies. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
