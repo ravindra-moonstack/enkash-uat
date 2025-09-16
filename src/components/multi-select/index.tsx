@@ -13,7 +13,7 @@ interface MultiSelectProps {
   options: Option[]
   placeholder?: string
   onChange: (selected: string[]) => void
-  label?: string // accessible label for the input
+  label?: string 
 }
 
 const MultiSelect: React.FC<MultiSelectProps> = ({
