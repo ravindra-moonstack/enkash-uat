@@ -11,11 +11,15 @@
   padding-top: 112px;
   padding-bottom: 50px;
   @include for-laptops {
-    padding: 112px 20px 0;
+    padding: 142px 20px 50px;
   }
   img {
     width: -webkit-fill-available;
     height: auto;
+    width: 100%;
+     @include for-laptops {
+    width: 375px;
+  }
   }
   a {
     color: $color-dim-grey;
