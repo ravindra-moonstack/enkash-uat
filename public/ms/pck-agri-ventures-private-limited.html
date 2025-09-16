@@ -1,0 +1,149 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCK Agri Ventures Pvt Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-green-700 text-white py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">PCK Agri Ventures Pvt Ltd</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#home" class="hover:underline">Home</a></li>
+                    <li><a href="#about" class="hover:underline">About Us</a></li>
+                    <li><a href="#products" class="hover:underline">Products</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('https://source.unsplash.com/random/1600x900/?spices')">
+        <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded">
+            <h2 class="text-4xl font-bold mb-4">Premium Spices & Agro Products</h2>
+            <p class="text-lg">Delivering export-quality spices since 2020</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                PCK Agri Ventures Private Limited, established in 2020, is a leading manufacturer, exporter, and supplier of premium spices and agro-commodities. Backed by over six decades of expertise from the PCK Group, we operate a state-of-the-art spice processing and packing unit in Indore, Madhya Pradesh, and additional facilities in Tamil Nadu, Gujarat, and Rajasthan. Our products, marketed under the brand name MAAVAN, include high-quality spices like coriander, cumin, fennel, and spice powders, as well as soya-based frozen products. With a commitment to quality, hygiene, and customer satisfaction, we cater to both domestic and international markets, earning recognition as one of India’s top spice exporters.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="bg-gray-200 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Indian Raw Spices</h3>
+                    <p class="text-gray-600">Premium spices including coriander, cumin, fennel, black pepper, and green cardamom.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Spice Powders</h3>
+                    <p class="text-gray-600">Finely ground powders like turmeric, red chili, garam masala, and curry powder.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Soya & Dry Fruits</h3>
+                    <p class="text-gray-600">High-quality soya chunks, almonds, cashews, and makhana for diverse culinary needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg text-gray-700 mb-4">
+                    <strong>Registered Office (Tamil Nadu):</strong><br>
+                    11/6, PPVN Street, Virudhunagar, Tamil Nadu, India - 626001
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    <strong>Processing Unit (Madhya Pradesh):</strong><br>
+                    8 & 9, Samar Park, Second Floor, Above State Bank of India, Apollo DB City Road, Nipania, Indore, Madhya Pradesh, India - 452010
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    <strong>Email:</strong> <a href="mailto:pckannan2020@gmail.com" class="text-blue-600 hover:underline">pckannan2020@gmail.com</a>
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    <strong>Phone:</strong> +91-8045803162
+                </p>
+                <p class="text-lg text-gray-700">
+                    <strong>Website:</strong> <a href="https://www.pckagriventuresprivatelimited.com" class="text-blue-600 hover:underline">www.pckagriventuresprivatelimited.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-700 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 PCK Agri Ventures Pvt Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+</Apis are not supported in your browser, but you can enable them in the settings.
