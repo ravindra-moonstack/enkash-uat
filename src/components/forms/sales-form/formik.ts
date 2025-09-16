@@ -25,8 +25,8 @@ const salesInitialValue: TSalesInitialValueProp = {
   MultiLine: "",
   Dropdown2: "Website Sales Leads",
   Dropdown1: "Marketing",
-  Dropdown3: "-Select-",
-  Dropdown4: "-Select-",
+  Dropdown3: "First Choice",
+  Dropdown4: "First Choice",
   Dropdown5: "",
 }
 
