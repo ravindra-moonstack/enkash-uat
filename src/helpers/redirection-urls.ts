@@ -2,6 +2,10 @@ const url: {
   source: string
   destination: string
 }[] = [
+  {
+    source: "/resource",
+    destination: "/resources",
+  },
   { source: "/bolt/category/404", destination: "/products/vouchers/" },
   { source: "/bolt/category/apparels", destination: "/apparels-vouchers/" },
   { source: "/bolt/category/e-commerce", destination: "/e-commerce-vouchers/" },
@@ -183,6 +187,10 @@ const url: {
   {
     source: "/vouchers/movies-and-music/zee5-gift-card",
     destination: "/vouchers/zee5",
+  },
+  {
+    source: "/resourcesblog/budget-highlights-2023",
+    destination: "/resources/blog/union-budget-2023",
   },
 ]
 
