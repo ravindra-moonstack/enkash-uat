@@ -6,7 +6,7 @@ import styles from "./page.module.scss"
 import reachOutImg from "@/public/images/SubtractImg.webp"
 import needIcon from "./img/need.svg"
 
-import { DynamicHeading } from "@/src/components"
+import DynamicHeading from "@/src/components/dynamic-heading"
 import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({

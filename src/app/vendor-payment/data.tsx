@@ -22,7 +22,7 @@ import {
   taskIconSix,
   taskIconThree,
   taskIconTwo,
-} from "."
+} from "./img"
 
 const cardsData = [
   {
@@ -58,7 +58,8 @@ const allProductSections = [
     items: [
       {
         title: "Automated Workflows",
-        description: "Save hours with automated invoice uploads, approval workflows, and payment processing.",
+        description:
+          "Save hours with automated invoice uploads, approval workflows, and payment processing.",
         image: crouselIconOne,
       },
       {
@@ -95,7 +96,6 @@ const allProductSections = [
     ],
   },
 ]
-
 
 const allInOnePolicyData = [
   {
@@ -155,7 +155,6 @@ const allInOnePolicyData = [
     maxImageHeight: "252px",
     reverse: true,
   },
-];
-
+]
 
 export { cardsData, allProductSections, allInOnePolicyData }

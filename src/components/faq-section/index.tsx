@@ -1,11 +1,11 @@
 "use client"
-
+import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
+
 import styles from "./faq-section.module.scss"
 import { DynamicHeading, FAQHtml } from ".."
-import { blueArrow } from "../all-in-one-policy"
 
 interface FaqSectionProps {
   faqData: any
@@ -15,7 +15,9 @@ interface FaqSectionProps {
 const FaqSectionWithSource = ({
   faqData,
   connectText = "Connect with us",
-}: FaqSectionProps) => {
+}: FaqSectionProps): React.JSX.Element => {
+  //
+
   const pathname = usePathname()
 
   const lastSlug = pathname?.split("/").filter(Boolean).pop() || "default"
@@ -62,7 +64,7 @@ const FaqSectionWithSource = ({
                     className="mb-0 f-5"
                   />
                   <Image
-                    src={blueArrow}
+                    src="/images/blue-arrow.svg"
                     alt="blue Arrow"
                     width={15}
                     height={15}

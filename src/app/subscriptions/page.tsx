@@ -26,7 +26,7 @@ import {
   activationIcon,
   hundredPercentIcon,
   realTimeIcon,
-} from "."
+} from "./img"
 
 // utils
 

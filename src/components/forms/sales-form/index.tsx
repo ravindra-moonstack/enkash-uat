@@ -26,7 +26,7 @@ const SalesForm: React.FC = () => {
 
   const [loading, setLoading] = useState<boolean>(false)
 
-  const [showOtherInput, setShowOtherInput] = useState(false)
+  const [showOtherInput, setShowOtherInput] = useState<boolean>(false)
 
   const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
     useFormik({
@@ -141,9 +141,10 @@ const SalesForm: React.FC = () => {
             name="MultipleChoice"
             options={categoryOptions}
             placeholder="What are you looking for?*"
-            onChange={(vals) => {
-              setShowOtherInput(vals.includes("Something Else"))
-              setFieldValue("MultipleChoice", vals)
+            onChange={(parent, children) => {
+              setShowOtherInput(parent.includes("Something Else"))
+              setFieldValue("MultipleChoice", parent)
+              setFieldValue("MultipleChoice1", children)
             }}
           />
           <ErrorText<TSalesInitialValueProp>

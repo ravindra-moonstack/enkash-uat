@@ -1,4 +1,6 @@
 import React from "react"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
 import {
   BankSolutionHeading,
@@ -17,12 +19,11 @@ import {
   BankSolutions,
   PartnerShipForm,
   BankAffiliatePartnershipForm,
-  FaqSection
+  FaqSection,
 } from "@/src/components"
-import { containerScreen, participantBg } from "."
-import { blueArrow } from "@/src/components/all-in-one-policy"
+
+import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Partner with Us: Bank Partnerships",
@@ -32,7 +33,10 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/bank-partnerships/`,
   },
 })
-const partnershipsPage = (): React.JSX.Element => {
+
+const PartnershipsPage = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white  `}>
       <BpHeroSection
@@ -67,7 +71,7 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: blueArrow.src,
+            blueArrow: "/images/blue-arrow-svg",
           }}
         />
       </div>
@@ -92,7 +96,7 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: blueArrow.src,
+            blueArrow: "/images/blue-arrow-svg",
           }}
         />
       </div>
@@ -123,4 +127,5 @@ const partnershipsPage = (): React.JSX.Element => {
     </div>
   )
 }
-export default partnershipsPage
+
+export default PartnershipsPage

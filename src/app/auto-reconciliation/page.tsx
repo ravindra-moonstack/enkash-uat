@@ -2,7 +2,6 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
-
 import {
   allInOnePolicies,
   cardsData,
@@ -30,7 +29,7 @@ import {
   realTimeIcon,
   hundredPercentIcon,
   activationIcon,
-} from "."
+} from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 

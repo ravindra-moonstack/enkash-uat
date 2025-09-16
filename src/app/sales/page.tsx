@@ -1,18 +1,19 @@
 import React from "react"
 import Image from "next/image"
-import {
-  DynamicHeading,
-  LogoSlider,
-  TestimonialSlider,
-  SalesForm,
-} from "@/src/components"
+import Link from "next/link"
+import { Metadata } from "next"
+
+// components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import TestimonialSlider from "@/src/components/testimonial-slider"
+import SalesForm from "@/src/components/forms/sales-form"
+
 import styles from "./page.module.scss"
-import { help, login, logo, support } from "."
+import { help, login, logo, support } from "./img"
 import { testimonialData } from "./data"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 import { getLoginUrl, getSupportUrl } from "@/src/utils/getSalesUrl"
-import Link from "next/link"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash Sales Get our Payment & Spend Solutions",
@@ -26,7 +27,7 @@ export const metadata: Metadata = generateMetaData({
 const loginUrl = getLoginUrl("/sales")
 const supportUrl = getSupportUrl("/sales")
 
-async function Sales() {
+function Sales(): React.JSX.Element {
   //
 
   return (

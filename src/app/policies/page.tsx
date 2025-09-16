@@ -1,9 +1,12 @@
-import { DynamicHeading } from "@/src/components"
 import React from "react"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 import { ctaButtonData } from "./data"
+
+import DynamicHeading from "@/src/components/dynamic-heading"
+
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Policies: Privacy, Security, Refunds & Compliance",
   description:
@@ -13,7 +16,9 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-const GrievancePolicy = () => {
+const GrievancePolicy = (): React.JSX.Element => {
+  //
+
   return (
     <div className={styles.policy}>
       <div className="max-w-auto">
