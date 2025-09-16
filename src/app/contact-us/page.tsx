@@ -171,7 +171,7 @@ const ContactUs = (): React.JSX.Element => {
                   {
                     title: "Privacy Policy",
                     color: "color-grey-100",
-                    link: "/policies/policies/privacy-policy",
+                    link: "/policies/privacy-policy",
                   },
                 ]}
                 headingTag="p"
