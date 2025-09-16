@@ -1,0 +1,149 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Vethaa Dairy Pvt Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Sri Vethaa Dairy Pvt Ltd</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#home" class="hover:underline">Home</a></li>
+                    <li><a href="#about" class="hover:underline">About Us</a></li>
+                    <li><a href="#products" class="hover:underline">Products</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('https://source.unsplash.com/random/1600x900/?dairy')">
+        <div class="text-center text-white bg-black bg-opacity-50 p-6 rounded">
+            <h2 class="text-4xl font-bold mb-4">Pure Dairy, Pure Trust</h2>
+            <p class="text-lg">Delivering farm-fresh milk and dairy products since 1996</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                Sri Vethaa Dairy Private Limited, established in 1996 in Musiri, Tamil Nadu, is dedicated to delivering high-quality, farm-fresh milk and dairy products. With a legacy spanning over two decades, we prioritize health and nutrition, ensuring our products retain their natural taste and flavor. Our state-of-the-art facilities and automated processes guarantee safe, wholesome dairy products that meet stringent quality standards. We are proud to be a trusted household name, committed to bringing the finest dairy foods to families across Tamil Nadu.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="bg-gray-200 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Fresh Milk</h3>
+                    <p class="text-gray-600">Pure, farm-fresh milk processed to retain its natural goodness and nutrition.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Pasteurized Butter</h3>
+                    <p class="text-gray-600">Creamy and rich butter, perfect for cooking and spreading.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Dairy Products</h3>
+                    <p class="text-gray-600">A range of wholesome products including ghee, paneer, and curd.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg text-gray-700 mb-4">
+                    <strong>Corporate Office:</strong><br>
+                    No. 223/2, Chettiyar Agaram, 1st Street, Vanagaram, Veeraraghavapuram, Poonamallee, Tiruvallur, Tamil Nadu, India - 600077
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    <strong>Factory Unit 1:</strong><br>
+                    S.F. No. 34/2, Thottiyapatti, Sevanthilingapuram Village, Musiri, Tiruchirappalli, Tamil Nadu - 621211
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    <strong>Factory Unit 2:</strong><br>
+                    S.F. No. 147/2A & 3A, 148/15A, Nagar Village, Ulundurpet Block, Kallakurichi, Tamil Nadu - 606107
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    <strong>Email:</strong> <a href="mailto:nramesh@vethaa.in" class="text-blue-600 hover:underline">nramesh@vethaa.in</a>
+                </p>
+                <p class="text-lg text-gray-700">
+                    <strong>Website:</strong> <a href="https://www.vethaa.in" class="text-blue-600 hover:underline">www.vethaa.in</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Sri Vethaa Dairy Pvt Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
