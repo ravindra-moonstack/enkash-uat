@@ -46,7 +46,7 @@ const WebHeader = ({}: props) => {
 
   return (
     <div className={styles.header_wrapper}>
-      {/* Skip Link for Accessibility */}
+
       <a href="#main" className="sr-only sr-only-focusable skip" tabIndex={0}>
         Skip to main content
       </a>
@@ -66,7 +66,7 @@ const WebHeader = ({}: props) => {
             aria-label="Main navigation"
           >
             <div className="row align-items-center">
-              {/* Logo and Main Menu */}
+        
               <div className="col-12 col-md-auto d-flex align-items-center">
                 <Link
                   href="/"
@@ -76,7 +76,7 @@ const WebHeader = ({}: props) => {
                   <Image src={enkashBlueLogo} alt="logo" width={98} />
                 </Link>
 
-                {/* Main Nav */}
+      
                 <ul
                   role="menubar"
                   aria-label="Main menu"
@@ -93,14 +93,14 @@ const WebHeader = ({}: props) => {
                       }}
                       id={`menuitem_${index}${styles.box}`}
                       role="none"
-                      // ✅ Close submenu when parent loses focus
+                    
                       onBlur={(e) => {
                         if (!e.currentTarget.contains(e.relatedTarget)) {
                           closeAllModals()
                         }
                       }}
                     >
-                      {/* Parent Button */}
+                  
                       <button
                         className={styles.link}
                         type="button"
@@ -124,7 +124,7 @@ const WebHeader = ({}: props) => {
                         />
                       </button>
 
-                      {/* Submenu Inside Parent */}
+                    
                       {hoveredIndex === index && modalLeft !== null && (
                         <div
                           id={`navbar-submenu-${index}`}
@@ -173,7 +173,7 @@ const WebHeader = ({}: props) => {
                 </ul>
               </div>
 
-              {/* Right Side Navigation */}
+         
               <div className="col-12 col-md d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
                 <Link
                   href={`/support/?source=nav-bar`}
