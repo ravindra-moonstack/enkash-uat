@@ -1,7 +1,8 @@
 import React from "react"
-import Image from "next/image" // Next.js optimized Image component
-import styles from "./BuiltforBuildersSection.module.scss"
+import Image from "next/image"
 import Link from "next/link"
+
+import styles from "./BuiltforBuildersSection.module.scss"
 import DynamicHeading from "../dynamic-heading"
 
 interface BuiltforBuildersSectionProps {
@@ -19,6 +20,8 @@ const BuiltforBuildersSection: React.FC<BuiltforBuildersSectionProps> = ({
   icon,
   url,
 }) => {
+  //
+
   const InnerContent = () => (
     <>
       {/* Title & Subtitle */}

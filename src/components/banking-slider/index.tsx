@@ -3,41 +3,17 @@
 import React, { useMemo } from "react"
 import Image from "next/image"
 import Slider, { Settings } from "react-slick"
+
 import styles from "./banking-slider.module.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import {
-  hdfc,
-  au,
-  axis,
-  dbms,
-  icici,
-  indusind,
-  northEast,
-  rbl,
-  suryoday,
-  kotak,
-  yes,
-  nsdlBank,
-} from "./index"
+
 import DynamicHeading from "../dynamic-heading"
+import { logos } from "./data"
 
-const logos = [
-  { src: hdfc, alt: "HDFC Bank" },
-  { src: au, alt: "AU Bank" },
-  { src: axis, alt: "Axis Bank" },
-  { src: dbms, alt: "DBS Bank" },
-  { src: icici, alt: "ICICI Bank" },
-  { src: indusind, alt: "IndusInd Bank" },
-  { src: suryoday, alt: "Suryoday Bank" },
-  { src: northEast, alt: "North East Bank" },
-  { src: rbl, alt: "RBL Bank" },
-  { src: kotak, alt: "Kotak Bank" },
-  { src: yes, alt: "Yes Bank" },
-  { src: nsdlBank, alt: "Nsdl Bank" },
-]
+const BankLogoSlider = (): React.JSX.Element => {
+  //
 
-const BankLogoSlider = () => {
   const sliderSettings: Settings = useMemo(
     () => ({
       infinite: true,
@@ -59,6 +35,7 @@ const BankLogoSlider = () => {
     }),
     []
   )
+
   return (
     <div className={`col-12 ${styles.banking_wrapper}`}>
       <div className={`${styles.title} text-center  pb-3 `}>

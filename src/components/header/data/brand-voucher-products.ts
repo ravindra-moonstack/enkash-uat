@@ -1,3 +1,4 @@
+import { TSubProduct } from "@/src/types"
 import {
   eCommerce,
   eCommerceFilled,
@@ -11,7 +12,7 @@ import {
   healthFilled,
 } from ".."
 
-const brandVouchersProducts = [
+const brandVouchersProducts: TSubProduct[] = [
   {
     subtitle: "Default",
     subtitleLink: "/products/vouchers",

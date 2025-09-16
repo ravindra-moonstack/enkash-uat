@@ -1,6 +1,7 @@
+import { TProductCategory } from "@/src/types"
 import { bank, affiliate, coBrand } from ".."
 
-const partnershipProducts = [
+const partnershipProducts: TProductCategory[] = [
   {
     name: "Partnership",
     description: "Flexible prepaid card solutions",

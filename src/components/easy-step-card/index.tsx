@@ -1,9 +1,10 @@
 import Image, { StaticImageData } from "next/image"
+
 import styles from "./easy-step-card.module.scss"
 import DynamicHeading from "../dynamic-heading"
 
 export interface CardProps {
-  title?: string // ✅ Optional plain title fallback
+  title?: string
   description: string
   ctaColor?: string
   source: string
@@ -11,13 +12,9 @@ export interface CardProps {
   steps: string
 }
 
-const EasyStepCard = ({
-  title,
+const EasyStepCard = ({ title, description, cardImage, steps }: CardProps) => {
+  //
 
-  description,
-  cardImage,
-  steps,
-}: CardProps) => {
   return (
     <div className={`d-flex flex-column ${styles.card_body}`}>
       {/* Image */}
