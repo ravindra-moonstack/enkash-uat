@@ -62,11 +62,11 @@ const MobileHeader = ({ utmSource }: Props) => {
           },
           {
             title: "Make Payments",
-            products: motherProducts[1]?.payableProducts,
+            products: motherProducts[1]?.subProducts,
           },
           {
             title: "Payable & Receivable+",
-            products: motherProducts[2]?.payableProducts,
+            products: motherProducts[2]?.subProducts,
           },
         ],
       },

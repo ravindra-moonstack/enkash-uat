@@ -2,7 +2,7 @@
 
 import type React from "react"
 import Image from "next/image"
-import PartnershipSlider from "./PartnershipSlider"
+import PartnershipSlider from "."
 
 import "./PartnershipSection.scss"
 import DynamicHeading from "../dynamic-heading"

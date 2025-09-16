@@ -1,11 +1,13 @@
-const options = [
+import { TCategoryOptions } from "@/src/types"
+
+const options: TCategoryOptions = [
   { value: "Google search", label: "Google Search" },
   { value: "Social media", label: "Social media" },
   { value: "Word of mouth/ Referral", label: "Word of mouth / Referral" },
   { value: "Used EnKash Before", label: "Used EnKash Before" },
 ]
 
-const categoryOptions = [
+const categoryOptions: TCategoryOptions = [
   {
     value: "Collect Payments",
     label: "Collect Payments",

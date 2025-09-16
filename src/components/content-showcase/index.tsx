@@ -1,9 +1,11 @@
+import { JSX, memo } from "react"
 import Image, { StaticImageData } from "next/image"
+
+import styles from "./contentShowcase.module.scss"
+
 import DynamicHeading from "@/src/components/dynamic-heading"
 import RectangleButton from "@/src/components/buttons/rectangle-button"
 import PolicyCard from "@/src/components/policy-card"
-import styles from "./contentShowcase.module.scss"
-import { JSX, memo } from "react"
 
 interface ContentShowcaseProps {
   mainHeading?: { title: string; color: string }[]
@@ -34,6 +36,8 @@ function ContentShowcase({
   mainHeading,
   buttonUrl,
 }: ContentShowcaseProps): JSX.Element {
+  //
+
   return (
     <div className={`${bgColor} ${styles.ContentShowcase} `}>
       <div className="max-w-auto">

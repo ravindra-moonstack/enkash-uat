@@ -1,8 +1,9 @@
-import Image, { StaticImageData } from "next/image"
-import styles from "./corporate-card.module.scss"
 import { ReactNode } from "react"
-import DynamicHeading from "../dynamic-heading"
 import Link from "next/link"
+import Image, { StaticImageData } from "next/image"
+
+import styles from "./corporate-card.module.scss"
+import DynamicHeading from "../dynamic-heading"
 
 export interface CardProps {
   titleHtml?: ReactNode
@@ -12,6 +13,8 @@ export interface CardProps {
 }
 
 const CorporateCard = ({ description, cardImage, buttonUrl }: CardProps) => {
+  //
+
   const CardContent = (
     <div className={`d-flex flex-column text-start ${styles.card_body}`}>
       <div className="d-flex flex-column flex-grow-1">

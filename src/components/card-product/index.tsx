@@ -1,6 +1,7 @@
-import Image, { StaticImageData } from "next/image"
-import styles from "./card-product.module.scss"
 import { ReactNode } from "react"
+import Image, { StaticImageData } from "next/image"
+
+import styles from "./card-product.module.scss"
 import DynamicHeading from "../dynamic-heading"
 
 export interface CardProps {
@@ -18,6 +19,8 @@ const CardProduct = ({
   cardImage,
   linkUrl,
 }: CardProps) => {
+  //
+
   const cardContent = (
     <>
       <div>
