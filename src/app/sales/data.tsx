@@ -9,7 +9,7 @@ import {
   testimonialImgFour,
   testimonailLogoFive,
   testimonialImgFive,
-} from "."
+} from "./img"
 
 const testimonialData = [
   {
