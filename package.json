@@ -14,7 +14,7 @@
     "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^7.0.2",
+
     "@gsap/react": "^2.1.2",
     "@next/bundle-analyzer": "^15.5.0",
     "@next/env": "^15.5.0",
