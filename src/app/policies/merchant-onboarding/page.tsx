@@ -1,8 +1,12 @@
 "use client"
 import React from "react"
+
 import styles from "./page.module.scss"
-import { payment } from "."
-import { DynamicHeading, TabPoliciesWrapper } from "@/src/components"
+import { payment } from "./img"
+
+// components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import TabPoliciesWrapper from "@/src/components/tab-policies-wrapper"
 
 const tabs = [{ key: "payments" }]
 
@@ -16,7 +20,10 @@ const cards = [
     buttonUrl: "/policies/payments/merchant-onboarding",
   },
 ]
-const MerchantOnboarding = () => {
+
+const MerchantOnboarding = (): React.JSX.Element => {
+  //
+
   return (
     <div className={styles.policy}>
       <div className="max-w-auto">

@@ -3,7 +3,10 @@ import { Metadata } from "next"
 
 import styles from "./page.module.scss"
 import generateMetaData from "@/src/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
+
+// components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
 
 export const metadata: Metadata = generateMetaData({
   title: "Card Related Charges: EnKash",

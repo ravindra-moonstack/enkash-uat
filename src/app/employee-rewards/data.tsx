@@ -9,7 +9,23 @@ import offers from "./img/offers.webp"
 import incentive from "./img/incentive.webp"
 import vouchers from "./img/vouchers.webp"
 
-import { costControlSavings, costControlSavingsIcon, fraudProtection, fraudProtectionIcon, realTimeExpense, realTimeExpenseIcon, scrollIconOne, scrollIconThree, scrollIconTwo, stackCardSixIcon, stackCardSixImg, streamlinedReimbursement, streamlinedReimbursementIcon, wideAcceptanceNetwork, wideAcceptanceNetworkIcon } from "."
+import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  realTimeExpense,
+  realTimeExpenseIcon,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  stackCardSixIcon,
+  stackCardSixImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
+} from "./img"
 
 const cardsData = [
   {
@@ -172,8 +188,6 @@ const stackcardData = [
     image: stackCardSixImg,
     buttonUrl: "/sales",
   },
-];
-
-
+]
 
 export { cardsData, allProductSections, cardType, stackcardData }

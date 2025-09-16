@@ -1,21 +1,22 @@
 import Image from "next/image"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
 import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  RectangleButton,
-  AllProducts,
-  AllInOnePolicy,
-  FaqSection,
-} from "@/src/components"
-import { blueArrow, groupIcon, paymentSummary, mealCardImage } from "."
+import { blueArrow, groupIcon, paymentSummary, mealCardImage } from "./img"
+
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import PolicyCard from "@/src/components/policy-card"
+import FaqSection from "@/src/components/faq-section"
+import RectangleButton from "@/src/components/buttons/rectangle-button"
+import AllProducts from "@/src/components/all-products"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate and Track your Vendor Payments ",
@@ -25,12 +26,15 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/vendor-payment/`,
   },
 })
+
 const salesUrl = getSalesUrl("/vendor-payment")
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const VendorPayment = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -168,9 +172,7 @@ const VendorPayment = (): React.JSX.Element => {
                 {cardsData.map(({ icon, title, description }, i) => (
                   <div
                     key={i}
-                    style={{
-                      direction: "ltr",
-                    }}
+                    style={{ direction: "ltr" }}
                     className={styles.scrollCard}
                   >
                     <PolicyCard

@@ -287,13 +287,13 @@ const FooterV2 = (): React.JSX.Element => {
                   <div
                     className={`col-6  ${styles.info_div} ${styles.info_div_three}`}
                   >
-                    <div className={` ${styles.info_header_three}`}>
+                    <div className={`${styles.info_header_three}`}>
                       <h4 className={`${styles.title}`}>FIND US ON</h4>
                     </div>
                     <div
                       className={`d-flex  justify-content-start ${styles.info_body}`}
                     >
-                      <div className={` ${styles.info_body_three}`}>
+                      <div className={`${styles.info_body_three}`}>
                         <div
                           className={`d-flex justify-content-between  ${styles.social_icons_row}`}
                         >
@@ -343,7 +343,7 @@ const FooterV2 = (): React.JSX.Element => {
                   </div>
                 </div>
 
-                <div className={`{styles.info_div} ${styles.info_div_one} `}>
+                <div className={`${styles.info_div} ${styles.info_div_one} `}>
                   <div className={` ${styles.info_header_one}`}>
                     <h4 className={`${styles.title}`}>
                       Licenses & Certification

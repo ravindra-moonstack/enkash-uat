@@ -32,7 +32,7 @@ import {
   leftHand,
   acceleratedGrowthImg,
   whiteArrow,
-} from "."
+} from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import { Metadata } from "next"

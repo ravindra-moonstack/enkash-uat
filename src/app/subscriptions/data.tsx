@@ -1,4 +1,3 @@
-
 import {
   autoCollect,
   instant,
@@ -18,8 +17,7 @@ import {
   taskIconOne,
   taskIconThree,
   taskIconTwo,
-} from "."
-
+} from "./img"
 
 const cardsData = [
   {
@@ -134,8 +132,4 @@ const managementCards = [
   },
 ]
 
-export {
-  cardsData,
-  allInOnePolicies,
-  managementCards,
-}
+export { cardsData, allInOnePolicies, managementCards }

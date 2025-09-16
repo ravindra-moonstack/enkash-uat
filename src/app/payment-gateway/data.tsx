@@ -42,7 +42,7 @@ import {
   paymentPage,
   qrCodes,
   reminder,
-} from "."
+} from "./img"
 
 const dataSets = [
   {

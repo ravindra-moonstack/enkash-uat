@@ -24,8 +24,8 @@ const contactInitialValue: TContactInitialValueProp = {
   Dropdown: "Landing Page",
   Dropdown1: "Marketing",
   Dropdown2: "Website Sales Leads",
-  Dropdown3: "-Select-",
-  Dropdown4: "-Select-",
+  Dropdown3: "First Choice",
+  Dropdown4: "First Choice",
 }
 
 const contactValidation = Yup.object({

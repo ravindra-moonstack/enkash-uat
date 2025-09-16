@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
 import {
   allInOnePolicies,
@@ -18,6 +20,7 @@ import {
   ManagementCard,
   CardStacking,
 } from "@/src/components"
+
 import {
   blueArrow,
   groupIcon,
@@ -27,9 +30,8 @@ import {
   realTimeIcon,
   hundredPercentIcon,
   activationIcon,
-} from "."
+} from "./img"
 
-import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -41,6 +43,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/collection-reminder/`,
   },
 })
+
 const salesUrl = getSalesUrl("/collection-reminder")
 
 const showScroll = cardsData.length > 3
@@ -59,7 +62,10 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const CollectionReminders = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>

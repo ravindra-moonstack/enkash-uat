@@ -1,9 +1,12 @@
 import React from "react"
-import styles from "./page.module.scss"
 import { Metadata } from "next"
-import generateMetaData from "@/src/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import Link from "next/link"
+
+import styles from "./page.module.scss"
+import generateMetaData from "@/src/utils/metaData"
+
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
 
 export const metadata: Metadata = generateMetaData({
   title: "Terms and Conditions (Platform): EnKash",
@@ -14,7 +17,9 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-const CustomerOnboarding = () => {
+const CustomerOnboarding = (): React.JSX.Element => {
+  //
+
   return (
     <>
       <div className={styles.parent_container}>

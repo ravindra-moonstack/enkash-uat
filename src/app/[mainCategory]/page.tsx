@@ -4,9 +4,9 @@ import styles from "./page.module.scss"
 
 // components
 import { CategoryData } from "../vouchers/data/category-data"
-import VoucherCard from "@/src/components/voucher-card/voucher-card"
+import VoucherCard from "@/src/components/voucher-card"
 import { nameToUrl } from "@/src/utils/stringUtils"
-import { CTASection } from "@/src/components"
+import CTASection from "@/src/components/cta-section"
 import SliderComponent from "@/src/components/slider-component"
 import VoucherFaqComponent from "./voucher-faq"
 import VoucherFaqSection from "@/src/components/voucher-faq"
@@ -124,7 +124,6 @@ const MainCategoryPage = async ({
           "Discover the EnKash difference - Secure, Scalable and Seamless."
         }
         buttonText={"Get Started"}
-       
         background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
       />
       <VoucherFaqSection
