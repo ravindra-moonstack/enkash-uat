@@ -1,6 +1,6 @@
 "use client"
+import React, { useState, useRef, useEffect, useMemo, useCallback } from "react"
 
-import React, { useState, useRef, useEffect, useMemo } from "react"
 import styles from "./categoryMultiSelect.module.scss"
 
 interface Option {
@@ -13,7 +13,7 @@ interface CategoryMultiSelectProps {
   name: string
   options: Option[]
   placeholder?: string
-  onChange?: (val: string[]) => void
+  onChange?: (parent: string[], children: string[]) => void
 }
 
 const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
@@ -22,8 +22,10 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
   placeholder = "What are you looking for? (dropdown)*",
   onChange,
 }) => {
+  //
+
   const [selected, setSelected] = useState<string[]>([])
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState<boolean>(false)
   const [openCategories, setOpenCategories] = useState<string[]>([])
   const wrapperRef = useRef<HTMLDivElement>(null)
 
@@ -43,66 +45,64 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
       .map((cat) => cat.value)
   }, [options, selected])
 
-  const toggleOption = (value: string) => {
-    const category = options.find((cat) => cat.value === value)
+  const toggleOption = useCallback(
+    (value: string) => {
+      const category = options.find((cat) => cat.value === value)
 
-    setSelected((prev) => {
-      let newSelected = [...prev]
+      setSelected((prev) => {
+        let newSelected = [...prev]
 
-      if (category) {
-        const allChildren = category.children?.map((c) => c.value) || []
+        if (category) {
+          const allChildren = category.children?.map((c) => c.value) || []
 
-        if (newSelected.includes(category.value)) {
-          newSelected = newSelected.filter(
-            (v) => v !== category.value && !allChildren.includes(v)
-          )
-        } else {
-          newSelected = [
-            ...new Set([...newSelected, category.value, ...allChildren]),
-          ]
-        }
-      } else {
-        if (newSelected.includes(value)) {
-          newSelected = newSelected.filter((v) => v !== value)
-        } else {
-          newSelected.push(value)
-        }
-
-        // Keep parent in sync
-        options.forEach((cat) => {
-          if (cat.children?.some((c) => c.value === value)) {
-            const allChildren = cat.children.map((c) => c.value)
-            const allSelected = allChildren.every((c) =>
-              newSelected.includes(c)
+          if (newSelected.includes(category.value)) {
+            newSelected = newSelected.filter(
+              (v) => v !== category.value && !allChildren.includes(v)
             )
-
-            if (allSelected) {
-              if (!newSelected.includes(cat.value)) {
-                newSelected.push(cat.value)
-              }
-            } else {
-              newSelected = newSelected.filter((v) => v !== cat.value)
-            }
+          } else {
+            newSelected = [
+              ...new Set([...newSelected, category.value, ...allChildren]),
+            ]
           }
-        })
-      }
+        } else {
+          if (newSelected.includes(value)) {
+            newSelected = newSelected.filter((v) => v !== value)
+          } else {
+            newSelected.push(value)
+          }
 
-      const finalSelected = [
-        ...new Set([
-          ...newSelected,
-          ...options
-            .filter((cat) =>
-              cat.children?.some((child) => newSelected.includes(child.value))
-            )
-            .map((cat) => cat.value),
-        ]),
-      ]
+          // Keep parent in sync
+          options.forEach((cat) => {
+            if (cat.children?.some((c) => c.value === value)) {
+              const allChildren = cat.children.map((c) => c.value)
+              const allSelected = allChildren.every((c) =>
+                newSelected.includes(c)
+              )
 
-      onChange?.(finalSelected)
+              if (allSelected) {
+                if (!newSelected.includes(cat.value)) {
+                  newSelected.push(cat.value)
+                }
+              } else {
+                newSelected = newSelected.filter((v) => v !== cat.value)
+              }
+            }
+          })
+        }
 
-      return newSelected
-    })
-  }
+        const parent = options
+          .filter((cat) =>
+            cat.children?.some((child) => newSelected.includes(child.value))
+          )
+          .map((cat) => cat.value)
+
+        onChange?.(parent, newSelected)
+
+        return newSelected
+      })
+    },
+    [onChange, options]
+  )
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -117,28 +117,52 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
 
+  const onKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault()
+        setOpen((prev) => !prev)
+      }
+      if (e.key === "Escape") setOpen(false)
+    },
+    [setOpen]
+  )
+
+  const deselectParentAndChildren = useCallback(
+    (parentValue: string) => {
+      const category = options.find((cat) => cat.value === parentValue)
+      if (!category) return
+
+      const children = category.children?.map((c) => c.value) || []
+
+      setSelected((prev) => {
+        const newSelected = prev.filter(
+          (val) => val !== parentValue && !children.includes(val)
+        )
+        onChange?.(
+          options
+            .filter(
+              (cat) =>
+                newSelected.includes(cat.value) ||
+                cat.children?.some((child) => newSelected.includes(child.value))
+            )
+            .map((cat) => cat.value),
+          newSelected
+        )
+        return newSelected
+      })
+    },
+    [options, onChange]
+  )
+
   return (
-    // eslint-disable-next-line jsx-a11y/role-supports-aria-props
-    <div
-      ref={wrapperRef}
-      className={styles.wrapper}
-      role="combobox"
-      aria-haspopup="listbox"
-      aria-expanded={open}
-      aria-multiselectable="true"
-    >
+    <div ref={wrapperRef} className={styles.wrapper}>
       {/* Input Box */}
       <div
         className={styles.inputBox}
         tabIndex={0}
         onClick={() => setOpen((prev) => !prev)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault()
-            setOpen((prev) => !prev)
-          }
-          if (e.key === "Escape") setOpen(false)
-        }}
+        onKeyDown={onKeyDown}
         aria-controls={`${name}-dropdown`}
         aria-label={placeholder}
       >
@@ -153,7 +177,12 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     aria-label={`Remove ${options.find((o) => o.value === val)?.label}`}
                     onClick={(e) => {
                       e.stopPropagation()
-                      toggleOption(val)
+                      const isParent = options.some((o) => o.value === val)
+                      if (isParent) {
+                        deselectParentAndChildren(val)
+                      } else {
+                        toggleOption(val)
+                      }
                     }}
                   >
                     ×
@@ -188,7 +217,7 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                   <input
                     id={`${name}-${cat.value}`}
                     type="checkbox"
-                    checked={selected.includes(cat.value)}
+                    checked={displayValues.includes(cat.value)}
                     onChange={() => {
                       toggleOption(cat.value)
                       setOpenCategories((prev) =>
@@ -197,7 +226,12 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     }}
                     onClick={(e) => e.stopPropagation()}
                   />
-                  <label htmlFor={`${name}-${cat.value}`}>{cat.label}</label>
+                  <label
+                    htmlFor={`${name}-${cat.value}`}
+                    className="cursor-pointer"
+                  >
+                    {cat.label}
+                  </label>
                 </div>
 
                 {cat.children && (
@@ -216,11 +250,12 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     <label
                       htmlFor={`${name}-${child.value}`}
                       key={child.value}
-                      className={styles.option}
+                      className={`${styles.option} cursor-pointer`}
                     >
                       <input
                         id={`${name}-${child.value}`}
                         type="checkbox"
+                        className="cursor-pointer"
                         checked={selected.includes(child.value)}
                         onChange={() => toggleOption(child.value)}
                       />
@@ -233,9 +268,6 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
           ))}
         </div>
       )}
-
-      {/* Hidden input for form submission */}
-      <input type="hidden" name={name} value={JSON.stringify(selected)} />
     </div>
   )
 }

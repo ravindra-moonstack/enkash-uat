@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useState, useRef, useEffect, useId } from "react"
 import styles from "./multiselect.module.scss"
 
@@ -13,7 +12,7 @@ interface MultiSelectProps {
   options: Option[]
   placeholder?: string
   onChange: (selected: string[]) => void
-  label?: string 
+  label?: string
 }
 
 const MultiSelect: React.FC<MultiSelectProps> = ({
@@ -22,8 +21,10 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   placeholder = "Select options...",
   onChange = () => {},
 }) => {
+  //
+
   const [selected, setSelected] = useState<string[]>([])
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState<boolean>(false)
   const wrapperRef = useRef<HTMLDivElement>(null)
   const inputId = useId()
 
