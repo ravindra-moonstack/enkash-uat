@@ -21,7 +21,7 @@ import {
   stepCardImgTwo,
   streamlinedReimbursement,
   streamlinedReimbursementIcon,
-} from "."
+} from "./img"
 
 const cardData = [
   {

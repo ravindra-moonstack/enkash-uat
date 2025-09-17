@@ -13,17 +13,17 @@ import {
 import faqData from "./faq-data"
 
 //components
-import CustomBreadcrumb from "@/src/components/breadcrumb"
-import LogoSlider from "@/src/components/logo-slider"
-import CardProduct from "@/src/components/card-product"
-import DynamicHeading from "@/src/components/dynamic-heading"
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import FaqSection from "@/src/components/faq-section"
-import Heading from "@/src/components/heading"
-import AllProducts from "@/src/components/all-products"
-import CardStacking from "@/src/components/card-stacking"
-
-import { CommanButton, StepsSection } from "@/src/components"
+import CustomBreadcrumb from "@/components/breadcrumb"
+import LogoSlider from "@/components/logo-slider"
+import CardProduct from "@/components/card-product"
+import DynamicHeading from "@/components/dynamic-heading"
+import AllInOnePolicy from "@/components/all-in-one-policy"
+import FaqSection from "@/components/faq-section"
+import Heading from "@/components/heading"
+import AllProducts from "@/components/all-products"
+import CardStacking from "@/components/card-stacking"
+import CommonButton from "@/src/components/buttons"
+import StepsSection from "@/src/components/steps-section"
 
 //helpers
 import { mealCardImage, heroCardImg } from "./img"
@@ -123,7 +123,7 @@ const InstantCardManagement = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
+              <CommonButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
@@ -259,7 +259,7 @@ const InstantCardManagement = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <CommanButton
+            <CommonButton
               title="Get Started Today "
               theme="outline-blue"
               arrow
