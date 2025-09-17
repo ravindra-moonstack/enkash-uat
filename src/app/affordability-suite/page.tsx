@@ -11,12 +11,11 @@ import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
+  CommanButton,
   AllInOnePolicy,
   ScrollableCardsSection,
   ManagementCard,
   FaqSection,
-  CommanButton,
 } from "@/src/components"
 
 // helpers
@@ -113,7 +112,7 @@ const AffordabilitySuite = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started"
                         theme="blue"
                         url={salesUrl}

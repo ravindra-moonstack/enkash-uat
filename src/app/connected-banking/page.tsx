@@ -1,27 +1,33 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+
+
+//data
 import { cardsData, paymentMethodData, payoutPolicies } from "./data"
 import faqData from "./faq-data"
+
+//components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
   PolicyCard,
-  RectangleButton,
+  CommanButton,
   AllInOnePolicy,
   FeatureCard,
   FaqSection,
+  BankLogoSlider
 } from "@/src/components"
 
+
+//helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
+  
 } from "."
 
-import BankLogoSlider from "@/src/components/banking-slider"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
@@ -114,7 +120,7 @@ const ConnectedBanking = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -186,7 +192,7 @@ const ConnectedBanking = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommanButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -294,11 +300,10 @@ const ConnectedBanking = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
