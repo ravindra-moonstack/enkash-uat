@@ -1,6 +1,7 @@
+import { TFAQProps } from "@/src/types/faq"
 import Link from "next/link"
 
-const faqData = [
+const faqData: TFAQProps[] = [
   {
     question: "What is automated reconciliation?",
     answer: [
@@ -60,11 +61,11 @@ const faqData = [
       "How does the automated reconciliation module help in business operations?",
     answer: [
       {
-        headers:
+        heading:
           "With the automated reconciliation module, there is increased operational efficiency and savings on resources.",
       },
       {
-        headers:
+        heading:
           "This, in turn, results in better business payment management and improved collections. When cash flow is optimised , then business operations become seamless and uninterrupted.",
       },
     ],
@@ -73,11 +74,11 @@ const faqData = [
     question: "What are the benefits of automated bank reconciliation?",
     answer: [
       {
-        headers:
+        heading:
           "Automating bank reconciliation has both direct and indirect benefits.",
       },
       {
-        headers: "Here are some direct benefits:",
+        heading: "Here are some direct benefits:",
       },
       {
         bullets: [
@@ -88,7 +89,7 @@ const faqData = [
         ],
       },
       {
-        headers: "Indirect benefits include:",
+        heading: "Indirect benefits include:",
       },
       {
         bullets: [

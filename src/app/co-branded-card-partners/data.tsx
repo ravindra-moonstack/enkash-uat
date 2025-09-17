@@ -1,4 +1,4 @@
-import { coBrandImage, GalaxyTabImage, Purchasecard } from "."
+import { coBrandImage, GalaxyTabImage, Purchasecard } from "./img"
 import imaCard from "./img/containerScreen.webp"
 import ItemIcon from "./img/itemIcon.svg"
 
@@ -109,6 +109,7 @@ const headingData = {
   headingTag: "h2",
   className: "f-5 mb-4 mb-md-5",
 }
+
 const BankSolutionHeading = {
   content: [
     { title: "Built For Partners", color: "color-black f-2" },
@@ -117,6 +118,7 @@ const BankSolutionHeading = {
   headingTag: "h2",
   className: "f-6 mb-3 mb-md-3",
 }
+
 const productsData = [
   {
     id: 1,

@@ -1,10 +1,13 @@
-import { DynamicHeading } from "@/src/components"
-import Image from "next/image"
 import React from "react"
-import styles from "./page.module.scss"
-import reachOutImg from "@/public/images/SubtractImg.webp"
+import Image from "next/image"
 import { Metadata } from "next"
+
+import styles from "./page.module.scss"
+
+import reachOutImg from "@/public/images/SubtractImg.webp"
 import generateMetaData from "@/src/utils/metaData"
+import DynamicHeading from "@/src/components/dynamic-heading"
+
 export const metadata: Metadata = generateMetaData({
   title: "Thank You for Your Interest in Partnering with Us",
   description:
@@ -13,7 +16,10 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/confirmation-partnerships/`,
   },
 })
-const ConfirmationPartner = () => {
+
+const ConfirmationPartner = (): React.JSX.Element => {
+  //
+
   return (
     <div>
       <div className={`${styles.thankyouPage}`}>
