@@ -1,5 +1,19 @@
 import Image from "next/image"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
+
+// components
+import DynamicHeading from "@/components/dynamic-heading"
+import CustomBreadcrumb from "@/components/breadcrumb"
+import FaqSection from "@/components/faq-section"
+import CardStacking from "@/components/card-stacking"
+import EasyStepCard from "@/components/easy-step-card"
+import ManagementCard from "@/components/management-card"
+import AllInOnePolicy from "@/components/all-in-one-policy"
+import LogoSlider from "@/components/logo-slider"
+import CommonButton from "@/components/buttons"
+
 import {
   cardData,
   expenseManagementData,
@@ -7,22 +21,10 @@ import {
   stepCards,
 } from "./data"
 import faqData from "./faq-data"
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  ManagementCard,
-  EasyStepCard,
-  CardStacking,
-  FaqSection,
-} from "@/src/components"
 
-import { groupIcon, paymentSummary } from "."
-import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import { groupIcon, paymentSummary } from "./img"
+import { getSalesUrl } from "@/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Budgets & Advances: Control & Track Business Spending",
@@ -47,7 +49,10 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const BudgetAndAdvances = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -127,7 +132,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <CommanButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -264,7 +269,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <CommanButton
+            <CommonButton
               title="Get Started Today "
               theme="outline-blue"
               arrow
