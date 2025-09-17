@@ -22,10 +22,11 @@ import {
   EasyStepCard,
   CardStacking,
   FaqSection,
+  CommanButton,
 } from "@/src/components"
 
 // helpers
-import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
+import {  groupIcon, paymentSummary } from "."
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
@@ -274,11 +275,10 @@ const ApprovalFlows = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

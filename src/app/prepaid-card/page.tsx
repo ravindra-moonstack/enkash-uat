@@ -8,8 +8,9 @@ import {
   CardStacking,
   AllInOnePolicy,
   FaqSection,
+  CommanButton,
 } from "@/src/components"
-import { blueArrow, whiteArrow, heroCardImg } from "."
+import { heroCardImg } from "."
 import { faqData } from "./faq-data"
 import EnkashWay from "@/src/components/enkash-way/enkash-way"
 import { progressData, stackcardData } from "./data"
@@ -164,11 +165,10 @@ const PrepaidCard = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
