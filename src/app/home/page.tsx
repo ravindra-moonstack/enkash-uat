@@ -7,7 +7,7 @@ import styles from "./page.module.scss"
 // components
 import {
   DynamicHeading,
-  RectangleButton,
+  CommanButton,
   LogoSlider,
   FeatureCard,
   LottieDynamicLoadComponent,
@@ -94,11 +94,9 @@ const HomePage = (): React.JSX.Element => {
               <div
                 className={`${styles.banner_button} d-flex justify-content-center`}
               >
-                <RectangleButton
+                <CommanButton
                   title="Connect with Us"
                   theme="blue"
-                  actionImage=""
-                  hoverImage=""
                   url="/sales?source=homepage"
                 />
               </div>
@@ -122,7 +120,7 @@ const HomePage = (): React.JSX.Element => {
               <div className={`${styles.ctaButtonSection}`}>
                 {ctaButtonData.map((item, index) => (
                   <div className={`${styles.ctaButtonBox}`} key={index}>
-                    <RectangleButton {...item} />
+                    <CommanButton {...item} />
                   </div>
                 ))}
               </div>

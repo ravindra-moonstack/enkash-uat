@@ -1,17 +1,3 @@
-import iconOne from "./img/subscribtionIcon.svg"
-import iconTwo from "./img/employeeIcon.svg"
-import iconThree from "./img/vendorIcon.svg"
-import iconFour from "./img/travelExpenceIcon.svg"
-import sliderOneIcon from "./img/sliderOneIcon.svg"
-import sliderTwoIcon from "./img/sliderTwoIcon.svg"
-import sliderThreeIcon from "./img/sliderThreeIcon.svg"
-import sliderFourIcon from "./img/sliderFourIcon.svg"
-import firstIcon from "./img/icon-one.svg"
-import secondIcon from "./img/icon-two.svg"
-import thirdIcon from "./img/icon-three.svg"
-import accesableIcon from "./img/accesable-icon.svg"
-import trackableIcon from "./img/trackable-icon.svg"
-import denominationIcon from "./img/denomination-icon.svg"
 
 import {
   costControlSavings,
@@ -30,7 +16,17 @@ import {
   streamlinedReimbursement,
   streamlinedReimbursementIcon,
   termsAndConCardImg,
-} from "."
+  denominationIcon,
+  trackableIcon,
+  accesableIcon,
+  thirdIcon,
+  secondIcon,
+  firstIcon,
+  sliderFourIcon,
+  sliderThreeIcon,
+  sliderOneIcon,
+  sliderTwoIcon,
+} from "./img"
 
 const intantActionData = [
   {
@@ -66,34 +62,6 @@ const cardData = [
   {
     icon: denominationIcon,
     title: "Multiple Denominations",
-  },
-]
-
-const spendAnalyticsData = [
-  {
-    title: "Employee Rewards",
-    description:
-      "Appreciate your workforce with employee rewards they deserve.",
-    icon: iconOne,
-  },
-
-  {
-    title: "Offers",
-    description:
-      "Unlock exclusive deals and discounts to boost employee engagement and motivation.",
-    icon: iconTwo,
-  },
-  {
-    title: "Channel Incentives ",
-    description:
-      "Drive partner performance with strategic rewards, commissions, and loyalty programs.",
-    icon: iconThree,
-  },
-  {
-    title: "Brand Vouchers ",
-    description:
-      "Provide employees with top-brand vouchers for flexible and meaningful appreciation.",
-    icon: iconFour,
   },
 ]
 
@@ -232,7 +200,6 @@ const stackcardData = [
 
 export {
   intantActionData,
-  spendAnalyticsData,
   cardType,
   allProductSections,
   cardData,
