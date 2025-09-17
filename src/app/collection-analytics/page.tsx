@@ -2,7 +2,6 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
-
 //data
 import {
   allInOnePolicies,
@@ -22,9 +21,8 @@ import {
   AllInOnePolicy,
   FaqSection,
   ManagementCard,
-  CardStacking
+  CardStacking,
 } from "@/src/components"
-
 
 //helpers
 import {
@@ -34,13 +32,11 @@ import {
   realTimeIcon,
   hundredPercentIcon,
   activationIcon,
-} from "."
-
+} from "./img"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Collection Analytics: Track & Optimize Your Payment Data",

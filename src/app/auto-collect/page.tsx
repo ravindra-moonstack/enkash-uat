@@ -23,7 +23,7 @@ import {
   activationIcon,
   realTimeIcon,
   hundredPercentIcon,
-} from "."
+} from "./img"
 import { Metadata } from "next"
 
 // utils

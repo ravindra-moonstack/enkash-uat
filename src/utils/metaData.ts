@@ -1,7 +1,6 @@
 import { TVoucher } from "@/src/app/vouchers/data/voucher-data"
 import { TFAQProps } from "../types/faq"
 
-
 interface MetadataInput {
   title: string
   description: string

@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "Who owns the customer data?",
     answer: [
@@ -26,5 +28,6 @@ const faqData = [
       },
     ],
   },
-];
-export default faqData;
+]
+
+export default faqData

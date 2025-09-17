@@ -52,7 +52,7 @@ import {
   taskIconOne,
   taskIconThree,
   taskIconTwo,
-} from "."
+} from "./img"
 
 import UpiPayments from "../upi-payments/img/heroImg.webp"
 const dataSets = [
@@ -93,8 +93,6 @@ const dataSets = [
       "Real-time visibility:  Managers can access up-to-date reports and dashboards that offer insights into spending patterns, budget utilization, and cost centers",
   },
 ]
-
-
 
 const cardsData = [
   {
@@ -297,7 +295,6 @@ const acceleratedGrowthData = [
     icon: support,
   },
 ]
-
 
 const allInOnePolicies = [
   {
