@@ -60,7 +60,7 @@ import {
   taskIconSix,
   taskIconThree,
   taskIconTwo,
-} from "."
+} from "./img"
 import { upiPayments } from "@/src/components/header"
 
 const dataSets = [

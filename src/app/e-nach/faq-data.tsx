@@ -1,6 +1,7 @@
+import { TFAQProps } from "@/src/types/faq"
 import Link from "next/link"
 
-const faqData = [
+const faqData: TFAQProps[] = [
   {
     question: "What is an e-NACH mandate?",
     answer: [],

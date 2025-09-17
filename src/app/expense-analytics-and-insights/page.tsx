@@ -25,7 +25,7 @@ import {
 } from "@/src/components"
 
 //helpers
-import { groupIcon, paymentSummary } from "."
+import { groupIcon, paymentSummary } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -39,6 +39,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/expense-analytics-and-insights/`,
   },
 })
+
 const salesUrl = getSalesUrl("/expense-analytics-and-insights")
 
 const cards = stackcardData.map((item, index) => ({
@@ -56,6 +57,7 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const ExpenseAnalytics = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>

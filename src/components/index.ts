@@ -30,7 +30,7 @@ const PolicyCard = dynamic(() => import("./policy-card"), {
 const FeatureCard = dynamic(() => import("./feature-card"), {
   ssr: true,
 })
-const StepCard = dynamic(() => import("./step-card/stepCard"), { ssr: true })
+const StepCard = dynamic(() => import("./step-card"), { ssr: true })
 const AllInOnePolicy = dynamic(() => import("./all-in-one-policy"), {
   ssr: true,
 })
@@ -74,19 +74,18 @@ const PaymentLinkTab = dynamic(
   { ssr: true }
 )
 const ScrollableCardsSection = dynamic(
-  () => import("./scrollable-cards-section/scrollableCardsSection"),
+  () => import("./scrollable-cards-section"),
   { ssr: true }
 )
-const RewardsCarousel = dynamic(
-  () => import("./rewards-carousel/rewards-carousel"),
-  { ssr: true }
-)
+const RewardsCarousel = dynamic(() => import("./rewards-carousel"), {
+  ssr: true,
+})
 const BankLogoSlider = dynamic(() => import("./banking-slider"), { ssr: true })
 const EasyStepCard = dynamic(() => import("./easy-step-card"), {
   ssr: true,
 })
 
-const StepsSection = dynamic(() => import("./steps-section/stepsSection"), {
+const StepsSection = dynamic(() => import("./steps-section"), {
   ssr: true,
 })
 
