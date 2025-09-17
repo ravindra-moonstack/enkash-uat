@@ -1,8 +1,9 @@
 import React from "react"
-import styles from "./rewards-carousel.module.scss"
-import Marquee from "react-fast-marquee"
-import CardProduct from "../card-product"
 import { StaticImageData } from "next/image"
+import Marquee from "react-fast-marquee"
+
+import styles from "./rewards-carousel.module.scss"
+import CardProduct from "../card-product"
 
 export type RewardsCarouselDataProp = {
   title: string
@@ -22,6 +23,8 @@ export type RewardsCarouselProp = {
 const RewardsCarousel = ({
   data = [],
 }: RewardsCarouselProp): React.JSX.Element => {
+  //
+
   return (
     <div>
       <div className={styles.container}>

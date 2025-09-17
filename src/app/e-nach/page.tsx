@@ -2,7 +2,6 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
-
 //data
 import {
   allInOnePolicies,
@@ -12,20 +11,16 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-
-//componments
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  CommanButton,
-  ManagementCard,
-  AllInOnePolicy,
-  FaqSection,
-  CardStacking,
-} from "@/src/components"
-
+//components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import PolicyCard from "@/src/components/policy-card"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CardStacking from "@/src/components/card-stacking"
+import ManagementCard from "@/src/components/management-card"
+import FaqSection from "@/src/components/faq-section"
+import CommonButton from "@/src/components/buttons"
 
 //helpers
 import {
@@ -35,8 +30,7 @@ import {
   activationIcon,
   hundredPercentIcon,
   creationIcon,
-} from "."
-
+} from "./img"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
@@ -68,7 +62,10 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
-const eNACH = (): React.JSX.Element => {
+
+const ENACH = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -144,7 +141,7 @@ const eNACH = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <CommanButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -303,7 +300,7 @@ const eNACH = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <CommanButton
+                <CommonButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -392,10 +389,10 @@ const eNACH = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <CommanButton
+            <CommonButton
               title="Get Started Today!"
               theme="outline-blue"
-            arrow
+              arrow
               url={salesUrl}
             />
           </div>
@@ -448,4 +445,4 @@ const eNACH = (): React.JSX.Element => {
   )
 }
 
-export default eNACH
+export default ENACH
