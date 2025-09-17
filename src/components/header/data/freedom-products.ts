@@ -1,3 +1,4 @@
+import { TSubProduct } from "@/src/types"
 import {
   digitalMarketingCard,
   digitalMarketingCardFilled,
@@ -17,7 +18,7 @@ import {
   diyCardFilled,
 } from ".."
 
-const freedomProducts = [
+const freedomProducts: TSubProduct[] = [
   {
     subtitle: "Default",
     subtitleLink: "/cards",
@@ -61,7 +62,6 @@ const freedomProducts = [
         imageSrcHovered: saasFilled,
         link: "/virtual-card",
       },
-      ,
       {
         name: "T&E Cards*",
         description: "Simplify Travel & Entertainment expenses",

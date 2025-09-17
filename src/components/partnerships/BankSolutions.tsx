@@ -2,7 +2,7 @@
 import type React from "react"
 import styles from "./BankSolutions.module.scss"
 import { FaCaretDown } from "react-icons/fa"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 import Link from "next/link"
 import Image from "next/image"
 

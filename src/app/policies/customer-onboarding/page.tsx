@@ -1,9 +1,14 @@
 import React from "react"
-import styles from "./page.module.scss"
-import { platform, prepaid } from "."
-import { DynamicHeading, TabPoliciesWrapper } from "@/src/components"
-import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
+
+import styles from "./page.module.scss"
+import { platform, prepaid } from "./img"
+
+// components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import TabPoliciesWrapper from "@/src/components/tab-policies-wrapper"
+
+import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Customer Onboarding Policy: EnKash",
@@ -34,7 +39,9 @@ const cards = [
     buttonUrl: "/policies/prepaid-program/customer-onboarding",
   },
 ]
-const CustomerOnboarding = () => {
+const CustomerOnboarding = (): React.JSX.Element => {
+  //
+
   return (
     <div className={styles.policy}>
       <div className="max-w-auto">

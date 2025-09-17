@@ -7,7 +7,7 @@ import {
   stackcardData,
 } from "./data"
 import {
-  RectangleButton,
+
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -114,7 +114,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
+              <CommanButton
                 title="Get Started"
                 theme="blue"
                 url={salesUrl}

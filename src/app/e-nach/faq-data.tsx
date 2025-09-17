@@ -9,7 +9,6 @@ const faqData = [
         <h4>
           Electronic National Automated Clearing House or e-NACH is a way to
           <Link target="_blank" href={`${process.env.URL}`}>
-
             automate recurring payments
           </Link>
           like electricity bills, insurance premiums, SIPs, telephone bills, and
@@ -132,7 +131,10 @@ const faqData = [
           A payment model where customers authorize the payment of funds from
           their accounts automatically at regular intervals for goods, services,
           or
-          <Link href="http://enkash.com/utility-bill-payment/" target="_blank">
+          <Link
+            href="https://www.enkash.com/utility-bill-payment"
+            target="_blank"
+          >
             bill payments
           </Link>
           on an ongoing basis is called recurring payments.

@@ -31,7 +31,7 @@ import {
   termsAndConCardImg,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
-} from "."
+} from "./img"
 
 const intantActionData = [
   {

@@ -34,8 +34,7 @@ import {
   activationIcon,
   realTimeIcon,
   hundredPercentIcon,
-} from "."
-
+} from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
@@ -385,7 +384,7 @@ const QrCode = (): React.JSX.Element => {
           />
         </div>
       </div>
-      
+
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-md-5 pb-4`}>

@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import Styles from "./partnerSectionData.module.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 import Link from "next/link"
 
 interface Partner {

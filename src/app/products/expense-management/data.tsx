@@ -16,7 +16,6 @@ import {
   instantAcessIcon,
   verifiedIcon,
   visibilityIcon,
-
   corporateCard,
   automaticCard,
   gstCard,
@@ -25,13 +24,11 @@ import {
   trackingCard,
   disrubsmentCard,
   customExpenseCard,
-
   encruption,
   complience,
   audit,
   signOn,
   key,
-
   costControlSavings,
   costControlSavingsIcon,
   fraudProtection,
@@ -49,10 +46,8 @@ import {
   streamlinedReimbursementIcon,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
-} from "."
-import { approve } from "@/src/components/all-products"
-
-
+} from "./img"
+import { approve } from "../corporate-cards/img"
 
 const cardsData = [
   {

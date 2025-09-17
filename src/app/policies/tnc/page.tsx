@@ -1,9 +1,13 @@
 import React from "react"
-import styles from "./page.module.scss"
-import { payment, platform, prepaid } from "."
-import { DynamicHeading, TabPoliciesWrapper } from "@/src/components"
-import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
+
+import styles from "./page.module.scss"
+
+import { tabs, cards } from "./data"
+
+import DynamicHeading from "@/src/components/dynamic-heading"
+import TabPoliciesWrapper from "@/src/components/tab-policies-wrapper"
+import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Terms and Conditions: EnKash",
@@ -13,34 +17,10 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/policies/tnc`,
   },
 })
-const tabs = [{ key: "payments" }, { key: "prepaid" }, { key: "platform" }]
 
-const cards = [
-  {
-    key: "payments",
-    description:
-      "Understand our payment terms for secure, compliant, and transparent transactions.",
-    titleHtml: "Payments",
-    cardImage: payment,
-  },
-  {
-    key: "prepaid",
-    description:
-      "Review prepaid usage terms to ensure smooth and compliant transactions.",
-    titleHtml: "Prepaid Program",
-    cardImage: prepaid,
-    buttonUrl: "/policies/prepaid-program/tnc",
-  },
-  {
-    key: "platform",
-    description: "Know our platform usage terms for fair and secure services.",
-    titleHtml: "Platform",
-    cardImage: platform,
-    buttonUrl: "/policies/platform/tnc",
-  },
-]
+const TermsAndConditions = (): React.JSX.Element => {
+  //
 
-const TermsAndConditions = () => {
   return (
     <div className={styles.policy}>
       <div className="max-w-auto">

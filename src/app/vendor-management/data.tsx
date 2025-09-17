@@ -1,5 +1,3 @@
-
-
 import {
   notificationImage,
   optimizedIcon,
@@ -21,7 +19,7 @@ import {
   crouselIconFour,
   crouselIconFive,
   crouselIconSix,
-} from "."
+} from "./img"
 
 const cardsData = [
   {

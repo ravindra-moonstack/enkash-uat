@@ -12,8 +12,8 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-
 // components
+
 import {
   CommanButton,
   CustomBreadcrumb,
@@ -28,14 +28,8 @@ import {
   StepsSection,
 } from "@/src/components"
 
-
 // helpers
-import {
-  mealCardImage,
-  instantActionImg,
-  heroCardImg,
-} from "."
-
+import { mealCardImage, instantActionImg, heroCardImg } from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
@@ -49,6 +43,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/virtual-card/`,
   },
 })
+
 const salesUrl = getSalesUrl("/virtual-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
@@ -129,11 +124,7 @@ const VirtualCards = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <CommanButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
@@ -148,25 +139,23 @@ const VirtualCards = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-        <StepsSection
-          heading={[
-            {
-              text: "How to Set Up Virtual Prepaid Cards ",
-              colorClass: "color-black",
-            },
-          ]}
-          steps={intantActionData}
-          button={{
-            title: "Get Started",
-            theme: "border-gray",
-         
-          }}
-          image={{
-            src: mealCardImage,
-            alt: "card background",
-          }}
-        />
-   
+      <StepsSection
+        heading={[
+          {
+            text: "How to Set Up Virtual Prepaid Cards ",
+            colorClass: "color-black",
+          },
+        ]}
+        steps={intantActionData}
+        button={{
+          title: "Get Started",
+          theme: "border-gray",
+        }}
+        image={{
+          src: mealCardImage,
+          alt: "card background",
+        }}
+      />
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
@@ -275,9 +264,7 @@ const VirtualCards = (): React.JSX.Element => {
         />
       </div>
 
-     
-        <FaqSection faqData={faqData} />
-     
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

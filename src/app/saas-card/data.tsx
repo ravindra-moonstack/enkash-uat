@@ -20,10 +20,8 @@ import {
   firstIcon,
   secondIcon,
   thirdIcon,
-  fourthIcon
-} from "."
-
-
+  fourthIcon,
+} from "./img"
 
 const intantActionData = [
   {
@@ -107,7 +105,6 @@ const cardType = [
   },
 ]
 
-
 const allProductSections = [
   {
     title: "Reconciliation & Policy",
@@ -184,9 +181,4 @@ const stackcardData = [
   },
 ]
 
-export {
-  intantActionData,
-  cardType,
-  allProductSections,
-  stackcardData,
-}
+export { intantActionData, cardType, allProductSections, stackcardData }

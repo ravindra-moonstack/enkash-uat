@@ -6,7 +6,7 @@ import {
   birthdayGiftingImg,
   festivalGiftingImg,
 } from ".."
-import DynamicHeading from "@/src/components/dynamic-heading/dynamic-heading"
+import DynamicHeading from "@/src/components/dynamic-heading"
 
 interface OccasionVoucherProps {
   voucherName: string

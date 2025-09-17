@@ -34,7 +34,6 @@ import {
   FaqSection,
 } from "@/src/components"
 
-
 // helper
 import {
   faqBg,
@@ -57,8 +56,7 @@ import {
   bg4,
   bg5,
   bg6,
-} from "."
-
+} from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
@@ -393,7 +391,6 @@ const ExpenseManagement = (): React.JSX.Element => {
 
       <FaqSection faqData={faqData} />
     </div>
-
   )
 }
 

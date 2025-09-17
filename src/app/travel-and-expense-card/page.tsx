@@ -27,7 +27,6 @@ import {
   StepCard,
 } from "@/src/components"
 
-
 // helpers
 import {
   mealCardImage,
@@ -36,7 +35,7 @@ import {
   enhanceEmployeeImg,
   costSavingdImg,
   unmatchedControlImg,
-} from "."
+} from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
@@ -131,25 +130,23 @@ const TravelExpenseCard = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-    
-        <StepsSection
-          heading={[
-            {
-              text: "How To Get Started with Travel and Expense Cards  ",
-              colorClass: "color-black",
-            },
-          ]}
-          steps={intantActionData}
-          button={{
-            title: "Get Started",
-            theme: "border-gray",
-          }}
-          image={{
-            src: mealCardImage,
-            alt: "card background",
-          }}
-        />
-    
+      <StepsSection
+        heading={[
+          {
+            text: "How To Get Started with Travel and Expense Cards  ",
+            colorClass: "color-black",
+          },
+        ]}
+        steps={intantActionData}
+        button={{
+          title: "Get Started",
+          theme: "border-gray",
+        }}
+        image={{
+          src: mealCardImage,
+          alt: "card background",
+        }}
+      />
 
       <div className={`${styles.third_row} bg-highlite`}>
         <div className="max-w-auto">
@@ -493,9 +490,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
         </div>
       </div>
 
-
-        <FaqSection faqData={faqData} />
-     
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

@@ -1,48 +1,39 @@
 import dynamic from "next/dynamic"
 const Header = dynamic(() => import("./header/header"), { ssr: true })
-const Footer = dynamic(() => import("./footer/footer"), { ssr: true })
-const Heading = dynamic(() => import("./heading/heading"), { ssr: true })
+const Footer = dynamic(() => import("./footer"), { ssr: true })
+const Heading = dynamic(() => import("./heading"), { ssr: true })
 const FAQHtml = dynamic(() => import("./faq-new/faqHtml"), { ssr: true })
 
-const DynamicHeading = dynamic(
-  () => import("./dynamic-heading/dynamic-heading"),
-  { ssr: true }
-)
+const DynamicHeading = dynamic(() => import("./dynamic-heading"), { ssr: true })
 const LottieDynamicLoadComponent = dynamic(
   () => import("./lottie-client/lottie-dynamic-load-client"),
   { ssr: true }
 )
 
-const CustomBreadcrumb = dynamic(() => import("./breadcrumb/breadbrumb"), {
+const CustomBreadcrumb = dynamic(() => import("./breadcrumb"), {
   ssr: true,
 })
 
-const TalkToSales = dynamic(
-  () => import("./mobile-talks-to-sales/mobile-talk-to-sales"),
-  { ssr: true }
-)
-
-const AllProducts = dynamic(() => import("./all-products/all-products"), {
+const AllProducts = dynamic(() => import("./all-products"), {
   ssr: true,
 })
 
-const CardProduct = dynamic(() => import("./card-product/card-product"), {
+const CardProduct = dynamic(() => import("./card-product"), {
   ssr: true,
 })
-const LogoSlider = dynamic(() => import("./logo-slider/logo-slider"), {
+const LogoSlider = dynamic(() => import("./logo-slider"), {
   ssr: true,
 })
 const PolicyCard = dynamic(() => import("./policy-card"), {
   ssr: true,
 })
-const FeatureCard = dynamic(() => import("./feature-card/feature-card"), {
+const FeatureCard = dynamic(() => import("./feature-card"), {
   ssr: true,
 })
 const StepCard = dynamic(() => import("./step-card/stepCard"), { ssr: true })
-const AllInOnePolicy = dynamic(
-  () => import("./all-in-one-policy/all-in-one-policy"),
-  { ssr: true }
-)
+const AllInOnePolicy = dynamic(() => import("./all-in-one-policy"), {
+  ssr: true,
+})
 const CardStacking = dynamic(() => import("./card-stacking"), {
   ssr: true,
 })
@@ -62,22 +53,17 @@ const EnkashWay = dynamic(() => import("./enkash-way/enkash-way"), {
   ssr: true,
 })
 
-const ContentShowcase = dynamic(
-  () => import("./content-showcase/contentShowcase"),
-  { ssr: true }
-)
+const ContentShowcase = dynamic(() => import("./content-showcase"), {
+  ssr: true,
+})
 const SecondFaqHtml = dynamic(() => import("./second-faq/secondFaqHtml"), {
   ssr: true,
 })
-const ManagementCard = dynamic(
-  () => import("./management-card/management-card"),
-  { ssr: true }
-)
-const TestimonialSlider = dynamic(
-  () => import("./testimonial-slider/testimonialSlider"),
-  { ssr: true }
-)
-const LocationCard = dynamic(() => import("./locationCard/location-card"), {
+const ManagementCard = dynamic(() => import("./management-card"), { ssr: true })
+const TestimonialSlider = dynamic(() => import("./testimonial-slider"), {
+  ssr: true,
+})
+const LocationCard = dynamic(() => import("./location-card"), {
   ssr: true,
 })
 const SupportCard = dynamic(() => import("./support-card/support-card"), {
@@ -95,11 +81,8 @@ const RewardsCarousel = dynamic(
   () => import("./rewards-carousel/rewards-carousel"),
   { ssr: true }
 )
-const BankLogoSlider = dynamic(
-  () => import("./banking-slider/banking-slider"),
-  { ssr: true }
-)
-const EasyStepCard = dynamic(() => import("./easy-step-card/easy-step-card"), {
+const BankLogoSlider = dynamic(() => import("./banking-slider"), { ssr: true })
+const EasyStepCard = dynamic(() => import("./easy-step-card"), {
   ssr: true,
 })
 
@@ -107,18 +90,14 @@ const StepsSection = dynamic(() => import("./steps-section/stepsSection"), {
   ssr: true,
 })
 
-const FaqSection = dynamic(() => import("./faq-section/faqSection"), {
+const FaqSection = dynamic(() => import("./faq-section"), {
   ssr: true,
 })
 
-const HowDoesItWork = dynamic(
-  () => import("./how-does-it-work/how-does-it-work."),
-  { ssr: true }
-)
-const BecomePartnerSteps = dynamic(
-  () => import("./becomepartner/become-partner-steps"),
-  { ssr: true }
-)
+const HowDoesItWork = dynamic(() => import("./how-does-it-work"), { ssr: true })
+const BecomePartnerSteps = dynamic(() => import("./becomepartner"), {
+  ssr: true,
+})
 
 const PartnerShipForm = dynamic(
   () => import("./forms/partnership-form/index"),
@@ -131,10 +110,9 @@ const BpHeroSection = dynamic(() => import("./bp-hero-section/index"), {
   ssr: true,
 })
 
-const TabPoliciesWrapper = dynamic(
-  () => import("./tab-policies-wrapper/tabPoliciesWrapper"),
-  { ssr: true }
-)
+const TabPoliciesWrapper = dynamic(() => import("./tab-policies-wrapper"), {
+  ssr: true,
+})
 
 const ProductsSection = dynamic(() => import("./our-products-section/index"), {
   ssr: true,
@@ -148,18 +126,11 @@ const OurStoryCard = dynamic(() => import("./about-our-story-card"), {
   ssr: true,
 })
 
-const LeadersSection = dynamic(
-  () => import("./about-leaders-card/about-leaders-card"),
-  { ssr: true }
-)
-const InvestorsLogos = dynamic(
-  () => import("./investors-logos/InvestorsLogos"),
-  { ssr: true }
-)
-const EmployeeSlider = dynamic(
-  () => import("./employee-slider/EmployeeSlider"),
-  { ssr: true }
-)
+const LeadersSection = dynamic(() => import("./about-leaders-card"), {
+  ssr: true,
+})
+const InvestorsLogos = dynamic(() => import("./investors-logos"), { ssr: true })
+const EmployeeSlider = dynamic(() => import("./employee-slider"), { ssr: true })
 
 const CareersCard = dynamic(() => import("./about-careers-card"), { ssr: true })
 
@@ -167,10 +138,9 @@ const LocationTabsMap = dynamic(() => import("./location-tabs-map"), {
   ssr: true,
 })
 
-const BottomCtaSection = dynamic(
-  () => import("./bottom-cta-section/bottomCtaSection"),
-  { ssr: true }
-)
+const BottomCtaSection = dynamic(() => import("./bottom-cta-section"), {
+  ssr: true,
+})
 
 const PartnershipSection = dynamic(
   () => import("./partner-ship-slider/PartnershipSection"),
@@ -186,19 +156,13 @@ const BankSolutions = dynamic(() => import("./partnerships/BankSolutions"), {
   ssr: true,
 })
 
-const CareersHero = dynamic(
-  () => import("./careers-hero-slider/CareersHeroSlider"),
-  {
-    ssr: true,
-  }
-)
+const CareersHero = dynamic(() => import("./careers-hero-slider"), {
+  ssr: true,
+})
 
-const CareersPaycheck = dynamic(
-  () => import("./careers-paycheck/CareersPaycheck"),
-  {
-    ssr: true,
-  }
-)
+const CareersPaycheck = dynamic(() => import("./careers-paycheck"), {
+  ssr: true,
+})
 
 const CoreValuesData = dynamic(() => import("./core-values-data"), {
   ssr: true,
@@ -212,7 +176,7 @@ const YourOpportunityCareers = dynamic(
 )
 
 const CareersTestimonialSlider = dynamic(
-  () => import("./careers-testimonial-slider/CareersTestimonialSlider"),
+  () => import("./careers-testimonial-slider"),
   {
     ssr: true,
   }
@@ -230,7 +194,7 @@ const PaymentGatewayPartnershipForm = dynamic(
 )
 
 const BuiltforBuildersSection = dynamic(
-  () => import("./builtfor-builders-card/BuiltforBuildersSection"),
+  () => import("./builtfor-builders-card"),
   {
     ssr: true,
   }
@@ -267,7 +231,6 @@ export {
   DynamicHeading,
   LottieDynamicLoadComponent,
   CustomBreadcrumb,
-  TalkToSales,
   AllProducts,
   CardProduct,
   LogoSlider,
@@ -324,5 +287,5 @@ export {
   SupportForm,
   ContactForm,
   CommanButton,
-  ShimmerImage
+  ShimmerImage,
 }

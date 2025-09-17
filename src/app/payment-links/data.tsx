@@ -55,7 +55,7 @@ import {
   shareImage,
   sharePaymentIcon,
   websiteIcon,
-} from "."
+} from "./img"
 
 const dataSets = [
   {
@@ -95,8 +95,6 @@ const dataSets = [
       "Real-time visibility:  Managers can access up-to-date reports and dashboards that offer insights into spending patterns, budget utilization, and cost centers",
   },
 ]
-
-
 
 const cardsData = [
   {
@@ -304,8 +302,6 @@ const acceleratedGrowthData = [
   },
 ]
 
-
-
 const policies = [
   {
     icon: quickIcon,
@@ -415,10 +411,8 @@ const managementCards = [
 ]
 
 export {
-  
   dataSets,
   cardsData,
- 
   acceleratedGrowthData,
   integrationData,
   paymentMethodData,

@@ -1,4 +1,4 @@
-import { scrollIconOne } from "."
+import { scrollIconOne } from "./img"
 
 export const bannerOurContent = [
   {

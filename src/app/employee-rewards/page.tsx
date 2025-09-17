@@ -1,12 +1,19 @@
+import { Metadata } from "next"
 import Image from "next/image"
 import styles from "./page.module.scss"
+
+
+//data
 import { cardsData, cardType, stackcardData } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
+
+
+//components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
+  CommanButton,
   AllInOnePolicy,
   CardStacking,
   ScrollableCardsSection,
@@ -14,20 +21,24 @@ import {
   SecondFaqHtml,
   FaqSection,
 } from "@/src/components"
+
+
+//helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   activationIcon,
   realTimeIcon,
   faqBg,
   extensiveIcon,
-} from "."
+} from "./img"
+
+
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
+
 export const metadata: Metadata = generateMetaData({
   title: "Employee Rewards: Recognise Employee Achievements",
   description:
@@ -53,7 +64,10 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const EmployeeRewards = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -130,7 +144,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -270,13 +284,11 @@ const EmployeeRewards = (): React.JSX.Element => {
               />
             </div>
             <div className="col-md-6 col-12">
-              <div>
-                <Image
-                  src={mealCardImage}
-                  alt="card background"
-                  className="w-100 mh-550 object-fit-contain"
-                />
-              </div>
+              <Image
+                src={mealCardImage}
+                alt="card background"
+                className="w-100 mh-550 object-fit-contain"
+              />
             </div>
           </div>
         </div>
@@ -368,7 +380,7 @@ const EmployeeRewards = (): React.JSX.Element => {
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
+          <div className="d-flex justify-content-center align-items-center text-center">
             <DynamicHeading
               content={[
                 {
@@ -381,11 +393,10 @@ const EmployeeRewards = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started  "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+         arrow
               url={salesUrl}
             />
           </div>

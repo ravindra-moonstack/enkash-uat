@@ -25,7 +25,7 @@ import {
   paymentSummary,
   whiteArrow,
   zeroLeakage,
-} from "."
+} from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"

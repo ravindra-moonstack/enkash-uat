@@ -59,7 +59,7 @@ import {
   taskIconOne,
   taskIconThree,
   taskIconTwo,
-} from "."
+} from "./img"
 
 const stackcardData = [
   {
@@ -336,8 +336,6 @@ const acceleratedGrowthData = [
   },
 ]
 
-
-
 const allInOnePolicies = [
   {
     icon: taskIconOne,
@@ -430,10 +428,8 @@ const managementCards = [
   },
 ]
 export {
-  
   dataSets,
   cardsData,
-
   acceleratedGrowthData,
   integrationData,
   paymentMethodData,

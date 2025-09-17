@@ -1,11 +1,13 @@
-const options = [
+import { TCategoryOptions } from "@/src/types"
+
+const options: TCategoryOptions = [
   { value: "Google search", label: "Google Search" },
   { value: "Social media", label: "Social media" },
   { value: "Word of mouth/ Referral", label: "Word of mouth / Referral" },
   { value: "Used EnKash Before", label: "Used EnKash Before" },
 ]
 
-const categoryOptions = [
+const categoryOptions: TCategoryOptions = [
   {
     value: "Collect Payments",
     label: "Collect Payments",
@@ -35,7 +37,7 @@ const categoryOptions = [
       { value: "Unsecured Credit Card", label: "Unsecured Credit Card" },
       { value: "Gift Cards", label: "Gift Cards" },
       { value: "Employee Cards", label: "Employee Cards" },
-      { value: "T&E Cards", label: "Travel and Expense Cards" },
+      { value: "T&amp;E Cards", label: "Travel and Expense Cards" },
       { value: "Meal Cards", label: "Meal Cards" },
     ],
   },

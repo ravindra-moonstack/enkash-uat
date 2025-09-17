@@ -30,7 +30,7 @@ import {
   termsAndConCardImg,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
-} from "."
+} from "./img"
 
 import { fleetCardImg } from "../digital-marketing-card"
 import { payrollCardImg } from "../fuel-card"
@@ -126,7 +126,7 @@ const cardType = [
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
-    linkUrl:'/sales/?source=gift-cards',
+    linkUrl: "/sales/?source=gift-cards",
   },
   {
     titleHtml: "Meal Card",
@@ -154,7 +154,7 @@ const cardType = [
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver",
     cardImage: fleetCardImg,
-     linkUrl:'/sales/?source=gift-cards',
+    linkUrl: "/sales/?source=gift-cards",
   },
 ]
 

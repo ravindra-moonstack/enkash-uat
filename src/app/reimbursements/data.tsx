@@ -20,7 +20,7 @@ import {
   herarchy,
   insight,
   scanAndDrops,
-} from "."
+} from "./img"
 
 const cardData = [
   {
