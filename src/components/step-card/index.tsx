@@ -1,5 +1,6 @@
 import React from "react"
 import Image, { StaticImageData } from "next/image"
+
 import styles from "./stepCard.module.scss"
 import DynamicHeading from "../dynamic-heading"
 
@@ -10,22 +11,22 @@ interface CardProps {
   className?: string
 }
 
-const StepCard: React.FC<CardProps> = ({
+const StepCard = ({
   icon,
   title,
   description,
   className,
-}) => {
+}: CardProps): React.JSX.Element => {
+  //
+
   return (
     <div
       className={`d-flex align-items-start   ${className}  ${styles.policyCard}`}
     >
-      {/* Icon */}
       <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
         {icon && <Image src={icon} alt="icon" width={55} height={55} />}
       </div>
 
-      {/* Title and Description */}
       <div className="d-flex flex-column text-start ">
         <DynamicHeading
           content={[

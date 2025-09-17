@@ -1,8 +1,12 @@
 "use client"
 import React from "react"
 import Image, { StaticImageData } from "next/image"
+
 import styles from "./steps-section.module.scss"
-import { CommanButton, DynamicHeading, StepCard } from ".."
+import CommonButton from "../buttons"
+import DynamicHeading from "../dynamic-heading"
+import StepCard from "../step-card"
+
 import { RectangleButtonTheme } from "../buttons/rectangle-button"
 import { useSalesUrl } from "@/src/utils/salesUrl"
 
@@ -26,13 +30,15 @@ interface StepsSectionProps {
   backgroundClass?: string
 }
 
-const StepsSection: React.FC<StepsSectionProps> = ({
+const StepsSection = ({
   heading,
   steps,
   button,
   image,
   backgroundClass = "bg-white",
-}) => {
+}: StepsSectionProps): React.JSX.Element => {
+  //
+
   const salesUrl = useSalesUrl()
 
   const buttonUrl = salesUrl
@@ -72,7 +78,7 @@ const StepsSection: React.FC<StepsSectionProps> = ({
 
             {/* Button */}
             <div className={styles.list_button}>
-              <CommanButton
+              <CommonButton
                 title={button.title}
                 theme={button.theme}
                 arrow

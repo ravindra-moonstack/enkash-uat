@@ -2,26 +2,23 @@ import { Metadata } from "next"
 import Image from "next/image"
 import styles from "./page.module.scss"
 
-
 //data
 import { cardsData, cardType, stackcardData } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
 
-
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  CardStacking,
-  ScrollableCardsSection,
-  RewardsCarousel,
-  SecondFaqHtml,
-  FaqSection,
-} from "@/src/components"
-
+import CommonButton from "@/src/components/buttons"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import generateMetaData from "@/src/utils/metaData"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CardStacking from "@/src/components/card-stacking"
+import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
+import FaqSection from "@/src/components/faq-section"
+import RewardsCarousel from "@/src/components/rewards-carousel"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
 
 //helpers
 import {
@@ -34,10 +31,7 @@ import {
   extensiveIcon,
 } from "./img"
 
-
 //utils
-import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Employee Rewards: Recognise Employee Achievements",
@@ -144,7 +138,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <CommanButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -393,10 +387,10 @@ const EmployeeRewards = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <CommanButton
+            <CommonButton
               title="Get Started  "
               theme="outline-blue"
-         arrow
+              arrow
               url={salesUrl}
             />
           </div>

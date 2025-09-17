@@ -45,7 +45,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "."
-import { payrollCardImg } from "../fuel-card"
+import { payrollCardImg } from "../fuel-card/img"
 
 const dataSets = [
   {
