@@ -1,18 +1,21 @@
+import { Metadata } from "next"
 import Image from "next/image"
+
 import styles from "./page.module.scss"
 import { cardsData, cardType, stackcardData } from "./data"
 import faqData from "./faq-data"
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  RectangleButton,
-  AllInOnePolicy,
-  CardStacking,
-  RewardsCarousel,
-  ScrollableCardsSection,
-  FaqSection,
-} from "@/src/components"
+
+// components
+import FaqSection from "@/src/components/faq-section"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
+import RewardsCarousel from "@/src/components/rewards-carousel"
+import CardStacking from "@/src/components/card-stacking"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import RectangleButton from "@/src/components/buttons/rectangle-button"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import LogoSlider from "@/src/components/logo-slider"
+import DynamicHeading from "@/src/components/dynamic-heading"
+
 import {
   blueArrow,
   groupIcon,
@@ -22,10 +25,10 @@ import {
   activationIcon,
   realTimeIcon,
   customizableIcon,
-} from "."
+} from "./img"
+
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Offers: Exclusive Deals on Business Payments & Cards",
@@ -35,6 +38,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/offers/`,
   },
 })
+
 const salesUrl = getSalesUrl("/offers")
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
@@ -52,7 +56,10 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const Offers = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
