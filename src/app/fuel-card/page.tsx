@@ -1,21 +1,22 @@
 import Image from "next/image"
-import styles from "./page.module.scss"
 import { Metadata } from "next"
-import { cardType, intantActionData, stackcardData } from "./data"
-import {
-  CommanButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  CardProduct,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  StepsSection,
-  FaqSection,
-} from "@/src/components"
-import { mealCardImage, heroCardImg } from "."
 
+import styles from "./page.module.scss"
+import { cardType, intantActionData, stackcardData } from "./data"
+import { mealCardImage, heroCardImg } from "./img"
+
+// components
+import CommonButton from "@/src/components/buttons"
 import faqData from "./faq-data"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import StepsSection from "@/src/components/steps-section"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CardProduct from "@/src/components/card-product"
+import LogoSlider from "@/src/components/logo-slider"
+
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -107,11 +108,7 @@ const FuelCards = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <CommanButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommonButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
