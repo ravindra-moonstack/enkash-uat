@@ -25,7 +25,7 @@ import {
   secondIcon,
   thirdIcon,
   fourthIcon,
-} from "."
+} from "./img"
 
 const intantActionData = [
   {

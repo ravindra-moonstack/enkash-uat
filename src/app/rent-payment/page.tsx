@@ -15,21 +15,15 @@ import {
   AllInOnePolicy,
   FaqSection,
   AllProducts,
-  ScrollableCardsSection
+  ScrollableCardsSection,
 } from "@/src/components"
 
 // helpers
-import {
-  groupIcon,
-  paymentSummary,
-  mealCardImage,
-} from "."
-
+import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Rent Payments: Pay Office & Property Rent Digitally",

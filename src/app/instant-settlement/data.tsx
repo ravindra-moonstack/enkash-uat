@@ -1,4 +1,3 @@
-
 import {
   autoCollect,
   fraudProtection,
@@ -25,11 +24,8 @@ import {
   taskIconOne,
   taskIconThree,
   taskIconTwo,
-  upiImg
-} from "."
-
-
-
+  upiImg,
+} from "./img"
 
 const cardsData = [
   {
@@ -51,7 +47,6 @@ const cardsData = [
     icon: scrollIconThree,
   },
 ]
-
 
 const allInOnePolicies = [
   {
@@ -181,9 +176,4 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
 ]
-export {
-  cardsData,
-  allInOnePolicies,
-  managementCards,
-  stackcardData,
-}
+export { cardsData, allInOnePolicies, managementCards, stackcardData }

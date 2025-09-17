@@ -1,9 +1,12 @@
-import styles from "./not-found.module.scss"
+import React from "react"
+import { Metadata } from "next"
 import Image from "next/image"
-import { DynamicHeading } from "@/src/components"
+
+import DynamicHeading from "../components/dynamic-heading"
+
+import styles from "./not-found.module.scss"
 import notFoundImg from "@/public/images/not-found.webp"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "404 Page",
@@ -14,7 +17,9 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-export default function NotFound() {
+function NotFound(): React.JSX.Element {
+  //
+
   return (
     <div className={`${styles.notFound}`}>
       <div className="max-w-auto">
@@ -144,3 +149,5 @@ export default function NotFound() {
     </div>
   )
 }
+
+export default NotFound

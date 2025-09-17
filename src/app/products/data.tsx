@@ -16,9 +16,7 @@ import {
   taskIconSix,
   taskIconThree,
   taskIconTwo,
-} from "."
-
-
+} from "./img"
 
 const allProductSections = [
   {
@@ -114,4 +112,4 @@ const policiesData = [
   },
 ]
 
-export {allProductSections, policiesData }
+export { allProductSections, policiesData }

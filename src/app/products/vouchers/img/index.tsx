@@ -1,0 +1,23 @@
+export { default as bg1 } from "./MealCard.webp"
+export { default as bg2 } from "./Fuel-card.webp"
+export { default as bg3 } from "./digital-marketing.jpg"
+export { default as bg4 } from "./logistic-card.webp"
+export { default as bg5 } from "./payroll-card.webp"
+
+export { default as notificationImage } from "./notification.webp"
+export { default as paymentLinkImage } from "./payment-link.webp"
+export { default as paymentOptionImage } from "./payment-option.webp"
+export { default as secureImage } from "./secure-transition.webp"
+export { default as shareImage } from "./shareImg.webp"
+
+export { default as tabIconOne } from "./tab-icon-one.svg"
+export { default as tabIconTwo } from "./tab-icon-two.svg"
+export { default as tabIconThree } from "./tab-icon-three.svg"
+export { default as tabIconFour } from "./tab-icon-four.svg"
+export { default as tabIconFive } from "./tab-icon-five.svg"
+
+export { default as taskIconOne } from "./task-icon-one.svg"
+export { default as taskIconTwo } from "./task-icon-two.svg"
+export { default as taskIconThree } from "./task-icon-three.svg"
+export { default as taskIconFour } from "./task-icon-four.svg"
+export { default as paymentSummary } from "./heroImg.webp"

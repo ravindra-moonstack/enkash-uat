@@ -1,36 +1,27 @@
 "use client"
-
 import { useState } from "react"
+
 import styles from "./faq.module.scss"
 import SECONDFAQ from "./secondFaq"
-
-interface AnswerItem {
-  heading: string
-  bullets?: string[]
-}
-
-interface FAQItem {
-  question: string
-  answer: AnswerItem[]
-}
+import { TFAQProps } from "@/src/types/faq"
 
 interface SecondFaqHtmlProps {
-  SecondfaqData: FAQItem[]
+  SecondfaqData: TFAQProps[]
 }
 
-const TRANSITION_DURATION = 400 // match SCSS transition time in ms
+const TRANSITION_DURATION = 400
 
 const SecondFaqHtml: React.FC<SecondFaqHtmlProps> = ({ SecondfaqData }) => {
-  const [, setActiveIndex] = useState<number | null>(null) // current active question
-  const [visibleIndex, setVisibleIndex] = useState<number | null>(null) // question being shown
+  //
+
+  const [, setActiveIndex] = useState<number | null>(null)
+  const [visibleIndex, setVisibleIndex] = useState<number | null>(null)
 
   const handleToggleAnswerVisibility = (index: number) => {
     if (index === visibleIndex) {
-      // same question clicked → close it
       setVisibleIndex(null)
       setTimeout(() => setActiveIndex(null), TRANSITION_DURATION)
     } else {
-      // different question clicked → close current, then open new
       setVisibleIndex(null)
       setTimeout(() => {
         setActiveIndex(index)

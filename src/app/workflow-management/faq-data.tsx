@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "What is workflow management?",
     answer: [
@@ -46,7 +48,7 @@ const faqData = [
   },
 ]
 
-export const SecondfaqData = [
+export const SecondfaqData: TFAQProps[] = [
   {
     question: "Quick Pay Button",
     answer: [

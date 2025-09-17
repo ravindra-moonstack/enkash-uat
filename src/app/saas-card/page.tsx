@@ -26,7 +26,7 @@ import {
 } from "@/src/components"
 
 // helpers
-import { mealCardImage, heroCardImg } from "."
+import { mealCardImage, heroCardImg } from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"

@@ -25,7 +25,7 @@ import {
 } from "@/src/components"
 
 // helpers
-import { groupIcon, paymentSummary } from "."
+import { groupIcon, paymentSummary } from "./img"
 
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -58,7 +58,6 @@ const cards = stackcardData.map((item, index) => ({
 const Reimbursements = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">

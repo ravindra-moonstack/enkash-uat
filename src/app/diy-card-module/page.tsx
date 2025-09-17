@@ -18,11 +18,7 @@ import {
   CommanButton,
 } from "@/src/components"
 
-import {
-  mealCardImage,
-  heroCardImg,
-  instantActionImg,
-} from "."
+import { mealCardImage, heroCardImg, instantActionImg } from "./img"
 import faqData from "./faq-data"
 import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
@@ -115,11 +111,7 @@ const DiyCardModule = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <CommanButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
