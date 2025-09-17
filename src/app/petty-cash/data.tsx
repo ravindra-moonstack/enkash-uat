@@ -36,7 +36,7 @@ import {
   stepCardImgTwo,
   streamlinedReimbursement,
   streamlinedReimbursementIcon,
-} from "."
+} from "./img"
 
 const cardData = [
   {
@@ -160,7 +160,7 @@ const stackcardData = [
     image: realTimeExpense,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "300px",
-    buttonText: ""
+    buttonText: "",
   },
   {
     color: "#eee",
@@ -191,7 +191,7 @@ const stackcardData = [
     image: streamlinedReimbursement,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "300px",
-    buttonText: ""
+    buttonText: "",
   },
   {
     color: "#eee",
@@ -202,7 +202,7 @@ const stackcardData = [
     image: costControlSavings,
     buttonUrl: "/sales",
     maxImageHeight: "300px",
-    buttonText: ""
+    buttonText: "",
   },
 ]
 
@@ -264,5 +264,5 @@ export {
   dashboardData,
   analyticData,
   stackcardData,
-  managementCards
+  managementCards,
 }

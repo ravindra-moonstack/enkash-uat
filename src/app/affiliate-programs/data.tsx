@@ -1,7 +1,7 @@
 import imaCard from "./img/containerScreen.webp"
 import ItemIcon from "./img/itemIcon.svg"
 import { coBrandImage, GalaxyTabImage } from "."
-import { blueArrow } from "../home"
+import { blueArrow } from "../home/img"
 
 const bankSolutions = [
   {

@@ -12,7 +12,7 @@ import {
   crouselIconThree,
   crouselIconFour,
   crouselIconFive,
-} from "."
+} from "./img"
 
 const allProductSections = [
   {

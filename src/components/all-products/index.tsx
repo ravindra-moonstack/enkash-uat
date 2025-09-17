@@ -1,6 +1,7 @@
 import React, { memo } from "react"
-import styles from "./all-products.module.scss"
 import Marquee from "react-fast-marquee"
+
+import styles from "./all-products.module.scss"
 import FeatureCard from "../feature-card"
 
 export type AllProductsDataProp = {
@@ -20,6 +21,8 @@ export type AllProductsProp = {
 }
 
 const AllProducts = ({ data = [] }: AllProductsProp): React.JSX.Element => {
+  //
+
   return (
     <div className={`${styles.integration_row} row`}>
       <div className={`${styles.container}`}>

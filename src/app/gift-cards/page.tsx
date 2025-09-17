@@ -22,7 +22,7 @@ import {
   StepsSection,
 } from "@/src/components"
 
-import { mealCardImage, instantActionImg, heroCardImg } from "."
+import { mealCardImage, instantActionImg, heroCardImg } from "./img"
 
 import faqData from "./faq-data"
 import AllProducts from "@/src/components/all-products"

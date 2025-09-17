@@ -1,12 +1,6 @@
-import { FAQProps } from "../../components/faq-new/faq"
+import { TFAQProps } from "@/src/types/faq"
 
-// ✅ Create a type that excludes `index` & `answerVisible` & `onToggleAnswerVisibility`
-type FAQDataItem = Omit<
-  FAQProps,
-  "index" | "answerVisible" | "onToggleAnswerVisibility"
->
-
-const faqData: FAQDataItem[] = [
+const faqData: TFAQProps[] = [
   {
     question: "What is a SaaS card?",
     answer: [

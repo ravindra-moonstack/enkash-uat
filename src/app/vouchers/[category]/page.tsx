@@ -9,7 +9,7 @@ import {
   whiteArrow,
   zigZagGrey,
   zigZagTop,
-} from "../index"
+} from "../img/index"
 import VoucherCard from "@/src/components/voucher-page/voucher-card"
 import SavingsCalculator from "@/src/components/voucher-page/voucher-calculator/voucher-calculator"
 import OccasionVoucher from "@/src/components/voucher-page/occasion-voucher"

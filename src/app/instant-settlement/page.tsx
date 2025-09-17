@@ -11,7 +11,6 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-
 //components
 import {
   DynamicHeading,
@@ -25,7 +24,6 @@ import {
   CardStacking,
 } from "@/src/components"
 
-
 //helpers
 import {
   groupIcon,
@@ -34,8 +32,7 @@ import {
   realTimeIcon,
   hundredPercentIcon,
   activationIcon,
-} from "."
-
+} from "./img"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
@@ -398,7 +395,7 @@ const InstantSettlement = (): React.JSX.Element => {
             <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-             arrow
+              arrow
               url={salesUrl}
             />
           </div>

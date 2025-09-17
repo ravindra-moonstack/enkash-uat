@@ -30,7 +30,7 @@ import {
   convenient,
   settlementIcon,
   flexibility,
-} from "."
+} from "./img"
 
 const cardsData = [
   {

@@ -21,7 +21,7 @@ import {
   taskIconSix,
   taskIconThree,
   taskIconTwo,
-} from "."
+} from "./img"
 
 const cardsData = [
   {

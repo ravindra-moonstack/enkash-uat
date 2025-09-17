@@ -21,7 +21,7 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
-} from "."
+} from "./img"
 
 import faqBg from "./img/faq-bg.webp"
 import { Metadata } from "next"

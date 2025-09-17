@@ -46,7 +46,7 @@ import {
   vianetBg,
   vianetlogo,
   vianetProfile,
-} from "."
+} from "./img"
 
 const HomePageRewardsVouchersSlide = [
   {

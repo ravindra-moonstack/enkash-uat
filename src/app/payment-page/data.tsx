@@ -35,7 +35,7 @@ import {
   taskIconTwo,
   TravelIcon,
   TravelImage,
-} from "."
+} from "./img"
 
 const cardsData = [
   {
@@ -243,4 +243,10 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
 ]
-export { cardsData, allProductSections, allInOnePolicyData, managementCardData, stackcardData }
+export {
+  cardsData,
+  allProductSections,
+  allInOnePolicyData,
+  managementCardData,
+  stackcardData,
+}
