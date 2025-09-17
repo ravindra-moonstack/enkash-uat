@@ -34,3 +34,12 @@ export { default as costControlSavingsIcon } from "./cost-control-savings-icon.s
 export { default as stackCardsixIicon } from "./streamlined-reimbursement-icon.svg"
 export { default as stackCardThreeIcon } from "./stackCardThreeIcon.svg"
 export { default as wideAcceptanceNetworkIcon } from "./wide-acceptance-network-icon.svg"
+
+export { default as pettyIconOne } from "./pettyIconOne.svg"
+export { default as pettyIconTwo } from "./pettyIconTwo.svg"
+export { default as pettyIconThree } from "./pettyIconThree.svg"
+export { default as pettyIconFour } from "./pettyIconFour.svg"
+export { default as pettyIconFive } from "./pettyIconFive.svg"
+export { default as pettyIconSix } from "./pettyIconSix.svg"
+export { default as pettyIconSeven } from "./pettyIconSeven.svg"
+export { default as pettyIconEight } from "./pettyIconEight.svg"

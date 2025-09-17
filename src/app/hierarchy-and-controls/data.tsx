@@ -23,7 +23,7 @@ import {
   stepCardImgTwo,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
-} from "."
+} from "./img"
 
 const cardData = [
   {

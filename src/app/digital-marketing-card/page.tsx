@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import Image from "next/image"
 import styles from "./page.module.scss"
 import {
@@ -6,8 +7,8 @@ import {
   spendAnalyticsData,
   stackcardData,
 } from "./data"
-import {
 
+import {
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -20,12 +21,12 @@ import {
   CommanButton,
 } from "@/src/components"
 
-import { mealCardImage, heroCardImg, instantActionImg } from "."
+import { mealCardImage, heroCardImg, instantActionImg } from "./img"
 
 import faqData from "./faq-data"
-import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 export const metadata: Metadata = generateMetaData({
   title: "Digital Marketing Card: Control Ad Spends Across Platforms",
   description:
@@ -53,6 +54,8 @@ const cards = stackcardData.map((item, index) => ({
 }))
 
 const DigitalMarketingCard = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>
@@ -114,11 +117,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <CommanButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
