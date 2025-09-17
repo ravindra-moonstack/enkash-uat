@@ -21,7 +21,7 @@ import {
   mealCardImage,
 } from "."
 
-import BankLogoSlider from "@/src/components/banking-slider/banking-slider"
+import BankLogoSlider from "@/src/components/banking-slider"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"

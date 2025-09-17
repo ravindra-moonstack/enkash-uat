@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 import { StaticImageData } from "next/image"
-import AdidasCard from "../adidas-card/AdidasCard"
+import AdidasCard from "../adidas-card"
 
 interface TestimonialItem {
   image: string | StaticImageData

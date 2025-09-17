@@ -8,3 +8,9 @@ export type BreadcrumbProps = {
   domain?: string
   linkColor?: "white" | "black" | "allWhite"
 }
+
+export type TCategoryOptions = {
+  value: string
+  label: string
+  children?: { value: string; label: string }[]
+}[]

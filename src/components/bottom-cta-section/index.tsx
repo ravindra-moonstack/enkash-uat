@@ -1,6 +1,6 @@
 "use client"
-
 import React from "react"
+
 import styles from "./BottomCtaSection.module.scss"
 import DynamicHeading from "../dynamic-heading"
 
@@ -19,6 +19,8 @@ const BottomCtaSection: React.FC<BottomCtaSectionProps> = ({
   buttonText = "Get Started",
   buttonHref = "/sales?source=homepage",
 }) => {
+  //
+
   return (
     <div className={`${styles.bottomCtaSection}`}>
       <div className="max-w-auto">
