@@ -1,12 +1,14 @@
 "use client"
 
-import FAQ, { FAQProps } from "@/src/components/faq-new/faq"
+import FAQ from "@/src/components/faq-new/faq"
+
 import { memo, useState } from "react"
 import styles from "./faq.module.scss" // Create this for styling
+import { TFAQProps } from "@/src/types/faq"
 
 interface FAQHtmlProps {
   faqData: Omit<
-    FAQProps,
+    TFAQProps,
     "index" | "answerVisible" | "onToggleAnswerVisibility"
   >[]
 }

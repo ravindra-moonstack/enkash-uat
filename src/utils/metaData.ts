@@ -1,5 +1,6 @@
 import { Voucher } from "@/src/app/vouchers/data/voucher-data"
-import { FAQProps } from "@/src/components/faq-new/faq"
+import { TFAQProps } from "../types/faq"
+
 
 interface MetadataInput {
   title: string
@@ -7,7 +8,7 @@ interface MetadataInput {
   alternates: {
     canonical: string
   }
-  faqData?: Array<FAQProps>
+  faqData?: Array<TFAQProps>
 }
 
 export interface BreadcrumbItem {
