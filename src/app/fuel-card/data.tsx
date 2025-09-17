@@ -48,7 +48,7 @@ import {
   virtualCardImg,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
-} from "."
+} from "./img"
 
 const stackcardData = [
   {

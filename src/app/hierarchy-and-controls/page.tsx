@@ -2,7 +2,6 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
-
 //data
 import {
   cardData,
@@ -12,29 +11,24 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  ManagementCard,
-  EasyStepCard,
-  CardStacking,
-  FaqSection,
-} from "@/src/components"
 
+import CommonButton from "@/components/buttons"
+import CustomBreadcrumb from "@/components/breadcrumb"
+import CardStacking from "@/components/card-stacking"
+import FaqSection from "@/components/faq-section"
+import AllInOnePolicy from "@/components/all-in-one-policy"
+import DynamicHeading from "@/components/dynamic-heading"
+import LogoSlider from "@/components/logo-slider"
+import ManagementCard from "@/components/management-card"
+import EasyStepCard from "@/components/easy-step-card"
 
 //helpers
-import {  groupIcon, paymentSummary } from "."
-
+import { groupIcon, paymentSummary } from "./img"
 
 //utils
-import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import generateMetaData from "@/src/utils/metaData"
-
+import { getSalesUrl } from "@/utils/getSalesUrl"
+import generateMetaData from "@/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Hierarchy & Controls: Streamline Spend Permissions",
@@ -63,6 +57,8 @@ const cards = stackcardData.map((item, index) => ({
 }))
 
 const HierarchyAndControl = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -142,7 +138,7 @@ const HierarchyAndControl = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <CommanButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -273,10 +269,10 @@ const HierarchyAndControl = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <CommanButton
+            <CommonButton
               title="Get Started Today "
               theme="outline-blue"
-            arrow
+              arrow
               url={salesUrl}
             />
           </div>
