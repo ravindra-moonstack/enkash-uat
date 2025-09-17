@@ -16,6 +16,13 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === "production",
   },
 
+  webpack(config) {
+    config.infrastructureLogging = {
+      level: "error", // Suppress warnings like the one you're seeing
+    }
+    return config
+  },
+
   async headers() {
     return [
       {
