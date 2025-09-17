@@ -1,6 +1,3 @@
-export { default as whiteArrow } from "./white-arrow.png"
-export { default as blueArrow } from "./blue-arrrow.svg"
-
 export { default as mealCardImg } from "./meal-card.png"
 export { default as fuelCardImg } from "./fuel-card.svg"
 export { default as termsAndConCardImg } from "./terms-and-conditon.png"
@@ -29,3 +26,13 @@ export { default as costControlSavingsIcon } from "./cost-control-savings-icon.s
 export { default as wideAcceptanceNetworkIcon } from "./wide-acceptance-network-icon.svg"
 export { default as integrationAuditIcon } from "./integrated-audit-icon.svg"
 export { default as seemlessIntegrationIcon } from "./seemlessIntegration-icon.svg"
+
+export { default as iconOne } from "./auto-collect.svg"
+export { default as iconTwo } from "./subsccribtion.svg"
+export { default as iconThree } from "./enach.svg"
+export { default as iconFour } from "./benifits-icon.svg"
+export { default as iconFive } from "./audit-ready.svg"
+export { default as firstIcon } from "./icon-one.svg"
+export { default as secondIcon } from "./icon-two.svg"
+export { default as thirdIcon } from "./icon-three.svg"
+export { default as fourthIcon } from "./icon-four.svg"
