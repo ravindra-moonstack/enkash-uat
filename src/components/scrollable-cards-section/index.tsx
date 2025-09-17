@@ -1,6 +1,6 @@
 "use client"
-
 import * as React from "react"
+
 import styles from "./scrollable-cards-section.module.scss"
 import PolicyCard from "../policy-card"
 import RectangleButton from "../buttons/rectangle-button"
@@ -27,10 +27,10 @@ interface ScrollableCardsSectionProps {
     | "border-black"
   buttonUrl?: string
   marginBottoms?: string
-  link?: string // Optional link prop for PolicyCard
+  link?: string
 }
 
-const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
+const ScrollableCardsSection = ({
   cardsData,
   showScroll = false,
   maxHeight = "400px",
@@ -38,7 +38,7 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
   buttonTheme = "outline-blue",
   buttonUrl,
   marginBottoms,
-}) => {
+}: ScrollableCardsSectionProps): React.JSX.Element => {
   return (
     <>
       <div
