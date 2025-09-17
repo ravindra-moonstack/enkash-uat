@@ -22,7 +22,7 @@ import {
   PartnerShipForm,
   BankAffiliatePartnershipForm,
 } from "@/src/components"
-import { containerScreen, participantBg } from "."
+import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({

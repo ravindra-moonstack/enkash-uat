@@ -25,7 +25,7 @@ import {
 } from "@/src/components"
 
 // helpers
-import {  groupIcon, paymentSummary } from "."
+import { groupIcon, paymentSummary } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 

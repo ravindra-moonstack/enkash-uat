@@ -1,10 +1,14 @@
 import React from "react"
-import styles from "./page.module.scss"
-import { infoIcon } from "."
-import { DynamicHeading } from "@/src/components"
-import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
-import CorporateCard from "@/src/components/corporate-card"
+
+import styles from "./page.module.scss"
+import { infoIcon } from "./img"
+
+// components
+import DynamicHeading from "@/components/dynamic-heading"
+import CorporateCard from "@/components/corporate-card"
+
+import generateMetaData from "@/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Customer Onboarding Policy: EnKash",
@@ -15,7 +19,9 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-const CustomerOnboarding = () => {
+const CustomerOnboarding = (): React.JSX.Element => {
+  //
+
   return (
     <div className={styles.policy}>
       <div className="max-w-auto">

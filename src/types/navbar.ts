@@ -1,11 +1,13 @@
+import { HTMLAttributeAnchorTarget } from "react"
+
 export type TProductFeatureItem = {
   children?: any
   name: string
   description?: string
-  imageSrc?: string // or StaticImageData
-  imageSrcHovered?: string // or StaticImageData
+  imageSrc?: string
+  imageSrcHovered?: string
   link: string
-  target?: "_self" | "_blank"
+  target?: HTMLAttributeAnchorTarget
 }
 
 export type TSubProduct = {
