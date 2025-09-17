@@ -28,7 +28,7 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
-} from "."
+} from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"

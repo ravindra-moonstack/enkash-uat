@@ -19,7 +19,7 @@ import {
 } from "@/src/components"
 
 // helpers
-import { groupIcon, paymentSummary, mealCardImage } from "."
+import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"

@@ -5,25 +5,22 @@ import Image from "next/image"
 import styles from "./page.module.scss"
 
 // components
-import {
-  DynamicHeading,
-  CommanButton,
-  LogoSlider,
-  FeatureCard,
-  LottieDynamicLoadComponent,
-} from "@/src/components"
-
-import UtilityBillPayments from "@/src/components/utility-bill-payments"
-import PartnerSection from "@/src/components/partner-section-data"
-import PaymentGatewayCare from "@/src/components/home-page-payment-box"
-import ScrollableCardsSection from "@/src/components/scrollable-cards-section/scrollableCardsSection"
-import PrepaidCardHome from "@/src/components/prepaid-card-home/PrepaidCardHome"
-import HomePageRewardsVouchers from "@/src/components/home-page-rewards-vouchers"
-import HomeReceivablesPayables from "@/src/components/home-receivables-payables"
-import Counter from "@/src/components/home-counter"
-import HomePageSlider from "@/src/components/home-page-slider"
-import BuiltforBuildersSection from "@/src/components/builtfor-builders-card"
-import BottomCtaSection from "@/src/components/bottom-cta-section"
+import DynamicHeading from "@/components/dynamic-heading"
+import LogoSlider from "@/components/logo-slider"
+import FeatureCard from "@/components/feature-card"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
+import CommanButton from "@/components/buttons"
+import UtilityBillPayments from "@/components/utility-bill-payments"
+import PartnerSection from "@/components/partner-section-data"
+import PaymentGatewayCare from "@/components/home-page-payment-box"
+import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
+import PrepaidCardHome from "@/components/prepaid-card-home/PrepaidCardHome"
+import HomePageRewardsVouchers from "@/components/home-page-rewards-vouchers"
+import HomeReceivablesPayables from "@/components/home-receivables-payables"
+import Counter from "@/components/home-counter"
+import HomePageSlider from "@/components/home-page-slider"
+import BuiltforBuildersSection from "@/components/builtfor-builders-card"
+import BottomCtaSection from "@/components/bottom-cta-section"
 
 // helpers
 import {
@@ -34,7 +31,7 @@ import {
   securityIcon4,
   securityIcon5,
   bankIcons2,
-} from "."
+} from "./img"
 import {
   counterData,
   HomePageRewardsVouchersSlide,
@@ -60,7 +57,10 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}`,
   },
 })
+
 const HomePage = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <section className={`${styles.topBanner}`}>

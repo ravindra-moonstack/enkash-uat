@@ -1,10 +1,11 @@
-import { FAQProps } from "@/src/types/faq"
+import { TFAQProps } from "@/src/types/faq"
 
-const faqData: FAQProps[] = [
+const faqData: TFAQProps[] = [
   {
     question: "Who can partner with Bharat Connect?",
     answer: [
       {
+        heading: "",
         bullets: [
           "Banks & FIs – Enable seamless payments and collections",
           "ERP & Billing Platforms – Embed smart payment capabilities",

@@ -17,15 +17,12 @@ import {
   FaqSection,
 } from "@/src/components"
 
-
 //helpers
-import { groupIcon, paymentSummary, mealCardImage } from "."
-
+import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "GST Payments: Automate, Track & Pay Your Taxes ",

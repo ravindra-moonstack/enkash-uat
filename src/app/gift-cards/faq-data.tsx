@@ -1,12 +1,6 @@
-import { FAQProps } from "../../components/faq-new/faq"
+import { TFAQProps } from "@/src/types/faq"
 
-// ✅ Create a type that excludes `index` & `answerVisible` & `onToggleAnswerVisibility`
-type FAQDataItem = Omit<
-  FAQProps,
-  "index" | "answerVisible" | "onToggleAnswerVisibility"
->
-
-const faqData: FAQDataItem[] = [
+const faqData: TFAQProps[] = [
   {
     question: "What are gift cards?",
     answer: [
@@ -57,6 +51,7 @@ const faqData: FAQDataItem[] = [
     question: "How to access a corporate gift card?",
     answer: [
       {
+        heading: "",
         bullets: [
           "Register on EnKash and enter all the company details requiredr",
           "After all the details are validated, the company becomes eligible for gift cards",

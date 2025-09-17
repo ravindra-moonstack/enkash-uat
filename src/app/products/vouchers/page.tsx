@@ -18,7 +18,7 @@ import {
 } from "@/src/components"
 
 // helpers
-import { paymentSummary } from "."
+import { paymentSummary } from "./img"
 
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"

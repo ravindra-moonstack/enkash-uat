@@ -94,10 +94,7 @@ const FaqSection = dynamic(() => import("./faq-section"), {
   ssr: true,
 })
 
-const HowDoesItWork = dynamic(
-  () => import("./how-does-it-work"),
-  { ssr: true }
-)
+const HowDoesItWork = dynamic(() => import("./how-does-it-work"), { ssr: true })
 const BecomePartnerSteps = dynamic(() => import("./becomepartner"), {
   ssr: true,
 })
@@ -132,10 +129,7 @@ const OurStoryCard = dynamic(() => import("./about-our-story-card"), {
 const LeadersSection = dynamic(() => import("./about-leaders-card"), {
   ssr: true,
 })
-const InvestorsLogos = dynamic(
-  () => import("./investors-logos"),
-  { ssr: true }
-)
+const InvestorsLogos = dynamic(() => import("./investors-logos"), { ssr: true })
 const EmployeeSlider = dynamic(() => import("./employee-slider"), { ssr: true })
 
 const CareersCard = dynamic(() => import("./about-careers-card"), { ssr: true })

@@ -10,7 +10,7 @@ import {
   FaqSection,
   CommanButton,
 } from "@/src/components"
-import { heroCardImg } from "."
+import { heroCardImg } from "./img"
 import { faqData } from "./faq-data"
 import EnkashWay from "@/src/components/enkash-way/enkash-way"
 import { progressData, stackcardData } from "./data"

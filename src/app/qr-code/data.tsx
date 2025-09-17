@@ -29,8 +29,7 @@ import {
   taskIconOne,
   taskIconThree,
   taskIconTwo,
-} from "."
-
+} from "./img"
 
 const cardsData = [
   {
@@ -209,5 +208,5 @@ export {
   paymentMethodData,
   allInOnePolicyData,
   managementCardData,
-  stackcardData
+  stackcardData,
 }
