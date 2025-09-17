@@ -12,12 +12,12 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Find clear steps for addressing prepaid instrument issues with accuracy and fairness.",
   alternates: {
-    canonical: `${process.env.URL}/policies/prepaid-programe/grievance-policy`,
+    canonical: `${process.env.URL}/policies/prepaid-program/grievance-policy`,
   },
 })
 
 const GrievancePolicy = (): React.JSX.Element => {
-  //
+ 
 
   return (
     <>
@@ -30,7 +30,7 @@ const GrievancePolicy = (): React.JSX.Element => {
                 { name: "Policies", url: "/policies" },
                 {
                   name: "Prepaid Program",
-                  url: "/policies/prepaid-programe",
+                  url: "/policies/prepaid-program",
                 },
                 {
                   name: "Grievance and Redressal Policy",
