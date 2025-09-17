@@ -37,7 +37,7 @@ const categoryOptions: TCategoryOptions = [
       { value: "Unsecured Credit Card", label: "Unsecured Credit Card" },
       { value: "Gift Cards", label: "Gift Cards" },
       { value: "Employee Cards", label: "Employee Cards" },
-      { value: "T&E Cards", label: "Travel and Expense Cards" },
+      { value: "T&amp;E Cards", label: "Travel and Expense Cards" },
       { value: "Meal Cards", label: "Meal Cards" },
     ],
   },
