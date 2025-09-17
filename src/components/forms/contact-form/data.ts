@@ -1,4 +1,6 @@
-export const contactOptions = [
+import { TCategoryOptions } from "@/src/types"
+
+export const contactOptions: TCategoryOptions = [
   {
     value: "Looking for Payment Collection Solution",
     label: "Looking for Payment Collection Solution",

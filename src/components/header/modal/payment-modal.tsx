@@ -18,10 +18,10 @@ const PaymentModal = ({ onLinkClick }: { onLinkClick?: () => void }) => {
 
   const [prevHoveredProductIndex] = useState<null | number>(null)
 
-  const getSubProductsByMother = (motherName: string) => {
+  const getSubProductsByMother = (motherName?: string) => {
     const mother = motherProducts.find((item) => item.name === motherName)
     if (!mother) return []
-    return mother.subProducts || mother.payableProducts || []
+    return mother.subProducts || []
   }
 
   return (

@@ -1,4 +1,6 @@
-const contactOptions = [
+import { TCategoryOptions } from "@/src/types"
+
+const contactOptions: TCategoryOptions = [
   {
     value: "Login/Password",
     label: "Login/Password",

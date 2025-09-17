@@ -1,5 +1,3 @@
-export { default as whiteArrow } from "./white-arrow.png"
-export { default as blueArrow } from "./blue-arrrow.svg"
 export { default as groupIcon } from "./groupIcon.svg"
 export { default as paymentSummary } from "./heroImg.webp"
 

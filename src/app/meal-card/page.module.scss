@@ -56,81 +56,12 @@
     img,
     .podium_img {
       position: absolute;
-      bottom: 0%; // stick podium ABOVE the grey strip
-      left: 50%; // center horizontally
+      bottom: 0%;
+      left: 50%;
       transform: translateX(-50%);
-      width: 423px; // your image width
+      width: 423px;
       height: auto;
     }
-  }
-}
-.second_row {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 56px 36px;
-  position: relative;
-  background-image:
-    linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    // black with 50% opacity
-    linear-gradient(90deg, rgba(97, 115, 247, 0) 0%, #6173f7 100%),
-    url("./img/secongBg.png");
-
-  .second_row_title {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .section {
-    max-width: 1200px;
-    margin: auto;
-    gap: 40px;
-
-    bottom: -65px;
-    justify-content: center;
-    right: 0;
-    left: 0;
-    z-index: 2;
-    @include for-laptops {
-      position: absolute;
-    }
-    .card {
-      width: 100%;
-      max-width: 300px; // Still limits on larger screens
-      min-width: 200px; // Optional: prevent it from getting too small
-      flex: 1 1 200px; // allows cards to shrink and wrap
-      background: $color-white;
-      border-radius: 20px;
-      padding: 20px;
-      gap: 20px;
-      box-shadow: 0px 20px 50px 0px #3440541a;
-
-      .card_image {
-        height: 48px;
-        width: 48px;
-      }
-    }
-  }
-}
-
-.third_row {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  background-color: $color-white;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
-  @include for-laptops {
-    padding: 84px 90px 51px 90px;
-  }
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
-  }
-  .section {
-    background-color: #35e7eb;
   }
 }
 
@@ -173,12 +104,10 @@
     background: #101318;
     border-radius: 12px;
     z-index: 2;
-    padding: 20px; // ✅ Add some breathing room on small screens
-    margin: 20px auto; // ✅ Center it by default
+    padding: 20px;
+    margin: 20px auto;
     width: 100%;
     max-width: 100%;
-
-    // ✅ Children stay flexible
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,20 +122,6 @@
       padding: 40px; // More room on larger screens
       margin: 0; // Remove mobile margin on large screens
     }
-  }
-}
-
-.fifth_row {
-  position: relative;
-  text-align: center;
-  padding: 20px;
-  @include for-laptops {
-    padding-top: 430px;
-    padding-bottom: 90px;
-  }
-
-  .list_button {
-    margin-left: 60px;
   }
 }
 
@@ -230,120 +145,6 @@
   }
 }
 
-.seventh_row {
-  .container {
-    @include for-laptops {
-      padding-left: 150px;
-      padding-right: 150px;
-    }
-    @include for-window-zoomed-screens {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-  }
-  .left_row {
-    padding: 40px;
-    margin-top: -20px;
-    border-radius: 10px;
-    border: 2px solid $color-night-blue;
-    @include for-laptops {
-      padding: 40px;
-      width: 50%;
-      margin-top: 0px;
-    }
-  }
-  .right_row {
-    margin-top: -10px;
-    @include for-laptops {
-      margin-left: -20px;
-      margin-top: 0;
-      width: 50%;
-    }
-
-    img {
-      height: 100%;
-    }
-  }
-}
-
-.eight_row {
-  background: $color-black;
-  border-radius: 12px;
-  position: relative;
-  padding: 20px;
-  @include for-laptops {
-    padding: 58px;
-  }
-  .get_started_button {
-    padding: 6px;
-    border: 2px solid $color-equity-blue;
-    border-radius: 12px;
-    @include for-laptops {
-      padding: 11px 14px;
-    }
-  }
-  .custom_list {
-    padding-left: 1rem; // optional: controls indentation
-    list-style-type: disc;
-
-    li {
-      margin-bottom: 12px;
-
-      &::marker {
-        color: #888; // optional: customize bullet color
-      }
-    }
-  }
-}
-
-.faq_new_row {
-  background: $color-white;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding: 50px 20px;
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      bottom: 0;
-      display: none;
-      @include for-laptops {
-        display: flex;
-      }
-    }
-  }
-
-  .faqData {
-    width: 100%;
-    @include for-laptops {
-      width: 70%;
-    }
-  }
-}
-
-.ninth_row {
-  position: relative;
-  padding: 20px;
-  @include for-laptops {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-  h1 {
-    font-size: 110px;
-    color: $color-black;
-
-    span {
-      background-color: $color-bluish-purple;
-      color: $color-white;
-    }
-  }
-}
 .card_stacking_row {
   padding: 0px 20px;
 
@@ -360,52 +161,5 @@
   padding: 0 20px 50px;
   @include for-laptops {
     padding: 0 20px 90px;
-  }
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar {
-  width: 12px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: $color-white;
-  border: 1px solid transparent;
-  border-radius: 20px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: #3b82f6;
-  border-radius: 9999px;
-  border: 1px solid transparent;
-}
-
-/* Firefox */
-.third_row .scrollbar-thin {
-  scrollbar-width: auto;
-  scrollbar-color: #3b82f6 transparent;
-}
-
-.action_row {
-  position: relative;
-  overflow: hidden;
-
-  padding: 50px 20px;
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-  .list_button {
-    padding-left: 40px;
-    margin-top: 18px;
-    margin-bottom: 18px;
-    @include for-laptops {
-      padding-left: 86px;
-    }
-  }
-
-  img {
-    height: auto;
-    @include for-laptops {
-      height: initial;
-    }
   }
 }

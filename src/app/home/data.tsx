@@ -1,4 +1,4 @@
-import { RectangleButtonTheme } from "@/src/components/buttons/rectangle-button"
+import { ButtonTheme } from "@/src/components/buttons"
 import {
   AdiadsBg,
   Adiadslogo,
@@ -467,42 +467,42 @@ const rewardData = [
 const ctaButtonData = [
   {
     title: "Collect Payments",
-    theme: "outline-blue" as RectangleButtonTheme,
+    theme: "outline-blue" as ButtonTheme,
     actionImage: "",
     hoverImage: "",
     url: "/sales?source=homepage",
   },
   {
     title: " Make Payments",
-    theme: "outline-blue" as RectangleButtonTheme,
+    theme: "outline-blue" as ButtonTheme,
     actionImage: "",
     hoverImage: "",
     url: "/sales?source=homepage",
   },
   {
     title: "Manage Expenses",
-    theme: "outline-blue" as RectangleButtonTheme,
+    theme: "outline-blue" as ButtonTheme,
     actionImage: "",
     hoverImage: "",
     url: "/sales?source=homepage",
   },
   {
     title: "Get Corporate Cards",
-    theme: "outline-blue" as RectangleButtonTheme,
+    theme: "outline-blue" as ButtonTheme,
     actionImage: "",
     hoverImage: "",
     url: "/sales?source=homepage",
   },
   {
     title: "Distribute Brand Vouchers",
-    theme: "outline-blue" as RectangleButtonTheme,
+    theme: "outline-blue" as ButtonTheme,
     actionImage: "",
     hoverImage: "",
     url: "/sales?source=homepage",
   },
   {
     title: "Reward Employees",
-    theme: "outline-blue" as RectangleButtonTheme,
+    theme: "outline-blue" as ButtonTheme,
     actionImage: "",
     hoverImage: "",
     url: "/sales?source=homepage",

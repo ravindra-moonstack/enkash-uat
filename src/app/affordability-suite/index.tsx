@@ -1,5 +1,3 @@
-// Only used image exports
-
 export { default as autoCollect } from "./img/auto-collect.svg"
 export { default as instant } from "./img/instant-settlement.svg"
 export { default as paymentButton } from "./img/pazment-button.svg"
@@ -23,5 +21,4 @@ export { default as taskIconOne } from "./img/task-icon-one.svg"
 export { default as taskIconTwo } from "./img/task-icon-two.svg"
 export { default as taskIconThree } from "./img/task-icon-three.svg"
 
-// Extra single export you requested
 

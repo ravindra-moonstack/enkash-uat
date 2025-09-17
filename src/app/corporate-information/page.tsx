@@ -4,7 +4,7 @@ import { infoIcon } from "."
 import { DynamicHeading } from "@/src/components"
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
-import CorporateCard from "@/src/components/corporate-card/corporate-card"
+import CorporateCard from "@/src/components/corporate-card"
 
 export const metadata: Metadata = generateMetaData({
   title: "Customer Onboarding Policy: EnKash",
