@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import {
   allInOnePolicies,
   cardsData,
@@ -7,30 +10,33 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
+
+//components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
   PolicyCard,
-  RectangleButton,
+  CommanButton,
   AllInOnePolicy,
   FaqSection,
   ManagementCard,
+  CardStacking,
 } from "@/src/components"
+
+//helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
   activationIcon,
-} from "."
-import { Metadata } from "next"
+} from "./img"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import CardStacking from "@/src/components/card-stacking"
 
 export const metadata: Metadata = generateMetaData({
   title: "Collection Analytics: Track & Optimize Your Payment Data",
@@ -134,7 +140,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -293,7 +299,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommanButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -385,11 +391,10 @@ const CollectionAnalytics = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

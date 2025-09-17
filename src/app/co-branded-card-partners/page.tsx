@@ -1,4 +1,6 @@
 import React from "react"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
 import {
   productsData,
@@ -20,9 +22,7 @@ import {
   PartnerShipForm,
   BankAffiliatePartnershipForm,
 } from "@/src/components"
-import { containerScreen, participantBg } from "."
-import { blueArrow } from "@/src/components/all-in-one-policy"
-import { Metadata } from "next"
+import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
@@ -68,7 +68,7 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: blueArrow.src,
+            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
@@ -88,7 +88,7 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: blueArrow.src,
+            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>

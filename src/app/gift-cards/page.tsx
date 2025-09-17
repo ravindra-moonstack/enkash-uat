@@ -22,10 +22,10 @@ import {
   StepsSection,
 } from "@/src/components"
 
-import { mealCardImage, instantActionImg, heroCardImg } from "."
+import { mealCardImage, instantActionImg, heroCardImg } from "./img"
 
 import faqData from "./faq-data"
-import AllProducts from "@/src/components/all-products/all-products"
+import AllProducts from "@/src/components/all-products"
 import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"

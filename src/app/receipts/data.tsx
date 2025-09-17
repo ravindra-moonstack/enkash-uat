@@ -19,9 +19,8 @@ import {
   herarchy,
   insight,
   advance,
-  reimbursements
-
-} from "."
+  reimbursements,
+} from "./img"
 
 const cardData = [
   {

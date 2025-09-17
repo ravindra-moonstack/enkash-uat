@@ -1,7 +1,0 @@
-export { default as steps } from "./img/steps.png"
-export { default as oldWay } from "./img/old-way.png"
-export { default as newWay } from "./img/new-way.png"
-export { default as blueArrowForward } from "./img/blue-forward-arrow.png"
-export { default as gradient } from "./img/gradient.png"
-export { default as whiteArrow } from "./img/white-arrow.png"
-export { default as blueArrow } from "./img/blue-arrrow.svg"

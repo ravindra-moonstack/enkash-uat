@@ -1,0 +1,6 @@
+export { default as containerScreen } from "./containerScreen.webp"
+export { default as participantBg } from "./participants-bg.webp"
+export { default as coBrandImage } from "./coBrandImage.webp"
+export { default as GalaxyTabImage } from "./Galaxy Tab S8 Ultra.webp"
+export { default as Purchasecard } from "./Purchase card-01.webp"
+export { default as BuiltforBuildersCardIcon } from "./BuiltforBuildersCardIcon.svg"

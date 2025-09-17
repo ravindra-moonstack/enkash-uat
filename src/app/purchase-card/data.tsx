@@ -25,8 +25,8 @@ import {
   firstIcon,
   secondIcon,
   thirdIcon,
-fourthIcon
-} from "."
+  fourthIcon,
+} from "./img"
 
 const intantActionData = [
   {
@@ -55,8 +55,6 @@ const intantActionData = [
     icon: fourthIcon,
   },
 ]
-
-
 
 const cardType = [
   {
@@ -117,8 +115,6 @@ const cardType = [
     linkUrl: "/sales/?source=prepaid-card",
   },
 ]
-
-
 
 const allProductSections = [
   {
@@ -210,9 +206,4 @@ const stackcardData = [
   },
 ]
 
-export {
-  intantActionData,
-  cardType,
-  allProductSections,
-  stackcardData,
-}
+export { intantActionData, cardType, allProductSections, stackcardData }

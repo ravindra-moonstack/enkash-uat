@@ -52,8 +52,8 @@ import {
   virtualCardImg,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
-} from "."
-import { bg1, bg2, bg3, bg4, bg5 } from "../products/vouchers"
+} from "./img"
+import { bg1, bg2, bg3, bg4, bg5 } from "../products/vouchers/img"
 
 const dataSets = [
   {
@@ -89,8 +89,6 @@ const dataSets = [
       "Boost morale and productivity by offering flexible meal benefits that employees truly appreciate. Meal Cards are designed with user convenience, ensuring a positive experience at every step.",
   },
 ]
-
-
 
 const cardData = [
   {
@@ -424,7 +422,7 @@ const progressData = [
       "Enable tax-saving meal benefits for employees with preloaded, compliant meal cards accepted at food outlets, canteens, and online platforms.",
     icon: tabIconOne,
     bgImage: bg1,
-    url: "/meal-card", 
+    url: "/meal-card",
   },
   {
     itemArray: ["Fuel Card"],
@@ -433,7 +431,7 @@ const progressData = [
       "Optimize your fuel spends with cards restricted to fuel merchants only. Get complete visibility and prevent fuel misuse at the pump.",
     icon: tabIcontwo,
     bgImage: bg2,
-    url: "/fuel-card", 
+    url: "/fuel-card",
   },
   {
     itemArray: ["Digital Marketing Card"],
@@ -452,7 +450,7 @@ const progressData = [
     icon: tabIconFour,
     bgImage: bg4,
     url: "/sales/?source=prepaid-card",
-    buttonText :"Get Started"
+    buttonText: "Get Started",
   },
   {
     itemArray: ["Payroll Card"],
@@ -462,12 +460,11 @@ const progressData = [
     icon: tabIconFive,
     bgImage: bg5,
     url: "/sales/?source=prepaid-card",
-    buttonText :"Get Started"
+    buttonText: "Get Started",
   },
 ]
 
 export {
-
   dataSets,
   cardsData,
   intantActionData,

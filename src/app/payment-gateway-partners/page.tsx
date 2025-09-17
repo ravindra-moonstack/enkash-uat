@@ -1,5 +1,9 @@
 import React from "react"
+import { Metadata } from "next"
+import Link from "next/link"
+
 import styles from "./page.module.scss"
+
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -9,6 +13,7 @@ import {
   stepsData,
 } from "./data"
 import faqData from "./faq-data"
+
 import {
   BecomePartnerSteps,
   BpHeroSection,
@@ -21,11 +26,8 @@ import {
   BankSolutions,
   DynamicHeading,
 } from "@/src/components"
-import { containerScreen, participantBg } from "."
-import { blueArrow } from "@/src/components/all-in-one-policy"
-import Link from "next/link"
+import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Gateway Partnerships",
@@ -75,7 +77,7 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: blueArrow.src,
+            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
@@ -164,7 +166,7 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: blueArrow.src,
+            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>

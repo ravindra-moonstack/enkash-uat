@@ -1,31 +1,38 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import { cardsData, cardType, stackcardData } from "./data"
 import faqData from "./faq-data"
+
+//components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
   ScrollableCardsSection,
-  RectangleButton,
+  CommanButton,
   RewardsCarousel,
   AllInOnePolicy,
   CardStacking,
   FaqSection,
 } from "@/src/components"
+
+//helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   activationIcon,
   realTimeIcon,
   PayoutIcon,
 } from "."
+
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
+
 export const metadata: Metadata = generateMetaData({
   title: "Channel Incentives to Drive and Motivate Your Partners",
   description:
@@ -128,7 +135,7 @@ const ChannelIncentives = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -340,11 +347,10 @@ const ChannelIncentives = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started  "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

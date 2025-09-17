@@ -1,8 +1,14 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import { cardType, dataSets, intantActionData, stackcardData } from "./data"
+import faqData from "./faq-data"
+
+//components
 import {
-  RectangleButton,
+  CommanButton,
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -14,17 +20,10 @@ import {
   HowDoesItWork,
 } from "@/src/components"
 
-import {
-  circles,
-  blueArrow,
-  whiteArrow,
-  mealCardImage,
-  cardRotatingImage,
-  heroCardImg,
-} from "."
+//helpers
+import { circles, mealCardImage, cardRotatingImage, heroCardImg } from "."
 
-import faqData from "./faq-data"
-import { Metadata } from "next"
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
@@ -52,6 +51,7 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const MealCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
@@ -114,11 +114,7 @@ const MealCards = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
@@ -212,11 +208,10 @@ const MealCards = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

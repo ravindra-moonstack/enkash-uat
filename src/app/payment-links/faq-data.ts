@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "What is a Payment Link?",
     answer: [
@@ -120,8 +122,7 @@ const faqData = [
   },
 ]
 
-export default faqData
-export const SecondfaqData = [
+export const SecondfaqData: TFAQProps[] = [
   {
     question: "Custom Branding",
     answer: [
@@ -168,3 +169,5 @@ export const SecondfaqData = [
     ],
   },
 ]
+
+export default faqData

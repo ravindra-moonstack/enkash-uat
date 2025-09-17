@@ -1,12 +1,4 @@
-export type FAQ = {
-  question: string
-  answer: {
-    heading: string
-    bullets: string[]
-  }[]
-}
-
-export type Voucher = {
+export type TVoucher = {
   name: string
   urlName: string
   brandName: string
@@ -34,7 +26,7 @@ export type Voucher = {
   birthdays: string
 }
 
-const VoucherData: Record<string, Voucher> = {
+const VoucherData: Record<string, TVoucher> = {
   nykaa: {
     name: "Nykaa Gift Card",
     urlName: "nykaa",

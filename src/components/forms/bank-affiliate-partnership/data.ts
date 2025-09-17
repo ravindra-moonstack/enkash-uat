@@ -1,4 +1,6 @@
-const Businessoptions = [
+import { TCategoryOptions } from "@/src/types"
+
+const Businessoptions: TCategoryOptions = [
   { value: "Bank Partnership", label: "Bank Partnership" },
   {
     value: "Payment Gateway Partnership",

@@ -75,81 +75,7 @@
   }
 }
 
-.second_row {
-  background: linear-gradient(
-    180deg,
-    #1c5af4 0%,
-    $color-cyan-blue 77%,
-    #18187f 100%
-  );
-  position: relative;
-  padding: 50px 20px;
 
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-
-  .section {
-    margin: auto;
-    gap: 10px;
-    justify-content: center;
-    // flex-wrap: wrap;
-
-    .card {
-      width: 90px;
-      max-width: 100%;
-      background-color: $color-white-1a;
-      border-radius: 10px;
-      box-shadow: 0px 0px 29.66px 0px $color-black-0d;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .outerCard {
-        margin: auto;
-
-        img {
-          height: 22px;
-          width: 22px;
-
-          @include for-laptops {
-            height: 51px;
-            width: 51px;
-          }
-        }
-      }
-
-      .innerCard {
-        box-shadow: 0px 0px 29.66px 0px $color-black-0d;
-        width: 100%;
-        padding: 4px;
-        text-align: center;
-      }
-
-      // 👇 Responsive widths
-      @include for-laptops {
-        width: 300px;
-      }
-
-      @include for-tablet {
-        width: 180px;
-      }
-    }
-
-    @include for-laptops {
-      gap: 65px;
-      flex-wrap: wrap;
-    }
-  }
-
-  .inner-content {
-    background: $color-white;
-    /* inner background */
-    padding: 11px 14px;
-    border-radius: 10px;
-    /* slightly smaller radius */
-  }
-}
 
 .third_row {
   width: 100%;
@@ -164,7 +90,6 @@
   }
 
   .scrollCard {
-    // margin-left: 10px;
     margin-bottom: 20px;
 
     @include for-laptops {
@@ -251,71 +176,7 @@
   }
 }
 
-.sixth_row {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  height: 100vh;
 
-  @include for-laptops {
-    padding: 32px;
-  }
-
-  // background-image: url(./img/enkashWayBg.svg);
-
-  .blur_bg {
-    position: absolute;
-    top: -70%;
-    left: 0;
-    width: 800px;
-    height: 1150px;
-  }
-
-  .progress_bar {
-    height: 4px;
-    border-radius: 12px;
-    padding-left: 50px;
-    padding-right: 50px;
-    background: linear-gradient(
-      90deg,
-      $color-equity-blue 15%,
-      $color-black 30%
-    );
-
-    @include for-laptops {
-      height: 8px;
-    }
-  }
-
-  .progress_items {
-    margin-right: 30px;
-
-    @include for-laptops {
-      margin-right: 0;
-    }
-  }
-
-  .progress_container {
-    @include for-laptops {
-      justify-content: space-evenly;
-    }
-  }
-
-  .arrow {
-    transform: rotate(90deg);
-    height: 30px;
-    width: 30px;
-    margin-top: -10px;
-
-    @include for-laptops {
-      height: 50px;
-      width: 50px;
-      transform: none;
-      margin-top: 0;
-    }
-  }
-}
 
 .fifth_row {
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
@@ -338,101 +199,6 @@
   }
 }
 
-.seventh_row {
-  .container {
-    @include for-laptops {
-      padding-left: 150px;
-      padding-right: 150px;
-    }
-
-    @include for-window-zoomed-screens {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-  }
-
-  .left_row {
-    padding: 40px;
-    margin-top: -20px;
-    border-radius: 10px;
-    border: 2px solid $color-night-blue;
-
-    @include for-laptops {
-      padding: 40px;
-      width: 50%;
-      margin-top: 0px;
-    }
-  }
-
-  .right_row {
-    margin-top: -10px;
-
-    @include for-laptops {
-      margin-left: -20px;
-      margin-top: 0;
-      width: 50%;
-    }
-
-    img {
-      height: 100%;
-    }
-  }
-}
-
-.eigth_row {
-  background-color: #f1f1f1;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding-bottom: 50px;
-  padding-top: 50px;
-
-  @include for-laptops {
-    padding-top: 138px;
-  }
-
-  .faqSection {
-    width: 70%;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      right: 0; // ✅ Add this
-      bottom: 0;
-      display: none;
-      pointer-events: none;
-
-      @include for-laptops {
-        display: block; // ✅ Changed from flex to block
-        height: 37.5rem;
-      }
-    }
-  }
-}
-
-.ninth_row {
-  position: relative;
-  padding: 20px;
-
-  @include for-laptops {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
-  h1 {
-    font-size: 110px;
-    color: $color-black;
-
-    span {
-      background-color: $color-bluish-purple;
-      color: $color-white;
-    }
-  }
-}
-
 .slider_row {
   position: relative;
   text-align: center;
@@ -444,31 +210,6 @@
   }
 }
 
-.third_row .scrollbar-thin::-webkit-scrollbar {
-  width: 12px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: $color-white;
-  border: 1px solid transparent;
-  border-radius: 20px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: #3b82f6;
-  border-radius: 9999px;
-  border: 1px solid transparent;
-}
-
-/* Firefox */
-.third_row .scrollbar-thin {
-  scrollbar-width: auto;
-  scrollbar-color: #3b82f6 transparent;
-}
-
-.bg-color-soft-mint {
-  background-color: $color-soft-mint;
-}
 
 .new_row {
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
@@ -484,43 +225,3 @@
   }
 }
 
-.faq_new_row {
-  background: $color-white;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding: 50px 20px;
-
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      bottom: 0;
-      display: none;
-
-      @include for-laptops {
-        display: flex;
-      }
-    }
-  }
-
-  .faqData {
-    width: 100%;
-
-    @include for-laptops {
-      width: 70%;
-    }
-  }
-}
-
-.other_products {
-  background: $color-white;
-  padding: 0 20px 50px;
-
-  @include for-laptops {
-    padding: 0px 20px 90px;
-  }
-}

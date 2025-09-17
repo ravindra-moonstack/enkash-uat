@@ -18,8 +18,7 @@ import {
   taskIconOne,
   taskIconThree,
   taskIconTwo,
-} from "."
-
+} from "./img"
 
 const allInOnePolicyData = [
   {

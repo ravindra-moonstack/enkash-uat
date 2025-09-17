@@ -1,0 +1,6 @@
+export { default as voicesEnkash1 } from "./voicesEnkash1.webp"
+export { default as voicesEnkash2 } from "./voicesEnkash2.webp"
+export { default as voicesEnkash3 } from "./voicesEnkash3.webp"
+export { default as voicesEnkash4 } from "./voicesEnkash4.webp"
+export { default as voicesEnkash5 } from "./voicesEnkash5.webp"
+export { default as voicesEnkash6 } from "./voicesEnkash6.webp"

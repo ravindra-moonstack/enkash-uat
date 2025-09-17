@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import styles from "./style.module.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 import RectangleButton from "../buttons/rectangle-button"
 
 interface CareersCardProps {

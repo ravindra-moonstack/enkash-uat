@@ -1,9 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react"
-import styles from "./page.module.scss"
 import { Metadata } from "next"
+
+import styles from "./page.module.scss"
 import generateMetaData from "@/src/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
+
+// components
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
 
 export const metadata: Metadata = generateMetaData({
   title: "Privacy Policy: EnKash",
@@ -14,7 +18,9 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-const grievancePolicy = () => {
+const PrivacyPolicy = (): React.JSX.Element => {
+  //
+
   return (
     <>
       <div className={styles.parent_container}>
@@ -1621,4 +1627,4 @@ const grievancePolicy = () => {
   )
 }
 
-export default grievancePolicy
+export default PrivacyPolicy

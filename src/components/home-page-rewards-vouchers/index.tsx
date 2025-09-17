@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 import styles from "./HomePageRewardsVouchers .module.scss"
 import Link from "next/link"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 interface HomePageRewardsVouchersProps {
   title: string

@@ -2,12 +2,12 @@
 
 import React, { useState } from "react"
 import Image, { StaticImageData } from "next/image"
-import Heading from "../heading/heading"
+import Heading from "../heading"
 import styles from "./payment-link-tab.module.scss"
 import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
 import RectangleButton from "../buttons/rectangle-button"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 import { usePathname } from "next/navigation"
 
 interface PaymentLinkTabProps {

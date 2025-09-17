@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import {
   allProductSections,
   cardData,
@@ -7,25 +10,25 @@ import {
   intantActionData,
   stackcardData,
 } from "./data"
-
-import {
-  CommanButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  CardProduct,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  FaqSection,
-  StepsSection,
-  Heading,
-  AllProducts,
-} from "@/src/components"
-
-import { mealCardImage, heroCardImg } from "."
-
 import faqData from "./faq-data"
-import { Metadata } from "next"
+
+//components
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import LogoSlider from "@/src/components/logo-slider"
+import CardProduct from "@/src/components/card-product"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import FaqSection from "@/src/components/faq-section"
+import Heading from "@/src/components/heading"
+import AllProducts from "@/src/components/all-products"
+import CardStacking from "@/src/components/card-stacking"
+
+import { CommanButton, StepsSection } from "@/src/components"
+
+//helpers
+import { mealCardImage, heroCardImg } from "./img"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -55,7 +58,10 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const InstantCardManagement = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>

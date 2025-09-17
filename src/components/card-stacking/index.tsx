@@ -1,11 +1,11 @@
 "use client"
-
 import React, { useRef, useEffect, useState, memo } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
+
 import styles from "./cardStacking.module.scss"
-import { DynamicHeading } from ".."
+import DynamicHeading from "../dynamic-heading"
 
 interface HeadingPart {
   title: string
@@ -18,12 +18,14 @@ export interface CardStackingProps {
   cards: {
     color: string
     content: React.ReactNode
-    heading?: HeadingPart[] // Optional heading per card (if needed elsewhere)
+    heading?: HeadingPart[]
   }[]
-  heading?: HeadingPart[] // Add heading prop for the section
+  heading?: HeadingPart[]
 }
 
 const CardStacking: React.FC<CardStackingProps> = ({ cards, heading }) => {
+  //
+
   const container = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement[]>([])
   const [isDesktop, setIsDesktop] = useState<boolean>(false)

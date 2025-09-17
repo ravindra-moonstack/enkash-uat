@@ -10,7 +10,7 @@ import {
   parksIcon4,
   parksIcon5,
   parksIcon6,
-} from "."
+} from "./img"
 
 const HomePageRewardsVouchersSlide = [
   {

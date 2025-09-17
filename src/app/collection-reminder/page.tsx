@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
 import {
   allInOnePolicies,
@@ -12,24 +14,22 @@ import {
   LogoSlider,
   CustomBreadcrumb,
   PolicyCard,
-  RectangleButton,
+  CommanButton,
   AllInOnePolicy,
   FaqSection,
   ManagementCard,
   CardStacking,
 } from "@/src/components"
+
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
   activationIcon,
-} from "."
+} from "./img"
 
-import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -41,6 +41,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/collection-reminder/`,
   },
 })
+
 const salesUrl = getSalesUrl("/collection-reminder")
 
 const showScroll = cardsData.length > 3
@@ -59,7 +60,10 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const CollectionReminders = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -136,7 +140,7 @@ const CollectionReminders = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -288,7 +292,7 @@ const CollectionReminders = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommanButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -380,11 +384,10 @@ const CollectionReminders = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+           arrow
               url={salesUrl}
             />
           </div>

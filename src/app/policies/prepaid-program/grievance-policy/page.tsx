@@ -1,19 +1,24 @@
 import React from "react"
-import styles from "./page.module.scss"
 import { Metadata } from "next"
+
+import styles from "./page.module.scss"
 import generateMetaData from "@/src/utils/metaData"
-import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
+
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
 
 export const metadata: Metadata = generateMetaData({
   title: "Prepaid Program Grievance and Redressal Policy: EnKash",
   description:
     "Find clear steps for addressing prepaid instrument issues with accuracy and fairness.",
   alternates: {
-    canonical: `${process.env.URL}/policies/prepaid-programe/grievance-policy`,
+    canonical: `${process.env.URL}/policies/prepaid-program/grievance-policy`,
   },
 })
 
-const grievancePolicy = () => {
+const GrievancePolicy = (): React.JSX.Element => {
+ 
+
   return (
     <>
       <div className={styles.parent_container}>
@@ -25,7 +30,7 @@ const grievancePolicy = () => {
                 { name: "Policies", url: "/policies" },
                 {
                   name: "Prepaid Program",
-                  url: "/policies/prepaid-programe",
+                  url: "/policies/prepaid-program",
                 },
                 {
                   name: "Grievance and Redressal Policy",
@@ -866,4 +871,4 @@ const grievancePolicy = () => {
   )
 }
 
-export default grievancePolicy
+export default GrievancePolicy

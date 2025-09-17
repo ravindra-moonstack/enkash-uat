@@ -15,7 +15,7 @@ import {
 } from "@/src/components"
 
 // helpers
-import { location, logo } from "."
+import { location, logo } from "./img"
 import { contactData, locationData, testimonialData } from "./data"
 import generateMetaData from "@/src/utils/metaData"
 

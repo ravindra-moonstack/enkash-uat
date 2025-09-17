@@ -2,10 +2,10 @@
 
 import type React from "react"
 import Image from "next/image"
-import PartnershipSlider from "./PartnershipSlider"
+import PartnershipSlider from "."
 
 import "./PartnershipSection.scss"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 import RectangleButton from "../buttons/rectangle-button"
 
 interface SlideData {

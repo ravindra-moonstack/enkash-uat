@@ -6,8 +6,8 @@ import styles from "./page.module.scss"
 import reachOutImg from "@/public/images/SubtractImg.webp"
 import needIcon from "./img/need.svg"
 
-import { DynamicHeading } from "@/src/components"
-import generateMetaData from "@/src/utils/metaData"
+import DynamicHeading from "@/components/dynamic-heading"
+import generateMetaData from "@/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Thank You for Contact Our Sales Team",

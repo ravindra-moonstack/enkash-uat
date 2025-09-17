@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image" // Next.js optimized Image component
 import styles from "./UtilityBillPayments.module.scss" // Import styles from a CSS/SCSS module
 import Link from "next/link"
-import DynamicHeading from "../dynamic-heading/dynamic-heading"
+import DynamicHeading from "../dynamic-heading"
 
 interface UtilityBillPaymentsProps {
   title: string

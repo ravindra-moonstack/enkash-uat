@@ -1,5 +1,5 @@
-import { Voucher } from "@/src/app/vouchers/data/voucher-data"
-import { FAQProps } from "@/src/components/faq-new/faq"
+import { TVoucher } from "@/src/app/vouchers/data/voucher-data"
+import { TFAQProps } from "../types/faq"
 
 interface MetadataInput {
   title: string
@@ -7,7 +7,7 @@ interface MetadataInput {
   alternates: {
     canonical: string
   }
-  faqData?: Array<FAQProps>
+  faqData?: Array<TFAQProps>
 }
 
 export interface BreadcrumbItem {
@@ -116,7 +116,7 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
   }
 }
 
-export const generateVoucherSchema = (voucher: Voucher): string => {
+export const generateVoucherSchema = (voucher: TVoucher): string => {
   const baseUrl = process.env.URL
 
   const schema = {

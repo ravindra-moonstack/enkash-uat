@@ -21,7 +21,7 @@ import {
   streamlinedReimbursementIcon,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
-} from "."
+} from "./img"
 
 const cardData = [
   {
