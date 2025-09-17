@@ -32,7 +32,7 @@ import {
   wideAcceptanceNetworkIcon,
 } from "./img"
 
-import { fleetCardImg } from "../digital-marketing-card"
+import { fleetCardImg } from "../digital-marketing-card/img"
 import { payrollCardImg } from "../fuel-card/img"
 
 const intantActionData = [
