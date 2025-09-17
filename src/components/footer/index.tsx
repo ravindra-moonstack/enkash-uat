@@ -421,7 +421,7 @@ const FooterV2 = (): React.JSX.Element => {
                 className="me-3 mb-3"
               />
             </Link>
-            <div className={`row gap-3  ${styles.light_bg}`}>
+            <div className={`row gap-3 flex-nowrap ${styles.light_bg}`}>
               {/* 2nd col */}
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <Link href="/products/collect-payments">
