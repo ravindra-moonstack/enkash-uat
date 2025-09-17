@@ -1,3 +1,4 @@
+import { TProductCategory } from "@/src/types"
 import {
   budgetAndAndvances,
   budgetAndAndvancesFilled,
@@ -12,7 +13,7 @@ import {
   pettyCash,
 } from ".."
 
-const expenseProducts = [
+const expenseProducts: TProductCategory[] = [
   {
     name: "Expense Managment",
     description: "Flexible prepaid card solutions",

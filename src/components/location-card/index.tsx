@@ -1,6 +1,7 @@
-import Image, { StaticImageData } from "next/image"
-import styles from "./location-card.module.scss"
 import { ReactNode } from "react"
+import Image, { StaticImageData } from "next/image"
+
+import styles from "./location-card.module.scss"
 import DynamicHeading from "../dynamic-heading"
 
 export interface CardProps {
@@ -16,6 +17,8 @@ const LocationCard = ({
   cardImage,
   title2,
 }: CardProps) => {
+  //
+
   return (
     <div className={`d-flex flex-column text-start ${styles.card_body} `}>
       <div className="d-flex flex-column flex-grow-1">

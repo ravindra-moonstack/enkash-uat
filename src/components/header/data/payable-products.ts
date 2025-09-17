@@ -1,3 +1,4 @@
+import { TSubProduct } from "@/src/types"
 import {
   vendorPayment,
   vendorPaymentFilled,
@@ -21,10 +22,9 @@ import {
   vendorManagementFilled,
 } from ".."
 
-const payableProducts = [
+const payableProducts: TSubProduct[] = [
   {
     subtitle: "Default",
-    link: "/products/make-payments",
     subtitleLink: "/products/make-payments",
     currentHeading: {
       name: "Make Payments",

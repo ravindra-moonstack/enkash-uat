@@ -1,3 +1,4 @@
+import { TSubProduct } from "@/src/types"
 import {
   virtualAccounts,
   virtualAccountsFilled,
@@ -33,7 +34,7 @@ import {
   autoReconciliationFilled,
 } from ".."
 
-const ReceivableProducts = [
+const ReceivableProducts: TSubProduct[] = [
   {
     subtitle: "Default",
     subtitleLink: "/products/collect-payments",
@@ -48,7 +49,6 @@ const ReceivableProducts = [
         imageSrc: paymentGateway,
         imageSrcHovered: paymentGatewayFilled,
         link: "/payment-gateway",
-        new: true,
       },
       {
         name: "Bulk Collect",
@@ -85,8 +85,6 @@ const ReceivableProducts = [
         imageSrc: upiPayments,
         imageSrcHovered: upiPaymentsFilled,
         link: "/upi-payments",
-        new: false,
-        comingSoon: false,
       },
       {
         name: "e-NACH",
@@ -115,8 +113,6 @@ const ReceivableProducts = [
         imageSrc: qrCode,
         imageSrcHovered: qrCodeFilled,
         link: "/qr-code",
-        new: false,
-        comingSoon: false,
       },
       {
         name: "Subscriptions",

@@ -28,6 +28,8 @@ const AdidasCard: React.FC<AdidasCardProps> = ({
   backLogo,
   ourlayClass = "",
 }) => {
+  //
+
   return (
     <div className={`${styles.cordData}`}>
       <div
