@@ -1,13 +1,13 @@
-import { nameToUrl } from "@/src/utils"
-import VoucherData, { Voucher } from "../app/vouchers/data/voucher-data"
+import { nameToUrl } from "@/utils/stringUtils"
+import VoucherData, { TVoucher } from "../app/vouchers/data/voucher-data"
 
 const fetchVouchers = async (
   categoryName: string
 ): Promise<{
-  validVouchers: Voucher[]
+  validVouchers: TVoucher[]
   apiDiscounts: Record<string, string>
 }> => {
-  const localVouchers: Voucher[] = Object.values(VoucherData).filter(
+  const localVouchers: TVoucher[] = Object.values(VoucherData).filter(
     (voucher) => voucher.category === categoryName
   )
 

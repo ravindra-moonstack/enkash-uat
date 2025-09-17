@@ -1,7 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
 
-
 //data
 import { cardsData, paymentMethodData, payoutPolicies } from "./data"
 import faqData from "./faq-data"
@@ -16,17 +15,11 @@ import {
   AllInOnePolicy,
   FeatureCard,
   FaqSection,
-  BankLogoSlider
+  BankLogoSlider,
 } from "@/src/components"
 
-
 //helpers
-import {
-  groupIcon,
-  paymentSummary,
-  mealCardImage,
-  
-} from "."
+import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
 import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"

@@ -1,4 +1,4 @@
-import { Voucher } from "@/src/app/vouchers/data/voucher-data"
+import { TVoucher } from "@/src/app/vouchers/data/voucher-data"
 import { FAQProps } from "@/src/components/faq-new/faq"
 
 interface MetadataInput {
@@ -116,7 +116,7 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
   }
 }
 
-export const generateVoucherSchema = (voucher: Voucher): string => {
+export const generateVoucherSchema = (voucher: TVoucher): string => {
   const baseUrl = process.env.URL
 
   const schema = {
