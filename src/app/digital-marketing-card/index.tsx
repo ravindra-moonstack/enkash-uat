@@ -1,5 +1,3 @@
-export { default as whiteArrow } from "./img/white-arrow.png"
-export { default as blueArrow } from "./img/blue-arrrow.svg"
 
 export { default as mealCardImg } from "./img/meal-card.png"
 export { default as fuelCardImg } from "./img/fuel-card.svg"

@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./rewards-carousel.module.scss"
 import Marquee from "react-fast-marquee"
-import CardProduct from "../card-product/card-product"
+import CardProduct from "../card-product"
 import { StaticImageData } from "next/image"
 
 export type RewardsCarouselDataProp = {

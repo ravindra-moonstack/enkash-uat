@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import {
   allInOnePolicies,
   cardsData,
@@ -7,29 +10,34 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
+
+
+//components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
   PolicyCard,
-  RectangleButton,
+  CommanButton,
   ManagementCard,
   AllInOnePolicy,
   FaqSection,
   CardStacking,
 } from "@/src/components"
+
+
+//helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
   activationIcon,
 } from "."
 
-import { Metadata } from "next"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -136,7 +144,7 @@ const InstantSettlement = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -295,7 +303,7 @@ const InstantSettlement = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommanButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -387,11 +395,10 @@ const InstantSettlement = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+             arrow
               url={salesUrl}
             />
           </div>

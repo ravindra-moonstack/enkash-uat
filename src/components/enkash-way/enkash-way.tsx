@@ -1,17 +1,12 @@
 "use client"
-
 import React, { memo, useState } from "react"
 import Image, { StaticImageData } from "next/image"
 
 import styles from "./enkash-way.module.scss"
 
-import arrowUpImg from "./img/arrowup.svg"
-import arrowDownImg from "./img/arrowdown.svg"
-
-import RectangleButton from "../buttons/rectangle-button"
+import CommonButton from "../buttons"
 import DynamicHeading from "../dynamic-heading"
-
-import { blueArrow, whiteArrow } from "."
+import { FaArrowDown, FaArrowUp } from "react-icons/fa6"
 
 interface EnkashWayProps {
   progressData: {
@@ -38,7 +33,9 @@ const EnkashWay = ({
   subTitle,
   progressItemPadding,
 }: EnkashWayProps) => {
-  const [selectedItemIndex, setSelectedItemIndex] = useState(0)
+  //
+
+  const [selectedItemIndex, setSelectedItemIndex] = useState<number>(0)
   const selectedItem = progressData[selectedItemIndex]
 
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -172,15 +169,14 @@ const EnkashWay = ({
 
               {selectedItem.url && (
                 <div className={`${styles.list_button}`}>
-                  <RectangleButton
+                  <CommonButton
                     title={
                       selectedItem.buttonText
                         ? selectedItem.buttonText
                         : "Learn More"
                     }
                     theme="border-gray"
-                    actionImage={blueArrow}
-                    hoverImage={whiteArrow}
+                    arrow
                     url={selectedItem.url}
                   />
                 </div>
@@ -255,12 +251,8 @@ const EnkashWay = ({
                     >
                       {data.title}
                     </p>
-                    <Image
-                      src={isOpen ? arrowUpImg : arrowDownImg}
-                      alt={isOpen ? "Arrow up" : "Arrow down"}
-                      width={24}
-                      height={24}
-                    />
+
+                    {isOpen ? <FaArrowUp /> : <FaArrowDown />}
                   </div>
 
                   {isOpen && (

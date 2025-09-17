@@ -3,7 +3,7 @@ import styles from "./page.module.scss"
 import { Metadata } from "next"
 import { cardType, intantActionData, stackcardData } from "./data"
 import {
-  RectangleButton,
+  CommanButton,
   CustomBreadcrumb,
   LogoSlider,
   CardProduct,
@@ -107,7 +107,7 @@ const FuelCards = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
+              <CommanButton
                 title="Get Started"
                 theme="blue"
                 url={salesUrl}

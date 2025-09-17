@@ -1,3 +1,4 @@
+import { TProductCategory } from "@/src/types"
 import {
   paymentLinks,
   paymentLinksFilled,
@@ -47,7 +48,7 @@ import {
   digitalInvoiceFilled,
 } from ".."
 
-export const motherProducts = [
+export const motherProducts: TProductCategory[] = [
   {
     name: "Collect Payments",
     description: "Fastest & secure payment gateway offerings",
@@ -152,7 +153,7 @@ export const motherProducts = [
     name: "Make Payments",
     description: "Manage all types of business payments",
     link: "/products/make-payments",
-    payableProducts: [
+    subProducts: [
       {
         subtitle: "Default",
         subtitleLink: "/products/make-payments",
@@ -217,7 +218,7 @@ export const motherProducts = [
     name: "Payable & Receivable+",
     description: "Manage all types of business payments",
 
-    payableProducts: [
+    subProducts: [
       {
         subtitle: "Default",
         subtitleLink: "/products/make-payments",

@@ -4,7 +4,7 @@ import { Metadata } from "next"
 import styles from "./page.module.scss"
 import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
-import { blueArrow, groupIcon, paymentSummary, mealCardImage } from "./img"
+import {  groupIcon, paymentSummary, mealCardImage } from "./img"
 
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
@@ -17,6 +17,7 @@ import AllInOnePolicy from "@/src/components/all-in-one-policy"
 
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import { CommanButton } from "@/src/components"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate and Track your Vendor Payments ",
@@ -286,10 +287,10 @@ const VendorPayment = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started  "
               theme="outline-blue"
-              actionImage={blueArrow}
+              arrow
               url={salesUrl}
             />
           </div>
