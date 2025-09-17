@@ -1,6 +1,7 @@
+import { TFAQProps } from "@/src/types/faq"
 import Link from "next/link"
 
-const faqData = [
+const faqData: TFAQProps[] = [
   {
     question: "Do I need to switch banks to use EnKash Connected Banking?",
     answer: [

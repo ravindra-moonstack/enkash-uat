@@ -10,6 +10,7 @@ type Category = {
 type Categories = {
   [key: string]: Category
 }
+
 export const CategoryData: Categories = {
   "e-commerce-vouchers": {
     name: "e-commerce",

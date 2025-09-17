@@ -1,17 +1,23 @@
-import { DynamicHeading } from "@/src/components"
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
+
+import DynamicHeading from "@/src/components/dynamic-heading"
 import reachOutImg from "@/public/images/SubtractImg.webp"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
+
 export const metadata: Metadata = generateMetaData({
   title: "Thank You for Your Support Request",
   description:
     "Your support request is logged! Our team will contact you soon to resolve your issue quickly and efficiently.",
   alternates: { canonical: `${process.env.URL}/confirmation-support/` },
 })
-const ConfirmationSupport = () => {
+
+const ConfirmationSupport = (): React.JSX.Element => {
+  //
+
   return (
     <div>
       <div className={`${styles.thankyouPage}`}>

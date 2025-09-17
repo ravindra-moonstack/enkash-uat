@@ -25,7 +25,7 @@ import {
   realTimeIcon,
   hundredPercentIcon,
   activationIcon,
-} from "."
+} from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"

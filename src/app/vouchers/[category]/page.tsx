@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import styles from "./page.module.scss"
-import VoucherData, { Voucher } from "../data/voucher-data"
+import VoucherData, { TVoucher } from "../data/voucher-data"
 import {
   blueStepTick,
   corporateNeed,
@@ -27,7 +27,7 @@ export async function generateMetadata({
 }) {
   const { category } = await params
 
-  const voucher: Voucher = VoucherData[category]
+  const voucher: TVoucher = VoucherData[category]
 
   if (!voucher) {
     return {
@@ -84,9 +84,9 @@ const sanitizeUTM = (utm: string): string => {
   return utm
 }
 
-const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
+const fetchVoucher = async (voucherName: string): Promise<TVoucher | null> => {
   // local voucher
-  const localVoucher: Voucher | any = VoucherData[voucherName]
+  const localVoucher: TVoucher | any = VoucherData[voucherName]
 
   if (!localVoucher) {
     return null
