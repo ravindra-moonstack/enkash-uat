@@ -5,14 +5,16 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 
 import styles from "./faq-section.module.scss"
-import { DynamicHeading, FAQHtml } from ".."
+
+import { FAQHtml } from "../faq-new"
+import DynamicHeading from "../dynamic-heading"
 
 interface FaqSectionProps {
   faqData: any
   connectText?: string
 }
 
-const FaqSectionWithSource = ({
+const FaqSection = ({
   faqData,
   connectText = "Connect with us",
 }: FaqSectionProps): React.JSX.Element => {
@@ -84,4 +86,4 @@ const FaqSectionWithSource = ({
   )
 }
 
-export default FaqSectionWithSource
+export default FaqSection

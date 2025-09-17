@@ -5,7 +5,29 @@ import crouselIconFour from "./img/crouselIconFour.svg"
 import crouselIconFive from "./img/crouselIconFive.svg"
 import crouselIconSix from "./img/crouselIconSix.svg"
 
-import { advancedImage, designedIcon, notificationImage, optimizedIcon, paymentLinkImage, paymentOptionImage, payrollImg, scrollIconOne, scrollIconThree, scrollIconTwo, secureImage, shareImage, taskIconEight, taskIconFive, taskIconFour, taskIconNine, taskIconOne, taskIconSeven, taskIconSix, taskIconThree, taskIconTwo } from "."
+import {
+  advancedImage,
+  designedIcon,
+  notificationImage,
+  optimizedIcon,
+  paymentLinkImage,
+  paymentOptionImage,
+  payrollImg,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  secureImage,
+  shareImage,
+  taskIconEight,
+  taskIconFive,
+  taskIconFour,
+  taskIconNine,
+  taskIconOne,
+  taskIconSeven,
+  taskIconSix,
+  taskIconThree,
+  taskIconTwo,
+} from "./img"
 
 const cardsData = [
   {

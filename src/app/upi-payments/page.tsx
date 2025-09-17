@@ -2,7 +2,6 @@ import Image from "next/image"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
 
-
 // data
 import {
   allInOnePolicyData,
@@ -25,9 +24,7 @@ import {
   FeatureCard,
   FaqSection,
   CardStacking,
-
 } from "@/src/components"
-
 
 // helpers
 import {
@@ -36,8 +33,7 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
-} from "."
-
+} from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"

@@ -1,14 +1,7 @@
-// Auto-generated FAQ data
-export type FAQ = {
-  question: string
-  answer: {
-    heading: string
-    bullets?: string[]
-  }[]
-}
+import { TFAQProps } from "@/src/types/faq"
 
 export type VoucherFaq = {
-  faqData: FAQ[]
+  faqData: TFAQProps[]
 }
 
 export const VoucherFaqData: Record<string, VoucherFaq> = {

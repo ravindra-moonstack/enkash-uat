@@ -5,7 +5,19 @@ import crouselIconFour from "./img/crouselIconFour.svg"
 import crouselIconFive from "./img/crouselIconFive.svg"
 import crouselIconSix from "./img/crouselIconSix.svg"
 
-import { notificationImage, paymentLinkImage, paymentOptionImage, scrollIconOne, scrollIconThree, scrollIconTwo, shareImage, taskIconFour, taskIconOne, taskIconThree, taskIconTwo } from "."
+import {
+  notificationImage,
+  paymentLinkImage,
+  paymentOptionImage,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  shareImage,
+  taskIconFour,
+  taskIconOne,
+  taskIconThree,
+  taskIconTwo,
+} from "./img"
 
 const cardsData = [
   {
@@ -114,6 +126,6 @@ const allInOnePolicyData = [
     maxImageHeight: "259px",
     reverse: true,
   },
-];
+]
 
 export { cardsData, allProductSections, allInOnePolicyData }

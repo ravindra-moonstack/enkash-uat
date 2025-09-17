@@ -3,27 +3,16 @@ import Image from "next/image"
 
 import styles from "./faq.module.scss"
 import arrowDown from "./img/arrow-down.svg"
-
-export interface FAQProps {
-  question: string
-  answerHTML?: React.ReactNode
-  answer?: {
-    heading?: string
-    bullets?: string[]
-  }[]
-  answerVisible?: boolean
-  onToggleAnswerVisibility?: () => void
-  index: number
-}
+import { TFAQProps } from "@/src/types/faq"
 
 const FAQ = ({
   question,
-  index,
+  index = 0,
   answer,
   answerVisible,
   answerHTML,
   onToggleAnswerVisibility,
-}: FAQProps) => {
+}: TFAQProps) => {
   //
 
   const timerRef = useRef<NodeJS.Timeout | null>(null)

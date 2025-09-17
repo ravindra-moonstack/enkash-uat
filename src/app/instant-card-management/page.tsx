@@ -13,19 +13,17 @@ import {
 import faqData from "./faq-data"
 
 //components
-import {
-  CommanButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  CardProduct,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  FaqSection,
-  StepsSection,
-  Heading,
-  AllProducts,
-} from "@/src/components"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import LogoSlider from "@/src/components/logo-slider"
+import CardProduct from "@/src/components/card-product"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import FaqSection from "@/src/components/faq-section"
+import Heading from "@/src/components/heading"
+import AllProducts from "@/src/components/all-products"
+import CardStacking from "@/src/components/card-stacking"
+
+import { CommanButton, StepsSection } from "@/src/components"
 
 //helpers
 import { mealCardImage, heroCardImg } from "./img"
@@ -62,6 +60,8 @@ const cards = stackcardData.map((item, index) => ({
 }))
 
 const InstantCardManagement = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>

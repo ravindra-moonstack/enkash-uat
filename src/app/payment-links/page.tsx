@@ -1,19 +1,22 @@
 import Image from "next/image"
+import { Metadata } from "next"
+
 import styles from "./page.module.scss"
 import { cardsData, managementCards, policies } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  RectangleButton,
-  ManagementCard,
-  SecondFaqHtml,
-  PaymentLinkTab,
-  AllInOnePolicy,
-  FaqSection,
-} from "@/src/components"
+
+// components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import PolicyCard from "@/src/components/policy-card"
+import RectangleButton from "@/src/components/buttons/rectangle-button"
+import ManagementCard from "@/src/components/management-card"
+import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
+import PaymentLinkTab from "@/src/components/payment-link-tabs/payment-link-tab"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+
+import { FaqSection } from "@/src/components"
 import {
   blueArrow,
   groupIcon,
@@ -37,7 +40,6 @@ import bg4 from "./img/bg2.jpg"
 import bg5 from "./img/bg1.jpg"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Simple Payment Links to Accept Online Payments",
@@ -52,6 +54,8 @@ const salesUrl = getSalesUrl("/payment-links")
 const showScroll = cardsData.length > 3
 
 const PaymentLinks = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
