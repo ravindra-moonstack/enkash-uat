@@ -7,7 +7,7 @@ import { TFAQProps } from "@/src/types/faq"
 
 const FAQ = ({
   question,
-  index,
+  index = 0,
   answer,
   answerVisible,
   answerHTML,
