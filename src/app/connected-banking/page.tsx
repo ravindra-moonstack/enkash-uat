@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 //data
@@ -21,7 +22,8 @@ import {
 //helpers
 import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
-import { Metadata } from "next"
+
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
@@ -246,9 +248,9 @@ const ConnectedBanking = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <div>
+      
         <BankLogoSlider />
-      </div>
+      
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
