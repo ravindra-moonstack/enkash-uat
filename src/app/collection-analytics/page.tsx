@@ -64,6 +64,7 @@ const cards = stackcardData.map((item, index) => ({
   ),
 }))
 const CollectionAnalytics = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -359,6 +360,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <CardStacking
@@ -376,6 +378,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
           />
         </div>
       </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -402,6 +405,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
+      
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div
