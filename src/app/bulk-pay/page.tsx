@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 //data
@@ -28,7 +29,7 @@ import {
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Bulk Payment: Smart, Fast & Secure Payouts ",
@@ -43,6 +44,8 @@ const salesUrl = getSalesUrl("/bulk-pay")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const BulkPay = (): React.JSX.Element => {
+
+  //
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -225,6 +228,7 @@ const BulkPay = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center max-w-auto`}>
           <div className={``}>
