@@ -22,3 +22,7 @@ export { default as taskIconThree } from "./task-icon-three.svg"
 export { default as taskIconFour } from "./task-icon-four.svg"
 export { default as taskIconFive } from "./task-icon-five.svg"
 export { default as taskIconSix } from "./task-icon-six.svg"
+
+export { default as cards } from "./credit-debit-cards.svg"
+export { default as upi } from "./upi.svg"
+export { default as netBanking } from "./net-banking.svg"

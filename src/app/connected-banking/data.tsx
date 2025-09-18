@@ -1,6 +1,4 @@
-import cards from "./img/credit-debit-cards.svg"
-import upi from "./img/upi.svg"
-import netBanking from "./img/net-banking.svg"
+
 import {
   MaintainCompleteControl,
   notificationImage,
@@ -19,6 +17,9 @@ import {
   taskIconSix,
   taskIconThree,
   taskIconTwo,
+  netBanking,
+  upi,
+  cards
 } from "./img"
 
 
