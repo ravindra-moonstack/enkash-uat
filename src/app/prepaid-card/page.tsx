@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//components
 import {
   RectangleButton,
   CustomBreadcrumb,
@@ -10,11 +13,16 @@ import {
   FaqSection,
   CommanButton,
 } from "@/src/components"
+
 import { heroCardImg } from "./img"
-import { faqData } from "./faq-data"
 import EnkashWay from "@/src/components/enkash-way/enkash-way"
+
+//data
 import { progressData, stackcardData } from "./data"
-import { Metadata } from "next"
+import { faqData } from "./faq-data"
+
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -44,6 +52,7 @@ const cards = stackcardData.map((item, index) => ({
   ),
 }))
 const PrepaidCard = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>
