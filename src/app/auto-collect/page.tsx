@@ -4,6 +4,8 @@ import styles from "./page.module.scss"
 // data
 import { allInOnePolicies, cardsData, managementCards } from "./data"
 import faqData from "./faq-data"
+
+//components
 import {
   DynamicHeading,
   LogoSlider,

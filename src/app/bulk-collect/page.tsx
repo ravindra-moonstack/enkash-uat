@@ -1,7 +1,12 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
+
+//data
 import { allInOnePolicyData, cardsData, managementCardData } from "./data"
 import faqData from "./faq-data"
+
+//components
 import {
   DynamicHeading,
   LogoSlider,
@@ -12,6 +17,9 @@ import {
   ManagementCard,
   FaqSection,
 } from "@/src/components"
+
+
+//helpers
 import {
   groupIcon,
   paymentSummary,
@@ -20,7 +28,9 @@ import {
   realTimeIcon,
   smartIcon,
 } from "./img"
-import { Metadata } from "next"
+
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -37,6 +47,7 @@ const salesUrl = getSalesUrl("/bulk-collect")
 const showScroll = cardsData.length > 3
 
 const BulkCollect = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
