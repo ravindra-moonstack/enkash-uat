@@ -155,4 +155,4 @@ const allInOnePolicyData = [
   },
 ]
 
-export { cardsData, allProductSections, allInOnePolicyData }
+export { allInOnePolicyData, allProductSections, cardsData}
