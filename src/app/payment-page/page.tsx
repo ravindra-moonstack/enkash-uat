@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import {
   allInOnePolicyData,
   allProductSections,
@@ -8,29 +11,33 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
+
+//components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
   PolicyCard,
-  RectangleButton,
   ManagementCard,
   AllInOnePolicy,
   AllProducts,
   FaqSection,
   CardStacking,
 } from "@/src/components"
+import CommonButton from "@/src/components/buttons"
+
+
+//helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   activationIcon,
   realTimeIcon,
 } from "./img"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
@@ -136,14 +143,14 @@ const PaymentPage = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
                       />
                     </div>
                     <div>
-                      <RectangleButton
+                      <CommonButton
                         title="API Doc"
                         theme="outline-blue"
                         url="https://docs.enkash.com/"
@@ -289,7 +296,7 @@ const PaymentPage = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommonButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -410,11 +417,10 @@ const PaymentPage = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommonButton
               title="Get Started  Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

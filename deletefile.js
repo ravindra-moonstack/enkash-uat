@@ -39,7 +39,7 @@ function cleanImageFolder(folderPath, allowedFiles) {
 }
  
 // === CONFIG ===
-const folderPath = path.resolve("./src/app/payment-gateway/img") // adjust as needed
+const folderPath = path.resolve("./src/app/payment-page/img") // adjust as needed
  
 // Detect index file (.ts or .tsx)
 const indexFile = fs.existsSync(path.join(folderPath, "index.ts"))
