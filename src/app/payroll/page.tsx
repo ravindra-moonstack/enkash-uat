@@ -1,26 +1,32 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import { allInOnePolicyData, cardsData } from "./data"
 import faqData from "./faq-data"
+
+//components
 import {
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
-  RectangleButton,
   AllInOnePolicy,
   ScrollableCardsSection,
   FaqSection,
 } from "@/src/components"
+
+//helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
 } from "./img"
+
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
+import CommonButton from "@/src/components/buttons"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payroll Management: Automate Salaries, Payouts & Compliance ",
@@ -34,6 +40,7 @@ const salesUrl = getSalesUrl("/payroll")
 
 const Payroll = (): React.JSX.Element => {
   return (
+    //
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
@@ -108,7 +115,7 @@ const Payroll = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -216,6 +223,7 @@ const Payroll = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className=" text-center">
@@ -231,11 +239,10 @@ const Payroll = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommonButton
               title="Get Started  "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>
