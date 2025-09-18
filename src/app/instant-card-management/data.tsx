@@ -1,4 +1,3 @@
-
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -199,9 +198,9 @@ const stackcardData = [
 ]
 
 export {
-  intantActionData,
-  cardType,
   allProductSections,
   cardData,
+  cardType,
+  intantActionData,
   stackcardData,
 }
