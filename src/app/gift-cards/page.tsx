@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import {
   allProductSections,
   cardData,
@@ -8,7 +11,10 @@ import {
   spendAnalyticsData,
   stackcardData,
 } from "./data"
+import faqData from "./faq-data"
 
+
+//components
 import {
   CommanButton,
   CustomBreadcrumb,
@@ -20,13 +26,15 @@ import {
   FaqSection,
   Heading,
   StepsSection,
+  AllProducts
 } from "@/src/components"
 
+
+//helpers
 import { mealCardImage, instantActionImg, heroCardImg } from "./img"
 
-import faqData from "./faq-data"
-import AllProducts from "@/src/components/all-products"
-import { Metadata } from "next"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -57,6 +65,7 @@ const cards = stackcardData.map(
   })
 )
 const GiftCards = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>

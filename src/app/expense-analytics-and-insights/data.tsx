@@ -164,4 +164,4 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
 ]
-export { cardData, expenseManagementData, stepCards, stackcardData }
+export { cardData, expenseManagementData, stackcardData, stepCards }
