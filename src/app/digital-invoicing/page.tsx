@@ -6,7 +6,6 @@ import { Metadata } from "next"
 import { allInOnePolicies, cardsData } from "./data"
 import faqData from "./faq-data"
 
-
 //components
 import {
   DynamicHeading,
@@ -18,7 +17,6 @@ import {
   FaqSection,
 } from "@/src/components"
 
-
 //helpers
 import {
   groupIcon,
@@ -26,8 +24,7 @@ import {
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
-} from "."
-
+} from "./img"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
@@ -46,6 +43,7 @@ const salesUrl = getSalesUrl("/digital-invoicing")
 const showScroll = cardsData.length > 3
 
 const DigitalInvoicing = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -358,6 +356,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -376,7 +375,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
             <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-           arrow
+              arrow
               url={salesUrl}
             />
           </div>
