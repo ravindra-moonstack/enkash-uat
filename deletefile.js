@@ -1,52 +1,32 @@
 import fs from "fs"
 import path from "path"
-
-
-const usedImages = [
-  "groupIcon.svg",
-  "heroImg.webp",
-  "collect-payment.webp",
-
-  "payment-link.webp",
-  "shareImg.webp",
-  "payment-option.webp",
-  "notification.webp",
-
-  "auto-collect.svg",
-  "instant-settlement.svg",
-  "remineder-engien.svg",
-
-  "scrollIconOne.svg",
-  "scrollIconTwo.svg",
-  "scrollIconThree.svg",
-
-  "task-icon-one.svg",
-  "task-icon-two.svg",
-  "task-icon-three.svg",
-  "task-icon-four.svg",
-
-  "payment-link.svg",
-  "qrCode.svg",
-  "pazment-button.svg",
-  "payment-gateway-img.svg",
-
-  "real-time.svg",
-  "100.svg",
-  "activation.svg",
-   "index.tsx",
-]
-
-
-
-
+ 
 /**
- * Delete all files in a directory except those in allowedFiles.
- * @param {string} folderPath - Path to the folder containing images
- * @param {string[]} allowedFiles - List of file names to keep
- */
+* Extracts image filenames from export statements in a file.
+* @param {string} filePath - Path to the index file containing exports
+* @returns {string[]} Array of image filenames
+*/
+function extractUsedImages(filePath) {
+  const content = fs.readFileSync(filePath, "utf-8")
+  const regex = /["']\.\/([^"']+\.(png|webp|svg))["']/g
+ 
+  const usedImages = []
+  let match
+  while ((match = regex.exec(content)) !== null) {
+    usedImages.push(match[1])
+  }
+ 
+  return usedImages
+}
+ 
+/**
+* Deletes all files in a folder except the ones in allowedFiles.
+* @param {string} folderPath - Path to folder
+* @param {string[]} allowedFiles - Files to keep
+*/
 function cleanImageFolder(folderPath, allowedFiles) {
   const files = fs.readdirSync(folderPath)
-
+ 
   files.forEach((file) => {
     if (!allowedFiles.includes(file)) {
       const filePath = path.join(folderPath, file)
@@ -57,8 +37,29 @@ function cleanImageFolder(folderPath, allowedFiles) {
     }
   })
 }
-
-// Example usage:
-// ⚠️ Be careful! This will delete files permanently
-const folderPath = path.resolve("./src/app/cashflow-analytics/img") // adjust to your images folder path
-cleanImageFolder(folderPath, usedImages)
+ 
+// === CONFIG ===
+const folderPath = path.resolve("./src/app/collection-analytics/img") // adjust as needed
+ 
+// Detect index file (.ts or .tsx)
+const indexFile = fs.existsSync(path.join(folderPath, "index.ts"))
+  ? "index.ts"
+  : fs.existsSync(path.join(folderPath, "index.tsx"))
+  ? "index.tsx"
+  : null
+ 
+if (!indexFile) {
+  console.error("❌ No index.ts or index.tsx found in folder:", folderPath)
+  process.exit(1)
+}
+ 
+const exportsFilePath = path.join(folderPath, indexFile)
+const usedImages = extractUsedImages(exportsFilePath)
+ 
+// Add the index file itself to the keep list
+const allowedFiles = [...usedImages, indexFile]
+ 
+// Run cleanup
+cleanImageFolder(folderPath, allowedFiles)
+ 
+ 

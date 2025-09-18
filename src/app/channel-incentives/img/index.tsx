@@ -1,9 +1,7 @@
-export { default as whiteArrow } from "./white-arrow.png"
 export { default as groupIcon } from "./groupIcon.png"
 export { default as paymentSummary } from "./heroImg.webp"
-export { default as blueArrow } from "./blue-arrrow.svg"
-
 export { default as mealCardImage } from "./collect-payment.webp"
+
 export { default as activationIcon } from "./activation.svg"
 export { default as realTimeIcon } from "./real-time.svg"
 export { default as PayoutIcon } from "./Layer_1.svg"
@@ -25,3 +23,4 @@ export { default as streamlinedReimbursementIcon } from "./streamlined-reimburse
 export { default as costControlSavingsIcon } from "./cost-control-savings-icon.svg"
 export { default as wideAcceptanceNetworkIcon } from "./wide-acceptance-network-icon.svg"
 export { default as stackCardSixIcon } from "./stackCard-six-icon.svg"
+
