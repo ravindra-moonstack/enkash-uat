@@ -26,15 +26,16 @@ const usedImages = [
   "task-icon-four.svg",
 
   "payment-link.svg",
-  "payment-page.svg",
   "qrCode.svg",
   "pazment-button.svg",
+  "payment-gateway-img.svg",
 
-  "activation.svg",
   "real-time.svg",
-  "smartIcon.svg",
-  "index.tsx",
+  "100.svg",
+  "activation.svg",
+   "index.tsx",
 ]
+
 
 
 
@@ -59,5 +60,5 @@ function cleanImageFolder(folderPath, allowedFiles) {
 
 // Example usage:
 // ⚠️ Be careful! This will delete files permanently
-const folderPath = path.resolve("./src/app/bulk-collect/img") // adjust to your images folder path
+const folderPath = path.resolve("./src/app/cashflow-analytics/img") // adjust to your images folder path
 cleanImageFolder(folderPath, usedImages)

@@ -27,7 +27,7 @@ import {
   activationIcon,
   realTimeIcon,
   PayoutIcon,
-} from "."
+} from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -41,6 +41,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/channel-incentives/`,
   },
 })
+
 const salesUrl = getSalesUrl("/channel-incentives")
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
@@ -58,7 +59,9 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const ChannelIncentives = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
