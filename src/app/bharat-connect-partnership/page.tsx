@@ -1,8 +1,9 @@
 import React from "react"
 import { Metadata } from "next"
-
 import styles from "./page.module.scss"
 
+
+//data
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -11,6 +12,9 @@ import {
   stepsData,
 } from "./data"
 import faqData from "./faq-data"
+
+
+//components
 import {
   BecomePartnerSteps,
   BpHeroSection,
@@ -21,7 +25,11 @@ import {
   FaqSection,
   BankAffiliatePartnershipForm,
 } from "@/src/components"
+
+//helpers
 import { containerScreen, participantBg } from "./img"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({

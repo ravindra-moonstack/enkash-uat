@@ -2,6 +2,8 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
+
+//data
 import {
   allInOnePolicies,
   cardsData,
@@ -9,6 +11,9 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
+
+
+//components
 import {
   DynamicHeading,
   LogoSlider,
@@ -20,6 +25,8 @@ import {
   ManagementCard,
   CommanButton,
 } from "@/src/components"
+
+//helpers
 import {
   groupIcon,
   paymentSummary,
@@ -28,6 +35,9 @@ import {
   hundredPercentIcon,
   activationIcon,
 } from "./img"
+
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -362,6 +372,7 @@ const AutoReconciliation = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <CardStacking
@@ -375,6 +386,7 @@ const AutoReconciliation = (): React.JSX.Element => {
           />
         </div>
       </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -401,6 +413,7 @@ const AutoReconciliation = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
+      
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div

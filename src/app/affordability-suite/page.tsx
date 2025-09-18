@@ -19,7 +19,7 @@ import {
 } from "@/src/components"
 
 // helpers
-import { groupIcon, paymentSummary, mealCardImage } from "."
+import { groupIcon, paymentSummary, mealCardImage } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
@@ -140,7 +140,7 @@ const AffordabilitySuite = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
+
       <LogoSlider />
 
       <div className={styles.third_row}>
