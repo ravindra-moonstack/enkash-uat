@@ -364,6 +364,7 @@ const InstantSettlement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <CardStacking
@@ -377,6 +378,7 @@ const InstantSettlement = (): React.JSX.Element => {
           />
         </div>
       </div>
+      
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
