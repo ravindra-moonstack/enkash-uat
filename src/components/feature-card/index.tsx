@@ -10,7 +10,7 @@ export interface CardProps {
   url?: string
   titleHtml?: ReactNode
   title2?: string
-  description: string
+  description?: string
   cardImage?: string | StaticImageData | undefined
   padding?: string
   hoverClass?: string

@@ -16,7 +16,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 export interface CardStackingProps {
   cards: {
-    color: string
     content: React.ReactNode
     heading?: HeadingPart[]
   }[]

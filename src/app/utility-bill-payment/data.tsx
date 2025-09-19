@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   notificationImage,
   optimizedIcon,
@@ -58,11 +59,9 @@ const allProductSections = [
       },
       {
         title: "Flexible Payments ",
-
         description: "Partial payments, bulk payments, or auto-pay options.",
         image: crouselIconTwo,
       },
-
       {
         title: "Security First ",
         description:
@@ -71,7 +70,6 @@ const allProductSections = [
       },
       {
         title: "Centralized Insights",
-
         description: "Consolidated view of all bills and payment history.",
         image: crouselIconFour,
       },
@@ -86,7 +84,7 @@ const allProductSections = [
   },
 ]
 
-const allInOnePolicyData = [
+const allInOnePolicyData: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "One Dashboard for All Bills",

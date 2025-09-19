@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
 })
 const salesUrl = getSalesUrl("/utility-bill-payment")
 const showScroll = cardsData.length > 3
-const mergedCards = allProductSections.flatMap((section) => section.items)
+const mergedCards = allProductSections.flatMap((section) => section?.items)
 
 const UtilityBillPayment = (): React.JSX.Element => {
   return (

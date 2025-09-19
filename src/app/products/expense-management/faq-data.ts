@@ -1,7 +1,8 @@
-export const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
-    question:
-      "What is an expense management platform, and how does it work?",
+    question: "What is an expense management platform, and how does it work?",
     answer: [
       {
         heading:
@@ -20,8 +21,7 @@ export const faqData = [
     ],
   },
   {
-    question:
-      "How does EnKash help with GST compliance?",
+    question: "How does EnKash help with GST compliance?",
     answer: [
       {
         heading:
@@ -57,7 +57,8 @@ export const faqData = [
     ],
   },
   {
-    question: "Is the platform suitable for startups, SMEs, and large enterprises?",
+    question:
+      "Is the platform suitable for startups, SMEs, and large enterprises?",
     answer: [
       {
         heading:
@@ -84,7 +85,8 @@ export const faqData = [
     ],
   },
   {
-    question: "Can I set different expense limits or policies for different departments or roles?",
+    question:
+      "Can I set different expense limits or policies for different departments or roles?",
     answer: [
       {
         heading:

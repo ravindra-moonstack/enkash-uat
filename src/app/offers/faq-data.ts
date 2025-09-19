@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "What are offers?",
     answer: [
@@ -12,8 +14,7 @@ const faqData = [
     question: "How to avail these offers?",
     answer: [
       {
-        heading:
-          "To access these offers on EnKash, follow these steps:",
+        heading: "To access these offers on EnKash, follow these steps:",
         bullets: [
           "Login to EnKash and complete your KYC.",
           "Visit the Partnered Services section on the dashboard.",
@@ -24,7 +25,8 @@ const faqData = [
     ],
   },
   {
-    question: "Are there any terms and conditions associated with these offers?",
+    question:
+      "Are there any terms and conditions associated with these offers?",
     answer: [
       {
         heading:
@@ -86,6 +88,6 @@ const faqData = [
       },
     ],
   },
-];
+]
 
-export default faqData;
+export default faqData

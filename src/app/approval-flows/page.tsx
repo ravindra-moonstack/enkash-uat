@@ -22,12 +22,10 @@ import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import ManagementCard from "@/src/components/management-card"
 
-
 // helpers
 import { groupIcon, paymentSummary } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Approval System: Streamline & Automate Approvals",
@@ -40,7 +38,6 @@ export const metadata: Metadata = generateMetaData({
 
 const salesUrl = getSalesUrl("/approval-flows")
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

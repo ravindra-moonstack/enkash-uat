@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "Who can join the EnKash partner program?",
     answer: [
@@ -73,5 +75,5 @@ const faqData = [
       },
     ],
   },
-];
-export default faqData;
+]
+export default faqData

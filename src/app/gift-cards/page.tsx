@@ -13,7 +13,6 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-
 //components
 import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
@@ -27,15 +26,12 @@ import CardProduct from "@/src/components/card-product"
 import AllProducts from "@/src/components/all-products"
 import Heading from "@/src/components/heading"
 
-
 //helpers
 import { mealCardImage, instantActionImg, heroCardImg } from "./img"
-
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Gift Cards for Business: Reward Employees & Partners",

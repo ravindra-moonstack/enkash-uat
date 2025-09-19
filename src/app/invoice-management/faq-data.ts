@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "What is invoice management?",
     answer: [
@@ -25,7 +27,8 @@ const faqData = [
     ],
   },
   {
-    question: "What is the importance of E-Invoicing in ensuring quick payments?",
+    question:
+      "What is the importance of E-Invoicing in ensuring quick payments?",
     answer: [
       {
         heading:
@@ -90,6 +93,6 @@ const faqData = [
       },
     ],
   },
-];
+]
 
-export default faqData;
+export default faqData

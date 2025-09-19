@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "What is department management?",
     answer: [
@@ -18,7 +20,8 @@ const faqData = [
     ],
   },
   {
-    question: "Does the department management module help improve the finance team’s performance? If yes, how?",
+    question:
+      "Does the department management module help improve the finance team’s performance? If yes, how?",
     answer: [
       {
         heading:
@@ -45,7 +48,8 @@ const faqData = [
     ],
   },
   {
-    question: "How does the department management module reduce business fraud?",
+    question:
+      "How does the department management module reduce business fraud?",
     answer: [
       {
         heading:
@@ -54,7 +58,8 @@ const faqData = [
     ],
   },
   {
-    question: "Seeking Further Understanding of Hierarchy and Control? Explore the Comprehensive Guide",
+    question:
+      "Seeking Further Understanding of Hierarchy and Control? Explore the Comprehensive Guide",
     answer: [
       {
         heading:
@@ -72,12 +77,10 @@ const faqData = [
     ],
   },
   {
-    question:
-      "What are the benefits of expense approval hierarchies?",
+    question: "What are the benefits of expense approval hierarchies?",
     answer: [
       {
-        heading:
-          "Here are some benefits of expense approval system:",
+        heading: "Here are some benefits of expense approval system:",
       },
       {
         bullets: [
@@ -87,7 +90,8 @@ const faqData = [
         ],
       },
     ],
-  }, {
+  },
+  {
     question:
       "How do approval hierarchies help reduce financial risk management?",
     answer: [
@@ -104,8 +108,10 @@ const faqData = [
         ],
       },
     ],
-  }, {
-    question: "How do approval hierarchies impact decision decision-making in businesses?",
+  },
+  {
+    question:
+      "How do approval hierarchies impact decision decision-making in businesses?",
     answer: [
       {
         heading:

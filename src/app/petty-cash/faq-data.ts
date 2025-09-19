@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "What is digital petty cash?",
     answer: [
@@ -9,8 +11,7 @@ const faqData = [
     ],
   },
   {
-    question:
-      "Can I issue separate budgets for different branches?",
+    question: "Can I issue separate budgets for different branches?",
     answer: [
       {
         heading:
@@ -28,8 +29,7 @@ const faqData = [
     ],
   },
   {
-    question:
-      "Do I need to use EnKash cards for this?",
+    question: "Do I need to use EnKash cards for this?",
     answer: [
       {
         heading:
