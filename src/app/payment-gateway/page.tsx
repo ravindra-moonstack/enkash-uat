@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import {
   acceleratedGrowthData,
   dashboardData,
@@ -11,17 +14,20 @@ import {
   supportData,
 } from "./data"
 import faqData from "./faq-data"
+
+//components
+import generateMetaData from "@/src/utils/metaData"
+import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import ManagementCard from "@/src/components/management-card"
+import FaqSection from "@/src/components/faq-section"
+import CommonButton from "@/src/components/buttons"
+import PolicyCard from "@/src/components/policy-card"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import LogoSlider from "@/src/components/logo-slider"
+import DynamicHeading from "@/src/components/dynamic-heading"
+
+//helpers
 import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  RectangleButton,
-  FaqSection,
-  ManagementCard,
-} from "@/src/components"
-import {
-  blueArrow,
   groupIcon,
   paymentSummary,
   integration,
@@ -31,11 +37,9 @@ import {
   support,
   leftHand,
   acceleratedGrowthImg,
-  whiteArrow,
 } from "./img"
-import generateMetaData from "@/src/utils/metaData"
-import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import { Metadata } from "next"
+
+//utils
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Payment Gateway in India for SMBs and Startups",
@@ -123,14 +127,14 @@ const PaymentGateway = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
                       />
                     </div>
                     <div>
-                      <RectangleButton
+                      <CommonButton
                         title="API Doc"
                         theme="outline-blue"
                         url="https://docs.enkash.com/payment-gateway"
@@ -332,7 +336,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommonButton
                   title="Get Started  Today "
                   theme="outline-blue"
                   url={salesUrl}
@@ -408,7 +412,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   ))}
                 </div>
                 <div className={`${styles.list_button}`}>
-                  <RectangleButton
+                  <CommonButton
                     title="Get Started Today "
                     theme="outline-blue"
                     url={salesUrl}
@@ -461,7 +465,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommonButton
                   title="Get Started Today "
                   theme="outline-blue"
                   url={salesUrl}
@@ -537,7 +541,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   ))}
                 </div>
                 <div className={`${styles.list_button}`}>
-                  <RectangleButton
+                  <CommonButton
                     title="Get Started Today "
                     theme="outline-blue"
                     url={salesUrl}
@@ -591,7 +595,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommonButton
                   title="Get Started Today "
                   theme="outline-blue"
                   url={salesUrl}
@@ -667,7 +671,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   ))}
                 </div>
                 <div className={`${styles.list_button}`}>
-                  <RectangleButton
+                  <CommonButton
                     title="Get Started Today "
                     theme="outline-blue"
                     url={salesUrl}
@@ -756,11 +760,10 @@ const PaymentGateway = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommonButton
               title="Get Started Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

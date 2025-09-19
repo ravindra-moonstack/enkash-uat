@@ -204,9 +204,9 @@ const stackcardData = [
   },
 ]
 export {
-  cardsData,
-  paymentMethodData,
   allInOnePolicyData,
+  cardsData,
   managementCardData,
+  paymentMethodData,
   stackcardData,
 }

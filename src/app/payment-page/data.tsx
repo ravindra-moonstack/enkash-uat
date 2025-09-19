@@ -1,8 +1,3 @@
-import crouselIconOne from "./img/crouselIconOne.svg"
-import crouselIconTwo from "./img/crouselIconTwo.svg"
-import crouselIconThree from "./img/crouselIconThree.svg"
-import crouselIconFour from "./img/crouselIconFour.svg"
-import crouselIconFive from "./img/crouselIconFive.svg"
 
 import {
   autoCollect,
@@ -35,6 +30,11 @@ import {
   taskIconTwo,
   TravelIcon,
   TravelImage,
+  crouselIconFive,
+  crouselIconFour,
+  crouselIconThree,
+  crouselIconTwo,
+  crouselIconOne,
 } from "./img"
 
 const cardsData = [
@@ -244,9 +244,9 @@ const stackcardData = [
   },
 ]
 export {
-  cardsData,
-  allProductSections,
   allInOnePolicyData,
+  allProductSections,
+  cardsData,
   managementCardData,
   stackcardData,
 }

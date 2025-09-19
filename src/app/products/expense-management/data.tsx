@@ -253,38 +253,6 @@ const rankData = [
   },
 ]
 
-const intantActionData = [
-  {
-    title: "Live Account Overview",
-    description:
-      "Track balances, credit limits, billing cycles, and dues in real-time.",
-    // icon: overviewIcon,
-  },
-  {
-    title: "Granular Card Controls",
-    description:
-      "Set custom limits, manage usage channels, and block or reissue cards with just a click.",
-    icon: controlIcon,
-  },
-  {
-    title: "Transaction Intelligence",
-    description:
-      "Drill down into each transaction by category, user, time, and channel.",
-    // icon: intelligenceIcon,
-  },
-  {
-    title: "Statement Clarity",
-    description:
-      "Download detailed, filterable statements for individual or consolidated accounts.",
-    // icon: statementIcon,
-  },
-  {
-    title: "One-Click Settlements",
-    description:
-      "Make payments across cards with flexible split options by total, minimum due, or custom logic.",
-    // icon: oneClickIcon,
-  },
-]
 
 const stackcardData = [
   {
@@ -426,13 +394,12 @@ const allProductSections = [
 ]
 
 export {
-  cardsData,
+  allProductSections,
   cardData,
+  cardsData,
+  stackcardData,
   dashboardData,
   integrationData,
   paymentMethodData,
   rankData,
-  intantActionData,
-  allProductSections,
-  stackcardData,
 }

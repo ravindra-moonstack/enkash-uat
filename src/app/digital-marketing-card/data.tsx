@@ -193,4 +193,7 @@ const stackcardData = [
   },
 ]
 
-export { intantActionData, spendAnalyticsData, cardType, stackcardData }
+export {   cardType,
+  intantActionData,
+  spendAnalyticsData,
+  stackcardData,}

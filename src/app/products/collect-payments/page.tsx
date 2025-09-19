@@ -7,17 +7,16 @@ import { allInOnePolicyData, cardData, dataSets } from "./data"
 import faqData from "./faq-data"
 
 // components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  AllInOnePolicy,
-  HowDoesItWork,
-  PolicyCard,
-  FaqSection,
-  LottieDynamicLoadComponent,
-  CommanButton,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import HowDoesItWork from "@/src/components/how-does-it-work"
+import LottieDynamicLoadComponent from "@/src/components/lottie-client/lottie-dynamic-load-client"
+import PolicyCard from "@/src/components/policy-card"
+
 
 // helpers
 import {
@@ -30,6 +29,7 @@ import {
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Simplify Online Payment Collections with EnKash",

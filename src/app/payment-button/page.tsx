@@ -1,32 +1,35 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import { allInOnePolicyData, cardsData, managementCardData } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
+
+//components
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import PolicyCard from "@/src/components/policy-card"
+import ManagementCard from "@/src/components/management-card"
+import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
+
+//helpers
 import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  RectangleButton,
-  ManagementCard,
-  SecondFaqHtml,
-  AllInOnePolicy,
-  FaqSection,
-} from "@/src/components"
-import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   activationIcon,
   realTimeIcon,
+  faqBg,
 } from "./img"
 
-import faqBg from "./img/faq-bg.webp"
-import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Button: Add Instant Checkout to Your Website",
@@ -117,14 +120,14 @@ const PaymentButton = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
                       />
                     </div>
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="API Doc"
                         theme="outline-blue"
                         url="https://docs.enkash.com/"
@@ -292,7 +295,7 @@ const PaymentButton = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommanButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -345,6 +348,7 @@ const PaymentButton = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      
       <div className={`${styles.eigth_row} `}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
           <div className={`${styles.title} text-start pb-md-3 pb-3 col-md-8`}>
@@ -401,11 +405,10 @@ const PaymentButton = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

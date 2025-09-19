@@ -1,4 +1,3 @@
-
 import {
   autoCollect,
   instant,
@@ -16,7 +15,7 @@ import {
   taskIconOne,
   taskIconThree,
   taskIconTwo,
-} from "."
+} from "./img"
 
 const cardsData = [
   {
@@ -38,7 +37,6 @@ const cardsData = [
     icon: scrollIconThree,
   },
 ]
-
 
 const allInOnePolicyData = [
   {
@@ -123,8 +121,4 @@ const managementCardsData = [
   },
 ]
 
-export {
-  cardsData,
-  allInOnePolicyData,
-  managementCardsData,
-}
+export { cardsData, allInOnePolicyData, managementCardsData }

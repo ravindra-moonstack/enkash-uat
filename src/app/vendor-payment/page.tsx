@@ -1,23 +1,30 @@
 import Image from "next/image"
 import { Metadata } from "next"
-
 import styles from "./page.module.scss"
+
+//data
 import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
+
+//helpers
 import {  groupIcon, paymentSummary, mealCardImage } from "./img"
 
+
+//components
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import PolicyCard from "@/src/components/policy-card"
 import FaqSection from "@/src/components/faq-section"
-import RectangleButton from "@/src/components/buttons/rectangle-button"
+import CommonButton from "@/src/components/buttons"
 import AllProducts from "@/src/components/all-products"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import  CommanButton  from "@/src/components/buttons"
 
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { CommanButton } from "@/src/components"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate and Track your Vendor Payments ",
@@ -111,7 +118,7 @@ const VendorPayment = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -185,7 +192,7 @@ const VendorPayment = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommonButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
