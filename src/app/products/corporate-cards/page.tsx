@@ -15,18 +15,16 @@ import {
 import faqData from "./faq-data"
 
 // components
-import {
-  PolicyCard,
-  LogoSlider,
-  FeatureCard,
-  CardProduct,
-  AllProducts,
-  CustomBreadcrumb,
-  LottieDynamicLoadComponent,
-  DynamicHeading,
-  FaqSection,
-  CommanButton,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import LottieDynamicLoadComponent from "@/src/components/lottie-client/lottie-dynamic-load-client"
+import PolicyCard from "@/src/components/policy-card"
+import FeatureCard from "@/src/components/feature-card"
+import CardProduct from "@/src/components/card-product"
+import AllProducts from "@/src/components/all-products"
 
 // helpers
 import {

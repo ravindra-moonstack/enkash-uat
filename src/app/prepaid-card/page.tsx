@@ -3,16 +3,14 @@ import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 //components
-import {
-  RectangleButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  FaqSection,
-  CommanButton,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+
 
 import { heroCardImg } from "./img"
 import EnkashWay from "@/src/components/enkash-way/enkash-way"
@@ -114,7 +112,7 @@ const PrepaidCard = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
+              <CommanButton
                 title="Get Started"
                 theme="blue"
                 url={salesUrl}

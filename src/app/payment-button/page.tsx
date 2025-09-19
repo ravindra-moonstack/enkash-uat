@@ -7,17 +7,15 @@ import { allInOnePolicyData, cardsData, managementCardData } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  CommanButton,
-  ManagementCard,
-  SecondFaqHtml,
-  AllInOnePolicy,
-  FaqSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import PolicyCard from "@/src/components/policy-card"
+import ManagementCard from "@/src/components/management-card"
+import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
 
 //helpers
 import {
@@ -31,6 +29,7 @@ import {
 
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Button: Add Instant Checkout to Your Website",

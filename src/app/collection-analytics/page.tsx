@@ -12,17 +12,16 @@ import {
 import faqData from "./faq-data"
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  CommanButton,
-  AllInOnePolicy,
-  FaqSection,
-  ManagementCard,
-  CardStacking,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import PolicyCard from "@/src/components/policy-card"
+import CardStacking from "@/src/components/card-stacking"
+import { FaqSection } from "@/src/components"
+import ManagementCard from "@/src/components/management-card"
+
 
 //helpers
 import {
@@ -37,6 +36,7 @@ import {
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Collection Analytics: Track & Optimize Your Payment Data",

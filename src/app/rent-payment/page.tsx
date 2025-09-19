@@ -7,16 +7,14 @@ import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 
 // components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  FaqSection,
-  AllProducts,
-  ScrollableCardsSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
+import AllProducts from "@/src/components/all-products"
 
 // helpers
 import { groupIcon, paymentSummary, mealCardImage } from "./img"
@@ -24,6 +22,7 @@ import { groupIcon, paymentSummary, mealCardImage } from "./img"
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Rent Payments: Pay Office & Property Rent Digitally",

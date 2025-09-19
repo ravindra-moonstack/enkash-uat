@@ -7,29 +7,21 @@ import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 
 //component
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  ScrollableCardsSection,
-  AllProducts,
-  FaqSection,
-} from "@/src/components"
-
+import CommanButton from "@/src/components/buttons"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import AllProducts from "@/src/components/all-products"
+import FaqSection from "@/src/components/faq-section"
 
 //helpers
-import {
-  groupIcon,
-  paymentSummary,
-  mealCardImage,
-} from "."
+import { groupIcon, paymentSummary, mealCardImage } from "."
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Bulk Payment: Smart, Fast & Secure Payouts ",
@@ -44,7 +36,6 @@ const salesUrl = getSalesUrl("/bulk-pay")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const BulkPay = (): React.JSX.Element => {
-
   //
   return (
     <div className={`color-white ${styles.home_container}`}>

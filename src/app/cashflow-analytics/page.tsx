@@ -7,16 +7,14 @@ import { cardsData, managementCards, policies } from "./data"
 import faqData from "./faq-data"
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  CommanButton,
-  AllInOnePolicy,
-  FaqSection,
-  ManagementCard,
-} from "@/src/components"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CommanButton from "@/src/components/buttons"
+import LogoSlider from "@/src/components/logo-slider"
+import PolicyCard from "@/src/components/policy-card"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import FaqSection from "@/src/components/faq-section"
+import ManagementCard from "@/src/components/management-card"
 
 //helpers
 import {

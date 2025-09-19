@@ -2,7 +2,6 @@ import React from "react"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
-
 //data
 import {
   BankSolutionHeading,
@@ -13,18 +12,15 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-
 //components
-import {
-  BecomePartnerSteps,
-  BpHeroSection,
-  PartnerShipForm,
-  BankSolutions,
-  PartnershipSection,
-  BottomCtaSection,
-  FaqSection,
-  BankAffiliatePartnershipForm,
-} from "@/src/components"
+import BpHeroSection from "@/src/components/bp-hero-section"
+import BankSolutions from "@/src/components/partnerships/BankSolutions"
+import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
+import BecomePartnerSteps from "@/src/components/becomepartner"
+import BottomCtaSection from "@/src/components/bottom-cta-section"
+import FaqSection from "@/src/components/faq-section"
+import PartnerShipForm from "@/src/components/forms/partnership-form"
+import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
 
 //helpers
 import { containerScreen, participantBg } from "./img"

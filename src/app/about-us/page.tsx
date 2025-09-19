@@ -7,18 +7,18 @@ import styles from "./page.module.scss"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import OurStoryCard from "@/src/components/about-our-story-card"
-import {
-  LeadersSection,
-  InvestorsLogos,
-  EmployeeSlider,
-  CareersCard,
-  LocationTabsMap,
-} from "@/src/components"
+import InvestorsLogos from "@/src/components/investors-logos"
+import EmployeeSlider from "@/src/components/employee-slider"
+import LocationTabsMap from "@/src/components/location-tabs-map"
+
+
 
 // helpers
 import { aboutBannerBottomIcon, careerCardIcon } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { bannerOurContent } from "./data"
+import { CareersCard, LeadersSection } from "@/src/components"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "About EnKash: India's Leading Spend Management & Payments Platform ",

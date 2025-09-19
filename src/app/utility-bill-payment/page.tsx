@@ -7,16 +7,12 @@ import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 
 // components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  CommanButton,
-  AllProducts,
-  AllInOnePolicy,
-  FaqSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
 
 // helpers
 import { groupIcon, paymentSummary, mealCardImage } from "./img"
@@ -24,6 +20,8 @@ import { groupIcon, paymentSummary, mealCardImage } from "./img"
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import PolicyCard from "@/src/components/policy-card"
+import AllProducts from "@/src/components/all-products"
 
 export const metadata: Metadata = generateMetaData({
   title: "Utility Bill Payment: Pay All Business Utility Bills Seamlessly",
