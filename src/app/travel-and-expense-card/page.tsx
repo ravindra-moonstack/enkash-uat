@@ -15,17 +15,16 @@ import {
 import faqData from "./faq-data"
 
 // components
-import {
-  CommanButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  CardProduct,
-  DynamicHeading,
-  FaqSection,
-  StepsSection,
-  AllProducts,
-  StepCard,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import StepsSection from "@/src/components/steps-section"
+import StepCard from "@/src/components/step-card"
+import AllProducts from "@/src/components/all-products"
+import CardProduct from "@/src/components/card-product"
+
 
 // helpers
 import {
@@ -40,6 +39,7 @@ import {
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Travel & Expense Card: Simplify Business Travel Spending",

@@ -1,6 +1,8 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import styles from "./page.module.scss"
+
+//data
 import {
   cardType,
   intantActionData,
@@ -8,24 +10,25 @@ import {
   stackcardData,
 } from "./data"
 
-import {
-  CustomBreadcrumb,
-  LogoSlider,
-  CardProduct,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  PolicyCard,
-  FaqSection,
-  StepsSection,
-  CommanButton,
-} from "@/src/components"
+
+//components
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import PolicyCard from "@/src/components/policy-card"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import StepsSection from "@/src/components/steps-section"
+import CardProduct from "@/src/components/card-product"
 
 import { mealCardImage, heroCardImg, instantActionImg } from "./img"
 
 import faqData from "./faq-data"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Digital Marketing Card: Control Ad Spends Across Platforms",

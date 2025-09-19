@@ -75,8 +75,6 @@
   }
 }
 
-
-
 .third_row {
   width: 100%;
   padding: 50px 20px 50px;
@@ -176,8 +174,6 @@
   }
 }
 
-
-
 .fifth_row {
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
@@ -207,21 +203,6 @@
 
   @include for-laptops {
     padding: 90px 20px 46px;
-  }
-}
-
-
-.new_row {
-  background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
-
-  position: relative;
-  padding: 20px;
-
-  @include for-laptops {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 80px;
-    padding-right: 80px;
   }
 }
 

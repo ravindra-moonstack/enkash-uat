@@ -13,17 +13,18 @@ import {
 import faqData from "./faq-data"
 
 // component
-import {
-  BecomePartnerSteps,
-  BpHeroSection,
-  BankAffiliatePartnershipForm,
-  BankSolutions,
-  PartnershipSection,
-  BottomCtaSection,
-  FaqSection,
-  PartnerShipForm,
-  ProductsSection,
-} from "@/src/components"
+
+import BpHeroSection from "@/src/components/bp-hero-section"
+import BottomCtaSection from "@/src/components/bottom-cta-section"
+import FaqSection from "@/src/components/faq-section"
+import BankSolutions from "@/src/components/partnerships/BankSolutions"
+import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
+import BecomePartnerSteps from "@/src/components/becomepartner"
+import ProductsSection from "@/src/components/our-products-section"
+import PartnerShipForm from "@/src/components/forms/partnership-form"
+import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
+
+
 
 // helpers
 import { containerScreen, participantBg } from "."
@@ -31,6 +32,8 @@ import { containerScreen, participantBg } from "."
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
+
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",

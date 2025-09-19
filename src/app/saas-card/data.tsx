@@ -181,4 +181,4 @@ const stackcardData = [
   },
 ]
 
-export { intantActionData, cardType, allProductSections, stackcardData }
+export { allProductSections, cardType, intantActionData, stackcardData }

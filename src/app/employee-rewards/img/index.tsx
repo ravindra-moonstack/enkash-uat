@@ -1,26 +1,36 @@
-export { default as whiteArrow } from "./white-arrow.png"
-export { default as blueArrow } from "./blue-arrrow.svg"
 export { default as groupIcon } from "./groupIcon.png"
 export { default as paymentSummary } from "./heroImg.webp"
-
 export { default as mealCardImage } from "./collect-payment.webp"
+
 export { default as activationIcon } from "./activation.svg"
 export { default as realTimeIcon } from "./real-time.svg"
+
 export { default as faqBg } from "./secondFaq.webp"
 export { default as extensiveIcon } from "./extensiveIcon.svg"
 
 export { default as costControlSavings } from "./cost-control-savings.webp"
 export { default as costControlSavingsIcon } from "./cost-control-savings-icon.svg"
+
 export { default as fraudProtection } from "./fraud-protection.webp"
 export { default as fraudProtectionIcon } from "./fraud-protection-icon.svg"
+
 export { default as realTimeExpense } from "./real-time-expense.webp"
 export { default as realTimeExpenseIcon } from "./real-time-icon.svg"
+
 export { default as scrollIconOne } from "./scrollIconOne.svg"
 export { default as scrollIconTwo } from "./scrollIconTwo.svg"
 export { default as scrollIconThree } from "./scrollIconThree.svg"
+
 export { default as stackCardSixImg } from "./stackCard-six-image.webp"
 export { default as stackCardSixIcon } from "./stackCard-six-icon.svg"
+
 export { default as streamlinedReimbursement } from "./streamlined-reimbursement.webp"
 export { default as streamlinedReimbursementIcon } from "./streamlined-reimbursement-icon.svg"
+
 export { default as wideAcceptanceNetwork } from "./wide-acceptance-network.webp"
 export { default as wideAcceptanceNetworkIcon } from "./wide-acceptance-network-icon.svg"
+
+export { default as giftCard } from "./gift-card.webp"
+export { default as offers } from "./offers.webp"
+export { default as incentive } from "./incentive.webp"
+export { default as vouchers } from "./vouchers.webp"

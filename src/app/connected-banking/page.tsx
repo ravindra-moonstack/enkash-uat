@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 //data
@@ -6,24 +7,24 @@ import { cardsData, paymentMethodData, payoutPolicies } from "./data"
 import faqData from "./faq-data"
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  CommanButton,
-  AllInOnePolicy,
-  FeatureCard,
-  FaqSection,
-  BankLogoSlider,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import PolicyCard from "@/src/components/policy-card"
+import FaqSection from "@/src/components/faq-section"
+import BankLogoSlider from "@/src/components/banking-slider"
+import FeatureCard from "@/src/components/feature-card"
+
 
 //helpers
 import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
-import { Metadata } from "next"
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Connected Banking: For Faster Payouts",
@@ -246,9 +247,9 @@ const ConnectedBanking = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <div>
-        <BankLogoSlider />
-      </div>
+
+      <BankLogoSlider />
+
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-4 pb-md-5`}>

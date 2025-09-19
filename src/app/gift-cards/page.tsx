@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import {
   allProductSections,
   cardData,
@@ -8,27 +11,31 @@ import {
   spendAnalyticsData,
   stackcardData,
 } from "./data"
+import faqData from "./faq-data"
 
-import {
-  CommanButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  CardProduct,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  FaqSection,
-  Heading,
-  StepsSection,
-} from "@/src/components"
 
+//components
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import StepsSection from "@/src/components/steps-section"
+import CardProduct from "@/src/components/card-product"
+import AllProducts from "@/src/components/all-products"
+import Heading from "@/src/components/heading"
+
+
+//helpers
 import { mealCardImage, instantActionImg, heroCardImg } from "./img"
 
-import faqData from "./faq-data"
-import AllProducts from "@/src/components/all-products"
-import { Metadata } from "next"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Gift Cards for Business: Reward Employees & Partners",
@@ -57,6 +64,7 @@ const cards = stackcardData.map(
   })
 )
 const GiftCards = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>
