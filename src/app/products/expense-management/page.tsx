@@ -16,23 +16,22 @@ import {
 import { faqData, SecondfaqData } from "./faq-data"
 
 // components
-import {
-  ContentShowcase,
-  AllInOnePolicy,
-  DynamicHeading,
-  EnkashWay,
-  LottieDynamicLoadComponent,
-  AllProducts,
-  SecondFaqHtml,
-  CustomBreadcrumb,
-  LogoSlider,
-  RectangleButton,
-  CardStacking,
-  FeatureSpotlight,
-  SmartPolicySection,
-  CTASection,
-  FaqSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import LottieDynamicLoadComponent from "@/src/components/lottie-client/lottie-dynamic-load-client"
+import ContentShowcase from "@/src/components/content-showcase"
+import FeatureSpotlight from "@/src/components/feature-spotlight"
+import SmartPolicySection from "@/src/components/smart-policy-section"
+import CardStacking from "@/src/components/card-stacking"
+import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
+import AllProducts from "@/src/components/all-products"
+import EnkashWay from "@/src/components/enkash-way/enkash-way"
+import { CTASection } from "@/src/components"
+
 
 // helper
 import {
@@ -135,7 +134,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               />
             </div>
             <div className="mt-3 pointer-auto justify-content-center d-flex">
-              <RectangleButton title="Talk to us" theme="blue" url={salesUrl} />
+              <CommanButton title="Talk to us" theme="blue" url={salesUrl} />
             </div>
           </div>
 

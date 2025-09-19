@@ -7,21 +7,20 @@ import { allInOnePolicyData, cardsData, managementCardsData } from "./data"
 import faqData from "./faq-data"
 
 // component
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  ScrollableCardsSection,
-  ManagementCard,
-  FaqSection,
-} from "@/src/components"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CommanButton from "@/src/components/buttons"
+import LogoSlider from "@/src/components/logo-slider"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import FaqSection from "@/src/components/faq-section"
+import ManagementCard from "@/src/components/management-card"
 
 // helpers
 import { groupIcon, paymentSummary, mealCardImage } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+
 
 export const metadata: Metadata = generateMetaData({
   title:

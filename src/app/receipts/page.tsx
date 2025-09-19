@@ -12,17 +12,16 @@ import {
 import faqData from "./faq-data"
 
 // components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  ManagementCard,
-  EasyStepCard,
-  CardStacking,
-  FaqSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import CardStacking from "@/src/components/card-stacking"
+import ManagementCard from "@/src/components/management-card"
+import EasyStepCard from "@/src/components/easy-step-card"
+
 
 // helpers
 import { groupIcon, paymentSummary } from "./img"
@@ -30,6 +29,7 @@ import { groupIcon, paymentSummary } from "./img"
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Scan and Drop Receipts for Faster Employee Expense Creation",

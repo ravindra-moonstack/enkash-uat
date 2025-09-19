@@ -12,17 +12,14 @@ import {
 import faqData from "./faq-data"
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  CommanButton,
-  ManagementCard,
-  AllInOnePolicy,
-  FaqSection,
-  CardStacking,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+
 
 //helpers
 import {
@@ -37,6 +34,8 @@ import {
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import PolicyCard from "@/src/components/policy-card"
+import ManagementCard from "@/src/components/management-card"
 
 export const metadata: Metadata = generateMetaData({
   title: "Instant Payment Settlement for Merchants",

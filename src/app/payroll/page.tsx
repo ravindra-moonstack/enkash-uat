@@ -7,14 +7,14 @@ import { allInOnePolicyData, cardsData } from "./data"
 import faqData from "./faq-data"
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  AllInOnePolicy,
-  ScrollableCardsSection,
-  FaqSection,
-} from "@/src/components"
+
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import CommonButton from "@/src/components/buttons"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
 
 //helpers
 import {
@@ -26,7 +26,7 @@ import {
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import CommonButton from "@/src/components/buttons"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Payroll Management: Automate Salaries, Payouts & Compliance ",

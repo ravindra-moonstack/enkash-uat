@@ -6,13 +6,12 @@ import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 // components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import SupportForm from "@/src/components/forms/support-form"
+import SupportCard from "@/src/components/support-card/support-card"
 
-import {
-  DynamicHeading,
-  LogoSlider,
-  SupportCard,
-  SupportForm,
-} from "@/src/components"
+
 import { location, logo } from "."
 
 // helpers

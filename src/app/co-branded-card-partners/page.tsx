@@ -1,7 +1,8 @@
 import React from "react"
 import { Metadata } from "next"
-
 import styles from "./page.module.scss"
+
+//data
 import {
   productsData,
   BankSolutionHeading,
@@ -11,19 +12,23 @@ import {
   stepsData,
 } from "./data"
 import faqData from "./faq-data"
-import {
-  BecomePartnerSteps,
-  BpHeroSection,
-  BankSolutions,
-  PartnershipSection,
-  BottomCtaSection,
-  FaqSection,
-  ProductsSection,
-  PartnerShipForm,
-  BankAffiliatePartnershipForm,
-} from "@/src/components"
+
+//components
+import BpHeroSection from "@/src/components/bp-hero-section"
+import BankSolutions from "@/src/components/partnerships/BankSolutions"
+import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
+import BecomePartnerSteps from "@/src/components/becomepartner"
+import ProductsSection from "@/src/components/our-products-section"
+import BottomCtaSection from "@/src/components/bottom-cta-section"
+import FaqSection from "@/src/components/faq-section"
+import PartnerShipForm from "@/src/components/forms/partnership-form"
+import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
+
+
+//helpers
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",

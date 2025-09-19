@@ -1,11 +1,16 @@
 import Image from "next/image"
 import { Metadata } from "next"
-
 import styles from "./page.module.scss"
+
+//data
 import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
+
+//helpers
 import {  groupIcon, paymentSummary, mealCardImage } from "./img"
 
+
+//components
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
@@ -14,10 +19,12 @@ import FaqSection from "@/src/components/faq-section"
 import CommonButton from "@/src/components/buttons"
 import AllProducts from "@/src/components/all-products"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import  CommanButton  from "@/src/components/buttons"
 
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { CommanButton } from "@/src/components"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate and Track your Vendor Payments ",
