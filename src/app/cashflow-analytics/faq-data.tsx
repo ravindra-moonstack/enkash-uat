@@ -1,6 +1,6 @@
+import { TFAQProps } from "@/src/types/faq"
 
-
-const faqData = [
+const faqData: TFAQProps[] = [
   {
     question: "What is Cashflow Analytics?",
     answer: [

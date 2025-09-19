@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "Who can get an EnKash Corporate Card?",
     answer: [

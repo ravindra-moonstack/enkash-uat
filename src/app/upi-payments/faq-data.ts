@@ -1,4 +1,6 @@
-export const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "What is a UPI Payment Gateway?",
     answer: [
@@ -148,8 +150,7 @@ export const faqData = [
     ],
   },
   {
-    question:
-      "What kind of support does EnKash provide for UPI payments?",
+    question: "What kind of support does EnKash provide for UPI payments?",
     answer: [
       {
         heading:
@@ -158,12 +159,10 @@ export const faqData = [
     ],
   },
   {
-    question:
-      "How to change UPI PIN?",
+    question: "How to change UPI PIN?",
     answer: [
       {
-        heading:
-          "To change your UPI PIN, follow these steps:",
+        heading: "To change your UPI PIN, follow these steps:",
       },
       {
         bullets: [
@@ -178,8 +177,7 @@ export const faqData = [
     ],
   },
   {
-    question:
-      "What is VPA in UPI?",
+    question: "What is VPA in UPI?",
     answer: [
       {
         heading:

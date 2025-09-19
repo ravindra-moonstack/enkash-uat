@@ -44,7 +44,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/instant-card-management")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

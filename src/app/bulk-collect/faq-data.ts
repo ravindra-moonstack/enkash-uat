@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question:
       "How does bulk collect enhance efficiency and accuracy while saving time?",

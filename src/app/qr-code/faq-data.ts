@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "What is a QR Code?",
     answer: [
@@ -18,11 +20,11 @@ const faqData = [
     ],
   },
   {
-    question:
-      "How can I create an EnKash QR Code?",
+    question: "How can I create an EnKash QR Code?",
     answer: [
       {
-        heading: "Sign up on our platform, access the dashboard, and generate codes in seconds.",
+        heading:
+          "Sign up on our platform, access the dashboard, and generate codes in seconds.",
       },
     ],
   },
@@ -39,12 +41,10 @@ const faqData = [
     question: "What is the price of setting up EnKash QR Code?",
     answer: [
       {
-        heading:
-          "Connect with our team to get the pricing details.",
+        heading: "Connect with our team to get the pricing details.",
       },
     ],
   },
-
 ]
 
 export const SecondfaqData = [

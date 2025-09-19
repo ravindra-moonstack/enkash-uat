@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image"
+
 export interface BreadcrumbItem {
   name: string
   url: string
@@ -14,3 +16,37 @@ export type TCategoryOptions = {
   label: string
   children?: { value: string; label: string }[]
 }[]
+
+export type TStackCardItemProp = {
+  icon: string | StaticImageData
+  title: string
+  description: string
+  image: string | StaticImageData
+  buttonUrl: string
+  maxImageHeight?: string
+  reverse?: boolean
+}
+
+export type TStackCardsProp = Array<TStackCardItemProp>
+
+export type TAllProductsDataProp = {
+  title: string
+  title2?: string
+  subtitle?: string
+  description?: string
+  image?: string
+  link?: string
+  showSlide?: string
+  items?: Array<{
+    title?: string
+    description?: string
+    image?: string | StaticImageData
+  }>
+}
+
+export type TAllProductsProp = {
+  title?: string
+  title2?: string
+  subtitle?: string
+  data?: Array<TAllProductsDataProp>
+}

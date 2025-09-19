@@ -1,6 +1,6 @@
+import { TFAQProps } from "@/src/types/faq"
 
-
-const faqData = [
+const faqData: TFAQProps[] = [
   {
     question:
       "What is an instant settlement in a payment gateway, and how does it benefit businesses?",
@@ -74,7 +74,6 @@ const faqData = [
         heading:
           "EnKash employs robust security measures and follows industry best practices to ensure the safety and security of your financial transactions.",
       },
-      
     ],
   },
 ]
