@@ -17,16 +17,11 @@ import CommonButton from "@/src/components/buttons"
 import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
 
 //helpers
-import {
-  groupIcon,
-  paymentSummary,
-  mealCardImage,
-} from "./img"
+import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Payroll Management: Automate Salaries, Payouts & Compliance ",
@@ -86,7 +81,7 @@ const Payroll = (): React.JSX.Element => {
                         color: "color-black",
                       },
                     ]}
-                    headingTag="h2"
+                    headingTag="h1"
                     className="f-7"
                   />
                 </div>

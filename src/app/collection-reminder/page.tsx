@@ -22,7 +22,6 @@ import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import ManagementCard from "@/src/components/management-card"
 
-
 //helpers
 import {
   groupIcon,
@@ -33,11 +32,9 @@ import {
   activationIcon,
 } from "./img"
 
-
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Collection Reminder: Automate Payment Reminders",
@@ -52,7 +49,6 @@ const salesUrl = getSalesUrl("/collection-reminder")
 
 const showScroll = cardsData.length > 3
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -394,7 +390,7 @@ const CollectionReminders = (): React.JSX.Element => {
             <CommanButton
               title="Get Started Today"
               theme="outline-blue"
-           arrow
+              arrow
               url={salesUrl}
             />
           </div>
@@ -402,7 +398,7 @@ const CollectionReminders = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
-      
+
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div

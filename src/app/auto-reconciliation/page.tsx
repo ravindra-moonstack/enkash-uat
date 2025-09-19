@@ -2,7 +2,6 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
-
 //data
 import {
   allInOnePolicies,
@@ -11,7 +10,6 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
-
 
 //components
 import CommanButton from "@/src/components/buttons"
@@ -24,7 +22,6 @@ import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import ManagementCard from "@/src/components/management-card"
 
-
 //helpers
 import {
   groupIcon,
@@ -35,11 +32,9 @@ import {
   activationIcon,
 } from "./img"
 
-
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Automatic Reconciliation: Simplify Payment Matching & Reporting",
@@ -55,7 +50,6 @@ const salesUrl = getSalesUrl("/auto-reconciliation")
 const showScroll = cardsData.length > 3
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -413,7 +407,7 @@ const AutoReconciliation = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
-      
+
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div

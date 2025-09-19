@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   costControlSavings,
@@ -62,9 +63,8 @@ const analyticData = [
     icon: pettyIconEight,
   },
 ]
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "UPI-Based Petty Cash",
     description:
@@ -72,10 +72,8 @@ const stackcardData = [
     image: realTimeExpense,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "300px",
-    buttonText: "",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Digital Petty Cash Distribution",
     description:
@@ -85,7 +83,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
     icon: stackCardThreeIcon,
     title: "Automatic Expense Creation",
     description:
@@ -95,7 +92,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Real-Time Tracking & Spend Visibility",
     description:
@@ -103,10 +99,8 @@ const stackcardData = [
     image: streamlinedReimbursement,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "300px",
-    buttonText: "",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Automated Reconciliation",
     description:
@@ -114,7 +108,6 @@ const stackcardData = [
     image: costControlSavings,
     buttonUrl: "/sales",
     maxImageHeight: "300px",
-    buttonText: "",
   },
 ]
 

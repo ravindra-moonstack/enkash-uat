@@ -44,21 +44,18 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/gift-cards")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const cards = stackcardData.map(
-  ({ color, icon, title, description, image }) => ({
-    color,
-    content: (
-      <AllInOnePolicy
-        icon={icon}
-        title={title}
-        description={description}
-        image={image}
-        buttonUrl={salesUrl}
-        maxImageHeight="300px"
-      />
-    ),
-  })
-)
+const cards = stackcardData.map(({ icon, title, description, image }) => ({
+  content: (
+    <AllInOnePolicy
+      icon={icon}
+      title={title}
+      description={description}
+      image={image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const GiftCards = (): React.JSX.Element => {
   //
   return (

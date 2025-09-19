@@ -10,7 +10,6 @@ import {
   stackcardData,
 } from "./data"
 
-
 //components
 import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
@@ -29,7 +28,6 @@ import faqData from "./faq-data"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Digital Marketing Card: Control Ad Spends Across Platforms",
   description:
@@ -41,7 +39,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/digtal-marketing-card")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

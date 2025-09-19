@@ -20,6 +20,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
+import { TStackCardsProp } from "@/src/types"
 
 const cardsData = [
   {
@@ -78,9 +79,9 @@ const cardType = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Add Partners In Bulk",
     description:
@@ -89,7 +90,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Diverse Redemptions",
     description:
@@ -98,7 +99,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Non-Reloadable Cards",
     description:
@@ -107,7 +108,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: costControlSavingsIcon,
     title: "Automatic Alerts",
     description:
@@ -116,7 +117,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: wideAcceptanceNetworkIcon,
     title: "Real-Time Analytics",
     description:
@@ -125,7 +126,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: stackCardSixIcon,
     title: "Bulk UPI for Incentives",
     description:

@@ -22,14 +22,12 @@ import CardStacking from "@/src/components/card-stacking"
 import ManagementCard from "@/src/components/management-card"
 import EasyStepCard from "@/src/components/easy-step-card"
 
-
 // helpers
 import { groupIcon, paymentSummary } from "./img"
 
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate Reimbursements for Easy Claim Submission & Approval",
@@ -42,7 +40,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/reimbursements")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

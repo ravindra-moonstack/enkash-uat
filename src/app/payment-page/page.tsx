@@ -37,7 +37,6 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Payment Page: Create Custom Branded Checkout Pages",
   description:
@@ -50,7 +49,6 @@ const salesUrl = getSalesUrl("/payment-page")
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

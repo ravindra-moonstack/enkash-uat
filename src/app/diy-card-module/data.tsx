@@ -32,6 +32,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
+import { TStackCardsProp } from "@/src/types"
 
 const intantActionData = [
   {
@@ -149,9 +150,9 @@ const cardType = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Purpose-Made Cards for Every Need",
     description:
@@ -160,7 +161,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Precise Spending Controls",
     description:
@@ -169,7 +170,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Real-Time Monitoring",
     description:
@@ -178,7 +179,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: costControlSavingsIcon,
     title: "Built-In Approval Workflows",
     description:
@@ -187,7 +188,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: wideAcceptanceNetworkIcon,
     title: "Enhanced Vendor Payments",
     description:
@@ -196,7 +197,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: integrationAuditIcon,
     title: "Integrated Audit Support",
     description:
@@ -205,7 +206,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: seemlessIntegrationIcon,
     title: "Seamless Integration",
     description:

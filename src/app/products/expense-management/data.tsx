@@ -48,6 +48,7 @@ import {
   wideAcceptanceNetworkIcon,
 } from "./img"
 import { approve } from "../corporate-cards/img"
+import { TStackCardsProp } from "@/src/types"
 
 const cardsData = [
   {
@@ -253,8 +254,7 @@ const rankData = [
   },
 ]
 
-
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
     icon: realTimeExpenseIcon,
     title: "Real-Time Expense Overview",
@@ -262,7 +262,6 @@ const stackcardData = [
       "Get a live view of company-wide expenses with powerful filters. Drill down by department, project, or user to uncover patterns and make data-driven decisions instantly.",
     image: realTimeExpense,
     buttonUrl: "/sales/?source=expense_management",
-    color: "#fff",
   },
   {
     icon: fraudProtectionIcon,
@@ -271,7 +270,6 @@ const stackcardData = [
       "Track actual expenses against allocated budgets in real-time. Spot overruns early, optimize spending, and stay in control of every cost center without relying on spreadsheets.",
     image: fraudProtection,
     buttonUrl: "/sales",
-    color: "#eee",
   },
   {
     icon: stackCardThreeIcon,
@@ -280,7 +278,6 @@ const stackcardData = [
       "Leverage AI to forecast upcoming expenses based on historical trends. Anticipate budget spikes, plan ahead, and make smarter financial decisions before costs hit the bottom line.",
     image: stackCardThreeImg,
     buttonUrl: "/sales",
-    color: "#eee",
   },
   {
     icon: streamlinedReimbursementIcon,
@@ -289,7 +286,6 @@ const stackcardData = [
       "Create tailored reports with actionable financial metrics - budget utilization, compliance gaps, exception flags - delivered in your preferred format, ready for audits, reviews, and strategic decisions.",
     image: streamlinedReimbursement,
     buttonUrl: "/sales/?source=expense_management",
-    color: "#fff",
   },
   {
     icon: costControlSavingsIcon,
@@ -298,7 +294,6 @@ const stackcardData = [
       "Identify your biggest spenders, repeat violators, and high-usage categories. Use these insights to refine policies, coach teams, and proactively reduce unnecessary costs.",
     image: costControlSavings,
     buttonUrl: "/sales",
-    color: "#eee",
   },
   {
     icon: wideAcceptanceNetworkIcon,
@@ -307,7 +302,6 @@ const stackcardData = [
       "Export all reports and dashboards in multiple formats—PDFs for presentations, Excel for deep dives, CSVs for uploads—keeping your team and systems aligned effortlessly.",
     image: wideAcceptanceNetwork,
     buttonUrl: "/sales",
-    color: "#eee",
   },
   {
     icon: stackCardsixIicon,
@@ -316,7 +310,6 @@ const stackcardData = [
       "Get instant alerts when actual spend exceeds budget thresholds. Stay informed in real-time, take corrective actions quickly, and avoid surprises at month-end.",
     image: stackCardsixImg,
     buttonUrl: "/sales",
-    color: "#eee",
   },
 ]
 

@@ -24,7 +24,6 @@ import CardStacking from "@/src/components/card-stacking"
 import FeatureCard from "@/src/components/feature-card"
 import ManagementCard from "@/src/components/management-card"
 
-
 // helpers
 import {
   groupIcon,
@@ -39,7 +38,6 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "QR Code Payments: Pay with UPI QR Codes",
   description:
@@ -52,7 +50,6 @@ const salesUrl = getSalesUrl("/qr-code")
 
 const showScroll = cardsData.length > 3
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

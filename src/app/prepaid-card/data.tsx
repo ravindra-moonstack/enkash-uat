@@ -1,4 +1,3 @@
-
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -17,10 +16,10 @@ import {
   wideAcceptanceNetworkIcon,
 } from "./img"
 import { bg1, bg2, bg3, bg4, bg5 } from "../products/vouchers/img"
+import { TStackCardsProp } from "@/src/types"
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Enjoy Ultimate Control",
     description:
@@ -29,7 +28,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Instantly Issue & Reload Cards",
     description:
@@ -38,7 +36,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Real-Time Visibility",
     description:
@@ -47,7 +44,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Get 360° Spend Analytics",
     description:
@@ -56,7 +52,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: wideAcceptanceNetworkIcon,
     title: "Seamlessly Reconcile",
     description:
@@ -116,6 +111,4 @@ const progressData = [
   },
 ]
 
-export {
-progressData, stackcardData 
-}
+export { progressData, stackcardData }

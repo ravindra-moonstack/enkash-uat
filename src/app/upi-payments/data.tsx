@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   costControlSavings,
@@ -163,9 +164,8 @@ const managementCardsData = [
     url: "/collection-reminder",
   },
 ]
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "UPI Intent Flow",
     description: `Make UPI payments faster for your customers by automatically opening their preferred UPI app. EnKash supports intent, collect, and in-app flows for a seamless checkout experience.`,
@@ -173,7 +173,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=upi-payments",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Dynamic QR Code",
     description: `Create and show dynamic QR codes on your website or softPOS app with our APIs, enabling quick and easy payments for your customers.`,
@@ -181,7 +180,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Static QR Code",
     description: `Simplify offline UPI payment collections by generating QR codes directly from your desktop or softPOS app.`,
@@ -189,7 +187,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=upi-payments",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Virtual UPI ID",
     description: `Generate unique UPI IDs for each payer, automatically reconcile payments from various customers, and allow users to pay without manually entering the amount.`,
@@ -197,7 +194,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
     icon: TravelIcon,
     title: "UPI AutoPay",
     description: `Automate recurring payments up to ₹15,000 with a one-time UPI mandate and streamline your subscription collections.`,

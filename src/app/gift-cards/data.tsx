@@ -34,6 +34,7 @@ import {
 
 import { fleetCardImg } from "../digital-marketing-card/img"
 import { payrollCardImg } from "../fuel-card/img"
+import { TStackCardsProp } from "@/src/types"
 
 const intantActionData = [
   {
@@ -195,9 +196,9 @@ const allProductSections = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Freedom of Choice",
     description:
@@ -206,7 +207,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Easily Accessible",
     description:
@@ -215,16 +216,16 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Safety",
     description:
       "Gift cards can be frozen in case of loss or theft without losing money with the self-PIN generation feature.",
     image: streamlinedReimbursement,
-    buttonUrl: "/sales/?source=expense_management",
+    buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: costControlSavingsIcon,
     title: "Easy Distribution",
     description: "These gift cards can be easily distributed on the occasion.",
@@ -232,7 +233,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: wideAcceptanceNetworkIcon,
     title: "Multiple Denominations",
     description:
