@@ -9,16 +9,14 @@ import faqData from "./faq-data"
 
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  ScrollableCardsSection,
-  AllProducts,
-  FaqSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import AllProducts from "@/src/components/all-products"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
 
 
 //helpers
@@ -32,6 +30,7 @@ import {
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+
 
 
 export const metadata: Metadata = generateMetaData({

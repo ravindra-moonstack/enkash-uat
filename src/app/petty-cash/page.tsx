@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import {
   analyticData,
   dashboardData,
@@ -7,28 +10,25 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  RectangleButton,
-  AllInOnePolicy,
-  CardStacking,
-  PolicyCard,
-  FaqSection,
-  ManagementCard,
-} from "@/src/components"
-import {
-  analytics,
-  blueArrow,
-  groupIcon,
-  paymentSummary,
-  whiteArrow,
-  zeroLeakage,
-} from "./img"
+
+//components
+
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import CommonButton from "@/src/components/buttons"
+import PolicyCard from "@/src/components/policy-card"
+import ManagementCard from "@/src/components/management-card"
+
+//helpers
+import { analytics, groupIcon, paymentSummary, zeroLeakage } from "./img"
+
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Digitize Your Petty Cash: Automate Petty Cash Management",
@@ -41,11 +41,10 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/petty-cash")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
-      buttonText={item.buttonText || "Get Started"}
+      buttonText={"Get Started"}
       icon={item.icon}
       title={item.title}
       description={item.description}
@@ -56,6 +55,7 @@ const cards = stackcardData.map((item, index) => ({
   ),
 }))
 const PettyCash = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
@@ -135,7 +135,7 @@ const PettyCash = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -333,11 +333,10 @@ const PettyCash = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommonButton
               title="Try Yourself "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

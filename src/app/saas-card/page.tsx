@@ -12,18 +12,16 @@ import {
 import faqData from "./faq-data"
 
 // components
-import {
-  CommanButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  CardProduct,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  FaqSection,
-  StepsSection,
-  AllProducts,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import StepsSection from "@/src/components/steps-section"
+import AllProducts from "@/src/components/all-products"
+import CardProduct from "@/src/components/card-product"
 
 // helpers
 import { mealCardImage, heroCardImg } from "./img"
@@ -43,21 +41,18 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/saas-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const cards = stackcardData.map(
-  ({ color, icon, title, description, image }) => ({
-    color,
-    content: (
-      <AllInOnePolicy
-        icon={icon}
-        title={title}
-        description={description}
-        image={image}
-        buttonUrl={salesUrl}
-        maxImageHeight="300px"
-      />
-    ),
-  })
-)
+const cards = stackcardData.map(({ icon, title, description, image }) => ({
+  content: (
+    <AllInOnePolicy
+      icon={icon}
+      title={title}
+      description={description}
+      image={image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 
 const SaasCards = (): React.JSX.Element => {
   return (

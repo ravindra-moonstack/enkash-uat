@@ -31,8 +31,8 @@ const GrievancePolicy = (): React.JSX.Element => {
                   color: "color-equity-blue",
                 },
               ]}
-              headingTag="h4"
-              className="f-5 text-center"
+              headingTag="h1"
+              className="f-5 text-center fs-4 fs-md-5"
             />
           </div>
         </div>

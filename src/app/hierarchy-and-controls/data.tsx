@@ -24,6 +24,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
+import { TStackCardsProp } from "@/src/types"
 
 const cardData = [
   {
@@ -116,9 +117,9 @@ const expenseManagementData = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Easy Configuration",
     description:
@@ -128,7 +129,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Define Custom Roles",
     description:
@@ -138,7 +139,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: stackCardThreeIcon,
     title: "Efficient Decision Making",
     description:
@@ -148,7 +149,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: costControlSavingsIcon,
     title: "Scalability",
     description:
@@ -158,7 +159,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: wideAcceptanceNetworkIcon,
     title: "Reduces Financial Risks",
     description:
@@ -168,7 +169,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: stackCardsixIicon,
     title: "Compliance Management",
     description:
@@ -179,4 +180,4 @@ const stackcardData = [
   },
 ]
 
-export { cardData, expenseManagementData, stepCards, stackcardData }
+export { cardData, expenseManagementData, stackcardData, stepCards }

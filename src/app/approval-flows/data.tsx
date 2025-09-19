@@ -22,6 +22,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
+import { TStackCardsProp } from "@/src/types"
 
 const cardData = [
   {
@@ -104,9 +105,8 @@ const expenseManagementData = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Ease of use",
     description:
@@ -116,7 +116,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Policy Enforcement",
     description:
@@ -126,7 +125,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
     icon: stackCardThreeIcon,
     title: "Alerts on Policy Breach",
     description:
@@ -136,7 +134,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Approval Workflows",
     description:
@@ -146,7 +143,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "User Permissions",
     description:
@@ -156,7 +152,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
     icon: wideAcceptanceNetworkIcon,
     title: "Transparency",
     description:

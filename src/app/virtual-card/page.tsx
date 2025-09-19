@@ -13,20 +13,13 @@ import {
 import faqData from "./faq-data"
 
 // components
-
-import {
-  CommanButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  CardProduct,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  PolicyCard,
-  AllProducts,
-  FaqSection,
-  StepsSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
 
 // helpers
 import { mealCardImage, instantActionImg, heroCardImg } from "./img"
@@ -34,6 +27,10 @@ import { mealCardImage, instantActionImg, heroCardImg } from "./img"
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import StepsSection from "@/src/components/steps-section"
+import PolicyCard from "@/src/components/policy-card"
+import AllProducts from "@/src/components/all-products"
+import CardProduct from "@/src/components/card-product"
 
 export const metadata: Metadata = generateMetaData({
   title: "Virtual Corporate Card for Secure and Instant Payments",
@@ -47,7 +44,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/virtual-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

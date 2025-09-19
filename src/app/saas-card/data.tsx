@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -142,9 +143,8 @@ const allProductSections = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Seamless Integration with Your SaaS Stack",
     description:
@@ -153,7 +153,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Single Dashboard Management",
     description:
@@ -162,7 +161,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Smarter Decisions, Backed by Data",
     description:
@@ -171,7 +169,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Complete Control, Zero Surprises",
     description:
@@ -181,4 +178,4 @@ const stackcardData = [
   },
 ]
 
-export { intantActionData, cardType, allProductSections, stackcardData }
+export { allProductSections, cardType, intantActionData, stackcardData }

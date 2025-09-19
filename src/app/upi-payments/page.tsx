@@ -13,18 +13,16 @@ import {
 import faqData from "./faq-data"
 
 // components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  CommanButton,
-  ManagementCard,
-  AllInOnePolicy,
-  FeatureCard,
-  FaqSection,
-  CardStacking,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import PolicyCard from "@/src/components/policy-card"
+import FeatureCard from "@/src/components/feature-card"
+import ManagementCard from "@/src/components/management-card"
 
 // helpers
 import {
@@ -50,7 +48,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/upi-payments")
 const showScroll = cardsData.length > 3
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

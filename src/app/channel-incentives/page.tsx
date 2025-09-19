@@ -7,17 +7,15 @@ import { cardsData, cardType, stackcardData } from "./data"
 import faqData from "./faq-data"
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  ScrollableCardsSection,
-  CommanButton,
-  RewardsCarousel,
-  AllInOnePolicy,
-  CardStacking,
-  FaqSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
+import CardStacking from "@/src/components/card-stacking"
+import RewardsCarousel from "@/src/components/rewards-carousel"
+import FaqSection from "@/src/components/faq-section"
 
 //helpers
 import {
@@ -27,7 +25,7 @@ import {
   activationIcon,
   realTimeIcon,
   PayoutIcon,
-} from "."
+} from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -41,10 +39,10 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/channel-incentives/`,
   },
 })
+
 const salesUrl = getSalesUrl("/channel-incentives")
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -58,7 +56,9 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const ChannelIncentives = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>

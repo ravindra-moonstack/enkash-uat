@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -158,9 +159,8 @@ const allProductSections = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Effortless Procurement Management",
     description:
@@ -169,7 +169,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Increase Control & Reduce Costs",
     description:
@@ -178,7 +177,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Simplify Expense Tracking and Reporting",
     description:
@@ -187,7 +185,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Faster Payment Cycles & Vendor Relationships",
     description:
@@ -196,7 +193,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
     icon: wideAcceptanceNetworkIcon,
     title: "Better Compliance & Risk Management",
     description:
@@ -206,4 +202,4 @@ const stackcardData = [
   },
 ]
 
-export { intantActionData, cardType, allProductSections, stackcardData }
+export { allProductSections, cardType, intantActionData, stackcardData }

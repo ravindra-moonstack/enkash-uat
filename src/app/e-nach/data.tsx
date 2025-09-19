@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   fraudProtection,
@@ -157,9 +158,8 @@ const managementCards = [
   },
 ]
 
-const stackcardData = [
-  {
-    color: "#fff",
+const stackcardData: TStackCardsProp = [
+  { 
     icon: realTimeExpenseIcon,
     title: "Track Every Transaction",
     description: `e-NACH keeps track of all recurring payments helping save big on penalties and lapsing of services.`,
@@ -167,7 +167,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Schedule As Convenient",
     description: `e-NACH gives the choice to schedule payment as per convenience for recurring payments.`,
@@ -175,7 +175,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Secure Transaction",
     description: `e-NACH transactions are digitally authorized and encrypted, helping reduce the risk of data breaches.`,

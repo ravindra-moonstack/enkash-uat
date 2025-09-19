@@ -1,9 +1,4 @@
-import crouselIconOne from "./img/crouselIconOne.svg"
-import crouselIconTwo from "./img/crouselIconTwo.svg"
-import crouselIconThree from "./img/crouselIconThree.svg"
-import crouselIconFour from "./img/crouselIconFour.svg"
-import crouselIconFive from "./img/crouselIconFive.svg"
-
+import { TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   costControlSavings,
@@ -35,6 +30,11 @@ import {
   taskIconTwo,
   TravelIcon,
   TravelImage,
+  crouselIconFive,
+  crouselIconFour,
+  crouselIconThree,
+  crouselIconTwo,
+  crouselIconOne,
 } from "./img"
 
 const cardsData = [
@@ -201,9 +201,8 @@ const managementCardData = [
     linkUrl: "/collection-reminder",
   },
 ]
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Product Sales",
     description: `Sell your products or services online with a professional storefront. List multiple items, manage inventory, and set purchase controls.`,
@@ -211,7 +210,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Event Registrations",
     description: `Easily collect event fees and manage attendee registration with customized payment pages.`,
@@ -219,7 +217,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Donations",
     description: `Streamline your fundraising efforts with pages that allow supporters to donate quickly and securely. Send automated receipts, including 80G certificates for NGOs.`,
@@ -227,7 +224,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Tuition and Fee Collection",
     description: `Simplify fee payments for educational institutions. Automate reconciliation and ensure hassle-free collections.`,
@@ -235,7 +231,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
     icon: TravelIcon,
     title: "Travel and Hospitality",
     description: `Collect payments for bookings, packages, or other services effortlessly.`,
@@ -244,9 +239,9 @@ const stackcardData = [
   },
 ]
 export {
-  cardsData,
-  allProductSections,
   allInOnePolicyData,
+  allProductSections,
+  cardsData,
   managementCardData,
   stackcardData,
 }

@@ -30,6 +30,7 @@ import {
   taskIconThree,
   taskIconTwo,
 } from "./img"
+import { TStackCardsProp } from "@/src/types"
 
 const cardsData = [
   {
@@ -187,26 +188,26 @@ const managementCardData = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Static QR Code",
     description: `Generate a single QR code for your business. Customers scan and pay the pre-defined amount using any UPI app. Ideal for displaying at stores or on invoices`,
     image: realTimeExpense,
+    buttonUrl: "",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Dynamic QR Code",
     description: `Generate unique QR codes for each transaction. Perfect for online payments, allowing you to capture specific invoice details for easy reconciliation and can be left open-ended for variable payment amounts`,
     image: fraudProtection,
+    buttonUrl: "",
   },
 ]
 export {
-  cardsData,
-  paymentMethodData,
   allInOnePolicyData,
+  cardsData,
   managementCardData,
+  paymentMethodData,
   stackcardData,
 }

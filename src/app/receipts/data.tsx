@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -102,9 +103,8 @@ const expenseManagementData = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "OCR Technology",
     description:
@@ -114,7 +114,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "WhatsApp Integration",
     description:
@@ -124,7 +123,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
     icon: stackCardThreeIcon,
     title: "Drop Receipts",
     description:
@@ -134,7 +132,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Link Receipts to Expenses",
     description:
@@ -144,7 +141,6 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Download Receipts in One Click",
     description:

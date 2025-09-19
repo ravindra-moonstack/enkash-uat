@@ -7,15 +7,13 @@ import { cardsData } from "./data"
 import faqData from "./faq-data"
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  ScrollableCardsSection,
-  FaqSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
 
 //helpers
 import {
@@ -38,6 +36,7 @@ import {
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Account Payable Analytics: Gain Real-Time Insights on Payables",
@@ -339,6 +338,7 @@ const PayableAnalytics = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">

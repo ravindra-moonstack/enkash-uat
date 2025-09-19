@@ -147,9 +147,7 @@ const managementCards = [
 ]
 
 export {
-
   cardsData,
-
   allInOnePolicies,
   managementCards,
 }

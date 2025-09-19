@@ -12,17 +12,15 @@ import {
 import faqData from "./faq-data"
 
 // component
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  AllInOnePolicy,
-  ManagementCard,
-  EasyStepCard,
-  CardStacking,
-  FaqSection,
-  CommanButton,
-} from "@/src/components"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CommanButton from "@/src/components/buttons"
+import LogoSlider from "@/src/components/logo-slider"
+import EasyStepCard from "@/src/components/easy-step-card"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import ManagementCard from "@/src/components/management-card"
 
 // helpers
 import { groupIcon, paymentSummary } from "./img"
@@ -40,7 +38,6 @@ export const metadata: Metadata = generateMetaData({
 
 const salesUrl = getSalesUrl("/approval-flows")
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

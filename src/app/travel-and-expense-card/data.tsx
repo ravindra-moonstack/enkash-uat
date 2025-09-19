@@ -225,11 +225,11 @@ const allProductSections = [
 ]
 
 export {
+  allProductSections,
+  cardType,
+  costSavingData,
+  enhanceEmployeeData,
   intantActionData,
   spendAnalyticsData,
-  cardType,
-  allProductSections,
   unmatchControlData,
-  enhanceEmployeeData,
-  costSavingData,
 }

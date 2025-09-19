@@ -38,8 +38,8 @@ const CustomerOnboarding = (): React.JSX.Element => {
                   color: "color-black",
                 },
               ]}
-              headingTag="h4"
-              className="f-5 text-center"
+              headingTag="h1"
+              className="f-5 text-center fs-4 fs-md-5"
             />
           </div>
           {/* Cards */}

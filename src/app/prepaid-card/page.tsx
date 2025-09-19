@@ -1,20 +1,24 @@
 import Image from "next/image"
-import styles from "./page.module.scss"
-import {
-  RectangleButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  FaqSection,
-  CommanButton,
-} from "@/src/components"
-import { heroCardImg } from "./img"
-import { faqData } from "./faq-data"
-import EnkashWay from "@/src/components/enkash-way/enkash-way"
-import { progressData, stackcardData } from "./data"
 import { Metadata } from "next"
+import styles from "./page.module.scss"
+
+//components
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+
+import { heroCardImg } from "./img"
+import EnkashWay from "@/src/components/enkash-way/enkash-way"
+
+//data
+import { progressData, stackcardData } from "./data"
+import { faqData } from "./faq-data"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -29,7 +33,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/prepaid-card")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -44,6 +47,7 @@ const cards = stackcardData.map((item, index) => ({
   ),
 }))
 const PrepaidCard = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>
@@ -105,11 +109,7 @@ const PrepaidCard = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <RectangleButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
