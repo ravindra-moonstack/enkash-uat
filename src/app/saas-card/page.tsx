@@ -23,14 +23,12 @@ import StepsSection from "@/src/components/steps-section"
 import AllProducts from "@/src/components/all-products"
 import CardProduct from "@/src/components/card-product"
 
-
 // helpers
 import { mealCardImage, heroCardImg } from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "SaaS Card: Manage & Track All SaaS Payments",
@@ -43,21 +41,18 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/saas-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const cards = stackcardData.map(
-  ({ color, icon, title, description, image }) => ({
-    color,
-    content: (
-      <AllInOnePolicy
-        icon={icon}
-        title={title}
-        description={description}
-        image={image}
-        buttonUrl={salesUrl}
-        maxImageHeight="300px"
-      />
-    ),
-  })
-)
+const cards = stackcardData.map(({ icon, title, description, image }) => ({
+  content: (
+    <AllInOnePolicy
+      icon={icon}
+      title={title}
+      description={description}
+      image={image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 
 const SaasCards = (): React.JSX.Element => {
   return (

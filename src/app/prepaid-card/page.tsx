@@ -11,14 +11,12 @@ import LogoSlider from "@/src/components/logo-slider"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 
-
 import { heroCardImg } from "./img"
 import EnkashWay from "@/src/components/enkash-way/enkash-way"
 
 //data
 import { progressData, stackcardData } from "./data"
 import { faqData } from "./faq-data"
-
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
@@ -35,7 +33,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/prepaid-card")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -112,11 +109,7 @@ const PrepaidCard = (): React.JSX.Element => {
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
-              <CommanButton
-                title="Get Started"
-                theme="blue"
-                url={salesUrl}
-              />
+              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>

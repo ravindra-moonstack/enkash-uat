@@ -42,7 +42,7 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/expense-analytics-and-insights")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
+
   content: (
     <AllInOnePolicy
       key={index}

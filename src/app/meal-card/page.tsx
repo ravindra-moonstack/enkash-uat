@@ -18,14 +18,12 @@ import StepsSection from "@/src/components/steps-section"
 import CardProduct from "@/src/components/card-product"
 import HowDoesItWork from "@/src/components/how-does-it-work"
 
-
 //helpers
 import { circles, mealCardImage, cardRotatingImage, heroCardImg } from "."
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Meal Card: Tax-Saving Digital Benefit for Employees",
@@ -37,7 +35,6 @@ export const metadata: Metadata = generateMetaData({
 })
 const salesUrl = getSalesUrl("/meal-card")
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

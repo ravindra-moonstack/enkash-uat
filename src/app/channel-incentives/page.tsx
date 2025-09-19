@@ -17,7 +17,6 @@ import CardStacking from "@/src/components/card-stacking"
 import RewardsCarousel from "@/src/components/rewards-carousel"
 import FaqSection from "@/src/components/faq-section"
 
-
 //helpers
 import {
   groupIcon,
@@ -32,7 +31,6 @@ import {
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Channel Incentives to Drive and Motivate Your Partners",
   description:
@@ -45,7 +43,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/channel-incentives")
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

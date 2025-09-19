@@ -23,14 +23,12 @@ import CommonButton from "@/src/components/buttons"
 import PolicyCard from "@/src/components/policy-card"
 import ManagementCard from "@/src/components/management-card"
 
-
 //helpers
 import { analytics, groupIcon, paymentSummary, zeroLeakage } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Digitize Your Petty Cash: Automate Petty Cash Management",
@@ -43,11 +41,10 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/petty-cash")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
-      buttonText={item.buttonText || "Get Started"}
+      buttonText={"Get Started"}
       icon={item.icon}
       title={item.title}
       description={item.description}

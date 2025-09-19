@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -25,9 +26,8 @@ import {
   benfits,
   fourthIcon,
   secondIcon,
-  payrollCardImg
+  payrollCardImg,
 } from "."
-
 
 const dataSets = [
   {
@@ -151,9 +151,8 @@ const cardType = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Tax Savings Made Simple",
     description: `With Meal Cards*, employees can save up to ₹26,400 
@@ -162,7 +161,6 @@ annually in taxes by utilizing tax exemptions under Section 17(2)(viii) of the I
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Wide Acceptance",
     description: `Our prepaid Meal Cards are accepted across a vast network of outlets, making them a versatile tool for daily needs. From supermarkets for grocery shopping to food delivery platforms like Swiggy and Zomato, as well as restaurants, cafes, and food courts nationwide, the card ensures hassle-free transactions anywhere employees prefer.`,
@@ -170,7 +168,6 @@ annually in taxes by utilizing tax exemptions under Section 17(2)(viii) of the I
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Secure and Hassle-Free",
     description: `Security is a priority with Meal Cards*. Employees can instantly block their cards if they are lost and get replacements without delay. With zero liability on reported lost cards, users enjoy peace of mind. Additionally, the paperless system ensures all transactions are trackable, reducing risks and promoting transparency.`,
@@ -178,7 +175,6 @@ annually in taxes by utilizing tax exemptions under Section 17(2)(viii) of the I
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Easy Management for Employers",
     description: `EnKash simplifies meal benefit distribution for businesses with a streamlined, one-time issuance process. Corporate can reload balances in real-time, track spending patterns, and generate detailed reports through an intuitive dashboard, saving time and reducing administrative overhead.`,

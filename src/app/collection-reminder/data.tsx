@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   costControlSavings,
@@ -150,9 +151,9 @@ const managementCards = [
     linkUrl: "/collection-reminder",
   },
 ]
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Choice of Reminders",
     description: `Businesses can send either of the two types of reminders — invoice reminders and automatic reminders. While invoice reminders can be sent to specific customers by looking at their payment patterns and timeline. Automatic reminders can be sent as and when the customer is onboarded.`,
@@ -160,7 +161,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=upi-payments",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Absolute Visibility",
     description: `Enterprises can view the customer’s payment history and pattern to understand their payment behaviour.`,
@@ -168,7 +169,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Embedded Links",
     description: `Payment reminders are sent to the customer with embedded links. This encourages then to pay instantly. `,
@@ -176,7 +177,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=upi-payments",
   },
   {
-    color: "#eee",
+    
     icon: costControlSavingsIcon,
     title: "Total Control",
     description: `Enterprises can control when to send the reminders and which channel for payment collection — email, SMS, or WhatsApp.`,
@@ -184,7 +185,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: TravelIcon,
     title: "Single Click Reminders",
     description: `Using invoice reminders, businesses can select and dispatch multiple reminders using a single click.`,

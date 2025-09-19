@@ -22,10 +22,10 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
+import { TStackCardsProp } from "@/src/types"
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Real-Time Expense Tracking",
     description:
@@ -34,7 +34,6 @@ const stackcardData = [
     buttonUrl: "/sales/",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Fraud Protection",
     description:
@@ -43,7 +42,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Streamlined Reimbursement",
     description:
@@ -52,7 +50,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Cost Control & Savings",
     description:
@@ -61,7 +58,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: wideAcceptanceNetworkIcon,
     title: "Wide Acceptance Network",
     description:
@@ -70,8 +66,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
 ]
-
-
 
 const intantActionData = [
   {
@@ -96,9 +90,6 @@ const intantActionData = [
     icon: fourthIcon,
   },
 ]
-
-
-
 
 const cardType = [
   {
@@ -158,7 +149,4 @@ const cardType = [
   },
 ]
 
-
-export {
-cardType, intantActionData, stackcardData
-}
+export { cardType, intantActionData, stackcardData }

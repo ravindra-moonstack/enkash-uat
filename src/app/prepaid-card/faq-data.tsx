@@ -1,6 +1,6 @@
 import { TFAQProps } from "@/src/types/faq"
 
-const faqData: TFAQProps[] = [
+export const faqData: TFAQProps[] = [
   {
     question: "What is a prepaid card, and how does it work for businesses?",
     answer: [

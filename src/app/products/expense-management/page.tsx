@@ -32,7 +32,6 @@ import AllProducts from "@/src/components/all-products"
 import EnkashWay from "@/src/components/enkash-way/enkash-way"
 import { CTASection } from "@/src/components"
 
-
 // helper
 import {
   faqBg,
@@ -74,7 +73,6 @@ const salesUrl = getSalesUrl("/expense-management")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item: any) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       icon={item.icon}

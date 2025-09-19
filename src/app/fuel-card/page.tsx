@@ -21,7 +21,6 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 import CardProduct from "@/src/components/card-product"
 import LogoSlider from "@/src/components/logo-slider"
 
-
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -37,7 +36,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/fuel-card")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -53,7 +51,6 @@ const cards = stackcardData.map((item, index) => ({
 }))
 
 const FuelCards = (): React.JSX.Element => {
-
   //
   return (
     <div className={`color-white  ${styles.home_container}`}>

@@ -1,6 +1,6 @@
 import { TFAQProps } from "@/src/types/faq"
 
-const faqData: TFAQProps[] = [
+export const faqData: TFAQProps[] = [
   {
     question: "What is an expense management platform, and how does it work?",
     answer: [

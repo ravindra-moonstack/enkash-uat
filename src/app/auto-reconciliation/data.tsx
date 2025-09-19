@@ -1,4 +1,5 @@
 
+import { TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   costControlSavings,
@@ -105,9 +106,9 @@ const allInOnePolicies = [
     maxImageHeight: "305px",
   },
 ]
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Accuracy",
     description: `EnKash's automated system significantly improves accuracy by minimizing human intervention. The advanced algorithms ensure precise data extraction and validation, contributing to a more reliable reconciliation process.`,
@@ -115,7 +116,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Visibility",
     description: `With EnKash, get clear visibility into your cash flow status and ensure all your business payments are processed on time, fostering better relationships.`,
@@ -123,7 +124,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Cost Efficiency",
     description: `With EnKash, you can make the whole process more cost-effective, as it reduces the reliance on manual labour. The streamlined process leads to operational efficiency, minimising the risk of costly errors.`,
@@ -131,7 +132,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: costControlSavingsIcon,
     title: "Integration",
     description: `EnKash offers seamless integration with various accounting and ERP systems. This interoperability ensures a smooth flow of information across different platforms, enhancing overall efficiency and connectivity.`,
@@ -139,7 +140,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
+    
     icon: TravelIcon,
     title: "Scalability",
     description: `EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency.`,

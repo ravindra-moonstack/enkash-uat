@@ -19,6 +19,7 @@ import {
   streamlinedReimbursement,
   streamlinedReimbursementIcon,
 } from "./img"
+import { TStackCardsProp } from "@/src/types"
 
 const cardData = [
   {
@@ -101,9 +102,9 @@ const expenseManagementData = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Define Budgets",
     description:
@@ -113,7 +114,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Allocate To Specific Users",
     description:
@@ -123,7 +124,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Spending Aligned With Budgets",
     description:
@@ -133,7 +134,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: costControlSavingsIcon,
     title: "Auto-fill Budgets",
     description:

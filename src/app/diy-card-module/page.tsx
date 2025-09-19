@@ -38,7 +38,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/diy-card-module")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -54,7 +53,6 @@ const cards = stackcardData.map((item, index) => ({
 }))
 
 const DiyCardModule = (): React.JSX.Element => {
-
   //
   return (
     <div className={`color-white  ${styles.home_container}`}>

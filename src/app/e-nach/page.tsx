@@ -48,7 +48,7 @@ const salesUrl = getSalesUrl("/e-nach")
 
 const showScroll = cardsData.length > 3
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
+ 
   content: (
     <AllInOnePolicy
       key={index}

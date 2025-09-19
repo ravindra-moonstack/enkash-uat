@@ -22,14 +22,12 @@ import CardStacking from "@/src/components/card-stacking"
 import ManagementCard from "@/src/components/management-card"
 import EasyStepCard from "@/src/components/easy-step-card"
 
-
 // helpers
 import { groupIcon, paymentSummary } from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Scan and Drop Receipts for Faster Employee Expense Creation",
@@ -41,21 +39,18 @@ export const metadata: Metadata = generateMetaData({
 })
 const salesUrl = getSalesUrl("/receipts")
 
-const cards = stackcardData.map(
-  ({ color, icon, title, description, image }) => ({
-    color,
-    content: (
-      <AllInOnePolicy
-        icon={icon}
-        title={title}
-        description={description}
-        image={image}
-        buttonUrl={salesUrl}
-        maxImageHeight="300px"
-      />
-    ),
-  })
-)
+const cards = stackcardData.map(({ icon, title, description, image }) => ({
+  content: (
+    <AllInOnePolicy
+      icon={icon}
+      title={title}
+      description={description}
+      image={image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const Receipts = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>

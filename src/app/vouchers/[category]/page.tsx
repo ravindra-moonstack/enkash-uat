@@ -195,7 +195,17 @@ const CategoryPage = async ({
                             : ""
                         }`}
                       >
-                        {voucherData.name.replace("-", "\u2011")}
+                        <DynamicHeading
+                          content={[
+                            {
+                              title: voucherData.name,
+                              color: "color-secondary-black",
+                            },
+                          ]}
+                          headingTag="h1"
+                          className="f-7 fs-1"
+                        />
+                        {/* {voucherData.name.replace("-", "\u2011")} */}
                       </div>
                       <div className={styles.voucher_image}>
                         {voucherImage && (

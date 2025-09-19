@@ -30,7 +30,6 @@ import { mealCardImage, heroCardImg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Purchase Card: Streamline Business Procurement & Spending",
   description:
@@ -42,21 +41,18 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/purchase-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const cards = stackcardData.map(
-  ({ color, icon, title, description, image }) => ({
-    color,
-    content: (
-      <AllInOnePolicy
-        icon={icon}
-        title={title}
-        description={description}
-        image={image}
-        buttonUrl={salesUrl}
-        maxImageHeight="300px"
-      />
-    ),
-  })
-)
+const cards = stackcardData.map(({ icon, title, description, image }) => ({
+  content: (
+    <AllInOnePolicy
+      icon={icon}
+      title={title}
+      description={description}
+      image={image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const PurchesCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
