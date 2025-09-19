@@ -32,6 +32,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
+import { TStackCardsProp } from "@/src/types"
 
 const intantActionData = [
   {
@@ -187,9 +188,8 @@ const allProductSections = [
     ],
   },
 ]
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Reduce Business Costs with Smarter Payment Solutions",
     description:
@@ -198,7 +198,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Stay in Control with Real-Time Expense Insights",
     description:
@@ -207,7 +206,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Tailor Your Virtual Card to Fit Your Needs",
     description:
@@ -216,7 +214,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Strengthen Vendor Trust with Timely Payments",
     description:
@@ -225,7 +222,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: wideAcceptanceNetworkIcon,
     title: "No Expense Oversight with One Dashboard",
     description:

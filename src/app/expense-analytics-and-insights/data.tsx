@@ -22,6 +22,7 @@ import {
   streamlinedReimbursement,
   streamlinedReimbursementIcon,
 } from "./img"
+import { TStackCardsProp } from "@/src/types"
 
 const cardData = [
   {
@@ -112,9 +113,9 @@ const expenseManagementData = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Security & Compliance",
     description:
@@ -124,7 +125,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Customizable Dashboards",
     description:
@@ -134,7 +135,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: stackCardThreeIcon,
     title: "AI-Powered Insights",
     description:
@@ -144,7 +145,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Policy Violation",
     description:
@@ -154,7 +155,7 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
   {
-    color: "#eee",
+    
     icon: costControlSavingsIcon,
     title: "Real-time Tracking",
     description:
@@ -164,4 +165,4 @@ const stackcardData = [
     maxImageHeight: "300px",
   },
 ]
-export { cardData, expenseManagementData, stepCards, stackcardData }
+export { cardData, expenseManagementData, stackcardData, stepCards }

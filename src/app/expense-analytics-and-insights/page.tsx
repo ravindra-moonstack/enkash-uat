@@ -12,17 +12,15 @@ import {
 import faqData from "./faq-data"
 
 //components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  CommanButton,
-  AllInOnePolicy,
-  ManagementCard,
-  EasyStepCard,
-  CardStacking,
-  FaqSection,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import EasyStepCard from "@/src/components/easy-step-card"
+import ManagementCard from "@/src/components/management-card"
 
 //helpers
 import { groupIcon, paymentSummary } from "./img"
@@ -30,6 +28,7 @@ import { groupIcon, paymentSummary } from "./img"
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Tracking Made Easy with Advanced Expense Analytics",
@@ -43,7 +42,7 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/expense-analytics-and-insights")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
+
   content: (
     <AllInOnePolicy
       key={index}
@@ -59,6 +58,7 @@ const cards = stackcardData.map((item, index) => ({
 }))
 
 const ExpenseAnalytics = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>

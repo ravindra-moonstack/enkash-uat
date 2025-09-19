@@ -1,5 +1,8 @@
 import Image from "next/image"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
+
+//data
 import {
   allInOnePolicyData,
   allProductSections,
@@ -8,29 +11,30 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
+
+//components
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import CommonButton from "@/src/components/buttons"
+import PolicyCard from "@/src/components/policy-card"
+import AllProducts from "@/src/components/all-products"
+import ManagementCard from "@/src/components/management-card"
+
+//helpers
 import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  RectangleButton,
-  ManagementCard,
-  AllInOnePolicy,
-  AllProducts,
-  FaqSection,
-  CardStacking,
-} from "@/src/components"
-import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   activationIcon,
   realTimeIcon,
 } from "./img"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 export const metadata: Metadata = generateMetaData({
@@ -45,7 +49,6 @@ const salesUrl = getSalesUrl("/payment-page")
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -136,14 +139,14 @@ const PaymentPage = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommonButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
                       />
                     </div>
                     <div>
-                      <RectangleButton
+                      <CommonButton
                         title="API Doc"
                         theme="outline-blue"
                         url="https://docs.enkash.com/"
@@ -289,7 +292,7 @@ const PaymentPage = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommonButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -410,11 +413,10 @@ const PaymentPage = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommonButton
               title="Get Started  Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

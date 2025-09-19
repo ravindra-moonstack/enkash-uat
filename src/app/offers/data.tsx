@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -75,9 +76,8 @@ const cardType = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
     icon: realTimeExpenseIcon,
     title: "Maximize Savings",
     description:
@@ -86,7 +86,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: fraudProtectionIcon,
     title: "Top Partnered Deals",
     description:
@@ -95,7 +94,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
     icon: streamlinedReimbursementIcon,
     title: "Effortless Process",
     description:
@@ -104,7 +102,6 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
     icon: costControlSavingsIcon,
     title: "Regularly Updated Offers",
     description:
@@ -113,7 +110,6 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#eee",
     icon: wideAcceptanceNetworkIcon,
     title: "Get Real-time Insights",
     description:

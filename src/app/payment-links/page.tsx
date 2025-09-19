@@ -1,7 +1,8 @@
 import Image from "next/image"
 import { Metadata } from "next"
-
 import styles from "./page.module.scss"
+
+//data
 import { cardsData, managementCards, policies } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
 
@@ -10,18 +11,17 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import PolicyCard from "@/src/components/policy-card"
-import RectangleButton from "@/src/components/buttons/rectangle-button"
+import CommonButton from "@/src/components/buttons"
 import ManagementCard from "@/src/components/management-card"
 import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
 import PaymentLinkTab from "@/src/components/payment-link-tabs/payment-link-tab"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-
 import { FaqSection } from "@/src/components"
+
+//helpers
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   activationIcon,
   realTimeIcon,
@@ -30,14 +30,16 @@ import {
   onlinSellsIcon,
   feeCancelIcon,
   invoiceIcon,
+  faqBg,
+  bg1,
+  bg2,
+  bg3,
+  bg4,
+  bg5,
 } from "./img"
 
-import faqBg from "./img/faq-bg.webp"
-import bg1 from "./img/bg5.jpg"
-import bg2 from "./img/bg4.jpg"
-import bg3 from "./img/bg3.jpg"
-import bg4 from "./img/bg2.jpg"
-import bg5 from "./img/bg1.jpg"
+
+//utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
@@ -132,20 +134,17 @@ const PaymentLinks = (): React.JSX.Element => {
                   <div
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
-                    <div>
-                      <RectangleButton
-                        title="Get Started  "
-                        theme="blue"
-                        url={salesUrl}
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com"
-                      />
-                    </div>
+                    <CommonButton
+                      title="Get Started  "
+                      theme="blue"
+                      url={salesUrl}
+                    />
+
+                    <CommonButton
+                      title="API Doc"
+                      theme="outline-blue"
+                      url="https://docs.enkash.com"
+                    />
                   </div>
                 </div>
               </div>
@@ -303,7 +302,7 @@ const PaymentLinks = (): React.JSX.Element => {
                 ))}
               </div>
               <div className={`${styles.list_button} `}>
-                <RectangleButton
+                <CommonButton
                   title="Get Started"
                   theme="outline-blue"
                   url={salesUrl}
@@ -483,11 +482,10 @@ const PaymentLinks = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommonButton
               title="Get Started  Today "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

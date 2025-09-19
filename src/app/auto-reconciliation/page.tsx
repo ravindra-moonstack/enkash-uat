@@ -2,6 +2,7 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
+//data
 import {
   allInOnePolicies,
   cardsData,
@@ -9,17 +10,19 @@ import {
   stackcardData,
 } from "./data"
 import faqData from "./faq-data"
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  PolicyCard,
-  AllInOnePolicy,
-  FaqSection,
-  CardStacking,
-  ManagementCard,
-  CommanButton,
-} from "@/src/components"
+
+//components
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import PolicyCard from "@/src/components/policy-card"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import ManagementCard from "@/src/components/management-card"
+
+//helpers
 import {
   groupIcon,
   paymentSummary,
@@ -28,6 +31,8 @@ import {
   hundredPercentIcon,
   activationIcon,
 } from "./img"
+
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -45,7 +50,6 @@ const salesUrl = getSalesUrl("/auto-reconciliation")
 const showScroll = cardsData.length > 3
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -362,6 +366,7 @@ const AutoReconciliation = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <CardStacking
@@ -375,6 +380,7 @@ const AutoReconciliation = (): React.JSX.Element => {
           />
         </div>
       </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -401,6 +407,7 @@ const AutoReconciliation = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
+
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div

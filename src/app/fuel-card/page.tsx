@@ -2,12 +2,16 @@ import Image from "next/image"
 import { Metadata } from "next"
 
 import styles from "./page.module.scss"
+
+//data
 import { cardType, intantActionData, stackcardData } from "./data"
+import faqData from "./faq-data"
+
+//helpers
 import { mealCardImage, heroCardImg } from "./img"
 
 // components
 import CommonButton from "@/src/components/buttons"
-import faqData from "./faq-data"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
@@ -17,6 +21,7 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 import CardProduct from "@/src/components/card-product"
 import LogoSlider from "@/src/components/logo-slider"
 
+//utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
@@ -31,7 +36,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/fuel-card")
 
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}
@@ -47,6 +51,7 @@ const cards = stackcardData.map((item, index) => ({
 }))
 
 const FuelCards = (): React.JSX.Element => {
+  //
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>

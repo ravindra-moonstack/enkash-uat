@@ -48,6 +48,7 @@ import {
   wideAcceptanceNetworkIcon,
 } from "./img"
 import { approve } from "../corporate-cards/img"
+import { TStackCardsProp } from "@/src/types"
 
 const cardsData = [
   {
@@ -253,40 +254,7 @@ const rankData = [
   },
 ]
 
-const intantActionData = [
-  {
-    title: "Live Account Overview",
-    description:
-      "Track balances, credit limits, billing cycles, and dues in real-time.",
-    // icon: overviewIcon,
-  },
-  {
-    title: "Granular Card Controls",
-    description:
-      "Set custom limits, manage usage channels, and block or reissue cards with just a click.",
-    icon: controlIcon,
-  },
-  {
-    title: "Transaction Intelligence",
-    description:
-      "Drill down into each transaction by category, user, time, and channel.",
-    // icon: intelligenceIcon,
-  },
-  {
-    title: "Statement Clarity",
-    description:
-      "Download detailed, filterable statements for individual or consolidated accounts.",
-    // icon: statementIcon,
-  },
-  {
-    title: "One-Click Settlements",
-    description:
-      "Make payments across cards with flexible split options by total, minimum due, or custom logic.",
-    // icon: oneClickIcon,
-  },
-]
-
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
     icon: realTimeExpenseIcon,
     title: "Real-Time Expense Overview",
@@ -294,7 +262,6 @@ const stackcardData = [
       "Get a live view of company-wide expenses with powerful filters. Drill down by department, project, or user to uncover patterns and make data-driven decisions instantly.",
     image: realTimeExpense,
     buttonUrl: "/sales/?source=expense_management",
-    color: "#fff",
   },
   {
     icon: fraudProtectionIcon,
@@ -303,7 +270,6 @@ const stackcardData = [
       "Track actual expenses against allocated budgets in real-time. Spot overruns early, optimize spending, and stay in control of every cost center without relying on spreadsheets.",
     image: fraudProtection,
     buttonUrl: "/sales",
-    color: "#eee",
   },
   {
     icon: stackCardThreeIcon,
@@ -312,7 +278,6 @@ const stackcardData = [
       "Leverage AI to forecast upcoming expenses based on historical trends. Anticipate budget spikes, plan ahead, and make smarter financial decisions before costs hit the bottom line.",
     image: stackCardThreeImg,
     buttonUrl: "/sales",
-    color: "#eee",
   },
   {
     icon: streamlinedReimbursementIcon,
@@ -321,7 +286,6 @@ const stackcardData = [
       "Create tailored reports with actionable financial metrics - budget utilization, compliance gaps, exception flags - delivered in your preferred format, ready for audits, reviews, and strategic decisions.",
     image: streamlinedReimbursement,
     buttonUrl: "/sales/?source=expense_management",
-    color: "#fff",
   },
   {
     icon: costControlSavingsIcon,
@@ -330,7 +294,6 @@ const stackcardData = [
       "Identify your biggest spenders, repeat violators, and high-usage categories. Use these insights to refine policies, coach teams, and proactively reduce unnecessary costs.",
     image: costControlSavings,
     buttonUrl: "/sales",
-    color: "#eee",
   },
   {
     icon: wideAcceptanceNetworkIcon,
@@ -339,7 +302,6 @@ const stackcardData = [
       "Export all reports and dashboards in multiple formats—PDFs for presentations, Excel for deep dives, CSVs for uploads—keeping your team and systems aligned effortlessly.",
     image: wideAcceptanceNetwork,
     buttonUrl: "/sales",
-    color: "#eee",
   },
   {
     icon: stackCardsixIicon,
@@ -348,7 +310,6 @@ const stackcardData = [
       "Get instant alerts when actual spend exceeds budget thresholds. Stay informed in real-time, take corrective actions quickly, and avoid surprises at month-end.",
     image: stackCardsixImg,
     buttonUrl: "/sales",
-    color: "#eee",
   },
 ]
 
@@ -426,13 +387,12 @@ const allProductSections = [
 ]
 
 export {
-  cardsData,
+  allProductSections,
   cardData,
+  cardsData,
+  stackcardData,
   dashboardData,
   integrationData,
   paymentMethodData,
   rankData,
-  intantActionData,
-  allProductSections,
-  stackcardData,
 }

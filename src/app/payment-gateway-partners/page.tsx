@@ -1,9 +1,10 @@
 import React from "react"
 import { Metadata } from "next"
 import Link from "next/link"
-
 import styles from "./page.module.scss"
 
+
+//data
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -14,20 +15,21 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-import {
-  BecomePartnerSteps,
-  BpHeroSection,
-  PaymentGatewayPartnershipForm,
-  BuiltforBuildersSection,
-  PartnerShipForm,
-  FaqSection,
-  BottomCtaSection,
-  PartnershipSection,
-  BankSolutions,
-  DynamicHeading,
-} from "@/src/components"
+//components
+import DynamicHeading from "@/src/components/dynamic-heading"
+import BpHeroSection from "@/src/components/bp-hero-section"
+import BankSolutions from "@/src/components/partnerships/BankSolutions"
+import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
+import BuiltforBuildersSection from "@/src/components/builtfor-builders-card"
+import BecomePartnerSteps from "@/src/components/becomepartner"
+import BottomCtaSection from "@/src/components/bottom-cta-section"
+import PartnerShipForm from "@/src/components/forms/partnership-form"
+import PaymentGatewayPartnershipForm from "@/src/components/forms/payment-gateway"
+import FaqSection from "@/src/components/faq-section"
+
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Gateway Partnerships",

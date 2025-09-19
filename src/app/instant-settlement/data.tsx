@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   fraudProtection,
@@ -150,9 +151,9 @@ const managementCards = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Instant Funds",
     description: `With EnKash’s instant payment settlement process, you receive funds instantly after every successful transaction.`,
@@ -160,7 +161,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Easy Access",
     description: `EnKash enables you to access your funds 24/7, 365 days a year, even on weekends and holidays.`,
@@ -168,7 +169,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Full Control",
     description: `Gain complete control over your cash flow, allowing you to invest, pay suppliers, or manage expenses instantly. Eliminate cash flow gaps and seize time-sensitive deals with readily available funds.`,

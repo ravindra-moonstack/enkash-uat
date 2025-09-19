@@ -7,15 +7,13 @@ import { allInOnePolicyData, categoriesData } from "./data"
 import faqData from "./faq-data"
 
 // components
-import {
-  DynamicHeading,
-  LogoSlider,
-  CustomBreadcrumb,
-  AllInOnePolicy,
-  EnkashWay,
-  FaqSection,
-  CommanButton,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import EnkashWay from "@/src/components/enkash-way/enkash-way"
 
 // helpers
 import { paymentSummary } from "./img"
@@ -23,6 +21,7 @@ import { paymentSummary } from "./img"
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Grab 400+ Brand Gift Vouchers for Best Discounts",

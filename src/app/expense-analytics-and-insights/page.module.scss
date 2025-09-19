@@ -147,24 +147,6 @@
   }
 }
 
-.fourth_row {
-  width: 100%;
-  padding: 50px 20px 0;
-  padding-bottom: 0px;
-  background-color: $color-white;
-
-  @include for-laptops {
-    padding: 90px 20px 0px;
-  }
-
-  .subtitle {
-    padding-bottom: 24px;
-    @include for-laptops {
-      padding-bottom: 48px;
-    }
-  }
-}
-
 .fifth_row {
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
@@ -179,35 +161,6 @@
     border-radius: 12px;
     @include for-laptops {
       padding: 11px 14px;
-    }
-  }
-}
-
-.faq_new_row {
-  background: $color-white;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding: 50px 20px;
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      bottom: 0;
-      display: none;
-      @include for-laptops {
-        display: flex;
-      }
-    }
-  }
-
-  .faqData {
-    width: 100%;
-    @include for-laptops {
-      width: 70%;
     }
   }
 }

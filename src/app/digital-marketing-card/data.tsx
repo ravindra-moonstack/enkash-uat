@@ -27,6 +27,7 @@ import {
   wideAcceptanceNetworkIcon,
 } from "./img"
 import { payrollCardImg } from "../fuel-card/img"
+import { TStackCardsProp } from "@/src/types"
 
 const intantActionData = [
   {
@@ -145,9 +146,9 @@ const cardType = [
   },
 ]
 
-const stackcardData = [
+const stackcardData: TStackCardsProp = [
   {
-    color: "#fff",
+    
     icon: realTimeExpenseIcon,
     title: "Simplified Budget Allocation",
     description:
@@ -156,7 +157,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: fraudProtectionIcon,
     title: "Real-Time Expense Tracking",
     description:
@@ -165,7 +166,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
+    
     icon: streamlinedReimbursementIcon,
     title: "Prevent Overspending",
     description:
@@ -174,7 +175,7 @@ const stackcardData = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    color: "#eee",
+    
     icon: costControlSavingsIcon,
     title: "Simplified Subscription Management",
     description:
@@ -183,7 +184,7 @@ const stackcardData = [
     buttonUrl: "/sales",
   },
   {
-    color: "#fff",
+    
     icon: wideAcceptanceNetworkIcon,
     title: "Customizable Usage Policies",
     description:
@@ -193,4 +194,7 @@ const stackcardData = [
   },
 ]
 
-export { intantActionData, spendAnalyticsData, cardType, stackcardData }
+export {   cardType,
+  intantActionData,
+  spendAnalyticsData,
+  stackcardData,}

@@ -1,4 +1,6 @@
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "What is EnKash subscription management?",
     answer: [
@@ -59,8 +61,7 @@ const faqData = [
     ],
   },
   {
-    question:
-      "Is it possible to customize subscription payments?",
+    question: "Is it possible to customize subscription payments?",
     answer: [
       {
         heading:
@@ -73,8 +74,7 @@ const faqData = [
     ],
   },
   {
-    question:
-      "How does an automated subscription work?",
+    question: "How does an automated subscription work?",
     answer: [
       {
         heading:
@@ -87,7 +87,8 @@ const faqData = [
     ],
   },
   {
-    question: "How subscription management software help in customer retention?",
+    question:
+      "How subscription management software help in customer retention?",
     answer: [
       {
         heading:
@@ -99,7 +100,6 @@ const faqData = [
       },
     ],
   },
-  
 ]
 
 export const SecondfaqData = [

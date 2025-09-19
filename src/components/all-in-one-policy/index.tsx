@@ -8,10 +8,10 @@ import CommonButton, { ButtonTheme } from "../buttons"
 import DynamicHeading from "../dynamic-heading"
 
 interface AllInOnePolicyProps {
-  icon: StaticImageData
+  icon: string | StaticImageData
   title: string
   description: string
-  image: StaticImageData
+  image: string | StaticImageData
   buttonUrl: string
   reverse?: boolean
   maxImageHeight?: string

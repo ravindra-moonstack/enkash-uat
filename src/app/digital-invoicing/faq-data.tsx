@@ -1,6 +1,8 @@
 import Link from "next/link"
 
-const faqData = [
+import { TFAQProps } from "@/src/types/faq"
+
+const faqData: TFAQProps[] = [
   {
     question: "Why opt for automated invoicing?",
     answer: [

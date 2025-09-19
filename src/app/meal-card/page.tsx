@@ -7,18 +7,16 @@ import { cardType, dataSets, intantActionData, stackcardData } from "./data"
 import faqData from "./faq-data"
 
 //components
-import {
-  CommanButton,
-  CustomBreadcrumb,
-  LogoSlider,
-  CardProduct,
-  DynamicHeading,
-  CardStacking,
-  AllInOnePolicy,
-  FaqSection,
-  StepsSection,
-  HowDoesItWork,
-} from "@/src/components"
+import CommanButton from "@/src/components/buttons"
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import LogoSlider from "@/src/components/logo-slider"
+import CardStacking from "@/src/components/card-stacking"
+import FaqSection from "@/src/components/faq-section"
+import StepsSection from "@/src/components/steps-section"
+import CardProduct from "@/src/components/card-product"
+import HowDoesItWork from "@/src/components/how-does-it-work"
 
 //helpers
 import { circles, mealCardImage, cardRotatingImage, heroCardImg } from "."
@@ -37,7 +35,6 @@ export const metadata: Metadata = generateMetaData({
 })
 const salesUrl = getSalesUrl("/meal-card")
 const cards = stackcardData.map((item, index) => ({
-  color: item.color,
   content: (
     <AllInOnePolicy
       key={index}

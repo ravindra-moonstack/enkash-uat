@@ -3,17 +3,15 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 
 import styles from "./mobile-header.module.scss"
+import RectangleButton from "../../buttons/rectangle-button"
 
 import { forwardArrowBlue } from ".."
-import RectangleButton from "@/src/components/buttons/rectangle-button"
 
 interface ProductListViewProps {
   products: any[]
 }
 
 const ProductListView = ({ products }: ProductListViewProps) => {
-
-
   const router = useRouter()
 
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
