@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Increase sales with Affordability Suite. Offer EMIs, Pay Later, and flexible payment options to enhance customer experience and drive higher conversions.",
   alternates: {
-    canonical: `${process.env.URL}affordability-suite/`,
+    canonical: `${process.env.URL}/affordability-suite/`,
   },
 })
 
