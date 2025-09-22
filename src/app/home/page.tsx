@@ -110,7 +110,7 @@ const HomePage = (): React.JSX.Element => {
             <div className="col-md-12">
               <div
                 style={{
-                  color: "#A5A5A5",
+                  color: "#2b2b2b",
                   marginBottom: "10px",
                   fontWeight: "300",
                 }}
