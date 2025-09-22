@@ -7,8 +7,7 @@ import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 
 //helpers
-import {  groupIcon, paymentSummary, mealCardImage } from "./img"
-
+import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
 //components
 import DynamicHeading from "@/src/components/dynamic-heading"
@@ -19,12 +18,11 @@ import FaqSection from "@/src/components/faq-section"
 import CommonButton from "@/src/components/buttons"
 import AllProducts from "@/src/components/all-products"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import  CommanButton  from "@/src/components/buttons"
+import CommanButton from "@/src/components/buttons"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate and Track your Vendor Payments ",
@@ -45,7 +43,7 @@ const VendorPayment = (): React.JSX.Element => {
 
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">

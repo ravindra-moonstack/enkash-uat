@@ -39,7 +39,7 @@ const BulkPay = (): React.JSX.Element => {
   //
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">

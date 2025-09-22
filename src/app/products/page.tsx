@@ -13,11 +13,8 @@ import LogoSlider from "@/src/components/logo-slider"
 import AllProducts from "@/src/components/all-products"
 import SalesForm from "@/src/components/forms/sales-form"
 
-
 // utils
 import generateMetaData from "@/src/utils/metaData"
-
-
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Platform: Comprehensive Product Suite",
@@ -33,7 +30,7 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const Rewards = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto">
           <div className="d-flex">
             <CustomBreadcrumb

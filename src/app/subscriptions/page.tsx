@@ -17,7 +17,6 @@ import FaqSection from "@/src/components/faq-section"
 import PolicyCard from "@/src/components/policy-card"
 import ManagementCard from "@/src/components/management-card"
 
-
 // helpers
 import {
   groupIcon,
@@ -32,7 +31,6 @@ import {
 
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 const showScroll = cardsData.length > 3
 
@@ -49,7 +47,7 @@ const salesUrl = getSalesUrl("/subscriptions")
 const Subscriptions = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">

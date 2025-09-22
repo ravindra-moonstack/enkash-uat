@@ -30,7 +30,6 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Payment Button: Add Instant Checkout to Your Website",
   description:
@@ -46,7 +45,7 @@ const showScroll = cardsData.length > 3
 const PaymentButton = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
@@ -348,7 +347,7 @@ const PaymentButton = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
+
       <div className={`${styles.eigth_row} `}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
           <div className={`${styles.title} text-start pb-md-3 pb-3 col-md-8`}>

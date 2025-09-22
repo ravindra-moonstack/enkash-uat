@@ -17,7 +17,6 @@ import HowDoesItWork from "@/src/components/how-does-it-work"
 import LottieDynamicLoadComponent from "@/src/components/lottie-client/lottie-dynamic-load-client"
 import PolicyCard from "@/src/components/policy-card"
 
-
 // helpers
 import {
   instantSettelmentIcon,
@@ -29,7 +28,6 @@ import {
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Simplify Online Payment Collections with EnKash",
@@ -44,7 +42,7 @@ const salesUrl = getSalesUrl("/collect-payments")
 const CollectPayment = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -189,7 +187,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
+
       <div
         className={`${styles.fourth_row} row d-flex row-padding-x-only position-relative`}
       >

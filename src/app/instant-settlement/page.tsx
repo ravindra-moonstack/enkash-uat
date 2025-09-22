@@ -20,7 +20,6 @@ import LogoSlider from "@/src/components/logo-slider"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 
-
 //helpers
 import {
   groupIcon,
@@ -49,7 +48,6 @@ const salesUrl = getSalesUrl("/instant-settlement")
 
 const showScroll = cardsData.length > 3
 const cards = stackcardData.map((item, index) => ({
-  
   content: (
     <AllInOnePolicy
       key={index}
@@ -66,7 +64,7 @@ const cards = stackcardData.map((item, index) => ({
 const InstantSettlement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
@@ -377,7 +375,7 @@ const InstantSettlement = (): React.JSX.Element => {
           />
         </div>
       </div>
-      
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">

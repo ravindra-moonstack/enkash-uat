@@ -29,7 +29,6 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Workflow Management Solution to Customize Your Payment Collections",
   description:
@@ -44,7 +43,7 @@ const showScroll = cardsData.length > 3
 const WorkflowManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">

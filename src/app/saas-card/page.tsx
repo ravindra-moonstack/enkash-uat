@@ -57,7 +57,7 @@ const cards = stackcardData.map(({ icon, title, description, image }) => ({
 const SaasCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
             <CustomBreadcrumb

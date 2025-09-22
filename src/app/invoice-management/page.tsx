@@ -2,11 +2,9 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
-
 //data
 import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
-
 
 //components
 import CommanButton from "@/src/components/buttons"
@@ -18,20 +16,12 @@ import FaqSection from "@/src/components/faq-section"
 import AllProducts from "@/src/components/all-products"
 import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
 
-
 //helpers
-import {
-  groupIcon,
-  paymentSummary,
-  mealCardImage,
-} from "."
-
+import { groupIcon, paymentSummary, mealCardImage } from "."
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Invoice Management System: Automate, Track & Reconcile Invoices ",
@@ -48,7 +38,7 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const InvoiceManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
@@ -233,7 +223,7 @@ const InvoiceManagement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
+
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center  max-w-auto`}>
           <div className={``}>
@@ -282,7 +272,7 @@ const InvoiceManagement = (): React.JSX.Element => {
             <CommanButton
               title="Get Started  "
               theme="outline-blue"
-            arrow
+              arrow
               url={salesUrl}
             />
           </div>

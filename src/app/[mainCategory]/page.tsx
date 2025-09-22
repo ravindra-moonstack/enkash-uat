@@ -99,7 +99,7 @@ const MainCategoryPage = async ({
 
   return (
     <div className={`color-black ${styles.home_container}`}>
-      <div className={styles.first_row}>
+      <div className={styles.hero_section}>
         <SliderComponent
           breadcrumbItems={pageData.breadcrumbItems}
           slides={slidesWithDiscount}

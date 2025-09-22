@@ -87,7 +87,7 @@ const cards = stackcardData.map((item: any) => ({
 const ExpenseManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto  position-relative no-pointer">
           <div className="d-flex">
             <CustomBreadcrumb

@@ -35,7 +35,6 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Fast, Easy and Secure Business Payments with EnKash",
   description:
@@ -50,7 +49,7 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const MakePayment = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -255,7 +254,7 @@ const MakePayment = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
+
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center `}>
           <div className={``}>
