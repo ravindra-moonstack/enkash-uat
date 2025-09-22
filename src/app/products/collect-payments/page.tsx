@@ -189,7 +189,7 @@ const CollectPayment = (): React.JSX.Element => {
       </div>
 
       <div
-        className={`${styles.fourth_row} row d-flex row-padding-x-only position-relative`}
+        className={`${styles.use_case_section} row d-flex row-padding-x-only position-relative`}
       >
         <div
           className={`${styles.text_container} max-w-auto position-relative`}
