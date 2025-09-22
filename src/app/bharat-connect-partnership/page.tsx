@@ -92,7 +92,7 @@ const partnershipsPage = (): React.JSX.Element => {
         slideData={slideData}
       />
 
-      <div className={`${styles.third_row} ${styles.steps_container}`}>
+      <div className={`${styles.features_section} ${styles.steps_container}`}>
         <BecomePartnerSteps
           heading={headingData}
           steps={stepsData}

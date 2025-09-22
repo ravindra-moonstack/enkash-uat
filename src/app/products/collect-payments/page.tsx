@@ -149,7 +149,7 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.third_row}  `}>
+      <div className={`${styles.features_section}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
             <div className={` row`}>

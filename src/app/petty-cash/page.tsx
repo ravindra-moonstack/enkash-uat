@@ -187,7 +187,7 @@ const PettyCash = (): React.JSX.Element => {
           </>
         </div>
       </div>
-      <div className={` ${styles.third_row}`}>
+      <div className={` ${styles.features_section}`}>
         <div className="max-w-auto">
           <div className={`d-flex flex-column ${styles.subtitle}`}>
             <div className="mb-2">

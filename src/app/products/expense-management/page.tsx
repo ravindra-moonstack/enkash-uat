@@ -211,7 +211,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.third_row} bg_white_index`}>
+      <div className={`${styles.features_section} bg_white_index`}>
         <SmartPolicySection
           heading={[
             { title: "Smart Policy", color: "color-black" },

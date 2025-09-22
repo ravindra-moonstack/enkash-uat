@@ -133,7 +133,7 @@
   }
 }
 
-.third_row {
+.features_section {
   background-image: url(./img/ArtboardBg.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -378,28 +378,6 @@
       width: 70%;
     }
   }
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar {
-  width: 12px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: $color-white;
-  border: 1px solid transparent;
-  border-radius: 20px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: #3b82f6;
-  border-radius: 9999px;
-  border: 1px solid transparent;
-}
-
-/* Firefox */
-.third_row .scrollbar-thin {
-  scrollbar-width: auto;
-  scrollbar-color: #3b82f6 transparent;
 }
 
 .card_stacking_row {

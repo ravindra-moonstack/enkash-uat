@@ -151,7 +151,7 @@
   }
 }
 
-.third_row {
+.features_section {
   width: 100%;
   padding: 50px 20px 50px;
 
@@ -442,28 +442,6 @@
   @include for-laptops {
     padding: 90px 20px 46px;
   }
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar {
-  width: 12px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: $color-white;
-  border: 1px solid transparent;
-  border-radius: 20px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: #3b82f6;
-  border-radius: 9999px;
-  border: 1px solid transparent;
-}
-
-/* Firefox */
-.third_row .scrollbar-thin {
-  scrollbar-width: auto;
-  scrollbar-color: #3b82f6 transparent;
 }
 
 .bg-color-soft-mint {
