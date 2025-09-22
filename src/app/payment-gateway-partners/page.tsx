@@ -3,7 +3,6 @@ import { Metadata } from "next"
 import Link from "next/link"
 import styles from "./page.module.scss"
 
-
 //data
 import {
   BankSolutionHeading,
@@ -29,7 +28,6 @@ import FaqSection from "@/src/components/faq-section"
 
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Gateway Partnerships",
@@ -79,7 +77,6 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
@@ -168,7 +165,6 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>

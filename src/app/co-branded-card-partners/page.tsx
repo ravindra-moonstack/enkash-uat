@@ -24,11 +24,9 @@ import FaqSection from "@/src/components/faq-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
 import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
 
-
 //helpers
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",
@@ -73,7 +71,6 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
@@ -93,7 +90,6 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
