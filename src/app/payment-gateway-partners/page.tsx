@@ -81,7 +81,7 @@ const partnershipsPage = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.second_row}`}>
+      <div className={`${styles.introduction_section}`}>
         <PartnershipSection
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}

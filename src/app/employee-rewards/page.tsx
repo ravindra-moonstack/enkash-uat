@@ -163,7 +163,7 @@ const EmployeeRewards = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={`row ${styles.second_row} `}>
+      <div className={`row ${styles.introduction_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <DynamicHeading

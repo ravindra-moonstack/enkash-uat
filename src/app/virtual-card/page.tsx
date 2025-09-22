@@ -177,7 +177,7 @@ const VirtualCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.second_row} `}>
+      <div className={`${styles.introduction_section} `}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-2 pb-md-5`}>
             <div

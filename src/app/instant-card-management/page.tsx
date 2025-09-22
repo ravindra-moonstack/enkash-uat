@@ -135,7 +135,7 @@ const InstantCardManagement = (): React.JSX.Element => {
 
       <LogoSlider />
 
-      <div className={styles.second_row}>
+      <div className={styles.introduction_section}>
         <div className="max-m-auto">
           <div
             className={`${styles.second_row_title} text-center pb-3 pb-md-5`}

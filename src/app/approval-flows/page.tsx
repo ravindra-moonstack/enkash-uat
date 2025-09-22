@@ -164,7 +164,7 @@ const ApprovalFlows = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={styles.second_row}>
+      <div className={styles.introduction_section}>
         <div className="max-m-auto">
           <div className=" text-center pb-md-4 pb-4">
             <DynamicHeading

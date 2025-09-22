@@ -101,7 +101,7 @@ const Vouchers = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`row ${styles.second_row} `}>
+      <div className={`row ${styles.introduction_section} `}>
         <div className="d-flex text-center flex-column gap-32  max-w-auto">
           <div className="d-inline  text-center">
             <DynamicHeading

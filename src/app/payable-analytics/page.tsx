@@ -154,7 +154,7 @@ const PayableAnalytics = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={`row ${styles.second_row} `}>
+      <div className={`row ${styles.introduction_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className=" text-center">
             <DynamicHeading
