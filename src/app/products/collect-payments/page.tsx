@@ -219,7 +219,7 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.fifth_row}>
+      <div className={styles.cta_section}>
         <div className={`max-w-auto  ${styles.section}`}>
           <div className="row align-items-center">
             <div className="col-12 col-md-6">

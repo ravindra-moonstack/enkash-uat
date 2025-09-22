@@ -318,7 +318,7 @@ const PettyCash = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} `}>
+      <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className={`${styles.heading} text-center`}>
             <DynamicHeading

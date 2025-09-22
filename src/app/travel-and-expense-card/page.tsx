@@ -434,7 +434,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} relative`}>
+      <div className={`${styles.cta_section} relative`}>
         <div className={`${styles.title} text-center max-w-auto`}>
           <div
             className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
