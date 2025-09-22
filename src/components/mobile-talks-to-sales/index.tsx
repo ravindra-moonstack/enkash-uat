@@ -1,9 +1,8 @@
 "use client"
 import React from "react"
 import { usePathname } from "next/navigation"
-
 import styles from "./mobile-talk-to-sales.module.scss"
-import RectangleButton from "../buttons/rectangle-button"
+import CommanButton from "../buttons"
 
 const TalkToSales = (): React.JSX.Element => {
   //
@@ -13,7 +12,7 @@ const TalkToSales = (): React.JSX.Element => {
 
   return (
     <div className={`mobile-only ${styles.mobile_talk_sales}`}>
-      <RectangleButton
+      <CommanButton
         title="Talk to Sales"
         theme="blue"
         url={`/sales/?source=${lastSlug}`}

@@ -6,7 +6,6 @@ import {
   blueStepTick,
   corporateNeed,
   individualNeed,
-  whiteArrow,
   zigZagGrey,
   zigZagTop,
 } from "../img/index"
@@ -16,9 +15,9 @@ import OccasionVoucher from "@/src/components/voucher-page/occasion-voucher"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import { linkifyText, nameToUrl } from "@/src/utils/stringUtils"
 import VoucherFaqComponent from "@/src/components/voucher-page/voucher-faq"
-import RectangleButton from "@/src/components/buttons/rectangle-button"
+import CommanButton from "@/src/components/buttons"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import { blueArrow } from "."
+import NotFound from "../../not-found"
 
 export async function generateMetadata({
   params,
@@ -632,11 +631,10 @@ const CategoryPage = async ({
                     />
                   </div>
                   <div className="mt-2 d-none d-md-block">
-                    <RectangleButton
+                    <CommanButton
                       title="Get started today"
                       theme="border-gray"
-                      actionImage={blueArrow}
-                      hoverImage={whiteArrow}
+                      arrow
                       iconSize={15}
                       url="/sales/?source=receivables"
                     />
@@ -650,47 +648,7 @@ const CategoryPage = async ({
           </div>
         </div>
       ) : (
-        <div className={` py-5 ${styles.error_container}`}>
-          <div className={`${styles.first_row} row color-white`}>
-            <div className="col-md-10 mx-auto col-12 d-flex flex-column align-items-center py-5">
-              <div className="d-flex mb-4 text-center">
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "The Voucher you are looking for is currently not available",
-                      color: "color-secondry-black ",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-7"
-                />
-              </div>
-              <div className="d-flex">
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Explore more on Bolt",
-                      color: "color-equity-blue ",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-7"
-                />
-              </div>
-
-              <div className="mt-4 desktop-only"></div>
-              <div className="mt-5">
-                <RectangleButton
-                  title="Explore Bolt"
-                  theme="blue"
-                  url="/bolt"
-                />
-                <span className="mx-2"></span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <NotFound />
       )}
     </>
   )

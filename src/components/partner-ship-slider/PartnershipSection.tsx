@@ -6,7 +6,7 @@ import PartnershipSlider from "."
 
 import "./PartnershipSection.scss"
 import DynamicHeading from "../dynamic-heading"
-import RectangleButton from "../buttons/rectangle-button"
+import CommanButton from "../buttons"
 
 interface SlideData {
   id: number
@@ -69,7 +69,7 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
 
             <div className="button-group">
               {buttons.map((btn, index) => (
-                <RectangleButton
+                <CommanButton
                   key={index}
                   title={btn.title}
                   theme={btn.theme}
