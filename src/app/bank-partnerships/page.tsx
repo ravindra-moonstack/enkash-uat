@@ -74,7 +74,7 @@ const PartnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow-svg",
+ 
           }}
         />
       </div>
@@ -99,7 +99,7 @@ const PartnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow-svg",
+          
           }}
         />
       </div>
