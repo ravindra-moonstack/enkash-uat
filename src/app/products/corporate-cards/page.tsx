@@ -338,7 +338,7 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.third_row}>
+      <div className={styles.features_section}>
         <div className={` ${styles.rbi_section} max-w-auto`}>
           <div>
             <Image

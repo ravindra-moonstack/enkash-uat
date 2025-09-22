@@ -146,7 +146,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
         }}
       />
 
-      <div className={`${styles.third_row} bg-highlite`}>
+      <div className={`${styles.features_section} bg-highlite`}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-2 pb-md-5`}>
             <div
@@ -300,7 +300,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.third_row} bg-highlite`}>
+      <div className={`${styles.features_section} bg-highlite`}>
         <div className="max-w-auto">
           <div className={`row align-items-center ${styles.section}`}>
             <div className="col-md-6 col-12  pe-md-5">

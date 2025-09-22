@@ -279,7 +279,7 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.third_row}>
+      <div className={styles.features_section}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center`}>
             <DynamicHeading

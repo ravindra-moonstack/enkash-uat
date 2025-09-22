@@ -23,7 +23,7 @@ const SmartPolicySection = ({
   buttonUrl = "/approval-flows",
 }: SmartPolicySectionProps) => {
   return (
-    <div className={`${styles.third_row}`}>
+    <div className={`${styles.features_section}`}>
       <div className="relative max-w-auto">
         <div className={`${styles.title} text-start`}>
           <DynamicHeading content={heading} headingTag="h2" className="f-6" />
