@@ -1,10 +1,9 @@
 "use client"
 import type React from "react"
 import styles from "./BankSolutions.module.scss"
-import { FaCaretDown } from "react-icons/fa"
+import { FaArrowRight, FaCaretDown } from "react-icons/fa"
 import DynamicHeading from "../dynamic-heading"
 import Link from "next/link"
-import Image from "next/image"
 
 interface Solution {
   title: string
@@ -31,7 +30,6 @@ interface BankSolutionsProps {
   button?: {
     connectText: string
     connectUrl: string
-    blueArrow: string
   }
 }
 
@@ -111,15 +109,9 @@ const BankSolutions: React.FC<BankSolutionsProps> = ({
                         },
                       ]}
                       headingTag="p"
-                      className="mb-0 f-5"
+                      className="mb-0 f-5 pe-1"
                     />
-                    <Image
-                      src={button.blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
+                    <FaArrowRight />
                   </Link>
                 </div>
               </div>
