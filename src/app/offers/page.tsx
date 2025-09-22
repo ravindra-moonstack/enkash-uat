@@ -11,16 +11,14 @@ import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
 import RewardsCarousel from "@/src/components/rewards-carousel"
 import CardStacking from "@/src/components/card-stacking"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import RectangleButton from "@/src/components/buttons/rectangle-button"
+import CommanButton from "@/src/components/buttons"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import LogoSlider from "@/src/components/logo-slider"
 import DynamicHeading from "@/src/components/dynamic-heading"
 
 import {
-  blueArrow,
   groupIcon,
   paymentSummary,
-  whiteArrow,
   mealCardImage,
   activationIcon,
   realTimeIcon,
@@ -134,7 +132,7 @@ const Offers = (): React.JSX.Element => {
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                   >
                     <div>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
@@ -354,11 +352,10 @@ const Offers = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.get_started_button} `}>
-            <RectangleButton
+            <CommanButton
               title="Get Started  "
               theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
+              arrow
               url={salesUrl}
             />
           </div>

@@ -18,7 +18,7 @@ import {
 
 import CustomBreadcrumb from "../breadcrumb"
 import DynamicHeading from "../dynamic-heading"
-import RectangleButton from "../buttons/rectangle-button"
+import CommanButton from "../buttons"
 
 const CareersHero: React.FC = () => {
   //
@@ -120,7 +120,7 @@ const CareersHero: React.FC = () => {
                 <div
                   className={`${styles.bannerButton} d-flex justify-content-center`}
                 >
-                  <RectangleButton
+                  <CommanButton
                     title="Explore Open Roles"
                     theme="blue"
                     url="#yourOpportunitySection"

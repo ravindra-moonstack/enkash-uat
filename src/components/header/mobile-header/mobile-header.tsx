@@ -10,7 +10,7 @@ import navBarTopTtitle from "@/src/components/header/data/nav-bar"
 import Hamburger from "./hamburger"
 import motherProducts from "@/src/components/header/data/mother-products"
 import loyaltyLoungeProducts from "../data/loaylty-lounge-products"
-import RectangleButton from "@/src/components/buttons/rectangle-button"
+import CommanButton from "@/src/components/buttons"
 import SubProductListView from "./sub-product-list-view"
 import {
   resourseProducts,
@@ -162,7 +162,7 @@ const MobileHeader = ({ utmSource }: Props) => {
             <div
               className={`d-flex justify-content-center ${styles.buttons_container}`}
             >
-              <RectangleButton
+              <CommanButton
                 title="Log In"
                 theme="outline-blue"
                 url={`${process.env.NEXT_PUBLIC_HOME_URL ?? ""}?source=nav-bar`}

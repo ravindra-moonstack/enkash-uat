@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 import styles from "./style.module.scss"
 import DynamicHeading from "../dynamic-heading"
-import RectangleButton from "../buttons/rectangle-button"
+import CommanButton from "../buttons"
 
 interface CareersCardProps {
   icon: string
@@ -58,7 +58,7 @@ const CareersCard: React.FC<CareersCardProps> = ({ icon }) => {
       </div>
 
       <div className={`${styles.buttonSection}`}>
-        <RectangleButton
+        <CommanButton
           title="View Open Roles"
           theme="outline-blue"
           url="/careers"
