@@ -189,18 +189,13 @@ const url: {
     destination: "/vouchers/zee5",
   },
   {
-    source: "/vouchers",
-    destination: "/products/vouchers",
-  },
-  {
-    source: "/vouchers/:path*",
-    destination: "/products/vouchers",
-  },
-  {
     source: "/voucher",
     destination: "/products/vouchers",
   },
-
+  {
+    source: "/voucher/:path*",
+    destination: "/products/vouchers",
+  },
   {
     source: "/resourcesblog/budget-highlights-2023",
     destination: "/resources/blog/union-budget-2023",

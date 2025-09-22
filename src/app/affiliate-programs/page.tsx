@@ -24,16 +24,12 @@ import ProductsSection from "@/src/components/our-products-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
 import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
 
-
-
 // helpers
 import { containerScreen, participantBg } from "."
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
-
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",
@@ -78,7 +74,6 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
@@ -99,7 +94,6 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
