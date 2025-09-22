@@ -154,7 +154,7 @@ const MakePayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row}`}>
+      <div className={`${styles.use_case_section}`}>
         <div className="max-w-auto">
           <div className={` ${styles.section}`}>
             <div className={`row gap-3`}>

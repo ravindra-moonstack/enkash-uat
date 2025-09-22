@@ -148,7 +148,7 @@ const PrepaidCard = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row} `}>
+      <div className={`${styles.use_case_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
             <DynamicHeading

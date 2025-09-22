@@ -380,7 +380,7 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row} bg-white`}>
+      <div className={`${styles.use_case_section} bg-white`}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
             <div

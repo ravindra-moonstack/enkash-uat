@@ -158,7 +158,7 @@ const MealCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row}  row d-flex`}>
+      <div className={`${styles.use_case_section}  row d-flex`}>
         <div className="max-m-auto relative ">
           <div className={styles.circles_bg}>
             <Image src={circles} alt="background image" />
