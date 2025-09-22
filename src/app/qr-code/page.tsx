@@ -169,7 +169,7 @@ const QrCode = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={`row ${styles.second_row} `}>
+      <div className={`row ${styles.introduction_section} `}>
         <div className="">
           <div className="pb-4 pb-md-5 text-center">
             <DynamicHeading
