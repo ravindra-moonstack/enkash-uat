@@ -1,6 +1,7 @@
+// /src/components/CustomBreadcrumb.tsx
 import React from "react"
 import Link from "next/link"
-import Head from "next/head"
+import Script from "next/script"
 import styles from "./breadcrumb.module.scss"
 import { BreadcrumbProps } from "@/src/types/common"
 
@@ -22,11 +23,14 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
 
   return (
     <>
-      <Head>
-        <script type="application/ld+json">
-          {JSON.stringify(schemaMarkup)}
-        </script>
-      </Head>
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify(schemaMarkup)}
+      </Script>
+
       <nav
         className={`${styles.breadcrumb} ${
           linkColor === "white"
