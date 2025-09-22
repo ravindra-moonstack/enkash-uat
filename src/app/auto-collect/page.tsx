@@ -30,7 +30,6 @@ import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 const showScroll = cardsData.length > 3
 export const metadata: Metadata = generateMetaData({
   title: "Auto Collect: Automate Incoming Payments with Virtual Accounts",
@@ -45,7 +44,7 @@ const salesUrl = getSalesUrl("/auto-collect")
 const AutoCollect = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">

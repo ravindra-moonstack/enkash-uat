@@ -17,14 +17,12 @@ import FaqSection from "@/src/components/faq-section"
 import BankLogoSlider from "@/src/components/banking-slider"
 import FeatureCard from "@/src/components/feature-card"
 
-
 //helpers
 import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Connected Banking: For Faster Payouts",
@@ -41,7 +39,7 @@ const showScroll = cardsData.length > 3
 const ConnectedBanking = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">

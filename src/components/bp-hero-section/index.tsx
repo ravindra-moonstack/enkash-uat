@@ -38,7 +38,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
 }) => {
   return (
     <div
-      className={`${styles.first_row}`}
+      className={`${styles.hero_section}`}
       style={{
         backgroundImage: `url(${backgroundImage})`,
         ...customCSS,

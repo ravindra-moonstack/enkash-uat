@@ -54,7 +54,7 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const CorporateCards = (): React.JSX.Element => {
   return (
     <>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto position-relative no-pointer ">
           <div className="d-flex">
             <CustomBreadcrumb

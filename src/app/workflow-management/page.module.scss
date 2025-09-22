@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -260,7 +260,6 @@
   }
 }
 
-
 .fifth_row {
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
@@ -281,4 +280,3 @@
     }
   }
 }
-

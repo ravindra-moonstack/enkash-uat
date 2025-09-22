@@ -22,7 +22,6 @@ import { paymentSummary } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Grab 400+ Brand Gift Vouchers for Best Discounts",
   description:
@@ -36,7 +35,7 @@ const salesUrl = getSalesUrl("/vouchers")
 const Vouchers = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto">
           <div className="d-flex">
             <CustomBreadcrumb

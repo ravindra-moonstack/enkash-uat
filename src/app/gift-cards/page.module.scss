@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
@@ -167,4 +167,3 @@
     padding: 0 20px 66px;
   }
 }
-

@@ -15,7 +15,6 @@ import LogoSlider from "@/src/components/logo-slider"
 import PolicyCard from "@/src/components/policy-card"
 import FaqSection from "@/src/components/faq-section"
 
-
 //helpers
 import {
   groupIcon,
@@ -45,7 +44,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
   //
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">

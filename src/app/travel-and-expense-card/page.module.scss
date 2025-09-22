@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -56,17 +56,14 @@
     img,
     .podium_img {
       position: absolute;
-      bottom: 0%; 
-      left: 50%; 
+      bottom: 0%;
+      left: 50%;
       transform: translateX(-50%);
       width: 423px;
       height: auto;
     }
   }
 }
-
-
-
 
 .fifth_row {
   position: relative;
@@ -105,7 +102,6 @@
     padding: 0px 20px 90px;
   }
 }
-
 
 .action_row {
   position: relative;

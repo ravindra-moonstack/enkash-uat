@@ -25,7 +25,6 @@ import StepCard from "@/src/components/step-card"
 import AllProducts from "@/src/components/all-products"
 import CardProduct from "@/src/components/card-product"
 
-
 // helpers
 import {
   mealCardImage,
@@ -39,7 +38,6 @@ import {
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Travel & Expense Card: Simplify Business Travel Spending",
@@ -55,7 +53,7 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const TravelExpenseCard = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
             <CustomBreadcrumb
