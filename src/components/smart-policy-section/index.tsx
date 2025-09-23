@@ -1,6 +1,6 @@
 import React, { memo } from "react"
 import styles from "./smartPolicySection.module.scss"
-import { DynamicHeading, PolicyCard, RectangleButton, ShimmerImage } from ".."
+import { DynamicHeading, PolicyCard, CommanButton, ShimmerImage } from ".."
 
 interface SmartPolicySectionProps {
   heading: { title: string; color: string }[]
@@ -21,10 +21,9 @@ const SmartPolicySection = ({
   showScroll = true,
   buttonTitle = "Explore Policy Controls",
   buttonUrl = "/approval-flows",
-  buttonIcon,
 }: SmartPolicySectionProps) => {
   return (
-    <div className={`${styles.third_row}`}>
+    <div className={`${styles.features_section}`}>
       <div className="relative max-w-auto">
         <div className={`${styles.title} text-start`}>
           <DynamicHeading content={heading} headingTag="h2" className="f-6" />
@@ -59,10 +58,10 @@ const SmartPolicySection = ({
         </div>
 
         <div className={styles.scrollBtn}>
-          <RectangleButton
+          <CommanButton
             title={buttonTitle}
             theme="border-gray"
-            actionImage={buttonIcon}
+            arrow
             iconSize={15}
             url={buttonUrl}
           />

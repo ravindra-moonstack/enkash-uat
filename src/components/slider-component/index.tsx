@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css"
 import styles from "./sliderComponent.module.scss"
 import CustomBreadcrumb from "../breadcrumb"
 import DynamicHeading from "../dynamic-heading"
-import RectangleButton from "../buttons/rectangle-button"
+import CommanButton from "../buttons"
 import Image, { StaticImageData } from "next/image"
 import { useMemo } from "react"
 
@@ -119,7 +119,7 @@ export default function SliderComponent({
                           className="mb-0"
                         />
                       </div>
-                      <RectangleButton
+                      <CommanButton
                         title={slide.buttonText}
                         theme="blue"
                         url={slide.buttonUrl}

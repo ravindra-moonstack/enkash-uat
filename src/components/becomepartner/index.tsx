@@ -1,9 +1,8 @@
 import React, { JSX } from "react"
 import Link from "next/link"
-import Image from "next/image"
-
 import DynamicHeading from "../dynamic-heading"
 import styles from "./become-partner-steps.module.scss"
+import { FaArrowRight } from "react-icons/fa6"
 
 interface StepData {
   stepNumber: string
@@ -23,7 +22,7 @@ interface BecomePartnerStepsProps {
   button?: {
     connectText: string
     connectUrl: string
-    blueArrow: string
+
   }
 }
 
@@ -73,15 +72,9 @@ export default function BecomePartnerSteps({
                         },
                       ]}
                       headingTag="p"
-                      className="mb-0 f-5"
+                      className="mb-0 f-5  pe-1"
                     />
-                    <Image
-                      src={button.blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
+                  <FaArrowRight />
                   </Link>
                 </div>
               </div>

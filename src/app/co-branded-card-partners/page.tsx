@@ -24,11 +24,9 @@ import FaqSection from "@/src/components/faq-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
 import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
 
-
 //helpers
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",
@@ -73,27 +71,24 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
 
-      <div className={`${styles.second_row}`}>
-        <PartnershipSection
-          backgroundImage={participantBg.src}
-          heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
-          description="If you are a startup owner, an influencer and an enterprise, or an employer, these co-branded products have been designed for you."
-          slideData={slideData}
-        />
-      </div>
-      <div className={`${styles.third_row} ${styles.steps_container}`}>
+      <PartnershipSection
+        backgroundImage={participantBg.src}
+        heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
+        description="If you are a startup owner, an influencer and an enterprise, or an employer, these co-branded products have been designed for you."
+        slideData={slideData}
+      />
+
+      <div className={`${styles.features_section} ${styles.steps_container}`}>
         <BecomePartnerSteps
           heading={headingData}
           steps={stepsData}
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>

@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -84,7 +84,7 @@
   }
 }
 
-.second_row {
+.introduction_section {
   background: linear-gradient(
     180deg,
     #1c5af4 0%,
@@ -172,7 +172,7 @@
   }
 }
 
-.third_row {
+.features_section {
   width: 100%;
   padding: 50px 20px;
 
@@ -245,7 +245,7 @@
   }
 }
 
-.fourth_row {
+.use_case_section {
   padding: 0px 20px;
 
   @include for-laptops {
@@ -264,7 +264,7 @@
   }
 }
 
-.fifth_row {
+.cta_section {
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
@@ -285,7 +285,7 @@
   }
 }
 
-.eigth_row {
+.integration_section {
   background-color: #f1f1f1;
   position: relative;
   display: flex;

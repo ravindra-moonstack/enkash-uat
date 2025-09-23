@@ -24,16 +24,12 @@ import ProductsSection from "@/src/components/our-products-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
 import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
 
-
-
 // helpers
 import { containerScreen, participantBg } from "."
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
-
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",
@@ -78,28 +74,24 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
 
-      <div className={`${styles.second_row}`}>
-        <PartnershipSection
-          backgroundImage={participantBg.src}
-          heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
-          description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
-          slideData={slideData}
-        />
-      </div>
+      <PartnershipSection
+        backgroundImage={participantBg.src}
+        heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
+        description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
+        slideData={slideData}
+      />
 
-      <div className={`${styles.third_row} ${styles.steps_container}`}>
+      <div className={`${styles.features_section} ${styles.steps_container}`}>
         <BecomePartnerSteps
           heading={headingData}
           steps={stepsData}
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>

@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -75,7 +75,7 @@
   }
 }
 
-.second_row {
+.introduction_section {
   background: linear-gradient(
     180deg,
     #1c5af4 0%,
@@ -151,7 +151,7 @@
   }
 }
 
-.third_row {
+.features_section {
   width: 100%;
   padding: 50px 20px 20px;
 
@@ -222,7 +222,7 @@
   }
 }
 
-.fourth_row {
+.use_case_section {
   padding: 0px 20px 50px;
 
   @include for-laptops {
@@ -317,7 +317,7 @@
   }
 }
 
-.fifth_row {
+.cta_section {
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
@@ -334,79 +334,6 @@
 
     @include for-laptops {
       padding: 11px 14px;
-    }
-  }
-}
-
-.seventh_row {
-  .container {
-    @include for-laptops {
-      padding-left: 150px;
-      padding-right: 150px;
-    }
-
-    @include for-window-zoomed-screens {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-  }
-
-  .left_row {
-    padding: 40px;
-    margin-top: -20px;
-    border-radius: 10px;
-    border: 2px solid $color-night-blue;
-
-    @include for-laptops {
-      padding: 40px;
-      width: 50%;
-      margin-top: 0px;
-    }
-  }
-
-  .right_row {
-    margin-top: -10px;
-
-    @include for-laptops {
-      margin-left: -20px;
-      margin-top: 0;
-      width: 50%;
-    }
-
-    img {
-      height: 100%;
-    }
-  }
-}
-
-.eigth_row {
-  background-color: #f1f1f1;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding-bottom: 50px;
-  padding-top: 50px;
-
-  @include for-laptops {
-    padding-top: 138px;
-  }
-
-  .faqSection {
-    width: 70%;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      right: 0; // ✅ Add this
-      bottom: 0;
-      display: none;
-      pointer-events: none;
-
-      @include for-laptops {
-        display: block; // ✅ Changed from flex to block
-        height: 37.5rem;
-      }
     }
   }
 }
@@ -444,77 +371,7 @@
   }
 }
 
-.third_row .scrollbar-thin::-webkit-scrollbar {
-  width: 12px;
-}
 
-.third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: $color-white;
-  border: 1px solid transparent;
-  border-radius: 20px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: #3b82f6;
-  border-radius: 9999px;
-  border: 1px solid transparent;
-}
-
-/* Firefox */
-.third_row .scrollbar-thin {
-  scrollbar-width: auto;
-  scrollbar-color: #3b82f6 transparent;
-}
-
-.bg-color-soft-mint {
-  background-color: $color-soft-mint;
-}
-
-.new_row {
-  background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
-
-  position: relative;
-  padding: 20px;
-
-  @include for-laptops {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-}
-
-.faq_new_row {
-  background: $color-white;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding: 50px 20px;
-
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      bottom: 0;
-      display: none;
-
-      @include for-laptops {
-        display: flex;
-      }
-    }
-  }
-
-  .faqData {
-    width: 100%;
-
-    @include for-laptops {
-      width: 70%;
-    }
-  }
-}
 
 .other_products {
   background: $color-white;

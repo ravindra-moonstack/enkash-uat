@@ -1,4 +1,4 @@
-export { default as whiteArrow } from "./white-arrow.png"
+
 export { default as groupIcon } from "./groupIcon.png"
 export { default as paymentSummary } from "./heroImg.webp"
 export { default as acceleratedGrowthImg } from "./acceleratedGrowthImg.svg"
@@ -7,7 +7,7 @@ export { default as heavyLiftingIconTwo } from "./heavy-lifting-icon-two.svg"
 export { default as heavyLiftingIconThree } from "./heavy-lifting-icon-three.svg"
 export { default as heavyLiftingIconFour } from "./heavy-lifting-icon-four.svg"
 export { default as creditCard } from "./credit_card.svg"
-export { default as blueArrow } from "./blue-arrrow.svg"
+
 
 export { default as paymentButton } from "./pazment-button.svg"
 export { default as mealCardImg } from "./meal-card.png"

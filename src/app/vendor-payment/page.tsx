@@ -7,8 +7,7 @@ import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 
 //helpers
-import {  groupIcon, paymentSummary, mealCardImage } from "./img"
-
+import { groupIcon, paymentSummary, mealCardImage } from "./img"
 
 //components
 import DynamicHeading from "@/src/components/dynamic-heading"
@@ -19,12 +18,11 @@ import FaqSection from "@/src/components/faq-section"
 import CommonButton from "@/src/components/buttons"
 import AllProducts from "@/src/components/all-products"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import  CommanButton  from "@/src/components/buttons"
+import CommanButton from "@/src/components/buttons"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate and Track your Vendor Payments ",
@@ -45,7 +43,7 @@ const VendorPayment = (): React.JSX.Element => {
 
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
@@ -148,7 +146,7 @@ const VendorPayment = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={styles.third_row}>
+      <div className={styles.features_section}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
@@ -212,7 +210,7 @@ const VendorPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row}  `}>
+      <div className={`${styles.use_case_section}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
             <div className={`row  align-items-center gap-3`}>
@@ -279,7 +277,7 @@ const VendorPayment = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.fifth_row} `}>
+      <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <DynamicHeading

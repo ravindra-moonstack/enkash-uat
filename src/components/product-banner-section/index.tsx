@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./banner.module.scss";
-import { CustomBreadcrumb, DynamicHeading, LottieDynamicLoadComponent, RectangleButton } from "..";
+import { CustomBreadcrumb, DynamicHeading, LottieDynamicLoadComponent, CommanButton } from "..";
 
 
 interface ProductBannerProps {
@@ -56,7 +56,7 @@ const ProductBanner: React.FC<ProductBannerProps> = ({
 
           {/* CTA */}
           <div className="justify-content-center d-flex mt-3 pointer-auto">
-            <RectangleButton title={buttonText} theme="blue" url={buttonUrl} />
+            <CommanButton title={buttonText} theme="blue" url={buttonUrl} />
           </div>
         </div>
 
