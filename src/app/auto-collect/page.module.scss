@@ -302,79 +302,6 @@
   }
 }
 
-.seventh_row {
-  .container {
-    @include for-laptops {
-      padding-left: 150px;
-      padding-right: 150px;
-    }
-
-    @include for-window-zoomed-screens {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-  }
-
-  .left_row {
-    padding: 40px;
-    margin-top: -20px;
-    border-radius: 10px;
-    border: 2px solid $color-night-blue;
-
-    @include for-laptops {
-      padding: 40px;
-      width: 50%;
-      margin-top: 0px;
-    }
-  }
-
-  .right_row {
-    margin-top: -10px;
-
-    @include for-laptops {
-      margin-left: -20px;
-      margin-top: 0;
-      width: 50%;
-    }
-
-    img {
-      height: 100%;
-    }
-  }
-}
-
-.eigth_row {
-  background-color: #f1f1f1;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding: 36px;
-
-  @include for-laptops {
-    padding-top: 138px;
-  }
-
-  .faqSection {
-    @include for-laptops {
-      width: 70%;
-    }
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      right: 0; // ✅ Add this
-      bottom: 0;
-      display: none;
-      pointer-events: none;
-
-      @include for-laptops {
-        display: block; // ✅ Changed from flex to block
-        height: 37.5rem;
-      }
-    }
-  }
-}
 
 .ninth_row {
   position: relative;
@@ -398,52 +325,7 @@
   }
 }
 
-.bg-color-soft-mint {
-  background-color: $color-soft-mint;
-}
 
-.new_row {
-  background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
-
-  position: relative;
-  padding: 50px 20px;
-
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-}
-
-.faq_new_row {
-  background: $color-white;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding: 50px 20px;
-
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      bottom: 0;
-      display: none;
-
-      @include for-laptops {
-        display: flex;
-      }
-    }
-  }
-
-  .faqData {
-    width: 100%;
-
-    @include for-laptops {
-      width: 70%;
-    }
-  }
-}
 
 .other_products {
   background: $color-white;

@@ -364,7 +364,7 @@ const PaymentLinks = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.eigth_row} `}>
+      <div className={`${styles.integration_section} `}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
           <div className={`${styles.title} text-start pb-md-5 pb-4`}>
             <DynamicHeading

@@ -193,31 +193,3 @@
   }
 }
 
-.faq_new_row {
-  background: $color-white;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding: 20px;
-  @include for-laptops {
-    padding: 96px 90px 90px 60px;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      bottom: 0;
-      display: none;
-      @include for-laptops {
-        display: flex;
-      }
-    }
-  }
-
-  .faqData {
-    width: 100%;
-    @include for-laptops {
-      width: 70%;
-    }
-  }
-}

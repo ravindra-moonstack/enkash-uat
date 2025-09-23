@@ -340,13 +340,13 @@ const EmployeeRewards = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.eigth_row} relative`}>
+      <div className={`${styles.integration_section} relative`}>
         <div className={`${styles.faqSection} text-start w-100 max-w-auto`}>
           <div className={`${styles.title} text-start pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
-                  title: "Rewards That Work For ",
+                  title: "Rewards That Work For",
                   color: "color-black",
                 },
                 {

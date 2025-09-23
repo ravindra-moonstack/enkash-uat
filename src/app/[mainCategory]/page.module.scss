@@ -38,37 +38,7 @@
   }
 }
 
-.faq_new_row {
-  background: $color-white;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding: 50px 20px;
 
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      bottom: 0;
-      display: none;
-
-      @include for-laptops {
-        display: flex;
-      }
-    }
-  }
-
-  .faqData {
-    width: 100%;
-
-    @include for-laptops {
-      width: 70%;
-    }
-  }
-}
 
 .faq_wrapper {
   width: 100%;
