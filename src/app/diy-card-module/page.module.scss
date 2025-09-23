@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
@@ -94,31 +94,10 @@
     }
   }
 }
+
 .other_products {
   padding: 0px 20px 50px;
   @include for-laptops {
     padding: 0px 20px 90px;
   }
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar {
-  width: 12px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-track {
-  background: $color-white;
-  border: 1px solid transparent;
-  border-radius: 20px;
-}
-
-.third_row .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: #3b82f6;
-  border-radius: 9999px;
-  border: 1px solid transparent;
-}
-
-/* Firefox */
-.third_row .scrollbar-thin {
-  scrollbar-width: auto;
-  scrollbar-color: #3b82f6 transparent;
 }

@@ -25,7 +25,6 @@ import StepCard from "@/src/components/step-card"
 import AllProducts from "@/src/components/all-products"
 import CardProduct from "@/src/components/card-product"
 
-
 // helpers
 import {
   mealCardImage,
@@ -39,7 +38,6 @@ import {
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Travel & Expense Card: Simplify Business Travel Spending",
@@ -55,7 +53,7 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const TravelExpenseCard = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -148,7 +146,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
         }}
       />
 
-      <div className={`${styles.third_row} bg-highlite`}>
+      <div className={`${styles.features_section} bg-highlite`}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-2 pb-md-5`}>
             <div
@@ -302,7 +300,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.third_row} bg-highlite`}>
+      <div className={`${styles.features_section} bg-highlite`}>
         <div className="max-w-auto">
           <div className={`row align-items-center ${styles.section}`}>
             <div className="col-md-6 col-12  pe-md-5">
@@ -436,7 +434,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} relative`}>
+      <div className={`${styles.cta_section} relative`}>
         <div className={`${styles.title} text-center max-w-auto`}>
           <div
             className={` flex-column justify-content-center align-items-center pb-3  d-inline`}

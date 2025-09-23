@@ -81,7 +81,7 @@ const partnershipsPage = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.second_row}`}>
+      <div className={`${styles.introduction_section}`}>
         <PartnershipSection
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
@@ -158,7 +158,7 @@ const partnershipsPage = (): React.JSX.Element => {
           </div>
         </div>
       </section>
-      <div className={`${styles.third_row} ${styles.steps_container}`}>
+      <div className={`${styles.features_section} ${styles.steps_container}`}>
         <BecomePartnerSteps
           heading={headingData}
           steps={stepsData}
@@ -168,7 +168,7 @@ const partnershipsPage = (): React.JSX.Element => {
           }}
         />
       </div>
-      <div className={`${styles.third_row}`}>
+      <div className={`${styles.features_section}`}>
         <BottomCtaSection
           headingPart1="The Smartest Way to"
           headingPart2="Co-Brand Your Card"

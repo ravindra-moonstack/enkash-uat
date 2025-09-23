@@ -54,7 +54,7 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const CorporateCards = (): React.JSX.Element => {
   return (
     <>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto position-relative no-pointer ">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -120,7 +120,7 @@ const CorporateCards = (): React.JSX.Element => {
 
       <LogoSlider />
 
-      <div className={styles.second_row}>
+      <div className={styles.introduction_section}>
         <div className="max-m-auto">
           <div
             className={`${styles.second_row_title} text-center pb-3 pb-md-5`}
@@ -338,7 +338,7 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.third_row}>
+      <div className={styles.features_section}>
         <div className={` ${styles.rbi_section} max-w-auto`}>
           <div>
             <Image
@@ -380,7 +380,7 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row} bg-white`}>
+      <div className={`${styles.use_case_section} bg-white`}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
             <div
@@ -512,7 +512,7 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} relative`}>
+      <div className={`${styles.cta_section} relative`}>
         <div className={`${styles.title} text-center `}>
           <div
             className={` flex-column justify-content-center align-items-center pb-3  d-inline`}

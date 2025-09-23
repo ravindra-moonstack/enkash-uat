@@ -17,7 +17,6 @@ import HowDoesItWork from "@/src/components/how-does-it-work"
 import LottieDynamicLoadComponent from "@/src/components/lottie-client/lottie-dynamic-load-client"
 import PolicyCard from "@/src/components/policy-card"
 
-
 // helpers
 import {
   instantSettelmentIcon,
@@ -29,7 +28,6 @@ import {
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Simplify Online Payment Collections with EnKash",
@@ -44,7 +42,7 @@ const salesUrl = getSalesUrl("/collect-payments")
 const CollectPayment = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -102,7 +100,7 @@ const CollectPayment = (): React.JSX.Element => {
 
       <LogoSlider />
 
-      <div className={styles.second_row}>
+      <div className={styles.introduction_section}>
         <div className="max-m-auto">
           <div
             className={`${styles.second_row_title} text-center pb-4 pb-md-5`}
@@ -151,7 +149,7 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.third_row}  `}>
+      <div className={`${styles.features_section}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
             <div className={` row`}>
@@ -189,9 +187,9 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
+
       <div
-        className={`${styles.fourth_row} row d-flex row-padding-x-only position-relative`}
+        className={`${styles.use_case_section} row d-flex row-padding-x-only position-relative`}
       >
         <div
           className={`${styles.text_container} max-w-auto position-relative`}
@@ -221,7 +219,7 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.fifth_row}>
+      <div className={styles.cta_section}>
         <div className={`max-w-auto  ${styles.section}`}>
           <div className="row align-items-center">
             <div className="col-12 col-md-6">

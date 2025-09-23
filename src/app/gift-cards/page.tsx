@@ -60,7 +60,7 @@ const GiftCards = (): React.JSX.Element => {
   //
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -135,7 +135,7 @@ const GiftCards = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={styles.second_row}>
+      <div className={styles.introduction_section}>
         <div className="max-m-auto">
           <div
             className={`${styles.second_row_title} text-center pb-3 pb-md-5`}
@@ -229,7 +229,7 @@ const GiftCards = (): React.JSX.Element => {
         backgroundClass="bg-color-black-30"
       />
 
-      <div className={`${styles.fifth_row} relative`}>
+      <div className={`${styles.cta_section} relative`}>
         <div className={`${styles.title} text-center max-w-auto`}>
           <div
             className={` flex-column justify-content-center align-items-center pb-3  d-inline`}

@@ -1443,7 +1443,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           • ग्राहक किसी भी समय बैंकिंग लोकपाल से संपर्क कर सकता
                           है; बैंकिंग लोकपाल की सूची RBI की वेबसाइट{" "}
                           <a
-                            href="http://www.rbi.org.in/"
+                            href="https://www.rbi.org.in/"
                             target="_blank"
                             rel="noreferrer"
                           >
