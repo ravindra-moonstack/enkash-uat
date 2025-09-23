@@ -402,6 +402,9 @@ const FooterV2 = (): React.JSX.Element => {
                     regulations and/or compliance maintained by banks and
                     regulated entities. EnKash is not a bank and does not hold
                     or claim to hold a banking license.
+                    <div className="color-alternate-grey">
+                      *Powered by Banks/REs.
+                    </div>
                   </div>
                 </div>
 
@@ -842,6 +845,7 @@ const FooterV2 = (): React.JSX.Element => {
             by RBI-licensed banks and/or in accordance with RBI regulations
             and/or compliance maintained by banks and regulated entities. EnKash
             is not a bank and does not hold or claim to hold a banking license.
+            <div className="color-alternate-grey">*Powered by Banks/REs.</div>
           </div>
         </div>
       </div>
