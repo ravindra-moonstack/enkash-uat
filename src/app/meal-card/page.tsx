@@ -52,7 +52,7 @@ const cards = stackcardData.map((item, index) => ({
 const MealCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -158,7 +158,7 @@ const MealCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row}  row d-flex`}>
+      <div className={`${styles.use_case_section}  row d-flex`}>
         <div className="max-m-auto relative ">
           <div className={styles.circles_bg}>
             <Image src={circles} alt="background image" />

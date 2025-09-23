@@ -189,7 +189,11 @@ const url: {
     destination: "/vouchers/zee5",
   },
   {
-    source: "/vouchers",
+    source: "/voucher",
+    destination: "/products/vouchers",
+  },
+  {
+    source: "/voucher/:path*",
     destination: "/products/vouchers",
   },
   {

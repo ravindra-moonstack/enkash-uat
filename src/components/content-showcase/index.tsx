@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image"
 import styles from "./contentShowcase.module.scss"
 
 import DynamicHeading from "@/src/components/dynamic-heading"
-import RectangleButton from "@/src/components/buttons/rectangle-button"
+import CommanButton from "@/src/components/buttons"
 import PolicyCard from "@/src/components/policy-card"
 
 interface ContentShowcaseProps {
@@ -93,7 +93,7 @@ function ContentShowcase({
                 ))}
               </div>
               <div className={styles.list_button}>
-                <RectangleButton
+                <CommanButton
                   title={buttonTitle || "Get Started"}
                   theme="outline-blue"
                   url={buttonUrl || "/sales"}

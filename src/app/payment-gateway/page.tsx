@@ -54,7 +54,7 @@ const salesUrl = getSalesUrl("/payment-gateway")
 const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
@@ -161,7 +161,7 @@ const PaymentGateway = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={` ${styles.second_row} `}>
+      <div className={` ${styles.introduction_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <DynamicHeading
@@ -279,7 +279,7 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.third_row}>
+      <div className={styles.features_section}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center`}>
             <DynamicHeading
@@ -683,7 +683,7 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.eigth_row}  `}>
+      <div className={`${styles.integration_section}  `}>
         <div className="max-w-auto w-100">
           <div className={`${styles.section} row`}>
             <div
@@ -744,7 +744,7 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} `}>
+      <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <DynamicHeading

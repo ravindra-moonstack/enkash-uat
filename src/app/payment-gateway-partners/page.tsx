@@ -3,7 +3,6 @@ import { Metadata } from "next"
 import Link from "next/link"
 import styles from "./page.module.scss"
 
-
 //data
 import {
   BankSolutionHeading,
@@ -29,7 +28,6 @@ import FaqSection from "@/src/components/faq-section"
 
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Gateway Partnerships",
@@ -79,12 +77,11 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
 
-      <div className={`${styles.second_row}`}>
+      <div className={`${styles.introduction_section}`}>
         <PartnershipSection
           backgroundImage={participantBg.src}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
@@ -161,18 +158,17 @@ const partnershipsPage = (): React.JSX.Element => {
           </div>
         </div>
       </section>
-      <div className={`${styles.third_row} ${styles.steps_container}`}>
+      <div className={`${styles.features_section} ${styles.steps_container}`}>
         <BecomePartnerSteps
           heading={headingData}
           steps={stepsData}
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
-      <div className={`${styles.third_row}`}>
+      <div className={`${styles.features_section}`}>
         <BottomCtaSection
           headingPart1="The Smartest Way to"
           headingPart2="Co-Brand Your Card"

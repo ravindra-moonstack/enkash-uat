@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
@@ -65,7 +65,7 @@
   }
 }
 
-.fourth_row {
+.use_case_section {
   background: $color-black;
   position: relative;
   border-radius: 12px;

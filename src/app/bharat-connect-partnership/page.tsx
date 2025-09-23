@@ -81,27 +81,24 @@ const partnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>
 
-      <div className={`${styles.second_row}`}>
-        <PartnershipSection
-          backgroundImage={participantBg.src}
-          heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
-          description="If you're in product & tech, business & partnerships, or finance, Bharat Connect will make your work smarter, faster, and hassle-free."
-          slideData={slideData}
-        />
-      </div>
-      <div className={`${styles.third_row} ${styles.steps_container}`}>
+      <PartnershipSection
+        backgroundImage={participantBg.src}
+        heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
+        description="If you're in product & tech, business & partnerships, or finance, Bharat Connect will make your work smarter, faster, and hassle-free."
+        slideData={slideData}
+      />
+
+      <div className={`${styles.features_section} ${styles.steps_container}`}>
         <BecomePartnerSteps
           heading={headingData}
           steps={stepsData}
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-            blueArrow: "/images/blue-arrow.svg",
           }}
         />
       </div>

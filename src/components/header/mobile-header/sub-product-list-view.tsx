@@ -4,7 +4,7 @@ import Link from "next/link"
 
 import styles from "./mobile-header.module.scss"
 
-import RectangleButton from "@/src/components/buttons/rectangle-button"
+import CommanButton from "@/src/components/buttons"
 import { blueArrowUp } from ".."
 import { TSubProduct } from "@/src/types/navbar"
 
@@ -139,7 +139,7 @@ const SubProductListView = ({
         <div
           className={`d-flex justify-content-center ${styles.buttons_container}`}
         >
-          <RectangleButton
+          <CommanButton
             title="Log In"
             theme="outline-blue"
             url={`${process.env.NEXT_PUBLIC_HOME_URL}`}

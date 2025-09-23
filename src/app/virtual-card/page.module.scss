@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
@@ -65,7 +65,7 @@
   }
 }
 
-.second_row {
+.introduction_section {
   padding: 50px 20px;
   background-color: $color-black-30;
   @include for-laptops {
@@ -88,7 +88,7 @@
   }
 }
 
-.fifth_row {
+.cta_section {
   position: relative;
   text-align: center;
   padding: 50px 20px 6px;
@@ -117,5 +117,3 @@
     padding: 0px 20px 90px;
   }
 }
-
-

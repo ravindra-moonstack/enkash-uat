@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -46,7 +46,7 @@
   // }
 }
 
-.second_row {
+.introduction_section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -96,7 +96,7 @@
   }
 }
 
-.third_row {
+.features_section {
   padding: 50px 20px;
 
   @include for-laptops {
@@ -121,7 +121,7 @@
   }
 }
 
-.fourth_row {
+.use_case_section {
   border-radius: 12px;
   position: relative;
   padding: 50px 20px 0;
@@ -195,7 +195,7 @@
   }
 }
 
-.fifth_row {
+.cta_section {
   position: relative;
   text-align: center;
   padding: 30px 20px 50px;

@@ -5,9 +5,9 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 
 import styles from "./faq-section.module.scss"
-
 import { FAQHtml } from "../faq-new"
 import DynamicHeading from "../dynamic-heading"
+import FAQSchema from "../faq-schema"
 
 interface FaqSectionProps {
   faqData: any
@@ -18,15 +18,15 @@ const FaqSection = ({
   faqData,
   connectText = "Connect with us",
 }: FaqSectionProps): React.JSX.Element => {
-  //
-
   const pathname = usePathname()
-
   const lastSlug = pathname?.split("/").filter(Boolean).pop() || "default"
   const connectUrl = `/contact-us?source=${lastSlug}`
 
   return (
     <div className={`${styles.faq_new_row} relative`}>
+      {/* Inject FAQ JSON-LD for SEO */}
+      <FAQSchema faqData={faqData} />
+
       <div className={`${styles.faqSection} text-start max-w-auto`}>
         <div className={`${styles.title} text-start pb-3 pb-md-5`}>
           <DynamicHeading
@@ -59,9 +59,7 @@ const FaqSection = ({
               <div className="connectWithUs">
                 <Link href={connectUrl}>
                   <DynamicHeading
-                    content={[
-                      { title: connectText, color: "color-equity-blue" },
-                    ]}
+                    content={[{ title: connectText, color: "color-equity-blue" }]}
                     headingTag="p"
                     className="mb-0 f-5"
                   />

@@ -29,7 +29,6 @@ import { groupIcon, paymentSummary } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Expense Tracking Made Easy with Advanced Expense Analytics",
   description:
@@ -42,7 +41,6 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/expense-analytics-and-insights")
 
 const cards = stackcardData.map((item, index) => ({
-
   content: (
     <AllInOnePolicy
       key={index}
@@ -61,7 +59,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
   //
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
@@ -168,7 +166,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={styles.second_row}>
+      <div className={styles.introduction_section}>
         <div className="max-m-auto">
           <div className=" text-center pb-md-4 pb-3">
             <DynamicHeading
@@ -210,7 +208,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.third_row}>
+      <div className={styles.features_section}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-4 pb-md-5`}>
             <DynamicHeading
@@ -259,7 +257,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} `}>
+      <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <DynamicHeading
