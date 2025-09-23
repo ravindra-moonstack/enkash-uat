@@ -348,7 +348,7 @@ const PaymentButton = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.eigth_row} `}>
+      <div className={`${styles.integration_section} `}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
           <div className={`${styles.title} text-start pb-md-3 pb-3 col-md-8`}>
             <DynamicHeading

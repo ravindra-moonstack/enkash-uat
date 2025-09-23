@@ -683,7 +683,7 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.eigth_row}  `}>
+      <div className={`${styles.integration_section}  `}>
         <div className="max-w-auto w-100">
           <div className={`${styles.section} row`}>
             <div

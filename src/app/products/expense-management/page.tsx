@@ -253,7 +253,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.eigth_row} relative`}>
+      <div className={`${styles.integration_section} relative`}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
           <div className={`${styles.title} text-start pb-4 pb-md-5`}>
             <DynamicHeading
