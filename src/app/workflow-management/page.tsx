@@ -29,7 +29,6 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Workflow Management Solution to Customize Your Payment Collections",
   description:
@@ -44,7 +43,7 @@ const showScroll = cardsData.length > 3
 const WorkflowManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
@@ -148,7 +147,7 @@ const WorkflowManagement = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={`row ${styles.second_row} `}>
+      <div className={`row ${styles.introduction_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <DynamicHeading
@@ -232,7 +231,7 @@ const WorkflowManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.third_row}>
+      <div className={styles.features_section}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
@@ -298,7 +297,7 @@ const WorkflowManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row}  `}>
+      <div className={`${styles.use_case_section}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
             <div className={`row  align-items-center gap-3`}>
@@ -340,7 +339,7 @@ const WorkflowManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} `}>
+      <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <DynamicHeading

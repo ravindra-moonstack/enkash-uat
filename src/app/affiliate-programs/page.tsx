@@ -78,16 +78,14 @@ const partnershipsPage = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.second_row}`}>
-        <PartnershipSection
-          backgroundImage={participantBg.src}
-          heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
-          description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
-          slideData={slideData}
-        />
-      </div>
+      <PartnershipSection
+        backgroundImage={participantBg.src}
+        heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
+        description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
+        slideData={slideData}
+      />
 
-      <div className={`${styles.third_row} ${styles.steps_container}`}>
+      <div className={`${styles.features_section} ${styles.steps_container}`}>
         <BecomePartnerSteps
           heading={headingData}
           steps={stepsData}

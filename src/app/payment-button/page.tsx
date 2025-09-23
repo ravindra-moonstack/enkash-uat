@@ -30,7 +30,6 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Payment Button: Add Instant Checkout to Your Website",
   description:
@@ -46,7 +45,7 @@ const showScroll = cardsData.length > 3
 const PaymentButton = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
@@ -157,7 +156,7 @@ const PaymentButton = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={`row ${styles.second_row} `}>
+      <div className={`row ${styles.introduction_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="mb-4 mb-md-0 text-center">
             <DynamicHeading
@@ -249,7 +248,7 @@ const PaymentButton = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.third_row}>
+      <div className={styles.features_section}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-4 pb-md-5`}>
             <DynamicHeading
@@ -315,7 +314,7 @@ const PaymentButton = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row}  `}>
+      <div className={`${styles.use_case_section}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
             <div className="row align-items-center">
@@ -348,8 +347,8 @@ const PaymentButton = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
-      <div className={`${styles.eigth_row} `}>
+
+      <div className={`${styles.integration_section} `}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
           <div className={`${styles.title} text-start pb-md-3 pb-3 col-md-8`}>
             <DynamicHeading
@@ -390,7 +389,7 @@ const PaymentButton = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} `}>
+      <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="text-center mb-3 mb-md-0">
             <DynamicHeading

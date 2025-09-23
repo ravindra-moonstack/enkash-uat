@@ -35,7 +35,6 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Fast, Easy and Secure Business Payments with EnKash",
   description:
@@ -50,7 +49,7 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const MakePayment = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -109,7 +108,7 @@ const MakePayment = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={styles.second_row}>
+      <div className={styles.introduction_section}>
         <div className="max-m-auto">
           <div className=" text-center pb-md-4 pb-3">
             <DynamicHeading
@@ -155,7 +154,7 @@ const MakePayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row}`}>
+      <div className={`${styles.use_case_section}`}>
         <div className="max-w-auto">
           <div className={` ${styles.section}`}>
             <div className={`row gap-3`}>
@@ -255,7 +254,7 @@ const MakePayment = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
+
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center `}>
           <div className={``}>
@@ -278,7 +277,7 @@ const MakePayment = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.fifth_row} `}>
+      <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="text-center">
             <DynamicHeading

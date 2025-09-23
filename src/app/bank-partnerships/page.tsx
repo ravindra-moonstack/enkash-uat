@@ -74,7 +74,6 @@ const PartnershipsPage = (): React.JSX.Element => {
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
- 
           }}
         />
       </div>
@@ -92,19 +91,18 @@ const PartnershipsPage = (): React.JSX.Element => {
         slideData={slideData}
       />
 
-      <div className={`${styles.third_row}`}>
+      <div className={`${styles.features_section}`}>
         <BecomePartnerSteps
           heading={headingData}
           steps={stepsData}
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
-          
           }}
         />
       </div>
 
-      <div className={`${styles.third_row}`}>
+      <div className={`${styles.features_section}`}>
         <BottomCtaSection
           headingPart1="Unlock New Revenue Opportunities"
           headingPart2="by Partnering With EnKash"

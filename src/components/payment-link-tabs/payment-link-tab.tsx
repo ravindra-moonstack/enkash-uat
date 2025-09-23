@@ -6,7 +6,7 @@ import Heading from "../heading"
 import styles from "./payment-link-tab.module.scss"
 import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
-import RectangleButton from "../buttons/rectangle-button"
+import CommanButton from "../buttons"
 import DynamicHeading from "../dynamic-heading"
 import { usePathname } from "next/navigation"
 
@@ -184,7 +184,7 @@ const PaymentLinkTab = ({
                     </div>
 
                     <div className={`${styles.list_button}`}>
-                      <RectangleButton
+                      <CommanButton
                         title="Get Started"
                         theme="outline-blue"
                         url={`/sales/?source=${lastSlug}`}
@@ -336,7 +336,7 @@ const PaymentLinkTab = ({
                           />
                         </div>
                         <div className={`${styles.list_button}`}>
-                          <RectangleButton
+                          <CommanButton
                             title="Get Started"
                             theme="outline-blue"
                             url={`/sales/?source=${lastSlug}`}
@@ -414,7 +414,7 @@ const PaymentLinkTab = ({
                 />
               </div>
               <div className={`${styles.list_button}`}>
-                <RectangleButton
+                <CommanButton
                   title="Get Started"
                   theme="outline-blue"
                   url="/sales/"

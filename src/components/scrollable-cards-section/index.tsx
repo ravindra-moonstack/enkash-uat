@@ -3,7 +3,7 @@ import * as React from "react"
 
 import styles from "./scrollable-cards-section.module.scss"
 import PolicyCard from "../policy-card"
-import RectangleButton from "../buttons/rectangle-button"
+import CommanButton from "../buttons"
 
 interface CardData {
   url?: string
@@ -78,7 +78,7 @@ const ScrollableCardsSection = ({
           }`}
         >
           <div className={styles.list_button}>
-            <RectangleButton
+            <CommanButton
               title={buttonTitle}
               theme={buttonTheme}
               url={buttonUrl}

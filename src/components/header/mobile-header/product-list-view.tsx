@@ -3,7 +3,7 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 
 import styles from "./mobile-header.module.scss"
-import RectangleButton from "../../buttons/rectangle-button"
+import CommanButton from "../../buttons"
 
 import { forwardArrowBlue } from ".."
 
@@ -64,7 +64,7 @@ const ProductListView = ({ products }: ProductListViewProps) => {
           <div
             className={`d-flex justify-content-center ${styles.buttons_container}`}
           >
-            <RectangleButton
+            <CommanButton
               title="Log In"
               theme="outline-blue"
               url={`${process.env.NEXT_PUBLIC_HOME_URL}`}

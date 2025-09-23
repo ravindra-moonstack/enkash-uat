@@ -4,9 +4,7 @@ import type React from "react"
 import DynamicHeading from "../dynamic-heading"
 import styles from "./style.module.scss"
 import CustomBreadcrumb from "../breadcrumb"
-import RectangleButton, {
-  RectangleButtonTheme,
-} from "../buttons/rectangle-button"
+import CommanButton, { ButtonTheme } from "../buttons/"
 import { StaticImageData } from "next/image"
 import { BreadcrumbProps } from "@/src/types/common"
 
@@ -40,7 +38,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
 }) => {
   return (
     <div
-      className={`${styles.first_row}`}
+      className={`${styles.hero_section}`}
       style={{
         backgroundImage: `url(${backgroundImage})`,
         ...customCSS,
@@ -80,9 +78,9 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
               <div
                 className={`${styles.button_wrapper} text-md-start text-center`}
               >
-                <RectangleButton
+                <CommanButton
                   title={button.title}
-                  theme={button.theme as RectangleButtonTheme}
+                  theme={button.theme as ButtonTheme}
                   url={button.url}
                 />
               </div>

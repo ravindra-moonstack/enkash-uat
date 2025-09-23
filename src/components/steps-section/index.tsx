@@ -7,7 +7,7 @@ import CommonButton from "../buttons"
 import DynamicHeading from "../dynamic-heading"
 import StepCard from "../step-card"
 
-import { RectangleButtonTheme } from "../buttons/rectangle-button"
+import { ButtonTheme } from "../buttons"
 import { useSalesUrl } from "@/src/utils/salesUrl"
 
 interface StepItem {
@@ -21,7 +21,7 @@ interface StepsSectionProps {
   steps: StepItem[]
   button: {
     title: string
-    theme?: RectangleButtonTheme
+    theme?: ButtonTheme
   }
   image: {
     src: string | StaticImageData
@@ -82,7 +82,7 @@ const StepsSection = ({
                 title={button.title}
                 theme={button.theme}
                 arrow
-                url={buttonUrl} // ✅ now uses fallback logic
+                url={buttonUrl} 
                 className="d-flex justify-content-between align-items-center"
               />
             </div>

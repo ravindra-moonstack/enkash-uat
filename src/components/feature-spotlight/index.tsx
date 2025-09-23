@@ -1,6 +1,6 @@
 import React, { memo } from "react"
 import styles from "./featureSpotlight.module.scss"
-import { DynamicHeading, ManagementCard, RectangleButton } from ".."
+import { DynamicHeading, ManagementCard, CommanButton } from ".."
 
 interface HeadingPart {
   title: string
@@ -56,7 +56,7 @@ const FeatureSpotlight: React.FC<FeatureSpotlightProps> = ({
           {showButtons && (
             <div className="mt-5 d-flex flex-column flex-md-row gap-3">
               {primaryButtonTitle && (
-                <RectangleButton
+                <CommanButton
                   title={primaryButtonTitle}
                   theme="blue"
                   url={primaryButtonUrl}
@@ -64,7 +64,7 @@ const FeatureSpotlight: React.FC<FeatureSpotlightProps> = ({
                 />
               )}
               {secondaryButtonTitle && (
-                <RectangleButton
+                <CommanButton
                   title={secondaryButtonTitle}
                   theme="outline-blue"
                   url={secondaryButtonUrl}

@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.first_row {
+.hero_section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -74,7 +74,7 @@
   }
 }
 
-.third_row {
+.features_section {
   width: 100%;
   padding: 20px;
 
@@ -144,7 +144,7 @@
   }
 }
 
-.fourth_row {
+.use_case_section {
   padding: 20px 30px;
   @include for-laptops {
     padding: 0px 90px 0px 90px;
@@ -175,7 +175,7 @@
   }
 }
 
-.fifth_row {
+.cta_section {
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
@@ -193,31 +193,3 @@
   }
 }
 
-.faq_new_row {
-  background: $color-white;
-  position: relative;
-  display: flex;
-  text-align: center;
-  padding: 20px;
-  @include for-laptops {
-    padding: 96px 90px 90px 60px;
-  }
-
-  .faq_bg {
-    img {
-      position: absolute;
-      bottom: 0;
-      display: none;
-      @include for-laptops {
-        display: flex;
-      }
-    }
-  }
-
-  .faqData {
-    width: 100%;
-    @include for-laptops {
-      width: 70%;
-    }
-  }
-}

@@ -20,7 +20,6 @@ import LogoSlider from "@/src/components/logo-slider"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 
-
 //helpers
 import {
   groupIcon,
@@ -49,7 +48,6 @@ const salesUrl = getSalesUrl("/instant-settlement")
 
 const showScroll = cardsData.length > 3
 const cards = stackcardData.map((item, index) => ({
-  
   content: (
     <AllInOnePolicy
       key={index}
@@ -66,7 +64,7 @@ const cards = stackcardData.map((item, index) => ({
 const InstantSettlement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row} `}>
+      <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
@@ -170,7 +168,7 @@ const InstantSettlement = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={`row ${styles.second_row} `}>
+      <div className={`row ${styles.introduction_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <DynamicHeading
@@ -253,7 +251,7 @@ const InstantSettlement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.third_row}>
+      <div className={styles.features_section}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
@@ -319,7 +317,7 @@ const InstantSettlement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row}  `}>
+      <div className={`${styles.use_case_section}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
             <div className={`row  align-items-center gap-3`}>
@@ -377,8 +375,8 @@ const InstantSettlement = (): React.JSX.Element => {
           />
         </div>
       </div>
-      
-      <div className={`${styles.fifth_row} `}>
+
+      <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <DynamicHeading

@@ -87,7 +87,7 @@ const cards = stackcardData.map((item: any) => ({
 const ExpenseManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.first_row}`}>
+      <div className={`${styles.hero_section}`}>
         <div className="max-w-auto  position-relative no-pointer">
           <div className="d-flex">
             <CustomBreadcrumb
@@ -211,7 +211,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.third_row} bg_white_index`}>
+      <div className={`${styles.features_section} bg_white_index`}>
         <SmartPolicySection
           heading={[
             { title: "Smart Policy", color: "color-black" },
@@ -253,7 +253,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.eigth_row} relative`}>
+      <div className={`${styles.integration_section} relative`}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
           <div className={`${styles.title} text-start pb-4 pb-md-5`}>
             <DynamicHeading
