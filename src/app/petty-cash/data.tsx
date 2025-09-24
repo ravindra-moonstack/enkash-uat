@@ -1,4 +1,4 @@
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   costControlSavings,
@@ -111,7 +111,7 @@ const stackcardData: TStackCardsProp = [
   },
 ]
 
-const managementCards = [
+const managementCards : TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:

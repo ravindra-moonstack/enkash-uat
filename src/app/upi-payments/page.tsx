@@ -447,7 +447,7 @@ const UpiPayments = (): React.JSX.Element => {
                   titleHtml={card.titleHtml}
                   description={card.description}
                   cardImage={card.cardImage}
-                  linkUrl={card.url}
+                  linkUrl={card.linkUrl}
                 />
               </div>
             ))}

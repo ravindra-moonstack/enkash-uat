@@ -36,11 +36,13 @@ import {
   paymentPage,
   qrCodes,
   reminder,
+  
 } from "./img"
+import {  TStackCardsProp } from "@/src/types"
 
 
 
-const integrationData = [
+const integrationData : TStackCardsProp = [
   {
     title: "Comprehensive SDKs and APIs",
     description:
@@ -67,7 +69,7 @@ const integrationData = [
   },
 ]
 
-const paymentMethodData = [
+const paymentMethodData : TStackCardsProp =  [
   {
     title: "Credit and Debit Cards",
     description: "Process domestic and international card payments easily.",
@@ -99,7 +101,7 @@ const paymentMethodData = [
   },
 ]
 
-const dashboardData = [
+const dashboardData : TStackCardsProp =  [
   {
     title: "Financial Overview",
     description:
@@ -126,7 +128,7 @@ const dashboardData = [
   },
 ]
 
-const rankData = [
+const rankData : TStackCardsProp =  [
   {
     title: "PCI DSS Compliance",
     description:
@@ -153,7 +155,7 @@ const rankData = [
   },
 ]
 
-const supportData = [
+const supportData : TStackCardsProp = [
   {
     title: "Tech Support at Every Stage",
     description:
@@ -180,7 +182,7 @@ const supportData = [
   },
 ]
 
-const savingData = [
+const savingData : TStackCardsProp =  [
   {
     title: "Frictionless Checkout",
     description:

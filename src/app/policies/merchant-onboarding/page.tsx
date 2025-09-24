@@ -21,6 +21,8 @@ const cards = [
   },
 ]
 
+
+
 const MerchantOnboarding = (): React.JSX.Element => {
   //
 

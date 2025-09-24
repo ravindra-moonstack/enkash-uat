@@ -32,7 +32,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 
 const intantActionData = [
   {
@@ -92,7 +92,7 @@ const spendAnalyticsData = [
   },
 ]
 
-const cardType = [
+const cardType : TCardTypes =[
   {
     titleHtml: "Fuel Card",
     description:

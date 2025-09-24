@@ -1,3 +1,4 @@
+import { TCardTypes } from "@/src/types"
 import {
   clockIcon,
   fuelCardImg,
@@ -144,7 +145,7 @@ const corporateCardData = [
   },
 ]
 
-const cardType = [
+const cardType: TCardTypes = [
   {
     titleHtml: "Meal Card",
     description:
