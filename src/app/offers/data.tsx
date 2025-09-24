@@ -19,7 +19,7 @@ import {
   vouchers,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Complete KYC",
     description: "Sign up on EnKash and complete your KYC.",

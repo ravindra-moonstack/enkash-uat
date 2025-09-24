@@ -66,16 +66,9 @@
     padding: 112px 20px 120px;
     min-height: 750px;
   }
+  .voucher_title {
+    font-size: 48px;
+    line-height: 60px;
+  }
 
-  // &:after{
-  //   position: absolute;
-  //   height: 100px;
-  //   width: 100%;
-  //   z-index: -1;
-  // background: linear-gradient(180deg,rgba(255, 0, 0, 1) 0%, rgba(250, 0, 0, 1) 100%);
-  //   content: '';
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  // }
 }

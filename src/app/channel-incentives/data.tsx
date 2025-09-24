@@ -22,7 +22,7 @@ import {
 } from "./img"
 import { TStackCardsProp } from "@/src/types"
 
-const cardsData = [
+const cardsData : TStackCardsProp = [
   {
     title: "Mandatory KYC",
     description:

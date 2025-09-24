@@ -34,7 +34,7 @@ import {
 
 import { fleetCardImg } from "../digital-marketing-card/img"
 import { payrollCardImg } from "../fuel-card/img"
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 
 const intantActionData = [
   {
@@ -100,7 +100,7 @@ const spendAnalyticsData = [
   },
 ]
 
-const cardType = [
+const cardType: TCardTypes = [
   {
     titleHtml: "Fuel Card",
     description:
@@ -198,7 +198,6 @@ const allProductSections = [
 
 const stackcardData: TStackCardsProp = [
   {
-    
     icon: realTimeExpenseIcon,
     title: "Freedom of Choice",
     description:
@@ -207,7 +206,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: fraudProtectionIcon,
     title: "Easily Accessible",
     description:
@@ -216,7 +214,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: streamlinedReimbursementIcon,
     title: "Safety",
     description:
@@ -225,7 +222,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: costControlSavingsIcon,
     title: "Easy Distribution",
     description: "These gift cards can be easily distributed on the occasion.",
@@ -233,7 +229,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: wideAcceptanceNetworkIcon,
     title: "Multiple Denominations",
     description:

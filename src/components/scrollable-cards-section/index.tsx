@@ -4,10 +4,11 @@ import * as React from "react"
 import styles from "./scrollable-cards-section.module.scss"
 import PolicyCard from "../policy-card"
 import CommanButton from "../buttons"
+import { StaticImageData } from "next/image"
 
 interface CardData {
   url?: string
-  icon: string
+  icon: string | StaticImageData
   title: string
   description: string
   hoverClass?: string | undefined

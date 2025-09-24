@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   notificationImage,
   paymentLinkImage,
@@ -12,7 +13,7 @@ import {
   taskIconTwo,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Sign up",
     description: "Create your account on EnKash and add your business details.",
@@ -32,7 +33,7 @@ const cardsData = [
   },
 ]
 
-const allInOnePolicies = [
+const allInOnePolicies : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "OCR Technology for Efficiency",

@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   notificationImage,
   paymentLinkImage,
@@ -12,7 +13,7 @@ import {
   taskIconTwo,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Workflow Outline",
     description:
@@ -33,7 +34,7 @@ const cardsData = [
   },
 ]
 
-const workflowPolicies = [
+const workflowPolicies : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Integration with Existing Tools",
