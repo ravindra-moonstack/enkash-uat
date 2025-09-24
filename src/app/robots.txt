@@ -2,6 +2,6 @@ User-Agent: *
 Allow: /
 Disallow: /resources/wp-admin/
 Disallow: /resources/wp-login.php
-Disallow: /_next/static/chunks/*
+
 
 Sitemap: https://enkash.com/sitemap.xml
