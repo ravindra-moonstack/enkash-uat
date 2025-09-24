@@ -21,8 +21,8 @@ export type TStackCardItemProp = {
   icon: string | StaticImageData
   title: string
   description: string
-  image: string | StaticImageData
-  buttonUrl: string
+  image?: string | StaticImageData
+  buttonUrl?: string
   maxImageHeight?: string
   reverse?: boolean
 }
@@ -50,3 +50,30 @@ export type TAllProductsProp = {
   subtitle?: string
   data?: Array<TAllProductsDataProp>
 }
+
+
+
+export type TAllProductSectionItem = {
+  title: string
+  title2?:string
+  description: string
+  image: string | StaticImageData
+  link?: string
+}
+
+export type TAllProductSection = {
+  title: string
+  subtitle?: string
+  items: TAllProductSectionItem[]
+}
+
+export type TAllProductSections = TAllProductSection[]
+
+export type TCardTypeItem = {
+  titleHtml: string
+  description: string
+  cardImage: string | StaticImageData
+  linkUrl?: string
+}
+
+export type TCardTypes = TCardTypeItem[]

@@ -1,3 +1,4 @@
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   instant,
@@ -18,7 +19,7 @@ import {
   taskIconTwo,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp = [
   {
     title: "Connect Your Financial Accounts",
     description:
@@ -39,7 +40,7 @@ const cardsData = [
   },
 ]
 
-const policies = [
+const policies : TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Real-Time Visibility",
@@ -78,9 +79,9 @@ const policies = [
     maxImageHeight: "305px",
     reverse: true,
   },
-]
+] 
 
-const managementCards = [
+const managementCards : TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:

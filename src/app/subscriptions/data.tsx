@@ -1,3 +1,4 @@
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   instant,
@@ -19,7 +20,7 @@ import {
   taskIconTwo,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Sign Up",
     description: "Sign up on EnKash to generate and share subscription link.",
@@ -39,7 +40,7 @@ const cardsData = [
   },
 ]
 
-const allInOnePolicies = [
+const allInOnePolicies : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Automate Recurring Payments",
@@ -80,7 +81,7 @@ const allInOnePolicies = [
   },
 ]
 
-const managementCards = [
+const managementCards : TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:

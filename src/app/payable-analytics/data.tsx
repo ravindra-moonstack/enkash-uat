@@ -1,6 +1,7 @@
+import { TStackCardsProp } from "@/src/types"
 import { scrollIconOne, scrollIconThree, scrollIconTwo } from "./img"
 
-const cardsData = [
+const cardsData: TStackCardsProp = [
   {
     title: "Access Dashboard",
     description: "Log in and access the dashboard to view payable analytics.",

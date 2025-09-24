@@ -50,7 +50,7 @@ import {
 import { approve } from "../corporate-cards/img"
 import { TStackCardsProp } from "@/src/types"
 
-const cardsData = [
+const cardsData: TStackCardsProp = [
   {
     title: "Custom Expense Policies ",
     description:
