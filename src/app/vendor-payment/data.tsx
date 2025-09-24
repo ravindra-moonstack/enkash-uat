@@ -23,8 +23,9 @@ import {
   taskIconThree,
   taskIconTwo,
 } from "./img"
+import {  TStackCardsProp } from "@/src/types"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Add Invoices",
     description:
@@ -51,7 +52,7 @@ const cardsData = [
   },
 ]
 
-const allProductSections = [
+const allProductSections =  [
   {
     title: "Expense Management",
     subtitle: "Manage every spend effortlessly",
@@ -97,7 +98,7 @@ const allProductSections = [
   },
 ]
 
-const allInOnePolicyData = [
+const allInOnePolicyData : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Pay Vendors in Seconds",

@@ -32,7 +32,7 @@ import {
 } from "./img"
 import { TStackCardsProp } from "@/src/types"
 
-const cardsData = [
+const cardsData: TStackCardsProp =  [
   {
     title: "Generate QR Code",
     description:
@@ -59,7 +59,7 @@ const cardsData = [
   },
 ]
 
-const paymentMethodData = [
+const paymentMethodData : TStackCardsProp =  [
   {
     title: "Bulk QR Code Generation",
     description:
@@ -86,7 +86,7 @@ const paymentMethodData = [
   },
 ]
 
-const allInOnePolicyData = [
+const allInOnePolicyData : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Generate QR Codes for your Business in Seconds",

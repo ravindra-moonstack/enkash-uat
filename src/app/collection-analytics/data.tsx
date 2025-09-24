@@ -1,4 +1,4 @@
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   costControlSavings,
@@ -59,7 +59,7 @@ const stackcardData: TStackCardsProp = [
   },
 ]
 
-const cardsData = [
+const cardsData : TStackCardsProp = [
   {
     title: "Integrate Payment Data",
     description:
@@ -80,7 +80,7 @@ const cardsData = [
   },
 ]
 
-const allInOnePolicies = [
+const allInOnePolicies : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Customizable Dashboards",
@@ -120,7 +120,7 @@ const allInOnePolicies = [
     reverse: true,
   },
 ]
-const managementCards = [
+const managementCards : TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:

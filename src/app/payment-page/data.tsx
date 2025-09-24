@@ -37,7 +37,7 @@ import {
   crouselIconOne,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Create",
     description:
@@ -56,7 +56,7 @@ const cardsData = [
   },
 ]
 
-const allProductSections = [
+const allProductSections =  [
   {
     title: "Expense Management",
     subtitle: "Manage every spend effortlessly",
@@ -100,7 +100,7 @@ const allProductSections = [
     ],
   },
 ]
-const allInOnePolicyData = [
+const allInOnePolicyData : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Customization at Your Fingertips",

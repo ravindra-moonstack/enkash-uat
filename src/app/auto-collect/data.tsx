@@ -1,4 +1,5 @@
 
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   instant,
   notificationImage,
@@ -24,7 +25,7 @@ import {
 
 
 
-const cardsData = [
+const cardsData  : TStackCardsProp =[
   {
     title: "Virtual Account Creation",
     description:
@@ -45,7 +46,7 @@ const cardsData = [
   },
 ]
 
-const allInOnePolicies = [
+const allInOnePolicies  : TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Payment Collection Across Multiple Modes",
@@ -94,7 +95,7 @@ const allInOnePolicies = [
     maxImageHeight: "305px",
   },
 ]
-const managementCards = [
+const managementCards : TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:

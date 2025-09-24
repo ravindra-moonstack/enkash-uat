@@ -1,3 +1,4 @@
+
 import {
   notificationImage,
   paymentLinkImage,
@@ -14,7 +15,7 @@ import {
   crouselIconFive,
 } from "./img"
 
-const allProductSections = [
+const allProductSections =  [
   {
     title: "Expense Management",
     subtitle: "Manage every spend effortlessly",
