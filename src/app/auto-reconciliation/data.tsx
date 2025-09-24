@@ -1,5 +1,5 @@
 
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   costControlSavings,
@@ -34,7 +34,7 @@ import {
 } from "./img"
 
 
-const cardsData = [
+const cardsData  : TStackCardsProp =[
   {
     title: "Integrate Payment Sources",
     description:
@@ -57,7 +57,7 @@ const cardsData = [
 
 
 
-const allInOnePolicies = [
+const allInOnePolicies  : TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Multi-Bank Reconciliation",
@@ -148,7 +148,7 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
 ]
-const managementCards = [
+const managementCards : TCardTypes =[
   {
     titleHtml: "Payment Gateway",
     description:

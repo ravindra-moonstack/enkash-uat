@@ -1,4 +1,4 @@
-
+import { TStackCardsProp } from "@/src/types"
 import {
   MaintainCompleteControl,
   notificationImage,
@@ -19,11 +19,10 @@ import {
   taskIconTwo,
   netBanking,
   upi,
-  cards
+  cards,
 } from "./img"
 
-
-const cardsData = [
+const cardsData: TStackCardsProp = [
   {
     title: "Link",
     description:
@@ -47,8 +46,7 @@ const cardsData = [
   },
 ]
 
-
-const paymentMethodData = [
+const paymentMethodData: TStackCardsProp = [
   {
     title: "Enterprise-Ready from Day One",
     description:
@@ -69,12 +67,7 @@ const paymentMethodData = [
   },
 ]
 
-
-
-
-
-
-const payoutPolicies = [
+const payoutPolicies: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Initiate payouts directly from your bank accounts",

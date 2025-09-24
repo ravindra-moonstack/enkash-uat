@@ -54,8 +54,8 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             color: "color-equity-blue",
                           },
                         ]}
-                        headingTag="h1"
-                        className="f-5 text-center"
+                        headingTag="p"
+                        className="f-5 text-center fs-1"
                       />
                     </div>
                     <div className="word-to-html-null mb-5">
@@ -912,8 +912,8 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             color: "color-equity-blue",
                           },
                         ]}
-                        headingTag="h1"
-                        className="f-5 text-center"
+                        headingTag="p"
+                        className="f-5 text-center fs-1"
                       />
                     </div>
 

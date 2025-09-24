@@ -1,4 +1,4 @@
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   fraudProtection,
@@ -28,7 +28,7 @@ import {
   upiImg,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Link Payment Accounts",
     description:
@@ -49,7 +49,7 @@ const cardsData = [
   },
 ]
 
-const allInOnePolicies = [
+const allInOnePolicies : TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Customized Settlements",
@@ -99,7 +99,7 @@ const allInOnePolicies = [
   },
 ]
 
-const managementCards = [
+const managementCards : TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:

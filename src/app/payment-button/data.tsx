@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   instant,
@@ -23,7 +24,7 @@ import {
   taskIconTwo,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Create",
     description: "Use EnKash’s intuitive dashboard to design your button.",
@@ -41,7 +42,7 @@ const cardsData = [
   },
 ]
 
-const allInOnePolicyData = [
+const allInOnePolicyData : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Setup in under 5 minutes",

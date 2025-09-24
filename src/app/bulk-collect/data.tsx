@@ -1,3 +1,4 @@
+import { TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   instant,
@@ -20,7 +21,7 @@ import {
 } from "./img"
 
 
-const cardsData = [
+const cardsData  : TStackCardsProp =[
   {
     title: "Login",
     description:
@@ -42,19 +43,7 @@ const cardsData = [
 ]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-const allInOnePolicyData = [
+const allInOnePolicyData  : TStackCardsProp =[
   {
     icon: taskIconOne,
     title: "Streamlined Payment Reminders",

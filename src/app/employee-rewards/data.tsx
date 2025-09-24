@@ -22,7 +22,7 @@ import {
   giftCard
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Complete KYC",
     description:
