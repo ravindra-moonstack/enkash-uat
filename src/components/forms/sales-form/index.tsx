@@ -67,8 +67,8 @@ const SalesForm: React.FC = () => {
             { title: "Talk", color: "color-black " },
             { title: " to Sales", color: "color-dark-grey " },
           ]}
-          headingTag="h1"
-          className="text-center "
+          headingTag="p"
+          className="text-center fs-1 f-6 "
         />
 
         <p className={"subtitle"}>We just need a few quick details</p>

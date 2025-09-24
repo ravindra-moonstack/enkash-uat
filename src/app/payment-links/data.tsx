@@ -1,3 +1,4 @@
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   generateIcon,
@@ -23,7 +24,7 @@ import {
 } from "./img"
 
 
-const cardsData = [
+const cardsData : TStackCardsProp = [
   {
     title: "Generate Payment Links",
     description:
@@ -44,7 +45,7 @@ const cardsData = [
 ]
 
 
-const policies = [
+const policies : TStackCardsProp =  [
   {
     icon: quickIcon,
     title: "Quick and Easy Setup",
@@ -93,7 +94,8 @@ const policies = [
     maxImageHeight: "259px",
   },
 ]
-const managementCards = [
+
+const managementCards : TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:

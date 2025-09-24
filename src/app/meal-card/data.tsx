@@ -1,4 +1,4 @@
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -91,7 +91,7 @@ const intantActionData = [
   },
 ]
 
-const cardType = [
+const cardType : TCardTypes = [
   {
     titleHtml: "Fuel Card",
     description:

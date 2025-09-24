@@ -1,3 +1,4 @@
+import {  TCardTypes } from "@/src/types"
 import {
   digitalCardImg,
   fleetCardImg,
@@ -134,7 +135,7 @@ const spendAnalyticsData = [
   },
 ]
 
-const cardType = [
+const cardType : TCardTypes = [
   {
     titleHtml: "Fuel Card",
     description:
@@ -187,7 +188,7 @@ const cardType = [
   },
 ]
 
-const allProductSections = [
+const allProductSections  = [
   {
     title: "Reconciliation & Policy",
     subtitle: "Control and visibility in real time",

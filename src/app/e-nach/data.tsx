@@ -1,4 +1,4 @@
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   fraudProtection,
@@ -31,7 +31,7 @@ import {
 
 import { upiPayments } from "@/src/components/header"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Login",
     description: "Log in to EnKash and initiate eNACH registration",
@@ -54,7 +54,7 @@ const cardsData = [
   },
 ]
 
-const allInOnePolicies = [
+const allInOnePolicies : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Instant Digital Mandate Creation",
@@ -113,7 +113,7 @@ const allInOnePolicies = [
     reverse: true,
   },
 ]
-const managementCards = [
+const managementCards : TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:

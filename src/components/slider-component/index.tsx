@@ -104,8 +104,8 @@ export default function SliderComponent({
                             color: "color-white",
                           },
                         ]}
-                        headingTag="h1"
-                        className="f-7"
+                        headingTag="p"
+                        className={`f-7 ${styles.voucher_title}`}
                       />
                       <div className="mt-3 mb-3">
                         <DynamicHeading

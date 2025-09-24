@@ -1,4 +1,5 @@
 
+import { TStackCardsProp } from "@/src/types"
 import {
   notificationImage,
   paymentLinkImage,
@@ -13,7 +14,7 @@ import {
   taskIconTwo,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Login",
     description: "Log in to EnKash portal",
@@ -31,7 +32,7 @@ const cardsData = [
   },
 ]
 
-const allInOnePolicyData = [
+const allInOnePolicyData : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Never Miss a GST Payment Deadline Again",

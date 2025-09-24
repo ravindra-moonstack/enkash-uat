@@ -22,7 +22,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 
 const stackcardData: TStackCardsProp = [
   {
@@ -91,7 +91,7 @@ const intantActionData = [
   },
 ]
 
-const cardType = [
+const cardType : TCardTypes =[
   {
     titleHtml: "Meal Card",
     description:

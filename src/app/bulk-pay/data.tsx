@@ -2,7 +2,7 @@ import crouselIconOne from "./img/crouselIconOne.svg"
 import crouselIconTwo from "./img/crouselIconTwo.svg"
 import crouselIconThree from "./img/crouselIconThree.svg"
 import crouselIconFour from "./img/crouselIconFour.svg"
-
+import { TStackCardsProp } from "@/src/types"
 import {
   advancedImage,
   notificationImage,
@@ -23,7 +23,8 @@ import {
   taskIconTwo,
 } from "."
 
-const cardsData = [
+
+const cardsData  : TStackCardsProp = [
   {
     title: "Login",
     description:
@@ -85,7 +86,7 @@ const allProductSections = [
   },
 ]
 
-const allInOnePolicyData = [
+const allInOnePolicyData : TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Save Time and Boost Efficiency",

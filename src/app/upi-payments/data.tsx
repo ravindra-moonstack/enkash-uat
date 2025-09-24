@@ -1,4 +1,4 @@
-import { TStackCardsProp } from "@/src/types"
+import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
   costControlSavings,
@@ -33,7 +33,7 @@ import {
   flexibility,
 } from "./img"
 
-const cardsData = [
+const cardsData : TStackCardsProp =  [
   {
     title: "Sign-up",
     description:
@@ -54,7 +54,7 @@ const cardsData = [
   },
 ]
 
-const paymentMethodData = [
+const paymentMethodData : TStackCardsProp =  [
   {
     title: "Convenient and Fast",
     description:
@@ -74,7 +74,7 @@ const paymentMethodData = [
     icon: flexibility,
   },
 ]
-const allInOnePolicyData = [
+const allInOnePolicyData : TStackCardsProp =  [
   {
     icon: taskIconOne,
     title: "Effortless Integration for Quick Setup",
@@ -115,53 +115,53 @@ const allInOnePolicyData = [
   },
 ]
 
-const managementCardsData = [
+const managementCardsData : TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description: "Seamlessly collect payments with no-code solutions.",
     cardImage: paymentLink,
-    url: "/payment-gateway",
+    linkUrl: "/payment-gateway",
   },
   {
     titleHtml: "Payment Page",
     description: "Create stunning, branded checkout experiences in minutes.",
     cardImage: paymentPage,
-    url: "/payment-page",
+    linkUrl: "/payment-page",
   },
   {
     titleHtml: "Payment Links",
     description:
       "Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links.",
     cardImage: paymentButton,
-    url: "/payment-links",
+    linkUrl: "/payment-links",
   },
   {
     titleHtml: "QR Codes",
     description:
       "Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions.",
     cardImage: qrCodes,
-    url: "/qr-code",
+    linkUrl: "/qr-code",
   },
   {
     titleHtml: "Auto Collect",
     description:
       "Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale.",
     cardImage: autoCollect,
-    url: "/auto-collect",
+    linkUrl: "/auto-collect",
   },
   {
     titleHtml: "Instant Settlement",
     description:
       "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
     cardImage: instant,
-    url: "/instant-settlement",
+    linkUrl: "/instant-settlement",
   },
   {
     titleHtml: "Reminder Engine",
     description:
       "Automate your collections and say goodbye to manual reminders.",
     cardImage: reminder,
-    url: "/collection-reminder",
+    linkUrl: "/collection-reminder",
   },
 ]
 const stackcardData: TStackCardsProp = [

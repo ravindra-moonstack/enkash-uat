@@ -11,7 +11,7 @@ interface AllInOnePolicyProps {
   icon: string | StaticImageData
   title: string
   description: string
-  image: string | StaticImageData
+  image?: string | StaticImageData
   buttonUrl: string
   reverse?: boolean
   maxImageHeight?: string
@@ -86,16 +86,18 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
           reverse ? "order-md-1" : "order-md-2"
         } ${styles.third_container}`}
       >
-        <Image
-          src={image}
-          alt="card visual"
-          className="w-100"
-          style={{
-            maxHeight: maxImageHeight || "auto",
-            height: "auto",
-            objectFit: "contain",
-          }}
-        />
+        {image && (
+          <Image
+            src={image}
+            alt="card visual"
+            className="w-100"
+            style={{
+              maxHeight: maxImageHeight || "auto",
+              height: "auto",
+              objectFit: "contain",
+            }}
+          />
+        )}
       </div>
     </div>
   )
