@@ -6,19 +6,18 @@
   max-width: 1200px;
   margin: auto;
   width: 100%;
-
-  @include for-laptops {
-    background-position: center right;
-    padding: 112px 0px 100px;
-    background-size: contain;
-  }
-
   background-position: bottom;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   position: relative;
   z-index: 1;
+
+  @include for-laptops {
+    background-position: center right;
+    padding: 112px 0px 100px;
+    background-size: contain;
+  }
 
   .gradient {
     display: none;
