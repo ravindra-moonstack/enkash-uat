@@ -1,6 +1,7 @@
 const url: {
   source: string
   destination: string
+  permanent?: boolean
 }[] = [
   {
     source: "/resource",
@@ -12,6 +13,16 @@ const url: {
   {
     source: "/bolt/category/food-and-beverages",
     destination: "/food-and-beverages-vouchers",
+  },
+  {
+    source: "/voucher/food-and-beverages",
+    destination: "/food-and-beverages-vouchers",
+    permanent: true,
+  },
+  {
+    source: "/voucher/nykaa-fashion-e-gift-card",
+    destination: "/vouchers/nykaa",
+    permanent: true,
   },
   {
     source: "/bolt/category/health-and-wellness",
@@ -188,14 +199,110 @@ const url: {
     source: "/vouchers/movies-and-music/zee5-gift-card",
     destination: "/vouchers/zee5",
   },
+
+  {
+    source: "/vouchers/e-commerce/nykaa-gift-card",
+    destination: "/vouchers/nykaa",
+  },
+  {
+    source: "/vouchers/e-commerce/flipkart-supercoins-e-gift-card",
+    destination: "/vouchers/flipkart-super-coins",
+  },
+
+  {
+    source: "/vouchers/e-commerce/ajio-e-gift-card",
+    destination: "/vouchers/ajio",
+  },
+
+  {
+    source: "/vouchers/e-commerce/amazon-prime-shopping",
+    destination: "/vouchers/amazon-prime-shopping",
+  },
+
+  {
+    source: "/vouchers/food-and-beverages/swiggy-e-gift-card",
+    destination: "/vouchers/swiggy",
+  },
+  {
+    source: "/vouchers/food-and-beverages/dominos-gift-card",
+    destination: "/vouchers/dominos",
+  },
+  {
+    source: "/vouchers/food-and-beverages/mcdonalds-gift-card",
+    destination: "/vouchers/mcdonalds",
+  },
+  {
+    source: "/vouchers/health-and-wellness/cultfit-gift-card",
+    destination: "/vouchers/cultfit",
+  },
+  {
+    source: "/vouchers/apparels/levis-gift-card",
+    destination: "/vouchers/levis",
+  },
+  {
+    source: "/vouchers/apparels/jockey-e-gift-card",
+    destination: "/vouchers/jockey",
+  },
+  {
+    source: "/vouchers/health-and-wellness/healthkart-gift-card",
+    destination: "/vouchers/healthkart",
+  },
+  {
+    source: "/vouchers/apparels/pantaloons-e-gift-card",
+    destination: "/vouchers/pantaloons",
+  },
+  {
+    source: "/vouchers/food-and-beverages/kfc-e-gift-card",
+    destination: "/vouchers/kfc",
+  },
+  {
+    source: "/vouchers/apparels/westside-gift-card",
+    destination: "/vouchers/westside",
+  },
+  {
+    source: "/vouchers/health-and-wellness/apollo-pharmacy-e-healing-gift-card",
+    destination: "/vouchers/apollo",
+  },
+  {
+    source: "/vouchers/health-and-wellness/mamaearth-gift-card",
+    destination: "/vouchers/mamaearth",
+  },
+
+  {
+    source: "/vouchers/movies-and-music/amazon-prime-gift-card",
+    destination: "/vouchers/amazon-prime-shopping",
+  },
+  {
+    source: "/vouchers/movies-and-music/amazon-prime-gift-card",
+    destination: "/vouchers/amazon-prime-shopping",
+  },
+  {
+    source: "/vouchers/movies-and-music/fancode-gift-card",
+    destination: "/vouchers/fan-code",
+  },
+  {
+    source: "/vouchers/movies-and-music/pvr-gift-card",
+    destination: "/vouchers/pvr",
+  },
+  {
+    source: "/vouchers/dominos-pizza-e-gift-card",
+    destination: "/vouchers/dominos",
+  },
+  {
+    source: "/qr-codes",
+    destination: "/qr-code",
+  },
   {
     source: "/voucher",
     destination: "/products/vouchers",
   },
+
   {
     source: "/voucher/:path*",
-    destination: "/products/vouchers",
+    destination: "/vouchers/:path*",
+    permanent: true,
   },
+
   {
     source: "/resourcesblog/budget-highlights-2023",
     destination: "/resources/blog/union-budget-2023",
