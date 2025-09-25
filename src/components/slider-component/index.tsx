@@ -56,6 +56,15 @@ export default function SliderComponent({
 
   return (
     <div className={styles.sliderComponent}>
+      {/* Keep single H1 here */}
+      <div className={styles.first_row_title}>
+        <DynamicHeading
+          content={[{ title: title, color: "color-white underline" }]}
+          headingTag="h1"
+          className="mb-0"
+        />
+      </div>
+
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index}>
@@ -63,7 +72,7 @@ export default function SliderComponent({
               className={styles.voucherSlider}
               style={{
                 background: slide.backgroundImage
-                  ? ` url('${
+                  ? `url('${
                       typeof slide.backgroundImage === "string"
                         ? slide.backgroundImage
                         : slide.backgroundImage.src
@@ -83,16 +92,9 @@ export default function SliderComponent({
                         items={breadcrumbItems}
                         linkColor="allWhite"
                       />
-                      <div className={styles.first_row_title}>
-                        <DynamicHeading
-                          content={[
-                            { title: title, color: "color-white underline" },
-                          ]}
-                          headingTag="p"
-                          className="mb-0 "
-                        />
-                      </div>
                     </div>
+
+                    {/* Slide-specific headings should NOT be H1 */}
                     <div
                       className={`text-center text-md-start ${styles.first_row_content}`}
                     >
@@ -104,7 +106,7 @@ export default function SliderComponent({
                             color: "color-white",
                           },
                         ]}
-                        headingTag="p"
+                        headingTag="h2" // ⬅️ changed to h2
                         className={`f-7 ${styles.voucher_title}`}
                       />
                       <div className="mt-3 mb-3">
@@ -139,7 +141,7 @@ export default function SliderComponent({
                             maxHeight: slide.rightImageMaxHeight ?? "400px",
                             marginTop: slide.rightImageMarginTop ?? "0px",
                           }}
-                          className="w-100 mh-550 object-fit-contain "
+                          className="w-100 mh-550 object-fit-contain"
                         />
                       </div>
                     </div>

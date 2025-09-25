@@ -18,8 +18,11 @@ import {
   TSalesInitialValueProp,
 } from "./formik"
 import { categoryOptions, options } from "./data"
+interface SalesFormProps {
+  isParagraph?: boolean
+}
 
-const SalesForm: React.FC = () => {
+const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
   //
 
   const router = useRouter()
@@ -62,14 +65,25 @@ const SalesForm: React.FC = () => {
           headingTag="h5"
           className="text-center "
         />
-        <DynamicHeading
-          content={[
-            { title: "Talk", color: "color-black " },
-            { title: " to Sales", color: "color-dark-grey " },
-          ]}
-          headingTag="p"
-          className="text-center fs-1 f-6 "
-        />
+        {isParagraph ? (
+          <DynamicHeading
+            content={[
+              { title: "Talk", color: "color-black " },
+              { title: " to Sales", color: "color-dark-grey " },
+            ]}
+            headingTag="p"
+            className="text-center fs-1 f-6"
+          />
+        ) : (
+          <DynamicHeading
+            content={[
+              { title: "Talk", color: "color-black " },
+              { title: " to Sales", color: "color-dark-grey " },
+            ]}
+            headingTag="h1"
+            className="text-center f-6"
+          />
+        )}
 
         <p className={"subtitle"}>We just need a few quick details</p>
 
