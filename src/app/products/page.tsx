@@ -148,7 +148,7 @@ const Rewards = (): React.JSX.Element => {
       </div>
 
       <div id="salesForm" className={`${styles.sales_form}`}>
-        <SalesForm />
+        <SalesForm isParagraph />
       </div>
     </div>
   )
