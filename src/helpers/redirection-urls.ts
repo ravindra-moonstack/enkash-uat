@@ -307,6 +307,10 @@ const url: {
     source: "/resourcesblog/budget-highlights-2023",
     destination: "/resources/blog/union-budget-2023",
   },
+  {
+    source: "/wp-admin/:path*",
+    destination: "/resources/wp-admin/:path*",
+  },
 ]
 
 const mappedUrls = url.map((item) => ({
