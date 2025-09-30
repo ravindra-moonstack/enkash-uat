@@ -306,7 +306,7 @@ body {
 
   &::-webkit-scrollbar {
     height: 6px;
-    background: $color-night-blue ;
+    background: $color-night-blue;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -314,7 +314,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, $color-cyan-blue , transparent);
+    background: linear-gradient(90deg, $color-cyan-blue, transparent);
   }
 }
 
@@ -444,4 +444,15 @@ body {
 
 .cardsSliderMargin {
   margin-top: 140px;
+}
+
+.card_stacking_row {
+  padding: 0px 20px;
+  .section {
+    padding: 50px 20px 0px;
+    background: $color-cultured;
+    @include for-laptops {
+      padding: 90px 20px;
+    }
+  }
 }

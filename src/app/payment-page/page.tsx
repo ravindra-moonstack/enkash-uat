@@ -21,7 +21,6 @@ import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import CommonButton from "@/src/components/buttons"
 import PolicyCard from "@/src/components/policy-card"
-import AllProducts from "@/src/components/all-products"
 import ManagementCard from "@/src/components/management-card"
 
 //helpers
@@ -36,6 +35,7 @@ import {
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import SliderSection from "@/src/components/sections/slider-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Page: Create Custom Branded Checkout Pages",
@@ -370,34 +370,22 @@ const PaymentPage = (): React.JSX.Element => {
           />
         </div>
       </div>
-      <div className={`${styles.slider_row} relative`}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} row`}>
-            <div className={`col-md-12 px-md-3`}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "EnKash Payment Pages Features for ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "Secure Online Payment",
-                    color: "color-equity-blue",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6 text-center"
-              />
-            </div>
-          </div>
-        </div>
-        <AllProducts
-          title="All Features"
-          subtitle="Combine all use cases"
-          data={mergedCards}
-        />
-      </div>
-
+     
+      <SliderSection
+        headingContent={[
+          {
+            title: "EnKash Payment Pages Features for ",
+            color: "color-black",
+          },
+          {
+            title: "Secure Online Payment",
+            color: "color-equity-blue",
+          },
+        ]}
+        productsData={mergedCards}
+        productsTitle="All Features"
+        productsSubtitle="Combine all use cases"
+      />
       <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className=" text-center">

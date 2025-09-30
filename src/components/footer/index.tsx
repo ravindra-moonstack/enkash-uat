@@ -424,8 +424,8 @@ const FooterV2 = (): React.JSX.Element => {
                 className="me-3 mb-3"
               />
             </Link>
-            <div className={`row gap-3 flex-nowrap ${styles.light_bg}`}>
-              {/* 2nd col */}
+            <div className={`row gap-3 flex-md-nowrap ${styles.light_bg}`}>
+              {/* 1st col */}
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <Link href="/products/collect-payments">
                   <h4 className={` ${styles.title}`}>Collect Payments</h4>
@@ -513,7 +513,7 @@ const FooterV2 = (): React.JSX.Element => {
                 </div>
               </div>
 
-              {/* 3rd col */}
+              {/* 2nd col */}
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <div>
                   <div className="">
@@ -614,7 +614,7 @@ const FooterV2 = (): React.JSX.Element => {
                 </div>
               </div>
 
-              {/* 4th col */}
+              {/* 3rd col */}
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <div>
                   <div>
@@ -695,7 +695,7 @@ const FooterV2 = (): React.JSX.Element => {
                   </div>
                 </div>
               </div>
-
+              {/* 4th col */}
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 {/* col-1 resources */}
                 <div className="">

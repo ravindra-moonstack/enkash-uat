@@ -13,7 +13,7 @@ import {
   taskIconTwo,
 } from "./img"
 
-const cardsData : TStackCardsProp =  [
+const cardsData: TStackCardsProp = [
   {
     title: "Sign up",
     description: "Create your account on EnKash and add your business details.",
@@ -33,7 +33,7 @@ const cardsData : TStackCardsProp =  [
   },
 ]
 
-const allInOnePolicies : TStackCardsProp =  [
+const allInOnePolicies: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "OCR Technology for Efficiency",

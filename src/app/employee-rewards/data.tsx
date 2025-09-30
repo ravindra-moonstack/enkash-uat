@@ -1,4 +1,3 @@
-
 import { TStackCardsProp } from "@/src/types"
 import {
   costControlSavings,
@@ -19,10 +18,18 @@ import {
   vouchers,
   incentive,
   offers,
-  giftCard
+  giftCard,
+  activationIcon,
+  extensiveIcon,
+  realTimeIcon,
 } from "./img"
 
-const cardsData : TStackCardsProp =  [
+const benifitsData = [
+  { icon: extensiveIcon, title: "Extensive Reward Options" },
+  { icon: activationIcon, title: "Instant Reward Redemption" },
+  { icon: realTimeIcon, title: "Easy Reward Disbursement" },
+]
+const cardsData: TStackCardsProp = [
   {
     title: "Complete KYC",
     description:
@@ -82,7 +89,6 @@ const cardType = [
 
 const stackcardData: TStackCardsProp = [
   {
-    
     icon: realTimeExpenseIcon,
     title: "Personalized Recognition",
     description:
@@ -91,7 +97,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: fraudProtectionIcon,
     title: "Instant Allocation & Redemption",
     description:
@@ -100,7 +105,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: streamlinedReimbursementIcon,
     title: "Diverse Rewards",
     description:
@@ -109,7 +113,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: costControlSavingsIcon,
     title: "HRMS Integration",
     description:
@@ -118,7 +121,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: wideAcceptanceNetworkIcon,
     title: "Open Voucher Function",
     description:
@@ -127,7 +129,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: stackCardSixIcon,
     title: "Data-Driven Insights",
     description:
@@ -137,4 +138,4 @@ const stackcardData: TStackCardsProp = [
   },
 ]
 
-export { cardsData, cardType, stackcardData }
+export { cardsData, cardType, stackcardData, benifitsData }

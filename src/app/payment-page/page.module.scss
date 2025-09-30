@@ -349,10 +349,3 @@
   }
 }
 
-.slider_row {
-  padding: 50px 20px 26px;
-
-  @include for-laptops {
-    padding: 90px 20px 46px;
-  }
-}

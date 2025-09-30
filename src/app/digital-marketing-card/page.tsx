@@ -13,20 +13,20 @@ import {
 //components
 import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import PolicyCard from "@/src/components/policy-card"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
-import CardProduct from "@/src/components/card-product"
 
 import { mealCardImage, heroCardImg, instantActionImg } from "./img"
 
 import faqData from "./faq-data"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import CardHeroSection from "@/src/components/sections/card-hero-section"
+import OtherProducts from "@/src/components/sections/other-products"
 
 export const metadata: Metadata = generateMetaData({
   title: "Digital Marketing Card: Control Ad Spends Across Platforms",
@@ -57,77 +57,38 @@ const DigitalMarketingCard = (): React.JSX.Element => {
   //
 
   return (
-    <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.hero_section}`}>
-        <div className="max-w-auto">
-          <div className="d-flex">
-            <CustomBreadcrumb
-              items={[
-                { name: "Home", url: "/" },
-                { name: "Corporate Cards ", url: "/corporate-cards" },
-                {
-                  name: "Digital Marketing Card",
-                  url: "/corporate-cards/digtal-marketing-card",
-                },
-              ]}
-            />
-          </div>
-          <div className={`${styles.title} col-12 `}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Digital Marketing Card",
-                  color: "color-equity-blue underline",
-                },
-              ]}
-              headingTag="p"
-              className=""
-            />
-
-            <div className="d-flex  flex-column text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Take Control of Your Marketing Budget with a ",
-                    color: "color-black italic f-3 d-block",
-                  },
-                  {
-                    title: "Digital Marketing Card",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h1"
-                className="f-7 mb-3"
-              />
-            </div>
-
-            <div className="d-inline text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "Effortlessly allocate, track, and optimize your marketing budgets. Designed specifically for marketing professionals, it ensures precision, control and real-time visibility.",
-                    color: "color-black subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className=""
-              />
-            </div>
-            <div
-              className={`${styles.button_wrapper} justify-content-center d-flex`}
-            >
-              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
-            </div>
-          </div>
-        </div>
-        <div className=" col-12 pt-5 ">
-          <div className={styles.lottie_container}>
-            <Image src={heroCardImg} alt="card background" className=" " />
-          </div>
-        </div>
-      </div>
-
+    <div className={`color-white `}>
+      <CardHeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Corporate Cards ", url: "/corporate-cards" },
+          {
+            name: "Digital Marketing Card",
+            url: "/corporate-cards/digtal-marketing-card",
+          },
+        ]}
+        subtitle={{
+          text: "Digital Marketing Card",
+          color: "color-equity-blue",
+          underline: true,
+        }}
+        title={[
+          {
+            text: "Take Control of Your Marketing Budget with a ",
+            color: "color-black f-3 italic d-block",
+          },
+          { text: "Digital Marketing Card", color: "color-black" },
+        ]}
+        description={{
+          text: "Effortlessly allocate, track, and optimize your marketing budgets. Designed specifically for marketing professionals, it ensures precision, control and real-time visibility.",
+          color: "color-black subHeading",
+        }}
+        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
+        heroImage={heroCardImg}
+        backgroundImage="/images/digitalBg.webp"
+        paddingTop="120px"
+        paddingBottom="60px"
+      />
       <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
@@ -172,24 +133,19 @@ const DigitalMarketingCard = (): React.JSX.Element => {
 
       <div className={`${styles.introduction_section} `}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-2 pb-md-5`}>
-            <div
-              className={` flex-column justify-content-center align-items-center pb-3 `}
-            >
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "Features of the Best Corporate Card for Digital Marketing Expenses",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-          </div>
-          <div className={`row align-items-center ${styles.section}`}>
+          <DynamicHeading
+            content={[
+              {
+                title:
+                  "Features of the Best Corporate Card for Digital Marketing Expenses",
+                color: "color-black",
+              },
+            ]}
+            headingTag="h2"
+            className="f-6 pb-3 text-center "
+          />
+
+          <div className={`row`}>
             <div className="col-md-6 col-12  pe-md-5">
               <div
                 style={{
@@ -219,60 +175,36 @@ const DigitalMarketingCard = (): React.JSX.Element => {
               </div>
             </div>
             <div className={`col-md-6 col-12 d-flex `}>
-              <div>
-                <Image
-                  src={instantActionImg}
-                  alt="card background"
-                  className="w-100 mh-550 object-fit-contain"
-                />
-              </div>
+              <Image
+                src={instantActionImg}
+                alt="card background"
+                className="w-100 mh-550 object-fit-contain"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div>
-        <FaqSection faqData={faqData} />
-      </div>
+      <FaqSection faqData={faqData} />
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Your Business, ",
-                  color: "color-black",
-                },
-                {
-                  title: "Your Cards – ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "Tailored by EnKash",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {cardType.map(
-              ({ titleHtml, description, cardImage, linkUrl }, index) => (
-                <div key={index} className="col-12 col-md-4">
-                  <CardProduct
-                    titleHtml={titleHtml}
-                    description={description}
-                    cardImage={cardImage}
-                    linkUrl={linkUrl}
-                  />
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </div>
+      <OtherProducts
+        heading={[
+          {
+            title: "Your Business, ",
+            color: "color-black",
+          },
+          {
+            title: "Your Cards – ",
+            color: "color-equity-blue",
+          },
+          {
+            title: "Tailored by EnKash",
+            color: "color-black",
+          },
+        ]}
+        useOptionalProps={true}
+        cards={cardType}
+      />
     </div>
   )
 }

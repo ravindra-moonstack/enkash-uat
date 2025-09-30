@@ -1,6 +1,4 @@
-import Image from "next/image"
 import { Metadata } from "next"
-
 import styles from "./page.module.scss"
 
 //data
@@ -11,15 +9,13 @@ import faqData from "./faq-data"
 import { mealCardImage, heroCardImg } from "./img"
 
 // components
-import CommonButton from "@/src/components/buttons"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import DynamicHeading from "@/src/components/dynamic-heading"
-import CardProduct from "@/src/components/card-product"
 import LogoSlider from "@/src/components/logo-slider"
+import CardHeroSection from "@/src/components/sections/card-hero-section"
+import OtherProducts from "@/src/components/sections/other-products"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
@@ -54,158 +50,97 @@ const FuelCards = (): React.JSX.Element => {
   //
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.hero_section}`}>
-        <div className="max-w-auto">
-          <div className="d-flex">
-            <CustomBreadcrumb
-              items={[
-                { name: "Home", url: "/" },
-                { name: "Corporate Cards ", url: "/corporate-cards" },
-                {
-                  name: "Fuel Card",
-                  url: "/corporate-cards/fuel-card",
-                },
-              ]}
-              linkColor="allWhite"
-            />
-          </div>
-          <div className={`${styles.title} col-12 `}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Fuel Card",
-                  color: "color-white underline",
-                },
-              ]}
-              headingTag="p"
-              className=""
-            />
-            <div className=" text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Transforming Fuel Expense Management with ",
-                    color: "color-white italic f-3 d-block",
-                  },
-                  {
-                    title: " Fuel Cards",
-                    color: "color-white",
-                  },
-                ]}
-                headingTag="h1"
-                className="f-7 mb-2"
-              />
-            </div>
-
-            <div className="text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "Eliminate hassle, gain control, and cut costs with a comprehensive fuel card solution for businesses of all sizes.",
-                    color: "color-white subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className=""
-              />
-            </div>
-            <div
-              className={`${styles.button_wrapper} justify-content-center d-flex`}
-            >
-              <CommonButton title="Get Started" theme="blue" url={salesUrl} />
-            </div>
-          </div>
-        </div>
-        <div className={`${styles.lottie_containerOuter} col-12`}>
-          <div className={styles.lottie_container}>
-            <Image src={heroCardImg} alt="card background" className=" " />
-          </div>
-        </div>
-      </div>
+      <CardHeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Corporate Cards ", url: "/corporate-cards" },
+          {
+            name: "Fuel Card",
+            url: "/corporate-cards/fuel-card",
+          },
+        ]}
+        linkColor="allWhite"
+        subtitle={{
+          text: "Fuel Cards",
+          color: "color-white",
+          underline: true,
+        }}
+        title={[
+          {
+            text: "Transforming Fuel Expense Management with",
+            color: "color-white f-3 italic d-block",
+          },
+          { text: "Fuel Cards", color: "color-white" },
+        ]}
+        description={{
+          text: "Eliminate hassle, gain control, and cut costs with a comprehensive fuel card solution for businesses of all sizes.",
+          color: "color-white subHeading",
+        }}
+        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
+        heroImage={heroCardImg}
+        backgroundImage="/images/fuelCardBg.webp"
+        paddingTop="120px"
+        paddingBottom="60px"
+      />
 
       <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
-      <div>
-        <StepsSection
-          heading={[
-            { text: "Steps to Manage Employee ", colorClass: "color-black" },
-            { text: "Fuel Costs", colorClass: "color-equity-blue" },
-          ]}
-          steps={intantActionData}
-          button={{
-            title: "Get Started",
-            theme: "border-gray",
-          }}
-          image={{
-            src: mealCardImage,
-            alt: "card background",
-          }}
-        />
-      </div>
+      <StepsSection
+        heading={[
+          { text: "Steps to Manage Employee ", colorClass: "color-black" },
+          { text: "Fuel Costs", colorClass: "color-equity-blue" },
+        ]}
+        steps={intantActionData}
+        button={{
+          title: "Get Started",
+          theme: "border-gray",
+        }}
+        image={{
+          src: mealCardImage,
+          alt: "card background",
+        }}
+      />
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <>
-            <CardStacking
-              cards={cards}
-              heading={[
-                {
-                  title: "Unlock  ",
-                  color: "color-black",
-                },
-                {
-                  title: "Savings ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "on Every Mile",
-                  color: "color-black",
-                },
-              ]}
-            />
-          </>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Unlock  ",
+                color: "color-black",
+              },
+              {
+                title: "Savings ",
+                color: "color-equity-blue",
+              },
+              {
+                title: "on Every Mile",
+                color: "color-black",
+              },
+            ]}
+          />
         </div>
       </div>
 
       <FaqSection faqData={faqData} />
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Your Business, Your Cards – ",
-                  color: "color-black",
-                },
-                {
-                  title: "Tailored by EnKash",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {cardType.map(
-              ({ titleHtml, description, cardImage, linkUrl }, index) => (
-                <div key={index} className="col-12 col-md-4">
-                  <CardProduct
-                    titleHtml={titleHtml}
-                    description={description}
-                    cardImage={cardImage}
-                    linkUrl={linkUrl}
-                  />
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </div>
+      <OtherProducts
+        heading={[
+          {
+            title: "Your Business, Your Cards – ",
+            color: "color-black",
+          },
+          {
+            title: "Tailored by EnKash",
+            color: "color-equity-blue",
+          },
+        ]}
+        useOptionalProps={true}
+        cards={cardType}
+      />
     </div>
   )
 }

@@ -9,6 +9,7 @@ import {
   optimizedIcon,
   paymentLinkImage,
   paymentOptionImage,
+  scrollIconFour,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
@@ -21,10 +22,9 @@ import {
   taskIconSix,
   taskIconThree,
   taskIconTwo,
-} from "."
+} from "./img"
 
-
-const cardsData  : TStackCardsProp = [
+const cardsData: TStackCardsProp = [
   {
     title: "Login",
     description:
@@ -46,7 +46,7 @@ const cardsData  : TStackCardsProp = [
     title: "Make Payment",
     description:
       "Select multiple invoices and make bulk payments using any payment mode",
-    icon: scrollIconThree,
+    icon: scrollIconFour,
   },
 ]
 
@@ -86,7 +86,7 @@ const allProductSections = [
   },
 ]
 
-const allInOnePolicyData : TStackCardsProp = [
+const allInOnePolicyData: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Save Time and Boost Efficiency",

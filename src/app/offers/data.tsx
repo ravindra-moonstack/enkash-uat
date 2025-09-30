@@ -17,9 +17,17 @@ import {
   offers,
   incentive,
   vouchers,
+  activationIcon,
+  customizableIcon,
+  realTimeIcon,
 } from "./img"
 
-const cardsData : TStackCardsProp =  [
+const benifitsData = [
+  { icon: customizableIcon, title: "Customizable Offers" },
+  { icon: activationIcon, title: "Exclusive Discounts" },
+  { icon: realTimeIcon, title: "Trusted Partners" },
+]
+const cardsData: TStackCardsProp = [
   {
     title: "Complete KYC",
     description: "Sign up on EnKash and complete your KYC.",
@@ -119,4 +127,4 @@ const stackcardData: TStackCardsProp = [
   },
 ]
 
-export { cardsData, cardType, stackcardData }
+export { cardsData, cardType, stackcardData, benifitsData }

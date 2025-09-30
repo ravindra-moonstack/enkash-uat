@@ -1,0 +1,58 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.introduction_section {
+  padding: 50px 20px;
+  position: relative;
+
+  @include for-laptops {
+    padding: 90px 20px;
+  }
+
+  .section {
+    max-width: 1200px;
+    margin: auto;
+    gap: 10px;
+
+    bottom: -65px;
+    justify-content: center;
+    right: 0;
+    left: 0;
+    z-index: 2;
+
+    @include for-laptops {
+      position: absolute;
+      gap: 40px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 200px;
+      min-width: 200px;
+      flex: 1 1 200px;
+      background: $color-white;
+      border-radius: 12px;
+      padding: 10px;
+      gap: 10px;
+      box-shadow: 0px 20px 50px 0px #3440541a;
+
+      @include for-laptops {
+        max-width: 300px;
+        min-width: 200px;
+        padding: 20px;
+        gap: 20px;
+        border-radius: 20px;
+      }
+
+      .card_image {
+        height: 24px;
+        width: 24px;
+
+        @include for-laptops {
+          height: 48px;
+          width: 48px;
+        }
+      }
+    }
+  }
+}
