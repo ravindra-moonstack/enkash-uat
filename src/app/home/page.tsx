@@ -47,7 +47,7 @@ import {
   rewardData,
   ctaButtonData,
 } from "./data"
-import generateMetaData from "@/src/utils/metaData"
+import generateMetaData from "@/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "The Best Payments and Spend Management Platform",
@@ -65,109 +65,92 @@ const HomePage = (): React.JSX.Element => {
     <div className={`color-white ${styles.home_container}`}>
       <section className={`${styles.topBanner}`}>
         <div className="max-w-auto">
-          <div className="row">
-            <div className="col-md-12">
-              <div className={`${styles.banner_heading}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Unifying Payments. Simplifying Spends",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h1"
-                  className="text-center mb-4"
-                />
-              </div>
-              <div className={`${styles.banner_subHeading}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "SPEND LESS | Save Time | Scale Fast",
-                      color: "color-black subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="text-center mb-4 text-uppercase"
-                />
-              </div>
-              <div
-                className={`${styles.banner_button} d-flex justify-content-center`}
-              >
-                <CommanButton
-                  title="Connect with Us"
-                  theme="blue"
-                  url="/sales?source=homepage"
-                />
-              </div>
-            </div>
+          <div className={`${styles.banner_heading}`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Unifying Payments. Simplifying Spends",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h1"
+              className="text-center mb-4"
+            />
+          </div>
+          <div className={`${styles.banner_subHeading}`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "SPEND LESS | Save Time | Scale Fast",
+                  color: "color-black subHeading",
+                },
+              ]}
+              headingTag="p"
+              className="text-center mb-4 text-uppercase"
+            />
+          </div>
+          <div className="d-flex justify-content-center">
+            <CommanButton
+              title="Connect with Us"
+              theme="blue"
+              url="/sales?source=homepage"
+            />
           </div>
         </div>
       </section>
       <section className={`${styles.ctaLogoSlider}`}>
         <div className="max-w-auto">
-          <div className="row">
-            <div className="col-md-12">
-              <div
-                style={{
-                  color: "#2b2b2b",
-                  marginBottom: "10px",
-                  fontWeight: "300",
-                }}
-              >
-                I want to:
+          <DynamicHeading
+            content={[
+              {
+                title: "I want to:",
+                color: "color-grey-200",
+              },
+            ]}
+            headingTag="p"
+            className=" mb-4 f-3"
+          />
+          <div className={`${styles.ctaButtonSection}`}>
+            {ctaButtonData.map((item, index) => (
+              <div className={`${styles.ctaButtonBox}`} key={index}>
+                <CommanButton {...item} />
               </div>
-              <div className={`${styles.ctaButtonSection}`}>
-                {ctaButtonData.map((item, index) => (
-                  <div className={`${styles.ctaButtonBox}`} key={index}>
-                    <CommanButton {...item} />
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className="row">
-            <div className="col-md-12">
-              <div className={`${styles.logoSliderSection}`}>
-                <LogoSlider />
-              </div>
-            </div>
+          <div className={`${styles.logoSliderSection}`}>
+            <LogoSlider />
           </div>
         </div>
       </section>
 
       <section className={`${styles.collectPaymentSection}`}>
         <div className="max-w-auto">
-          <div className="row">
-            <div className="col-md-12">
-              <div className={`${styles.collectPaymentHeadingBox}`}>
-                <div className={`${styles.collectPaymentHeading}`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "India’s Only End-to-End Payments & Spend Stack",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="text-center mb-2"
-                  />
-                </div>
-                <div className={`${styles.collectPaymentSubHeading}`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Built for Businesses. Powered by RBI Licenses. Trusted by Enterprises.",
-                        color: "color-black subHeading",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="text-center mb-0"
-                  />
-                </div>
-              </div>
+          <div className={`${styles.collectPaymentHeadingBox}`}>
+            <div className={`${styles.collectPaymentHeading}`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "India’s Only End-to-End Payments & Spend Stack",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="text-center mb-2"
+              />
+            </div>
+            <div className={`${styles.collectPaymentSubHeading}`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title:
+                      "Built for Businesses. Powered by RBI Licenses. Trusted by Enterprises.",
+                    color: "color-black subHeading",
+                  },
+                ]}
+                headingTag="p"
+                className="text-center mb-0"
+              />
             </div>
           </div>
 
@@ -215,64 +198,53 @@ const HomePage = (): React.JSX.Element => {
               </div>
             </div>
           </div>
-          <div className={`${styles.collectPaymentsBoxSection}`}>
-            <div className="row">
-              {cardsData.map((item, index) => (
-                <div className="col-12 col-sm-6 col-lg-4" key={index}>
-                  <div className={`${styles.collectPaymentBox}`}>
-                    <PaymentGatewayCare {...item} />
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className={`${styles.collectPaymentsBoxSection} row`}>
+            {cardsData.map((item, index) => (
+              <PaymentGatewayCare
+                {...item}
+                key={index.toString()}
+                className={`${styles.collectPaymentBox} col-12 col-sm-6 col-lg-4`}
+              />
+            ))}
           </div>
         </div>
       </section>
       <section className={`${styles.makePaymentSection}`}>
         <div className="max-w-auto">
-          <div className="row">
-            <div className="col-md-12">
-              <div className={`${styles.makePaymentsInner}`}>
-                <div className="row">
-                  <div className="col-md-12">
-                    <div
-                      className={`${styles.makePaymentHeading} mb-4 mb-md-5`}
-                    >
-                      <DynamicHeading
-                        content={[
-                          {
-                            title: "Make Payments",
-                            color: "color-black italic f-3 d-block",
-                          },
-                          {
-                            title: "Effortlessly",
-                            color: "color-black",
-                          },
-                        ]}
-                        headingTag="h3"
-                        className=" mb-4"
-                      />
-                    </div>
+          <div className={`${styles.makePaymentsInner}`}>
+            <div className={`${styles.makePaymentHeading} mb-4 mb-md-5`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Make Payments",
+                    color: "color-black italic f-3 d-block",
+                  },
+                  {
+                    title: "Effortlessly",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h3"
+                className=" mb-4"
+              />
+            </div>
+            <div className="row">
+              {makePaymentData.map((item, index) => (
+                <div
+                  className={`${styles.makePaymentsBoxData} col-md-6`}
+                  key={index}
+                >
+                  <div className={`${styles.makesPaymentsBox} `}>
+                    <UtilityBillPayments
+                      {...item}
+                      womanImg={item.womanImg.src}
+                    />
                   </div>
                 </div>
-                <div className="row">
-                  {makePaymentData.map((item, index) => (
-                    <div
-                      className={`${styles.makePaymentsBoxData} col-md-6`}
-                      key={index}
-                    >
-                      <div className={`${styles.makesPaymentsBox} `}>
-                        <UtilityBillPayments
-                          {...item}
-                          womanImg={item.womanImg.src}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
+
           <div className={`${styles.makePaymentExpenseMagement}`}>
             <div className="row">
               <div className="col-md-6 z-1">
@@ -324,26 +296,23 @@ const HomePage = (): React.JSX.Element => {
       <section className={`${styles.prepaidCardSection}`}>
         <div className="max-w-auto">
           <div className={`${styles.prepaidCardTopSection}`}>
-            <div className="row">
-              <div className="col-md-12">
-                <div className={`${styles.prepaidCardHeading}`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Prepaid Cards",
-                        color: "color-white italic f-3 d-block",
-                      },
-                      {
-                        title: "with Total Spend Control",
-                        color: "color-white",
-                      },
-                    ]}
-                    headingTag="h3"
-                    className="text-start mb-4"
-                  />
-                </div>
-              </div>
+            <div className={`${styles.prepaidCardHeading}`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Prepaid Cards",
+                    color: "color-white italic f-3 d-block",
+                  },
+                  {
+                    title: "with Total Spend Control",
+                    color: "color-white",
+                  },
+                ]}
+                headingTag="h3"
+                className="text-start mb-4"
+              />
             </div>
+
             <div className={`${styles.prepaidCardSectionInner}`}>
               <div className="row g-md-5">
                 {prepaidCardsData.map((item, index) => (
@@ -358,32 +327,30 @@ const HomePage = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.prepaidCardSectionBottom}`}>
-            <div className="row">
-              <div className="col-md-12">
-                <div className={`${styles.prepaidCardHeading} mb-4 mb-md-5`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Corporate Credit Cards*",
-                        color: "color-white italic f-3 d-block",
-                      },
-                      {
-                        title: "Built to Power Growth",
-                        color: "color-white",
-                      },
-                    ]}
-                    headingTag="h3"
-                    className=" mb-4"
-                  />
-                </div>
-              </div>
+            <div className={`${styles.prepaidCardHeading} mb-4 mb-md-5`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Corporate Credit Cards*",
+                    color: "color-white italic f-3 d-block",
+                  },
+                  {
+                    title: "Built to Power Growth",
+                    color: "color-white",
+                  },
+                ]}
+                headingTag="h3"
+                className=" mb-4"
+              />
             </div>
+
             <div className="row g-md-5">
               {prepaidCardsDataSecond.map((item, index) => (
-                <div className="col-md-6 mb-4 mb-md-0" key={index}>
-                  <div className={`${styles.prepaidCardBox}`}>
-                    <PrepaidCardHome {...item} />
-                  </div>
+                <div
+                  key={index.toString()}
+                  className={`${styles.prepaidCardBox} col-md-6 mb-4 mb-md-0`}
+                >
+                  <PrepaidCardHome {...item} />
                 </div>
               ))}
             </div>
@@ -394,26 +361,23 @@ const HomePage = (): React.JSX.Element => {
       <section className={`${styles.rewardSction}`}>
         <div className="max-w-auto">
           <div className={`${styles.rewardSectionInner}`}>
-            <div className="row">
-              <div className="col-md-12">
-                <div className={`${styles.rewardHeading} mb-4 mb-md-5`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Rewards & Vouchers ",
-                        color: "color-black f-3 d-block",
-                      },
-                      {
-                        title: "That Motivate and Matter",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="f-6 text-center"
-                  />
-                </div>
-              </div>
+            <div className={`${styles.rewardHeading} mb-4 mb-md-5`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Rewards & Vouchers ",
+                    color: "color-black f-3 d-block",
+                  },
+                  {
+                    title: "That Motivate and Matter",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6 text-center"
+              />
             </div>
+
             <div className={`${styles.rewardSectionContent}`}>
               <div className="row ">
                 {rewardData.map((item, index) => (
@@ -428,41 +392,34 @@ const HomePage = (): React.JSX.Element => {
                 ))}
               </div>
             </div>
-            <div className="row">
-              <div className="col-md-12">
-                <div className={`${styles.rewardBottomText} `}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Vouchers",
-                        color: "color-white subHeading",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="text-center"
-                  />
-                </div>
-              </div>
+
+            <div className={`${styles.rewardBottomText} `}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Vouchers",
+                    color: "color-white subHeading",
+                  },
+                ]}
+                headingTag="p"
+                className="text-center"
+              />
             </div>
           </div>
         </div>
 
         <div className={`${styles.rewardsBottomSlider} container`}>
-          <div className="row">
-            <div className="col-md-12">
-              <div className={`${styles.rewardsBottomSliderContent}`}>
-                {HomePageRewardsVouchersSlide.map((item, index) => (
-                  <div
-                    className={`${styles.rewardsBottomSliderContentBox}`}
-                    key={index}
-                  >
-                    <div className={`${styles.rewardsBottomSliderBox}`}>
-                      <FeatureCard {...item} />
-                    </div>
-                  </div>
-                ))}
+          <div className={`${styles.rewardsBottomSliderContent}`}>
+            {HomePageRewardsVouchersSlide.map((item, index) => (
+              <div
+                className={`${styles.rewardsBottomSliderContentBox}`}
+                key={index}
+              >
+                <div className={`${styles.rewardsBottomSliderBox}`}>
+                  <FeatureCard {...item} />
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -491,56 +448,49 @@ const HomePage = (): React.JSX.Element => {
               </div>
             </div>
             <div className={`${styles.receivablesSection}`}>
-              <div className="row">
-                <div className="col-md-12">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Receivables Automation",
-                        color: "color-black subHeading",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="mb-3"
-                  />
-                </div>
-              </div>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Receivables Automation",
+                    color: "color-black subHeading",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-3"
+              />
 
               <div className="row gap-x-3">
                 {ReceivablesData.map((item, index) => (
-                  <div className="col-md-4  mb-4" key={index}>
-                    <div className={`${styles.ReceivablesPayablesBoxOuter}`}>
-                      <HomeReceivablesPayables {...item} />
-                    </div>
+                  <div
+                    className={`${styles.ReceivablesPayablesBoxOuter} col-md-4  mb-4`}
+                    key={index.toString()}
+                  >
+                    <HomeReceivablesPayables {...item} />
                   </div>
                 ))}
               </div>
             </div>
             <div className={`${styles.receivablesSection}`}>
-              <div className="row">
-                <div className="col-md-12">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Payables Automation",
-                        color: "color-black subHeading",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="mb-3 mt-md-5 mt-4"
-                  />
-                </div>
-              </div>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Payables Automation",
+                    color: "color-black subHeading",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-3 mt-md-5 mt-4"
+              />
+
               <div className="row">
                 <div className="col-md-8">
                   <div className="row">
                     {PayablesData.map((item, index) => (
-                      <div className="col-md-6 mb-4" key={index}>
-                        <div
-                          className={`${styles.ReceivablesPayablesBoxOuter}`}
-                        >
-                          <HomeReceivablesPayables {...item} />
-                        </div>
+                      <div
+                        key={index.toString()}
+                        className={`${styles.ReceivablesPayablesBoxOuter} col-md-6 mb-4`}
+                      >
+                        <HomeReceivablesPayables {...item} />
                       </div>
                     ))}
                   </div>
@@ -589,40 +539,38 @@ const HomePage = (): React.JSX.Element => {
 
       <section className={`${styles.counterSection}`}>
         <div className="max-w-auto">
-          <div className="row">
-            <div className="col-md-12">
-              <div className={`${styles.counterHeading} mb-4 mb-md-5`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Say Goodbye to Fragmented Experience",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="text-center mb-2"
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "One Unified Platform. Multiple Use Cases. Zero Complexity.",
-                      color: "color-black subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="text-center mb-0"
-                />
-              </div>
-            </div>
+          <div className={`${styles.counterHeading} mb-4 mb-md-5`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Say Goodbye to Fragmented Experience",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="text-center mb-2"
+            />
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "One Unified Platform. Multiple Use Cases. Zero Complexity.",
+                  color: "color-black subHeading",
+                },
+              ]}
+              headingTag="p"
+              className="text-center mb-0"
+            />
           </div>
+
           <div className={`${styles.counterSectionOuter}`}>
             <div className="row">
               {counterData.map((item, index) => (
-                <div className="col-md-4" key={index}>
-                  <div className={`${styles.counterBox}`}>
-                    <Counter {...item} />
-                  </div>
+                <div className="col-md-4" key={index.toString()}>
+                  <Counter
+                    {...item}
+                    className={`${styles.counterBox} "col-md-4`}
+                  />
                 </div>
               ))}
             </div>
@@ -631,144 +579,138 @@ const HomePage = (): React.JSX.Element => {
       </section>
       <section className={`${styles.brandSection}`}>
         <div className="max-w-auto">
-          <div className="row">
-            <div className="col-md-12">
-              <div className={`${styles.heading}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Don’t Just Take Our Word for It",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="text-center mb-4"
-                />
-              </div>
-            </div>
+          <div className={`${styles.heading}`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Don’t Just Take Our Word for It",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="text-center mb-4"
+            />
           </div>
-          <div className={`${styles.brandSliderSection}`}>
-            <div className="row">
-              <div className={`${styles.brandSliderInner}`}>
-                <HomePageSlider testimonials={adidasData} />
-              </div>
-            </div>
+
+          <div className={`row ${styles.brandSliderSection}`}>
+            <HomePageSlider
+              testimonials={adidasData}
+              className={styles.brandSliderInner}
+            />
           </div>
         </div>
       </section>
 
       <section className={`${styles.securitySection}`}>
-        <div className="max-w-auto">
-          <div className={`${styles.securitySectionOuter}`}>
-            <div className="row">
-              <div className="col-md-7 mb-4 mb-md-0">
-                <div className={`${styles.securityLeft}`}>
-                  <Image src={securityIcon1} alt={""}></Image>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Our Credentials, Your Confidence",
-                        color: "color-white",
-                      },
-                    ]}
-                    headingTag="h3"
-                    className="f-5 mb-3 mt-3"
-                  />
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Built for Businesses. Powered by RBI Licenses. Trusted by Enterprises.",
-                        color: "color-white",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="mb-0"
-                  />
-                </div>
+        <div className={`${styles.securitySectionOuter} max-w-auto`}>
+          <div className="row">
+            <div className="col-md-7 mb-4 mb-md-0">
+              <div className={`${styles.securityLeft}`}>
+                <Image src={securityIcon1} alt={""}></Image>
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Our Credentials, Your Confidence",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h3"
+                  className="f-5 mb-3 mt-3"
+                />
+                <DynamicHeading
+                  content={[
+                    {
+                      title:
+                        "Built for Businesses. Powered by RBI Licenses. Trusted by Enterprises.",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
               </div>
-              <div className="col-md-5">
-                <div className={`${styles.securityRight}`}>
-                  <div className="row">
-                    <div className="col-sm-6 mb-3">
-                      <div className={`${styles.card}`}>
-                        <Image src={securityIcon2} alt={""}></Image>
-                        <DynamicHeading
-                          content={[
-                            {
-                              title: "Payment Aggregator",
-                              color: "color-black",
-                            },
-                            {
-                              title: "License",
-                              color: "color-black d-block",
-                            },
-                          ]}
-                          headingTag="p"
-                          className="text-center"
-                        />
-                      </div>
+            </div>
+            <div className="col-md-5">
+              <div className={`${styles.securityRight}`}>
+                <div className="row">
+                  <div className="col-sm-6 mb-3">
+                    <div className={`${styles.card}`}>
+                      <Image src={securityIcon2} alt={""}></Image>
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: "Payment Aggregator",
+                            color: "color-black",
+                          },
+                          {
+                            title: "License",
+                            color: "color-black d-block",
+                          },
+                        ]}
+                        headingTag="p"
+                        className="text-center"
+                      />
                     </div>
-                    <div className="col-sm-6  mb-3">
-                      <div className={`${styles.card}`}>
-                        <Image src={securityIcon3} alt={""}></Image>
-                        <DynamicHeading
-                          content={[
-                            {
-                              title: "Prepaid Payment",
-                              color: "color-black",
-                            },
-                            {
-                              title: "Instrument License",
-                              color: "color-black d-block",
-                            },
-                          ]}
-                          headingTag="p"
-                          className="text-center"
-                        />
-                      </div>
+                  </div>
+                  <div className="col-sm-6  mb-3">
+                    <div className={`${styles.card}`}>
+                      <Image src={securityIcon3} alt={""}></Image>
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: "Prepaid Payment",
+                            color: "color-black",
+                          },
+                          {
+                            title: "Instrument License",
+                            color: "color-black d-block",
+                          },
+                        ]}
+                        headingTag="p"
+                        className="text-center"
+                      />
                     </div>
-                    <div className="col-sm-6 mb-3 mb-md-0">
-                      <div className={`${styles.card} `}>
-                        <Image
-                          src={securityIcon4}
-                          className={`${styles.bharatBillPaymentImg}`}
-                          alt={""}
-                        ></Image>
-                        <DynamicHeading
-                          content={[
-                            {
-                              title: "Bharat Bill Payment",
-                              color: "color-black d-block",
-                            },
-                            {
-                              title: "Operating Unit",
-                              color: "color-black",
-                            },
-                          ]}
-                          headingTag="p"
-                          className="text-center"
-                        />
-                      </div>
+                  </div>
+                  <div className="col-sm-6 mb-3 mb-md-0">
+                    <div className={`${styles.card} `}>
+                      <Image
+                        src={securityIcon4}
+                        className={`${styles.bharatBillPaymentImg}`}
+                        alt={""}
+                      ></Image>
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: "Bharat Bill Payment",
+                            color: "color-black d-block",
+                          },
+                          {
+                            title: "Operating Unit",
+                            color: "color-black",
+                          },
+                        ]}
+                        headingTag="p"
+                        className="text-center"
+                      />
                     </div>
-                    <div className="col-sm-6">
-                      <div className={`${styles.card}`}>
-                        <Image src={securityIcon5} alt={""}></Image>
-                        <DynamicHeading
-                          content={[
-                            {
-                              title: "PCI DSS ",
-                              color: "color-black",
-                            },
-                            {
-                              title: "Certification",
-                              color: "color-black d-block",
-                            },
-                          ]}
-                          headingTag="p"
-                          className="text-center"
-                        />
-                      </div>
+                  </div>
+                  <div className="col-sm-6">
+                    <div className={`${styles.card}`}>
+                      <Image src={securityIcon5} alt={""}></Image>
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: "PCI DSS ",
+                            color: "color-black",
+                          },
+                          {
+                            title: "Certification",
+                            color: "color-black d-block",
+                          },
+                        ]}
+                        headingTag="p"
+                        className="text-center"
+                      />
                     </div>
                   </div>
                 </div>
@@ -780,70 +722,64 @@ const HomePage = (): React.JSX.Element => {
 
       <section className={`${styles.BuiltforBuildersSection}`}>
         <div className="max-w-auto">
-          <div className="row">
-            <div className="col-md-12">
-              <div className={`${styles.topSubHeading}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Built for ",
-                      color: "color-equity-blue f-3",
-                    },
-                    {
-                      title: "Builders",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h5"
-                  className="f-5 "
-                />
-              </div>
-              <div className={`${styles.topSubHeading}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Everything You Need to Ship Faster",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6 mb-3"
-                />
-              </div>
-            </div>
+          <div className={`${styles.topSubHeading}`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Built for ",
+                  color: "color-equity-blue f-3",
+                },
+                {
+                  title: "Builders",
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h5"
+              className="f-5 "
+            />
           </div>
+          <div className={`${styles.topSubHeading}`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Everything You Need to Ship Faster",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6 mb-3"
+            />
+          </div>
+
           <div className={`${styles.BuiltforBuilderscard}`}>
             <div className="row">
               {BuiltforBuildersCardData.map((item, index) => (
-                <div className="col-md-3" key={index}>
-                  <div className={`${styles.collectPaymentBox}`}>
-                    <BuiltforBuildersSection {...item} />
-                  </div>
-                </div>
+                <BuiltforBuildersSection
+                  className={`${styles.collectPaymentBox} col-md-3`}
+                  {...item}
+                  key={index.toString()}
+                />
               ))}
             </div>
-            <div className="row">
-              <div className="col-md-12">
-                <div className={`${styles.customButtons}`}>
-                  <Link href={"https://docs.enkash.com/"} className="">
-                    Read the Docs
-                    <Image
-                      src="/svgs/chevron-right.svg"
-                      alt="chevron-right"
-                      width={8}
-                      height={10}
-                      className="ms-1"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
+
+            <Link
+              href={"https://docs.enkash.com/"}
+              className={`${styles.customButtons}`}
+            >
+              Read the Docs
+              <Image
+                src="/svgs/chevron-right.svg"
+                alt="chevron-right"
+                width={8}
+                height={10}
+                className="ms-1"
+              />
+            </Link>
           </div>
         </div>
       </section>
-      <section className={`${styles.getStartedSection}`}>
-        <BottomCtaSection />
-      </section>
+
+      <BottomCtaSection className={`${styles.getStartedSection}`} />
     </div>
   )
 }

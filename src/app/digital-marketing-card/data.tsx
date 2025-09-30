@@ -27,9 +27,10 @@ import {
   wideAcceptanceNetworkIcon,
 } from "./img"
 import { payrollCardImg } from "../fuel-card/img"
-import { TCardTypes, TStackCardsProp } from "@/src/types"
+import { TStackCardItemProp, TStackCardsProp } from "@/src/types"
+import { CardData } from "@/src/components/management-card"
 
-const intantActionData = [
+const intantActionData: TStackCardItemProp[] = [
   {
     title: "Issuance",
     description:
@@ -51,7 +52,7 @@ const intantActionData = [
   },
 ]
 
-const spendAnalyticsData = [
+const spendAnalyticsData: TStackCardItemProp[] = [
   {
     title: "Predefined Spending Limits",
     description:
@@ -85,70 +86,77 @@ const spendAnalyticsData = [
   },
 ]
 
-const cardType : TCardTypes =[
+const cardType: CardData[] = [
   {
-    titleHtml: "Fuel Card",
+    whiteTitle: "Fuel Card",
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
     linkUrl: "/fuel-card",
+    theme: "black",
   },
   {
-    titleHtml: "Meal Card",
+    whiteTitle: "Meal Card",
     description:
       "Give tax-saving meal benefits to employees with easy-to-use, digital meal cards accepted nationwide.",
     cardImage: mealCardImg,
     linkUrl: "/meal-card",
+    theme: "black",
   },
 
   {
-    titleHtml: "SaaS Card",
+    whiteTitle: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
     linkUrl: "/saas-card",
+    theme: "black",
   },
   {
-    titleHtml: "Payroll Card",
+    whiteTitle: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
     linkUrl: "/sales/?source=digital-marketing-card",
+    theme: "black",
   },
   {
-    titleHtml: "Virtual Card",
+    whiteTitle: "Virtual Card",
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
     cardImage: virtualCardImg,
     linkUrl: "/virtual-card",
+    theme: "black",
   },
   {
-    titleHtml: "Travel & Expense Card",
+    whiteTitle: "Travel & Expense Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
     cardImage: termsAndConCardImg,
     linkUrl: "/travel-and-expense-card",
+    theme: "black",
   },
 
   {
-    titleHtml: "Purchase Card",
+    whiteTitle: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
     cardImage: purchesCardImg,
     linkUrl: "/purchase-card",
+    theme: "black",
   },
   {
-    titleHtml: "Fleet Card",
+    whiteTitle: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
     linkUrl: "/sales/?source=digital-marketing-card",
+    theme: "black",
   },
 ]
 
 const stackcardData: TStackCardsProp = [
   {
-    
     icon: realTimeExpenseIcon,
     title: "Simplified Budget Allocation",
     description:
@@ -157,7 +165,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: fraudProtectionIcon,
     title: "Real-Time Expense Tracking",
     description:
@@ -166,7 +173,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: streamlinedReimbursementIcon,
     title: "Prevent Overspending",
     description:
@@ -175,7 +181,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: costControlSavingsIcon,
     title: "Simplified Subscription Management",
     description:
@@ -184,7 +189,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: wideAcceptanceNetworkIcon,
     title: "Customizable Usage Policies",
     description:
@@ -194,7 +198,4 @@ const stackcardData: TStackCardsProp = [
   },
 ]
 
-export {   cardType,
-  intantActionData,
-  spendAnalyticsData,
-  stackcardData,}
+export { cardType, intantActionData, spendAnalyticsData, stackcardData }

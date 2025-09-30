@@ -15,7 +15,6 @@ import faqData from "./faq-data"
 //components
 import CustomBreadcrumb from "@/components/breadcrumb"
 import LogoSlider from "@/components/logo-slider"
-import CardProduct from "@/components/card-product"
 import DynamicHeading from "@/components/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy"
 import FaqSection from "@/components/faq-section"
@@ -24,6 +23,8 @@ import AllProducts from "@/components/all-products"
 import CardStacking from "@/components/card-stacking"
 import CommonButton from "@/src/components/buttons"
 import StepsSection from "@/src/components/steps-section"
+import CtaSection from "@/src/components/sections/cta-section"
+import OtherProducts from "@/src/components/sections/other-products"
 
 //helpers
 import { mealCardImage, heroCardImg } from "./img"
@@ -31,6 +32,7 @@ import { mealCardImage, heroCardImg } from "./img"
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Instant Card Management Platform for Businesses",
@@ -77,7 +79,7 @@ const InstantCardManagement = (): React.JSX.Element => {
               ]}
             />
           </div>
-          <div className={`${styles.title} col-12 `}>
+          <div className={`${styles.title} col-12 text-center `}>
             <DynamicHeading
               content={[
                 {
@@ -89,47 +91,41 @@ const InstantCardManagement = (): React.JSX.Element => {
               className="mb-2"
             />
 
-            <div className="d-flex  flex-column text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Take Charge of Your Cards",
-                    color: "color-black italic f-3 d-block",
-                  },
-                  {
-                    title: "In Real Time",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h1"
-                className="mb-2 f-7"
-              />
-            </div>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Take Charge of Your Cards",
+                  color: "color-black italic f-3 d-block",
+                },
+                {
+                  title: "In Real Time",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h1"
+              className="mb-2 f-7"
+            />
 
-            <div className="d-inline text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "One click to block lost cards, manage permissions, and stay secure with EnKash’s advanced card management system",
-                    color: "color-black subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className=""
-              />
-            </div>
-            <div
-              className={`${styles.button_wrapper} justify-content-center d-flex`}
-            >
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "One click to block lost cards, manage permissions, and stay secure with EnKash’s advanced card management system",
+                  color: "color-black subHeading",
+                },
+              ]}
+              headingTag="p"
+              className="d-inline"
+            />
+
+            <div className={` justify-content-center d-flex`}>
               <CommonButton title="Get Started" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>
-        <div className=" col-12 pt-5 ">
-          <div className={styles.lottie_container}>
-            <Image src={heroCardImg} alt="card background" className=" " />
-          </div>
+
+        <div className={styles.lottie_container}>
+          <Image src={heroCardImg} alt="card background" className=" " />
         </div>
       </div>
 
@@ -137,20 +133,17 @@ const InstantCardManagement = (): React.JSX.Element => {
 
       <div className={styles.introduction_section}>
         <div className="max-m-auto">
-          <div
-            className={`${styles.second_row_title} text-center pb-3 pb-md-5`}
-          >
-            <DynamicHeading
-              content={[
-                {
-                  title: "Best Gift Cards Online",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
+          <DynamicHeading
+            content={[
+              {
+                title: "Best Gift Cards Online",
+                color: "color-white",
+              },
+            ]}
+            headingTag="h3"
+            className="f-5 text-center pb-3 pb-md-5"
+          />
+
           <div className={`d-flex  flex-wrap  ${styles.section}`}>
             {cardData.map((item, index) => (
               <div
@@ -215,26 +208,21 @@ const InstantCardManagement = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.cta_section} relative`}>
-        <div className={`${styles.title} text-center max-w-auto`}>
-          <div
-            className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
-          >
-            <DynamicHeading
-              content={[
-                {
-                  title: "Key Features of ",
-                  color: "color-black",
-                },
-                {
-                  title: "Instant Card Management ",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-        </div>
+        <DynamicHeading
+          content={[
+            {
+              title: "Key Features of ",
+              color: "color-black",
+            },
+            {
+              title: "Instant Card Management ",
+              color: "color-equity-blue",
+            },
+          ]}
+          headingTag="h2"
+          className="f-6 pb-3 text-center max-w-auto"
+        />
+
         <AllProducts
           title="All Features"
           subtitle="Combine all use cases"
@@ -242,72 +230,32 @@ const InstantCardManagement = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.sixth_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Explore our customizable instant management cards!",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
-
-          <div className={`${styles.get_started_button} `}>
-            <CommonButton
-              title="Get Started Today "
-              theme="outline-blue"
-              arrow
-              url={salesUrl}
-            />
-          </div>
-        </div>
-      </div>
+      <CtaSection
+        title={"Explore our customizable instant management cards!"}
+        buttonText={"Get Started Today "}
+        background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
+      />
 
       <FaqSection faqData={faqData} />
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Choose",
-                  color: "color-black",
-                },
-                {
-                  title: " the Right Card",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: " for Every Use Case",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {cardType.map(
-              ({ titleHtml, description, cardImage, linkUrl }, index) => (
-                <div key={index} className="col-12 col-md-4">
-                  <CardProduct
-                    titleHtml={titleHtml}
-                    description={description}
-                    cardImage={cardImage}
-                    linkUrl={linkUrl}
-                  />
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </div>
+      <OtherProducts
+        heading={[
+          {
+            title: "Choose",
+            color: "color-black",
+          },
+          {
+            title: " the Right Card",
+            color: "color-equity-blue",
+          },
+          {
+            title: " for Every Use Case",
+            color: "color-black",
+          },
+        ]}
+        useOptionalProps={true}
+        cards={cardType}
+      />
     </div>
   )
 }

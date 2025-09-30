@@ -11,7 +11,7 @@ import { ButtonTheme } from "../buttons"
 import { useSalesUrl } from "@/src/utils/salesUrl"
 
 interface StepItem {
-  icon: string
+  icon: string | StaticImageData
   title: string
   description: string
 }
@@ -81,8 +81,7 @@ const StepsSection = ({
               <CommonButton
                 title={button.title}
                 theme={button.theme}
-                arrow
-                url={buttonUrl} 
+                url={buttonUrl}
                 className="d-flex justify-content-between align-items-center"
               />
             </div>

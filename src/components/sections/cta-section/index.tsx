@@ -4,7 +4,7 @@ import { StaticImageData } from "next/image"
 import { usePathname } from "next/navigation"
 
 import styles from "./CTASection.module.scss"
-import { CommanButton, DynamicHeading } from ".."
+import { CommanButton, DynamicHeading } from "../.."
 
 interface CTASectionProps {
   title: string
@@ -46,14 +46,12 @@ const CTASection: React.FC<CTASectionProps> = ({
           />
         </div>
         <div className={styles.get_started_button}>
-         
-             <CommanButton
+          <CommanButton
             title={buttonText}
             theme="outline-blue"
             arrow
             url={finalUrl}
           />
-          
         </div>
       </div>
     </div>

@@ -1,0 +1,70 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.hero_section {
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: cover, cover;
+  box-shadow: 0px 0px 77px 0px $color-black-1a;
+  padding: 100px 20px 0;
+  background-image: url(/images/digitalBg.webp);
+
+  @include for-laptops {
+    padding: 112px 20px 0;
+  }
+
+  .subtitle {
+    color: $color-equity-blue;
+    border-bottom: 2px solid $color-equity-blue;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .title {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .dashboard_img {
+    max-width: 100%;
+    height: auto;
+
+    @include for-laptops {
+      max-width: none;
+      height: fit-content;
+      width: 800px;
+    }
+  }
+
+  .lottie_container {
+    display: flex;
+    justify-content: center;
+
+    img {
+      z-index: 1;
+      max-width: 100%;
+      height: auto;
+      max-height: 430px;
+      margin-bottom: -164px;
+      max-width: 287px;
+    }
+  }
+
+  .lottie_container_bottom {
+    height: 52px;
+    background-color: $color-ash-grey;
+    position: relative;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+
+    img,
+    .podium_img {
+      position: absolute;
+      bottom: 0%; // stick podium ABOVE the grey strip
+      left: 50%; // center horizontally
+      transform: translateX(-50%);
+      width: 423px; // your image width
+      height: auto;
+    }
+  }
+}

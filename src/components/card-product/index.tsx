@@ -7,7 +7,7 @@ import DynamicHeading from "../dynamic-heading"
 export interface CardProps {
   whiteTitle?: string
   titleHtml?: ReactNode
-  description: string
+  description?: string
   cardImage?: string | StaticImageData
   linkUrl?: string
 }

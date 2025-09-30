@@ -1,8 +1,10 @@
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
   autoCollect,
   fraudProtection,
   fraudProtectionIcon,
+  hundredPercentIcon,
   notificationImage,
   paymentButton,
   paymentGatewayImg,
@@ -12,6 +14,7 @@ import {
   qrCodes,
   realTimeExpense,
   realTimeExpenseIcon,
+  realTimeIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
@@ -28,7 +31,13 @@ import {
   upiImg,
 } from "./img"
 
-const cardsData : TStackCardsProp =  [
+const benifitsData = [
+  { icon: realTimeIcon, title: "Real-Time Payment" },
+  { icon: activationIcon, title: "24/7 Availability" },
+  { icon: hundredPercentIcon, title: "Seamless Integration" },
+]
+
+const cardsData: TStackCardsProp = [
   {
     title: "Link Payment Accounts",
     description:
@@ -49,7 +58,7 @@ const cardsData : TStackCardsProp =  [
   },
 ]
 
-const allInOnePolicies : TStackCardsProp = [
+const allInOnePolicies: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Customized Settlements",
@@ -99,7 +108,7 @@ const allInOnePolicies : TStackCardsProp = [
   },
 ]
 
-const managementCards : TCardTypes = [
+const managementCards: TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:
@@ -153,7 +162,6 @@ const managementCards : TCardTypes = [
 
 const stackcardData: TStackCardsProp = [
   {
-    
     icon: realTimeExpenseIcon,
     title: "Instant Funds",
     description: `With EnKash’s instant payment settlement process, you receive funds instantly after every successful transaction.`,
@@ -161,7 +169,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: fraudProtectionIcon,
     title: "Easy Access",
     description: `EnKash enables you to access your funds 24/7, 365 days a year, even on weekends and holidays.`,
@@ -169,7 +176,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: streamlinedReimbursementIcon,
     title: "Full Control",
     description: `Gain complete control over your cash flow, allowing you to invest, pay suppliers, or manage expenses instantly. Eliminate cash flow gaps and seize time-sensitive deals with readily available funds.`,
@@ -177,4 +183,10 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
 ]
-export { cardsData, allInOnePolicies, managementCards, stackcardData }
+export {
+  cardsData,
+  allInOnePolicies,
+  managementCards,
+  stackcardData,
+  benifitsData,
+}

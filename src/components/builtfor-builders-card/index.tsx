@@ -11,6 +11,7 @@ interface BuiltforBuildersSectionProps {
   subtitle2?: string // Optional second subtitle
   icon: string // can be a local import or remote URL
   url?: string // Destination URL (now optional)
+  className?: string
 }
 
 const BuiltforBuildersSection: React.FC<BuiltforBuildersSectionProps> = ({
@@ -19,6 +20,7 @@ const BuiltforBuildersSection: React.FC<BuiltforBuildersSectionProps> = ({
   subtitle2,
   icon,
   url,
+  className = "",
 }) => {
   //
 
@@ -70,19 +72,17 @@ const BuiltforBuildersSection: React.FC<BuiltforBuildersSectionProps> = ({
   )
 
   return (
-    <>
-      <div className={`${styles.coloctPaymentBoxInnerBox}`}>
-        {url ? (
-          <Link href={url} className={`${styles.coloctPaymentBoxInnerLink}`}>
-            <InnerContent />
-          </Link>
-        ) : (
-          <div className={`${styles.coloctPaymentBoxInnerLink}`}>
-            <InnerContent />
-          </div>
-        )}
-      </div>
-    </>
+    <div className={`${styles.coloctPaymentBoxInnerBox} ${className}`}>
+      {url ? (
+        <Link href={url} className={`${styles.coloctPaymentBoxInnerLink}`}>
+          <InnerContent />
+        </Link>
+      ) : (
+        <div className={`${styles.coloctPaymentBoxInnerLink}`}>
+          <InnerContent />
+        </div>
+      )}
+    </div>
   )
 }
 

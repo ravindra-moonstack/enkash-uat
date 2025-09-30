@@ -16,7 +16,7 @@ import ManagementCard from "@/src/components/management-card"
 import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
 import PaymentLinkTab from "@/src/components/payment-link-tabs/payment-link-tab"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import { FaqSection } from "@/src/components"
+
 
 //helpers
 import {
@@ -41,6 +41,7 @@ import {
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import FaqSection from "@/src/components/faq-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Simple Payment Links to Accept Online Payments",
@@ -490,6 +491,7 @@ const PaymentLinks = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      
       <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>

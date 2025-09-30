@@ -49,7 +49,6 @@ const BankSolutions: React.FC<BankSolutionsProps> = ({
             className={heading.className || "f-5 mb-4 mb-md-5"}
           />
 
-          {/* Optional subheading */}
           {subheading && (
             <DynamicHeading
               content={subheading.content}
@@ -76,19 +75,7 @@ const BankSolutions: React.FC<BankSolutionsProps> = ({
                     <div className={styles.customButtons}>
                       <Link href={item.button.url}>
                         {item.button.text}
-                        <svg
-                          width="8"
-                          height="10"
-                          viewBox="0 0 8 10"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.75 1.25L5.75 5.25L1.75 9.25"
-                            stroke="#1C5AF4"
-                            strokeWidth="2"
-                          />
-                        </svg>
+                        <FaArrowRight />
                       </Link>
                     </div>
                   )}

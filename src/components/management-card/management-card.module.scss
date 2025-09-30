@@ -119,3 +119,12 @@
     color: inherit; // or a hover color
   }
 }
+.black {
+  background: linear-gradient(180deg, #353535 0%, $color-black 100%);
+
+  .titleHtml,
+  .whiteTitleHtml,
+  .description {
+    color: $color-white;
+  }
+}
