@@ -37,6 +37,7 @@ const Careers = (): React.JSX.Element => {
               { name: "Careers", url: "/careers" },
             ]}
           />
+          
         </section>
         <section className={`${styles.CoreValuesDataSection}`}>
           <div className="max-w-auto">
