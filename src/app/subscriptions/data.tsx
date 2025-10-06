@@ -1,6 +1,8 @@
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
   autoCollect,
+  hundredPercentIcon,
   instant,
   notificationImage,
   paymentButton,
@@ -9,6 +11,7 @@ import {
   paymentOptionImage,
   paymentPage,
   qrCodes,
+  realTimeIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
@@ -20,6 +23,12 @@ import {
   taskIconTwo,
 } from "./img"
 
+
+const cards = [
+  { icon: hundredPercentIcon, title: "RBI Compliant" },
+  { icon: realTimeIcon, title: "Automated Subscription Management" },
+  { icon: activationIcon, title: "Customizable Subscription Plans" },
+]
 const cardsData : TStackCardsProp =  [
   {
     title: "Sign Up",
@@ -133,4 +142,4 @@ const managementCards : TCardTypes = [
   },
 ]
 
-export { cardsData, allInOnePolicies, managementCards }
+export { cardsData, allInOnePolicies, managementCards, cards }

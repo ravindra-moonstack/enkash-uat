@@ -10,9 +10,9 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
-
-import { heroCardImg } from "./img"
+import CtaSection from "@/src/components/sections/cta-section"
 import EnkashWay from "@/src/components/enkash-way/enkash-way"
+import { heroCardImg } from "./img"
 
 //data
 import { progressData, stackcardData } from "./data"
@@ -148,32 +148,11 @@ const PrepaidCard = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.use_case_section} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title:
-                    "Step into the World of Smarter, Safer & Seamless Spending",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
-
-          <div className={`${styles.get_started_button} `}>
-            <CommanButton
-              title="Get Started "
-              theme="outline-blue"
-              arrow
-              url={salesUrl}
-            />
-          </div>
-        </div>
-      </div>
+      <CtaSection
+        title={"Step into the World of Smarter, Safer & Seamless Spending"}
+        buttonText={"Get Started "}
+        background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
+      />
 
       <FaqSection faqData={faqData} />
     </div>

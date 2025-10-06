@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Image, { StaticImageData } from "next/image"
 
 import styles from "./steps-section.module.scss"
@@ -37,11 +37,21 @@ const StepsSection = ({
   image,
   backgroundClass = "bg-white",
 }: StepsSectionProps): React.JSX.Element => {
-  //
-
   const salesUrl = useSalesUrl()
-
   const buttonUrl = salesUrl
+
+  // scroll logic
+  const stepsRef = useRef<HTMLDivElement>(null)
+  const [showScroll, setShowScroll] = useState(false)
+
+  useEffect(() => {
+    if (stepsRef.current) {
+      const height = stepsRef.current.scrollHeight
+      if (height > 400) {
+        setShowScroll(true)
+      }
+    }
+  }, [steps])
 
   return (
     <div className={`${styles.action_row} ${backgroundClass}`}>
@@ -63,7 +73,15 @@ const StepsSection = ({
           {/* Steps */}
           <div className="col-md-6 col-12 pe-md-5">
             <div
-              style={{ display: "flex", flexDirection: "column", gap: "12px" }}
+              ref={stepsRef}
+              className={`${showScroll ? "overflow-auto scrollbar-thin" : ""}`}
+              style={{
+                maxHeight: "400px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px",
+                direction: showScroll ? "rtl" : "ltr",
+              }}
             >
               {steps.map((step, i) => (
                 <div key={i} style={{ direction: "ltr" }}>

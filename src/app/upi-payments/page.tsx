@@ -36,6 +36,7 @@ import {
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import HeroSection from "@/src/components/sections/hero-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "UPI Payments: Fast, Secure, and Instant Online Payment",
@@ -64,7 +65,7 @@ const cards = stackcardData.map((item, index) => ({
 
 const UpiPayments = (): React.JSX.Element => {
   return (
-    <div className={`color-white ${styles.home_container}`}>
+    <div className={`color-white`}>
       <div className={`${styles.hero_section} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -171,6 +172,36 @@ const UpiPayments = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
+      <HeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          {
+            name: "Collect Payments",
+            url: "/products/collect-payments",
+          },
+          {
+            name: "UPI Payments ",
+            url: "/upi-payments",
+          },
+        ]}
+        subtitle={{
+          text: "UPI Payments",
+          color: "color-equity-blue",
+          underline: true,
+        }}
+        title={[
+          {
+            text: "Simplify Transactions, Accelerate Growth with EnKash UPI Payments",
+            color: "color-black",
+          },
+        ]}
+        description={{
+          text: "Effortless UPI payment. Whether it's BHIM, PhonePe, WhatsApp, or any UPI-supported app, experience smooth transactions without the hassle of SMS notifications or remembering VPAs.",
+        }}
+        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
+        rightImage={paymentSummary}
+        backgroundImage="/images/collectPaymentBg.webp"
+      />
       <div className={`row ${styles.introduction_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">

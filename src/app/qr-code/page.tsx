@@ -1,10 +1,10 @@
-import Image from "next/image"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
 
 // data
 import {
   allInOnePolicyData,
+  benifitsData,
   cardsData,
   managementCardData,
   paymentMethodData,
@@ -13,30 +13,25 @@ import {
 import faqData from "./faq-data"
 
 // components
-import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
 import FaqSection from "@/src/components/faq-section"
-import PolicyCard from "@/src/components/policy-card"
 import CardStacking from "@/src/components/card-stacking"
 import FeatureCard from "@/src/components/feature-card"
-import ManagementCard from "@/src/components/management-card"
+import HeroSection from "@/src/components/sections/hero-section"
+import CoreBenefitsSection from "@/src/components/sections/core-benifits-section"
+import StepsSection from "@/src/components/steps-section"
+import UseCaseSection from "@/src/components/sections/use-case-section"
+import CtaSection from "@/src/components/sections/cta-section"
+import OtherProducts from "@/src/components/sections/other-products"
 
 // helpers
-import {
-  groupIcon,
-  paymentSummary,
-  mealCardImage,
-  activationIcon,
-  realTimeIcon,
-  hundredPercentIcon,
-} from "./img"
+import { paymentSummary, mealCardImage } from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "QR Code Payments: Pay with UPI QR Codes",
@@ -47,8 +42,6 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 const salesUrl = getSalesUrl("/qr-code")
-
-const showScroll = cardsData.length > 3
 const cards = stackcardData.map((item, index) => ({
   content: (
     <AllInOnePolicy
@@ -63,310 +56,90 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
+
 const QrCode = (): React.JSX.Element => {
   return (
-    <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.hero_section} `}>
-        <div className="max-w-auto">
-          <div className="d-flex flex-column flex-md-row">
-            <div className="col-12 col-md-6 d-flex flex-column">
-              <div className="d-flex">
-                <CustomBreadcrumb
-                  items={[
-                    { name: "Home", url: "/" },
-                    {
-                      name: "Collect Payments",
-                      url: "/products/collect-payments",
-                    },
-                    {
-                      name: "QR Code",
-                      url: "/collect-payments/qr-code",
-                    },
-                  ]}
-                />
-              </div>
-              <div
-                className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row `}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "QR Codes",
-                      color: "color-equity-blue underline",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div
-                className={`text-center text-md-start ${styles.first_row_content}  `}
-              >
-                <div className="d-flex flex-column   pt-3 pt-md-0">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Contactless Payments with UPI QR Code",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h1"
-                    className="f-7"
-                  />
-                </div>
+    <div className={`color-white`}>
+      <HeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          {
+            name: "Collect Payments",
+            url: "/products/collect-payments",
+          },
+          {
+            name: "QR Code",
+            url: "/collect-payments/qr-code",
+          },
+        ]}
+        subtitle={{
+          text: "QR Codes",
+          color: "color-equity-blue",
+          underline: true,
+        }}
+        title={[
+          {
+            text: "Contactless Payments with UPI QR Code",
+            color: "color-black",
+          },
+        ]}
+        description={{
+          text: "Generate unique QR codes to collect payments via any UPI app while tracking each transaction for your business.",
+        }}
+        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
+        rightImage={paymentSummary}
+        backgroundImage="/images/collectPaymentBg.webp"
+      />
 
-                <div className="d-flex mt-3 mb-3  text-center text-md-start ">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Generate unique QR codes to collect payments via any UPI app while tracking each transaction for your business.",
-                        color: "color-black subHeading",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="mb-0"
-                  />
-                </div>
+      <CoreBenefitsSection
+        sectionTitle="Best Online Payment Solution"
+        cards={benifitsData}
+      />
 
-                <div className="">
-                  <Image
-                    src={groupIcon}
-                    alt="card visual"
-                    className={`${styles.group_logo}  `}
-                  />
-                  <div
-                    className={`${styles.first_row_button} d-flex  align-items-center`}
-                  >
-                    <div>
-                      <CommanButton
-                        title="Get Started  "
-                        theme="blue"
-                        url={salesUrl}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div
-                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
-              >
-                <Image
-                  src={paymentSummary}
-                  alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "672px",
-                  }}
-                  className="w-100"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <LogoSlider />
-      </div>
+      <StepsSection
+        heading={[
+          {
+            text: "Accepting Payments via ",
+            colorClass: "color-black",
+          },
+          {
+            text: "QR Codes ",
+            colorClass: "color-equity-blue",
+          },
+          {
+            text: "was Never This Easy",
+            colorClass: "color-black",
+          },
+        ]}
+        steps={cardsData}
+        button={{
+          title: "Get started",
+          theme: "outline-blue",
+        }}
+        image={{
+          src: mealCardImage,
+          alt: "card background",
+        }}
+      />
 
-      <div className={`row ${styles.introduction_section} `}>
-        <div className="">
-          <div className="pb-4 pb-md-5 text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Best Online Payment Solution",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
-
-          <div className={` d-flex ${styles.section}`}>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={activationIcon} alt="icon" />
-              </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Fast",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-            </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={hundredPercentIcon} alt="icon" />
-              </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Economical",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-            </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={realTimeIcon} alt="icon" />
-              </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Secure",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.features_section}>
-        <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Accepting Payments via ",
-                  color: "color-black",
-                },
-                {
-                  title: "QR Codes ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "was Never This Easy",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row">
-            <div className="col-md-6 col-12">
-              <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
-                style={{
-                  maxHeight: "400px",
-                  direction: showScroll ? "rtl" : "ltr",
-                }}
-              >
-                {cardsData.map(({ icon, title, description }, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      direction: "ltr",
-                    }}
-                    className={styles.scrollCard}
-                  >
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button} `}>
-                <CommanButton
-                  title="Get Started"
-                  theme="outline-blue"
-                  url={salesUrl}
-                />
-              </div>
-            </div>
-            <div className="col-md-6 col-12">
-              <div>
-                <Image
-                  src={mealCardImage}
-                  alt="card background"
-                  className="w-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={`${styles.use_case_section}  `}>
-        <div className="max-w-auto">
-          <div className={`${styles.section}`}>
-            <div className={`row  align-items-center `}>
-              <div className={`${styles.title} text-center `}>
-                <div className={`text-center mb-4 mb-md-5`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Why EnKash for Collecting ",
-                        color: "color-black",
-                      },
-                      {
-                        title: "QR Code Payments",
-                        color: "color-equity-blue",
-                      },
-                      {
-                        title: "?",
-                        color: "color-equity-blue",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="f-6"
-                  />
-                </div>
-              </div>
-
-              <div className={styles.allInOnePolicy}>
-                {allInOnePolicyData.map((item, index) => (
-                  <AllInOnePolicy
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    image={item.image}
-                    buttonUrl={salesUrl}
-                    maxImageHeight={item.maxImageHeight}
-                    reverse={item.reverse}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <UseCaseSection
+        heading={[
+          {
+            title: "Why EnKash for Collecting ",
+            color: "color-black",
+          },
+          {
+            title: "QR Code Payments",
+            color: "color-equity-blue",
+          },
+          {
+            title: "?",
+            color: "color-equity-blue",
+          },
+        ]}
+        items={allInOnePolicyData}
+        buttonUrl="salesUrl"
+      />
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
@@ -384,22 +157,20 @@ const QrCode = (): React.JSX.Element => {
 
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
-          <div className={`${styles.title} text-center  pb-md-5 pb-4`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "EnKash",
-                  color: "color-black",
-                },
-                {
-                  title: " QR Code Features",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
+          <DynamicHeading
+            content={[
+              {
+                title: "EnKash",
+                color: "color-black",
+              },
+              {
+                title: " QR Code Features",
+                color: "color-equity-blue",
+              },
+            ]}
+            headingTag="h2"
+            className="f-6 text-center  pb-md-5 pb-4"
+          />
 
           <div className={styles.card_grid}>
             {paymentMethodData.map(({ icon, title, description }, i) => (
@@ -415,69 +186,22 @@ const QrCode = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.cta_section} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Ready To Simplify Your Collections?",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5 mb-3 mb-md-0"
-            />
-          </div>
-          <div className={`${styles.get_started_button} `}>
-            <CommanButton
-              title="Get Started  Today "
-              theme="outline-blue"
-              arrow
-              url={salesUrl}
-            />
-          </div>
-        </div>
-      </div>
+      <CtaSection
+        title={"Ready To Simplify Your Collections?"}
+        buttonText={"Get Started  Today "}
+      />
 
       <FaqSection faqData={faqData} />
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-4 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Check out ",
-                  color: "color-black",
-                },
-                {
-                  title: "other collection products",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: " at EnKash",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {managementCardData.map((card, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <ManagementCard
-                  titleHtml={card.titleHtml}
-                  description={card.description}
-                  cardImage={card.cardImage}
-                  linkUrl={card.linkUrl}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <OtherProducts
+        heading={[
+          { title: "Check out ", color: "color-black" },
+          { title: "other payment products", color: "color-equity-blue" },
+          { title: " at EnKash", color: "color-black" },
+        ]}
+        cards={managementCardData}
+      />
+      
     </div>
   )
 }

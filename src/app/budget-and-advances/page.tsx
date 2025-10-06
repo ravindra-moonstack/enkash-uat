@@ -159,6 +159,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
         title={"Redefine Budgeting For Your Business"}
         buttonText={"Get Started Today"}
       />
+      
       <FaqSection faqData={faqData} />
 
       <OtherProducts

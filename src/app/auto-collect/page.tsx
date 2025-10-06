@@ -62,6 +62,7 @@ const AutoCollect = (): React.JSX.Element => {
         rightImage={paymentSummary}
         backgroundImage="/images/collectPaymentBg.webp"
       />
+      
       <CoreBenefitsSection
         sectionTitle="Automating Payment Collection"
         cards={cards}
