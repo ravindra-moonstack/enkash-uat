@@ -57,13 +57,11 @@ const CareersCard: React.FC<CareersCardProps> = ({ icon }) => {
         </p>
       </div>
 
-      <div className={`${styles.buttonSection}`}>
-        <CommanButton
-          title="View Open Roles"
-          theme="outline-blue"
-          url="/careers"
-        />
-      </div>
+      <CommanButton
+        title="View Open Roles"
+        theme="outline-blue"
+        url="/careers"
+      />
     </div>
   )
 }

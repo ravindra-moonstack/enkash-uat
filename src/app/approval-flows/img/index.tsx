@@ -1,4 +1,3 @@
-export { default as groupIcon } from "./groupIcon.png"
 export { default as paymentSummary } from "./heroImg.webp"
 
 export { default as stepCardImgOne } from "./stepCardImgOne.webp"

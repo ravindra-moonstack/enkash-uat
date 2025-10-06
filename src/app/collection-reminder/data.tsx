@@ -1,10 +1,12 @@
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
   autoCollect,
   costControlSavings,
   costControlSavingsIcon,
   fraudProtection,
   fraudProtectionIcon,
+  hundredPercentIcon,
   instant,
   notificationImage,
   paymentButton,
@@ -14,6 +16,7 @@ import {
   qrCodes,
   realTimeExpense,
   realTimeExpenseIcon,
+  realTimeIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
@@ -30,9 +33,13 @@ import {
   TravelIcon,
   TravelImage,
 } from "./img"
+const benifitsData = [
+  { icon: hundredPercentIcon, title: "Instant Setup" },
+  { icon: activationIcon, title: "Single Dashboard Tracking" },
+  { icon: realTimeIcon, title: "Detailed Insights" },
+]
 
-
-const cardsData : TStackCardsProp = [
+const cardsData: TStackCardsProp = [
   {
     title: "Sign Up",
     description: "Create your account on EnKash and get payment links.",
@@ -51,7 +58,7 @@ const cardsData : TStackCardsProp = [
   },
 ]
 
-const allInOnePolicies : TStackCardsProp =  [
+const allInOnePolicies: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Automation",
@@ -100,7 +107,7 @@ const allInOnePolicies : TStackCardsProp =  [
     maxImageHeight: "305px",
   },
 ]
-const managementCards : TCardTypes = [
+const managementCards: TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:
@@ -146,7 +153,6 @@ const managementCards : TCardTypes = [
 ]
 const stackcardData: TStackCardsProp = [
   {
-    
     icon: realTimeExpenseIcon,
     title: "Choice of Reminders",
     description: `Businesses can send either of the two types of reminders — invoice reminders and automatic reminders. While invoice reminders can be sent to specific customers by looking at their payment patterns and timeline. Automatic reminders can be sent as and when the customer is onboarded.`,
@@ -154,7 +160,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=upi-payments",
   },
   {
-    
     icon: fraudProtectionIcon,
     title: "Absolute Visibility",
     description: `Enterprises can view the customer’s payment history and pattern to understand their payment behaviour.`,
@@ -162,7 +167,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: streamlinedReimbursementIcon,
     title: "Embedded Links",
     description: `Payment reminders are sent to the customer with embedded links. This encourages then to pay instantly. `,
@@ -170,7 +174,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=upi-payments",
   },
   {
-    
     icon: costControlSavingsIcon,
     title: "Total Control",
     description: `Enterprises can control when to send the reminders and which channel for payment collection — email, SMS, or WhatsApp.`,
@@ -178,7 +181,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: TravelIcon,
     title: "Single Click Reminders",
     description: `Using invoice reminders, businesses can select and dispatch multiple reminders using a single click.`,
@@ -191,4 +193,5 @@ export {
   cardsData,
   managementCards,
   stackcardData,
+  benifitsData,
 }

@@ -11,8 +11,7 @@ import LogoSlider from "@/src/components/logo-slider"
 import SupportForm from "@/src/components/forms/support-form"
 import SupportCard from "@/src/components/support-card/support-card"
 
-
-import { location, logo } from "."
+import { location, logo } from "./img"
 
 // helpers
 import { locationData } from "./data"
@@ -29,36 +28,29 @@ const Suppport = (): React.JSX.Element => {
   //
 
   return (
-    <>
+   
       <div className={styles.talk_to_sales}>
         <div className="max-w-auto">
-          <div className={styles.logo}>
-            <Link href="/">
-              <Image
-                src={logo}
-                alt="card visual"
-                className={styles.group_logo}
-              />
-            </Link>
-          </div>
+          <Link href="/" className={styles.logo}>
+            <Image src={logo} alt="card visual" className={styles.group_logo} />
+          </Link>
 
           <div className="row">
             <div className="col-md-5 col-12"></div>
             <div className="col-md-7 col-12">
               <SupportForm />
-              <div>
-                <div className="row">
-                  {locationData.map((loc, idx) => (
-                    <div className="col-md-6 col-12 my-3" key={idx}>
-                      <SupportCard
-                        description={loc.description}
-                        titleHtml={loc.titleHtml}
-                        title2={loc.title2}
-                        cardImage={location}
-                      />
-                    </div>
-                  ))}
-                </div>
+
+              <div className="row">
+                {locationData.map((loc, idx) => (
+                  <div className="col-md-6 col-12 my-3" key={idx}>
+                    <SupportCard
+                      description={loc.description}
+                      titleHtml={loc.titleHtml}
+                      title2={loc.title2}
+                      cardImage={location}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -76,6 +68,7 @@ const Suppport = (): React.JSX.Element => {
             <LogoSlider />
           </div>
           <hr className={styles.greyLine} />
+
           <div className={`${styles.copyright} `}>
             <div className={`${styles.termsCond} `}>
               <DynamicHeading
@@ -101,23 +94,22 @@ const Suppport = (): React.JSX.Element => {
                 className="mb-0"
               />
             </div>
-            <div>
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All right reserved.",
-                    color: "color-grey-100",
-                  },
-                ]}
-                headingTag="p"
-                className="mb-0"
-              />
-            </div>
+
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All right reserved.",
+                  color: "color-grey-100",
+                },
+              ]}
+              headingTag="p"
+              className="mb-0"
+            />
           </div>
         </div>
       </div>
-    </>
+
   )
 }
 

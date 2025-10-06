@@ -4,12 +4,15 @@ import incentive from "./img/incentive.webp"
 import vouchers from "./img/vouchers.webp"
 
 import {
+  activationIcon,
   costControlSavings,
   costControlSavingsIcon,
   fraudProtection,
   fraudProtectionIcon,
+  PayoutIcon,
   realTimeExpense,
   realTimeExpenseIcon,
+  realTimeIcon,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
@@ -22,7 +25,12 @@ import {
 } from "./img"
 import { TStackCardsProp } from "@/src/types"
 
-const cardsData : TStackCardsProp = [
+const benifitsData = [
+  { icon: PayoutIcon, title: "Automated Rewards & Payouts" },
+  { icon: activationIcon, title: "Real-Time Performance Tracking" },
+  { icon: realTimeIcon, title: "Customizable Programs" },
+]
+const cardsData: TStackCardsProp = [
   {
     title: "Mandatory KYC",
     description:
@@ -81,7 +89,6 @@ const cardType = [
 
 const stackcardData: TStackCardsProp = [
   {
-    
     icon: realTimeExpenseIcon,
     title: "Add Partners In Bulk",
     description:
@@ -90,7 +97,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: fraudProtectionIcon,
     title: "Diverse Redemptions",
     description:
@@ -99,7 +105,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: streamlinedReimbursementIcon,
     title: "Non-Reloadable Cards",
     description:
@@ -108,7 +113,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: costControlSavingsIcon,
     title: "Automatic Alerts",
     description:
@@ -117,7 +121,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: wideAcceptanceNetworkIcon,
     title: "Real-Time Analytics",
     description:
@@ -126,7 +129,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: stackCardSixIcon,
     title: "Bulk UPI for Incentives",
     description:
@@ -136,4 +138,4 @@ const stackcardData: TStackCardsProp = [
   },
 ]
 
-export { cardsData, cardType, stackcardData }
+export { cardsData, cardType, stackcardData, benifitsData }

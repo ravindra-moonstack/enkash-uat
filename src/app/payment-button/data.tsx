@@ -24,7 +24,7 @@ import {
   taskIconTwo,
 } from "./img"
 
-const cardsData : TStackCardsProp =  [
+const cardsData: TStackCardsProp = [
   {
     title: "Create",
     description: "Use EnKash’s intuitive dashboard to design your button.",
@@ -42,7 +42,7 @@ const cardsData : TStackCardsProp =  [
   },
 ]
 
-const allInOnePolicyData : TStackCardsProp =  [
+const allInOnePolicyData: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Setup in under 5 minutes",

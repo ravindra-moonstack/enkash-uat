@@ -35,23 +35,21 @@ const LogoSlider = (): React.JSX.Element => {
   )
 
   return (
-    <div>
-      <div className={styles.marquee_box}>
-        <Slider {...sliderSettings}>
-          {[...logos, ...logos].map((logo, i) => (
-            <div
-              key={i}
-              className={`d-flex  justify-content-center  ${styles.logo_wrapper}`}
-            >
-              <Image
-                className={`${logo.className} ${styles.logo_img}`}
-                src={coloredLogos[i % logos.length]}
-                alt={logo.alt}
-              />
-            </div>
-          ))}
-        </Slider>
-      </div>
+    <div className={styles.marquee_box}>
+      <Slider {...sliderSettings}>
+        {[...logos, ...logos].map((logo, i) => (
+          <div
+            key={i}
+            className={`d-flex  justify-content-center  ${styles.logo_wrapper}`}
+          >
+            <Image
+              className={`${logo.className} ${styles.logo_img}`}
+              src={coloredLogos[i % logos.length]}
+              alt={logo.alt}
+            />
+          </div>
+        ))}
+      </Slider>
     </div>
   )
 }

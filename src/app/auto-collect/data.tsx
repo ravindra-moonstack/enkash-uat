@@ -1,6 +1,7 @@
-
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
+  hundredPercentIcon,
   instant,
   notificationImage,
   paymentButton,
@@ -9,6 +10,7 @@ import {
   paymentOptionImage,
   paymentPage,
   qrCodes,
+  realTimeIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
@@ -20,12 +22,16 @@ import {
   taskIconOne,
   taskIconThree,
   taskIconTwo,
-  UpiPayments
+  UpiPayments,
 } from "./img"
 
+const cards = [
+  { icon: hundredPercentIcon, title: "Instant" },
+  { icon: activationIcon, title: "Smart" },
+  { icon: realTimeIcon, title: "Secure" },
+]
 
-
-const cardsData  : TStackCardsProp =[
+const cardsData: TStackCardsProp = [
   {
     title: "Virtual Account Creation",
     description:
@@ -46,7 +52,7 @@ const cardsData  : TStackCardsProp =[
   },
 ]
 
-const allInOnePolicies  : TStackCardsProp = [
+const allInOnePolicies: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Payment Collection Across Multiple Modes",
@@ -95,7 +101,7 @@ const allInOnePolicies  : TStackCardsProp = [
     maxImageHeight: "305px",
   },
 ]
-const managementCards : TCardTypes = [
+const managementCards: TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:
@@ -147,8 +153,4 @@ const managementCards : TCardTypes = [
   },
 ]
 
-export {
-  cardsData,
-  allInOnePolicies,
-  managementCards,
-}
+export { cardsData, allInOnePolicies, managementCards, cards }

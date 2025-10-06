@@ -363,9 +363,10 @@
 
 .light_bg {
   border-radius: 10px;
-  flex-wrap: nowrap;
+
   @include for-laptops {
     padding: 24px;
+    flex-wrap: nowrap;
   }
 }
 

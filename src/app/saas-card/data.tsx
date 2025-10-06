@@ -1,4 +1,4 @@
-import {  TCardTypes, TStackCardsProp } from "@/src/types"
+import { TStackCardsProp } from "@/src/types"
 import {
   costControlSavings,
   costControlSavingsIcon,
@@ -23,6 +23,7 @@ import {
   thirdIcon,
   fourthIcon,
 } from "./img"
+import { CardData } from "@/src/components/management-card"
 
 const intantActionData = [
   {
@@ -52,23 +53,26 @@ const intantActionData = [
   },
 ]
 
-const cardType : TCardTypes = [
+const cardType: CardData[] = [
   {
-    titleHtml: "Fuel Card",
+    theme: "black",
+    whiteTitle: "Fuel Card",
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
     linkUrl: "/fuel-card",
   },
   {
-    titleHtml: "Digital Marketing Card",
+    theme: "black",
+    whiteTitle: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: purchesCardImg,
     linkUrl: "/digital-marketing-card",
   },
   {
-    titleHtml: "Meal Card",
+    theme: "black",
+    whiteTitle: "Meal Card",
     description:
       "Access meal cards to give monthly access to food across multiple online, dine-in, and food delivery apps, along with a tax-saving facility.",
     cardImage: mealCardImg,
@@ -76,14 +80,16 @@ const cardType : TCardTypes = [
   },
 
   {
-    titleHtml: "Payroll Card",
+    theme: "black",
+    whiteTitle: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
     linkUrl: "/sales/?source=saas-card",
   },
   {
-    titleHtml: "Virtual Card",
+    theme: "black",
+    whiteTitle: "Virtual Card",
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
     cardImage: virtualCardImg,
@@ -91,14 +97,16 @@ const cardType : TCardTypes = [
   },
 
   {
-    titleHtml: "Purchase Card",
+    theme: "black",
+    whiteTitle: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
     cardImage: purchesCardImg,
     linkUrl: "/purchase-card",
   },
   {
-    titleHtml: "Fleet Card",
+    theme: "black",
+    whiteTitle: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
@@ -106,7 +114,7 @@ const cardType : TCardTypes = [
   },
 ]
 
-const allProductSections  = [
+const allProductSections = [
   {
     title: "Reconciliation & Policy",
     subtitle: "Control and visibility in real time",

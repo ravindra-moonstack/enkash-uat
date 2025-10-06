@@ -8,9 +8,9 @@ import DynamicHeading from "../dynamic-heading"
 export interface CardProps {
   whiteTitle?: string
   titleHtml?: ReactNode
-  description: string
+  description?: string
   cardImage?: string | StaticImageData
-  theme?: "light" | "dark"
+  theme?: "light" | "dark" | "black"
   linkUrl?: string
 }
 
@@ -22,13 +22,11 @@ const ManagementCard = ({
   theme = "light",
   linkUrl,
 }: CardProps): React.JSX.Element => {
-  //
-
   const cardContent = (
     <div
       className={`d-flex flex-column justify-content-between ${
         styles.card_body
-      } ${theme === "dark" ? styles.dark : styles.light}`}
+      } ${theme === "dark" ? styles.dark : theme === "black" ? styles.black : styles.light}`}
     >
       <div>
         {titleHtml ? (
@@ -66,7 +64,6 @@ const ManagementCard = ({
               },
             ]}
             headingTag="p"
-            className=""
           />
         </div>
       </div>
@@ -95,3 +92,4 @@ const ManagementCard = ({
 }
 
 export default ManagementCard
+export type CardData = CardProps
