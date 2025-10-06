@@ -1,4 +1,4 @@
-import { TStackCardsProp } from "@/src/types";
+import { TStackCardsProp } from "@/src/types"
 import {
   notificationImage,
   optimizedIcon,
@@ -18,10 +18,10 @@ import {
   crouselIconThree,
   crouselIconFour,
   crouselIconTwo,
-  crouselIconOne
-} from "."
+  crouselIconOne,
+} from "./img"
 
-const cardsData : TStackCardsProp =  [
+const cardsData: TStackCardsProp = [
   {
     title: "Sign Up and Upload",
     description: "Create your account and add invoices.",
@@ -46,7 +46,7 @@ const cardsData : TStackCardsProp =  [
   },
 ]
 
-const allProductSections=  [
+const allProductSections = [
   {
     title: "Customizable Alerts and Notifications",
     subtitle: "Manage every spend effortlessly",
@@ -89,8 +89,7 @@ const allProductSections=  [
   },
 ]
 
-
-const allInOnePolicyData : TStackCardsProp =  [
+const allInOnePolicyData: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Centralized Dashboard for Complete Control",
@@ -138,7 +137,6 @@ const allInOnePolicyData : TStackCardsProp =  [
     buttonUrl: "/sales",
     maxImageHeight: "259px",
   },
-];
-
+]
 
 export { cardsData, allProductSections, allInOnePolicyData }

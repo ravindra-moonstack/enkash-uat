@@ -29,8 +29,8 @@ import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import StepsSection from "@/src/components/steps-section"
 import PolicyCard from "@/src/components/policy-card"
-import AllProducts from "@/src/components/all-products"
-import CardProduct from "@/src/components/card-product"
+import SliderSection from "@/src/components/sections/slider-section"
+import OtherProducts from "@/src/components/sections/other-products"
 
 export const metadata: Metadata = generateMetaData({
   title: "Virtual Corporate Card for Secure and Instant Payments",
@@ -59,8 +59,9 @@ const cards = stackcardData.map((item, index) => ({
 }))
 
 const VirtualCards = (): React.JSX.Element => {
+  //
   return (
-    <div className={`color-white  ${styles.home_container}`}>
+    <div className={`color-white`}>
       <div className={`${styles.hero_section}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
@@ -155,25 +156,23 @@ const VirtualCards = (): React.JSX.Element => {
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <>
-            <CardStacking
-              cards={cards}
-              heading={[
-                {
-                  title: "Best Virtual Prepaid Cards in India -  ",
-                  color: "color-black",
-                },
-                {
-                  title: "Modern Solutions ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "for Managing Business Expenses",
-                  color: "color-black",
-                },
-              ]}
-            />
-          </>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Best Virtual Prepaid Cards in India -  ",
+                color: "color-black",
+              },
+              {
+                title: "Modern Solutions ",
+                color: "color-equity-blue",
+              },
+              {
+                title: "for Managing Business Expenses",
+                color: "color-black",
+              },
+            ]}
+          />
         </div>
       </div>
 
@@ -232,70 +231,38 @@ const VirtualCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.cta_section} relative`}>
-        <div className={`${styles.title} text-center  max-w-auto`}>
-          <div
-            className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
-          >
-            <DynamicHeading
-              content={[
-                {
-                  title: "The EnKash Advantage - Why Businesses Trust   ",
-                  color: "color-black",
-                },
-                {
-                  title: "Virtual Prepaid Cards ",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-        </div>
-        <AllProducts
-          title="All Features"
-          subtitle="Combine all use cases"
-          data={mergedCards}
-        />
-      </div>
+      <SliderSection
+        headingContent={[
+          {
+            title: "The EnKash Advantage - Why Businesses Trust   ",
+            color: "color-black",
+          },
+          {
+            title: "Virtual Prepaid Cards ",
+            color: "color-equity-blue",
+          },
+        ]}
+        productsData={mergedCards}
+        productsTitle="All Features"
+        productsSubtitle="Combine all use cases"
+      />
 
       <FaqSection faqData={faqData} />
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Your Business, Your Cards –",
-                  color: "color-black",
-                },
-                {
-                  title: "Tailored by EnKash ",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {cardType.map(
-              ({ titleHtml, description, cardImage, linkUrl }, index) => (
-                <div key={index} className="col-12 col-md-4">
-                  <CardProduct
-                    titleHtml={titleHtml}
-                    description={description}
-                    cardImage={cardImage}
-                    linkUrl={linkUrl}
-                  />
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </div>
+      <OtherProducts
+        heading={[
+          {
+            title: "Your Business, Your Cards –",
+            color: "color-black",
+          },
+          {
+            title: "Tailored by EnKash ",
+            color: "color-equity-blue",
+          },
+        ]}
+        useOptionalProps={true}
+        cards={cardType}
+      />
     </div>
   )
 }

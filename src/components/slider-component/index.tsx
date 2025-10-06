@@ -8,11 +8,7 @@ import DynamicHeading from "../dynamic-heading"
 import CommanButton from "../buttons"
 import Image, { StaticImageData } from "next/image"
 import { useMemo } from "react"
-
-interface BreadcrumbItem {
-  name: string
-  url: string
-}
+import { BreadcrumbItem } from "@/src/types"
 
 export interface Slide {
   backgroundImage?: string | StaticImageData

@@ -1,6 +1,8 @@
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
   autoCollect,
+  hundredPercentIcon,
   instant,
   notificationImage,
   paymentButton,
@@ -8,6 +10,7 @@ import {
   paymentLinkImage,
   paymentOptionImage,
   qrCodes,
+  realTimeIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
@@ -18,6 +21,12 @@ import {
   taskIconThree,
   taskIconTwo,
 } from "./img"
+
+const cards = [
+  { icon: activationIcon, title: "InstAnalyze Real-Time Dataant" },
+  { icon: hundredPercentIcon, title: "Track Emerging Trends" },
+  { icon: realTimeIcon, title: "Know Actionable Insights" },
+]
 
 const cardsData : TStackCardsProp = [
   {
@@ -125,4 +134,4 @@ const managementCards : TCardTypes = [
     linkUrl: "/collection-reminder",
   },
 ]
-export { cardsData, managementCards, policies }
+export { cardsData, managementCards, policies, cards }

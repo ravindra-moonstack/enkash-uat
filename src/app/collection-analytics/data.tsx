@@ -1,10 +1,12 @@
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
   autoCollect,
   costControlSavings,
   costControlSavingsIcon,
   fraudProtection,
   fraudProtectionIcon,
+  hundredPercentIcon,
   instant,
   notificationImage,
   paymentButton,
@@ -15,6 +17,7 @@ import {
   qrCodes,
   realTimeExpense,
   realTimeExpenseIcon,
+  realTimeIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
@@ -28,6 +31,11 @@ import {
   taskIconTwo,
 } from "./img"
 
+const benifitsData = [
+  { icon: hundredPercentIcon, title: "Data Tracking" },
+  { icon: activationIcon, title: "Performance Insights" },
+  { icon: realTimeIcon, title: "Visual Dashboards" },
+]
 const stackcardData: TStackCardsProp = [
   {
     icon: realTimeExpenseIcon,
@@ -59,7 +67,7 @@ const stackcardData: TStackCardsProp = [
   },
 ]
 
-const cardsData : TStackCardsProp = [
+const cardsData: TStackCardsProp = [
   {
     title: "Integrate Payment Data",
     description:
@@ -80,7 +88,7 @@ const cardsData : TStackCardsProp = [
   },
 ]
 
-const allInOnePolicies : TStackCardsProp =  [
+const allInOnePolicies: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Customizable Dashboards",
@@ -120,7 +128,7 @@ const allInOnePolicies : TStackCardsProp =  [
     reverse: true,
   },
 ]
-const managementCards : TCardTypes = [
+const managementCards: TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:
@@ -171,4 +179,10 @@ const managementCards : TCardTypes = [
     linkUrl: "/collection-reminder",
   },
 ]
-export { allInOnePolicies, cardsData, managementCards, stackcardData }
+export {
+  allInOnePolicies,
+  cardsData,
+  managementCards,
+  stackcardData,
+  benifitsData,
+}

@@ -52,7 +52,7 @@ const TestimonialCard: React.FC<CardProps> = ({
         </div>
       </div>
 
-      <div className="d-flex  text-start gap-3 ">
+      <div className="d-flex text-start gap-3 ">
         <div>
           {testimonialImg && (
             <Image

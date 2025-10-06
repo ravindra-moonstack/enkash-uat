@@ -40,7 +40,7 @@ const CardStacking = dynamic(() => import("./card-stacking"), {
 const RectangleButton = dynamic(() => import("./buttons/rectangle-button"), {
   ssr: true,
 })
-const CTASection = dynamic(() => import("./cta-section"), {
+const CTASection = dynamic(() => import("./sections/cta-section"), {
   ssr: true,
 })
 const SmartPolicySection = dynamic(() => import("./smart-policy-section"), {

@@ -31,14 +31,12 @@ export default function ProductsSection({
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* Section Title */}
         <DynamicHeading
           content={[{ title: sectionTitle, color: "color-black" }]}
           headingTag="h2"
           className="f-5 text-center"
         />
 
-        {/* Products Grid */}
         <div className={styles.grid}>
           {products.map((product) => (
             <div key={product.id} className={styles.card}>
@@ -65,31 +63,27 @@ export default function ProductsSection({
                 <p className={styles.description}>{product.description}</p>
                 {product.button && (
                   <div className={styles.buttonContainer}>
-                    <div>
-                      <div className="d-md-block">
-                        <div
-                          className={`connectWithUs ${styles.connectWithUs}`}
-                        >
-                          <Link href={product.button.connectUrl}>
-                            <DynamicHeading
-                              content={[
-                                {
-                                  title: product.button.connectText,
-                                  color: "color-equity-blue",
-                                },
-                              ]}
-                              headingTag="p"
-                              className="mb-0 f-5"
-                            />
-                            <Image
-                              src={product.button.blueArrow}
-                              alt="blue Arrow"
-                              width={15}
-                              height={15}
-                              className="ms-2"
-                            />
-                          </Link>
-                        </div>
+                    <div className="d-md-block">
+                      <div className={`connectWithUs ${styles.connectWithUs}`}>
+                        <Link href={product.button.connectUrl}>
+                          <DynamicHeading
+                            content={[
+                              {
+                                title: product.button.connectText,
+                                color: "color-equity-blue",
+                              },
+                            ]}
+                            headingTag="p"
+                            className="mb-0 f-5"
+                          />
+                          <Image
+                            src={product.button.blueArrow}
+                            alt="blue Arrow"
+                            width={15}
+                            height={15}
+                            className="ms-2"
+                          />
+                        </Link>
                       </div>
                     </div>
                   </div>

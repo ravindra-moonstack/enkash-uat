@@ -11,14 +11,11 @@ import InvestorsLogos from "@/src/components/investors-logos"
 import EmployeeSlider from "@/src/components/employee-slider"
 import LocationTabsMap from "@/src/components/location-tabs-map"
 
-
-
 // helpers
 import { aboutBannerBottomIcon, careerCardIcon } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { bannerOurContent } from "./data"
 import { CareersCard, LeadersSection } from "@/src/components"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "About EnKash: India's Leading Spend Management & Payments Platform ",
@@ -37,93 +34,78 @@ const About = (): React.JSX.Element => {
       <div className={`color-white ${styles.home_container}`}>
         <section className={`${styles.topBanner}`}>
           <div className="max-w-auto">
-            <div className="row">
-              <div className="col-md-12">
-                <div className={`${styles.customBreadcrumbSection} mb-4`}>
-                  <CustomBreadcrumb
-                    items={[
-                      { name: "Home", url: "/" },
-                      {
-                        name: "About Us",
-                        url: "/about-us",
-                      },
-                    ]}
-                  />
-                </div>
-              </div>
+            <div className={`${styles.customBreadcrumbSection} mb-4`}>
+              <CustomBreadcrumb
+                items={[
+                  { name: "Home", url: "/" },
+                  {
+                    name: "About Us",
+                    url: "/about-us",
+                  },
+                ]}
+              />
             </div>
             <div className={`${styles.bannerContentSetion}`}>
               <div className={`${styles.bannerContentSetionTop}`}>
-                <div className="row">
-                  <div className="col-md-12">
-                    <div className={`${styles.pageTitle} `}>
-                      <DynamicHeading
-                        content={[
-                          {
-                            title: "About",
-                            color: "color-white ",
-                          },
-                        ]}
-                        headingTag="p"
-                        className="mb-3"
-                      />
-                    </div>
-                    <div className={`${styles.banner_heading}`}>
-                      <DynamicHeading
-                        content={[
-                          {
-                            title: "Shaping the Future of Fintech",
-                            color: "color-white italic",
-                          },
-                        ]}
-                        headingTag="h1"
-                        className="text-center mb-4"
-                      />
-                    </div>
-                    <div className={`${styles.bannerOurSection} mt-4 mt-md-5`}>
-                      <div className="row">
-                        {bannerOurContent.map((item, index) => (
-                          <div className="col-md-6" key={index}>
-                            <div
-                              className={`${styles.bannerOurCard} text-start`}
-                            >
-                              <div className={`styles.topIcon`}>
-                                <Image
-                                  src={item.icon}
-                                  alt={item.title}
-                                  width={30}
-                                  height={30}
-                                ></Image>
-                              </div>
-                              <div className={`styles.heading`}>
-                                <DynamicHeading
-                                  content={[
-                                    {
-                                      title: item.title,
-                                      color: "color-white subHeading",
-                                    },
-                                  ]}
-                                  headingTag="p"
-                                  className=" mb-2 mt-2"
-                                />
-                              </div>
-                              <div className={`${styles.content}`}>
-                                <DynamicHeading
-                                  content={[
-                                    {
-                                      title: item.description,
-                                      color: "color-white",
-                                    },
-                                  ]}
-                                  headingTag="p"
-                                  className=" mb-0"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        ))}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "About",
+                      color: "color-white ",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-3"
+                />
+
+                <div className={`${styles.banner_heading}`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Shaping the Future of Fintech",
+                        color: "color-white italic",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="text-center mb-4"
+                  />
+                </div>
+                <div className={`${styles.bannerOurSection} mt-4 mt-md-5`}>
+                  <div className="row">
+                    {bannerOurContent.map((item, index) => (
+                      <div className="col-md-6" key={index}>
+                        <div className={`${styles.bannerOurCard} text-start`}>
+                          <Image
+                            src={item.icon}
+                            alt={item.title}
+                            width={30}
+                            height={30}
+                          ></Image>
+
+                          <DynamicHeading
+                            content={[
+                              {
+                                title: item.title,
+                                color: "color-white subHeading",
+                              },
+                            ]}
+                            headingTag="p"
+                            className=" mb-2 mt-2"
+                          />
+
+                          <DynamicHeading
+                            content={[
+                              {
+                                title: item.description,
+                                color: "color-white",
+                              },
+                            ]}
+                            headingTag="p"
+                            className=" mb-0"
+                          />
+                        </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -146,34 +128,22 @@ const About = (): React.JSX.Element => {
         </section>
         <section className={`${styles.investorsSection}`}>
           <div className="max-w-auto">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="heading">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Backed by Marquee Investors",
-                        color: "color-black ",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="f-6 text-center mb-4 mb-md-5"
-                  />
-                </div>
-              </div>
+            <div className="heading">
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Backed by Marquee Investors",
+                    color: "color-black ",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6 text-center mb-4 mb-md-5"
+              />
             </div>
-            <div className="row">
-              <div className="col-md-12">
-                <InvestorsLogos />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
-                <div className={`${styles.employeesSliderOuter}`}>
-                  <EmployeeSlider />
-                </div>
-              </div>
-            </div>
+
+            <InvestorsLogos />
+
+            <EmployeeSlider />
           </div>
         </section>
         <section className={`${styles.careerSection}`}>
@@ -189,11 +159,7 @@ const About = (): React.JSX.Element => {
         </section>
         <section className={styles.locationsSection}>
           <div className="max-w-auto">
-            <div className="row">
-              <div>
-                <LocationTabsMap />
-              </div>
-            </div>
+            <LocationTabsMap />
           </div>
         </section>
       </div>

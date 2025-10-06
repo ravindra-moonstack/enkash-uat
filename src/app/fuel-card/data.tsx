@@ -22,7 +22,8 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
-import { TCardTypes, TStackCardsProp } from "@/src/types"
+import { TStackCardsProp } from "@/src/types"
+import { CardData } from "@/src/components/management-card"
 
 const stackcardData: TStackCardsProp = [
   {
@@ -91,61 +92,69 @@ const intantActionData = [
   },
 ]
 
-const cardType : TCardTypes =[
+const cardType: CardData[] = [
   {
-    titleHtml: "Meal Card",
+    whiteTitle: "Meal Card",
     description:
       "Give tax-saving meal benefits to employees with easy-to-use, digital meal cards accepted nationwide.",
     cardImage: mealCardImg,
     linkUrl: "/meal-card",
+    theme: "black",
   },
   {
-    titleHtml: "Digital Marketing Card",
+    whiteTitle: "Digital Marketing Card",
     description:
       "Manage online ad spends across platforms with preset limits and real-time spend visibility and control.",
     cardImage: digitalCardImg,
     linkUrl: "/digital-marketing-card",
+    theme: "black",
   },
   {
-    titleHtml: "SaaS Card",
+    whiteTitle: "SaaS Card",
     description:
       "Centralize and manage software subscriptions easily with cards made for recurring SaaS payments and renewals.",
     cardImage: sassCardImg,
     linkUrl: "/saas-card",
+    theme: "black",
   },
   {
-    titleHtml: "Payroll Card",
+    whiteTitle: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
+    theme: "black",
   },
   {
-    titleHtml: "Virtual Card",
+    whiteTitle: "Virtual Card",
     description:
       "Generate secure, one-time or recurring virtual cards for safer, faster, and trackable online payments.",
     cardImage: virtualCardImg,
     linkUrl: "/virtual-card",
+    theme: "black",
   },
   {
-    titleHtml: "T&E Card",
+    whiteTitle: "T&E Card",
     description:
       "Manage travel & entertainment spends with smart controls, real-time tracking, and seamless",
     cardImage: termsAndConCardImg,
     linkUrl: "/travel-and-expense-card",
+    theme: "black",
   },
 
   {
-    titleHtml: "Purchase Card",
+    whiteTitle: "Purchase Card",
     description:
       "Pre-approved cards that help manage vendor payments and operational purchases for effortless procurement",
     cardImage: purchesCardImg,
     linkUrl: "/purchase-card",
+    theme: "black",
   },
   {
-    titleHtml: "Fleet Card",
+    whiteTitle: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, repairs—while tracking usage per vehicle or driver.",
     cardImage: purchesCardImg,
+    theme: "black",
   },
 ]
 

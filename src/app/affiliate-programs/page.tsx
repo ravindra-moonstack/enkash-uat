@@ -42,7 +42,7 @@ export const metadata: Metadata = generateMetaData({
 
 const partnershipsPage = (): React.JSX.Element => {
   return (
-    <div className={`color-black`}>
+    <div>
       <BpHeroSection
         breadcrumbs={{
           items: [

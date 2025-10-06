@@ -1,8 +1,11 @@
 import { TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
+  hundredPercentIcon,
   notificationImage,
   paymentLinkImage,
   paymentOptionImage,
+  realTimeIcon,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
@@ -13,7 +16,13 @@ import {
   taskIconTwo,
 } from "./img"
 
-const cardsData : TStackCardsProp =  [
+const cards = [
+  { icon: hundredPercentIcon, title: "Improve Efficiency At Work" },
+  { icon: activationIcon, title: "Scalability At Work" },
+  { icon: realTimeIcon, title: "Employee Empowerment" },
+]
+
+const cardsData: TStackCardsProp = [
   {
     title: "Workflow Outline",
     description:
@@ -34,7 +43,7 @@ const cardsData : TStackCardsProp =  [
   },
 ]
 
-const workflowPolicies : TStackCardsProp =  [
+const workflowPolicies: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Integration with Existing Tools",
@@ -75,4 +84,4 @@ const workflowPolicies : TStackCardsProp =  [
   },
 ]
 
-export { cardsData, workflowPolicies }
+export { cardsData, workflowPolicies, cards }
