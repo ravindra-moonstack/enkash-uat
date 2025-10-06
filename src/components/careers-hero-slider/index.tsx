@@ -19,14 +19,12 @@ import {
 import CustomBreadcrumb from "../breadcrumb"
 import DynamicHeading from "../dynamic-heading"
 import CommanButton from "../buttons"
-import { BreadcrumbItem } from "@/src/types"
-interface CareersHeroProps {
-  breadcrumbs: BreadcrumbItem[]}
-  const CareersHero: React.FC<CareersHeroProps> = ({
-    breadcrumbs,
- 
-  }) => {
+import { BreadcrumbItem } from "@/src/types/common"
 
+interface CareersHeroProps {
+  breadcrumbs: BreadcrumbItem[]
+}
+const CareersHero: React.FC<CareersHeroProps> = ({ breadcrumbs }) => {
   //
 
   const backgrounds = [
@@ -76,7 +74,7 @@ interface CareersHeroProps {
         <div className="max-w-auto">
           <div className="row">
             <div className={`${styles.customBreadcrumbSection}`}>
-               <CustomBreadcrumb items={breadcrumbs} />
+              <CustomBreadcrumb items={breadcrumbs} />
             </div>
           </div>
 
