@@ -32,6 +32,7 @@ const salesUrl = getSalesUrl("/auto-collect")
 const AutoCollect = (): React.JSX.Element => {
   return (
     <div className={`color-white`}>
+      
       <HeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
