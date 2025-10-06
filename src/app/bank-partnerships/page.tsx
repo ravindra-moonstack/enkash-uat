@@ -47,7 +47,7 @@ const PartnershipsPage = (): React.JSX.Element => {
         breadcrumbs={{
           items: [
             { name: "Home", url: "/" },
-            { name: "Partnerships", url: "/partnerships" },
+            { name: "Partnerships", url: "/#" },
             { name: "Banks", url: "/bank-partnerships" },
           ],
         }}
