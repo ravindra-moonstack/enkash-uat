@@ -31,7 +31,12 @@ const Careers = (): React.JSX.Element => {
     <>
       <div className={`color-white ${styles.home_container}`}>
         <section className={`${styles.topBanner}`}>
-          <CareersHero />
+          <CareersHero
+            breadcrumbs={[
+              { name: "Home", url: "/" },
+              { name: "Careers", url: "/careers" },
+            ]}
+          />
         </section>
         <section className={`${styles.CoreValuesDataSection}`}>
           <div className="max-w-auto">
