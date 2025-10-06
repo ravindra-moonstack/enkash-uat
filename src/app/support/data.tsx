@@ -1,4 +1,10 @@
-import { help, login, support, testimonailImgOne, testimonialLogoOne } from "."
+import {
+  help,
+  login,
+  support,
+  testimonailImgOne,
+  testimonialLogoOne,
+} from "./img"
 
 const testimonialData = [
   {
