@@ -18,7 +18,6 @@ import { Metadata } from "next"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Auto Collect: Automate Incoming Payments with Virtual Accounts",
   description:
@@ -32,7 +31,6 @@ const salesUrl = getSalesUrl("/auto-collect")
 const AutoCollect = (): React.JSX.Element => {
   return (
     <div className={`color-white`}>
-      
       <HeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -63,7 +61,7 @@ const AutoCollect = (): React.JSX.Element => {
         rightImage={paymentSummary}
         backgroundImage="/images/collectPaymentBg.webp"
       />
-      
+
       <CoreBenefitsSection
         sectionTitle="Automating Payment Collection"
         cards={cards}
@@ -111,9 +109,9 @@ const AutoCollect = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
-      
+
       <FaqSection faqData={faqData} />
 
       <OtherProducts

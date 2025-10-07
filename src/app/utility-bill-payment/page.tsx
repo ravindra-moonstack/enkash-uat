@@ -99,7 +99,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicyData}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <SliderSection

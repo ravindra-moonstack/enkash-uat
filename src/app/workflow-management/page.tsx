@@ -101,7 +101,7 @@ const WorkflowManagement = (): React.JSX.Element => {
           },
         ]}
         items={workflowPolicies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <CtaSection

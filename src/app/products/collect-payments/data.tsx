@@ -16,9 +16,8 @@ import {
   autoCollect,
   iconThree,
   iconTwo,
-  iconOne
-
-} from "."
+  iconOne,
+} from "./img"
 
 const dataSets = [
   {
@@ -29,7 +28,7 @@ const dataSets = [
     imageMaxHeight: "283px",
     subtitle:
       "Automate the collection of payments through virtual accounts and UPI IDs, ensuring faster and error-free reconciliations while eliminating manual efforts and improving operational efficiency for merchants handling high transaction volumes.",
-    linkUrl: "/auto-collect"
+    linkUrl: "/auto-collect",
   },
   {
     iconSrc: iconTwo,
@@ -39,7 +38,7 @@ const dataSets = [
     imageMaxHeight: "221px",
     subtitle:
       "Set up automated recurring payments effortlessly, enabling merchants to offer subscription-based services while ensuring seamless and timely payments, reducing manual intervention, and enhancing customer retention rates.",
-    linkUrl: "/subscriptions"
+    linkUrl: "/subscriptions",
   },
   {
     iconSrc: iconThree,
@@ -49,10 +48,9 @@ const dataSets = [
     imageMaxHeight: "377px",
     subtitle:
       "Simplify recurring payments and mandate-based transactions for businesses managing loans, insurance, and other financial services by enabling automated deductions from customer accounts with full compliance and security.",
-    linkUrl: "/e-nach"
+    linkUrl: "/e-nach",
   },
 ]
-
 
 const cardData = [
   {
@@ -69,7 +67,6 @@ const cardData = [
   },
 ]
 
-
 const allInOnePolicyData = [
   {
     icon: paymentGatwayIcon,
@@ -77,7 +74,7 @@ const allInOnePolicyData = [
     description:
       "A high-performance gateway that enables merchants to accept payments through multiple methods such as credit cards, debit cards, UPI, net banking, and digital wallets, ensuring seamless transactions with exceptional success rates and security.",
     image: paymentGatwayImg,
-    buttonUrl: "/payment-gateway"
+    buttonUrl: "/payment-gateway",
   },
   {
     icon: paymentLinkIcon,
@@ -86,7 +83,7 @@ const allInOnePolicyData = [
       "Generate and share secure payment links instantly via SMS, email, WhatsApp, or social media, allowing merchants to collect payments from customers without requiring a website, ensuring quick and hassle-free transactions..",
     image: paymentLinkImg,
     reverse: true,
-    buttonUrl: "/payment-links"
+    buttonUrl: "/payment-links",
   },
   {
     icon: paymentButtonIcon,
@@ -94,7 +91,7 @@ const allInOnePolicyData = [
     description:
       "Easily integrate a payment button on your website, app, or digital platform, providing customers with a seamless checkout experience that enhances conversions while simplifying payment collection for merchants of all sizes.",
     image: paymentButtonImg,
-    buttonUrl: "/payment-button"
+    buttonUrl: "/payment-button",
   },
   {
     icon: paymentPageIcon,
@@ -103,7 +100,7 @@ const allInOnePolicyData = [
       "Create a professional, branded payment page in just minutes, enabling merchants without a website to collect online payments efficiently while providing customers with a secure and user-friendly payment experience.",
     image: paymentPageImg,
     reverse: true,
-    buttonUrl: "/payment-page"
+    buttonUrl: "/payment-page",
   },
   {
     icon: upiIcon,
@@ -111,7 +108,7 @@ const allInOnePolicyData = [
     description:
       " Enable customers to make instant payments using UPI, ensuring a fast, secure, and seamless checkout process that reduces transaction friction and improves the overall user experience for both merchants and consumers alike.",
     image: upiImg,
-    buttonUrl: "/upi-payments"
+    buttonUrl: "/upi-payments",
   },
   {
     icon: qrCodeIcon,
@@ -120,12 +117,8 @@ const allInOnePolicyData = [
       "Generate unique static or dynamic QR codes for merchants to accept payments instantly in retail stores, restaurants, and events, allowing customers to make secure and contactless payments with ease.",
     image: qrCodeImg,
     reverse: true,
-    buttonUrl: "/qr-code"
+    buttonUrl: "/qr-code",
   },
 ]
 
-export {
-  dataSets,
-  cardData,
-  allInOnePolicyData,
-}
+export { dataSets, cardData, allInOnePolicyData }

@@ -21,12 +21,10 @@ import IntroductionSection from "@/src/components/sections/introduction-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
-
 // helpers
 import { paymentSummary } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Approval System: Streamline & Automate Approvals",
@@ -157,7 +155,7 @@ const ApprovalFlows = (): React.JSX.Element => {
 
       <OtherProducts
         heading={[
-          { title: "EnKash’s innovative solutions for", color: "color-black" },
+          { title: "EnKash’s innovative solutions for ", color: "color-black" },
           { title: "expense managements", color: "color-equity-blue" },
         ]}
         useOptionalProps={true}

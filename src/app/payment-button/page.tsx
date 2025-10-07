@@ -197,7 +197,7 @@ const PaymentButton = (): React.JSX.Element => {
           { title: "All it Takes", color: "color-equity-blue" },
         ]}
         items={allInOnePolicyData}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <div className={`${styles.integration_section} `}>
