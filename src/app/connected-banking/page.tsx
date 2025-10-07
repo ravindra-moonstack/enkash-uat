@@ -15,14 +15,12 @@ import StepsSection from "@/src/components/steps-section"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 import CtaSection from "@/src/components/sections/cta-section"
 
-
 //helpers
 import { paymentSummary, mealCardImage } from "./img"
 
 //utils
 import { getSalesUrl } from "@/utils/getSalesUrl"
 import generateMetaData from "@/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Connected Banking: For Faster Payouts",
@@ -100,7 +98,7 @@ const ConnectedBanking = (): React.JSX.Element => {
           },
         ]}
         items={payoutPolicies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <BankLogoSlider />

@@ -129,7 +129,7 @@ const ENACH = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <div className={styles.card_stacking_row}>

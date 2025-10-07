@@ -91,7 +91,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
           alt: "card background",
         }}
       />
-      
+
       <UseCaseSection
         heading={[
           {
@@ -104,7 +104,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
           },
         ]}
         items={policies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <CtaSection

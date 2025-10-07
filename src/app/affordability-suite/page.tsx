@@ -59,7 +59,7 @@ const AffordabilitySuite = (): React.JSX.Element => {
       <StepsSection
         heading={[
           {
-            text: "How to Use the DIY Card Module",
+            text: "How Affordability Suite Works",
             colorClass: "color-black",
           },
         ]}
@@ -79,7 +79,7 @@ const AffordabilitySuite = (): React.JSX.Element => {
           { title: "Effortless Conversions Start Here", color: "color-black" },
         ]}
         items={allInOnePolicyData}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
       <CtaSection
         title={"Turn Interest Into Action"}

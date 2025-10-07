@@ -96,7 +96,7 @@ const GstPayment = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicyData}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <FaqSection faqData={faqData} />
