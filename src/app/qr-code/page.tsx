@@ -32,7 +32,6 @@ import { paymentSummary, mealCardImage } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "QR Code Payments: Pay with UPI QR Codes",
   description:
@@ -201,7 +200,6 @@ const QrCode = (): React.JSX.Element => {
         ]}
         cards={managementCardData}
       />
-      
     </div>
   )
 }

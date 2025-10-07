@@ -251,7 +251,7 @@ const PaymentButton = (): React.JSX.Element => {
       <OtherProducts
         heading={[
           { title: "Check out ", color: "color-black" },
-          { title: "other payment products", color: "color-equity-blue" },
+          { title: "other collection products ", color: "color-equity-blue" },
           { title: " at EnKash", color: "color-black" },
         ]}
         cards={managementCardData}

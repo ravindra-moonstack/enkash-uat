@@ -1,13 +1,11 @@
 import { Metadata } from "next"
 
-
 //data
 import { allInOnePolicyData, cardsData } from "./data"
 import faqData from "./faq-data"
 
 //components
 import FaqSection from "@/src/components/faq-section"
-
 
 //helpers
 import { paymentSummary, mealCardImage } from "./img"
@@ -77,7 +75,7 @@ const Payroll = (): React.JSX.Element => {
           },
           {
             text: "EnKash Payroll Processing",
-            colorClass: "color-black",
+            colorClass: "color-equity-blue",
           },
         ]}
         steps={cardsData}
@@ -107,7 +105,6 @@ const Payroll = (): React.JSX.Element => {
         buttonText={"Get Started  Today "}
       />
 
-  
       <FaqSection faqData={faqData} />
     </div>
   )
