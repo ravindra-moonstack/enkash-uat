@@ -90,7 +90,6 @@ const PaymentGateway = (): React.JSX.Element => {
         backgroundImage="/images/collectPaymentBg.webp"
       />
 
-
       <div className={styles.introduction_section}>
         <div className="d-flex justify-content-center flex-column gap-32 align-items-center max-w-auto">
           <DynamicHeading
@@ -120,7 +119,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[{ title: card.label, color: "color-white" }]}
                     headingTag="p"
-                    className="mb-0"
+                    className="mb-0 text-center"
                   />
                 </div>
               </div>
@@ -611,7 +610,6 @@ const PaymentGateway = (): React.JSX.Element => {
         ]}
         cards={managementCardData}
       />
-    
     </div>
   )
 }

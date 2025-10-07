@@ -69,7 +69,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
           },
         ]}
         subtitle={{
-          text: "Cashflow Analytics",
+          text: "Collection Analytics",
           color: "color-equity-blue",
           underline: true,
         }}

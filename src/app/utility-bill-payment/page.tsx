@@ -76,7 +76,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
             colorClass: "color-equity-blue",
           },
           {
-            text: "for Your Business",
+            text: " for Your Business",
             colorClass: "color-black",
           },
         ]}

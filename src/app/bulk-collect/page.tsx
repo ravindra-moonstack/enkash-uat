@@ -20,11 +20,9 @@ import OtherProducts from "@/src/components/sections/other-products"
 //helpers
 import { paymentSummary, mealCardImage } from "./img"
 
-
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Bulk Payment Collection: Collect from Many, Fast & Easily",
@@ -105,16 +103,12 @@ const BulkCollect = (): React.JSX.Element => {
       <UseCaseSection
         heading={[
           {
-            title: "How EnKash ",
+            title: "Why EnKash for ",
             color: "color-black",
           },
           {
-            title: "Bulk Collect ",
+            title: "Bulk Payment Collection",
             color: "color-equity-blue",
-          },
-          {
-            title: "Work",
-            color: "color-black",
           },
         ]}
         items={allInOnePolicyData}

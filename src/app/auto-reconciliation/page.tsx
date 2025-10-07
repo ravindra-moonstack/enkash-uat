@@ -99,16 +99,12 @@ const AutoReconciliation = (): React.JSX.Element => {
       <StepsSection
         heading={[
           {
-            text: "How EnKash",
+            text: "How to Set Up ",
             colorClass: "color-black",
           },
           {
-            text: " Auto Collect ",
+            text: "EnKash Automated Reconciliation",
             colorClass: "color-equity-blue",
-          },
-          {
-            text: "Works",
-            colorClass: "color-black",
           },
         ]}
         steps={cardsData}

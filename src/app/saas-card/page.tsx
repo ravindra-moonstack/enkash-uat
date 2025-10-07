@@ -56,7 +56,6 @@ const SaasCards = (): React.JSX.Element => {
   //
   return (
     <div className={`color-white  `}>
-      
       <CardHeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -134,7 +133,7 @@ const SaasCards = (): React.JSX.Element => {
         headingContent={[
           {
             title: "Key Features of SaaS Card ",
-            color: "color-equity-blue",
+            color: "color-black",
           },
         ]}
         headingTag="h2"
