@@ -98,7 +98,7 @@ const VendorPayment = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicyData}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <SliderSection

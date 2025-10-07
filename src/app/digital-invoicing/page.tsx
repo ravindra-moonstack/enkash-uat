@@ -14,7 +14,6 @@ import StepsSection from "@/src/components/steps-section"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 import CtaSection from "@/src/components/sections/cta-section"
 
-
 //helpers
 import {
   paymentSummary,
@@ -23,11 +22,9 @@ import {
   hundredPercentIcon,
 } from "./img"
 
-
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "E Invoicing Solution: Automate Billing & Get Paid Faster",
@@ -209,7 +206,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <CtaSection

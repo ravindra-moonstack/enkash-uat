@@ -22,14 +22,12 @@ import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 
-
 //helpers
 import { paymentSummary, mealCardImage } from "./img"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Collection Analytics: Track & Optimize Your Payment Data",
@@ -58,7 +56,6 @@ const CollectionAnalytics = (): React.JSX.Element => {
   //
   return (
     <div className={`color-white ${styles.home_container}`}>
-
       <HeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -129,7 +126,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <div className={styles.card_stacking_row}>

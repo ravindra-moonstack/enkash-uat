@@ -92,7 +92,7 @@ const VendorManagement = (): React.JSX.Element => {
           },
         ]}
         items={policies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <CtaSection
