@@ -116,7 +116,7 @@ const Subscriptions = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <CtaSection

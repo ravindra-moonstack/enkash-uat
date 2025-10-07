@@ -99,7 +99,7 @@ const Payroll = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicyData}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <CtaSection

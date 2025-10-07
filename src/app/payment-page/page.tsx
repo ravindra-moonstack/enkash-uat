@@ -210,7 +210,7 @@ const PaymentPage = (): React.JSX.Element => {
           },
         ]}
         items={allInOnePolicyData}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <div className={styles.card_stacking_row}>

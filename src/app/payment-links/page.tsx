@@ -212,7 +212,7 @@ const PaymentLinks = (): React.JSX.Element => {
           { title: "Single Link ", color: "color-equity-blue" },
         ]}
         items={policies}
-        buttonUrl="salesUrl"
+        buttonUrl={salesUrl}
       />
 
       <div className={`${styles.integration_section} `}>
