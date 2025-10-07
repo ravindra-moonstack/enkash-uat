@@ -20,10 +20,8 @@ import CoreBenefitsSection from "@/src/components/sections/core-benifits-section
 import { StepsSection } from "@/src/components"
 import CtaSection from "@/src/components/sections/cta-section"
 
-
 //helpers
 import { paymentSummary, mealCardImage, faqBg } from "./img"
-
 
 //utils
 
@@ -89,11 +87,10 @@ const EmployeeRewards = (): React.JSX.Element => {
       />
 
       <CoreBenefitsSection
-        sectionTitle="Automating Payment Collection"
+        sectionTitle="Recognize & Retain Employees"
         cards={benifitsData}
       />
 
-      
       <StepsSection
         heading={[
           {
