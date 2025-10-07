@@ -102,10 +102,6 @@ const InstantSettlement = (): React.JSX.Element => {
             text: "EnKash Instant Settlement ",
             colorClass: "color-equity-blue",
           },
-          {
-            text: "Works",
-            colorClass: "color-black",
-          },
         ]}
         steps={cardsData}
         button={{

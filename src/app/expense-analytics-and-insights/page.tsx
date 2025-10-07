@@ -22,14 +22,12 @@ import IntroductionSection from "@/src/components/sections/introduction-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
-
 //helpers
 import { paymentSummary } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Tracking Made Easy with Advanced Expense Analytics",
@@ -69,8 +67,8 @@ const ExpenseAnalytics = (): React.JSX.Element => {
             url: "/products/expense-management",
           },
           {
-            name: "Budget And Advances",
-            url: "/budget-and-advances",
+            name: "Insights",
+            url: "/expense-analytics-and-insights",
           },
         ]}
         subtitle={{
@@ -161,8 +159,9 @@ const ExpenseAnalytics = (): React.JSX.Element => {
 
       <OtherProducts
         heading={[
-          { title: "Ace business expenses with", color: "color-black" },
-          { title: " innovative solutions", color: "color-equity-blue" },
+          { title: "Simplify ", color: "color-black" },
+          { title: " expense management", color: "color-equity-blue" },
+          { title: "with EnKash’s innovative solutions", color: "color-black" },
         ]}
         useOptionalProps={true}
         cards={expenseManagementData}
