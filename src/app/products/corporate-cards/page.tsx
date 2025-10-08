@@ -20,7 +20,6 @@ import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import FaqSection from "@/src/components/faq-section"
-import LottieDynamicLoadComponent from "@/src/components/lottie-client/lottie-dynamic-load-client"
 import PolicyCard from "@/src/components/policy-card"
 import FeatureCard from "@/src/components/feature-card"
 import CardProduct from "@/src/components/card-product"
@@ -33,6 +32,7 @@ import {
   corporateCard,
   corporateCardIcon,
   onePlatform,
+  heroImg,
 } from "./img"
 
 // utils
@@ -107,12 +107,7 @@ const CorporateCards = (): React.JSX.Element => {
             className={`col-12 d-flex justify-content-center align-items-center no-pointer`}
           >
             <div className={styles.bannerImages}>
-              <div className={styles.lottie_container}>
-                <LottieDynamicLoadComponent
-                  animationName={"CorporateCardLottie"}
-                  loop={true}
-                />
-              </div>
+              <Image src={heroImg} alt={"corporateHeroImg"} />
             </div>
           </div>
         </div>
