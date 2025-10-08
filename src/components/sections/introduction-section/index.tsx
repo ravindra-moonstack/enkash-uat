@@ -17,26 +17,22 @@ interface IntroductionSectionProps {
   heading: TextPart[]
   cards: CardItem[]
   backgroundImage?: string
-  gradient?: string // optional gradient overlay
+  gradient?: string
 }
 
 const IntroductionSection: React.FC<IntroductionSectionProps> = ({
   heading,
   cards,
   backgroundImage,
-  gradient = "linear-gradient(90deg, rgba(6, 99, 252, 0) 0%, #0663fc 100%)",
 }) => {
   return (
     <div
       className={styles.introduction_section}
       style={{
-        background: backgroundImage
-          ? `${gradient}, url(${backgroundImage})`
-          : undefined,
+        background: backgroundImage ? ` url(${backgroundImage})` : undefined,
       }}
     >
       <div className="max-m-auto">
-        {/* Heading */}
         <div className="text-center pb-md-4 pb-4">
           <DynamicHeading
             content={heading.map((h) => ({
@@ -48,7 +44,6 @@ const IntroductionSection: React.FC<IntroductionSectionProps> = ({
           />
         </div>
 
-        {/* Cards */}
         <div className={`d-flex flex-wrap ${styles.section}`}>
           {cards.map((item, index) => (
             <div
