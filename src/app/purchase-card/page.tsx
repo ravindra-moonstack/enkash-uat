@@ -152,7 +152,7 @@ const PurchesCards = (): React.JSX.Element => {
         title={
           "Ready to bring Efficiency, Control & Savings to your Procurement Process?"
         }
-        buttonText={"Get Started "}
+        buttonText={"Get Started Today"}
         background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
       />
 
