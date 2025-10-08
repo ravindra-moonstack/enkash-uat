@@ -4,7 +4,6 @@ import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
 import {
   collectPaymentAnimation,
-  corporateCardAnimation,
   expenseAnimation,
   homeAnimation,
   makePaymentAnimation,
@@ -13,7 +12,6 @@ import {
 
 const animationMap: Record<string, () => Promise<any>> = {
   ExpenseLottie: expenseAnimation,
-  CorporateCardLottie: corporateCardAnimation,
   RewardAnimationLottie: rewardAnimation,
   MakePaymentAnimationLottie: makePaymentAnimation,
   HomeAnimationLottie: homeAnimation,
