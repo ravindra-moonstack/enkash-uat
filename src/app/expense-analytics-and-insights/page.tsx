@@ -160,7 +160,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
       <OtherProducts
         heading={[
           { title: "Simplify ", color: "color-black" },
-          { title: " expense management", color: "color-equity-blue" },
+          { title: " expense management ", color: "color-equity-blue" },
           { title: "with EnKash’s innovative solutions", color: "color-black" },
         ]}
         useOptionalProps={true}
