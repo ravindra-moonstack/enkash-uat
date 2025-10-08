@@ -156,7 +156,7 @@ const ApprovalFlows = (): React.JSX.Element => {
       <OtherProducts
         heading={[
           { title: "EnKash’s innovative solutions for ", color: "color-black" },
-          { title: "expense managements", color: "color-equity-blue" },
+          { title: "expense management", color: "color-equity-blue" },
         ]}
         useOptionalProps={true}
         cards={expenseManagementData}
