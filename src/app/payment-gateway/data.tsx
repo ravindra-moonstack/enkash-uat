@@ -36,13 +36,16 @@ import {
   paymentPage,
   qrCodes,
   reminder,
-  
 } from "./img"
-import {  TStackCardsProp } from "@/src/types"
+import { TStackCardsProp } from "@/src/types"
 
+const introductionCards = [
+  { value: "100%", label: "Support" },
+  { value: "100%", label: "Uptime" },
+  { value: "100%", label: "Faster" },
+]
 
-
-const integrationData : TStackCardsProp = [
+const integrationData: TStackCardsProp = [
   {
     title: "Comprehensive SDKs and APIs",
     description:
@@ -69,7 +72,7 @@ const integrationData : TStackCardsProp = [
   },
 ]
 
-const paymentMethodData : TStackCardsProp =  [
+const paymentMethodData: TStackCardsProp = [
   {
     title: "Credit and Debit Cards",
     description: "Process domestic and international card payments easily.",
@@ -101,7 +104,7 @@ const paymentMethodData : TStackCardsProp =  [
   },
 ]
 
-const dashboardData : TStackCardsProp =  [
+const dashboardData: TStackCardsProp = [
   {
     title: "Financial Overview",
     description:
@@ -128,7 +131,7 @@ const dashboardData : TStackCardsProp =  [
   },
 ]
 
-const rankData : TStackCardsProp =  [
+const rankData: TStackCardsProp = [
   {
     title: "PCI DSS Compliance",
     description:
@@ -155,7 +158,7 @@ const rankData : TStackCardsProp =  [
   },
 ]
 
-const supportData : TStackCardsProp = [
+const supportData: TStackCardsProp = [
   {
     title: "Tech Support at Every Stage",
     description:
@@ -182,7 +185,7 @@ const supportData : TStackCardsProp = [
   },
 ]
 
-const savingData : TStackCardsProp =  [
+const savingData: TStackCardsProp = [
   {
     title: "Frictionless Checkout",
     description:
@@ -287,7 +290,7 @@ const managementCardData = [
   },
 ]
 export {
- acceleratedGrowthData,
+  acceleratedGrowthData,
   dashboardData,
   integrationData,
   managementCardData,
@@ -295,4 +298,5 @@ export {
   rankData,
   savingData,
   supportData,
+  introductionCards,
 }

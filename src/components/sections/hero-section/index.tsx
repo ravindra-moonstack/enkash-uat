@@ -1,9 +1,11 @@
+"use client"
+
 import React from "react"
 import Image, { StaticImageData } from "next/image"
 import styles from "./hero-section.module.scss"
 import CustomBreadcrumb from "../../breadcrumb"
 import DynamicHeading from "../../dynamic-heading"
-import { CommanButton } from "../.."
+import CommanButton from "../../buttons"
 import { BreadcrumbItem } from "@/src/types"
 import LogoSlider from "../../logo-slider"
 
@@ -18,7 +20,6 @@ interface HeroSectionProps {
   subtitle?: TextPart
   title: TextPart[]
   description: TextPart
-
   button?: {
     title: string
     url: string
@@ -38,18 +39,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   rightImage,
   backgroundImage,
 }) => {
-  //
-
   return (
-    <div
-      className={`${styles.hero_section}`}
-      style={
-        backgroundImage
-          ? { backgroundImage: `url(${backgroundImage})` }
-          : undefined
-      }
-    >
-      <div className="max-w-auto">
+    <div className={`${styles.hero_section} position-relative`}>
+    
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt="Hero Background"
+          fill
+          priority={true} 
+          style={{ objectFit: "cover", zIndex: -1 }}
+        />
+      )}
+
+      <div className="max-w-auto position-relative">
         <div className="d-flex flex-column flex-md-row">
           {/* LEFT CONTENT */}
           <div className="col-12 col-md-6 d-flex flex-column">
@@ -108,11 +111,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   width={366}
                   height={62}
                   className={styles.group_logo}
+                  priority={true} // prioritize logos if needed
                 />
 
                 {button && (
                   <div
-                    className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
+                    className={`${styles.first_row_button} d-flex flex-row align-items-center`}
                   >
                     <CommanButton
                       title={button.title}
@@ -132,24 +136,24 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
           </div>
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT HERO IMAGE */}
           <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
             <div
               className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
             >
               <Image
                 src={rightImage}
-                alt="hero visual"
-                style={{
-                  objectFit: "contain",
-                  maxHeight: "672px",
-                }}
+                alt="Hero Visual"
+                style={{ objectFit: "contain", maxHeight: "672px" }}
                 className="w-100 mh-550 object-fit-contain"
+                priority={true} // LCP priority
               />
             </div>
           </div>
         </div>
       </div>
+
+      {/* Logo Slider */}
       <LogoSlider />
     </div>
   )

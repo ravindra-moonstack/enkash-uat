@@ -25,23 +25,17 @@ const LeadersSection: React.FC = () => {
 
   return (
     <div className={`${styles.aboutLeaderSectionInner}`}>
-      {/* Title */}
-      <div className="row">
-        <div className="col-md-12">
-          <div className={`${styles.leaderHeading}`}>
-            <DynamicHeading
-              content={[
-                { title: "Meet our ", color: "color-black" },
-                { title: "Leaders", color: "color-equity-blue" },
-              ]}
-              headingTag="h2"
-              className="f-6 text-center mb-4 mb-md-5"
-            />
-          </div>
-        </div>
+      <div className={`${styles.leaderHeading}`}>
+        <DynamicHeading
+          content={[
+            { title: "Meet our ", color: "color-black" },
+            { title: "Leaders", color: "color-equity-blue" },
+          ]}
+          headingTag="h2"
+          className="f-6 text-center mb-4 mb-md-5"
+        />
       </div>
 
-      {/* Cards */}
       <div className={`${styles.leaderCardSection}`}>
         <div className="row ">
           {leaders.map((leader, index) => (
@@ -72,17 +66,16 @@ const LeadersSection: React.FC = () => {
                   <p>{leader.role}</p>
                 </div>
 
-                {/* Popup inside the card */}
+               
                 {selectedLeader?.name === leader.name && (
                   <div
                     className={`${styles.leaderPopupOuter}`}
-                    onClick={(e) => e.stopPropagation()} // prevent card click from firing under popup
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <div
                       className={`${styles.leaderPopupinner} animate-slideUp`}
-                      onClick={(e) => e.stopPropagation()} // safety: clicks inside don't bubble
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      {/* Close button for mobile */}
                       {isMobile && (
                         <button
                           type="button"

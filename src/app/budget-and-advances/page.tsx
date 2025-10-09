@@ -1,19 +1,19 @@
-import Image from "next/image"
 import { Metadata } from "next"
-
 import styles from "./page.module.scss"
 
 // components
 import DynamicHeading from "@/components/dynamic-heading"
-import CustomBreadcrumb from "@/components/breadcrumb"
 import FaqSection from "@/components/faq-section"
 import CardStacking from "@/components/card-stacking"
 import EasyStepCard from "@/components/easy-step-card"
-import ManagementCard from "@/components/management-card"
 import AllInOnePolicy from "@/components/all-in-one-policy"
-import LogoSlider from "@/components/logo-slider"
-import CommonButton from "@/components/buttons"
+import HeroSection from "@/src/components/sections/hero-section"
+import IntroductionSection from "@/src/components/sections/introduction-section"
+import CtaSection from "@/src/components/sections/cta-section"
+import OtherProducts from "@/src/components/sections/other-products"
 
+
+//data
 import {
   cardData,
   expenseManagementData,
@@ -22,9 +22,12 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-import { groupIcon, paymentSummary } from "./img"
+
+//helpers
+import { paymentSummary } from "./img"
 import { getSalesUrl } from "@/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Budgets & Advances: Control & Track Business Spending",
@@ -54,152 +57,49 @@ const BudgetAndAdvances = (): React.JSX.Element => {
 
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.hero_section} `}>
-        <div className="max-w-auto">
-          <div className="d-flex flex-column flex-md-row">
-            <div className="col-12 col-md-6 d-flex flex-column">
-              <div className="d-flex">
-                <CustomBreadcrumb
-                  items={[
-                    { name: "Home", url: "/" },
-                    {
-                      name: "Expense Management",
-                      url: "/products/expense-management",
-                    },
-                    {
-                      name: "Budget And Advances",
-                      url: "/budget-and-advances",
-                    },
-                  ]}
-                />
-              </div>
-              <div
-                className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Budget And Advances",
-                      color: "color-equity-blue underline",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-md-0"
-                />
-              </div>
-              <div
-                className={`text-center text-md-start ${styles.first_row_content}  `}
-              >
-                <div className="d-inline   pt-3 pt-md-0">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Keep your spends in check by allocating",
-                        color: "color-black",
-                      },
-                      {
-                        title: " budgets in advance",
-                        color: "color-equity-blue",
-                      },
-                    ]}
-                    headingTag="h1"
-                    className="f-7"
-                  />
-                </div>
-
-                <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Define smart budgets and release advances based on projections and past insights.",
-                        color: "color-black subHeading",
-                      },
-                    ]}
-                    headingTag="p"
-                    className=""
-                  />
-                </div>
-
-                <div className="d-flex flex-column align-items-center align-items-md-start">
-                  <Image
-                    src={groupIcon}
-                    alt="card visual"
-                    className={styles.group_logo}
-                  />
-                  <div
-                    className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
-                  >
-                    <div>
-                      <CommonButton
-                        title="Get Started  "
-                        theme="blue"
-                        url={salesUrl}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div
-                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
-              >
-                <Image
-                  src={paymentSummary}
-                  alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "672px",
-                  }}
-                  className="w-100"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <LogoSlider />
-      </div>
+      <HeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          {
+            name: "Expense Management",
+            url: "/products/expense-management",
+          },
+          {
+            name: "Budget And Advances",
+            url: "/budget-and-advances",
+          },
+        ]}
+        subtitle={{
+          text: "Budget And Advances",
+          color: "color-equity-blue",
+          underline: true,
+        }}
+        title={[
+          {
+            text: "Keep your spends in check by allocating",
+            color: "color-black",
+          },
+          { text: " budgets in advance", color: "color-equity-blue" },
+        ]}
+        description={{
+          text: "Define smart budgets and release advances based on projections and past insights.",
+        }}
+        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
+        rightImage={paymentSummary}
+        backgroundImage="/images/expenceBg.webp"
+      />
 
       <div className={styles.introduction_section}>
-        <div className="max-m-auto">
-          <div className=" text-center pb-md-4 pb-3">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Better Budgeting For Your Business",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
-          <div className={`d-flex  flex-wrap  ${styles.section}`}>
-            {cardData.map((item, index) => (
-              <div
-                key={index}
-                className={`d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-              >
-                <Image
-                  src={item.icon}
-                  alt="card visual"
-                  className={styles.card_image}
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title: item.title,
-                      color: "color-main-grey",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0 text-center"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <IntroductionSection
+          heading={[
+            {
+              text: "Better Budgeting For Your Business",
+              color: "color-white",
+            },
+          ]}
+          cards={cardData}
+          backgroundImage="img/secongBg.png"
+        />
       </div>
 
       <div className={styles.features_section}>
@@ -230,6 +130,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
@@ -253,66 +154,22 @@ const BudgetAndAdvances = (): React.JSX.Element => {
           </>
         </div>
       </div>
-      <div className={`${styles.cta_section} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Redefine Budgeting For Your Business",
-                  color: "color-white ",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5 pb-3 pb-md-0"
-            />
-          </div>
-          <div className={`${styles.get_started_button} `}>
-            <CommonButton
-              title="Get Started Today "
-              theme="outline-blue"
-              arrow
-              url={salesUrl}
-            />
-          </div>
-        </div>
-      </div>
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Ace business expenses with",
-                  color: "color-black",
-                },
-                {
-                  title: " innovative solutions",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4 ">
-            {expenseManagementData.map((card, index) => (
-              <div className="col-12 col-md-4" key={index}>
-                <ManagementCard
-                  whiteTitle={card.whiteTitle}
-                  description={card.description}
-                  cardImage={card.cardImage}
-                  theme="dark"
-                  linkUrl={card.linkUrl}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
+      <CtaSection
+        title={"Redefine Budgeting For Your Business"}
+        buttonText={"Get Started Today"}
+      />
+      
       <FaqSection faqData={faqData} />
+
+      <OtherProducts
+        heading={[
+          { title: "Ace business expenses with", color: "color-black" },
+          { title: " innovative solutions", color: "color-equity-blue" },
+        ]}
+        useOptionalProps={true}
+        cards={expenseManagementData}
+      />
     </div>
   )
 }

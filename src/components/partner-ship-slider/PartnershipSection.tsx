@@ -17,7 +17,7 @@ interface SlideData {
 
 interface ButtonData {
   title: string
-  theme: "blue" // extend if you have more themes
+  theme: "blue"
   url: string
 }
 
@@ -30,7 +30,7 @@ export interface PartnershipSectionProps {
   backgroundImage?: string
   heading: HeadingContent[]
   description: string
-  buttons?: ButtonData[] // can be 0, 1, or 2 buttons
+  buttons?: ButtonData[] 
   slideData: SlideData[]
 }
 
@@ -43,7 +43,7 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
 }) => {
   return (
     <section className="partnership-section">
-      {/* Background Image with Overlay */}
+     
       <div className="background-container">
         <Image
           src={backgroundImage}
@@ -53,7 +53,7 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
         />
         <div className="background-overlay"></div>
       </div>
-      {/* Content Container */}
+ 
       <div className="content-container max-w-auto">
         <div className="slider-header">
           <DynamicHeading
@@ -63,7 +63,7 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
           />
         </div>
         <div className="content-grid">
-          {/* Left Content */}
+        
           <div className="left-content">
             <p className="description-text">{description}</p>
 

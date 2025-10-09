@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
@@ -12,16 +11,16 @@ import {
 import faqData from "./faq-data"
 
 // components
-import CommanButton from "@/src/components/buttons"
+
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
-import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
 import CardStacking from "@/src/components/card-stacking"
-import AllProducts from "@/src/components/all-products"
-import CardProduct from "@/src/components/card-product"
+import CardHeroSection from "@/src/components/sections/card-hero-section"
+import SliderSection from "@/src/components/sections/slider-section"
+import CtaSection from "@/src/components/sections/cta-section"
+import OtherProducts from "@/src/components/sections/other-products"
 
 // helpers
 import { mealCardImage, heroCardImg } from "./img"
@@ -53,80 +52,43 @@ const cards = stackcardData.map(({ icon, title, description, image }) => ({
     />
   ),
 }))
+
 const PurchesCards = (): React.JSX.Element => {
+  //
   return (
-    <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.hero_section}`}>
-        <div className="max-w-auto ">
-          <div className="d-flex">
-            <CustomBreadcrumb
-              items={[
-                { name: "Home", url: "/" },
-                { name: "Corporate Cards ", url: "/corporate-cards" },
-                {
-                  name: "Purchase Cards",
-                  url: "/corporate-cards/purchase-card",
-                },
-              ]}
-              linkColor="allWhite"
-            />
-          </div>
-          <div className={`${styles.title} col-12 `}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Purchase Card",
-                  color: "color-white underline",
-                },
-              ]}
-              headingTag="p"
-              className="mb-2"
-            />
-
-            <div className="d-flex  flex-column text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Optimize Your Business Procurement with",
-                    color: "color-white f-3 italic d-block",
-                  },
-                  {
-                    title: "Purchase Cards (P-Cards)",
-                    color: "color-white ",
-                  },
-                ]}
-                headingTag="h1"
-                className="f-7 mb-2"
-              />
-            </div>
-
-            <div className="d-inline text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "Skip the paperwork; set limits, approve fast, and track team spending in real time.",
-                    color: "color-white subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className=""
-              />
-            </div>
-            <div
-              className={`${styles.button_wrapper} justify-content-center d-flex`}
-            >
-              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
-            </div>
-          </div>
-        </div>
-        <div className=" col-12 pt-5 ">
-          <div className={styles.lottie_container}>
-            <Image src={heroCardImg} alt="card background" className=" " />
-          </div>
-        </div>
-      </div>
-
+    <div className={`color-white `}>
+      <CardHeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Corporate Cards ", url: "/corporate-cards" },
+          {
+            name: "Purchase Cards",
+            url: "/corporate-cards/purchase-card",
+          },
+        ]}
+        linkColor="allWhite"
+        subtitle={{
+          text: "Purchase Card",
+          color: "color-white",
+          underline: true,
+        }}
+        title={[
+          {
+            text: "Optimize Your Business Procurement with ",
+            color: "color-white f-3 italic d-block",
+          },
+          { text: "Purchase Cards (P-Cards)", color: "color-white" },
+        ]}
+        description={{
+          text: "Skip the paperwork; set limits, approve fast, and track team spending in real time.",
+          color: "color-white subHeading",
+        }}
+        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
+        heroImage={heroCardImg}
+        backgroundImage="/images/PurchaseCardBg.webp"
+        paddingTop="120px"
+        paddingBottom="60px"
+      />
       <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
@@ -148,126 +110,72 @@ const PurchesCards = (): React.JSX.Element => {
           alt: "card background",
         }}
       />
-
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <>
-            <CardStacking
-              cards={cards}
-              heading={[
-                {
-                  title: "Get a Handle on Your Business Expenses with the ",
-                  color: "color-black",
-                },
-                {
-                  title: "Best Purchase Card in India",
-                  color: "color-equity-blue",
-                },
-              ]}
-            />
-          </>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Get a Handle on Your Business Expenses with the ",
+                color: "color-black",
+              },
+              {
+                title: "Best Purchase Card in India",
+                color: "color-equity-blue",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      <div className={`${styles.cta_section} relative`}>
-        <div className={`${styles.title} text-center  max-w-auto`}>
-          <div
-            className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
-          >
-            <DynamicHeading
-              content={[
-                {
-                  title: "Key ",
-                  color: "color-black",
-                },
-                {
-                  title: "Features & Benefits ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "of Purchase Cards",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-        </div>
-        <AllProducts
-          title="All Features"
-          subtitle="Combine all use cases"
-          data={mergedCards}
-        />
-      </div>
+      <SliderSection
+        headingContent={[
+          {
+            title: "Key ",
+            color: "color-black",
+          },
+          {
+            title: "Features & Benefits ",
+            color: "color-equity-blue",
+          },
+          {
+            title: "of Purchase Cards",
+            color: "color-black",
+          },
+        ]}
+        productsData={mergedCards}
+        productsTitle="All Features"
+        productsSubtitle="Combine all use cases"
+      />
 
-      <div className={`${styles.sixth_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title:
-                    "Ready to bring Efficiency, Control & Savings to your Procurement Process?",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className=""
-            />
-          </div>
-
-          <div className={`${styles.get_started_button} `}>
-            <CommanButton
-              title="Get Started Today"
-              theme="outline-blue"
-              arrow
-              url={salesUrl}
-            />
-          </div>
-        </div>
-      </div>
+      <CtaSection
+        title={
+          "Ready to bring Efficiency, Control & Savings to your Procurement Process?"
+        }
+        buttonText={"Get Started Today"}
+        background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
+      />
 
       <FaqSection faqData={faqData} />
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Our Business, ",
-                  color: "color-black",
-                },
-                {
-                  title: "Your Cards – ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "Tailored by EnKash",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className=""
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {cardType.map(
-              ({ titleHtml, description, cardImage, linkUrl }, index) => (
-                <div key={index} className="col-12 col-md-4">
-                  <CardProduct
-                    titleHtml={titleHtml}
-                    description={description}
-                    cardImage={cardImage}
-                    linkUrl={linkUrl}
-                  />
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </div>
+      <OtherProducts
+        heading={[
+          {
+            title: "Our Business, ",
+            color: "color-black",
+          },
+          {
+            title: "Your Cards – ",
+            color: "color-equity-blue",
+          },
+          {
+            title: "Tailored by EnKash",
+            color: "color-black",
+          },
+        ]}
+        useOptionalProps={true}
+        cards={cardType}
+      />
     </div>
   )
 }

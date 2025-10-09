@@ -29,9 +29,18 @@ import {
   taskIconOne,
   taskIconThree,
   taskIconTwo,
+  activationIcon,
+  hundredPercentIcon,
+  realTimeIcon,
 } from "./img"
 import { TStackCardsProp } from "@/src/types"
 
+
+const benifitsData = [
+  { icon: activationIcon, title: "Fast" },
+  { icon: hundredPercentIcon, title: "Economical" },
+  { icon: realTimeIcon, title: "Secure" },
+]
 const cardsData: TStackCardsProp =  [
   {
     title: "Generate QR Code",
@@ -210,4 +219,5 @@ export {
   managementCardData,
   paymentMethodData,
   stackcardData,
+  benifitsData
 }

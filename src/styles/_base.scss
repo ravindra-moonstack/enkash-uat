@@ -306,7 +306,7 @@ body {
 
   &::-webkit-scrollbar {
     height: 6px;
-    background: $color-night-blue ;
+    background: $color-night-blue;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -314,7 +314,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, $color-cyan-blue , transparent);
+    background: linear-gradient(90deg, $color-cyan-blue, transparent);
   }
 }
 
@@ -397,6 +397,40 @@ body {
   /* use default scrollbar width */
 }
 
+.scrollbar-thin {
+  /* Desktop scrollbar */
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $color-white;
+    border: 1px solid transparent;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #3b82f6;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+  }
+
+  /* Firefox */
+  scrollbar-width: auto;
+}
+
+/* Mobile: hide scrollbar */
+@media (max-width: 767px) {
+  .scrollbar-thin {
+    overflow: visible; // allow full height, no scroll
+    max-height: none;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    display: none; // hide webkit scrollbar
+  }
+}
+
 .gap-32 {
   gap: 8px;
 
@@ -444,4 +478,15 @@ body {
 
 .cardsSliderMargin {
   margin-top: 140px;
+}
+
+.card_stacking_row {
+  padding: 0px 20px;
+  .section {
+    padding: 50px 20px 0px;
+    background: $color-cultured;
+    @include for-laptops {
+      padding: 90px 20px;
+    }
+  }
 }

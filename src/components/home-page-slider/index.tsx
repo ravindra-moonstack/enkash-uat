@@ -25,42 +25,48 @@ interface TestimonialItem {
 interface HomePageSliderProps {
   testimonials: TestimonialItem[]
   slidesToShow?: number
+  className?: string
 }
 
 const HomePageSlider: React.FC<HomePageSliderProps> = ({
   testimonials,
   slidesToShow = 2,
+  className = "",
 }) => {
-const sliderSettings: Settings = useMemo(
-  () => ({
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    cssEase: "ease",
-    slidesToShow,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: true,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 1 },
-      },
-    ],
-  }),
-  [slidesToShow] 
-)
+  //
+
+  const sliderSettings: Settings = useMemo(
+    () => ({
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      cssEase: "ease",
+      slidesToShow,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      pauseOnHover: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: { slidesToShow: 1 },
+        },
+      ],
+    }),
+    [slidesToShow]
+  )
 
   return (
-    <div className={`col-12 ${styles.banking_wrapper}`}>
+    <div className={`col-12 ${styles.banking_wrapper} ${className}`}>
       <div className={styles.marquee_box}>
         <Slider {...sliderSettings} className={styles.custom_slider}>
           {testimonials.map((item, index) => (
             <div key={index} className={styles.slide_item}>
               <AdidasCard
-                image={typeof item.image === "string" ? item.image : item.image.src}
+                image={
+                  typeof item.image === "string" ? item.image : item.image.src
+                }
                 title1={item.title1}
                 title2={item.title2}
                 description={item.description}

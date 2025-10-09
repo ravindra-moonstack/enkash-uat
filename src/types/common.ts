@@ -34,7 +34,7 @@ export type TAllProductsDataProp = {
   title2?: string
   subtitle?: string
   description?: string
-  image?: string
+  image?: string | StaticImageData
   link?: string
   showSlide?: string
   items?: Array<{
@@ -51,11 +51,9 @@ export type TAllProductsProp = {
   data?: Array<TAllProductsDataProp>
 }
 
-
-
 export type TAllProductSectionItem = {
   title: string
-  title2?:string
+  title2?: string
   description: string
   image: string | StaticImageData
   link?: string
@@ -71,8 +69,8 @@ export type TAllProductSections = TAllProductSection[]
 
 export type TCardTypeItem = {
   titleHtml: string
-  description: string
-  cardImage: string | StaticImageData
+  description?: string
+  cardImage?: string | StaticImageData
   linkUrl?: string
 }
 

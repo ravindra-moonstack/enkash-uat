@@ -20,7 +20,7 @@ const EmployeeSlider: React.FC = () => {
       dots: false,
       infinite: true,
       speed: 500,
-      autoplay: true, // 👈 use lowercase, `autoPlay` isn’t valid in react-slick
+      autoplay: true, 
       slidesToShow: 4,
       slidesToScroll: 1,
       autoplaySpeed: 3000,

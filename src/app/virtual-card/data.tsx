@@ -32,7 +32,8 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
-import { TCardTypes, TStackCardsProp } from "@/src/types"
+import {TStackCardsProp } from "@/src/types"
+import { CardData } from "@/src/components/management-card"
 
 const intantActionData = [
   {
@@ -87,64 +88,72 @@ const spendAnalyticsData = [
   },
 ]
 
-const cardType : TCardTypes = [
+const cardType: CardData[] = [
   {
-    titleHtml: "Fuel Card",
+    theme: "black",
+    whiteTitle: "Fuel Card",
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
     linkUrl: "/fuel-card",
   },
   {
-    titleHtml: "Digital Marketing Card",
+    theme: "black",
+    whiteTitle: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: digitalCardImg,
     linkUrl: "/digital-marketing-card",
   },
   {
-    titleHtml: "SaaS Card",
+    theme: "black",
+    whiteTitle: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense contro",
     cardImage: sassCardImg,
     linkUrl: "/saas-card",
   },
   {
-    titleHtml: "Payroll Card",
+    theme: "black",
+    whiteTitle: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
   },
   {
-    titleHtml: "Meal Card",
+    theme: "black",
+    whiteTitle: "Meal Card",
     description:
       "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
     cardImage: mealCardImg,
     linkUrl: "/meal-card",
   },
   {
-    titleHtml: "T&E Card",
+    theme: "black",
+    whiteTitle: "T&E Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation",
     cardImage: termsAndConCardImg,
     linkUrl: "/travel-and-expense-card",
   },
   {
-    titleHtml: "Purchase Card",
+    theme: "black",
+    whiteTitle: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
     cardImage: purchesCardImg,
     linkUrl: "/purchase-card",
   },
   {
-    titleHtml: "Fleet Card",
+    theme: "black",
+    whiteTitle: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver",
     cardImage: fleetCardImg,
   },
 ]
 
-const allProductSections  = [
+const allProductSections = [
   {
     title: "Expense Management",
     subtitle: "Manage every spend effortlessly",

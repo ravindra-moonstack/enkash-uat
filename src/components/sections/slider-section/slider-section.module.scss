@@ -1,0 +1,13 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.slider_row {
+  position: relative;
+  text-align: center;
+  padding: 50px 20px 16px;
+  padding-top: 0px;
+
+  @include for-laptops {
+    padding: 90px 20px 46px;
+  }
+}

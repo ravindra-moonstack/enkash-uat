@@ -34,7 +34,8 @@ import {
 
 import { fleetCardImg } from "../digital-marketing-card/img"
 import { payrollCardImg } from "../fuel-card/img"
-import { TCardTypes, TStackCardsProp } from "@/src/types"
+import { TStackCardsProp } from "@/src/types"
+import { CardData } from "@/src/components/management-card"
 
 const intantActionData = [
   {
@@ -100,62 +101,70 @@ const spendAnalyticsData = [
   },
 ]
 
-const cardType: TCardTypes = [
+const cardType: CardData[] = [
   {
-    titleHtml: "Fuel Card",
+    whiteTitle: "Fuel Card",
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
     linkUrl: "/fuel-card",
+    theme: "black",
   },
   {
-    titleHtml: "Digital Marketing Card",
+    whiteTitle: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: digitalCardImg,
     linkUrl: "/digital-marketing-card",
+    theme: "black",
   },
   {
-    titleHtml: "SaaS Card",
+    whiteTitle: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense contro",
     cardImage: sassCardImg,
     linkUrl: "/saas-card",
+    theme: "black",
   },
   {
-    titleHtml: "Payroll Card",
+    whiteTitle: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
     linkUrl: "/sales/?source=gift-cards",
+    theme: "black",
   },
   {
-    titleHtml: "Meal Card",
+    whiteTitle: "Meal Card",
     description:
       "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
     cardImage: mealCardImg,
     linkUrl: "/meal-card",
+    theme: "black",
   },
   {
-    titleHtml: "T&E Card",
+    whiteTitle: "T&E Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation",
     cardImage: termsAndConCardImg,
     linkUrl: "/travel-and-expense-card",
+    theme: "black",
   },
   {
-    titleHtml: "Purchase Card",
+    whiteTitle: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
     cardImage: purchesCardImg,
     linkUrl: "/purchase-card",
+    theme: "black",
   },
   {
-    titleHtml: "Fleet Card",
+    whiteTitle: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver",
     cardImage: fleetCardImg,
     linkUrl: "/sales/?source=gift-cards",
+    theme: "black",
   },
 ]
 
