@@ -145,6 +145,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   maxHeight: "672px",
                 }}
                 className="w-100 mh-550 object-fit-contain"
+                priority={true}
               />
             </div>
           </div>
