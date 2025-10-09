@@ -8,19 +8,11 @@ import faqData, { SecondfaqData } from "./faq-data"
 
 // components
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
-import PolicyCard from "@/src/components/policy-card"
-import CommonButton from "@/src/components/buttons"
-import ManagementCard from "@/src/components/management-card"
 import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
 import PaymentLinkTab from "@/src/components/payment-link-tabs/payment-link-tab"
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import { FaqSection } from "@/src/components"
 
 //helpers
 import {
-  groupIcon,
   paymentSummary,
   mealCardImage,
   activationIcon,
@@ -41,6 +33,12 @@ import {
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import FaqSection from "@/src/components/faq-section"
+import HeroSection from "@/src/components/sections/hero-section"
+import StepsSection from "@/src/components/steps-section"
+import UseCaseSection from "@/src/components/sections/use-case-section"
+import CtaSection from "@/src/components/sections/cta-section"
+import OtherProducts from "@/src/components/sections/other-products"
 
 export const metadata: Metadata = generateMetaData({
   title: "Simple Payment Links to Accept Online Payments",
@@ -52,116 +50,47 @@ export const metadata: Metadata = generateMetaData({
 })
 const salesUrl = getSalesUrl("/payment-links")
 
-const showScroll = cardsData.length > 3
-
 const PaymentLinks = (): React.JSX.Element => {
   //
 
   return (
-    <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.hero_section} `}>
-        <div className="max-w-auto">
-          <div className="d-flex flex-column flex-md-row">
-            <div className="col-12 col-md-6">
-              <div className="d-flex">
-                <CustomBreadcrumb
-                  items={[
-                    { name: "Home", url: "/" },
-                    {
-                      name: "Collect Payments",
-                      url: "/products/collect-payments",
-                    },
-                    {
-                      name: "Payment Links",
-                      url: "/payment-links",
-                    },
-                  ]}
-                />
-              </div>
-              <div
-                className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Payment Links",
-                      color: "color-equity-blue underline",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
+    <div className={`color-white`}>
 
-              <div
-                className={`text-center text-md-start ${styles.first_row_content}  `}
-              >
-                <div className="d-flex flex-column   pt-3 pt-md-0">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Accept Payments Instantly with EnKash Payment Links",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h1"
-                    className="f-7"
-                  />
-                </div>
-
-                <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Create payment link effortlessly—no website or app needed. Share via SMS, WhatsApp, email, or social media, and accept payments through 100+ methods - no coding required.",
-                        color: "color-black subHeading",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="mb-0"
-                  />
-                </div>
-
-                <div className="d-flex flex-column align-items-center align-items-md-start">
-                  <Image
-                    src={groupIcon}
-                    alt="card visual"
-                    className={styles.group_logo}
-                  />
-                  <div
-                    className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
-                  >
-                    <CommonButton
-                      title="Get Started  "
-                      theme="blue"
-                      url={salesUrl}
-                    />
-
-                    <CommonButton
-                      title="API Doc"
-                      theme="outline-blue"
-                      url="https://docs.enkash.com"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div className={`${styles.right_img} position-relative  d-flex`}>
-                <Image
-                  src={paymentSummary}
-                  alt="card visual"
-                  style={{ objectFit: "contain", maxHeight: "672px" }}
-                  className="w-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <LogoSlider />
-      </div>
+      <HeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          {
+            name: "Collect Payments",
+            url: "/products/collect-payments",
+          },
+          {
+            name: "Payment Links",
+            url: "/payment-links",
+          },
+        ]}
+        subtitle={{
+          text: "Payment Links",
+          color: "color-equity-blue",
+          underline: true,
+        }}
+        title={[
+          {
+            text: "Accept Payments Instantly with EnKash Payment Links",
+            color: "color-black",
+          },
+        ]}
+        description={{
+          text: "Create payment link effortlessly—no website or app needed. Share via SMS, WhatsApp, email, or social media, and accept payments through 100+ methods - no coding required.",
+        }}
+        button={{
+          title: "Get Started",
+          url: salesUrl,
+          theme: "blue",
+          apiUrl: "https://docs.enkash.com/",
+        }}
+        rightImage={paymentSummary}
+        backgroundImage="/images/collectPaymentBg.webp"
+      />
 
       <div className={`row ${styles.introduction_section} `}>
         <div className="gap-32  align-items-center max-w-auto">
@@ -255,114 +184,36 @@ const PaymentLinks = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.features_section}>
-        <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "How to Create  ",
-                  color: "color-black",
-                },
-                {
-                  title: "Payment Links",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row">
-            <div className="col-md-6 col-12">
-              <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
-                style={{
-                  maxHeight: "400px",
-                  direction: showScroll ? "rtl" : "ltr",
-                }}
-              >
-                {cardsData.map(({ icon, title, description }, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      direction: "ltr",
-                    }}
-                    className={styles.scrollCard}
-                  >
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button} `}>
-                <CommonButton
-                  title="Get Started"
-                  theme="outline-blue"
-                  url={salesUrl}
-                />
-              </div>
-            </div>
-            <div className="col-md-6 col-12">
-              <div>
-                <Image
-                  src={mealCardImage}
-                  alt="card background"
-                  className="w-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <StepsSection
+        heading={[
+          {
+            text: "How to Create  ",
+            colorClass: "color-black",
+          },
+          {
+            text: "Payment Links",
+            colorClass: "color-equity-blue",
+          },
+        ]}
+        steps={cardsData}
+        button={{
+          title: "Get started",
+          theme: "outline-blue",
+        }}
+        image={{
+          src: mealCardImage,
+          alt: "card background",
+        }}
+      />
 
-      <div className={`${styles.use_case_section}  `}>
-        <div className="max-w-auto">
-          <div className={`${styles.section}`}>
-            <div className={`row  align-items-center `}>
-              <div className={`${styles.title} text-center `}>
-                <div
-                  className={`flex-column justify-content-center   mb-md-5 mb-4`}
-                >
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Get Paid with a ",
-                        color: "color-black",
-                      },
-                      {
-                        title: "Single Link ",
-                        color: "color-equity-blue",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="f-6"
-                  />
-                </div>
-              </div>
-              <div className={styles.allInOnePolicyCard}>
-                {policies.map((policy, index) => (
-                  <AllInOnePolicy
-                    key={index}
-                    icon={policy.icon}
-                    title={policy.title}
-                    description={policy.description}
-                    image={policy.image}
-                    buttonUrl={salesUrl}
-                    maxImageHeight={policy.maxImageHeight}
-                    reverse={policy.reverse}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <UseCaseSection
+        heading={[
+          { title: "Get Paid with a ", color: "color-black" },
+          { title: "Single Link ", color: "color-equity-blue" },
+        ]}
+        items={policies}
+        buttonUrl={salesUrl}
+      />
 
       <div className={`${styles.integration_section} `}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
@@ -466,68 +317,31 @@ const PaymentLinks = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.cta_section} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Ready To Simplify Your Collections?",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5 mb-3 mb-md-0"
-            />
-          </div>
-          <div className={`${styles.get_started_button} `}>
-            <CommonButton
-              title="Get Started  Today "
-              theme="outline-blue"
-              arrow
-              url={salesUrl}
-            />
-          </div>
-        </div>
-      </div>
-      <FaqSection faqData={faqData} />
+      <CtaSection
+        title={"Ready To Simplify Your Collections?"}
+        buttonText={"Get Started  Today "}
+      />
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Check out other ",
-                  color: "color-black",
-                },
-                {
-                  title: "collection products",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: " at EnKash",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {managementCards.map((card, index) => (
-              <div className="col-12 col-md-4" key={index}>
-                <ManagementCard
-                  titleHtml={card.titleHtml}
-                  description={card.description}
-                  cardImage={card.cardImage}
-                  linkUrl={card.linkUrl}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
+    
+      <OtherProducts
+        heading={[
+          {
+            title: "Check out other ",
+            color: "color-black",
+          },
+          {
+            title: "collection products",
+            color: "color-equity-blue",
+          },
+          {
+            title: " at EnKash",
+            color: "color-black",
+          },
+        ]}
+        cards={managementCards}
+      />
+      
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
   autoCollect,
   instant,
   notificationImage,
@@ -9,19 +10,25 @@ import {
   paymentOptionImage,
   paymentPage,
   qrCodes,
+  realTimeIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
   shareImage,
+  smartIcon,
   taskIconFour,
   taskIconOne,
   taskIconThree,
   taskIconTwo,
 } from "./img"
 
-
-const cardsData  : TStackCardsProp =[
+const cards = [
+  { icon: activationIcon, title: "Instant" },
+  { icon: smartIcon, title: "Smart" },
+  { icon: realTimeIcon, title: "Secure" },
+]
+const cardsData: TStackCardsProp = [
   {
     title: "Login",
     description:
@@ -42,8 +49,7 @@ const cardsData  : TStackCardsProp =[
   },
 ]
 
-
-const allInOnePolicyData  : TStackCardsProp =[
+const allInOnePolicyData: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Streamlined Payment Reminders",
@@ -136,6 +142,4 @@ const managementCardData = [
   },
 ]
 
-export {
-allInOnePolicyData, cardsData, managementCardData 
-}
+export { allInOnePolicyData, cardsData, managementCardData, cards }

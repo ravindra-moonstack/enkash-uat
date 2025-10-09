@@ -3,33 +3,25 @@ import Image from "next/image"
 import styles from "./page.module.scss"
 
 //data
-import { cardsData, cardType, stackcardData } from "./data"
+import { benifitsData, cardsData, cardType, stackcardData } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
 
 //components
-import CommonButton from "@/src/components/buttons"
-import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import generateMetaData from "@/src/utils/metaData"
-import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import CardStacking from "@/src/components/card-stacking"
-import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
-import FaqSection from "@/src/components/faq-section"
-import RewardsCarousel from "@/src/components/rewards-carousel"
-import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
+import { getSalesUrl } from "@/utils/getSalesUrl"
+import generateMetaData from "@/utils/metaData"
+import DynamicHeading from "@/components/dynamic-heading"
+import AllInOnePolicy from "@/components/all-in-one-policy"
+import CardStacking from "@/components/card-stacking"
+import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
+import FaqSection from "@/components/faq-section"
+import RewardsCarousel from "@/components/rewards-carousel"
+import HeroSection from "@/src/components/sections/hero-section"
+import CoreBenefitsSection from "@/src/components/sections/core-benifits-section"
+import { StepsSection } from "@/src/components"
+import CtaSection from "@/src/components/sections/cta-section"
 
 //helpers
-import {
-  groupIcon,
-  paymentSummary,
-  mealCardImage,
-  activationIcon,
-  realTimeIcon,
-  faqBg,
-  extensiveIcon,
-} from "./img"
+import { paymentSummary, mealCardImage, faqBg } from "./img"
 
 //utils
 
@@ -62,230 +54,64 @@ const EmployeeRewards = (): React.JSX.Element => {
   //
 
   return (
-    <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.hero_section} `}>
-        <div className="max-w-auto mb-4">
-          <div className="d-flex flex-column flex-md-row">
-            <div className="col-12 col-md-6 d-flex flex-column">
-              <div className="d-flex">
-                <CustomBreadcrumb
-                  items={[
-                    { name: "Home", url: "/" },
-                    {
-                      name: "Rewards",
-                      url: "/products/rewards",
-                    },
-                    {
-                      name: "Employee Rewards",
-                      url: "/employee-rewards",
-                    },
-                  ]}
-                />
-              </div>
-              <div
-                className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Employee Rewards",
-                      color: "color-equity-blue underline",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div
-                className={`text-center text-md-start ${styles.first_row_content}  `}
-              >
-                <div className=" pt-4 pt-md-0">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Motivate Your Valuable Workflow with Employee Rewards",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h1"
-                    className="f-7"
-                  />
-                </div>
+    <div className={`color-white `}>
+      <HeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          {
+            name: "Rewards",
+            url: "/products/rewards",
+          },
+          {
+            name: "Employee Rewards",
+            url: "/employee-rewards",
+          },
+        ]}
+        subtitle={{
+          text: "Employee Rewards",
+          color: "color-equity-blue",
+          underline: true,
+        }}
+        title={[
+          {
+            text: "Motivate Your Valuable Workflow with Employee Rewards",
+            color: "color-black",
+          },
+        ]}
+        description={{
+          text: "Recognize achievements, celebrate milestones, and boost morale with EnKash’s all-in-one employee rewards and recognition platform.",
+        }}
+        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
+        rightImage={paymentSummary}
+        backgroundImage="/images/rewardsBg.webp"
+      />
 
-                <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Recognize achievements, celebrate milestones, and boost morale with EnKash’s all-in-one employee rewards and recognition platform.",
-                        color: "color-black subHeading",
-                      },
-                    ]}
-                    headingTag="p"
-                    className=""
-                  />
-                </div>
+      <CoreBenefitsSection
+        sectionTitle="Recognize & Retain Employees"
+        cards={benifitsData}
+      />
 
-                <div className="d-flex flex-column align-items-center align-items-md-start">
-                  <Image
-                    src={groupIcon}
-                    alt="card visual"
-                    className={styles.group_logo}
-                  />
-                  <div
-                    className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
-                  >
-                    <div>
-                      <CommonButton
-                        title="Get Started  "
-                        theme="blue"
-                        url={salesUrl}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div
-                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
-              >
-                <Image
-                  src={paymentSummary}
-                  alt="card visual"
-                  className="w-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <LogoSlider />
-      </div>
-
-      <div className={`row ${styles.introduction_section} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
-          <div className="d-inline justify-content-center  align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Recognize & Retain Employees",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5 pb-md-0 pb-3"
-            />
-            <div className={`${styles.second_row_line} `}></div>
-          </div>
-
-          <div className={` d-flex ${styles.section}`}>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={extensiveIcon} alt="icon" />
-              </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Extensive Reward Options",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-            </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={activationIcon} alt="icon" />
-              </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Instant Reward Redemption",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-            </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={realTimeIcon} alt="icon" />
-              </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Easy Reward Disbursement",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.features_section}>
-        <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "How to Distribute ",
-                  color: "color-black",
-                },
-                {
-                  title: "Employee Rewards ",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row">
-            <div className="col-md-6 col-12">
-              <ScrollableCardsSection
-                cardsData={cardsData}
-                showScroll={false}
-                maxHeight="400px"
-                buttonTitle="Get Started"
-                buttonTheme="outline-blue"
-                buttonUrl={salesUrl}
-              />
-            </div>
-            <div className="col-md-6 col-12">
-              <Image
-                src={mealCardImage}
-                alt="card background"
-                className="w-100 mh-550 object-fit-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <StepsSection
+        heading={[
+          {
+            text: "How to Distribute ",
+            colorClass: "color-black",
+          },
+          {
+            text: "Employee Rewards ",
+            colorClass: "color-equity-blue",
+          },
+        ]}
+        steps={cardsData}
+        button={{
+          title: "Get started",
+          theme: "outline-blue",
+        }}
+        image={{
+          src: mealCardImage,
+          alt: "card background",
+        }}
+      />
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
@@ -311,22 +137,20 @@ const EmployeeRewards = (): React.JSX.Element => {
 
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center  max-w-auto`}>
-          <div className={`px-3 mb-4 mb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Other Products ",
-                  color: "color-black",
-                },
-                {
-                  title: "to Build High-Performing Teams",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-5"
-            />
-          </div>
+          <DynamicHeading
+            content={[
+              {
+                title: "Other Products ",
+                color: "color-black",
+              },
+              {
+                title: "to Build High-Performing Teams",
+                color: "color-equity-blue",
+              },
+            ]}
+            headingTag="h2"
+            className="f-5 px-3 mb-4 mb-md-5"
+          />
         </div>
         <RewardsCarousel
           title="All Features"
@@ -340,62 +164,41 @@ const EmployeeRewards = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.integration_section} relative`}>
-        <div className={`${styles.faqSection} text-start w-100 max-w-auto`}>
-          <div className={`${styles.title} text-start pb-md-5 pb-4`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Rewards That Work For",
-                  color: "color-black",
-                },
-                {
-                  title: "Employers and Employees! ",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
+      <div className={`${styles.integration_section}`}>
+        <div className={` w-100 max-w-auto`}>
+          <DynamicHeading
+            content={[
+              {
+                title: "Rewards That Work For ",
+                color: "color-black",
+              },
+              {
+                title: "Employers and Employees! ",
+                color: "color-equity-blue",
+              },
+            ]}
+            headingTag="h2"
+            className="f-6 text-start pb-md-5 pb-4"
+          />
+
           <div className="row align-items-end ">
             <div className={`${styles.secondFaq} col-md-6 col-12`}>
               <SecondFaqHtml SecondfaqData={SecondfaqData} />
             </div>
-            <div className="col-md-6 col-12 d-md-block d-none">
-              <div className={styles.faq_bg}>
-                <Image src={faqBg} alt="background image" />
-              </div>
+
+            <div
+              className={`${styles.faq_bg} col-md-6 col-12 d-md-block d-none`}
+            >
+              <Image src={faqBg} alt="background image" />
             </div>
           </div>
         </div>
       </div>
 
-      <div className={`${styles.cta_section} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Ready To Turn Hard Work Into Heartfelt Rewards?",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5 pb-md-0 pb-3"
-            />
-          </div>
-          <div className={`${styles.get_started_button} `}>
-            <CommonButton
-              title="Get Started  "
-              theme="outline-blue"
-              arrow
-              url={salesUrl}
-            />
-          </div>
-        </div>
-      </div>
-
+      <CtaSection
+        title={"Ready To Turn Hard Work Into Heartfelt Rewards?"}
+        buttonText={"Get Started  "}
+      />
       <FaqSection faqData={faqData} />
     </div>
   )

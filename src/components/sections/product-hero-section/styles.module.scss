@@ -1,0 +1,41 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.hero_section {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: $color-black;
+  box-shadow: 0px 0px 77px 0px $color-black-1a;
+  padding: 110px 20px 0;
+
+  @include for-laptops {
+    padding: 123px 70px 0;
+  }
+
+  .subtitle {
+    color: $color-equity-blue;
+    border-bottom: 2px solid $color-equity-blue;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .dashboard_img {
+    max-width: 100%;
+    height: auto;
+
+    @include for-laptops {
+      max-width: none;
+      height: fit-content;
+      width: 800px;
+    }
+  }
+
+  .lottie_container {
+    width: 500px;
+
+    @include for-laptops {
+      width: 900px;
+    }
+  }
+}

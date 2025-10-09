@@ -32,7 +32,9 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
-import { TCardTypes, TStackCardsProp } from "@/src/types"
+import { TStackCardsProp } from "@/src/types"
+
+import { CardData } from "@/components/management-card" 
 
 const intantActionData = [
   {
@@ -92,67 +94,74 @@ const spendAnalyticsData = [
   },
 ]
 
-const cardType : TCardTypes =[
+const cardType: CardData[] =[
   {
-    titleHtml: "Fuel Card",
+    whiteTitle: "Fuel Card",
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
     linkUrl: "/fuel-card",
+    theme: "black",
   },
   {
-    titleHtml: "Digital Marketing Card",
+    whiteTitle: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: digitalCardImg,
     linkUrl: "/digital-marketing-card",
+    theme: "black",
   },
   {
-    titleHtml: "Saas Card",
+    whiteTitle: "Saas Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
     linkUrl: "/saas-card",
+    theme: "black",
   },
   {
-    titleHtml: "Payroll Card",
+    whiteTitle: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCarddImg,
+    theme: "black",
   },
   {
-    titleHtml: "Virtual Card",
+    whiteTitle: "Virtual Card",
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
     cardImage: virtualCardImg,
     linkUrl: "/virtual-card",
+    theme: "black",
   },
   {
-    titleHtml: "Travel & Expense Card",
+    whiteTitle: "Travel & Expense Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
     cardImage: termsAndConCardImg,
     linkUrl: "/travel-and-expense-card",
+    theme: "black",
   },
   {
-    titleHtml: "Meal Card",
+    whiteTitle: "Meal Card",
     description:
       "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
     cardImage: mealCardImg,
     linkUrl: "/meal-card",
+    theme: "black",
   },
 
   {
-    titleHtml: "Fleet Card",
+    whiteTitle: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
+    theme: "black",
   },
 ]
 
 const stackcardData: TStackCardsProp = [
   {
-    
     icon: realTimeExpenseIcon,
     title: "Purpose-Made Cards for Every Need",
     description:
@@ -161,7 +170,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: fraudProtectionIcon,
     title: "Precise Spending Controls",
     description:
@@ -170,7 +178,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: streamlinedReimbursementIcon,
     title: "Real-Time Monitoring",
     description:
@@ -179,7 +186,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: costControlSavingsIcon,
     title: "Built-In Approval Workflows",
     description:
@@ -188,7 +194,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: wideAcceptanceNetworkIcon,
     title: "Enhanced Vendor Payments",
     description:
@@ -197,7 +202,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: integrationAuditIcon,
     title: "Integrated Audit Support",
     description:
@@ -206,7 +210,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: seemlessIntegrationIcon,
     title: "Seamless Integration",
     description:

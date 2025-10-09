@@ -9,6 +9,7 @@ interface CounterProps {
   duration?: number // Animation time in ms
   label: string // Text below counter
   prefix?: string // Optional prefix like "$"
+  className?: string
 }
 
 const Counter: React.FC<CounterProps> = ({
@@ -17,6 +18,7 @@ const Counter: React.FC<CounterProps> = ({
   duration = 200,
   label,
   prefix = "",
+  className = "",
 }) => {
   const [count, setCount] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
@@ -58,7 +60,7 @@ const Counter: React.FC<CounterProps> = ({
   }, [isVisible, end, duration])
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={className}>
       <div>
         {/* <h2>
           {prefix} {count.toLocaleString()} {suffix}

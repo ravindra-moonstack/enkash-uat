@@ -9,6 +9,7 @@ interface PaymentGatewayCareProps {
   subtitle: string
   icon: string // can be a local import or remote URL
   url: string // Destination URL
+  className?: string
 }
 
 const PaymentGatewayCare: React.FC<PaymentGatewayCareProps> = ({
@@ -16,10 +17,10 @@ const PaymentGatewayCare: React.FC<PaymentGatewayCareProps> = ({
   subtitle,
   icon,
   url,
+  className = "",
 }) => {
   return (
-    <>
-      {" "}
+    <div className={className}>
       <Link href={url} className={`${styles.coloctPaymentBoxInnerLink}`}>
         <div className={`${styles.coloctPaymentBoxInnerBox}`}>
           {/* Title & Subtitle */}
@@ -54,7 +55,7 @@ const PaymentGatewayCare: React.FC<PaymentGatewayCareProps> = ({
           />
         </div>
       </Link>
-    </>
+    </div>
   )
 }
 

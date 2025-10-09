@@ -1,8 +1,11 @@
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
   autoCollect,
+  creationIcon,
   fraudProtection,
   fraudProtectionIcon,
+  hundredPercentIcon,
   instant,
   notificationImage,
   paymentButton,
@@ -30,6 +33,12 @@ import {
 } from "./img"
 
 import { upiPayments } from "@/src/components/header"
+
+const benifitsData = [
+  { icon: creationIcon, title: "Quick Mandate Creation" },
+  { icon: activationIcon, title: "Easy Subscription Management" },
+  { icon: hundredPercentIcon, title: "Instant Payment Settlement" },
+]
 
 const cardsData : TStackCardsProp =  [
   {
@@ -184,4 +193,4 @@ const stackcardData: TStackCardsProp = [
   },
 ]
 
-export { allInOnePolicies, cardsData, managementCards, stackcardData }
+export { allInOnePolicies, cardsData, managementCards, stackcardData, benifitsData }

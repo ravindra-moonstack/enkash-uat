@@ -152,21 +152,18 @@ const ConfirmationContactUs = (): React.JSX.Element => {
                     headingTag="p"
                     className="mb-0"
                   />
-                  <a
-                    href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
-                    className="text-decoration-none"
-                  >
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: `${process.env.NEXT_PUBLIC_EMAIL}`,
-                          color: "color-electric-green d-block",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0"
-                    />
-                  </a>
+
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: `${process.env.NEXT_PUBLIC_EMAIL}`,
+                        color: "color-electric-green d-block",
+                        link: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`,
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
+                  />
                 </div>
               </div>
             </div>

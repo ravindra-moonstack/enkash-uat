@@ -7,19 +7,19 @@ import { cardType, dataSets, intantActionData, stackcardData } from "./data"
 import faqData from "./faq-data"
 
 //components
-import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
-import CardProduct from "@/src/components/card-product"
 import HowDoesItWork from "@/src/components/how-does-it-work"
+import CardHeroSection from "@/src/components/sections/card-hero-section"
+import CtaSection from "@/src/components/sections/cta-section"
+import OtherProducts from "@/src/components/sections/other-products"
 
 //helpers
-import { circles, mealCardImage, cardRotatingImage, heroCardImg } from "."
+import { circles, mealCardImage, cardRotatingImage, heroCardImg } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -51,76 +51,39 @@ const cards = stackcardData.map((item, index) => ({
 
 const MealCards = (): React.JSX.Element => {
   return (
-    <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.hero_section}`}>
-        <div className="max-w-auto ">
-          <div className="d-flex">
-            <CustomBreadcrumb
-              items={[
-                { name: "Home", url: "/" },
-                { name: "Corporate Cards ", url: "/corporate-cards" },
-                {
-                  name: "Meal Card",
-                  url: "/corporate-cards/meal-card",
-                },
-              ]}
-              linkColor="allWhite"
-            />
-          </div>
-          <div className={`${styles.title} col-12 `}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Meal Card",
-                  color: "color-white underline",
-                },
-              ]}
-              headingTag="p"
-              className="mb-2"
-            />
-            <div className="d-flex  flex-column text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Empower Your Employees with",
-                    color: "color-white f-3 d-block italic",
-                  },
-                  {
-                    title: "Tax-Free Meal Cards",
-                    color: "color-white",
-                  },
-                ]}
-                headingTag="h1"
-                className="mb-2 f-7"
-              />
-            </div>
-
-            <div className="d-inline text-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      " Simplify meal benefits with tax-free, paperless cards; easy to manage and widely accepted across merchants.",
-                    color: "color-white subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className=""
-              />
-            </div>
-            <div
-              className={`${styles.button_wrapper} justify-content-center d-flex`}
-            >
-              <CommanButton title="Get Started" theme="blue" url={salesUrl} />
-            </div>
-          </div>
-        </div>
-        <div className=" col-12 pt-5 ">
-          <div className={styles.lottie_container}>
-            <Image src={heroCardImg} alt="card background" className=" " />
-          </div>
-        </div>
-      </div>
+    <div className={`color-white`}>
+      <CardHeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Corporate Cards ", url: "/corporate-cards" },
+          {
+            name: "Meal Card",
+            url: "/corporate-cards/meal-card",
+          },
+        ]}
+        linkColor="allWhite"
+        subtitle={{
+          text: "Meal Card",
+          color: "color-white",
+          underline: true,
+        }}
+        title={[
+          {
+            text: "Empower Your Employees with ",
+            color: "color-white f-3 italic d-block",
+          },
+          { text: "Tax-Free Meal Cards", color: "color-white" },
+        ]}
+        description={{
+          text: " Simplify meal benefits with tax-free, paperless cards; easy to manage and widely accepted across merchants.",
+          color: "color-white subHeading",
+        }}
+        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
+        heroImage={heroCardImg}
+        backgroundImage="/images/mealCardBg.webp"
+        paddingTop="120px"
+        paddingBottom="60px"
+      />
 
       <div className="cardsSliderMargin">
         <LogoSlider />
@@ -166,22 +129,21 @@ const MealCards = (): React.JSX.Element => {
           <div className={styles.cardRotatingImage}>
             <Image src={cardRotatingImage} alt="background image" />
           </div>
-          <div className="d-flex flex-column text-center mb-5">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Meal Card Features That Make ",
-                  color: "color-white italic d-block f-3",
-                },
-                {
-                  title: "EnKash the Perfect Choice",
-                  color: "color-block",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
+
+          <DynamicHeading
+            content={[
+              {
+                title: "Meal Card Features That Make ",
+                color: "color-white italic d-block f-3",
+              },
+              {
+                title: "EnKash the Perfect Choice",
+                color: "color-block",
+              },
+            ]}
+            headingTag="h2"
+            className="f-6 text-center mb-5"
+          />
 
           <div className={styles.how_it_workssection}>
             <HowDoesItWork dataSets={dataSets} />
@@ -189,72 +151,34 @@ const MealCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.sixth_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Hassle-Free Meals, Happier Employees",
-                  color: "color-block",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
-
-          <div className={`${styles.get_started_button} `}>
-            <CommanButton
-              title="Get Started "
-              theme="outline-blue"
-              arrow
-              url={salesUrl}
-            />
-          </div>
-        </div>
+      <div className={`${styles.sixth_row}`}>
+        <CtaSection
+          title={"Hassle-Free Meals, Happier Employees"}
+          buttonText={"Get Started "}
+          background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
+        />
       </div>
 
       <FaqSection faqData={faqData} />
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Choose ",
-                  color: "color-black",
-                },
-                {
-                  title: "the Right Card ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "for Every Use Case",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {cardType.map(
-              ({ titleHtml, description, cardImage, linkUrl }, index) => (
-                <div key={index} className="col-12 col-md-4">
-                  <CardProduct
-                    titleHtml={titleHtml}
-                    description={description}
-                    cardImage={cardImage}
-                    linkUrl={linkUrl}
-                  />
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </div>
+      <OtherProducts
+        heading={[
+          {
+            title: "Choose ",
+            color: "color-black",
+          },
+          {
+            title: "the Right Card ",
+            color: "color-equity-blue",
+          },
+          {
+            title: "for Every Use Case",
+            color: "color-black",
+          },
+        ]}
+        useOptionalProps={true}
+        cards={cardType}
+      />
     </div>
   )
 }

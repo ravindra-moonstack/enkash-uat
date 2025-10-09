@@ -29,13 +29,13 @@
   }
 
   .bannerImages {
-    min-height: 150px;
+    img {
+      width: 100%;
+      height: auto;
 
-    @include for-laptops {
-      min-height: 540px;
-    }
-    .lottie_container {
-      // pointer-events: none;
+      @include for-laptops {
+        min-height: 540px;
+      }
     }
   }
   .subtitle {
@@ -55,14 +55,6 @@
       width: 800px;
     }
   }
-
-  // .lottie_container {
-  //   width: 500px;
-
-  //   @include for-laptops {
-  //     // width: 900px;
-  //   }
-  // }
 }
 
 .introduction_section {

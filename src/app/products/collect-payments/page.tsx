@@ -9,12 +9,9 @@ import faqData from "./faq-data"
 // components
 import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
 import FaqSection from "@/src/components/faq-section"
 import HowDoesItWork from "@/src/components/how-does-it-work"
-import LottieDynamicLoadComponent from "@/src/components/lottie-client/lottie-dynamic-load-client"
 import PolicyCard from "@/src/components/policy-card"
 
 // helpers
@@ -23,11 +20,12 @@ import {
   instantSettelmentImg,
   affordabilityImg,
   affordabilityIcon,
-} from "."
+} from "./img"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import ProductHeroSection from "@/src/components/sections/product-hero-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Simplify Online Payment Collections with EnKash",
@@ -41,81 +39,35 @@ const salesUrl = getSalesUrl("/collect-payments")
 
 const CollectPayment = (): React.JSX.Element => {
   return (
-    <div className={`color-white  ${styles.home_container}`}>
-      <div className={`${styles.hero_section}`}>
-        <div className="max-w-auto">
-          <div className="d-flex">
-            <CustomBreadcrumb
-              items={[
-                { name: "Home", url: "/" },
-                { name: "Products", url: "/products" },
-                {
-                  name: "Collect Payments",
-                  url: "/products/collect-payments",
-                },
-              ]}
-              linkColor="white"
-            />
-          </div>
-          <div className="col-12 d-flex flex-column text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Accept Payments the Smarter Way with EnKash",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h1"
-              className="f-7 mt-4 mb-2"
-            />
-
-            <div className="d-inline">
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "No more chasing, no more delays - Payment Collection Solutions for Merchants Who Want to Make Money",
-                    color: "color-white subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className="mb-0"
-              />
-            </div>
-
-            <div className="mt-md-5 mt-3 justify-content-center d-flex">
-              <CommanButton title="Talk to Us" theme="blue" url={salesUrl} />
-            </div>
-          </div>
-          <div className=" col-12 d-flex justify-content-center align-items-center">
-            <div className={styles.lottie_container}>
-              <LottieDynamicLoadComponent
-                animationName={"CollectPaymentAnimation"}
-                loop={true}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <LogoSlider />
+    <div className={`color-white`}>
+      <ProductHeroSection
+        breadcrumbItems={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/products" },
+          { name: "Collect Payments", url: "/products/collect-payments" },
+        ]}
+        title="Accept Payments the Smarter Way with EnKash"
+        subtitle="No more chasing, no more delays – Payment Collection Solutions for Merchants Who Want to Make Money"
+        animationName="CollectPaymentAnimation"
+        buttonTitle="Talk to Us"
+        buttonUrl={process.env.SALES_URL}
+        buttonTheme="blue"
+        linkColor="white"
+      />
 
       <div className={styles.introduction_section}>
         <div className="max-m-auto">
-          <div
-            className={`${styles.second_row_title} text-center pb-4 pb-md-5`}
-          >
-            <DynamicHeading
-              content={[
-                {
-                  title: "Payments Rolling In Automatically, Every Time.",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
+          <DynamicHeading
+            content={[
+              {
+                title: "Payments Rolling In Automatically, Every Time.",
+                color: "color-white",
+              },
+            ]}
+            headingTag="h3"
+            className="f-5 text-center pb-4 pb-md-5"
+          />
+
           <div className={`d-flex  flex-wrap  ${styles.section}`}>
             {cardData.map((item, index) => (
               <div
@@ -148,7 +100,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+    
       <div className={`${styles.features_section}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>

@@ -1,11 +1,12 @@
-
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
+  activationIcon,
   autoCollect,
   costControlSavings,
   costControlSavingsIcon,
   fraudProtection,
   fraudProtectionIcon,
+  hundredPercentIcon,
   instant,
   notificationImage,
   paymentButton,
@@ -16,6 +17,7 @@ import {
   qrCodes,
   realTimeExpense,
   realTimeExpenseIcon,
+  realTimeIcon,
   reduceFrauds,
   reminder,
   scrollIconOne,
@@ -33,8 +35,13 @@ import {
   TravelImage,
 } from "./img"
 
+const corebenifitData = [
+  { icon: activationIcon, title: "Data Tracking " },
+  { icon: hundredPercentIcon, title: "24/7 Availability" },
+  { icon: realTimeIcon, title: "Visual Dashboards" },
+]
 
-const cardsData  : TStackCardsProp =[
+const cardsData: TStackCardsProp = [
   {
     title: "Integrate Payment Sources",
     description:
@@ -55,9 +62,7 @@ const cardsData  : TStackCardsProp =[
   },
 ]
 
-
-
-const allInOnePolicies  : TStackCardsProp = [
+const allInOnePolicies: TStackCardsProp = [
   {
     icon: taskIconOne,
     title: "Multi-Bank Reconciliation",
@@ -108,7 +113,6 @@ const allInOnePolicies  : TStackCardsProp = [
 ]
 const stackcardData: TStackCardsProp = [
   {
-    
     icon: realTimeExpenseIcon,
     title: "Accuracy",
     description: `EnKash's automated system significantly improves accuracy by minimizing human intervention. The advanced algorithms ensure precise data extraction and validation, contributing to a more reliable reconciliation process.`,
@@ -116,7 +120,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: fraudProtectionIcon,
     title: "Visibility",
     description: `With EnKash, get clear visibility into your cash flow status and ensure all your business payments are processed on time, fostering better relationships.`,
@@ -124,7 +127,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: streamlinedReimbursementIcon,
     title: "Cost Efficiency",
     description: `With EnKash, you can make the whole process more cost-effective, as it reduces the reliance on manual labour. The streamlined process leads to operational efficiency, minimising the risk of costly errors.`,
@@ -132,7 +134,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales/?source=expense_management",
   },
   {
-    
     icon: costControlSavingsIcon,
     title: "Integration",
     description: `EnKash offers seamless integration with various accounting and ERP systems. This interoperability ensures a smooth flow of information across different platforms, enhancing overall efficiency and connectivity.`,
@@ -140,7 +141,6 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
   {
-    
     icon: TravelIcon,
     title: "Scalability",
     description: `EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency.`,
@@ -148,7 +148,7 @@ const stackcardData: TStackCardsProp = [
     buttonUrl: "/sales",
   },
 ]
-const managementCards : TCardTypes =[
+const managementCards: TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:
@@ -199,9 +199,4 @@ const managementCards : TCardTypes =[
     linkUrl: "/collection-reminder",
   },
 ]
-export {
- allInOnePolicies,
-  cardsData,
-  managementCards,
-  stackcardData,
-}
+export { allInOnePolicies, cardsData, managementCards, stackcardData, corebenifitData }
