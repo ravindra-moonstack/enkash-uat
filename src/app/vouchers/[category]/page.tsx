@@ -221,6 +221,8 @@ const CategoryPage = async ({
                             alt={voucherData.name}
                             width={330}
                             height={300}
+                            priority
+                            fetchPriority="high"
                             style={{ objectFit: "cover" }}
                           />
                         )}
