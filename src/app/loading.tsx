@@ -11,7 +11,7 @@ const Loading = (): React.JSX.Element => {
         alt="funny gif"
         width={75}
         height={75}
-        unoptimized
+        priority
       />
     </div>
   )
