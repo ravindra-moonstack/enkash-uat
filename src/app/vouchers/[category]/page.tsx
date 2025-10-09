@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 import VoucherData, { TVoucher } from "../data/voucher-data"
 import {
@@ -10,7 +11,6 @@ import {
   zigZagTop,
 } from "../img/index"
 import VoucherCard from "@/src/components/voucher-page/voucher-card"
-import SavingsCalculator from "@/src/components/voucher-page/voucher-calculator/voucher-calculator"
 import OccasionVoucher from "@/src/components/voucher-page/occasion-voucher"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import { linkifyText, nameToUrl } from "@/src/utils/stringUtils"
@@ -18,7 +18,15 @@ import VoucherFaqComponent from "@/src/components/voucher-page/voucher-faq"
 import CommanButton from "@/src/components/buttons"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import NotFound from "../../not-found"
-
+const SavingsCalculator = dynamic(
+  () =>
+    import(
+      "@/src/components/voucher-page/voucher-calculator/voucher-calculator"
+    ),
+  {
+    ssr: true,
+  }
+)
 export async function generateMetadata({
   params,
 }: {
@@ -213,6 +221,7 @@ const CategoryPage = async ({
                             alt={voucherData.name}
                             width={330}
                             height={300}
+                            style={{ objectFit: "cover" }}
                           />
                         )}
                       </div>
@@ -363,9 +372,13 @@ const CategoryPage = async ({
                     <ul>
                       <li>
                         <div>
-                          Go to bolt.enkash.com or
-                          <a href="https://bolt.enkash.com/" target="_blank">
-                            click here
+                          Go to{" "}
+                          <a
+                            href="https://bolt.enkash.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            bolt.enkash.com
                           </a>
                         </div>
                       </li>
