@@ -48,6 +48,7 @@ import {
   ctaButtonData,
 } from "./data"
 import generateMetaData from "@/utils/metaData"
+import Head from "next/head"
 
 export const metadata: Metadata = generateMetaData({
   title: "The Best Payments and Spend Management Platform",
@@ -63,6 +64,9 @@ const HomePage = (): React.JSX.Element => {
 
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <Head>
+        <link rel="preload" as="image" href="/img/banner_bg_image.webp" />
+      </Head>
       <section className={`${styles.topBanner}`}>
         <div className="max-w-auto">
           <div className={`${styles.banner_heading}`}>
@@ -579,7 +583,7 @@ const HomePage = (): React.JSX.Element => {
           </div>
         </div>
       </section>
-      
+
       <section className={`${styles.brandSection}`}>
         <div className="max-w-auto">
           <div className={`${styles.heading}`}>
