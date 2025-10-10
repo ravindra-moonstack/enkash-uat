@@ -43,6 +43,7 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <meta name="robots" content="index, follow" />
       </head>
       <body className={inter.variable}>
         <WebVitals />
