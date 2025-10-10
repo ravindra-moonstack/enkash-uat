@@ -11,9 +11,7 @@
     "prepare": "husky && husky install",
     "test": "jest",
     "test:watch": "jest --watch",
-
- "analyze": "cross-env ANALYZE=true next build"
-
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -22,6 +20,7 @@
     "@novemberfiveco/lottie-react-light": "^2.4.0",
     "axios": "^1.11.0",
     "bootstrap": "^5.3.7",
+    "critters": "^0.0.23",
     "dotenv": "^17.2.2",
     "formik": "^2.4.6",
     "gsap": "^3.13.0",
@@ -68,5 +67,12 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
-  }
+  },
+  "browserslist": [
+    ">0.5%",
+    "last 2 versions",
+    "not dead",
+    "not IE 11",
+    "not op_mini all"
+  ]
 }

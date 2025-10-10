@@ -41,13 +41,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <div className={`${styles.hero_section} position-relative`}>
-    
       {backgroundImage && (
         <Image
           src={backgroundImage}
           alt="Hero Background"
           fill
-          priority={true} 
+          priority={true}
+          fetchPriority="high"
           style={{ objectFit: "cover", zIndex: -1 }}
         />
       )}
@@ -146,7 +146,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 alt="Hero Visual"
                 style={{ objectFit: "contain", maxHeight: "672px" }}
                 className="w-100 mh-550 object-fit-contain"
-                priority={true} // LCP priority
+                priority={true}
+                fetchPriority="high"
               />
             </div>
           </div>
