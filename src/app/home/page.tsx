@@ -98,6 +98,7 @@ const HomePage = (): React.JSX.Element => {
           </div>
         </div>
       </section>
+
       <section className={`${styles.ctaLogoSlider}`}>
         <div className="max-w-auto">
           <DynamicHeading
@@ -209,6 +210,7 @@ const HomePage = (): React.JSX.Element => {
           </div>
         </div>
       </section>
+
       <section className={`${styles.makePaymentSection}`}>
         <div className="max-w-auto">
           <div className={`${styles.makePaymentsInner}`}>
@@ -577,6 +579,7 @@ const HomePage = (): React.JSX.Element => {
           </div>
         </div>
       </section>
+      
       <section className={`${styles.brandSection}`}>
         <div className="max-w-auto">
           <div className={`${styles.heading}`}>
