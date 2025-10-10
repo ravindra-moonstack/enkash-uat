@@ -45,7 +45,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Create and share secure payment links in seconds—no coding needed. Accept UPI, cards, and net banking with EnKash’s powerful payment link solution.",
   alternates: {
-    canonical: `${process.env.URL}/payment-links/`,
+    canonical: `${process.env.URL}/payment-links`,
   },
 })
 const salesUrl = getSalesUrl("/payment-links")
@@ -55,7 +55,6 @@ const PaymentLinks = (): React.JSX.Element => {
 
   return (
     <div className={`color-white`}>
-
       <HeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -323,7 +322,7 @@ const PaymentLinks = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
-    
+
       <OtherProducts
         heading={[
           {
@@ -341,7 +340,6 @@ const PaymentLinks = (): React.JSX.Element => {
         ]}
         cards={managementCards}
       />
-      
     </div>
   )
 }

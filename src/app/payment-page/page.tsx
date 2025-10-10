@@ -41,7 +41,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Design personalized payment pages with your brand logo, colors, and fields. Accept UPI, cards & more—no coding needed, easy to share and collect payments.",
   alternates: {
-    canonical: `${process.env.URL}/payment-page/`,
+    canonical: `${process.env.URL}/payment-page`,
   },
 })
 const salesUrl = getSalesUrl("/payment-page")
@@ -253,7 +253,7 @@ const PaymentPage = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
-      
+
       <OtherProducts
         heading={[
           {
