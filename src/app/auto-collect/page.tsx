@@ -23,7 +23,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Automate receivables with EnKash Auto Collect. Use virtual accounts and UPI IDs to track, reconcile, and manage payments faster with zero manual effort.",
   alternates: {
-    canonical: `${process.env.URL}/auto-collect/`,
+    canonical: `${process.env.URL}/auto-collect`,
   },
 })
 const salesUrl = getSalesUrl("/auto-collect")

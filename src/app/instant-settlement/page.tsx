@@ -34,7 +34,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Access your funds instantly with EnKash’s Instant Settlement solution. Improve cash flow, reduce wait times, and gain 24/7 control over your business payments.",
   alternates: {
-    canonical: `${process.env.URL}/instant-settlement/`,
+    canonical: `${process.env.URL}/instant-settlement`,
   },
 })
 const salesUrl = getSalesUrl("/instant-settlement")
