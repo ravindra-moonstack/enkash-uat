@@ -7,7 +7,6 @@ const withBundleAnalyzerConfigured = withBundleAnalyzer({
 })
 
 const nextConfig: NextConfig = {
-  trailingSlash: false,
   experimental: {
     optimizePackageImports: ["@gsap/react", "react-icons"],
     optimizeCss: true,
