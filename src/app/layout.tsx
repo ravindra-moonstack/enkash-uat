@@ -37,13 +37,31 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+
+        {/* Meta */}
         <meta name="robots" content="index, follow" />
+
+        {/* Preload LCP hero image */}
+        <link
+          rel="preload"
+          as="image"
+          href="@/src/app/home/img/banner_bg_image.webp"
+          fetchPriority="high"
+        />
+
+        {/* Defer Cloudflare email decode script */}
+        <script
+          src="https://www.cloudflare.com/static/email-decode.min.js"
+          data-cfasync="false"
+          defer
+        />
       </head>
       <body className={inter.variable}>
         <WebVitals />
