@@ -65,7 +65,12 @@ const HomePage = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Head>
-        <link rel="preload" as="image" href="/img/banner_bg_image.webp" />
+        <link
+          rel="preload"
+          as="image"
+          href="/img/banner_bg_image.webp"
+          fetchPriority="high"
+        />
       </Head>
       <section className={`${styles.topBanner}`}>
         <div className="max-w-auto">
