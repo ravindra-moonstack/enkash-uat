@@ -3,7 +3,7 @@ import generateMetaData from "../utils/metaData"
 import HomePage from "./home/page"
 
 export const metadata: Metadata = generateMetaData({
-  title: "The Best Payments and Spend Management Platform",
+  title: "Best Expense Management & Payment Solutions for Businesses.",
   description:
     "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
   alternates: {

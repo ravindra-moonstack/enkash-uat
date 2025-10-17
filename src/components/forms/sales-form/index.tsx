@@ -43,7 +43,7 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
   const onSubmitForm = async (values: TSalesInitialValueProp) => {
     try {
       setLoading(true)
-
+      console.log("Submitted Data:", values) 
       const {} = await axios.post("/api/zoho", {
         url: process.env.NEXT_PUBLIC_ZOHO_SALES_URL,
         data: values,
