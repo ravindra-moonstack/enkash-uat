@@ -9,10 +9,13 @@ export type TSalesInitialValueProp = {
   Website: string
   MultiLine: string
   Dropdown1: string
-  Dropdown2: string
   Dropdown3: string
   Dropdown4: string
   Dropdown5: string
+  SingleLine2: string // ✅ UTM Source
+  SingleLine3: string // ✅ UTM Medium
+  SingleLine4: string // ✅ UTM Campaign
+  SingleLine5: string // ✅ Referring Page
 }
 
 const salesInitialValue: TSalesInitialValueProp = {
@@ -23,11 +26,14 @@ const salesInitialValue: TSalesInitialValueProp = {
   MultipleChoice: "",
   Website: "",
   MultiLine: "",
-  Dropdown2: "Website Sales Leads",
   Dropdown1: "Marketing",
   Dropdown3: "First Choice",
   Dropdown4: "First Choice",
   Dropdown5: "",
+  SingleLine2: "Website Sales Leads", // ✅ UTM Source default
+  SingleLine3: "", // ✅ UTM Medium
+  SingleLine4: "", // ✅ UTM Campaign
+  SingleLine5: "", // ✅ Referring Page
 }
 
 const salesValidation = Yup.object({
@@ -44,5 +50,4 @@ const salesValidation = Yup.object({
   Website: Yup.string().url("Please enter valid url"),
   MultiLine: Yup.string().max(500, "Text exceeds"),
 })
-
 export { salesInitialValue, salesValidation }
