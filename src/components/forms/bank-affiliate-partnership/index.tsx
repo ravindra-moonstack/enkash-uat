@@ -1,9 +1,9 @@
 "use client"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import { useFormik } from "formik"
 import axios from "axios"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 import "@/src/styles/_forms.scss"
 
@@ -12,6 +12,7 @@ import ErrorText from "../../error-text"
 import CategoryWithOther from "../../single-select"
 import {
   bankAffiliateInitialValue,
+  bankAffiliateValidation,
   TBankAffiliateInitialValueProp,
 } from "./formik"
 import { Businessoptions } from "./data"
@@ -23,18 +24,40 @@ const BankAffiliatePartnershipForm: React.FC = () => {
 
   const router = useRouter()
 
-  const { errors, touched, getFieldProps, handleSubmit, setFieldValue } =
-    useFormik({
-      initialValues: bankAffiliateInitialValue,
-      onSubmit: (values) => {
-        onSubmitForm(values)
-      },
+  const formik = useFormik({
+    initialValues: bankAffiliateInitialValue,
+    validationSchema: bankAffiliateValidation,
+    onSubmit: (values) => {
+      onSubmitForm(values)
+    },
+  })
+  const { errors, touched, handleSubmit, getFieldProps, setFieldValue } = formik
+
+  const params = useSearchParams()
+  const referringPage = usePathname()
+
+  useEffect(() => {
+    const utmSource = "Website Sales Leads"
+
+    const utmMedium = params.get("utm_medium") || ""
+    const utmCampaign = params.get("utm_campaign") || ""
+
+    console.log({
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      referringPage,
     })
 
+    setFieldValue("SingleLine2", utmSource)
+    setFieldValue("SingleLine3", utmMedium)
+    setFieldValue("SingleLine4", utmCampaign)
+    setFieldValue("SingleLine5", referringPage)
+  }, [])
   const onSubmitForm = async (values: TBankAffiliateInitialValueProp) => {
     try {
       setLoading(true)
-
+      console.log("Submitted Data:", values)
       const {} = await axios.post("/api/zoho", {
         url: process.env.NEXT_PUBLIC_ZOHO_AFFILIATE_URL,
         data: values,
@@ -50,12 +73,13 @@ const BankAffiliatePartnershipForm: React.FC = () => {
 
   return (
     <div className={"contactFormWrapper"}>
-      <form action="#" onSubmit={handleSubmit}>
+      <form action="#" onSubmit={handleSubmit} className="">
         <p className={"subtitle"}>We just need a few quick details</p>
 
         <div className={"grid"}>
           <div className="">
             <input
+              className=""
               type="text"
               required
               autoComplete="name"
@@ -72,6 +96,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
           <div className="">
             <input
               type="text"
+              className=""
               required
               autoComplete="email"
               placeholder="Business Email ID*"
@@ -87,6 +112,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
           <div className="">
             <input
               type="text"
+              className=""
               required
               placeholder="Company Name*"
               {...getFieldProps("SingleLine1")}
@@ -101,6 +127,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
           <div className="">
             <input
               type="text"
+              className=""
               required
               autoComplete="tel"
               placeholder="Contact No.*"
@@ -145,10 +172,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
 
         <p className={"privacy"}>
           By submitting this form, you are agreeing to our{" "}
-          <Link
-            href="/policies/privacy-policy"
-            className={"privacyLink"}
-          >
+          <Link href="/policies/privacy-policy" className={"privacyLink"}>
             privacy policy
           </Link>
         </p>

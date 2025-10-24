@@ -1,6 +1,6 @@
 "use client"
-import React, { useState } from "react"
-import { useRouter } from "next/navigation"
+import React, { useEffect, useState } from "react"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import axios from "axios"
 import { useFormik } from "formik"
@@ -26,29 +26,50 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
 
   const [loading, setLoading] = useState<boolean>(false)
 
-  const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
-    useFormik({
-      initialValues: paymentInitialValue,
-      validationSchema: paymentValidation,
-      onSubmit: (values) => {
-        onSubmitForm(values)
-      },
+  const formik = useFormik({
+    initialValues: paymentInitialValue,
+    validationSchema: paymentValidation,
+    onSubmit: (values) => {
+      onSubmitForm(values)
+    },
+  })
+
+  const { errors, touched, handleSubmit, getFieldProps, setFieldValue } = formik
+  const params = useSearchParams()
+  const referringPage = usePathname()
+
+  useEffect(() => {
+    const utmSource = "Website Sales Leads"
+    const utmMedium = params.get("utm_medium") || ""
+    const utmCampaign = params.get("utm_campaign") || ""
+
+    console.log({
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      referringPage,
     })
+
+    setFieldValue("SingleLine2", utmSource)
+    setFieldValue("SingleLine3", utmMedium)
+    setFieldValue("SingleLine4", utmCampaign)
+    setFieldValue("SingleLine5", referringPage)
+  }, [])
 
   const onSubmitForm = async (values: TPaymentInitialValueProp) => {
     try {
       setLoading(true)
-
-      const {} = await axios.post("/api/zoho", {
+      console.log("Submitted Data:", values)
+      await axios.post("/api/zoho", {
         url: process.env.NEXT_PUBLIC_ZOHO_PARTNERSHIP_URL,
         data: values,
       })
 
       router.push("/confirmation-partnerships")
-      setLoading(false)
     } catch (error) {
+      console.error("Zoho submission error:", error)
+    } finally {
       setLoading(false)
-      throw error
     }
   }
 

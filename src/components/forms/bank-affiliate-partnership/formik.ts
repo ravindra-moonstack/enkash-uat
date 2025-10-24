@@ -5,14 +5,14 @@ export type TBankAffiliateInitialValueProp = {
   SingleLine1: string
   Email: string
   PhoneNumber_countrycode: string
-  MultipleChoice: string
+  MultipleChoice: string // keep as string if single select, or string[] if multi-select
   Website: string
   MultiLine: string
-  Dropdown: string
   Dropdown1: string
-  Dropdown2: string
-  Dropdown3: string
-  Dropdown4: string
+  SingleLine2: string // ✅ UTM Source
+  SingleLine3: string // ✅ UTM Medium
+  SingleLine4: string // ✅ UTM Campaign
+  SingleLine5: string // ✅ Referring Page
 }
 
 const bankAffiliateInitialValue: TBankAffiliateInitialValueProp = {
@@ -20,29 +20,29 @@ const bankAffiliateInitialValue: TBankAffiliateInitialValueProp = {
   SingleLine1: "",
   Email: "",
   PhoneNumber_countrycode: "",
-  MultipleChoice: "",
+  MultipleChoice: "", // default empty string
   Website: "",
   MultiLine: "",
-  Dropdown: "Landing Page",
   Dropdown1: "Marketing",
-  Dropdown2: "Website Sales Leads",
-  Dropdown3: "-Select-",
-  Dropdown4: "-Select-",
+  SingleLine2: "Website Salessss Leads", // ✅ UTM Source default
+  SingleLine3: "", // ✅ UTM Medium
+  SingleLine4: "", // ✅ UTM Campaign
+  SingleLine5: "", // ✅ Referring Page
 }
 
 const bankAffiliateValidation = Yup.object({
   SingleLine: Yup.string().required("Please enter name"),
   SingleLine1: Yup.string().required("Please enter company name"),
   Email: Yup.string()
-    .email("Please enter valid email")
+    .email("Please enter a valid email")
     .required("Please enter email"),
   PhoneNumber_countrycode: Yup.string()
     .required("Please enter phone number")
-    .max(13)
-    .min(10, "Please enter valid mobile number"),
-  MultipleChoice: Yup.array().required("Please select category"),
-  Website: Yup.string().url("Please enter valid url"),
-  MultiLine: Yup.string().max(500, "Text exceeds"),
+    .min(10, "Please enter a valid mobile number")
+    .max(13, "Please enter a valid mobile number"),
+  MultipleChoice: Yup.string().required("Please select category"), // match type with initial value
+  Website: Yup.string().url("Please enter a valid URL").notRequired(),
+  MultiLine: Yup.string().max(500, "Text exceeds").notRequired(),
 })
 
 export { bankAffiliateInitialValue, bankAffiliateValidation }
