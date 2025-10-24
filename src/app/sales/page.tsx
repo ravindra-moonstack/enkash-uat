@@ -30,6 +30,7 @@ const supportUrl = getSupportUrl("/sales")
 function Sales(): React.JSX.Element {
   //
 
+
   return (
     <>
       <div className={`${styles.talk_to_sales} `}>
@@ -69,7 +70,6 @@ function Sales(): React.JSX.Element {
                     </div>
                   </li>
 
-                  {/* ✅ Support Link dynamic */}
                   <li>
                     <div className="d-flex gap-3">
                       <Image
@@ -97,7 +97,6 @@ function Sales(): React.JSX.Element {
                     </div>
                   </li>
 
-                  {/* ✅ Login Link dynamic */}
                   <li>
                     <div className="d-flex gap-3">
                       <Image
