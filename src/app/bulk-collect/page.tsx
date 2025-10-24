@@ -29,7 +29,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Automate bulk payment collection with EnKash. Share links or QR codes to collect from multiple customers at once—track, reconcile, and manage payments at scale.",
   alternates: {
-    canonical: `${process.env.URL}/bulk-collect/`,
+    canonical: `${process.env.URL}/bulk-collect`,
   },
 })
 const salesUrl = getSalesUrl("/bulk-collect")

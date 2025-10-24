@@ -36,7 +36,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Partner with EnKash as an affiliate and earn rewards for every successful business referral. Promote smart spend and payment solutions with India’s leading fintech platform..",
   alternates: {
-    canonical: `${process.env.URL}/affiliate-programs/`,
+    canonical: `${process.env.URL}/affiliate-programs`,
   },
 })
 
