@@ -12,7 +12,6 @@ import UseCaseSection from "@/src/components/sections/use-case-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import SliderSection from "@/src/components/sections/slider-section"
 
-
 //helpers
 import { paymentSummary, mealCardImage } from "./img"
 
@@ -20,13 +19,12 @@ import { paymentSummary, mealCardImage } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Invoice Management System: Automate, Track & Reconcile Invoices ",
   description:
     "Digitize your invoice workflow with EnKash. Create, share, approve, and reconcile invoices faster—streamline accounts payable and improve cash flow visibility.",
   alternates: {
-    canonical: `${process.env.URL}/invoice-management/`,
+    canonical: `${process.env.URL}/invoice-management`,
   },
 })
 const salesUrl = getSalesUrl("/invoice-management")
@@ -103,7 +101,6 @@ const InvoiceManagement = (): React.JSX.Element => {
         items={allInOnePolicyData}
         buttonUrl={salesUrl}
       />
-
 
       <SliderSection
         headingContent={[
