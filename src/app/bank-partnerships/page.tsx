@@ -39,8 +39,9 @@ export const metadata: Metadata = generateMetaData({
 
 const PartnershipsPage = (): React.JSX.Element => {
   //
-
+  console.log("heloooo")
   return (
+    
     <div className={`color-white  `}>
       <BpHeroSection
         backgroundImage={containerScreen.src}
