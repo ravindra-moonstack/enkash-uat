@@ -180,6 +180,9 @@ export const generateMetaData = ({
           "@type": "WebPage",
           "@id": canonicalUrl,
           url: canonicalUrl,
+
+
+          
           name: title,
           description,
           breadcrumb: generateBreadcrumbSchema(canonicalUrl),
