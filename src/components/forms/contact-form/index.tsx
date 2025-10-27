@@ -1,10 +1,9 @@
 "use client"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import { useFormik } from "formik"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import axios from "axios"
-
 import "@/src/styles/_forms.scss"
 
 // components
@@ -25,35 +24,58 @@ const ContactForm: React.FC = () => {
 
   const [loading, setLoading] = useState<boolean>(false)
 
-  const { errors, touched, handleSubmit, getFieldProps, setFieldValue } =
-    useFormik({
-      initialValues: contactInitialValue,
-      validationSchema: contactValidation,
-      onSubmit: (values) => {
-        onSubmitForm(values)
-      },
+  const formik = useFormik({
+    initialValues: contactInitialValue,
+    validationSchema: contactValidation,
+    onSubmit: (values) => {
+      onSubmitForm(values)
+    },
+  })
+
+  const { errors, touched, handleSubmit, getFieldProps, setFieldValue } = formik
+
+  const params = useSearchParams()
+  const referringPage = usePathname()
+
+  useEffect(() => {
+    const utmSource = "Website Sales Leads"
+
+    const utmMedium = params.get("utm_medium") || ""
+    const utmCampaign = params.get("utm_campaign") || ""
+
+    console.log({
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      referringPage,
     })
 
+    setFieldValue("SingleLine2", utmSource)
+    setFieldValue("SingleLine3", utmMedium)
+    setFieldValue("SingleLine4", utmCampaign)
+    setFieldValue("SingleLine5", referringPage)
+  }, [])
+  
   const onSubmitForm = async (values: TContactInitialValueProp) => {
     try {
       setLoading(true)
-
-      const {} = await axios.post("/api/zoho", {
+      console.log("Submitted Data:", values)
+      await axios.post("/api/zoho", {
         url: process.env.NEXT_PUBLIC_ZOHO_CONTACT_URL,
         data: values,
       })
 
       router.push("/confirmation-contact-us")
-      setLoading(false)
     } catch (error) {
+      console.error("Zoho submission error:", error)
+    } finally {
       setLoading(false)
-      throw error
     }
   }
 
   return (
     <div className={"contactFormWrapper"}>
-      <form action="#" onSubmit={handleSubmit}>
+      <form action="#" onSubmit={handleSubmit} className="">
         <DynamicHeading
           content={[
             {
@@ -69,6 +91,7 @@ const ContactForm: React.FC = () => {
           <div>
             <input
               type="text"
+              className=""
               required
               placeholder="Name*"
               autoComplete="name"
@@ -80,6 +103,7 @@ const ContactForm: React.FC = () => {
             <input
               type="email"
               required
+              className=""
               placeholder="Business Email ID*"
               autoComplete="email"
               {...getFieldProps("Email")}
@@ -100,6 +124,7 @@ const ContactForm: React.FC = () => {
             <input
               type="text"
               required
+              className=""
               placeholder="Contact No.*"
               autoComplete="tel"
               {...getFieldProps("PhoneNumber_countrycode")}
