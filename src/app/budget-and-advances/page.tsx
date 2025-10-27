@@ -12,7 +12,6 @@ import IntroductionSection from "@/src/components/sections/introduction-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
-
 //data
 import {
   cardData,
@@ -22,19 +21,17 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-
 //helpers
 import { paymentSummary } from "./img"
 import { getSalesUrl } from "@/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Budgets & Advances: Control & Track Business Spending",
   description:
     "Allocate budgets, issue advances, and monitor usage in real-time with EnKash. Gain complete control over employee spends and ensure policy-compliant expenses.",
   alternates: {
-    canonical: `${process.env.URL}/budget-and-advances/`,
+    canonical: `${process.env.URL}/budget-and-advances`,
   },
 })
 const salesUrl = getSalesUrl("/budget-and-advances")
@@ -159,7 +156,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
         title={"Redefine Budgeting For Your Business"}
         buttonText={"Get Started Today"}
       />
-      
+
       <FaqSection faqData={faqData} />
 
       <OtherProducts

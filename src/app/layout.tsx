@@ -18,11 +18,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Enkash",
   description:
-    "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more",
+    "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
   openGraph: {
     title: "Enkash",
     description:
-      "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more",
+      "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
     url: process.env.NEXT_PUBLIC_URL,
     type: "website",
     images: [`${process.env.NEXT_PUBLIC_URL}/og-image.png`],
