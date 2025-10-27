@@ -11,7 +11,7 @@ interface MetadataInput {
 }
 
 export interface BreadcrumbItem {
-  "@type": "ListItem"
+  "@type": "ListItem" // literal type
   position: number
   name: string
   item: string
@@ -33,15 +33,15 @@ export const generateBreadcrumbSchema = (
   try {
     const url = new URL(canonicalUrl)
 
-    const pathSegments = url.pathname
+    // ✅ ensure explicit string[] type
+    const pathSegments: string[] = url.pathname
       .replace(/^\/|\/$/g, "")
       .split("/")
       .filter(Boolean)
 
-    // Format segment to title case and replace hyphens with spaces
     const formatSegmentName = (segment: string): string => {
       return segment
-        .split(/[-_]/) // Also handle underscores
+        .split(/[-_]/)
         .map(
           (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
         )
@@ -49,25 +49,22 @@ export const generateBreadcrumbSchema = (
         .trim()
     }
 
-    const breadcrumbItems: BreadcrumbItem[] = []
-
-    // Always add Home as first item
-    breadcrumbItems.push({
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: `${url.origin}/`,
-    })
-
-    // Add subsequent segments
-    pathSegments.forEach((segment, index) => {
-      breadcrumbItems.push({
+    const breadcrumbItems: BreadcrumbItem[] = [
+      {
         "@type": "ListItem",
-        position: index + 2, // +2 because Home is position 1
-        name: formatSegmentName(segment),
-        item: `${url.origin}/${pathSegments.slice(0, index + 1).join("/")}/`,
-      })
-    })
+        position: 1,
+        name: "Home",
+        item: `${url.origin}/`,
+      },
+      ...pathSegments.map(
+        (segment, index): BreadcrumbItem => ({
+          "@type": "ListItem", // ✅ literal type
+          position: index + 2,
+          name: formatSegmentName(segment),
+          item: `${url.origin}/${pathSegments.slice(0, index + 1).join("/")}/`,
+        })
+      ),
+    ]
 
     return {
       "@context": "https://schema.org",
@@ -79,11 +76,9 @@ export const generateBreadcrumbSchema = (
   }
 }
 
-// Your existing generateFaqSchema function remains the same
+// ✅ Generate FAQ Schema
 export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
-  if (!faqData || faqData.length === 0) {
-    return null
-  }
+  if (!faqData || faqData.length === 0) return null
 
   return {
     "@context": "https://schema.org",
@@ -98,14 +93,9 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
           (faq?.answer &&
             faq?.answer
               ?.map((ans) => {
-                // Construct answer text with heading and bullets
                 const parts = []
-                if (ans.heading) {
-                  parts.push(ans.heading)
-                }
-                if (ans.bullets?.length) {
-                  parts.push(ans.bullets.join(". "))
-                }
+                if (ans.heading) parts.push(ans.heading)
+                if (ans.bullets?.length) parts.push(ans.bullets.join(". "))
                 return parts.join(". ")
               })
               .filter(Boolean)
@@ -116,9 +106,9 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
   }
 }
 
+// ✅ Voucher Schema
 export const generateVoucherSchema = (voucher: TVoucher): string => {
   const baseUrl = process.env.URL
-
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -155,7 +145,8 @@ export const generateVoucherSchema = (voucher: TVoucher): string => {
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`
 }
 
-const generateMetaData = ({
+// ✅ Unified Meta + OG Schema generator
+export const generateMetaData = ({
   title,
   description,
   alternates,
@@ -168,6 +159,20 @@ const generateMetaData = ({
     title,
     description,
     alternates,
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: "website",
+      images: [`${process.env.NEXT_PUBLIC_URL}/og-image.png`],
+    },
+    // Optional: auto Twitter meta
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${process.env.NEXT_PUBLIC_URL}/og-image.png`],
+    },
     structuredDataScript: `
       <script type="application/ld+json">
         ${JSON.stringify({
