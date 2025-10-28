@@ -12,6 +12,7 @@ export type TSupportInitialValueProp = {
   SingleLine3: string // ✅ UTM Medium
   SingleLine4: string // ✅ UTM Campaign
   SingleLine5: string // ✅ Referring Page
+  SingleLine6: string
 }
 
 const supportInitialValue: TSupportInitialValueProp = {
@@ -26,6 +27,7 @@ const supportInitialValue: TSupportInitialValueProp = {
   SingleLine3: "", // ✅ UTM Medium
   SingleLine4: "", // ✅ UTM Campaign
   SingleLine5: "", // ✅ Referring Page
+  SingleLine6: "Talk to Sales",
 }
 
 const supportValidation = Yup.object({

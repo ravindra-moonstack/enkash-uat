@@ -36,19 +36,16 @@ const SupportForm: React.FC = () => {
   })
 
   const { errors, touched, handleSubmit, getFieldProps, setFieldValue } = formik
- 
+
   const params = useSearchParams()
   const referringPage = usePathname()
 
   useEffect(() => {
-    
     const utmSource = "Website Sales Leads"
 
- 
     const utmMedium = params.get("utm_medium") || ""
     const utmCampaign = params.get("utm_campaign") || ""
 
-  
     console.log({
       utmSource,
       utmMedium,
@@ -56,11 +53,11 @@ const SupportForm: React.FC = () => {
       referringPage,
     })
 
- 
     setFieldValue("SingleLine2", utmSource)
     setFieldValue("SingleLine3", utmMedium)
     setFieldValue("SingleLine4", utmCampaign)
     setFieldValue("SingleLine5", referringPage)
+    setFieldValue("SingleLine6", "Talk to Sales")
   }, [])
 
   const onSubmitForm = async (values: TSupportInitialValueProp) => {

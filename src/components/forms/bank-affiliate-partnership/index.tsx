@@ -53,6 +53,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
     setFieldValue("SingleLine3", utmMedium)
     setFieldValue("SingleLine4", utmCampaign)
     setFieldValue("SingleLine5", referringPage)
+    setFieldValue("SingleLine6", "Talk to Sales")
   }, [])
   const onSubmitForm = async (values: TBankAffiliateInitialValueProp) => {
     try {

@@ -16,6 +16,7 @@ export type TSalesInitialValueProp = {
   SingleLine3: string // ✅ UTM Medium
   SingleLine4: string // ✅ UTM Campaign
   SingleLine5: string // ✅ Referring Page
+  SingleLine6: string
 }
 
 const salesInitialValue: TSalesInitialValueProp = {
@@ -34,6 +35,7 @@ const salesInitialValue: TSalesInitialValueProp = {
   SingleLine3: "", // ✅ UTM Medium
   SingleLine4: "", // ✅ UTM Campaign
   SingleLine5: "", // ✅ Referring Page
+  SingleLine6: "Talk to Sales",
 }
 
 const salesValidation = Yup.object({
