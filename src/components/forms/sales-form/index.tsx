@@ -58,6 +58,7 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
     setFieldValue("SingleLine3", utmMedium)
     setFieldValue("SingleLine4", utmCampaign)
     setFieldValue("SingleLine5", referringPage)
+    setFieldValue("SingleLine6", "Talk to Sales")
   }, [])
 
   const onSubmitForm = async (values: TSalesInitialValueProp) => {
@@ -80,7 +81,7 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
 
   return (
     <div className="contactFormWrapper">
-      <form action="#" className="" onSubmit={handleSubmit}>
+      <form action="#" onSubmit={handleSubmit}>
         <DynamicHeading
           content={[{ title: "New to EnKash? ", color: "color-dark-grey " }]}
           headingTag="h5"
@@ -109,10 +110,9 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
         <p className="subtitle">We just need a few quick details</p>
 
         <div className="grid">
-          <div className="">
+          <div>
             <input
               type="text"
-              className=""
               required
               placeholder="Name*"
               autoComplete="name"
@@ -121,10 +121,9 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
             <ErrorText errors={errors} touched={touched} field="SingleLine" />
           </div>
 
-          <div className="">
+          <div>
             <input
               type="email"
-              className=""
               required
               placeholder="Business Email ID*"
               autoComplete="email"
@@ -133,22 +132,20 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
             <ErrorText errors={errors} touched={touched} field="Email" />
           </div>
 
-          <div className="">
+          <div>
             <input
               type="text"
               required
-              className=""
               placeholder="Company Name*"
               {...getFieldProps("SingleLine1")}
             />
             <ErrorText errors={errors} touched={touched} field="SingleLine1" />
           </div>
 
-          <div className="">
+          <div>
             <input
               type="text"
               required
-              className=""
               maxLength={13}
               placeholder="Contact No.*"
               autoComplete="tel"
@@ -163,7 +160,7 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
           </div>
         </div>
 
-        <div className="">
+        <div>
           <CategoryMultiSelect
             name="MultipleChoice"
             options={categoryOptions}
@@ -189,17 +186,16 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
         )}
 
         <div className="grid">
-          <div className="">
+          <div>
             <input
               type="url"
-              className=""
               placeholder="Website or App Link"
               {...getFieldProps("Website")}
             />
             <ErrorText errors={errors} touched={touched} field="Website" />
           </div>
 
-          <div className="">
+          <div>
             <CategoryWithOther
               name="Dropdown5"
               options={options}
@@ -212,7 +208,7 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
           </div>
         </div>
 
-        <div className="">
+        <div>
           <textarea
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
             maxLength={500}
