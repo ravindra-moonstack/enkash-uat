@@ -44,7 +44,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Empower your teams with EnKash corporate cards. Set spend limits, track transactions in real time, and manage all business expenses on one powerful platform.",
   alternates: {
-    canonical: `${process.env.URL}/corporate-cards`,
+    canonical: `${process.env.URL}/products/corporate-cards`,
   },
 })
 const salesUrl = getSalesUrl("/corporate-cards")
