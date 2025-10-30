@@ -13,7 +13,7 @@ export type TBankAffiliateInitialValueProp = {
   SingleLine3: string // ✅ UTM Medium
   SingleLine4: string // ✅ UTM Campaign
   SingleLine5: string // ✅ Referring Page
-   SingleLine6: string 
+  SingleLine6: string
 }
 
 const bankAffiliateInitialValue: TBankAffiliateInitialValueProp = {
@@ -25,11 +25,11 @@ const bankAffiliateInitialValue: TBankAffiliateInitialValueProp = {
   Website: "",
   MultiLine: "",
   Dropdown1: "Marketing",
-  SingleLine2: "Website Salessss Leads", // ✅ UTM Source default
+  SingleLine2: "Website Sales Leads", // ✅ UTM Source default
   SingleLine3: "", // ✅ UTM Medium
   SingleLine4: "", // ✅ UTM Campaign
   SingleLine5: "", // ✅ Referring Page
-   SingleLine6: "Talk to Sales",
+  SingleLine6: "Bank and Affiliate Partnerships",
 }
 
 const bankAffiliateValidation = Yup.object({

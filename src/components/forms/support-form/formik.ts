@@ -27,7 +27,7 @@ const supportInitialValue: TSupportInitialValueProp = {
   SingleLine3: "", // ✅ UTM Medium
   SingleLine4: "", // ✅ UTM Campaign
   SingleLine5: "", // ✅ Referring Page
-  SingleLine6: "Talk to Sales",
+  SingleLine6: "Support",
 }
 
 const supportValidation = Yup.object({
