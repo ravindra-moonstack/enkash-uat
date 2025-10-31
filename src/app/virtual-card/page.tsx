@@ -37,7 +37,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Create instant virtual cards for online payments, subscriptions, and vendor spends. Control limits, track usage, and reduce fraud with EnKash’s smart card solution.",
   alternates: {
-    canonical: `${process.env.URL}/virtual-card/`,
+    canonical: `${process.env.URL}/virtual-card`,
   },
 })
 

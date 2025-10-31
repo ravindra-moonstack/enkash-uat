@@ -29,7 +29,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Manage and automate recurring payments with EnKash Subscriptions. Ideal for SaaS, ed-tech, and memberships—enable auto-debit via UPI, cards & more.",
   alternates: {
-    canonical: `${process.env.URL}/subscriptions/`,
+    canonical: `${process.env.URL}/subscriptions`,
   },
 })
 const salesUrl = getSalesUrl("/subscriptions")

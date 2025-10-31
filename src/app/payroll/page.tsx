@@ -23,7 +23,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Automate salary disbursals, contractor payouts, and compliance with EnKash Payroll. Ensure timely, error-free payments with full visibility and control.",
   alternates: {
-    canonical: `${process.env.URL}/payroll/`,
+    canonical: `${process.env.URL}/payroll`,
   },
 })
 const salesUrl = getSalesUrl("/payroll")
