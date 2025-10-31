@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Join EnKash's Bharat Connect Partnership to digitize financial operations for businesses in Tier 2 & 3 cities. Drive fintech adoption and enable smart payment solutions.",
   alternates: {
-    canonical: `${process.env.URL}/bharat-connect-partnership/`,
+    canonical: `${process.env.URL}/bharat-connect-partnership`,
   },
 })
 

@@ -27,7 +27,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify business banking with EnKash’s Seamless Banking solution. Enable faster transactions, smooth integrations, and unified banking on one smart platform.",
   alternates: {
-    canonical: `${process.env.URL}/connected-banking/`,
+    canonical: `${process.env.URL}/connected-banking`,
   },
 })
 const salesUrl = getSalesUrl("/connected-banking")

@@ -1,4 +1,3 @@
-
 import { Metadata } from "next"
 
 // data
@@ -25,7 +24,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Manage and pay utility, vendor, credit card, and GST bills in one place with EnKash. Schedule, track, and automate business bill payments for better control.",
   alternates: {
-    canonical: `${process.env.URL}/utility-bill-payment/`,
+    canonical: `${process.env.URL}/utility-bill-payment`,
   },
 })
 const salesUrl = getSalesUrl("/utility-bill-payment")
@@ -126,7 +125,6 @@ const UtilityBillPayment = (): React.JSX.Element => {
         title={"Take Control of Your Business Utility Payments Today!"}
         buttonText={"Get Started "}
       />
-
 
       <FaqSection faqData={faqData} />
     </div>
