@@ -21,7 +21,6 @@ import IntroductionSection from "@/src/components/sections/introduction-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
-
 // helpers
 import { paymentSummary } from "./img"
 
@@ -34,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify employee reimbursements with EnKash. Submit, approve, and settle expense claims digitally—boost transparency, compliance, and employee satisfaction.",
   alternates: {
-    canonical: `${process.env.URL}/reimbursements/`,
+    canonical: `${process.env.URL}/reimbursements`,
   },
 })
 const salesUrl = getSalesUrl("/reimbursements")

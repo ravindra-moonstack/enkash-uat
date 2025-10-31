@@ -27,7 +27,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Unlock exclusive EnKash offers on business payments, cards, rewards, and partner deals. Save more while you manage expenses smarter across all business needs.",
   alternates: {
-    canonical: `${process.env.URL}/offers/`,
+    canonical: `${process.env.URL}/offers`,
   },
 })
 

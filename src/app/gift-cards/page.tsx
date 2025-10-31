@@ -26,7 +26,6 @@ import CardHeroSection from "@/src/components/sections/card-hero-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
-
 //helpers
 import { mealCardImage, instantActionImg, heroCardImg } from "./img"
 
@@ -34,13 +33,12 @@ import { mealCardImage, instantActionImg, heroCardImg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Gift Cards for Business: Reward Employees & Partners",
   description:
     "Create and distribute digital gift cards with EnKash. Personalize rewards for employees, clients, or partners—perfect for festive gifting and engagement programs.",
   alternates: {
-    canonical: `${process.env.URL}/gift-cards/`,
+    canonical: `${process.env.URL}/gift-cards`,
   },
 })
 const salesUrl = getSalesUrl("/gift-cards")
@@ -95,7 +93,7 @@ const GiftCards = (): React.JSX.Element => {
         paddingTop="120px"
         paddingBottom="60px"
       />
-      
+
       <div className="cardsSliderMargin">
         <LogoSlider />
       </div>

@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Collaborate with EnKash to launch co-branded cards tailored for your customers. Unlock new revenue streams, boost brand engagement, and deliver seamless payment experiences.",
   alternates: {
-    canonical: `${process.env.URL}/co-branded-card-partners/`,
+    canonical: `${process.env.URL}/co-branded-card-partners`,
   },
 })
 
