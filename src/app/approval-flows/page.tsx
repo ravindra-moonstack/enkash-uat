@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Set custom approval workflows for payments, expenses, and requests with EnKash. Improve compliance, speed up decisions, and gain real-time spend visibility..",
   alternates: {
-    canonical: `${process.env.URL}/approval-flows/`,
+    canonical: `${process.env.URL}/approval-flows`,
   },
 })
 

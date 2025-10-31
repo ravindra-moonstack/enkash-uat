@@ -20,7 +20,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Connect with EnKash’s sales team to explore tailored payment, expense, and card management solutions. Get expert guidance to streamline your business finance operations.",
   alternates: {
-    canonical: `${process.env.URL}/sales/`,
+    canonical: `${process.env.URL}/sales`,
   },
 })
 
@@ -29,7 +29,6 @@ const supportUrl = getSupportUrl("/sales")
 
 function Sales(): React.JSX.Element {
   //
-
 
   return (
     <>

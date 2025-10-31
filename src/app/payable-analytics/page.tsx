@@ -9,10 +9,7 @@ import faqData from "./faq-data"
 import FaqSection from "@/components/faq-section"
 
 //helpers
-import {
-  paymentSummary,
-  mealCardImage,
-} from "./img"
+import { paymentSummary, mealCardImage } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -28,7 +25,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Track, analyze, and optimize your accounts payable with EnKash Payable Analytics. Improve cash flow planning, spot delays, and make informed financial decisions.",
   alternates: {
-    canonical: `${process.env.URL}/payable-analytics/`,
+    canonical: `${process.env.URL}/payable-analytics`,
   },
 })
 const salesUrl = getSalesUrl("/payable-analytics")

@@ -19,13 +19,12 @@ import CtaSection from "@/src/components/sections/cta-section"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "Automate and Track your Vendor Payments ",
   description:
     "Streamline vendor payouts with EnKash. Automate payments, track due dates, and simplify reconciliation—save time and reduce errors in your accounts payable.",
   alternates: {
-    canonical: `${process.env.URL}/vendor-payment/`,
+    canonical: `${process.env.URL}/vendor-payment`,
   },
 })
 
@@ -126,7 +125,6 @@ const VendorPayment = (): React.JSX.Element => {
         buttonText={"Get Started "}
       />
 
-     
       <FaqSection faqData={faqData} />
     </div>
   )

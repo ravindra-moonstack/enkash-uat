@@ -32,7 +32,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "From payment gateway, payment button, payment link, UPI payments, and more. Everything the merchants need fot payment collection.",
   alternates: {
-    canonical: `${process.env.URL}/collect-payments/`,
+    canonical: `${process.env.URL}/products/collect-payments`,
   },
 })
 const salesUrl = getSalesUrl("/collect-payments")
@@ -100,7 +100,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-    
+
       <div className={`${styles.features_section}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>

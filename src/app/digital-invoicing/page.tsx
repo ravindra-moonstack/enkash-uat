@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify your billing process with EnKash Digital Invoicing. Create GST-compliant invoices, send them instantly, and track payments in real time—no manual effort.",
   alternates: {
-    canonical: `${process.env.URL}/digital-invoicing/`,
+    canonical: `${process.env.URL}/digital-invoicing`,
   },
 })
 

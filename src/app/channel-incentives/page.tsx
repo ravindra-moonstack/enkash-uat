@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Boost partner performance with EnKash Channel Incentives. Automate payouts, track performance, and motivate resellers, agents, or dealers with ease.",
   alternates: {
-    canonical: `${process.env.URL}/channel-incentives/`,
+    canonical: `${process.env.URL}/channel-incentives`,
   },
 })
 
@@ -110,7 +110,7 @@ const ChannelIncentives = (): React.JSX.Element => {
           alt: "card background",
         }}
       />
-      
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <CardStacking

@@ -23,7 +23,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Streamline vendor onboarding, document collection, and payment workflows with EnKash. Centralize data, reduce errors, and boost vendor relationship efficiency.",
   alternates: {
-    canonical: `${process.env.URL}/vendor-management/`,
+    canonical: `${process.env.URL}/vendor-management`,
   },
 })
 const salesUrl = getSalesUrl("/vendor-management")
