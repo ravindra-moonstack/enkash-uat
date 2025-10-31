@@ -24,7 +24,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Pay office, warehouse, or commercial rent digitally via EnKash. Use credit cards or bank transfers, track due dates, and automate monthly rent payments easily.",
   alternates: {
-    canonical: `${process.env.URL}/rent-payment/`,
+    canonical: `${process.env.URL}/rent-payment`,
   },
 })
 const salesUrl = getSalesUrl("/rent-payment")
@@ -123,7 +123,6 @@ const RentPayment = (): React.JSX.Element => {
         title={"Ready to Redefine your Rent Payments?"}
         buttonText={"Get Started "}
       />
-  
 
       <FaqSection faqData={faqData} />
     </div>

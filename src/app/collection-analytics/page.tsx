@@ -34,7 +34,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Gain real-time insights into your receivables with EnKash Collection Analytics. Monitor payment trends, identify delays, and improve cash flow decisions.",
   alternates: {
-    canonical: `${process.env.URL}/collection-analytics/`,
+    canonical: `${process.env.URL}/collection-analytics`,
   },
 })
 const salesUrl = getSalesUrl("/collection-analytics")
