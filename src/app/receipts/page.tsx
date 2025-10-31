@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Generate and manage digital receipts for every business transaction with EnKash. Automate collections, track payment status, and improve cash flow visibility.",
   alternates: {
-    canonical: `${process.env.URL}/receipts/`,
+    canonical: `${process.env.URL}/receipts`,
   },
 })
 const salesUrl = getSalesUrl("/receipts")
@@ -157,7 +157,7 @@ const Receipts = (): React.JSX.Element => {
         buttonText={"Get Started Today "}
       />
       <FaqSection faqData={faqData} />
-      
+
       <OtherProducts
         heading={[
           {

@@ -10,7 +10,6 @@ import HeroSection from "@/src/components/sections/hero-section"
 import StepsSection from "@/src/components/steps-section"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 
-
 //helpers
 import { paymentSummary, mealCardImage } from "./img"
 
@@ -18,13 +17,12 @@ import { paymentSummary, mealCardImage } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 
-
 export const metadata: Metadata = generateMetaData({
   title: "GST Payments: Automate, Track & Pay Your Taxes ",
   description:
     "Pay GST directly from EnKash with complete visibility. Automate reminders, track due dates, and manage all your tax payments securely from a single dashboard.",
   alternates: {
-    canonical: `${process.env.URL}/gst-payment/`,
+    canonical: `${process.env.URL}/gst-payment`,
   },
 })
 const salesUrl = getSalesUrl("/gst-payment")

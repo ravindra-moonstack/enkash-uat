@@ -12,7 +12,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Explore EnKash’s official policies, like privacy, terms of service, refunds, and compliance. Built on transparency and trust to ensure secure and seamless experiences.",
   alternates: {
-    canonical: `${process.env.URL}/policies/`,
+    canonical: `${process.env.URL}/policies`,
   },
 })
 
