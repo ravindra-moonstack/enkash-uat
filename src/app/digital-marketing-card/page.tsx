@@ -33,10 +33,10 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Manage digital marketing budgets with EnKash Marketing Cards. Set spending limits, track campaign expenses in real time, and eliminate overspending on ads.",
   alternates: {
-    canonical: `${process.env.URL}/digtal-marketing-card`,
+    canonical: `${process.env.URL}/digital-marketing-card`,
   },
 })
-const salesUrl = getSalesUrl("/digtal-marketing-card")
+const salesUrl = getSalesUrl("/digital-marketing-card")
 
 const cards = stackcardData.map((item, index) => ({
   content: (
