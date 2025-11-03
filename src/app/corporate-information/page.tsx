@@ -11,9 +11,9 @@ import CorporateCard from "@/components/corporate-card"
 import generateMetaData from "@/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
-  title: "Customer Onboarding Policy: EnKash",
+  title: "EnKash Corporate Information",
   description:
-    "Get an overview of our quick, compliant customer onboarding procedure for all services.",
+    "EnKash is India’s leading spend management platform for payments, cards, expenses & rewards—trusted by 5K+ businesses & backed by $23M.",
   alternates: {
     canonical: `${process.env.URL}/corporate-information`,
   },
