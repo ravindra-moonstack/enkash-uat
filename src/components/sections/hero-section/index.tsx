@@ -28,6 +28,7 @@ interface HeroSectionProps {
   }
   rightImage: StaticImageData | string
   backgroundImage?: string
+  rightImageMaxHeight?: string | number
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
@@ -38,6 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   button,
   rightImage,
   backgroundImage,
+  rightImageMaxHeight = "550px",
 }) => {
   return (
     <div className={`${styles.hero_section} position-relative`}>
@@ -144,8 +146,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <Image
                 src={rightImage}
                 alt="Hero Visual"
-                style={{ objectFit: "contain", maxHeight: "672px" }}
-                className="w-100 mh-550 object-fit-contain"
+                style={{
+                  objectFit: "contain",
+                  maxHeight: rightImageMaxHeight,
+                }}
+                className="w-100 object-fit-contain"
                 priority={true}
                 fetchPriority="high"
               />
@@ -154,8 +159,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       </div>
 
-      {/* Logo Slider */}
-      <LogoSlider />
+      <div className="pt-4">
+        {" "}
+        <LogoSlider />
+      </div>
     </div>
   )
 }

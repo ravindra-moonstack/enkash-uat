@@ -10,7 +10,7 @@
   padding: 100px 20px 0px;
   background-image: url(/images/expenceBg.webp);
   @include for-laptops {
-    padding: 112px 20px 0;
+    padding: 124px 20px 0;
   }
   .group_logo {
     width: 250px;
@@ -164,7 +164,6 @@
     }
   }
 }
-
 
 .other_products {
   background: $color-white;

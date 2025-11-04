@@ -98,6 +98,7 @@ const PaymentPage = (): React.JSX.Element => {
         }}
         rightImage={paymentSummary}
         backgroundImage="/images/collectPaymentBg.webp"
+        rightImageMaxHeight="506px"
       />
 
       <div className={`row ${styles.introduction_section} `}>
