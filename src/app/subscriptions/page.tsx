@@ -1,4 +1,3 @@
-
 import { Metadata } from "next"
 
 // data
@@ -14,7 +13,6 @@ import UseCaseSection from "@/src/components/sections/use-case-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
-
 // helpers
 import { paymentSummary, mealCardImage } from "./img"
 
@@ -22,7 +20,6 @@ import { paymentSummary, mealCardImage } from "./img"
 
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Subscription & Recurring Payment Collection Platform",
@@ -67,6 +64,7 @@ const Subscriptions = (): React.JSX.Element => {
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         rightImage={paymentSummary}
         backgroundImage="/images/collectPaymentBg.webp"
+        rightImageMaxHeight="606px"
       />
 
       <CoreBenefitsSection
@@ -143,8 +141,6 @@ const Subscriptions = (): React.JSX.Element => {
         ]}
         cards={managementCards}
       />
-
-    
     </div>
   )
 }
