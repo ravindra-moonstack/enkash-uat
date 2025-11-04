@@ -58,7 +58,7 @@ const PartnershipsPage = (): React.JSX.Element => {
         subHeading={[
           { title: "", color: "color-black f-3 d-block" },
           {
-            title: "Empower your customers with seamless banking solutions",
+            title: "Empower Your Customers With Seamless Banking Solutions",
             color: "color-black",
           },
         ]}

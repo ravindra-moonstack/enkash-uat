@@ -117,11 +117,13 @@ export default function SliderComponent({
                           className="mb-0"
                         />
                       </div>
-                      <CommanButton
-                        title={slide.buttonText}
-                        theme="blue"
-                        url={slide.buttonUrl}
-                      />
+                      <div className="d-flex justify-content-md-start justify-content-center">
+                        <CommanButton
+                          title={slide.buttonText}
+                          theme="blue"
+                          url={slide.buttonUrl}
+                        />
+                      </div>
                     </div>
                   </div>
 

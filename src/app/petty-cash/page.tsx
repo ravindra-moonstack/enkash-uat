@@ -94,6 +94,7 @@ const PettyCash = (): React.JSX.Element => {
         }}
         rightImage={paymentSummary}
         backgroundImage="/images/expenceBg.webp"
+        rightImageMaxHeight="502px"
       />
 
       <div className={styles.card_stacking_row}>

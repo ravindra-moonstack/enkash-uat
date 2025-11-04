@@ -89,6 +89,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         rightImage={paymentSummary}
         backgroundImage="/images/expenceBg.webp"
+        rightImageMaxHeight="520px"
       />
 
       <div className={styles.introduction_section}>
