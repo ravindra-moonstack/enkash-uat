@@ -53,7 +53,7 @@ const partnershipsPage = (): React.JSX.Element => {
         mainHeading={[{ title: "Co-branded Products", color: " underline" }]}
         subHeading={[
           {
-            title: "Grow your business with one smart transaction at a time.",
+            title: "Grow your Business with One Smart Transaction at a Time.",
             color: "color-white",
           },
         ]}
