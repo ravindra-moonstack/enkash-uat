@@ -86,7 +86,7 @@ const PurchesCards = (): React.JSX.Element => {
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         heroImage={heroCardImg}
         backgroundImage="/images/PurchaseCardBg.webp"
-        paddingTop="120px"
+        paddingTop="138px"
         paddingBottom="60px"
       />
       <div className="cardsSliderMargin">

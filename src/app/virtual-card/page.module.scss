@@ -9,7 +9,7 @@
   padding: 100px 20px 0;
   background-image: url("./img/first-row-bg.svg"), url("./img/first-bg.jpg");
   @include for-laptops {
-    padding: 112px 20px 0;
+    padding: 132px 20px 0;
   }
   .subtitle {
     color: $color-equity-blue;
