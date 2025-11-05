@@ -90,7 +90,7 @@ const GiftCards = (): React.JSX.Element => {
         button={{ title: "Get Started", url: "/get-started", theme: "blue" }}
         heroImage={heroCardImg}
         backgroundImage="/images/giftCardBg.webp"
-        paddingTop="120px"
+        paddingTop="138px"
         paddingBottom="60px"
       />
 
