@@ -7,7 +7,7 @@ import axios from "axios"
 import "@/src/styles/_forms.scss"
 
 // components
-import { DynamicHeading } from "@/src/components"
+
 import ErrorText from "../../error-text"
 import CategoryMultiSelect from "../../category-multi-select"
 import CategoryWithOther from "../../single-select"
@@ -23,7 +23,7 @@ interface SalesFormProps {
   isParagraph?: boolean
 }
 
-const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
+const SalesForm: React.FC<SalesFormProps> = () => {
   const router = useRouter()
   const [loading, setLoading] = useState<boolean>(false)
   const [showOtherInput, setShowOtherInput] = useState<boolean>(false)
