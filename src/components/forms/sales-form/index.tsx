@@ -97,14 +97,17 @@ const SalesForm: React.FC<SalesFormProps> = ({ isParagraph = false }) => {
             className="text-center fs-1 f-6"
           />
         ) : (
-          <DynamicHeading
-            content={[
-              { title: "Talk", color: "color-black " },
-              { title: " to Sales", color: "color-dark-grey " },
-            ]}
-            headingTag="h1"
-            className="text-center f-6"
-          />
+          <h1
+            className="fw-bold text-center"
+            style={{
+              fontSize: "48px",
+              lineHeight: "60px",
+              fontWeight: 700,
+              color: "black",
+            }}
+          >
+            Talk <span style={{ color: "#a5a5a5" }}>to Sales</span>
+          </h1>
         )}
 
         <p className="subtitle">We just need a few quick details</p>
