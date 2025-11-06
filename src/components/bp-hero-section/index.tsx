@@ -1,4 +1,4 @@
-"use client"
+
 
 import type React from "react"
 import DynamicHeading from "../dynamic-heading"
@@ -72,6 +72,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
                   headingTag="h1"
                   className="mb-4 f-7 pt-3 pt-md-0"
                 />
+                
               </div>
 
               {/* CTA Button */}

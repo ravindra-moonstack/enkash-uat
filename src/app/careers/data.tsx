@@ -102,7 +102,7 @@ const jobs = [
     title: "Product Manager",
     description: "Create fintech products that power growth.",
     department: "Product",
-    location: "Bangalore/Mumbai",
+    location: "Bangalore/Pune",
     applyLink: "#",
   },
 ]
