@@ -92,13 +92,6 @@ const coreValues = [
 ]
 const jobs = [
   {
-    title: "Social Media Marketing Specialist",
-    description: "Drive conversations, build communities, and amplify our brand",
-    department: "Marketing",
-    location: "Gurgaon",
-    applyLink: "#",
-  },
-  {
     title: "Sales Development Representative",
     description: "Open doors to new business.",
     department: "Marketing",
@@ -109,7 +102,7 @@ const jobs = [
     title: "Product Manager",
     description: "Create fintech products that power growth.",
     department: "Product",
-    location: "Bangalore/Mumbai",
+    location: "Bangalore/Pune",
     applyLink: "#",
   },
 ]

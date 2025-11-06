@@ -1,8 +1,5 @@
-"use client"
 import Image, { StaticImageData } from "next/image"
-import { useRouter } from "next/navigation"
 import { FaArrowRight } from "react-icons/fa"
-
 import styles from "./button.module.scss"
 
 export type ButtonTheme =
@@ -41,35 +38,34 @@ const CommonButton = ({
   image,
   arrow = false,
 }: ButtonProps) => {
-  //
+  const iconClass = iconSize === 20 ? "big-icon" : "custom-icon"
 
-  const router = useRouter()
-
-  const handleClick = () => {
-    if (typeof url === "string") {
-      if (openInNewTab) {
-        window.open(url, "_blank", "noopener,noreferrer")
-      } else {
-        router.push(url)
-      }
-    } else if (typeof url === "function") {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof url === "function") {
+      e.preventDefault() // prevent navigation
       url()
     }
   }
 
-  const iconClass = iconSize === 20 ? "big-icon" : "custom-icon"
+  const href = typeof url === "string" ? url : "#"
 
   return (
-    <button
-      disabled={isDisabled}
+    <a
+      href={href}
+      onClick={handleClick}
+      target={openInNewTab ? "_blank" : "_self"}
+      rel={openInNewTab ? "noopener noreferrer" : undefined}
       className={`
         ${styles.rectangle_button}
         ${theme ? styles[theme] : ""}
         ${isDisabled ? styles.disabled : ""}
         ${className ?? ""}
       `}
-      onClick={handleClick}
-      style={{ width: width || "auto" }}
+      style={{
+        width: width || "auto",
+        pointerEvents: isDisabled ? "none" : "auto",
+        opacity: isDisabled ? 0.6 : 1,
+      }}
     >
       {title}
       {image && (
@@ -82,7 +78,7 @@ const CommonButton = ({
         />
       )}
       {arrow && <FaArrowRight />}
-    </button>
+    </a>
   )
 }
 

@@ -79,7 +79,22 @@ const SupportForm: React.FC = () => {
     <>
       <div className={"contactFormWrapper"}>
         <form action="#" onSubmit={handleSubmit} className="">
+          {/* Static SEO-friendly heading (server-rendered) */}
+          <h1 className="text-center">
+            How Can <span className="color-black">We Help You</span>
+          </h1>
+
+          {/* Your dynamic version for styling/interactivity */}
           <DynamicHeading
+            content={[
+              { title: "How Can ", color: "color-dark-grey " },
+              { title: "We Help You", color: "color-black " },
+            ]}
+            headingTag="h1"
+            className="text-center visually-hidden" // optional
+          />
+
+          {/* <DynamicHeading
             content={[
               {
                 title: "How Can ",
@@ -92,7 +107,7 @@ const SupportForm: React.FC = () => {
             ]}
             headingTag="h1"
             className="text-center "
-          />
+          /> */}
 
           <p className={"subtitle"}>We just need a few quick details</p>
 
