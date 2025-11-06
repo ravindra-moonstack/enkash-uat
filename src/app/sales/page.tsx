@@ -150,7 +150,29 @@ function Sales(): React.JSX.Element {
             </div>
 
             <div className={`${styles.salesForm} col-md-7 col-12 `}>
-              <SalesForm />
+              <div className="contactFormWrapper flex flex-col gap-4">
+                <DynamicHeading
+                  content={[
+                    { title: "New to EnKash? ", color: "color-dark-grey " },
+                  ]}
+                  headingTag="h5"
+                  className="text-center "
+                />
+
+                <DynamicHeading
+                  content={[
+                    { title: "Talk", color: "color-black " },
+                    { title: " to Sales", color: "color-dark-grey " },
+                  ]}
+                  headingTag="h1"
+                  className="text-center py-3"
+                />
+
+                <p className="subtitle mb-4">
+                  We just need a few quick details
+                </p>
+                <SalesForm />
+              </div>
             </div>
 
             <div>

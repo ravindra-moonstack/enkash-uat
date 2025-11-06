@@ -1,8 +1,5 @@
-"use client"
 import Image, { StaticImageData } from "next/image"
-import { useRouter } from "next/navigation"
 import { FaArrowRight } from "react-icons/fa"
-
 import styles from "./button.module.scss"
 
 export type ButtonTheme =
@@ -19,7 +16,7 @@ export type ButtonTheme =
 export interface ButtonProps {
   isDisabled?: boolean
   title: string
-  url?: string | (() => void)
+  url?: string
   theme?: ButtonTheme
   width?: string
   iconSize?: number
@@ -32,7 +29,7 @@ export interface ButtonProps {
 const CommonButton = ({
   isDisabled,
   title,
-  url,
+  url = "#",
   theme = "blue",
   width,
   iconSize = 20,
@@ -41,35 +38,24 @@ const CommonButton = ({
   image,
   arrow = false,
 }: ButtonProps) => {
-  //
-
-  const router = useRouter()
-
-  const handleClick = () => {
-    if (typeof url === "string") {
-      if (openInNewTab) {
-        window.open(url, "_blank", "noopener,noreferrer")
-      } else {
-        router.push(url)
-      }
-    } else if (typeof url === "function") {
-      url()
-    }
-  }
-
   const iconClass = iconSize === 20 ? "big-icon" : "custom-icon"
 
   return (
-    <button
-      disabled={isDisabled}
+    <a
+      href={url}
+      target={openInNewTab ? "_blank" : "_self"}
+      rel={openInNewTab ? "noopener noreferrer" : undefined}
       className={`
         ${styles.rectangle_button}
         ${theme ? styles[theme] : ""}
         ${isDisabled ? styles.disabled : ""}
         ${className ?? ""}
       `}
-      onClick={handleClick}
-      style={{ width: width || "auto" }}
+      style={{
+        width: width || "fit-content",
+        pointerEvents: isDisabled ? "none" : "auto",
+        opacity: isDisabled ? 0.6 : 1,
+      }}
     >
       {title}
       {image && (
@@ -82,7 +68,7 @@ const CommonButton = ({
         />
       )}
       {arrow && <FaArrowRight />}
-    </button>
+    </a>
   )
 }
 
