@@ -16,7 +16,7 @@ export type ButtonTheme =
 export interface ButtonProps {
   isDisabled?: boolean
   title: string
-  url?: string
+  url?: string | (() => void)
   theme?: ButtonTheme
   width?: string
   iconSize?: number
@@ -29,7 +29,7 @@ export interface ButtonProps {
 const CommonButton = ({
   isDisabled,
   title,
-  url = "#",
+  url,
   theme = "blue",
   width,
   iconSize = 20,
@@ -40,9 +40,19 @@ const CommonButton = ({
 }: ButtonProps) => {
   const iconClass = iconSize === 20 ? "big-icon" : "custom-icon"
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof url === "function") {
+      e.preventDefault() // prevent navigation
+      url()
+    }
+  }
+
+  const href = typeof url === "string" ? url : "#"
+
   return (
     <a
-      href={url}
+      href={href}
+      onClick={handleClick}
       target={openInNewTab ? "_blank" : "_self"}
       rel={openInNewTab ? "noopener noreferrer" : undefined}
       className={`
@@ -52,7 +62,7 @@ const CommonButton = ({
         ${className ?? ""}
       `}
       style={{
-        width: width || "fit-content",
+        width: width || "auto",
         pointerEvents: isDisabled ? "none" : "auto",
         opacity: isDisabled ? 0.6 : 1,
       }}
