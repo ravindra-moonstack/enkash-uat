@@ -3,11 +3,11 @@
 
 .hero_section {
   box-shadow: 0px 0px 77px 0px $color-black-1a;
-  padding: 90px 20px 0px;
+  padding: 98px 20px 0px;
   position: relative;
 
   @include for-laptops {
-    padding: 112px 20px 0;
+    padding: 121px 20px 0;
   }
   .subtitle {
     color: $color-equity-blue;
@@ -341,8 +341,6 @@
     }
   }
 }
-
-
 
 .card_stacking_row {
   padding: 0px 20px;

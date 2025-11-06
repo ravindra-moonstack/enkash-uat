@@ -88,6 +88,7 @@ const QrCode = (): React.JSX.Element => {
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         rightImage={paymentSummary}
         backgroundImage="/images/collectPaymentBg.webp"
+        rightImageMaxHeight="508px"
       />
 
       <CoreBenefitsSection
