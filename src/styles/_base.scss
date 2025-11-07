@@ -210,6 +210,9 @@
 .bg-black-200 {
   background-color: $color-black-200;
 }
+.bg-white-73 {
+  background-color: $color-white-73;
+}
 
 /* Padding Classes */
 
@@ -488,5 +491,23 @@ body {
     @include for-laptops {
       padding: 90px 20px;
     }
+  }
+}
+.calculator {
+  input {
+    width: 265px;
+    font-size: 24px;
+  }
+  select {
+    width: 265px;
+    font-size: 24px;
+  }
+  label {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .secondRow {
+    text-align: center;
   }
 }
