@@ -1,0 +1,44 @@
+.home_container {
+  background-image: url("/images/gstCalculatorBg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 138px;
+  padding-bottom: 90px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.exclusive {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  .greenLine {
+    width: 2px;
+    height: 40px;
+    background-color: #00bf9e;
+  }
+  .exclusive_container {
+    width: 50%;
+    text-align: start;
+
+    padding-left: 80px;
+  }
+}
+.gst {
+  padding: 54px 74px;
+  background: #fff 0 0 no-repeat padding-box;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1019607843);
+  .greenLine {
+    width: 2px;
+    height: 67px;
+    background-color: #00bf9e;
+  }
+  ul {
+    padding-left: 0;
+    color: black;
+  }
+  ol {
+    list-style: auto;
+    padding-left: 0;
+    color: black;
+  }
+}
