@@ -35,7 +35,7 @@ const GstCalculator: React.FC = () => {
   }
 
   return (
-    <Form className="calculator text-black p-4">
+    <Form className="calculator text-black py-4 px-md-0 px-4">
       {/* Inputs Row */}
       <Row className="mb-3 g-3">
         {/* Amount */}
