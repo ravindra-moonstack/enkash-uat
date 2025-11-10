@@ -86,7 +86,7 @@ const Page = (): React.JSX.Element => {
               />{" "}
             </div>
           </div>
-          <div className={`bg-white rounded-4   ${styles.gst}`}>
+          <div className={`bg-white   ${styles.gst}`}>
             <div className="d-flex">
               <span className={` ${styles.greenLine}`}></span>
               <div className="ps-3">
@@ -94,10 +94,10 @@ const Page = (): React.JSX.Element => {
                   content={[
                     {
                       title: "What is GST?",
-                      color: "color-grey-200 subHeading",
+                      color: "color-grey-200 ",
                     },
                   ]}
-                  headingTag="p"
+                  headingTag="h5"
                   className="mb-0  f-6 text-start"
                 />
                 <DynamicHeading
@@ -131,10 +131,10 @@ const Page = (): React.JSX.Element => {
                   content={[
                     {
                       title: "How to Use the EnKash GST Tax Calculator",
-                      color: "color-grey-200 subHeading",
+                      color: "color-grey-200 ",
                     },
                   ]}
-                  headingTag="p"
+                  headingTag="h5"
                   className="mb-0  f-6 text-start"
                 />
                 <ol>
@@ -246,10 +246,10 @@ const Page = (): React.JSX.Element => {
                   content={[
                     {
                       title: "GST Calculation Formula",
-                      color: "color-grey-200 subHeading",
+                      color: "color-grey-200 ",
                     },
                   ]}
-                  headingTag="p"
+                  headingTag="h5"
                   className="mb-0  f-6 text-start"
                 />
                 <ul>
@@ -473,7 +473,9 @@ const Page = (): React.JSX.Element => {
               className="mb-0 pt-4   f-4 text-center fst-italic "
             />
           </div>
-          <FaqSection faqData={faqData} />
+          <div className="mt-5">
+            <FaqSection faqData={faqData} />
+          </div>
         </div>
       </div>
     </div>
