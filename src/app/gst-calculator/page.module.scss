@@ -8,7 +8,7 @@
     top: 0;
     z-index: 0;
     img {
-      height: 1336px;
+      height: 1384px;
       @include for-laptops {
         height: 100%;
       }
@@ -35,7 +35,7 @@
     padding-bottom: 23px;
 
     background-color: #fff;
-    border-radius: 1.5rem;
+    border-radius: 12px;
     margin-top: 3rem;
     box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.25);
   }
@@ -69,7 +69,7 @@
   padding: 50px 20px;
   background: #fff 0 0 no-repeat padding-box;
   box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.25);
-
+  border-radius: 12px;
   @include for-laptops {
     padding: 54px 74px;
   }
