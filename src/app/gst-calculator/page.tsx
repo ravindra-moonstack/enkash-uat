@@ -11,7 +11,6 @@ import {
   oldGstData,
 } from "./data"
 import { Table } from "react-bootstrap"
-import bankIcon from "../../../public/svgs/bank-icon.svg"
 import Image from "next/image"
 import FaqSection from "@/src/components/faq-section"
 import generateMetaData from "@/src/utils/metaData"
@@ -354,7 +353,12 @@ const Page = (): React.JSX.Element => {
                       <td>
                         <div className="d-flex align-items-center gap-2">
                           {/* <Bank size={20} color="#0d6efd" /> */}
-                          <Image src={bankIcon} alt={""} width={20} />
+                          <Image
+                            src={item.icon}
+                            alt={""}
+                            width={40}
+                            height={40}
+                          />
                           <span>{item.type}</span>
                         </div>
                       </td>
@@ -427,8 +431,6 @@ const Page = (): React.JSX.Element => {
                     <tr key={index}>
                       <td>
                         <div className="d-flex align-items-center gap-2">
-                          {/* <Bank size={20} color="#0d6efd" /> */}
-
                           <span>{item.type}</span>
                         </div>
                       </td>

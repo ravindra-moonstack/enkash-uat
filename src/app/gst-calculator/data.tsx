@@ -1,22 +1,30 @@
 import { TFAQProps } from "@/src/types/faq"
+import first from "../../../public/svgs/gst-first-icon.svg"
+import second from "../../../public/svgs/gst-second-icon.svg"
+import third from "../../../public/svgs/gst-third-icon.svg"
+import fourth from "../../../public/svgs/gst-fourth-icon.svg"
 
 export const gstData = [
   {
+    icon: first,
     type: "CGST (Central GST)",
     description: "Collected on intra-state supplies",
     leviedBy: "CGST (Central GST)",
   },
   {
+    icon: second,
     type: "SGST (State GST)",
     description: "Collected on intra-state supplies",
     leviedBy: "State Government",
   },
   {
+    icon: third,
     type: "IGST (Integrated GST)",
     description: "Applied to inter-state supplies & imports",
     leviedBy: "Central Government",
   },
   {
+    icon: fourth,
     type: "UTGST (Union Territory GST)",
     description: "Applied in Union Territories",
     leviedBy: "Union Territory Administration",
