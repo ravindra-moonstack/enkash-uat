@@ -495,16 +495,27 @@ body {
 }
 .calculator {
   input {
-    width: 265px;
-    font-size: 24px;
+    width: full;
+    font-size: 16px;
+    @include for-laptops {
+      width: 265px;
+      font-size: 24px;
+    }
   }
   select {
-    width: 265px;
-    font-size: 24px;
+    width: full;
+    font-size: 16px;
+    @include for-laptops {
+      width: 265px;
+      font-size: 24px;
+    }
   }
   label {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 600;
+    @include for-laptops {
+      font-size: 20px;
+    }
   }
 
   .secondRow {
