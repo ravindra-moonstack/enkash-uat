@@ -52,6 +52,12 @@
   font-size: 84px;
 }
 
+
+.fs-10 {
+  font-size: 10px;
+}
+
+
 .bgBlue {
   background-color: $color-equity-blue;
 }
