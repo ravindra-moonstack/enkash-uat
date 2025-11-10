@@ -24,7 +24,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Boost employee engagement with EnKash Rewards. Design custom reward programs, send instant digital vouchers, and simplify recognition across teams and departments.",
   alternates: {
-    canonical: `${process.env.URL}/products/products/rewardsrewards`,
+    canonical: `${process.env.URL}/products/rewards`,
   },
 })
 const salesUrl = getSalesUrl("/rewards")
@@ -48,7 +48,7 @@ const Rewards = (): React.JSX.Element => {
             />
           </div>
           <div className="col-12 d-flex flex-column text-center">
-            <div className="  mt-4 mb-3 text-center">
+            <div className="  mt-3 mb-3 text-center">
               <DynamicHeading
                 content={[
                   {
