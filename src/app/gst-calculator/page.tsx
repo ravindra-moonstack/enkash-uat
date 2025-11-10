@@ -368,6 +368,18 @@ const Page = (): React.JSX.Element => {
                   ))}
                 </tbody>
               </Table>
+
+              <DynamicHeading
+                content={[
+                  {
+                    title: " Explore more about types of GST",
+                    color: "color-equity-blue underline",
+                    link: `${process.env.NEXT_PUBLIC_URL}/resources/blog/types-of-gst-in-india`,
+                  },
+                ]}
+                headingTag="p"
+                className="mb-0 pt-4  text-start "
+              />
             </div>
 
             <div className="pt-5">
@@ -395,18 +407,6 @@ const Page = (): React.JSX.Element => {
                   />
                 </div>
               ))}
-
-              <DynamicHeading
-                content={[
-                  {
-                    title: " Explore more about GST Reforms (2025)",
-                    color: "color-equity-blue underline",
-                    link: `${process.env.NEXT_PUBLIC_URL}/resources/blog/types-of-gst-rates-in-india-new-rate-list-and-updates`,
-                  },
-                ]}
-                headingTag="p"
-                className="mb-0 pt-2  text-start "
-              />
             </div>
             <div className="table-responsive mt-5">
               <DynamicHeading
@@ -419,29 +419,7 @@ const Page = (): React.JSX.Element => {
                 headingTag="h5"
                 className="mb-4  f-6 text-start"
               />
-              <Table bordered hover className="align-middle text-start mt-4">
-                <thead className="bg-light bg-white-73">
-                  <tr>
-                    <th>New GST Rate</th>
-                    <th>Common Items/ Services</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {newGstData.map((item, index) => (
-                    <tr key={index}>
-                      <td>
-                        <div className="d-flex align-items-center gap-2">
-                          <span>{item.type}</span>
-                        </div>
-                      </td>
-                      <td>{item.description}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
-            </div>
 
-            <div className="table-responsive mt-5">
               <Table bordered hover className="align-middle text-start">
                 <thead className="bg-light bg-white-73">
                   <tr>
@@ -463,6 +441,40 @@ const Page = (): React.JSX.Element => {
                 </tbody>
               </Table>
             </div>
+
+            <div className="table-responsive mt-3">
+              <Table bordered hover className="align-middle text-start mt-4">
+                <thead className="bg-light bg-white-73">
+                  <tr>
+                    <th>New GST Rate</th>
+                    <th>Common Items/ Services</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {newGstData.map((item, index) => (
+                    <tr key={index}>
+                      <td>
+                        <div className="d-flex align-items-center gap-2">
+                          <span>{item.type}</span>
+                        </div>
+                      </td>
+                      <td>{item.description}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </div>
+            <DynamicHeading
+              content={[
+                {
+                  title: " Explore more about GST Reforms (2025)",
+                  color: "color-equity-blue underline",
+                  link: `${process.env.NEXT_PUBLIC_URL}/resources/blog/types-of-gst-rates-in-india-new-rate-list-and-updates`,
+                },
+              ]}
+              headingTag="p"
+              className="mb-0 pt-4  text-start "
+            />
             <DynamicHeading
               content={[
                 {
