@@ -65,7 +65,7 @@ const MakePayment = (): React.JSX.Element => {
             />
           </div>
           <div className="col-12 d-flex flex-column text-center">
-            <div className="  mt-3 text-center mb-2">
+            <div className="  mt-3 text-center mb-3">
               <DynamicHeading
                 content={[
                   {

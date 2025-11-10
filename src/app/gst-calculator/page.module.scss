@@ -1,0 +1,90 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.body_container {
+  position: relative;
+  .bgImg_container {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    img {
+      height: 1384px;
+      @include for-laptops {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.home_container {
+  // background-image: url("/images/gstCalculatorBg.webp");
+  background-size: cover;
+  z-index: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 138px;
+  padding-bottom: 90px;
+  padding-right: 20px;
+  padding-left: 20px;
+  position: relative;
+  z-index: 9;
+  .gst_calclulator {
+    display: flex;
+    justify-content: center;
+    padding-top: 23px;
+    padding-bottom: 23px;
+
+    background-color: #fff;
+    border-radius: 12px;
+    margin-top: 3rem;
+    box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.25);
+  }
+  td {
+    line-height: 20px;
+    letter-spacing: -0.04em;
+  }
+}
+.exclusive {
+  padding-top: 28px;
+  padding-bottom: 28px;
+
+  @include for-laptops {
+    padding-left: 75px;
+  }
+  .greenLine {
+    width: 2px;
+    height: 40px;
+    background-color: #00bf9e;
+  }
+  .exclusive_container {
+    width: 100%;
+    text-align: start;
+    padding-left: 16px;
+    @include for-laptops {
+      width: 40%;
+    }
+  }
+}
+.gst {
+  padding: 50px 20px;
+  background: #fff 0 0 no-repeat padding-box;
+  box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  @include for-laptops {
+    padding: 54px 74px;
+  }
+  .greenLine {
+    width: 2px;
+    height: 67px;
+    background-color: #00bf9e;
+  }
+  ul {
+    padding-left: 0;
+    color: black;
+  }
+  ol {
+    list-style: auto;
+    padding-left: 0;
+    color: black;
+  }
+}
