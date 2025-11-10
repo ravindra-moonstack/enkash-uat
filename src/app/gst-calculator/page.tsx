@@ -51,7 +51,7 @@ const Page = (): React.JSX.Element => {
               },
             ]}
             headingTag="h1"
-            className="text-center"
+            className="text-center mt-3"
           />
           <DynamicHeading
             content={[
@@ -368,20 +368,18 @@ const Page = (): React.JSX.Element => {
                   ))}
                 </tbody>
               </Table>
-
-              <DynamicHeading
-                content={[
-                  {
-                    title: " Explore more about types of GST",
-                    color: "color-equity-blue underline",
-                    link: `${process.env.NEXT_PUBLIC_URL}/resources/blog/types-of-gst-in-india`,
-                  },
-                ]}
-                headingTag="p"
-                className="mb-0 pt-4  text-start "
-              />
             </div>
-
+            <DynamicHeading
+              content={[
+                {
+                  title: " Explore more about types of GST",
+                  color: "color-equity-blue underline",
+                  link: `${process.env.NEXT_PUBLIC_URL}/resources/blog/types-of-gst-in-india`,
+                },
+              ]}
+              headingTag="p"
+              className="mb-0 pt-4  text-start "
+            />
             <div className="pt-5">
               {goodsAndServiceData.map((item, index) => (
                 <div key={index} className="mb-4">
