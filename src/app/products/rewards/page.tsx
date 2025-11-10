@@ -48,7 +48,7 @@ const Rewards = (): React.JSX.Element => {
             />
           </div>
           <div className="col-12 d-flex flex-column text-center">
-            <div className="  mt-4 mb-3 text-center">
+            <div className="  mt-3 mb-3 text-center">
               <DynamicHeading
                 content={[
                   {
