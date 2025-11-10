@@ -66,7 +66,7 @@ const Page = (): React.JSX.Element => {
             className="mb-0 pt-3 text-center"
           />
           {/* GST Calculator Component */}
-          <div className="d-flex justify-content-center py-6 px-[115px] bg-white rounded-4  mt-5">
+          <div className={` ${styles.gst_calclulator}`}>
             <GstCalculator />
           </div>
           <div className={`d-flex ${styles.exclusive}`}>
@@ -334,11 +334,11 @@ const Page = (): React.JSX.Element => {
                 content={[
                   {
                     title: "Types of GST in India",
-                    color: "color-equity-blue f-6 ",
+                    color: "color-grey-200 f-6 ",
                   },
                 ]}
-                headingTag="h6"
-                className="mb-4  f-6   text-center"
+                headingTag="h5"
+                className="mb-4  f-6   text-start"
               />
               <Table bordered hover className="align-middle text-start mt-4">
                 <thead className="bg-light bg-white-73">
@@ -409,11 +409,11 @@ const Page = (): React.JSX.Element => {
                 content={[
                   {
                     title: "Old Vs New GST Slabs in India (FY 2025-26)",
-                    color: "color-equity-blue mb-4  f-6",
+                    color: "color-grey-200 mb-4  f-6",
                   },
                 ]}
-                headingTag="h6"
-                className="mb-4  f-6 text-center"
+                headingTag="h5"
+                className="mb-4  f-6 text-start"
               />
               <Table bordered hover className="align-middle text-start mt-4">
                 <thead className="bg-light bg-white-73">
@@ -428,7 +428,7 @@ const Page = (): React.JSX.Element => {
                       <td>
                         <div className="d-flex align-items-center gap-2">
                           {/* <Bank size={20} color="#0d6efd" /> */}
-                          <Image src={bankIcon} alt={""} width={20} />
+
                           <span>{item.type}</span>
                         </div>
                       </td>
@@ -452,8 +452,6 @@ const Page = (): React.JSX.Element => {
                     <tr key={index}>
                       <td>
                         <div className="d-flex align-items-center gap-2">
-                          {/* <Bank size={20} color="#0d6efd" /> */}
-                          <Image src={bankIcon} alt={""} width={20} />
                           <span>{item.type}</span>
                         </div>
                       </td>
@@ -468,11 +466,11 @@ const Page = (): React.JSX.Element => {
                 {
                   title:
                     "(Source: GST Council India – Central Board of Indirect Taxes and Customs as of October 2025)",
-                  color: "color-black ",
+                  color: "color-black fs-10",
                 },
               ]}
               headingTag="p"
-              className="mb-0 pt-4  f-4 text-center fst-italic "
+              className="mb-0 pt-4   f-4 text-center fst-italic "
             />
           </div>
           <FaqSection faqData={faqData} />
