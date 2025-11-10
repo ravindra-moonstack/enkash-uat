@@ -103,7 +103,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
 
           <div className="col-12">
-            <div className="text-center mt-4 mt-mb-5">
+            <div className="text-center mt-3 mt-mb-5">
               <DynamicHeading
                 content={[
                   {
