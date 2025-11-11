@@ -24,7 +24,7 @@ export const metadata: Metadata = generateMetaData({
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_URL}/gst-calculator`,
   },
-  ogImage: `https://websitev3-uat.enkash.in/images/GST_PREVIEW.webp`,
+  ogImage: `${process.env.NEXT_PUBLIC_URL}/images/GST_PREVIEW.webp`,
 })
 const Page = (): React.JSX.Element => {
   return (
