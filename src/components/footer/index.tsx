@@ -693,48 +693,52 @@ const FooterV2 = (): React.JSX.Element => {
                       </li>
                     </ul>
                   </div>
+                  <div className="">
+                    <Link
+                      href={`${process.env.NEXT_PUBLIC_URL}/resources`}
+                      rel="noopener noreferrer"
+                    >
+                      <h4 className={styles.title}>Resources</h4>
+                    </Link>
+
+                    <ul>
+                      <li>
+                        <Link
+                          href={`${process.env.NEXT_PUBLIC_URL}/resources/blogs`}
+                          rel="noopener noreferrer"
+                        >
+                          Blogs
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={`${process.env.NEXT_PUBLIC_URL}/resources/customer-stories`}
+                          rel="noopener noreferrer"
+                        >
+                          Case Studies
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link
+                          href={`${process.env.NEXT_PUBLIC_URL}/resources/videos`}
+                          rel="noopener noreferrer"
+                        >
+                          Videos
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/gst-calculator/">GST Calculator</Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               {/* 4th col */}
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 {/* col-1 resources */}
-                <div className="">
-                  <Link
-                    href={`${process.env.NEXT_PUBLIC_URL}/resources`}
-                    rel="noopener noreferrer"
-                  >
-                    <h4 className={styles.title}>Resources</h4>
-                  </Link>
 
-                  <ul>
-                    <li>
-                      <Link
-                        href={`${process.env.NEXT_PUBLIC_URL}/resources/blogs`}
-                        rel="noopener noreferrer"
-                      >
-                        Blogs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href={`${process.env.NEXT_PUBLIC_URL}/resources/customer-stories`}
-                        rel="noopener noreferrer"
-                      >
-                        Case Studies
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        href={`${process.env.NEXT_PUBLIC_URL}/resources/videos`}
-                        rel="noopener noreferrer"
-                      >
-                        Videos
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div className="mt-3">
+                <div>
                   <div className={styles.freedom_card_box}>
                     <h4 className={`${styles.title}`}>Company</h4>
                   </div>
@@ -766,7 +770,7 @@ const FooterV2 = (): React.JSX.Element => {
                 <div className="mt-3">
                   <Link href="/policies">
                     <h4 className={`col-12 ${styles.title} text-wrap`}>
-                      Policies and Compliance
+                      Policies And Compliance
                     </h4>
                   </Link>
 

@@ -8,10 +8,11 @@ interface MetadataInput {
     canonical: string
   }
   faqData?: Array<TFAQProps>
+  ogImage?: string
 }
 
 export interface BreadcrumbItem {
-  "@type": "ListItem" // literal type
+  "@type": "ListItem"
   position: number
   name: string
   item: string
@@ -23,6 +24,7 @@ export interface BreadcrumbSchema {
   itemListElement: BreadcrumbItem[]
 }
 
+// ✅ Breadcrumb generator
 export const generateBreadcrumbSchema = (
   canonicalUrl: string
 ): BreadcrumbSchema => {
@@ -33,7 +35,6 @@ export const generateBreadcrumbSchema = (
   try {
     const url = new URL(canonicalUrl)
 
-    // ✅ ensure explicit string[] type
     const pathSegments: string[] = url.pathname
       .replace(/^\/|\/$/g, "")
       .split("/")
@@ -58,7 +59,7 @@ export const generateBreadcrumbSchema = (
       },
       ...pathSegments.map(
         (segment, index): BreadcrumbItem => ({
-          "@type": "ListItem", // ✅ literal type
+          "@type": "ListItem",
           position: index + 2,
           name: formatSegmentName(segment),
           item: `${url.origin}/${pathSegments.slice(0, index + 1).join("/")}/`,
@@ -76,7 +77,7 @@ export const generateBreadcrumbSchema = (
   }
 }
 
-// ✅ Generate FAQ Schema
+// ✅ FAQ Schema
 export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
   if (!faqData || faqData.length === 0) return null
 
@@ -151,9 +152,11 @@ export const generateMetaData = ({
   description,
   alternates,
   faqData,
+  ogImage, // ✅ custom OG image supported
 }: MetadataInput) => {
   const canonicalUrl = alternates.canonical
   const faqldJSON = generateFaqSchema(faqData)
+  const baseImage = ogImage || `${process.env.NEXT_PUBLIC_URL}/og-image.png` // ✅ fallback to default OG image
 
   return {
     title,
@@ -164,14 +167,13 @@ export const generateMetaData = ({
       description,
       url: canonicalUrl,
       type: "website",
-      images: [`${process.env.NEXT_PUBLIC_URL}/og-image.png`],
+      images: [baseImage],
     },
-    // Optional: auto Twitter meta
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`${process.env.NEXT_PUBLIC_URL}/og-image.png`],
+      images: [baseImage],
     },
     structuredDataScript: `
       <script type="application/ld+json">
@@ -180,9 +182,6 @@ export const generateMetaData = ({
           "@type": "WebPage",
           "@id": canonicalUrl,
           url: canonicalUrl,
-
-
-          
           name: title,
           description,
           breadcrumb: generateBreadcrumbSchema(canonicalUrl),
