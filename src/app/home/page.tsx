@@ -78,7 +78,7 @@ const HomePage = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Unifying Payments. Simplifying Spends",
+                  title: "Unifying Payments. Simplifying Spends.",
                   color: "color-black",
                 },
               ]}
