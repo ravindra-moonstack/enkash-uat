@@ -1423,7 +1423,7 @@ const PrivacyPolicy = (): React.JSX.Element => {
                                   </span>
                                 </td>
                                 <td>
-                                  <b>Mr Krishna Kumar </b>
+                                  <b>Mr Nagesh Shet </b>
                                 </td>
                               </tr>
                               <tr>
@@ -1434,12 +1434,7 @@ const PrivacyPolicy = (): React.JSX.Element => {
                                   </a>
                                 </td>
                               </tr>
-                              <tr>
-                                <td>Phone</td>
-                                <td>
-                                  <a>+91 9513251477</a>
-                                </td>
-                              </tr>
+
                               <tr>
                                 <td>Working Day(s)</td>
                                 <td>Monday to Friday</td>
@@ -1473,7 +1468,7 @@ const PrivacyPolicy = (): React.JSX.Element => {
                                   </span>
                                 </td>
                                 <td>
-                                  <b> Mr Vibhor Chugh</b>
+                                  <b> Mr Nagesh Shet</b>
                                 </td>
                               </tr>
                               <tr>
@@ -1486,10 +1481,7 @@ const PrivacyPolicy = (): React.JSX.Element => {
                                   </a>
                                 </td>
                               </tr>
-                              <tr>
-                                <td>Phone Number</td>
-                                <td>+91 9513251499</td>
-                              </tr>
+
                               <tr>
                                 <td>Working Day(s)</td>
                                 <td>Monday to Friday</td>
