@@ -13,32 +13,19 @@ import {
 import { Table } from "react-bootstrap"
 import Image from "next/image"
 import FaqSection from "@/src/components/faq-section"
+import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 import bgImg from "../../../public/images/gstCalculatorBg.webp"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Free GST Calculator | Calculate GST Online Free - EnKash",
   description:
     "Free online GST calculator to get accurate CGST, SGST & IGST breakdowns with inclusive and exclusive amounts.",
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_URL}/gst-calculator`,
   },
-  openGraph: {
-    title: "Free GST Calculator | Calculate GST Online Free - EnKash",
-    description:
-      "Free online GST calculator to get accurate CGST, SGST & IGST breakdowns with inclusive and exclusive amounts.",
-    url: `${process.env.NEXT_PUBLIC_URL}/gst-calculator`,
-    type: "website",
-    images: [
-      {
-        url: `https://websitev3-uat.enkash.in/images/GST_PREVIEW.webp`,
-        width: 1200,
-        height: 630,
-        alt: "GST Calculator Preview - EnKash",
-      },
-    ],
-  },
-}
+  ogImage: `https://websitev3-uat.enkash.in/images/GST_PREVIEW.webp`,
+})
 const Page = (): React.JSX.Element => {
   return (
     <div className={` ${styles.body_container} relative`}>

@@ -15,18 +15,20 @@ const inter = Inter({
   display: "swap",
 })
 
-export const metadata: Metadata = {
-  title: "Enkash",
-  description:
-    "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  return {
     title: "Enkash",
     description:
       "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
-    url: process.env.NEXT_PUBLIC_URL,
-    type: "website",
-    images: [`${process.env.NEXT_PUBLIC_URL}/og-image.png`],
-  },
+    openGraph: {
+      title: "Enkash",
+      description:
+        "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
+      url: process.env.NEXT_PUBLIC_URL,
+      type: "website",
+      images: [`${process.env.NEXT_PUBLIC_URL}/og-image.png`],
+    },
+  }
 }
 
 export default function RootLayout({
