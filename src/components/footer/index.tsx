@@ -770,7 +770,7 @@ const FooterV2 = (): React.JSX.Element => {
                 <div className="mt-3">
                   <Link href="/policies">
                     <h4 className={`col-12 ${styles.title} text-wrap`}>
-                      Policies & Compliance
+                      Policies And Compliance
                     </h4>
                   </Link>
 
