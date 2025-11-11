@@ -156,10 +156,7 @@ export const generateMetaData = ({
 }: MetadataInput) => {
   const canonicalUrl = alternates.canonical
   const faqldJSON = generateFaqSchema(faqData)
-  const baseImage =
-    ogImage && ogImage.trim().length > 0
-      ? ogImage
-      : `${process.env.NEXT_PUBLIC_URL}/og-image.png`
+  const baseImage = ogImage || `${process.env.NEXT_PUBLIC_URL}/og-image.png` // ✅ fallback to default OG image
 
   return {
     title,
