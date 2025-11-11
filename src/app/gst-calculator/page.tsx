@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_URL}/images/GST_PREVIEW.webp`,
+        url: `https://websitev3-uat.enkash.in/images/GST_PREVIEW.webp`,
         width: 1200,
         height: 630,
         alt: "GST Calculator Preview - EnKash",
