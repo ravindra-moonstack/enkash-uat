@@ -1,5 +1,5 @@
 import { TProductCategory } from "@/src/types/navbar"
-import { blogsFilled, casestudies, vedioFilled } from ".."
+import { blogsFilled, casestudies, gstCalculator, vedioFilled } from ".."
 
 const resourseProducts: TProductCategory[] = [
   {
@@ -36,6 +36,12 @@ const resourseProducts: TProductCategory[] = [
             description: "Stories, solutions, and demos",
             imageSrcHovered: vedioFilled,
             link: `${process.env.NEXT_PUBLIC_URL}/resources/videos`,
+          },
+          {
+            name: "GST Calculator",
+            description: "Quick, reliable, and hassle-free GST computations",
+            imageSrcHovered: gstCalculator,
+            link: `/gst-calculator`,
           },
         ],
         footerText: "Effortless recognition, and endless rewards in one place",
