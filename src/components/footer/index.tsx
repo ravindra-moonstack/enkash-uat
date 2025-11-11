@@ -738,7 +738,7 @@ const FooterV2 = (): React.JSX.Element => {
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 {/* col-1 resources */}
 
-                <div> 
+                <div>
                   <div className={styles.freedom_card_box}>
                     <h4 className={`${styles.title}`}>Company</h4>
                   </div>
@@ -770,7 +770,7 @@ const FooterV2 = (): React.JSX.Element => {
                 <div className="mt-3">
                   <Link href="/policies">
                     <h4 className={`col-12 ${styles.title} text-wrap`}>
-                      Policies and Compliance
+                      Policies & Compliance
                     </h4>
                   </Link>
 
