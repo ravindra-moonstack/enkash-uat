@@ -8,7 +8,7 @@ interface MetadataInput {
     canonical: string
   }
   faqData?: Array<TFAQProps>
-  ogImage?: string 
+  ogImage?: string
 }
 
 export interface BreadcrumbItem {
@@ -100,7 +100,8 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
                 return parts.join(". ")
               })
               .filter(Boolean)
-              .join(" ")) ?? "",
+              .join(" ")) ??
+          "",
       },
     })),
   }
@@ -156,7 +157,9 @@ export const generateMetaData = ({
   const canonicalUrl = alternates.canonical
   const faqldJSON = generateFaqSchema(faqData)
   const baseImage =
-    ogImage || `${process.env.NEXT_PUBLIC_URL}/og-image.png` // ✅ fallback to default OG image
+    ogImage && ogImage.trim().length > 0
+      ? ogImage
+      : `${process.env.NEXT_PUBLIC_URL}/og-image.png`
 
   return {
     title,
