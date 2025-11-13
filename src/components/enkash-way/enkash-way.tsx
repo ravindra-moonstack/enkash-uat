@@ -134,7 +134,7 @@ const EnkashWay = ({
           <div className="d-flex position-relative">
             {/* Left Content */}
             <div
-              className="d-flex align-items-start gap-3 col-6"
+              className="d-flex align-items-start gap-3 col-5"
               style={{ paddingTop: "108px", paddingBottom: "80px" }}
             >
               <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
@@ -178,7 +178,7 @@ const EnkashWay = ({
             {/* Right Image */}
             {selectedItem.rightImg && (
               <div
-                className="col-6 pointer-events-none position-absolute end-0 text-end"
+                className="col-7 pointer-events-none position-absolute end-0 text-end"
                 style={{ maxHeight: 322, bottom: "-92px" }}
               >
                 <Image

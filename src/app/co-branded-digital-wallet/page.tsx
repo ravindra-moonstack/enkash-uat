@@ -55,14 +55,14 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Launch your own co-branded digital wallet with EnKash - a fully licensed Wallet-as-a-Service (WaaS) platform. Enjoy instant KYC, secure payments, API-based setup, and regulatory compliance under RBI-approved licenses.",
   alternates: {
-    canonical: `${process.env.URL}/co-branded-digital-wallets`,
+    canonical: `${process.env.URL}/co-branded-digital-wallet`,
   },
 })
-const salesUrl = getSalesUrl("/co-branded-digital-wallets")
+const salesUrl = getSalesUrl("/co-branded-digital-wallet")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const CoBrandedDigitalWallets = (): React.JSX.Element => {
+const CoBrandedDigitalWallet = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <HeroSection
@@ -70,12 +70,12 @@ const CoBrandedDigitalWallets = (): React.JSX.Element => {
           { name: "Home", url: "/" },
           { name: " Partnerships", url: "" },
           {
-            name: " Co-branded Digital Wallets",
-            url: "/co-branded-digital-wallets",
+            name: " Co-branded Digital Wallet",
+            url: "/co-branded-digital-wallet",
           },
         ]}
         subtitle={{
-          text: " Co-branded Digital Wallets",
+          text: " Co-branded Digital Wallet",
           color: "color-equity-blue",
           underline: true,
         }}
@@ -152,7 +152,6 @@ const CoBrandedDigitalWallets = (): React.JSX.Element => {
           imageAlt="card background"
           bgColor="bg-color-white"
           buttonUrl={salesUrl}
-          buttonTitle="Learn More"
         />
         <ContentShowcase
           heading="Manage Every Payment Flow in One Place"
@@ -162,7 +161,6 @@ const CoBrandedDigitalWallets = (): React.JSX.Element => {
           imageAlt="card background"
           buttonUrl={salesUrl}
           bgColor="bg-color-black-30"
-          buttonTitle="Learn More"
           reverse
         />
         <ContentShowcase
@@ -173,7 +171,6 @@ const CoBrandedDigitalWallets = (): React.JSX.Element => {
           imageAlt="card background"
           bgColor="bg-color-white"
           buttonUrl={salesUrl}
-          buttonTitle="Learn More"
         />
       </div>
 
@@ -234,18 +231,18 @@ const CoBrandedDigitalWallets = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.seventh_row} bg_white_index `}>
-        <div className={`${styles.title} text-center`}>
+        <div className={`${styles.title} text-center max-w-auto`}>
           <div
             className={` flex-column justify-content-center align-items-center `}
           >
             <DynamicHeading
               content={[
                 {
-                  title: "Be Ready for Every ",
+                  title: "From Wallet Issuance to Payment Processing: ",
                   color: "color-black",
                 },
                 {
-                  title: "Review with Confidence",
+                  title: "  End-to-End Digital Wallet Service Provider ",
                   color: "color-equity-blue",
                 },
               ]}
@@ -279,4 +276,4 @@ const CoBrandedDigitalWallets = (): React.JSX.Element => {
   )
 }
 
-export default CoBrandedDigitalWallets
+export default CoBrandedDigitalWallet
