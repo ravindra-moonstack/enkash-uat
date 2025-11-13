@@ -15,8 +15,9 @@ interface EnkashWayProps {
     description: string
     url?: string
     icon: StaticImageData
-    bgImage?: string | StaticImageData
+    bgImage?: string | StaticImageData | ""
     buttonText?: string
+    rightImg?: string | StaticImageData
   }[]
   sectionHeading: string
   secondHeading?: string
@@ -130,58 +131,65 @@ const EnkashWay = ({
           </div>
 
           <div className={styles.progress_bar}></div>
+          <div className="d-flex position-relative">
+            {/* Left Content */}
+            <div
+              className="d-flex align-items-start gap-3 col-6"
+              style={{ paddingTop: "108px", paddingBottom: "80px" }}
+            >
+              <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
+                <Image
+                  src={selectedItem.icon}
+                  alt="icon"
+                  width={55}
+                  height={55}
+                />
+              </div>
 
-          {/* Selected Content */}
-          <div
-            className="mt-5 px-3 d-flex align-items-start gap-3"
-            style={{ width: "50%" }}
-          >
-            <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-              <Image
-                src={selectedItem.icon}
-                alt="icon"
-                width={55}
-                height={55}
-              />
+              <div className="d-flex flex-column gap-3">
+                <DynamicHeading
+                  content={[
+                    { title: selectedItem.title, color: "color-black" },
+                  ]}
+                  headingTag="h4"
+                  className="f-5"
+                />
+                <DynamicHeading
+                  content={[
+                    { title: selectedItem.description, color: "color-black" },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
+
+                {selectedItem.url && (
+                  <div className={`${styles.list_button}`}>
+                    <CommonButton
+                      title={selectedItem.buttonText || "Learn More"}
+                      theme="border-gray"
+                      arrow
+                      url={selectedItem.url}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
-            <div className="d-flex flex-column gap-3">
-              <DynamicHeading
-                content={[
-                  {
-                    title: selectedItem.title,
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h4"
-                className="f-5"
-              />
-              <DynamicHeading
-                content={[
-                  {
-                    title: selectedItem.description,
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="p"
-                className="mb-0"
-              />
-
-              {selectedItem.url && (
-                <div className={`${styles.list_button}`}>
-                  <CommonButton
-                    title={
-                      selectedItem.buttonText
-                        ? selectedItem.buttonText
-                        : "Learn More"
-                    }
-                    theme="border-gray"
-                    arrow
-                    url={selectedItem.url}
-                  />
-                </div>
-              )}
-            </div>
+            {/* Right Image */}
+            {selectedItem.rightImg && (
+              <div
+                className="col-6 position-absolute end-0 bottom-0 d-flex justify-content-end"
+                style={{ maxHeight: 300 }}
+              >
+                <Image
+                  src={selectedItem.rightImg}
+                  alt="right image"
+                  height={360}
+                  className="w-auto"
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -229,6 +237,7 @@ const EnkashWay = ({
                 typeof data.bgImage === "string"
                   ? data.bgImage
                   : data.bgImage?.src || ""
+
               return (
                 <div key={index} className={styles.progress_items}>
                   <div
@@ -295,6 +304,19 @@ const EnkashWay = ({
                           />
                         </div>
                       </div>
+                      {data.rightImg && (
+                        <div className="mt-3 text-center">
+                          <Image
+                            src={data.rightImg}
+                            alt="right image"
+                            width={250}
+                            height={150}
+                            style={{ objectFit: "contain" }}
+                          />
+                        </div>
+                      )}
+
+                      {/* right image */}
                     </div>
                   )}
                 </div>
