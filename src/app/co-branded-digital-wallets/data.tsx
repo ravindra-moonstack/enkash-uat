@@ -357,8 +357,8 @@ const allProductSections = [
         link: "",
       },
       {
-        title: "Customization",
-        title2: " & Flexibility",
+        title: "Tailor",
+        title2: "-Made",
         description:
           "Owned tech stack allows tailored solutions to fit your business needs.",
         image: key,
