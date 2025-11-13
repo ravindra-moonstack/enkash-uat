@@ -58,7 +58,7 @@ const EnkashWay = ({
         className={`d-md-block d-none ${styles.sixth_row}`}
         style={{
           backgroundImage: `url(${currentBgImage})`,
-          backgroundSize: "cover", // show full image
+          backgroundSize: "cover",
           backgroundPosition: "center bottom",
           backgroundRepeat: "no-repeat",
           transition: "background-image 0.5s ease-in-out",
@@ -178,14 +178,14 @@ const EnkashWay = ({
             {/* Right Image */}
             {selectedItem.rightImg && (
               <div
-                className="col-6 position-absolute end-0 bottom-0 d-flex justify-content-end"
-                style={{ maxHeight: 300 }}
+                className="col-6 pointer-events-none position-absolute end-0 text-end"
+                style={{ maxHeight: 322, bottom: "-92px" }}
               >
                 <Image
                   src={selectedItem.rightImg}
                   alt="right image"
-                  height={360}
-                  className="w-auto"
+                  height={322}
+                  width={380}
                   style={{ objectFit: "contain" }}
                 />
               </div>
@@ -272,7 +272,22 @@ const EnkashWay = ({
                           alt="background"
                           width={600}
                           height={200}
+                          className={styles.dropdownBackgroundBg}
                         />
+                        {data.rightImg && (
+                          <div
+                            className="mt-3 text-center position-absolute "
+                            style={{ top: "-4px", right: "50px" }}
+                          >
+                            <Image
+                              src={data.rightImg}
+                              alt="right image"
+                              width={250}
+                              height={150}
+                              style={{ objectFit: "contain" }}
+                            />
+                          </div>
+                        )}
                       </div>
                       <div className="d-flex align-items-start gap-2 mt-2">
                         <Image
@@ -304,17 +319,6 @@ const EnkashWay = ({
                           />
                         </div>
                       </div>
-                      {data.rightImg && (
-                        <div className="mt-3 text-center">
-                          <Image
-                            src={data.rightImg}
-                            alt="right image"
-                            width={250}
-                            height={150}
-                            style={{ objectFit: "contain" }}
-                          />
-                        </div>
-                      )}
 
                       {/* right image */}
                     </div>
