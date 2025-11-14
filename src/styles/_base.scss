@@ -537,3 +537,10 @@ body {
     max-height: 650px;
   }
 }
+
+@media (min-width: 768px) {
+  .my-absolute-desktop {
+    position: absolute;
+    left: 0;
+  }
+}
