@@ -90,7 +90,7 @@ const CoBrandedDigitalWallet = (): React.JSX.Element => {
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         rightImage={heroImg}
         backgroundImage="/images/collectPaymentBg.webp"
-        rightImageMaxHeight="604px"
+        rightImageMaxHeight="540px"
       />
 
       <div className={styles.introduction_section}>
@@ -153,8 +153,10 @@ const CoBrandedDigitalWallet = (): React.JSX.Element => {
           data={paymentMethodData}
           imageSrc={receipt}
           imageAlt="card background"
-          bgColor="bg-color-white"
+          bgColor="bg-color-white position-relative"
+          imgStyle="position-absolute start-0"
           buttonUrl={salesUrl}
+          imgHeightStyle="mh-650"
         />
         <ContentShowcase
           heading="Manage Every Payment Flow in One Place"
@@ -164,6 +166,7 @@ const CoBrandedDigitalWallet = (): React.JSX.Element => {
           imageAlt="card background"
           buttonUrl={salesUrl}
           bgColor="bg-color-black-30"
+          imgHeightStyle="mh-650"
           reverse
         />
         <ContentShowcase
@@ -172,8 +175,9 @@ const CoBrandedDigitalWallet = (): React.JSX.Element => {
           data={rankData}
           imageSrc={walletExpense}
           imageAlt="card background"
-          bgColor="bg-color-white"
+          bgColor="bg-color-white position-relative"
           buttonUrl={salesUrl}
+          imgStyle="position-absolute start-0"
         />
       </div>
 
@@ -266,11 +270,9 @@ const CoBrandedDigitalWallet = (): React.JSX.Element => {
 
       <div className={`${styles.features_section}`}>
         <BottomCtaSection
-          headingPart1="Start Building 
-
-"
+          headingPart1="Start Building"
           headingPart2="Your Wallet Today"
-          buttonHref="#partnership-form"
+          buttonHref={salesUrl}
         />
       </div>
 

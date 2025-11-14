@@ -531,3 +531,9 @@ body {
     font-size: 46px !important;
   }
 }
+
+.mh-650 {
+  @include for-laptops {
+    max-height: 650px;
+  }
+}

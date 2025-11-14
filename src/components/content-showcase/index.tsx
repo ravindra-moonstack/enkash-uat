@@ -22,6 +22,8 @@ interface ContentShowcaseProps {
   reverse?: boolean
   buttonTitle?: string
   buttonUrl?: string
+  imgStyle?: string
+  imgHeightStyle?: string
 }
 
 function ContentShowcase({
@@ -35,6 +37,8 @@ function ContentShowcase({
   buttonTitle,
   mainHeading,
   buttonUrl,
+  imgStyle,
+  imgHeightStyle = "mh-550",
 }: ContentShowcaseProps): JSX.Element {
   //
 
@@ -57,11 +61,11 @@ function ContentShowcase({
                 reverse ? "order-2 order-md-1" : "order-1 order-md-1"
               }`}
             >
-              <div>
+              <div className={`${imgStyle} `}>
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
-                  className="position-relative w-100 mh-550 object-fit-contain"
+                  className={`position-relative w-100  object-fit-contain ${imgHeightStyle} `}
                 />
               </div>
             </div>
