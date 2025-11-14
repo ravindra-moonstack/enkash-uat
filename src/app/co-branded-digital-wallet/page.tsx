@@ -154,7 +154,7 @@ const CoBrandedDigitalWallet = (): React.JSX.Element => {
           imageSrc={receipt}
           imageAlt="card background"
           bgColor="bg-color-white position-relative"
-          imgStyle="position-absolute start-0"
+          imgStyle="my-absolute-desktop"
           buttonUrl={salesUrl}
           imgHeightStyle="mh-650"
         />
@@ -177,7 +177,7 @@ const CoBrandedDigitalWallet = (): React.JSX.Element => {
           imageAlt="card background"
           bgColor="bg-color-white position-relative"
           buttonUrl={salesUrl}
-          imgStyle="position-absolute start-0"
+          imgStyle="my-absolute-desktop"
         />
       </div>
 
