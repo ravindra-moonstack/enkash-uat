@@ -81,7 +81,11 @@ const CoBrandedDigitalWallet = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "The Best Co-branded Digital Wallet Stack for Indian Businesses",
+            text: "The Best Co-branded Digital Wallet Stack for ",
+          },
+          {
+            text: " Indian Businesses",
+            color: "f-4 color-black ",
           },
         ]}
         description={{
