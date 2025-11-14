@@ -34,6 +34,11 @@ const partnershipProducts: TProductCategory[] = [
                 imageSrc: coBrand,
               },
               {
+                name: "Co-branded Digital Wallet",
+                link: "/co-branded-digital-wallet",
+                imageSrc: coBrand,
+              },
+              {
                 name: "Payment Gateway",
                 link: "/payment-gateway-partners",
                 imageSrc: coBrand,
