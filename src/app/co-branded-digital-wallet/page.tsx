@@ -132,7 +132,10 @@ const CoBrandedDigitalWallet = (): React.JSX.Element => {
       <div className="bg_white_index">
         <ContentShowcase
           mainHeading={[
-            { title: "A Full-Stack WaaS ", color: "color-black" },
+            {
+              title: "A Full-stack Wallet-as-a-Service (WaaS):  ",
+              color: "color-black",
+            },
             { title: " Designed for Scale", color: "color-equity-blue" },
           ]}
           heading="Start with Compliance Built In"
