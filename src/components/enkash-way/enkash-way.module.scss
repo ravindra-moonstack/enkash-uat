@@ -10,25 +10,6 @@
     background: none !important; // remove background on mobile
   }
 
-  .blur_bg {
-    position: relative; // must be relative for pseudo absolute to work
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%; // position center
-      left: 0%;
-      transform: translate(-50%, -50%); // truly center it
-      width: 400px; // adjust as needed
-      height: 200px; // adjust for oval shape
-      border-radius: 50%; // makes it an oval
-      background: #ffff; // pick your color
-      filter: blur(120px); // adjust blur strength
-      opacity: 0.3; // adjust opacity
-      z-index: 0; // stay behind content
-    }
-  }
-
   .list_button {
     margin-top: 60px;
   }
@@ -40,12 +21,13 @@
 
   .tab_section {
     background-color: $color-soft-mint;
+    position: relative;
   }
 }
 
 .tab_section {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   padding: 50px 20px;
 
   @include for-laptops {
@@ -98,8 +80,9 @@
   .dropdownBg {
     width: 100%;
     margin-bottom: 8px;
+    position: relative;
 
-    img {
+    .dropdownBackgroundBg {
       width: 100%;
       height: auto;
       object-fit: cover;

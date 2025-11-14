@@ -653,43 +653,37 @@ const FooterV2 = (): React.JSX.Element => {
                     </ul>
                   </div>
                   <div className="mt-3">
-                    <Link href="https://docs.enkash.com/" target="_blank">
-                      <h4 className={`col-12 ${styles.title}`}>
-                        For Developers
-                      </h4>
-                    </Link>
+                    <div className={styles.freedom_card_box}>
+                      <h4 className={`${styles.title}`}>Partnerships</h4>
+                    </div>
                     <ul>
                       <li>
-                        <a
-                          href="https://docs.enkash.com/payment-gateway"
-                          target="_blank"
-                        >
+                        <Link href="/bank-partnerships">For Banks</Link>
+                      </li>
+                      <li>
+                        <Link href="/affiliate-programs">
+                          Affiliate Program
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/co-branded-card-partners">
+                          Co-branded Cards
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/co-branded-digital-wallet">
+                          Co-branded Digital Wallet
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/payment-gateway-partners">
                           Payment Gateway
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="https://docs.enkash.com/folder-1769242"
-                          target="_blank"
-                        >
-                          Prepaid Cards
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://docs.enkash.com/expense-management"
-                          target="_blank"
-                        >
-                          Expense Management
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://docs.enkash.com/doc-1039810"
-                          target="_blank"
-                        >
-                          Rewards
-                        </a>
+                        <Link href="/bharat-connect-partnership">
+                          Bharat Connect
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -806,30 +800,41 @@ const FooterV2 = (): React.JSX.Element => {
                   </ul>
                 </div>
                 <div className="mt-3">
-                  <div className={styles.freedom_card_box}>
-                    <h4 className={`${styles.title}`}>Partnerships</h4>
-                  </div>
+                  <Link href="https://docs.enkash.com/" target="_blank">
+                    <h4 className={`col-12 ${styles.title}`}>For Developers</h4>
+                  </Link>
                   <ul>
                     <li>
-                      <Link href="/bank-partnerships">For Banks</Link>
-                    </li>
-                    <li>
-                      <Link href="/affiliate-programs">Affiliate Program</Link>
-                    </li>
-                    <li>
-                      <Link href="/co-branded-card-partners">
-                        Co-branded Cards
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/payment-gateway-partners">
+                      <a
+                        href="https://docs.enkash.com/payment-gateway"
+                        target="_blank"
+                      >
                         Payment Gateway
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link href="/bharat-connect-partnership">
-                        Bharat Connect
-                      </Link>
+                      <a
+                        href="https://docs.enkash.com/folder-1769242"
+                        target="_blank"
+                      >
+                        Prepaid Cards
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://docs.enkash.com/expense-management"
+                        target="_blank"
+                      >
+                        Expense Management
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://docs.enkash.com/doc-1039810"
+                        target="_blank"
+                      >
+                        Rewards
+                      </a>
                     </li>
                   </ul>
                 </div>

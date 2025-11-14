@@ -111,8 +111,8 @@ const PaymentGateway = (): React.JSX.Element => {
                 <div className={`d-flex ${styles.outerCard}`}>
                   <DynamicHeading
                     content={[{ title: card.value, color: "color-white" }]}
-                    headingTag="h2"
-                    className="f-6"
+                    headingTag="p"
+                    className="f-6 title-adaptive"
                   />
                 </div>
                 <div className={`py-2  ${styles.innerCard}`}>

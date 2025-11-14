@@ -13,19 +13,32 @@ import {
 import { Table } from "react-bootstrap"
 import Image from "next/image"
 import FaqSection from "@/src/components/faq-section"
-import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 import bgImg from "../../../public/images/gstCalculatorBg.webp"
 
-export const metadata: Metadata = generateMetaData({
+// export const metadata: Metadata = ({
+//   title: "Free GST Calculator | Calculate GST Online Free - EnKash",
+//   description:
+//     "Free online GST calculator to get accurate CGST, SGST & IGST breakdowns with inclusive and exclusive amounts.",
+//   alternates: {
+//     canonical: `${process.env.NEXT_PUBLIC_URL}/gst-calculator`,
+//   },
+//   ogImage: `${process.env.NEXT_PUBLIC_URL}/images/GST_PREVIEW.webp`,
+// })
+
+export const metadata: Metadata = {
   title: "Free GST Calculator | Calculate GST Online Free - EnKash",
   description:
     "Free online GST calculator to get accurate CGST, SGST & IGST breakdowns with inclusive and exclusive amounts.",
-  alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_URL}/gst-calculator`,
+  openGraph: {
+    title: "Free GST Calculator | Calculate GST Online Free - EnKash",
+    description:
+      "Free online GST calculator to get accurate CGST, SGST & IGST breakdowns with inclusive and exclusive amounts.",
+    url: `${process.env.NEXT_PUBLIC_URL}/gst-calculator`,
+    type: "website",
+    images: [`${process.env.NEXT_PUBLIC_URL}/images/GST_PREVIEW.webp`],
   },
-  ogImage: `${process.env.NEXT_PUBLIC_URL}/images/GST_PREVIEW.webp`,
-})
+}
 const Page = (): React.JSX.Element => {
   return (
     <div className={` ${styles.body_container} relative`}>

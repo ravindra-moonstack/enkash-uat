@@ -130,7 +130,7 @@ const UpiPayments = (): React.JSX.Element => {
                 <DynamicHeading
                   content={[
                     {
-                      title: "Instant Setup",
+                      title: "Instant   Setup",
                       color: "color-white",
                     },
                   ]}
