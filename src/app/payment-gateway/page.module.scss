@@ -111,12 +111,12 @@
       align-items: center;
 
       .outerCard {
-        padding-top: 5px;
+        padding-top: 24px;
         padding-bottom: 5px;
         margin: auto;
 
         @include for-laptops {
-          padding-top: 20px;
+          padding-top: 38px;
           padding-bottom: 20px;
         }
       }

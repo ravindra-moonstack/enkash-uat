@@ -494,8 +494,6 @@ body {
   }
 }
 .calculator {
-
-
   letter-spacing: -0.04em;
   input {
     width: full;
@@ -523,5 +521,26 @@ body {
 
   .secondRow {
     text-align: center;
+  }
+}
+
+.title-adaptive {
+  font-size: 24px !important;
+
+  @include for-laptops {
+    font-size: 46px !important;
+  }
+}
+
+.mh-650 {
+  @include for-laptops {
+    max-height: 650px;
+  }
+}
+
+@media (min-width: 768px) {
+  .my-absolute-desktop {
+    position: absolute;
+    left: 0;
   }
 }

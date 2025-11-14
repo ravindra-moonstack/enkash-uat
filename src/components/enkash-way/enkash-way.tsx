@@ -15,8 +15,9 @@ interface EnkashWayProps {
     description: string
     url?: string
     icon: StaticImageData
-    bgImage?: string | StaticImageData
+    bgImage?: string | StaticImageData | ""
     buttonText?: string
+    rightImg?: string | StaticImageData
   }[]
   sectionHeading: string
   secondHeading?: string
@@ -57,7 +58,7 @@ const EnkashWay = ({
         className={`d-md-block d-none ${styles.sixth_row}`}
         style={{
           backgroundImage: `url(${currentBgImage})`,
-          backgroundSize: "cover", // show full image
+          backgroundSize: "cover",
           backgroundPosition: "center bottom",
           backgroundRepeat: "no-repeat",
           transition: "background-image 0.5s ease-in-out",
@@ -130,58 +131,65 @@ const EnkashWay = ({
           </div>
 
           <div className={styles.progress_bar}></div>
+          <div className="d-flex position-relative">
+            {/* Left Content */}
+            <div
+              className="d-flex align-items-start gap-3 col-5"
+              style={{ paddingTop: "108px", paddingBottom: "80px" }}
+            >
+              <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
+                <Image
+                  src={selectedItem.icon}
+                  alt="icon"
+                  width={55}
+                  height={55}
+                />
+              </div>
 
-          {/* Selected Content */}
-          <div
-            className="mt-5 px-3 d-flex align-items-start gap-3"
-            style={{ width: "50%" }}
-          >
-            <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-              <Image
-                src={selectedItem.icon}
-                alt="icon"
-                width={55}
-                height={55}
-              />
+              <div className="d-flex flex-column gap-3">
+                <DynamicHeading
+                  content={[
+                    { title: selectedItem.title, color: "color-black" },
+                  ]}
+                  headingTag="h4"
+                  className="f-5"
+                />
+                <DynamicHeading
+                  content={[
+                    { title: selectedItem.description, color: "color-black" },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
+
+                {selectedItem.url && (
+                  <div className={`${styles.list_button}`}>
+                    <CommonButton
+                      title={selectedItem.buttonText || "Learn More"}
+                      theme="border-gray"
+                      arrow
+                      url={selectedItem.url}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
-            <div className="d-flex flex-column gap-3">
-              <DynamicHeading
-                content={[
-                  {
-                    title: selectedItem.title,
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h4"
-                className="f-5"
-              />
-              <DynamicHeading
-                content={[
-                  {
-                    title: selectedItem.description,
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="p"
-                className="mb-0"
-              />
-
-              {selectedItem.url && (
-                <div className={`${styles.list_button}`}>
-                  <CommonButton
-                    title={
-                      selectedItem.buttonText
-                        ? selectedItem.buttonText
-                        : "Learn More"
-                    }
-                    theme="border-gray"
-                    arrow
-                    url={selectedItem.url}
-                  />
-                </div>
-              )}
-            </div>
+            {/* Right Image */}
+            {selectedItem.rightImg && (
+              <div
+                className="col-7 pointer-events-none position-absolute end-0 text-end"
+                style={{ maxHeight: 322, bottom: "-92px" }}
+              >
+                <Image
+                  src={selectedItem.rightImg}
+                  alt="right image"
+                  height={322}
+                  width={380}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -229,6 +237,7 @@ const EnkashWay = ({
                 typeof data.bgImage === "string"
                   ? data.bgImage
                   : data.bgImage?.src || ""
+
               return (
                 <div key={index} className={styles.progress_items}>
                   <div
@@ -263,7 +272,22 @@ const EnkashWay = ({
                           alt="background"
                           width={600}
                           height={200}
+                          className={styles.dropdownBackgroundBg}
                         />
+                        {data.rightImg && (
+                          <div
+                            className="mt-3 text-center position-absolute "
+                            style={{ top: "-4px", right: "50px" }}
+                          >
+                            <Image
+                              src={data.rightImg}
+                              alt="right image"
+                              width={250}
+                              height={150}
+                              style={{ objectFit: "contain" }}
+                            />
+                          </div>
+                        )}
                       </div>
                       <div className="d-flex align-items-start gap-2 mt-2">
                         <Image
@@ -295,6 +319,8 @@ const EnkashWay = ({
                           />
                         </div>
                       </div>
+
+                      {/* right image */}
                     </div>
                   )}
                 </div>

@@ -22,6 +22,8 @@ interface ContentShowcaseProps {
   reverse?: boolean
   buttonTitle?: string
   buttonUrl?: string
+  imgStyle?: string
+  imgHeightStyle?: string
 }
 
 function ContentShowcase({
@@ -35,14 +37,14 @@ function ContentShowcase({
   buttonTitle,
   mainHeading,
   buttonUrl,
+  imgStyle,
+  imgHeightStyle = "mh-550",
 }: ContentShowcaseProps): JSX.Element {
-  //
-
   return (
-    <div className={`${bgColor} ${styles.ContentShowcase} `}>
+    <div className={`${bgColor} ${styles.ContentShowcase}`}>
       <div className="max-w-auto">
         {mainHeading && (
-          <div className={`text-center  ${styles.MaineHeading} `}>
+          <div className={`text-center ${styles.MaineHeading}`}>
             <DynamicHeading
               content={mainHeading}
               headingTag="h2"
@@ -50,25 +52,33 @@ function ContentShowcase({
             />
           </div>
         )}
-        <div className={`${styles.ContentShowcaseContent} `}>
-          <div className={`row  ${reverse ? "flex-row-reverse" : ""}`}>
+
+        <div className={styles.ContentShowcaseContent}>
+          <div className={`row`}>
+            {/* IMAGE COLUMN — Mobile second, Desktop based on reverse */}
             <div
-              className={`col-md-6 col-12 ${
-                reverse ? "order-2 order-md-1" : "order-1 order-md-1"
-              }`}
+              className={`
+                col-md-6 col-12
+                ${reverse ? "order-md-2" : "order-md-1"}
+                order-2
+              `}
             >
-              <div>
+              <div className={`${imgStyle}`}>
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
-                  className="position-relative w-100 mh-550 object-fit-contain"
+                  className={`position-relative w-100 object-fit-contain ${imgHeightStyle}`}
                 />
               </div>
             </div>
+
+            {/* CONTENT COLUMN — Mobile first, Desktop based on reverse */}
             <div
-              className={`col-md-6 col-12 ${
-                reverse ? "order-1 order-md-2" : "order-2 order-md-2"
-              }`}
+              className={`
+                col-md-6 col-12
+                ${reverse ? "order-md-1" : "order-md-2"}
+                order-1
+              `}
             >
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <DynamicHeading
@@ -76,12 +86,14 @@ function ContentShowcase({
                   headingTag="h4"
                   className="f-5"
                 />
+
                 <DynamicHeading
                   content={[{ title: subheading, color: "color-main-grey" }]}
                   headingTag="p"
                   className="f-4 mt-2 mb-0"
                 />
               </div>
+
               <div className="d-flex flex-column gap-32 mt-4">
                 {data.map(({ icon, title, description }, i) => (
                   <PolicyCard
@@ -92,6 +104,7 @@ function ContentShowcase({
                   />
                 ))}
               </div>
+
               <div className={styles.list_button}>
                 <CommanButton
                   title={buttonTitle || "Get Started"}
