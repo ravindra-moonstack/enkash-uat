@@ -494,8 +494,6 @@ body {
   }
 }
 .calculator {
-
-
   letter-spacing: -0.04em;
   input {
     width: full;
@@ -523,5 +521,13 @@ body {
 
   .secondRow {
     text-align: center;
+  }
+}
+
+.title-adaptive {
+  font-size: 24px !important;
+
+  @include for-laptops {
+    font-size: 46px !important;
   }
 }

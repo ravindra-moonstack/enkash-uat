@@ -97,7 +97,7 @@ const cardsData: TStackCardsProp = [
 const introductionCards = [
   { value: "100%", label: "Regulatory Compliance" },
   { value: "99.99%", label: "Platform Uptime" },
-  { value: "100%", label: "Auto-scalable" },
+  { value: "100%", label: "Auto  -  scalable" },
 ]
 
 const cardData = [
