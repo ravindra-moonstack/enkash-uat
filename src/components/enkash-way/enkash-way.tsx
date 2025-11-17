@@ -326,8 +326,8 @@ const EnkashWay = ({
                               src={data.rightImg}
                               alt="center image"
                               width={178}
-                              height={178} // give same for ratio — height auto not allowed
-                              style={{ objectFit: "contain" }}
+                        
+                              style={{ objectFit: "contain", height: "auto" }}
                             />
                           </div>
                         </div>
