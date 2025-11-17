@@ -8,8 +8,7 @@
   padding: 8px 8px 24px;
   display: flex;
   flex-direction: column;
-
-  height: 100%; // 🔥 ensures all cards same height
+  height: 100%;
   cursor: pointer;
 }
 
@@ -27,11 +26,26 @@
   width: 100%;
   height: auto;
   max-height: 100%;
-  object-fit: contain;
+  object-fit: inherit;
   border-radius: 16px;
 }
 
 .voucher_card_title {
-  padding: 16px;
-  padding-bottom: 0;
+  padding-top: 16px;
+  min-height: 72px;
+}
+
+.voucher_card_title p,
+.voucher_card_title h6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.full_card_link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
