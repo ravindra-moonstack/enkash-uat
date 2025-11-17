@@ -1,8 +1,6 @@
 import React, { JSX } from "react"
-
 import styles from "./blog-section.module.scss"
 import DynamicHeading from "../../dynamic-heading"
-import { StaticImageData } from "next/image"
 import BlogCard from "../../blog-card"
 
 interface HeadingPart {
@@ -10,49 +8,59 @@ interface HeadingPart {
   color: string
 }
 
-interface CardData {
-  whiteTitle?: string
-  description?: string
-  cardImage?: string | StaticImageData
-  link?: string
-  theme?: "dark" | "light" | "black"
-  [key: string]: any
+interface BlogPost {
+  ID: number
+  title: string
+  link: string
+  featured_image: string
 }
 
 interface BlogSectionProps {
   heading: HeadingPart[]
   headingTag?: keyof JSX.IntrinsicElements
-  cards: CardData[]
+  cards: number[] // ONLY post IDs now
   className?: string
-  useOptionalProps?: boolean
 }
 
-const BlogSection: React.FC<BlogSectionProps> = ({
+// Server Component
+async function fetchBlogs(postIds: number[]): Promise<BlogPost[]> {
+  const res = await fetch(
+    "https://www.enkash.com/resources/wp-json/custom-api/v2/send-post",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ post_ids: postIds }),
+      next: { revalidate: 3600 },
+    }
+  )
+
+  const data = await res.json()
+  return data.posts || []
+}
+
+const BlogSection = async ({
   heading,
-  headingTag = "h2",
-  cards,
+
+  cards, // post IDs
   className = "",
-}) => {
+}: BlogSectionProps) => {
+  // Fetch API here
+  const posts = await fetchBlogs(cards)
+
   return (
     <div className={`${styles.other_products} ${className}`}>
       <div className="max-w-auto">
         <div className={`${styles.title} text-center pb-4 pb-md-4`}>
-          <DynamicHeading
-            content={heading}
-            headingTag={headingTag}
-            className="f-6"
-          />
+          <DynamicHeading content={heading} headingTag="h2" className="f-6" />
         </div>
 
         <div className="row g-3 pb-4">
-          {cards.map((card, index) => (
-            <div className="col-12 col-md-4" key={index}>
+          {posts.map((post) => (
+            <div className="col-12 col-md-4" key={post.ID}>
               <BlogCard
-                titleHtml={card.whiteTitle}
-                description={card.description}
-                cardImage={card.cardImage}
-                discount={card.discount}
-                buttonUrl={card.link}
+                description={post.title}
+                cardImage={post.featured_image}
+                buttonUrl={post.link}
               />
             </div>
           ))}
