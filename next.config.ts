@@ -7,26 +7,32 @@ const withBundleAnalyzerConfigured = withBundleAnalyzer({
 })
 
 const nextConfig: NextConfig = {
-  compress: true, // ✅ Enables gzip & brotli compression for faster transfer
+  compress: true,
 
   experimental: {
-    // ✅ Optimize CSS delivery and reduce render-blocking chunks
     optimizeCss: true,
-
-    // ✅ Tree-shake unused imports for lighter bundles
     optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
   },
 
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
-    // ✅ Enable minification of styled components if used
     styledComponents: true,
+  },
+
+  // ✅ ADD THIS PART FOR BLOG IMAGE SUPPORT
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.enkash.com",
+        pathname: "/resources/wp-content/uploads/**",
+      },
+    ],
   },
 
   webpack(config, { dev, isServer }) {
     config.infrastructureLogging = { level: "error" }
 
-    // ✅ Prevent multiple CSS chunks per component
     if (!dev && !isServer) {
       config.optimization.splitChunks.cacheGroups = {
         default: false,
@@ -43,10 +49,8 @@ const nextConfig: NextConfig = {
     return config
   },
 
-  // ✅ Add HTTP caching and security headers
   async headers() {
     return [
-      // Security Headers
       {
         source: "/(.*)",
         headers: [
@@ -57,24 +61,18 @@ const nextConfig: NextConfig = {
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
         ],
       },
-
-      // Cache static assets aggressively
       {
         source: "/(.*).(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
-
-      // Cache Next.js static chunks
       {
         source: "/_next/static/(.*)",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
-
-      // No cache for SSR / HTML pages
       {
         source: "/((?!_next/static|.*\\..*).*)",
         headers: [
@@ -84,7 +82,6 @@ const nextConfig: NextConfig = {
     ]
   },
 
-  // ✅ Preload key LCP-related assets (optional hint)
   async rewrites() {
     return [
       { source: "/resources", destination: "https://blogs.enkash.com/blog" },

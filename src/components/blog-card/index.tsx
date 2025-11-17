@@ -27,6 +27,8 @@ const BlogCard = ({
           <div className={styles.image_wrapper}>
             <Image
               src={cardImage}
+              width={400}
+              height={250}
               alt="card visual"
               className={styles.card_image}
             />
