@@ -38,6 +38,7 @@ import {
 import HeroSection from "@/src/components/sections/hero-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
+import BlogSection from "@/src/components/sections/blog-section"
 
 //utils
 
@@ -601,7 +602,20 @@ const PaymentGateway = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[12642, 13675, 12195]}
+      />
       <OtherProducts
         heading={[
           { title: "Check out ", color: "color-black" },

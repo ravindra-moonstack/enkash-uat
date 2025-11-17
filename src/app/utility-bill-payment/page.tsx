@@ -18,6 +18,7 @@ import StepsSection from "@/src/components/steps-section"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 import SliderSection from "@/src/components/sections/slider-section"
 import CtaSection from "@/src/components/sections/cta-section"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Utility Bill Payment: Pay All Business Utility Bills Seamlessly",
@@ -128,6 +129,20 @@ const UtilityBillPayment = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[4062, 10658, 11322]}
+      />
     </div>
   )
 }

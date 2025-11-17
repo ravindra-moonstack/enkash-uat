@@ -76,18 +76,46 @@
   &.show {
     display: block;
   }
+  .bgContainer {
+    width: 100%;
+    height: 200px; // match background image height
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center; // centers inner image horizontally
+    align-items: end; // centers inner image vertically
+
+    border-radius: 8px; // optional
+  }
+
+  .bgInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .dropdownBg {
-    width: 100%;
-    margin-bottom: 8px;
     position: relative;
+  }
 
-    .dropdownBackgroundBg {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+  .dropdownBackgroundBg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .centerImageWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
