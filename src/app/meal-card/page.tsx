@@ -24,6 +24,7 @@ import { circles, mealCardImage, cardRotatingImage, heroCardImg } from "./img"
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Meal Card: Tax-Saving Digital Benefit for Employees",
@@ -160,6 +161,21 @@ const MealCards = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
+
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[1155, 13983, 1628]}
+      />
 
       <OtherProducts
         heading={[

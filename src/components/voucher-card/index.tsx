@@ -7,7 +7,7 @@ import { CommanButton } from ".."
 
 export interface CardProps {
   titleHtml?: ReactNode
-  description: string
+  description?: string
   cardImage?: string | StaticImageData
   buttonUrl?: string
   discount?: number | string

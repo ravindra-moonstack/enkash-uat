@@ -13,9 +13,10 @@ import FaqSection from "@/src/components/faq-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import EnkashWay from "@/src/components/enkash-way/enkash-way"
 import { heroCardImg } from "./img"
+import BlogSection from "@/src/components/sections/blog-section"
 
 //data
-import { progressData, stackcardData } from "./data"
+import { otherProductsHeading, progressData, stackcardData } from "./data"
 import { faqData } from "./faq-data"
 
 //utils
@@ -30,9 +31,11 @@ export const metadata: Metadata = generateMetaData({
     canonical: `${process.env.URL}/prepaid-card`,
   },
 })
+
 const salesUrl = getSalesUrl("/prepaid-card")
 
-const cards = stackcardData.map((item, index) => ({
+// Static card stacking data
+const stackCards = stackcardData.map((item, index) => ({
   content: (
     <AllInOnePolicy
       key={index}
@@ -46,10 +49,14 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
-const PrepaidCard = (): React.JSX.Element => {
-  //
+
+// -----------------------------------------
+//  PAGE COMPONENT
+// -----------------------------------------
+const PrepaidCard = async (): Promise<React.JSX.Element> => {
   return (
-    <div className={`color-white  `}>
+    <div className={`color-white`}>
+      {/* ---------------- HERO SECTION ---------------- */}
       <div className={`${styles.hero_section}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
@@ -57,36 +64,28 @@ const PrepaidCard = (): React.JSX.Element => {
               items={[
                 { name: "Home", url: "/" },
                 { name: "Corporate Cards ", url: "/products/corporate-cards" },
-                {
-                  name: "Prepaid Cards",
-                  url: "/corporate-cards/prepaid-card",
-                },
+                { name: "Prepaid Cards", url: "/corporate-cards/prepaid-card" },
               ]}
               linkColor="allWhite"
             />
           </div>
-          <div className={`${styles.title} col-12 `}>
+
+          <div className={`${styles.title} col-12`}>
             <DynamicHeading
               content={[
-                {
-                  title: "Prepaid Cards",
-                  color: "color-white underline",
-                },
+                { title: "Prepaid Cards", color: "color-white underline" },
               ]}
               headingTag="p"
-              className=""
             />
-            <div className="d-flex  flex-column text-center">
+
+            <div className="d-flex flex-column text-center">
               <DynamicHeading
                 content={[
                   {
                     title: "The Best Prepaid Corporate Card",
                     color: "color-white f-3 d-block italic",
                   },
-                  {
-                    title: "for Business Spending",
-                    color: "color-white",
-                  },
+                  { title: "for Business Spending", color: "color-white" },
                 ]}
                 headingTag="h1"
                 className="f-7 mb-2"
@@ -103,9 +102,9 @@ const PrepaidCard = (): React.JSX.Element => {
                   },
                 ]}
                 headingTag="p"
-                className=""
               />
             </div>
+
             <div
               className={`${styles.button_wrapper} justify-content-center d-flex`}
             >
@@ -113,48 +112,56 @@ const PrepaidCard = (): React.JSX.Element => {
             </div>
           </div>
         </div>
+
         <div className={`${styles.lottie_containerOuter} col-12`}>
           <div className={styles.lottie_container}>
-            <Image src={heroCardImg} alt="card background" className=" " />
+            <Image src={heroCardImg} alt="card background" />
           </div>
         </div>
       </div>
 
+      {/* ---------------- LOGO SLIDER ---------------- */}
       <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
+      {/* ---------------- ENKASH WAY ---------------- */}
       <EnkashWay
         sectionHeading="Ditch out-of-pocket claims. "
         secondHeading="Take control of every rupee."
         secondHeadingColor="black"
         subTitle="Empower your teams with prepaid business cards that simplify purchases, improve tracking, and eliminate manual reimbursements."
-        progressData={progressData.map((item) => ({
-          ...item,
-        }))}
+        progressData={progressData}
       />
 
+      {/* ---------------- STACKED CARDS ---------------- */}
       <div className={styles.card_stacking_row}>
-        <div className={` max-w-auto  ${styles.section}`}>
+        <div className={`max-w-auto ${styles.section}`}>
           <CardStacking
-            cards={cards}
+            cards={stackCards}
             heading={[
-              {
-                title: "Why Businesses Love Us? ",
-                color: "color-black",
-              },
+              { title: "Why Businesses Love Us? ", color: "color-black" },
             ]}
           />
         </div>
       </div>
 
+      {/* ---------------- CTA ---------------- */}
       <CtaSection
-        title={"Step into the World of Smarter, Safer & Seamless Spending"}
-        buttonText={"Get Started "}
+        title="Step into the World of Smarter, Safer & Seamless Spending"
+        buttonText="Get Started"
         background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
       />
 
+      {/* ---------------- FAQ ---------------- */}
       <FaqSection faqData={faqData} />
+
+      {/* ---------------- BLOG SECTION (now dynamic!) ---------------- */}
+      <BlogSection
+        heading={otherProductsHeading}
+        headingTag="h2"
+        cards={[13651, 13953, 10503]}
+      />
     </div>
   )
 }
