@@ -267,7 +267,7 @@ const PaymentPage = (): React.JSX.Element => {
             color: "color-black f-4",
           },
         ]}
-        cards={[7146, 9045, 9158]}
+        cards={[7146, 9045, 8835]}
       />
       <OtherProducts
         heading={[
