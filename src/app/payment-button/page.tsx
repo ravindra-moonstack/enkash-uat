@@ -27,6 +27,7 @@ import StepsSection from "@/src/components/steps-section"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Button: Add Instant Checkout to Your Website",
@@ -247,7 +248,20 @@ const PaymentButton = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[14010, 7146, 12195]}
+      />
       <OtherProducts
         heading={[
           { title: "Check out ", color: "color-black" },
