@@ -18,11 +18,16 @@ interface BlogPost {
 interface BlogSectionProps {
   heading: HeadingPart[]
   headingTag?: keyof JSX.IntrinsicElements
-  cards: number[] // ONLY post IDs now
+  cards: number[]
   className?: string
 }
 
-// Server Component
+function decodeHTML(str: string) {
+  return str
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(dec))
+    .replace(/&amp;/g, "&")
+}
+
 async function fetchBlogs(postIds: number[]): Promise<BlogPost[]> {
   const res = await fetch(
     "https://www.enkash.com/resources/wp-json/custom-api/v2/send-post",
@@ -40,11 +45,9 @@ async function fetchBlogs(postIds: number[]): Promise<BlogPost[]> {
 
 const BlogSection = async ({
   heading,
-
-  cards, // post IDs
+  cards,
   className = "",
 }: BlogSectionProps) => {
-  // Fetch API here
   const posts = await fetchBlogs(cards)
 
   return (
@@ -56,9 +59,9 @@ const BlogSection = async ({
 
         <div className="row g-3 pb-4">
           {posts.map((post) => (
-            <div className="col-12 col-md-4" key={post.ID}>
+            <div className="col-12 col-md-4 d-flex" key={post.ID}>
               <BlogCard
-                description={post.title}
+                description={decodeHTML(post.title)}
                 cardImage={post.featured_image}
                 buttonUrl={post.link}
               />
