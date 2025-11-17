@@ -277,12 +277,12 @@ const EnkashWay = ({
                         {data.rightImg && (
                           <div
                             className="mt-3 text-center position-absolute "
-                            style={{ top: "-4px", right: "50px" }}
+                            style={{ top: "-8px", right: "93px" }}
                           >
                             <Image
                               src={data.rightImg}
                               alt="right image"
-                              width={250}
+                              width={150}
                               height={150}
                               style={{ objectFit: "contain" }}
                             />
