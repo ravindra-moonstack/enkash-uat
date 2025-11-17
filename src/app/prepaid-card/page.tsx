@@ -15,12 +15,18 @@ import EnkashWay from "@/src/components/enkash-way/enkash-way"
 import { heroCardImg } from "./img"
 
 //data
-import { progressData, stackcardData } from "./data"
+import {
+  blogData,
+  otherProductsHeading,
+  progressData,
+  stackcardData,
+} from "./data"
 import { faqData } from "./faq-data"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Corporate Prepaid Cards for Business Payments",
@@ -155,6 +161,12 @@ const PrepaidCard = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+
+      <BlogSection
+        heading={otherProductsHeading}
+        headingTag="h2"
+        cards={blogData}
+      />
     </div>
   )
 }

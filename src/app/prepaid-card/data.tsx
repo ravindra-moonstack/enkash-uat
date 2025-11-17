@@ -18,6 +18,34 @@ import {
 import { bg1, bg2, bg3, bg4, bg5 } from "../products/vouchers/img"
 import { TStackCardsProp } from "@/src/types"
 
+const otherProductsHeading = [
+  { title: "Related", color: "color-black" },
+  { title: " Resources", color: "color-black f-4" },
+]
+const blogData = [
+  {
+    whiteTitle: "Travel Vouchers",
+    description: "Best vouchers for travel & holidays",
+    cardImage: bg1,
+    link: "/travel",
+    discount: "20% OFF",
+  },
+  {
+    whiteTitle: "Food Cards",
+    description: "Save more on everyday meals",
+    cardImage: bg2,
+    link: "/food",
+    discount: "10% OFF",
+  },
+  {
+    whiteTitle: "Gift Vouchers",
+    description: "Perfect for gifting moments",
+    cardImage: bg3,
+    link: "/gift",
+    discount: "15% OFF",
+  },
+]
+
 const stackcardData: TStackCardsProp = [
   {
     icon: realTimeExpenseIcon,
@@ -111,4 +139,4 @@ const progressData = [
   },
 ]
 
-export { progressData, stackcardData }
+export { progressData, stackcardData, blogData, otherProductsHeading }
