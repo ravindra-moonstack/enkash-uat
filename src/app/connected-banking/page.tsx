@@ -21,6 +21,7 @@ import { paymentSummary, mealCardImage } from "./img"
 //utils
 import { getSalesUrl } from "@/utils/getSalesUrl"
 import generateMetaData from "@/utils/metaData"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Connected Banking: For Faster Payouts",
@@ -139,6 +140,21 @@ const ConnectedBanking = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[13158, 1083, 13309]}
+      />
     </div>
   )
 }
