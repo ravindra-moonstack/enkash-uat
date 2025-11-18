@@ -25,6 +25,7 @@ import {
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "E Invoicing Solution: Automate Billing & Get Paid Faster",
@@ -213,7 +214,20 @@ const DigitalInvoicing = (): React.JSX.Element => {
         title={"Opt For Digital Invoicing and Get Paid Faster!"}
         buttonText={"Get Started Today"}
       />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[11633, 10707, 2989]}
+      />
       <FaqSection faqData={faqData} />
     </div>
   )

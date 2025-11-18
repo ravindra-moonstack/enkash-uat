@@ -17,6 +17,7 @@ import HeroSection from "@/src/components/sections/hero-section"
 import StepsSection from "@/src/components/steps-section"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 import CtaSection from "@/src/components/sections/cta-section"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payroll Management: Automate Salaries, Payouts & Compliance ",
@@ -106,6 +107,20 @@ const Payroll = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[8931, 11143, 11394]}
+      />
     </div>
   )
 }

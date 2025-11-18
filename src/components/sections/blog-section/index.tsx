@@ -51,7 +51,7 @@ const BlogSection = async ({
   const posts = await fetchBlogs(cards)
 
   return (
-    <div className={`  ${styles.other_products} ${className}`}>
+    <div className={`${styles.other_products} ${className}`}>
       <div className="max-w-auto">
         <div className={`${styles.title} text-center pb-4 pb-md-5`}>
           <DynamicHeading content={heading} headingTag="h2" className="f-6" />
