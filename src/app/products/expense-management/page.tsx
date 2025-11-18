@@ -60,6 +60,7 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Management Suite: Automate & Track Business Spending",
@@ -387,6 +388,21 @@ const ExpenseManagement = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
+
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[1033, 1, 8740]}
+      />
     </div>
   )
 }

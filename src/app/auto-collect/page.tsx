@@ -17,6 +17,7 @@ import { Metadata } from "next"
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Auto Collect: Automate Incoming Payments with Virtual Accounts",
@@ -113,7 +114,20 @@ const AutoCollect = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[8835, 10658, 13953]}
+      />
       <OtherProducts
         heading={[
           { title: "Check out ", color: "color-black" },

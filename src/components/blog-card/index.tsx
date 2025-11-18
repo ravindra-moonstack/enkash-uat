@@ -42,16 +42,16 @@ const BlogCard = ({
               content={[
                 {
                   title: description,
-                  color: "color-main-grey subHeading",
+                  color: "color-main-grey fs-6 lh-20",
                 },
               ]}
-              headingTag="h6"
-              className="f-4 mb-0"
+              headingTag="h3"
+              className="f-4 mb-0 lh-20"
             />
           </div>
         </div>
 
-        <div className="mt-auto d-flex justify-content-end pt-4">
+        <div className="mt-auto d-flex justify-content-end p-4">
           <CommanButton
             title="Read More"
             url={buttonUrl}

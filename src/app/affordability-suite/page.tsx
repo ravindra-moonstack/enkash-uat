@@ -16,6 +16,7 @@ import HeroSection from "@/components/sections/hero-section"
 import { paymentSummary, mealCardImage } from "./img"
 import { getSalesUrl } from "@/utils/getSalesUrl"
 import generateMetaData from "@/utils/metaData"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -88,6 +89,21 @@ const AffordabilitySuite = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[14737, 14513, 13155]}
+      />
       <OtherProducts
         heading={[
           { title: "Check out ", color: "color-black" },
