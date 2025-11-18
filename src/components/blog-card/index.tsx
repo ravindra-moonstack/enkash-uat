@@ -42,7 +42,7 @@ const BlogCard = ({
               content={[
                 {
                   title: description,
-                  color: "color-main-grey fs-6 lh-24",
+                  color: "color-main-grey  lh-24",
                 },
               ]}
               headingTag="h3"
@@ -51,7 +51,7 @@ const BlogCard = ({
           </div>
         </div>
 
-        <div className="mt-auto d-flex justify-content-end p-4 pb-0">
+        <div className="mt-auto d-flex justify-content-end p-3 pb-0">
           <CommanButton
             title="Read More"
             url={buttonUrl}
