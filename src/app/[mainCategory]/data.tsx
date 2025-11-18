@@ -87,6 +87,7 @@ export const VOUCHER_DATA: Record<
     breadcrumbItems: { name: string; url: string }[]
     slides: Slide[]
     voucherCards: VoucherCard[]
+    blogCards?: number[]
   }
 > = {
   "e-commerce-vouchers": {
@@ -185,7 +186,7 @@ export const VOUCHER_DATA: Record<
         buttonUrl: "/vouchers/fnp",
       },
     ],
-    // faqData: VoucherFaqData["e-commerce-vouchers"].faqData,
+    blogCards: [10013, 9162, 9133],
   },
 
   "movie-and-music-vouchers": {
@@ -384,6 +385,7 @@ export const VOUCHER_DATA: Record<
       },
     ],
   },
+
   "food-and-beverages-vouchers": {
     title: "Food and Beverages Vouchers",
     breadcrumbItems: [

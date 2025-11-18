@@ -32,6 +32,7 @@ import { mealCardImage, instantActionImg, heroCardImg } from "./img"
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Gift Cards for Business: Reward Employees & Partners",
@@ -217,7 +218,20 @@ const GiftCards = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[13986, 9188, 9172]}
+      />
       <OtherProducts
         heading={[
           {

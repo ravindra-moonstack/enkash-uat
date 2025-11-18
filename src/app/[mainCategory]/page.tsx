@@ -15,6 +15,7 @@ import NotFound from "../not-found"
 // helpers
 import { VOUCHER_DATA, CATEGORY_META, VALID_CATEGORIES } from "./data"
 import fetchVouchers from "@/src/helpers/vouchers"
+import BlogSection from "@/src/components/sections/blog-section"
 
 const getDiscountValue = (raw: string | number | undefined): number => {
   if (!raw) return 0
@@ -133,6 +134,15 @@ const MainCategoryPage = async ({
         buttonText="Contact with us"
         FaqContent={<VoucherFaqComponent voucherName={mainCategory} />}
       />
+      {pageData.blogCards && pageData.blogCards.length > 0 && (
+        <BlogSection
+          heading={[
+            { title: "Related  ", color: "color-black " },
+            { title: " Resources", color: "color-black f-4" },
+          ]}
+          cards={pageData.blogCards}
+        />
+      )}
     </div>
   )
 }

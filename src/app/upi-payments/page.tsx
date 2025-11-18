@@ -34,6 +34,7 @@ import {
 // utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "UPI Payments: Fast, Secure, and Instant Online Payment",
@@ -266,7 +267,20 @@ const UpiPayments = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[14013, 12687, 13088]}
+      />
       <OtherProducts
         heading={[
           {

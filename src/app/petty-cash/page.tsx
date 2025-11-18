@@ -28,6 +28,7 @@ import { analytics, paymentSummary, zeroLeakage } from "./img"
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Digitize Your Petty Cash: Automate Petty Cash Management",
@@ -258,7 +259,20 @@ const PettyCash = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[10539, 9129, 11225]}
+      />
       <OtherProducts
         heading={[
           {
