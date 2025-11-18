@@ -51,7 +51,7 @@ const BlogCard = ({
           </div>
         </div>
 
-        <div className="mt-auto d-flex justify-content-end p-4">
+        <div className="mt-auto d-flex justify-content-end p-4 pb-0">
           <CommanButton
             title="Read More"
             url={buttonUrl}
