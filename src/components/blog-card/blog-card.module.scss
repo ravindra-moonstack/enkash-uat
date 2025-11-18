@@ -17,10 +17,11 @@
 
 .image_wrapper {
   width: 100%;
-  height: 180px;
-  display: flex;
+  height: 14rem;
+  max-height: 250px;
+  display: contents;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background: #f7f8fc;
   border-radius: 16px;
 }
