@@ -18,6 +18,7 @@ import CtaSection from "@/src/components/sections/cta-section"
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate and Track your Vendor Payments ",
@@ -127,6 +128,21 @@ const VendorPayment = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[13155, 3985, 2943]}
+      />
     </div>
   )
 }

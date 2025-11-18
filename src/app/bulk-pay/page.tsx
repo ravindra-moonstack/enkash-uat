@@ -18,6 +18,7 @@ import { paymentSummary, mealCardImage } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 import SliderSection from "@/src/components/sections/slider-section"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Bulk Payment: Smart, Fast & Secure Payouts ",
@@ -124,6 +125,20 @@ const BulkPay = (): React.JSX.Element => {
       <CtaSection title={""} buttonText={"Try for Yourself"} />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[7131, 3038, 11501]}
+      />
     </div>
   )
 }

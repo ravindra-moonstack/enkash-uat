@@ -18,6 +18,7 @@ import { paymentSummary, mealCardImage } from "./img"
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Rent Payments: Pay Office & Property Rent Digitally",
@@ -124,7 +125,20 @@ const RentPayment = (): React.JSX.Element => {
         title={"Ready to Redefine your Rent Payments?"}
         buttonText={"Get Started "}
       />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[7225, 12940, 13297]}
+      />
       <FaqSection faqData={faqData} />
     </div>
   )
