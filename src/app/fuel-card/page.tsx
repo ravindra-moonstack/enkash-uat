@@ -20,6 +20,7 @@ import OtherProducts from "@/src/components/sections/other-products"
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Fuel Card for Fleet & Employee Travel Management",
@@ -127,6 +128,20 @@ const FuelCards = (): React.JSX.Element => {
 
       <FaqSection faqData={faqData} />
 
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[13826, 1628, 13953]}
+      />
       <OtherProducts
         heading={[
           {

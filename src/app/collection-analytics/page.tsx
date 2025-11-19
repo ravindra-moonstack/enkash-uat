@@ -28,6 +28,7 @@ import { paymentSummary, mealCardImage } from "./img"
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Collection Analytics: Track & Optimize Your Payment Data",
@@ -153,7 +154,20 @@ const CollectionAnalytics = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[8835, 9045, 9158]}
+      />
       <OtherProducts
         heading={[
           { title: "Check out ", color: "color-black" },

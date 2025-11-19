@@ -10,14 +10,18 @@
   flex-direction: column;
   height: 100%;
   cursor: pointer;
+  @include for-laptops {
+    min-width: 389px;
+  }
 }
 
 .image_wrapper {
   width: 100%;
-  height: 180px;
-  display: flex;
+  height: 14rem;
+  max-height: 250px;
+  display: contents;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background: #f7f8fc;
   border-radius: 16px;
 }
@@ -31,7 +35,7 @@
 }
 
 .voucher_card_title {
-  padding-top: 16px;
+  padding: 16px;
   min-height: 72px;
 }
 

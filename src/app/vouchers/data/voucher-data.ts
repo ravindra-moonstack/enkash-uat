@@ -24,6 +24,7 @@ export type TVoucher = {
   festivals: string
   anniversary: string
   birthdays: string
+  blogCards?: number[]
 }
 
 const VoucherData: Record<string, TVoucher> = {
@@ -324,6 +325,7 @@ const VoucherData: Record<string, TVoucher> = {
       "The perfect anniversary gift, an Amazon Gift Voucher is something they will appreciate on their special occasion.",
     birthdays:
       "This exclusive Amazon E-Gift Card is to surprise your loved ones on their birthdays.",
+    blogCards: [9172, 9133, 9162],
   },
   zee5: {
     name: "ZEE5 Gift Card",
@@ -1011,6 +1013,7 @@ const VoucherData: Record<string, TVoucher> = {
       "Using a Swiggy Gift Card designed for a couple’s special day saves them the hassle of cooking. This is the perfect gift for them to make the most of their day. \n",
     birthdays:
       "This makes perfect sense for birthdays; consider a Swiggy Gift Card, so that the person celebrating their birthday can enjoy their favourite food any time they want. This approach allows the beneficiaries to choose for themselves, adding to making the day even better.",
+    blogCards: [10579, 10043, 13986],
   },
   kfc: {
     name: "KFC E-Gift Card",
@@ -1146,6 +1149,7 @@ const VoucherData: Record<string, TVoucher> = {
       "The perfect anniversary gift for a couple who loves binge-eating. Zomato Gift Voucher is something they will appreciate on their special occasion.",
     festivals:
       "The recipient of the Zomato gift card will thank you for making the festive season better for them.",
+    blogCards: [10043, 10579, 13986],
   },
   dominos: {
     name: "Domino’s Gift Card",

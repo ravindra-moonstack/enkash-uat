@@ -53,7 +53,7 @@ const BlogSection = async ({
   return (
     <div className={`${styles.other_products} ${className}`}>
       <div className="max-w-auto">
-        <div className={`${styles.title} text-center pb-4 pb-md-4`}>
+        <div className={`${styles.title} text-center pb-4 pb-md-5`}>
           <DynamicHeading content={heading} headingTag="h2" className="f-6" />
         </div>
 

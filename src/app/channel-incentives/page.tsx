@@ -22,6 +22,7 @@ import { paymentSummary, mealCardImage } from "./img"
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Channel Incentives to Drive and Motivate Your Partners",
@@ -160,7 +161,20 @@ const ChannelIncentives = (): React.JSX.Element => {
         title={"Empower Your Channel Partners Today!"}
         buttonText={"Get Started "}
       />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[10509, 8818, 11400]}
+      />
       <FaqSection faqData={faqData} />
     </div>
   )
