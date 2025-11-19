@@ -20,6 +20,7 @@ import { paymentSummary, mealCardImage } from "./img"
 
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Subscription & Recurring Payment Collection Platform",
@@ -123,7 +124,20 @@ const Subscriptions = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[12919, 14519, 13047]}
+      />
       <OtherProducts
         heading={[
           {

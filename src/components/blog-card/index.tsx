@@ -24,7 +24,7 @@ const BlogCard = ({
       <div className={`d-flex flex-column ${styles.card_body}`}>
         {/* Whole card clickable */}
 
-        <div className="flex-grow-1">
+        <div className="flex-grow-1 justify-between">
           {cardImage && (
             <div className={styles.image_wrapper}>
               <Image
@@ -42,16 +42,16 @@ const BlogCard = ({
               content={[
                 {
                   title: description,
-                  color: "color-main-grey subHeading",
+                  color: "color-main-grey  lh-24",
                 },
               ]}
-              headingTag="h6"
-              className="f-4 mb-0"
+              headingTag="h3"
+              className="f-6 mb-0 lh-24"
             />
           </div>
         </div>
 
-        <div className="mt-auto d-flex justify-content-end pt-4">
+        <div className="mt-auto d-flex justify-content-end p-3 pb-0">
           <CommanButton
             title="Read More"
             url={buttonUrl}

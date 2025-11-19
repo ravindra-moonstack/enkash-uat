@@ -18,6 +18,7 @@ import VoucherFaqComponent from "@/src/components/voucher-page/voucher-faq"
 import CommanButton from "@/src/components/buttons"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import NotFound from "../../not-found"
+import BlogSection from "@/src/components/sections/blog-section"
 const SavingsCalculator = dynamic(
   () =>
     import(
@@ -659,6 +660,15 @@ const CategoryPage = async ({
               </div>
             </div>
           </div>
+          {voucherData.blogCards && voucherData.blogCards.length > 0 && (
+            <BlogSection
+              heading={[
+                { title: "Related  ", color: "color-black " },
+                { title: " Resources", color: "color-black f-4" },
+              ]}
+              cards={voucherData.blogCards}
+            />
+          )}
         </div>
       ) : (
         <NotFound />

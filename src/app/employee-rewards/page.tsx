@@ -22,6 +22,7 @@ import CtaSection from "@/src/components/sections/cta-section"
 
 //helpers
 import { paymentSummary, mealCardImage, faqBg } from "./img"
+import BlogSection from "@/src/components/sections/blog-section"
 
 //utils
 
@@ -200,6 +201,20 @@ const EmployeeRewards = (): React.JSX.Element => {
         buttonText={"Get Started  "}
       />
       <FaqSection faqData={faqData} />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[8818, 11400, 5318]}
+      />
     </div>
   )
 }
