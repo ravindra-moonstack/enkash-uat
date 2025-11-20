@@ -23,11 +23,11 @@ import BuiltforBuildersSection from "@/src/components/builtfor-builders-card"
 import BecomePartnerSteps from "@/src/components/becomepartner"
 import BottomCtaSection from "@/src/components/bottom-cta-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
-import PaymentGatewayPartnershipForm from "@/src/components/forms/payment-gateway"
 import FaqSection from "@/src/components/faq-section"
 
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
+import PaymentGatewayFormClient from "@/src/components/PaymentGatewayFormWrapper/PaymentGatewayFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Gateway Partnerships",
@@ -188,7 +188,7 @@ const partnershipsPage = (): React.JSX.Element => {
             { id: 2, text: "Fast activation for your clients" },
             { id: 3, text: "Dedicated support for accelerated growth" },
           ]}
-          formComponent={<PaymentGatewayPartnershipForm />}
+          formComponent={<PaymentGatewayFormClient />}
         />
       </div>
     </div>
