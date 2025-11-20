@@ -34,3 +34,10 @@
     margin-top: -250px;
   }
 }
+.hiddenH1 {
+  position: absolute;
+  left: -9999px; // Off-screen but accessible
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
