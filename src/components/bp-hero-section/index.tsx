@@ -1,3 +1,5 @@
+"use client"
+
 import type React from "react"
 import DynamicHeading from "../dynamic-heading"
 import styles from "./style.module.scss"
