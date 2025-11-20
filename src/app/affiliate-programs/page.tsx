@@ -1,7 +1,8 @@
+// app/affiliate-programs/page.tsx
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
-// data
+// Data
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -12,7 +13,7 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-// components (सभी server components)
+// Server Components
 import BpHeroSection from "@/src/components/bp-hero-section"
 import BottomCtaSection from "@/src/components/bottom-cta-section"
 import FaqSection from "@/src/components/faq-section"
@@ -21,32 +22,20 @@ import PartnershipSection from "@/src/components/partner-ship-slider/Partnership
 import BecomePartnerSteps from "@/src/components/becomepartner"
 import ProductsSection from "@/src/components/our-products-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
-
-// helpers
 import { containerScreen, participantBg } from "."
-
-// utils
 import generateMetaData from "@/src/utils/metaData"
-
-import { Suspense } from "react"
-import BankAffiliatePartnershipFormWrapper from "@/src/components/BankAffiliatePartnershipFormWrapper/BankAffiliatePartnershipFormWrapper"
+import AffiliateFormClient from "@/src/components/BankAffiliatePartnershipFormWrapper/BankAffiliatePartnershipFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",
   description:
-    "Partner with EnKash as an affiliate and earn rewards for every successful business referral. Promote smart spend and payment solutions with India’s leading fintech platform..",
-  alternates: {
-    canonical: `${process.env.URL}/affiliate-programs`,
-  },
+    "Partner with EnKash as an affiliate and earn rewards for every successful business referral.",
+  alternates: { canonical: `${process.env.URL}/affiliate-programs` },
 })
 
-const PartnershipsPage = (): React.JSX.Element => {
+export default function PartnershipsPage() {
   return (
     <div>
-      <h1 className={styles.hiddenH1}>
-        Join EnKash Affiliate Program | Earn by Referring Businesses
-      </h1>
-
       <BpHeroSection
         breadcrumbs={{
           items: [
@@ -71,6 +60,7 @@ const PartnershipsPage = (): React.JSX.Element => {
         }}
       />
 
+      {/* बाकी सारे sections... */}
       <div className={`${styles.boxContainer}`}>
         <BankSolutions
           solutions={bankSolutions}
@@ -85,7 +75,7 @@ const PartnershipsPage = (): React.JSX.Element => {
       <PartnershipSection
         backgroundImage={participantBg.src}
         heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
-        description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
+        description="..."
         slideData={slideData}
       />
 
@@ -112,35 +102,22 @@ const PartnershipsPage = (): React.JSX.Element => {
 
       <FaqSection faqData={faqData} />
 
-      {/* Form section with Suspense (recommended) */}
+
       <div id="partnership-form">
-        <Suspense
-          fallback={
-            <div className="py-20 text-center text-gray-600">
-              Loading partnership form...
-            </div>
-          }
-        >
-          <PartnerShipForm
-            heading={[
-              { title: "Ready to ", color: "color-grey-200" },
-              {
-                title: "Earn More and Grow Faster ",
-                color: "color-equity-blue",
-              },
-              { title: "with EnKash?", color: "color-grey-200" },
-            ]}
-            features={[
-              { id: 1, text: "Industry-best earnings" },
-              { id: 2, text: "Fast activation for your clients" },
-              { id: 3, text: "Dedicated support for accelerated growth" },
-            ]}
-            formComponent={<BankAffiliatePartnershipFormWrapper />}
-          />
-        </Suspense>
+        <PartnerShipForm
+          heading={[
+            { title: "Ready to ", color: "color-grey-200" },
+            { title: "Earn More and Grow Faster ", color: "color-equity-blue" },
+            { title: "with EnKash?", color: "color-grey-200" },
+          ]}
+          features={[
+            { id: 1, text: "Industry-best earnings" },
+            { id: 2, text: "Fast activation for your clients" },
+            { id: 3, text: "Dedicated support for accelerated growth" },
+          ]}
+          formComponent={<AffiliateFormClient />}
+        />
       </div>
     </div>
   )
 }
-
-export default PartnershipsPage

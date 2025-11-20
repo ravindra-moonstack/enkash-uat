@@ -20,13 +20,13 @@ import BecomePartnerSteps from "@/src/components/becomepartner"
 import BottomCtaSection from "@/src/components/bottom-cta-section"
 import FaqSection from "@/src/components/faq-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
-import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
 
 //helpers
 import { containerScreen, participantBg } from "./img"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
+import AffiliateFormClient from "@/src/components/BankAffiliatePartnershipFormWrapper/BankAffiliatePartnershipFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Partner with Us: Bank Partnerships",
@@ -41,7 +41,6 @@ const PartnershipsPage = (): React.JSX.Element => {
   //
   console.log("heloooo")
   return (
-    
     <div className={`color-white  `}>
       <BpHeroSection
         backgroundImage={containerScreen.src}
@@ -123,7 +122,7 @@ const PartnershipsPage = (): React.JSX.Element => {
             { id: 2, text: "Fast activation for your clients" },
             { id: 3, text: "Dedicated support for accelerated growth" },
           ]}
-          formComponent={<BankAffiliatePartnershipForm />}
+          formComponent={<AffiliateFormClient />}
         />
       </div>
     </div>
