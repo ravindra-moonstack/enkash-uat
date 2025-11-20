@@ -64,12 +64,13 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
                 className="color-equity-blue pt-3 text-md-start text-center pt-md-5 pb-md-4 mb-2"
               />
 
-              {/* H1 Tag (only one!) */}
-              <DynamicHeading
-                content={subHeading}
-                headingTag="h1"
-                className="mb-4 f-7 pt-3 pt-md-0 text-md-start text-center"
-              />
+              <h1 className="mb-4 f-7 pt-3 pt-md-0 text-md-start text-center">
+                {subHeading.map((item, i) => (
+                  <span key={i} className={item.color}>
+                    {item.title}
+                  </span>
+                ))}
+              </h1>
 
               {/* CTA Button */}
               <div
