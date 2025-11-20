@@ -1,6 +1,3 @@
-"use client"
-
-import type React from "react"
 import Image from "next/image"
 import PartnershipSlider from "."
 
@@ -30,7 +27,7 @@ export interface PartnershipSectionProps {
   backgroundImage?: string
   heading: HeadingContent[]
   description: string
-  buttons?: ButtonData[] 
+  buttons?: ButtonData[]
   slideData: SlideData[]
 }
 
@@ -43,7 +40,6 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
 }) => {
   return (
     <section className="partnership-section">
-     
       <div className="background-container">
         <Image
           src={backgroundImage}
@@ -53,7 +49,7 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
         />
         <div className="background-overlay"></div>
       </div>
- 
+
       <div className="content-container max-w-auto">
         <div className="slider-header">
           <DynamicHeading
@@ -63,7 +59,6 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
           />
         </div>
         <div className="content-grid">
-        
           <div className="left-content">
             <p className="description-text">{description}</p>
 

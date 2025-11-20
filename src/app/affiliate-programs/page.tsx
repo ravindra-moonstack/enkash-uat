@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 // data
@@ -28,7 +29,6 @@ import { containerScreen, participantBg } from "."
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",
@@ -42,6 +42,9 @@ export const metadata: Metadata = generateMetaData({
 const partnershipsPage = (): React.JSX.Element => {
   return (
     <div>
+      <h1 className={styles.hiddenH1}> 
+       Grow with India’s Leading Spend & Payments Management Platform
+      </h1>
       <BpHeroSection
         breadcrumbs={{
           items: [
