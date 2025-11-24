@@ -79,7 +79,7 @@ const PaymentGateway = (): React.JSX.Element => {
           },
         ]}
         description={{
-          text: "Supporting Description: Accept online payments instantly with a RBI-authorised, merchant payment gateway designed for MSMEs, D2C brands, SaaS platforms, marketplaces, and enterprises.",
+          text: " Accept online payments instantly with a RBI-authorised, merchant payment gateway designed for MSMEs, D2C brands, SaaS platforms, marketplaces, and enterprises.",
         }}
         button={{
           title: "Get Started",
