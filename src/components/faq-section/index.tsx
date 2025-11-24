@@ -59,7 +59,9 @@ const FaqSection = ({
               <div className="connectWithUs">
                 <Link href={connectUrl}>
                   <DynamicHeading
-                    content={[{ title: connectText, color: "color-equity-blue" }]}
+                    content={[
+                      { title: connectText, color: "color-equity-blue" },
+                    ]}
                     headingTag="p"
                     className="mb-0 f-5"
                   />

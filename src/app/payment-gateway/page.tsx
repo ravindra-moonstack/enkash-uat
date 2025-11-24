@@ -74,12 +74,12 @@ const PaymentGateway = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "India’s First Payment Gateway Built for SMBs",
+            text: "India's Best Payment Gateway Truly Built for SMBs",
             color: "color-black",
           },
         ]}
         description={{
-          text: "The best payment gateway for a superior merchant experience.",
+          text: " Accept online payments instantly with a RBI-authorised, merchant payment gateway designed for MSMEs, D2C brands, SaaS platforms, marketplaces, and enterprises.",
         }}
         button={{
           title: "Get Started",
