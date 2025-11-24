@@ -26,7 +26,7 @@ import { containerScreen, participantBg } from "./img"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
-import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper/BankAffiliatePartnershipFormWrapper"
+import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: " Join EnKash Bharat Connect Partnership Program",

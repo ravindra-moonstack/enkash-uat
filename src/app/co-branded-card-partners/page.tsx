@@ -26,7 +26,7 @@ import PartnerShipForm from "@/src/components/forms/partnership-form"
 //helpers
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
-import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper/BankAffiliatePartnershipFormWrapper"
+import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",
