@@ -352,14 +352,9 @@ const faqData: TFAQProps[] = [
     answerHTML: (
       <div>
         <p>
-          The main types of payment gateways are Hosted, Self-Hosted, and
-          API/Non-Hosted gateways. Hosted gateways redirect users to a secure
-          checkout page, self-hosted gateways collect data on your site but
-          process it externally, and API gateways enable fully integrated,
-          seamless checkout within your website or app.
-        </p>
-
-        <p>
+          {
+            "The main types of payment gateways are Hosted, Self-Hosted, and API/Non-Hosted gateways. Hosted gateways redirect users to a secure checkout page, self-hosted gateways collect data on your site but process it externally, and API gateways enable fully integrated, seamless checkout within your website or app."
+          }
           <Link
             className="mx-1"
             href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/hosted-vs-integrated-payment-gateways`}
