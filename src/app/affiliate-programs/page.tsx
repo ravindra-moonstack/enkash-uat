@@ -1,7 +1,8 @@
-import React from "react"
+// app/affiliate-programs/page.tsx
+import { Metadata } from "next"
 import styles from "./page.module.scss"
 
-// data
+// Data
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -12,8 +13,7 @@ import {
 } from "./data"
 import faqData from "./faq-data"
 
-// component
-
+// Server Components
 import BpHeroSection from "@/src/components/bp-hero-section"
 import BottomCtaSection from "@/src/components/bottom-cta-section"
 import FaqSection from "@/src/components/faq-section"
@@ -22,25 +22,18 @@ import PartnershipSection from "@/src/components/partner-ship-slider/Partnership
 import BecomePartnerSteps from "@/src/components/becomepartner"
 import ProductsSection from "@/src/components/our-products-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
-import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
-
-// helpers
 import { containerScreen, participantBg } from "."
-
-// utils
 import generateMetaData from "@/src/utils/metaData"
-import { Metadata } from "next"
+import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",
   description:
-    "Partner with EnKash as an affiliate and earn rewards for every successful business referral. Promote smart spend and payment solutions with India’s leading fintech platform..",
-  alternates: {
-    canonical: `${process.env.URL}/affiliate-programs`,
-  },
+    "Partner with EnKash as an affiliate and earn rewards for every successful business referral.",
+  alternates: { canonical: `${process.env.URL}/affiliate-programs` },
 })
 
-const partnershipsPage = (): React.JSX.Element => {
+export default function PartnershipsPage() {
   return (
     <div>
       <BpHeroSection
@@ -67,6 +60,7 @@ const partnershipsPage = (): React.JSX.Element => {
         }}
       />
 
+      {/* बाकी सारे sections... */}
       <div className={`${styles.boxContainer}`}>
         <BankSolutions
           solutions={bankSolutions}
@@ -81,7 +75,7 @@ const partnershipsPage = (): React.JSX.Element => {
       <PartnershipSection
         backgroundImage={participantBg.src}
         heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
-        description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
+        description="..."
         slideData={slideData}
       />
 
@@ -120,10 +114,9 @@ const partnershipsPage = (): React.JSX.Element => {
             { id: 2, text: "Fast activation for your clients" },
             { id: 3, text: "Dedicated support for accelerated growth" },
           ]}
-          formComponent={<BankAffiliatePartnershipForm />}
+          formComponent={<AffiliateFormClient />}
         />
       </div>
     </div>
   )
 }
-export default partnershipsPage

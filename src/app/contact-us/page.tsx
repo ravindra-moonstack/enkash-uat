@@ -7,7 +7,6 @@ import styles from "./page.module.scss"
 
 // components
 import {
-  ContactForm,
   DynamicHeading,
   LocationCard,
   LogoSlider,
@@ -18,6 +17,7 @@ import {
 import { location, logo } from "./img"
 import { contactData, locationData, testimonialData } from "./data"
 import generateMetaData from "@/src/utils/metaData"
+import ContactFormClient from "@/src/components/form-wrapper/ContactFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash | Get Support or Speak to Our Team",
@@ -103,7 +103,20 @@ const ContactUs = (): React.JSX.Element => {
               </div>
             </div>
             <div className={`${styles.contactForm} col-md-7 col-12 `}>
-              <ContactForm />
+              <div className={"contactFormWrapper"}>
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Let's Connect",
+                      color: "color-black ",
+                    },
+                  ]}
+                  headingTag="h1"
+                  className="text-center "
+                />
+                <p className={"subtitle"}>We just need a few quick details</p>
+                <ContactFormClient />
+              </div>
             </div>
           </div>
 

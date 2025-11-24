@@ -1,6 +1,3 @@
-"use client"
-
-import type React from "react"
 import styles from "./partnershipForm.module.scss"
 import DynamicHeading from "../../dynamic-heading"
 import CheckmarkIcon from "@/src/assets/icons/checkmarkIcon"

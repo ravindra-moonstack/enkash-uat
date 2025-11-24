@@ -1,4 +1,4 @@
-import React, { JSX } from "react"
+import { JSX } from "react"
 import Link from "next/link"
 import DynamicHeading from "../dynamic-heading"
 import styles from "./become-partner-steps.module.scss"
@@ -22,7 +22,6 @@ interface BecomePartnerStepsProps {
   button?: {
     connectText: string
     connectUrl: string
-
   }
 }
 
@@ -74,7 +73,7 @@ export default function BecomePartnerSteps({
                       headingTag="p"
                       className="mb-0 f-5  pe-1"
                     />
-                  <FaArrowRight />
+                    <FaArrowRight />
                   </Link>
                 </div>
               </div>

@@ -22,11 +22,11 @@ import ProductsSection from "@/src/components/our-products-section"
 import BottomCtaSection from "@/src/components/bottom-cta-section"
 import FaqSection from "@/src/components/faq-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
-import BankAffiliatePartnershipForm from "@/src/components/forms/bank-affiliate-partnership"
 
 //helpers
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
+import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",
@@ -116,7 +116,7 @@ const partnershipsPage = (): React.JSX.Element => {
             { id: 2, text: "Fast activation for your clients" },
             { id: 3, text: "Dedicated support for accelerated growth" },
           ]}
-          formComponent={<BankAffiliatePartnershipForm />}
+          formComponent={<AffiliateFormClient />}
         />
       </div>
     </div>

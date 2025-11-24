@@ -7,13 +7,13 @@ import { Metadata } from "next"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import TestimonialSlider from "@/src/components/testimonial-slider"
-import SalesForm from "@/src/components/forms/sales-form"
 
 import styles from "./page.module.scss"
 import { help, login, logo, support } from "./img"
 import { testimonialData } from "./data"
 import generateMetaData from "@/src/utils/metaData"
 import { getLoginUrl, getSupportUrl } from "@/src/utils/getSalesUrl"
+import SalesFormWrapper from "@/src/components/form-wrapper/SalesFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash Sales Get our Payment & Spend Solutions",
@@ -171,7 +171,7 @@ function Sales(): React.JSX.Element {
                 <p className="subtitle mb-4">
                   We just need a few quick details
                 </p>
-                <SalesForm />
+                <SalesFormWrapper />
               </div>
             </div>
 

@@ -1,6 +1,3 @@
-
-
-import type React from "react"
 import DynamicHeading from "../dynamic-heading"
 import styles from "./style.module.scss"
 import CustomBreadcrumb from "../breadcrumb"
@@ -56,24 +53,23 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
               />
             </div>
           )}
+
           <div className="row">
             <div className={`${styles.title} col-md-7 `}>
-              <div className="d-inline">
-                <DynamicHeading
-                  content={mainHeading}
-                  headingTag="p"
-                  className={` color-equity-blue pt-3 text-md-start text-center pt-md-5 pb-md-4 mb-2`}
-                />
-              </div>
+              {/* Main heading (not H1) */}
+              <DynamicHeading
+                content={mainHeading}
+                headingTag="p"
+                className="color-equity-blue pt-3 text-md-start text-center pt-md-5 pb-md-4 mb-2"
+              />
 
-              <div className="d-flex flex-column text-md-start text-center">
-                <DynamicHeading
-                  content={subHeading}
-                  headingTag="h1"
-                  className="mb-4 f-7 pt-3 pt-md-0"
-                />
-                
-              </div>
+              <h1 className="mb-4 f-7 pt-3 pt-md-0 text-md-start text-center">
+                {subHeading.map((item, i) => (
+                  <span key={i} className={item.color}>
+                    {item.title}
+                  </span>
+                ))}
+              </h1>
 
               {/* CTA Button */}
               <div

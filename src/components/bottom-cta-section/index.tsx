@@ -1,6 +1,3 @@
-"use client"
-import React from "react"
-
 import styles from "./BottomCtaSection.module.scss"
 import DynamicHeading from "../dynamic-heading"
 import { FaArrowRight } from "react-icons/fa"

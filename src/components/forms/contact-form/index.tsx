@@ -7,7 +7,6 @@ import axios from "axios"
 import "@/src/styles/_forms.scss"
 
 // components
-import { DynamicHeading } from "@/src/components"
 import MultiSelect from "../../multi-select"
 
 // helpers
@@ -75,19 +74,8 @@ const ContactForm: React.FC = () => {
   }
 
   return (
-    <div className={"contactFormWrapper"}>
-      <form action="#" onSubmit={handleSubmit} className="">
-        <DynamicHeading
-          content={[
-            {
-              title: "Let's Connect",
-              color: "color-black ",
-            },
-          ]}
-          headingTag="h1"
-          className="text-center "
-        />
-        <p className={"subtitle"}>We just need a few quick details</p>
+    <div>
+      <form action="#" onSubmit={handleSubmit} className="pt-4">
         <div className={"grid"}>
           <div>
             <input
