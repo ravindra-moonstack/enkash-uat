@@ -37,8 +37,26 @@ const Suppport = (): React.JSX.Element => {
         <div className="row">
           <div className="col-md-5 col-12"></div>
           <div className="col-md-7 col-12">
-            <SupportFormWrapper />
+            <div className={"contactFormWrapper"}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "How Can ",
+                    color: "color-dark-grey ",
+                  },
+                  {
+                    title: "We Help You",
+                    color: "color-black ",
+                  },
+                ]}
+                headingTag="h1"
+                className="text-center "
+              />
 
+              <p className={"subtitle"}>We just need a few quick details</p>
+
+              <SupportFormWrapper />
+            </div>
             <div className="row">
               {locationData.map((loc, idx) => (
                 <div className="col-md-6 col-12 my-3" key={idx}>
