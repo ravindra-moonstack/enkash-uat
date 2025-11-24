@@ -11,7 +11,7 @@ import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import AllProducts from "@/src/components/all-products"
-import SalesForm from "@/src/components/forms/sales-form"
+import SalesFormWrapper from "@/src/components/form-wrapper/SalesFormWrapper"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
@@ -148,7 +148,25 @@ const Rewards = (): React.JSX.Element => {
       </div>
 
       <div id="salesForm" className={`${styles.sales_form}`}>
-        <SalesForm isParagraph />
+        <div className="contactFormWrapper flex flex-col gap-4">
+          <DynamicHeading
+            content={[{ title: "New to EnKash? ", color: "color-dark-grey " }]}
+            headingTag="h5"
+            className="text-center "
+          />
+
+          <DynamicHeading
+            content={[
+              { title: "Talk", color: "color-black " },
+              { title: " to Sales", color: "color-dark-grey " },
+            ]}
+            headingTag="h1"
+            className="text-center py-3"
+          />
+
+          <p className="subtitle mb-4">We just need a few quick details</p>
+          <SalesFormWrapper />
+        </div>
       </div>
     </div>
   )
