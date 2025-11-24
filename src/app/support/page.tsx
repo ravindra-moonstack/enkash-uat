@@ -8,7 +8,6 @@ import styles from "./page.module.scss"
 // components
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
-import SupportForm from "@/src/components/forms/support-form"
 import SupportCard from "@/src/components/support-card/support-card"
 
 import { location, logo } from "./img"
@@ -16,6 +15,7 @@ import { location, logo } from "./img"
 // helpers
 import { locationData } from "./data"
 import generateMetaData from "@/src/utils/metaData"
+import SupportFormWrapper from "@/src/components/form-wrapper/SupportFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Support Center | Get Help with Products & Services",
@@ -37,7 +37,7 @@ const Suppport = (): React.JSX.Element => {
         <div className="row">
           <div className="col-md-5 col-12"></div>
           <div className="col-md-7 col-12">
-            <SupportForm />
+            <SupportFormWrapper />
 
             <div className="row">
               {locationData.map((loc, idx) => (

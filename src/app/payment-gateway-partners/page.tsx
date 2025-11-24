@@ -27,7 +27,7 @@ import FaqSection from "@/src/components/faq-section"
 
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
-import PaymentGatewayFormClient from "@/src/components/form-wrapper/PaymentGatewayFormWrapper/PaymentGatewayFormWrapper"
+import PaymentGatewayFormClient from "@/src/components/form-wrapper/PaymentGatewayFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Gateway Partnerships",

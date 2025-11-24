@@ -24,7 +24,7 @@ import ProductsSection from "@/src/components/our-products-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
 import { containerScreen, participantBg } from "."
 import generateMetaData from "@/src/utils/metaData"
-import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper/BankAffiliatePartnershipFormWrapper"
+import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",
