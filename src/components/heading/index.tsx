@@ -19,8 +19,8 @@ export interface HeadingProps {
 
   weight?: "2" | "3" | "4" | "5" | "6" | "7"
   italic?: boolean
-  useH1TagInHtml?: boolean // New prop for using h1 tag
-  useH2TagInHtml?: boolean // New prop for using h2 tag
+  useH1TagInHtml?: boolean 
+  useH2TagInHtml?: boolean 
   underline?: boolean
 }
 
