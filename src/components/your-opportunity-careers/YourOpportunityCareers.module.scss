@@ -12,6 +12,10 @@
   @include for-laptops {
     flex-wrap: nowrap;
   }
+  &:hover {
+    background: rgba(30, 30, 30, 0.95);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
 
   .careerCardTitleDesc {
     width: 100%;
