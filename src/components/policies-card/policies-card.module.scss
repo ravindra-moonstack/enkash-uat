@@ -13,7 +13,7 @@
 
   width: 100%;
   @include for-laptops {
-    height: 338px;
+    min-height: 338px;
   }
 
   .voucher_card_title {
