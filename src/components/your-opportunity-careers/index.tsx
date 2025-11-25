@@ -1,6 +1,7 @@
 import { FC } from "react"
 import styles from "./YourOpportunityCareers.module.scss"
 import DynamicHeading from "../dynamic-heading"
+import JobPostDescModal from "../job-post-desc-modal"
 
 export interface YourOpportunityCareersProps {
   title: string
@@ -19,18 +20,23 @@ const YourOpportunityCareers: FC<YourOpportunityCareersProps> = ({
   return (
     <div className={`${styles.careerCard}`}>
       <div className={`${styles.careerCardTitleDesc}`}>
-        <DynamicHeading
-          content={[
-            {
-              title: title,
-              color: "color-white subHeading",
-            },
-          ]}
-          headingTag="p"
-          className="mb-2"
-        />
+        {title === "Product Manager" ? (
+          <JobPostDescModal />
+        ) : (
+          <DynamicHeading
+            content={[
+              {
+                title: title,
+                color: "color-white subHeading",
+              },
+            ]}
+            headingTag="p"
+            className="mb-2"
+          />
+        )}
         <p className="mb-0 f-3">{description}</p>
       </div>
+
       <div className={`${styles.careerCardDepartmentLocation}`}>
         <span>{department}</span>
         <span>
