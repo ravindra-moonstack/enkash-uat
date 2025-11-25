@@ -7,7 +7,17 @@ import { payment } from "./img"
 // components
 import DynamicHeading from "@/src/components/dynamic-heading"
 import TabPoliciesWrapper from "@/src/components/tab-policies-wrapper"
+import generateMetaData from "@/src/utils/metaData"
+import { Metadata } from "next"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Merchant Onboarding Policy: EnKash",
+  description:
+    "Understand the secure, compliant steps we follow to onboard merchants with ease.",
+  alternates: {
+    canonical: `${process.env.URL}/policies/merchant-onboarding`,
+  },
+})
 const tabs = [{ key: "payments" }]
 
 const cards = [
@@ -20,8 +30,6 @@ const cards = [
     buttonUrl: "/policies/payments/merchant-onboarding",
   },
 ]
-
-
 
 const MerchantOnboarding = (): React.JSX.Element => {
   //
