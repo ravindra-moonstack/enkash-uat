@@ -3,7 +3,7 @@ import React, { memo, useState } from "react"
 import Image, { StaticImageData } from "next/image"
 
 import styles from "./enkash-way.module.scss"
-
+import ellips from "../../../public/svgs/tab-ellips.svg"
 import CommonButton from "../buttons"
 import DynamicHeading from "../dynamic-heading"
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6"
@@ -55,7 +55,7 @@ const EnkashWay = ({
     <>
       {/* DESKTOP */}
       <div
-        className={`d-md-block d-none ${styles.sixth_row}`}
+        className={`d-md-block d-none position-relative ${styles.sixth_row}`}
         style={{
           backgroundImage: `url(${currentBgImage})`,
           backgroundSize: "cover",
@@ -64,7 +64,11 @@ const EnkashWay = ({
           transition: "background-image 0.5s ease-in-out",
         }}
       >
-        <div className={styles.blur_bg}></div>
+        {/* <div className={styles.blur_bg}></div> */}
+        <div className="position-absolute">
+          {" "}
+          <Image src={ellips} alt={"ellips"} />
+        </div>
 
         <div className={styles.tab_section}>
           {/* Headings */}
