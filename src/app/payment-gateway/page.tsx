@@ -86,6 +86,7 @@ const PaymentGateway = (): React.JSX.Element => {
           url: salesUrl,
           theme: "blue",
           apiUrl: "https://docs.enkash.com/payment-gateway",
+          vedioLink: "https://www.youtube.com/watch?v=oApuECjnRIU",
         }}
         rightImage={paymentSummary}
         backgroundImage="/images/collectPaymentBg.webp"
