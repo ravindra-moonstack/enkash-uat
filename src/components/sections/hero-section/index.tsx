@@ -24,6 +24,7 @@ interface HeroSectionProps {
     title: string
     url: string
     apiUrl?: string
+    vedioLink?: string
     theme?: "blue" | "black" | "white"
   }
   rightImage: StaticImageData | string
@@ -128,6 +129,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                         title="API Doc"
                         theme="outline-blue"
                         url={button.apiUrl}
+                      />
+                    )}
+                    {button.vedioLink && (
+                      <CommanButton
+                        title="Watch Vedio"
+                        theme="blue"
+                        url={button.vedioLink}
                       />
                     )}
                   </div>
