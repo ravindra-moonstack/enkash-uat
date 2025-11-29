@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import Image, { StaticImageData } from "next/image"
 import styles from "./hero-section.module.scss"
 import CustomBreadcrumb from "../../breadcrumb"
@@ -8,6 +8,7 @@ import DynamicHeading from "../../dynamic-heading"
 import CommanButton from "../../buttons"
 import { BreadcrumbItem } from "@/src/types"
 import LogoSlider from "../../logo-slider"
+import VideoModal from "../../vedio-modal"
 
 interface TextPart {
   text: string
@@ -42,6 +43,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage,
   rightImageMaxHeight = "550px",
 }) => {
+  const [open, setOpen] = useState(false)
   return (
     <div className={`${styles.hero_section} position-relative`}>
       {backgroundImage && (
@@ -134,11 +136,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                       />
                     )}
                     {button.vedioLink && (
-                      <CommanButton
-                        title="Watch Vedio"
-                        theme="blue"
-                        url={button.vedioLink}
-                      />
+                      <>
+                        {button.vedioLink && (
+                          <>
+                            <CommanButton
+                              title="Watch Video"
+                              theme="blue"
+                              url={() => setOpen(true)}
+                            />
+                          </>
+                        )}
+                      </>
                     )}
                   </div>
                 )}
@@ -166,11 +174,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
       </div>
-
-      <div className="pt-4">
-        {" "}
-        <LogoSlider />
-      </div>
+      {button && (
+        <>
+          {button.vedioLink && (
+            <VideoModal
+              open={open}
+              onClose={() => setOpen(false)}
+              videoUrl={button.vedioLink}
+            />
+          )}
+        </>
+      )}
+      {/* Logo Slider */}
+      <LogoSlider />
     </div>
   )
 }
