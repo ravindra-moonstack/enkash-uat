@@ -23,6 +23,7 @@ interface UseCaseSectionProps {
   heading: HeadingPart[]
   headingTag?: keyof JSX.IntrinsicElements
   items: UseCaseItem[]
+  subHeading?:HeadingPart[]
   buttonUrl: string
   className?: string
 }
@@ -32,6 +33,7 @@ const UseCaseSection: React.FC<UseCaseSectionProps> = ({
   headingTag = "h2",
   items,
   buttonUrl,
+  subHeading,
   className = "",
 }) => {
   return (
@@ -42,6 +44,11 @@ const UseCaseSection: React.FC<UseCaseSectionProps> = ({
             content={heading}
             headingTag={headingTag}
             className="f-6"
+          />
+            <DynamicHeading
+            content={subHeading}
+            headingTag="p"
+            className="mt-2"
           />
         </div>
 
