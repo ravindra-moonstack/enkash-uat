@@ -2,7 +2,7 @@
 import Image, { StaticImageData } from "next/image"
 import { useRouter } from "next/navigation"
 import { FaArrowRight } from "react-icons/fa"
-
+import { IoIosArrowForward } from "react-icons/io"
 import styles from "./button.module.scss"
 
 export type ButtonTheme =
@@ -11,10 +11,12 @@ export type ButtonTheme =
   | "black"
   | "outline-blue"
   | "border-gray"
+  | "vedio-button"
   | "border-black"
   | "outline-blue-small"
   | "small-blue"
   | "white"
+  | "grey-text"
 
 export interface ButtonProps {
   isDisabled?: boolean
@@ -27,6 +29,7 @@ export interface ButtonProps {
   image?: StaticImageData | string
   openInNewTab?: boolean
   arrow?: boolean
+  arrowType?: "fa" | "ios"
 }
 
 const CommonButton = ({
@@ -35,14 +38,13 @@ const CommonButton = ({
   url,
   theme = "blue",
   width,
-  iconSize = 20,
+  iconSize = 28,
   className,
   openInNewTab = false,
   image,
   arrow = false,
+  arrowType = "fa",
 }: ButtonProps) => {
-  //
-
   const router = useRouter()
 
   const handleClick = () => {
@@ -71,17 +73,20 @@ const CommonButton = ({
       onClick={handleClick}
       style={{ width: width || "auto" }}
     >
-      {title}
       {image && (
         <Image
-          className={`ms-2 ${styles[iconClass]}`}
+          className={`${styles[iconClass]}`}
           src={image}
           alt="action image"
           width={iconSize}
           height={iconSize}
         />
       )}
-      {arrow && <FaArrowRight />}
+      {title}
+
+      {/* NEW: Two arrow options */}
+      {arrow &&
+        (arrowType === "ios" ? <IoIosArrowForward /> : <FaArrowRight />)}
     </button>
   )
 }
