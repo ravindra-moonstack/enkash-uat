@@ -63,7 +63,7 @@ const EnkashWay = ({
         }}
       >
         <div className={styles.blur_bg}></div>
-
+<div className={styles.blur_bg_right}></div>
         <div className={styles.tab_section}>
           {/* Headings */}
           <div className="d-flex flex-column text-center">
@@ -174,7 +174,7 @@ const EnkashWay = ({
                         ? selectedItem.buttonText
                         : "Learn More"
                     }
-                    theme="border-gray"
+                    theme="outline-blue"
                     arrow
                     url={selectedItem.url}
                   />

@@ -57,7 +57,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           },
         ]}
         description={{
-          text: "Manage and pay all your business bills from a single, unified dashboard.",
+          text: "Manage all your business utility bills – electricity, water, post-paid, internet, and more – from a single dashboard. Automate payments and get real-time updates built for growing enterprises.",
         }}
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         rightImage={paymentSummary}
@@ -94,6 +94,13 @@ const UtilityBillPayment = (): React.JSX.Element => {
         heading={[
           {
             title: "Say Goodbye to Bill Management Chaos",
+            color: "color-black ",
+          },
+        ]}
+        subHeading={[
+          {
+            title:
+              "Manage all your essential utility bill payments: electricity, power, water, gas, and more - in one seamless platform. EnKash automatically discovers upcoming bills, sends smart reminders, and helps you pay them on time every time. No more manual tracking, missed due dates, or scattered systems. Simplify your organization’s utility bill management with a single, automated dashboard. ",
             color: "color-black ",
           },
         ]}
