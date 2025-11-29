@@ -64,7 +64,7 @@ const EnkashWay = ({
         }}
       >
         <div className={styles.blur_bg}></div>
-
+<div className={styles.blur_bg_right}></div>
         <div className={styles.tab_section}>
           {/* Headings */}
           <div className="d-flex flex-column text-center">
@@ -174,21 +174,43 @@ const EnkashWay = ({
               </div>
             </div>
 
-            {/* Right Image */}
-            {selectedItem.rightImg && (
-              <div
-                className="col-7 pointer-events-none position-absolute end-0 text-end"
-                style={{ maxHeight: 322, bottom: "-92px" }}
-              >
-                <Image
-                  src={selectedItem.rightImg}
-                  alt="right image"
-                  height={322}
-                  width={380}
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-            )}
+            <div className="d-flex flex-column gap-3">
+              <DynamicHeading
+                content={[
+                  {
+                    title: selectedItem.title,
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h4"
+                className="f-5"
+              />
+              <DynamicHeading
+                content={[
+                  {
+                    title: selectedItem.description,
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-0"
+              />
+
+              {selectedItem.url && (
+                <div className={`${styles.list_button}`}>
+                  <CommonButton
+                    title={
+                      selectedItem.buttonText
+                        ? selectedItem.buttonText
+                        : "Learn More"
+                    }
+                    theme="outline-blue"
+                    arrow
+                    url={selectedItem.url}
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
