@@ -9,6 +9,7 @@ import CommanButton from "../../buttons"
 import { BreadcrumbItem } from "@/src/types"
 import LogoSlider from "../../logo-slider"
 import VideoModal from "../../vedio-modal"
+import VideoIcon from "../../../../public/svgs/vedio-icon.svg"
 
 interface TextPart {
   text: string
@@ -128,25 +129,30 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                       theme={button.theme ?? "blue"}
                       url={button.url}
                     />
-                    {button.apiUrl && (
-                      <CommanButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url={button.apiUrl}
-                      />
-                    )}
+
                     {button.vedioLink && (
                       <>
                         {button.vedioLink && (
                           <>
                             <CommanButton
                               title="Watch Video"
-                              theme="blue"
+                              theme="vedio-button"
+                              iconSize={28}
                               url={() => setOpen(true)}
+                              image={VideoIcon}
                             />
                           </>
                         )}
                       </>
+                    )}
+                    {button.apiUrl && (
+                      <CommanButton
+                        title="API Doc"
+                        theme="grey-text"
+                        arrow
+                        arrowType="ios"
+                        url={button.apiUrl}
+                      />
                     )}
                   </div>
                 )}

@@ -37,11 +37,9 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoUrl, open, onClose }) => {
       dialogClassName="video-modal-dialog"
       backdropClassName="video-backdrop-blur"
     >
-      <Modal.Header closeButton></Modal.Header>
-
       <iframe
         className="w-full"
-        style={{ height: "400px", border: "8px" }}
+        style={{ height: "400px", border: "8px", borderRadius: "8px" }}
         src={convertToEmbedUrl(videoUrl)}
         title="Video Player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
