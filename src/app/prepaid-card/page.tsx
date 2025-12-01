@@ -82,7 +82,8 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
               <DynamicHeading
                 content={[
                   {
-                    title: "The Best Prepaid Corporate Card",
+                    title:
+                      "The Best Prepaid Card for Smarter Business Spending",
                     color: "color-white f-3 d-block italic",
                   },
                   { title: "for Business Spending", color: "color-white" },
@@ -139,7 +140,10 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
           <CardStacking
             cards={stackCards}
             heading={[
-              { title: "Why Businesses Choose EnKash Prepaid Cards ", color: "color-black" },
+              {
+                title: "Why Businesses Choose EnKash Prepaid Cards ",
+                color: "color-black",
+              },
             ]}
           />
         </div>

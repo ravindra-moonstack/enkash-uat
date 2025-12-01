@@ -96,7 +96,7 @@ const allInOnePolicyData: TStackCardsProp = [
   },
   {
     icon: taskIconTwo,
-    title: "Under one click payment Section:",
+    title: " One click payment Section:",
     description:
       "Simplify the complexity of multiple payments with EnKash’s one-click payment feature. Easily pay several bills simultaneously by filtering them based on location, provider, or due date. Ideal for businesses making bulk commercial bill payments and multi-location corporate bill payment cycles.This efficiency not only saves time but also makes bulk payment handling a breeze, ensuring you never miss a due date.",
     image: shareImage,

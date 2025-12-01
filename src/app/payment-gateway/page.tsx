@@ -39,20 +39,8 @@ import HeroSection from "@/src/components/sections/hero-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
-
-import Script from "next/script"
-
 //utils
-
-// export const metadata: Metadata = generateMetaData({
-//   title: "Best Payment Gateway in India for SMBs and Startups",
-//   description:
-//     "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
-//   alternates: {
-//     canonical: `${process.env.URL}/payment-gateway`,
-//   },
-//   videoUrl: "https://www.youtube.com/watch?v=oApuECjnRIU",
-// })
+import Script from "next/script"
 
 const videoId = "oApuECjnRIU"
 const videoSchema = {
@@ -644,6 +632,7 @@ const PaymentGateway = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+
       <BlogSection
         heading={[
           {
