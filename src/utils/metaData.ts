@@ -157,7 +157,7 @@ export const generateMetaData = ({
   alternates,
   faqData,
   ogImage,
-  videoUrl, // ✅ NEW
+  videoUrl,
 }: MetadataInput) => {
   const canonicalUrl = alternates.canonical
   const faqldJSON = generateFaqSchema(faqData)

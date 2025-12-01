@@ -17,6 +17,7 @@ export type ButtonTheme =
   | "small-blue"
   | "white"
   | "grey-text"
+  | "vedio-button-dark"
 
 export interface ButtonProps {
   isDisabled?: boolean
