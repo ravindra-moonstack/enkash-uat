@@ -88,6 +88,62 @@ const faqData: TFAQProps[] = [
       },
     ],
   },
+
+  {
+    question: "How do meal cards help employees save tax?",
+    answer: [
+      {
+        heading:
+          "Meal cards offer tax-free meals for employees under Section 17(2)(viii) of the Income Tax Act. Employees can save up to ₹26,400 annually since meal allowance spent through a compliant card is exempt from tax. Using a prepaid meal card ensures the allowance is used only for eligible food and beverage spends, making it fully compliant and easier for employees to maximise tax benefits while giving companies better control and digital tracking.",
+      },
+    ],
+  },
+  {
+    question:
+      "Why should businesses use prepaid meal cards instead of cash allowances?",
+    answer: [
+      {
+        heading:
+          "Prepaid meal cards are a better option than cash allowances because they ensure tax compliance, prevent misuse, and offer complete visibility into food-related spends. Cash allowances are usually taxable and difficult to track, while prepaid meal cards restrict usage to eligible food and beverage merchants, making them compliant with Section 17(2)(viii) of the Income Tax Act. For Indian businesses, meal cards provide digital tracking, stronger controls, and guaranteed tax benefits for employees, unlike cash or paper coupons that often lead to leakage and audit issues.",
+      },
+    ],
+  },
+  {
+    question: "Can meal cards be reloaded every month?",
+    answer: [
+      {
+        heading:
+          "Yes. Meal cards can be reloaded every month. Employers can add the monthly meal allowance directly through their corporate dashboard, ensuring timely benefits and simple, compliant tracking of all meal-related expenses.",
+      },
+    ],
+  },
+  {
+    question: "Are meal cards accepted for online food delivery?",
+    answer: [
+      {
+        heading:
+          "Yes. Prepaid meal cards are accepted on major food delivery platforms in India, including Swiggy, Zomato, and other eligible food and beverage merchants. As long as the platform falls under approved F&B MCC codes, employees can use their meal cards to conveniently order meals online and enjoy tax-free meal benefits.",
+      },
+    ],
+  },
+  {
+    question: "How do meal cards improve compliance for companies?",
+    answer: [
+      {
+        heading:
+          "Meal cards improve compliance by ensuring that meal allowances are spent only on eligible food and beverage categories. Prepaid meal cards automatically restrict spending to approved F&B MCC codes, reducing misuse and leakages. Companies also receive real-time tracking, digital audit trails, and clear documentation, making it easier to meet tax and payroll compliance requirements while offering employees tax-free meal benefits.",
+      },
+    ],
+  },
+  {
+    question: "Can startups and small businesses use prepaid meal cards?",
+    answer: [
+      {
+        heading:
+          "Absolutely. Startups and small businesses can use prepaid meal cards to offer tax-efficient, compliant meal benefits. They are easy to issue, reload, monitor, and manage digitally—making them perfect for companies looking for structured employee benefits without heavy administrative work.",
+      },
+    ],
+  },
 ]
 
 export default faqData

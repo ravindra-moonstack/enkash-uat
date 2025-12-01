@@ -64,7 +64,7 @@ const EnkashWay = ({
         }}
       >
         <div className={styles.blur_bg}></div>
-<div className={styles.blur_bg_right}></div>
+        <div className={styles.blur_bg_right}></div>
         <div className={styles.tab_section}>
           {/* Headings */}
           <div className="d-flex flex-column text-center">
@@ -165,51 +165,13 @@ const EnkashWay = ({
                   <div className={`${styles.list_button}`}>
                     <CommonButton
                       title={selectedItem.buttonText || "Learn More"}
-                      theme="border-gray"
+                      theme="outline-blue"
                       arrow
                       url={selectedItem.url}
                     />
                   </div>
                 )}
               </div>
-            </div>
-
-            <div className="d-flex flex-column gap-3">
-              <DynamicHeading
-                content={[
-                  {
-                    title: selectedItem.title,
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h4"
-                className="f-5"
-              />
-              <DynamicHeading
-                content={[
-                  {
-                    title: selectedItem.description,
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="p"
-                className="mb-0"
-              />
-
-              {selectedItem.url && (
-                <div className={`${styles.list_button}`}>
-                  <CommonButton
-                    title={
-                      selectedItem.buttonText
-                        ? selectedItem.buttonText
-                        : "Learn More"
-                    }
-                    theme="outline-blue"
-                    arrow
-                    url={selectedItem.url}
-                  />
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -347,7 +309,6 @@ const EnkashWay = ({
                               src={data.rightImg}
                               alt="center image"
                               width={178}
-                        
                               style={{ objectFit: "contain", height: "auto" }}
                             />
                           </div>
