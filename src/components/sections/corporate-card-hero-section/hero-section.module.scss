@@ -1,0 +1,49 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.hero_section {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #292929;
+  box-shadow: 0 0 77px 0 $color-black-1a;
+  padding: 110px 20px 36px;
+  position: relative;
+
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/images/corporate-card-first-bg.svg"),
+    url("/images/corporate-card-second-bg.webp");
+  @include for-laptops {
+    padding: 121px 70px 40px;
+  }
+
+  .bannerImages {
+    img {
+      width: 100%;
+      height: auto;
+
+      @include for-laptops {
+        min-height: 540px;
+      }
+    }
+  }
+
+  .subtitle {
+    color: $color-equity-blue;
+    border-bottom: 2px solid $color-equity-blue;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .dashboard_img {
+    max-width: 100%;
+    height: auto;
+
+    @include for-laptops {
+      width: 800px;
+      height: fit-content;
+      max-width: none;
+    }
+  }
+}

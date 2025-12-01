@@ -49,6 +49,7 @@ export const metadata: Metadata = generateMetaData({
   alternates: {
     canonical: `${process.env.URL}/payment-gateway`,
   },
+  videoUrl: "https://www.youtube.com/watch?v=oApuECjnRIU",
 })
 const salesUrl = getSalesUrl("/payment-gateway")
 

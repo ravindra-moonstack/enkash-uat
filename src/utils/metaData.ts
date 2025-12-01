@@ -1,6 +1,7 @@
 import { TVoucher } from "@/src/app/vouchers/data/voucher-data"
 import { TFAQProps } from "../types/faq"
 
+// ------------------ INPUT ------------------
 interface MetadataInput {
   title: string
   description: string
@@ -9,8 +10,12 @@ interface MetadataInput {
   }
   faqData?: Array<TFAQProps>
   ogImage?: string
+
+  // ✅ NEW
+  videoUrl?: string
 }
 
+// ------------------ Breadcrumb Types ------------------
 export interface BreadcrumbItem {
   "@type": "ListItem"
   position: number
@@ -24,7 +29,7 @@ export interface BreadcrumbSchema {
   itemListElement: BreadcrumbItem[]
 }
 
-// ✅ Breadcrumb generator
+// ------------------ Breadcrumb Generator ------------------
 export const generateBreadcrumbSchema = (
   canonicalUrl: string
 ): BreadcrumbSchema => {
@@ -40,15 +45,14 @@ export const generateBreadcrumbSchema = (
       .split("/")
       .filter(Boolean)
 
-    const formatSegmentName = (segment: string): string => {
-      return segment
+    const formatSegmentName = (segment: string): string =>
+      segment
         .split(/[-_]/)
         .map(
           (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
         )
         .join(" ")
         .trim()
-    }
 
     const breadcrumbItems: BreadcrumbItem[] = [
       {
@@ -77,7 +81,7 @@ export const generateBreadcrumbSchema = (
   }
 }
 
-// ✅ FAQ Schema
+// ------------------ FAQ Schema ------------------
 export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
   if (!faqData || faqData.length === 0) return null
 
@@ -107,7 +111,7 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
   }
 }
 
-// ✅ Voucher Schema
+// ------------------ Voucher Schema ------------------
 export const generateVoucherSchema = (voucher: TVoucher): string => {
   const baseUrl = process.env.URL
   const schema = {
@@ -146,18 +150,39 @@ export const generateVoucherSchema = (voucher: TVoucher): string => {
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`
 }
 
-// ✅ Unified Meta + OG Schema generator
+// ------------------ Meta + OG + Structured Data ------------------
 export const generateMetaData = ({
   title,
   description,
   alternates,
   faqData,
-  ogImage, // ✅ custom OG image supported
+  ogImage,
+  videoUrl, // ✅ NEW
 }: MetadataInput) => {
   const canonicalUrl = alternates.canonical
   const faqldJSON = generateFaqSchema(faqData)
-  const baseImage = ogImage || `${process.env.NEXT_PUBLIC_URL}/og-image.png` // ✅ fallback to default OG image
+  const baseImage = ogImage || `${process.env.NEXT_PUBLIC_URL}/og-image.png`
 
+  // ---------- VIDEO SCHEMA ----------
+  let videoSchema = null
+
+  if (videoUrl) {
+    // YouTube detection
+    const isYouTube =
+      videoUrl.includes("youtube.com") || videoUrl.includes("youtu.be")
+
+    videoSchema = {
+      "@type": "VideoObject",
+      name: title,
+      description: description,
+      uploadDate: new Date().toISOString(),
+      thumbnailUrl: [baseImage],
+      contentUrl: videoUrl,
+      embedUrl: isYouTube ? videoUrl : undefined,
+    }
+  }
+
+  // ---------- FINAL RETURN ----------
   return {
     title,
     description,
@@ -175,6 +200,8 @@ export const generateMetaData = ({
       description,
       images: [baseImage],
     },
+
+    // ---------- STRUCTURED DATA SCRIPT ----------
     structuredDataScript: `
       <script type="application/ld+json">
         ${JSON.stringify({
@@ -186,6 +213,7 @@ export const generateMetaData = ({
           description,
           breadcrumb: generateBreadcrumbSchema(canonicalUrl),
           mainEntity: faqldJSON,
+          video: videoSchema || undefined, // ✅ attach video
         })}
       </script>
     `,

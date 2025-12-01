@@ -51,7 +51,7 @@ const stackcardData: TStackCardsProp = [
     icon: realTimeExpenseIcon,
     title: "Enjoy Ultimate Control",
     description:
-      "Block merchant types, set daily/weekly/monthly spend limits, and restrict payment modes (ATM, POS, Online) - all in minutes.",
+      "Set spend limits, block merchant categories, restrict channels (ATM/POS/Online), and instantly manage every card. Perfect for teams using prepaid cards for employees or vendors.",
     image: realTimeExpense,
     buttonUrl: "/sales/?source=expense_management",
   },
@@ -59,7 +59,7 @@ const stackcardData: TStackCardsProp = [
     icon: fraudProtectionIcon,
     title: "Instantly Issue & Reload Cards",
     description:
-      "Issue cards digitally to teams or individuals. Load or top up in one click via your centralized dashboard.",
+      "Issue physical or virtual prepaid cards in seconds. Reload balances anytime using your central dashboard—ideal for distributed teams and branch-level operations.",
     image: fraudProtection,
     buttonUrl: "/sales",
   },
