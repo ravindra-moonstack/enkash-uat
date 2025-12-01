@@ -39,6 +39,7 @@ import HeroSection from "@/src/components/sections/hero-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
+import Head from "next/head"
 
 //utils
 
@@ -51,6 +52,21 @@ import BlogSection from "@/src/components/sections/blog-section"
 //   },
 //   videoUrl: "https://www.youtube.com/watch?v=oApuECjnRIU",
 // })
+
+const videoId = "oApuECjnRIU"
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Payment Gateway in India - Enkash",
+  description:
+    "Smooth checkouts, advanced fraud protection, and more with Enkash.",
+  thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+  uploadDate: "2025-11-30T08:00:00+00:00", // Use your real upload date
+  duration: "PT2M30S", // example duration ISO 8601 format
+  contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
+  embedUrl: `https://www.youtube.com/embed/${videoId}`,
+}
+
 
 export const metadata: Metadata = {
   title: "Best Payment Gateway in India for SMBs and Startups",
@@ -74,6 +90,12 @@ const salesUrl = getSalesUrl("/payment-gateway")
 const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white`}>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+        />
+      </Head>
       <HeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
