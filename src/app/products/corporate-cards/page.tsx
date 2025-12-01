@@ -40,6 +40,15 @@ import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import BlogSection from "@/src/components/sections/blog-section"
 import CorporateHeroSection from "@/src/components/sections/corporate-card-hero-section"
 
+const YOUTUBE_VIDEO = {
+  url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // replace with your real video
+  title: "EnKash Corporate Cards – Spend Smarter, Control Better",
+  description:
+    "Discover how EnKash corporate cards help businesses manage expenses with real-time tracking, custom limits, and seamless integration.",
+  uploadDate: "2025-06-15",
+  duration: "PT2M34S",
+} as const
+
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
   description:
@@ -47,7 +56,8 @@ export const metadata: Metadata = generateMetaData({
   alternates: {
     canonical: `${process.env.URL}/products/corporate-cards`,
   },
-  videoUrl: "https://youtu.be/EgWI_tkBpk0",
+  video: YOUTUBE_VIDEO, // ← just pass the object directly
+  // faqData, ogImage, etc. if needed
 })
 const salesUrl = getSalesUrl("/corporate-cards")
 
