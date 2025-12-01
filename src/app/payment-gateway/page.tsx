@@ -39,7 +39,8 @@ import HeroSection from "@/src/components/sections/hero-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
-import Head from "next/head"
+
+import Script from "next/script"
 
 //utils
 
@@ -61,12 +62,11 @@ const videoSchema = {
   description:
     "Smooth checkouts, advanced fraud protection, and more with Enkash.",
   thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-  uploadDate: "2025-11-30T08:00:00+00:00", // Use your real upload date
-  duration: "PT2M30S", // example duration ISO 8601 format
+  uploadDate: "2025-11-30T08:00:00+00:00",
+  duration: "PT2M30S",
   contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
   embedUrl: `https://www.youtube.com/embed/${videoId}`,
 }
-
 
 export const metadata: Metadata = {
   title: "Best Payment Gateway in India for SMBs and Startups",
@@ -90,12 +90,12 @@ const salesUrl = getSalesUrl("/payment-gateway")
 const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white`}>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-        />
-      </Head>
+      <Script
+        id="video-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+      />
       <HeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
