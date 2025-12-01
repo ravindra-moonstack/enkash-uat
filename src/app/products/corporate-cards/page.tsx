@@ -92,7 +92,7 @@ const CorporateCards = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Under : Build for cfos, Loved by Teams ",
+                  title: " Build for CFOs, Loved by Teams ",
                   color: "color-white",
                 },
               ]}

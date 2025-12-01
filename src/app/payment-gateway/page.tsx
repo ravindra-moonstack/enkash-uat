@@ -17,7 +17,7 @@ import {
 import faqData from "./faq-data"
 
 //components
-import generateMetaData from "@/src/utils/metaData"
+// import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import FaqSection from "@/src/components/faq-section"
 import CommonButton from "@/src/components/buttons"
@@ -42,15 +42,33 @@ import BlogSection from "@/src/components/sections/blog-section"
 
 //utils
 
-export const metadata: Metadata = generateMetaData({
+// export const metadata: Metadata = generateMetaData({
+//   title: "Best Payment Gateway in India for SMBs and Startups",
+//   description:
+//     "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
+//   alternates: {
+//     canonical: `${process.env.URL}/payment-gateway`,
+//   },
+//   videoUrl: "https://www.youtube.com/watch?v=oApuECjnRIU",
+// })
+
+export const metadata: Metadata = {
   title: "Best Payment Gateway in India for SMBs and Startups",
   description:
     "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
-  alternates: {
-    canonical: `${process.env.URL}/payment-gateway`,
+  openGraph: {
+    title: "Enkash",
+    description:
+      "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
+    url: `${process.env.URL}/payment-gateway`,
+    type: "website",
+    videos: [
+      {
+        url: "https://www.youtube.com/watch?v=oApuECjnRIU",
+      },
+    ],
   },
-  videoUrl: "https://www.youtube.com/watch?v=oApuECjnRIU",
-})
+}
 const salesUrl = getSalesUrl("/payment-gateway")
 
 const PaymentGateway = (): React.JSX.Element => {

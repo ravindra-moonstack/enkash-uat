@@ -5,7 +5,7 @@ import CustomBreadcrumb from "../../breadcrumb"
 import DynamicHeading from "../../dynamic-heading"
 import CommanButton from "../../buttons"
 import VideoModal from "../../vedio-modal"
-import VideoIcon from "../../../../public/svgs/vedio-icon.svg"
+import VideoIcon from "../../../../public/svgs/vedio-icon-dark-theme.svg"
 import { useState } from "react"
 import { BreadcrumbItem } from "@/src/types"
 interface TextPart {
@@ -76,7 +76,7 @@ const CorporateHeroSection: React.FC<HeroSectionProps> = ({
 
             <CommanButton
               title="Watch Video"
-              theme="vedio-button"
+              theme="vedio-button-dark"
               iconSize={28}
               url={() => setOpen(true)}
               image={VideoIcon}
