@@ -23,6 +23,8 @@ import PolicyCard from "@/src/components/policy-card"
 import FeatureCard from "@/src/components/feature-card"
 import CardProduct from "@/src/components/card-product"
 import AllProducts from "@/src/components/all-products"
+import BlogSection from "@/src/components/sections/blog-section"
+import CorporateHeroSection from "@/src/components/sections/corporate-card-hero-section"
 
 // helpers
 import {
@@ -35,30 +37,42 @@ import {
 } from "./img"
 
 // utils
-import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import BlogSection from "@/src/components/sections/blog-section"
-import CorporateHeroSection from "@/src/components/sections/corporate-card-hero-section"
 
-const YOUTUBE_VIDEO = {
-  url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // replace with your real video
-  title: "EnKash Corporate Cards – Spend Smarter, Control Better",
-  description:
-    "Discover how EnKash corporate cards help businesses manage expenses with real-time tracking, custom limits, and seamless integration.",
-  uploadDate: "2025-06-15",
-  duration: "PT2M34S",
-} as const
+import Script from "next/script"
 
-export const metadata: Metadata = generateMetaData({
-  title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
+const videoId = "EgWI_tkBpk0"
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Payment Gateway in India - Enkash",
   description:
-    "Empower your teams with EnKash corporate cards. Set spend limits, track transactions in real time, and manage all business expenses on one powerful platform.",
-  alternates: {
-    canonical: `${process.env.URL}/products/corporate-cards`,
+    "Smooth checkouts, advanced fraud protection, and more with Enkash.",
+  thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+  uploadDate: "2025-11-30T08:00:00+00:00",
+  duration: "PT2M30S",
+  contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
+  embedUrl: `https://www.youtube.com/embed/${videoId}`,
+}
+
+export const metadata: Metadata = {
+  title: "Best Payment Gateway in India for SMBs and Startups",
+  description:
+    "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
+  openGraph: {
+    title: "Enkash",
+    description:
+      "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
+    url: `${process.env.URL}/payment-gateway`,
+    type: "website",
+    videos: [
+      {
+        url: "https://youtu.be/EgWI_tkBpk0?si=IPPm7ujd9qxht0s0",
+      },
+    ],
   },
-  video: YOUTUBE_VIDEO, // ← just pass the object directly
-  // faqData, ogImage, etc. if needed
-})
+}
+
 const salesUrl = getSalesUrl("/corporate-cards")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -66,6 +80,12 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const CorporateCards = (): React.JSX.Element => {
   return (
     <>
+      <Script
+        id="video-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+      />
       <CorporateHeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -157,7 +177,7 @@ const CorporateCards = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Under: One Platform. Total Visibility. ",
+                    title: "One Platform. Total Visibility. ",
                     color: "color-black",
                   },
                   {
