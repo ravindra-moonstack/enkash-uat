@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { FaArrowRight } from "react-icons/fa"
 import { IoIosArrowForward } from "react-icons/io"
 import styles from "./button.module.scss"
+import { useState } from "react"
 
 export type ButtonTheme =
   | "blue"
@@ -28,6 +29,8 @@ export interface ButtonProps {
   iconSize?: number
   className?: string
   image?: StaticImageData | string
+  hoverImage?: StaticImageData | string       
+  changeImageOnHover?: boolean                
   openInNewTab?: boolean
   arrow?: boolean
   arrowType?: "fa" | "ios"
@@ -43,10 +46,14 @@ const CommonButton = ({
   className,
   openInNewTab = false,
   image,
+  hoverImage,                 // ⭐ NEW
+  changeImageOnHover = false, // ⭐ NEW
   arrow = false,
   arrowType = "fa",
 }: ButtonProps) => {
   const router = useRouter()
+
+  const [currentImage, setCurrentImage] = useState(image) // ⭐ NEW
 
   const handleClick = () => {
     if (typeof url === "string") {
@@ -57,6 +64,18 @@ const CommonButton = ({
       }
     } else if (typeof url === "function") {
       url()
+    }
+  }
+
+  const handleMouseEnter = () => {
+    if (changeImageOnHover && hoverImage) {
+      setCurrentImage(hoverImage)
+    }
+  }
+
+  const handleMouseLeave = () => {
+    if (changeImageOnHover && image) {
+      setCurrentImage(image)
     }
   }
 
@@ -72,20 +91,22 @@ const CommonButton = ({
         ${className ?? ""}
       `}
       onClick={handleClick}
+      onMouseEnter={handleMouseEnter}   // ⭐ NEW
+      onMouseLeave={handleMouseLeave}   // ⭐ NEW
       style={{ width: width || "auto" }}
     >
-      {image && (
+      {currentImage && (
         <Image
           className={`${styles[iconClass]}`}
-          src={image}
+          src={currentImage}
           alt="action image"
           width={iconSize}
           height={iconSize}
         />
       )}
+
       {title}
 
-      {/* NEW: Two arrow options */}
       {arrow &&
         (arrowType === "ios" ? <IoIosArrowForward /> : <FaArrowRight />)}
     </button>
