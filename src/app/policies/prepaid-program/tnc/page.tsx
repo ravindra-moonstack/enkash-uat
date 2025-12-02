@@ -236,12 +236,20 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           classification:
                         </p>
                         <table className="table table-bordered table-striped">
-                          <thead className="table-dark">
+                          <thead className=" ">
                             <tr>
-                              <th>PPI Type</th>
-                              <th>Monthly Credit Limit</th>
-                              <th>Annual Credit Limit</th>
-                              <th>KYC Requirement</th>
+                              <th className="text-center bg-secondary text-white">
+                                PPI Type
+                              </th>
+                              <th className="text-center bg-secondary text-white">
+                                Monthly Credit Limit
+                              </th>
+                              <th className="text-center bg-secondary text-white">
+                                Annual Credit Limit
+                              </th>
+                              <th className="text-center bg-secondary text-white">
+                                KYC Requirement
+                              </th>
                             </tr>
                           </thead>
                           <tbody>
@@ -407,11 +415,17 @@ const CustomerOnboarding = (): React.JSX.Element => {
                       <div className="container my-4">
                         <h6>Schedule of Standard Charges</h6>
                         <table className="table table-bordered table-striped">
-                          <thead className="table-dark">
+                          <thead>
                             <tr>
-                              <th>Service Description</th>
-                              <th>Charge (INR)</th>
-                              <th>Applicability</th>
+                              <th className="text-center bg-secondary text-white">
+                                Service Description
+                              </th>
+                              <th className="text-center bg-secondary text-white">
+                                Charge (INR)
+                              </th>
+                              <th className="text-center bg-secondary text-white">
+                                Applicability
+                              </th>
                             </tr>
                           </thead>
 
