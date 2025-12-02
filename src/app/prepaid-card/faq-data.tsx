@@ -94,4 +94,49 @@ export const faqData: TFAQProps[] = [
       },
     ],
   },
-]
+
+  // -------------------------------------------------------------------
+  // ⭐ NEW FAQS ADDED BELOW
+  // -------------------------------------------------------------------
+
+  {
+    question:
+      "Why EnKash Prepaid Corporate Cards are better than traditional employee reimbursement methods?",
+    answer: [
+      {
+        heading:
+          "EnKash Prepaid Corporate Cards remove the need for cash advances and manual reimbursement claims by giving employees a secure, preloaded card for approved business expenses. Every transaction is recorded in real time, allowing finance teams to track spends instantly, set category-wise limits, and control usage for meals, fuel, travel, SaaS tools, or purchase-related expenses. Unlike traditional reimbursement methods that create delays, paperwork, and compliance gaps, EnKash cards offer faster approvals, automated tracking, and complete visibility, making them one of the most efficient and compliant spend solutions for Indian businesses.",
+      },
+    ],
+  },
+  {
+    question:
+      "Can prepaid cards be used for employee benefits like meals and rewards?",
+    answer: [
+      {
+        heading:
+          "Yes. EnKash provides dedicated prepaid meal cards and prepaid gift cards that support tax-saving meals, employee rewards, festival gifting, and incentive payouts. These cards are accepted across online and offline merchants in India, making them easy for employees to use for food, dining, shopping, and other eligible spends. Companies also gain better control, instant issuance, and real-time visibility compared to traditional voucher or reimbursement-based benefit programs.",
+      },
+    ],
+  },
+  {
+    question:
+      "How does EnKash simplify corporate spending through prepaid cards online?",
+    answer: [
+      {
+        heading:
+          "EnKash simplifies corporate spending by letting businesses issue and manage prepaid cards online from a unified dashboard. Companies can create cards instantly, set limits, automate top-ups, and track spends in real time. All key workflows—card issuance, fund loading, spend controls, approvals, analytics, and reconciliation—are handled digitally without paperwork, branch visits, or bank delays. This makes EnKash one of the most efficient solutions for managing meal, fuel, travel, SaaS, and purchase-based expenses with full visibility.",
+      },
+    ],
+  },
+  {
+    question:
+      "Do EnKash reloadable prepaid cards support department-wise or project-wise budgeting?",
+    answer: [
+      {
+        heading:
+          "Yes. EnKash reloadable prepaid cards allow businesses to create department-wise, project-wise, or team-wise budgets. Each card can be configured with custom limits, category controls, and merchant restrictions to prevent overspending and maintain real-time visibility across all business units.",
+      },
+    ],
+  },
+];

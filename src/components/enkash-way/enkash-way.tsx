@@ -3,7 +3,6 @@ import React, { memo, useState } from "react"
 import Image, { StaticImageData } from "next/image"
 
 import styles from "./enkash-way.module.scss"
-
 import CommonButton from "../buttons"
 import DynamicHeading from "../dynamic-heading"
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6"
@@ -65,7 +64,7 @@ const EnkashWay = ({
         }}
       >
         <div className={styles.blur_bg}></div>
-
+        <div className={styles.blur_bg_right}></div>
         <div className={styles.tab_section}>
           {/* Headings */}
           <div className="d-flex flex-column text-center">
@@ -166,7 +165,7 @@ const EnkashWay = ({
                   <div className={`${styles.list_button}`}>
                     <CommonButton
                       title={selectedItem.buttonText || "Learn More"}
-                      theme="border-gray"
+                      theme="outline-blue"
                       arrow
                       url={selectedItem.url}
                     />
@@ -174,22 +173,6 @@ const EnkashWay = ({
                 )}
               </div>
             </div>
-
-            {/* Right Image */}
-            {selectedItem.rightImg && (
-              <div
-                className="col-7 pointer-events-none position-absolute end-0 text-end"
-                style={{ maxHeight: 322, bottom: "-92px" }}
-              >
-                <Image
-                  src={selectedItem.rightImg}
-                  alt="right image"
-                  height={322}
-                  width={380}
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -326,7 +309,6 @@ const EnkashWay = ({
                               src={data.rightImg}
                               alt="center image"
                               width={178}
-                        
                               style={{ objectFit: "contain", height: "auto" }}
                             />
                           </div>

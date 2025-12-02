@@ -82,10 +82,10 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
               <DynamicHeading
                 content={[
                   {
-                    title: "The Best Prepaid Corporate Card",
+                    title: "The Best Prepaid Card for ",
                     color: "color-white f-3 d-block italic",
                   },
-                  { title: "for Business Spending", color: "color-white" },
+                  { title: "Smarter Business Spending", color: "color-white" },
                 ]}
                 headingTag="h1"
                 className="f-7 mb-2"
@@ -97,7 +97,7 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
                 content={[
                   {
                     title:
-                      "No paperwork. No delays. Just swipe and go, with full compliance.",
+                      " No paperwork. No delays. Experience the prepaid corporate card solution for businesses: built to deliver full control, instant issuance, and 100% compliance.",
                     color: "color-white subHeading",
                   },
                 ]}
@@ -112,8 +112,7 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
             </div>
           </div>
         </div>
-
-        <div className={`${styles.lottie_containerOuter} col-12`}>
+        <div className={`${styles.lottie_containerOuter} col-12 `}>
           <div className={styles.lottie_container}>
             <Image src={heroCardImg} alt="card background" />
           </div>
@@ -130,7 +129,7 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
         sectionHeading="Ditch out-of-pocket claims. "
         secondHeading="Take control of every rupee."
         secondHeadingColor="black"
-        subTitle="Empower your teams with prepaid business cards that simplify purchases, improve tracking, and eliminate manual reimbursements."
+        subTitle="Empower your teams with prepaid business cards that simplify purchases, automate tracking, and eliminate out-of-pocket claims—whether it’s meals, fuel, travel, SaaS, or purchase-specific spends."
         progressData={progressData}
       />
 
@@ -140,7 +139,10 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
           <CardStacking
             cards={stackCards}
             heading={[
-              { title: "Why Businesses Love Us? ", color: "color-black" },
+              {
+                title: "Why Businesses Choose EnKash Prepaid Cards ",
+                color: "color-black",
+              },
             ]}
           />
         </div>

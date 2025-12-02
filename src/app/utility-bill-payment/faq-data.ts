@@ -54,42 +54,63 @@ const faqData: TFAQProps[] = [
       },
     ],
   },
-]
 
-export const SecondfaqData = [
   {
-    question: "Quick Pay Button",
+    question: "How do Online Bill Pay Services help Businesses?",
     answer: [
       {
         heading:
-          "Perfect for fixed-price payments. Designed for businesses that sell products or services at a set price",
+          "Online bill pay services automate recurring payments, centralise bills to pay, and eliminate manual processing. Companies can effortlessly handle business bill payments, corporate internet bill payment, and all utility service bills through one secure dashboard like EnKash, avoiding late fees and improving cash-flow control.",
       },
     ],
   },
   {
-    question: "Checkout Button",
+    question: "What is Auto Bill Payment?",
     answer: [
       {
         heading:
-          "Sell multiple items with ease. Tailored for e-commerce businesses to allow customers to select multiple items and quantities effortlessly",
+          "Auto bill payments enable businesses to schedule payments for utilities like power bills, water bills, and postpaid bill. Once Auto pay is setup, the system deducts the amount automatically from the registered bill pay account, ensuring on-time settlements without manual intervention.",
       },
     ],
   },
   {
-    question: "Donate Button",
+    question:
+      "How Does EnKash as a Utility Bill Payment Platform Help Corporates Reduce Operational Workload?",
     answer: [
       {
         heading:
-          "Let supporters contribute their desired amount. Ideal for NGOs and charitable organizations, allowing supporters to contribute any amount they wish.",
+          "EnKash reduces manual efforts, prevents missed deadlines, and ensures secure bill settlement for utilities, telecom, internet, and more. It improves operational efficiency by centralizing all utility bill payment workflows under one system.",
       },
     ],
   },
   {
-    question: "Custom Button",
+    question:
+      "Which Bills Can Businesses Pay Using EnKash as a Bill Payment Platform?",
     answer: [
       {
         heading:
-          "Add advanced options for tailored use cases. Perfect for businesses with unique payment needs. This button can be configured to match your exact requirements.",
+          "EnKash supports a comprehensive range of business and commercial utility bill payments, helping you centralize and automate all your recurring expenses. You can easily manage and pay for:",
+        bullets: [
+          "Electricity and power bills",
+          "Water bill payments",
+          "Post-paid mobile bills",
+          "Corporate internet bills",
+          "Municipal charges, gas bills, and other essential utilities",
+        ],
+      },
+      {
+        heading:
+          "No more juggling multiple portals or missing deadlines – handle every bill from one unified dashboard. Want to streamline your utility bill payments? Talk to us today.",
+      },
+    ],
+  },
+  {
+    question:
+      "Why Should Enterprises Switch to a Centralized Business Bill Payment Platform?",
+    answer: [
+      {
+        heading:
+          "Enterprises should switch to centralized business bill payment platforms like EnKash to reduce costs, avoid penalties, prevent service disruptions, and gain complete visibility across utility bill payments across all branches. It also supports automation through bill payment APIs.",
       },
     ],
   },

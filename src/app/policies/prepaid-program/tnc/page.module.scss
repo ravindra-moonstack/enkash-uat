@@ -12,16 +12,15 @@
   background-size: cover;
   position: relative;
   z-index: 1;
-  
+
   @include for-laptops {
     background-position: center right;
-    padding: 112px 0px 100px;
+    padding: 121px 0px 100px;
     background-size: contain;
   }
   h1 {
     line-height: 60px;
   }
-
 
   .gradient {
     display: none;

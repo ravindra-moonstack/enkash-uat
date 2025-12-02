@@ -1,4 +1,4 @@
-import {  TStackCardsProp } from "@/src/types"
+import { TStackCardsProp } from "@/src/types"
 import {
   notificationImage,
   optimizedIcon,
@@ -21,7 +21,7 @@ import {
   crouselIconFive,
 } from "./img"
 
-const cardsData : TStackCardsProp =  [
+const cardsData: TStackCardsProp = [
   {
     title: "Onboard in Minutes",
     description: "Sign up and link your business locations to our platform.",
@@ -47,7 +47,7 @@ const cardsData : TStackCardsProp =  [
   },
 ]
 
-const allProductSections  = [
+const allProductSections = [
   {
     title: "Expense Management",
     subtitle: "Manage every spend effortlessly",
@@ -96,9 +96,9 @@ const allInOnePolicyData: TStackCardsProp = [
   },
   {
     icon: taskIconTwo,
-    title: "One-Click Payments",
+    title: " One click payment Section:",
     description:
-      "Simplify the complexity of multiple payments with EnKash’s one-click payment feature. Easily pay several bills simultaneously by filtering them based on location, provider, or due date. This efficiency not only saves time but also makes bulk payment handling a breeze, ensuring you never miss a due date.",
+      "Simplify the complexity of multiple payments with EnKash’s one-click payment feature. Easily pay several bills simultaneously by filtering them based on location, provider, or due date. Ideal for businesses making bulk commercial bill payments and multi-location corporate bill payment cycles.This efficiency not only saves time but also makes bulk payment handling a breeze, ensuring you never miss a due date.",
     image: shareImage,
     buttonUrl: "/sales",
     maxImageHeight: "305px",

@@ -53,7 +53,7 @@ const intantActionData = [
   {
     title: "Live Account Overview",
     description:
-      "Track balances, credit limits, billing cycles, and dues in real-time.",
+      "Track balances, credit limits, billing cycles, and dues in real time across both corporate cards and prepaid cards.",
     icon: overviewIcon,
   },
   {
@@ -71,7 +71,7 @@ const intantActionData = [
   {
     title: "Statement Clarity",
     description:
-      "Download detailed, filterable statements for individual or consolidated accounts.",
+      "Download detailed, filterable statements for individual or consolidated corporate card and prepaid card usage",
     icon: statementIcon,
   },
   {

@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import Image, { StaticImageData } from "next/image"
 import styles from "./hero-section.module.scss"
 import CustomBreadcrumb from "../../breadcrumb"
@@ -8,6 +8,10 @@ import DynamicHeading from "../../dynamic-heading"
 import CommanButton from "../../buttons"
 import { BreadcrumbItem } from "@/src/types"
 import LogoSlider from "../../logo-slider"
+import VideoModal from "../../vedio-modal"
+import VideoIcon from "../../../../public/svgs/vedio-icon.svg"
+import HoverVideoIcon from "../../../../public/svgs/vedio-icon-dark-theme.svg"
+
 
 interface TextPart {
   text: string
@@ -24,6 +28,7 @@ interface HeroSectionProps {
     title: string
     url: string
     apiUrl?: string
+    vedioLink?: string
     theme?: "blue" | "black" | "white"
   }
   rightImage: StaticImageData | string
@@ -41,6 +46,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage,
   rightImageMaxHeight = "550px",
 }) => {
+  const [open, setOpen] = useState(false)
   return (
     <div className={`${styles.hero_section} position-relative`}>
       {backgroundImage && (
@@ -125,10 +131,30 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                       theme={button.theme ?? "blue"}
                       url={button.url}
                     />
+
+                    {button.vedioLink && (
+                      <>
+                        {button.vedioLink && (
+                          <>
+                            <CommanButton
+                              title="Watch Video"
+                              theme="vedio-button"
+                              iconSize={28}
+                              url={() => setOpen(true)}
+                              image={VideoIcon}
+                              hoverImage={HoverVideoIcon}
+                              changeImageOnHover={true}
+                            />
+                          </>
+                        )}
+                      </>
+                    )}
                     {button.apiUrl && (
                       <CommanButton
                         title="API Doc"
-                        theme="outline-blue"
+                        theme="grey-text"
+                        arrow
+                        arrowType="ios"
                         url={button.apiUrl}
                       />
                     )}
@@ -158,11 +184,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
       </div>
-
-      <div className="pt-4">
-        {" "}
-        <LogoSlider />
-      </div>
+      {button && (
+        <>
+          {button.vedioLink && (
+            <VideoModal
+              open={open}
+              onClose={() => setOpen(false)}
+              videoUrl={button.vedioLink}
+            />
+          )}
+        </>
+      )}
+      {/* Logo Slider */}
+      <LogoSlider />
     </div>
   )
 }

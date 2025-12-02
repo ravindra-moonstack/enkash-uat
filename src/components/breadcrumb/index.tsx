@@ -6,18 +6,29 @@ import { BreadcrumbProps } from "@/src/types/common"
 
 const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
   items,
-  domain = process.env.NEXT_PUBLIC_URL || "", // ← use NEXT_PUBLIC_ prefix
+  domain = process.env.NEXT_PUBLIC_URL || "https://www.enkash.com",
   linkColor,
 }) => {
+  const cleanDomain = domain.replace(/\/$/, "")
+
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
+    "@type": "BreadcrumbList" as const,
     itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
+      "@type": "ListItem" as const,
       position: index + 1,
       name: item.name,
-      item: `${domain}${item.url}`,
+      item: item.url === "/" ? cleanDomain : `${cleanDomain}${item.url}`,
     })),
+  } satisfies {
+    "@context": "https://schema.org"
+    "@type": "BreadcrumbList"
+    itemListElement: Array<{
+      "@type": "ListItem"
+      position: number
+      name: string
+      item: string
+    }>
   }
 
   return (
@@ -26,46 +37,39 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
         id="breadcrumb-schema"
         type="application/ld+json"
         strategy="afterInteractive"
-      >
-        {JSON.stringify(schemaMarkup)}
-      </Script>
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaMarkup, null, 2),
+        }}
+      />
 
       <nav
         className={`${styles.breadcrumb} ${
-          linkColor === "white"
-            ? styles.white
-            : linkColor === "allWhite"
-              ? styles.allWhite
-              : ""
+          linkColor === "white" ? styles.white : linkColor === "allWhite" ? styles.allWhite : ""
         }`}
         aria-label="Breadcrumb"
       >
         <ol className={styles.list}>
-          {items.map((item, index) => (
-            <li key={index} className={styles.item}>
-              {index < items.length - 1 ? (
-                <Link
-                  href={item.url}
-                  className={`${styles.link} ${
-                    styles[
-                      linkColor === "allWhite" ? "black" : linkColor || "black"
-                    ]
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <span className={styles.current} aria-current="page">
-                  {item.name}
-                </span>
-              )}
-              {index < items.length - 1 && (
-                <span className={styles.separator} aria-hidden="true">
-                  &gt;
-                </span>
-              )}
-            </li>
-          ))}
+          {items.map((item, index) => {
+            const isLast = index === items.length - 1
+
+            return (
+              <li key={index} className={styles.item}>
+                {isLast ? (
+                  <span className={styles.current} aria-current="page">
+                    {item.name}
+                  </span>
+                ) : (
+                  <Link
+                    href={item.url}
+                    className={styles.link}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+                {!isLast && <span className={styles.separator}>›</span>}
+              </li>
+            )
+          })}
         </ol>
       </nav>
     </>

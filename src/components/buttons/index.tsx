@@ -2,8 +2,9 @@
 import Image, { StaticImageData } from "next/image"
 import { useRouter } from "next/navigation"
 import { FaArrowRight } from "react-icons/fa"
-
+import { IoIosArrowForward } from "react-icons/io"
 import styles from "./button.module.scss"
+import { useState } from "react"
 
 export type ButtonTheme =
   | "blue"
@@ -11,10 +12,13 @@ export type ButtonTheme =
   | "black"
   | "outline-blue"
   | "border-gray"
+  | "vedio-button"
   | "border-black"
   | "outline-blue-small"
   | "small-blue"
   | "white"
+  | "grey-text"
+  | "vedio-button-dark"
 
 export interface ButtonProps {
   isDisabled?: boolean
@@ -25,8 +29,11 @@ export interface ButtonProps {
   iconSize?: number
   className?: string
   image?: StaticImageData | string
+  hoverImage?: StaticImageData | string       
+  changeImageOnHover?: boolean                
   openInNewTab?: boolean
   arrow?: boolean
+  arrowType?: "fa" | "ios"
 }
 
 const CommonButton = ({
@@ -35,15 +42,18 @@ const CommonButton = ({
   url,
   theme = "blue",
   width,
-  iconSize = 20,
+  iconSize = 28,
   className,
   openInNewTab = false,
   image,
+  hoverImage,                 // ⭐ NEW
+  changeImageOnHover = false, // ⭐ NEW
   arrow = false,
+  arrowType = "fa",
 }: ButtonProps) => {
-  //
-
   const router = useRouter()
+
+  const [currentImage, setCurrentImage] = useState(image) // ⭐ NEW
 
   const handleClick = () => {
     if (typeof url === "string") {
@@ -54,6 +64,18 @@ const CommonButton = ({
       }
     } else if (typeof url === "function") {
       url()
+    }
+  }
+
+  const handleMouseEnter = () => {
+    if (changeImageOnHover && hoverImage) {
+      setCurrentImage(hoverImage)
+    }
+  }
+
+  const handleMouseLeave = () => {
+    if (changeImageOnHover && image) {
+      setCurrentImage(image)
     }
   }
 
@@ -69,19 +91,24 @@ const CommonButton = ({
         ${className ?? ""}
       `}
       onClick={handleClick}
+      onMouseEnter={handleMouseEnter}   // ⭐ NEW
+      onMouseLeave={handleMouseLeave}   // ⭐ NEW
       style={{ width: width || "auto" }}
     >
-      {title}
-      {image && (
+      {currentImage && (
         <Image
-          className={`ms-2 ${styles[iconClass]}`}
-          src={image}
+          className={`${styles[iconClass]}`}
+          src={currentImage}
           alt="action image"
           width={iconSize}
           height={iconSize}
         />
       )}
-      {arrow && <FaArrowRight />}
+
+      {title}
+
+      {arrow &&
+        (arrowType === "ios" ? <IoIosArrowForward /> : <FaArrowRight />)}
     </button>
   )
 }
