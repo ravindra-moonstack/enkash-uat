@@ -17,7 +17,7 @@ import {
 import faqData from "./faq-data"
 
 //components
-import generateMetaData from "@/src/utils/metaData"
+// import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import FaqSection from "@/src/components/faq-section"
 import CommonButton from "@/src/components/buttons"
@@ -39,22 +39,52 @@ import HeroSection from "@/src/components/sections/hero-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
-
 //utils
+import Script from "next/script"
 
-export const metadata: Metadata = generateMetaData({
+const videoId = "oApuECjnRIU"
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Payment Gateway in India - Enkash",
+  description:
+    "Smooth checkouts, advanced fraud protection, and more with Enkash.",
+  thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+  uploadDate: "2025-11-30T08:00:00+00:00",
+  duration: "PT2M30S",
+  contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
+  embedUrl: `https://www.youtube.com/embed/${videoId}`,
+}
+
+export const metadata: Metadata = {
   title: "Best Payment Gateway in India for SMBs and Startups",
   description:
     "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
-  alternates: {
-    canonical: `${process.env.URL}/payment-gateway`,
+  openGraph: {
+    title: "Enkash",
+    description:
+      "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
+    url: `${process.env.URL}/payment-gateway`,
+    type: "website",
+    videos: [
+      {
+        url: "https://www.youtube.com/watch?v=oApuECjnRIU",
+      },
+    ],
   },
-})
+}
+
 const salesUrl = getSalesUrl("/payment-gateway")
 
 const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white`}>
+      <Script
+        id="video-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+      />
       <HeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -86,6 +116,7 @@ const PaymentGateway = (): React.JSX.Element => {
           url: salesUrl,
           theme: "blue",
           apiUrl: "https://docs.enkash.com/payment-gateway",
+          vedioLink: "https://www.youtube.com/watch?v=oApuECjnRIU",
         }}
         rightImage={paymentSummary}
         backgroundImage="/images/collectPaymentBg.webp"
@@ -602,6 +633,7 @@ const PaymentGateway = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
+
       <BlogSection
         heading={[
           {

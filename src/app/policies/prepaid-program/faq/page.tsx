@@ -33,7 +33,7 @@ const Faq = (): React.JSX.Element => {
                   url: "/policies/prepaid-program",
                 },
                 {
-                  name: "Faq",
+                  name: "FAQ",
                   url: "/policies/prepaid-program/FAQ",
                 },
               ]}

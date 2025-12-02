@@ -16,7 +16,6 @@ import faqData from "./faq-data"
 
 // components
 import CommanButton from "@/src/components/buttons"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import FaqSection from "@/src/components/faq-section"
@@ -24,6 +23,8 @@ import PolicyCard from "@/src/components/policy-card"
 import FeatureCard from "@/src/components/feature-card"
 import CardProduct from "@/src/components/card-product"
 import AllProducts from "@/src/components/all-products"
+import BlogSection from "@/src/components/sections/blog-section"
+import CorporateHeroSection from "@/src/components/sections/corporate-card-hero-section"
 
 // helpers
 import {
@@ -36,18 +37,42 @@ import {
 } from "./img"
 
 // utils
-import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import BlogSection from "@/src/components/sections/blog-section"
 
-export const metadata: Metadata = generateMetaData({
-  title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
+import Script from "next/script"
+
+const videoId = "EgWI_tkBpk0"
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: "Payment Gateway in India - Enkash",
   description:
-    "Empower your teams with EnKash corporate cards. Set spend limits, track transactions in real time, and manage all business expenses on one powerful platform.",
-  alternates: {
-    canonical: `${process.env.URL}/products/corporate-cards`,
+    "Smooth checkouts, advanced fraud protection, and more with Enkash.",
+  thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+  uploadDate: "2025-11-30T08:00:00+00:00",
+  duration: "PT2M30S",
+  contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
+  embedUrl: `https://www.youtube.com/embed/${videoId}`,
+}
+
+export const metadata: Metadata = {
+  title: "Best Payment Gateway in India for SMBs and Startups",
+  description:
+    "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
+  openGraph: {
+    title: "Enkash",
+    description:
+      "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
+    url: `${process.env.URL}/payment-gateway`,
+    type: "website",
+    videos: [
+      {
+        url: "https://youtu.be/EgWI_tkBpk0?si=IPPm7ujd9qxht0s0",
+      },
+    ],
   },
-})
+}
+
 const salesUrl = getSalesUrl("/corporate-cards")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -55,65 +80,38 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const CorporateCards = (): React.JSX.Element => {
   return (
     <>
-      <div className={`${styles.hero_section}`}>
-        <div className="max-w-auto position-relative no-pointer ">
-          <div className="d-flex">
-            <CustomBreadcrumb
-              items={[
-                { name: "Home", url: "/" },
-                { name: "Products", url: "/products" },
-                {
-                  name: "Corporate Card",
-                  url: "/products/corporate-card",
-                },
-              ]}
-              linkColor="white"
-            />
-          </div>
-          <div className="col-12 d-flex flex-column text-center">
-            <div className="text-center mb-3 mt-3 ">
-              <DynamicHeading
-                content={[
-                  {
-                    title: "The Only Corporate Cards",
-                    color: "color-white d-block text-center italic f-2",
-                  },
-                  {
-                    title: "You’ll Ever Need.",
-                    color: "color-white d-block text-center",
-                  },
-                ]}
-                headingTag="h1"
-                className="f-7"
-              />
-            </div>
-            <div className="d-inline align-items-center">
-              <DynamicHeading
-                content={[
-                  {
-                    title: "More control, more flexibility & more security.",
-                    color: "color-white d-block text-center subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className=""
-              />
-            </div>
-
-            <div className={`justify-content-center d-flex mt-3 pointer-auto`}>
-              <CommanButton title="Talk to Us" theme="blue" url={salesUrl} />
-            </div>
-          </div>
-          <div
-            className={`col-12 d-flex justify-content-center align-items-center no-pointer`}
-          >
-            <div className={styles.bannerImages}>
-              <Image src={heroImg} alt={"corporateHeroImg"} />
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <Script
+        id="video-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+      />
+      <CorporateHeroSection
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/products" },
+          { name: "Corporate Card", url: "/products/corporate-card" },
+        ]}
+        titleLines={[
+          {
+            text: "The Only Corporate Cards",
+            color: "color-white d-block text-center italic f-2",
+          },
+          {
+            text: "You’ll Ever Need.",
+            color: "color-white d-block text-center",
+          },
+        ]}
+        subtitle={{
+          text: "More control, more flexibility & more security.",
+          color: "color-black",
+        }}
+        heroImage={heroImg}
+        videoUrl="https://youtu.be/EgWI_tkBpk0?si=IPPm7ujd9qxht0s0"
+        buttonUrl=""
+        title={"Talk to sales"}
+        url={salesUrl}
+      />
       <LogoSlider />
 
       <div className={styles.introduction_section}>
@@ -124,7 +122,7 @@ const CorporateCards = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Built for CFOs, Loved by Teams ",
+                  title: " Build for CFOs, Loved by Teams ",
                   color: "color-white",
                 },
               ]}
@@ -135,7 +133,7 @@ const CorporateCards = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "From instant issuance to granular controls - corporate cards that do more.",
+                    "Instant issuance, smart controls, and cards for every use case. Preloaded team cards or enterprise-level controls.",
                   color: "color-white subHeading",
                 },
               ]}
@@ -179,7 +177,7 @@ const CorporateCards = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "One Platform. Total Visibility.",
+                    title: "One Platform. Total Visibility. ",
                     color: "color-black",
                   },
                   {
@@ -196,7 +194,7 @@ const CorporateCards = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "Real-time visibility, control, and insights that traditional bank-issued card portals simply can’t match.",
+                      "Experience real-time visibility, smart spend tracking, and actionable insights—capabilities you won’t get with most traditional bank-issued cards or standard prepaid card programs",
                     color: "color-alternate-grey text-center subHeading",
                   },
                 ]}
@@ -276,7 +274,7 @@ const CorporateCards = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "Move beyond raw data. Leverage our advanced analytics to turn into actionable business insights.",
+                      "Move beyond basic data. Leverage real-time analytics to track spend patterns across prepaid cards, corporate programs, and purchase cards, helping finance teams detect anomalies/ inconsistencies or policy violations instantly.",
                     color: "color-grey-100 subHeading",
                   },
                 ]}
@@ -349,11 +347,11 @@ const CorporateCards = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "RBI-Approved. Business-Ready. Powered by",
+                  title: "RBI-Approved,",
                   color: "color-black",
                 },
                 {
-                  title: " Our PPI License.",
+                  title: "  Business-Ready",
                   color: "color-equity-blue ",
                 },
               ]}
@@ -402,7 +400,7 @@ const CorporateCards = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "From instant issuance to granular controls - corporate cards that do more.",
+                      "From instant issuance to automated controls, prepaid corporate cards built to manage every business spend.",
                     color: "color-alternate-grey subHeading",
                   },
                 ]}
@@ -533,7 +531,7 @@ const CorporateCards = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Connect Corporate Cards with Expense Management for a Unified Experience. ",
+                    "Connect your corporate cards and purchase cards programs with a unified expense management suite.",
                   color: "color-alternate-grey subHeading",
                 },
               ]}

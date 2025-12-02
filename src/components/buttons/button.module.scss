@@ -121,11 +121,52 @@
     }
   }
 
+  &.vedio-button {
+    background-color: transparent;
+    color: $color-equity-blue;
+    transition: box-shadow 0.3s ease;
+    border: 2px solid $color-dark-grey;
+    padding: 6px;
+    padding-right: 21px;
+    padding-right: 10px;
+    &:hover {
+      background-color: $color-equity-blue;
+      color: $color-white;
+      border: 2px solid $color-equity-blue;
+    }
+  }
+  &.vedio-button-dark {
+    background-color: transparent;
+    color: $color-white;
+    transition: box-shadow 0.3s ease;
+    border: 2px solid $color-dark-grey;
+    padding: 6px;
+    padding-right: 21px;
+    padding-right: 10px;
+    &:hover {
+      background-color: $color-equity-blue;
+      color: $color-white;
+      border: 2px solid $color-equity-blue;
+    }
+  }
   &.border-black {
     background-color: transparent;
     color: $color-equity-blue;
     transition: box-shadow 0.3s ease;
     border: 2px solid $color-black;
+
+    &:hover {
+      background-color: #023ed4;
+      color: $color-white;
+      border: 2px solid #023ed4;
+    }
+  }
+  &.grey-text {
+    color: $color-dark-grey;
+    text-decoration: underline;
+    transition: box-shadow 0.3s ease;
+    background: none;
+    border: none;
 
     &:hover {
       background-color: #023ed4;
@@ -155,7 +196,6 @@
     display: inline-block;
     // height: auto;
     width: auto;
-    max-width: 20px !important;
   }
 
   .border_radius {
