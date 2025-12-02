@@ -347,7 +347,7 @@ const CorporateCards = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Under: RBI-Approved,",
+                  title: "RBI-Approved,",
                   color: "color-black",
                 },
                 {
