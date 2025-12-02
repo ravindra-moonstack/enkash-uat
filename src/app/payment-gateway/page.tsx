@@ -73,6 +73,7 @@ export const metadata: Metadata = {
     ],
   },
 }
+
 const salesUrl = getSalesUrl("/payment-gateway")
 
 const PaymentGateway = (): React.JSX.Element => {

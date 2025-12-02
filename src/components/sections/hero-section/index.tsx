@@ -10,6 +10,8 @@ import { BreadcrumbItem } from "@/src/types"
 import LogoSlider from "../../logo-slider"
 import VideoModal from "../../vedio-modal"
 import VideoIcon from "../../../../public/svgs/vedio-icon.svg"
+import HoverVideoIcon from "../../../../public/svgs/vedio-icon-dark-theme.svg"
+
 
 interface TextPart {
   text: string
@@ -140,6 +142,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                               iconSize={28}
                               url={() => setOpen(true)}
                               image={VideoIcon}
+                              hoverImage={HoverVideoIcon}
+                              changeImageOnHover={true}
                             />
                           </>
                         )}
