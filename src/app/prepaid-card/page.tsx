@@ -82,11 +82,10 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
               <DynamicHeading
                 content={[
                   {
-                    title:
-                      "The Best Prepaid Card for Smarter Business Spending",
+                    title: "The Best Prepaid Card for ",
                     color: "color-white f-3 d-block italic",
                   },
-                  { title: "for Business Spending", color: "color-white" },
+                  { title: "Smarter Business Spending", color: "color-white" },
                 ]}
                 headingTag="h1"
                 className="f-7 mb-2"
