@@ -548,14 +548,64 @@ const CustomerOnboarding = (): React.JSX.Element => {
                       <div className="container my-4">
                         <p>
                           <strong> Customer Support:</strong> 📞 +91-85304-90475
-                          | 📧 support@enkash.com
+                          📧 {""}
+                          <a className="c17" href="mailto:support@enkash.com">
+                            support@enkash.com
+                          </a>
                         </p>
 
                         <p>
-                          Unresolved complaints may be escalated to the Nodal
-                          Officer or to the RBI Ombudsman as per the Integrated
-                          Ombudsman Scheme, 2021.
+                          Unresolved complaints may be escalated to the{" "}
+                          <strong>Nodal Officer</strong> or to the{" "}
+                          <strong>RBI Ombudsman</strong> as per the{" "}
+                          <strong>
+                            Integrated Ombudsman Scheme, 2021.
+                          </strong>{" "}
                         </p>
+                        <div>
+                          <p>
+                            <strong>Details of Grievance Officer:</strong>
+                          </p>
+                          <p>Mr Nagesh Shet</p>
+                          <p>
+                            Contact information:{" "}
+                            <a
+                              className="c17"
+                              href="mailto: grievanceofficer@enkash.com"
+                            >
+                              grievanceofficer@enkash.com
+                            </a>{" "}
+                          </p>
+                        </div>
+                        <div>
+                          <p>
+                            <strong>Details of Nodal Officer:</strong>
+                          </p>
+                          <p>Mr Nagesh Shet</p>
+                          <p>
+                            Contact information:{" "}
+                            <a
+                              className="c17"
+                              href="mailto: nodalofficer@enkash.com"
+                            >
+                              nodalofficer@enkash.com
+                            </a>{" "}
+                          </p>
+                        </div>
+                        <div>
+                          <p>
+                            <strong>
+                              Details of the Data Protection Officer:
+                            </strong>
+                          </p>
+                          <p>Mr Arockiaraj Martin</p>
+                          <p>
+                            Contact information:{" "}
+                            <a className="c17" href="mailto: dpo@enkash.com">
+                              dpo@enkash.com
+                            </a>{" "}
+                          </p>
+                        </div>
                       </div>
 
                       <h5 className="c15 mt-6">15. GLOSSARY</h5>
