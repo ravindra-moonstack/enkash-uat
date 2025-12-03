@@ -555,9 +555,12 @@ const CustomerOnboarding = (): React.JSX.Element => {
                         </p>
 
                         <p>
-                          Unresolved complaints may be escalated to the Nodal
-                          Officer or to the RBI Ombudsman as per the Integrated
-                          Ombudsman Scheme, 2021.
+                          Unresolved complaints may be escalated to the{" "}
+                          <strong>Nodal Officer</strong> or to the{" "}
+                          <strong>RBI Ombudsman</strong> as per the{" "}
+                          <strong>
+                            Integrated Ombudsman Scheme, 2021.
+                          </strong>{" "}
                         </p>
                         <div>
                           <p>
