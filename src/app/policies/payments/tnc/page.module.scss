@@ -53,7 +53,36 @@
       margin-bottom: 80px;
     }
   }
+  .inner_container_hindi {
+    padding: 20px;
 
+    @include for-laptops {
+      padding: 30px 40px;
+    }
+
+    margin-top: 48px;
+    background: $color-white 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1019607843);
+
+    border-radius: 10px;
+    margin-bottom: 10px;
+    p {
+      line-height: 32px;
+    }
+    ul {
+      li {
+        line-height: 32px;
+      }
+    }
+       ol {
+      li {
+        line-height: 32px;
+      }
+    }
+    .sectionTitle {
+      margin-bottom: 80px;
+    }
+  }
   h5 {
     margin-top: 20px !important;
   }

@@ -1729,7 +1729,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
           {" "}
           <div className="enkash-banking-maincontainer" lang="hi">
             <div className=" enkash-blog-detail  ">
-              <div className={styles.inner_container}>
+              <div className={styles.inner_container_hindi}>
                 <div className="row">
                   <div className="col-md-12">
                     <div className="enkash-term-condtions">
@@ -1737,7 +1737,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                         <DynamicHeading
                           content={[
                             {
-                              title: "शर्तें और नियम",
+                              title: "पेमेंट एग्रीगेटर शर्तें और नियम",
                               color: "color-equity-blue",
                             },
                           ]}
