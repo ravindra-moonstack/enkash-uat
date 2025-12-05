@@ -56,14 +56,14 @@ const videoSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Best Payment Gateway in India for SMBs and Startups",
+  title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
   description:
-    "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
+    "Empower your teams with EnKash corporate cards. Set spend limits, track transactions in real time, and manage all business expenses on one powerful platform.",
   openGraph: {
-    title: "Enkash",
+    title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
     description:
-      "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
-    url: `${process.env.URL}/payment-gateway`,
+      "Empower your teams with EnKash corporate cards. Set spend limits, track transactions in real time, and manage all business expenses on one powerful platform.",
+    url: `${process.env.URL}/products/corporate-card`,
     type: "website",
     videos: [
       {
