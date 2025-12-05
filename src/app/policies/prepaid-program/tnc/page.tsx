@@ -2096,7 +2096,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
           {" "}
           <div className="enkash-banking-maincontainer" lang="hi">
             <div className=" enkash-blog-detail  ">
-              <div className={styles.inner_container}>
+              <div className={styles.inner_container_hindi}>
                 <div className="row">
                   <div className="col-md-12">
                     <div className="enkash-term-condtions">
@@ -3318,7 +3318,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                                     उपलब्ध मोड
                                   </th>
                                   <th className="text-center bg-secondary text-white">
-                                    अनुमानित TAT समाधान
+                                    अनुमानित टीएटी समाधान के लिए
                                   </th>
                                 </tr>
                               </thead>
