@@ -1496,6 +1496,52 @@ const PrivacyPolicy = (): React.JSX.Element => {
                         <p className="c5">
                           <span className="c2"></span>
                         </p>
+                        <h5 className="c43">
+                          <span className="c1 c0 c3">
+                            Details of the Data Protection Officer:
+                          </span>
+                        </h5>
+                        <p className="c5">
+                          <span className="c2"></span>
+                        </p>
+                       
+                        <div className="table-responsive">
+                          <table className="table table-bordered">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <span className="c8">
+                                  Name of the Data Protection Officer (DPO):
+                                  </span>
+                                </td>
+                                <td>
+                                  <b>Mr. Arockiaraj Martin Gracis</b>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Email ID:</td>
+                                <td>
+                                  <a href="mailto:dpo@enkash.com">
+                                    dpo@enkash.com
+                                  </a>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>Working Day(s)</td>
+                                <td>Monday to Friday</td>
+                              </tr>
+                              <tr>
+                                <td>Working Hr(s)</td>
+                                <td>10 AM to 5 PM IST</td>
+                              </tr>
+                              <tr></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <p className="c5">
+                          <span className="c2"></span>
+                        </p>
                         <p className="c28 c22">
                           <span className="c2"></span>
                         </p>

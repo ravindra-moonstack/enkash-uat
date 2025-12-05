@@ -101,6 +101,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           href={`${process.env.NEXT_PUBLIC_URL}`}
                           rel="noopener noreferrer"
                           target="_blank"
+                          className="text-break"
                         >
                           ( https://www.enkash.com/)
                         </a>{" "}
@@ -116,6 +117,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           href=" https://www.enkash.com/policies/privacy-policy"
                           rel="noopener noreferrer"
                           target="_blank"
+                          className="text-break"
                         >
                           https://www.enkash.com/policies/privacy-policy
                         </a>{" "}
@@ -126,6 +128,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           href="https://www.enkash.com/policies/prepaid-program/grievance-policy"
                           rel="noopener noreferrer"
                           target="_blank"
+                          className="text-break"
                         >
                           https://www.enkash.com/policies/prepaid-program/grievance-policy
                         </a>{" "}
@@ -464,44 +467,46 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           PPI load and transaction limits shall be as per RBI
                           classification:
                         </p>
-                        <table className="table table-bordered table-striped">
-                          <thead className=" ">
-                            <tr>
-                              <th className="text-center bg-secondary text-white">
-                                PPI Type
-                              </th>
-                              <th className="text-center bg-secondary text-white">
-                                Load Limit
-                              </th>
-                              <th className="text-center bg-secondary text-white">
-                                Annual Load Limit
-                              </th>
-                              <th className="text-center bg-secondary text-white">
-                                KYC Requirement
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Small PPI</td>
-                              <td>₹10,000</td>
-                              <td>₹1,20,000</td>
-                              <td>Minimum KYC</td>
-                            </tr>
-                            <tr>
-                              <td>Full-KYC PPI</td>
-                              <td>₹2,00,000</td>
-                              <td>As permitted</td>
-                              <td>Full KYC</td>
-                            </tr>
-                            <tr>
-                              <td>Gift PPI</td>
-                              <td>₹10,000</td>
-                              <td>Non-reloadable</td>
-                              <td>Minimum KYC</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                        <div className="w-full overflow-x-auto">
+                          <table className="table table-bordered table-striped min-w-max w-full">
+                            <thead className=" ">
+                              <tr>
+                                <th className="text-center bg-secondary text-white">
+                                  PPI Type
+                                </th>
+                                <th className="text-center bg-secondary text-white">
+                                  Load Limit
+                                </th>
+                                <th className="text-center bg-secondary text-white">
+                                  Annual Load Limit
+                                </th>
+                                <th className="text-center bg-secondary text-white">
+                                  KYC Requirement
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Small PPI</td>
+                                <td>₹10,000</td>
+                                <td>₹1,20,000</td>
+                                <td>Minimum KYC</td>
+                              </tr>
+                              <tr>
+                                <td>Full-KYC PPI</td>
+                                <td>₹2,00,000</td>
+                                <td>As permitted</td>
+                                <td>Full KYC</td>
+                              </tr>
+                              <tr>
+                                <td>Gift PPI</td>
+                                <td>₹10,000</td>
+                                <td>Non-reloadable</td>
+                                <td>Minimum KYC</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                         <p>
                           You may perform debit transactions up to your
                           available balance, without a separate monthly debit
@@ -577,7 +582,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                       </h5>
 
                       <div className="container my-4">
-                        <ol className="ms-3">
+                        <ol>
                           <li>
                             Purchasing goods and services at Authorised
                             Merchants (online/offline) accepting Our
@@ -607,7 +612,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
 
                           <li>
                             For funds transfers (Full-KYC PPI):
-                            <ul className="ms-4">
+                            <ul>
                               <li>
                                 Back to source account or Your own verified bank
                                 account.
@@ -658,11 +663,11 @@ const CustomerOnboarding = (): React.JSX.Element => {
 
                       <h5 className="c15 mt-6">9. LIMITS AND FEES</h5>
                       <div className="container my-4">
-                        <ol className="ms-3">
+                        <ol>
                           <li>
                             Transaction and balance limits depend on PPI type
                             and KYC status, as per RBI guidelines:
-                            <ol className="ms-4">
+                            <ol>
                               <li>
                                 Small PPI: Maximum balance and loading limit of
                                 ₹10,000 per month; transfers and withdrawals are
@@ -713,7 +718,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
 
                           <li>
                             Customers can request:
-                            <ol className="ms-4">
+                            <ol>
                               <li>
                                 Refund of the remaining balance to the source
                                 account, or
@@ -724,71 +729,75 @@ const CustomerOnboarding = (): React.JSX.Element => {
 
                           <li>
                             Fee table:
-                            <table className="table table-bordered table-striped">
-                              <thead>
-                                <tr>
-                                  <th className="text-center bg-secondary text-white">
-                                    Service Description
-                                  </th>
-                                  <th className="text-center bg-secondary text-white">
-                                    Charge (INR)
-                                  </th>
-                                  <th className="text-center bg-secondary text-white">
-                                    Applicability
-                                  </th>
-                                </tr>
-                              </thead>
+                            <div className="w-full overflow-x-auto">
+                              <table className="table table-bordered table-striped min-w-max w-full">
+                                <thead>
+                                  <tr>
+                                    <th className="text-center bg-secondary text-white">
+                                      Service Description
+                                    </th>
+                                    <th className="text-center bg-secondary text-white">
+                                      Charge (INR)
+                                    </th>
+                                    <th className="text-center bg-secondary text-white">
+                                      Applicability
+                                    </th>
+                                  </tr>
+                                </thead>
 
-                              <tbody>
-                                <tr>
-                                  <td>Physical Card Issuance / Re-issuance</td>
-                                  <td>250</td>
-                                  <td>Per card issued or replaced</td>
-                                </tr>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      Physical Card Issuance / Re-issuance
+                                    </td>
+                                    <td>250</td>
+                                    <td>Per card issued or replaced</td>
+                                  </tr>
 
-                                <tr>
-                                  <td>Gift Card Reactivation</td>
-                                  <td>250</td>
-                                  <td>Per reactivation</td>
-                                </tr>
+                                  <tr>
+                                    <td>Gift Card Reactivation</td>
+                                    <td>250</td>
+                                    <td>Per reactivation</td>
+                                  </tr>
 
-                                <tr>
-                                  <td>
-                                    ATM – Financial Transaction (Cash
-                                    Withdrawal)
-                                  </td>
-                                  <td>25</td>
-                                  <td>Per transaction</td>
-                                </tr>
+                                  <tr>
+                                    <td>
+                                      ATM – Financial Transaction (Cash
+                                      Withdrawal)
+                                    </td>
+                                    <td>25</td>
+                                    <td>Per transaction</td>
+                                  </tr>
 
-                                <tr>
-                                  <td>
-                                    ATM – Non-Financial Transaction (PIN Change,
-                                    Balance Enquiry, Mini Statement)
-                                  </td>
-                                  <td>15 </td>
-                                  <td>Per transaction</td>
-                                </tr>
+                                  <tr>
+                                    <td>
+                                      ATM – Non-Financial Transaction (PIN
+                                      Change, Balance Enquiry, Mini Statement)
+                                    </td>
+                                    <td>15 </td>
+                                    <td>Per transaction</td>
+                                  </tr>
 
-                                <tr>
-                                  <td>Surcharge – Government Transactions</td>
-                                  <td>Up to 2.5% </td>
-                                  <td>Per transaction</td>
-                                </tr>
+                                  <tr>
+                                    <td>Surcharge – Government Transactions</td>
+                                    <td>Up to 2.5% </td>
+                                    <td>Per transaction</td>
+                                  </tr>
 
-                                <tr>
-                                  <td>Surcharge – Fuel Transactions</td>
-                                  <td>Up to 1.5%</td>
-                                  <td>Per transaction</td>
-                                </tr>
+                                  <tr>
+                                    <td>Surcharge – Fuel Transactions</td>
+                                    <td>Up to 1.5%</td>
+                                    <td>Per transaction</td>
+                                  </tr>
 
-                                <tr>
-                                  <td>Surcharge – Railway Transactions</td>
-                                  <td>Up to ₹10</td>
-                                  <td>Per transaction</td>
-                                </tr>
-                              </tbody>
-                            </table>
+                                  <tr>
+                                    <td>Surcharge – Railway Transactions</td>
+                                    <td>Up to ₹10</td>
+                                    <td>Per transaction</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
                           </li>
                           <li>
                             <i>
@@ -1248,6 +1257,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             <a
                               href="https://www.enkash.com/policies/privacy-policy"
                               target="_blank"
+                              className="text-break"
                             >
                               https://www.enkash.com/policies/privacy-policy
                             </a>
@@ -1300,7 +1310,13 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             For further information and escalations, customers
                             can reach out to the Data Protection Officer,
                             EnKash: Mr Arockiaraj Martin (Contact:{" "}
-                            <a href="mailto:dpo@enkash.com">dpo@enkash.com</a>).
+                            <a
+                              href="mailto:dpo@enkash.com"
+                              className="text-break"
+                            >
+                              dpo@enkash.com
+                            </a>
+                            ).
                           </li>
                         </ul>
                       </div>
@@ -1333,121 +1349,138 @@ const CustomerOnboarding = (): React.JSX.Element => {
                       </h5>
 
                       <div className="container my-4">
-                        <table className="table table-bordered table-striped">
-                          <thead>
-                            <tr>
-                              <th className="text-center bg-secondary text-white">
-                                Level
-                              </th>
-                              <th className="text-center bg-secondary text-white">
-                                Responsible Person
-                              </th>
-                              <th className="text-center bg-secondary text-white">
-                                Modes Available
-                              </th>
-                              <th className="text-center bg-secondary text-white">
-                                Estimated TAT for Resolution
-                              </th>
-                            </tr>
-                          </thead>
+                        <div className="w-full overflow-x-auto">
+                          <table className="table table-bordered table-striped min-w-max w-full">
+                            <thead>
+                              <tr>
+                                <th className="text-center bg-secondary text-white">
+                                  Level
+                                </th>
+                                <th className="text-center bg-secondary text-white">
+                                  Responsible Person
+                                </th>
+                                <th className="text-center bg-secondary text-white">
+                                  Modes Available
+                                </th>
+                                <th className="text-center bg-secondary text-white">
+                                  Estimated TAT for Resolution
+                                </th>
+                              </tr>
+                            </thead>
 
-                          <tbody>
-                            {/* Level 1 */}
-                            <tr>
-                              <td>Level 1</td>
-                              <td>Customer Support Executive</td>
-                              <td>
-                                <strong>Contact:</strong> +91 85304 90475 <br />
-                                <strong>Email:</strong> support@enkash.com{" "}
-                                <br />
-                                <strong>Registered office address:</strong> 91,
-                                Springboard 175, Kagalwala House, 2nd Floor,
-                                Kalina, Santacruz (E), Mumbai 400098 <br />
-                                <strong>Corporate office address:</strong> 91,
-                                Springboard, Gate No 2, Plant No. 6, LBS Marg,
-                                Godrej & Boyce Industry Estate, Opposite
-                                Vikhroli Bus Depot, Vikhroli West, Mumbai,
-                                Maharashtra, 400079
-                              </td>
-                              <td>
-                                Within 3 business days from the date of receipt
-                                of complaint
-                              </td>
-                            </tr>
+                            <tbody>
+                              {/* Level 1 */}
+                              <tr>
+                                <td>Level 1</td>
+                                <td>Customer Support Executive</td>
+                                <td>
+                                  <strong>Contact:</strong> +91 85304 90475{" "}
+                                  <br />
+                                  <strong>
+                                    Email:
+                                  </strong> support@enkash.com <br />
+                                  <strong>
+                                    Registered office address:
+                                  </strong>{" "}
+                                  91, Springboard 175, Kagalwala House, 2nd
+                                  Floor, Kalina, Santacruz (E), Mumbai 400098{" "}
+                                  <br />
+                                  <strong>Corporate office address:</strong> 91,
+                                  Springboard, Gate No 2, Plant No. 6, LBS Marg,
+                                  Godrej & Boyce Industry Estate, Opposite
+                                  Vikhroli Bus Depot, Vikhroli West, Mumbai,
+                                  Maharashtra, 400079
+                                </td>
+                                <td>
+                                  Within 3 business days from the date of
+                                  receipt of complaint
+                                </td>
+                              </tr>
 
-                            {/* Level 2 */}
-                            <tr>
-                              <td>Level 2</td>
-                              <td>Customer Support Team Manager</td>
-                              <td>
-                                <strong>Contact:</strong> +91 85304 90475 <br />
-                                <strong>
-                                  Email:
-                                </strong> csmanager@enkash.com <br />
-                                <strong>Registered office address:</strong> 91,
-                                Springboard 175, Kagalwala House, 2nd Floor,
-                                Kalina, Santacruz (E), Mumbai 400098 <br />
-                                <strong>Corporate office address:</strong> 91,
-                                Springboard, Gate No 2, Plant No. 6, LBS Marg,
-                                Godrej & Boyce Industry Estate, Opposite
-                                Vikhroli Bus Depot, Vikhroli West, Mumbai,
-                                Maharashtra, 400079
-                              </td>
-                              <td>
-                                Within 7 business days from the date of receipt
-                                of the complaint
-                              </td>
-                            </tr>
+                              {/* Level 2 */}
+                              <tr>
+                                <td>Level 2</td>
+                                <td>Customer Support Team Manager</td>
+                                <td>
+                                  <strong>Contact:</strong> +91 85304 90475{" "}
+                                  <br />
+                                  <strong>
+                                    Email:
+                                  </strong> csmanager@enkash.com <br />
+                                  <strong>
+                                    Registered office address:
+                                  </strong>{" "}
+                                  91, Springboard 175, Kagalwala House, 2nd
+                                  Floor, Kalina, Santacruz (E), Mumbai 400098{" "}
+                                  <br />
+                                  <strong>Corporate office address:</strong> 91,
+                                  Springboard, Gate No 2, Plant No. 6, LBS Marg,
+                                  Godrej & Boyce Industry Estate, Opposite
+                                  Vikhroli Bus Depot, Vikhroli West, Mumbai,
+                                  Maharashtra, 400079
+                                </td>
+                                <td>
+                                  Within 7 business days from the date of
+                                  receipt of the complaint
+                                </td>
+                              </tr>
 
-                            {/* Level 3 */}
-                            <tr>
-                              <td>Level 3</td>
-                              <td>Grievance Redressal Officer</td>
-                              <td>
-                                <strong>Contact:</strong> +91 95132 51477 <br />
-                                <strong>Email:</strong>{" "}
-                                grievanceofficer@enkash.com <br />
-                                <strong>Registered office address:</strong> 91,
-                                Springboard 175, Kagalwala House, 2nd Floor,
-                                Kalina, Santacruz (E), Mumbai 400098 <br />
-                                <strong>Corporate office address:</strong> 91,
-                                Springboard, Gate No 2, Plant No. 6, LBS Marg,
-                                Godrej & Boyce Industry Estate, Opposite
-                                Vikhroli Bus Depot, Vikhroli West, Mumbai,
-                                Maharashtra, 400079
-                              </td>
-                              <td>
-                                Within 30 business days from the date of receipt
-                                of the complaint
-                              </td>
-                            </tr>
+                              {/* Level 3 */}
+                              <tr>
+                                <td>Level 3</td>
+                                <td>Grievance Redressal Officer</td>
+                                <td>
+                                  <strong>Contact:</strong> +91 95132 51477{" "}
+                                  <br />
+                                  <strong>Email:</strong>{" "}
+                                  grievanceofficer@enkash.com <br />
+                                  <strong>
+                                    Registered office address:
+                                  </strong>{" "}
+                                  91, Springboard 175, Kagalwala House, 2nd
+                                  Floor, Kalina, Santacruz (E), Mumbai 400098{" "}
+                                  <br />
+                                  <strong>Corporate office address:</strong> 91,
+                                  Springboard, Gate No 2, Plant No. 6, LBS Marg,
+                                  Godrej & Boyce Industry Estate, Opposite
+                                  Vikhroli Bus Depot, Vikhroli West, Mumbai,
+                                  Maharashtra, 400079
+                                </td>
+                                <td>
+                                  Within 30 business days from the date of
+                                  receipt of the complaint
+                                </td>
+                              </tr>
 
-                            {/* Level 4 */}
-                            <tr>
-                              <td>Level 4</td>
-                              <td>Nodal Officer</td>
-                              <td>
-                                <strong>Contact:</strong> +91 95132 51499 <br />
-                                <strong>
-                                  Email:
-                                </strong> nodalofficer@enkash.com <br />
-                                <strong>Registered office address:</strong> 91,
-                                Springboard 175, Kagalwala House, 2nd Floor,
-                                Kalina, Santacruz (E), Mumbai 400098 <br />
-                                <strong>Corporate office address:</strong> 91,
-                                Springboard, Gate No 2, Plant No. 6, LBS Marg,
-                                Godrej & Boyce Industry Estate, Opposite
-                                Vikhroli Bus Depot, Vikhroli West, Mumbai,
-                                Maharashtra, 400079
-                              </td>
-                              <td>
-                                Within 15 business days from the date of receipt
-                                of the complaint
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-
+                              {/* Level 4 */}
+                              <tr>
+                                <td>Level 4</td>
+                                <td>Nodal Officer</td>
+                                <td>
+                                  <strong>Contact:</strong> +91 95132 51499{" "}
+                                  <br />
+                                  <strong>Email:</strong>{" "}
+                                  nodalofficer@enkash.com <br />
+                                  <strong>
+                                    Registered office address:
+                                  </strong>{" "}
+                                  91, Springboard 175, Kagalwala House, 2nd
+                                  Floor, Kalina, Santacruz (E), Mumbai 400098{" "}
+                                  <br />
+                                  <strong>Corporate office address:</strong> 91,
+                                  Springboard, Gate No 2, Plant No. 6, LBS Marg,
+                                  Godrej & Boyce Industry Estate, Opposite
+                                  Vikhroli Bus Depot, Vikhroli West, Mumbai,
+                                  Maharashtra, 400079
+                                </td>
+                                <td>
+                                  Within 15 business days from the date of
+                                  receipt of the complaint
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                         <p>
                           Unresolved complaints may be escalated to the Nodal
                           Officer or to the RBI Ombudsman as per the Integrated
@@ -1746,7 +1779,10 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           <li>
                             To report a dispute, chargeback, or fraud, Customers
                             can raise a request at{" "}
-                            <a href="https://www.enkash.com/support">
+                            <a
+                              href="https://www.enkash.com/support"
+                              className="text-break"
+                            >
                               https://www.enkash.com/support
                             </a>
                             , or alternatively contact EnKash support by writing
@@ -2031,6 +2067,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             href={`${process.env.NEXT_PUBLIC_URL}`}
                             rel="noopener noreferrer"
                             target="_blank"
+                            className="text-break"
                           >
                             ( https://www.enkash.com/)
                           </a>{" "}
@@ -2073,7 +2110,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             },
                           ]}
                           headingTag="p"
-                          className="f-5 text-center fs-1"
+                          className="f-5 text-center fs-1 lh-sm"
                         />
                       </div>{" "}
                       <DynamicHeading
@@ -2468,45 +2505,47 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             पीपीआई लोड और लेन-देन सीमाएंआरबीआई वर्गी करण के अनसु
                             ार होंगी:
                           </p>
-                          <table className="table table-bordered table-striped">
-                            <thead className=" ">
-                              <tr>
-                                <th className="text-center bg-secondary text-white">
-                                  पीपीआई प्रकार
-                                </th>
-                                <th className="text-center bg-secondary text-white">
-                                  लोड सीमा
-                                </th>
-                                <th className="text-center bg-secondary text-white">
-                                  वार्षिक लोड सीमा
-                                </th>
-                                <th className="text-center bg-secondary text-white">
-                                  केवाईसी आवश्यकता
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>छोटा पीपीआई</td>
-                                <td>₹10,000</td>
-                                <td>₹1,20,000</td>
-                                <td>न्यूनतम केवाईसी</td>
-                              </tr>
-                              <tr>
-                                <td>पूर्ण-केवाईसी पीपीआई</td>
-                                <td>₹2,00,000</td>
-                                <td>अनुमति अनुसार</td>
-                                <td>पूर्ण केवाईसी</td>
-                              </tr>
-                              <tr>
-                                <td>गिफ्ट पीपीआई</td>
-                                <td>₹10,000</td>
-                                <td>गैर-रीलोडेबल</td>
-                                <td>न्यूनतम केवाईसी</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <p>
+                          <div className="w-full overflow-x-auto my-3">
+                            <table className="table table-bordered table-striped min-w-max w-full">
+                              <thead className=" ">
+                                <tr>
+                                  <th className="text-center bg-secondary text-white">
+                                    पीपीआई प्रकार
+                                  </th>
+                                  <th className="text-center bg-secondary text-white">
+                                    लोड सीमा
+                                  </th>
+                                  <th className="text-center bg-secondary text-white">
+                                    वार्षिक लोड सीमा
+                                  </th>
+                                  <th className="text-center bg-secondary text-white">
+                                    केवाईसी आवश्यकता
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>छोटा पीपीआई</td>
+                                  <td>₹10,000</td>
+                                  <td>₹1,20,000</td>
+                                  <td>न्यूनतम केवाईसी</td>
+                                </tr>
+                                <tr>
+                                  <td>पूर्ण-केवाईसी पीपीआई</td>
+                                  <td>₹2,00,000</td>
+                                  <td>अनुमति अनुसार</td>
+                                  <td>पूर्ण केवाईसी</td>
+                                </tr>
+                                <tr>
+                                  <td>गिफ्ट पीपीआई</td>
+                                  <td>₹10,000</td>
+                                  <td>गैर-रीलोडेबल</td>
+                                  <td>न्यूनतम केवाईसी</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p className="pt-3">
                             आप अपनी उपलब्ध बैलेंस तक डेबिट लेन-देन कर सकते हैं,
                             बिना अलग मासिक डेबिट सीमा के, बशर्ते समग्र उपयोग
                             आरबीआई दिशानिर्देशों के अधीन लागू सीमाओं का अनुपालन
@@ -2699,63 +2738,67 @@ const CustomerOnboarding = (): React.JSX.Element => {
                               </ul>
                             </li>
                             <li>शुल्क तालिका:</li>
-                            <table className="table table-bordered table-striped">
-                              <thead>
-                                <tr>
-                                  <th className="text-center bg-secondary text-white">
-                                    सेवा विवरण
-                                  </th>
-                                  <th className="text-center bg-secondary text-white">
-                                    शुल्क (₹)
-                                  </th>
-                                  <th className="text-center bg-secondary text-white">
-                                    लागतू ा
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>
-                                    भौतिक कार्ड जारी करना / पुनः-जारी करना
-                                  </td>
-                                  <td>250</td>
-                                  <td>प्रति कार्ड जारी या प्रति स्थापित</td>
-                                </tr>
-                                <tr>
-                                  <td>गिफ्ट कार्ड पुनः-सक्रियण</td>
-                                  <td>250</td>
-                                  <td>प्रति पुनः-सक्रियण</td>
-                                </tr>
-                                <tr>
-                                  <td>एटीएम – वित्तीय लेन-देन (नकद निकासी)</td>
-                                  <td>25</td>
-                                  <td>प्रति लेन-देन</td>
-                                </tr>
-                                <tr>
-                                  <td>
-                                    एटीएम – गैर-वित्तीय लेन-देन (PIN परिवर्तन,
-                                    बैलेंस जांच, मिनी स्टेटमेंट)
-                                  </td>
-                                  <td>15</td>
-                                  <td>प्रति लेन-देन</td>
-                                </tr>
-                                <tr>
-                                  <td>सरचार्ज – सरकारी लेन-देन</td>
-                                  <td>2.5%</td>
-                                  <td>प्रति लेन-देन</td>
-                                </tr>
-                                <tr>
-                                  <td>सरचार्ज – ईंधन लेन-देन</td>
-                                  <td>1.5%</td>
-                                  <td>प्रति लेन-देन</td>
-                                </tr>
-                                <tr>
-                                  <td>सरचार्ज – रेलवे लेन-देन</td>
-                                  <td>₹10</td>
-                                  <td>प्रति लेन-देन</td>
-                                </tr>
-                              </tbody>
-                            </table>
+                            <div className="w-full overflow-x-auto my-3">
+                              <table className="table table-bordered table-striped     overflow-wrap: anywhere;">
+                                <thead>
+                                  <tr>
+                                    <th className="text-center bg-secondary text-white">
+                                      सेवा विवरण
+                                    </th>
+                                    <th className="text-center bg-secondary text-white">
+                                      शुल्क (₹)
+                                    </th>
+                                    <th className="text-center bg-secondary text-white">
+                                      लागतू ा
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      भौतिक कार्ड जारी करना / पुनः-जारी करना
+                                    </td>
+                                    <td>250</td>
+                                    <td>प्रति कार्ड जारी या प्रति स्थापित</td>
+                                  </tr>
+                                  <tr>
+                                    <td>गिफ्ट कार्ड पुनः-सक्रियण</td>
+                                    <td>250</td>
+                                    <td>प्रति पुनः-सक्रियण</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      एटीएम – वित्तीय लेन-देन (नकद निकासी)
+                                    </td>
+                                    <td>25</td>
+                                    <td>प्रति लेन-देन</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      एटीएम – गैर-वित्तीय लेन-देन (PIN परिवर्तन,
+                                      बैलेंस जांच, मिनी स्टेटमेंट)
+                                    </td>
+                                    <td>15</td>
+                                    <td>प्रति लेन-देन</td>
+                                  </tr>
+                                  <tr>
+                                    <td>सरचार्ज – सरकारी लेन-देन</td>
+                                    <td>2.5%</td>
+                                    <td>प्रति लेन-देन</td>
+                                  </tr>
+                                  <tr>
+                                    <td>सरचार्ज – ईंधन लेन-देन</td>
+                                    <td>1.5%</td>
+                                    <td>प्रति लेन-देन</td>
+                                  </tr>
+                                  <tr>
+                                    <td>सरचार्ज – रेलवे लेन-देन</td>
+                                    <td>₹10</td>
+                                    <td>प्रति लेन-देन</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
                             <li>
                               सभी शुल्क लागू करों को छोड़कर हैं जब तक अन्यथा कहा
                               न जाए।
@@ -2804,7 +2847,10 @@ const CustomerOnboarding = (): React.JSX.Element => {
                               किसी भी अनधिकृत पहुंच, हानि, चोरी या आपके पीपीआई,
                               कार्ड या उपकरण के समझौते पर तुरंत हमारी ग्राहक
                               सहायता को{" "}
-                              <a href="mailto:support@enkash.com">
+                              <a
+                                href="mailto:support@enkash.com"
+                                className="text-break"
+                              >
                                 support@enkash.com
                               </a>{" "}
                               पर रिपोर्ट करें।
@@ -3006,7 +3052,10 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           <ul>
                             <li>
                               आप किसी भी समय एनकैश प्लेटफॉर्म के माध्यम से या{" "}
-                              <a href="mailto:support@enkash.com">
+                              <a
+                                href="mailto:support@enkash.com"
+                                className="text-break"
+                              >
                                 support@enkash.com
                               </a>{" "}
                               पर संपर्क करके अपने एनकैश पीपीआई उत्पादों का समापन
@@ -3176,6 +3225,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                               <a
                                 href="https://www.enkash.com/policies/privacy-policy"
                                 target="_blank"
+                                className="text-break"
                               >
                                 https://www.enkash.com/policies/privacy-policy
                               </a>{" "}
@@ -3254,102 +3304,104 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             की जाएंगी और नीचे निर्दिष्ट समय सीमाओं के भीतर हल की
                             जाएंगी।
                           </p>
-                          <table className="table table-bordered table-striped">
-                            <thead>
-                              <tr>
-                                <th className="text-center bg-secondary text-white">
-                                  स्तर
-                                </th>
-                                <th className="text-center bg-secondary text-white">
-                                  जिम्मेदार व्यक्ति
-                                </th>
-                                <th className="text-center bg-secondary text-white">
-                                  उपलब्ध मोड
-                                </th>
-                                <th className="text-center bg-secondary text-white">
-                                  अनुमानित TAT समाधान
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>स्तर 1</td>
-                                <td>ग्राहक सहायता कार्यकारी</td>
-                                <td>
-                                  फोन: +91 85304 90475
-                                  <br />
-                                  ईमेल: support@enkash.com
-                                  <br />
-                                  रजिस्टर्ड ऑफिस: 91, स्प्रिंग बोर्ड 175,
-                                  कागलवाला हाउस, दूसरी मंज़िल, कलिना,
-                                  सांताक्रूज़ (E), मुंबई 400098
-                                  <br />
-                                  कॉर्पोरेट ऑफिस: 91, स्प्रिंग बोर्ड, गेट नंबर
-                                  2, प्लांट नंबर 6, LBS मार्ग, गोदरेज एंड बॉयस
-                                  इंडस्ट्री एस्टेट, विक्रोली वेस्ट, मुंबई,
-                                  महाराष्ट्र, 400079
-                                </td>
-                                <td>3 व्यावसायिक दिनों के भीतर</td>
-                              </tr>
-                              <tr>
-                                <td>स्तर 2</td>
-                                <td>ग्राहक सहायता टीम प्रबंधक</td>
-                                <td>
-                                  फोन: +91 85304 90475
-                                  <br />
-                                  ईमेल: csmanager@enkash.com
-                                  <br />
-                                  रजिस्टर्ड ऑफिस: 91, स्प्रिंग बोर्ड 175,
-                                  कागलवाला हाउस, दूसरी मंज़िल, कलिना,
-                                  सांताक्रूज़ (E), मुंबई 400098
-                                  <br />
-                                  कॉर्पोरेट ऑफिस: 91, स्प्रिंग बोर्ड, गेट नंबर
-                                  2, प्लांट नंबर 6, LBS मार्ग, गोदरेज एंड बॉयस
-                                  इंडस्ट्री एस्टेट, विक्रोली वेस्ट, मुंबई,
-                                  महाराष्ट्र, 400079
-                                </td>
-                                <td>7 व्यावसायिक दिनों के भीतर</td>
-                              </tr>
-                              <tr>
-                                <td>स्तर 3</td>
-                                <td>शिकायत निवारण अधिकारी</td>
-                                <td>
-                                  फोन: +91 95132 51477
-                                  <br />
-                                  ईमेल: grievanceofficer@enkash.com
-                                  <br />
-                                  रजिस्टर्ड ऑफिस: 91, स्प्रिंग बोर्ड 175,
-                                  कागलवाला हाउस, दूसरी मंज़िल, कलिना,
-                                  सांताक्रूज़ (E), मुंबई 400098
-                                  <br />
-                                  कॉर्पोरेट ऑफिस: 91, स्प्रिंग बोर्ड, गेट नंबर
-                                  2, प्लांट नंबर 6, LBS मार्ग, गोदरेज एंड बॉयस
-                                  इंडस्ट्री एस्टेट, विक्रोली वेस्ट, मुंबई,
-                                  महाराष्ट्र, 400079
-                                </td>
-                                <td>30 व्यावसायिक दिनों के भीतर</td>
-                              </tr>
-                              <tr>
-                                <td>स्तर 4</td>
-                                <td>नोडल अधिकारी</td>
-                                <td>
-                                  फोन: +91 95132 51499
-                                  <br />
-                                  ईमेल: nodalofficer@enkash.com
-                                  <br />
-                                  रजिस्टर्ड ऑफिस: 91, स्प्रिंग बोर्ड 175,
-                                  कागलवाला हाउस, दूसरी मंज़िल, कलिना,
-                                  सांताक्रूज़ (E), मुंबई 400098
-                                  <br />
-                                  कॉर्पोरेट ऑफिस: 91, स्प्रिंग बोर्ड, गेट नंबर
-                                  2, प्लांट नंबर 6, LBS मार्ग, गोदरेज एंड बॉयस
-                                  इंडस्ट्री एस्टेट, विक्रोली वेस्ट, मुंबई,
-                                  महाराष्ट्र, 400079
-                                </td>
-                                <td>15 व्यावसायिक दिनों के भीतर</td>
-                              </tr>
-                            </tbody>
-                          </table>
+                          <div className="w-full overflow-x-auto my-3">
+                            <table className="table table-bordered table-striped min-w-max w-full">
+                              <thead>
+                                <tr>
+                                  <th className="text-center bg-secondary text-white">
+                                    स्तर
+                                  </th>
+                                  <th className="text-center bg-secondary text-white">
+                                    जिम्मेदार व्यक्ति
+                                  </th>
+                                  <th className="text-center bg-secondary text-white">
+                                    उपलब्ध मोड
+                                  </th>
+                                  <th className="text-center bg-secondary text-white">
+                                    अनुमानित TAT समाधान
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>स्तर 1</td>
+                                  <td>ग्राहक सहायता कार्यकारी</td>
+                                  <td>
+                                    फोन: +91 85304 90475
+                                    <br />
+                                    ईमेल: support@enkash.com
+                                    <br />
+                                    रजिस्टर्ड ऑफिस: 91, स्प्रिंग बोर्ड 175,
+                                    कागलवाला हाउस, दूसरी मंज़िल, कलिना,
+                                    सांताक्रूज़ (E), मुंबई 400098
+                                    <br />
+                                    कॉर्पोरेट ऑफिस: 91, स्प्रिंग बोर्ड, गेट नंबर
+                                    2, प्लांट नंबर 6, LBS मार्ग, गोदरेज एंड बॉयस
+                                    इंडस्ट्री एस्टेट, विक्रोली वेस्ट, मुंबई,
+                                    महाराष्ट्र, 400079
+                                  </td>
+                                  <td>3 व्यावसायिक दिनों के भीतर</td>
+                                </tr>
+                                <tr>
+                                  <td>स्तर 2</td>
+                                  <td>ग्राहक सहायता टीम प्रबंधक</td>
+                                  <td>
+                                    फोन: +91 85304 90475
+                                    <br />
+                                    ईमेल: csmanager@enkash.com
+                                    <br />
+                                    रजिस्टर्ड ऑफिस: 91, स्प्रिंग बोर्ड 175,
+                                    कागलवाला हाउस, दूसरी मंज़िल, कलिना,
+                                    सांताक्रूज़ (E), मुंबई 400098
+                                    <br />
+                                    कॉर्पोरेट ऑफिस: 91, स्प्रिंग बोर्ड, गेट नंबर
+                                    2, प्लांट नंबर 6, LBS मार्ग, गोदरेज एंड बॉयस
+                                    इंडस्ट्री एस्टेट, विक्रोली वेस्ट, मुंबई,
+                                    महाराष्ट्र, 400079
+                                  </td>
+                                  <td>7 व्यावसायिक दिनों के भीतर</td>
+                                </tr>
+                                <tr>
+                                  <td>स्तर 3</td>
+                                  <td>शिकायत निवारण अधिकारी</td>
+                                  <td>
+                                    फोन: +91 95132 51477
+                                    <br />
+                                    ईमेल: grievanceofficer@enkash.com
+                                    <br />
+                                    रजिस्टर्ड ऑफिस: 91, स्प्रिंग बोर्ड 175,
+                                    कागलवाला हाउस, दूसरी मंज़िल, कलिना,
+                                    सांताक्रूज़ (E), मुंबई 400098
+                                    <br />
+                                    कॉर्पोरेट ऑफिस: 91, स्प्रिंग बोर्ड, गेट नंबर
+                                    2, प्लांट नंबर 6, LBS मार्ग, गोदरेज एंड बॉयस
+                                    इंडस्ट्री एस्टेट, विक्रोली वेस्ट, मुंबई,
+                                    महाराष्ट्र, 400079
+                                  </td>
+                                  <td>30 व्यावसायिक दिनों के भीतर</td>
+                                </tr>
+                                <tr>
+                                  <td>स्तर 4</td>
+                                  <td>नोडल अधिकारी</td>
+                                  <td>
+                                    फोन: +91 95132 51499
+                                    <br />
+                                    ईमेल: nodalofficer@enkash.com
+                                    <br />
+                                    रजिस्टर्ड ऑफिस: 91, स्प्रिंग बोर्ड 175,
+                                    कागलवाला हाउस, दूसरी मंज़िल, कलिना,
+                                    सांताक्रूज़ (E), मुंबई 400098
+                                    <br />
+                                    कॉर्पोरेट ऑफिस: 91, स्प्रिंग बोर्ड, गेट नंबर
+                                    2, प्लांट नंबर 6, LBS मार्ग, गोदरेज एंड बॉयस
+                                    इंडस्ट्री एस्टेट, विक्रोली वेस्ट, मुंबई,
+                                    महाराष्ट्र, 400079
+                                  </td>
+                                  <td>15 व्यावसायिक दिनों के भीतर</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                         <h5 className="c15 mt-6">
                           19. सामान्य शर्तें एवं नियम
@@ -3555,6 +3607,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                               <a
                                 href="https://www.enkash.com/support"
                                 target="_blank"
+                                className="text-break"
                               >
                                 https://www.enkash.com/support
                               </a>{" "}
@@ -3591,7 +3644,10 @@ const CustomerOnboarding = (): React.JSX.Element => {
                               सूचनाएं: हमारी सभी सूचनाएं आपके पंजीकृत विवरण पर
                               ईमेल/एसएमएस के माध्यम से या एनकैश प्लेटफॉर्म पर
                               पोस्ट की जाएंगी। आपको{" "}
-                              <a href="mailto:support@enkash.com">
+                              <a
+                                href="mailto:support@enkash.com"
+                                className="text-break"
+                              >
                                 support@enkash.com
                               </a>{" "}
                               पर लिखित रूप से सूचित करना होगा।
@@ -3611,7 +3667,10 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             </li>
                             <li>
                               संपर्क: किसी भी सहायता के लिए,{" "}
-                              <a href="mailto:support@enkash.com">
+                              <a
+                                href="mailto:support@enkash.com"
+                                className="text-break"
+                              >
                                 support@enkash.com
                               </a>{" "}
                               पर हमसे संपर्क करें।
@@ -3827,7 +3886,10 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           <p>
                             ग्राहकों को अवधि, नवीनीकरण एवं रिफंड प्रक्रियाओं पर
                             व्यावहारिक मार्गदर्शन के लिए{" "}
-                            <a href="https://www.enkash.com/">
+                            <a
+                              href="https://www.enkash.com/"
+                              className="text-break"
+                            >
                               https://www.enkash.com/
                             </a>{" "}
                             पर FAQ अनुभाग का संदर्भ करने के लिए प्रोत्साहित किया

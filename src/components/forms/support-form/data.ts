@@ -13,6 +13,8 @@ const contactOptions: TCategoryOptions = [
   },
   { value: "Report a Fraud", label: "Report a Fraud" },
   { value: "Exploring EnKash", label: "Exploring EnKash" },
+  { value: "Report a Chargeback", label: "Report a Chargeback" },
+  { value: "Report a Dispute", label: "Report a Dispute" },
   { value: "Something Else", label: "Something Else" },
 ]
 
