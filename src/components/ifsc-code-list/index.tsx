@@ -183,7 +183,7 @@ const IfscCode: React.FC = () => {
       {/* IFSC RESULT */}
       {ifscDetail && (
         <div
-          className={`calculator color-alternate-grey fs-13 ${styles.gst_calclulator}`}
+          className={`calculator color-alternate-grey fs-14 ${styles.gst_calclulator}`}
         >
           <Container>
             <Row>
