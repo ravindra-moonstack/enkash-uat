@@ -2,13 +2,7 @@ import React from "react"
 import styles from "./page.module.scss"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import {
-  bankCodesData,
-  faqData,
-  
-  ifscData,
-
-} from "./data"
+import { bankCodesData, faqData, ifscData } from "./data"
 import { Table } from "react-bootstrap"
 import Image from "next/image"
 import FaqSection from "@/src/components/faq-section"
@@ -21,14 +15,14 @@ import IfscCode from "@/src/components/ifsc-code-list"
 import IfscDetailCard from "@/src/components/ifsc-detail-card"
 
 export const metadata: Metadata = {
-  title: "Free GST Calculator | Calculate GST Online Free - EnKash",
+  title: " IFSC Code: Search IFSC & MICR Code of Top Banks in India.",
   description:
-    "Free online GST calculator to get accurate CGST, SGST & IGST breakdowns with inclusive and exclusive amounts.",
+    "Find IFSC and MICR codes of all Indian banks. Search by bank, state, district or branch to get accurate IFSC, branch address and transfer details instantly.",
   openGraph: {
-    title: "Free GST Calculator | Calculate GST Online Free - EnKash",
+    title: "  Search IFSC & MICR Code of Top Banks in India.",
     description:
-      "Free online GST calculator to get accurate CGST, SGST & IGST breakdowns with inclusive and exclusive amounts.",
-    url: `${process.env.NEXT_PUBLIC_URL}/gst-calculator`,
+      "Meta Description: Find IFSC and MICR codes of all Indian banks. Search by bank, state, district or branch to get accurate IFSC, branch address and transfer details instantly.",
+    url: `${process.env.NEXT_PUBLIC_URL}/ifsc-codes`,
     type: "website",
     images: [`${process.env.NEXT_PUBLIC_URL}/images/GST_PREVIEW.webp`],
   },
@@ -44,7 +38,7 @@ const Ifsc = (): React.JSX.Element => {
           <CustomBreadcrumb
             items={[
               { name: "Home", url: "/" },
-              { name: "Ifsc Code", url: "/ifsc-code" },
+              { name: " IFSC Codes", url: "/ifsc-codes" },
             ]}
             linkColor="allWhite"
           />
@@ -55,15 +49,14 @@ const Ifsc = (): React.JSX.Element => {
                 color: "color-white f-7 d-block",
               },
               {
-                title: "List of IFSC Code and MICR Codes of All Banks in India",
+                title:
+                  "List of IFSC Codes and MICR Codes of All Banks in India",
                 color: "color-white f-2",
               },
             ]}
             headingTag="h1"
             className="text-center mt-3"
           />
-
-  
 
           <IfscCode />
           <DynamicHeading
@@ -494,8 +487,17 @@ const Ifsc = (): React.JSX.Element => {
                 <DynamicHeading
                   content={[
                     {
+                      title: "The",
+                      color: "color-grey-200  ",
+                    },
+                    {
+                      title: " MICR Code ",
+                      color: "color-grey-200  ",
+                      link: "https://www.enkash.com/resources/blog/what-is-micr-full-form-meaning-micr-code-in-banking-and-cheque-explained",
+                    },
+                    {
                       title:
-                        "The MICR Code (Magnetic Ink Character Recognition Code) is a 9-digit numeric code printed on cheques to speed up and authenticate the processing of cheques. It uniquely identifies a bank branch, similar to the IFSC code, but serves a different purpose.",
+                        "(Magnetic Ink Character Recognition Code) is a 9-digit numeric code printed on cheques to speed up and authenticate the processing of cheques. It uniquely identifies a bank branch, similar to the IFSC code, but serves a different purpose.",
                       color: "color-grey-200  ",
                     },
                   ]}
