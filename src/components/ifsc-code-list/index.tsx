@@ -85,101 +85,104 @@ const IfscCode: React.FC = () => {
 
   return (
     <>
-      <Form className={` text-black ${styles.gst_calclulator}`}>
-        <Row className="mb-3 g-3">
-          {/* Bank Dropdown */}
-          <Col md>
-            <Form.Select
-              value={bankName}
-              onChange={(e) => {
-                setBankName(e.target.value)
-                setState("")
-                setDistrict("")
-                setBranchName("")
-                setIfscInput("")
-                setIfscDetail(null)
-              }}
-            >
-              <option value="">Select Bank</option>
-              {banks.map((b) => (
-                <option key={b}>{b}</option>
-              ))}
-            </Form.Select>
-          </Col>
+      <div className={` text-black ${styles.gst_calclulator}`}>
+        <Form>
+          <Row className="mb-3 g-3">
+            {/* Bank Dropdown */}
+            <Col md>
+              <Form.Select
+                value={bankName}
+                onChange={(e) => {
+                  setBankName(e.target.value)
+                  setState("")
+                  setDistrict("")
+                  setBranchName("")
+                  setIfscInput("")
+                  setIfscDetail(null)
+                }}
+              >
+                <option value="">Select Bank</option>
+                {banks.map((b) => (
+                  <option key={b}>{b}</option>
+                ))}
+              </Form.Select>
+            </Col>
 
-          {/* State */}
-          <Col md>
-            <Form.Select
-              value={state}
-              onChange={(e) => {
-                setState(e.target.value)
-                setDistrict("")
-                setBranchName("")
-                setIfscInput("")
-                setIfscDetail(null)
-              }}
-            >
-              <option value="">Select State</option>
-              {states.map((s) => (
-                <option key={s}>{s}</option>
-              ))}
-            </Form.Select>
-          </Col>
+            {/* State */}
+            <Col md>
+              <Form.Select
+                value={state}
+                onChange={(e) => {
+                  setState(e.target.value)
+                  setDistrict("")
+                  setBranchName("")
+                  setIfscInput("")
+                  setIfscDetail(null)
+                }}
+              >
+                <option value="">Select State</option>
+                {states.map((s) => (
+                  <option key={s}>{s}</option>
+                ))}
+              </Form.Select>
+            </Col>
 
-          {/* District */}
-          <Col md>
-            <Form.Select
-              value={district}
-              onChange={(e) => {
-                setDistrict(e.target.value)
-                setBranchName("")
-                setIfscInput("")
-                setIfscDetail(null)
-              }}
-            >
-              <option value="">Select District</option>
-              {districts.map((d) => (
-                <option key={d}>{d}</option>
-              ))}
-            </Form.Select>
-          </Col>
+            {/* District */}
+            <Col md>
+              <Form.Select
+                value={district}
+                onChange={(e) => {
+                  setDistrict(e.target.value)
+                  setBranchName("")
+                  setIfscInput("")
+                  setIfscDetail(null)
+                }}
+              >
+                <option value="">Select District</option>
+                {districts.map((d) => (
+                  <option key={d}>{d}</option>
+                ))}
+              </Form.Select>
+            </Col>
 
-          {/* Branch */}
-          <Col md>
-            <Form.Select
-              value={branchName}
-              onChange={(e) => setBranchName(e.target.value)}
-            >
-              <option value="">Select Branch</option>
-              {branches.map((b) => (
-                <option key={b}>{b}</option>
-              ))}
-            </Form.Select>
-          </Col>
-        </Row>
+            {/* Branch */}
+            <Col md>
+              <Form.Select
+                value={branchName}
+                onChange={(e) => setBranchName(e.target.value)}
+              >
+                <option value="">Select Branch</option>
+                {branches.map((b) => (
+                  <option key={b}>{b}</option>
+                ))}
+              </Form.Select>
+            </Col>
+          </Row>
 
-        {/* OR divider */}
-        <div className="text-center color-alternate-grey fw-bold my-3">OR</div>
-
-        {/* Manual IFSC Input */}
-        <Row className="mb-4">
-          <Col md className="d-flex justify-content-center">
-            <Form.Control
-              type="text"
-              placeholder="Enter IFSC"
-              value={ifscInput}
-              onChange={(e) => {
-                setIfscInput(e.target.value.toUpperCase())
-                setBankName("")
-                setState("")
-                setDistrict("")
-                setBranchName("")
-              }}
-            />
-          </Col>
-        </Row>
-      </Form>
-
+          {/* OR divider */}
+          <div className="text-center color-alternate-grey fw-bold my-3">
+            OR
+          </div>
+        </Form>
+        <Form onSubmit={(e) => e.preventDefault()}>
+          <Row className="mb-4">
+            <Col md className="d-flex justify-content-center">
+              <Form.Control
+                type="text"
+                placeholder="Enter IFSC"
+                value={ifscInput}
+                onChange={(e) => {
+                  setIfscInput(e.target.value.toUpperCase())
+                  setBankName("")
+                  setState("")
+                  setDistrict("")
+                  setBranchName("")
+                }}
+              />
+            </Col>
+          </Row>
+        </Form>
+      </div>
       {/* IFSC RESULT */}
       {ifscDetail && (
         <div

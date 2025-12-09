@@ -98,11 +98,12 @@ const Ifsc = (): React.JSX.Element => {
                   content={[
                     {
                       title: "What is an IFSC Code?",
-                      color: "color-grey-200 ",
+                      color: "color-grey-200  text-decoration-none",
+                      link: "https://www.enkash.com/resources/blog/what-is-ifsc-code",
                     },
                   ]}
                   headingTag="h5"
-                  className="mb-0  f-6 text-start"
+                  className={`mb-0  f-6 text-start text-decoration-none ${styles.ifscCode}`}
                 />
                 <DynamicHeading
                   content={[
