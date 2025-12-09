@@ -5,11 +5,9 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 import {
   bankCodesData,
   faqData,
-  goodsAndServiceData,
-  gstData,
+  
   ifscData,
-  newGstData,
-  oldGstData,
+
 } from "./data"
 import { Table } from "react-bootstrap"
 import Image from "next/image"
@@ -46,7 +44,7 @@ const Ifsc = (): React.JSX.Element => {
           <CustomBreadcrumb
             items={[
               { name: "Home", url: "/" },
-              { name: "Ifsc Code", url: "/ifsc" },
+              { name: "Ifsc Code", url: "/ifsc-code" },
             ]}
             linkColor="allWhite"
           />
@@ -65,7 +63,7 @@ const Ifsc = (): React.JSX.Element => {
             className="text-center mt-3"
           />
 
-          {/* GST Calculator Component */}
+  
 
           <IfscCode />
           <DynamicHeading
