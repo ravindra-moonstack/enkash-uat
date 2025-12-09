@@ -399,7 +399,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                       </div>
 
                       <h5 className="c15 mt-6">
-                        5. ISSUANCE AND ACTIVATION OF PPI
+                        5. ISSUANCE, ACTIVATION AND VALIDITY OF PPI
                       </h5>
                       <div className="container my-4">
                         <ul className="list-unstyled ms-3">
@@ -447,15 +447,49 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           </li>
 
                           <li>
-                            viii) All EnKash PPIs (including Wallets) are valid
-                            for at least one (1) year from the date of
-                            issuance/last load/reload.
+                            {" "}
+                            viii) Card Validity for General Purpose Reloadable
+                            (GPR) Cards <br />{" "}
+                            <ul>
+                              <li>
+                                GPR Cards issued by EnKash shall remain valid
+                                for a minimum period of three (3) years from the
+                                date of issuance, unless otherwise specified on
+                                the card or communicated at the time of
+                                issuance.{" "}
+                              </li>
+                              <li>
+                                {" "}
+                                Upon expiry, the Cardholder may request renewal
+                                or replacement, subject to applicable policies
+                                and KYC requirements.{" "}
+                              </li>
+                            </ul>
                           </li>
-
                           <li>
-                            ix) EnKash may deactivate PPIs or Wallets that
-                            remain inactive for one (1) year, after providing
-                            prior intimation to the Customer.
+                            ix) Card Validity for Gift Cards <br />
+                            <ul>
+                              <li>
+                                {" "}
+                                Gift Cards shall remain valid for a period of
+                                one (1) year from the date of issuance, unless a
+                                different validity period is mandated by
+                                regulations or specified at the time of
+                                issuance.{" "}
+                              </li>
+                              <li>
+                                {" "}
+                                Any unused balance remaining on the Gift Card
+                                after expiry shall be handled in accordance with
+                                applicable RBI guidelines and EnKash
+                                policies.{" "}
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            x) EnKash may deactivate PPIs or Wallets that remain
+                            inactive for one (1) year, after providing prior
+                            intimation to the Customer.
                           </li>
                         </ul>
                       </div>
@@ -1043,7 +1077,9 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             refunded within two years from expiry upon customer
                             request.
                           </li>
-
+                          <li>
+                            Transactions will not be permitted on expired cards.
+                          </li>
                           <li>
                             Customers may request renewal or replacement of an
                             expired PPI (including Wallets) after verification
@@ -1056,9 +1092,10 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           </li>
 
                           <li>
-                            Upon customer request, refunds will be credited to
+                            Upon Customer request, refunds will be credited to
                             the verified source bank account following due
-                            diligence.
+                            diligence, completion of necessary KYC, and in
+                            accordance with prevailing regulatory requirements.
                           </li>
 
                           <li>
@@ -1114,7 +1151,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                           </li>
 
                           <li>
-                            Small PPI validity is 3 years from issuance or last
+                            PPI validity is 3 years from issuance or last
                             reload/activity, after which it expires, and
                             balances may be handled as unclaimed.
                           </li>
