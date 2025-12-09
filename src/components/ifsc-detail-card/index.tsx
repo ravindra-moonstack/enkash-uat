@@ -12,7 +12,7 @@ interface IfscDetailProps {
   district: string
   branch: string
   address: string
-  phone: string
+  phone?: string
 }
 
 const IfscDetailCard: React.FC<IfscDetailProps> = ({
@@ -72,9 +72,11 @@ const IfscDetailCard: React.FC<IfscDetailProps> = ({
           <div style={{ whiteSpace: "pre-line" }}>{address}</div>
         </Col>
 
-        <Col xs={12} className="mt-2">
-          <b>Mob No.:</b> {phone}
-        </Col>
+        {phone && (
+          <Col xs={12} className="mt-2">
+            <b>Mob No.:</b> {phone}
+          </Col>
+        )}
       </Row>
     </Card>
   )
