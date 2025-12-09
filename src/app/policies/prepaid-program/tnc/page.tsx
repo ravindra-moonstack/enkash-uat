@@ -450,37 +450,41 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             {" "}
                             viii) Card Validity for General Purpose Reloadable
                             (GPR) Cards <br />{" "}
-                            <span className="ms-3">
-                              (a) GPR Cards issued by EnKash shall remain valid
-                              for a minimum period of three (3) years from the
-                              date of issuance, unless otherwise specified on
-                              the card or communicated at the time of
-                              issuance.{" "}
-                            </span>
-                            <br />{" "}
-                            <span className="ms-3">
-                              (b) Upon expiry, the Cardholder may request
-                              renewal or replacement, subject to applicable
-                              policies and KYC requirements.{" "}
-                            </span>
+                            <ul>
+                              <li>
+                                GPR Cards issued by EnKash shall remain valid
+                                for a minimum period of three (3) years from the
+                                date of issuance, unless otherwise specified on
+                                the card or communicated at the time of
+                                issuance.{" "}
+                              </li>
+                              <li>
+                                {" "}
+                                Upon expiry, the Cardholder may request renewal
+                                or replacement, subject to applicable policies
+                                and KYC requirements.{" "}
+                              </li>
+                            </ul>
                           </li>
                           <li>
                             ix) Card Validity for Gift Cards <br />
-                            <span className="ms-3">
-                              (a) Gift Cards shall remain valid for a period of
-                              one (1) year from the date of issuance, unless a
-                              different validity period is mandated by
-                              regulations or specified at the time of
-                              issuance.{" "}
-                            </span>
-                            <br />{" "}
-                            <span className="ms-3">
-                              {" "}
-                              (b) Any unused balance remaining on the Gift Card
-                              after expiry shall be handled in accordance with
-                              applicable RBI guidelines and EnKash
-                              policies.{" "}
-                            </span>
+                            <ul>
+                              <li>
+                                {" "}
+                                Gift Cards shall remain valid for a period of
+                                one (1) year from the date of issuance, unless a
+                                different validity period is mandated by
+                                regulations or specified at the time of
+                                issuance.{" "}
+                              </li>
+                              <li>
+                                {" "}
+                                Any unused balance remaining on the Gift Card
+                                after expiry shall be handled in accordance with
+                                applicable RBI guidelines and EnKash
+                                policies.{" "}
+                              </li>
+                            </ul>
                           </li>
                           <li>
                             x) EnKash may deactivate PPIs or Wallets that remain
