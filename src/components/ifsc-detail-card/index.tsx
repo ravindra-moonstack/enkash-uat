@@ -30,10 +30,11 @@ const IfscDetailCard: React.FC<IfscDetailProps> = ({
     <Card className="shadow-sm p-4">
       {/* Header */}
       <Row className="align-items-center mb-3">
-        <Col xs="auto">
-          {bankLogo && <Image src={bankLogo} alt="Bank Logo" height={45} />}
+        <Col xs="auto" className="bank-logo-col">
+          {bankLogo && (
+            <Image src={bankLogo} alt="Bank Logo" className="bank-logo" />
+          )}
         </Col>
-
         <Col>
           <h5 className="mb-0 fw-bold color-alternate-grey">
             {bankName} IFSC Code
