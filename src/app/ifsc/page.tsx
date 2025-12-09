@@ -575,3 +575,10 @@
 // }
 
 // export default Ifsc
+export default function IFSCPage() {
+  return (
+    <div>
+      IFSC Page Works
+    </div>
+  );
+}
