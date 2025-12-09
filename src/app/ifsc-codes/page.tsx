@@ -764,7 +764,7 @@ const Ifsc = (): React.JSX.Element => {
                 headingTag="h5"
                 className="mb-4  f-6   text-start"
               />
-              <Table bordered hover className="align-middle text-start">
+              <Table bordered  className="align-middle text-start">
                 <thead className="bg-light bg-white-73">
                   <tr>
                     <th>Bank Name</th>
@@ -932,7 +932,7 @@ const Ifsc = (): React.JSX.Element => {
                 headingTag="h5"
                 className="mb-4  f-6   text-start"
               />
-              <Table bordered hover className="align-middle text-start">
+              <Table bordered  className="align-middle text-start">
                 <thead className="bg-light bg-white-73">
                   <tr>
                     <th>MICR Code</th>
