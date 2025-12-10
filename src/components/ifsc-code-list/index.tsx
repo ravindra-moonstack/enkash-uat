@@ -218,9 +218,12 @@ const IfscCode: React.FC = () => {
             </Row>
 
             <Row className="mt-2">
-              <Col>
-                <b>Phone No:</b> {ifscDetail.phone}
-              </Col>
+              {ifscDetail.phone && (
+                <Col>
+                  <b>Phone No:</b> {ifscDetail.phone}
+                </Col>
+              )}
+
               <Col>
                 <b>Branch:</b> {ifscDetail.branch}
               </Col>
