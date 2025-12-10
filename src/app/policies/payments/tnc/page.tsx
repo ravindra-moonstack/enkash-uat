@@ -1423,6 +1423,135 @@ const CustomerOnboarding = (): React.JSX.Element => {
                         </ul>
 
                         <h6 className="c15 mt-6">
+                          <b>REFUNDS</b>
+                        </h6>
+                        <p>
+                          Refunds are reversal transactions wherein complete or
+                          partial money is moved back to the Customer’s source
+                          account (the account from which actual payment was
+                          made). A refund can only be created for a successful
+                          or settled transaction as per the refund policy of the
+                          third-party merchants.
+                        </p>
+
+                        <p>
+                          The Turnaround Time (TAT) for processing refunds shall
+                          be T+3 days, calculated from the date on which the
+                          refund request is communicated by the Merchant. The
+                          refunded amount shall be credited to the Customer’s
+                          bank account based on the timelines and processing
+                          policies of the issuing bank.
+                        </p>
+
+                        <p>A refund arises in the following scenarios:</p>
+                        <ul>
+                          <li>
+                            Customer has changed his mind about the consumption
+                            of product pre/post order delivery.
+                          </li>
+                        </ul>
+
+                        <p>
+                          Refund can be initiated by the Merchant in the
+                          following scenarios:
+                        </p>
+                        <ul>
+                          <li>Product/service is out of stock.</li>
+                        </ul>
+
+                        <p>
+                          The Customer/Merchant can initiate complete refunds to
+                          the Customer’s source account.
+                        </p>
+
+                        <p>The process followed for Refunds is as under:</p>
+
+                        <ul>
+                          <li>Merchant to initiate refund.</li>
+                          <li>
+                            The Company validates the refund against the
+                            original order. These include basic validations like
+                            cumulative refund on this order (not exceeding order
+                            value), the order not being more than a year old, or
+                            as per merchant refund policy.
+                          </li>
+                          <li>
+                            Sync confirmation after validation of refund is
+                            provided in response to the request.
+                          </li>
+                          <li>
+                            Once validated, the Company deducts the refund
+                            amount from the Merchant’s pending settlement
+                            amount.
+                          </li>
+                          <li>
+                            The Company initiates the refund to the Bank. Except
+                            for instant net banking refunds, most refunds are
+                            file-based and sent to the Bank on the next working
+                            day.
+                          </li>
+                          <li>
+                            Once the Bank accepts the refund, the Company sends
+                            the message “Success Refund” to the Merchant,
+                            indicating that the refund has been initiated.
+                          </li>
+                          <li>
+                            Bank credits the Customer’s source account with the
+                            refund amount.
+                          </li>
+                        </ul>
+
+                        <h6 className="c15 mt-6">
+                          <b>FRAUDULENT TRANSACTIONS</b>
+                        </h6>
+                        <ul className={styles.alphaList}>
+                          <li>
+                            Subject to clause 2.1 and 2.2 of this Part B, Part
+                            I, if EnKash is intimated, by a Facility Provider,
+                            that a customer has reported an unauthorised debit
+                            of the customer's Payment Instrument (“Fraudulent
+                            Transaction”), then in addition to its rights under
+                            clause 16 of Part A: General Terms and Conditions,
+                            EnKash shall be entitled to suspend settlements to
+                            You during the pendency of inquiries, investigations
+                            and resolution thereof by the Facility Providers.
+                          </li>
+                          <li>
+                            If the amount in respect of the Fraudulent
+                            Transaction has already been settled to You pursuant
+                            to these Terms, any dispute arising in relation to
+                            the said Fraudulent Transaction, following
+                            settlement, shall be resolved in accordance with the
+                            RBI's notification
+                            DBR.No.Leg.BC.78/09.07.005/2017-18, dated July 6,
+                            2017 read with RBI's notification DBOD. LEG. BC
+                            86/09.07.007/2001-02 dated April 8, 2002, and other
+                            notifications, circulars and guidelines issued by
+                            the RBI in this regard from time to time.
+                          </li>
+                          <li>
+                            Subject to clause 4.2 above, if the Fraudulent
+                            Transaction results in a Chargeback, then such
+                            Chargeback shall be resolved in accordance with the
+                            provisions set out in the Terms.
+                          </li>
+                          <li>
+                            You acknowledge that EnKash shall not be responsible
+                            for any liability arising in respect of Fraudulent
+                            Transactions whether it is an international or a
+                            domestic transaction.
+                          </li>
+                          <li>
+                            You shall be liable in the event of breach of the
+                            fraud amount thresholds as provided under the NPCI
+                            guideline on ‘Fraud liability guidelines on UPI
+                            transactions' NPCI/2022- 23/RMD/001. You hereby
+                            understand and agree that the decision of the NPCI
+                            or the concerned acquiring bank, as the case may be,
+                            shall be final and binding.
+                          </li>
+                        </ul>
+                        <h6 className="c15 mt-6">
                           <b>CHARGEBACKS</b>
                         </h6>
                         <ul className={styles.alphaList}>
@@ -1520,92 +1649,6 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             and justification. For loans which would get
                             cancelled on the basis of Your confirmation, the
                             amount would be recovered from the daily settlement.
-                          </li>
-                        </ul>
-                        <h6 className="c15 mt-6">
-                          <b>REFUNDS</b>
-                        </h6>
-                        <ul className={styles.alphaList}>
-                          <li>
-                            You agree and acknowledge that subject to
-                            availability of funds received in the Escrow
-                            Account, You are entitled to effect Refunds at Your
-                            sole discretion.
-                          </li>
-                          <li>
-                            You further agree and acknowledge that initiation of
-                            Refunds is at Your discretion and EnKash PA shall
-                            process a Refund only upon initiation of the same on
-                            the Platform.
-                          </li>
-                          <li>
-                            All Refunds initiated by You shall be routed to the
-                            same payment method through which the Transaction
-                            was processed.
-                          </li>
-                          <li>
-                            You agree that EnKash PA fees shall always be
-                            applicable and payable by You on each Transaction
-                            irrespective of whether You have refunded the same
-                            to Your customer either through normal channels of
-                            refunds or through the instant refund service of
-                            EnKash PA Group Entities (if availed).
-                          </li>
-                          <li>
-                            You acknowledge and agree that for payments that are
-                            late authorized but not captured by You, EnKash PA
-                            may initiate auto-refund to the customer within five
-                            (5) days.
-                          </li>
-                        </ul>
-                        <h6 className="c15 mt-6">
-                          <b>FRAUDULENT TRANSACTIONS</b>
-                        </h6>
-                        <ul className={styles.alphaList}>
-                          <li>
-                            Subject to clause 2.1 and 2.2 of this Part B, Part
-                            I, if EnKash is intimated, by a Facility Provider,
-                            that a customer has reported an unauthorised debit
-                            of the customer's Payment Instrument (“Fraudulent
-                            Transaction”), then in addition to its rights under
-                            clause 16 of Part A: General Terms and Conditions,
-                            EnKash shall be entitled to suspend settlements to
-                            You during the pendency of inquiries, investigations
-                            and resolution thereof by the Facility Providers.
-                          </li>
-                          <li>
-                            If the amount in respect of the Fraudulent
-                            Transaction has already been settled to You pursuant
-                            to these Terms, any dispute arising in relation to
-                            the said Fraudulent Transaction, following
-                            settlement, shall be resolved in accordance with the
-                            RBI's notification
-                            DBR.No.Leg.BC.78/09.07.005/2017-18, dated July 6,
-                            2017 read with RBI's notification DBOD. LEG. BC
-                            86/09.07.007/2001-02 dated April 8, 2002, and other
-                            notifications, circulars and guidelines issued by
-                            the RBI in this regard from time to time.
-                          </li>
-                          <li>
-                            Subject to clause 4.2 above, if the Fraudulent
-                            Transaction results in a Chargeback, then such
-                            Chargeback shall be resolved in accordance with the
-                            provisions set out in the Terms.
-                          </li>
-                          <li>
-                            You acknowledge that EnKash shall not be responsible
-                            for any liability arising in respect of Fraudulent
-                            Transactions whether it is an international or a
-                            domestic transaction.
-                          </li>
-                          <li>
-                            You shall be liable in the event of breach of the
-                            fraud amount thresholds as provided under the NPCI
-                            guideline on ‘Fraud liability guidelines on UPI
-                            transactions' NPCI/2022- 23/RMD/001. You hereby
-                            understand and agree that the decision of the NPCI
-                            or the concerned acquiring bank, as the case may be,
-                            shall be final and binding.
                           </li>
                         </ul>
                       </div>
@@ -3337,6 +3380,147 @@ const CustomerOnboarding = (): React.JSX.Element => {
                               हुआ है।
                             </li>
                           </ul>
+
+                          <h6>
+                            <b>रिफंड </b>
+                          </h6>
+                          <p>
+                            रिफंड उलट लेनदेन हैं, जिसमें पूर्ण या आंशिक धनराशि
+                            ग्राहक के स्रोत खाते (उस खाते में वापस स्थानांतरित
+                            की जाती है जिसमें से वास्तविक भुगतान किया गया था)।
+                            रिफंड केवल सफल या निपटाए गए लेनदेन के लिए ही बनाया
+                            जा सकता है, जैसा कि तृतीय-पक्ष व्यापारियों की रिफंड
+                            नीति के अनुसार।
+                          </p>
+
+                          <p>
+                            रिफंड प्रक्रिया करने का टर्नअराउंड टाइम (TAT) T+3
+                            दिन होगा, जो व्यापारी द्वारा रिफंड अनुरोध की संचार
+                            तिथि से गणना किया जाएगा। रिफंड की गई राशि को
+                            जारीकर्ता बैंक की समयसीमाओं और प्रक्रिया नीतियों के
+                            आधार पर ग्राहक के बैंक खाते में जमा किया जाएगा।
+                          </p>
+
+                          <p>
+                            रिफंड निम्नलिखित परिदृश्यों में उत्पन्न होता है:
+                          </p>
+
+                          <ul>
+                            <li>
+                              ग्राहक ने उत्पाद की खपत के बारे में अपना मन बदल
+                              लिया है, ऑर्डर डिलीवरी से पहले/बाद में।
+                            </li>
+                          </ul>
+
+                          <p>
+                            निम्नलिखित परिदृश्यों में व्यापारी द्वारा रिफंड
+                            प्रारंभ किया जा सकता है:
+                          </p>
+
+                          <ul>
+                            <li>उत्पाद/सेवा स्टॉक से बाहर है।</li>
+                          </ul>
+
+                          <p>
+                            ग्राहक/व्यापारी ग्राहक के स्रोत खाते में पूर्ण रिफंड
+                            प्रारंभ कर सकता है।
+                          </p>
+
+                          <p>
+                            रिफंड के लिए अनुसरण की जाने वाली प्रक्रिया
+                            निम्नानुसार है:
+                          </p>
+
+                          <ul>
+                            <li>व्यापारी द्वारा रिफंड प्रारंभ करें।</li>
+
+                            <li>
+                              कंपनी मूल ऑर्डर के विरुद्ध रिफंड की वैलिडेशन करती
+                              है। ये बुनियादी वैलिडेशन हैं जैसे इस ऑर्डर पर
+                              संचयी रिफंड अर्थात ऑर्डर मूल्य, ऑर्डर एक वर्ष से
+                              अधिक पुराना न हो आदि या व्यापारी रिफंड नीति के
+                              अनुसार।
+                            </li>
+
+                            <li>
+                              वैलिडेशन के बाद रिफंड की सिंक पुष्टि अनुरोध के
+                              प्रतिक्रिया में प्रदान की जाती है।
+                            </li>
+
+                            <li>
+                              एक बार जब कंपनी के अंत में रिफंड वैलिडेट हो जाता
+                              है, तो कंपनी रिफंड राशि को व्यापारी के लंबित
+                              निपटान राशि से काट लेती है।
+                            </li>
+
+                            <li>
+                              कंपनी बैंक को रिफंड प्रारंभ करती है। नेट बैंकिंग
+                              रिफंड के अलावा, जो तत्काल प्रकृति के हैं, अधिकांश
+                              नेट बैंकिंग रिफंड फाइल-आधारित होते हैं और इसलिए,
+                              अगले कार्य दिवस पर बैंक को भेजे जाते हैं।
+                            </li>
+
+                            <li>
+                              एक बार जब बैंक रिफंड स्वीकार कर लेता है, तो कंपनी
+                              व्यापारी को 'सफल रिफंड' संदेश भेजती है, जो दर्शाता
+                              है कि रिफंड प्रारंभ किया गया है।
+                            </li>
+
+                            <li>
+                              बैंक ग्राहक के स्रोत खाते में रिफंड राशि जमा करता
+                              है।
+                            </li>
+                          </ul>
+
+                          <h6>
+                            <b>धोखाधड़ीपूर्ण लेनदेन </b>
+                          </h6>
+                          <ul className={styles.hindiList}>
+                            <li data-hindi="क">
+                              भाग बी के खंड 2.1 और 2.2, भाग I के अधीन, यदि एनकैश
+                              को सुविधा प्रदाता द्वारा सूचित किया जाता है कि
+                              ग्राहक ने ग्राहक के भुगतान साधन के अनधिकृत डेबिट
+                              ("धोखाधड़ीपूर्ण लेनदेन" (Fraudulent Transaction))
+                              की रिपोर्ट की है, तो भाग ए: सामान्य शर्तें और
+                              स्थितियां (Part A: General Terms and Conditions)
+                              के खंड 16 के तहत उसके अधिकारों के अतिरिक्त, एनकैश
+                              को सुविधा प्रदाताओं द्वारा जांच, जांच और उसके
+                              समाधान की लंबित अवधि के दौरान आपको बसावट निलंबित
+                              करने का अधिकार होगा।
+                            </li>
+                            <li data-hindi="ख">
+                              यदि धोखाधड़ीपूर्ण लेनदेन की राशि इन शर्तों के तहत
+                              पहले ही आपको बसाई जा चुकी है, तो बसावट के बाद उक्त
+                              धोखाधड़ीपूर्ण लेनदेन से संबंधित किसी भी विवाद को
+                              आरबीआई की अधिसूचना
+                              डीबीआर.नं.लेग.बीसी.78/09.07.005/2017-18, दिनांक 6
+                              जुलाई 2017 के साथ पढ़ते हुए आरबीआई की अधिसूचना
+                              डीबीओडी. लेग. बीसी 86/09.07.007/2001-02 दिनांक 8
+                              अप्रैल 2002, और आरबीआई द्वारा समय-समय पर जारी अन्य
+                              अधिसूचनाओं, परिपत्रों और दिशानिर्देशों के अनुसार
+                              हल किया जाएगा।
+                            </li>
+                            <li data-hindi="ग">
+                              उपरोक्त खंड 4.2 के अधीन, यदि धोखाधड़ीपूर्ण लेनदेन
+                              से चार्जबैक उत्पन्न होता है, तो ऐसी चार्जबैक को
+                              शर्तों में निर्धारित प्रावधानों के अनुसार हल किया
+                              जाएगा।
+                            </li>
+                            <li>
+                              आप स्वीकार करते हैं कि एनकैश धोखाधड़ीपूर्ण लेनदेन
+                              से उत्पन्न किसी भी दायित्व के लिए जिम्मेदार नहीं
+                              होगा, चाहे वह अंतरराष्ट्रीय या घरेलू लेनदेन हो।
+                            </li>
+                            <li>
+                              आप एनपीसीआई दिशानिर्देश 'धोखाधड़ी दायित्व
+                              दिशानिर्देश यूपीआई लेनदेन पर'
+                              एनपीसीआई/2022-23/आरएमडी/001 के तहत प्रदान किए गए
+                              धोखाधड़ी राशि सीमाओं के उल्लंघन की घटना में दायी
+                              होंगे। आप यहां समझते और सहमत होते हैं कि एनपीसीआई
+                              या संबंधित अधिग्रहण बैंक का निर्णय, जैसा भी मामला
+                              हो, अंतिम और बाध्यकारी होगा।
+                            </li>
+                          </ul>
                           <h6>
                             <b>चार्जबैक </b>
                           </h6>
@@ -3447,83 +3631,6 @@ const CustomerOnboarding = (): React.JSX.Element => {
                               डिलीवरी का प्रमाण और औचित्य प्रदान करना होगा। आपके
                               पुष्टिकरण के आधार पर रद्द होने वाले ऋणों के लिए,
                               राशि दैनिक बसावट से वसूल की जाएगी।
-                            </li>
-                          </ul>
-                          <h6>
-                            <b>रिफंड </b>
-                          </h6>
-                          <ul className={styles.hindiList}>
-                            <li data-hindi="क">
-                              आप सहमत और स्वीकार करते हैं कि एस्क्रो खाते
-                              (Escrow Account) में प्राप्त धनराशि की उपलब्धता के
-                              अधीन, आप रिफंड करने के लिए पूरी तरह से अपने विवेक
-                              पर हकदार हैं।
-                            </li>
-                            <li data-hindi="ख">
-                              आप आगे सहमत और स्वीकार करते हैं कि रिफंड का
-                              प्रारंभ आपके विवेक पर है और एनकैश पीए रिफंड को
-                              केवल प्लेटफॉर्म (Platform) पर उसके प्रारंभ होने पर
-                              ही प्रक्रिया करेगा।
-                            </li>
-                            <li data-hindi="ग">
-                              आपके द्वारा प्रारंभ किए गए सभी रिफंड उसी भुगतान
-                              विधि के माध्यम से रूट किए जाएंगे जिसके माध्यम से
-                              लेनदेन प्रक्रिया किया गया था।
-                            </li>
-                            <li>
-                              आप स्वीकार और सहमत होते हैं कि आपके द्वारा अधिकृत
-                              लेकिन कैप्चर न किए गए देर से अधिकृत भुगतानों के
-                              लिए, एनकैश पीए पांच (5) दिनों के भीतर ग्राहक को
-                              ऑटो-रिफंड प्रारंभ कर सकता है।
-                            </li>
-                          </ul>
-                          <h6>
-                            <b>धोखाधड़ीपूर्ण लेनदेन </b>
-                          </h6>
-                          <ul className={styles.hindiList}>
-                            <li data-hindi="क">
-                              भाग बी के खंड 2.1 और 2.2, भाग I के अधीन, यदि एनकैश
-                              को सुविधा प्रदाता द्वारा सूचित किया जाता है कि
-                              ग्राहक ने ग्राहक के भुगतान साधन के अनधिकृत डेबिट
-                              ("धोखाधड़ीपूर्ण लेनदेन" (Fraudulent Transaction))
-                              की रिपोर्ट की है, तो भाग ए: सामान्य शर्तें और
-                              स्थितियां (Part A: General Terms and Conditions)
-                              के खंड 16 के तहत उसके अधिकारों के अतिरिक्त, एनकैश
-                              को सुविधा प्रदाताओं द्वारा जांच, जांच और उसके
-                              समाधान की लंबित अवधि के दौरान आपको बसावट निलंबित
-                              करने का अधिकार होगा।
-                            </li>
-                            <li data-hindi="ख">
-                              यदि धोखाधड़ीपूर्ण लेनदेन की राशि इन शर्तों के तहत
-                              पहले ही आपको बसाई जा चुकी है, तो बसावट के बाद उक्त
-                              धोखाधड़ीपूर्ण लेनदेन से संबंधित किसी भी विवाद को
-                              आरबीआई की अधिसूचना
-                              डीबीआर.नं.लेग.बीसी.78/09.07.005/2017-18, दिनांक 6
-                              जुलाई 2017 के साथ पढ़ते हुए आरबीआई की अधिसूचना
-                              डीबीओडी. लेग. बीसी 86/09.07.007/2001-02 दिनांक 8
-                              अप्रैल 2002, और आरबीआई द्वारा समय-समय पर जारी अन्य
-                              अधिसूचनाओं, परिपत्रों और दिशानिर्देशों के अनुसार
-                              हल किया जाएगा।
-                            </li>
-                            <li data-hindi="ग">
-                              उपरोक्त खंड 4.2 के अधीन, यदि धोखाधड़ीपूर्ण लेनदेन
-                              से चार्जबैक उत्पन्न होता है, तो ऐसी चार्जबैक को
-                              शर्तों में निर्धारित प्रावधानों के अनुसार हल किया
-                              जाएगा।
-                            </li>
-                            <li>
-                              आप स्वीकार करते हैं कि एनकैश धोखाधड़ीपूर्ण लेनदेन
-                              से उत्पन्न किसी भी दायित्व के लिए जिम्मेदार नहीं
-                              होगा, चाहे वह अंतरराष्ट्रीय या घरेलू लेनदेन हो।
-                            </li>
-                            <li>
-                              आप एनपीसीआई दिशानिर्देश 'धोखाधड़ी दायित्व
-                              दिशानिर्देश यूपीआई लेनदेन पर'
-                              एनपीसीआई/2022-23/आरएमडी/001 के तहत प्रदान किए गए
-                              धोखाधड़ी राशि सीमाओं के उल्लंघन की घटना में दायी
-                              होंगे। आप यहां समझते और सहमत होते हैं कि एनपीसीआई
-                              या संबंधित अधिग्रहण बैंक का निर्णय, जैसा भी मामला
-                              हो, अंतिम और बाध्यकारी होगा।
                             </li>
                           </ul>
                         </div>
