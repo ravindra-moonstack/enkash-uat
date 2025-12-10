@@ -1,6 +1,11 @@
 @use "@/src/styles/mixin" as *;
 @use "@/src/styles/variables" as *;
 
+.body_container {
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
 .bank-logo {
   height: 45px;
   width: auto;
