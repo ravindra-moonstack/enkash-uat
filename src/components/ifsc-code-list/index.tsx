@@ -44,7 +44,17 @@ const IfscCode: React.FC = () => {
     if (!bankName) return
     fetch(`${SEARCH_API}?bankName=${bankName}`)
       .then((r) => r.json())
-      .then((data) => setStates(data?.payload?.states || []))
+
+      .then(
+        (data: {
+          payload: {
+            states: string[]
+          }
+        }) => {
+          const response = data?.payload?.states.sort() ?? []
+          setStates(response)
+        }
+      )
   }, [bankName])
 
   // ---------------- Fetch Districts ----------------
@@ -52,7 +62,17 @@ const IfscCode: React.FC = () => {
     if (!bankName || !state) return
     fetch(`${SEARCH_API}?bankName=${bankName}&state=${state}`)
       .then((r) => r.json())
-      .then((data) => setDistricts(data?.payload?.districts || []))
+
+      .then(
+        (data: {
+          payload: {
+            districts: string[]
+          }
+        }) => {
+          const response = data?.payload?.districts.sort() ?? []
+          setDistricts(response)
+        }
+      )
   }, [bankName, state])
 
   // ---------------- Fetch Branches ----------------
@@ -62,7 +82,17 @@ const IfscCode: React.FC = () => {
       `${SEARCH_API}?bankName=${bankName}&state=${state}&district=${district}`
     )
       .then((r) => r.json())
-      .then((data) => setBranches(data?.payload?.branches || []))
+      // .then((data) => setBranches(data?.payload?.branches || []))
+      .then(
+        (data: {
+          payload: {
+            branches: string[]
+          }
+        }) => {
+          const response = data?.payload?.branches.sort() ?? []
+          setBranches(response)
+        }
+      )
   }, [bankName, state, district])
 
   // ---------------- IFSC Detail from Dropdown ----------------
@@ -218,6 +248,9 @@ const IfscCode: React.FC = () => {
             </Row>
 
             <Row className="mt-2">
+              <Col>
+                <b>Bank:</b> {ifscDetail.bank}
+              </Col>
               {ifscDetail.phone && (
                 <Col>
                   <b>Phone No:</b> {ifscDetail.phone}
@@ -230,7 +263,6 @@ const IfscCode: React.FC = () => {
               <Col rowSpan={2}>
                 <b>Address:</b> {ifscDetail.address}
               </Col>
-              <Col></Col>
             </Row>
           </Container>
         </div>
