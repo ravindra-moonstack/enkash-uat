@@ -1,0 +1,17 @@
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+
+.bank-logo {
+  height: 45px;
+  width: auto;
+
+  @media (max-width: 576px) {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+.myText {
+  letter-spacing: -0.04em;
+  height: auto;
+}

@@ -74,7 +74,7 @@
         line-height: 32px;
       }
     }
-       ol {
+    ol {
       li {
         line-height: 32px;
       }
@@ -89,5 +89,9 @@
 
   h1 {
     font-weight: 600;
+  }
+
+  ul.alphaList {
+    list-style-type: lower-alpha;
   }
 }

@@ -1094,30 +1094,82 @@ const CustomerOnboarding = (): React.JSX.Element => {
                       </div>
                       <h5 className="c15 mt-6">12.Force Majeure</h5>
                       <div className="container my-4">
-                        <p>
-                          If performance of Services/Platform by Enkash is
-                          prevented, restricted, delayed or interfered with by
-                          reason of labour disputes, strikes, acts of God,
-                          epidemic, pandemic, floods, lightning, severe weather,
-                          shortages of materials, rationing, inducement of any
-                          virus, malware, trojan or other disruptive mechanisms,
-                          any event of hacking or illegal usage of the Platform,
-                          utility or communication failures, earthquakes, war,
-                          revolution, acts of terrorism, civil commotion, acts
-                          of public enemies, blockade, embargo or any law,
-                          order, proclamation, regulation, ordinance, demand or
-                          requirement having legal effect of any government,
-                          regulatory or any judicial authority or representative
-                          of any such government, or any other act whatsoever,
-                          whether similar or dissimilar to those referred to in
-                          this clause, which are beyond the reasonable control
-                          of Enkash, then Enkash shall be excused and discharged
-                          from such performance to the extent of and during the
-                          period of such force majeure event, and such
-                          non-performance shall, in no manner whosoever, amount
-                          to a breach by Enkash of its obligations herein or
-                          incur any legal liability on Enkash.
-                        </p>
+                        <ul>
+                          <li>
+                            If performance of Services/Platform by Enkash is
+                            prevented, restricted, delayed or interfered with by
+                            reason of labour disputes, strikes, acts of God,
+                            epidemic, pandemic, floods, lightning, severe
+                            weather, shortages of materials, rationing,
+                            inducement of any virus, malware, trojan or other
+                            disruptive mechanisms, any event of hacking or
+                            illegal usage of the Platform, utility or
+                            communication failures, earthquakes, war,
+                            revolution, acts of terrorism, civil commotion, acts
+                            of public enemies, blockade, embargo or any law,
+                            order, proclamation, regulation, ordinance, demand
+                            or requirement having legal effect of any
+                            government, regulatory or any judicial authority or
+                            representative of any such government, or any other
+                            act whatsoever, whether similar or dissimilar to
+                            those referred to in this clause, which are beyond
+                            the reasonable control of Enkash, then Enkash shall
+                            be excused and discharged from such performance to
+                            the extent of and during the period of such force
+                            majeure event, and such non-performance shall, in no
+                            manner whosoever, amount to a breach by Enkash of
+                            its obligations herein or incur any legal liability
+                            on Enkash.{" "}
+                          </li>
+                        </ul>
+
+                        <h6 className="c15 mt-6">
+                          <b>DATA PROTECTION</b>
+                        </h6>
+                        <ul>
+                          <li>
+                            You acknowledge that Your use of the Services is
+                            subject to and governed by the Privacy Policy, which
+                            is incorporated into these Terms by reference. You
+                            consent to the collection, storage, processing, and
+                            transfer of personal data and transaction data by
+                            EnKash and its Facility Providers strictly in
+                            accordance with the Privacy Policy and Applicable
+                            Laws.
+                          </li>
+                          <li>
+                            You are and shall remain solely and absolutely
+                            responsible for all personal data, sensitive
+                            personal data, and confidential information
+                            collected by You from Your customers ("Customer
+                            Data"). You covenant that You have obtained and will
+                            maintain all necessary consents and approvals from
+                            Your customers required to collect, use, store, and
+                            transmit Customer Data to EnKash for the purpose of
+                            utilizing the Services.
+                          </li>
+                          <li>
+                            You shall immediately notify EnKash, and in no event
+                            later than twenty-four (24) hours, upon becoming
+                            aware of any actual or suspected data security
+                            breach, unauthorized access, loss, misuse, or
+                            compromise of Customer Data in Your possession or
+                            control, or within Your systems. You shall cooperate
+                            fully with EnKash and any regulatory authority or
+                            Card Network in the investigation and remediation of
+                            any such incident.
+                          </li>
+                          <li>
+                            You shall not, under any circumstance, store or any
+                            sensitive Customer Data, including full card
+                            credentials (full card number, CVV, expiry date, or
+                            PIN), within Your systems or infrastructure or
+                            access any server or database containing or any
+                            sensitive Customer Data, including full card
+                            credentials (full card number, CVV, expiry date, or
+                            PIN).
+                          </li>
+                        </ul>
                       </div>
                       <h5 className="c15 mt-6">
                         13.Anti Bribery and Sanctions Laws
@@ -1367,6 +1419,236 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             liable to us for any fees or fines, or other
                             financial obligation incurred by You or through Your
                             use of the Services prior to termination.
+                          </li>
+                        </ul>
+
+                        <h6 className="c15 mt-6">
+                          <b>REFUNDS</b>
+                        </h6>
+                        <p>
+                          Refunds are reversal transactions wherein complete or
+                          partial money is moved back to the Customer’s source
+                          account (the account from which actual payment was
+                          made). A refund can only be created for a successful
+                          or settled transaction as per the refund policy of the
+                          third-party merchants.
+                        </p>
+
+                        <p>
+                          The Turnaround Time (TAT) for processing refunds shall
+                          be T+3 days, calculated from the date on which the
+                          refund request is communicated by the Merchant. The
+                          refunded amount shall be credited to the Customer’s
+                          bank account based on the timelines and processing
+                          policies of the issuing bank.
+                        </p>
+
+                        <p>A refund arises in the following scenarios:</p>
+                        <ul>
+                          <li>
+                            Customer has changed his mind about the consumption
+                            of product pre/post order delivery.
+                          </li>
+                        </ul>
+
+                        <p>
+                          Refund can be initiated by the Merchant in the
+                          following scenarios:
+                        </p>
+                        <ul>
+                          <li>Product/service is out of stock.</li>
+                        </ul>
+
+                        <p>
+                          The Customer/Merchant can initiate complete refunds to
+                          the Customer’s source account.
+                        </p>
+
+                        <p>The process followed for Refunds is as under:</p>
+
+                        <ul>
+                          <li>Merchant to initiate refund.</li>
+                          <li>
+                            The Company validates the refund against the
+                            original order. These include basic validations like
+                            cumulative refund on this order (not exceeding order
+                            value), the order not being more than a year old, or
+                            as per merchant refund policy.
+                          </li>
+                          <li>
+                            Sync confirmation after validation of refund is
+                            provided in response to the request.
+                          </li>
+                          <li>
+                            Once validated, the Company deducts the refund
+                            amount from the Merchant’s pending settlement
+                            amount.
+                          </li>
+                          <li>
+                            The Company initiates the refund to the Bank. Except
+                            for instant net banking refunds, most refunds are
+                            file-based and sent to the Bank on the next working
+                            day.
+                          </li>
+                          <li>
+                            Once the Bank accepts the refund, the Company sends
+                            the message “Success Refund” to the Merchant,
+                            indicating that the refund has been initiated.
+                          </li>
+                          <li>
+                            Bank credits the Customer’s source account with the
+                            refund amount.
+                          </li>
+                        </ul>
+
+                        <h6 className="c15 mt-6">
+                          <b>FRAUDULENT TRANSACTIONS</b>
+                        </h6>
+                        <ul className={styles.alphaList}>
+                          <li>
+                            Subject to clause 2.1 and 2.2 of this Part B, Part
+                            I, if EnKash is intimated, by a Facility Provider,
+                            that a customer has reported an unauthorised debit
+                            of the customer's Payment Instrument (“Fraudulent
+                            Transaction”), then in addition to its rights under
+                            clause 16 of Part A: General Terms and Conditions,
+                            EnKash shall be entitled to suspend settlements to
+                            You during the pendency of inquiries, investigations
+                            and resolution thereof by the Facility Providers.
+                          </li>
+                          <li>
+                            If the amount in respect of the Fraudulent
+                            Transaction has already been settled to You pursuant
+                            to these Terms, any dispute arising in relation to
+                            the said Fraudulent Transaction, following
+                            settlement, shall be resolved in accordance with the
+                            RBI's notification
+                            DBR.No.Leg.BC.78/09.07.005/2017-18, dated July 6,
+                            2017 read with RBI's notification DBOD. LEG. BC
+                            86/09.07.007/2001-02 dated April 8, 2002, and other
+                            notifications, circulars and guidelines issued by
+                            the RBI in this regard from time to time.
+                          </li>
+                          <li>
+                            Subject to clause 4.2 above, if the Fraudulent
+                            Transaction results in a Chargeback, then such
+                            Chargeback shall be resolved in accordance with the
+                            provisions set out in the Terms.
+                          </li>
+                          <li>
+                            You acknowledge that EnKash shall not be responsible
+                            for any liability arising in respect of Fraudulent
+                            Transactions whether it is an international or a
+                            domestic transaction.
+                          </li>
+                          <li>
+                            You shall be liable in the event of breach of the
+                            fraud amount thresholds as provided under the NPCI
+                            guideline on ‘Fraud liability guidelines on UPI
+                            transactions' NPCI/2022- 23/RMD/001. You hereby
+                            understand and agree that the decision of the NPCI
+                            or the concerned acquiring bank, as the case may be,
+                            shall be final and binding.
+                          </li>
+                        </ul>
+                        <h6 className="c15 mt-6">
+                          <b>CHARGEBACKS</b>
+                        </h6>
+                        <ul className={styles.alphaList}>
+                          <li>
+                            If a Facility Provider communicates to EnKash PA the
+                            receipt of a Chargeback Request, You will be
+                            notified of the Chargeback. You agree that liability
+                            for Chargeback, whether domestic or international,
+                            under the Terms solely rests with You. You further
+                            agree that it is Your sole discretion whether to
+                            avail non-3D secure services or not. Subject to
+                            availability of funds, EnKash PA upon receipt of a
+                            Chargeback Request shall forthwith deduct Chargeback
+                            Amount from the Transaction Amounts, which may be
+                            used, based on the decision of the Facility
+                            Provider, either to a) process Chargeback in favour
+                            of the customer or b) credit to You. For the
+                            avoidance of doubt, EnKash PA shall be entitled to
+                            deduct the Chargeback Amount upon receiving a
+                            Chargeback claim. You shall be entitled to furnish
+                            to EnKash PA documents and information (“Chargeback
+                            Documents”) pertaining to the Transaction associated
+                            with the Chargeback Request in order to substantiate
+                            (i) the completion of the aforesaid Transaction; and
+                            /or; (ii) delivery of goods/services sought by the
+                            customer pursuant to the said Transaction. You shall
+                            furnish the Chargeback Documents within three (3)
+                            calendar days (or such other period specified by the
+                            Facility Provider) of receiving notification of the
+                            Chargeback Request.
+                          </li>
+                          <li>
+                            You agree that (i) if You are unable to furnish
+                            Chargeback Documents; and /or; (ii) the Facility
+                            Provider is not satisfied with the Chargeback
+                            Documents furnished by You, then the Facility
+                            Provider shall be entitled to order EnKash PA to
+                            effect a reversal of the debit of the Chargeback
+                            Amount associated with the Chargeback such that the
+                            said Chargeback Amount is credited to the customer's
+                            Payment Instrument.
+                          </li>
+                          <li>
+                            Notwithstanding anything in these Terms, if the
+                            Facility Providers charge the Chargeback Amount from
+                            EnKash PA then You agree and acknowledge that EnKash
+                            PA is entitled to recover such Chargeback Amount
+                            from You by way of deduction from (i) the
+                            Transaction Amounts to be settled to You and (ii)
+                            any of Your other funds held by EnKash PA in the
+                            course of providing the Services. Provided however,
+                            if the available Transaction Amounts or other funds
+                            are insufficient for deduction of the Chargeback
+                            Amount, then EnKash PA is entitled to issue a debit
+                            note seeking reimbursement of the Chargeback Amount.
+                            You shall reimburse the Chargeback Amount within
+                            seven (7) days of receipt of the debit note.
+                          </li>
+                          <li>
+                            On the issuance of notice of termination under the
+                            Terms, EnKash PA reserves the right to withhold from
+                            each settlement made during the notice period, a sum
+                            computed based on a Stipulated Percentage (defined
+                            hereinbelow) for a period of one hundred and twenty
+                            (120) days (“Withholding Term”) from the date of
+                            termination of these Terms. The sums so withheld
+                            shall be utilized towards settlement of Chargebacks.
+                            After processing such Chargebacks, EnKash PA shall
+                            transfer the unutilized amounts, if any, to You
+                            forthwith upon completion of the Withholding Term.
+                            The ‘Stipulated Percentage' is the proportion of the
+                            Chargeback Amounts out of the total Transaction
+                            Amounts settled during the subsistence of these
+                            Terms.
+                          </li>
+                          <li>
+                            Notwithstanding anything in the Terms, if the amount
+                            withheld pursuant to clause 2.4 above is
+                            insufficient to settle Chargebacks Amounts received
+                            during the Withholding Term, then EnKash PA is
+                            entitled to issue a debit note seeking reimbursement
+                            of the Chargeback Amount. You shall reimburse the
+                            Chargeback Amount within seven (7) days of receipt
+                            of the debit note.
+                          </li>
+                          <li>
+                            The following applies for Chargebacks associated
+                            with EMI products which are supported by Facility
+                            Providers. For any loan cancellation requests, You
+                            need to respond to EnKash PA within seven (7)
+                            working days with a suitable response. If loan is to
+                            be cancelled, then the same needs to be informed to
+                            EnKash PA and if cancellation request is to be
+                            declined then You need to provide proof of delivery
+                            and justification. For loans which would get
+                            cancelled on the basis of Your confirmation, the
+                            amount would be recovered from the daily settlement.
                           </li>
                         </ul>
                       </div>
@@ -2765,6 +3047,54 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             दायित्वों का उल्लंघन नहीं मानेगा या एंकैश पर कोई
                             कानूनी दायित्व उत्पन्न नहीं करेगा।
                           </p>
+                          <h6>
+                            <b>डेटा संरक्षण </b>
+                          </h6>
+                          <ul>
+                            <li>
+                              आप स्वीकार करते हैं कि सेवाओं का आपका उपयोग
+                              गोपनीयता नीति के अधीन और उसके द्वारा शासित है, जो
+                              संदर्भ द्वारा इन शर्तों (Terms) में शामिल है। आप
+                              एनकैश (EnKash) और उसके सुविधा प्रदाताओं द्वारा
+                              व्यक्तिगत डेटा और लेनदेन डेटा के संग्रहण, भंडारण,
+                              प्रसंस्करण और हस्तांतरण को गोपनीयता नीति और लागू
+                              कानूनों (Applicable Laws) के सख्त अनुपालन में अपनी
+                              सहमति देते हैं।
+                            </li>
+
+                            <li>
+                              आप ग्राहकों से आपके द्वारा एकत्रित सभी व्यक्तिगत
+                              डेटा, संवेदनशील व्यक्तिगत डेटा और गोपनीय जानकारी
+                              ("ग्राहक डेटा") के लिए एकमात्र और पूर्ण रूप से
+                              जिम्मेदार हैं तथा रहेंगे। आप प्रतिज्ञान करते हैं
+                              कि आपने ग्राहक डेटा को एकत्रित करने, उपयोग करने,
+                              भंडारण करने और एनकैश को सेवाओं के उद्देश्य के लिए
+                              हस्तांतरित करने के लिए आवश्यक सभी सहमितियां और
+                              अनुमोदन ग्राहकों से प्राप्त किए हैं तथा बनाए
+                              रखेंगे।
+                            </li>
+                          </ul>
+                          <li>
+                            आपको अपने कब्जे या नियंत्रण में, या अपनी प्रणालियों
+                            के भीतर ग्राहक डेटा के किसी भी वास्तविक या संदिग्ध
+                            डेटा सुरक्षा उल्लंघन, अनधिकृत पहुंच, हानि, दुरुपयोग
+                            या समझौते के बारे में जागरूक होने पर तुरंत एनकैश को
+                            सूचित करना होगा, और किसी भी स्थिति में चौबीस (24)
+                            घंटे से अधिक देर नहीं। आपको एनकैश और किसी भी नियामक
+                            प्राधिकरण या कार्ड नेटवर्क के साथ ऐसी किसी भी घटना
+                            की जांच और उपचार में पूर्ण रूप से सहयोग करना होगा।
+                          </li>
+
+                          <li>
+                            आप किसी भी परिस्थिति में अपनी प्रणालियों या अवसंरचना
+                            के भीतर या तो संवेदनशील ग्राहक डेटा, जिसमें पूर्ण
+                            कार्ड प्रमाण-पत्र (पूर्ण कार्ड संख्या, सीवीवी,
+                            समाप्ति तिथि, या पिन) शामिल हैं, को भंडारण नहीं
+                            करेंगे या किसी सर्वर या डेटाबेस तक पहुंच नहीं करेंगे
+                            जिसमें या तो संवेदनशील ग्राहक डेटा, जिसमें पूर्ण
+                            कार्ड प्रमाण-पत्र (पूर्ण कार्ड संख्या, सीवीवी,
+                            समाप्ति तिथि, या पिन) शामिल हैं।
+                          </li>
                         </div>
 
                         <h5 className="c15 mt-6">
@@ -3048,6 +3378,259 @@ const CustomerOnboarding = (): React.JSX.Element => {
                               के लिए उत्तरदायी रहेंगे जो समाप्ति से पहले आपके या
                               सेवाओं के उपयोग के माध्यम से आपके द्वारा उत्पन्न
                               हुआ है।
+                            </li>
+                          </ul>
+
+                          <h6>
+                            <b>रिफंड </b>
+                          </h6>
+                          <p>
+                            रिफंड उलट लेनदेन हैं, जिसमें पूर्ण या आंशिक धनराशि
+                            ग्राहक के स्रोत खाते (उस खाते में वापस स्थानांतरित
+                            की जाती है जिसमें से वास्तविक भुगतान किया गया था)।
+                            रिफंड केवल सफल या निपटाए गए लेनदेन के लिए ही बनाया
+                            जा सकता है, जैसा कि तृतीय-पक्ष व्यापारियों की रिफंड
+                            नीति के अनुसार।
+                          </p>
+
+                          <p>
+                            रिफंड प्रक्रिया करने का टर्नअराउंड टाइम (TAT) T+3
+                            दिन होगा, जो व्यापारी द्वारा रिफंड अनुरोध की संचार
+                            तिथि से गणना किया जाएगा। रिफंड की गई राशि को
+                            जारीकर्ता बैंक की समयसीमाओं और प्रक्रिया नीतियों के
+                            आधार पर ग्राहक के बैंक खाते में जमा किया जाएगा।
+                          </p>
+
+                          <p>
+                            रिफंड निम्नलिखित परिदृश्यों में उत्पन्न होता है:
+                          </p>
+
+                          <ul>
+                            <li>
+                              ग्राहक ने उत्पाद की खपत के बारे में अपना मन बदल
+                              लिया है, ऑर्डर डिलीवरी से पहले/बाद में।
+                            </li>
+                          </ul>
+
+                          <p>
+                            निम्नलिखित परिदृश्यों में व्यापारी द्वारा रिफंड
+                            प्रारंभ किया जा सकता है:
+                          </p>
+
+                          <ul>
+                            <li>उत्पाद/सेवा स्टॉक से बाहर है।</li>
+                          </ul>
+
+                          <p>
+                            ग्राहक/व्यापारी ग्राहक के स्रोत खाते में पूर्ण रिफंड
+                            प्रारंभ कर सकता है।
+                          </p>
+
+                          <p>
+                            रिफंड के लिए अनुसरण की जाने वाली प्रक्रिया
+                            निम्नानुसार है:
+                          </p>
+
+                          <ul>
+                            <li>व्यापारी द्वारा रिफंड प्रारंभ करें।</li>
+
+                            <li>
+                              कंपनी मूल ऑर्डर के विरुद्ध रिफंड की वैलिडेशन करती
+                              है। ये बुनियादी वैलिडेशन हैं जैसे इस ऑर्डर पर
+                              संचयी रिफंड अर्थात ऑर्डर मूल्य, ऑर्डर एक वर्ष से
+                              अधिक पुराना न हो आदि या व्यापारी रिफंड नीति के
+                              अनुसार।
+                            </li>
+
+                            <li>
+                              वैलिडेशन के बाद रिफंड की सिंक पुष्टि अनुरोध के
+                              प्रतिक्रिया में प्रदान की जाती है।
+                            </li>
+
+                            <li>
+                              एक बार जब कंपनी के अंत में रिफंड वैलिडेट हो जाता
+                              है, तो कंपनी रिफंड राशि को व्यापारी के लंबित
+                              निपटान राशि से काट लेती है।
+                            </li>
+
+                            <li>
+                              कंपनी बैंक को रिफंड प्रारंभ करती है। नेट बैंकिंग
+                              रिफंड के अलावा, जो तत्काल प्रकृति के हैं, अधिकांश
+                              नेट बैंकिंग रिफंड फाइल-आधारित होते हैं और इसलिए,
+                              अगले कार्य दिवस पर बैंक को भेजे जाते हैं।
+                            </li>
+
+                            <li>
+                              एक बार जब बैंक रिफंड स्वीकार कर लेता है, तो कंपनी
+                              व्यापारी को 'सफल रिफंड' संदेश भेजती है, जो दर्शाता
+                              है कि रिफंड प्रारंभ किया गया है।
+                            </li>
+
+                            <li>
+                              बैंक ग्राहक के स्रोत खाते में रिफंड राशि जमा करता
+                              है।
+                            </li>
+                          </ul>
+
+                          <h6>
+                            <b>धोखाधड़ीपूर्ण लेनदेन </b>
+                          </h6>
+                          <ul className={styles.hindiList}>
+                            <li data-hindi="क">
+                              भाग बी के खंड 2.1 और 2.2, भाग I के अधीन, यदि एनकैश
+                              को सुविधा प्रदाता द्वारा सूचित किया जाता है कि
+                              ग्राहक ने ग्राहक के भुगतान साधन के अनधिकृत डेबिट
+                              ("धोखाधड़ीपूर्ण लेनदेन" (Fraudulent Transaction))
+                              की रिपोर्ट की है, तो भाग ए: सामान्य शर्तें और
+                              स्थितियां (Part A: General Terms and Conditions)
+                              के खंड 16 के तहत उसके अधिकारों के अतिरिक्त, एनकैश
+                              को सुविधा प्रदाताओं द्वारा जांच, जांच और उसके
+                              समाधान की लंबित अवधि के दौरान आपको बसावट निलंबित
+                              करने का अधिकार होगा।
+                            </li>
+                            <li data-hindi="ख">
+                              यदि धोखाधड़ीपूर्ण लेनदेन की राशि इन शर्तों के तहत
+                              पहले ही आपको बसाई जा चुकी है, तो बसावट के बाद उक्त
+                              धोखाधड़ीपूर्ण लेनदेन से संबंधित किसी भी विवाद को
+                              आरबीआई की अधिसूचना
+                              डीबीआर.नं.लेग.बीसी.78/09.07.005/2017-18, दिनांक 6
+                              जुलाई 2017 के साथ पढ़ते हुए आरबीआई की अधिसूचना
+                              डीबीओडी. लेग. बीसी 86/09.07.007/2001-02 दिनांक 8
+                              अप्रैल 2002, और आरबीआई द्वारा समय-समय पर जारी अन्य
+                              अधिसूचनाओं, परिपत्रों और दिशानिर्देशों के अनुसार
+                              हल किया जाएगा।
+                            </li>
+                            <li data-hindi="ग">
+                              उपरोक्त खंड 4.2 के अधीन, यदि धोखाधड़ीपूर्ण लेनदेन
+                              से चार्जबैक उत्पन्न होता है, तो ऐसी चार्जबैक को
+                              शर्तों में निर्धारित प्रावधानों के अनुसार हल किया
+                              जाएगा।
+                            </li>
+                            <li>
+                              आप स्वीकार करते हैं कि एनकैश धोखाधड़ीपूर्ण लेनदेन
+                              से उत्पन्न किसी भी दायित्व के लिए जिम्मेदार नहीं
+                              होगा, चाहे वह अंतरराष्ट्रीय या घरेलू लेनदेन हो।
+                            </li>
+                            <li>
+                              आप एनपीसीआई दिशानिर्देश 'धोखाधड़ी दायित्व
+                              दिशानिर्देश यूपीआई लेनदेन पर'
+                              एनपीसीआई/2022-23/आरएमडी/001 के तहत प्रदान किए गए
+                              धोखाधड़ी राशि सीमाओं के उल्लंघन की घटना में दायी
+                              होंगे। आप यहां समझते और सहमत होते हैं कि एनपीसीआई
+                              या संबंधित अधिग्रहण बैंक का निर्णय, जैसा भी मामला
+                              हो, अंतिम और बाध्यकारी होगा।
+                            </li>
+                          </ul>
+                          <h6>
+                            <b>चार्जबैक </b>
+                          </h6>
+                          <ul className={styles.hindiList}>
+                            <li data-hindi="क">
+                              यदि कोई सुविधा प्रदाता (Facility Provider) एनकैश
+                              पीए (EnKash PA) को चार्जबैक अनुरोध (Chargeback
+                              Request) की प्राप्ति की सूचना देता है, तो आपको
+                              चार्जबैक की सूचना दी जाएगी। आप सहमत होते हैं कि
+                              शर्तों (Terms) के तहत, घरेलू या अंतरराष्ट्रीय,
+                              चार्जबैक के लिए दायित्व पूरी तरह से आपके साथ ही
+                              रहेगा। आप आगे सहमत होते हैं कि गैर-3D सुरक्षित
+                              सेवाओं (non-3D secure services) का लाभ लेना या न
+                              लेना पूरी तरह से आपकी विवेकाधीनता पर निर्भर है।
+                              धनराशि की उपलब्धता के अधीन, एनकैश पीए चार्जबैक
+                              अनुरोध की प्राप्ति पर तुरंत लेनदेन राशि
+                              (Transaction Amounts) से चार्जबैक राशि (Chargeback
+                              Amount) काट लेगा, जिसका उपयोग सुविधा प्रदाता के
+                              निर्णय के आधार पर किया जा सकता है, या तो (क)
+                              ग्राहक के पक्ष में चार्जबैक प्रक्रिया करने के लिए
+                              या
+                            </li>
+                            <li data-hindi="ख">
+                              यदि कोई सुविधा प्रदाता (Facility Provider) एनकैश
+                              पीए (EnKash PA) को चार्जबैक अनुरोध (Chargeback
+                              Request) की प्राप्ति की सूचना देता है, तो आपको
+                              चार्जबैक की सूचना दी जाएगी। आप सहमत होते हैं कि
+                              शर्तों (Terms) के तहत, घरेलू या अंतरराष्ट्रीय,
+                              चार्जबैक के लिए दायित्व पूरी तरह से आपके साथ ही
+                              रहेगा। आप आगे सहमत होते हैं कि गैर-3D सुरक्षित
+                              सेवाओं (non-3D secure services) का लाभ लेना या न
+                              लेना पूरी तरह से आपकी विवेकाधीनता पर निर्भर है।
+                              धनराशि की उपलब्धता के अधीन, एनकैश पीए चार्जबैक
+                              अनुरोध की प्राप्ति पर तुरंत लेनदेन राशि
+                              (Transaction Amounts) से चार्जबैक राशि (Chargeback
+                              Amount) काट लेगा, जिसका उपयोग सुविधा प्रदाता के
+                              निर्णय के आधार पर किया जा सकता है, या तो (क)
+                              ग्राहक के पक्ष में चार्जबैक प्रक्रिया करने के लिए
+                              या (ख) आपको जमा करने के लिए। संदेह से बचने के लिए,
+                              एनकैश पीए चार्जबैक दावा प्राप्त करने पर चार्जबैक
+                              राशि काटने का हकदार होगा। आपको चार्जबैक अनुरोध से
+                              संबंधित लेनदेन के लिए दस्तावेज और जानकारी
+                              ("चार्जबैक दस्तावेज" (Chargeback Documents)) एनकैश
+                              पीए को प्रदान करने का अधिकार होगा, ताकि (i)
+                              उपरोक्त लेनदेन की पूर्णता को प्रमाणित किया जा सके;
+                              और/या (ii) ग्राहक द्वारा उक्त लेनदेन के तहत मांगे
+                              गए वस्तुओं/सेवाओं की डिलीवरी को प्रमाणित किया जा
+                              सके। आपको चार्जबैक अनुरोध की सूचना प्राप्त होने के
+                              तीन (3) कैलेंडर दिनों (या सुविधा प्रदाता द्वारा
+                              निर्दिष्ट अन्य अवधि) के भीतर चार्जबैक दस्तावेज
+                              प्रदान करने होंगे।
+                            </li>
+                            <li data-hindi="ग">
+                              आप सहमत होते हैं कि (i) यदि आप चार्जबैक दस्तावेज
+                              प्रदान करने में असमर्थ हैं; और/या (ii) यदि सुविधा
+                              प्रदाता द्वारा आप द्वारा प्रदान किए गए चार्जबैक
+                              दस्तावेज से संतुष्टि नहीं होती, तो सुविधा प्रदाता
+                              एनकैश पीए को उस चार्जबैक से संबंधित चार्जबैक राशि
+                              के डेबिट का रिवर्सल करने का आदेश देने का हकदार
+                              होगा, ताकि उक्त चार्जबैक राशि ग्राहक के भुगतान
+                              साधन (Payment Instrument) में जमा की जाए।
+                            </li>
+                            <li>
+                              {" "}
+                              इन शर्तों में कुछ भी होने के बावजूद, यदि सुविधा
+                              प्रदाता एनकैश पीए से चार्जबैक राशि वसूलते हैं, तो
+                              आप सहमत और स्वीकार करते हैं कि एनकैश पीए को ऐसी
+                              चार्जबैक राशि को (i) आपको बसने वाली लेनदेन राशि से
+                              काटकर और (ii) एनकैश पीए द्वारा सेवाएं प्रदान करने
+                              के दौरान आपके पास रखी गई किसी भी अन्य धनराशि से
+                              वसूलने का अधिकार है। हालांकि, यदि उपलब्ध लेनदेन
+                              राशि या अन्य धनराशि चार्जबैक राशि काटने के लिए
+                              अपर्याप्त हैं, तो एनकैश पीए को चार्जबैक राशि की
+                              प्रतिपूर्ति मांगने के लिए डेबिट नोट जारी करने का
+                              अधिकार है। आपको डेबिट नोट प्राप्त होने के सात (7)
+                              दिनों के भीतर चार्जबैक राशि का भुगतान करना होगा।
+                            </li>
+                            <li>
+                              निम्नलिखित सुविधा प्रदाताओं द्वारा समर्थित ईएमआई
+                              उत्पादों से संबंधित चार्जबैक के लिए लागू होता है।
+                              किसी भी ऋण रद्दीकरण अनुरोधों के लिए, आपको एनकैश
+                              पीए को सात (7) कार्य दिवसों के भीतर उपयुक्त
+                              प्रतिक्रिया के साथ उत्तर देना होगा। यदि ऋण रद्द
+                              किया जाना है, तो एनकैश पीए को सूचित करना होगा और
+                              यदि रद्दीकरण अनुरोध अस्वीकार किया जाना है, तो आपको
+                              डिलीवरी का प्रमाण और औचित्य प्रदान करना होगा। आपके
+                              पुष्टिकरण के आधार पर रद्द होने वाले ऋणों के लिए,
+                              राशि दैनिक बसावट से वसूल की जाएगी।
+                            </li>
+                            <li>
+                              {" "}
+                              शर्तों में कुछ भी होने के बावजूद, यदि उपरोक्त खंड
+                              2.4 के तहत रोकी गई राशि विथहोल्डिंग टर्म के दौरान
+                              प्राप्त चार्जबैक राशियों के निपटान के लिए
+                              अपर्याप्त है, तो एनकैश पीए को चार्जबैक राशि की
+                              प्रतिपूर्ति मांगने के लिए डेबिट नोट जारी करने का
+                              अधिकार है। आपको डेबिट नोट प्राप्त होने के सात (7)
+                              दिनों के भीतर चार्जबैक राशि का भुगतान करना होगा।
+                            </li>
+                            <li>
+                              निम्नलिखित सुविधा प्रदाताओं द्वारा समर्थित ईएमआई
+                              उत्पादों से संबंधित चार्जबैक के लिए लागू होता है।
+                              किसी भी ऋण रद्दीकरण अनुरोधों के लिए, आपको एनकैश
+                              पीए को सात (7) कार्य दिवसों के भीतर उपयुक्त
+                              प्रतिक्रिया के साथ उत्तर देना होगा। यदि ऋण रद्द
+                              किया जाना है, तो एनकैश पीए को सूचित करना होगा और
+                              यदि रद्दीकरण अनुरोध अस्वीकार किया जाना है, तो आपको
+                              डिलीवरी का प्रमाण और औचित्य प्रदान करना होगा। आपके
+                              पुष्टिकरण के आधार पर रद्द होने वाले ऋणों के लिए,
+                              राशि दैनिक बसावट से वसूल की जाएगी।
                             </li>
                           </ul>
                         </div>
