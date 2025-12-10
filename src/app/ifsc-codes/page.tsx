@@ -109,7 +109,7 @@ const Ifsc = (): React.JSX.Element => {
                   content={[
                     {
                       title:
-                        "IFSC stands for Indian Financial System Code. It is an 11-character alphanumeric code o identify bank branches participating in NEFT, RTGS, and IMPS. Every bank branch has a unique IFSC code that helps the ",
+                        "IFSC stands for Indian Financial System Code. It is an 11-character alphanumeric code of identify bank branches participating in NEFT, RTGS, and IMPS. Every bank branch has a unique IFSC code that helps the ",
                       color: "color-grey-200  ",
                     },
                     {
@@ -764,7 +764,7 @@ const Ifsc = (): React.JSX.Element => {
                 headingTag="h5"
                 className="mb-4  f-6   text-start"
               />
-              <Table bordered  className="align-middle text-start">
+              <Table bordered className="align-middle text-start">
                 <thead className="bg-light bg-white-73">
                   <tr>
                     <th>Bank Name</th>
@@ -932,7 +932,7 @@ const Ifsc = (): React.JSX.Element => {
                 headingTag="h5"
                 className="mb-4  f-6   text-start"
               />
-              <Table bordered  className="align-middle text-start">
+              <Table bordered className="align-middle text-start">
                 <thead className="bg-light bg-white-73">
                   <tr>
                     <th>MICR Code</th>
