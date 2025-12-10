@@ -74,17 +74,34 @@
     padding: 54px 74px;
   }
   .greenLine {
-    width: 2px;
+    width: 3px;
     height: 67px;
     background-color: #00bf9e;
+  }
+  .greenLine.greenLineHeight {
+    height: 120px;
   }
   ul {
     padding-left: 0;
     color: black;
+    margin-left: 0;
+    li {
+      margin-left: 20px;
+    }
   }
   ol {
     list-style: auto;
     padding-left: 0;
     color: black;
+    margin-left: 0;
+    li {
+      margin-left: 20px;
+    }
+  }
+
+  .ifscCode {
+    a {
+      text-decoration: none !important;
+    }
   }
 }

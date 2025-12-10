@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   description:
     "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
   openGraph: {
-    title: "Enkash",
+    title: "Best Payment Gateway in India for SMBs and Startups ",
     description:
       "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
     url: `${process.env.URL}/payment-gateway`,

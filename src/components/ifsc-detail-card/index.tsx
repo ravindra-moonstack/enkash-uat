@@ -2,6 +2,8 @@
 import Image, { StaticImageData } from "next/image"
 import React from "react"
 import { Card, Row, Col } from "react-bootstrap"
+import DynamicHeading from "../dynamic-heading"
+import styles from "./ifsc-detail-card.module.scss"
 
 interface IfscDetailProps {
   bankLogo?: string | StaticImageData
@@ -12,7 +14,7 @@ interface IfscDetailProps {
   district: string
   branch: string
   address: string
-  phone: string
+  phone?: string
 }
 
 const IfscDetailCard: React.FC<IfscDetailProps> = ({
@@ -27,27 +29,35 @@ const IfscDetailCard: React.FC<IfscDetailProps> = ({
   phone,
 }) => {
   return (
-    <Card className="shadow-sm p-4">
+    <Card className="shadow-sm p-4 rounded-3">
       {/* Header */}
       <Row className="align-items-center mb-3">
-        <Col xs="auto">
-          {bankLogo && <Image src={bankLogo} alt="Bank Logo" height={45} />}
+        <Col xs="auto" className="bank-logo-col">
+          {bankLogo && (
+            <Image src={bankLogo} alt="Bank Logo" className="bank-logo" />
+          )}
         </Col>
-
         <Col>
-          <h5 className="mb-0 fw-bold color-alternate-grey">
-            {bankName} IFSC Code
-          </h5>
+          <DynamicHeading
+            content={[
+              {
+                title: bankName,
+                color: " color-alternate-grey f-7 ",
+              },
+            ]}
+            headingTag="p"
+            className="mb-0"
+          />
         </Col>
       </Row>
 
       <hr />
 
       {/* Details */}
-      <Row className="mb-2 fs-13 color-alternate-grey">
+      <Row className={`mb-2 fs-14 color-alternate-grey ${styles.myText}`}>
         <Col xs={12}>
           <b>IFSC Code:</b>{" "}
-          <span className="text-equity-blue fw-semibold">{ifsc}</span>
+          <span className="color-equity-blue fw-semibold">{ifsc}</span>
         </Col>
 
         <Col xs={12} className="mt-2">
@@ -72,9 +82,11 @@ const IfscDetailCard: React.FC<IfscDetailProps> = ({
           <div style={{ whiteSpace: "pre-line" }}>{address}</div>
         </Col>
 
-        <Col xs={12} className="mt-2">
-          <b>Mob No.:</b> {phone}
-        </Col>
+        {phone && (
+          <Col xs={12} className="mt-2">
+            <b>Mob No.:</b> {phone}
+          </Col>
+        )}
       </Row>
     </Card>
   )

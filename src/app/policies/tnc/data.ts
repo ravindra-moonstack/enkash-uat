@@ -9,6 +9,7 @@ const cards = [
       "Understand our payment terms for secure, compliant, and transparent transactions.",
     titleHtml: "Payments",
     cardImage: payment,
+    buttonUrl: "/policies/payments/tnc",
   },
   {
     key: "prepaid",
