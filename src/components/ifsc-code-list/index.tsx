@@ -27,7 +27,16 @@ const IfscCode: React.FC = () => {
   useEffect(() => {
     fetch(SEARCH_API)
       .then((r) => r.json())
-      .then((data) => setBanks(data?.payload?.banks || []))
+      .then(
+        (data: {
+          payload: {
+            banks: string[]
+          }
+        }) => {
+          const response = data?.payload?.banks.sort() ?? []
+          setBanks(response)
+        }
+      )
   }, [])
 
   // ---------------- Fetch States ----------------
@@ -35,7 +44,17 @@ const IfscCode: React.FC = () => {
     if (!bankName) return
     fetch(`${SEARCH_API}?bankName=${bankName}`)
       .then((r) => r.json())
-      .then((data) => setStates(data?.payload?.states || []))
+
+      .then(
+        (data: {
+          payload: {
+            states: string[]
+          }
+        }) => {
+          const response = data?.payload?.states.sort() ?? []
+          setStates(response)
+        }
+      )
   }, [bankName])
 
   // ---------------- Fetch Districts ----------------
@@ -43,7 +62,17 @@ const IfscCode: React.FC = () => {
     if (!bankName || !state) return
     fetch(`${SEARCH_API}?bankName=${bankName}&state=${state}`)
       .then((r) => r.json())
-      .then((data) => setDistricts(data?.payload?.districts || []))
+
+      .then(
+        (data: {
+          payload: {
+            districts: string[]
+          }
+        }) => {
+          const response = data?.payload?.districts.sort() ?? []
+          setDistricts(response)
+        }
+      )
   }, [bankName, state])
 
   // ---------------- Fetch Branches ----------------
@@ -53,7 +82,17 @@ const IfscCode: React.FC = () => {
       `${SEARCH_API}?bankName=${bankName}&state=${state}&district=${district}`
     )
       .then((r) => r.json())
-      .then((data) => setBranches(data?.payload?.branches || []))
+      // .then((data) => setBranches(data?.payload?.branches || []))
+      .then(
+        (data: {
+          payload: {
+            branches: string[]
+          }
+        }) => {
+          const response = data?.payload?.branches.sort() ?? []
+          setBranches(response)
+        }
+      )
   }, [bankName, state, district])
 
   // ---------------- IFSC Detail from Dropdown ----------------
@@ -197,29 +236,33 @@ const IfscCode: React.FC = () => {
                   {ifscDetail.ifsc}
                 </span>
               </Col>
-
               <Col>
                 <b>State:</b> {ifscDetail.state}
               </Col>
+              <Col>
+                <b>District:</b> {ifscDetail.city}
+              </Col>
+              <Col>
+                <b>MICR Code:</b> {ifscDetail.micr}
+              </Col>{" "}
+            </Row>
+
+            <Row className="mt-2">
+              <Col>
+                <b>Bank:</b> {ifscDetail.bank}
+              </Col>
+              {ifscDetail.phone && (
+                <Col>
+                  <b>Phone No:</b> {ifscDetail.phone}
+                </Col>
+              )}
+
               <Col>
                 <b>Branch:</b> {ifscDetail.branch}
               </Col>
               <Col rowSpan={2}>
                 <b>Address:</b> {ifscDetail.address}
               </Col>
-            </Row>
-
-            <Row className="mt-2">
-              <Col>
-                <b>MICR Code:</b> {ifscDetail.micr}
-              </Col>{" "}
-              <Col>
-                <b>District:</b> {ifscDetail.city}
-              </Col>
-              <Col>
-                <b>Phone No:</b> {ifscDetail.phone}
-              </Col>
-              <Col></Col>
             </Row>
           </Container>
         </div>

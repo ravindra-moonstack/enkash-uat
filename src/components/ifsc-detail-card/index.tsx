@@ -29,7 +29,7 @@ const IfscDetailCard: React.FC<IfscDetailProps> = ({
   phone,
 }) => {
   return (
-    <Card className="shadow-sm p-4 rounded-3">
+    <Card className={` ${styles.body_container}  p-4 rounded-3`}>
       {/* Header */}
       <Row className="align-items-center mb-3">
         <Col xs="auto" className="bank-logo-col">
