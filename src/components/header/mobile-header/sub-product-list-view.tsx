@@ -121,7 +121,10 @@ const SubProductListView = ({
                   "Partnership",
                 ].includes(section.title) && (
                   <div className={styles.exploreProduct}>
-                    <Link href={section.products[0].subtitleLink}>
+                    <Link
+                      href={section.products[0].subtitleLink}
+                      onClick={() => setCurrentStep(0)}
+                    >
                       <h4 className="fw-bold mb-0">Explore {section.title}</h4>
                     </Link>
                   </div>
@@ -132,7 +135,12 @@ const SubProductListView = ({
 
         {navTitle === "Cards" && (
           <div className={styles.exploreProduct}>
-            <h4 className="fw-bold mb-0  pr-4">Explore Corporate Card</h4>
+            <h4
+              className="fw-bold mb-0  pr-4"
+              onClick={() => setCurrentStep(0)}
+            >
+              Explore Corporate Card
+            </h4>
           </div>
         )}
 
