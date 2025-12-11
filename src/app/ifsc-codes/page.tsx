@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: " IFSC Code: Search IFSC & MICR Code of Top Banks in India.",
   description:
     "Find IFSC and MICR codes of all Indian banks. Search by bank, state, district or branch to get accurate IFSC, branch address and transfer details instantly.",
+
   openGraph: {
     title: "  Search IFSC & MICR Code of Top Banks in India.",
     description:
@@ -26,10 +27,13 @@ export const metadata: Metadata = {
     type: "website",
     images: [`${process.env.NEXT_PUBLIC_URL}/images/GST_PREVIEW.webp`],
   },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_URL}/ifsc-codes`,
+  },
 }
 const Ifsc = (): React.JSX.Element => {
   return (
-    <div className={` ${styles.body_container} relative`}>
+    <div className={`${styles.body_container} relative`}>
       <div className={`${styles.bgImg_container} absolute`}>
         <Image src={bgImg} alt={"bgImg"} />
       </div>
@@ -38,7 +42,7 @@ const Ifsc = (): React.JSX.Element => {
           <CustomBreadcrumb
             items={[
               { name: "Home", url: "/" },
-              { name: " IFSC Codes", url: "/ifsc-codes" },
+              { name: "IFSC Codes", url: "/ifsc-codes" },
             ]}
             linkColor="allWhite"
           />
