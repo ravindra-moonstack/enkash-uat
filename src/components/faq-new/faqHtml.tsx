@@ -20,14 +20,8 @@ const FAQHtml: React.FC<FAQHtmlProps> = ({ faqData }) => {
     setOpenFAQIndex((prevIndex) => (prevIndex === index ? null : index))
   }
 
-  const isScrollable = faqData.length > 5
-
   return (
-    <div
-      className={`${styles.faq_wrapper} ${
-        isScrollable ? styles.scrollable : ""
-      }`}
-    >
+    <div className={`${styles.faq_wrapper} `}>
       {faqData.map((item, index) => (
         <FAQ
           key={index}

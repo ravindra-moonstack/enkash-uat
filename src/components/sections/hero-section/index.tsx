@@ -12,7 +12,6 @@ import VideoModal from "../../vedio-modal"
 import VideoIcon from "../../../../public/svgs/vedio-icon.svg"
 import HoverVideoIcon from "../../../../public/svgs/vedio-icon-dark-theme.svg"
 
-
 interface TextPart {
   text: string
   color?: string
