@@ -46,8 +46,8 @@ const CommonButton = ({
   className,
   openInNewTab = false,
   image,
-  hoverImage,                 // ⭐ NEW
-  changeImageOnHover = false, // ⭐ NEW
+  hoverImage,               
+  changeImageOnHover = false, 
   arrow = false,
   arrowType = "fa",
 }: ButtonProps) => {

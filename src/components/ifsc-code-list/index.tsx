@@ -208,7 +208,7 @@ const IfscCode: React.FC = () => {
             <Col md className="d-flex justify-content-center">
               <Form.Control
                 type="text"
-                placeholder="Enter IFSC"
+                placeholder="Enter IFSC Code"
                 value={ifscInput}
                 onChange={(e) => {
                   setIfscInput(e.target.value.toUpperCase())
