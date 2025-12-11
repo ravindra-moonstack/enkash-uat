@@ -119,6 +119,117 @@ const faqData: TFAQProps[] = [
       },
     ],
   },
+
+  /* -------------------- NEW FAQ ENTRIES --------------------- */
+
+  {
+    question: "What is a Fuel Surcharge Waiver?",
+    answer: [
+      {
+        heading:
+          "A fuel surcharge waiver is a benefit offered by banks and corporate card providers where the extra fee charged on fuel transactions is refunded to the customer. In India, fuel stations usually apply a surcharge on card payments, and this waiver helps reduce that additional cost.",
+      },
+      {
+        heading:
+          "For businesses, especially those managing fleets, logistics teams or high-volume fuel expenses, a fuel surcharge waiver leads to direct savings on every refuelling transaction and improves overall expense efficiency.",
+      },
+    ],
+  },
+  {
+    question: "How does a Fuel Surcharge Waiver benefit businesses?",
+    answer: [
+      {
+        heading:
+          "A fuel surcharge waiver helps businesses save on every fuel transaction by refunding the additional surcharge typically charged at fuel stations. This reduces overall fuel costs, lowers monthly operating expenses, and supports more accurate budgeting.",
+      },
+      {
+        heading:
+          "For companies with delivery teams, logistics fleets, sales staff, or on-field employees, a fuel surcharge waiver ensures predictable fuel spend, better cost control, and improved expense management across locations.",
+      },
+    ],
+  },
+  {
+    question: "What is a Petrol Card?",
+    answer: [
+      {
+        heading:
+          "A petrol card is a dedicated fuel payment card that allows users or businesses to pay for petrol, diesel, and other fuel services at authorised fuel stations across India. It functions like a prepaid card but is restricted only to fuel-related transactions.",
+      },
+      {
+        heading:
+          "Businesses use petrol cards to control fuel spend, track usage in real time, reduce cash handling, and ensure that employees refuel only at approved locations.",
+      },
+    ],
+  },
+  {
+    question: "What are the key benefits of Petrol Cards?",
+    answer: [
+      {
+        heading:
+          "Petrol cards provide businesses with stronger control over fuel expenses and offer multiple advantages such as spending limits, fuel surcharge waivers, and real-time transaction tracking.",
+      },
+      {
+        heading:
+          "They help prevent misuse by restricting purchases only to fuel, improving transparency and reducing fraud. Companies also benefit from easier reimbursements, automated expense records, and better visibility into fuel consumption across teams, vehicles, and locations.",
+      },
+    ],
+  },
+  {
+    question: "How to apply for a Fuel Card for your company?",
+    answer: [
+      {
+        heading:
+          "You can apply for an EnKash Fuel Card by sharing your business details, basic KYC documents, and contact information through the EnKash application page. After quick verification, your fuel cards are issued and activated for your teams, vehicles, or branch locations.",
+      },
+      {
+        heading:
+          "To begin the process, click here to apply for an EnKash Fuel Card for your company.",
+      },
+    ],
+  },
+  {
+    question: "Are Fuel Cards different from regular corporate cards?",
+    answer: [
+      {
+        heading:
+          "Yes, Fuel Cards are different from regular corporate cards. A Fuel Card is a restricted-use payment card that can be used only for petrol, diesel, or other fuel-related transactions at authorised fuel stations. This gives businesses stronger spending control, clearer budgeting, and detailed fuel-specific reports.",
+      },
+      {
+        heading:
+          "Regular corporate cards allow broader business expenses, while a Fuel Card focuses only on fuel, helping companies prevent misuse and manage fleet or on-field travel costs more efficiently.",
+      },
+      {
+        heading:
+          "Businesses using the EnKash Fuel Card also get real-time tracking, spending limits, and automated expense visibility to improve fuel management across teams and locations.",
+      },
+    ],
+  },
+  {
+    question: "Do Fuel Cards offer GST benefits?",
+    answer: [
+      {
+        heading:
+          "Yes, Fuel Cards can offer GST benefits. Businesses can claim Input Tax Credit (ITC) on eligible fuel expenses when the fuel purchase comes with a valid GST-compliant invoice. This helps reduce overall tax liability and improves monthly reconciliation.",
+      },
+      {
+        heading:
+          "Companies using the EnKash Fuel Card get clear digital records, GST-ready invoices, and organised expense data, making GST claims and filing easier and more accurate.",
+      },
+    ],
+  },
+  {
+    question: "Are Fuel Cards safe for driver or employee use?",
+    answer: [
+      {
+        heading:
+          "Yes, Fuel Cards are safe for drivers and employees. They come with built-in security features such as PIN protection, spend limits, merchant restrictions, and real-time transaction alerts.",
+      },
+      {
+        heading:
+          "With the EnKash Fuel Card, businesses also get advanced security options, location-wise controls, instant card blocking, and real-time dashboards that make fuel usage safer and fully trackable across teams and vehicles.",
+      },
+    ],
+  },
 ]
 
 export default faqData
