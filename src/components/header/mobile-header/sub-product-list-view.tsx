@@ -135,12 +135,12 @@ const SubProductListView = ({
 
         {navTitle === "Cards" && (
           <div className={styles.exploreProduct}>
-            <h4
-              className="fw-bold mb-0  pr-4"
+            <Link
+              href="/products/corporate-cards"
               onClick={() => setCurrentStep(0)}
             >
-              Explore Corporate Card
-            </h4>
+              <h4 className="fw-bold mb-0  pr-4">Explore Corporate Card</h4>
+            </Link>
           </div>
         )}
 

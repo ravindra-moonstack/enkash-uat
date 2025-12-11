@@ -18,6 +18,7 @@ interface StepItem {
 
 interface StepsSectionProps {
   heading: { text: string; colorClass: string }[]
+  subHeading?: { text: string; colorClass: string }[]
   steps: StepItem[]
   button: {
     title: string
@@ -32,6 +33,7 @@ interface StepsSectionProps {
 
 const StepsSection = ({
   heading,
+  subHeading,
   steps,
   button,
   image,
@@ -56,7 +58,7 @@ const StepsSection = ({
   return (
     <div className={`${styles.action_row} ${backgroundClass}`}>
       <div className="max-w-auto">
-        <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+        <div className={`${styles.title} text-center pb-3`}>
           <DynamicHeading
             content={heading.map((h) => ({
               title: h.text,
@@ -66,7 +68,18 @@ const StepsSection = ({
             className="f-6"
           />
         </div>
-
+        {subHeading && (
+          <div className={` text-center pb-md-5 pb-3`}>
+            <DynamicHeading
+              content={subHeading.map((h) => ({
+                title: h.text,
+                color: h.colorClass,
+              }))}
+              headingTag="p"
+              className="f-5"
+            />
+          </div>
+        )}
         <div
           className={`row ${backgroundClass} align-items-center ${styles.section}`}
         >
