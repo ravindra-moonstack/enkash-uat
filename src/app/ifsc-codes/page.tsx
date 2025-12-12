@@ -476,7 +476,7 @@ const Ifsc = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div className="d-flex pt-3">
+            <div className="d-flex pt-5">
               <span className={` ${styles.greenLine}`}></span>
               <div className="ps-3">
                 <DynamicHeading
