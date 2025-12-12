@@ -21,15 +21,7 @@ export const faqData: TFAQProps[] = [
       },
     ],
   },
-  {
-    question: "How does EnKash help with GST compliance?",
-    answer: [
-      {
-        heading:
-          "EnKash auto-captures GST breakup (CGST, SGST, IGST), validates GSTINs, and stores input credit data, making your tax filings audit-ready and accurate. (See also: How does EnKash help with GST compliance?)",
-      },
-    ],
-  },
+
   {
     question: "Can employees submit expenses via WhatsApp or email?",
     answer: [
