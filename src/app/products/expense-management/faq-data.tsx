@@ -226,7 +226,23 @@ export const faqData: TFAQProps[] = [
             rel="noopener noreferrer"
             target="_blank"
           >
-            GST breakup (CGST, SGST, IGST)
+            GST breakup{" "}
+            <Link
+              className="mx-1"
+              href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/what-is-cgst`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              ( CGST
+            </Link>
+            <Link
+              className="mx-1"
+              href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/what-is-sgst`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              , SGST , IGST )
+            </Link>{" "}
           </Link>
           {"  validates"}
           <Link
