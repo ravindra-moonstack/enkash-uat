@@ -124,7 +124,8 @@ const ExpenseManagement = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Let’s Put Smart Expense Management in Your Pocket",
+                    title:
+                      "A smart expense management platform that helps you manage expenses via WhatsApp, email, app, and more. Built to simplify reimbursements, petty cash control, and corporate spending.",
                     color: "color-alternate-grey subHeading",
                   },
                 ]}
@@ -167,7 +168,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         />
         <ContentShowcase
           heading="Travel Requests & Per Diem – Plan Ahead, Stay Within Budget"
-          subheading="Let employees plan trips easily with automated per diem and compliance."
+          subheading="Employees can create travel requests, claim per diem, and track every approval in one unified expense management system. With all travel plans, budgets, and reimbursements managed centrally, teams move faster while finance gets full visibility and tighter cost control.The result is smoother travel planning, cleaner documentation, and predictable spending across every trip."
           data={paymentMethodData}
           imageSrc={receipt}
           imageAlt="card background"
@@ -176,8 +177,8 @@ const ExpenseManagement = (): React.JSX.Element => {
           buttonTitle="Learn More"
         />
         <ContentShowcase
-          heading="UPI- Based Petty Cash"
-          subheading="Turn petty cash chaos into controlled digital spending with real-time visibility and approvals."
+          heading="UPI-Based Petty Cash – The Easiest Way to Manage Expenses"
+          subheading="Built to eliminate manual registers, loose cash slips, and reconciliation delays, EnKash’s digital petty cash module lets teams record and manage expenses in real time. Every UPI-based transaction is instantly captured, synced with your expense management system, and routed through the right approval workflow for complete control and transparency."
           data={dashboardData}
           imageSrc={upi}
           imageAlt="card background"
@@ -187,7 +188,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         />
         <ContentShowcase
           heading="Employee Reimbursements with Smart Wallets"
-          subheading="Automate category-wise allowances, get instant access to funds, and breeze through compliance."
+          subheading="Employees can submit reimbursement claims in seconds, while finance teams track, verify, and approve them through the same unified expense platform. Every claim is validated, recorded, and processed with accuracy and compliance, enabling faster payouts and complete visibility across teams."
           data={rankData}
           imageSrc={walletExpense}
           imageAlt="card background"
@@ -221,7 +222,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           subheading={[
             {
               title:
-                "Control spending before it happens. Automate what doesn't need your time.",
+                "Control spending before it happens with automated policies that keep every transaction within budget. Set custom rules in your expense management platform to manage limits, approvals, and reimbursements without manual intervention. Automate routine checks, reduce policy violations, and give finance teams full control with zero extra effort.",
               color: "color-main-grey subHeading",
             },
           ]}

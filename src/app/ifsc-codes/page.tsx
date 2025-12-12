@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       "Meta Description: Find IFSC and MICR codes of all Indian banks. Search by bank, state, district or branch to get accurate IFSC, branch address and transfer details instantly.",
     url: `${process.env.NEXT_PUBLIC_URL}/ifsc-codes`,
     type: "website",
-    images: [`${process.env.NEXT_PUBLIC_URL}/images/GST_PREVIEW.webp`],
+    images: [`${process.env.NEXT_PUBLIC_URL}/images/IFSC_featureImage.webp`],
   },
   alternates: {
     canonical: `${process.env.NEXT_PUBLIC_URL}/ifsc-codes`,
@@ -476,7 +476,7 @@ const Ifsc = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div className="d-flex pt-3">
+            <div className="d-flex pt-5">
               <span className={` ${styles.greenLine}`}></span>
               <div className="ps-3">
                 <DynamicHeading

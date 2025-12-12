@@ -66,13 +66,15 @@
   }
 
   // Hero button wrapper
+
   .first_row_button {
     padding-top: 16px;
+    padding-bottom: 16px;
     gap: 12px;
 
     @include for-laptops {
-      padding-top: 48px;
-      gap: 26px;
+      padding-top: 32px;
+      padding-bottom: 112px;
     }
   }
 
