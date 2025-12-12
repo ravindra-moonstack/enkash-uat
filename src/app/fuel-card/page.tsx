@@ -68,13 +68,13 @@ const FuelCards = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "Transforming Fuel Expense Management with",
+            text: "Transform Fuel Expense with Most Flexible",
             color: "color-white f-3 italic d-block",
           },
-          { text: "Fuel Cards", color: "color-white" },
+          { text: " Fuel Card Solution in India", color: "color-white" },
         ]}
         description={{
-          text: "Eliminate hassle, gain control, and cut costs with a comprehensive fuel card solution for businesses of all sizes.",
+          text: "Eliminate hassle, gain control, and cut costs with best fuel card solution for businesses of all sizes",
           color: "color-white subHeading",
         }}
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
@@ -92,6 +92,12 @@ const FuelCards = (): React.JSX.Element => {
         heading={[
           { text: "Steps to Manage Employee ", colorClass: "color-black" },
           { text: "Fuel Costs", colorClass: "color-equity-blue" },
+        ]}
+        subHeading={[
+          {
+            text: "Eliminate hassle, gain control, and cut costs with best fuel card solution for businesses of all sizes. ",
+            colorClass: "color-black",
+          },
         ]}
         steps={intantActionData}
         button={{
