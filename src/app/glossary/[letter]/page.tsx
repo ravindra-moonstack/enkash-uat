@@ -1,18 +1,15 @@
+import React from "react"
 import { Container } from "react-bootstrap"
 import Link from "next/link"
+import { fetchByLetter } from "@/src/utils/fetchByLetter"
 
-export async function fetchByLetter(letter: string) {
-  const res = await fetch(
-    `https://uat.blogs.enkash.com/wp-json/custom/v1/glossary?letter=${letter.toUpperCase()}`,
-    { next: { revalidate: 60 } }
-  )
-  const json = await res.json()
-  return json.data || []
+interface PageProps {
+  params: Promise<{ letter: string }>;
 }
 
-export default async function LetterPage({ params }: any) {
-  const { letter } = params
-  const terms = await fetchByLetter(letter)
+export default async function LetterPage({ params }: PageProps) {
+  const { letter } = await params;
+  const terms = await fetchByLetter(letter);
 
   return (
     <Container className="pb-5 paddingTopClass">
