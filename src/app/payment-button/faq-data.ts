@@ -79,6 +79,124 @@ const faqData: TFAQProps[] = [
       },
     ],
   },
+  {
+    question: "What is an online payment button?",
+    answer: [
+      {
+        heading:
+          "An online payment button is a clickable element placed on a website or app that allows customers to make payments instantly. When clicked, it redirects users to a secure payment flow where they can pay using UPI, cards, net banking, or wallets. In India, payment buttons are widely used by businesses to simplify collections without building complex checkout systems.",
+      },
+    ],
+  },
+  {
+    question: "How do I add a payment button to my website?",
+    answer: [
+      {
+        heading:
+          "You can add a payment button to your website by copying the auto-generated code from your payment provider and pasting it into your site's HTML.",
+      },
+    ],
+  },
+  {
+    question: "How do I integrate a payment button into my website?",
+    answer: [
+      {
+        heading:
+          "Payment button integration usually involves copying a ready-to-use link, HTML snippet, or script and placing it on your website. Advanced setups may offer APIs or webhooks for tracking payment status. Solutions like EnKash are designed for quick integration, allowing businesses in India to start accepting payments without heavy development work.",
+      },
+    ],
+  },
+  {
+    question: "Can I integrate a payment button on any type of website?",
+    answer: [
+      {
+        heading:
+          "Yes, payment buttons can be added to most platforms including HTML sites, WordPress, Shopify, Wix, and even on blog pages seamlessly. They also work well for businesses that do not have a full checkout page, such as service providers, freelancers, and B2B companies collecting payments through links or invoices.",
+      },
+    ],
+  },
+  {
+    question:
+      "How is the EnKash Payment Button different from a PayPal payment button?",
+    answer: [
+      {
+        heading:
+          "The EnKash Payment Button is built specifically for Indian businesses and supports local payment methods such as UPI, cards, and net banking. Unlike PayPal, which is more focused on international transactions, EnKash offers India-centric settlement flows, compliance alignment, and seamless integration with other business payment and reconciliation tools.",
+      },
+    ],
+  },
+  {
+    question: "Can I customize the PayPal payment button?",
+    answer: [
+      {
+        heading:
+          "Yes. PayPal allows limited customization such as button style, size, and payment amount. However, customization options may vary depending on your account type and region. Businesses often evaluate alternatives when they need deeper control over payment flows, reporting, or local payment methods.",
+      },
+    ],
+  },
+  {
+    question: "What is a Shopify Payment Button?",
+    answer: [
+      {
+        heading:
+          'A Shopify Payment Button is a feature that allows merchants to add a "Buy Now" or checkout button to their Shopify store or external websites. It enables customers to complete purchases quickly without going through the full cart process, helping improve conversion rates for online stores.',
+      },
+    ],
+  },
+  {
+    question: "How do I create a Shopify Payment Button?",
+    answer: [
+      {
+        heading:
+          "You can create a Shopify Payment Button by enabling it in your Shopify admin panel and selecting where you want the button to appear. Shopify provides embed options for product pages and external websites. Merchants may also use external payment buttons depending on their payment collection and settlement requirements.",
+      },
+    ],
+  },
+  {
+    question: "Is a payment button suitable for small businesses in India?",
+    answer: [
+      {
+        heading:
+          "Yes. Payment buttons are ideal for small businesses, startups, and service providers in India because they offer a simple way to collect payments without building a full e-commerce checkout or app.",
+      },
+    ],
+  },
+  {
+    question: "What payment methods can be enabled through a payment button?",
+    answer: [
+      {
+        heading:
+          "Most payment buttons support UPI, debit and credit cards, and net banking. The available methods depend on the payment provider and regulatory setup.",
+      },
+    ],
+  },
+  {
+    question: "Are payment buttons secure for online transactions?",
+    answer: [
+      {
+        heading:
+          "Yes. Payment buttons use encrypted payment flows and are backed by regulated payment infrastructure. Businesses should ensure their provider follows RBI guidelines and standard security practices.",
+      },
+    ],
+  },
+  {
+    question: "Can payment button payments be tracked and reconciled?",
+    answer: [
+      {
+        heading:
+          "Yes. Digital payment buttons generate transaction records that can be tracked in dashboards and exported for accounting and reconciliation. Some platforms also integrate payment data with broader financial workflows.",
+      },
+    ],
+  },
+  {
+    question: "Can payment buttons be used for B2B payments?",
+    answer: [
+      {
+        heading:
+          "Yes. Payment buttons are commonly used for B2B collections such as invoices, service fees, subscriptions, and advance payments, especially when fast and simple payment acceptance is required.",
+      },
+    ],
+  },
 ]
 
 export const SecondfaqData = [
@@ -96,7 +214,7 @@ export const SecondfaqData = [
     answer: [
       {
         heading:
-          "Sell multiple items with ease. Tailored for e-commerce merchants to allow customers to select multiple items and quantities effortlessly.",
+          "Sell multiple items with ease. Payment Buttons for e-commerce merchants to allow customers to select multiple items and quantities effortlessly.",
       },
     ],
   },
