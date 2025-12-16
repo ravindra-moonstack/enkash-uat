@@ -68,7 +68,7 @@ const stackcardData: TStackCardsProp = [
     icon: realTimeExpenseIcon,
     title: "UPI-Based Petty Cash",
     description:
-      "Enable UPI-based payments for everyday expenses - no cash, no chaos. Assign wallets to employees, apply spend controls and approval flows, and get full visibility of transactions in a compliant, audit-ready format.",
+      "Replace messy cash handling with UPI-based petty cash that works the way your teams do. Give employees assigned wallets for daily expenses, set clear spend limits and approval rules, and track every transaction in real time. Every payment is recorded automatically - no manual entries, no missing receipts - so you stay fully compliant, audit-ready, and always in control of petty cash spends.",
     image: realTimeExpense,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "300px",
@@ -77,7 +77,7 @@ const stackcardData: TStackCardsProp = [
     icon: fraudProtectionIcon,
     title: "Digital Petty Cash Distribution",
     description:
-      "Distribute funds instantly with EnKash prepaid cards or UPI wallets. Set monthly budgets, configure user or branch-level limits, automate top-ups, and revoke access anytime—eliminating manual disbursement and giving you total control over petty cash.",
+      "Distribute petty cash instantly—without paperwork, delays, or manual handovers. Load funds to EnKash prepaid cards or UPI wallets, define monthly budgets, set user or branch-level limits, automate top-ups, and revoke access anytime. Every allocation and spend is tracked in real time, helping you replace manual petty cash registers with a fully digital, controlled, and audit-ready petty cash system for everyday reimbursements.",
     image: fraudProtection,
     buttonUrl: "/sales",
     maxImageHeight: "300px",
@@ -86,7 +86,7 @@ const stackcardData: TStackCardsProp = [
     icon: stackCardThreeIcon,
     title: "Automatic Expense Creation",
     description:
-      "Every transaction is auto-converted into an expense with pre-filled details like amount, date, and merchant. Smart categorization and mobile app verification simplify reporting, so employees just review, attach receipts, and submit in seconds.",
+      "Every petty cash transaction is automatically converted into an expense with key details pre-filled - amount, date, and merchant. Smart categorisation and mobile verification reduce manual work, so employees simply review, attach receipts, and submit in seconds. All expenses flow into a single, accurate petty cash expense list, giving finance teams clean, error-free reporting without follow-ups.",
     image: stackCardThreeImg,
     buttonUrl: "/sales",
     maxImageHeight: "300px",
@@ -95,7 +95,7 @@ const stackcardData: TStackCardsProp = [
     icon: streamlinedReimbursementIcon,
     title: "Real-Time Tracking & Spend Visibility",
     description:
-      "Track every rupee as it’s spent. Get live dashboards, instant policy alerts, and geo-tagged logs for each transaction, ensuring complete transparency and real-time visibility across teams, branches, or employees, from anywhere.",
+      "See every rupee as it’s spent, not after the month ends. Get live dashboards, instant policy alerts, and geo-tagged transaction logs for complete visibility across teams, branches, and locations. With itemised petty cash expenses in one central dashboard, you always know where money is going, no blind spots, no surprises.",
     image: streamlinedReimbursement,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "300px",
@@ -104,14 +104,14 @@ const stackcardData: TStackCardsProp = [
     icon: costControlSavingsIcon,
     title: "Automated Reconciliation",
     description:
-      "The system automatically matches each transaction with submitted receipts. One-click verifications, live reconciliation reports, and instant exception alerts mean faster closes, fewer errors, and a hassle-free audit trail—all with minimal manual effort.",
+      "Every transaction is automatically matched with submitted receipts - no manual cross-checking required. One-click verification, live reconciliation reports, and instant exception alerts help finance teams close faster with fewer errors. The result: a real-time, audit-ready trail that replaces manual petty cash registers and simplifies reviews, compliance, and audits.",
     image: costControlSavings,
     buttonUrl: "/sales",
     maxImageHeight: "300px",
   },
 ]
 
-const managementCards : TCardTypes = [
+const managementCards: TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:

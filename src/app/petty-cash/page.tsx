@@ -31,9 +31,10 @@ import generateMetaData from "@/src/utils/metaData"
 import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
-  title: "Digitize Your Petty Cash: Automate Petty Cash Management",
+  title:
+    "Digital Petty Cash Management – Petty Cash Application for Business Spending.",
   description:
-    "Go cashless with EnKash Petty Cash solution. Assign, track, and reconcile small business expenses in real time.",
+    "Manage petty cash with a digital petty cash management system. Track expenses in real time, use petty cash cards, and simplify petty cash expense management.",
   alternates: {
     canonical: `${process.env.URL}/petty-cash`,
   },
@@ -77,16 +78,16 @@ const PettyCash = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "Best Petty Cash",
+            text: "Petty Cash Management ",
             color: "color-equity-blue",
           },
           {
-            text: " Management Suite",
+            text: "System to Track Petty Cash Expenses & Control Spend",
             color: "color-black",
           },
         ]}
         description={{
-          text: "Go digital with petty cash. Simplify small payments, track expenses in real-time, and stay audit-ready with ease.",
+          text: "Digitize petty cash management with UPI, petty cash cards, and automated petty cash registers. Track petty cash expenses in real time and stay audit-ready.",
         }}
         button={{
           title: "Get Started",
@@ -145,7 +146,7 @@ const PettyCash = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Put your petty cash policy into action automatically.",
+                    "Turn your petty cash policy into automated control. Smart rules ensure every spend stays within approved categories and limits, without manual enforcement.",
                   color: "color-main-grey subHeading",
                 },
               ]}
@@ -221,7 +222,7 @@ const PettyCash = (): React.JSX.Element => {
                   content={[
                     {
                       title:
-                        "Get a 360° view of your petty cash spends - branch-wise, team-wise, and category-wise.",
+                        "Get a 360° view of petty cash expenses: branch-wise, team-wise, and category-wise. Export detailed expense lists and branch-level details from a central dashboard for audits and compliance.",
                       color: "color-main-grey subHeading",
                     },
                   ]}
