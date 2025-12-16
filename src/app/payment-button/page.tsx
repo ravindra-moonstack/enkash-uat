@@ -32,7 +32,7 @@ import BlogSection from "@/src/components/sections/blog-section"
 export const metadata: Metadata = generateMetaData({
   title: "Payment Button: Add Instant Checkout to Your Website",
   description:
-    "Easily embed EnKash Payment Buttons on your website or app. Enable fast, secure payments via UPI, cards & net banking—no complex integration needed.",
+    "Create an online payment button in minutes. Make a payment button for any website or Shopify store—fast, secure, customizable, and code-free.",
   alternates: {
     canonical: `${process.env.URL}/payment-button`,
   },
@@ -61,12 +61,12 @@ const PaymentButton = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "Collect smarter, not harder with EnKash Payment Button",
+            text: "Collect smarter with an online payment button designed for fast, secure payments",
             color: "color-black",
           },
         ]}
         description={{
-          text: "Embed a secure, customizable payment button on your website and collect payments in minutes.",
+          text: "Create a payment button in minutes and embed it on your website or app to accept fast, seamless, and secure online payments—no complex integrations required.With EnKash, you can make a payment button for your website without coding.",
         }}
         button={{
           title: "Get Started",

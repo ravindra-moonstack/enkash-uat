@@ -242,21 +242,24 @@ const faqData: TFAQProps[] = [
     answerHTML: (
       <div>
         <p>
-          {"Yes, Fuel Cards can offer"
-          }
+          {"Yes, Fuel Cards can offer"}
           <Link
             className="mx-1"
             href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/what-is-gst`}
             rel="noopener noreferrer"
             target="_blank"
           >
-           GST
+            GST
           </Link>
-          {"benefits. Businesses can claim Input Tax Credit (ITC) on eligible fuel expenses when the fuel purchase comes with a valid GST-compliant invoice. This helps reduce overall tax liability and improves monthly reconciliation."}
-
-
+          {
+            "benefits. Businesses can claim Input Tax Credit (ITC) on eligible fuel expenses when the fuel purchase comes with a valid GST-compliant invoice. This helps reduce overall tax liability and improves monthly reconciliation."
+          }
         </p>
-        <p>{"Companies using the EnKash Fuel Card get clear digital records, GST-ready invoices, and organised expense data, making GST claims and filing easier and more accurate."}</p>
+        <p>
+          {
+            "Companies using the EnKash Fuel Card get clear digital records, GST-ready invoices, and organised expense data, making GST claims and filing easier and more accurate."
+          }
+        </p>
       </div>
     ),
   },
