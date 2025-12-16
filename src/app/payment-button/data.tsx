@@ -75,7 +75,7 @@ const allInOnePolicyData: TStackCardsProp = [
     icon: taskIconFour,
     title: "Match Your Style",
     description:
-      "Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence.",
+      "Match your brand’s look and feel with customizable styles, colors, and text. Make Payment buttons that align with your business identity, creating a consistent and professional appearance for your online presence.",
     image: notificationImage,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "259px",
