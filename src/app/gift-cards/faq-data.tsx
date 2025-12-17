@@ -1,4 +1,5 @@
 import { TFAQProps } from "@/src/types/faq"
+import Link from "next/link"
 
 const faqData: TFAQProps[] = [
   {
@@ -28,7 +29,6 @@ const faqData: TFAQProps[] = [
       },
     ],
   },
-
   {
     question: "Is corporate gifting taxable?",
     answer: [
@@ -53,7 +53,7 @@ const faqData: TFAQProps[] = [
       {
         heading: "",
         bullets: [
-          "Register on EnKash and enter all the company details requiredr",
+          "Register on EnKash and enter all the company details required",
           "After all the details are validated, the company becomes eligible for gift cards",
           "The company can load money into their account and request the cards as required",
           "These gift cards can be allocated to the recipient with a preloaded amount as per the occasion",
@@ -66,7 +66,7 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "Corporate gifts should be aligned with the company's ethics and policies. These gifts must be legal. There must be transparency in corporate gifting and sensitivity towards all cultures",
+          "Corporate gifts should be aligned with the company's ethics and policies. These gifts must be legal. There must be transparency in corporate gifting and sensitivity towards all cultures.",
       },
     ],
   },
@@ -94,6 +94,210 @@ const faqData: TFAQProps[] = [
       {
         heading:
           "Businesses can avoid gift tax by keeping the value of gifts within the tax-free limit of 5000 INR in a calendar year.",
+      },
+    ],
+  },
+
+  /* 🔽 NEW FAQs ADDED BELOW 🔽 */
+
+  {
+    question: "Where can businesses buy gift cards online securely?",
+
+    answerHTML: (
+      <div>
+        <p>
+          {
+            "Businesses can buy gift cards online through trusted corporate gifting platforms that offer strong security, compliance, and invoice support."
+          }
+
+          {"With EnKash Gift Cards, businesses get:"}
+        </p>
+        <ul>
+          <li>
+            {" "}
+            Access to verified brand vouchers across shopping, food, travel, and
+            entertainment
+          </li>
+          <li>Secure digital issuance with role-based access and approvals</li>
+
+          <li>
+            {" "}
+            <Link
+              className="mx-1"
+              href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/what-is-gst`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              GST
+            </Link>
+            -compliant invoices for easy accounting
+          </li>
+          <li>Centralised tracking from a single dashboard</li>
+        </ul>
+        <p>
+          EnKash also integrates gifting with expense management,{" "}
+          <Link
+            className="mx-1"
+            href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/prepaid-cards-a-defintive-guide-to-growth`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            prepaid cards,
+          </Link>
+          and{" "}
+          <Link
+            className="mx-1"
+            href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/benefits-of-paying-utility-bill-payment-online`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            bill payments,
+          </Link>{" "}
+          helping finance teams manage rewards and spends together.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Can companies sell gift cards through a digital platform?",
+    answer: [
+      {
+        heading:
+          "Yes. Companies can sell gift cards digitally using platforms that support bulk issuance, APIs, and white-label options.",
+        bullets: [
+          "Issue gift cards digitally to customers, partners, or channel teams",
+          "Distribute rewards instantly via email or mobile",
+          "Track redemptions and balances in real time",
+          "Use gift cards as part of sales incentives, loyalty programs, or promotions",
+        ],
+      },
+      {
+        heading:
+          "For fintechs and enterprises, EnKash also offers API-based and co-branded solutions for large-scale distribution.",
+      },
+    ],
+  },
+  {
+    question: "Are discount gift cards available for corporate gifting?",
+    answerHTML: (
+      <div>
+        <p>
+          {
+            "Yes. Many brands offer discounted gift cards for bulk or corporate purchases."
+          }
+
+          {"With EnKash "}
+
+          <Link
+            className="mx-1"
+            href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/guide-to-gift-cards-where-to-buy`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Gift Cards,
+          </Link>
+          {" businesses can:"}
+        </p>
+        <ul>
+          <li> Access bulk pricing and corporate discounts</li>
+          <li>Reduce overall reward and incentive costs</li>
+
+          <li>Choose from multiple popular brands in one place</li>
+          <li>Control budgets with predefined limits and approvals</li>
+        </ul>
+        <p>
+          This makes EnKash ideal for employee rewards, festive gifting, sales
+          incentives, and customer engagement programs
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "How can recipients redeem a gift card?",
+    answer: [
+      {
+        heading:
+          "To redeem a gift card, recipients can use the card details or app-based access to shop online or in-store at supported merchants. Redemption steps vary based on the gift card type and merchant acceptance.",
+      },
+    ],
+  },
+  {
+    question:
+      "Why should businesses choose digital gift cards over cash rewards?",
+    answer: [
+      {
+        heading:
+          "Digital gift cards offer better tracking, flexibility, and compliance than cash rewards. They are easier to distribute, customizable in value, and provide recipients with the freedom to choose how they want to redeem them.",
+      },
+    ],
+  },
+  {
+    question: "Can gift cards be used across multiple stores or platforms?",
+    answer: [
+      {
+        heading:
+          "Many modern gift cards are designed for wide acceptance and can be redeemed across multiple online or offline stores. This flexibility makes them ideal for corporate gifting and employee reward programs.",
+      },
+    ],
+  },
+  {
+    question: "Is it safe to buy gift cards online for employees?",
+    answer: [
+      {
+        heading:
+          "Yes, it is safe to buy gift cards online when using a verified gift cards site that offers security features like tracking, blocking, and controlled access. This ensures protection against loss, misuse, or unauthorized transactions.",
+      },
+    ],
+  },
+  {
+    question: "What types of gift cards are available for businesses?",
+    answer: [
+      {
+        heading:
+          "Businesses can choose from different types of gift cards based on their use case and audience.",
+        bullets: [
+          "Brand-specific gift cards usable at a single merchant",
+          "Multi-brand gift cards accepted across multiple stores or platforms",
+          "Category-based cards for food, shopping, travel, or entertainment",
+          "Digital gift cards issued instantly in bulk",
+        ],
+      },
+    ],
+  },
+  {
+    question: "Can gift cards be used for employee rewards and incentives?",
+    answer: [
+      {
+        heading:
+          "Yes. Gift cards are widely used for employee rewards and incentive programs.",
+        bullets: [
+          "Performance recognition and spot rewards",
+          "Festive and annual employee gifting",
+          "Sales incentives and referral programs",
+          "Engagement initiatives across distributed teams",
+        ],
+      },
+      {
+        heading:
+          "Digital gift cards are easy to distribute and work well for remote or multi-location organisations.",
+      },
+    ],
+  },
+  {
+    question: "Do corporate gift cards come with GST invoices?",
+    answer: [
+      {
+        heading:
+          "Yes, when purchased through authorised corporate platforms, gift cards come with GST-compliant invoices.",
+        bullets: [
+          "Maintain proper accounting records",
+          "Simplify audits and compliance",
+          "Track gifting expenses clearly",
+          "Align rewards with internal finance policies",
+        ],
+      },
+      {
+        heading: "Invoice availability may vary by brand and voucher type.",
       },
     ],
   },
