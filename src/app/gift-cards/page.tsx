@@ -35,9 +35,9 @@ import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
-  title: "Gift Cards for Business: Reward Employees & Partners",
+  title: "Buy Corporate Gift Cards Online for Employees & Teams | EnKash",
   description:
-    "Create and distribute digital gift cards with EnKash. Personalize rewards for employees, clients, or partners—perfect for festive gifting and engagement programs.",
+    "Buy corporate gift cards online with EnKash. Easily issue, track, and distribute secure digital gift cards in multiple denominations for employees & teams.",
   alternates: {
     canonical: `${process.env.URL}/gift-cards`,
   },
@@ -82,10 +82,10 @@ const GiftCards = (): React.JSX.Element => {
             text: "Build a Culture of Recognition with ",
             color: "color-white f-3 italic d-block",
           },
-          { text: "Customized Gift Cards", color: "color-white" },
+          { text: "Corporate Gift Cards", color: "color-white" },
         ]}
         description={{
-          text: "Make gifting seamless for businesses with these easy-to-access and control gift cards.",
+          text: "Power smarter corporate gifting with customizable digital gift cards. Easily buy, manage, and distribute corporate gift cards in India with full control, transparency, and real-time visibility.",
           color: "color-white subHeading",
         }}
         button={{ title: "Get Started", url: "/get-started", theme: "blue" }}
@@ -104,14 +104,24 @@ const GiftCards = (): React.JSX.Element => {
           <DynamicHeading
             content={[
               {
-                title: "Best Gift Cards Online",
+                title: "Best Gift Cards Online for Businesses & Teams",
                 color: "color-white",
               },
             ]}
             headingTag="h3"
-            className="f-5 text-center pb-3 pb-md-5"
+            className="f-5 text-center pb-3 "
           />
-
+          <DynamicHeading
+            content={[
+              {
+                title:
+                  "Secure, centralized platform to buy gift cards online, issue digital gift cards instantly",
+                color: "color-white",
+              },
+            ]}
+            headingTag="p"
+            className="f-4 text-center pb-3 pb-md-5"
+          />
           <div className={`d-flex  flex-wrap  ${styles.section}`}>
             {cardData.map((item, index) => (
               <div
@@ -138,6 +148,12 @@ const GiftCards = (): React.JSX.Element => {
       <StepsSection
         heading={[
           { text: "How to Buy Gift Cards?", colorClass: "color-black" },
+        ]}
+        subHeading={[
+          {
+            text: "Get started with corporate gift cards in minutes with a few simple steps",
+            colorClass: "color-black",
+          },
         ]}
         steps={intantActionData}
         button={{

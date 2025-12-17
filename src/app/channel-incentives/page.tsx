@@ -73,12 +73,12 @@ const ChannelIncentives = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "Boost channel partner engagement with Channel Incentives",
+            text: "Boost Channel Partner Engagement with a Leading Channel Incentive Platform",
             color: "color-black",
           },
         ]}
         description={{
-          text: "Automate channel rewards with powerful channel incentive software built for partner growth and engagement.  Use a single dashboard to manage, track performance, and distribute incentives.",
+          text: "Automate channel rewards with powerful channel partner incentive platform built to scale channel incentive programs and drive long-term channel partner engagement",
         }}
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         rightImage={paymentSummary}
@@ -86,7 +86,7 @@ const ChannelIncentives = (): React.JSX.Element => {
       />
 
       <CoreBenefitsSection
-        sectionTitle="Best Platform For Channel Incentives"
+        sectionTitle="Best Channel Incentive Platform for Channel Partners"
         cards={benifitsData}
       />
 
@@ -99,6 +99,12 @@ const ChannelIncentives = (): React.JSX.Element => {
           {
             text: "Channel Incentives ",
             colorClass: "color-equity-blue",
+          },
+        ]}
+        subHeading={[
+          {
+            text: "Setting up channel incentives is simple with EnKash’s centralized channel incentive platform, enabling faster onboarding and seamless reward distribution for every channel partner. ",
+            colorClass: "color-black",
           },
         ]}
         steps={cardsData}

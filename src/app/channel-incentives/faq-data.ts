@@ -25,7 +25,7 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "Each business designs the incentive program using its industry and competition. However, the basic structure of an incentive program offers a fixed payment for each unit and has a slab system, which, when achieved, adds to the basic remuneration. For example, if a channel partner gets 2% of the sales value as remuneration, crossing a slab (of, say, a sale of 100 units) will get them an additional incentive of 1%. When the channel partner crosses the next slab (of, say, a sale of 200 units), then an additional incentive of 2% will be offered. However, this may vary from company to company as per the policies.",
+          "Each business designs the incentive program using its industry and competition. However, the basic structure of an incentive program offers a fixed payment for each unit and has a slab system, which, when achieved, adds to the basic remuneration.",
       },
     ],
   },
@@ -34,7 +34,7 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "The basic purpose of incentives is to keep the channel partner motivated. In many instances, the channel partner may use the extra income they generate from incentives on promoting the products from their end to increase sales or even offer special rebates to increase customers. The overall purpose of incentives is to improve sales and reach of the product and the brand.",
+          "The basic purpose of incentives is to keep the channel partner motivated. Incentives help increase product promotion, improve customer outreach, and drive higher sales and brand visibility.",
       },
     ],
   },
@@ -43,7 +43,7 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "Examples of channel incentive programs include incentives offered to channel partners for selling products in any business segment, such as financial products, retail products, and FMCG products.The program starts with training the teams of the channel partners on the product, the unique selling points, product specifications, and the product's value to the customers. Each channel partner may also receive marketing display material, samples, demo materials, and more to sell effectively. Periodic training and updates are also given to educate the channel partner on product developments and usage.",
+          "Examples of channel incentive programs include incentives offered to channel partners across industries such as financial services, retail, and FMCG. These programs often include sales-based rewards, training, marketing support, and periodic performance-based incentives.",
       },
     ],
   },
@@ -51,7 +51,8 @@ const faqData: TFAQProps[] = [
     question: "What is an incentive reward?",
     answer: [
       {
-        heading: "What is an incentive reward?",
+        heading:
+          "An incentive reward is a benefit or payout given to a channel partner for achieving predefined performance goals. Rewards may include cash payouts, digital gift cards, vouchers, or other performance-based benefits.",
       },
     ],
   },
@@ -59,14 +60,13 @@ const faqData: TFAQProps[] = [
     question: "What are the benefits of incentive schemes?",
     answer: [
       {
-        heading:
-          "Incentive schemes offer a lot of benefits, which include the following:",
+        heading: "Incentive schemes offer several benefits, including:",
         bullets: [
           "Improved market reach",
-          "Building a brand within remote markets",
-          "Additional sales resources without adding directly to your overhead",
-          "Ability to serve your customers better due to the proximity of your channel partner to the market",
-          "Quicker turnaround on the post-sales processes",
+          "Stronger partner engagement and loyalty",
+          "Additional sales resources without increasing overhead",
+          "Better customer service through local market presence",
+          "Faster post-sales support and turnaround",
         ],
       },
     ],
@@ -76,11 +76,11 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "The starting point for planning an incentive program is to fully understand the product, the market, and potential customers. The next step is to discover how your peers and competitors in the market are structuring their incentive programs. The next step is to decide on the criteria you will use to reward your channel partners. ",
+          "Planning a channel incentive program starts with understanding your product, target market, and customer segments. Businesses should also analyze competitor programs and define clear reward criteria and performance slabs.",
       },
       {
         heading:
-          "Businesses often offer incentives to channel partners and their salespeople directly. Define the slabs for channel partners and salespeople and other conditions they must fulfill to qualify for the rewards. Take the time to explain the incentive program clearly to the channel partners and the sales team, along with the payout timelines. You can also consider tying up with a platform that makes channel sales incentives easier and faster. ",
+          "Clear communication of incentive rules, timelines, and payouts is critical. Many businesses partner with digital platforms like EnKash to automate incentives and simplify management.",
       },
     ],
   },
@@ -89,17 +89,70 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "As mentioned, connect with a smart platform like EnKash to manage your channel incentive program. This way, you will have a dashboard of the complete program, the due incentives, and the already paid incentives. You will get insights into which channel partners are doing well and which incentive program gives you the best results. ",
+          "Using a smart platform like EnKash helps businesses gain real-time insights into partner performance, pending incentives, and payout history. These insights enable better decision-making and program optimization.",
+      },
+    ],
+  },
+
+  /* 🔽 NEW FAQs ADDED BELOW 🔽 */
+
+  {
+    question: "What is channel incentive management?",
+    answer: [
+      {
+        heading:
+          "Channel incentive management refers to the process of planning, distributing, tracking, and optimizing rewards offered to channel partners for driving sales, growth, or specific business outcomes.",
+        bullets: [
+          "Define incentive structures for distributors, resellers, or agents",
+          "Automate reward distribution using digital payouts or gift cards",
+          "Track partner performance in real time",
+          "Maintain control over budgets, approvals, and compliance",
+        ],
       },
     ],
   },
   {
-    question:
-      "How is EnKash’s channel incentive platform different from others?",
+    question: "What are channel partner incentives?",
     answer: [
       {
         heading:
-          "EnKash is a modern, flexible channel incentive platform that replaces traditional gifts with customizable digital rewards. Partners get to choose what they value most, making the program more impactful and engaging.",
+          "Channel partner incentives are rewards given to partners for meeting or exceeding performance goals. These incentives strengthen partner relationships, increase motivation, and drive consistent sales outcomes across distribution channels.",
+      },
+    ],
+  },
+  {
+    question: "Why should businesses use channel incentive solutions?",
+    answer: [
+      {
+        heading:
+          "Businesses use channel incentive solutions to scale partner programs efficiently, reduce operational complexity, ensure timely rewards, and gain actionable insights. These solutions improve partner engagement while delivering measurable ROI on incentive spend.",
+      },
+    ],
+  },
+  {
+    question: "Who can become a channel partner?",
+    answer: [
+      {
+        heading:
+          "Any individual or organization involved in selling, promoting, or distributing products—such as resellers, distributors, consultants, or agents—can become a channel partner and participate in channel incentive programs.",
+      },
+    ],
+  },
+  {
+    question: "How are channel incentive programs tracked and optimized?",
+    answer: [
+      {
+        heading:
+          "Channel incentive programs are tracked through dashboards available in channel incentive platforms. These dashboards provide insights into partner performance, reward utilization, and overall program effectiveness, helping businesses optimize incentives for better engagement and growth.",
+      },
+    ],
+  },
+  {
+    question: "What are the benefits of automated channel incentive platforms?",
+    answer: [
+      {
+        heading:
+          "Automated channel incentive platforms provide faster payouts, real-time visibility, reduced manual errors, improved compliance, and higher partner satisfaction. They help businesses manage complex incentive structures efficiently while keeping partners motivated.",
       },
     ],
   },
