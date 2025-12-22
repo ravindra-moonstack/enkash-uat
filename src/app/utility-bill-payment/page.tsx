@@ -16,6 +16,15 @@ import faqData from "./faq-data"
 
 // components
 import FaqSection from "@/src/components/faq-section"
+import HeroSection from "@/src/components/sections/hero-section"
+import StepsSection from "@/src/components/steps-section"
+import SliderSection from "@/src/components/sections/slider-section"
+import CtaSection from "@/src/components/sections/cta-section"
+import BlogSection from "@/src/components/sections/blog-section"
+import UtilityBeefitSection from "@/src/components/sections/utilityBenefitSection"
+import ContentShowcase from "@/src/components/content-showcase"
+import EnterpriseSection from "@/src/components/enterprise-section"
+import UtilityWorkflow from "@/src/components/sections/utilityWorkflow"
 
 // helpers
 import {
@@ -38,15 +47,7 @@ import {
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import HeroSection from "@/src/components/sections/hero-section"
-import StepsSection from "@/src/components/steps-section"
-import SliderSection from "@/src/components/sections/slider-section"
-import CtaSection from "@/src/components/sections/cta-section"
-import BlogSection from "@/src/components/sections/blog-section"
-import UtilityBeefitSection from "@/src/components/sections/utilityBenefitSection"
-import ContentShowcase from "@/src/components/content-showcase"
-import EnterpriseSection from "@/src/components/enterprise-section"
-import UtilityWorkflow from "@/src/components/sections/utilityWorkflow"
+import AskAiSection from "@/src/components/sections/askAISection"
 
 export const metadata: Metadata = generateMetaData({
   title: "Utility Bill Payment: Pay All Business Utility Bills Seamlessly",
@@ -179,8 +180,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           data={paymentMethodData}
           imageSrc={paymentImg}
           imageAlt="card background"
-          buttonUrl="/budget-and-advances"
-          buttonTitle="Learn More"
+          buttonUrl={salesUrl}
         />
         <ContentShowcase
           heading="Manage Utility Bills Across Multiple Business Locations"
@@ -188,9 +188,8 @@ const UtilityBillPayment = (): React.JSX.Element => {
           data={dashboardData}
           imageSrc={locationImg}
           imageAlt="card background"
-          buttonUrl="/petty-cash"
           bgColor="bg-color-grey-100"
-          buttonTitle="Learn More"
+          buttonUrl={salesUrl}
           reverse
         />
         <ContentShowcase
@@ -199,8 +198,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           data={rankData}
           imageSrc={realTimeImg}
           imageAlt="card background"
-          buttonUrl="/reimbursements"
-          buttonTitle="Learn More"
+          buttonUrl={salesUrl}
         />
         <ContentShowcase
           heading="Streamlined Approvals, Built for Governance"
@@ -209,8 +207,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           imageSrc={approvalImg}
           imageAlt="card background"
           bgColor="bg-color-grey-100"
-          buttonUrl="/petty-cash"
-          buttonTitle="Learn More"
+          buttonUrl={salesUrl}
           reverse
         />
         <ContentShowcase
@@ -219,13 +216,13 @@ const UtilityBillPayment = (): React.JSX.Element => {
           data={centerData}
           imageSrc={centerlizeImg}
           imageAlt="card background"
-          buttonUrl="/reimbursements"
-          buttonTitle="Learn More"
+          buttonUrl={salesUrl}
         />
       </div>
 
       <EnterpriseSection />
 
+      <AskAiSection />
       <SliderSection
         headingContent={[
           {
