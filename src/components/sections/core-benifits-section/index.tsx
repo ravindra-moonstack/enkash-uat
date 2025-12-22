@@ -1,6 +1,6 @@
 import React from "react"
 import Image, { StaticImageData } from "next/image"
-import styles from "./core-benifits-section.module.scss"
+import styles from "./style.module.scss"
 import DynamicHeading from "../../dynamic-heading"
 
 type CardItem = {
