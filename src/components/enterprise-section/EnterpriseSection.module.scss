@@ -1,0 +1,87 @@
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+
+.EnterpriseSection {
+  background-image: url("./img/enterpriseSectionImg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 20px;
+
+  @include for-laptops {
+    padding: 50px;
+  }
+
+  .getStartedBox {
+    display: flex;
+    align-items: center;
+    .getStartedBoxInner {
+      background: linear-gradient(
+        -90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 70%
+      );
+      padding: 20px 20px 30px;
+      border-radius: 10px;
+      max-width: 738px;
+      width: 738px;
+
+      @include for-laptops {
+        padding: 50px;
+      }
+    }
+
+    .content {
+      :global(p)::before {
+        content: "";
+        width: 1.5px;
+        height: 20px;
+        margin-right: 10px;
+        background: $color-electric-green;
+        display: inline-block;
+        margin-bottom: -5px;
+      }
+    }
+    ul {
+      padding-left: 0;
+    }
+    .transitionImgWrapper {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .transitionImgWrapper {
+    display: none;
+  }
+}
+
+  }
+
+  .buttons {
+    padding-top: 20px;
+
+    .ctaButton {
+      background: $color-white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: $color-equity-blue;
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+
+      svg {
+        margin-left: 8px;
+      }
+
+      &:hover {
+        background: $color-equity-blue;
+        color: $color-white;
+
+        svg {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}

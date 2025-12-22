@@ -89,7 +89,7 @@ const StepsSection = ({
               ref={stepsRef}
               className={`${showScroll ? "overflow-auto scrollbar-thin" : ""}`}
               style={{
-                maxHeight: "400px",
+                maxHeight: "550px",
                 display: "flex",
                 flexDirection: "column",
                 gap: "12px",
