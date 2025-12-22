@@ -47,7 +47,7 @@ import {
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import AskAiSection from "@/src/components/sections/askAISection"
+// import AskAiSection from "@/src/components/sections/askAISection"
 
 export const metadata: Metadata = generateMetaData({
   title: "Utility Bill Payment: Pay All Business Utility Bills Seamlessly",
@@ -222,7 +222,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
 
       <EnterpriseSection />
 
-      <AskAiSection />
+      {/* <AskAiSection /> */}
       <SliderSection
         headingContent={[
           {
