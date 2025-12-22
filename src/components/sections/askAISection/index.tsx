@@ -39,54 +39,57 @@ const aiOptions: AiOption[] = [
 
 const AskAiSection: React.FC = () => {
   return (
-    <section className={`container mt-5 ${styles.askAiSection}`}>
-      <div className={`p-4 p-md-5 max-w-auto ${styles.askAiBox}`}>
-        <DynamicHeading
-          content={[
-            {
-              title: "Still not sure that EnKash is right",
-              color: "color-black",
-            },
-            {
-              title: " for you?",
-              color: "color-equity-blue",
-            },
-          ]}
-          headingTag="h3"
-          className="f-6 pb-3"
-        />
+    <section className={` my-5 md:mb-0 ${styles.askAiSection}`}>
+      <div className="max-w-auto">
+        {" "}
+        <div className={`p-4 p-md-5  ${styles.askAiBox}`}>
+          <DynamicHeading
+            content={[
+              {
+                title: "Still not sure that EnKash is right",
+                color: "color-black",
+              },
+              {
+                title: " for you?",
+                color: "color-equity-blue",
+              },
+            ]}
+            headingTag="h3"
+            className="f-6 pb-3"
+          />
 
-        <DynamicHeading
-          content={[
-            {
-              title:
-                "Let ChatGPT, Claude, or Perplexity do the thinking for you. Click a          button and see what your favorite AI says about EnKash.",
-              color: "color-black",
-            },
-          ]}
-          headingTag="p"
-          className="mb-0 pb-4"
-        />
+          <DynamicHeading
+            content={[
+              {
+                title:
+                  "Let ChatGPT, Claude, or Perplexity do the thinking for you. Click a          button and see what your favorite AI says about EnKash.",
+                color: "color-black",
+              },
+            ]}
+            headingTag="p"
+            className="mb-0 pb-4"
+          />
 
-        <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
-          {aiOptions.map((ai) => (
-            <>
-              <div>
-                {" "}
-                <Link
-                  key={ai.id}
-                  href={ai.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`btn ${styles.askAiBtn} text-black gap-3`}
-                >
-                  <Image src={ai.image} alt={ai.id} width={40} height={40} />
-                  {ai.label}
-                </Link>
-                <hr className={`${styles.askAiBtnHr}`} />
-              </div>
-            </>
-          ))}
+          <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
+            {aiOptions.map((ai) => (
+              <>
+                <div>
+                  {" "}
+                  <Link
+                    key={ai.id}
+                    href={ai.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`btn ${styles.askAiBtn} text-black gap-3`}
+                  >
+                    <Image src={ai.image} alt={ai.id} width={40} height={40} />
+                    {ai.label}
+                  </Link>
+                  <hr className={`${styles.askAiBtnHr}`} />
+                </div>
+              </>
+            ))}
+          </div>
         </div>
       </div>
     </section>
