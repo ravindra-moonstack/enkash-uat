@@ -1,0 +1,76 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.wrapper {
+  background: #f3fcff;
+  padding: 40px 24px;
+}
+
+.container {
+  display: flex;
+  gap: 32px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+}
+
+.leftCard {
+  background-image: url("./img/leftBg.png");
+  background-repeat: no-repeat;
+  background-size: cover; // or contain
+  background-position: center;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 420px;
+  min-height: 412px;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.description {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 16px;
+  flex: 1;
+}
+
+.utilityCard {
+  background: #fff;
+  border: 1px solid $color-baby-blue;
+  border-radius: 20px;
+  padding: 44px 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leftCard {
+    max-width: 100%;
+  }
+}

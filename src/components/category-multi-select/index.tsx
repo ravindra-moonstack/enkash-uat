@@ -52,8 +52,21 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
       setSelected((prev) => {
         let newSelected = [...prev]
 
-        if (category) {
-          const allChildren = category.children?.map((c) => c.value) || []
+        // 🟢 SINGLE CATEGORY (NO CHILDREN)
+        if (category && !hasChildren(category)) {
+          if (newSelected.includes(value)) {
+            newSelected = newSelected.filter((v) => v !== value)
+          } else {
+            newSelected.push(value)
+          }
+
+          onChange?.(newSelected, [])
+          return newSelected
+        }
+
+        // 🟢 CATEGORY WITH CHILDREN
+        if (category && hasChildren(category)) {
+          const allChildren = category.children!.map((c) => c.value)
 
           if (newSelected.includes(category.value)) {
             newSelected = newSelected.filter(
@@ -64,30 +77,15 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
               ...new Set([...newSelected, category.value, ...allChildren]),
             ]
           }
-        } else {
+        }
+
+        // 🟢 CHILD TOGGLE
+        if (!category) {
           if (newSelected.includes(value)) {
             newSelected = newSelected.filter((v) => v !== value)
           } else {
             newSelected.push(value)
           }
-
-          // Keep parent in sync
-          options.forEach((cat) => {
-            if (cat.children?.some((c) => c.value === value)) {
-              const allChildren = cat.children.map((c) => c.value)
-              const allSelected = allChildren.every((c) =>
-                newSelected.includes(c)
-              )
-
-              if (allSelected) {
-                if (!newSelected.includes(cat.value)) {
-                  newSelected.push(cat.value)
-                }
-              } else {
-                newSelected = newSelected.filter((v) => v !== cat.value)
-              }
-            }
-          })
         }
 
         const parent = options
@@ -96,12 +94,17 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
           )
           .map((cat) => cat.value)
 
-        onChange?.(parent, newSelected)
+        const children = newSelected.filter((val) =>
+          options.some((cat) =>
+            cat.children?.some((child) => child.value === val)
+          )
+        )
 
+        onChange?.(parent, children)
         return newSelected
       })
     },
-    [onChange, options]
+    [options, onChange]
   )
 
   useEffect(() => {
@@ -154,6 +157,8 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
     },
     [options, onChange]
   )
+  const hasChildren = (cat: Option) =>
+    Array.isArray(cat.children) && cat.children.length > 0
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
@@ -209,7 +214,13 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
             <div key={cat.value} className={styles.category}>
               <div
                 className={styles.categoryHeader}
-                onClick={() => toggleCategory(cat.value)}
+                onClick={() => {
+                  if (hasChildren(cat)) {
+                    toggleCategory(cat.value)
+                  } else {
+                    toggleOption(cat.value) // select immediately
+                  }
+                }}
                 role="option"
                 aria-selected={selected.includes(cat.value)}
               >
@@ -220,9 +231,12 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     checked={displayValues.includes(cat.value)}
                     onChange={() => {
                       toggleOption(cat.value)
-                      setOpenCategories((prev) =>
-                        prev.includes(cat.value) ? prev : [...prev, cat.value]
-                      )
+
+                      if (hasChildren(cat)) {
+                        setOpenCategories((prev) =>
+                          prev.includes(cat.value) ? prev : [...prev, cat.value]
+                        )
+                      }
                     }}
                     onClick={(e) => e.stopPropagation()}
                   />
