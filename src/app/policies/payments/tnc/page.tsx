@@ -9,9 +9,9 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 
 export const metadata: Metadata = generateMetaData({
-  title: "Terms and Conditions (Prepaid Program): EnKash",
+  title: "Terms and Conditions (Payments): EnKash",
   description:
-    "Understand the specific terms for issuing and using EnKash prepaid instruments.",
+    "Read the rules and obligations for using EnKash’s payment solutions.",
   alternates: {
     canonical: `${process.env.URL}/policies/payments/tnc`,
   },
