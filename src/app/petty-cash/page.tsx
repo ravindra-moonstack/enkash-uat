@@ -93,6 +93,7 @@ const PettyCash = (): React.JSX.Element => {
           title: "Get Started",
           url: salesUrl,
           theme: "blue",
+          vedioLink: "https://youtu.be/pjeEde3ruiU?si=ZxvNS0h4z1Mxcsga",
         }}
         rightImage={paymentSummary}
         backgroundImage="/images/expenceBg.webp"
