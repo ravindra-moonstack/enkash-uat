@@ -72,6 +72,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: `${process.env.URL}/payment-gateway`,
+  },
 }
 
 const salesUrl = getSalesUrl("/payment-gateway")
