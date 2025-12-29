@@ -1,0 +1,60 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.introduction_section {
+  background: $color-white;
+
+  position: relative;
+  padding: 50px 20px !important;
+
+  @include for-laptops {
+    padding: 90px 20px;
+  }
+
+  .section {
+    margin: auto;
+    gap: 10px;
+    justify-content: center;
+
+    width: 100%;
+
+    @include for-laptops {
+      width: initial;
+    }
+
+    .card {
+      width: calc(100% / 3 - 4px);
+      max-width: 100%;
+      background-color: $color-equity-blue;
+      border-radius: 10px;
+      box-shadow: 0px 0px 29.66px 0px $color-black-0d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 34px 24px;
+
+      // 👇 Responsive widths
+      @include for-laptops {
+        width: 300px;
+      }
+
+      @include for-tablet {
+        width: 180px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .section {
+      flex-wrap: wrap; // mobile
+      gap: 12px;
+    }
+  }
+
+  .inner-content {
+    background: $color-white;
+    /* inner background */
+    padding: 11px 14px;
+    border-radius: 10px;
+    /* slightly smaller radius */
+  }
+}

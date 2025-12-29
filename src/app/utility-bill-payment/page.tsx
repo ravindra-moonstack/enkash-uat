@@ -1,24 +1,53 @@
 import { Metadata } from "next"
 
 // data
-import { allInOnePolicyData, allProductSections, cardsData } from "./data"
+import {
+  allProductSections,
+  approvalData,
+  benifitsData,
+  cardsData,
+  centerData,
+  dashboardData,
+  integrationData,
+  paymentMethodData,
+  rankData,
+} from "./data"
 import faqData from "./faq-data"
 
 // components
 import FaqSection from "@/src/components/faq-section"
+import HeroSection from "@/src/components/sections/hero-section"
+import StepsSection from "@/src/components/steps-section"
+import SliderSection from "@/src/components/sections/slider-section"
+import CtaSection from "@/src/components/sections/cta-section"
+import BlogSection from "@/src/components/sections/blog-section"
+import UtilityBeefitSection from "@/src/components/sections/utilityBenefitSection"
+import ContentShowcase from "@/src/components/content-showcase"
+import EnterpriseSection from "@/src/components/enterprise-section"
+import UtilityWorkflow from "@/src/components/sections/utilityWorkflow"
 
 // helpers
-import { paymentSummary, mealCardImage } from "./img"
+import {
+  paymentSummary,
+  mealCardImage,
+  dashbordImg,
+  paymentImg,
+  locationImg,
+  approvalImg,
+  centerlizeImg,
+  realTimeImg,
+  electricity,
+  gas,
+  water,
+  dth,
+  prepaid,
+  broadband,
+} from "./img"
 
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import HeroSection from "@/src/components/sections/hero-section"
-import StepsSection from "@/src/components/steps-section"
-import UseCaseSection from "@/src/components/sections/use-case-section"
-import SliderSection from "@/src/components/sections/slider-section"
-import CtaSection from "@/src/components/sections/cta-section"
-import BlogSection from "@/src/components/sections/blog-section"
+import AskAiSection from "@/src/components/sections/askAISection"
 
 export const metadata: Metadata = generateMetaData({
   title: "Utility Bill Payment: Pay All Business Utility Bills Seamlessly",
@@ -53,17 +82,22 @@ const UtilityBillPayment = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "Simplify Business Utility Bill Payments with EnKash",
+            text: "One Platform to Control, Pay, and Audit Every Business Utility Bill",
             color: "color-black",
           },
         ]}
         description={{
-          text: "Manage all your business utility bills – electricity, water, post-paid, internet, and more – from a single dashboard. Automate payments and get real-time updates built for growing enterprises.",
+          text: "Manage electricity, water, gas, broadband, telecom, and other recurring business utility bills across all locations from one unified dashboard powered by Bharat Connect.",
         }}
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         rightImage={paymentSummary}
         backgroundImage="/images/collectPaymentBg.webp"
-        rightImageMaxHeight="520px"
+        rightImageMaxHeight="555px"
+      />
+
+      <UtilityBeefitSection
+        sectionTitle="Best Online Payment Solution"
+        cards={benifitsData}
       />
 
       <StepsSection
@@ -91,25 +125,104 @@ const UtilityBillPayment = (): React.JSX.Element => {
           alt: "card background",
         }}
       />
-
-      <UseCaseSection
+      <UtilityWorkflow
         heading={[
           {
-            title: "Say Goodbye to Bill Management Chaos",
-            color: "color-black ",
+            text: "All utilities. ",
+            colorClass: "color-black d-block f-3",
           },
-        ]}
-        subHeading={[
           {
-            title:
-              "Manage all your essential utility bill payments: electricity, power, water, gas, and more - in one seamless platform. EnKash automatically discovers upcoming bills, sends smart reminders, and helps you pay them on time every time. No more manual tracking, missed due dates, or scattered systems. Simplify your organization’s utility bill management with a single, automated dashboard. ",
-            color: "color-black ",
+            text: "All locations. ",
+            colorClass: "color-black d-block f-3",
+          },
+          {
+            text: "One workflow.",
+            colorClass: "color-black d-block f-7",
           },
         ]}
-        items={allInOnePolicyData}
-        buttonUrl={salesUrl}
+        description={[
+          {
+            text: "A platform to manage end-to-end utility payment operations.",
+            colorClass: "color-secondry-black f-4",
+          },
+        ]}
+        items={[
+          { label: "Electricity", icon: electricity },
+          { label: "Gas", icon: gas },
+          { label: "Water", icon: water },
+          { label: "DTH", icon: dth },
+          { label: "Electricity Prepaid", icon: prepaid },
+          { label: "Broadband", icon: broadband },
+        ]}
       />
 
+      <div className="bg_white_index">
+        <ContentShowcase
+          mainHeading={[
+            {
+              title: "Turn Bill Payments into   ",
+              color: "color-black",
+            },
+            { title: " Business Cost Savings", color: "color-equity-blue" },
+          ]}
+          heading="One Dashboard for All Bills"
+          subheading="When your utility bills come from multiple providers and locations, tracking quickly turns manual and error-prone. EnKash brings every business utility bill into one dashboard, so you always know what’s due, what’s paid, and what needs action."
+          data={integrationData}
+          imageSrc={dashbordImg}
+          imageAlt="card background"
+          buttonUrl={salesUrl}
+          bgColor="bg-color-grey-100"
+          reverse
+        />
+        <ContentShowcase
+          heading="One-click Payments"
+          subheading="Multiple portals slow payments and increase errors. Pay one or many utility bills in a single click, while keeping every payment linked and traceable."
+          data={paymentMethodData}
+          imageSrc={paymentImg}
+          imageAlt="card background"
+          buttonUrl={salesUrl}
+        />
+        <ContentShowcase
+          heading="Manage Utility Bills Across Multiple Business Locations"
+          subheading="Managing utility bills location by location leads to fragmented data and weak oversight. Get central control over all payments, without losing branch-level visibility."
+          data={dashboardData}
+          imageSrc={locationImg}
+          imageAlt="card background"
+          bgColor="bg-color-grey-100"
+          buttonUrl={salesUrl}
+          reverse
+        />
+        <ContentShowcase
+          heading="Real-Time Reconciliation"
+          subheading="When bills, payments, and documents sit in different places, reconciliation slows you down. EnKash brings everything into one view, so you match payments with verified bill copies and close faster with confidence."
+          data={rankData}
+          imageSrc={realTimeImg}
+          imageAlt="card background"
+          buttonUrl={salesUrl}
+        />
+        <ContentShowcase
+          heading="Streamlined Approvals, Built for Governance"
+          subheading="As utility spending grows, unstructured approvals create delays and risk. Keep approvals controlled, transparent, and consistent across every location."
+          data={approvalData}
+          imageSrc={approvalImg}
+          imageAlt="card background"
+          bgColor="bg-color-grey-100"
+          buttonUrl={salesUrl}
+          reverse
+        />
+        <ContentShowcase
+          heading="Centralized Bill Copies, Instantly Available"
+          subheading="Missing or delayed bill copies create audit risk. Access verified utility bill copies, including electricity bill copies, automatically fetched and mapped to each payment and billing cycle."
+          data={centerData}
+          imageSrc={centerlizeImg}
+          imageAlt="card background"
+          buttonUrl={salesUrl}
+        />
+      </div>
+
+      <EnterpriseSection />
+
+      <AskAiSection />
       <SliderSection
         headingContent={[
           {
