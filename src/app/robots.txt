@@ -5,17 +5,6 @@ Allow: /
 Disallow: /resources/wp-admin/
 Disallow: /resources/wp-login.php
 
-# Block crawling of tracking parameter URLs (SEO fix)
-Disallow: /*?utm_source=
-Disallow: /*?utm_medium=
-Disallow: /*?utm_campaign=
-Disallow: /*?utm_term=
-Disallow: /*?utm_content=
-Disallow: /*?_gl=
-Disallow: /*?_ga=
-Disallow: /*?_gcl_au=
 
-# Allow crawling of pages without parameters
-Allow: /*
 
 Sitemap: https://www.enkash.com/sitemap.xml
