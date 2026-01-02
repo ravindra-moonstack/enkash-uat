@@ -71,6 +71,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: `${process.env.URL}/products/corporate-cards`,
+  },
 }
 
 const salesUrl = getSalesUrl("/corporate-cards")
