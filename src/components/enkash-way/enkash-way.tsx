@@ -54,7 +54,7 @@ const EnkashWay = ({
     <>
       {/* DESKTOP */}
       <div
-        className={`d-md-block d-none ${styles.sixth_row}`}
+        className={`d-md-block d-none  ${styles.sixth_row}`}
         style={{
           backgroundImage: `url(${currentBgImage})`,
           backgroundSize: "cover",
@@ -65,7 +65,7 @@ const EnkashWay = ({
       >
         <div className={styles.blur_bg}></div>
         <div className={styles.blur_bg_right}></div>
-        <div className={styles.tab_section}>
+        <div className={` position-relative ${styles.tab_section}`}>
           {/* Headings */}
           <div className="d-flex flex-column text-center">
             <DynamicHeading
@@ -130,7 +130,7 @@ const EnkashWay = ({
           </div>
 
           <div className={styles.progress_bar}></div>
-          <div className="d-flex position-relative">
+          <div className="d-flex  gap-3">
             {/* Left Content */}
             <div
               className="d-flex align-items-start gap-3 col-5"
@@ -173,6 +173,19 @@ const EnkashWay = ({
                 )}
               </div>
             </div>
+            {selectedItem?.rightImg && (
+              <div className="d-flex align-items-start gap-3 col-7">
+                <div className="position-absolute bottom-0 end-0">
+                  {" "}
+                  <Image
+                    src={selectedItem.rightImg}
+                    alt="icon"
+                    width={379}
+                    height={322}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
