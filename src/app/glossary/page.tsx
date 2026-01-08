@@ -5,7 +5,7 @@ import axios from "axios"
 import Link from "next/link"
 import { Container, Row, Col, Form } from "react-bootstrap"
 
-const API_BASE = "https://uat.blogs.enkash.com/wp-json/custom/v1/glossary"
+const API_BASE = process.env.GLOSSARY_BASE_URL
 
 type GlossaryItem = {
   id: number
