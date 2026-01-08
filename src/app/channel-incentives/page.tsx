@@ -25,7 +25,7 @@ import generateMetaData from "@/src/utils/metaData"
 import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
-  title: "Channel Incentives to Drive and Motivate Your Partners",
+  title: "Channel Incentives Platform to Drive and Motivate Your Partners",
   description:
     "Boost partner performance with EnKash Channel Incentives. Automate payouts, track performance, and motivate resellers, agents, or dealers with ease.",
   alternates: {

@@ -8,7 +8,7 @@ export interface BreadcrumbItem {
 export type BreadcrumbProps = {
   items: BreadcrumbItem[]
   domain?: string
-  linkColor?: "white" | "black" | "allWhite"
+  linkColor?: "white" | "black" | "allWhite" | "allBlack"
 }
 
 export type TCategoryOptions = {

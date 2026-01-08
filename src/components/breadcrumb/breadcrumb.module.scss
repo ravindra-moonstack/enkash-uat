@@ -23,7 +23,17 @@
 
     // Keep .current blue (no override here)
   }
-
+  &.allBlack {
+    .link {
+      color: $color-alternate-grey;
+    } 
+    .separator {
+      color: $color-ash-greylite;
+    } 
+    .current {
+      color: $color-alternate-grey !important;
+    } 
+  }
   &.allWhite {
     .link {
       color: $color-white;
