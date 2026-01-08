@@ -29,6 +29,7 @@ const tabs = [
   "Longitudinal Data",
   "Longitudinal Data",
 ]
+
 const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 const Spinner = () => (
@@ -42,7 +43,7 @@ const LetterPageClient = () => {
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState("")
   const [suggestions, setSuggestions] = useState<GlossaryItem[]>([])
-  const [keywords, setKeywords] = useState<string[]>([])
+
   const cancelRef = useRef<any>(null)
   const suggestionsRef = useRef<HTMLDivElement>(null)
 
@@ -55,14 +56,6 @@ const LetterPageClient = () => {
         setTerms(data)
         setLoading(false)
       })
-    }
-    const stored = localStorage.getItem("glossary_keywords")
-    if (stored) {
-      try {
-        setKeywords(JSON.parse(stored))
-      } catch (e) {
-        setKeywords([])
-      }
     }
   }, [letter])
 
@@ -96,15 +89,15 @@ const LetterPageClient = () => {
     if (cancelRef.current) {
       cancelRef.current.cancel("canceled")
     }
+
     cancelRef.current = axios.CancelToken.source()
 
     try {
       const res = await axios.get(
         `${API_BASE}?search=${encodeURIComponent(q)}`,
-        {
-          cancelToken: cancelRef.current.token,
-        }
+        { cancelToken: cancelRef.current.token }
       )
+
       setSuggestions(res.data?.data || [])
     } catch (err: any) {
       if (!axios.isCancel(err)) {
@@ -117,6 +110,7 @@ const LetterPageClient = () => {
   return (
     <section className={styles.letterPageSection}>
       <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
+
       <Container className={`pb-0 ${styles.paddingTop}`}>
         <div className="d-flex mb-3">
           <CustomBreadcrumb
@@ -124,16 +118,14 @@ const LetterPageClient = () => {
             items={[
               { name: "Home", url: "/" },
               { name: "Glossary", url: "/glossary" },
-              { name: `${letter}`, url: `/${letter}` },
+              { name: letter, url: `/${letter}` },
             ]}
           />
         </div>
+
         <DynamicHeading
           content={[
-            {
-              text: "FinTech ",
-              color: "color-black f-3",
-            },
+            { text: "FinTech ", color: "color-black f-3" },
             { text: "Glossary", color: "color-equity-blue" },
           ]}
           headingTag="h1"
@@ -148,11 +140,14 @@ const LetterPageClient = () => {
             onChange={(e) => handleSearch(e.target.value)}
             className={styles.searchInput}
           />
+
           <Image src={FaSearch} alt="" className={styles.searchButton} />
+
           {suggestions.length > 0 && (
             <div ref={suggestionsRef} className={styles.suggestions}>
               {suggestions.map((item) => {
                 const firstLetter = (item.title?.[0] || "").toLowerCase()
+
                 return (
                   <div key={item.id} className={styles.suggestionItem}>
                     <Link href={`/glossary/${firstLetter}/${item.slug}`}>
@@ -164,13 +159,15 @@ const LetterPageClient = () => {
             </div>
           )}
         </div>
+
         <div className={styles.wrapper}>
           {tabs.map((label, index) => (
-            <Link href={"/"} key={index} className={styles.tab}>
+            <Link href="/" key={index} className={styles.tab}>
               {label}
             </Link>
           ))}
         </div>
+
         <div className={styles.alphabetBar}>
           <div className={styles.alphabetScroll}>
             {ALPHABET.map((ltr) => (
