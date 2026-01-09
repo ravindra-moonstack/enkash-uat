@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import axios from "axios"
 import styles from "./page.module.scss"
-import { Container, Row, Col, Form } from "react-bootstrap"
+import { Container, Form } from "react-bootstrap"
 import Link from "next/link"
 import FaSearch from "../../../../public/svgs/SearchIcon.svg"
 import ChevronRight from "../../../../public/svgs/chevron-right.svg"
@@ -13,7 +13,7 @@ import GlossaryBgImage from "../../../../public/images/glossaryBgImage.webp"
 import { useParams } from "next/navigation"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 
-const API_BASE = process.env.GLOSSARY_BASE_URL
+const API_BASE = process.env.NEXT_PUBLIC_GLOSSARY_BASE_URL
 
 type GlossaryItem = {
   id: number
@@ -184,18 +184,12 @@ const LetterPageClient = () => {
           </div>
         </div>
 
-        <Row className={styles.termsGrid}>
+        <div className={styles.termsGrid}>
           {loading ? (
             <Spinner />
           ) : terms.length > 0 ? (
             terms.map((item: any) => (
-              <Col
-                key={item.id}
-                xs={12}
-                sm={6}
-                md={3}
-                className={styles.termCol}
-              >
+              <div key={item.id} className={styles.termCol}>
                 <Link
                   href={`/glossary/${letter}/${item.slug}`}
                   className={styles.termLink}
@@ -207,14 +201,14 @@ const LetterPageClient = () => {
                     className={styles.arrow}
                   />
                 </Link>
-              </Col>
+              </div>
             ))
           ) : (
-            <Col xs={12}>
+            <div className={styles.noResultsCol}>
               <p className={styles.noResults}>No glossary items found.</p>
-            </Col>
+            </div>
           )}
-        </Row>
+        </div>
 
         <div className={styles.alphabetBar}>
           <div className={styles.alphabetScroll}>
