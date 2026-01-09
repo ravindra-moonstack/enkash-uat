@@ -199,10 +199,10 @@
 }
 
 .termsGrid {
-  margin: 32px 8px 40px 8px;
+  margin: 32px 8px 40px 8px !important;
  
   @include for-laptops {
-    margin: 47px 47px 68px 48px;
+    margin: 47px 47px 68px 48px !important;
   }
 }
 
