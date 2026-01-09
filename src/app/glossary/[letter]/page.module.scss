@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.letterPageSection { 
+.letterPageSection {
   position: relative;
   // background-color: $color-white;
 }
@@ -20,34 +20,37 @@
     height: 297px;
   }
 }
-.paddingTop{
-    padding-top: 110px;
-    @include for-laptops {
-        padding-top: 130px;
-      }
+
+.paddingTop {
+  padding-top: 110px;
+
+  @include for-laptops {
+    padding-top: 130px;
+  }
 }
 
 .breadcrumb {
   font-size: 14px;
-  color: $color-main-grey;  
+  color: $color-main-grey;
+
   a {
     color: $color-main-grey;
     text-decoration: none;
-    
+
     &:hover {
       color: $color-equity-blue;
     }
   }
 
   @include for-laptops {
-    font-size: 16px; 
+    font-size: 16px;
   }
 }
 
-.pageTitle { 
-  margin-top: 30px; 
-  margin-bottom: 30px !important; 
-  text-align: center; 
+.pageTitle {
+  margin-top: 30px;
+  margin-bottom: 30px !important;
+  text-align: center;
 }
 
 .glossaryHighlight {
@@ -58,7 +61,8 @@
 .searchWrapper {
   position: relative;
   max-width: 780px;
-  margin: 0 auto 32px; 
+  margin: 0 auto 32px;
+
   @include for-laptops {
     margin-bottom: 42px;
   }
@@ -75,11 +79,13 @@
   background-color: $color-white;
   box-shadow: 0px 10px 44px 0px #00000014;
   padding-right: 35px;
+
   &:focus {
     outline: none;
     border-color: $color-equity-blue;
     box-shadow: 0 0 0 3px rgba(28, 90, 244, 0.1);
   }
+
   &::placeholder {
     color: $color-slate-grey;
   }
@@ -94,8 +100,8 @@
   border: none;
   color: $color-slate-grey;
   width: 27px;
-  height: 22px; 
-   
+  height: 22px;
+
 }
 
 .suggestions {
@@ -116,12 +122,12 @@
 
 .suggestionItem {
   padding: 8px 12px;
-  
+
   a {
     color: $color-main-black;
     text-decoration: none;
     display: block;
-    
+
     &:hover {
       color: $color-equity-blue;
     }
@@ -151,7 +157,7 @@
   border-radius: 24px;
   cursor: pointer;
   transition: all 0.2s ease;
-  
+
   &:hover {
     background-color: $color-equity-blue;
     color: $color-white;
@@ -164,17 +170,17 @@
   }
 }
 
-.alphabetBar { 
-   margin-bottom: 20px;
+.alphabetBar {
+  margin-bottom: 20px;
 }
 
 .alphabetScroll {
   display: flex;
   gap: 22px;
   justify-content: space-evenly;
-  min-width: min-content; 
+  min-width: min-content;
   flex-wrap: wrap;
- 
+
 }
 
 .alphabetLink {
@@ -186,56 +192,72 @@
   font-size: 16px;
   font-weight: 700;
   color: $color-dark-grey;
-  text-decoration: none; 
+  text-decoration: none;
   transition: all 0.2s ease;
-  
+
   &:hover {
-    color: $color-equity-blue; 
+    color: $color-equity-blue;
   }
-  
+
   &.active {
-    color: $color-equity-blue;  
-  } 
+    color: $color-equity-blue;
+  }
 }
 
 .termsGrid {
-  margin: 32px 8px 40px 8px;
- 
+  margin: 32px 8px 40px 8px !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
   @include for-laptops {
-    margin: 47px 47px 68px 48px;
+    margin: 47px 47px 68px 48px !important;
   }
 }
 
 .termCol {
-  margin-bottom: 16px; 
+  width: 100%;
+  padding: 0 15px;
+
+  @include for-laptops {
+    width: calc(25% - 18px);
+  }
 }
+
+.noResultsCol {
+  width: 100%;
+}
+ 
 
 .termLink {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
-  background-color: $color-white; 
+  align-items: center;
+  background-color: $color-white;
   color: $color-main-black;
   text-decoration: none;
   height: 31px;
   transition: all 0.2s ease;
+
   .title {
     font-size: 16px;
-    color: $color-grey-200; 
+    color: $color-grey-200;
     font-weight: 400;
   }
+
   .arrow {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     color: $color-equity-blue;
-    transition: all 0.2s ease; 
+    transition: all 0.2s ease;
   }
-  &:hover {  
+
+  &:hover {
     .arrow {
       color: $color-equity-blue;
       transform: translateX(4px);
     }
-  } 
+  }
 }
 
 
@@ -258,25 +280,25 @@
   gap: 11px;
   padding: 0 12px;
   margin-bottom: 34px;
- 
+
 
   @include for-laptops {
     grid-template-columns: repeat(5, 1fr);
     padding: 0 24px;
   }
- 
+
 }
 
 .tab {
   border: 1px solid $color-black-2;
-  border-radius: 4px; 
+  border-radius: 4px;
   font-size: 16px;
   font-weight: 400;
   line-height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color:$color-dark-grey;
+  color: $color-dark-grey;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -304,7 +326,11 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
-  

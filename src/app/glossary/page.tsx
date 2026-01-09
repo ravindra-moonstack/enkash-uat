@@ -5,7 +5,7 @@ import axios from "axios"
 import Link from "next/link"
 import { Container, Row, Col, Form } from "react-bootstrap"
 
-const API_BASE = process.env.GLOSSARY_BASE_URL
+const API_BASE = process.env.NEXT_PUBLIC_GLOSSARY_BASE_URL
 
 type GlossaryItem = {
   id: number
