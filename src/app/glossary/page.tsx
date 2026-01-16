@@ -1,91 +1,120 @@
-"use client"
+// app/glossary/page.tsx
 
-import React, { useState, useRef } from "react"
-import axios from "axios"
+import React from "react"
+import { Container } from "react-bootstrap"
 import Link from "next/link"
-import { Container, Row, Col, Form } from "react-bootstrap"
+import Image from "next/image"
+import GlossaryBgImage from "../../../public/images/glossaryBgImage.webp"
+import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
+import GlossaryHomeClient from "./glossary-home-client"
+import styles from "./page.module.scss"
+import {
+  fetchAllGlossaryData,
+  fetchGroupedTerms,
+} from "@/src/utils/glossaryData"
 
-const API_BASE = process.env.NEXT_PUBLIC_GLOSSARY_BASE_URL
+const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
-type GlossaryItem = {
-  id: number
-  title: string
-  slug: string
-  content?: string
+export const metadata = {
+  title: "FinTech Glossary | Complete Financial Technology Terms",
+  description:
+    "Explore our comprehensive FinTech glossary with definitions, business context, and explanations of financial technology terms.",
 }
 
-export default function GlossaryPage() {
-  const [search, setSearch] = useState("")
-  const [suggestions, setSuggestions] = useState<GlossaryItem[]>([])
-  const cancelRef = useRef<any>(null)
-
-  async function handleSearch(q: string) {
-    setSearch(q)
-
-    if (!q) {
-      setSuggestions([])
-      return
-    }
-
-    // cancel previous request if still active
-    if (cancelRef.current) {
-      cancelRef.current.cancel("canceled")
-    }
-    cancelRef.current = axios.CancelToken.source()
-
-    try {
-      const res = await axios.get(
-        `${API_BASE}?search=${encodeURIComponent(q)}`,
-        {
-          cancelToken: cancelRef.current.token,
-        }
-      )
-      // API returns { status, count, data: [...] }
-      setSuggestions(res.data?.data || [])
-    } catch (err: any) {
-      if (!axios.isCancel(err)) {
-        console.error("Search error:", err?.message || err)
-      }
-      setSuggestions([])
-    }
-  }
+export default async function GlossaryPage() {
+  const groupedTerms = await fetchGroupedTerms()
+  const allTerms = await fetchAllGlossaryData()
 
   return (
-    <Container className="pb-5 paddingTopClass">
-      <nav className="mb-3">Home &gt; Glossary</nav>
-      <h1 className="mb-4 fw-bold">Glossary</h1>
-
-      <Form.Control
-        type="text"
-        placeholder="Search glossary terms..."
-        value={search}
-        onChange={(e) => handleSearch(e.target.value)}
-        className="mb-2"
-      />
-
-      {suggestions.length > 0 && (
-        <div className="border rounded p-3 bg-light mb-4">
-          {suggestions.map((item) => {
-            const firstLetter = (item.title?.[0] || "").toLowerCase()
-            return (
-              <div key={item.id} className="py-1">
-                <Link href={`/glossary/${firstLetter}/${item.slug}`}>
-                  {item.title}
-                </Link>
-              </div>
-            )
-          })}
+    <section className={styles.glossaryHomeSection}>
+      <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
+      <Container className={`pb-0 ${styles.paddingTop}`}>
+        <div className="d-flex mb-3">
+          <CustomBreadcrumb
+            linkColor="allBlack"
+            items={[
+              { name: "Home", url: "/" },
+              { name: "Glossary", url: "/glossary" },
+            ]}
+          />
         </div>
-      )}
 
-      {/* A-Z alphabet */}
-      <Row className="g-2 mt-4">
-        {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((ltr) => (
-          <Col key={ltr} xs="1" className="text-center">
-            <Link href={`/glossary/${ltr.toLowerCase()}`}>{ltr}</Link>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+        <DynamicHeading
+          content={[
+            {
+              text: "FinTech ",
+              color: "color-black f-3",
+            },
+            { text: "Glossary", color: "color-equity-blue" },
+          ]}
+          headingTag="h1"
+          className={styles.pageTitle}
+        />
+
+        <GlossaryHomeClient />
+
+        <div className={styles.alphabetBar}>
+          <div className={styles.alphabetScroll}>
+            {ALPHABET.map((ltr) => (
+              <Link
+                key={ltr}
+                href={`/glossary/${ltr.toLowerCase()}`}
+                className={styles.alphabetLink}
+              >
+                {ltr}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.termsContainer}>
+          {Object.keys(groupedTerms)
+            .sort()
+            .map((letter) => (
+              <div key={letter} className={styles.letterSection}>
+                <DynamicHeading
+                  content={[
+                    {
+                      text: `${letter}`,
+                      color: "color-black f-3",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className={styles.letterHeading}
+                />
+                <div className={styles.termsGrid}>
+                  {groupedTerms[letter].map((term) => (
+                    <Link
+                      key={term.slug}
+                      href={`/glossary/${letter.toLowerCase()}/${term.slug.split("/").pop()}`}
+                      className={styles.termCard}
+                    >
+                      <h3 className={styles.termCardTitle}>{term.keyword}</h3>
+                      <p className={styles.termCardDescription}>
+                        {term.definition.substring(0, 120)}
+                        {term.definition.length > 120 ? "..." : ""}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+        </div>
+
+        <div className={styles.alphabetBar}>
+          <div className={styles.alphabetScroll}>
+            {ALPHABET.map((ltr) => (
+              <Link
+                key={ltr}
+                href={`/glossary/${ltr.toLowerCase()}`}
+                className={styles.alphabetLink}
+              >
+                {ltr}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
   )
 }
