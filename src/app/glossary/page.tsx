@@ -8,10 +8,7 @@ import GlossaryBgImage from "../../../public/images/glossaryBgImage.webp"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import GlossaryHomeClient from "./glossary-home-client"
 import styles from "./page.module.scss"
-import {
-  fetchAllGlossaryData,
-  fetchGroupedTerms,
-} from "@/src/utils/glossaryData"
+import { fetchGroupedTerms } from "@/src/utils/glossaryData"
 
 const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
@@ -23,7 +20,6 @@ export const metadata = {
 
 export default async function GlossaryPage() {
   const groupedTerms = await fetchGroupedTerms()
-  const allTerms = await fetchAllGlossaryData()
 
   return (
     <section className={styles.glossaryHomeSection}>
