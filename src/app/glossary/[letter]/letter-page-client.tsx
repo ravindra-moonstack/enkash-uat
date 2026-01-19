@@ -251,11 +251,11 @@ import type { GlossaryTerm } from "@/src/utils/glossaryData"
 
 const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
-const Spinner = () => (
-  <div className={styles.spinnerContainer}>
-    <div className={styles.spinner}></div>
-  </div>
-)
+// const Spinner = () => (
+//   <div className={styles.spinnerContainer}>
+//     <div className={styles.spinner}></div>
+//   </div>
+// )
 
 interface Props {
   letter: string

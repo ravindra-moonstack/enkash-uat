@@ -8,7 +8,7 @@ import Image from "next/image"
 import Link from "next/link"
 import GlossaryBgImage from "../../../../../public/images/glossaryBgImage.webp"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
-import BlogSection from "@/src/components/sections/blog-section"
+// import BlogSection from "@/src/components/sections/blog-section"
 import styles from "./page.module.scss"
 import GlossaryClient from "./slug-page-client"
 
@@ -45,12 +45,12 @@ export default async function GlossaryDetail({ params }: PageProps) {
   }
 
   // Parse related blogs if present
-  const relatedBlogIds = term.relatedBlogs
-    ? term.relatedBlogs
-        .split(",")
-        .map((id) => parseInt(id.trim()))
-        .filter((id) => !isNaN(id))
-    : []
+  // const relatedBlogIds = term.relatedBlogs
+  //   ? term.relatedBlogs
+  //       .split(",")
+  //       .map((id) => parseInt(id.trim()))
+  //       .filter((id) => !isNaN(id))
+  //   : []
 
   // Collect all sections to display
   const sections = []
