@@ -8,9 +8,10 @@ import GlossaryBgImage from "../../../public/images/glossaryBgImage.webp"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import GlossaryHomeClient from "./glossary-home-client"
 import styles from "./page.module.scss"
-import { fetchGroupedTerms } from "@/src/utils/glossaryData"
+import { HARDCODED_GLOSSARY_DATA } from "./data"
 
 const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+ 
 
 export const metadata = {
   title: "FinTech Glossary | Complete Financial Technology Terms",
@@ -19,8 +20,6 @@ export const metadata = {
 }
 
 export default async function GlossaryPage() {
-  const groupedTerms = await fetchGroupedTerms()
-
   return (
     <section className={styles.glossaryHomeSection}>
       <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
@@ -64,37 +63,34 @@ export default async function GlossaryPage() {
         </div>
 
         <div className={styles.termsContainer}>
-          {Object.keys(groupedTerms)
-            .sort()
-            .map((letter) => (
-              <div key={letter} className={styles.letterSection}>
-                <DynamicHeading
-                  content={[
-                    {
-                      text: `${letter}`,
-                      color: "color-black f-3",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className={styles.letterHeading}
-                />
-                <div className={styles.termsGrid}>
-                  {groupedTerms[letter].map((term) => (
-                    <Link
-                      key={term.slug}
-                      href={`/glossary/${letter.toLowerCase()}/${term.slug.split("/").pop()}`}
-                      className={styles.termCard}
-                    >
-                      <h3 className={styles.termCardTitle}>{term.keyword}</h3>
-                      <p className={styles.termCardDescription}>
-                        {term.definition.substring(0, 120)}
-                        {term.definition.length > 120 ? "..." : ""}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
+          {HARDCODED_GLOSSARY_DATA.map((section, idx) => (
+            <div key={idx} className={styles.letterSection}>
+              <DynamicHeading
+                content={[
+                  {
+                    text: `${section.heading}`,
+                    color: "color-black f-3",
+                  },
+                ]}
+                headingTag="h2"
+                className={styles.letterHeading}
+              />
+              <div className={styles.termsGrid}>
+                {section.cards.map((card, cardIdx) => (
+                  <Link
+                    key={cardIdx}
+                    href={card.link}
+                    className={styles.termCard}
+                  >
+                    <h3 className={styles.termCardTitle}>{card.heading}</h3>
+                    <p className={styles.termCardDescription}>
+                      {card.description}
+                    </p>
+                  </Link>
+                ))}
               </div>
-            ))}
+            </div>
+          ))}
         </div>
 
         <div className={styles.alphabetBar}>
