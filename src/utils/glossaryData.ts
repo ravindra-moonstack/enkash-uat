@@ -20,7 +20,7 @@ export type GlossaryTerm = {
     sheet: string
 }
 
-const CSV_URL = process.env.NEXT_PUBLIC_GLOSSARY_CSV_URL!
+const CSV_URL = process.env.GLOSSARY_CSV_URL!
 
 /**
  * Improved CSV parser that handles quotes and commas properly
@@ -201,7 +201,11 @@ export async function searchGlossaryTerms(query: string): Promise<GlossaryTerm[]
 export async function fetchGroupedTerms(): Promise<Record<string, GlossaryTerm[]>> {
     const allData = await fetchAllGlossaryData()
     const grouped: Record<string, GlossaryTerm[]> = {}
-
+    const res = await fetch(CSV_URL, { cache: 'no-store' })
+    const text = await res.text()
+    
+    console.log("CSV RESPONSE PREVIEW:", text.slice(0, 300))
+    
     allData.forEach(term => {
         const letter = term.sheet.toUpperCase()
         if (!grouped[letter]) {
