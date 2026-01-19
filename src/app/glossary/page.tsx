@@ -9,6 +9,7 @@ import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import GlossaryHomeClient from "./glossary-home-client"
 import styles from "./page.module.scss"
 import { HARDCODED_GLOSSARY_DATA } from "./data"
+import BlogSection from "@/src/components/sections/blog-section"
 
 const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
  
@@ -20,7 +21,7 @@ export const metadata = {
 }
 
 export default async function GlossaryPage() {
-  return (
+  return (<>
     <section className={styles.glossaryHomeSection}>
       <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
       <Container className={`pb-0 ${styles.paddingTop}`}>
@@ -106,7 +107,22 @@ export default async function GlossaryPage() {
             ))}
           </div>
         </div>
+
       </Container>
     </section>
+    <BlogSection
+    className="bg-white"
+    heading={[
+      {
+        title: "Related  ",
+        color: "color-black ",
+      },
+      {
+        title: " Resources",
+        color: "color-black f-4",
+      },
+    ]}
+    cards={[12642, 13675, 12195]}
+  /></>
   )
 }
