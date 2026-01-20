@@ -1,5 +1,5 @@
 "use client"
- 
+
 
 import React, { useState, useRef, useEffect } from "react"
 import styles from "./page.module.scss"
@@ -9,11 +9,11 @@ import FaSearch from "../../../../public/svgs/SearchIcon.svg"
 import ChevronRight from "../../../../public/svgs/chevron-right.svg"
 import Image from "next/image"
 import GlossaryBgImage from "../../../../public/images/glossaryBgImage.webp"
-import { CustomBreadcrumb, DynamicHeading } from "@/src/components" 
+import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import { GlossaryTerm } from "../glossaryData"
 
 const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
- 
+
 
 interface Props {
   letter: string
@@ -127,9 +127,8 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
               <Link
                 key={ltr}
                 href={`/glossary/${ltr.toLowerCase()}`}
-                className={`${styles.alphabetLink} ${
-                  letter.toUpperCase() === ltr ? styles.active : ""
-                }`}
+                className={`${styles.alphabetLink} ${letter.toUpperCase() === ltr ? styles.active : ""
+                  }`}
               >
                 {ltr}
               </Link>
@@ -167,9 +166,8 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
               <Link
                 key={ltr}
                 href={`/glossary/${ltr.toLowerCase()}`}
-                className={`${styles.alphabetLink} ${
-                  letter.toUpperCase() === ltr ? styles.active : ""
-                }`}
+                className={`${styles.alphabetLink} ${letter.toUpperCase() === ltr ? styles.active : ""
+                  }`}
               >
                 {ltr}
               </Link>

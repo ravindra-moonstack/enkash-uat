@@ -73,7 +73,9 @@ export default async function GlossaryDetail({ params }: PageProps) {
       content: term.sectionDescription4,
     })
   }
-
+  const blogIds = term.relatedBlogs && Array.isArray(term.relatedBlogs)
+    ? term.relatedBlogs
+    : []
   return (
     <>
       <section className={styles.detailPageSection}>
@@ -104,47 +106,48 @@ export default async function GlossaryDetail({ params }: PageProps) {
 
           <GlossaryClient letter={letter} availableLetters={availableLetters} />
 
-          <div className={styles.titleSection}>
-            <DynamicHeading
-              content={[
-                {
-                  text: term.keyword,
-                  color: "color-dark-grey",
-                },
-              ]}
-              headingTag="h2"
-              className={styles.termTitle}
-            />
-
-            <div className={styles.iconContainer}>
-              <a href="#" className={styles.icon}>
-                <FaLinkedinIn />
-              </a>
-
-              <a href="#" className={styles.icon}>
-                <FaFacebookF />
-              </a>
-
-              <a href="#" className={styles.icon}>
-                <FaXTwitter />
-              </a>
-            </div>
-          </div>
-
-          {/* All Other Sections */}
-          {sections.map((section, index) => (
-            <section key={index} className={styles.contentSection}>
+          <div className={styles.sectionWrapper}>
+            <div className={styles.titleSection}>
               <DynamicHeading
                 content={[
                   {
-                    text: `${section.heading}`,
-                    color: "color-alternate-grey f-7",
+                    text: term.keyword,
+                    color: "color-dark-grey",
                   },
                 ]}
-                headingTag="h4"
-              // className={styles.sectionHeading}
+                headingTag="h2"
+                className={styles.termTitle}
               />
-              <div className={styles.sectionContent}>
+
+              <div className={styles.iconContainer}>
+                <a href="#" className={styles.icon}>
+                  <FaLinkedinIn />
+                </a>
+
+                <a href="#" className={styles.icon}>
+                  <FaFacebookF />
+                </a>
+
+                <a href="#" className={styles.icon}>
+                  <FaXTwitter />
+                </a>
+              </div>
+            </div>
+
+            {/* All Other Sections */}
+            {sections.map((section, index) => (
+              <section key={index} className={styles.contentSection}>
+                <DynamicHeading
+                  content={[
+                    {
+                      text: `${section.heading}`,
+                      color: "color-alternate-grey f-7",
+                    },
+                  ]}
+                  headingTag="h4"
+                // className={styles.sectionHeading}
+                />
+                {/* <div className={styles.sectionContent}>
                 <DynamicHeading
                   content={[
                     {
@@ -152,12 +155,18 @@ export default async function GlossaryDetail({ params }: PageProps) {
                       color: "color-alternate-grey f-4",
                     },
                   ]}
-                  headingTag="p"
+                  headingTag="pre"
                 // className={styles.sectionHeading}
                 />
-              </div>
-            </section>
-          ))}
+              </div> */}
+
+                <div
+                  className={styles.sectionContent}
+                  dangerouslySetInnerHTML={{ __html: section.content }}
+                />
+              </section>
+            ))}
+          </div>
 
           {/* Bottom Alphabet Navigation - Matching Reference Image */}
           <div className={styles.bottomAlphabetBar}>
@@ -181,20 +190,22 @@ export default async function GlossaryDetail({ params }: PageProps) {
       </section>
 
       {/* Related Blogs Section */}
-      <BlogSection
-        className="bg-white"
-        heading={[
-          {
-            title: "Related  ",
-            color: "color-black ",
-          },
-          {
-            title: " Resources",
-            color: "color-black f-4",
-          },
-        ]}
-        cards={[12642, 13675, 12195]}
-      />
+      {blogIds.length > 0 && (
+        <BlogSection
+          className="bg-white"
+          heading={[
+            {
+              title: "Related  ",
+              color: "color-black ",
+            },
+            {
+              title: " Resources",
+              color: "color-black f-4",
+            },
+          ]}
+          cards={blogIds}
+        />
+      )}
     </>
   )
 }
