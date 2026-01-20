@@ -183,7 +183,7 @@ const FooterV2 = (): React.JSX.Element => {
                           <FaLinkedinIn />
                         </Link>
                         <Link
-                          href="https://www.youtube.com/@enkashbusiness"
+                          href="https://youtube.com/@enkash"
                           target="_blank"
                           rel="noreferrer noopener"
                           title="Youtube"

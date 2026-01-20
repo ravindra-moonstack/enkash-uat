@@ -83,9 +83,8 @@ export default function GlossaryClient({
               <Link
                 key={ltr}
                 href={hasTerms ? `/glossary/${ltr.toLowerCase()}` : "#"}
-                className={`${styles.alphabetLink} ${
-                  letter.toUpperCase() === ltr ? styles.active : ""
-                } ${!hasTerms ? styles.disabled : ""}`}
+                className={`${styles.alphabetLink} ${letter.toUpperCase() === ltr ? styles.active : ""
+                  } ${!hasTerms ? styles.disabled : ""}`}
               >
                 {ltr}
               </Link>
