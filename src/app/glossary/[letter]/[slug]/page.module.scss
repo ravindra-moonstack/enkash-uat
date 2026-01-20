@@ -47,6 +47,39 @@
   text-align: center;
 }
 
+.sectionWrapper {
+  max-width: 100%;
+  padding: 10px 0;
+
+  @include for-laptops {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.sectionContent p {
+  color: $color-alternate-grey;
+  font-weight: 400;
+}
+
+.sectionContent:has(:only-child > ol),
+.sectionContent:has(:only-child > ul) {
+  padding-left: 16px;
+}
+
+
+
+.sectionContent ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 0 !important;
+}
+
+.sectionContent ol li {
+  font-weight: 700;
+}
+
 .paddingTop {
   padding-top: 110px;
 
@@ -138,6 +171,8 @@
 
 .bottomAlphabetBar {
   margin-top: 50px;
+  margin-bottom: 20px;
+
 }
 
 .alphabetScroll {
@@ -242,7 +277,7 @@
 
 /* Content Sections - Clean Layout */
 .contentSection {
-  margin-bottom: $spacing-2xl;
+  margin-bottom: 20px;
 
   @include for-laptops {
     margin-bottom: $spacing-3xl;
@@ -314,6 +349,7 @@
   .titleSection {
     flex-direction: row;
     align-items: flex-end;
+    margin-bottom: 16px;
   }
 
   .socialIcons {
@@ -326,6 +362,6 @@
   }
 
   .contentSection {
-    padding: $spacing-lg;
+    padding: 18px;
   }
 }
