@@ -153,7 +153,7 @@ export default async function GlossaryDetail({ params }: PageProps) {
                     },
                   ]}
                   headingTag="h4"
-                  className={styles.sluSectionHeading}
+                  className={styles.slugSectionHeading}
                 />
 
                 <div
