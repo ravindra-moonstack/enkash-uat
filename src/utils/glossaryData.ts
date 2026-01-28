@@ -34,8 +34,7 @@ export async function fetchAllLetters(): Promise<string[]> {
 
   return Array.from(letters).sort()
 }
-
-// Generate static params for all letters
+ 
 export async function generateLetterParams() {
   const letters = await fetchAllLetters()
   return letters.map(letter => ({
