@@ -73,9 +73,17 @@ export default async function GlossaryDetail({ params }: PageProps) {
       content: term.sectionDescription4,
     })
   }
-  const blogIds = term.relatedBlogs && Array.isArray(term.relatedBlogs)
-    ? term.relatedBlogs
-    : []
+
+  const blogLinks: string[] = []
+  const blogCards: number[] = []
+
+  if (term.relatedBlogs && Array.isArray(term.relatedBlogs) && term.relatedBlogs.length > 0) {
+    if (typeof term.relatedBlogs[0] === 'string') {
+      blogLinks.push(...(term.relatedBlogs as string[]));
+    } else if (typeof term.relatedBlogs[0] === 'number') {
+      blogCards.push(...(term.relatedBlogs as number[]));
+    }
+  }
   return (
     <>
       <section className={styles.detailPageSection}>
@@ -145,20 +153,8 @@ export default async function GlossaryDetail({ params }: PageProps) {
                     },
                   ]}
                   headingTag="h4"
-                // className={styles.sectionHeading}
+                  className={styles.sluSectionHeading}
                 />
-                {/* <div className={styles.sectionContent}>
-                <DynamicHeading
-                  content={[
-                    {
-                      text: `${section.content}`,
-                      color: "color-alternate-grey f-4",
-                    },
-                  ]}
-                  headingTag="pre"
-                // className={styles.sectionHeading}
-                />
-              </div> */}
 
                 <div
                   className={styles.sectionContent}
@@ -190,7 +186,7 @@ export default async function GlossaryDetail({ params }: PageProps) {
       </section>
 
       {/* Related Blogs Section */}
-      {blogIds.length > 0 && (
+      {(blogLinks.length > 0 || blogCards.length > 0) && (
         <BlogSection
           className="bg-white"
           heading={[
@@ -203,7 +199,8 @@ export default async function GlossaryDetail({ params }: PageProps) {
               color: "color-black f-4",
             },
           ]}
-          cards={blogIds}
+          {...(blogLinks.length > 0 ? { links: blogLinks } : {})}
+          {...(blogCards.length > 0 ? { cards: blogCards } : {})}
         />
       )}
     </>
