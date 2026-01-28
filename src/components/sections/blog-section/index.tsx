@@ -1,24 +1,21 @@
+'use client'
+
 import React, { JSX } from "react"
 import styles from "./blog-section.module.scss"
 import DynamicHeading from "../../dynamic-heading"
 import BlogCard from "../../blog-card"
+import { useBlogPosts } from "@/src/hooks/useBlogPosts"
 
 interface HeadingPart {
   title: string
   color: string
 }
 
-interface BlogPost {
-  ID: number
-  title: string
-  link: string
-  featured_image: string
-}
-
 interface BlogSectionProps {
   heading: HeadingPart[]
   headingTag?: keyof JSX.IntrinsicElements
-  cards: number[]
+  cards?: number[]
+  links?: string[]
   className?: string
 }
 
@@ -28,27 +25,16 @@ function decodeHTML(str: string) {
     .replace(/&amp;/g, "&")
 }
 
-async function fetchBlogs(postIds: number[]): Promise<BlogPost[]> {
-  const res = await fetch(
-    "https://www.enkash.com/resources/wp-json/custom-api/v2/send-post",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ post_ids: postIds }),
-      next: { revalidate: 3600 },
-    }
-  )
-
-  const data = await res.json()
-  return data.posts || []
-}
-
-const BlogSection = async ({
+const BlogSection = ({
   heading,
   cards,
+  links,
   className = "",
 }: BlogSectionProps) => {
-  const posts = await fetchBlogs(cards)
+  const { posts, loading, error } = useBlogPosts({ cards, links })
+  console.log("posts", posts);
+
+  if (error) return <div>Error: {error}</div>
 
   return (
     <div className={`${styles.other_products} ${className}`}>
