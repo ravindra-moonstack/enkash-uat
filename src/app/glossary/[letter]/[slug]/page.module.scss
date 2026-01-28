@@ -183,7 +183,7 @@
   flex-wrap: wrap;
 }
 
-.sectionHeading {
+.slugSectionHeading {
   margin-bottom: 6px;
 }
 
@@ -286,20 +286,20 @@
   @include for-laptops {
     margin-bottom: $spacing-3xl;
   }
-}
 
-.sectionHeading {
-  font-size: 18px;
-  font-weight: 700;
-  color: $color-main-black;
-  margin-bottom: $spacing-md;
-  padding-bottom: $spacing-sm;
-  border-bottom: 2px solid $color-black-10;
+  .sectionHeading {
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-main-black;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-sm;
+    border-bottom: 2px solid $color-black-10;
 
-  @include for-laptops {
-    font-size: 22px;
-    margin-bottom: $spacing-lg;
-    padding-bottom: $spacing-md;
+    @include for-laptops {
+      font-size: 22px;
+      margin-bottom: $spacing-lg;
+      padding-bottom: $spacing-md;
+    }
   }
 }
 
