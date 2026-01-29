@@ -31,8 +31,7 @@ const BlogSection = ({
   links,
   className = "",
 }: BlogSectionProps) => {
-  const { posts, loading, error } = useBlogPosts({ cards, links })
-  console.log("posts", posts);
+  const { posts, error } = useBlogPosts({ cards, links })
 
   if (error) return <div>Error: {error}</div>
 
