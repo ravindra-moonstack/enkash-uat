@@ -127,9 +127,11 @@
     background-color: #ffff;
     border-radius: 16px;
     padding: 20px;
+    position: relative;
 
     @include for-laptops {
       padding: 10px;
+      padding-bottom: 60px !important;
     }
 
     .footer_copy_right {
@@ -146,9 +148,20 @@
         font-size: 14px;
         padding-top: 0px;
         position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
+        bottom: 20px;
+        right: 10px;
+        width: 50%;
+        text-align: right;
+      }
+    }
+
+    .footer_copy_left {
+      padding-top: 0px;
+
+      @include for-laptops {
+        left: 10px;
+        right: auto;
+        text-align: left;
       }
     }
   }
@@ -363,7 +376,7 @@
 
 .light_bg {
   border-radius: 10px;
-  
+
 
   @include for-laptops {
     padding: 24px;
@@ -438,6 +451,7 @@
           color: $color-black;
 
           &:hover {
+
             span,
             svg {
               color: #1c5af4 !important;
