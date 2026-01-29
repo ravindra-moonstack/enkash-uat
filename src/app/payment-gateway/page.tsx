@@ -34,6 +34,7 @@ import {
   support,
   leftHand,
   acceleratedGrowthImg,
+  stateBg
 } from "./img"
 import HeroSection from "@/src/components/sections/hero-section"
 import CtaSection from "@/src/components/sections/cta-section"
@@ -41,6 +42,7 @@ import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
 //utils
 import Script from "next/script"
+import { StatsSection } from "@/src/components"
 
 const videoId = "oApuECjnRIU"
 const videoSchema = {
@@ -123,6 +125,13 @@ const PaymentGateway = (): React.JSX.Element => {
         }}
         rightImage={paymentSummary}
         backgroundImage="/images/collectPaymentBg.webp"
+      />
+
+      <StatsSection
+        title="Payment Gateway That Delivers"
+        description="Built for businesses that demand more than just payment processing. EnKash combines enterprise-grade infrastructure with SMB-focused solutions."
+        backgroundImage={stateBg}
+        className="darkTheme"
       />
 
       <div className={styles.introduction_section}>

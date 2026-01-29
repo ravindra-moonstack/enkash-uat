@@ -5,6 +5,7 @@ const Heading = dynamic(() => import("./heading"), { ssr: true })
 const FAQHtml = dynamic(() => import("./faq-new/faqHtml"), { ssr: true })
 
 const DynamicHeading = dynamic(() => import("./dynamic-heading"), { ssr: true })
+const StatsSection = dynamic(() => import("./StatsSection"), { ssr: true })
 const LottieDynamicLoadComponent = dynamic(
   () => import("./lottie-client/lottie-dynamic-load-client"),
   { ssr: true }
@@ -228,6 +229,7 @@ export {
   Heading,
   FAQHtml,
   DynamicHeading,
+  StatsSection,
   LottieDynamicLoadComponent,
   CustomBreadcrumb,
   AllProducts,

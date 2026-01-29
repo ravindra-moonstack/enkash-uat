@@ -12,7 +12,7 @@ import { HARDCODED_GLOSSARY_DATA } from "./data"
 import BlogSection from "@/src/components/sections/blog-section"
 
 const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
- 
+
 
 export const metadata = {
   title: "FinTech Glossary | Complete Financial Technology Terms",
@@ -111,18 +111,18 @@ export default async function GlossaryPage() {
       </Container>
     </section>
     <BlogSection
-    className="bg-white"
-    heading={[
-      {
-        title: "Related  ",
-        color: "color-black ",
-      },
-      {
-        title: " Resources",
-        color: "color-black f-4",
-      },
-    ]}
-    cards={[12642, 13675, 12195]}
-  /></>
+      className="bg-white"
+      heading={[
+        {
+          title: "Related  ",
+          color: "color-black ",
+        },
+        {
+          title: " Resources",
+          color: "color-black f-4",
+        },
+      ]}
+      cards={[12642, 13675, 12195]}
+    /></>
   )
 }
