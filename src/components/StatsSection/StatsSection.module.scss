@@ -1,0 +1,143 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.statsSection {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 20px;
+    overflow: hidden;
+
+    @include for-laptops {
+        padding: 92px 40px;
+    }
+
+}
+
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+
+    @include for-laptops {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+    }
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+
+.description {
+    font-size: 16px;
+    line-height: 26.27px !important;
+
+    @include for-laptops {
+        font-size: 20px !important;
+    }
+}
+
+.statsGrid {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff46;
+    padding: 40px 45px;
+    border-radius: 10px;
+    gap: 20px;
+
+    @include for-laptops {
+        padding: 70px 75px;
+        gap: 27px;
+    }
+}
+
+.statsContainer {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 22px;
+}
+
+.statCard {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &:nth-child(1) {
+        transition-delay: 0s;
+    }
+
+    &:nth-child(2) {
+        transition-delay: 0.1s;
+    }
+
+    &:nth-child(3) {
+        transition-delay: 0.2s;
+    }
+
+    &:nth-child(4) {
+        transition-delay: 0.3s;
+    }
+}
+
+
+.statLabel {
+    font-size: 14px;
+    line-height: 1.4;
+    color: $color-main-grey;
+    font-weight: 400;
+    margin: 0;
+
+    @include for-laptops {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .statsSection {
+        padding: 60px 16px;
+    }
+
+    .content {
+        gap: 40px;
+    }
+
+    .textContent {
+        gap: 16px;
+    }
+
+    .heading {
+        font-size: 28px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .statsGrid {
+        padding: 30px 20px;
+        gap: 24px;
+        border-radius: 20px;
+    }
+
+    .statValue {
+        font-size: 32px;
+    }
+
+    .statLabel {
+        font-size: 13px;
+    }
+}

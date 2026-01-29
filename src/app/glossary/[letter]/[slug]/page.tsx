@@ -46,7 +46,6 @@ export default async function GlossaryDetail({ params }: PageProps) {
   }
 
 
-  // Collect all sections to display
   const sections = []
 
   if (term.sectionHeading1 && term.sectionDescription1) {

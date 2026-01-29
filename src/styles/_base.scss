@@ -202,8 +202,13 @@
 .bg-color-grey-100 {
   background-color: $color-grey-100;
 }
+
 .color-grey-200 {
   color: $color-grey-200;
+}
+
+.color-brand-blue {
+  color: $color-brand-blue;
 }
 
 .color-dim-grey {
@@ -213,6 +218,7 @@
 .bg-black-200 {
   background-color: $color-black-200;
 }
+
 .bg-white-73 {
   background-color: $color-white-73;
 }
@@ -404,6 +410,7 @@ body {
 }
 
 .scrollbar-thin {
+
   /* Desktop scrollbar */
   &::-webkit-scrollbar {
     width: 12px;
@@ -488,35 +495,44 @@ body {
 
 .card_stacking_row {
   padding: 0px 20px;
+
   .section {
     padding: 50px 20px 0px;
     background: $color-cultured;
+
     @include for-laptops {
       padding: 90px 20px;
     }
   }
 }
+
 .calculator {
   letter-spacing: -0.04em;
+
   input {
     width: full;
     font-size: 16px;
+
     @include for-laptops {
       width: 265px;
       font-size: 24px;
     }
   }
+
   select {
     width: full;
     font-size: 16px;
+
     @include for-laptops {
       width: 265px;
       font-size: 24px;
     }
   }
+
   label {
     font-size: 14px;
     font-weight: 600;
+
     @include for-laptops {
       font-size: 20px;
     }
@@ -547,6 +563,7 @@ body {
     left: 0;
   }
 }
+
 .lh-24 {
   line-height: 24px !important;
   font-size: 16px !important;
