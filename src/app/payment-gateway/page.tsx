@@ -42,7 +42,7 @@ import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
 //utils
 import Script from "next/script"
-import { BankGradeSecurity, ContentShowcase, FeatureCard, PaymentGatewaySection, StatsSection } from "@/src/components"
+import { BankGradeSecurity, CommanButton, ContentShowcase, FeatureCard, PaymentGatewaySection, StatsSection } from "@/src/components"
 import IndustrySlider from "@/src/components/Industry-slider"
 import { Container } from "react-bootstrap"
 
@@ -273,21 +273,27 @@ const PaymentGateway = (): React.JSX.Element => {
         <div className="max-w-auto w-100">
           <div className={`${styles.section} row`}>
             <div
-              className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-7`}
+              className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-8`}
             >
               <DynamicHeading
                 content={[
                   {
-                    title: "Best Payment Gateway in India for ",
+                    title: "Start Processing Payments Today",
                     color: "color-black",
-                  },
-                  {
-                    title: "Accelerated Growth ",
-                    color: "color-equity-blue",
                   },
                 ]}
                 headingTag="h2"
                 className="f-6"
+              />
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Join thousands of businesses that trust EnKash for reliable, secure, and transparent payment processing.",
+                    color: "color-grey-200",
+                  },
+                ]}
+                headingTag="p"
+                className="f-4 mb-0 fs-20"
               />
             </div>
 
@@ -316,6 +322,12 @@ const PaymentGateway = (): React.JSX.Element => {
                   </div>
                 </div>
               ))}
+              <CommanButton
+                title="Get Started Today"
+                theme="white"
+                arrow
+                url={salesUrl}
+              />
             </div>
             <div className="col-md-6">
               <div className={styles.faq_bg}>
@@ -335,6 +347,7 @@ const PaymentGateway = (): React.JSX.Element => {
           "Discover the EnKash difference - Secure, Scalable and Seamless."
         }
         buttonText={"Get Started Today"}
+        buttonUrl={salesUrl}
       />
 
       <FaqSection faqData={faqData} />
