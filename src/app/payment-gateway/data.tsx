@@ -19,14 +19,6 @@ import pci from "./img/pci.svg"
 import encription from "./img/encryption.svg"
 import token from "./img/token.svg"
 import monitorizing from "./img/monitoring.svg"
-import tech from "./img/tech.svg"
-import merchant from "./img/merchant.svg"
-import proActive from "./img/proActive.svg"
-import onboarding from "./img/onboarding.svg"
-import frictionless from "./img/frictionless.svg"
-import saved from "./img/saved.svg"
-import global from "./img/global.svg"
-import options from "./img/options.png"
 import {
   autoCollect,
   carouselIcon1,
@@ -51,7 +43,6 @@ import {
   reminder,
   travelImage,
 } from "./img"
-import { TStackCardsProp } from "@/src/types"
 
 const introductionCards = [
   { value: "100%", label: "Support" },

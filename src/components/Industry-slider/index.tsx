@@ -1,14 +1,12 @@
 "use client"
 
-import React, { useRef, useState, useEffect, JSX } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import Slider from "react-slick"
 import Image from "next/image"
 import styles from "./IndustrySlider.module.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { DynamicHeading } from ".."
-import CommonButton from "../buttons"
-import { Container } from "react-bootstrap"
 
 interface CategoryButton {
     id: string
@@ -47,7 +45,6 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
 }) => {
     const sliderRef = useRef<Slider>(null)
     const [activeCategory, setActiveCategory] = useState<string>(categories[0]?.id || "")
-    const [currentSlide, setCurrentSlide] = useState(0)
     const [isAutoplayPaused, setIsAutoplayPaused] = useState(false)
 
     useEffect(() => {
@@ -68,7 +65,6 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
     }
 
     const handleAfterChange = (index: number) => {
-        setCurrentSlide(index)
         const currentCategory = slides[index]?.category
         if (currentCategory) {
             setActiveCategory(currentCategory)
