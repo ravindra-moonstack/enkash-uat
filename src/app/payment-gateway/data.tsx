@@ -2,10 +2,6 @@ import policyIcon from "./img/policyIcon.svg"
 import sandbox from "./img/sandbox-logo.svg"
 import documentation from "./img/documentation-logo.svg"
 import plugin from "./img/plugin-logo.svg"
-import authorised from "./img/authorised.svg"
-import first from "./img/first.svg"
-import uptime from "./img/uptime.svg"
-import support from "./img/support-icon.svg"
 import cards from "./img/credit-debit-cards.svg"
 import upi from "./img/upi.svg"
 import netBanking from "./img/net-banking.svg"
@@ -35,12 +31,14 @@ import {
   itemIcon2,
   itemIcon3,
   itemIcon4,
+  itemIcon5,
   nbfcsImage,
   paymentButton,
   paymentLink,
   paymentPage,
   qrCodes,
   reminder,
+  success,
   travelImage,
 } from "./img"
 
@@ -53,31 +51,31 @@ const introductionCards = [
 
 const integrationData = [
   {
-    title: "Debit and Credit Cards:",
+    title: "Debit and Credit Cards",
     description:
       "Process transactions across all major card networks. Complete card coverage in a single integration.",
     icon: policyIcon,
   },
   {
-    title: "UPI Payments:",
+    title: "UPI Payments",
     description:
       "Direct integration with India's most popular payment method. Support for all major UPI applications with industry-leading success rates.",
     icon: plugin,
   },
   {
-    title: "Net Banking:",
+    title: "Net Banking",
     description:
       "Seamless connectivity with 50+ major banks across India. Enable direct account-to-account transfers with real-time authorization.",
     icon: documentation,
   },
   {
-    title: "Digital Wallets:",
+    title: "Digital Wallets",
     description:
       "Accept payments through all major digital wallets for faster, more convenient checkouts. One-tap payments for millions of wallet users.",
     icon: sandbox,
   },
   {
-    title: "EMI & Buy Now Pay Later:",
+    title: "EMI & Buy Now Pay Later",
     description:
       "Offer No Cost EMI, cardless EMI, and Buy Now Pay Later options to increase conversion rates and average order values. Make purchases more affordable for customers.",
     icon: emi,
@@ -86,24 +84,24 @@ const integrationData = [
 
 const paymentMethodData = [
   {
-    title: "Pre-Built Platform Integrations:",
+    title: "Pre-Built Platform Integrations",
     description: "Production-ready plugins for Shopify, WooCommerce, Magento, and other major e-commerce platforms. Deploy in minutes, not weeks.",
     icon: cards,
   },
   {
-    title: "Comprehensive SDK Support:",
+    title: "Comprehensive SDK Support",
     description:
       "Native SDKs for Python, Java, PHP, and other major programming languages. Clean architecture, consistent interfaces, and extensive code examples.",
     icon: upi,
   },
   {
-    title: "Complete API Documentation:",
+    title: "Complete API Documentation",
     description:
       "Step-by-step integration guides with working code samples. Comprehensive webhook documentation for real-time event handling.",
     icon: netBanking,
   },
   {
-    title: "Full-Featured Sandbox Environment:",
+    title: "Full-Featured Sandbox Environment",
     description:
       "Test every integration scenario in an environment that mirrors production exactly. Validate implementations before going live with confidence.",
     icon: digital,
@@ -112,25 +110,25 @@ const paymentMethodData = [
 
 const dashboardData = [
   {
-    title: "Round-the-Clock Technical Support:",
+    title: "Round-the-Clock Technical Support",
     description:
       "Direct access to technical support for integration, troubleshooting, and scaling. Available 24/7 via chat, email, or call for instant help and resolution.",
     icon: financial,
   },
   {
-    title: "Expert Merchant Support:",
+    title: "Expert Merchant Support",
     description:
       "Reach our support team anytime, any day for guidance on payments, settlements, and business operations. Instant help when you need it most.",
     icon: transation,
   },
   {
-    title: "Proactive Issue Resolution:",
+    title: "Proactive Issue Resolution",
     description:
       "We don't wait for you to raise tickets. Our team actively monitors and preempts potential issues to ensure your business continuity.",
     icon: settlement,
   },
   {
-    title: "Intuitive Interface Design:",
+    title: "Intuitive Interface Design",
     description:
       "Consistent support quality from Day 1 through Year 5 and beyond. We guide you at every milestone of your payment journey.",
     icon: userFriendly,
@@ -139,25 +137,25 @@ const dashboardData = [
 
 const rankData = [
   {
-    title: "Comprehensive Financial Overview:",
+    title: "Comprehensive Financial Overview",
     description:
       "Track and analyze transaction data across daily, weekly, monthly, and yearly timeframes. Complete visibility into payment volumes, success rates, and settlement timelines.",
     icon: pci,
   },
   {
-    title: "Detailed Transaction Insights:",
+    title: "Detailed Transaction Insights",
     description:
       "Access complete history of each transaction. Understand payment statuses, order details, refunds, and detailed transaction information.",
     icon: encription,
   },
   {
-    title: "Settlement Reconciliation:",
+    title: "Settlement Reconciliation",
     description:
       "Clear breakdown of transactions, reversals, refunds, disputes, and vendor commissions. Stay fully informed about your business finances.",
     icon: token,
   },
   {
-    title: "User-Friendly Interface:",
+    title: "User-Friendly Interface",
     description:
       "Easy-to-navigate dashboard to manage payments, refunds, API keys, webhooks, invoices, and more—all in one place.",
     icon: monitorizing,
@@ -167,20 +165,20 @@ const rankData = [
 
 const acceleratedGrowthData = [
   {
-    title: "Fully-Compliant RBI Authorized Platform",
-    icon: authorised,
+    title: "Zero setup fees",
+    icon: success,
   },
   {
-    title: "Industry First Payment-led Financial Platform",
-    icon: first,
+    title: "Complete pricing transparency",
+    icon: success,
   },
   {
-    title: "100% Uptime",
-    icon: uptime,
+    title: "24-hour onboarding",
+    icon: success,
   },
   {
-    title: "24X7 Customer Support",
-    icon: support,
+    title: "Dedicated technical support",
+    icon: success,
   },
 ]
 
@@ -244,8 +242,8 @@ const managementCardData = [
 ]
 const categories = [
   { id: "ecommerce", label: "E-commerce & Retail" },
-  { id: "education", label: "Education & EdTech" },
   { id: "nbfcs", label: "NBFCs & Financial Institutions" },
+  { id: "education", label: "Education & EdTech" },
   { id: "healthcare", label: "Healthcare & Wellness" },
   { id: "food", label: "Food & Beverage" },
   { id: "travel", label: "Travel & Hospitality" },
@@ -261,29 +259,29 @@ const slides = [
     imageAlt: "E-commerce retail business",
   },
   {
-    id: "education-1",
-    category: "education",
-    title: "Education & EdTech",
-    description:
-      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
-    image: educationImage.src,
-    imageAlt: "Education and EdTech classroom",
-  },
-  {
     id: "nbfcs-1",
     category: "nbfcs",
     title: "NBFCs & Financial Institutions",
     description:
-      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+      "Enable structured collections with recurring and one-time payments, installment-based flows, partner split settlements, and clear reconciliation across loans, policies, and investments.",
     image: nbfcsImage.src,
     imageAlt: "Financial institutions business",
+  },
+  {
+    id: "education-1",
+    category: "education",
+    title: "Education & EdTech",
+    description:
+      "Flexible payment options including EMI and Pay Later for course fees. Automated installment collection, bulk fee collection for institutions, and seamless student payment tracking.",
+    image: educationImage.src,
+    imageAlt: "Education and EdTech classroom",
   },
   {
     id: "healthcare-1",
     category: "healthcare",
     title: "Healthcare & Wellness",
     description:
-      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+      "HIPAA-compliant payment processing for consultations and treatments. Support for insurance copays, installment plans for procedures, and automated appointment payment reminders.",
     image: healthcareImage.src,
     imageAlt: "Healthcare and wellness services",
   },
@@ -292,7 +290,7 @@ const slides = [
     category: "food",
     title: "Food & Beverage",
     description:
-      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+      "QR-based contactless payments for dine-in. Online ordering integration, split bills, tip collection, and real-time settlement for daily cash flow management.",
     image: foodImage.src,
     imageAlt: "Food and beverage industry",
   },
@@ -301,7 +299,7 @@ const slides = [
     category: "travel",
     title: "Travel & Hospitality",
     description:
-      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+      "Multi-currency support for international bookings. Partial payment collection, cancellation, and refund automation, and flexible payment plans for packages.",
     image: travelImage.src,
     imageAlt: "Travel and hospitality services",
   },
@@ -320,27 +318,32 @@ const slideData = [
     icon: itemIcon2.src,
     title: "Enterprise Integration",
     description:
-      "Simplify collections and payables by connecting to the Bharat Connect platform. Expand your reach and get paid faster, all in one place.",
+      "Native integrations with accounting software, CRM, inventory systems, and ERP platforms. Payments flow directly into your workflow.",
   },
   {
     id: 3,
     icon: itemIcon3.src,
     title: "Instant Settlement",
     description:
-      "Expand into new regions and business segments by bundling EnKash with your existing SME and corporate offerings.",
+      "Access funds the same day, including weekends and bank holidays, without waiting for standard settlement cycles.",
   },
   {
     id: 4,
     icon: itemIcon4.src,
     title: "Recurring Billing Engine",
     description:
-      "Position your bank as a tech-forward brand by offering co-branded solutions across payments, cards, and expense tools.",
+      "Automated subscription billing with intelligent retry, lifecycle management, and flexible payment updates, all handled automatically.",
+  },
+  {
+    id: 5,
+    icon: itemIcon5.src,
+    title: "Custom Payment Solutions",
+    description:
+      "Tailored solutions for specialized compliance, custom flows, and industry-specific scenarios that standard gateways can't support.",
   },
 ]
 const allProductSections = [
   {
-    title: "Expense Management",
-    subtitle: "Manage every spend effortlessly",
     items: [
       {
         title: "High-Performance Loading ",
@@ -349,18 +352,18 @@ const allProductSections = [
       },
       {
         title: "Secure Card Storage ",
-        description: "Wallets that work across multiple merchants, not limited to your ecosystem.",
+        description: "Tokenized card saving for one-click repeat purchases. Customers complete future transactions instantly while maintaining complete security.",
         image: carouselIcon2,
       },
       {
         title: "Intelligent Payment Routing ",
         description:
-          "Integrated Payment Gateway for easy fund addition via credit cards.",
+          "Smart algorithm suggests optimal payment methods based on historical success rates, customer preferences, and transaction patterns.",
         image: carouselIcon3,
       },
       {
         title: "Mobile-First Design",
-        description: "Simple APIs for quick setup, perfect for B2C companies looking to scale.",
+        description: "Fully responsive checkout optimized for mobile devices. Touch-friendly interfaces and native performance across all screen sizes.",
         image: carouselIcon4,
       },
     ],
@@ -373,15 +376,15 @@ const customFeatures = [
   },
   {
     title: "End-to-End Encryption",
-    description: "Each team was given its own virtual card with preset spending limits. This helped avoid overlap and made it easier to manage team-wise budgets while giving full visibility to finance.",
+    description: "256-bit SSL encryption from initial data capture through final settlement. Payment information is encrypted at every stage of processing.",
   },
   {
     title: "Advanced Tokenization",
-    description: "Each team was given its own virtual card with preset spending limits. This helped avoid overlap and made it easier to manage team-wise budgets while giving full visibility to finance.",
+    description: "Sensitive card data is replaced with secure tokens. Original card information is never stored, eliminating data breach risks while enabling saved card functionality.",
   },
   {
     title: "Continuous Monitoring",
-    description: "Each team was given its own virtual card with preset spending limits. This helped avoid overlap and made it easier to manage team-wise budgets while giving full visibility to finance.",
+    description: "24/7 security operations center with real-time threat detection, automated response protocols, and regular third-party security audits.",
   },
 ]
 export {

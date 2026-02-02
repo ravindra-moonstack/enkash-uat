@@ -573,6 +573,14 @@ body {
   font-size: 16px !important;
 }
 
+.fs-20 {
+  font-size: 16px !important;
+
+  @include for-laptops {
+    font-size: 20px !important;
+  }
+}
+
 .paddingTopClass {
   padding-top: 200px;
 }
