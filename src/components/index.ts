@@ -5,7 +5,7 @@ const Heading = dynamic(() => import("./heading"), { ssr: true })
 const FAQHtml = dynamic(() => import("./faq-new/faqHtml"), { ssr: true })
 
 const DynamicHeading = dynamic(() => import("./dynamic-heading"), { ssr: true })
-const StatsSection = dynamic(() => import("./StatsSection"), { ssr: true })
+const StatsSection = dynamic(() => import("./stats-section"), { ssr: true })
 const LottieDynamicLoadComponent = dynamic(
   () => import("./lottie-client/lottie-dynamic-load-client"),
   { ssr: true }
@@ -193,6 +193,11 @@ const PaymentGatewayPartnershipForm = dynamic(
   }
 )
 
+const PaymentGatewaySection = dynamic(
+  () => import("./payment-gateway-slider/PaymentGatewaySection"),
+  { ssr: true }
+)
+
 const BuiltforBuildersSection = dynamic(
   () => import("./builtfor-builders-card"),
   {
@@ -218,6 +223,9 @@ const ContactForm = dynamic(() => import("./forms/contact-form"), {
 const ShimmerImage = dynamic(() => import("./shimmer-image"), {
   ssr: true,
 })
+const BankGradeSecurity = dynamic(() => import("./BankGradeSecurity/BankGradeSecurity"), {
+  ssr: true,
+})
 
 const CommanButton = dynamic(() => import("./buttons/index"), {
   ssr: true,
@@ -235,6 +243,7 @@ export {
   AllProducts,
   CardProduct,
   LogoSlider,
+  BankGradeSecurity,
   PolicyCard,
   RectangleButton,
   FeatureCard,
@@ -282,6 +291,7 @@ export {
   CareersTestimonialSlider,
   HiringProcessModal,
   PaymentGatewayPartnershipForm,
+  PaymentGatewaySection,
   BuiltforBuildersSection,
   UtilityBillPayments,
   PartnerSection,
