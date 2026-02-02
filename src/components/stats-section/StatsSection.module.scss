@@ -6,13 +6,14 @@
     display: flex;
     align-items: center;
     background-size: cover;
-    background-position: center;
+    background-position: left;
     background-repeat: no-repeat;
     padding: 80px 20px;
     overflow: hidden;
 
     @include for-laptops {
         padding: 92px 40px;
+        background-position: center;
     }
 
 }
@@ -53,10 +54,12 @@
     padding: 40px 45px;
     border-radius: 10px;
     gap: 20px;
+    backdrop-filter: blur(6px);
 
     @include for-laptops {
         padding: 70px 75px;
         gap: 27px;
+        backdrop-filter: blur(0px);
     }
 }
 

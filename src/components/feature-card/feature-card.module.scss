@@ -13,6 +13,7 @@
   max-width: 327px;
   box-shadow: 0 0px 40px -4px rgba(0, 0, 0, 0.08);
   margin-right: 10px;
+
   @include for-laptops {
     margin-right: 21px;
   }
@@ -46,6 +47,7 @@
 .action_container {
   position: absolute;
   cursor: pointer;
+
   img {
     transition: width 0.3s ease-in-out;
   }
@@ -59,13 +61,16 @@
   font-size: 12px;
   font-weight: 500;
   color: $color-main-grey;
+
   span {
     font-weight: 700;
   }
+
   @include for-laptops {
     font-size: 18px;
   }
 }
+
 .card_image {
   max-width: 100%;
   object-fit: contain;

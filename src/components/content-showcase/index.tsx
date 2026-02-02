@@ -9,6 +9,7 @@ import PolicyCard from "@/src/components/policy-card"
 
 interface ContentShowcaseProps {
   mainHeading?: { title: string; color: string }[]
+  mainDescription?: { title: string; color: string }[]
   heading?: string
   subheading?: string
   data: {
@@ -24,10 +25,12 @@ interface ContentShowcaseProps {
   buttonUrl?: string
   imgStyle?: string
   imgHeightStyle?: string
+  buttonArrow?: boolean
 }
 
 function ContentShowcase({
   heading,
+  mainDescription,
   subheading,
   data,
   imageSrc,
@@ -39,6 +42,7 @@ function ContentShowcase({
   buttonUrl,
   imgStyle,
   imgHeightStyle = "mh-550",
+  buttonArrow,
 }: ContentShowcaseProps): JSX.Element {
   return (
     <div className={`${bgColor} ${styles.ContentShowcase}`}>
@@ -51,6 +55,13 @@ function ContentShowcase({
               className="f-6"
             />
           </div>
+        )}
+        {mainDescription && (
+          <DynamicHeading
+            content={mainDescription}
+            headingTag="p"
+            className="f-4 mb-0 text-center"
+          />
         )}
 
         <div className={styles.ContentShowcaseContent}>
@@ -110,6 +121,7 @@ function ContentShowcase({
                   title={buttonTitle || "Get Started"}
                   theme="outline-blue"
                   url={buttonUrl || "/sales"}
+                  arrow={buttonArrow}
                 />
               </div>
             </div>
