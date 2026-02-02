@@ -10,7 +10,6 @@ import {
   customFeatures,
   dashboardData,
   integrationData,
-  introductionCards,
   managementCardData,
   paymentMethodData,
   rankData,
@@ -45,7 +44,6 @@ import BlogSection from "@/src/components/sections/blog-section"
 import Script from "next/script"
 import { BankGradeSecurity, ContentShowcase, FeatureCard, PaymentGatewaySection, StatsSection } from "@/src/components"
 import IndustrySlider from "@/src/components/Industry-slider"
-import SliderSection from "@/src/components/sections/slider-section"
 import { Container } from "react-bootstrap"
 
 const videoId = "oApuECjnRIU"
