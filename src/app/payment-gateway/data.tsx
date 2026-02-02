@@ -29,13 +29,27 @@ import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
   autoCollect,
+  carouselIcon1,
+  carouselIcon2,
+  carouselIcon3,
+  carouselIcon4,
+  ecommerceImage,
+  educationImage,
+  foodImage,
+  healthcareImage,
   instant,
   invoices,
+  itemIcon1,
+  itemIcon2,
+  itemIcon3,
+  itemIcon4,
+  nbfcsImage,
   paymentButton,
   paymentLink,
   paymentPage,
   qrCodes,
   reminder,
+  travelImage,
 } from "./img"
 import { TStackCardsProp } from "@/src/types"
 
@@ -46,172 +60,119 @@ const introductionCards = [
 ]
 
 
-const integrationData: TStackCardsProp = [
+const integrationData = [
   {
-    title: "Comprehensive SDKs and APIs",
+    title: "Debit and Credit Cards:",
     description:
-      "Integrate quickly using our well-documented, developer-friendly tools compatible with Python, Java, PHP, and more.",
+      "Process transactions across all major card networks. Complete card coverage in a single integration.",
     icon: policyIcon,
   },
   {
-    title: "Plugins for Popular Platforms",
+    title: "UPI Payments:",
     description:
-      "Enable seamless setup with ready-to-use plugins for platforms like Shopify, WooCommerce, and Magento.",
+      "Direct integration with India's most popular payment method. Support for all major UPI applications with industry-leading success rates.",
     icon: plugin,
   },
   {
-    title: "Detailed API Documentation",
+    title: "Net Banking:",
     description:
-      "Access step-by-step guides and resources for frictionless onboarding.",
+      "Seamless connectivity with 50+ major banks across India. Enable direct account-to-account transfers with real-time authorization.",
     icon: documentation,
   },
   {
-    title: "Sandbox Environment",
+    title: "Digital Wallets:",
     description:
-      "Test your integration thoroughly in a secure and isolated environment before going live.",
+      "Accept payments through all major digital wallets for faster, more convenient checkouts. One-tap payments for millions of wallet users.",
     icon: sandbox,
   },
-]
-
-const paymentMethodData: TStackCardsProp = [
   {
-    title: "Credit and Debit Cards",
-    description: "Process domestic and international card payments easily.",
-    icon: cards,
-  },
-  {
-    title: "UPI (Unified Payments Interface)",
+    title: "EMI & Buy Now Pay Later:",
     description:
-      "Harness the power of instant, hassle-free payments with India’s leading digital payment method.",
-    icon: upi,
-  },
-  {
-    title: "Net Banking",
-    description:
-      "Enable seamless transactions through direct integrations with over 50+ major banks.",
-    icon: netBanking,
-  },
-  {
-    title: "Digital Wallets",
-    description:
-      "Accept payments through popular wallets for quicker and convenient checkouts.",
-    icon: digital,
-  },
-  {
-    title: "EMI & PayLater",
-    description:
-      "Empower your customers with flexible payment options like No Cost EMI and PayLater, boosting affordability and conversion rates.",
+      "Offer No Cost EMI, cardless EMI, and Buy Now Pay Later options to increase conversion rates and average order values. Make purchases more affordable for customers.",
     icon: emi,
   },
 ]
 
-const dashboardData: TStackCardsProp = [
+const paymentMethodData = [
   {
-    title: "Financial Overview",
+    title: "Pre-Built Platform Integrations:",
+    description: "Production-ready plugins for Shopify, WooCommerce, Magento, and other major e-commerce platforms. Deploy in minutes, not weeks.",
+    icon: cards,
+  },
+  {
+    title: "Comprehensive SDK Support:",
     description:
-      "Track and analyze transactions across daily, weekly, monthly, and yearly time frames.",
+      "Native SDKs for Python, Java, PHP, and other major programming languages. Clean architecture, consistent interfaces, and extensive code examples.",
+    icon: upi,
+  },
+  {
+    title: "Complete API Documentation:",
+    description:
+      "Step-by-step integration guides with working code samples. Comprehensive webhook documentation for real-time event handling.",
+    icon: netBanking,
+  },
+  {
+    title: "Full-Featured Sandbox Environment:",
+    description:
+      "Test every integration scenario in an environment that mirrors production exactly. Validate implementations before going live with confidence.",
+    icon: digital,
+  },
+]
+
+const dashboardData = [
+  {
+    title: "Round-the-Clock Technical Support:",
+    description:
+      "Direct access to technical support for integration, troubleshooting, and scaling. Available 24/7 via chat, email, or call for instant help and resolution.",
     icon: financial,
   },
   {
-    title: "Transaction History Insights",
+    title: "Expert Merchant Support:",
     description:
-      "Detailed insights into the history of each transaction. Understand payment statuses, order details, refunds, and more.",
+      "Reach our support team anytime, any day for guidance on payments, settlements, and business operations. Instant help when you need it most.",
     icon: transation,
   },
   {
-    title: "Settlement Reconciliation",
+    title: "Proactive Issue Resolution:",
     description:
-      "Stay fully informed about your business with a detailed breakdown of transactions, reversals, refunds, disputes, and vendor commissions.",
+      "We don't wait for you to raise tickets. Our team actively monitors and preempts potential issues to ensure your business continuity.",
     icon: settlement,
   },
   {
-    title: "User-friendly Interface",
+    title: "Intuitive Interface Design:",
     description:
-      "With an easy-to-navigate interface, you can effortlessly manage payments, refunds, API keys, webhooks, invoices, and more—all in one place.",
+      "Consistent support quality from Day 1 through Year 5 and beyond. We guide you at every milestone of your payment journey.",
     icon: userFriendly,
   },
 ]
 
-const rankData: TStackCardsProp = [
+const rankData = [
   {
-    title: "PCI DSS Compliance",
+    title: "Comprehensive Financial Overview:",
     description:
-      "Protect sensitive payment information with industry-standard security practices.",
+      "Track and analyze transaction data across daily, weekly, monthly, and yearly timeframes. Complete visibility into payment volumes, success rates, and settlement timelines.",
     icon: pci,
   },
   {
-    title: "End-to-End Encryption",
+    title: "Detailed Transaction Insights:",
     description:
-      "Safeguard transactions with advanced encryption protocols to prevent data breaches.",
+      "Access complete history of each transaction. Understand payment statuses, order details, refunds, and detailed transaction information.",
     icon: encription,
   },
   {
-    title: "Tokenization",
+    title: "Settlement Reconciliation:",
     description:
-      "Replace card details with secure tokens to enhance privacy and reduce fraud risks.",
+      "Clear breakdown of transactions, reversals, refunds, disputes, and vendor commissions. Stay fully informed about your business finances.",
     icon: token,
   },
   {
-    title: "Continuous Monitoring",
+    title: "User-Friendly Interface:",
     description:
-      "Detect and mitigate vulnerabilities proactively with real-time threat assessments and third-party audits.",
+      "Easy-to-navigate dashboard to manage payments, refunds, API keys, webhooks, invoices, and more—all in one place.",
     icon: monitorizing,
   },
 ]
 
-const supportData: TStackCardsProp = [
-  {
-    title: "Tech Support at Every Stage",
-    description:
-      "Whether you're integrating, going live, or scaling up, our tech team is with you throughout.",
-    icon: tech,
-  },
-  {
-    title: "Merchant Support",
-    description:
-      "Reach us anytime, any day—via chat, email, or call—for instant help and issue resolution.",
-    icon: merchant,
-  },
-  {
-    title: "Proactive Issue Resolution",
-    description:
-      "We don’t just wait for you to raise a ticket—our team monitors and preempts potential issues to ensure business continuity.",
-    icon: proActive,
-  },
-  {
-    title: "Onboarding to Scaling Assistance",
-    description:
-      "Whether it’s Day 1 or Year 5, we guide you at every milestone of your payment journey.",
-    icon: onboarding,
-  },
-]
-
-const savingData: TStackCardsProp = [
-  {
-    title: "Frictionless Checkout",
-    description:
-      "Simplify payments with a clean and intuitive checkout interface that minimizes distractions and maximizes conversions.",
-    icon: frictionless,
-  },
-  {
-    title: "Saved Cards Across Businesses",
-    description:
-      "Enable customers to save their card details securely for faster payments on subsequent purchases.",
-    icon: saved,
-  },
-  {
-    title: "Global Card Saving",
-    description:
-      "Extend your services to international customers with global card-saving capabilities, ensuring compliance with tokenization standards.",
-    icon: global,
-  },
-  {
-    title: "Personalized Payment Options",
-    description:
-      "Display payment methods tailored to your customer’s preferences and behavior, driving faster decision-making at checkout.",
-    icon: options,
-  },
-]
 
 const acceleratedGrowthData = [
   {
@@ -290,6 +251,148 @@ const managementCardData = [
     linkUrl: "collection-reminder",
   },
 ]
+const categories = [
+  { id: "ecommerce", label: "E-commerce & Retail" },
+  { id: "education", label: "Education & EdTech" },
+  { id: "nbfcs", label: "NBFCs & Financial Institutions" },
+  { id: "healthcare", label: "Healthcare & Wellness" },
+  { id: "food", label: "Food & Beverage" },
+  { id: "travel", label: "Travel & Hospitality" },
+]
+const slides = [
+  {
+    id: "ecommerce-1",
+    category: "ecommerce",
+    title: "E-commerce & Retail",
+    description:
+      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+    image: ecommerceImage.src,
+    imageAlt: "E-commerce retail business",
+  },
+  {
+    id: "education-1",
+    category: "education",
+    title: "Education & EdTech",
+    description:
+      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+    image: educationImage.src,
+    imageAlt: "Education and EdTech classroom",
+  },
+  {
+    id: "nbfcs-1",
+    category: "nbfcs",
+    title: "NBFCs & Financial Institutions",
+    description:
+      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+    image: nbfcsImage.src,
+    imageAlt: "Financial institutions business",
+  },
+  {
+    id: "healthcare-1",
+    category: "healthcare",
+    title: "Healthcare & Wellness",
+    description:
+      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+    image: healthcareImage.src,
+    imageAlt: "Healthcare and wellness services",
+  },
+  {
+    id: "food-1",
+    category: "food",
+    title: "Food & Beverage",
+    description:
+      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+    image: foodImage.src,
+    imageAlt: "Food and beverage industry",
+  },
+  {
+    id: "travel-1",
+    category: "travel",
+    title: "Travel & Hospitality",
+    description:
+      "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
+    image: travelImage.src,
+    imageAlt: "Travel and hospitality services",
+  },
+]
+
+const slideData = [
+  {
+    id: 1,
+    icon: itemIcon1.src,
+    title: "Split Payment Architecture",
+    description:
+      "Automatically split payments across sellers, platform fees, and service providers with configurable commissions, hold periods, and payout schedules.",
+  },
+  {
+    id: 2,
+    icon: itemIcon2.src,
+    title: "Enterprise Integration",
+    description:
+      "Simplify collections and payables by connecting to the Bharat Connect platform. Expand your reach and get paid faster, all in one place.",
+  },
+  {
+    id: 3,
+    icon: itemIcon3.src,
+    title: "Instant Settlement",
+    description:
+      "Expand into new regions and business segments by bundling EnKash with your existing SME and corporate offerings.",
+  },
+  {
+    id: 4,
+    icon: itemIcon4.src,
+    title: "Recurring Billing Engine",
+    description:
+      "Position your bank as a tech-forward brand by offering co-branded solutions across payments, cards, and expense tools.",
+  },
+]
+const allProductSections = [
+  {
+    title: "Expense Management",
+    subtitle: "Manage every spend effortlessly",
+    items: [
+      {
+        title: "High-Performance Loading ",
+        description: "Checkout optimized to load in under 300ms. Every millisecond matters, faster checkouts directly translate to higher conversion rates.",
+        image: carouselIcon1,
+      },
+      {
+        title: "Secure Card Storage ",
+        description: "Wallets that work across multiple merchants, not limited to your ecosystem.",
+        image: carouselIcon2,
+      },
+      {
+        title: "Intelligent Payment Routing ",
+        description:
+          "Integrated Payment Gateway for easy fund addition via credit cards.",
+        image: carouselIcon3,
+      },
+      {
+        title: "Mobile-First Design",
+        description: "Simple APIs for quick setup, perfect for B2C companies looking to scale.",
+        image: carouselIcon4,
+      },
+    ],
+  },
+]
+const customFeatures = [
+  {
+    title: "PCI DSS Level 1 Compliance",
+    description: "Certified to the highest level of payment card industry security standards. Your transaction data is protected with the same protocols used by major financial institutions.",
+  },
+  {
+    title: "End-to-End Encryption",
+    description: "Each team was given its own virtual card with preset spending limits. This helped avoid overlap and made it easier to manage team-wise budgets while giving full visibility to finance.",
+  },
+  {
+    title: "Advanced Tokenization",
+    description: "Each team was given its own virtual card with preset spending limits. This helped avoid overlap and made it easier to manage team-wise budgets while giving full visibility to finance.",
+  },
+  {
+    title: "Continuous Monitoring",
+    description: "Each team was given its own virtual card with preset spending limits. This helped avoid overlap and made it easier to manage team-wise budgets while giving full visibility to finance.",
+  },
+]
 export {
   acceleratedGrowthData,
   dashboardData,
@@ -297,7 +400,10 @@ export {
   managementCardData,
   paymentMethodData,
   rankData,
-  savingData,
-  supportData,
   introductionCards,
+  categories,
+  slides,
+  slideData,
+  allProductSections,
+  customFeatures,
 }

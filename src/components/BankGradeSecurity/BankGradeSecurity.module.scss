@@ -1,0 +1,158 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.bankGradeSection {
+    background-color: $color-white;
+    box-shadow: 0px 0px 77px 0px #0000001A;
+    border-radius: 12px;
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    background-color: $color-white;
+    box-shadow: 0px 0px 77px 0px #0000001A;
+    border-radius: 12px;
+    padding: 46px 20px;
+
+    @include for-laptops {
+        flex-direction: row;
+        gap: 60px;
+        align-items: flex-start;
+        padding: 73px 59px 73px 69px;
+    }
+
+}
+
+.leftContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%; //col-4
+
+    @include for-laptops {
+        max-width: 41%; //col-4
+    }
+}
+
+.imageWrapper {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+
+
+    @include for-laptops {
+        width: 266px;
+        max-width: 266px;
+    }
+}
+
+.vaultImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.textContent {
+    flex: 1;
+    width: 100%;
+    max-width: 100%; //col-8
+
+    @include for-laptops {
+        max-width: 59%; //col-8
+    }
+}
+
+.mainHeading {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+
+    @include for-laptops {
+        font-size: 42px;
+    }
+
+    @include for-large-screen {
+        font-size: 48px;
+    }
+}
+
+.preTitle {
+    font-weight: 700;
+}
+
+.highlightedTitle {
+    font-weight: 700;
+}
+
+.subtitleWrapper {
+    font-size: 20px;
+}
+
+.subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+
+    @include for-laptops {
+        font-size: 18px;
+    }
+}
+
+.featuresGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.featureCard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 12px;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 4px;
+        width: 1.5px;
+        height: 50px;
+        background-color: $color-electric-green;
+    }
+}
+
+
+.featureTitle {
+    font-size: 16px;
+    line-height: 1;
+
+    @include for-laptops {
+        font-size: 20px !important;
+        line-height: 24px !important;
+    }
+}
+
+.featureDescription {
+    font-size: 14px;
+    line-height: 160%;
+
+    @include for-laptops {
+        font-size: 16px;
+    }
+}

@@ -54,7 +54,7 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
         },
       ],
     }),
-    [] // static config, so no deps
+    []
   )
 
   return (

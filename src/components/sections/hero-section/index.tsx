@@ -73,9 +73,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   content={[
                     {
                       title: subtitle.text,
-                      color: `${subtitle.color ?? "color-equity-blue"} ${
-                        subtitle.underline ? "underline" : ""
-                      }`,
+                      color: `${subtitle.color ?? "color-equity-blue"} ${subtitle.underline ? "underline" : ""
+                        }`,
                     },
                   ]}
                   headingTag="p"

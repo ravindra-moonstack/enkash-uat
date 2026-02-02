@@ -29,6 +29,7 @@ export interface PartnershipSectionProps {
   description: string
   buttons?: ButtonData[]
   slideData: SlideData[]
+  className?: string
 }
 
 const PartnershipSection: React.FC<PartnershipSectionProps> = ({
@@ -37,9 +38,10 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
   description,
   buttons = [],
   slideData,
+  className = "",
 }) => {
   return (
-    <section className="partnership-section">
+    <section className={`partnership-section ${className}`}>
       <div className="background-container">
         <Image
           src={backgroundImage}
