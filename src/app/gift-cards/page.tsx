@@ -88,7 +88,7 @@ const GiftCards = (): React.JSX.Element => {
           text: "Power smarter corporate gifting with customizable digital gift cards. Easily buy, manage, and distribute corporate gift cards in India with full control, transparency, and real-time visibility.",
           color: "color-white subHeading",
         }}
-        button={{ title: "Get Started", url: "/get-started", theme: "blue" }}
+        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         heroImage={heroCardImg}
         backgroundImage="/images/giftCardBg.webp"
         paddingTop="138px"

@@ -1,0 +1,198 @@
+@use "./@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+
+.paymentGatewaySlider {
+    position: relative;
+    width: 100%;
+    padding-bottom: 18px;
+    overflow: hidden;
+
+    :global {
+        .slick-slider {
+            .slick-slide {
+                height: inherit !important;
+            }
+
+            .slick-list {
+                height: 100%;
+            }
+
+            .slick-track {
+                display: flex;
+                align-items: stretch;
+            }
+
+            .slick-slide {
+                height: 100%;
+                margin-left: 0px;
+                /* Adjust as needed */
+
+                >div {
+                    height: 100%;
+                }
+            }
+        }
+
+        .slick-dots {
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            display: flex !important;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+
+            li {
+                width: auto;
+                height: auto;
+                margin: 0;
+
+                button {
+                    font-size: 0;
+                    padding: 0;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: $color-dark-grey;
+                    border: none;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &::before {
+                        display: none;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.4);
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.7);
+                    }
+                }
+
+                &.slick-active button {
+                    width: 24px; // elongated pill shape
+                    height: 8px;
+                    border-radius: 20px;
+                    background: rgba(255, 255, 255, 1);
+                    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+
+    }
+
+    .customButtons {
+        a {
+            text-decoration: none;
+            color: $color-equity-blue;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 500; // optional
+            font-size: 14px; // optional
+
+            svg {
+                margin-left: 7px;
+                vertical-align: middle; // keeps arrow aligned
+            }
+        }
+    }
+
+    @include for-laptops {
+        :global {
+            .slick-slider {
+                .slick-slide {
+                    margin-left: 15px;
+                    margin-right: 15px;
+
+                }
+            }
+
+            .slick-dots {
+                left: 8px;
+                transform: none;
+            }
+
+        }
+    }
+}
+
+.slideContainer {
+    height: 100%;
+    padding: 0 15px;
+
+    @include for-laptops {
+        padding: 0;
+    }
+}
+
+.slideCard {
+    background: $color-white;
+    border-radius: 10px;
+    padding: 34px 20px 30px 27px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    gap: 15.55px;
+}
+
+.slideIcon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 32px;
+        height: 32px;
+        color: $color-equity-blue;
+        object-fit: cover;
+    }
+}
+
+.slideTitle {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+    line-height: 31.25px;
+    font-family: "Inter", sans-serif;
+}
+
+.slideDescription {
+    font-size: 16px;
+    color: $color-grey-200;
+    line-height: 21.77px;
+    flex: 1;
+    font-weight: 400;
+}
+
+.customButtons {
+    a {
+        text-decoration: none;
+        color: $color-equity-blue;
+        display: inline-block;
+        margin-top: 20px;
+        font-weight: 500; // optional
+        font-size: 14px; // optional
+
+        svg {
+            margin-left: 7px;
+            vertical-align: middle; // keeps arrow aligned
+        }
+    }
+}
