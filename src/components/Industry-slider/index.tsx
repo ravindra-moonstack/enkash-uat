@@ -3,7 +3,7 @@
 import React, { useRef, useState, useEffect } from "react"
 import Slider from "react-slick"
 import Image from "next/image"
-import styles from "./IndustrySlider.module.scss"
+import styles from "./Industryslider.module.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { DynamicHeading } from ".."
