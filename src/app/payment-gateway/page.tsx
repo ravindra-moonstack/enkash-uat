@@ -44,7 +44,6 @@ import BlogSection from "@/src/components/sections/blog-section"
 import Script from "next/script"
 import { BankGradeSecurity, CommanButton, ContentShowcase, FeatureCard, PaymentGatewaySection, StatsSection } from "@/src/components"
 import IndustrySlider from "@/src/components/Industry-slider"
-import { Container } from "react-bootstrap"
 
 const videoId = "oApuECjnRIU"
 const videoSchema = {
@@ -252,7 +251,7 @@ const PaymentGateway = (): React.JSX.Element => {
           />
         </div>
 
-        <Container>
+        <div className="max-w-auto">
           <div className={`row ${styles.integration_row}`}>
             <div className="d-flex align-items-stretch gap-3 gap-md-0 flex-wrap flex-md-nowrap pb-4 pt-4 pt-md-5">
               {mergedCards?.map((card, index) => (
@@ -262,12 +261,13 @@ const PaymentGateway = (): React.JSX.Element => {
                     description={card?.description}
                     cardImage={card.image}
                     hoverClass={styles.hoverClass}
+                    iconWidth={48}
                   />
                 </div>
               ))}
             </div>
           </div>
-        </Container>
+        </div>
       </div>
       <div className={`${styles.integration_section}  `}>
         <div className="max-w-auto w-100">
@@ -327,6 +327,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 theme="white"
                 arrow
                 url={salesUrl}
+                className="mt-3"
               />
             </div>
             <div className="col-md-6">

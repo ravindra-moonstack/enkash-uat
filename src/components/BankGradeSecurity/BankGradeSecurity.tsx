@@ -2,7 +2,6 @@ import React from "react"
 import Image from "next/image"
 import styles from "./BankGradeSecurity.module.scss"
 import { DynamicHeading } from ".."
-import { Container } from "react-bootstrap"
 
 interface SecurityFeature {
     title: string
@@ -38,7 +37,7 @@ const BankGradeSecurity: React.FC<BankGradeSecurityProps> = ({
 
     return (
         <section className={`${styles.bankGradeSection}`}>
-            <Container>
+            <div className="max-w-auto">
                 <div className={styles.content + " " + className}>
                     <div className={styles.leftContent}>
                         {imageSrc && (
@@ -139,7 +138,7 @@ const BankGradeSecurity: React.FC<BankGradeSecurityProps> = ({
                         )}
                     </div>
                 </div>
-            </Container>
+            </div>
         </section>
     )
 }
