@@ -37,7 +37,6 @@ import {
   vaultSecurity
 } from "./img"
 import HeroSection from "@/src/components/sections/hero-section"
-import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
 //utils
