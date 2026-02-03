@@ -329,7 +329,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 theme="white"
                 arrow
                 url={salesUrl}
-                className="mt-3"
+                className="mt-4"
               />
             </div>
             <div className="col-md-6">
