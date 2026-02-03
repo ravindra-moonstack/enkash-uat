@@ -164,6 +164,8 @@ const PaymentGateway = (): React.JSX.Element => {
           bgColor="bg-color-black-30"
           buttonArrow
           reverse
+          imgHeightStyle={'mh-760'}
+          contentContainerStyle={'pb-0'}
         />
         <ContentShowcase
           heading="Built for Developers Who Demand Excellence"
@@ -186,6 +188,7 @@ const PaymentGateway = (): React.JSX.Element => {
           buttonTitle="Get Started Today"
           buttonArrow
           reverse
+          imgHeightStyle={'mh-650'}
         />
         <ContentShowcase
           heading="Complete Visibility Into Your Payments"

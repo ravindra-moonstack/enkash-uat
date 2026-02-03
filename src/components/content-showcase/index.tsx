@@ -26,6 +26,7 @@ interface ContentShowcaseProps {
   imgStyle?: string
   imgHeightStyle?: string
   buttonArrow?: boolean
+  contentContainerStyle?: string
 }
 
 function ContentShowcase({
@@ -43,6 +44,7 @@ function ContentShowcase({
   imgStyle,
   imgHeightStyle = "mh-550",
   buttonArrow,
+  contentContainerStyle,
 }: ContentShowcaseProps): JSX.Element {
   return (
     <div className={`${bgColor} ${styles.ContentShowcase}`}>
@@ -64,7 +66,7 @@ function ContentShowcase({
           />
         )}
 
-        <div className={styles.ContentShowcaseContent}>
+        <div className={`${styles.ContentShowcaseContent} ${contentContainerStyle}`}>
           <div className={`row`}>
             {/* IMAGE COLUMN — Mobile second, Desktop based on reverse */}
             <div
