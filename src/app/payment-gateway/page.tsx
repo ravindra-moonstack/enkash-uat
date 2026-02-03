@@ -343,14 +343,6 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <CtaSection
-        title={
-          "Discover the EnKash difference - Secure, Scalable and Seamless."
-        }
-        buttonText={"Get Started Today"}
-        buttonUrl={salesUrl}
-      />
-
       <FaqSection faqData={faqData} />
 
       <BlogSection
