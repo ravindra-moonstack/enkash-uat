@@ -561,6 +561,12 @@ body {
   }
 }
 
+.mh-760 {
+  @include for-laptops {
+    max-height: 760px;
+  }
+}
+
 @media (min-width: 768px) {
   .my-absolute-desktop {
     position: absolute;
@@ -578,6 +584,7 @@ body {
 
   @include for-laptops {
     font-size: 20px !important;
+    line-height: 24px !important;
   }
 }
 
