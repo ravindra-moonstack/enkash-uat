@@ -195,14 +195,12 @@ const cardType: TCardTypes = [
     description:
       "Pay for fuel, tolls, repairs, and parking without cash. Give each driver their own card with spending limits you control. Track all fleet expenses in one place.",
     cardImage: virtualCardImg,
-    linkUrl: "/fleet-and-logistics-card",
   },
   {
     titleHtml: "Payroll Cards",
     description:
       "Load salaries, bonuses, or incentives directly onto cards. Perfect for gig workers, contract staff, or employees without bank accounts. Instant, secure, zero paperwork.",
     cardImage: purchesCardImg,
-    linkUrl: "/payroll-card",
   },
 
   {
