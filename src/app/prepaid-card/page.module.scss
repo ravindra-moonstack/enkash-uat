@@ -2,24 +2,20 @@
 @use "@/src/styles/mixin" as *;
 
 .hero_section {
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, center;
-  background-size: cover, cover;
-  box-shadow: 0px 0px 77px 0px $color-black-1a;
   padding: 100px 20px 0;
-  background-image: url(/images/prepaidCardBg.webp);
+
   @include for-laptops {
     padding: 138px 20px 0;
   }
-  .lottie_containerOuter {
-    padding-top: 175px;
-  }
+
+
   .subtitle {
     color: $color-equity-blue;
     border-bottom: 2px solid $color-equity-blue;
     font-size: 24px;
     font-weight: 400;
   }
+
   .title {
     text-align: center;
     padding-top: 16px;
@@ -45,10 +41,10 @@
       max-width: 100%;
       height: auto;
       max-height: 430px;
-      margin-bottom: -111px;
       max-width: 287px;
     }
   }
+
   .lottie_container_bottom {
     height: 52px;
     background-color: $color-ash-grey;
@@ -74,24 +70,81 @@
   position: relative;
 
   padding: 20px;
+
   @include for-laptops {
     padding: 58px;
   }
+
   .get_started_button {
     padding: 6px;
     border: 2px solid $color-bolt-green;
     border-radius: 12px;
+
     @include for-laptops {
       padding: 11px 14px;
     }
   }
 }
 
+.other_products {
+  padding: 60px 20px 50px;
+
+  @include for-laptops {
+    padding: 80px 20px 66px;
+  }
+}
+
+.features_section {
+  padding: 0px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+
+  @include for-laptops {
+    gap: 46px;
+    padding: 0px 20px 130px;
+  }
+}
+
+.integration_section {
+  background-color: #f1f1f1;
+  position: relative;
+  display: flex;
+  text-align: center;
+  padding: 50px 20px;
+
+  @include for-laptops {
+    padding: 90px 20px 0;
+  }
+
+  .section {
+    text-align: start;
+
+    .faq_bg {
+      Img {
+        height: auto;
+
+        @include for-laptops {
+          max-width: 475px;
+          height: auto;
+          margin-top: -100px;
+        }
+      }
+    }
+  }
+}
+
 .card_stacking_row {
-  padding: 0px 20px;
+  padding: 40px 20px;
+
+  @include for-laptops {
+    padding: 57px 20px 54px;
+  }
+
   .section {
     padding: 50px 20px 0px;
     background: $color-cultured;
+
     @include for-laptops {
       padding: 90px 20px;
     }

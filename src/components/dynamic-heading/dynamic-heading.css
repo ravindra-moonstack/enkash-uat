@@ -44,6 +44,17 @@
   line-height: 26px;
 }
 
+.fs-24 {
+
+  font-size: 20px;
+  line-height: 28px;
+
+  @media (min-width: 768px) {
+    font-size: 24px !important;
+    line-height: 31px !important;
+  }
+}
+
 .bannerHeading {
   font-size: 38px !important;
 }
