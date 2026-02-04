@@ -1,0 +1,68 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.statsSection {
+    padding: 48px 20px;
+    position: relative;
+    overflow: hidden;
+
+    @include for-laptops {
+        padding: 60px 20px;
+    }
+
+}
+
+.backgroundImg {
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+.titleWrapper {
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include for-laptops {
+        margin-bottom: 48px;
+    }
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: $color-main-grey;
+
+    @include for-laptops {
+        font-size: 36px;
+    }
+
+    @include for-window-zoomed-screens {
+        font-size: 32px;
+    }
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    @include for-laptops {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+}
+
+.statCard {
+    background: $color-solid-blue;
+    padding: 25px 15px 21px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 0px 24.72px 0px #0000000D;
+    }
+}
