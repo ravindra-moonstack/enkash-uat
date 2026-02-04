@@ -98,6 +98,9 @@ const HowDoesItWork = dynamic(() => import("./how-does-it-work"), { ssr: true })
 const BecomePartnerSteps = dynamic(() => import("./becomepartner"), {
   ssr: true,
 })
+const CounterSection = dynamic(() => import("./counter-section"), {
+  ssr: true,
+}) 
 
 const PartnerShipForm = dynamic(
   () => import("./forms/partnership-form/index"),
@@ -198,6 +201,11 @@ const PaymentGatewaySection = dynamic(
   { ssr: true }
 )
 
+const PaymentGatewayGridSection = dynamic(
+  () => import("./payment-gateway-grid/PaymentGatewayGridSection"),
+  { ssr: true }
+)
+
 const BuiltforBuildersSection = dynamic(
   () => import("./builtfor-builders-card"),
   {
@@ -245,6 +253,7 @@ export {
   LogoSlider,
   BankGradeSecurity,
   PolicyCard,
+  CounterSection,
   RectangleButton,
   FeatureCard,
   StepCard,
@@ -292,6 +301,7 @@ export {
   HiringProcessModal,
   PaymentGatewayPartnershipForm,
   PaymentGatewaySection,
+  PaymentGatewayGridSection,
   BuiltforBuildersSection,
   UtilityBillPayments,
   PartnerSection,
