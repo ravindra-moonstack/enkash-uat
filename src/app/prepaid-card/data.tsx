@@ -210,21 +210,21 @@ const cardType: TCardTypes = [
     description:
       "Issue cards for business travel with preset budgets. Employees book flights, hotels, meals, and cabs without fronting personal money. Auto-capture all expenses for easy reconciliation.",
     cardImage: sassCardImg,
-    linkUrl: "/travel-expense-card",
+    linkUrl: "/travel-and-expense-card",
   },
   {
     titleHtml: "Petty Cash Digitization",
     description:
       "Replace messy cash management with prepaid cards. Issue cards to branches, departments, or admin teams. Track office supplies, pantry, and maintenance spends.",
     cardImage: PettyCashDigitizationImage,
-    linkUrl: "/petty-cash-digitization-card",
+    linkUrl: "/petty-cash",
   },
   {
     titleHtml: "Vendor Payments",
     description:
       "Load cards for freelancers, suppliers, or contractors. Control when and where funds can be used. No bank transfers. No payment delays.",
     cardImage: vendorPaymentImage,
-    linkUrl: "/vendor-payment-card",
+    linkUrl: "/vendor-payment",
   },
 ]
 
