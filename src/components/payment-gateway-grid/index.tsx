@@ -19,8 +19,8 @@ const PaymentGatewayGrid: React.FC<PaymentGatewayGridProps> = ({ slides }) => {
     return (
         <div className={styles.paymentGatewayGrid}>
             <div className={styles.gridContainer}>
-                {slides.map((slide) => (
-                    <div className={styles.slideCard}>
+                {slides.map((slide, i) => (
+                    <div className={styles.slideCard} key={i}>
                         <div className={styles.slideIcon}>
                             <Image
                                 src={slide.icon}
