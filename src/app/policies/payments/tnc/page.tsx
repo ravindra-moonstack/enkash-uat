@@ -182,7 +182,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                             Bank of India (RBI) and/or rules, regulations,
                             roles, responsibilities and processes as defined by
                             NPCI on their website{" "}
-                            <a href=" www.npci.org.in." className="text-break">
+                            <a href="https://www.npci.org.in." className="text-break">
                               www.npci.org.in.
                             </a>{" "}
                           </li>

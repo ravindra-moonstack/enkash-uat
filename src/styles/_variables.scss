@@ -1,76 +1,80 @@
-$color-black: #000000;
-$color-black-1a: #0000001a;
-$color-black-0d: #0000000d;
-$color-black-03: #00000003;
-$color-black-17: #00000017;
-$color-black-00: #00000000;
-$color-main-black: #151522;
-$color-secondry-black: #333333;
-$color-indi-volt: #0b0b28;
-$color-deep-indigo: #0c0e4a;
-$color-dark-midnight-blue: #0c0e4a;
-$color-baby-blue: #4dc1ee;
-$color-cyan-blue: #61d6ff;
-$color-night-blue: #092093;
-$color-shadow-blue: #21215c;
-$color-main-grey: #425466;
-$color-slate-grey: #97a3b7;
-$color-light-shade-grey: #f0f0f0;
-$color-quick-silver: #b5bbcb;
-$color-secondry-grey: #999999;
-$color-alt-grey: #ececec;
-$color-alternate-grey: #5b5b5b;
-$color-pale-grey: #dadada;
-$color-equity-blue: #1c5af4;
-$color-error-red: #f03d3e;
-$color-electric-green: #00bf9e;
-$color-electric-light-green: #00f0ff;
-$color-rainy-blue: #61d6ff;
-$color-white: #ffffff;
-$color-white-73: #ffffff73;
-$color-white-1a: #ffffff1a;
-$color-white-c4: #ffffffc4;
-$color-bluish-purple: #6173f7;
-$primary-gradient: linear-gradient(270deg, #1c5af4 14.05%, #0a0d33 83.93%);
-$secondry-gradient: linear-gradient(
-  303.75deg,
-  $color-cyan-blue 20.29%,
-  #0b0b28 103.31%
-);
-$light-gradient: linear-gradient(
-  270deg,
-  #30f37e -0.74%,
-  rgba(48, 243, 126, 0) 88.06%
-);
-$color-bolt-light: #cfe2fd;
-$color-bolt-title-grey: #2e2e2e;
-$color-bolt-green: #70ff9b;
-$color-light-blue-bg: #f3fcff;
-$color-brand-blue: #0663fc;
-$color-sky-hint: #f6fcff;
-$color-silver-grey: #f9f9f9;
-$color-soft-mint: #f6fdfb;
-$color-pale-aqua: #e6f0ed;
-$color-dark-grey: #a5a5a5;
+        $color-black: #000000;
+        $color-black-1a: #0000001a;
+        $color-black-0d: #0000000d;
+        $color-black-03: #00000003;
+        $color-black-17: #00000017;
+        $color-black-00: #00000000;
+        $color-main-black: #151522;
+        $color-secondry-black: #333333;
+        $color-indi-volt: #0b0b28;
+        $color-deep-indigo: #0c0e4a;
+        $color-dark-midnight-blue: #0c0e4a;
+        $color-baby-blue: #4dc1ee;
+        $color-cyan-blue: #61d6ff;
+        $color-night-blue: #092093;
+        $color-shadow-blue: #21215c;
+        $color-solid-blue: #2369FA;
+        $color-main-grey: #425466;
+        $color-slate-grey: #97a3b7;
+        $color-light-shade-grey: #f0f0f0;
+        $color-quick-silver: #b5bbcb;
+        $color-secondry-grey: #999999;
+        $color-alt-grey: #ececec;
+        $color-alternate-grey: #5b5b5b;
+        $color-pale-grey: #dadada;
+        $color-equity-blue: #1c5af4;
+        $color-shocking-blue: #1853F9;
+        $color-error-red: #f03d3e;
+        $color-electric-green: #00bf9e;
+        $color-electric-light-green: #00f0ff;
+        $color-rainy-blue: #61d6ff;
+        $color-white: #ffffff;
+        $color-white-73: #ffffff73;
+        $color-white-1a: #ffffff1a;
+        $color-white-c4: #ffffffc4;
+        $color-white-10: #ffffff10;
+        $color-bluish-purple: #6173f7;
+        $primary-gradient: linear-gradient(270deg, #1c5af4 14.05%, #0a0d33 83.93%);
+        $secondry-gradient: linear-gradient(303.75deg,
+                        $color-cyan-blue 20.29%,
+                        #0b0b28 103.31%);
+        $light-gradient: linear-gradient(270deg,
+                        #30f37e -0.74%,
+                        rgba(48, 243, 126, 0) 88.06%);
+        $color-bolt-light: #cfe2fd;
+        $color-bolt-title-grey: #2e2e2e;
+        $color-bolt-green: #70ff9b;
+        $color-light-blue-bg: #f3fcff;
+        $color-brand-blue: #0663fc;
+        $color-sky-hint: #f6fcff;
+        $color-silver-grey: #f9f9f9;
+        $color-soft-mint: #f6fdfb;
+        $color-blinding-white: #F6FEFF;
+        $color-pale-aqua: #e6f0ed;
+        $color-dark-grey: #a5a5a5;
 
-$color-black-200: #252728;
-$color-black-100: #333333;
-$color-black-80: #333333;
-$color-black-75: #414141;
-$color-black-65: #595959;
-$color-black-50: #797979;
-$color-black-30: #eaeaea;
-$color-black-16: #d6d6d6;
-$color-black-10: #e5e5e5;
-$color-black-5: #f2f2f2;
+        $color-black-200: #252728;
+        $color-black-100: #333333;
+        $color-black-80: #333333;
+        $color-black-75: #414141;
+        $color-black-65: #595959;
+        $color-black-50: #797979;
+        $color-black-30: #eaeaea;
+        $color-black-16: #d6d6d6;
+        $color-black-10: #e5e5e5;
+        $color-black-5: #f2f2f2;
+        $color-black-2: #f1f1f1;
 
-$color-grey-900: #111b29;
-$color-grey-600: #4a5567;
-$color-grey-100: #d9d9d9;
-$color-grey-200: #2b2b2b;
-$color-dark-blue: #0040df;
-$color-ash-grey: #c4c4c2;
-$color-grey-300: #576675;
-$color-dim-grey: #4b4b4b;
-$color-crayola: #2563eb;
-$color-cultured: #f6f6f6;
+        $color-grey-900: #111b29;
+        $color-grey-600: #4a5567;
+        $color-grey-100: #d9d9d9;
+        $color-grey-200: #2b2b2b;
+        $color-dark-blue: #0040df;
+        $color-ash-grey: #c4c4c2;
+        $color-ash-greylite: #c8c8c8;
+        $color-grey-300: #576675;
+        $color-dim-grey: #4b4b4b;
+        $color-crayola: #2563eb;
+        $color-cultured: #f6f6f6;
+        $color-uncultured: #858ea2;
+        $color-glossy: #C7C7C7;

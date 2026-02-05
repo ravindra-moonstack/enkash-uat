@@ -5,6 +5,7 @@ const Heading = dynamic(() => import("./heading"), { ssr: true })
 const FAQHtml = dynamic(() => import("./faq-new/faqHtml"), { ssr: true })
 
 const DynamicHeading = dynamic(() => import("./dynamic-heading"), { ssr: true })
+const StatsSection = dynamic(() => import("./stats-section"), { ssr: true })
 const LottieDynamicLoadComponent = dynamic(
   () => import("./lottie-client/lottie-dynamic-load-client"),
   { ssr: true }
@@ -97,6 +98,9 @@ const HowDoesItWork = dynamic(() => import("./how-does-it-work"), { ssr: true })
 const BecomePartnerSteps = dynamic(() => import("./becomepartner"), {
   ssr: true,
 })
+const CounterSection = dynamic(() => import("./counter-section"), {
+  ssr: true,
+}) 
 
 const PartnerShipForm = dynamic(
   () => import("./forms/partnership-form/index"),
@@ -192,6 +196,16 @@ const PaymentGatewayPartnershipForm = dynamic(
   }
 )
 
+const PaymentGatewaySection = dynamic(
+  () => import("./payment-gateway-slider/PaymentGatewaySection"),
+  { ssr: true }
+)
+
+const PaymentGatewayGridSection = dynamic(
+  () => import("./payment-gateway-grid/PaymentGatewayGridSection"),
+  { ssr: true }
+)
+
 const BuiltforBuildersSection = dynamic(
   () => import("./builtfor-builders-card"),
   {
@@ -217,6 +231,9 @@ const ContactForm = dynamic(() => import("./forms/contact-form"), {
 const ShimmerImage = dynamic(() => import("./shimmer-image"), {
   ssr: true,
 })
+const BankGradeSecurity = dynamic(() => import("./BankGradeSecurity/BankGradeSecurity"), {
+  ssr: true,
+})
 
 const CommanButton = dynamic(() => import("./buttons/index"), {
   ssr: true,
@@ -228,12 +245,15 @@ export {
   Heading,
   FAQHtml,
   DynamicHeading,
+  StatsSection,
   LottieDynamicLoadComponent,
   CustomBreadcrumb,
   AllProducts,
   CardProduct,
   LogoSlider,
+  BankGradeSecurity,
   PolicyCard,
+  CounterSection,
   RectangleButton,
   FeatureCard,
   StepCard,
@@ -280,6 +300,8 @@ export {
   CareersTestimonialSlider,
   HiringProcessModal,
   PaymentGatewayPartnershipForm,
+  PaymentGatewaySection,
+  PaymentGatewayGridSection,
   BuiltforBuildersSection,
   UtilityBillPayments,
   PartnerSection,
