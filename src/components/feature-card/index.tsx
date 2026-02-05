@@ -14,6 +14,7 @@ export interface CardProps {
   cardImage?: string | StaticImageData | undefined
   padding?: string
   hoverClass?: string
+  iconWidth?: number
 }
 
 const FeatureCard = ({
@@ -25,6 +26,7 @@ const FeatureCard = ({
   title2 = "",
   padding = "40px 29px",
   hoverClass = "",
+  iconWidth = 65,
 }: CardProps): React.JSX.Element => {
   //
 
@@ -41,8 +43,8 @@ const FeatureCard = ({
                 src={cardImage}
                 alt="card visual"
                 className={styles.card_image}
-                width={65}
-                height={65}
+                width={iconWidth}
+                height={iconWidth}
               />
             </div>
           )}

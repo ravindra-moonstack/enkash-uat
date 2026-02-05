@@ -5,6 +5,7 @@ import styles from "./slider-section.module.scss"
 
 type TSliderSectionProps = {
   headingContent: { title: string; color: string }[]
+  descriptionContent?: { title: string; color: string }[]
   headingTag?: "h1" | "h2" | "h3"
   headingClassName?: string
   productsData: any[]
@@ -15,6 +16,7 @@ type TSliderSectionProps = {
 
 const SliderSection: React.FC<TSliderSectionProps> = ({
   headingContent,
+  descriptionContent,
   headingTag = "h2",
   headingClassName = "f-6",
   productsData,
@@ -29,6 +31,11 @@ const SliderSection: React.FC<TSliderSectionProps> = ({
           content={headingContent}
           headingTag={headingTag}
           className={headingClassName}
+        />
+        <DynamicHeading
+          content={descriptionContent}
+          headingTag="p"
+          className={`${styles.description} mb-0`}
         />
       </div>
       <AllProducts
