@@ -70,11 +70,12 @@
   .first_row_button {
     padding-top: 16px;
     padding-bottom: 16px;
-    gap: 12px;
+    gap: 8px;
 
     @include for-laptops {
       padding-top: 32px;
       padding-bottom: 112px;
+      gap: 12px;
     }
   }
 

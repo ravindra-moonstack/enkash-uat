@@ -5,14 +5,16 @@ import styles from "./page.module.scss"
 //data
 import {
   acceleratedGrowthData,
+  allProductSections,
+  categories,
+  customFeatures,
   dashboardData,
   integrationData,
-  introductionCards,
   managementCardData,
   paymentMethodData,
   rankData,
-  savingData,
-  supportData,
+  slideData,
+  slides,
 } from "./data"
 import faqData from "./faq-data"
 
@@ -20,8 +22,6 @@ import faqData from "./faq-data"
 // import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import FaqSection from "@/src/components/faq-section"
-import CommonButton from "@/src/components/buttons"
-import PolicyCard from "@/src/components/policy-card"
 import DynamicHeading from "@/src/components/dynamic-heading"
 
 //helpers
@@ -31,16 +31,18 @@ import {
   paymenyMethod,
   dashboard,
   rank,
-  support,
-  leftHand,
   acceleratedGrowthImg,
+  stateBg,
+  capabilityImage,
+  vaultSecurity
 } from "./img"
 import HeroSection from "@/src/components/sections/hero-section"
-import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
 //utils
 import Script from "next/script"
+import { BankGradeSecurity, CommanButton, ContentShowcase, FeatureCard, PaymentGatewaySection, StatsSection } from "@/src/components"
+import IndustrySlider from "@/src/components/Industry-slider"
 
 const videoId = "oApuECjnRIU"
 const videoSchema = {
@@ -57,11 +59,11 @@ const videoSchema = {
 }
 
 export const metadata: Metadata = {
-  title: "Best Payment Gateway in India for SMBs and Startups",
+  title: "Best Payment Gateway in India to Accept  Payments Online.",
   description:
     "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
   openGraph: {
-    title: "Best Payment Gateway in India for SMBs and Startups ",
+    title: "Best Payment Gateway in India to Accept  Payments Online.",
     description:
       "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
     url: `${process.env.URL}/payment-gateway`,
@@ -78,6 +80,7 @@ export const metadata: Metadata = {
 }
 
 const salesUrl = getSalesUrl("/payment-gateway")
+const mergedCards = allProductSections.flatMap((section) => section?.items)
 
 const PaymentGateway = (): React.JSX.Element => {
   return (
@@ -125,467 +128,174 @@ const PaymentGateway = (): React.JSX.Element => {
         backgroundImage="/images/collectPaymentBg.webp"
       />
 
-      <div className={styles.introduction_section}>
-        <div className="d-flex justify-content-center flex-column gap-32 align-items-center max-w-auto">
+      <StatsSection
+        title="Payment Gateway That Delivers"
+        description="Built for businesses that demand more than just payment processing. EnKash combines enterprise-grade infrastructure with SMB-focused solutions."
+        backgroundImage={stateBg}
+        className="darkTheme"
+      />
+
+      <div className="bg_white_index">
+        <ContentShowcase
+          mainHeading={[
+            {
+              title: "The ",
+              color: "color-black",
+            },
+            { title: "Backbone of Modern Business", color: "color-equity-blue" },
+            {
+              title: " Payments",
+              color: "color-black",
+            },
+          ]}
+          mainDescription={[
+            {
+              title: "A complete payments setup that supports growth, complexity, and volume.",
+              color: "color-black",
+            },
+          ]}
+          heading="Accept Every Payment Method That Matters"
+          subheading="Offer your customers complete payment flexibility with 100+ integrated payment options that work seamlessly across all channels."
+          data={integrationData}
+          imageSrc={integration}
+          imageAlt="card background"
+          buttonUrl={salesUrl}
+          buttonTitle="Get Started Today"
+          bgColor="bg-color-black-30"
+          buttonArrow
+          reverse
+          imgHeightStyle={'mh-760'}
+          contentContainerStyle={'pb-0'}
+        />
+        <ContentShowcase
+          heading="Built for Developers Who Demand Excellence"
+          subheading="Enterprise-grade APIs and SDKs designed for rapid integration. Comprehensive documentation that eliminates guesswork."
+          data={paymentMethodData}
+          imageSrc={paymenyMethod}
+          imageAlt="card background"
+          buttonTitle="Get Started Today"
+          buttonUrl={salesUrl}
+          buttonArrow
+        />
+        <ContentShowcase
+          heading="Support That Drives Your Success"
+          subheading="EnKash provides dedicated technical and merchant support teams that understand your business and respond when you need them."
+          data={dashboardData}
+          imageSrc={dashboard}
+          imageAlt="card background"
+          bgColor="bg-color-black-30"
+          buttonUrl={salesUrl}
+          buttonTitle="Get Started Today"
+          buttonArrow
+          reverse
+          imgHeightStyle={'mh-650'}
+        />
+        <ContentShowcase
+          heading="Complete Visibility Into Your Payments"
+          subheading="Access comprehensive analytics and reporting tools that provide deep insights into transaction performance, settlement status, and business metrics."
+          data={rankData}
+          imageSrc={rank}
+          imageAlt="card background"
+          buttonUrl={salesUrl}
+          buttonTitle="Get Started Today"
+          buttonArrow
+        />
+      </div>
+      <IndustrySlider
+        heading={"Designed for How Businesses Collect Payments"}
+        subheading={"Whether you're scaling an e-commerce store or launching a subscription service, EnKash adapts to your unique needs."}
+        categories={categories}
+        slides={slides}
+        autoplaySpeed={4000}
+      />
+      <PaymentGatewaySection
+        backgroundImage={capabilityImage.src}
+        heading={[{ title: "Advanced Capabilities for Complex Requirements", color: "color-white" }]}
+        description="Beyond standard payment processing, EnKash handles sophisticated business scenarios."
+        slideData={slideData}
+        className={styles.partnerSectionOverlap}
+      />
+      <BankGradeSecurity
+        preTitle="Bank-Grade "
+        highlightedTitle="Security "
+        titleAfterHighlightedTitle="Standards"
+        subtitle="Every transaction is protected by the same security standards used by major financial institutions."
+        features={customFeatures}
+        imageSrc={vaultSecurity.src}
+        imageAlt="Bank vault with security lock"
+        className={styles.securitySectionOverlap}
+      />
+      <div className={`${styles.slider_row} relative bg-white`}>
+        <div className={`${styles.title} text-center max-w-auto`}>
           <DynamicHeading
             content={[
-              { title: "Say Hello to a ", color: "color-white" },
               {
-                title: "Smarter, Faster & Secure  ",
-                color: "color-white italic f-6",
+                title: "Turn More ",
+                color: "color-black ",
               },
-              { title: "way to handle transactions", color: "color-white" },
+              {
+                title: "Browsers Into Buyers",
+                color: "color-equity-blue ",
+              },
             ]}
-            headingTag="h3"
-            className="f-3 mb-3 text-center"
+            headingTag={'h2'}
+            className={'f-6'}
           />
-
-          <div className={`d-flex ${styles.section}`}>
-            {introductionCards.map((card, idx) => (
-              <div key={idx} className={`${styles.card}`}>
-                <div className={`d-flex ${styles.outerCard}`}>
-                  <DynamicHeading
-                    content={[{ title: card.value, color: "color-white" }]}
-                    headingTag="p"
-                    className="f-6 title-adaptive"
-                  />
-                </div>
-                <div className={`py-2  ${styles.innerCard}`}>
-                  <DynamicHeading
-                    content={[{ title: card.label, color: "color-white" }]}
-                    headingTag="p"
-                    className="mb-0 text-center"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+          <DynamicHeading
+            content={[
+              {
+                title: "Fast, frictionless checkout experience designed to maximize conversion rates and minimize cart abandonment.",
+                color: "color-grey-200 f-4 ",
+              },
+            ]}
+            headingTag="p"
+            className={`${styles.description} mb-0`}
+          />
         </div>
-      </div>
 
-      <div className={styles.features_section}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Built for SMBs, ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "Trusted by Merchants",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-
-          {/* Section 1 */}
-          <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-0 pe-md-5 order-1 order-md-1">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Developer First Integration ",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h4"
-                  className="f-5"
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms",
-                      color: "color-main-grey",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className={` ${styles.payment_section}`}>
-                {integrationData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <CommonButton
-                  title="Get Started  Today "
-                  theme="outline-blue"
-                  url={salesUrl}
-                />
-              </div>
-            </div>
-            <div
-              className={`col-md-6 col-12 ${styles.third_container} order-2 order-md-2`}
-            >
-              <div>
-                <Image
-                  src={integration}
-                  alt="card background"
-                  className="position-relative w-100 h-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Section 2 */}
-          <div className={`bg-color-soft-mint ${styles.section}`}>
-            <div className={`row pb-[50px] pt-[50px] align-items-center `}>
-              <div
-                className={`col-md-6 ${styles.third_container} order-2 order-md-1`}
-              >
-                <div>
-                  <Image
-                    src={paymenyMethod}
-                    alt="card background"
-                    className="position-relative w-100 h-100 mh-550 object-fit-contain"
+          <div className={`row ${styles.integration_row}`}>
+            <div className="d-flex align-items-stretch gap-3 gap-md-0 flex-wrap flex-md-nowrap pb-4 pt-4 pt-md-5">
+              {mergedCards?.map((card, index) => (
+                <div key={index.toString()} className="d-flex">
+                  <FeatureCard
+                    titleHtml={card.title}
+                    description={card?.description}
+                    cardImage={card.image}
+                    hoverClass={styles.hoverClass}
+                    iconWidth={48}
                   />
                 </div>
-              </div>
-              <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
-                <div className={`d-flex flex-column ${styles.subtitle}`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Accept All Payment Methods ",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h4"
-                    className="f-5"
-                  />
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Provide your customers with the freedom to choose how they pay with several online payment methods. ",
-                        color: "color-main-grey",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="mb-0"
-                  />
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "32px",
-                  }}
-                >
-                  {paymentMethodData.map(({ icon, title, description }, i) => (
-                    <div key={i} style={{ direction: "ltr" }}>
-                      <PolicyCard
-                        icon={icon}
-                        title={title}
-                        description={description}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className={`${styles.list_button}`}>
-                  <CommonButton
-                    title="Get Started Today "
-                    theme="outline-blue"
-                    url={salesUrl}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Section 3 */}
-          <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-0 pe-md-5 order-1 order-md-1">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Powerful Dashboards to Drive Decisions",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h4"
-                  className="f-5"
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Get detailed statistics and reports on payments, settlements, refunds, and much more for informed decision-making.",
-                      color: "color-main-grey",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
-                {dashboardData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <CommonButton
-                  title="Get Started Today "
-                  theme="outline-blue"
-                  url={salesUrl}
-                />
-              </div>
-            </div>
-            <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-end ${styles.third_container} order-2 order-md-2`}
-            >
-              <div>
-                <Image
-                  src={dashboard}
-                  alt="card background"
-                  className="position-relative w-100 h-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Section 4 */}
-          <div className={`bg-color-soft-mint ${styles.section}`}>
-            <div className={`row  pb-[50px] pt-[50px] align-items-center `}>
-              <div
-                className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-start ${styles.third_container} order-2 order-md-1`}
-              >
-                <div>
-                  <Image
-                    src={rank}
-                    alt="card background"
-                    className="position-relative w-100 h-100 mh-550 object-fit-contain"
-                  />
-                </div>
-              </div>
-              <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
-                <div className={`d-flex flex-column ${styles.subtitle}`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Bank Grade Security",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h4"
-                    className="f-5 mb-2"
-                  />
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Enjoy enterprise-grade security to reassure your customers of secure and reliable payment transactions.",
-                        color: "color-main-grey",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="mb-0"
-                  />
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "32px",
-                  }}
-                >
-                  {rankData.map(({ icon, title, description }, i) => (
-                    <div key={i} style={{ direction: "ltr" }}>
-                      <PolicyCard
-                        icon={icon}
-                        title={title}
-                        description={description}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className={`${styles.list_button}`}>
-                  <CommonButton
-                    title="Get Started Today "
-                    theme="outline-blue"
-                    url={salesUrl}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Section 5 */}
-          <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-0 pe-md-5 order-1 order-md-1">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100% Lifetime Support ",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h4"
-                  className="f-5 mb-2"
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Dedicated Relationship Managers: Get personalized assistance from experts who understand your business and growth goals.",
-                      color: "color-main-grey",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
-                {supportData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <CommonButton
-                  title="Get Started Today "
-                  theme="outline-blue"
-                  url={salesUrl}
-                />
-              </div>
-            </div>
-            <div
-              className={`col-md-6 col-12 d-flex  justify-content-end ${styles.third_container} order-2 order-md-2`}
-            >
-              <div>
-                <Image
-                  src={support}
-                  alt="card background"
-                  className="position-relative w-100 h-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Section 6 */}
-          <div className={`bg-color-soft-mint ${styles.section}`}>
-            <div className={`row pb-2 pb-md-5  position-relative `}>
-              <div
-                className={`col-md-6 col-12 ${styles.third_container} order-2 order-md-1`}
-              >
-                <div className={`${styles.custom_bottom_offset}`}>
-                  <Image
-                    src={leftHand}
-                    alt="card background"
-                    className="position-relative w-100 h-100 mh-550 object-fit-contain"
-                  />
-                </div>
-              </div>
-              <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
-                <div className={`d-flex flex-column ${styles.subtitle}`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Advanced Checkout and Card Saving",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h4"
-                    className="f-5 mb-2"
-                  />
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Enhance your checkout experience with features designed for convenience and efficiency:",
-                        color: "color-main-grey",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="mb-0"
-                  />
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "32px",
-                  }}
-                >
-                  {savingData.map(({ icon, title, description }, i) => (
-                    <div key={i} style={{ direction: "ltr" }}>
-                      <PolicyCard
-                        icon={icon}
-                        title={title}
-                        description={description}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className={`${styles.list_button}`}>
-                  <CommonButton
-                    title="Get Started Today "
-                    theme="outline-blue"
-                    url={salesUrl}
-                  />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.integration_section}  `}>
         <div className="max-w-auto w-100">
           <div className={`${styles.section} row`}>
             <div
-              className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-7`}
+              className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-8`}
             >
               <DynamicHeading
                 content={[
                   {
-                    title: "Best Payment Gateway in India for ",
+                    title: "Start Processing Payments Today",
                     color: "color-black",
-                  },
-                  {
-                    title: "Accelerated Growth ",
-                    color: "color-equity-blue",
                   },
                 ]}
                 headingTag="h2"
                 className="f-6"
+              />
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Join thousands of businesses that trust EnKash for reliable, secure, and transparent payment processing.",
+                    color: "color-grey-200",
+                  },
+                ]}
+                headingTag="p"
+                className="f-4 mb-0 fs-20"
               />
             </div>
 
@@ -614,6 +324,13 @@ const PaymentGateway = (): React.JSX.Element => {
                   </div>
                 </div>
               ))}
+              <CommanButton
+                title="Get Started Today"
+                theme="white"
+                arrow
+                url={salesUrl}
+                className="mt-4"
+              />
             </div>
             <div className="col-md-6">
               <div className={styles.faq_bg}>
@@ -627,13 +344,6 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
-      <CtaSection
-        title={
-          "Discover the EnKash difference - Secure, Scalable and Seamless."
-        }
-        buttonText={"Get Started Today"}
-      />
 
       <FaqSection faqData={faqData} />
 

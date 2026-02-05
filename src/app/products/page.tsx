@@ -17,7 +17,7 @@ import SalesFormWrapper from "@/src/components/form-wrapper/SalesFormWrapper"
 import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
-  title: "EnKash Platform: Comprehensive Product Suite",
+  title: "EnKash Product Suite",
   description:
     "Comprehensive product suite for all your business finance needs - payment gateway, expense management, corporate cards, payables, loyalty programs, brand vouchers and more",
   alternates: {
