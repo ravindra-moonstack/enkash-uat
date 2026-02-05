@@ -10,18 +10,18 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 import LogoSlider from "@/src/components/logo-slider"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
-import CtaSection from "@/src/components/sections/cta-section"
-import EnkashWay from "@/src/components/enkash-way/enkash-way"
-import { heroCardImg } from "./img"
+import { GridBgImage, heroCardImg, statsBg } from "./img"
 import BlogSection from "@/src/components/sections/blog-section"
 
 //data
-import { otherProductsHeading, progressData, stackcardData } from "./data"
+import { acceleratedGrowthData, cardType, counterHeadingData, gridData, headingData, otherProductsHeading, stackcardData, statsData, stepsData } from "./data"
 import { faqData } from "./faq-data"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import { BecomePartnerSteps, CardProduct, CounterSection, PaymentGatewayGridSection } from "@/src/components"
+import { acceleratedGrowthImg } from "../payment-gateway/img"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Corporate Prepaid Cards for Business Payments",
@@ -52,7 +52,8 @@ const stackCards = stackcardData.map((item, index) => ({
 
 // -----------------------------------------
 //  PAGE COMPONENT
-// -----------------------------------------
+// ----------------------------------------- 
+
 const PrepaidCard = async (): Promise<React.JSX.Element> => {
   return (
     <div className={`color-white`}>
@@ -66,14 +67,13 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
                 { name: "Corporate Cards ", url: "/products/corporate-cards" },
                 { name: "Prepaid Cards", url: "/corporate-cards/prepaid-card" },
               ]}
-              linkColor="allWhite"
             />
           </div>
 
           <div className={`${styles.title} col-12`}>
             <DynamicHeading
               content={[
-                { title: "Prepaid Cards", color: "color-white underline" },
+                { title: "PREPAID CARDS", color: "color-grey-200 underline" },
               ]}
               headingTag="p"
             />
@@ -82,10 +82,10 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
               <DynamicHeading
                 content={[
                   {
-                    title: "The Best Prepaid Card for ",
-                    color: "color-white f-3 d-block italic",
+                    title: "Prepaid Cards Built for ",
+                    color: "color-grey-200 f-2 d-block",
                   },
-                  { title: "Smarter Business Spending", color: "color-white" },
+                  { title: "Smarter Business Spending", color: "color-grey-200" },
                 ]}
                 headingTag="h1"
                 className="f-7 mb-2"
@@ -97,11 +97,12 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
                 content={[
                   {
                     title:
-                      " No paperwork. No delays. Experience the prepaid corporate card solution for businesses: built to deliver full control, instant issuance, and 100% compliance.",
-                    color: "color-white subHeading",
+                      "Issue cards instantly. Set limits in seconds. Track every rupee in real time. No reimbursements, no surprises, no cash advances.",
+                    color: "color-grey-200 subHeading",
                   },
                 ]}
                 headingTag="p"
+                className="mb-5"
               />
             </div>
 
@@ -112,7 +113,7 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
             </div>
           </div>
         </div>
-        <div className={`${styles.lottie_containerOuter} col-12 `}>
+        <div className={`col-12 `}>
           <div className={styles.lottie_container}>
             <Image src={heroCardImg} alt="card background" />
           </div>
@@ -120,18 +121,15 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
       </div>
 
       {/* ---------------- LOGO SLIDER ---------------- */}
-      <div className="cardsSliderMargin">
-        <LogoSlider />
-      </div>
 
-      {/* ---------------- ENKASH WAY ---------------- */}
-      <EnkashWay
-        sectionHeading="Ditch out-of-pocket claims. "
-        secondHeading="Take control of every rupee."
-        secondHeadingColor="black"
-        subTitle="Empower your teams with prepaid business cards that simplify purchases, automate tracking, and eliminate out-of-pocket claims—whether it’s meals, fuel, travel, SaaS, or purchase-specific spends."
-        progressData={progressData}
+      <LogoSlider />
+
+      <CounterSection
+        titleContent={counterHeadingData}
+        stats={statsData}
+        backgroundImage={statsBg}
       />
+
 
       {/* ---------------- STACKED CARDS ---------------- */}
       <div className={styles.card_stacking_row}>
@@ -140,21 +138,128 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
             cards={stackCards}
             heading={[
               {
-                title: "Why Businesses Choose EnKash Prepaid Cards ",
-                color: "color-black",
+                title: "Everything You Need to Manage Business Spending",
+                color: "color-grey-200",
               },
             ]}
           />
         </div>
       </div>
 
-      {/* ---------------- CTA ---------------- */}
-      <CtaSection
-        title="Step into the World of Smarter, Safer & Seamless Spending"
-        buttonText="Get Started"
-        background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
+      <PaymentGatewayGridSection
+        slideData={gridData}
+        heading={[{ title: "Prepaid Cards, Natively Connected to Expense Management", color: "color-white" }]}
+        description="With EnKash, prepaid cards feed directly into expense management, eliminating the need to match transactions, receipts, and approvals across different systems."
+        backgroundImage={GridBgImage.src}
       />
 
+      <div className={styles.other_products}>
+        <div className="max-w-auto">
+          <div className={`${styles.title} text-center pb-5`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "One ",
+                  color: "color-black",
+                },
+                {
+                  title: "Platform. ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "Every Business Spending Need.",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
+          </div>
+          <div className="row g-3 pb-4">
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </div>
+      <div className={`${styles.features_section} ${styles.steps_container}`}>
+        <BecomePartnerSteps
+          heading={headingData}
+          steps={stepsData}
+        />
+      </div>
+      <div className={`${styles.integration_section}  `}>
+        <div className="max-w-auto w-100">
+          <div className={`${styles.section} row`}>
+            <div
+              className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-8`}
+            >
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Let's Build Your Prepaid Card Program",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
+
+            <div className="col-md-6 ">
+              {acceleratedGrowthData.map(({ icon, title }, i) => (
+                <div key={i} style={{ direction: "ltr" }}>
+                  <div className="d-flex align-items-start gap-3 py-3 w-4 h-4">
+                    <div
+                      className="d-flex justify-content-center align-items-center bg-light rounded-circle"
+                      style={{ width: "32px", height: "32px" }}
+                    >
+                      <Image src={icon} alt="icon" />
+                    </div>
+                    <div className="d-flex flex-column gap-3">
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: title,
+                            color: "color-black",
+                          },
+                        ]}
+                        headingTag="h5"
+                        className="f-5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <CommanButton
+                title="Get Started Today"
+                theme="white"
+                arrow
+                url={salesUrl}
+                className="mt-4"
+              />
+            </div>
+            <div className="col-md-6">
+              <div className={styles.faq_bg}>
+                <Image
+                  src={acceleratedGrowthImg}
+                  alt="background image"
+                  className="w-100 mh-550 object-fit-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* ---------------- FAQ ---------------- */}
       <FaqSection faqData={faqData} />
 

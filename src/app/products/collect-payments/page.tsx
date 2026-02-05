@@ -28,7 +28,7 @@ import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import ProductHeroSection from "@/src/components/sections/product-hero-section"
 
 export const metadata: Metadata = generateMetaData({
-  title: "Simplify Online Payment Collections with EnKash",
+  title: "Collect Payments Online with EnKash",
   description:
     "From payment gateway, payment button, payment link, UPI payments, and more. Everything the merchants need fot payment collection.",
   alternates: {

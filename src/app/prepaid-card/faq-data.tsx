@@ -2,30 +2,30 @@ import { TFAQProps } from "@/src/types/faq"
 
 export const faqData: TFAQProps[] = [
   {
-    question: "What is a prepaid card, and how does it work for businesses?",
+    question: "What is a prepaid card?",
     answer: [
       {
         heading:
-          "A prepaid card is a reloadable payment card that allows you to load a specific amount and control how it's used. EnKash prepaid cards are ideal for managing business expenses, payroll, petty cash, and vendor payments, offering full control, compliance, and visibility.",
+          "A prepaid card is a reloadable payment card preloaded with a fixed amount. It works like a company wallet for employees to make approved business purchases. Once the balance is spent, the card stops working until you reload it.",
       },
     ],
   },
   {
     question:
-      "How is a prepaid card different from a credit card or debit card?",
+      "How are prepaid cards different from debit or credit cards?",
     answer: [
       {
         heading:
-          "Unlike credit cards (which offer credit) or debit cards (linked to a bank account), prepaid cards are preloaded with funds. EnKash cards are not tied to a bank account, which makes them ideal for budget control and limiting unauthorized spends.",
+          "Credit cards provide a line of credit, which creates repayment obligations. Debit cards are linked directly to a bank account. Prepaid cards are loaded with a fixed amount in advance, are not linked to a bank account, and involve no credit risk. Once the balance is used, the card simply stops working until it is reloaded.",
       },
     ],
   },
   {
-    question: "Can I set limits and restrictions on each prepaid card?",
+    question: "Can I set spending limits and restrictions?",
     answer: [
       {
         heading:
-          "Yes. You can set daily, weekly, or monthly spend limits, block merchant categories (like alcohol or ATMs), and restrict usage to specific channels such as POS, online, or contactless.",
+          "Yes. Set daily, weekly, or monthly limits. Block specific merchant categories like alcohol or ATMs. Restrict cards to POS, online, or contactless usage. Pause or cancel cards instantly.",
       },
     ],
   },
@@ -71,41 +71,45 @@ export const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "Yes. EnKash prepaid cards are PPI license approved and fully compliant with RBI guidelines, making them safe, auditable, and tax-efficient, especially for benefits like meals or reimbursements.",
+          "Yes. EnKash prepaid cards are PCI-DSS certified and fully compliant with RBI guidelines, making them safe, auditable, and tax-efficient, especially for benefits like meals or reimbursements.",
       },
     ],
   },
   {
-    question: "What happens if a card is lost or stolen?",
+    question: "Is there a minimum balance requirement?",
+    answer: [
+      {
+        heading:
+          "There is no minimum balance required to keep a prepaid card active. However, a minimum available balance of ₹250 is required on the card to complete a transaction. You can load funds as needed and top up cards at any time based on usage.",
+      },
+    ],
+  },
+  {
+    question: "What happens to the unused balance on a prepaid card?",
+    answer: [
+      {
+        heading:
+          "Unused balances are carried forward. Funds remain available on the card until they are spent, reallocated, or the card is closed, subject to applicable regulatory guidelines.",
+      },
+    ],
+  },
+  {
+    question:
+      "Can I issue prepaid cards with my company’s branding?",
+    answer: [
+      {
+        heading:
+          "Yes, company-branded prepaid cards can be issued as part of a co-branded card program. Standard prepaid cards are issued with EnKash branding.",
+      },
+    ],
+  },
+  {
+    question:
+      "What happens if a card is lost or stolen?",
     answer: [
       {
         heading:
           "You can instantly block, freeze, or hotlist the card from your EnKash dashboard. All funds remain secure, and you can reissue a replacement card easily.",
-      },
-    ],
-  },
-  {
-    question:
-      "How do EnKash prepaid cards help reduce expense fraud or leakage?",
-    answer: [
-      {
-        heading:
-          "With real-time tracking, merchant restrictions, policy enforcement, and analytics, EnKash cards eliminate manual processes and unauthorized spending, improving governance across all spending categories.",
-      },
-    ],
-  },
-
-  // -------------------------------------------------------------------
-  // ⭐ NEW FAQS ADDED BELOW
-  // -------------------------------------------------------------------
-
-  {
-    question:
-      "Why EnKash Prepaid Corporate Cards are better than traditional employee reimbursement methods?",
-    answer: [
-      {
-        heading:
-          "EnKash Prepaid Corporate Cards remove the need for cash advances and manual reimbursement claims by giving employees a secure, preloaded card for approved business expenses. Every transaction is recorded in real time, allowing finance teams to track spends instantly, set category-wise limits, and control usage for meals, fuel, travel, SaaS tools, or purchase-related expenses. Unlike traditional reimbursement methods that create delays, paperwork, and compliance gaps, EnKash cards offer faster approvals, automated tracking, and complete visibility, making them one of the most efficient and compliant spend solutions for Indian businesses.",
       },
     ],
   },
@@ -121,21 +125,11 @@ export const faqData: TFAQProps[] = [
   },
   {
     question:
-      "How does EnKash simplify corporate spending through prepaid cards online?",
+      "How do EnKash prepaid cards help reduce expense fraud or leakage?",
     answer: [
       {
         heading:
-          "EnKash simplifies corporate spending by letting businesses issue and manage prepaid cards online from a unified dashboard. Companies can create cards instantly, set limits, automate top-ups, and track spends in real time. All key workflows—card issuance, fund loading, spend controls, approvals, analytics, and reconciliation—are handled digitally without paperwork, branch visits, or bank delays. This makes EnKash one of the most efficient solutions for managing meal, fuel, travel, SaaS, and purchase-based expenses with full visibility.",
-      },
-    ],
-  },
-  {
-    question:
-      "Do EnKash reloadable prepaid cards support department-wise or project-wise budgeting?",
-    answer: [
-      {
-        heading:
-          "Yes. EnKash reloadable prepaid cards allow businesses to create department-wise, project-wise, or team-wise budgets. Each card can be configured with custom limits, category controls, and merchant restrictions to prevent overspending and maintain real-time visibility across all business units.",
+          "With real-time tracking, merchant restrictions, policy enforcement, and analytics, EnKash cards eliminate manual processes and unauthorized spending, improving governance across all spending categories.",
       },
     ],
   },
