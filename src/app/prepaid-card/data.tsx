@@ -11,11 +11,6 @@ import {
   SecureCompliantIcon,
   streamlinedReimbursement,
   streamlinedReimbursementIcon,
-  tabIconFive,
-  tabIconFour,
-  tabIconOne,
-  tabIconThree,
-  tabIcontwo,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
   fuelCardImg, mealCardImg, purchesCardImg, sassCardImg, termsAndConCardImg, virtualCardImg,
@@ -29,7 +24,7 @@ import {
   itemIcon5,
   itemIcon6
 } from "./img"
-import { bg1, bg2, bg3, bg4, bg5 } from "../products/vouchers/img"
+import { bg1, bg2, bg3 } from "../products/vouchers/img"
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 
 const otherProductsHeading = [
