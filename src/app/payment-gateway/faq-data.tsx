@@ -139,7 +139,40 @@ const faqData: TFAQProps[] = [
         </ul>
       </div>
     ),
-  }
+  },
+  {
+    question: "Do you provide payment analytics and reports?",
+    answer: [
+      {
+        heading:
+          "Yes, EnKash provides comprehensive analytics and reporting through your dashboard. Track transaction volumes, success rates, settlement timelines, and business metrics across daily, weekly, monthly, and yearly timeframes. Export data for accounting and reconciliation purposes.",
+      },
+    ],
+  }, {
+    question: "How do I handle chargebacks and disputes?",
+    answer: [
+      {
+        heading:
+          "EnKash provides a dedicated dispute management system through your dashboard. When a chargeback occurs, you're notified immediately and can submit evidence to contest it. Our support team assists throughout the dispute resolution process.",
+      },
+    ],
+  }, {
+    question: "How does EnKash prevent fraudulent transactions?",
+    answer: [
+      {
+        heading:
+          "EnKash employs multi-layered fraud prevention, including real-time transaction monitoring, velocity checks, pattern recognition, risk scoring, and integration with industry fraud databases. Suspicious transactions are flagged for review before processing.",
+      },
+    ],
+  }, {
+    question: "What makes EnKash different from other payment gateways?",
+    answer: [
+      {
+        heading:
+          "EnKash delivers enterprise-level capabilities with a merchant-first approach. We offer transparent pricing with no hidden fees, 24/7 dedicated support that actually responds, same-day onboarding without bureaucratic delays, and robust technical infrastructure that scales as you grow. Unlike gateways that prioritize enterprise clients, we provide every merchant, regardless of size, with the same level of attention, service quality, and technical excellence.",
+      },
+    ],
+  },
 ]
 
 export default faqData
