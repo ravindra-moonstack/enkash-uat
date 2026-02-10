@@ -5,6 +5,9 @@ Allow: /
 Disallow: /resources/wp-admin/
 Disallow: /resources/wp-login.php
 
+# Block Cloudflare email protection
+Disallow: /cdn-cgi/l/email-protection
+
 
 
 Sitemap: https://www.enkash.com/sitemap.xml
