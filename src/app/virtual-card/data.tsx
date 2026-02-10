@@ -21,7 +21,6 @@ import {
   fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
-  payrollCardImg,
   purchesCardImg,
   realTimeExpense,
   realTimeExpenseIcon,
@@ -32,30 +31,30 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
-import {TStackCardsProp } from "@/src/types"
+import { TStackCardsProp } from "@/src/types"
 import { CardData } from "@/src/components/management-card"
 
 const intantActionData = [
   {
-    title: "Create an Account",
-    description: "Register your business on EnKash",
+    title: "Create Your Business Account",
+    description: "Sign up on EnKash and complete quick business verification.",
     icon: firstIcon,
   },
 
   {
-    title: "Issue Cards Instantly ",
-    description: "Generate virtual cards for employees, vendors, or projects.",
+    title: "Issue Virtual Cards Instantly ",
+    description: "Create virtual cards for employees, vendors, or specific use cases within minutes.",
     icon: secondIcon,
   },
   {
-    title: "Set Limits & Monitor Usage",
-    description: "Customize spend limits and track all transactions",
+    title: "Set Spend Controls",
+    description: "Define limits, allowed categories, validity periods, and usage rules.",
     icon: thirdIcon,
   },
   {
-    title: "Make Payments",
+    title: "Pay Online Securely",
     description:
-      "Use cards for online purchases, SaaS subscriptions, or other expenses.",
+      "Use virtual cards for subscriptions, vendor payments, ads, travel bookings, and more.",
     icon: fourthIcon,
   },
 ]
@@ -64,26 +63,26 @@ const spendAnalyticsData = [
   {
     title: "Subscription Management",
     description:
-      "Keep SaaS payments under control with one-time or recurring payment cards.",
+      "Control SaaS renewals and recurring payments with card-level limits and validity controls.",
     icon: iconOne,
   },
 
   {
     title: "Employee Expenses",
     description:
-      "Keep SaaS payments under control with one-time or recurring payment cards.",
+      "Enable employees to spend without reimbursements or policy violations.",
     icon: iconTwo,
   },
   {
     title: "Vendor Payments",
     description:
-      "Allocate separate cards for each vendor to simplify expense tracking and reconciliation.",
+      "Assign individual virtual cards to vendors for clean reconciliation and audit-ready records.",
     icon: iconThree,
   },
   {
-    title: "Travel & Entertainment",
+    title: "Travel and Entertainment",
     description:
-      "Manage travel-related expenses efficiently with real-time monitoring.",
+      "Manage online travel bookings with defined budgets and real-time tracking.",
     icon: iconFour,
   },
 ]
@@ -93,7 +92,7 @@ const cardType: CardData[] = [
     theme: "black",
     whiteTitle: "Fuel Card",
     description:
-      "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
+      "Track and control fuel spends with vehicle-wise limits, real-time usage visibility, and GST-ready reporting.",
     cardImage: fuelCardImg,
     linkUrl: "/fuel-card",
   },
@@ -101,7 +100,7 @@ const cardType: CardData[] = [
     theme: "black",
     whiteTitle: "Digital Marketing Card",
     description:
-      "Simplify ad payments across platforms while staying within budget and preventing overspending.",
+      "Manage ad spends across platforms with fixed budgets, spend controls, and clear campaign-level visibility.",
     cardImage: digitalCardImg,
     linkUrl: "/digital-marketing-card",
   },
@@ -109,30 +108,23 @@ const cardType: CardData[] = [
     theme: "black",
     whiteTitle: "SaaS Card",
     description:
-      "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense contro",
+      "Control recurring SaaS subscriptions with vendor-wise limits, renewal tracking, and centralised expense visibility.",
     cardImage: sassCardImg,
     linkUrl: "/saas-card",
   },
   {
     theme: "black",
-    whiteTitle: "Payroll Card",
-    description:
-      "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: payrollCardImg,
-  },
-  {
-    theme: "black",
     whiteTitle: "Meal Card",
     description:
-      "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
+      "Offer compliant meal benefits with controlled usage, wide acceptance, and transparent spend tracking.",
     cardImage: mealCardImg,
     linkUrl: "/meal-card",
   },
   {
     theme: "black",
-    whiteTitle: "T&E Card",
+    whiteTitle: "Travel & Expense Card",
     description:
-      "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation",
+      "Manage business travel and online bookings with predefined budgets, controls, and real-time monitoring.",
     cardImage: termsAndConCardImg,
     linkUrl: "/travel-and-expense-card",
   },
@@ -140,16 +132,17 @@ const cardType: CardData[] = [
     theme: "black",
     whiteTitle: "Purchase Card",
     description:
-      "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
+      "Centralise vendor and operational purchases with approval workflows, spend limits, and easy reconciliation.",
     cardImage: purchesCardImg,
     linkUrl: "/purchase-card",
   },
   {
     theme: "black",
-    whiteTitle: "Fleet Card",
+    whiteTitle: "Gift Card",
     description:
-      "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver",
+      "Distribute digital rewards or incentives instantly with controlled issuance, tracking, and redemption visibility.",
     cardImage: fleetCardImg,
+    linkUrl: "/gift-card",
   },
 ]
 
@@ -159,14 +152,14 @@ const allProductSections = [
     subtitle: "Manage every spend effortlessly",
     items: [
       {
-        title: "High Security: ",
-        description: "Bank-grade encryption to protect your data.",
+        title: "Bank-Grade Security ",
+        description: "Enterprise-grade encryption and card-level controls.",
         image: sliderOneIcon,
         link: "/payment-links/",
       },
       {
-        title: "Instant Access:",
-        description: "No waiting time—issue cards immediately.",
+        title: "Instant Access",
+        description: "No waiting periods or manual approvals.",
         image: sliderTwoIcon,
         link: "/payment-page/",
       },
@@ -177,20 +170,20 @@ const allProductSections = [
     subtitle: "Control and visibility in real time",
     items: [
       {
-        title: "No Hidden Fees: ",
-        description: "Transparent pricing with no extra charges.",
+        title: "Transparent Pricing",
+        description: "No hidden fees or surprise charges.",
         image: sliderThreeIcon,
         link: "/payment-button/",
       },
       {
-        title: "Seamless Integration",
-        description: "Sync with your existing accounting tools.",
+        title: "Accounting Ready",
+        description: "Easy integration with ERP and accounting tools.",
         image: sliderFourIcon,
         link: "/qr-code/",
       },
       {
-        title: "Unlimited Cards:",
-        description: "Create as many cards as your business needs.",
+        title: "Built to Scale",
+        description: "Unlimited virtual cards as your business grows.",
         image: sliderFiveIcon,
         link: "/auto-collect/",
       },
@@ -200,9 +193,9 @@ const allProductSections = [
 const stackcardData: TStackCardsProp = [
   {
     icon: realTimeExpenseIcon,
-    title: "Reduce Business Costs with Smarter Payment Solutions",
+    title: "Reduce Business Costs with Smarter Payment Control",
     description:
-      "Save costs by eliminating the need for physical cards, including production and maintenance fees. Advanced fraud control features minimize the risk of unauthorized transactions, ensuring secure financial operations without additional expenses.",
+      "Eliminate the costs associated with physical card issuance, replacement, and maintenance. Virtual prepaid cards help reduce operational overhead while advanced controls minimise unauthorised or non-compliant spending.",
     image: realTimeExpense,
     buttonUrl: "/sales/?source=expense_management",
   },
@@ -210,31 +203,31 @@ const stackcardData: TStackCardsProp = [
     icon: fraudProtectionIcon,
     title: "Stay in Control with Real-Time Expense Insights",
     description:
-      "Monitor every transaction in real-time with our intuitive dashboard. Access detailed insights into spending trends, helping your business optimize budgets and make informed financial decisions.",
+      "Monitor every virtual card transaction as it happens through an intuitive dashboard. Gain clear visibility into spending patterns to improve budgeting, approvals, and financial decision-making.",
     image: fraudProtection,
     buttonUrl: "/sales",
   },
   {
     icon: streamlinedReimbursementIcon,
-    title: "Tailor Your Virtual Card to Fit Your Needs",
+    title: "Tailor Virtual Cards to Your Business Needs",
     description:
-      "Design virtual cards tailored for specific needs such as vendor payments, SaaS subscriptions, or travel expenses. Set individual or departmental spending limits and usage policies to ensure compliance and efficiency.",
+      "Create virtual cards for specific purposes such as vendor payments, subscriptions, marketing spends, or travel expenses. Set card-level limits and policies to ensure spends remain aligned with business rules.",
     image: streamlinedReimbursement,
     buttonUrl: "/sales/?source=expense_management",
   },
   {
     icon: costControlSavingsIcon,
-    title: "Strengthen Vendor Trust with Timely Payments",
+    title: "Strengthen Vendor Relationships with Timely Payments",
     description:
-      "Ensure timely and secure payments to vendors, fostering trust and better business terms. Streamlined payment processes enable quicker transactions, enhancing vendor satisfaction.",
+      "Ensure reliable and secure payments to vendors using dedicated virtual prepaid cards. Faster, predictable payments improve trust while simplifying reconciliation for finance teams.",
     image: costControlSavings,
     buttonUrl: "/sales",
   },
   {
     icon: wideAcceptanceNetworkIcon,
-    title: "No Expense Oversight with One Dashboard",
+    title: "Complete Expense Oversight from One Dashboard",
     description:
-      "Easily manage multiple cards through a centralized, user-friendly interface. Take immediate action by monitoring, blocking, or canceling cards, all while maintaining full control over business expenses.",
+      "Manage multiple virtual cards through a centralised interface. Instantly view transactions, modify limits, block cards, or cancel usage while retaining full visibility across teams and vendors.",
     image: wideAcceptanceNetwork,
     buttonUrl: "/sales/?source=expense_management",
   },

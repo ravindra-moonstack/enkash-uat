@@ -2,11 +2,11 @@ import { TFAQProps } from "@/src/types/faq"
 
 const faqData: TFAQProps[] = [
   {
-    question: "What is a virtual card?",
+    question: "What is a virtual prepaid card?",
     answer: [
       {
         heading:
-          "A virtual card is available in a virtual format, not in a physical form. The use of virtual cards started with the need to enable safe and speedy online transactions. Unlike a physical card with the risk of being misplaced, lost, or stolen, virtual cards can be kept safe with password-protected access.",
+          "A virtual prepaid card is a digitally issued card that exists only in online form and is used to make secure online payments. It works like a physical prepaid card but offers faster issuance, better control, and lower operational effort, making it ideal for managing business expenses.",
       },
     ],
   },
@@ -53,7 +53,7 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          " Virtual prepaid cards can be used for online transactions across e-commerce platforms, subscription services, travel bookings, digital ads, SaaS tools, and more, wherever online card payments are accepted. They are ideal for businesses looking to manage digital expenses securely and efficiently without relying on physical cards.",
+          "Virtual prepaid cards can be used for online transactions across e-commerce platforms, subscription services, travel bookings, digital ads, SaaS tools, and more, wherever online card payments are accepted. They are ideal for businesses looking to manage digital expenses securely and efficiently without relying on physical cards.",
       },
     ],
   },
