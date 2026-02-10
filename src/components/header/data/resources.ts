@@ -77,9 +77,8 @@ const resourseProducts: TProductCategory[] = [
           },
           {
             name: "Expense Management",
-            link: "https://docs.enkash.com/expense-management",
+            link: "https://docs.enkash.com/folder-1769241",
           },
-
           {
             name: "Rewards",
             link: "https://docs.enkash.com/doc-1039810",
