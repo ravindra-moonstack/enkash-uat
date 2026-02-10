@@ -5,8 +5,7 @@ import jwt from 'jsonwebtoken';
 
 export async function POST(request: Request) {
   try {
-    const { email, password } = await request.json();
-
+    const { email, password } = await request.json(); 
     if (!email || !password) {
       return NextResponse.json(
         { success: false, message: 'Email and password are required' },
@@ -18,7 +17,7 @@ export async function POST(request: Request) {
       'SELECT id, email, password FROM admins WHERE email = ? LIMIT 1',
       [email]
     );
-
+console.log('rows',rows);
     if (rows.length === 0) {
       return NextResponse.json(
         { success: false, message: 'Invalid email or password' },
@@ -36,7 +35,6 @@ export async function POST(request: Request) {
         { status: 401 }
       );
     }
-console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
     const token = jwt.sign(
       {
@@ -45,7 +43,7 @@ console.log('JWT_SECRET:', process.env.JWT_SECRET);
         role: 'admin',
       },
       process.env.JWT_SECRET as string,
-      { expiresIn: '1m' }
+      { expiresIn: '1h' }
     );
 
     return NextResponse.json({
