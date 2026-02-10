@@ -44,6 +44,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <meta name="robots" content="index, follow" />
+        <meta name="google-site-verification" content="RWOqrBamBY0cC_WQwIz55vCzZRBv97CtZYwlpUCIjY4" />
       </head>
       <body className={inter.variable}>
         <WebVitals />
