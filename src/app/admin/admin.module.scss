@@ -4,85 +4,75 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding-top: 140px;
-  background-color: $color-light-blue-bg;
-  font-family: inherit;
+  width: 100%;
+  padding: 20px;
 }
 
 .loginCard {
   background-color: $color-white;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  padding: 48px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
   width: 100%;
-  max-width: 420px;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
+  max-width: 450px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .logoSection {
   text-align: center;
-  margin-bottom: 32px;
-}
-
-.logoText {
-  font-size: 28px;
-  font-weight: 700;
-  color: $color-equity-blue;
-  letter-spacing: -0.5px;
+  margin-bottom: 40px;
 }
 
 .title {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
   color: $color-main-black;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   text-align: center;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
-  font-size: 14px;
+  font-size: 15px;
   color: $color-grey-600;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .formGroup {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .label {
   display: block;
   font-size: 14px;
-  font-weight: 500;
-  color: $color-grey-600;
-  margin-bottom: 8px;
+  font-weight: 600;
+  color: $color-main-black;
+  margin-bottom: 10px;
 }
 
 .input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 14px 18px;
   font-size: 15px;
   color: $color-main-black;
-  background-color: $color-white;
-  border: 1px solid $color-grey-100;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  background-color: #f8fafc;
+  border: 1.5px solid #edf2f7;
+  border-radius: 12px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
 
   &:focus {
+    background-color: $color-white;
     border-color: $color-equity-blue;
-    box-shadow: 0 0 0 3px rgba($color-equity-blue, 0.1);
+    box-shadow: 0 0 0 4px rgba($color-equity-blue, 0.1);
   }
 
   &::placeholder {
-    color: $color-quick-silver;
+    color: #94a3b8;
   }
 }
+
 
 .actions {
   display: flex;

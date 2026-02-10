@@ -27,8 +27,8 @@ const AdminLogin = () => {
             const data = await response.json()
 
             if (data.success) {
-                // Store token in cookie with 1 minute expiry (matching JWT)
-                document.cookie = `token=${data.token}; path=/; max-age=300; SameSite=Strict`;
+                // Store token in cookie with 1 hour expiry (matching JWT)
+                document.cookie = `token=${data.token}; path=/; max-age=3600; SameSite=Strict`;
                 window.location.href = "/admin/glossary"
             } else {
                 setError(data.message || "Login failed")
@@ -50,7 +50,7 @@ const AdminLogin = () => {
                 <h1 className={styles.title}>Welcome Back</h1>
                 <p className={styles.subtitle}>Please enter your details to sign in</p>
 
-                {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+                {error && <p className={styles.error}>{error}</p>}
 
                 <form onSubmit={handleSubmit}>
                     <div className={styles.formGroup}>
