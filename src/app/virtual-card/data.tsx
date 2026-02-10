@@ -32,7 +32,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "./img"
-import {TStackCardsProp } from "@/src/types"
+import { TStackCardsProp } from "@/src/types"
 import { CardData } from "@/src/components/management-card"
 
 const intantActionData = [

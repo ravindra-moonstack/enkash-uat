@@ -1,32 +1,48 @@
 import React from "react"
-import { Container } from "react-bootstrap"
-import Link from "next/link"
-import { fetchByLetter } from "@/src/utils/fetchByLetter"
+import LetterPageClient from "./letter-page-client"
+import BlogSection from "@/src/components/sections/blog-section"
+import { fetchTermsByLetter } from "@/src/utils/glossaryData"
+import { notFound } from "next/navigation"
 
 interface PageProps {
-  params: Promise<{ letter: string }>;
+  params: Promise<{ letter: string }>
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { letter } = await params
+  const upperLetter = letter.toUpperCase()
+
+  return {
+    title: `FinTech Glossary - ${upperLetter} Terms | Financial Technology Dictionary`,
+    description: `Browse all financial technology terms starting with ${upperLetter}. Comprehensive definitions and explanations.`,
+  }
 }
 
 export default async function LetterPage({ params }: PageProps) {
-  const { letter } = await params;
-  const terms = await fetchByLetter(letter);
+  const { letter } = await params
+  const terms = await fetchTermsByLetter(letter) 
+
+  if (!terms || terms.length === 0) {
+    notFound()
+  }
 
   return (
-    <Container className="pb-5 paddingTopClass">
-      <nav className="mb-3">Home &gt; {letter.toUpperCase()}</nav>
-      <h2 className="fw-bold mb-4">
-        Terms starting with {letter.toUpperCase()}
-      </h2>
-
-      {terms.length > 0 ? (
-        terms.map((item: any) => (
-          <div key={item.id} className="mb-2">
-            <Link href={`/glossary/${letter}/${item.slug}`}>{item.title}</Link>
-          </div>
-        ))
-      ) : (
-        <p>No glossary items found.</p>
-      )}
-    </Container>
+    <>
+      <LetterPageClient letter={letter} initialTerms={terms} />
+      <BlogSection
+        className="bg-white"
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[12642, 13675, 12195]}
+      />
+    </>
   )
 }

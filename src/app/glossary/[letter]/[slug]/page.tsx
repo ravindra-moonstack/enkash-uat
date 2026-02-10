@@ -1,55 +1,172 @@
-import { fetchDetail } from "@/src/utils/fetchDetail"
+// app/glossary/[letter]/[slug]/page.tsx
+
+import { fetchTermBySlug, fetchAllLetters, stripHtml } from "@/src/utils/glossaryData"
 import React from "react"
 import { Container } from "react-bootstrap"
+import { notFound } from "next/navigation"
+import { FaLinkedinIn, FaFacebookF, FaXTwitter } from 'react-icons/fa6'
+import Image from "next/image"
+import Link from "next/link"
+import GlossaryBgImage from "../../../../../public/images/glossaryBgImage.webp"
+import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
+import BlogSection from "@/src/components/sections/blog-section"
+import styles from "./page.module.scss"
+import GlossaryClient from "./slug-page-client"
+
+const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 interface PageProps {
-  params: Promise<{ letter: string; slug: string }>;
+  params: Promise<{ letter: string; slug: string }>
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { slug } = await params
+  const term = await fetchTermBySlug(slug)
+
+  if (!term) {
+    return {
+      title: "Term Not Found",
+      description: "The requested glossary term was not found.",
+    }
+  }
+
+  return {
+    title: `${term.word} | FinTech Glossary`,
+    description: stripHtml(term.content).substring(0, 160),
+  }
 }
 
 export default async function GlossaryDetail({ params }: PageProps) {
-  const { letter, slug } = await params;
-  const term = await fetchDetail(slug);
+  const { letter, slug } = await params
+  const term = await fetchTermBySlug(slug)
+  const availableLetters = await fetchAllLetters()
 
   if (!term) {
-    return (
-      <Container className="pb-5 paddingTopClass">
-        <nav className="mb-3">Home &gt; {letter.toUpperCase()}</nav>
-        <h2>Term not found</h2>
-      </Container>
-    )
+    notFound()
+  }
+
+  const blogLinks: string[] = []
+  const blogCards: number[] = []
+
+  if (term.showRelatedBlogs && term.blogWord) {
+    blogLinks.push(term.blogWord);
   }
 
   return (
-    <Container className="pb-5 paddingTopClass">
-      <nav className="mb-3">
-        Home &gt; {letter.toUpperCase()} &gt; {term.title}
-      </nav>
+    <>
+      <section className={styles.detailPageSection}>
+        <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
+        <Container className={`pb-0 ${styles.paddingTop}`}>
+          <div className="d-flex mb-3">
+            <CustomBreadcrumb
+              linkColor="allBlack"
+              items={[
+                { name: "Home", url: "/" },
+                { name: "Glossary", url: "/glossary" },
+                { name: letter.toUpperCase(), url: `/glossary/${letter}` },
+                { name: term.word, url: `/glossary/${letter}/${slug}` },
+              ]}
+            />
+          </div>
+          <DynamicHeading
+            content={[
+              {
+                text: "FinTech ",
+                color: "color-black f-3",
+              },
+              { text: "Glossary", color: "color-equity-blue" },
+            ]}
+            headingTag="h1"
+            className={styles.pageTitle}
+          />
 
-      <h1 className="fw-bold mb-4">{term.title}</h1>
+          <GlossaryClient letter={letter} availableLetters={availableLetters} />
 
-      <section className="mb-4">
-        <div dangerouslySetInnerHTML={{ __html: term.content || "" }} />
+          <div className={styles.sectionWrapper}>
+            <div className={styles.titleSection}>
+              <DynamicHeading
+                content={[
+                  {
+                    text: term.word,
+                    color: "color-dark-grey",
+                  },
+                ]}
+                headingTag="h2"
+                className={styles.termTitle}
+              />
+
+              <div className={styles.iconContainer}>
+                <a href="#" className={styles.icon}>
+                  <FaLinkedinIn />
+                </a>
+
+                <a href="#" className={styles.icon}>
+                  <FaFacebookF />
+                </a>
+
+                <a href="#" className={styles.icon}>
+                  <FaXTwitter />
+                </a>
+              </div>
+            </div>
+
+            <section className={styles.contentSection}>
+              <DynamicHeading
+                content={[
+                  {
+                    text: `Definition`,
+                    color: "color-alternate-grey f-7",
+                  },
+                ]}
+                headingTag="h4"
+                className={styles.slugSectionHeading}
+              />
+
+              <div
+                className={styles.sectionContent}
+                dangerouslySetInnerHTML={{ __html: term.content }}
+              />
+            </section>
+          </div>
+
+          <div className={styles.bottomAlphabetBar}>
+            <div className={styles.alphabetScroll}>
+              {ALPHABET.map((ltr) => {
+                const hasTerms = availableLetters.includes(ltr)
+                return (
+                  <Link
+                    key={ltr}
+                    href={hasTerms ? `/glossary/${ltr.toLowerCase()}` : "#"}
+                    className={`${styles.alphabetLink} ${letter.toUpperCase() === ltr ? styles.active : ""
+                      } ${!hasTerms ? styles.disabled : ""}`}
+                  >
+                    {ltr}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </Container>
       </section>
 
-      {Array.isArray(term.related_posts) && term.related_posts.length > 0 && (
-        <section className="mt-5">
-          <h4 className="fw-bold">Related Blogs</h4>
-          <ul>
-            {term.related_posts.map((b: any) => (
-              <li key={b.id}>
-                <a
-                  href={b.link ?? `https://uat.blogs.enkash.com/blog/${b.slug}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {b.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-    </Container>
+      {/* Related Blogs Section */}
+      {/* {(blogLinks.length > 0 || blogCards.length > 0) && (
+        <BlogSection
+          className="bg-white"
+          heading={[
+            {
+              title: "Related  ",
+              color: "color-black ",
+            },
+            {
+              title: " Resources",
+              color: "color-black f-4",
+            },
+          ]}
+          {...(blogLinks.length > 0 ? { links: blogLinks } : {})}
+          {...(blogCards.length > 0 ? { cards: blogCards } : {})}
+        />
+      )} */}
+    </>
   )
 }
- 
