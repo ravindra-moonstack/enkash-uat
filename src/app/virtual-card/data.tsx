@@ -21,7 +21,6 @@ import {
   fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
-  payrollCardImg,
   purchesCardImg,
   realTimeExpense,
   realTimeExpenseIcon,
