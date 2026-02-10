@@ -33,7 +33,7 @@ import SliderSection from "@/src/components/sections/slider-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
 export const metadata: Metadata = generateMetaData({
-  title: "Virtual Corporate Card for Secure and Instant Payments",
+  title: "Virtual Corporate Cards for Smarter Payments | EnKash",
   description:
     "Create instant virtual cards for online payments, subscriptions, and vendor spends. Control limits, track usage, and reduce fraud with EnKash’s smart card solution.",
   alternates: {
@@ -92,11 +92,11 @@ const VirtualCards = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Secure and Efficient Payments with",
+                    title: "Virtual Prepaid Cards for",
                     color: "color-black italic f-3 d-block",
                   },
                   {
-                    title: "Virtual Prepaid Card",
+                    title: "Business Payments in India",
                     color: "color-black",
                   },
                 ]}
@@ -110,7 +110,7 @@ const VirtualCards = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "Empower your organization to control, track, and optimize spending like never before.",
+                      "Issue virtual prepaid cards instantly, control spending in real time, and manage every online payment from one dashboard.",
                     color: "color-black subHeading",
                   },
                 ]}
@@ -139,7 +139,7 @@ const VirtualCards = (): React.JSX.Element => {
       <StepsSection
         heading={[
           {
-            text: "How to Set Up Virtual Prepaid Cards ",
+            text: "How Virtual Prepaid Cards Work ",
             colorClass: "color-black",
           },
         ]}
@@ -160,16 +160,12 @@ const VirtualCards = (): React.JSX.Element => {
             cards={cards}
             heading={[
               {
-                title: "Best Virtual Prepaid Cards in India -  ",
+                title: "BesBest Virtual Prepaid Cards in India for ",
                 color: "color-black",
               },
               {
-                title: "Modern Solutions ",
+                title: "Business Expenses",
                 color: "color-equity-blue",
-              },
-              {
-                title: "for Managing Business Expenses",
-                color: "color-black",
               },
             ]}
           />
@@ -185,11 +181,11 @@ const VirtualCards = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Use Cases for Virtual ",
+                    title: "Built for Every ",
                     color: "color-black",
                   },
                   {
-                    title: "Prepaid Cards ",
+                    title: "Business Spending Scenario ",
                     color: "color-equity-blue",
                   },
                 ]}
@@ -234,7 +230,7 @@ const VirtualCards = (): React.JSX.Element => {
       <SliderSection
         headingContent={[
           {
-            title: "The EnKash Advantage - Why Businesses Trust   ",
+            title: "Why Businesses Choose EnKash ",
             color: "color-black",
           },
           {
@@ -252,11 +248,11 @@ const VirtualCards = (): React.JSX.Element => {
       <OtherProducts
         heading={[
           {
-            title: "Your Business, Your Cards –",
+            title: "Explore Purpose-Built ",
             color: "color-black",
           },
           {
-            title: "Tailored by EnKash ",
+            title: "Virtual Card Programs",
             color: "color-equity-blue",
           },
         ]}
