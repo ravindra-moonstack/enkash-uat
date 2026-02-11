@@ -1,8 +1,8 @@
 import React from "react"
 import LetterPageClient from "./letter-page-client"
 import BlogSection from "@/src/components/sections/blog-section"
-import { fetchTermsByLetter } from "@/src/utils/glossaryData"
 import { notFound } from "next/navigation"
+import { getApiBaseUrl } from "@/src/utils/api-helpers"
 
 interface PageProps {
   params: Promise<{ letter: string }>
@@ -18,13 +18,23 @@ export async function generateMetadata({ params }: PageProps) {
   }
 }
 
+async function getTerms(letter: string) {
+  try {
+    const baseUrl = getApiBaseUrl()
+    const res = await fetch(`${baseUrl}/api/glossary/letter/${letter}`, { cache: 'no-store' })
+    if (!res.ok) return []
+    return res.json()
+  } catch (error) {
+    console.error("Error fetching terms:", error)
+    return []
+  }
+}
+
 export default async function LetterPage({ params }: PageProps) {
   const { letter } = await params
-  const terms = await fetchTermsByLetter(letter) 
+  const terms = await getTerms(letter)
 
-  if (!terms || terms.length === 0) {
-    notFound()
-  }
+
 
   return (
     <>

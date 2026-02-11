@@ -1,13 +1,8 @@
 import { NextResponse } from 'next/server';
 import pool from '@/src/lib/dbConnect';
-import { verifyToken } from '@/src/utils/auth';
  
 export async function GET(request: Request) {
   try {
-    const user = await verifyToken();
-    if (!user) {
-      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
-    }
 
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get('page') || '1');
@@ -46,10 +41,6 @@ export async function GET(request: Request) {
 // POST: Create a new glossary item
 export async function POST(request: Request) {
   try {
-    const user = await verifyToken();
-    if (!user) {
-      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
-    }
     const body = await request.json();
     const { word, slug, content, showRelatedBlogs, blogWord } = body;
 
