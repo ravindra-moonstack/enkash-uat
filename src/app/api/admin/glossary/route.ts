@@ -42,7 +42,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { word, slug, content, showRelatedBlogs, blogWord } = body;
+    const { word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description } = body;
 
     if (!word || !slug || !content) {
       return NextResponse.json(
@@ -65,8 +65,8 @@ export async function POST(request: Request) {
     }
 
     const [result]: any = await pool.execute(
-      'INSERT INTO glossary (word, slug, content, showRelatedBlogs, blogWord) VALUES (?, ?, ?, ?, ?)',
-      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '']
+      'INSERT INTO glossary (word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null]
     );
 
     return NextResponse.json({

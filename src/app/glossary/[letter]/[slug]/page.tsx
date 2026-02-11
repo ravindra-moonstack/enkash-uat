@@ -57,8 +57,8 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${term.word} | FinTech Glossary`,
-    description: stripHtml(term.content).substring(0, 160),
+    title: term.meta_title || `${term.word} | FinTech Glossary`,
+    description: term.meta_description || stripHtml(term.content).substring(0, 160),
   }
 }
 
@@ -122,15 +122,15 @@ export default async function GlossaryDetail({ params }: PageProps) {
               />
 
               <div className={styles.iconContainer}>
-                <a href="#" className={styles.icon}>
+                <a href="https://www.linkedin.com/company/enkashbusiness" className={styles.icon}>
                   <FaLinkedinIn />
                 </a>
 
-                <a href="#" className={styles.icon}>
+                <a href="https://www.facebook.com/EnKashBusiness" className={styles.icon}>
                   <FaFacebookF />
                 </a>
 
-                <a href="#" className={styles.icon}>
+                <a href="https://twitter.com/EnkashBusiness" className={styles.icon}>
                   <FaXTwitter />
                 </a>
               </div>

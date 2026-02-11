@@ -14,6 +14,8 @@ interface GlossaryItem {
     content: string
     showRelatedBlogs: boolean
     blogWord: string
+    meta_title?: string
+    meta_description?: string
 }
 
 type ViewMode = "list" | "form"
@@ -39,6 +41,8 @@ const GlossaryAdmin = () => {
     const [content, setContent] = useState("")
     const [showRelatedBlogs, setShowRelatedBlogs] = useState(false)
     const [blogWord, setBlogWord] = useState("")
+    const [metaTitle, setMetaTitle] = useState("")
+    const [metaDescription, setMetaDescription] = useState("")
     const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
 
     const {
@@ -108,6 +112,8 @@ const GlossaryAdmin = () => {
         const finalWord = word.trim()
         const finalSlug = nameToUrl(slug)
         const finalBlogWord = blogWord.trim()
+        const finalMetaTitle = metaTitle.trim()
+        const finalMetaDescription = metaDescription.trim()
 
         const errors: Record<string, string> = {}
         if (!finalWord) errors.word = "Word is required"
@@ -126,6 +132,8 @@ const GlossaryAdmin = () => {
             content,
             showRelatedBlogs,
             blogWord: showRelatedBlogs ? finalBlogWord : "",
+            meta_title: finalMetaTitle,
+            meta_description: finalMetaDescription,
         }
 
         try {
@@ -178,6 +186,8 @@ const GlossaryAdmin = () => {
         setContent(item.content)
         setShowRelatedBlogs(item.showRelatedBlogs)
         setBlogWord(item.blogWord || "")
+        setMetaTitle(item.meta_title || "")
+        setMetaDescription(item.meta_description || "")
         setViewMode("form")
     }
 
@@ -224,6 +234,8 @@ const GlossaryAdmin = () => {
         setShowRelatedBlogs(false)
         setShowHtmlView(false)
         setBlogWord("")
+        setMetaTitle("")
+        setMetaDescription("")
         setFieldErrors({})
         setEditingItem(null)
 
@@ -271,6 +283,10 @@ const GlossaryAdmin = () => {
                     setShowRelatedBlogs={setShowRelatedBlogs}
                     blogWord={blogWord}
                     setBlogWord={setBlogWord}
+                    metaTitle={metaTitle}
+                    setMetaTitle={setMetaTitle}
+                    metaDescription={metaDescription}
+                    setMetaDescription={setMetaDescription}
                     isSubmitting={isSubmitting}
                 />
             )}
