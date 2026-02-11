@@ -9,7 +9,7 @@ export async function PUT(
   try {
     const { id } = await params;
     const body = await request.json();
-    const { word, slug, content, showRelatedBlogs, blogWord } = body;
+    const { word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description } = body;
 
     if (!word || !slug || !content) {
       return NextResponse.json(
@@ -31,8 +31,8 @@ export async function PUT(
     }
 
     await pool.execute(
-      'UPDATE glossary SET word = ?, slug = ?, content = ?, showRelatedBlogs = ?, blogWord = ? WHERE id = ?',
-      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', id]
+      'UPDATE glossary SET word = ?, slug = ?, content = ?, showRelatedBlogs = ?, blogWord = ?, meta_title = ?, meta_description = ? WHERE id = ?',
+      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, id]
     );
 
     return NextResponse.json({
@@ -50,7 +50,7 @@ export async function PUT(
 
 // DELETE: Remove a glossary item
 export async function DELETE(
-  request: Request,
+  _request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {

@@ -21,6 +21,10 @@ interface GlossaryFormViewProps {
     blogWord: string
     setBlogWord: (word: string) => void
     isSubmitting: boolean
+    metaTitle: string
+    setMetaTitle: (title: string) => void
+    metaDescription: string
+    setMetaDescription: (description: string) => void
 }
 
 const GlossaryFormView = ({
@@ -42,6 +46,10 @@ const GlossaryFormView = ({
     blogWord,
     setBlogWord,
     isSubmitting,
+    metaTitle,
+    setMetaTitle,
+    metaDescription,
+    setMetaDescription,
 }: GlossaryFormViewProps) => {
     return (
         <div className={styles.contentWrapper}>
@@ -92,6 +100,36 @@ const GlossaryFormView = ({
                         onChange={handleSlugChange}
                     />
                     {fieldErrors.slug && <div className={styles.errorText}>{fieldErrors.slug}</div>}
+                    {fieldErrors.slug && <div className={styles.errorText}>{fieldErrors.slug}</div>}
+                </div>
+
+                <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="metaTitle">
+                        Meta Title
+                    </label>
+                    <input
+                        id="metaTitle"
+                        type="text"
+                        className={styles.input}
+                        placeholder="Enter SEO Meta Title"
+                        value={metaTitle}
+                        onChange={(e) => setMetaTitle(e.target.value)}
+                    />
+                </div>
+
+                <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="metaDescription">
+                        Meta Description
+                    </label>
+                    <textarea
+                        id="metaDescription"
+                        className={styles.input}
+                        placeholder="Enter SEO Meta Description"
+                        value={metaDescription}
+                        onChange={(e) => setMetaDescription(e.target.value)}
+                        rows={3}
+                        style={{ height: 'auto' }}
+                    />
                 </div>
 
                 <div className={styles.formGroup}>
