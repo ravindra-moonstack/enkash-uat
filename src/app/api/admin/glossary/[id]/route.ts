@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import pool from '@/src/lib/dbConnect';
-import { verifyToken } from '@/src/utils/auth';
 
 // PUT: Update an existing glossary item
 export async function PUT(
@@ -8,10 +7,6 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const user = await verifyToken();
-    if (!user) {
-      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
-    }
     const { id } = await params;
     const body = await request.json();
     const { word, slug, content, showRelatedBlogs, blogWord } = body;
@@ -59,10 +54,6 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const user = await verifyToken();
-    if (!user) {
-      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
-    }
     const { id } = await params;
 
     await pool.execute('DELETE FROM glossary WHERE id = ?', [id]);

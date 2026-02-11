@@ -241,10 +241,6 @@
         color: $color-equity-blue;
     }
 
-    // Custom Email Variables Picker Styling
-    :global(.ql-picker.ql-emailVars) {
-        width: 160px;
-    }
 
 
     // Custom Show HTML Button
@@ -397,31 +393,6 @@
     margin: 0 0 4px 0;
 }
 
-.sectionSubtitle {
-    font-size: 13px;
-    color: $color-grey-600;
-    margin: 0 0 20px 0;
-}
-
-.blogLinkRow {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 20px;
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px dashed $color-grey-100;
-
-    &:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-    }
-
-    @media (max-width: 600px) {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-}
 
 .actionButtons {
     display: flex;
@@ -432,139 +403,7 @@
     border-top: 1px solid $color-grey-100;
 }
 
-.resetButton {
-    padding: 14px 32px;
-    background-color: $color-white;
-    color: $color-grey-600;
-    font-size: 15px;
-    font-weight: 600;
-    border: 1px solid $color-grey-100;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
 
-    &:hover {
-        background-color: $color-silver-grey;
-        border-color: $color-grey-600;
-        color: $color-grey-900;
-    }
-
-    &:active {
-        transform: translateY(1px);
-    }
-}
-
-.submitButton {
-    padding: 14px 32px;
-    background: $primary-gradient;
-    color: $color-white;
-    font-size: 15px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba($color-equity-blue, 0.2);
-    font-family: inherit;
-
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba($color-equity-blue, 0.3);
-    }
-
-    &:active {
-        transform: translateY(0);
-    }
-}
-
-// Preview Section
-.previewSection {
-    margin-top: 40px;
-    padding-top: 40px;
-    border-top: 2px solid $color-grey-100;
-}
-
-.previewTitle {
-    font-size: 24px;
-    font-weight: 600;
-    color: $color-main-black;
-    margin-bottom: 20px;
-}
-
-.previewContent {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.previewSubtitle {
-    font-size: 14px;
-    font-weight: 600;
-    color: $color-grey-600;
-    margin: 0 0 8px 0;
-}
-
-.renderedPreview {
-    padding: 20px;
-    background-color: $color-silver-grey;
-    border: 1px solid $color-grey-100;
-    border-radius: 8px;
-    color: $color-main-black;
-    line-height: 1.6;
-
-    :global(h1),
-    :global(h2),
-    :global(h3),
-    :global(h4),
-    :global(h5),
-    :global(h6) {
-        margin-top: 0;
-    }
-
-    :global(ul),
-    :global(ol) {
-        padding-left: 20px;
-        margin-bottom: 16px;
-    }
-
-    :global(li) {
-        margin-bottom: 8px;
-    }
-
-    :global(blockquote) {
-        border-left: 4px solid #e2e8f0;
-        padding-left: 16px;
-        color: #64748b;
-        font-style: italic;
-        margin: 16px 0;
-    }
-
-    :global(code) {
-        background-color: #f1f5f9;
-        padding: 2px 4px;
-        border-radius: 4px;
-        font-family: monospace;
-    }
-
-    :global(a) {
-        color: $color-equity-blue;
-    }
-}
-
-.htmlPreview {
-    padding: 20px;
-    background-color: #1d1d1d;
-    color: #cccccc;
-    border: 1px solid #3d3d3d;
-    border-radius: 8px;
-    font-size: 13px;
-    font-family: 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
-    line-height: 1.6;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
 
 .listHeader {
     display: flex;
@@ -671,11 +510,25 @@
     text-align: center;
     color: $color-grey-600;
 
-    i {
-        font-size: 48px;
-        margin-bottom: 16px;
-        display: block;
-        opacity: 0.3;
+    p {
+        margin: 0;
+        font-size: 15px;
+    }
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid rgba($color-equity-blue, 0.1);
+    border-top-color: $color-equity-blue;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 12px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }
 

@@ -1,6 +1,7 @@
 // app/glossary/[letter]/[slug]/page.tsx
 
-import { fetchTermBySlug, fetchAllLetters, stripHtml } from "@/src/utils/glossaryData"
+import { stripHtml } from "@/src/utils/format"
+import { getApiBaseUrl } from "@/src/utils/api-helpers"
 import React from "react"
 import { Container } from "react-bootstrap"
 import { notFound } from "next/navigation"
@@ -19,9 +20,34 @@ interface PageProps {
   params: Promise<{ letter: string; slug: string }>
 }
 
+async function getTerm(slug: string) {
+  try {
+    const baseUrl = getApiBaseUrl()
+    const res = await fetch(`${baseUrl}/api/glossary/term/${slug}`, { cache: 'no-store' })
+    if (res.status === 404) return null
+    if (!res.ok) return null
+    return res.json()
+  } catch (error) {
+    console.error("Error fetching term:", error)
+    return null
+  }
+}
+
+async function getLetters() {
+  try {
+    const baseUrl = getApiBaseUrl()
+    const res = await fetch(`${baseUrl}/api/glossary/letters`, { cache: 'no-store' })
+    if (!res.ok) return []
+    return res.json()
+  } catch (error) {
+    console.error("Error fetching letters:", error)
+    return []
+  }
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
-  const term = await fetchTermBySlug(slug)
+  const term = await getTerm(slug)
 
   if (!term) {
     return {
@@ -38,8 +64,8 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function GlossaryDetail({ params }: PageProps) {
   const { letter, slug } = await params
-  const term = await fetchTermBySlug(slug)
-  const availableLetters = await fetchAllLetters()
+  const term = await getTerm(slug)
+  const availableLetters = await getLetters()
 
   if (!term) {
     notFound()
@@ -123,7 +149,7 @@ export default async function GlossaryDetail({ params }: PageProps) {
               />
 
               <div
-                className={styles.sectionContent}
+                className={styles.sectionContent + " " + "ql-editor"}
                 dangerouslySetInnerHTML={{ __html: term.content }}
               />
             </section>

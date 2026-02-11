@@ -1,7 +1,6 @@
-// app/api/glossary/search/route.ts
-
 import { NextRequest, NextResponse } from "next/server"
-import { searchGlossaryTerms, stripHtml } from "@/src/utils/glossaryData"
+import pool from "@/src/lib/dbConnect";
+import { stripHtml } from "@/src/utils/format";
 
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams
@@ -12,9 +11,12 @@ export async function GET(request: NextRequest) {
     }
 
     try {
-        const results = await searchGlossaryTerms(query)
+        const [rows]: any = await pool.execute(
+            "SELECT * FROM glossary WHERE word LIKE ? LIMIT 10",
+            [`%${query}%`]
+        );
 
-        const formattedResults = results.map(term => ({
+        const formattedResults = rows.map((term: any) => ({
             word: term.word,
             slug: term.slug,
             content: stripHtml(term.content)

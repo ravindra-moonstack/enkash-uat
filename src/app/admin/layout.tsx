@@ -39,7 +39,7 @@ export default function AdminLayout({
         };
 
         checkAuth();
-    }, [pathname, isLoginPage, router]);
+    }, [isLoginPage, router]);
 
     const handleLogout = () => {
         document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Strict";
@@ -49,7 +49,13 @@ export default function AdminLayout({
     if (isLoading) {
         return (
             <div className={styles.fullScreenWrapper}>
-                <p>Loading...</p>
+                <Image
+                    src="/images/loader.gif"
+                    alt="Loading..."
+                    width={75}
+                    height={75}
+                    priority
+                />
             </div>
         )
     }

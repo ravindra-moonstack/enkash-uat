@@ -10,7 +10,7 @@ import ChevronRight from "../../../../public/svgs/chevron-right.svg"
 import Image from "next/image"
 import GlossaryBgImage from "../../../../public/images/glossaryBgImage.webp"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
-import { stripHtml } from "@/src/utils/glossaryData"
+import { stripHtml } from "@/src/utils/format"
 
 const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
@@ -29,6 +29,8 @@ type SearchResult = {
 const LetterPageClient = ({ letter, initialTerms }: Props) => {
   const [search, setSearch] = useState("")
   const [suggestions, setSuggestions] = useState<SearchResult[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [showSuggestions, setShowSuggestions] = useState(false)
   const suggestionsRef = useRef<HTMLDivElement>(null)
 
   const BigLetter = (letter || "").toUpperCase()
@@ -39,27 +41,31 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
         suggestionsRef.current &&
         !suggestionsRef.current.contains(event.target as Node)
       ) {
-        setSuggestions([])
+        setShowSuggestions(false)
       }
     }
 
-    if (suggestions.length > 0) {
+    if (showSuggestions) {
       document.addEventListener("mousedown", handleClickOutside)
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
-  }, [suggestions.length])
+  }, [showSuggestions])
 
   const handleSearch = async (q: string) => {
     setSearch(q)
 
     if (!q) {
       setSuggestions([])
+      setIsLoading(false)
+      setShowSuggestions(false)
       return
     }
 
+    setIsLoading(true)
+    setShowSuggestions(true)
     try {
       const response = await fetch(
         `/api/glossary/search?q=${encodeURIComponent(q)}`
@@ -69,6 +75,8 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
     } catch (err) {
       console.error("Search error:", err)
       setSuggestions([])
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -113,26 +121,33 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
             placeholder="Search for a word...."
             value={search}
             onChange={(e) => handleSearch(e.target.value)}
+            onFocus={() => search && setShowSuggestions(true)}
             className={styles.searchInput}
           />
           <Image src={FaSearch} alt="" className={styles.searchButton} />
-          {suggestions.length > 0 && (
+          {search.length > 0 && showSuggestions && (
             <div ref={suggestionsRef} className={styles.suggestions}>
-              {Object.keys(groupedSuggestions).sort().map(letterKey => (
-                <div key={letterKey} className={styles.suggestionGroup}>
-                  <div className={styles.suggestionLetter}>{letterKey}</div>
-                  {groupedSuggestions[letterKey].map((item, idx) => (
-                    <div key={idx} className={styles.suggestionItem}>
-                      <Link
-                        href={`/glossary/${(letterKey || "").toLowerCase()}/${item.slug || ""}`}
-                      >
-                        <div className={styles.suggestionKeyword}>{item.word || ""}</div>
-                        <div className={styles.suggestionDescription}>{item.content || ""}</div>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              ))}
+              {isLoading ? (
+                <div style={{ padding: '12px', textAlign: 'center', color: '#64748b' }}>Searching...</div>
+              ) : suggestions.length > 0 ? (
+                Object.keys(groupedSuggestions).sort().map(letterKey => (
+                  <div key={letterKey} className={styles.suggestionGroup}>
+                    <div className={styles.suggestionLetter}>{letterKey}</div>
+                    {groupedSuggestions[letterKey].map((item, idx) => (
+                      <div key={idx} className={styles.suggestionItem}>
+                        <Link
+                          href={`/glossary/${(letterKey || "").toLowerCase()}/${item.slug || ""}`}
+                        >
+                          <div className={styles.suggestionKeyword}>{item.word || ""}</div>
+                          <div className={styles.suggestionDescription}>{item.content || ""}</div>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                ))
+              ) : (
+                <div style={{ padding: '12px', textAlign: 'center', color: '#64748b' }}>No Results</div>
+              )}
             </div>
           )}
         </div>
@@ -175,7 +190,7 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
             ))
           ) : (
             <div className={styles.noResultsCol}>
-              <p className={styles.noResults}>No glossary items found.</p>
+              <p className={styles.noResults}>No Data for This Letter</p>
             </div>
           )}
         </div>
