@@ -11,11 +11,6 @@ import {
   SecureCompliantIcon,
   streamlinedReimbursement,
   streamlinedReimbursementIcon,
-  tabIconFive,
-  tabIconFour,
-  tabIconOne,
-  tabIconThree,
-  tabIcontwo,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
   fuelCardImg, mealCardImg, purchesCardImg, sassCardImg, termsAndConCardImg, virtualCardImg,
@@ -29,7 +24,7 @@ import {
   itemIcon5,
   itemIcon6
 } from "./img"
-import { bg1, bg2, bg3, bg4, bg5 } from "../products/vouchers/img"
+import { bg1, bg2, bg3 } from "../products/vouchers/img"
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 
 const otherProductsHeading = [
@@ -176,40 +171,6 @@ const cardType: TCardTypes = [
     linkUrl: "/vendor-payment",
   },
 ]
-const cardType: TCardTypes = [
-  {
-    titleHtml: "Meal Cards",
-    description:
-      "Give employees tax-compliant meal benefits without vouchers. Accepted at restaurants, food delivery apps, grocery stores, and canteens across India.",
-    cardImage: mealCardImg,
-    linkUrl: "/meal-card",
-  },
-  {
-    titleHtml: "Fuel Cards",
-    description:
-      "Lock cards to fuel stations only. Track vehicle-wise fuel spending. Eliminate cash misuse with drivers. Get detailed reports on mileage and fuel consumption patterns.",
-    cardImage: fuelCardImg,
-    linkUrl: "/fuel-card",
-  },
-  {
-    titleHtml: "Digital Marketing Cards",
-    description:
-      "Set fixed budgets for Google Ads, Meta, LinkedIn, and other ad platforms. Prevent campaign overspending. Get alerts when budgets near their limits.",
-    cardImage: termsAndConCardImg,
-    linkUrl: "/digital-marketing-card",
-  },
-  {
-    titleHtml: "Fleet & Logistics Cards",
-    description:
-      "Pay for fuel, tolls, repairs, and parking without cash. Give each driver their own card with spending limits you control. Track all fleet expenses in one place.",
-    cardImage: virtualCardImg,
-  },
-  {
-    titleHtml: "Payroll Cards",
-    description:
-      "Load salaries, bonuses, or incentives directly onto cards. Perfect for gig workers, contract staff, or employees without bank accounts. Instant, secure, zero paperwork.",
-    cardImage: purchesCardImg,
-  },
 
 const acceleratedGrowthData = [
   {
