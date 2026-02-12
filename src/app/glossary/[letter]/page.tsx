@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps) {
 async function getTerms(letter: string) {
   try {
     const baseUrl = getApiBaseUrl()
-    const res = await fetch(`${baseUrl}/api/glossary/letter/${letter}`, { cache: 'no-store' })
+    const res = await fetch(`${baseUrl}/api/glossary/letter/${letter}`, { next: { revalidate: 3600 } })
     if (!res.ok) return []
     return res.json()
   } catch (error) {
@@ -33,7 +33,6 @@ async function getTerms(letter: string) {
 export default async function LetterPage({ params }: PageProps) {
   const { letter } = await params
   const terms = await getTerms(letter)
-
 
 
   return (
@@ -51,7 +50,7 @@ export default async function LetterPage({ params }: PageProps) {
             color: "color-black f-4",
           },
         ]}
-        cards={[12642, 13675, 12195]}
+        links={[letter]}
       />
     </>
   )

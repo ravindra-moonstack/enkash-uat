@@ -1,6 +1,30 @@
 import { NextResponse } from 'next/server';
 import pool from '@/src/lib/dbConnect';
 
+// GET: Fetch a single glossary item by ID
+export async function GET(
+  _request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+    const [rows]: any = await pool.execute('SELECT * FROM glossary WHERE id = ? LIMIT 1', [id]);
+    const item = rows[0] || null;
+
+    if (!item) {
+        return NextResponse.json({ success: false, message: 'Item not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ success: true, data: item });
+  } catch (error: any) {
+    console.error('Error fetching glossary item:', error);
+    return NextResponse.json(
+      { success: false, message: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
 // PUT: Update an existing glossary item
 export async function PUT(
   request: Request,

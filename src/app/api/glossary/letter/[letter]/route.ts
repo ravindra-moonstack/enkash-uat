@@ -9,12 +9,12 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     try {
         if (queryLetter === "#") {
             const [result]: any = await pool.execute(
-                "SELECT * FROM glossary WHERE word NOT REGEXP '^[A-Za-z]' ORDER BY word ASC"
+                "SELECT word, slug FROM glossary WHERE word NOT REGEXP '^[A-Za-z]' ORDER BY word ASC"
             );
             rows = result;
         } else {
             const [result]: any = await pool.execute(
-                "SELECT * FROM glossary WHERE word LIKE ? ORDER BY word ASC",
+                "SELECT word, slug FROM glossary WHERE word LIKE ? ORDER BY word ASC",
                 [`${queryLetter}%`]
             );
             rows = result;
