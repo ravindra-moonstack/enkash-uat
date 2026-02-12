@@ -4,7 +4,6 @@ import React, { JSX } from "react"
 import styles from "./blog-section.module.scss"
 import DynamicHeading from "../../dynamic-heading"
 import BlogCard from "../../blog-card"
-import { useBlogPosts } from "@/src/hooks/useBlogPosts"
 
 interface HeadingPart {
   title: string
@@ -17,6 +16,13 @@ interface BlogSectionProps {
   cards?: number[]
   links?: string[]
   className?: string
+}
+
+interface BlogPost {
+  ID: number
+  title: string
+  featured_image: string
+  link: string
 }
 
 function decodeHTML(str: string) {

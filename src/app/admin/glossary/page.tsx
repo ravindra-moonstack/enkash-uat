@@ -178,7 +178,7 @@ const GlossaryAdmin = () => {
                     setFieldErrors({ general: data.message || "Operation failed" })
                 }
             }
-        } catch (error) {
+        } catch {
             setFieldErrors({ general: "Something went wrong. Please try again." })
         } finally {
             setIsSubmitting(false)
@@ -242,7 +242,7 @@ const GlossaryAdmin = () => {
             } else {
                 alert(data.message || "Delete failed")
             }
-        } catch (error) {
+        } catch {
             alert("Internal server error")
         }
     }
