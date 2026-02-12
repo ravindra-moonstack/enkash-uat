@@ -603,3 +603,63 @@
         cursor: not-allowed;
     }
 }
+
+// Alt Text Modal Styling
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    backdrop-filter: blur(2px);
+}
+
+.modalContent {
+    background: $color-white;
+    padding: 32px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modalTitle {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-main-black;
+    letter-spacing: -0.5px;
+}
+
+.modalDescription {
+    margin: 0 0 24px;
+    font-size: 15px;
+    color: $color-grey-600;
+    line-height: 1.5;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}

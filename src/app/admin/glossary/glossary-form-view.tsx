@@ -25,6 +25,10 @@ interface GlossaryFormViewProps {
     setMetaTitle: (title: string) => void
     metaDescription: string
     setMetaDescription: (description: string) => void
+    showAltModal: boolean
+    pendingImage: File | null
+    handleAltSubmit: (altText: string) => void
+    handleAltCancel: () => void
 }
 
 const GlossaryFormView = ({
@@ -50,6 +54,10 @@ const GlossaryFormView = ({
     setMetaTitle,
     metaDescription,
     setMetaDescription,
+    showAltModal,
+    pendingImage,
+    handleAltSubmit,
+    handleAltCancel
 }: GlossaryFormViewProps) => {
     return (
         <div className={styles.contentWrapper}>
@@ -100,36 +108,37 @@ const GlossaryFormView = ({
                         onChange={handleSlugChange}
                     />
                     {fieldErrors.slug && <div className={styles.errorText}>{fieldErrors.slug}</div>}
-                    {fieldErrors.slug && <div className={styles.errorText}>{fieldErrors.slug}</div>}
                 </div>
 
                 <div className={styles.formGroup}>
                     <label className={styles.label} htmlFor="metaTitle">
-                        Meta Title
+                        Meta Title <span className={styles.required}>*</span>
                     </label>
                     <input
                         id="metaTitle"
                         type="text"
-                        className={styles.input}
+                        className={`${styles.input} ${fieldErrors.metaTitle ? styles.inputError : ""}`}
                         placeholder="Enter SEO Meta Title"
                         value={metaTitle}
                         onChange={(e) => setMetaTitle(e.target.value)}
                     />
+                    {fieldErrors.metaTitle && <div className={styles.errorText}>{fieldErrors.metaTitle}</div>}
                 </div>
 
                 <div className={styles.formGroup}>
                     <label className={styles.label} htmlFor="metaDescription">
-                        Meta Description
+                        Meta Description <span className={styles.required}>*</span>
                     </label>
                     <textarea
                         id="metaDescription"
-                        className={styles.input}
+                        className={`${styles.input} ${fieldErrors.metaDescription ? styles.inputError : ""}`}
                         placeholder="Enter SEO Meta Description"
                         value={metaDescription}
                         onChange={(e) => setMetaDescription(e.target.value)}
                         rows={3}
                         style={{ height: 'auto' }}
                     />
+                    {fieldErrors.metaDescription && <div className={styles.errorText}>{fieldErrors.metaDescription}</div>}
                 </div>
 
                 <div className={styles.formGroup}>
@@ -183,16 +192,17 @@ const GlossaryFormView = ({
                         <h3 className={styles.sectionTitle}>Related Blog</h3>
                         <div className={styles.formGroup}>
                             <label className={styles.label} htmlFor="blogWord">
-                                Blog Related Word
+                                Blog Related Word <span className={styles.required}>*</span>
                             </label>
                             <input
                                 id="blogWord"
                                 type="text"
-                                className={styles.input}
+                                className={`${styles.input} ${fieldErrors.blogWord ? styles.inputError : ""}`}
                                 placeholder="Enter one related blog word"
                                 value={blogWord}
                                 onChange={(e) => setBlogWord(e.target.value)}
                             />
+                            {fieldErrors.blogWord && <div className={styles.errorText}>{fieldErrors.blogWord}</div>}
                         </div>
                     </div>
                 )}
@@ -207,6 +217,51 @@ const GlossaryFormView = ({
                     />
                 </div>
             </form>
+
+            {showAltModal && (
+                <div
+                    key={pendingImage?.name}
+                    className={styles.modalOverlay}
+                >
+                    <div className={styles.modalContent}>
+                        <h3 className={styles.modalTitle}>Image Description (Alt Text)</h3>
+                        <p className={styles.modalDescription}>
+                            Add a description for this image to improve accessibility and SEO.
+                        </p>
+                        <input
+                            autoFocus
+                            type="text"
+                            placeholder="e.g. Credit Card Terminal"
+                            defaultValue={pendingImage ? pendingImage.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ") : ""}
+                            id="alt-text-input"
+                            className={styles.input}
+                            style={{ marginBottom: '24px' }}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    const input = document.getElementById('alt-text-input') as HTMLInputElement;
+                                    handleAltSubmit(input.value);
+                                }
+                            }}
+                        />
+                        <div className={styles.modalActions}>
+                            <CommanButton
+                                title="Cancel"
+                                theme="outline-blue"
+                                url={handleAltCancel}
+                            />
+                            <CommanButton
+                                title="Insert Image"
+                                theme="blue"
+                                url={() => {
+                                    const input = document.getElementById('alt-text-input') as HTMLInputElement;
+                                    handleAltSubmit(input.value);
+                                }}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
