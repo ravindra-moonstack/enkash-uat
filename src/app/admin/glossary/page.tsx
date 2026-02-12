@@ -185,17 +185,38 @@ const GlossaryAdmin = () => {
         }
     }
 
-    const handleEdit = (item: GlossaryItem) => {
-        setEditingItem(item)
-        setWord(item.word)
-        setSlug(item.slug)
-        setIsSlugModified(true)
-        setContent(item.content)
-        setShowRelatedBlogs(item.showRelatedBlogs)
-        setBlogWord(item.blogWord || "")
-        setMetaTitle(item.meta_title || "")
-        setMetaDescription(item.meta_description || "")
-        setViewMode("form")
+    const handleEdit = async (item: GlossaryItem) => {
+        setIsLoading(true)
+        try {
+            const response = await fetch(`/api/admin/glossary/${item.id}`)
+
+            if (response.status === 401) {
+                window.location.href = "/admin"
+                return
+            }
+
+            const data = await response.json()
+
+            if (data.success) {
+                const fullItem = data.data
+                setEditingItem(fullItem)
+                setWord(fullItem.word)
+                setSlug(fullItem.slug)
+                setIsSlugModified(true)
+                setContent(fullItem.content || "")
+                setShowRelatedBlogs(fullItem.showRelatedBlogs === 1 || fullItem.showRelatedBlogs === true)
+                setBlogWord(fullItem.blogWord || "")
+                setMetaTitle(fullItem.meta_title || "")
+                setMetaDescription(fullItem.meta_description || "")
+                setViewMode("form")
+            } else {
+                setFieldErrors({ general: "Failed to load item details" })
+            }
+        } catch (error) {
+            console.error("Error loading item:", error)
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     const handleDelete = async (id: number) => {

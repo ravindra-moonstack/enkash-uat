@@ -9,12 +9,13 @@ import { FaLinkedinIn, FaFacebookF, FaXTwitter } from 'react-icons/fa6'
 import Image from "next/image"
 import Link from "next/link"
 import GlossaryBgImage from "../../../../../public/images/glossaryBgImage.webp"
-import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
 import BlogSection from "@/src/components/sections/blog-section"
 import styles from "./page.module.scss"
 import GlossaryClient from "./slug-page-client"
+import AlphabetBar from "@/src/components/glossary/AlphabetBar"
 
-const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 interface PageProps {
   params: Promise<{ letter: string; slug: string }>
@@ -23,7 +24,7 @@ interface PageProps {
 async function getTerm(slug: string) {
   try {
     const baseUrl = getApiBaseUrl()
-    const res = await fetch(`${baseUrl}/api/glossary/term/${slug}`, { cache: 'no-store' })
+    const res = await fetch(`${baseUrl}/api/glossary/term/${slug}`, { next: { revalidate: 3600 } })
     if (res.status === 404) return null
     if (!res.ok) return null
     return res.json()
@@ -36,7 +37,7 @@ async function getTerm(slug: string) {
 async function getLetters() {
   try {
     const baseUrl = getApiBaseUrl()
-    const res = await fetch(`${baseUrl}/api/glossary/letters`, { cache: 'no-store' })
+    const res = await fetch(`${baseUrl}/api/glossary/letters`, { next: { revalidate: 3600 } })
     if (!res.ok) return []
     return res.json()
   } catch (error) {
@@ -72,7 +73,9 @@ export default async function GlossaryDetail({ params }: PageProps) {
   }
 
   const blogLinks: string[] = []
-  const blogCards: number[] = []
+
+  // const tempLinks = ["top-10-banks-in-india", "how-to-update-pan-card", "https://uat.blogs.enkash.com/blog/how-to-apply-for-a-pan-card-online"]
+  // blogLinks.push(...tempLinks)
 
   if (term.showRelatedBlogs && term.blogWord) {
     blogLinks.push(term.blogWord);
@@ -156,27 +159,13 @@ export default async function GlossaryDetail({ params }: PageProps) {
           </div>
 
           <div className={styles.bottomAlphabetBar}>
-            <div className={styles.alphabetScroll}>
-              {ALPHABET.map((ltr) => {
-                const hasTerms = availableLetters.includes(ltr)
-                return (
-                  <Link
-                    key={ltr}
-                    href={hasTerms ? `/glossary/${ltr.toLowerCase()}` : "#"}
-                    className={`${styles.alphabetLink} ${letter.toUpperCase() === ltr ? styles.active : ""
-                      } ${!hasTerms ? styles.disabled : ""}`}
-                  >
-                    {ltr}
-                  </Link>
-                )
-              })}
-            </div>
+            <AlphabetBar currentLetter={letter} availableLetters={availableLetters} />
           </div>
         </Container>
       </section>
 
       {/* Related Blogs Section */}
-      {/* {(blogLinks.length > 0 || blogCards.length > 0) && (
+      {(blogLinks.length > 0) && (
         <BlogSection
           className="bg-white"
           heading={[
@@ -189,10 +178,9 @@ export default async function GlossaryDetail({ params }: PageProps) {
               color: "color-black f-4",
             },
           ]}
-          {...(blogLinks.length > 0 ? { links: blogLinks } : {})}
-          {...(blogCards.length > 0 ? { cards: blogCards } : {})}
+          links={blogLinks}
         />
-      )} */}
+      )}
     </>
   )
 }

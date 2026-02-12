@@ -39,30 +39,39 @@ const GlossarySearch = () => {
         }
     }, [showSuggestions])
 
-    const handleSearch = async (q: string) => {
+    useEffect(() => {
+        const fetchSuggestions = async (q: string) => {
+            setIsLoading(true)
+            setShowSuggestions(true)
+            try {
+                const response = await fetch(
+                    `/api/glossary/search?q=${encodeURIComponent(q)}`
+                )
+                const data = await response.json()
+                setSuggestions(data.results || [])
+            } catch (err) {
+                console.error("Search error:", err)
+                setSuggestions([])
+            } finally {
+                setIsLoading(false)
+            }
+        }
+
+        const timeoutId = setTimeout(() => {
+            if (search.trim()) {
+                fetchSuggestions(search)
+            } else {
+                setSuggestions([])
+                setIsLoading(false)
+                setShowSuggestions(false)
+            }
+        }, 100)
+
+        return () => clearTimeout(timeoutId)
+    }, [search])
+
+    const handleSearch = (q: string) => {
         setSearch(q)
-
-        if (!q) {
-            setSuggestions([])
-            setIsLoading(false)
-            setShowSuggestions(false)
-            return
-        }
-
-        setIsLoading(true)
-        setShowSuggestions(true)
-        try {
-            const response = await fetch(
-                `/api/glossary/search?q=${encodeURIComponent(q)}`
-            )
-            const data = await response.json()
-            setSuggestions(data.results || [])
-        } catch (err) {
-            console.error("Search error:", err)
-            setSuggestions([])
-        } finally {
-            setIsLoading(false)
-        }
     }
 
     // Grouping suggestions by first letter

@@ -28,6 +28,8 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
         setShowHtmlView(!showHtmlView);
     };
 
+    const [savedRange, setSavedRange] = useState<any>(null);
+
     const handleHtmlChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setHtmlContent(e.target.value);
     };
@@ -57,8 +59,8 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
 
         try {
             const quill = quillInstance.current;
-            // Get selection or default to end
-            const range = quill.getSelection(true) || { index: quill.getLength() };
+            // Get selection from saved state or current selection
+            const range = savedRange || quill.getSelection(true) || { index: quill.getLength() };
             
             const res = await fetch('/api/upload', {
                 method: 'POST',
@@ -117,6 +119,10 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                 };
 
                 const imageHandler = function (this: any) {
+                    // Save current selection before losing focus to file dialog
+                    const range = quill.getSelection();
+                    setSavedRange(range);
+
                     const input = document.createElement('input');
                     input.setAttribute('type', 'file');
                     input.setAttribute('accept', 'image/webp, image/svg+xml');

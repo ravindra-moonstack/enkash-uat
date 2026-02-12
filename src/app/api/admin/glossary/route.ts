@@ -15,7 +15,7 @@ export async function GET(request: Request) {
     const totalPages = Math.ceil(totalItems / limit);
 
     const [rows]: any = await pool.query(
-      'SELECT * FROM glossary ORDER BY word ASC LIMIT ? OFFSET ?',
+      'SELECT id, word, slug, showRelatedBlogs, blogWord, meta_title, meta_description FROM glossary ORDER BY word ASC LIMIT ? OFFSET ?',
       [limit, offset]
     );
 

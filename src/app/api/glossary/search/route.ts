@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
 
     try {
         const [rows]: any = await pool.execute(
-            "SELECT * FROM glossary WHERE word LIKE ? LIMIT 10",
+            "SELECT word, slug, LEFT(content, 500) as content FROM glossary WHERE word LIKE ? LIMIT 10",
             [`%${query}%`]
         );
 
