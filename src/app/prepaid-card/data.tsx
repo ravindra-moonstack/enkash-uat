@@ -119,53 +119,61 @@ const stackcardData: TStackCardsProp = [
   },
 ]
 
-const progressData = [
+const cardType: TCardTypes = [
   {
-    itemArray: ["Meal Card"],
-    title: "Meal Card",
+    titleHtml: "Meal Cards",
     description:
-      "Enable tax-saving meal benefits for employees with preloaded, compliant meal cards accepted at food outlets, canteens, and online platforms.",
-    icon: tabIconOne,
-    bgImage: bg1,
-    url: "/meal-card",
+      "Give employees tax-compliant meal benefits without vouchers. Accepted at restaurants, food delivery apps, grocery stores, and canteens across India.",
+    cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
   {
-    itemArray: ["Fuel Card"],
-    title: "Fuel Card",
+    titleHtml: "Fuel Cards",
     description:
-      "Optimize your fuel spends with cards restricted to fuel merchants only. Get complete visibility and prevent fuel misuse at the pump.",
-    icon: tabIcontwo,
-    bgImage: bg2,
-    url: "/fuel-card",
+      "Lock cards to fuel stations only. Track vehicle-wise fuel spending. Eliminate cash misuse with drivers. Get detailed reports on mileage and fuel consumption patterns.",
+    cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
-    itemArray: ["Digital Marketing Card"],
-    title: "Digital Marketing Card",
+    titleHtml: "Digital Marketing Cards",
     description:
-      "Manage campaign budgets with dedicated prepaid cards for ad platforms like Google, Meta, and LinkedIn - eliminating overages.",
-    icon: tabIconThree,
-    bgImage: bg3,
-    url: "/digital-marketing-card",
+      "Set fixed budgets for Google Ads, Meta, LinkedIn, and other ad platforms. Prevent campaign overspending. Get alerts when budgets near their limits.",
+    cardImage: sassCardImg,
+    linkUrl: "/digital-marketing-card",
   },
   {
-    itemArray: ["Fleet & Logistics Card"],
-    title: "Logistics & Supply Chain",
+    titleHtml: "Fleet & Logistics Cards",
     description:
-      "Give your drivers the power to pay without the risk of cash misuse. Track fuel, tolls, and repair spends in real-time.",
-    icon: tabIconFour,
-    bgImage: bg4,
-    url: "/sales/?source=prepaid-card",
-    buttonText: "Get Started",
+      "Pay for fuel, tolls, repairs, and parking without cash. Give each driver their own card with spending limits you control. Track all fleet expenses in one place.",
+    cardImage: vendorPaymentImage,
   },
   {
-    itemArray: ["Payroll Card"],
-    title: "Payroll Card",
+    titleHtml: "Payroll Cards",
     description:
-      "Pay employees and gig workers instantly: no bank hassles, no KYC delays. Load salaries, bonuses, or incentives directly to payroll cards.",
-    icon: tabIconFive,
-    bgImage: bg5,
-    url: "/sales/?source=prepaid-card",
-    buttonText: "Get Started",
+      "Load salaries, bonuses, or incentives directly onto cards. Perfect for gig workers, contract staff, or employees without bank accounts. Instant, secure, zero paperwork.",
+    cardImage: purchesCardImg,
+  },
+
+  {
+    titleHtml: "Travel & Expense Cards",
+    description:
+      "Issue cards for business travel with preset budgets. Employees book flights, hotels, meals, and cabs without fronting personal money. Auto-capture all expenses for easy reconciliation.",
+    cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
+  },
+  {
+    titleHtml: "Petty Cash Digitization",
+    description:
+      "Replace messy cash management with prepaid cards. Issue cards to branches, departments, or admin teams. Track office supplies, pantry, and maintenance spends.",
+    cardImage: PettyCashDigitizationImage,
+    linkUrl: "/petty-cash",
+  },
+  {
+    titleHtml: "Vendor Payments",
+    description:
+      "Load cards for freelancers, suppliers, or contractors. Control when and where funds can be used. No bank transfers. No payment delays.",
+    cardImage: virtualCardImg,
+    linkUrl: "/vendor-payment",
   },
 ]
 const cardType: TCardTypes = [
@@ -202,29 +210,6 @@ const cardType: TCardTypes = [
       "Load salaries, bonuses, or incentives directly onto cards. Perfect for gig workers, contract staff, or employees without bank accounts. Instant, secure, zero paperwork.",
     cardImage: purchesCardImg,
   },
-
-  {
-    titleHtml: "Travel & Expense Cards",
-    description:
-      "Issue cards for business travel with preset budgets. Employees book flights, hotels, meals, and cabs without fronting personal money. Auto-capture all expenses for easy reconciliation.",
-    cardImage: sassCardImg,
-    linkUrl: "/travel-and-expense-card",
-  },
-  {
-    titleHtml: "Petty Cash Digitization",
-    description:
-      "Replace messy cash management with prepaid cards. Issue cards to branches, departments, or admin teams. Track office supplies, pantry, and maintenance spends.",
-    cardImage: PettyCashDigitizationImage,
-    linkUrl: "/petty-cash",
-  },
-  {
-    titleHtml: "Vendor Payments",
-    description:
-      "Load cards for freelancers, suppliers, or contractors. Control when and where funds can be used. No bank transfers. No payment delays.",
-    cardImage: vendorPaymentImage,
-    linkUrl: "/vendor-payment",
-  },
-]
 
 const acceleratedGrowthData = [
   {
@@ -329,4 +314,4 @@ const gridData = [
     title: "Manage everything in one system",
   },
 ]
-export { progressData, stackcardData, blogData, otherProductsHeading, cardType, acceleratedGrowthData, stepsData, headingData, statsData, counterHeadingData, gridData }
+export { stackcardData, blogData, otherProductsHeading, cardType, acceleratedGrowthData, stepsData, headingData, statsData, counterHeadingData, gridData }

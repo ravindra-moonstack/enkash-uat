@@ -1,27 +1,53 @@
 // app/glossary/[letter]/[slug]/page.tsx
 
-import { fetchTermBySlug, fetchAllLetters } from "@/src/utils/glossaryData"
+import { stripHtml } from "@/src/utils/format"
+import { getApiBaseUrl } from "@/src/utils/api-helpers"
 import React from "react"
 import { Container } from "react-bootstrap"
 import { notFound } from "next/navigation"
 import { FaLinkedinIn, FaFacebookF, FaXTwitter } from 'react-icons/fa6'
 import Image from "next/image"
-import Link from "next/link"
 import GlossaryBgImage from "../../../../../public/images/glossaryBgImage.webp"
-import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
 import BlogSection from "@/src/components/sections/blog-section"
 import styles from "./page.module.scss"
 import GlossaryClient from "./slug-page-client"
+import AlphabetBar from "@/src/components/glossary/AlphabetBar"
 
-const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 interface PageProps {
   params: Promise<{ letter: string; slug: string }>
 }
 
+async function getTerm(slug: string) {
+  try {
+    const baseUrl = getApiBaseUrl()
+    const res = await fetch(`${baseUrl}/api/glossary/term/${slug}`, { next: { revalidate: 3600 } })
+    if (res.status === 404) return null
+    if (!res.ok) return null
+    return res.json()
+  } catch (error) {
+    console.error("Error fetching term:", error)
+    return null
+  }
+}
+
+async function getLetters() {
+  try {
+    const baseUrl = getApiBaseUrl()
+    const res = await fetch(`${baseUrl}/api/glossary/letters`, { next: { revalidate: 3600 } })
+    if (!res.ok) return []
+    return res.json()
+  } catch (error) {
+    console.error("Error fetching letters:", error)
+    return []
+  }
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
-  const term = await fetchTermBySlug(slug)
+  const term = await getTerm(slug)
 
   if (!term) {
     return {
@@ -31,58 +57,29 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: term.metaTitle || `${term.keyword} | FinTech Glossary`,
-    description: term.metaDescription || term.definition.substring(0, 160),
+    title: term.meta_title || `${term.word} | FinTech Glossary`,
+    description: term.meta_description || stripHtml(term.content).substring(0, 160),
   }
 }
 
 export default async function GlossaryDetail({ params }: PageProps) {
   const { letter, slug } = await params
-  const term = await fetchTermBySlug(slug)
-  const availableLetters = await fetchAllLetters()
+  const term = await getTerm(slug)
+  const availableLetters = await getLetters()
 
   if (!term) {
     notFound()
   }
 
-
-  const sections = []
-
-  if (term.sectionHeading1 && term.sectionDescription1) {
-    sections.push({
-      heading: term.sectionHeading1,
-      content: term.sectionDescription1,
-    })
-  }
-  if (term.sectionHeading2 && term.sectionDescription2) {
-    sections.push({
-      heading: term.sectionHeading2,
-      content: term.sectionDescription2,
-    })
-  }
-  if (term.sectionHeading3 && term.sectionDescription3) {
-    sections.push({
-      heading: term.sectionHeading3,
-      content: term.sectionDescription3,
-    })
-  }
-  if (term.sectionHeading4 && term.sectionDescription4) {
-    sections.push({
-      heading: term.sectionHeading4,
-      content: term.sectionDescription4,
-    })
-  }
-
   const blogLinks: string[] = []
-  const blogCards: number[] = []
 
-  if (term.relatedBlogs && Array.isArray(term.relatedBlogs) && term.relatedBlogs.length > 0) {
-    if (typeof term.relatedBlogs[0] === 'string') {
-      blogLinks.push(...(term.relatedBlogs as string[]));
-    } else if (typeof term.relatedBlogs[0] === 'number') {
-      blogCards.push(...(term.relatedBlogs as number[]));
-    }
+  // const tempLinks = ["top-10-banks-in-india", "how-to-update-pan-card", "https://uat.blogs.enkash.com/blog/how-to-apply-for-a-pan-card-online"]
+  // blogLinks.push(...tempLinks)
+
+  if (term.showRelatedBlogs && term.blogWord) {
+    blogLinks.push(term.blogWord);
   }
+
   return (
     <>
       <section className={styles.detailPageSection}>
@@ -95,7 +92,7 @@ export default async function GlossaryDetail({ params }: PageProps) {
                 { name: "Home", url: "/" },
                 { name: "Glossary", url: "/glossary" },
                 { name: letter.toUpperCase(), url: `/glossary/${letter}` },
-                { name: term.keyword, url: `/glossary/${letter}/${slug}` },
+                { name: term.word, url: `/glossary/${letter}/${slug}` },
               ]}
             />
           </div>
@@ -118,7 +115,7 @@ export default async function GlossaryDetail({ params }: PageProps) {
               <DynamicHeading
                 content={[
                   {
-                    text: term.keyword,
+                    text: term.word,
                     color: "color-dark-grey",
                   },
                 ]}
@@ -127,65 +124,36 @@ export default async function GlossaryDetail({ params }: PageProps) {
               />
 
               <div className={styles.iconContainer}>
-                <a href="#" className={styles.icon}>
+                <a href="https://www.linkedin.com/company/enkashbusiness" className={styles.icon}>
                   <FaLinkedinIn />
                 </a>
 
-                <a href="#" className={styles.icon}>
+                <a href="https://www.facebook.com/EnKashBusiness" className={styles.icon}>
                   <FaFacebookF />
                 </a>
 
-                <a href="#" className={styles.icon}>
+                <a href="https://twitter.com/EnkashBusiness" className={styles.icon}>
                   <FaXTwitter />
                 </a>
               </div>
             </div>
 
-            {/* All Other Sections */}
-            {sections.map((section, index) => (
-              <section key={index} className={styles.contentSection}>
-                <DynamicHeading
-                  content={[
-                    {
-                      text: `${section.heading}`,
-                      color: "color-alternate-grey f-7",
-                    },
-                  ]}
-                  headingTag="h4"
-                  className={styles.slugSectionHeading}
-                />
-
-                <div
-                  className={styles.sectionContent}
-                  dangerouslySetInnerHTML={{ __html: section.content }}
-                />
-              </section>
-            ))}
+            <section className={styles.contentSection}>
+              <div
+                className={styles.sectionContent + " " + "ql-editor"}
+                dangerouslySetInnerHTML={{ __html: term.content }}
+              />
+            </section>
           </div>
 
-          {/* Bottom Alphabet Navigation - Matching Reference Image */}
           <div className={styles.bottomAlphabetBar}>
-            <div className={styles.alphabetScroll}>
-              {ALPHABET.map((ltr) => {
-                const hasTerms = availableLetters.includes(ltr)
-                return (
-                  <Link
-                    key={ltr}
-                    href={hasTerms ? `/glossary/${ltr.toLowerCase()}` : "#"}
-                    className={`${styles.alphabetLink} ${letter.toUpperCase() === ltr ? styles.active : ""
-                      } ${!hasTerms ? styles.disabled : ""}`}
-                  >
-                    {ltr}
-                  </Link>
-                )
-              })}
-            </div>
+            <AlphabetBar currentLetter={letter} availableLetters={availableLetters} />
           </div>
         </Container>
       </section>
 
       {/* Related Blogs Section */}
-      {(blogLinks.length > 0 || blogCards.length > 0) && (
+      {(blogLinks.length > 0) && (
         <BlogSection
           className="bg-white"
           heading={[
@@ -198,8 +166,7 @@ export default async function GlossaryDetail({ params }: PageProps) {
               color: "color-black f-4",
             },
           ]}
-          {...(blogLinks.length > 0 ? { links: blogLinks } : {})}
-          {...(blogCards.length > 0 ? { cards: blogCards } : {})}
+          links={blogLinks}
         />
       )}
     </>
