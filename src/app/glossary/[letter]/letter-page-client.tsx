@@ -1,81 +1,33 @@
 "use client"
 
 
-import React, { useState, useRef, useEffect } from "react"
+import React from "react"
 import styles from "./page.module.scss"
-import { Container, Form } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import Link from "next/link"
-import FaSearch from "../../../../public/svgs/SearchIcon.svg"
 import ChevronRight from "../../../../public/svgs/chevron-right.svg"
 import Image from "next/image"
 import GlossaryBgImage from "../../../../public/images/glossaryBgImage.webp"
-import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
-import { GlossaryTerm } from "../glossaryData"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
+import DynamicHeading from "@/src/components/dynamic-heading"
+import GlossarySearch from "@/src/components/glossary/GlossarySearch"
+import AlphabetBar from "@/src/components/glossary/AlphabetBar"
 
-const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 
 interface Props {
   letter: string
-  initialTerms: GlossaryTerm[]
+  initialTerms: any[]
 }
 
-type SearchResult = {
-  keyword: string
-  slug: string
-  sheet: string
-}
 
 const LetterPageClient = ({ letter, initialTerms }: Props) => {
-  const [search, setSearch] = useState("")
-  const [suggestions, setSuggestions] = useState<SearchResult[]>([])
-  const suggestionsRef = useRef<HTMLDivElement>(null)
-
-  const BigLetter = letter.toUpperCase()
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        suggestionsRef.current &&
-        !suggestionsRef.current.contains(event.target as Node)
-      ) {
-        setSuggestions([])
-      }
-    }
-
-    if (suggestions.length > 0) {
-      document.addEventListener("mousedown", handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [suggestions.length])
-
-  const handleSearch = async (q: string) => {
-    setSearch(q)
-
-    if (!q) {
-      setSuggestions([])
-      return
-    }
-
-    try {
-      const response = await fetch(
-        `/api/glossary/search?q=${encodeURIComponent(q)}`
-      )
-      const data = await response.json()
-      setSuggestions(data.results || [])
-    } catch (err) {
-      console.error("Search error:", err)
-      setSuggestions([])
-    }
-  }
+  const BigLetter = (letter || "").toUpperCase()
+  const activeLetter = BigLetter === "#" ? "#" : BigLetter;
 
   return (
     <section className={styles.letterPageSection}>
       <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
-
       <Container className={`pb-0 ${styles.paddingTop}`}>
         <div className="d-flex mb-3">
           <CustomBreadcrumb
@@ -83,59 +35,25 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
             items={[
               { name: "Home", url: "/" },
               { name: "Glossary", url: "/glossary" },
-              { name: `${BigLetter}`, url: `/glossary/${letter}` },
+              { name: `${activeLetter}`, url: `/glossary/${letter}` },
             ]}
           />
         </div>
-
         <DynamicHeading
           content={[
-            { text: "FinTech ", color: "color-black f-3" },
+            {
+              text: "FinTech ",
+              color: "color-black f-3",
+            },
             { text: "Glossary", color: "color-equity-blue" },
           ]}
           headingTag="h1"
           className={styles.pageTitle}
         />
-        <div className={styles.searchWrapper}>
-          <Form.Control
-            type="text"
-            placeholder="Search for a word...."
-            value={search}
-            onChange={(e) => handleSearch(e.target.value)}
-            className={styles.searchInput}
-          />
 
-          <Image src={FaSearch} alt="" className={styles.searchButton} />
+        <GlossarySearch />
 
-          {suggestions.length > 0 && (
-            <div ref={suggestionsRef} className={styles.suggestions}>
-              {suggestions.map((item, idx) => (
-                <div key={idx} className={styles.suggestionItem}>
-                  <Link
-                    href={`/glossary/${item.sheet.toLowerCase()}/${item.slug}`}
-                  >
-                    {item.keyword}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className={styles.alphabetBar}>
-          <div className={styles.alphabetScroll}>
-            {ALPHABET.map((ltr) => (
-              <Link
-                key={ltr}
-                href={`/glossary/${ltr.toLowerCase()}`}
-                className={`${styles.alphabetLink} ${letter.toUpperCase() === ltr ? styles.active : ""
-                  }`}
-              >
-                {ltr}
-              </Link>
-            ))}
-          </div>
-        </div>
+        <AlphabetBar currentLetter={activeLetter} />
 
         <div className={styles.termsGrid}>
           {initialTerms.length > 0 ? (
@@ -145,7 +63,7 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
                   href={`/glossary/${letter}/${item.slug}`}
                   className={styles.termLink}
                 >
-                  <span className={styles.title}>{item.keyword}</span>
+                  <span className={styles.title}>{item.word}</span>
                   <Image
                     src={ChevronRight}
                     alt="ChevronRight"
@@ -156,25 +74,12 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
             ))
           ) : (
             <div className={styles.noResultsCol}>
-              <p className={styles.noResults}>No glossary items found.</p>
+              <p className={styles.noResults}>No Data for This Letter</p>
             </div>
           )}
         </div>
 
-        <div className={styles.alphabetBar}>
-          <div className={styles.alphabetScroll}>
-            {ALPHABET.map((ltr) => (
-              <Link
-                key={ltr}
-                href={`/glossary/${ltr.toLowerCase()}`}
-                className={`${styles.alphabetLink} ${letter.toUpperCase() === ltr ? styles.active : ""
-                  }`}
-              >
-                {ltr}
-              </Link>
-            ))}
-          </div>
-        </div>
+        <AlphabetBar currentLetter={activeLetter} />
       </Container>
     </section>
   )

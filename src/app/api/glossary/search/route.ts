@@ -1,23 +1,26 @@
-// app/api/glossary/search/route.ts
-
 import { NextRequest, NextResponse } from "next/server"
-import { searchGlossaryTerms } from "@/src/utils/glossaryData"
+import { getGlossaryJson } from "@/src/lib/glossaryUtils";
 
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams
-    const query = searchParams.get("q") || ""
+    const query = (searchParams.get("q") || "").toLowerCase();
 
     if (!query) {
         return NextResponse.json({ results: [] })
     }
 
     try {
-        const results = await searchGlossaryTerms(query)
+        const allTerms = getGlossaryJson();
 
-        const formattedResults = results.map(term => ({
-            keyword: term.keyword,
+        // Filter results based on the query
+        const results = allTerms.filter((term: any) =>
+            term.word.toLowerCase().includes(query)
+        ).slice(0, 10);
+
+        const formattedResults = results.map((term: any) => ({
+            word: term.word,
             slug: term.slug,
-            sheet: term.sheet,
+            content: "" // Content is not available in the manual JSON
         }))
 
         return NextResponse.json({ results: formattedResults })

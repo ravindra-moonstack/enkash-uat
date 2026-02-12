@@ -4,6 +4,7 @@ import "../styles/_base.scss"
 import "../styles/_variables.scss"
 import "./globals.css"
 import "bootstrap/dist/css/bootstrap.min.css"
+import 'quill/dist/quill.snow.css';
 
 import { Inter } from "next/font/google"
 import LayoutClientWrapper from "@/src/components/layout-wrapper"
@@ -42,6 +43,10 @@ export default function RootLayout({
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
         <meta name="robots" content="index, follow" />
         <meta name="google-site-verification" content="RWOqrBamBY0cC_WQwIz55vCzZRBv97CtZYwlpUCIjY4" />

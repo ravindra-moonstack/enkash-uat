@@ -1,0 +1,118 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.searchWrapper {
+    position: sticky;
+    top: 100px;
+    z-index: 99;
+    max-width: 780px;
+    margin: 0 auto 32px;
+
+    @include for-laptops {
+        margin-bottom: 42px;
+    }
+}
+
+.searchInput {
+    width: 100%;
+    font-size: 12px;
+    line-height: 100%;
+    border: 1px solid $color-black-5;
+    border-radius: 8px;
+    height: 40px;
+    color: $color-uncultured;
+    background-color: $color-white;
+    box-shadow: 0px 10px 44px 0px #00000014;
+    padding-right: 35px;
+
+    &:focus {
+        outline: none;
+        border-color: $color-equity-blue;
+        box-shadow: 0 0 0 3px rgba(28, 90, 244, 0.1);
+    }
+
+    &::placeholder {
+        color: $color-slate-grey;
+    }
+}
+
+.searchButton {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $color-slate-grey;
+    width: 27px;
+    height: 22px;
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: $color-white;
+    border: 1px solid $color-grey-100;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.suggestionGroup {
+    margin-bottom: 16px;
+    text-align: left;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.suggestionLetter {
+    font-size: 11px;
+    font-weight: 700;
+    color: $color-equity-blue;
+    padding: 4px 12px;
+    background: rgba($color-equity-blue, 0.05);
+    border-radius: 4px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.suggestionItem {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #f8fafc;
+    }
+
+    a {
+        color: $color-main-black;
+        text-decoration: none;
+        display: block;
+    }
+}
+
+.suggestionKeyword {
+    font-weight: 600;
+    font-size: 14px;
+    color: $color-main-black;
+    margin-bottom: 2px;
+}
+
+.suggestionDescription {
+    font-size: 12px;
+    color: $color-slate-grey;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
