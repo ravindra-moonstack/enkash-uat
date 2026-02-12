@@ -220,6 +220,10 @@ const url: {
   },
 
   {
+    source: "/vouchers/food-and-beverages/zomato-e-gift-card",
+    destination: "/vouchers/zomato",
+  },
+  {
     source: "/vouchers/food-and-beverages/swiggy-e-gift-card",
     destination: "/vouchers/swiggy",
   },
