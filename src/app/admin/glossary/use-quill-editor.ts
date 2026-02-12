@@ -11,13 +11,17 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
     const quillInstance = useRef<any>(null);
     const [showHtmlView, setShowHtmlView] = useState(false);
     const [htmlContent, setHtmlContent] = useState("");
+    
+    // Alt Text Modal State
+    const [showAltModal, setShowAltModal] = useState(false);
+    const [pendingImage, setPendingImage] = useState<File | null>(null);
 
     const toggleHtmlView = () => {
         if (!showHtmlView) {
             setHtmlContent(content);
         } else {
             if (quillInstance.current) {
-                quillInstance.current.root.innerHTML = htmlContent;
+                quillInstance.current.root.innerHTML = htmlContent; 
                 setContent(htmlContent);
             }
         }
@@ -36,18 +40,116 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
         setShowHtmlView(false);
     };
 
+    const handleAltCancel = () => {
+        setShowAltModal(false);
+        setPendingImage(null);
+    };
+
+    const handleAltSubmit = async (altText: string) => {
+        setShowAltModal(false);
+        if (!pendingImage || !quillInstance.current) return;
+
+        const file = pendingImage;
+        setPendingImage(null);
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const quill = quillInstance.current;
+            // Get selection or default to end
+            const range = quill.getSelection(true) || { index: quill.getLength() };
+            
+            const res = await fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (res.ok) {
+                console.log("image uploaded");
+                const data = await res.json();
+                quill.insertEmbed(range.index, 'image', data.url);
+                
+                setTimeout(() => {
+                    const img = quill.root.querySelector(`img[src="${data.url}"]`);
+                    if (img) {
+                        img.setAttribute('alt', altText);
+                    }
+                }, 0);
+                
+                quill.setSelection(range.index + 1);
+            } else {
+                const errorData = await res.json();
+                console.error('Image upload failed:', errorData.error, errorData.details);
+                alert(`Image upload failed: ${errorData.error}\nCheck console for details.`);
+            }
+        } catch (e) {
+            console.error('Error uploading image:', e);
+            alert('Error uploading image');
+        }
+    };
+
     useEffect(() => {
         if (viewMode === "form" && typeof window !== "undefined" && editorRef.current && !quillInstance.current) {
-            import("quill").then((Quill) => {
-                const QuillNamespace = Quill.default || Quill;
+            import("quill").then(async (QuillModule) => {
+                const QuillNamespace = QuillModule.default || QuillModule;
+                 
+                //@ts-ignore
+                window.Quill = QuillNamespace;
+
+                // Load quill-image-resize-module (Compatible with Quill 1.x)
+                try {
+                    const mod = await import('quill-image-resize-module');
+                    const ImageResize = mod.default || mod;
+                    
+                    if (QuillNamespace && QuillNamespace.register) {
+                        QuillNamespace.register('modules/imageResize', ImageResize);
+                        console.log("ImageResize module registered successfully (Quill 1.x)");
+                    } else {
+                        console.error("QuillNamespace.register is not available");
+                    }
+                } catch (error) {
+                    console.error("Failed to load image resize module", error);
+                }
 
                 const showHtmlHandler = function (this: any) {
                     toggleHtmlView();
                 };
 
+                const imageHandler = function (this: any) {
+                    const input = document.createElement('input');
+                    input.setAttribute('type', 'file');
+                    input.setAttribute('accept', 'image/webp, image/svg+xml');
+                    input.click();
+
+                     input.onchange = () => {
+                         const file = input.files ? input.files[0] : null;
+                         if (file) {
+                              const fileType = file.type;
+                              const validTypes = ['image/webp', 'image/svg+xml'];
+                              
+                              if (!validTypes.includes(fileType)) {
+                                  alert('Only .webp and .svg images are allowed.');
+                                  return;
+                              }
+                              
+                              // Instead of direct upload, trigger Modal
+                              console.log("File selected, triggering Alt Text Modal:", file.name);
+                              setPendingImage(file);
+                              setShowAltModal(true);
+                         }
+                     };
+                };
+
+                const editorElement = editorRef.current;
+                if (!editorElement) return;
+
                 //@ts-ignore
-                const quill = new QuillNamespace(editorRef.current, {
+                const quill = new QuillNamespace(editorElement, {
                     modules: {
+                        imageResize: {
+                            displaySize: true
+                        },
                         toolbar: {
                             container: [
                                 [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -65,6 +167,7 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                             ],
                             handlers: {
                                 showHtml: showHtmlHandler,
+                                image: imageHandler,
                             },
                         },
                     },
@@ -101,6 +204,10 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
         setHtmlContent,
         toggleHtmlView,
         handleHtmlChange,
-        applyHtmlChanges
+        applyHtmlChanges, 
+        showAltModal,
+        pendingImage,
+        handleAltSubmit,
+        handleAltCancel
     };
 };

@@ -53,7 +53,11 @@ const GlossaryAdmin = () => {
         handleHtmlChange,
         applyHtmlChanges,
         setHtmlContent,
-        setShowHtmlView
+        setShowHtmlView,
+        showAltModal,
+        pendingImage,
+        handleAltSubmit,
+        handleAltCancel
     } = useQuillEditor({ content, setContent, viewMode })
 
     const fetchItems = useCallback(async (page: number = 1) => {
@@ -119,6 +123,9 @@ const GlossaryAdmin = () => {
         if (!finalWord) errors.word = "Word is required"
         if (!finalSlug) errors.slug = "Slug cannot be empty after formatting."
         if (!content || content.trim() === "" || content === "<p><br></p>") errors.content = "Content is required"
+        if (!finalMetaTitle) errors.metaTitle = "Meta Title is required"
+        if (!finalMetaDescription) errors.metaDescription = "Meta Description is required"
+        if (showRelatedBlogs && !finalBlogWord) errors.blogWord = "Blog Related Word is required"
 
         if (Object.keys(errors).length > 0) {
             setFieldErrors(errors)
@@ -288,6 +295,10 @@ const GlossaryAdmin = () => {
                     metaDescription={metaDescription}
                     setMetaDescription={setMetaDescription}
                     isSubmitting={isSubmitting}
+                    showAltModal={showAltModal}
+                    pendingImage={pendingImage}
+                    handleAltSubmit={handleAltSubmit}
+                    handleAltCancel={handleAltCancel}
                 />
             )}
         </div>

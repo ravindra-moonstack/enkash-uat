@@ -4,7 +4,7 @@ import "../styles/_base.scss"
 import "../styles/_variables.scss"
 import "./globals.css"
 import "bootstrap/dist/css/bootstrap.min.css"
-import 'react-quill-new/dist/quill.snow.css';
+import 'quill/dist/quill.snow.css';
 
 import { Inter } from "next/font/google"
 import LayoutClientWrapper from "@/src/components/layout-wrapper"
