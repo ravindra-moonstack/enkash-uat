@@ -96,7 +96,7 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
             import("quill").then(async (QuillModule) => {
                 const QuillNamespace = QuillModule.default || QuillModule;
                  
-                //@ts-ignore
+                //@ts-expect-error
                 window.Quill = QuillNamespace;
 
                 // Load quill-image-resize-module (Compatible with Quill 1.x)
@@ -150,7 +150,6 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                 const editorElement = editorRef.current;
                 if (!editorElement) return;
 
-                //@ts-ignore
                 const quill = new QuillNamespace(editorElement, {
                     modules: {
                         imageResize: {

@@ -1,7 +1,7 @@
 import React from "react"
 import LetterPageClient from "./letter-page-client"
 import BlogSection from "@/src/components/sections/blog-section"
-import { notFound } from "next/navigation"
+
 import { getApiBaseUrl } from "@/src/utils/api-helpers"
 
 interface PageProps {
