@@ -140,17 +140,6 @@ export default async function GlossaryDetail({ params }: PageProps) {
             </div>
 
             <section className={styles.contentSection}>
-              <DynamicHeading
-                content={[
-                  {
-                    text: `Definition`,
-                    color: "color-alternate-grey f-7",
-                  },
-                ]}
-                headingTag="h4"
-                className={styles.slugSectionHeading}
-              />
-
               <div
                 className={styles.sectionContent + " " + "ql-editor"}
                 dangerouslySetInnerHTML={{ __html: term.content }}
