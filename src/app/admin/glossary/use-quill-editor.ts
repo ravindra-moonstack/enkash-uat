@@ -96,7 +96,7 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
             import("quill").then(async (QuillModule) => {
                 const QuillNamespace = QuillModule.default || QuillModule;
                  
-                //@ts-expect-error
+                //@ts-expect-error Quill is not typed directly on window
                 window.Quill = QuillNamespace;
 
                 // Load quill-image-resize-module (Compatible with Quill 1.x)
