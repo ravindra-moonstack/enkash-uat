@@ -109,7 +109,7 @@ const GlossarySearch = () => {
                                             href={`/glossary/${(letterKey || "").toLowerCase()}/${item.slug || ""}`}
                                         >
                                             <div className={styles.suggestionKeyword}>{item.word || ""}</div>
-                                            <div className={styles.suggestionDescription}>{item.content || ""}</div>
+
                                         </Link>
                                     </div>
                                 ))}
