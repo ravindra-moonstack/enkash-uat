@@ -304,74 +304,7 @@
   }
 }
 
-/* Content Sections - Clean Layout */
-.contentSection {
-  margin-bottom: 20px;
 
-  @include for-laptops {
-    margin-bottom: $spacing-3xl;
-  }
-
-  .sectionHeading {
-    font-size: 18px;
-    font-weight: 700;
-    color: $color-main-black;
-    margin-bottom: $spacing-md;
-    padding-bottom: $spacing-sm;
-    border-bottom: 2px solid $color-black-10;
-
-    @include for-laptops {
-      font-size: 22px;
-      margin-bottom: $spacing-lg;
-      padding-bottom: $spacing-md;
-    }
-  }
-}
-
-.sectionContent {
-  font-size: 15px;
-  line-height: 1.7;
-  color: $color-main-grey;
-
-  p {
-    margin-bottom: $spacing-md;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  // ul,
-  // ol {
-  //   margin: $spacing-md 0;
-  //   padding-left: $spacing-xl;
-
-  //   li {
-  //     margin-bottom: $spacing-sm;
-  //   }
-  // }
-
-  strong {
-    color: $color-main-black;
-    font-weight: 600;
-  }
-
-  a {
-    color: $color-equity-blue;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s ease;
-
-    &:hover {
-      border-bottom-color: $color-equity-blue;
-    }
-  }
-
-  @include for-laptops {
-    font-size: 16px;
-    line-height: 1.8;
-  }
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -390,7 +323,4 @@
     padding: $spacing-lg;
   }
 
-  .contentSection {
-    padding: 18px;
-  }
 }

@@ -4,21 +4,36 @@ import { addToGlossaryJson } from '@/src/lib/glossaryUtils';
  
 export async function GET(request: Request) {
   try {
-
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get('page') || '1');
     const limit = parseInt(searchParams.get('limit') || '10');
+    const search = searchParams.get('search') || '';
+    const letter = searchParams.get('letter') || '';
     const offset = (page - 1) * limit;
 
+    let whereClause = '';
+    const queryParams: any[] = [];
+
+    if (search) {
+      whereClause = 'WHERE word LIKE ?';
+      queryParams.push(`%${search}%`);
+    } else if (letter) {
+      if (letter === '#') {
+        whereClause = "WHERE word REGEXP '^[^a-zA-Z]'";
+      } else if (letter !== 'ALL') {
+        whereClause = 'WHERE word LIKE ?';
+        queryParams.push(`${letter}%`);
+      }
+    }
+
     // Get total count for pagination
-    const [countRows]: any = await pool.execute('SELECT COUNT(*) as total FROM glossary');
+    const countQuery = `SELECT COUNT(*) as total FROM glossary ${whereClause}`;
+    const [countRows]: any = await pool.query(countQuery, queryParams);
     const totalItems = countRows[0].total;
     const totalPages = Math.ceil(totalItems / limit);
 
-    const [rows]: any = await pool.query(
-      'SELECT id, word, slug, showRelatedBlogs, blogWord, meta_title, meta_description FROM glossary ORDER BY word ASC LIMIT ? OFFSET ?',
-      [limit, offset]
-    );
+    const selectQuery = `SELECT id, word, slug, showRelatedBlogs, blogWord, meta_title, meta_description, feature_image FROM glossary ${whereClause} ORDER BY word ASC LIMIT ? OFFSET ?`;
+    const [rows]: any = await pool.query(selectQuery, [...queryParams, limit, offset]);
 
     return NextResponse.json({
       success: true,
@@ -43,7 +58,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description } = body;
+    const { word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description, feature_image, feature_image_alt } = body;
 
     if (!word || !slug || !content) {
       return NextResponse.json(
@@ -66,8 +81,8 @@ export async function POST(request: Request) {
     }
 
     const [result]: any = await pool.execute(
-      'INSERT INTO glossary (word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null]
+      'INSERT INTO glossary (word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description, feature_image, feature_image_alt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, feature_image || null, feature_image_alt || null]
     );
 
     // Update the local JSON file

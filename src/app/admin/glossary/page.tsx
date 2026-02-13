@@ -16,6 +16,8 @@ interface GlossaryItem {
     blogWord: string
     meta_title?: string
     meta_description?: string
+    feature_image?: string
+    feature_image_alt?: string
 }
 
 type ViewMode = "list" | "form"
@@ -44,6 +46,10 @@ const GlossaryAdmin = () => {
     const [metaTitle, setMetaTitle] = useState("")
     const [metaDescription, setMetaDescription] = useState("")
     const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
+    const [searchTerm, setSearchTerm] = useState("")
+    const [featureImage, setFeatureImage] = useState("")
+    const [featureImageAlt, setFeatureImageAlt] = useState("")
+    const [hasManuallyEditedBlogWord, setHasManuallyEditedBlogWord] = useState(false)
 
     const {
         editorRef,
@@ -60,10 +66,10 @@ const GlossaryAdmin = () => {
         handleAltCancel
     } = useQuillEditor({ content, setContent, viewMode })
 
-    const fetchItems = useCallback(async (page: number = 1) => {
+    const fetchItems = useCallback(async (page: number = 1, search: string = "") => {
         setIsLoading(true)
         try {
-            const response = await fetch(`/api/admin/glossary?page=${page}&limit=${itemsPerPage}`)
+            const response = await fetch(`/api/admin/glossary?page=${page}&limit=${itemsPerPage}&search=${search}`)
             if (response.status === 401) {
                 window.location.href = "/admin"
                 return
@@ -81,13 +87,59 @@ const GlossaryAdmin = () => {
         }
     }, [itemsPerPage])
 
-    // Fetch items on mount and when page changes
+    // Debounce search and handle fetch
     useEffect(() => {
-        fetchItems(currentPage)
-    }, [currentPage, fetchItems])
+        const handler = setTimeout(() => {
+            fetchItems(currentPage, searchTerm)
+        }, 300)
+
+        return () => clearTimeout(handler)
+    }, [currentPage, searchTerm, fetchItems])
+
+    const handleSearchChange = (term: string) => {
+        setSearchTerm(term)
+        if (currentPage !== 1) setCurrentPage(1)
+    }
 
     const handleWordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setWord(e.target.value)
+        if (showRelatedBlogs && !hasManuallyEditedBlogWord) {
+            setBlogWord(e.target.value)
+        }
+    }
+
+    // Effect to handle blogWord auto-fill when checkbox is toggled
+    useEffect(() => {
+        if (showRelatedBlogs && !blogWord && !hasManuallyEditedBlogWord) {
+            setBlogWord(word)
+        }
+    }, [showRelatedBlogs, word, blogWord, hasManuallyEditedBlogWord])
+
+    const handleBlogWordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setBlogWord(e.target.value)
+        setHasManuallyEditedBlogWord(true)
+    }
+
+    const handleFeatureImageUpload = async (file: File) => {
+        const formData = new FormData()
+        formData.append('file', file)
+
+        try {
+            const res = await fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            })
+
+            if (res.ok) {
+                const data = await res.json()
+                setFeatureImage(data.url)
+            } else {
+                alert("Image upload failed")
+            }
+        } catch (e) {
+            console.error("Error uploading image:", e)
+            alert("Error uploading image")
+        }
     }
 
     useEffect(() => {
@@ -141,6 +193,8 @@ const GlossaryAdmin = () => {
             blogWord: showRelatedBlogs ? finalBlogWord : "",
             meta_title: finalMetaTitle,
             meta_description: finalMetaDescription,
+            feature_image: featureImage,
+            feature_image_alt: featureImageAlt
         }
 
         try {
@@ -208,6 +262,10 @@ const GlossaryAdmin = () => {
                 setBlogWord(fullItem.blogWord || "")
                 setMetaTitle(fullItem.meta_title || "")
                 setMetaDescription(fullItem.meta_description || "")
+                setMetaDescription(fullItem.meta_description || "")
+                setFeatureImage(fullItem.feature_image || "")
+                setFeatureImageAlt(fullItem.feature_image_alt || "")
+                setHasManuallyEditedBlogWord(!!fullItem.blogWord) // If it has a value, assume manually edited or previously saved
                 setViewMode("form")
             } else {
                 setFieldErrors({ general: "Failed to load item details" })
@@ -264,6 +322,9 @@ const GlossaryAdmin = () => {
         setBlogWord("")
         setMetaTitle("")
         setMetaDescription("")
+        setFeatureImage("")
+        setFeatureImageAlt("")
+        setHasManuallyEditedBlogWord(false)
         setFieldErrors({})
         setEditingItem(null)
 
@@ -291,6 +352,8 @@ const GlossaryAdmin = () => {
                     handleEdit={handleEdit}
                     handleDelete={handleDelete}
                     setCurrentPage={setCurrentPage}
+                    searchTerm={searchTerm}
+                    setSearchTerm={(term) => handleSearchChange(term)}
                 />
             ) : (
                 <GlossaryFormView
@@ -310,16 +373,21 @@ const GlossaryAdmin = () => {
                     showRelatedBlogs={showRelatedBlogs}
                     setShowRelatedBlogs={setShowRelatedBlogs}
                     blogWord={blogWord}
-                    setBlogWord={setBlogWord}
                     metaTitle={metaTitle}
                     setMetaTitle={setMetaTitle}
                     metaDescription={metaDescription}
                     setMetaDescription={setMetaDescription}
+                    featureImage={featureImage}
+                    setFeatureImage={setFeatureImage}
+                    handleFeatureImageUpload={handleFeatureImageUpload}
+                    handleBlogWordChange={handleBlogWordChange}
                     isSubmitting={isSubmitting}
                     showAltModal={showAltModal}
                     pendingImage={pendingImage}
                     handleAltSubmit={handleAltSubmit}
                     handleAltCancel={handleAltCancel}
+                    featureImageAlt={featureImageAlt}
+                    setFeatureImageAlt={setFeatureImageAlt}
                 />
             )}
         </div>

@@ -1,7 +1,32 @@
 [
-    {
-        "id": 1,
-        "word": "Business Expenses",
-        "slug": "business-expenses"
-    }
+  {
+    "id": 6,
+    "word": "2fa",
+    "slug": "2faaa"
+  },
+  {
+    "id": 7,
+    "word": "aaa",
+    "slug": "aaa"
+  },
+  {
+    "id": 2,
+    "word": "Asset",
+    "slug": "asset"
+  },
+  {
+    "id": 3,
+    "word": "Asset Management",
+    "slug": "asset-management"
+  },
+  {
+    "id": 4,
+    "word": "Asset Transfer",
+    "slug": "asset-transfer"
+  },
+  {
+    "id": 1,
+    "word": "Business Expenses",
+    "slug": "business-expenses"
+  }
 ]

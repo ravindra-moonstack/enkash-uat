@@ -12,8 +12,8 @@ import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import BlogSection from "@/src/components/sections/blog-section"
 import styles from "./page.module.scss"
-import GlossaryClient from "./slug-page-client"
 import AlphabetBar from "@/src/components/glossary/AlphabetBar"
+import GlossarySearch from "@/src/components/glossary/GlossarySearch"
 
 
 interface PageProps {
@@ -59,6 +59,17 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: term.meta_title || `${term.word} | FinTech Glossary`,
     description: term.meta_description || stripHtml(term.content).substring(0, 160),
+    openGraph: {
+      title: term.meta_title || `${term.word} | FinTech Glossary`,
+      description: term.meta_description || stripHtml(term.content).substring(0, 160),
+      images: term.feature_image ? [term.feature_image] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: term.meta_title || `${term.word} | FinTech Glossary`,
+      description: term.meta_description || stripHtml(term.content).substring(0, 160),
+      images: term.feature_image ? [term.feature_image] : [],
+    },
   }
 }
 
@@ -107,16 +118,17 @@ export default async function GlossaryDetail({ params }: PageProps) {
             headingTag="h1"
             className={styles.pageTitle}
           />
-
-          <GlossaryClient letter={letter} availableLetters={availableLetters} />
-
+          <GlossarySearch />
+          <div className={styles.topAlphabetBar}>
+            <AlphabetBar currentLetter={letter} availableLetters={availableLetters} />
+          </div>
           <div className={styles.sectionWrapper}>
             <div className={styles.titleSection}>
               <DynamicHeading
                 content={[
                   {
                     text: term.word,
-                    color: "color-dark-grey",
+                    color: "color-dark-grey f-5",
                   },
                 ]}
                 headingTag="h2"
@@ -138,12 +150,10 @@ export default async function GlossaryDetail({ params }: PageProps) {
               </div>
             </div>
 
-            <section className={styles.contentSection}>
-              <div
-                className={styles.sectionContent + " " + "ql-editor"}
-                dangerouslySetInnerHTML={{ __html: term.content }}
-              />
-            </section>
+            <div
+              className={styles.sectionContent + " " + "ql-editor"}
+              dangerouslySetInnerHTML={{ __html: term.content }}
+            />
           </div>
 
           <div className={styles.bottomAlphabetBar}>

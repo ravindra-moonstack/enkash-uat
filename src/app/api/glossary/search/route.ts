@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getGlossaryJson } from "@/src/lib/glossaryUtils";
+import pool from "@/src/lib/dbConnect";
+// import { getGlossaryJson } from "@/src/lib/glossaryUtils";
 
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams
@@ -10,18 +11,30 @@ export async function GET(request: NextRequest) {
     }
 
     try {
-        const allTerms = getGlossaryJson();
+        // Database filtering
+        const [rows]: any = await pool.execute(
+            "SELECT word, slug FROM glossary WHERE word LIKE ? LIMIT 10",
+            [`%${query}%`]
+        )
 
-        // Filter results based on the query
-        const results = allTerms.filter((term: any) =>
-            term.word.toLowerCase().includes(query)
-        ).slice(0, 10);
-
-        const formattedResults = results.map((term: any) => ({
+        const formattedResults = rows.map((term: any) => ({
             word: term.word,
             slug: term.slug,
-            content: "" // Content is not available in the manual JSON
+            content: "" 
         }))
+
+        // const allTerms = getGlossaryJson();
+
+        // // Filter results based on the query
+        // const results = allTerms.filter((term: any) =>
+        //     term.word.toLowerCase().includes(query)
+        // ).slice(0, 10);
+
+        // const formattedResults = results.map((term: any) => ({
+        //     word: term.word,
+        //     slug: term.slug,
+        //     content: "" // Content is not available in the manual JSON
+        // }))
 
         return NextResponse.json({ results: formattedResults })
     } catch (error) {

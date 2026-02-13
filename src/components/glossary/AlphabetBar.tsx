@@ -7,7 +7,7 @@ import styles from "./AlphabetBar.module.scss"
 const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
 interface AlphabetBarProps {
-    currentLetter: string
+    currentLetter?: string
     availableLetters?: string[]
 }
 
@@ -24,7 +24,7 @@ const AlphabetBar = ({ currentLetter, availableLetters }: AlphabetBarProps) => {
                     const isDisabled = false
 
                     if (safeLtr === "#") {
-                        href = "/glossary"
+                        href = "/glossary/%23"
                     } else if (availableLetters && !availableLetters.includes(safeLtr)) {
                         // href = "#"
                         // isDisabled = true

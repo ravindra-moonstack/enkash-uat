@@ -34,7 +34,7 @@ export async function PUT(
   try {
     const { id } = await params;
     const body = await request.json();
-    const { word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description } = body;
+    const { word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description, feature_image, feature_image_alt } = body;
 
     if (!word || !slug || !content) {
       return NextResponse.json(
@@ -60,8 +60,8 @@ export async function PUT(
     const currentItem = currentItemRows[0];
 
     await pool.execute(
-      'UPDATE glossary SET word = ?, slug = ?, content = ?, showRelatedBlogs = ?, blogWord = ?, meta_title = ?, meta_description = ? WHERE id = ?',
-      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, id]
+      'UPDATE glossary SET word = ?, slug = ?, content = ?, showRelatedBlogs = ?, blogWord = ?, meta_title = ?, meta_description = ?, feature_image = ?, feature_image_alt = ? WHERE id = ?',
+      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, feature_image || null, feature_image_alt || null, id]
     );
 
     // Update the local JSON file only if critical fields changed

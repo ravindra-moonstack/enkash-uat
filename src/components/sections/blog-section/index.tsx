@@ -88,7 +88,6 @@ const BlogSection = async ({
         <div className={`${styles.title} text-center pb-4 pb-md-5`}>
           <DynamicHeading content={heading} headingTag="h2" className="f-6" />
         </div>
-
         <div className="row g-3 pb-4">
           {posts.map((post) => (
             <div className="col-12 col-md-4 d-flex" key={post.ID}>
@@ -105,4 +104,4 @@ const BlogSection = async ({
   )
 }
 
-export default BlogSection
+export default BlogSection;
