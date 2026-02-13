@@ -1,6 +1,5 @@
 import React from "react"
 import LetterPageClient from "./letter-page-client"
-import BlogSection from "@/src/components/sections/blog-section"
 
 import { getApiBaseUrl } from "@/src/utils/api-helpers"
 
@@ -38,20 +37,6 @@ export default async function LetterPage({ params }: PageProps) {
   return (
     <>
       <LetterPageClient letter={letter} initialTerms={terms} />
-      <BlogSection
-        className="bg-white"
-        heading={[
-          {
-            title: "Related  ",
-            color: "color-black ",
-          },
-          {
-            title: " Resources",
-            color: "color-black f-4",
-          },
-        ]}
-        links={[letter]}
-      />
     </>
   )
 }
