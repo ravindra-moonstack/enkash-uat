@@ -22,6 +22,8 @@ interface GlossaryListViewProps {
     handleEdit: (item: GlossaryItem) => void
     handleDelete: (id: number) => void
     setCurrentPage: (page: number) => void
+    searchTerm: string
+    setSearchTerm: (term: string) => void
 }
 
 const GlossaryListView = ({
@@ -35,6 +37,8 @@ const GlossaryListView = ({
     handleEdit,
     handleDelete,
     setCurrentPage,
+    searchTerm,
+    setSearchTerm,
 }: GlossaryListViewProps) => {
     return (
         <div className={styles.contentWrapper}>
@@ -42,6 +46,16 @@ const GlossaryListView = ({
                 <div>
                     <h1 className={styles.title}>Glossary Items</h1>
                     <p className={styles.subtitle}>Manage your website glossary terms</p>
+                </div>
+                <div className={styles.searchContainer}>
+                    <i className={`bi bi-search ${styles.searchIcon}`}></i>
+                    <input
+                        type="text"
+                        placeholder="Search items..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className={styles.searchInput}
+                    />
                 </div>
                 <CommanButton title="Add New Item" theme="blue" url={handleAddNew} />
             </div>

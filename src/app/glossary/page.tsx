@@ -4,12 +4,12 @@ import Link from "next/link"
 import Image from "next/image"
 import GlossaryBgImage from "../../../public/images/glossaryBgImage.webp"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
-import GlossaryHomeClient from "./glossary-home-client"
 import styles from "./page.module.scss"
 import { HARDCODED_GLOSSARY_DATA } from "./data"
 import BlogSection from "@/src/components/sections/blog-section"
-
-const ALPHABET = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+import GlossarySearch from "@/src/components/glossary/GlossarySearch"
+import AlphabetBar from "@/src/components/glossary/AlphabetBar"
+import { getApiBaseUrl } from "@/src/utils/api-helpers"
 
 
 export const metadata = {
@@ -17,8 +17,19 @@ export const metadata = {
   description:
     "Explore our comprehensive FinTech glossary with definitions, business context, and explanations of financial technology terms.",
 }
-
+async function getLetters() {
+  try {
+    const baseUrl = getApiBaseUrl()
+    const res = await fetch(`${baseUrl}/api/glossary/letters`, { next: { revalidate: 3600 } })
+    if (!res.ok) return []
+    return res.json()
+  } catch (error) {
+    console.error("Error fetching letters:", error)
+    return []
+  }
+}
 export default async function GlossaryPage() {
+  const availableLetters = await getLetters()
   return (<>
     <section className={styles.glossaryHomeSection}>
       <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
@@ -45,21 +56,8 @@ export default async function GlossaryPage() {
           className={styles.pageTitle}
         />
 
-        <GlossaryHomeClient />
-
-        <div className={styles.alphabetBar}>
-          <div className={styles.alphabetScroll}>
-            {ALPHABET.map((ltr) => (
-              <Link
-                key={ltr}
-                href={`/glossary/${ltr.toLowerCase()}`}
-                className={styles.alphabetLink}
-              >
-                {ltr}
-              </Link>
-            ))}
-          </div>
-        </div>
+        <GlossarySearch />
+        <AlphabetBar availableLetters={availableLetters} />
 
         <div className={styles.termsContainer}>
           {HARDCODED_GLOSSARY_DATA.map((section, idx) => (
@@ -92,20 +90,7 @@ export default async function GlossaryPage() {
           ))}
         </div>
 
-        <div className={styles.alphabetBar}>
-          <div className={styles.alphabetScroll}>
-            {ALPHABET.map((ltr) => (
-              <Link
-                key={ltr}
-                href={`/glossary/${ltr.toLowerCase()}`}
-                className={styles.alphabetLink}
-              >
-                {ltr}
-              </Link>
-            ))}
-          </div>
-        </div>
-
+        <AlphabetBar availableLetters={availableLetters} />
       </Container>
     </section>
     <BlogSection

@@ -18,8 +18,12 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
 
     const toggleHtmlView = () => {
         if (!showHtmlView) {
-            setHtmlContent(content);
+            // Switch to HTML View
+            if (quillInstance.current) {
+                setHtmlContent(quillInstance.current.root.innerHTML);
+            }
         } else {
+            // Switch back to Visual View
             if (quillInstance.current) {
                 quillInstance.current.root.innerHTML = htmlContent; 
                 setContent(htmlContent);
@@ -115,7 +119,10 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                 }
 
                 const showHtmlHandler = function (this: any) {
-                    toggleHtmlView();
+                    // Switch to HTML view
+                    const html = quill.root.innerHTML;
+                    setHtmlContent(html);
+                    setShowHtmlView(true);
                 };
 
                 const imageHandler = function (this: any) {

@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 import styles from "./blog-card.module.scss"
 import DynamicHeading from "../dynamic-heading"
-import { CommanButton } from ".."
+import CommanButton from "../buttons"
 
 export interface CardProps {
   titleHtml?: ReactNode

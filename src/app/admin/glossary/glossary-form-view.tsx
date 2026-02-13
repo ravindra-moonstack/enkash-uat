@@ -19,7 +19,12 @@ interface GlossaryFormViewProps {
     showRelatedBlogs: boolean
     setShowRelatedBlogs: (show: boolean) => void
     blogWord: string
-    setBlogWord: (word: string) => void
+    handleBlogWordChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    featureImage: string
+    setFeatureImage: (url: string) => void
+    featureImageAlt: string
+    setFeatureImageAlt: (alt: string) => void
+    handleFeatureImageUpload: (file: File) => Promise<void>
     isSubmitting: boolean
     metaTitle: string
     setMetaTitle: (title: string) => void
@@ -48,7 +53,12 @@ const GlossaryFormView = ({
     showRelatedBlogs,
     setShowRelatedBlogs,
     blogWord,
-    setBlogWord,
+    handleBlogWordChange,
+    featureImage,
+    setFeatureImage,
+    featureImageAlt,
+    setFeatureImageAlt,
+    handleFeatureImageUpload,
     isSubmitting,
     metaTitle,
     setMetaTitle,
@@ -142,34 +152,101 @@ const GlossaryFormView = ({
                 </div>
 
                 <div className={styles.formGroup}>
+                    <label className={styles.label}>Feature Image</label>
+                    <div className={styles.imageUploadWrapper}>
+                        {featureImage && (
+                            <div className={styles.imagePreviewContainer}>
+                                <img src={featureImage} alt="Feature" />
+                                <button
+                                    type="button"
+                                    onClick={() => setFeatureImage("")}
+                                    style={{
+                                        position: 'absolute',
+                                        top: '4px',
+                                        right: '4px',
+                                        background: 'rgba(255, 0, 0, 0.8)',
+                                        color: 'white',
+                                        border: 'none',
+                                        borderRadius: '50%',
+                                        width: '24px',
+                                        height: '24px',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}
+                                    title="Remove Image"
+                                >
+                                    &times;
+                                </button>
+                            </div>
+                        )}
+                        <div className={styles.uploadControls}>
+                            <input
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => {
+                                    if (e.target.files?.[0]) {
+                                        handleFeatureImageUpload(e.target.files[0])
+                                    }
+                                }}
+                                className={styles.fileInput}
+                            />
+                            <p className={styles.helperText}>Recommended size: 1200x630px</p>
+                        </div>
+                    </div>
+                </div>
+
+                {featureImage && (
+                    <div className={styles.formGroup}>
+                        <label className={styles.label} htmlFor="featureImageAlt">
+                            Feature Image Alt Text
+                        </label>
+                        <input
+                            id="featureImageAlt"
+                            type="text"
+                            className={styles.input}
+                            placeholder="Describe the feature image for SEO..."
+                            value={featureImageAlt}
+                            onChange={(e) => setFeatureImageAlt(e.target.value)}
+                        />
+                    </div>
+                )}
+
+                <div className={styles.formGroup}>
                     <label className={styles.label} htmlFor="content">
                         Definition/Content <span className={styles.required}>*</span>
                     </label>
 
-                    {!showHtmlView ? (
-                        <div className={`${styles.editorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}>
-                            <div ref={editorRef} className={styles.quillEditor} />
+                    <div
+                        className={`${styles.editorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}
+                        style={{ display: showHtmlView ? 'none' : 'block' }}
+                    >
+                        <div ref={editorRef} className={styles.quillEditor} />
+                    </div>
+
+                    <div
+                        className={`${styles.htmlEditorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}
+                        style={{ display: showHtmlView ? 'block' : 'none' }}
+                    >
+                        <div className={styles.htmlEditorHeader}>
+                            <span className={styles.htmlEditorTitle}>HTML Editor</span>
+                            <button
+                                type="button"
+                                onClick={applyHtmlChanges}
+                                className={styles.applyHtmlButton}
+                            >
+                                Apply Changes
+                            </button>
                         </div>
-                    ) : (
-                        <div className={`${styles.htmlEditorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}>
-                            <div className={styles.htmlEditorHeader}>
-                                <span className={styles.htmlEditorTitle}>HTML Editor</span>
-                                <button
-                                    type="button"
-                                    onClick={applyHtmlChanges}
-                                    className={styles.applyHtmlButton}
-                                >
-                                    Apply Changes
-                                </button>
-                            </div>
-                            <textarea
-                                className={styles.htmlEditor}
-                                value={htmlContent}
-                                onChange={handleHtmlChange}
-                                placeholder="Edit HTML here..."
-                            />
-                        </div>
-                    )}
+                        <textarea
+                            className={styles.htmlEditor}
+                            value={htmlContent}
+                            onChange={handleHtmlChange}
+                            placeholder="Edit HTML here..."
+                        />
+                    </div>
+
                     {fieldErrors.content && <div className={styles.errorText}>{fieldErrors.content}</div>}
                 </div>
 
@@ -187,25 +264,27 @@ const GlossaryFormView = ({
                     </label>
                 </div>
 
-                {showRelatedBlogs && (
-                    <div className={styles.blogLinksSection}>
-                        <h3 className={styles.sectionTitle}>Related Blog</h3>
-                        <div className={styles.formGroup}>
-                            <label className={styles.label} htmlFor="blogWord">
-                                Blog Related Word <span className={styles.required}>*</span>
-                            </label>
-                            <input
-                                id="blogWord"
-                                type="text"
-                                className={`${styles.input} ${fieldErrors.blogWord ? styles.inputError : ""}`}
-                                placeholder="Enter one related blog word"
-                                value={blogWord}
-                                onChange={(e) => setBlogWord(e.target.value)}
-                            />
-                            {fieldErrors.blogWord && <div className={styles.errorText}>{fieldErrors.blogWord}</div>}
+                {
+                    showRelatedBlogs && (
+                        <div className={styles.blogLinksSection}>
+                            <h3 className={styles.sectionTitle}>Related Blog</h3>
+                            <div className={styles.formGroup}>
+                                <label className={styles.label} htmlFor="blogWord">
+                                    Blog Related Word <span className={styles.required}>*</span>
+                                </label>
+                                <input
+                                    id="blogWord"
+                                    type="text"
+                                    className={`${styles.input} ${fieldErrors.blogWord ? styles.inputError : ""}`}
+                                    placeholder="Enter one related blog word"
+                                    value={blogWord}
+                                    onChange={handleBlogWordChange}
+                                />
+                                {fieldErrors.blogWord && <div className={styles.errorText}>{fieldErrors.blogWord}</div>}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )
+                }
 
                 <div className={styles.actionButtons}>
                     <CommanButton title="Cancel" theme="outline-blue" url={handleCancel} />
@@ -216,7 +295,7 @@ const GlossaryFormView = ({
                         isDisabled={isSubmitting}
                     />
                 </div>
-            </form>
+            </form >
 
             {showAltModal && (
                 <div
@@ -262,7 +341,7 @@ const GlossaryFormView = ({
                     </div>
                 </div>
             )}
-        </div>
+        </div >
     )
 }
 
