@@ -1,4 +1,4 @@
-'use client'
+
 
 import React, { JSX } from "react"
 import styles from "./blog-section.module.scss"
@@ -80,7 +80,6 @@ const BlogSection = async ({
   className = "",
 }: BlogSectionProps) => {
   const posts = await fetchBlogs(cards, links)
-  console.log("posts", posts)
   if (!posts || posts.length < 3) return null
 
   return (
