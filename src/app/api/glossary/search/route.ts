@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import pool from "@/src/lib/dbConnect";
+// import pool from "@/src/lib/dbConnect";
 import { getGlossaryJson } from "@/src/lib/glossaryUtils";
 
 export async function GET(request: NextRequest) {
