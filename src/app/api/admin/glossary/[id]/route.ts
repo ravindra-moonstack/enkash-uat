@@ -65,11 +65,7 @@ export async function PUT(
 
     // Update the local JSON file only if critical fields changed
     if (currentItem && (currentItem.word !== word || currentItem.slug !== slug)) {
-        await updateInGlossaryJson({
-          id: Number(id),
-          word: word,
-          slug: slug
-        });
+        await updateInGlossaryJson();
     }
 
     return NextResponse.json({
@@ -96,7 +92,7 @@ export async function DELETE(
     await pool.execute('DELETE FROM glossary WHERE id = ?', [id]);
 
     // Update the local JSON file
-    await deleteFromGlossaryJson(Number(id));
+    await deleteFromGlossaryJson();
 
     return NextResponse.json({
       success: true,
