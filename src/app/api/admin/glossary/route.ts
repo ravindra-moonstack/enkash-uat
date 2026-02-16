@@ -86,7 +86,7 @@ export async function POST(request: Request) {
     );
 
     // Update the local JSON file
-    addToGlossaryJson({
+    await addToGlossaryJson({
       id: result.insertId,
       word: word,
       slug: slug

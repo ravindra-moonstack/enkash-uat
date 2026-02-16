@@ -166,15 +166,14 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                             container: [
                                 [{ header: [1, 2, 3, 4, 5, 6, false] }],
                                 [{ size: ["small", false, "large", "huge"] }],
-                                [{ color: [] }, { background: [] }],
+                                [{ color: ["#000000", "#2b2b2b", "#5b5b5b", "#1c5af4", "#f03d3e"] }, { background: ["#000000", "#2b2b2b", "#5b5b5b", "#1c5af4", "#f03d3e"] }],
                                 ["bold", "italic", "underline", "strike"],
                                 [{ list: "ordered" }, { list: "bullet" }],
                                 [{ indent: "-1" }, { indent: "+1" }],
                                 [{ align: [] }],
                                 ["blockquote", "code-block"],
                                 [{ script: "sub" }, { script: "super" }],
-                                ["link", "image"],
-                                ["clean"],
+                                ["link", "image"], 
                                 ["showHtml"],
                             ],
                             handlers: {
