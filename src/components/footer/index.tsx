@@ -809,7 +809,7 @@ const FooterV2 = (): React.JSX.Element => {
                     <ul>
                       <li>
                         <a
-                          href="https://docs.enkash.com/payment-gateway"
+                          href="https://docs.enkash.com/folder-1769236"
                           target="_blank"
                         >
                           Payment Gateway
@@ -825,7 +825,7 @@ const FooterV2 = (): React.JSX.Element => {
                       </li>
                       <li>
                         <a
-                          href="https://docs.enkash.com/expense-management"
+                          href="https://docs.enkash.com/folder-1769241"
                           target="_blank"
                         >
                           Expense Management
