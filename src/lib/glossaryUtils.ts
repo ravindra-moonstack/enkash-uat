@@ -60,14 +60,14 @@ export const syncGlossaryToS3 = async () => {
     }
 }
 
-export const addToGlossaryJson = async (_item: { id: number, word: string, slug: string }) => {
+export const addToGlossaryJson = async () => {
     return await syncGlossaryToS3();
 }
 
-export const updateInGlossaryJson = async (_item: { id: number, word: string, slug: string }) => {
+export const updateInGlossaryJson = async () => {
     return await syncGlossaryToS3();
 }
 
-export const deleteFromGlossaryJson = async (_id: number) => {
+export const deleteFromGlossaryJson = async () => {
     return await syncGlossaryToS3();
 }
