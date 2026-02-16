@@ -15,22 +15,30 @@ import {
 } from "./data"
 import { faqData, SecondfaqData } from "./faq-data"
 
+import dynamic from "next/dynamic"
+
 // components
 import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
-import FaqSection from "@/src/components/faq-section"
-import LottieDynamicLoadComponent from "@/src/components/lottie-client/lottie-dynamic-load-client"
-import ContentShowcase from "@/src/components/content-showcase"
-import FeatureSpotlight from "@/src/components/feature-spotlight"
-import SmartPolicySection from "@/src/components/smart-policy-section"
-import CardStacking from "@/src/components/card-stacking"
-import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
-import AllProducts from "@/src/components/all-products"
-import EnkashWay from "@/src/components/enkash-way/enkash-way"
-import { CTASection } from "@/src/components"
+
+// Dynamic imports for performance
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
+const LottieDynamicLoadComponent = dynamic(
+  () => import("@/src/components/lottie-client/lottie-dynamic-load-client"),
+  { ssr: false }
+)
+const ContentShowcase = dynamic(() => import("@/src/components/content-showcase"))
+const FeatureSpotlight = dynamic(() => import("@/src/components/feature-spotlight"))
+const SmartPolicySection = dynamic(() => import("@/src/components/smart-policy-section"))
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"), { ssr: false })
+const SecondFaqHtml = dynamic(() => import("@/src/components/second-faq/secondFaqHtml"))
+const AllProducts = dynamic(() => import("@/src/components/all-products"))
+const EnkashWay = dynamic(() => import("@/src/components/enkash-way/enkash-way"))
+const CTASection = dynamic(() => import("@/src/components").then(mod => mod.CTASection))
+const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
 
 // helper
 import {
@@ -60,7 +68,6 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Management Suite: Automate & Track Business Spending",
