@@ -14,7 +14,7 @@ import { acceleratedGrowthImg } from "../payment-gateway/img"
 
 // Dynamic imports for performance
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
-const CardStacking = dynamic(() => import("@/src/components/card-stacking"), { ssr: false })
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
 const BecomePartnerSteps = dynamic(() => import("@/src/components").then(mod => mod.BecomePartnerSteps))
