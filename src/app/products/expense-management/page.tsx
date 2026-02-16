@@ -27,13 +27,12 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 const LottieDynamicLoadComponent = dynamic(
-  () => import("@/src/components/lottie-client/lottie-dynamic-load-client"),
-  { ssr: false }
+  () => import("@/src/components/lottie-client/lottie-dynamic-load-client")
 )
 const ContentShowcase = dynamic(() => import("@/src/components/content-showcase"))
 const FeatureSpotlight = dynamic(() => import("@/src/components/feature-spotlight"))
 const SmartPolicySection = dynamic(() => import("@/src/components/smart-policy-section"))
-const CardStacking = dynamic(() => import("@/src/components/card-stacking"), { ssr: false })
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 const SecondFaqHtml = dynamic(() => import("@/src/components/second-faq/secondFaqHtml"))
 const AllProducts = dynamic(() => import("@/src/components/all-products"))
 const EnkashWay = dynamic(() => import("@/src/components/enkash-way/enkash-way"))
