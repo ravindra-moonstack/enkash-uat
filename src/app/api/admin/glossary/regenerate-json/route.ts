@@ -5,9 +5,8 @@ import { saveGlossaryJson } from '@/src/lib/glossaryUtils';
 export async function GET() {
   try {
     const [rows]: any = await pool.query('SELECT id, word, slug FROM glossary ORDER BY word ASC');
-    
-    // Use the utility function to save
-    const success = saveGlossaryJson(rows);
+     
+    const success = await saveGlossaryJson(rows);
 
     if (success) {
       return NextResponse.json({ message: 'Glossary JSON regenerated successfully' });

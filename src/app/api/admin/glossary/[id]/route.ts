@@ -25,8 +25,7 @@ export async function GET(
     );
   }
 }
-
-// PUT: Update an existing glossary item
+ 
 export async function PUT(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -66,7 +65,7 @@ export async function PUT(
 
     // Update the local JSON file only if critical fields changed
     if (currentItem && (currentItem.word !== word || currentItem.slug !== slug)) {
-        updateInGlossaryJson({
+        await updateInGlossaryJson({
           id: Number(id),
           word: word,
           slug: slug
@@ -97,7 +96,7 @@ export async function DELETE(
     await pool.execute('DELETE FROM glossary WHERE id = ?', [id]);
 
     // Update the local JSON file
-    deleteFromGlossaryJson(Number(id));
+    await deleteFromGlossaryJson(Number(id));
 
     return NextResponse.json({
       success: true,

@@ -134,11 +134,13 @@ const GlossaryAdmin = () => {
                 const data = await res.json()
                 setFeatureImage(data.url)
             } else {
-                alert("Image upload failed")
+                const errorData = await res.json();
+                console.error("Upload failed:", errorData);
+                alert(errorData.error || errorData.message || "Image upload failed");
             }
-        } catch (e) {
+        } catch (e: any) {
             console.error("Error uploading image:", e)
-            alert("Error uploading image")
+            alert(e.message || "Error uploading image")
         }
     }
 

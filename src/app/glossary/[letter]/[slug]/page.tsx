@@ -46,7 +46,7 @@ async function getLetters() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params
+  const { letter, slug } = await params
   const term = await getTerm(slug)
 
   if (!term) {
@@ -62,7 +62,10 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title: term.meta_title || `${term.word} | FinTech Glossary`,
       description: term.meta_description || stripHtml(term.content).substring(0, 160),
+      url: `${getApiBaseUrl()}/glossary/${letter}/${slug}`,
+      type: "website",
       images: term.feature_image ? [term.feature_image] : [],
+      imageAlt: term.feature_image_alt || "",
     },
     twitter: {
       card: 'summary_large_image',
@@ -81,11 +84,15 @@ export default async function GlossaryDetail({ params }: PageProps) {
   if (!term) {
     notFound()
   }
+  const url = `${getApiBaseUrl()}/glossary/${letter}/${slug}`;
+  const encodedUrl = encodeURIComponent(url);
+  const encodedTitle = encodeURIComponent(term.word);
+
+  const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+  const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+  const twitterShare = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
 
   const blogLinks: string[] = []
-
-  // const tempLinks = ["top-10-banks-in-india", "how-to-update-pan-card", "https://uat.blogs.enkash.com/blog/how-to-apply-for-a-pan-card-online"]
-  // blogLinks.push(...tempLinks)
 
   if (term.showRelatedBlogs && term.blogWord) {
     blogLinks.push(term.blogWord);
@@ -136,18 +143,34 @@ export default async function GlossaryDetail({ params }: PageProps) {
               />
 
               <div className={styles.iconContainer}>
-                <a href="https://www.linkedin.com/company/enkashbusiness" className={styles.icon}>
+                <a
+                  href={linkedinShare}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={styles.icon}
+                >
                   <FaLinkedinIn />
                 </a>
 
-                <a href="https://www.facebook.com/EnKashBusiness" className={styles.icon}>
+                <a
+                  href={facebookShare}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={styles.icon}
+                >
                   <FaFacebookF />
                 </a>
 
-                <a href="https://twitter.com/EnkashBusiness" className={styles.icon}>
+                <a
+                  href={twitterShare}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={styles.icon}
+                >
                   <FaXTwitter />
                 </a>
               </div>
+
             </div>
 
             <div

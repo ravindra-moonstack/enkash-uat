@@ -18,7 +18,7 @@ const AlphabetBar = ({ currentLetter, availableLetters }: AlphabetBarProps) => {
                 {ALPHABET.map((ltr) => {
                     const safeLtr = ltr || ""
                     const safeLetter = currentLetter || ""
-                    const isActive = safeLetter.toUpperCase() === safeLtr
+                    const isActive = safeLetter.toUpperCase() === safeLtr || (safeLtr === '#' && (safeLetter === '#' || safeLetter === '%23'))
 
                     let href = `/glossary/${safeLtr.toLowerCase()}`
                     const isDisabled = false

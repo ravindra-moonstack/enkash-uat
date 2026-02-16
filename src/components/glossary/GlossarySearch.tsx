@@ -45,7 +45,8 @@ const GlossarySearch = () => {
             setShowSuggestions(true)
             try {
                 const response = await fetch(
-                    `/api/glossary/search?q=${encodeURIComponent(q)}`
+                    `/api/glossary/search?q=${encodeURIComponent(q)}`,
+                    { cache: 'no-store' }
                 )
                 const data = await response.json()
                 setSuggestions(data.results || [])

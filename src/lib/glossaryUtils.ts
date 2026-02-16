@@ -1,72 +1,73 @@
-import fs from 'fs';
-import path from 'path';
+import pool from '@/src/lib/dbConnect';
 
-const JSON_PATH = path.join(process.cwd(), 'public', 'glossary-data.json');
+const S3_BASE_URL = 'https://glossary.enkash.com';
+const JSON_FILE_NAME = 'glossary-data.json';
 
-export const getGlossaryJson = () => {
+export const getGlossaryJson = async () => {
     try {
-        if (!fs.existsSync(JSON_PATH)) return [];
-        const fileContent = fs.readFileSync(JSON_PATH, 'utf-8');
-        return JSON.parse(fileContent);
+        const response = await fetch(`${S3_BASE_URL}/${JSON_FILE_NAME}`, { 
+            next: { revalidate: 0 } // Revalidate on every request to ensure freshness, change to higher value for caching
+        });
+        
+        if (!response.ok) {
+            if (response.status === 404) return [];
+            console.error(`Failed to fetch glossary JSON: ${response.status} ${response.statusText}`);
+            return [];
+        }
+        
+        return await response.json();
     } catch (error) {
-        console.error("Error reading glossary JSON:", error);
+        console.error("Error reading glossary JSON from S3:", error);
         return [];
     }
 }
 
-export const saveGlossaryJson = (data: any[]) => {
+export const saveGlossaryJson = async (data: any[]) => {
     try {
         // Sort by word alphabetically
         data.sort((a, b) => a.word.localeCompare(b.word));
+        console.log(`Saving ${data.length} items to S3...`);
         
-        const dir = path.dirname(JSON_PATH);
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
+        const response = await fetch(`${S3_BASE_URL}/${JSON_FILE_NAME}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to save to S3: ${response.status}`);
         }
-        
-        fs.writeFileSync(JSON_PATH, JSON.stringify(data, null, 2));
+        console.log("Successfully saved to S3");
         return true;
     } catch (error) {
-        console.error("Error saving glossary JSON:", error);
+        console.error("Error saving glossary JSON to S3:", error);
+        return false;
+    }
+}
+ 
+export const syncGlossaryToS3 = async () => {
+    try { 
+        const [rows]: any = await pool.query('SELECT id, word, slug FROM glossary ORDER BY word ASC');
+        if (!Array.isArray(rows)) {
+            throw new Error("Invalid data retrieved from database");
+        }
+        return await saveGlossaryJson(rows);
+    } catch (error) {
+        console.error("Error syncing glossary to S3:", error);
         return false;
     }
 }
 
-export const addToGlossaryJson = (item: { id: number, word: string, slug: string }) => {
-    const data = getGlossaryJson();
-    // Check if exists to avoid duplicates (though ID should be unique)
-    const exists = data.some((i: any) => i.id === Number(item.id));
-    if (!exists) {
-        data.push({
-            id: Number(item.id),
-            word: item.word,
-            slug: item.slug
-        });
-        return saveGlossaryJson(data);
-    }
-    return false;
+export const addToGlossaryJson = async (_item: { id: number, word: string, slug: string }) => {
+    return await syncGlossaryToS3();
 }
 
-export const updateInGlossaryJson = (item: { id: number, word: string, slug: string }) => {
-    const data = getGlossaryJson();
-    const index = data.findIndex((i: any) => i.id === Number(item.id));
-    if (index !== -1) {
-        data[index] = { 
-            ...data[index],
-            word: item.word,
-            slug: item.slug
-        };
-        return saveGlossaryJson(data);
-    }
-    return false;
+export const updateInGlossaryJson = async (_item: { id: number, word: string, slug: string }) => {
+    return await syncGlossaryToS3();
 }
 
-export const deleteFromGlossaryJson = (id: number) => {
-    const data = getGlossaryJson();
-    // Filter out the item
-    const newData = data.filter((i: any) => i.id !== Number(id));
-    if (data.length !== newData.length) {
-        return saveGlossaryJson(newData);
-    }
-    return false;
+export const deleteFromGlossaryJson = async (_id: number) => {
+    return await syncGlossaryToS3();
 }
