@@ -314,10 +314,10 @@ const PaymentGateway = (): React.JSX.Element => {
                         content={[
                           {
                             title: title,
-                            color: "color-black",
+                            color: "color-black subHeading",
                           },
                         ]}
-                        headingTag="h5"
+                        headingTag="p"
                         className="f-5"
                       />
                     </div>
