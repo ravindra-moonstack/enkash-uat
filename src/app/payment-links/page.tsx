@@ -2,14 +2,15 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
+import dynamic from "next/dynamic"
+
 //data
 import { cardsData, managementCards, policies } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
 
 // components
 import DynamicHeading from "@/src/components/dynamic-heading"
-import SecondFaqHtml from "@/src/components/second-faq/secondFaqHtml"
-import PaymentLinkTab from "@/src/components/payment-link-tabs/payment-link-tab"
+import HeroSection from "@/src/components/sections/hero-section"
 
 //helpers
 import {
@@ -33,13 +34,16 @@ import {
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import FaqSection from "@/src/components/faq-section"
-import HeroSection from "@/src/components/sections/hero-section"
-import StepsSection from "@/src/components/steps-section"
-import UseCaseSection from "@/src/components/sections/use-case-section"
-import CtaSection from "@/src/components/sections/cta-section"
-import OtherProducts from "@/src/components/sections/other-products"
-import BlogSection from "@/src/components/sections/blog-section"
+
+// Dynamic imports for performance
+const SecondFaqHtml = dynamic(() => import("@/src/components/second-faq/secondFaqHtml"))
+const PaymentLinkTab = dynamic(() => import("@/src/components/payment-link-tabs/payment-link-tab"))
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
+const StepsSection = dynamic(() => import("@/src/components/steps-section"))
+const UseCaseSection = dynamic(() => import("@/src/components/sections/use-case-section"))
+const CtaSection = dynamic(() => import("@/src/components/sections/cta-section"))
+const OtherProducts = dynamic(() => import("@/src/components/sections/other-products"))
+const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
 
 export const metadata: Metadata = generateMetaData({
   title: "Simple Payment Links to Accept Online Payments",

@@ -6,14 +6,17 @@ import { allInOnePolicyData, categoriesData } from "./data"
 // data
 import faqData from "./faq-data"
 
-// components
-import CommanButton from "@/src/components/buttons"
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
+// components 
+import dynamic from "next/dynamic"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
-import FaqSection from "@/src/components/faq-section"
-import EnkashWay from "@/src/components/enkash-way/enkash-way"
+
+// Dynamic imports for performance
+const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"))
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
+const EnkashWay = dynamic(() => import("@/src/components/enkash-way/enkash-way"))
+const CommanButton = dynamic(() => import("@/src/components/buttons"))
 
 // helpers
 import { paymentSummary } from "./img"
@@ -86,6 +89,7 @@ const Vouchers = (): React.JSX.Element => {
                 <Image
                   src={paymentSummary}
                   alt="card visual"
+                  priority={true}
                   style={{
                     objectFit: "contain",
                     maxHeight: "648px",
