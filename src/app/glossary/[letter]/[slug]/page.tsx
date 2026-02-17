@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title: term.meta_title || `${term.word} | FinTech Glossary`,
       description: term.meta_description || stripHtml(term.content).substring(0, 160),
-      url: `${getApiBaseUrl()}/glossary/${letter}/${slug}`,
+      url: `${process.env.NEXT_PUBLIC_URL}/glossary/${letter}/${slug}`,
       type: "website",
       images: term.feature_image ? [term.feature_image] : [],
       imageAlt: term.feature_image_alt || "",
@@ -84,10 +84,9 @@ export default async function GlossaryDetail({ params }: PageProps) {
   if (!term) {
     notFound()
   }
-  const url = `${getApiBaseUrl()}/glossary/${letter}/${slug}`;
+  const url = `${process.env.NEXT_PUBLIC_URL}/glossary/${letter}/${slug}`;
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(term.word);
-
   const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
   const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
   const twitterShare = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
@@ -135,7 +134,7 @@ export default async function GlossaryDetail({ params }: PageProps) {
                 content={[
                   {
                     text: term.word,
-                    color: "color-dark-grey f-5",
+                    color: "color-dark-grey f-4",
                   },
                 ]}
                 headingTag="h2"
