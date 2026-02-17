@@ -59,6 +59,11 @@
 
 .sectionContent h2 {
   letter-spacing: -0.04em;
+  color: $color-equity-blue;
+
+  &:not(:first-child) {
+    margin-top: 24px;
+  }
 }
 
 .sectionContent p {
@@ -66,6 +71,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  margin-bottom: 0;
 }
 
 .sectionContent img {

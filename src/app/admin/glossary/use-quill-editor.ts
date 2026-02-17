@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import 'quill/dist/quill.snow.css';
 
 interface UseQuillEditorProps {
     content: string;
