@@ -1,5 +1,5 @@
 export { default as spendAnalylicsImg } from "./spend-analylics.webp"
-export { default as rbiLogo } from "./rbi.png"
+export { default as rbiLogo } from "./rbi.webp"
 export { default as corporateCard } from "./corporate-card.svg"
 export { default as corporateCardIcon } from "./oneClick.svg"
 export { default as onePlatform } from "./one-platform.webp"
