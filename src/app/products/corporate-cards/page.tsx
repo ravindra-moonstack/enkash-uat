@@ -1,6 +1,7 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 
 // data
 import {
@@ -17,14 +18,16 @@ import faqData from "./faq-data"
 // components
 import CommanButton from "@/src/components/buttons"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
-import FaqSection from "@/src/components/faq-section"
-import PolicyCard from "@/src/components/policy-card"
-import FeatureCard from "@/src/components/feature-card"
-import CardProduct from "@/src/components/card-product"
-import AllProducts from "@/src/components/all-products"
-import BlogSection from "@/src/components/sections/blog-section"
 import CorporateHeroSection from "@/src/components/sections/corporate-card-hero-section"
+
+// Dynamic imports for performance
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
+const PolicyCard = dynamic(() => import("@/src/components/policy-card"))
+const FeatureCard = dynamic(() => import("@/src/components/feature-card"))
+const CardProduct = dynamic(() => import("@/src/components/card-product"))
+const AllProducts = dynamic(() => import("@/src/components/all-products"))
+const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
 
 // helpers
 import {
