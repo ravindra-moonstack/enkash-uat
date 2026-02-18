@@ -18,13 +18,13 @@ const AlphabetBar = ({ currentLetter, availableLetters }: AlphabetBarProps) => {
                 {ALPHABET.map((ltr) => {
                     const safeLtr = ltr || ""
                     const safeLetter = currentLetter || ""
-                    const isActive = safeLetter.toUpperCase() === safeLtr || (safeLtr === '#' && (safeLetter === '#' || safeLetter === '%23'))
+                    const isActive = safeLetter.toUpperCase() === safeLtr || (safeLtr === '#' && (safeLetter === '#' || safeLetter === '%23' || safeLetter === 'numbers'))
 
                     let href = `/glossary/${safeLtr.toLowerCase()}`
                     const isDisabled = false
 
                     if (safeLtr === "#") {
-                        href = "/glossary/%23"
+                        href = "/glossary/numbers"
                     } else if (availableLetters && !availableLetters.includes(safeLtr)) {
                         // href = "#"
                         // isDisabled = true
