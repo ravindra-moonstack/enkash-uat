@@ -31,7 +31,7 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
                         items={[
                             { name: "Home", url: "/" },
                             { name: "Glossary", url: "/glossary" },
-                            { name: `${activeLetter}`, url: `/glossary/${letter}` },
+                            { name: `${activeLetter}`, url: `/glossary/${activeLetter === '#' ? 'numbers' : letter}` },
                         ]}
                     />
                 </div>

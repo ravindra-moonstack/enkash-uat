@@ -54,7 +54,7 @@ async function getLetters() {
 async function getTerms(letter: string) {
     try {
         const baseUrl = getApiBaseUrl()
-        const res = await fetch(`${baseUrl}/api/glossary/letter/${letter}`, { next: { revalidate: 3600 } })
+        const res = await fetch(`${baseUrl}/api/glossary/letter/${encodeURIComponent(letter)}`, { next: { revalidate: 3600 } })
         if (!res.ok) return []
         return res.json()
     } catch (error) {
@@ -68,14 +68,16 @@ function isLetter(slug: string): boolean {
     // Check if it's a single letter or special character placeholders
     return (
         decoded.length === 1 && /^[a-zA-Z]$/.test(decoded)
-    ) || decoded === '#' || decoded === '%23'
+    ) || decoded === '#' || decoded === '%23' || decoded === 'numbers'
 }
 
 export async function generateMetadata({ params }: PageProps) {
     const { slug } = await params
 
     if (isLetter(slug)) {
-        const letter = decodeURIComponent(slug).toUpperCase()
+        let letter = decodeURIComponent(slug).toUpperCase()
+        if (letter === 'NUMBERS') letter = '#'
+
         return {
             title: `FinTech Glossary - ${letter} Terms | Financial Technology Dictionary`,
             description: `Browse all financial technology terms starting with ${letter}. Comprehensive definitions and explanations.`,
@@ -115,7 +117,9 @@ export default async function GlossarySlugPage({ params }: PageProps) {
 
     if (isLetter(slug)) {
         // Render Letter Page
-        const letter = decodeURIComponent(slug)
+        let letter = decodeURIComponent(slug)
+        if (letter === 'numbers') letter = '#'
+
         const terms = await getTerms(letter)
         return <LetterPageClient letter={letter} initialTerms={terms} />
     } else {
