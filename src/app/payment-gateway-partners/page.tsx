@@ -1,6 +1,7 @@
 import React from "react"
 import { Metadata } from "next"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 
 //data
@@ -17,17 +18,30 @@ import faqData from "./faq-data"
 //components
 import DynamicHeading from "@/src/components/dynamic-heading"
 import BpHeroSection from "@/src/components/bp-hero-section"
-import BankSolutions from "@/src/components/partnerships/BankSolutions"
-import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
-import BuiltforBuildersSection from "@/src/components/builtfor-builders-card"
-import BecomePartnerSteps from "@/src/components/becomepartner"
-import BottomCtaSection from "@/src/components/bottom-cta-section"
-import PartnerShipForm from "@/src/components/forms/partnership-form"
-import FaqSection from "@/src/components/faq-section"
+import PaymentGatewayFormClient from "@/src/components/form-wrapper/PaymentGatewayFormWrapper"
+
+const BankSolutions = dynamic(
+  () => import("@/src/components/partnerships/BankSolutions")
+)
+const PartnershipSection = dynamic(
+  () => import("@/src/components/partner-ship-slider/PartnershipSection")
+)
+const BuiltforBuildersSection = dynamic(
+  () => import("@/src/components/builtfor-builders-card")
+)
+const BecomePartnerSteps = dynamic(
+  () => import("@/src/components/becomepartner")
+)
+const BottomCtaSection = dynamic(
+  () => import("@/src/components/bottom-cta-section")
+)
+const PartnerShipForm = dynamic(
+  () => import("@/src/components/forms/partnership-form")
+)
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 
 import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
-import PaymentGatewayFormClient from "@/src/components/form-wrapper/PaymentGatewayFormWrapper"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Gateway Partnerships",
@@ -39,10 +53,10 @@ export const metadata: Metadata = generateMetaData({
 })
 
 const partnershipsPage = (): React.JSX.Element => {
-  return (
+  return ( // turbo-all
     <div className={`color-white  `}>
       <BpHeroSection
-        backgroundImage={containerScreen.src}
+        backgroundImage={containerScreen}
         mainHeading={[
           {
             title: "Payment Gateway Partner Program ",
@@ -68,7 +82,7 @@ const partnershipsPage = (): React.JSX.Element => {
           theme: "blue",
           url: "#partnership-form",
         }}
-        customCSS={{ backgroundPosition: "top center" }}
+        imgObjectPosition="top center"
       />
       <div className={`${styles.boxContainer}`}>
         <BankSolutions
@@ -83,7 +97,7 @@ const partnershipsPage = (): React.JSX.Element => {
 
       <div className={`${styles.introduction_section}`}>
         <PartnershipSection
-          backgroundImage={participantBg.src}
+          backgroundImage={participantBg}
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="Whether you're a tech innovator, service provider, or business enabler, EnKash’s payment gateway partner program is tailored for you."
           slideData={slideData}

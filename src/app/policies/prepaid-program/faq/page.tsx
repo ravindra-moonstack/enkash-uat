@@ -1,11 +1,13 @@
 import React from "react"
 import { Metadata } from "next"
 
+import dynamic from "next/dynamic"
+
 import styles from "./page.module.scss"
 import generateMetaData from "@/src/utils/metaData"
 
-import DynamicHeading from "@/src/components/dynamic-heading"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
+const DynamicHeading = dynamic(() => import("@/src/components/dynamic-heading"))
+const CustomBreadcrumb = dynamic(() => import("@/src/components/breadcrumb"))
 
 export const metadata: Metadata = generateMetaData({
   title: "FAQ for Prepaid Instruments: EnKash",
@@ -59,12 +61,12 @@ const Faq = (): React.JSX.Element => {
                       />
                     </div>
                     <div className="word-to-html-null mb-5">
-                      <h5 className="c15 mt-6 pb-4">
-                        Last Updated On: 25th August 2025
-                      </h5>
-                      <h5 className="c15 mt-6">
+                      <p className="c15 mt-6 pb-4 h5">
+                        <strong>Last Updated On: 25th August 2025</strong>
+                      </p>
+                      <h2 className="c15 mt-6 h5">
                         1. What is a Prepaid Payment Instrument (PPI)?
-                      </h5>
+                      </h2>
                       <p className="c3 c9">
                         <span className="c15">
                           A PPI is a method that facilitates the purchase of
@@ -73,9 +75,9 @@ const Faq = (): React.JSX.Element => {
                           on such instruments.
                         </span>
                       </p>
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         2. Is EnKash authorized to operate as a PPI issuer?
-                      </h5>
+                      </h2>
                       <p className="c3 c9">
                         <span className="c15">
                           Yes, EnKash, operated by Nehat Tech Solutions Private
@@ -83,9 +85,9 @@ const Faq = (): React.JSX.Element => {
                           (RBI) as a PPI issuer.
                         </span>
                       </p>
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         3. What types of PPIs does EnKash offer?
-                      </h5>
+                      </h2>
                       <p className="c3 c9">
                         <span className="c15">
                           EnKash offers non closed system PPIs such as wallets
@@ -93,10 +95,10 @@ const Faq = (): React.JSX.Element => {
                           and platforms.
                         </span>
                       </p>
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         4. What is meant by interoperability in the context of
                         PPI?
-                      </h5>
+                      </h2>
                       <p className="c3 c9">
                         <span className="c15">
                           Interoperability refers to the ability of PPI
@@ -105,9 +107,9 @@ const Faq = (): React.JSX.Element => {
                           for users
                         </span>
                       </p>
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         5. Are KYC norms applicable to EnKash PPI users?
-                      </h5>
+                      </h2>
                       <p className="c3 c9">
                         <span className="c15">
                           Yes, EnKash follows RBI&apos;s Know Your Customer
@@ -115,9 +117,9 @@ const Faq = (): React.JSX.Element => {
                           customer accounts.
                         </span>
                       </p>
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         6. How does EnKash ensure customer data security?
-                      </h5>
+                      </h2>
                       <p className="c3 c9">
                         <span className="c15">
                           EnKash complies with RBI mandated security frameworks,
@@ -126,9 +128,9 @@ const Faq = (): React.JSX.Element => {
                           security assessmentsto ensure data protection.
                         </span>
                       </p>
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         7. What are the limits on PPI balances and transactions?
-                      </h5>
+                      </h2>
                       <p className="c3 c9">
                         <span className="c15">
                           As per RBI guidelines, Full KYC PPIs can hold balances
@@ -136,9 +138,9 @@ const Faq = (): React.JSX.Element => {
                           minimum detail PPIs have lower limits.
                         </span>
                       </p>
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         8. What happens if there is an unauthorised transaction?
-                      </h5>
+                      </h2>
                       <p className="c3 c9">
                         <span className="c15">
                           Customers must report to EnKash support team for any

@@ -1,12 +1,14 @@
 import React from "react"
 import { Metadata } from "next"
 
+import dynamic from "next/dynamic"
+
 import styles from "./page.module.scss"
 import generateMetaData from "@/src/utils/metaData"
 
 // components
-import DynamicHeading from "@/src/components/dynamic-heading"
-import CustomBreadcrumb from "@/src/components/breadcrumb"
+const DynamicHeading = dynamic(() => import("@/src/components/dynamic-heading"))
+const CustomBreadcrumb = dynamic(() => import("@/src/components/breadcrumb"))
 
 export const metadata: Metadata = generateMetaData({
   title: "Card Related Charges: EnKash",
@@ -58,9 +60,9 @@ const CardRelatedCharges = () => {
                       />
                     </div>
                     <div className="word-to-html-null mb-5">
-                      <h5 className="c15 mt-6 pb-4">
-                        Last Updated On: 25th August 2025
-                      </h5>
+                      <p className="c15 mt-6 pb-4 h5">
+                        <strong>Last Updated On: 25th August 2025</strong>
+                      </p>
                       <p className="c3 c9">
                         <span className="c15">
                           The following charges apply to the use of
@@ -71,9 +73,9 @@ const CardRelatedCharges = () => {
                       </p>
                       <div className="container my-4">
                         {/* Card Issuance & Maintenance Charges */}
-                        <h5 className="mb-3 ">
+                        <h2 className="mb-3 h5">
                           Card Issuance & Maintenance Charges
-                        </h5>
+                        </h2>
                         <table className="table table-bordered">
                           <thead>
                             <tr>
@@ -96,7 +98,7 @@ const CardRelatedCharges = () => {
                           </tbody>
                         </table>
 
-                        <h5 className="mb-3  mt-4">ATM Transaction Charges</h5>
+                        <h2 className="mb-3 mt-4 h5">ATM Transaction Charges</h2>
                         <table className="table table-bordered">
                           <thead>
                             <tr>
@@ -124,9 +126,9 @@ const CardRelatedCharges = () => {
                           </tbody>
                         </table>
 
-                        <h5 className="mb-3  mt-4">
+                        <h2 className="mb-3 mt-4 h5">
                           Industry Program Surcharges
-                        </h5>
+                        </h2>
                         <table className="table table-bordered">
                           <thead>
                             <tr>
@@ -154,9 +156,9 @@ const CardRelatedCharges = () => {
                           </tbody>
                         </table>
                       </div>
-                      <h5 className="mb-3  mt-4">
+                      <h2 className="mb-3 mt-4 h5">
                         General Terms Applicable to Charges
-                      </h5>
+                      </h2>
 
                       <div className="container mt-4">
                         <ul className="">

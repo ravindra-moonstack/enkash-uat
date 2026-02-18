@@ -60,10 +60,10 @@ const GrievancePolicy = (): React.JSX.Element => {
                       />
                     </div>
                     <div className="word-to-html-null mb-5">
-                      <h5 className="c15 mt-6 pb-4">
-                        Last Updated On: 25th August 2025
-                      </h5>
-                      <h5 className="c15 mt-6">1. Introduction</h5>
+                      <p className="c15 mt-6 pb-4 h5">
+                        <strong>Last Updated On: 25th August 2025</strong>
+                      </p>
+                      <h2 className="c15 mt-6 h5">1. Introduction</h2>
                       <p className="c3 c9">
                         <span className="c15">
                           In the present scenario of competitive world,
@@ -98,7 +98,7 @@ const GrievancePolicy = (): React.JSX.Element => {
                         </span>
                       </p>
 
-                      <h5 className="c15 mt-6">2. Objectives</h5>
+                      <h2 className="c15 mt-6 h5">2. Objectives</h2>
 
                       <p className="c3 c9">
                         <span className="c15"></span>
@@ -132,7 +132,7 @@ const GrievancePolicy = (): React.JSX.Element => {
                         </li>
                       </ol>
 
-                      <h5 className="c15 mt-6">3. Key definitions</h5>
+                      <h2 className="c15 mt-6 h5">3. Key definitions</h2>
 
                       <p className="c3 c9">
                         <span className="c15"></span>
@@ -167,9 +167,9 @@ const GrievancePolicy = (): React.JSX.Element => {
                         </li>
                       </ol>
 
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         4. Grievance filing mechanism
-                      </h5>
+                      </h2>
 
                       <p className="c3 c9">
                         <span className="c15"></span>
@@ -210,9 +210,9 @@ const GrievancePolicy = (): React.JSX.Element => {
                           </span>
                         </li>
                       </ol>
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         5. Registration of Complaints/Grievance
-                      </h5>
+                      </h2>
 
                       <p className="c3">
                         <span className="c15">
@@ -222,9 +222,9 @@ const GrievancePolicy = (): React.JSX.Element => {
                         </span>
                       </p>
 
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         6. Acknowledgement and processing of grievance request
-                      </h5>
+                      </h2>
 
                       <p className="c3">
                         <span className="c15">
@@ -239,9 +239,9 @@ const GrievancePolicy = (): React.JSX.Element => {
                           aforementioned modes.
                         </span>
                       </p>
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         7. Turn around time (TAT) for redressal of grievance
-                      </h5>
+                      </h2>
 
                       <p className="c3">
                         <span className="c15">
@@ -255,9 +255,9 @@ const GrievancePolicy = (): React.JSX.Element => {
                         </span>
                       </p>
 
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         8. Details of Grievance & Nodal officer Details:
-                      </h5>
+                      </h2>
 
                       <p className="c3">
                         <span className="c15">
@@ -296,9 +296,9 @@ const GrievancePolicy = (): React.JSX.Element => {
                         </span>
                       </p>
 
-                      <h5 className="c15 mt-6">
+                      <h2 className="c15 mt-6 h5">
                         9. Resolution & Closure of grievances
-                      </h5>
+                      </h2>
 
                       <p className="c3">
                         <span className="c15">
@@ -315,10 +315,10 @@ const GrievancePolicy = (): React.JSX.Element => {
                       <p className="c3 c9">
                         <span className="c15"></span>
                       </p>
-                      <h5 className="c15">
+                      <h2 className="c15 h5">
                         10. Nehat Tech Solution Pvt Ltd Grievance Escalation
                         Matrix
-                      </h5>
+                      </h2>
 
                       <p className="c3 c9">
                         <span className="c15"></span>
@@ -570,7 +570,7 @@ const GrievancePolicy = (): React.JSX.Element => {
                         <span className="c0 c24"></span>
                       </p>
 
-                      <h5 className="c32">11. Maintenance of records</h5>
+                      <h2 className="c32 h5">11. Maintenance of records</h2>
 
                       <p className="c41">
                         <span className="c0">
@@ -608,9 +608,9 @@ const GrievancePolicy = (): React.JSX.Element => {
                         <span className="c7"></span>
                       </p>
 
-                      <h5 className="c32">
+                      <h2 className="c32 h5">
                         12. Complaints Review and Analysis
-                      </h5>
+                      </h2>
 
                       <p className="c41">
                         <span className="c0">
@@ -661,7 +661,7 @@ const GrievancePolicy = (): React.JSX.Element => {
                         <span className="c7"></span>
                       </p>
 
-                      <h5 className="c32">13. Review of Policy</h5>
+                      <h2 className="c32 h5">13. Review of Policy</h2>
 
                       <p className="c41">
                         <span className="c0">
@@ -711,7 +711,7 @@ const GrievancePolicy = (): React.JSX.Element => {
                         <span className="c7"></span>
                       </p>
 
-                      <h5 className="c32">14. Roles and Responsibilities:</h5>
+                      <h2 className="c32 h5">14. Roles and Responsibilities:</h2>
 
                       <p className="c41">
                         <span className="c0">
