@@ -91,7 +91,7 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                 try {
                      const errorData = JSON.parse(text);
                      alert(`Image upload failed: ${errorData.error}\nCheck console for details.`);
-                } catch(e) {
+                } catch {
                      // If response is not JSON (e.g. HTML 403/500 page)
                      alert(`Image upload failed with status ${res.status}. See console for server response.`);
                 }
@@ -211,7 +211,7 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                 quillInstance.current = null;
             }
         };
-    }, [viewMode]);
+    }, [viewMode, content, setContent]);
 
     return {
         editorRef,
