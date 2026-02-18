@@ -5,15 +5,23 @@ import { Metadata } from "next"
 import { allProductSections, policiesData } from "./data"
 import faqData from "./faq-data"
 
+import dynamic from "next/dynamic"
+
 // components
 import CommanButton from "@/src/components/buttons"
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
-import FaqSection from "@/src/components/faq-section"
-import LottieDynamicLoadComponent from "@/src/components/lottie-client/lottie-dynamic-load-client"
-import AllProducts from "@/src/components/all-products"
+
+const AllInOnePolicy = dynamic(
+  () => import("@/src/components/all-in-one-policy")
+)
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
+const LottieDynamicLoadComponent = dynamic(
+  () => import("@/src/components/lottie-client/lottie-dynamic-load-client"),
+  { ssr: false }
+)
+const AllProducts = dynamic(() => import("@/src/components/all-products"))
 
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
