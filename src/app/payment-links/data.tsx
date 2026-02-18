@@ -24,7 +24,7 @@ import {
 } from "./img"
 
 
-const cardsData : TStackCardsProp = [
+const cardsData: TStackCardsProp = [
   {
     title: "Generate Payment Links",
     description:
@@ -45,7 +45,7 @@ const cardsData : TStackCardsProp = [
 ]
 
 
-const policies : TStackCardsProp =  [
+const policies: TStackCardsProp = [
   {
     icon: quickIcon,
     title: "Quick and Easy Setup",
@@ -95,7 +95,7 @@ const policies : TStackCardsProp =  [
   },
 ]
 
-const managementCards : TCardTypes = [
+const managementCards: TCardTypes = [
   {
     titleHtml: "Payment Gateway",
     description:
@@ -155,5 +155,5 @@ const managementCards : TCardTypes = [
 ]
 
 export {
-cardsData, managementCards, policies
+  cardsData, managementCards, policies
 }
