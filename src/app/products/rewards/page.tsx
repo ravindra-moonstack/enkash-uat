@@ -18,8 +18,7 @@ const AllInOnePolicy = dynamic(
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 const LottieDynamicLoadComponent = dynamic(
-  () => import("@/src/components/lottie-client/lottie-dynamic-load-client"),
-  { ssr: false }
+  () => import("@/src/components/lottie-client/lottie-dynamic-load-client")
 )
 const AllProducts = dynamic(() => import("@/src/components/all-products"))
 
