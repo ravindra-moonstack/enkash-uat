@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import PartnershipSlider from "."
 
 import "./PartnershipSection.scss"
@@ -24,7 +24,7 @@ interface HeadingContent {
 }
 
 export interface PartnershipSectionProps {
-  backgroundImage?: string
+  backgroundImage?: string | StaticImageData
   heading: HeadingContent[]
   description: string
   buttons?: ButtonData[]
