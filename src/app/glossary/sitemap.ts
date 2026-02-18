@@ -31,8 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     )
     
     rows.forEach((row: any) => {
-        const firstLetter = row.word.charAt(0).toUpperCase();
-        const letter = /^[A-Z]$/.test(firstLetter) ? firstLetter : "#";
+
         const lastMod = row.updated_at || row.created_at || row.update_at || row.create_at || new Date();
         
         sitemapEntries.push({
