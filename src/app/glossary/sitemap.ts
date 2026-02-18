@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const lastMod = row.updated_at || row.created_at || row.update_at || row.create_at || new Date();
         
         sitemapEntries.push({
-            url: `${BASE_URL}/glossary/${letter.toLowerCase()}/${row.slug}`,
+            url: `${BASE_URL}/glossary/${row.slug}`,
             lastModified: lastMod,
             changeFrequency: 'weekly',
             priority: 0.7,

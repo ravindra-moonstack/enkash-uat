@@ -5,6 +5,5 @@ export function getApiBaseUrl() {
     if (process.env.VERCEL_URL) {
         return `https://${process.env.VERCEL_URL}`;
     }
-    // Default to localhost for development
     return 'http://localhost:3000';
 }

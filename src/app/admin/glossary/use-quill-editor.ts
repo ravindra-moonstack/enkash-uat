@@ -86,9 +86,15 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                 
                 quill.setSelection(range.index + 1);
             } else {
-                const errorData = await res.json();
-                console.error('Image upload failed:', errorData.error, errorData.details);
-                alert(`Image upload failed: ${errorData.error}\nCheck console for details.`);
+                const text = await res.text();
+                console.error('Image upload failed. Status:', res.status, 'Response:', text);
+                try {
+                     const errorData = JSON.parse(text);
+                     alert(`Image upload failed: ${errorData.error}\nCheck console for details.`);
+                } catch(e) {
+                     // If response is not JSON (e.g. HTML 403/500 page)
+                     alert(`Image upload failed with status ${res.status}. See console for server response.`);
+                }
             }
         } catch (e) {
             console.error('Error uploading image:', e);
