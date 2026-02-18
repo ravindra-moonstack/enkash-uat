@@ -2,7 +2,7 @@ import DynamicHeading from "../dynamic-heading"
 import styles from "./style.module.scss"
 import CustomBreadcrumb from "../breadcrumb"
 import CommanButton, { ButtonTheme } from "../buttons/"
-import { StaticImageData } from "next/image"
+import Image, { StaticImageData } from "next/image"
 import { BreadcrumbProps } from "@/src/types/common"
 
 interface HeadingContent {
@@ -23,6 +23,7 @@ interface BpHeroSectionProps {
   subHeading: HeadingContent[]
   button: ButtonData
   customCSS?: any
+  imgObjectPosition?: string
 }
 
 const BpHeroSection: React.FC<BpHeroSectionProps> = ({
@@ -32,16 +33,33 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
   subHeading,
   button,
   customCSS,
+  imgObjectPosition = "center",
 }) => {
+  const isStaticImage = typeof backgroundImage === "object"
+
   return (
     <div
-      className={`${styles.hero_section}`}
+      className={`${styles.hero_section} ${isStaticImage ? "relative" : ""}`}
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: !isStaticImage ? `url(${backgroundImage})` : "none",
+        position: isStaticImage ? "relative" : undefined,
         ...customCSS,
       }}
     >
-      <div className={styles.box_white}>
+      {isStaticImage && (
+        <Image
+          src={backgroundImage as StaticImageData}
+          alt="Hero Background"
+          fill
+          priority
+          style={{
+            objectFit: "cover",
+            objectPosition: imgObjectPosition,
+            zIndex: 0,
+          }}
+        />
+      )}
+      <div className={styles.box_white} style={{ position: "relative", zIndex: 1 }}>
         <div className="max-w-auto">
           {/* Breadcrumb */}
           {breadcrumbs && (

@@ -2,16 +2,25 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
+import dynamic from "next/dynamic"
+
 //components
 import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
-import CardStacking from "@/src/components/card-stacking"
-import FaqSection from "@/src/components/faq-section"
 import { GridBgImage, heroCardImg, statsBg } from "./img"
-import BlogSection from "@/src/components/sections/blog-section"
+import { acceleratedGrowthImg } from "../payment-gateway/img"
+
+// Dynamic imports for performance
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
+const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
+const BecomePartnerSteps = dynamic(() => import("@/src/components").then(mod => mod.BecomePartnerSteps))
+const CardProduct = dynamic(() => import("@/src/components").then(mod => mod.CardProduct))
+const CounterSection = dynamic(() => import("@/src/components").then(mod => mod.CounterSection))
+const PaymentGatewayGridSection = dynamic(() => import("@/src/components").then(mod => mod.PaymentGatewayGridSection))
 
 //data
 import { acceleratedGrowthData, cardType, counterHeadingData, gridData, headingData, otherProductsHeading, stackcardData, statsData, stepsData } from "./data"
@@ -20,8 +29,6 @@ import { faqData } from "./faq-data"
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import { BecomePartnerSteps, CardProduct, CounterSection, PaymentGatewayGridSection } from "@/src/components"
-import { acceleratedGrowthImg } from "../payment-gateway/img"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Corporate Prepaid Cards for Business Payments",
@@ -115,7 +122,12 @@ const PrepaidCard = async (): Promise<React.JSX.Element> => {
         </div>
         <div className={`col-12 `}>
           <div className={styles.lottie_container}>
-            <Image src={heroCardImg} alt="card background" />
+            <Image
+              src={heroCardImg}
+              alt="card background"
+              priority={true}
+              fetchPriority="high"
+            />
           </div>
         </div>
       </div>
