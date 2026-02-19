@@ -25,12 +25,15 @@ export const uploadToS3 = async (
     });
 
     if (!response.ok) {
-      throw new Error(`Upload failed with status: ${response.status}`);
+      const errorText = await response.text();
+      console.error(`S3 Upload FAILED: ${response.status} - ${errorText}`);
+      throw new Error(`Upload failed with status: ${response.status}. Details: ${errorText}`);
     }
  
     return uploadUrl;
   } catch (error: any) {
     console.error('Error uploading to Cloudflare/S3:', error);
-    throw new Error(error.message || 'Failed to upload image');
+    // Propagate the detailed error
+    throw error;
   }
 };
