@@ -76,10 +76,17 @@ export default function AdminLayout({
                 <nav className={styles.navSection}>
                     <Link
                         href="/admin/glossary"
-                        className={`${styles.navItem} ${pathname.includes('/glossary') ? styles.active : ''}`}
+                        className={`${styles.navItem} ${pathname === '/admin/glossary' ? styles.active : ''}`}
                     >
                         <i className="bi bi-journal-text"></i>
                         Glossary
+                    </Link>
+                    <Link
+                        href="/admin/glossary/categories"
+                        className={`${styles.navItem} ${pathname.includes('/glossary/categories') ? styles.active : ''}`}
+                    >
+                        <i className="bi bi-layout-text-window-reverse"></i>
+                        Glossary Home Sections
                     </Link>
                 </nav>
 

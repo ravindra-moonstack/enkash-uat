@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 import { CommanButton } from "@/src/components"
 import styles from "./glossary-admin.module.scss"
 
@@ -59,6 +60,8 @@ const GlossaryListView = ({
                 </div>
                 <CommanButton title="Add New Item" theme="blue" url={handleAddNew} />
             </div>
+
+
 
             <div className={styles.tableCard}>
                 <div className={styles.tableContainer}>
