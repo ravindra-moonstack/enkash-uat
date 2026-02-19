@@ -428,5 +428,125 @@ export const STATIC_ROUTES = [
     "url": "https://www.enkash.com/glossary",
     "lastModified": "2025-09-01T10:32:59+01:00",
     "priority": 1
+  },
+  {
+    "url": "https://www.enkash.com/products",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/instant-card-management",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/ajio",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/nykaa",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/amazon-prime-shopping",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/fan-code",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/amazon-prime",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/levis",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/pantaloons",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/mcdonalds",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/swiggy",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/kfc",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/zomato",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/dominos",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/mamaearth",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/apollo",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/cultfit",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/vouchers/healthkart",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/policies/prepaid-program/grievance-policy",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/policies/platform/customer-onboarding",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/policies/payments/tnc",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/policies/prepaid-program/tnc",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/policies/prepaid-program/faq",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
+  },
+  {
+    "url": "https://www.enkash.com/policies/prepaid-program/card-related-charges",
+    "lastModified": "2025-09-01T10:32:31+01:00",
+    "priority": 1.0
   }
 ]
