@@ -68,7 +68,7 @@ function isLetter(slug: string): boolean {
     // Check if it's a single letter or special character placeholders
     return (
         decoded.length === 1 && /^[a-zA-Z]$/.test(decoded)
-    ) || decoded === '#' || decoded === '%23' || decoded === 'numbers'
+    ) || decoded === '#' || decoded === '%23' || decoded === 'letter-with-numbers'
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: PageProps) {
 
     if (isLetter(slug)) {
         let letter = decodeURIComponent(slug).toUpperCase()
-        if (letter === 'NUMBERS') letter = '#'
+        if (letter === 'LETTER-WITH-NUMBERS') letter = '#'
 
         return {
             title: `FinTech Glossary - ${letter} Terms | Financial Technology Dictionary`,
@@ -118,7 +118,7 @@ export default async function GlossarySlugPage({ params }: PageProps) {
     if (isLetter(slug)) {
         // Render Letter Page
         let letter = decodeURIComponent(slug)
-        if (letter === 'numbers') letter = '#'
+        if (letter === 'letter-with-numbers') letter = '#'
 
         const terms = await getTerms(letter)
         return <LetterPageClient letter={letter} initialTerms={terms} />
