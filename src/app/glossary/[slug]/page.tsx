@@ -29,7 +29,7 @@ async function getTerm(slug: string) {
 
     try {
         const baseUrl = getApiBaseUrl()
-        const res = await fetch(`${baseUrl}/api/glossary/term/${slug}`, { next: { revalidate: 3600 } })
+        const res = await fetch(`${baseUrl}/api/glossary/term/${slug}`, { cache: 'no-store' })
         if (res.status === 404) return null
         if (!res.ok) return null
         return res.json()
@@ -42,7 +42,7 @@ async function getTerm(slug: string) {
 async function getLetters() {
     try {
         const baseUrl = getApiBaseUrl()
-        const res = await fetch(`${baseUrl}/api/glossary/letters`, { next: { revalidate: 3600 } })
+        const res = await fetch(`${baseUrl}/api/glossary/letters`, { cache: 'no-store' })
         if (!res.ok) return []
         return res.json()
     } catch (error) {
@@ -54,7 +54,7 @@ async function getLetters() {
 async function getTerms(letter: string) {
     try {
         const baseUrl = getApiBaseUrl()
-        const res = await fetch(`${baseUrl}/api/glossary/letter/${encodeURIComponent(letter)}`, { next: { revalidate: 3600 } })
+        const res = await fetch(`${baseUrl}/api/glossary/letter/${encodeURIComponent(letter)}`, { cache: 'no-store' })
         if (!res.ok) return []
         return res.json()
     } catch (error) {
