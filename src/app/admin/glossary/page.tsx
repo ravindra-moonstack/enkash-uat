@@ -125,7 +125,7 @@ const GlossaryAdmin = () => {
         formData.append('file', file)
 
         try {
-            const res = await fetch('/api/upload', {
+            const res = await fetch('/api/admin/glossary/upload', {
                 method: 'POST',
                 body: formData
             })
@@ -141,7 +141,7 @@ const GlossaryAdmin = () => {
                     alert(errorData.error || errorData.message || `Image upload failed: ${res.status}`);
                 } catch {
                     console.error("Upload failed (non-JSON):", text);
-                    alert(`Image upload failed with status ${res.status}. Check console for details.`);
+                    alert(`Image upload failed: ${text.substring(0, 500)}`);
                 }
             }
         } catch (e: any) {
