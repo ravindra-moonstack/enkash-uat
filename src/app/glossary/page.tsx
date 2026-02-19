@@ -20,7 +20,7 @@ export const metadata = {
 async function getLetters() {
   try {
     const baseUrl = getApiBaseUrl()
-    const res = await fetch(`${baseUrl}/api/glossary/letters`, { next: { revalidate: 3600 } })
+    const res = await fetch(`${baseUrl}/api/glossary/letters`, { cache: 'no-store' })
     if (!res.ok) return []
     return res.json()
   } catch (error) {

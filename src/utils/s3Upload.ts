@@ -28,8 +28,8 @@ export const uploadToS3 = async (
     }
  
     return uploadUrl;
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error uploading to Cloudflare/S3:', error);
-    throw new Error('Failed to upload image');
+    throw new Error(error.message || 'Failed to upload image');
   }
 };
