@@ -161,6 +161,12 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                      };
                 };
 
+                // Configure custom font sizes
+                const Size = QuillNamespace.import('attributors/style/size');
+                const outputSizeList = ['10px', '12px', '14px', '16px', '18px', '20px', '24px', '30px', '32px', '48px'];
+                Size.whitelist = outputSizeList;
+                QuillNamespace.register(Size, true);
+
                 const editorElement = editorRef.current;
                 if (!editorElement) return;
 
@@ -172,9 +178,8 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                         toolbar: {
                             container: [
                                 [{ header: [1, 2, 3, 4, 5, 6, false] }],
-                                [{ size: ["small", false, "large", "huge"] }],
-                                [{ color: ["#000000", "#2b2b2b", "#5b5b5b", "#1c5af4", "#f03d3e"] }, { background: ["#000000", "#2b2b2b", "#5b5b5b", "#1c5af4", "#f03d3e"] }],
-                                ["bold", "italic", "underline", "strike"],
+                                [{ size: outputSizeList }],
+                                [{ color: ["#000000", "#2b2b2b", "#5b5b5b", "#1c5af4", "#f03d3e"] }, { background: ["#000000", "#2b2b2b", "#5b5b5b", "#1c5af4", "#f03d3e"] }],                                ["bold", "italic", "underline", "strike"],
                                 [{ list: "ordered" }, { list: "bullet" }],
                                 [{ indent: "-1" }, { indent: "+1" }],
                                 [{ align: [] }],
@@ -195,8 +200,9 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
 
                 quillInstance.current = quill;
 
-                if (content) {
+                if (content && (quill as any).history) {
                     quill.root.innerHTML = content;
+                    (quill as any).history.clear();
                 }
 
                 quill.on("text-change", () => {
