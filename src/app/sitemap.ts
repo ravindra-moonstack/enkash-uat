@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   const termRoutes = terms.map(term => ({ 
-    url: `${BASE_URL}/glossary/${term.letter}/${term.slug}`, 
+    url: `${BASE_URL}/glossary/${term.slug}`, 
     lastModified: new Date().toISOString(),
     changeFrequency: 'monthly' as const,
     priority: 1.0, 
