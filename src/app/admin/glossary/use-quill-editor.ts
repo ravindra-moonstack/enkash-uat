@@ -69,11 +69,7 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
             
             const res = await fetch('/api/upload', {
                 method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'Accept': 'application/json',
-                }
+                body: formData
             });
             
             if (res.ok) {
@@ -97,7 +93,7 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                      alert(`Image upload failed: ${errorData.error}\nCheck console for details.`);
                 } catch {
                      // If response is not JSON (e.g. HTML 403/500 page)
-                     alert(`Image upload failed with status ${res.status}. See console for server response.`);
+                     alert(`Image upload failed: ${text.substring(0, 500)}`);
                 }
             }
         } catch (e) {
