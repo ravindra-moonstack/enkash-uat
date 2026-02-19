@@ -1,5 +1,4 @@
 import React from "react"
-import Link from "next/link"
 import { CommanButton } from "@/src/components"
 import styles from "./glossary-admin.module.scss"
 
