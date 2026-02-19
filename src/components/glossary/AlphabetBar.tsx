@@ -24,7 +24,7 @@ const AlphabetBar = ({ currentLetter, availableLetters }: AlphabetBarProps) => {
                     const isDisabled = false
 
                     if (safeLtr === "#") {
-                        href = "/glossary/numbers"
+                        href = "/glossary/letter-with-numbers"
                     } else if (availableLetters && !availableLetters.includes(safeLtr)) {
                         // href = "#"
                         // isDisabled = true
