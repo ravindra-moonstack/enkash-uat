@@ -2,6 +2,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
+import { CommanButton } from "@/src/components"
 import styles from "../glossary-admin.module.scss"
 import { FaPlus, FaEdit, FaTrash, FaArrowLeft, FaList } from "react-icons/fa"
 
@@ -185,13 +186,11 @@ export default function GlossaryCategoriesAdmin() {
                         {view === "list" ? "Glossary Home Sections" : `Managing: ${selectedCategory?.heading}`}
                     </h1>
                 </div>
-                <button
-                    className="btn btn-primary d-flex align-items-center gap-2"
-                    style={{ backgroundColor: "#0056b3", color: "white", padding: "10px 20px", borderRadius: "8px", border: "none" }}
-                    onClick={view === "list" ? handleAddCategory : handleAddCard}
-                >
-                    <FaPlus /> {view === "list" ? "Add Section" : "Add Card"}
-                </button>
+                <CommanButton
+                    title={view === "list" ? "Add Section" : "Add Card"}
+                    theme="blue"
+                    url={view === "list" ? handleAddCategory : handleAddCard}
+                />
             </div>
 
             {isLoading ? (
@@ -344,31 +343,16 @@ export default function GlossaryCategoriesAdmin() {
                         </div>
 
                         <div className={styles.actionButtons}>
-                            <button
-                                onClick={() => setShowModal(false)}
-                                style={{
-                                    padding: "10px 20px",
-                                    borderRadius: "8px",
-                                    border: "1px solid #e2e8f0",
-                                    background: "white",
-                                    cursor: "pointer"
-                                }}
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                onClick={view === "list" ? saveCategory : saveCard}
-                                style={{
-                                    padding: "10px 20px",
-                                    borderRadius: "8px",
-                                    border: "none",
-                                    background: "#0056b3",
-                                    color: "white",
-                                    cursor: "pointer"
-                                }}
-                            >
-                                Save
-                            </button>
+                            <CommanButton
+                                title="Cancel"
+                                theme="outline-blue"
+                                url={() => setShowModal(false)}
+                            />
+                            <CommanButton
+                                title="Save"
+                                theme="blue"
+                                url={view === "list" ? saveCategory : saveCard}
+                            />
                         </div>
                     </div>
                 </div>
