@@ -5,7 +5,7 @@ import Image from "next/image"
 import GlossaryBgImage from "../../../public/images/glossaryBgImage.webp"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import styles from "./page.module.scss"
-import { HARDCODED_GLOSSARY_DATA } from "./data"
+
 import BlogSection from "@/src/components/sections/blog-section"
 import GlossarySearch from "@/src/components/glossary/GlossarySearch"
 import AlphabetBar from "@/src/components/glossary/AlphabetBar"
@@ -28,8 +28,21 @@ async function getLetters() {
     return []
   }
 }
+
+async function getGlossaryCategories() {
+  try {
+    const baseUrl = getApiBaseUrl()
+    const res = await fetch(`${baseUrl}/api/glossary/categories`, { cache: 'no-store' })
+    if (!res.ok) return []
+    return res.json()
+  } catch (error) {
+    console.error("Error fetching glossary data:", error)
+    return []
+  }
+}
 export default async function GlossaryPage() {
   const availableLetters = await getLetters()
+  const glossaryData = await getGlossaryCategories()
   return (<>
     <section className={styles.glossaryHomeSection}>
       <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
@@ -60,7 +73,7 @@ export default async function GlossaryPage() {
         <AlphabetBar availableLetters={availableLetters} />
 
         <div className={styles.termsContainer}>
-          {HARDCODED_GLOSSARY_DATA.map((section, idx) => (
+          {glossaryData && glossaryData.map((section: any, idx: number) => (
             <div key={idx} className={styles.letterSection}>
               <DynamicHeading
                 content={[
@@ -73,7 +86,7 @@ export default async function GlossaryPage() {
                 className={styles.letterHeading}
               />
               <div className={styles.termsGrid}>
-                {section.cards.map((card, cardIdx) => (
+                {section.cards.map((card: any, cardIdx: number) => (
                   <Link
                     key={cardIdx}
                     href={card.link}
