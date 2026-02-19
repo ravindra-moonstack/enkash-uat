@@ -7,7 +7,7 @@ export async function middleware(request: NextRequest) {
   const token = request.cookies.get('token')?.value;
  
   const isProtectedAdminPath = pathname.startsWith('/admin') && pathname !== '/admin';
-  const isProtectedAdminApi = pathname.startsWith('/api/admin') && pathname !== '/api/admin/login' && pathname !== '/api/upload';
+  const isProtectedAdminApi = pathname.startsWith('/api/admin') && pathname !== '/api/admin/login';
 
   if (isProtectedAdminPath || isProtectedAdminApi) {
     if (!token) {

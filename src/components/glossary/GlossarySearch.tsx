@@ -107,7 +107,7 @@ const GlossarySearch = () => {
                                 {groupedSuggestions[letterKey].map((item, idx) => (
                                     <div key={idx} className={styles.suggestionItem}>
                                         <Link
-                                            href={`/glossary/${(letterKey || "").toLowerCase()}/${item.slug || ""}`}
+                                            href={`/glossary/${item.slug || ""}`}
                                         >
                                             <div className={styles.suggestionKeyword}>{item.word || ""}</div>
 
