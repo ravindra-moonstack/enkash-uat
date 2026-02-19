@@ -23,11 +23,13 @@ export const uploadToS3 = async (
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
       },
     });
-console.log("response",response)
+
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`S3 Upload FAILED: ${response.status} - ${errorText}`);
-      throw new Error(`Upload failed with status: ${response.status}. Details: ${errorText}`);
+        const errorText = await response.text();
+        console.error(`S3 Upload FAILED: ${response.status} - ${errorText}`);
+        // Throwing the raw HTML/text here so the calling API route can catch it 
+        // and send it back to the client for debugging
+        throw new Error(`Upload failed with status: ${response}`);
     }
  
     return uploadUrl;
