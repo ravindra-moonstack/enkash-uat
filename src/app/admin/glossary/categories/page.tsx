@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react"
 import { CommanButton } from "@/src/components"
 import styles from "../glossary-admin.module.scss"
-import { FaPlus, FaEdit, FaTrash, FaArrowLeft, FaList } from "react-icons/fa"
+import { FaEdit, FaTrash, FaArrowLeft, FaList } from "react-icons/fa"
 
 interface Card {
     id: number
