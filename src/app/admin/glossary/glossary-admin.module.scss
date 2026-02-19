@@ -273,6 +273,13 @@
         border-bottom: 1px solid $color-grey-100;
         background-color: $color-white;
         padding: 12px;
+
+
+    }
+
+    :global(.ql-snow .ql-picker.ql-size .ql-picker-label::before),
+    :global(.ql-snow .ql-picker.ql-size .ql-picker-item::before) {
+        content: attr(data-value) !important;
     }
 
     :global(.ql-container) {
@@ -386,6 +393,11 @@
 
     :global(.ql-snow a) {
         color: $color-equity-blue;
+    }
+
+
+    :global(.ql-snow .ql-picker.ql-size) {
+        width: 98px;
     }
 
 }
