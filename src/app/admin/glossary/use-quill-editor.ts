@@ -69,7 +69,10 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
             
             const res = await fetch('/api/admin/glossary/upload', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                }
             });
             
             if (res.ok) {
@@ -92,8 +95,11 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                      const errorData = JSON.parse(text);
                      alert(`Image upload failed: ${errorData.error}\nCheck console for details.`);
                 } catch {
-                     // If response is not JSON (e.g. HTML 403/500 page)
-                     alert(`Image upload failed: ${text.substring(0, 500)}`);
+                     if (text.includes("<!DOCTYPE html>")) {
+                         alert(`Request Blocked by Firewall (Cloudflare). The server treated this upload as a bot request.\n\nTechncial Detail: Received HTML challenge page instead of JSON.`);
+                     } else {
+                         alert(`Image upload failed: ${text.substring(0, 500)}`);
+                     }
                 }
             }
         } catch (e) {

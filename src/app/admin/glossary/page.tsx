@@ -127,7 +127,10 @@ const GlossaryAdmin = () => {
         try {
             const res = await fetch('/api/admin/glossary/upload', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                }
             })
 
             if (res.ok) {
