@@ -69,7 +69,11 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
             
             const res = await fetch('/api/upload', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json',
+                }
             });
             
             if (res.ok) {
