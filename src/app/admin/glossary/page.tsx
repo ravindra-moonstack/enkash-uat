@@ -125,7 +125,7 @@ const GlossaryAdmin = () => {
         formData.append('file', file)
 
         try {
-            const res = await fetch('/api/admin/glossary/upload', {
+            const res = await fetch('/api/upload', {
                 method: 'POST',
                 body: formData,
                 headers: {

@@ -66,8 +66,9 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
             const quill = quillInstance.current;
             // Get selection from saved state or current selection
             const range = savedRange || quill.getSelection(true) || { index: quill.getLength() };
-            
-            const res = await fetch('/api/admin/glossary/upload', {
+            console.log("range", range);
+            console.log("formData", formData);
+            const res = await fetch('/api/upload', {
                 method: 'POST',
                 body: formData,
                 headers: {
