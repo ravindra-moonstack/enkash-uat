@@ -147,6 +147,11 @@ export default async function GlossarySlugPage({ params }: PageProps) {
             blogLinks.push(term.blogWord);
         }
 
+        const aiPrompt = `Please summarize this FinTech glossary term for me: ${url}`;
+        const chatGptLink = `https://chatgpt.com/?q=${encodeURIComponent(aiPrompt)}`;
+        const claudeLink = `https://claude.ai/new?q=${encodeURIComponent(aiPrompt)}`;
+        const perplexityLink = `https://www.perplexity.ai/?q=${encodeURIComponent(aiPrompt)}`;
+
         return (
             <>
                 <section className={styles.detailPageSection}>
@@ -179,78 +184,114 @@ export default async function GlossarySlugPage({ params }: PageProps) {
                             <AlphabetBar currentLetter={letter} availableLetters={availableLetters} />
                         </div>
                         <div className={styles.sectionWrapper}>
-                            <div className={styles.titleSection}>
-                                <DynamicHeading
-                                    content={[
-                                        {
-                                            text: term.word,
-                                            color: "color-dark-grey f-4",
-                                        },
-                                    ]}
-                                    headingTag="h2"
-                                    className={styles.termTitle}
-                                />
+                            <aside className={styles.sidebar}>
+                                <div className={styles.aiBox}>
+                                    <h3 className={styles.aiBoxTitle}>
+                                        Summarize with <span>AI</span>
+                                    </h3>
 
-                                <div className={styles.iconContainer}>
-                                    <a
-                                        href={linkedinShare}
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                        className={styles.icon}
-                                    >
-                                        <FaLinkedinIn />
+                                    <a href={chatGptLink} target="_blank" rel="noopener noreferrer" className={styles.aiOption}>
+                                        <span className={styles.aiIcon}>
+                                            <Image src="/svgs/chat-gpt-icon.svg" alt="Ask ChatGPT" width={40} height={40} />
+                                        </span>
+                                        {"Ask "} <strong> Chat GPT</strong>
                                     </a>
+                                    <div className={styles.aiDivider}></div>
 
-                                    <a
-                                        href={facebookShare}
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                        className={styles.icon}
-                                    >
-                                        <FaFacebookF />
+                                    <a href={claudeLink} target="_blank" rel="noopener noreferrer" className={styles.aiOption}>
+                                        <span className={styles.aiIcon}>
+                                            <Image src="/svgs/claude-icon.svg" alt="Ask Claude" width={40} height={40} />
+                                        </span>
+                                        {"Ask "} <strong> Claude</strong>
                                     </a>
+                                    <div className={styles.aiDivider}></div>
 
-                                    <a
-                                        href={twitterShare}
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                        className={styles.icon}
-                                    >
-                                        <FaXTwitter />
+                                    <a href={perplexityLink} target="_blank" rel="noopener noreferrer" className={styles.aiOption}>
+                                        <span className={styles.aiIcon}>
+                                            <Image src="/svgs/perplexity-icon.svg" alt="Ask Perplexity" width={40} height={40} />
+                                        </span>
+                                        {"Ask "} <strong> Perplexity</strong>
                                     </a>
+                                    <div className={styles.aiDivider}></div>
+                                </div>
+                            </aside >
+
+                            <div className={styles.mainContent}>
+                                <div className={styles.titleSection}>
+                                    <DynamicHeading
+                                        content={[
+                                            {
+                                                text: term.word,
+                                                color: "color-dark-grey f-4",
+                                            },
+                                        ]}
+                                        headingTag="h2"
+                                        className={styles.termTitle}
+                                    />
+
+                                    <div className={styles.iconContainer}>
+                                        <a
+                                            href={linkedinShare}
+                                            target="_blank"
+                                            rel="noreferrer noopener"
+                                            className={styles.icon}
+                                        >
+                                            <FaLinkedinIn />
+                                        </a>
+
+                                        <a
+                                            href={facebookShare}
+                                            target="_blank"
+                                            rel="noreferrer noopener"
+                                            className={styles.icon}
+                                        >
+                                            <FaFacebookF />
+                                        </a>
+
+                                        <a
+                                            href={twitterShare}
+                                            target="_blank"
+                                            rel="noreferrer noopener"
+                                            className={styles.icon}
+                                        >
+                                            <FaXTwitter />
+                                        </a>
+                                    </div>
+
                                 </div>
 
+                                <div
+                                    className={styles.sectionContent + " " + "ql-editor"}
+                                    dangerouslySetInnerHTML={{ __html: term.content }}
+                                />
                             </div>
-
-                            <div
-                                className={styles.sectionContent + " " + "ql-editor"}
-                                dangerouslySetInnerHTML={{ __html: term.content }}
-                            />
-                        </div>
+                        </div >
 
                         <div className={styles.bottomAlphabetBar}>
                             <AlphabetBar currentLetter={letter} availableLetters={availableLetters} />
                         </div>
-                    </Container>
-                </section>
+                    </Container >
+                </section >
 
                 {/* Related Blogs Section */}
-                {(blogLinks.length > 0) && (
-                    <BlogSection
-                        className="bg-white"
-                        heading={[
-                            {
-                                title: "Related  ",
-                                color: "color-black ",
-                            },
-                            {
-                                title: " Resources",
-                                color: "color-black f-4",
-                            },
-                        ]}
-                        links={blogLinks}
-                    />
-                )}
+                {
+                    (blogLinks.length > 0) && (
+                        <BlogSection
+                            className="bg-white"
+                            heading={[
+                                {
+                                    title: "Related  ",
+                                    color: "color-black ",
+                                },
+                                {
+                                    title: " Resources",
+                                    color: "color-black f-4",
+                                },
+                            ]}
+                            links={blogLinks}
+                        />
+                    )
+                }
             </>
         )
     }
