@@ -69,6 +69,65 @@ const GlossaryFormView = ({
     handleAltSubmit,
     handleAltCancel
 }: GlossaryFormViewProps) => {
+    // Presence / Locking Logic
+    const [activeEditors, setActiveEditors] = React.useState<string[]>([])
+    const editorIdCurrent = React.useRef<string>("")
+
+    React.useEffect(() => {
+        if (!editingItem || !editingItem.id) return
+
+        // Generate a simplified unique ID for this specific session instance
+        // This ensures even duplicated tabs are treated as separate editors
+        const eId = Math.random().toString(36).substring(2, 10)
+        editorIdCurrent.current = eId
+
+        const checkActiveEditors = async () => {
+            if (!editingItem?.id) return
+            try {
+                const res = await fetch('/api/admin/glossary/active-editors', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        glossaryId: editingItem.id,
+                        editorId: eId
+                    })
+                })
+                const data = await res.json()
+                if (data.success) {
+                    setActiveEditors(data.activeEditors || [])
+                }
+            } catch (err) {
+                console.error("Error checking active editors", err)
+            }
+        }
+
+        // Cleanup function to release lock
+        const releaseLock = () => {
+            if (eId && editingItem?.id) {
+                // Use fetch with keepalive to ensure request sends even during page unload
+                fetch(`/api/admin/glossary/active-editors?glossaryId=${editingItem.id}&editorId=${eId}`, {
+                    method: 'DELETE',
+                    keepalive: true
+                }).catch(e => console.error("Failed to release lock", e))
+            }
+        }
+
+        // Initial check
+        checkActiveEditors()
+
+        // Poll every 5 seconds
+        const interval = setInterval(checkActiveEditors, 5000)
+
+        // Add beforeunload listener for browser close/refresh
+        window.addEventListener('beforeunload', releaseLock)
+
+        return () => {
+            clearInterval(interval)
+            window.removeEventListener('beforeunload', releaseLock)
+            releaseLock()
+        }
+    }, [editingItem?.id])
+
     return (
         <div className={styles.contentWrapper}>
             <div className={styles.header}>
@@ -81,6 +140,15 @@ const GlossaryFormView = ({
                 <p className={styles.subtitle}>
                     {editingItem ? `Updating details for "${editingItem.word}"` : "Add a new term and definition to the glossary"}
                 </p>
+
+                {activeEditors.length > 0 && (
+                    <div className="alert alert-warning mt-3" role="alert" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <i className="bi bi-exclamation-triangle-fill" style={{ fontSize: '1.2rem' }}></i>
+                        <div>
+                            <strong>Warning:</strong> Another user is currently editing this item. Please coordinate to avoid overwriting changes.
+                        </div>
+                    </div>
+                )}
             </div>
 
             {fieldErrors.general && (
