@@ -353,9 +353,9 @@
         }
     }
 
-    :global(.ql-tooltip) {
-        display: none !important;
-    }
+    // :global(.ql-tooltip) {
+    //     display: none !important;
+    // }
 
     :global(.ql-snow .ql-stroke) {
         stroke: $color-grey-600;
