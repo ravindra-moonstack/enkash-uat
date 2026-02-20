@@ -50,10 +50,119 @@
 .sectionWrapper {
   max-width: 100%;
   padding: 10px 0;
+  position: relative;
 
   @include for-laptops {
     max-width: 70%;
     margin: 0 auto;
+  }
+}
+
+.mainContent {
+  width: 100%;
+}
+
+.sidebar {
+  width: 100%;
+  margin-bottom: 24px;
+  z-index: 10;
+
+  @include for-laptops {
+    width: 240px;
+    position: absolute;
+    left: -260px;
+    top: 145px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1500px) {
+    width: 285px;
+    left: -300px;
+  }
+}
+
+.aiBox {
+  background: $color-alt-grey-b;
+  border-radius: 12px;
+  padding: 20px;
+  padding-top: 36px;
+  border: 1px solid $color-electric-green;
+  box-shadow: 0px 0px 77px 0px #0000001A;
+}
+
+.aiBoxTitle {
+  font-size: 17px;
+  font-weight: 400;
+  color: $color-black-100;
+  margin-bottom: 16px;
+  text-align: center;
+
+  span {
+    color: $color-equity-blue;
+  }
+
+  @include for-laptops {
+    font-size: 24px;
+    margin-bottom: 22px;
+  }
+}
+
+.aiOption {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 24px 30px 27px;
+  margin-bottom: 2px;
+  background: $color-white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  font-size: 20px;
+  font-weight: 400;
+  color: $color-black-100;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background: #f8fffe;
+    border-color: #3dd6c8;
+    color: $color-main-black;
+    text-decoration: none;
+  }
+
+  strong {
+    font-weight: 700;
+    margin-left: 2px;
+  }
+}
+
+.aiDivider {
+  border: 2.5px solid $color-white;
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.aiIcon {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+
+  svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
