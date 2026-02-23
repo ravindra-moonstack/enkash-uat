@@ -15,7 +15,7 @@ export async function POST(request: Request) {
       );
     }
 
-    let imageUrl = "";
+    // let imageUrl = "";
     const buffer = Buffer.from(await file.arrayBuffer());
  const fileExtension = file.name.split('.').pop()?.toLowerCase();
   const uniqueFileName = `${uuidv4()}`;
