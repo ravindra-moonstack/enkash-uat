@@ -13,72 +13,88 @@ import GlossarySearch from "@/src/components/glossary/GlossarySearch"
 import AlphabetBar from "@/src/components/glossary/AlphabetBar"
 
 interface Props {
-    letter: string
-    initialTerms: any[]
+  letter: string
+  initialTerms: any[]
 }
 
 const LetterPageClient = ({ letter, initialTerms }: Props) => {
-    const BigLetter = (letter || "").toUpperCase()
-    const activeLetter = BigLetter === "#" || BigLetter === "%23" ? "#" : BigLetter;
+  const BigLetter = (letter || "").toUpperCase()
+  const activeLetter =
+    BigLetter === "#" || BigLetter === "%23" ? "#" : BigLetter
 
-    return (
-        <section className={styles.letterPageSection}>
-            <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
-            <Container className={`pb-0 ${styles.paddingTop}`}>
-                <div className="d-flex mb-3">
-                    <CustomBreadcrumb
-                        linkColor="allBlack"
-                        items={[
-                            { name: "Home", url: "/" },
-                            { name: "Glossary", url: "/glossary" },
-                            { name: `${activeLetter}`, url: `/glossary/${activeLetter === '#' ? 'numbers' : letter}` },
-                        ]}
-                    />
-                </div>
-                <DynamicHeading
-                    content={[
-                        {
-                            text: "FinTech ",
-                            color: "color-black f-3",
-                        },
-                        { text: "Glossary", color: "color-equity-blue" },
-                    ]}
-                    headingTag="h1"
-                    className={styles.pageTitle}
-                />
+  return (
+    <section className={styles.letterPageSection}>
+      <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
+      <Container className={`pb-0 ${styles.paddingTop}`}>
+        <div className="d-flex mb-3">
+          <CustomBreadcrumb
+            linkColor="allBlack"
+            items={[
+              { name: "Home", url: "/" },
+              { name: "Glossary", url: "/glossary" },
+              {
+                name: `${activeLetter}`,
+                url: `/glossary/${activeLetter === "#" ? "numbers" : letter}`,
+              },
+            ]}
+          />
+        </div>
+        <DynamicHeading
+          content={[
+            {
+              text: "FinTech ",
+              color: "color-black f-3",
+            },
+            { text: "Glossary", color: "color-equity-blue" },
+          ]}
+          headingTag="h1"
+          className={styles.pageTitle}
+        />
 
-                <GlossarySearch />
+        <GlossarySearch />
+        <div className={styles.termsLetter}>
+          <DynamicHeading
+            content={[
+              {
+                text: activeLetter,
+                color: " f-2",
+              },
+            ]}
+            headingTag="h3"
+            className={styles.pageLetter}
+          />
+        </div>
 
-                <AlphabetBar currentLetter={activeLetter} />
+        <AlphabetBar currentLetter={activeLetter} />
 
-                <div className={styles.termsGrid}>
-                    {initialTerms.length > 0 ? (
-                        initialTerms.map((item) => (
-                            <div key={item.slug} className={styles.termCol}>
-                                <Link
-                                    href={`/glossary/${item.slug}`}
-                                    className={styles.termLink}
-                                >
-                                    <span className={styles.title}>{item.word}</span>
-                                    <Image
-                                        src={ChevronRight}
-                                        alt="ChevronRight"
-                                        className={styles.arrow}
-                                    />
-                                </Link>
-                            </div>
-                        ))
-                    ) : (
-                        <div className={styles.noResultsCol}>
-                            <p className={styles.noResults}>No Data for This Letter</p>
-                        </div>
-                    )}
-                </div>
+        <div className={styles.termsGrid}>
+          {initialTerms.length > 0 ? (
+            initialTerms.map((item) => (
+              <div key={item.slug} className={styles.termCol}>
+                <Link
+                  href={`/glossary/${item.slug}`}
+                  className={styles.termLink}
+                >
+                  <span className={styles.title}>{item.word}</span>
+                  <Image
+                    src={ChevronRight}
+                    alt="ChevronRight"
+                    className={styles.arrow}
+                  />
+                </Link>
+              </div>
+            ))
+          ) : (
+            <div className={styles.noResultsCol}>
+              <p className={styles.noResults}>No Data for This Letter</p>
+            </div>
+          )}
+        </div>
 
-                <AlphabetBar currentLetter={activeLetter} />
-            </Container>
-        </section>
-    )
+        <AlphabetBar currentLetter={activeLetter} />
+      </Container>
+    </section>
+  )
 }
 
 export default LetterPageClient
