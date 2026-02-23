@@ -1,6 +1,6 @@
 
 import { NextResponse } from 'next/server';
-import { uploadToS3 } from '@/src/utils/s3Upload';
+// import { uploadToS3 } from '@/src/utils/s3Upload';
 import { v4 as uuidv4 } from 'uuid'; 
 
 export async function POST(request: Request) {
