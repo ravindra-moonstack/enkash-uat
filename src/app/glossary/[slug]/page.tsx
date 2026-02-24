@@ -132,7 +132,10 @@ export default async function GlossarySlugPage({ params }: PageProps) {
 
         const availableLetters = await getLetters()
         // Identify letter from term word
-        const letter = term.word ? term.word.charAt(0).toUpperCase() : '#'
+        let letter = term.word ? term.word.charAt(0).toUpperCase() : '#'
+        if (/\d/.test(letter)) {
+            letter = '#'
+        }
 
         const url = `${process.env.NEXT_PUBLIC_URL}/glossary/${slug}`;
         const encodedUrl = encodeURIComponent(url);
@@ -163,7 +166,7 @@ export default async function GlossarySlugPage({ params }: PageProps) {
                                 items={[
                                     { name: "Home", url: "/" },
                                     { name: "Glossary", url: "/glossary" },
-                                    { name: letter.toUpperCase(), url: `/glossary/${letter.toLowerCase()}` },
+                                    { name: letter.toUpperCase(), url: `/glossary/${letter === '#' ? 'letter-with-numbers' : letter.toLowerCase()}` },
                                     { name: term.word, url: `/glossary/${slug}` },
                                 ]}
                             />
