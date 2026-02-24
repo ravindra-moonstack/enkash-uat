@@ -21,7 +21,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Comprehensive product suite for all your business finance needs - payment gateway, expense management, corporate cards, payables, loyalty programs, brand vouchers and more",
   alternates: {
-    canonical: `${process.env.URL}/products/`,
+    canonical: `${process.env.URL}/products`,
   },
 })
 
