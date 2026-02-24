@@ -75,6 +75,10 @@
     margin-bottom: 0;
   }
 
+  @media (max-width: 1440px) {
+    width: 260px;
+  }
+
   @media (min-width: 1500px) {
     width: 285px;
     left: -300px;
@@ -137,6 +141,11 @@
   strong {
     font-weight: 700;
     margin-left: 2px;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 18px 20px 20px;
+    font-size: 16px;
   }
 }
 
