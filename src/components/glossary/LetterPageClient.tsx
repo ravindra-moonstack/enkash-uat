@@ -19,7 +19,8 @@ interface Props {
 
 const LetterPageClient = ({ letter, initialTerms }: Props) => {
     const BigLetter = (letter || "").toUpperCase()
-    const activeLetter = BigLetter === "#" || BigLetter === "%23" ? "#" : BigLetter;
+    const activeLetter =
+        BigLetter === "#" || BigLetter === "%23" ? "#" : BigLetter
 
     return (
         <section className={styles.letterPageSection}>
@@ -31,7 +32,10 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
                         items={[
                             { name: "Home", url: "/" },
                             { name: "Glossary", url: "/glossary" },
-                            { name: `${activeLetter}`, url: `/glossary/${activeLetter === '#' ? 'numbers' : letter}` },
+                            {
+                                name: `${activeLetter}`,
+                                url: `/glossary/${activeLetter === "#" ? "letter-with-numbers" : letter}`,
+                            },
                         ]}
                     />
                 </div>
@@ -76,8 +80,8 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
                 </div>
 
                 <AlphabetBar currentLetter={activeLetter} />
-            </Container>
-        </section>
+            </Container >
+        </section >
     )
 }
 
