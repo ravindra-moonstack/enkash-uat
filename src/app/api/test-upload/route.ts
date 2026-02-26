@@ -37,10 +37,7 @@ export async function POST(request: Request) {
       responseData = JSON.parse(responseText);
     } catch{
       responseData = responseText;
-    }
-    
-    console.log("response status:", response.status);
-    console.log("response data:", responseData);
+    } 
 
     return NextResponse.json({ 
       error: !response.ok ? "Upload failed" : undefined,

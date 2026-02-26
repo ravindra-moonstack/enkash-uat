@@ -34,7 +34,7 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
               { name: "Glossary", url: "/glossary" },
               {
                 name: `${activeLetter}`,
-                url: `/glossary/${activeLetter === "#" ? "numbers" : letter}`,
+                url: `/glossary/${activeLetter === "#" ? "letter-with-numbers" : letter}`,
               },
             ]}
           />
@@ -92,8 +92,8 @@ const LetterPageClient = ({ letter, initialTerms }: Props) => {
         </div>
 
         <AlphabetBar currentLetter={activeLetter} />
-      </Container>
-    </section>
+      </Container >
+    </section >
   )
 }
 

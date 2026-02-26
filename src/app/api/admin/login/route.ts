@@ -43,7 +43,7 @@ console.log('rows',rows);
         role: 'admin',
       },
       process.env.JWT_SECRET as string,
-      { expiresIn: '1h' }
+      { expiresIn: '1d' }
     );
 
     return NextResponse.json({
