@@ -66,9 +66,7 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
             const quill = quillInstance.current;
             // Get selection from saved state or current selection
             const range = savedRange || quill.getSelection(true) || { index: quill.getLength() };
-            console.log("range", range);
-            console.log("formData", formData);
-            const res = await fetch('http://localhost:3000/api/upload', {
+            const res = await fetch('/api/upload', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -77,8 +75,8 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
             });
             
             if (res.ok) {
-                console.log("image uploaded");
                 const data = await res.json();
+                console.log("S3 Upload Success Response:", data.s3Response);
                 quill.insertEmbed(range.index, 'image', data.url);
                 
                 setTimeout(() => {
@@ -94,6 +92,9 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                 console.error('Image upload failed. Status:', res.status, 'Response:', text);
                 try {
                      const errorData = JSON.parse(text);
+                     if (errorData.details) {
+                         console.error("S3 Upload Error Details:", errorData.details);
+                     }
                      alert(`Image upload failed: ${errorData.error}\nCheck console for details.`);
                 } catch {
                      if (text.includes("<!DOCTYPE html>")) {

@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 export const uploadToS3 = async ( 
   fileName: string,
   fileBuffer: Buffer
-): Promise<string> => {
+): Promise<{ url: string; s3Response: any }> => {
   const fileExtension = fileName.split('.').pop()?.toLowerCase();
    
   const allowedExtensions = ['webp', 'svg'];
@@ -24,15 +24,29 @@ export const uploadToS3 = async (
       },
     });
 
+    const responseText = await response.text();
+    let responseData;
+    try {
+      responseData = JSON.parse(responseText);
+    } catch{
+      responseData = responseText;
+    } 
+
+    const s3Response = {
+      status: response.status,
+      statusText: response.statusText,
+      headers: Object.fromEntries(response.headers.entries()),
+      data: responseData 
+    };
+
     if (!response.ok) {
-        const errorText = await response.text();
-        console.error(`S3 Upload FAILED: ${response.status} - ${errorText}`);
-        // Throwing the raw HTML/text here so the calling API route can catch it 
+        console.error(`S3 Upload FAILED: ${response.status} - ${responseText}`);
+        // Throwing the serialized JSON here so the calling API route can catch it 
         // and send it back to the client for debugging
-        throw new Error(`Upload failed with status: ${response}`);
+        throw new Error(JSON.stringify(s3Response));
     }
  
-    return uploadUrl;
+    return { url: uploadUrl, s3Response };
   } catch (error: any) {
     console.error('Error uploading to Cloudflare/S3:', error);
     // Propagate the detailed error
