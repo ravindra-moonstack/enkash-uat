@@ -68,7 +68,7 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
             const range = savedRange || quill.getSelection(true) || { index: quill.getLength() };
             console.log("range", range);
             console.log("formData", formData);
-            const res = await fetch('/api/upload', {
+            const res = await fetch('http://localhost:3000/api/upload', {
                 method: 'POST',
                 body: formData,
                 headers: {
