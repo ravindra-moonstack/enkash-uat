@@ -16,15 +16,27 @@ export async function POST(request: Request) {
     }
 
     let imageUrl = "";
+    let s3Response = null;
     const buffer = Buffer.from(await file.arrayBuffer());
     try {
-        imageUrl = await uploadToS3(file.name, buffer);
-    } catch (error) {
+        const result = await uploadToS3(file.name, buffer);
+        imageUrl = result.url;
+        s3Response = result.s3Response;
+    } catch (error: any) {
         console.error("S3 Upload Error:", error);
-        throw error;
+        let errorDetails = error.message;
+        try {
+            errorDetails = JSON.parse(error.message);
+        } catch {
+            // keep as string if not JSON
+        }
+        return NextResponse.json(
+          { error: 'Upload failed', details: errorDetails },
+          { status: 500 }
+        );
     }
 
-    return NextResponse.json({ url: imageUrl });
+    return NextResponse.json({ url: imageUrl, s3Response });
   } catch (error: any) {
     console.error('Error uploading file:', error);
     return NextResponse.json(
