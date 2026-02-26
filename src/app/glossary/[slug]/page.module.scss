@@ -86,19 +86,18 @@
 }
 
 .aiBox {
-  background: $color-alt-grey-b;
+  background: color-white;
   border-radius: 12px;
-  padding: 20px;
-  padding-top: 36px;
-  border: 1px solid $color-electric-green;
-  box-shadow: 0px 0px 77px 0px #0000001A;
+  padding: 50px 45px;
+  border: 1px solid $color-grey-100;
+  box-shadow: 0px 0px 77px 0px #0000001a;
 }
 
 .aiBoxTitle {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
   color: $color-black-100;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   text-align: center;
 
   span {
@@ -106,8 +105,7 @@
   }
 
   @include for-laptops {
-    font-size: 24px;
-    margin-bottom: 22px;
+    font-size: 20px;
   }
 }
 
@@ -115,12 +113,12 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 24px 30px 27px;
+  padding: 10px 8px;
   margin-bottom: 2px;
   background: $color-white;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   color: $color-black-100;
   cursor: pointer;
@@ -160,8 +158,8 @@
 }
 
 .aiIcon {
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   margin-right: 12px;
   display: flex;
   align-items: center;
@@ -179,9 +177,10 @@
   letter-spacing: -0.04em;
   color: $color-equity-blue;
   margin-bottom: 4px;
+  font-size: 28px !important;
 
   &:not(:first-child) {
-    margin-top: 24px;
+    margin-top: 20px;
   }
 }
 
@@ -324,11 +323,9 @@
   margin-bottom: 20px;
 }
 
-
 .bottomAlphabetBar {
   margin-top: 50px;
   margin-bottom: 20px;
-
 }
 
 .alphabetScroll {
@@ -420,7 +417,6 @@
   }
 }
 
-
 .definitionSection {
   background: $color-white;
   padding: $spacing-2xl;
@@ -434,8 +430,6 @@
     margin-bottom: $spacing-4xl;
   }
 }
-
-
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -453,5 +447,4 @@
   .definitionSection {
     padding: $spacing-lg;
   }
-
 }
