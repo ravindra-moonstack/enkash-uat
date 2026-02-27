@@ -95,7 +95,8 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
                      if (errorData.details) {
                          console.error("S3 Upload Error Details:", errorData.details);
                      }
-                     alert(`Image upload failed: ${errorData.error}\nCheck console for details.`);
+                     const errorMessage = errorData.details?.message || errorData.details || errorData.message || errorData.error;
+                     alert(`Image upload failed: ${errorMessage}\nCheck console for details.`);
                 } catch {
                      if (text.includes("<!DOCTYPE html>")) {
                          alert(`Request Blocked by Firewall (Cloudflare). The server treated this upload as a bot request.\n\nTechncial Detail: Received HTML challenge page instead of JSON.`);
