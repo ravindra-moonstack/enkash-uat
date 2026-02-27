@@ -141,7 +141,8 @@ const GlossaryAdmin = () => {
                 try {
                     const errorData = JSON.parse(text);
                     console.error("Upload failed:", errorData);
-                    alert(errorData.error || errorData.message || `Image upload failed: ${res.status}`);
+                    const errorMessage = errorData.details?.message || errorData.details || errorData.message || errorData.error || `Image upload failed: ${res.status}`;
+                    alert(errorMessage);
                 } catch {
                     console.error("Upload failed (non-JSON):", text);
                     alert(`Image upload failed: ${text.substring(0, 500)}`);
