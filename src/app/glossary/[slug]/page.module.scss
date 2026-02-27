@@ -86,7 +86,7 @@
 }
 
 .aiBox {
-  background: color-white;
+  background: $color-white;
   border-radius: 12px;
   padding: 50px 30px;
   border: 1px solid $color-grey-100;
@@ -197,6 +197,7 @@
 }
 
 .paddingTop {
+  padding: 20px;
   padding-top: 110px;
 
   @include for-laptops {
