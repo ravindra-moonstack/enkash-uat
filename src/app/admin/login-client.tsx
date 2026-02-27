@@ -26,8 +26,8 @@ const LoginClient = () => {
             const data = await response.json()
 
             if (data.success) {
-                // Store token in cookie with 1 hour expiry (matching JWT)
-                document.cookie = `token=${data.token}; path=/; max-age=3600; SameSite=Strict`;
+                // Store token in cookie with 1 day expiry (matching JWT)
+                document.cookie = `token=${data.token}; path=/; max-age=86400; SameSite=Strict`;
                 window.location.href = "/admin/glossary"
             } else {
                 setError(data.message || "Login failed")
