@@ -24,15 +24,29 @@ export async function POST(request: Request) {
         s3Response = result.s3Response;
     } catch (error: any) {
         console.error("S3 Upload Error:", error);
-        let errorDetails = error.message;
+        let errorDetails: any = { message: error.message };
+        let statusCode = 500;
         try {
-            errorDetails = JSON.parse(error.message);
+            const parsed = JSON.parse(error.message);
+            if (parsed && typeof parsed === 'object') {
+                errorDetails = parsed;
+                if (parsed.status) {
+                    statusCode = parsed.status;
+                }
+            }
         } catch {
             // keep as string if not JSON
         }
         return NextResponse.json(
-          { error: 'Upload failed', details: errorDetails },
-          { status: 500 }
+          { 
+            error: 'Upload failed',
+            status: errorDetails.status,
+            statusText: errorDetails.statusText,
+            headers: errorDetails.headers,
+            data: errorDetails.data,
+            details: errorDetails 
+          },
+          { status: statusCode }
         );
     }
 
