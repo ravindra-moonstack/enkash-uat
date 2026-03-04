@@ -316,8 +316,11 @@
   background-color: $color-white;
   color: $color-main-black;
   text-decoration: none;
-  height: 31px;
   transition: all 0.2s ease;
+
+  @include for-laptops {
+    height: 31px;
+  }
 
   .title {
     font-size: 16px;
