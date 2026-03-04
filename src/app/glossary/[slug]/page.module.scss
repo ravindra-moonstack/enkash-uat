@@ -51,33 +51,46 @@
   max-width: 100%;
   padding: 10px 0;
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   @include for-laptops {
     max-width: 70%;
     margin: 0 auto;
+    display: block;
   }
 }
 
 .mainContent {
   width: 100%;
+  order: 1;
+
+  @include for-laptops {
+    order: unset;
+  }
 }
 
 .sidebar {
   width: 100%;
-  margin-bottom: 24px;
+  margin-top: 24px;
+  margin-bottom: 0;
   z-index: 10;
+  order: 2;
 
   @include for-laptops {
+    order: unset;
     width: 240px;
     position: absolute;
     left: -260px;
     top: 145px;
+    margin-top: 0;
     margin-bottom: 0;
   }
 
   @media (max-width: 1440px) {
     width: 247px;
   }
+
 
   @media (min-width: 1500px) {
     width: 285px;
@@ -170,6 +183,16 @@
   svg {
     width: 28px;
     height: 28px;
+  }
+}
+
+.sectionContent p a {
+  color: $color-equity-blue !important;
+  text-decoration: underline !important;
+
+  &:hover {
+    color: darken($color-equity-blue, 12%) !important;
+    text-decoration: underline !important;
   }
 }
 
