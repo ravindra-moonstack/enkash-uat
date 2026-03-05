@@ -87,6 +87,8 @@
     margin-bottom: 0;
   }
 
+
+
   @media (max-width: 1440px) {
     width: 247px;
   }
@@ -95,6 +97,10 @@
   @media (min-width: 1500px) {
     width: 285px;
     left: -300px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 }
 
@@ -158,15 +164,24 @@
     padding: 18px 20px 20px;
     font-size: 16px;
   }
+
+  @media (max-width: 768px) {
+    padding: 12px 20px 12px;
+    font-size: 16px;
+  }
 }
 
 .aiDivider {
   border: 2.5px solid $color-white;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 
-  &:last-child {
-    margin-bottom: 0;
+  @include for-laptops {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
