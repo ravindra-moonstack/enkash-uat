@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import pool from '@/src/lib/dbConnect';
-import { addToGlossaryJson } from '@/src/lib/glossaryUtils';
+
  
 export async function GET(request: Request) {
   try {
@@ -85,8 +85,7 @@ export async function POST(request: Request) {
       [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, feature_image || null, feature_image_alt || null]
     );
 
-    // Update the local JSON file
-    await addToGlossaryJson();
+
 
     return NextResponse.json({
       success: true,
