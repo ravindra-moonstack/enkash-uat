@@ -2,6 +2,10 @@ import { MetadataRoute } from 'next'
 import { fetchAllLetters, generateTermParams } from '@/utils/glossaryData'
 import { STATIC_ROUTES } from './static-routes'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
+
 const BASE_URL = 'https://www.enkash.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
