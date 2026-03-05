@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import pool from '@/src/lib/dbConnect';
-import { updateInGlossaryJson, deleteFromGlossaryJson } from '@/src/lib/glossaryUtils';
+
 
 // GET: Fetch a single glossary item by ID
 export async function GET(
@@ -54,19 +54,10 @@ export async function PUT(
       );
     }
 
-    // Check if we need to update the JSON file (only if word or slug changed)
-    const [currentItemRows]: any = await pool.execute('SELECT word, slug FROM glossary WHERE id = ?', [id]);
-    const currentItem = currentItemRows[0];
-
     await pool.execute(
       'UPDATE glossary SET word = ?, slug = ?, content = ?, showRelatedBlogs = ?, blogWord = ?, meta_title = ?, meta_description = ?, feature_image = ?, feature_image_alt = ? WHERE id = ?',
       [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, feature_image || null, feature_image_alt || null, id]
     );
-
-    // Update the local JSON file only if critical fields changed
-    if (currentItem && (currentItem.word !== word || currentItem.slug !== slug)) {
-        await updateInGlossaryJson();
-    }
 
     return NextResponse.json({
       success: true,
@@ -90,9 +81,6 @@ export async function DELETE(
     const { id } = await params;
 
     await pool.execute('DELETE FROM glossary WHERE id = ?', [id]);
-
-    // Update the local JSON file
-    await deleteFromGlossaryJson();
 
     return NextResponse.json({
       success: true,
