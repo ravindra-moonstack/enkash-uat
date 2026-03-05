@@ -239,13 +239,11 @@ export const useQuillEditor = ({ content, setContent, viewMode }: UseQuillEditor
     const [pendingImage, setPendingImage] = useState<File | null>(null);
 
     const toggleHtmlView = () => {
-        if (!showHtmlView) {
-            // Switch to HTML View
+        if (!showHtmlView) { 
             if (quillInstance.current) {
                 setHtmlContent(quillInstance.current.root.innerHTML);
             }
-        } else {
-            // Switch back to Visual View
+        } else { 
             if (quillInstance.current) {
                 quillInstance.current.root.innerHTML = htmlContent; 
                 setContent(htmlContent);
