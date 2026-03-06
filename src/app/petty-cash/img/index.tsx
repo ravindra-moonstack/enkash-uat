@@ -43,3 +43,26 @@ export { default as pettyIconFive } from "./pettyIconFive.svg"
 export { default as pettyIconSix } from "./pettyIconSix.svg"
 export { default as pettyIconSeven } from "./pettyIconSeven.svg"
 export { default as pettyIconEight } from "./pettyIconEight.svg"
+
+export { default as success } from "./success.svg"
+export { default as acceleratedGrowthImg } from "./payment-getway.webp"
+
+export { default as quickIcon } from "./quickIcon.svg"
+export { default as paymentLinkImage } from "./payment-link.webp"
+export { default as paymentOptionIcon } from "./payment-option-icon.svg"
+export { default as paymentOptionImage } from "./payment-option.webp"
+export { default as notificationIcon } from "./notification-icon.svg"
+export { default as notificationImage } from "./notification.webp"
+export { default as secureIcon } from "./secure-icon.svg"
+export { default as secureImage } from "./secure-transition.webp"
+export { default as shareImage } from "./shareImg.webp"
+export { default as websiteIcon } from "./websiteIcon.svg"
+
+
+
+export { default as corporateCard } from "./coprate-card.webp"
+export { default as automaticCard } from "./automaticCard.webp"
+export { default as gstCard } from "./gstCard.webp"
+export { default as expenseCard } from "./expenseCard.webp"
+export { default as exchangeCard } from "./exchangeCard.webp"
+export { default as trackingCard } from "./tracking.webp"

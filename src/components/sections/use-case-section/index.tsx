@@ -12,7 +12,8 @@ interface HeadingPart {
 interface UseCaseItem {
   icon: string | StaticImageData
   title: string
-  description: string
+  description?: string
+  descriptionHtml?: React.ReactNode
   image?: string | StaticImageData
   buttonUrl?: string
   maxImageHeight?: string
@@ -23,7 +24,7 @@ interface UseCaseSectionProps {
   heading: HeadingPart[]
   headingTag?: keyof JSX.IntrinsicElements
   items: UseCaseItem[]
-  subHeading?:HeadingPart[]
+  subHeading?: HeadingPart[]
   buttonUrl: string
   className?: string
 }
@@ -45,7 +46,7 @@ const UseCaseSection: React.FC<UseCaseSectionProps> = ({
             headingTag={headingTag}
             className="f-6"
           />
-            <DynamicHeading
+          <DynamicHeading
             content={subHeading}
             headingTag="p"
             className="mt-2"
@@ -58,6 +59,7 @@ const UseCaseSection: React.FC<UseCaseSectionProps> = ({
             icon={item.icon}
             title={item.title}
             description={item.description}
+            descriptionHtml={item.descriptionHtml}
             image={item.image}
             buttonUrl={buttonUrl}
             maxImageHeight={item.maxImageHeight}
