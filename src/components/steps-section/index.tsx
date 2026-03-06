@@ -13,7 +13,7 @@ import { useSalesUrl } from "@/src/utils/salesUrl"
 interface StepItem {
   icon: string | StaticImageData
   title: string
-  description: string
+  description?: string
 }
 
 interface StepsSectionProps {
