@@ -4,7 +4,12 @@ import Image from "next/image"
 import DynamicHeading from "@/components/dynamic-heading"
 import styles from "./page.module.scss"
 import CommonButton from "../buttons"
-import { success } from "@/src/app/payment-gateway/img"
+
+type HeadingSegment = {
+    title?: string
+    text?: string
+    color?: string
+}
 
 interface VideoPlayerProps {
     videoSrc: string
@@ -12,14 +17,19 @@ interface VideoPlayerProps {
     ctaHref?: string
     features?: string[]
     featureIcon?: React.ReactNode
+    heading?: HeadingSegment[]
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
     videoSrc,
-    ctaLabel = "Request a Demo",
-    ctaHref = "#",
+    ctaLabel,
+    ctaHref,
     features = ["Zero setup fees", "Complete pricing transparency"],
     featureIcon,
+    heading = [
+        { title: "Experience ", color: "color-main-black" },
+        { title: "truly matters", color: "color-equity-blue" },
+    ],
 }) => {
     const sectionRef = useRef<HTMLElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
@@ -68,16 +78,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             <div className={`${styles.card} max-w-auto`}>
                 <div className={styles.leftCol}>
                     <DynamicHeading
-                        content={[
-                            {
-                                title: "Experience Payment Gateway that ",
-                                color: "color-main-black",
-                            },
-                            {
-                                title: "truly matters",
-                                color: "color-equity-blue",
-                            },
-                        ]}
+                        content={heading}
                         headingTag="h3"
                         className="f-6"
                     />
@@ -85,17 +86,19 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
                     <ul className={styles.featureList}>
                         {features.map((feature, i) => (
                             <li key={i} className={styles.featureItem}>
-                                <div
-                                    className="d-flex justify-content-center align-items-center bg-light rounded-circle"
-                                    style={{ width: "32px", height: "32px" }}
-                                >
-                                    <Image src={success} alt="icon" />
-                                </div>
+                                {featureIcon && (
+                                    <div
+                                        className="d-flex justify-content-center align-items-center"
+                                        style={{ width: "32px", height: "32px" }}
+                                    >
+                                        {featureIcon}
+                                    </div>
+                                )}
                                 <span className={styles.featureText}>{feature}</span>
                             </li>
                         ))}
                     </ul>
-                    <div>
+                    {ctaLabel && <div>
                         <CommonButton
                             title={ctaLabel}
                             url={ctaHref}
@@ -103,7 +106,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
                             theme="outline-blue"
                             arrowType="fa"
                         />
-                    </div>
+                    </div>}
                 </div>
 
                 <div className={styles.rightCol}>
