@@ -5,7 +5,7 @@ import { DynamicHeading, PolicyCard, CommanButton, ShimmerImage } from ".."
 interface SmartPolicySectionProps {
   heading: { title: string; color: string }[]
   subheading: { title: string; color: string }[]
-  cardsData: { icon: any; title: string; description: string }[]
+  cardsData: { icon: any; title: string; description?: string }[]
   approvedImage: string
   showScroll?: boolean
   buttonTitle?: string
@@ -35,9 +35,8 @@ const SmartPolicySection = ({
         </div>
 
         <div
-          className={`col-md-6 col-12 mt-4 mt-md-5 ${
-            showScroll ? "overflow-auto scrollbar-thin" : ""
-          }`}
+          className={`col-md-6 col-12 mt-4 mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+            }`}
           style={{
             maxHeight: "400px",
             direction: showScroll ? "rtl" : "ltr",
