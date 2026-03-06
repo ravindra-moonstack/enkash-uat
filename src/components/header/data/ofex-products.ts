@@ -15,7 +15,7 @@ import {
 
 const expenseProducts: TProductCategory[] = [
   {
-    name: "Expense Managment",
+    name: "Expense Management",
     description: "Flexible prepaid card solutions",
     link: "/products/expense-management",
     subProducts: [
@@ -70,7 +70,6 @@ const expenseProducts: TProductCategory[] = [
             imageSrcHovered: budgetAndAndvancesFilled,
             link: "/approval-flows",
           },
-
           {
             name: "Scan and Drop Receipts",
             description: "Auto-capture receipts, skip paperwork",
