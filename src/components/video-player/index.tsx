@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useRef } from "react"
-import Image from "next/image"
 import DynamicHeading from "@/components/dynamic-heading"
 import styles from "./page.module.scss"
 import CommonButton from "../buttons"
