@@ -302,12 +302,12 @@ const PaymentGateway = (): React.JSX.Element => {
             <div className="col-md-6 ">
               {acceleratedGrowthData.map(({ icon, title }, i) => (
                 <div key={i} style={{ direction: "ltr" }}>
-                  <div className="d-flex align-items-start gap-3 py-3 w-4 h-4">
+                  <div className="d-flex align-items-start gap-3 pt-2 w-4 h-4">
                     <div
                       className="d-flex justify-content-center align-items-center bg-light rounded-circle"
                       style={{ width: "32px", height: "32px" }}
                     >
-                      <Image src={icon} alt="icon" />
+                      <Image src={icon} alt="icon" sizes="32px" />
                     </div>
                     <div className="d-flex flex-column gap-3">
                       <DynamicHeading

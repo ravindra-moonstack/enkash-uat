@@ -1,3 +1,4 @@
+import React from "react"
 import { StaticImageData } from "next/image"
 
 export interface BreadcrumbItem {
@@ -20,7 +21,8 @@ export type TCategoryOptions = {
 export type TStackCardItemProp = {
   icon: string | StaticImageData
   title: string
-  description: string
+  description?: string
+  descriptionHtml?: React.ReactNode
   image?: string | StaticImageData
   buttonUrl?: string
   maxImageHeight?: string

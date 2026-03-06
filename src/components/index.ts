@@ -50,6 +50,9 @@ const SmartPolicySection = dynamic(() => import("./smart-policy-section"), {
 const FeatureSpotlight = dynamic(() => import("./feature-spotlight"), {
   ssr: true,
 })
+const VideoPlayer = dynamic(() => import("./video-player"), {
+  ssr: true,
+})
 const EnkashWay = dynamic(() => import("./enkash-way/enkash-way"), {
   ssr: true,
 })
@@ -270,6 +273,7 @@ export {
   LocationCard,
   SupportCard,
   PaymentLinkTab,
+  VideoPlayer,
   ScrollableCardsSection,
   RewardsCarousel,
   BankLogoSlider,
