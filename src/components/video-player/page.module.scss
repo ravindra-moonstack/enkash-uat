@@ -1,0 +1,109 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 52px 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: $color-white;
+    border-radius: 12px;
+    box-shadow: 0px 0px 77px 0px #0000001A;
+    padding: 32px 24px;
+    width: 100%;
+
+    @include for-laptops {
+        flex-direction: row;
+        align-items: center;
+        padding: 75px 85px 75px 75px;
+        gap: 22px;
+    }
+}
+
+// ── Left Column ──────────────────────────────────────────────────────────────
+
+.leftCol {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    flex: 1 1 280px;
+}
+
+.featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.featureText {
+    font-size: 14px;
+    color: $color-secondry-black;
+    letter-spacing: -0.02em;
+
+    @include for-laptops {
+        font-size: 15px;
+    }
+}
+
+
+// ── Right Column ─────────────────────────────────────────────────────────────
+
+.rightCol {
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 33px 0px #0000008C;
+}
+
+.videoWrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; // 16:9 aspect ratio
+    background: linear-gradient(135deg, #0c0e4a 0%, $color-night-blue 60%, $color-equity-blue 100%);
+    overflow: hidden;
+}
+
+.iframe,
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+}
+
+.caption {
+    background-color: #0c0e4a;
+    padding: 8px 14px;
+    font-size: 11px;
+    color: $color-white;
+    margin: 0;
+    letter-spacing: 0.01em;
+    line-height: 18px;
+
+    span {
+        opacity: 0.65;
+    }
+}

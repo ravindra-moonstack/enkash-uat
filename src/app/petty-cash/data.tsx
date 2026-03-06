@@ -1,22 +1,12 @@
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import {
   autoCollect,
-  costControlSavings,
-  costControlSavingsIcon,
-  fraudProtection,
-  fraudProtectionIcon,
   instant,
   paymentButton,
   paymentGatewayImg,
   paymentLink,
   qrCodes,
-  realTimeExpense,
-  realTimeExpenseIcon,
   reminder,
-  stackCardThreeIcon,
-  stackCardThreeImg,
-  streamlinedReimbursement,
-  streamlinedReimbursementIcon,
   pettyIconTwo,
   pettyIconOne,
   pettyIconThree,
@@ -25,92 +15,222 @@ import {
   pettyIconSix,
   pettyIconSeven,
   pettyIconEight,
+  success,
+  quickIcon,
+  paymentLinkImage,
+  paymentOptionIcon,
+  paymentOptionImage,
+  notificationIcon,
+  notificationImage,
+  secureIcon,
+  secureImage,
+  shareImage,
+  websiteIcon,
+  corporateCard,
+  automaticCard,
+  gstCard,
+  expenseCard,
+  exchangeCard,
+  trackingCard,
 } from "./img"
 
 const dashboardData = [
   {
-    title: "Block specific merchants or categories (e.g., liquor, groceries)",
+    title: "Block merchant categories",
     icon: pettyIconOne,
   },
   {
-    title: "Set maximum spend per transaction",
+    title: "Set transaction limits",
     icon: pettyIconTwo,
   },
   {
-    title: "Define allowed spend windows or time frames",
+    title: "Define time windows",
     icon: pettyIconThree,
   },
   {
-    title: "Stop out-of-policy expenses at source",
+    title: "Bulk allocate budgets",
     icon: pettyIconFour,
+  },
+  {
+    title: "Reclaim unused funds",
+    icon: pettyIconFive,
+  },
+]
+
+const policies: TStackCardsProp = [
+  {
+    icon: quickIcon,
+    title: "Branch Budgets, Defined Centrally",
+    descriptionHtml: (
+      <>
+        <p>Multi-location businesses require disciplined allocation. Budgets are set at branch level, with employee-specific limits defined within each location.</p>
+        <ul>
+          <li>Monthly petty cash limits per branch</li>
+          <li>Employee-level caps within each unit</li>
+          <li>Automated recurring top-ups</li>
+          <li>Instant reallocation of unused balances</li>
+        </ul>
+        <p>Allocation remains structured across cities and teams.</p>
+      </>
+    ),
+    image: paymentLinkImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "248px",
+  },
+  {
+    icon: websiteIcon,
+    title: "Policy Embedded in Every Transaction",
+    descriptionHtml: (
+      <>
+        <p>Local teams transact using UPI QR at any vendor, while policies remain consistent across branches.</p>
+        <ul>
+          <li>Transaction caps applied automatically</li>
+          <li>Merchant category restrictions enforced system-wide</li>
+          <li>Time-based rules validated before payment</li>
+          <li>Non-compliant transactions blocked at source</li>
+        </ul>
+        <p>Control is embedded directly into the transaction flow.</p>
+      </>
+    ),
+    image: shareImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+  {
+    icon: paymentOptionIcon,
+    title: "Every Payment Becomes a Record",
+    descriptionHtml: (
+      <>
+        <p>The moment a payment is completed, it becomes structured financial data.</p>
+        <ul>
+          <li>Expense entries created instantly</li>
+          <li>Transaction details pre-filled</li>
+          <li>Receipts captured via mobile or WhatsApp</li>
+          <li>Automated categorization for reporting</li>
+        </ul>
+        <p>Petty cash accounting progresses in real time.</p>
+      </>
+    ),
+    image: paymentOptionImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: notificationIcon,
+    title: "Visibility Across Every Branch",
+    descriptionHtml: (
+      <>
+        <p>Finance teams gain continuous oversight across distributed locations.</p>
+        <ul>
+          <li>Branch-level budget tracking</li>
+          <li>Employee-level spend monitoring</li>
+          <li>Vendor frequency insights</li>
+          <li>Real-time policy alerts</li>
+        </ul>
+        <p>Operational clarity does not depend on month-end reporting.</p>
+      </>
+    ),
+    image: notificationImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: secureIcon,
+    title: "Close in Minutes",
+    descriptionHtml: (
+      <>
+        <p>Reconciliation across multiple locations is system-driven.</p>
+        <ul>
+          <li>Automatic matching of transactions and receipts</li>
+          <li>Instant exception alerts</li>
+          <li>Streamlined verification workflows</li>
+          <li>Audit-ready exports on demand</li>
+        </ul>
+        <p>Even at scale, financial closure remains controlled and predictable.</p>
+      </>
+    ),
+    image: secureImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
   },
 ]
 const analyticData = [
   {
-    title: "Identify top spending branches or employees",
+    title: "Identify top-spending branches and employees",
     icon: pettyIconFive,
   },
   {
-    title: "Detect budget violations early",
+    title: "Detect budget violations in real-time",
     icon: pettyIconSix,
   },
   {
-    title: "Forecast future needs based on spend patterns",
+    title: "Forecast future spend based on patterns",
     icon: pettyIconSeven,
   },
   {
-    title: "Export reports for audits, compliance, or management reviews",
+    title: "Export audit-ready reports for compliance",
     icon: pettyIconEight,
   },
 ]
-const stackcardData: TStackCardsProp = [
+
+const acceleratedGrowthData = [
   {
-    icon: realTimeExpenseIcon,
-    title: "UPI-Based Petty Cash",
-    description:
-      "Replace messy cash handling with UPI-based petty cash that works the way your teams do. Give employees assigned wallets for daily expenses, set clear spend limits and approval rules, and track every transaction in real time. Every payment is recorded automatically - no manual entries, no missing receipts - so you stay fully compliant, audit-ready, and always in control of petty cash spends.",
-    image: realTimeExpense,
-    buttonUrl: "/sales/?source=expense_management",
-    maxImageHeight: "300px",
+    title: "Zero setup fees",
+    icon: success,
   },
   {
-    icon: fraudProtectionIcon,
-    title: "Digital Petty Cash Distribution",
-    description:
-      "Distribute petty cash instantly—without paperwork, delays, or manual handovers. Load funds to EnKash prepaid cards or UPI wallets, define monthly budgets, set user or branch-level limits, automate top-ups, and revoke access anytime. Every allocation and spend is tracked in real time, helping you replace manual petty cash registers with a fully digital, controlled, and audit-ready petty cash system for everyday reimbursements.",
-    image: fraudProtection,
-    buttonUrl: "/sales",
-    maxImageHeight: "300px",
+    title: "Live in 2 weeks",
+    icon: success,
   },
   {
-    icon: stackCardThreeIcon,
-    title: "Automatic Expense Creation",
-    description:
-      "Every petty cash transaction is automatically converted into an expense with key details pre-filled - amount, date, and merchant. Smart categorisation and mobile verification reduce manual work, so employees simply review, attach receipts, and submit in seconds. All expenses flow into a single, accurate petty cash expense list, giving finance teams clean, error-free reporting without follow-ups.",
-    image: stackCardThreeImg,
-    buttonUrl: "/sales",
-    maxImageHeight: "300px",
+    title: "Branch-wise budget control",
+    icon: success,
   },
   {
-    icon: streamlinedReimbursementIcon,
-    title: "Real-Time Tracking & Spend Visibility",
-    description:
-      "See every rupee as it’s spent, not after the month ends. Get live dashboards, instant policy alerts, and geo-tagged transaction logs for complete visibility across teams, branches, and locations. With itemised petty cash expenses in one central dashboard, you always know where money is going, no blind spots, no surprises.",
-    image: streamlinedReimbursement,
-    buttonUrl: "/sales/?source=expense_management",
-    maxImageHeight: "300px",
-  },
-  {
-    icon: costControlSavingsIcon,
-    title: "Automated Reconciliation",
-    description:
-      "Every transaction is automatically matched with submitted receipts - no manual cross-checking required. One-click verification, live reconciliation reports, and instant exception alerts help finance teams close faster with fewer errors. The result: a real-time, audit-ready trail that replaces manual petty cash registers and simplifies reviews, compliance, and audits.",
-    image: costControlSavings,
-    buttonUrl: "/sales",
-    maxImageHeight: "300px",
+    title: "Dedicated account manager",
+    icon: success,
   },
 ]
-
+const cardData = [
+  {
+    whiteTitle: "QR payments",
+    description:
+      "Pay any merchant instantly via UPI. No cards, cash, or transfers needed.",
+    cardImage: corporateCard,
+  },
+  {
+    whiteTitle: "Budget automation",
+    description:
+      "Set limits once. System enforces across all branches automatically.",
+    cardImage: automaticCard,
+  },
+  {
+    whiteTitle: "Pre-spend control",
+    description:
+      "Block non-compliant transactions before payment completes.",
+    cardImage: gstCard,
+  },
+  {
+    whiteTitle: "Real-time visibility",
+    description:
+      "See every branch expense the moment it happens.",
+    cardImage: expenseCard,
+  },
+  {
+    whiteTitle: "Auto reconciliation",
+    description:
+      "Receipts captured, expenses created, books updated—automatically.",
+    cardImage: exchangeCard,
+  },
+  {
+    whiteTitle: "Audit ready",
+    description:
+      "Complete digital trail with GST tracking built in.",
+    cardImage: trackingCard,
+  },
+]
 const managementCards: TCardTypes = [
   {
     titleHtml: "Payment Gateway",
@@ -162,4 +282,4 @@ const managementCards: TCardTypes = [
     linkUrl: "/collection-reminder",
   },
 ]
-export { analyticData, dashboardData, managementCards, stackcardData }
+export { analyticData, dashboardData, managementCards, acceleratedGrowthData, policies, cardData }
