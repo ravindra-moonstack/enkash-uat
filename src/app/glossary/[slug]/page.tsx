@@ -97,6 +97,9 @@ export async function generateMetadata({ params }: PageProps) {
     return {
       title: `FinTech Glossary - ${letter} Terms | Financial Technology Dictionary`,
       description: `Browse all financial technology terms starting with ${letter}. Comprehensive definitions and explanations.`,
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_URL}/glossary/${slug}`,
+      },
     }
   } else {
     const term = await getTerm(slug)
@@ -111,6 +114,9 @@ export async function generateMetadata({ params }: PageProps) {
       title: term.meta_title || `${term.word} | FinTech Glossary`,
       description:
         term.meta_description || stripHtml(term.content).substring(0, 160),
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_URL}/glossary/${slug}`,
+      },
       openGraph: {
         title: term.meta_title || `${term.word} | FinTech Glossary`,
         description:
