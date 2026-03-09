@@ -160,7 +160,7 @@ const VirtualCards = (): React.JSX.Element => {
             cards={cards}
             heading={[
               {
-                title: "BesBest Virtual Prepaid Cards in India for ",
+                title: "Best Virtual Prepaid Cards in India for ",
                 color: "color-black",
               },
               {
