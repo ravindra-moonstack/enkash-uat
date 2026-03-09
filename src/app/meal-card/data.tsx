@@ -87,7 +87,7 @@ const intantActionData = [
   {
     title: "Card Activation",
     description:
-      "Employees will be notified via SMS, WhatsApp, and e-mail about rewards and the redemption process.",
+      "Employees will be notified via SMS, WhatsApp, and e-mail about the meal card being activated and ready to use.",
     icon: fourthIcon,
   },
 ]

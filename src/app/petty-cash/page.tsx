@@ -4,31 +4,30 @@ import styles from "./page.module.scss"
 
 //data
 import {
+  acceleratedGrowthData,
   analyticData,
+  cardData,
   dashboardData,
-  managementCards,
-  stackcardData,
+  policies,
 } from "./data"
 import faqData from "./faq-data"
 
 //components
 
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import PolicyCard from "@/src/components/policy-card"
 import HeroSection from "@/src/components/sections/hero-section"
-import CtaSection from "@/src/components/sections/cta-section"
-import OtherProducts from "@/src/components/sections/other-products"
 
 //helpers
-import { analytics, paymentSummary, zeroLeakage } from "./img"
+import { acceleratedGrowthImg, analytics, paymentSummary, zeroLeakage } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 import BlogSection from "@/src/components/sections/blog-section"
+import { CommanButton, FeatureSpotlight, VideoPlayer } from "@/src/components"
+import UseCaseSection from "@/src/components/sections/use-case-section"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -41,20 +40,7 @@ export const metadata: Metadata = generateMetaData({
 })
 const salesUrl = getSalesUrl("/petty-cash")
 
-const cards = stackcardData.map((item, index) => ({
-  content: (
-    <AllInOnePolicy
-      key={index}
-      buttonText={"Get Started"}
-      icon={item.icon}
-      title={item.title}
-      description={item.description}
-      image={item.image}
-      buttonUrl={salesUrl}
-      maxImageHeight="300px"
-    />
-  ),
-}))
+
 const PettyCash = (): React.JSX.Element => {
   //
   return (
@@ -78,51 +64,57 @@ const PettyCash = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "Petty Cash Management ",
+            text: "Control Petty Cash ",
             color: "color-equity-blue",
           },
           {
-            text: "System to Track Petty Cash Expenses & Control Spend",
+            text: "Across Multiple Branches. In Real Time.",
             color: "color-black",
           },
         ]}
         description={{
-          text: "Digitize petty cash management with UPI, petty cash cards, and automated petty cash registers. Track petty cash expenses in real time and stay audit-ready.",
+          text: "Digital petty cash with QR payments, real-time policy control, and zero reconciliation hassle.",
         }}
         button={{
           title: "Get Started",
           url: salesUrl,
           theme: "blue",
-          vedioLink: "https://youtu.be/pjeEde3ruiU?si=ZxvNS0h4z1Mxcsga",
+          // vedioLink: "https://youtu.be/pjeEde3ruiU?si=ZxvNS0h4z1Mxcsga",
         }}
         rightImage={paymentSummary}
         backgroundImage="/images/expenceBg.webp"
         rightImageMaxHeight="502px"
       />
-
-      <div className={styles.card_stacking_row}>
-        <div className={` max-w-auto  ${styles.section}`}>
-          <>
-            <CardStacking
-              cards={cards}
-              heading={[
-                {
-                  title: "Manage ",
-                  color: "color-black",
-                },
-                {
-                  title: "Petty Cash ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "Like Never Before",
-                  color: "color-black",
-                },
-              ]}
-            />
-          </>
-        </div>
+      <div className="bg_white_index">
+        <FeatureSpotlight
+          heading={[
+            { title: "Your Complete ", color: "color-black" },
+            { title: "Petty Cash ", color: "color-equity-blue" },
+            { title: "Management System", color: "color-black" },
+          ]}
+          description={{
+            text: "Manage petty cash across every branch with payment control, budget automation, and instant reconciliation.",
+            color: "color-black",
+          }}
+          cardData={cardData}
+        />
       </div>
+      <UseCaseSection
+        heading={[
+          { title: "Manage ", color: "color-black" },
+          { title: "Petty Cash ", color: "color-equity-blue" },
+          { title: "Like Never Before", color: "color-black" },
+        ]}
+        items={policies}
+        buttonUrl={salesUrl}
+      />
+      <VideoPlayer
+        videoSrc="https://youtu.be/pjeEde3ruiU?si=ZxvNS0h4z1Mxcsga"
+        heading={[{ title: "Watch how EnKash brings everything onto one platform — instantly.", color: "color-black" }]}
+        ctaLabel={"Get Started"}
+        ctaHref={salesUrl}
+
+      />
 
       <div className={` ${styles.features_section}`}>
         <div className="max-w-auto">
@@ -131,29 +123,14 @@ const PettyCash = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Full Control. ",
+                    title: "Complete Spending Control",
                     color: "color-black",
-                  },
-                  {
-                    title: "Zero Leakage.",
-                    color: "color-equity-blue",
                   },
                 ]}
                 headingTag="h2"
                 className="f-6"
               />
             </div>
-            <DynamicHeading
-              content={[
-                {
-                  title:
-                    "Turn your petty cash policy into automated control. Smart rules ensure every spend stays within approved categories and limits, without manual enforcement.",
-                  color: "color-main-grey subHeading",
-                },
-              ]}
-              headingTag="p"
-              className="mb-0"
-            />
           </div>
           <div className="row">
             <div className="col-md-6 col-12 ">
@@ -223,7 +200,7 @@ const PettyCash = (): React.JSX.Element => {
                   content={[
                     {
                       title:
-                        "Get a 360° view of petty cash expenses: branch-wise, team-wise, and category-wise. Export detailed expense lists and branch-level details from a central dashboard for audits and compliance.",
+                        "Get a 360° view of your petty cash spends - branch-wise, team-wise, and category-wise.",
                       color: "color-main-grey subHeading",
                     },
                   ]}
@@ -254,11 +231,79 @@ const PettyCash = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      <div className={`${styles.integration_section}  `}>
+        <div className="max-w-auto w-100">
+          <div className={`${styles.section} row`}>
+            <div
+              className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-8`}
+            >
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Control Petty Cash Across All Your Branches",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Join multi-location enterprises managing expenses with complete visibility and automated control.",
+                    color: "color-grey-200",
+                  },
+                ]}
+                headingTag="p"
+                className="f-4 mb-0 fs-20"
+              />
+            </div>
 
-      <CtaSection
-        title={"No More Manual Petty Cash Management"}
-        buttonText={"Try Yourself "}
-      />
+            <div className="col-md-6 ">
+              {acceleratedGrowthData.map(({ icon, title }, i) => (
+                <div key={i} style={{ direction: "ltr" }}>
+                  <div className="d-flex align-items-start gap-3 pt-2 w-4 h-4">
+                    <div
+                      className="d-flex justify-content-center align-items-center bg-light rounded-circle"
+                      style={{ width: "32px", height: "32px" }}
+                    >
+                      <Image src={icon} alt="icon" />
+                    </div>
+                    <div className="d-flex flex-column gap-3">
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: title,
+                            color: "color-black subHeading",
+                          },
+                        ]}
+                        headingTag="p"
+                        className="f-5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <CommanButton
+                title="Get Started Today"
+                theme="white"
+                arrow
+                url={salesUrl}
+                className="mt-4"
+              />
+            </div>
+            <div className="col-md-6">
+              <div className={styles.faq_bg}>
+                <Image
+                  src={acceleratedGrowthImg}
+                  alt="background image"
+                  className="w-100 mh-550 object-fit-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <FaqSection faqData={faqData} />
       <BlogSection
@@ -274,23 +319,6 @@ const PettyCash = (): React.JSX.Element => {
           },
         ]}
         cards={[10539, 9129, 11225]}
-      />
-      <OtherProducts
-        heading={[
-          {
-            title: "Check out ",
-            color: "color-black",
-          },
-          {
-            title: "other collection products",
-            color: "color-equity-blue",
-          },
-          {
-            title: " at EnKash",
-            color: "color-black",
-          },
-        ]}
-        cards={managementCards}
       />
     </div>
   )

@@ -17,6 +17,7 @@
 
   .subtitle {
     padding-bottom: 24px;
+
     @include for-laptops {
       padding-bottom: 48px;
     }
@@ -35,6 +36,7 @@
 
   .subtitle {
     padding-bottom: 24px;
+
     @include for-laptops {
       padding-bottom: 48px;
     }
@@ -43,14 +45,45 @@
 
 .card_stacking_row {
   padding: 0px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
+
   .section {
     padding: 50px 20px 0px;
     background: $color-cultured;
+
     @include for-laptops {
       padding: 90px 20px;
+    }
+  }
+}
+
+.integration_section {
+  background-color: #f1f1f1;
+  position: relative;
+  display: flex;
+  text-align: center;
+  padding: 50px 20px;
+
+  @include for-laptops {
+    padding: 90px 20px 0;
+  }
+
+  .section {
+    text-align: start;
+
+    .faq_bg {
+      Img {
+        height: auto;
+
+        @include for-laptops {
+          max-width: 475px;
+          height: auto;
+          margin-top: -100px;
+        }
+      }
     }
   }
 }

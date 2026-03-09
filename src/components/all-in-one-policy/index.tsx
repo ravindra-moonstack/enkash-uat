@@ -10,7 +10,8 @@ import DynamicHeading from "../dynamic-heading"
 interface AllInOnePolicyProps {
   icon: string | StaticImageData
   title: string
-  description: string
+  description?: string
+  descriptionHtml?: React.ReactNode
   image?: string | StaticImageData
   buttonUrl: string
   reverse?: boolean
@@ -23,6 +24,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   icon,
   title,
   description,
+  descriptionHtml,
   image,
   buttonUrl,
   reverse = false,
@@ -54,7 +56,11 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
               headingTag="h5"
               className="f-5"
             />
-            {description && (
+            {descriptionHtml ? (
+              <div className="color-grey-200 mb-0">
+                {descriptionHtml}
+              </div>
+            ) : description && (
               <DynamicHeading
                 content={[
                   {
@@ -82,9 +88,8 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
 
       {/* Image Block */}
       <div
-        className={`col-md-4 col-12 d-flex justify-content-end ${
-          reverse ? "order-md-1" : "order-md-2"
-        } ${styles.third_container}`}
+        className={`col-md-4 col-12 d-flex justify-content-end ${reverse ? "order-md-1" : "order-md-2"
+          } ${styles.third_container}`}
       >
         {image && (
           <Image
