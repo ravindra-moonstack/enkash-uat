@@ -17,6 +17,11 @@
   flex-direction: row;
   align-items: center;
 
+  @media (max-width: 424px) {
+    padding: 6px 8px;
+    gap: 2px;
+  }
+
   @include for-laptops {
     padding: 8px 20px;
     font-size: 16px;
@@ -130,12 +135,14 @@
     padding-right: 21px;
     padding-right: 10px;
     gap: 18px;
+
     &:hover {
       background-color: $color-equity-blue;
       color: $color-white;
       border: 2px solid $color-equity-blue;
     }
   }
+
   &.vedio-button-dark {
     background-color: transparent;
     color: $color-white;
@@ -145,12 +152,14 @@
     padding-right: 21px;
     padding-right: 10px;
     gap: 18px !important;
+
     &:hover {
       background-color: $color-equity-blue;
       color: $color-white;
       border: 2px solid $color-equity-blue;
     }
   }
+
   &.border-black {
     background-color: transparent;
     color: $color-equity-blue;
@@ -163,6 +172,7 @@
       border: 2px solid #023ed4;
     }
   }
+
   &.grey-text {
     color: $color-alternate-grey;
     text-decoration: underline;

@@ -29,8 +29,8 @@ export interface ButtonProps {
   iconSize?: number
   className?: string
   image?: StaticImageData | string
-  hoverImage?: StaticImageData | string       
-  changeImageOnHover?: boolean                
+  hoverImage?: StaticImageData | string
+  changeImageOnHover?: boolean
   openInNewTab?: boolean
   arrow?: boolean
   arrowType?: "fa" | "ios"
@@ -46,8 +46,8 @@ const CommonButton = ({
   className,
   openInNewTab = false,
   image,
-  hoverImage,               
-  changeImageOnHover = false, 
+  hoverImage,
+  changeImageOnHover = false,
   arrow = false,
   arrowType = "fa",
 }: ButtonProps) => {
