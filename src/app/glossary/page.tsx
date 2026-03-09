@@ -45,7 +45,7 @@ export default async function GlossaryPage() {
   const glossaryData = await getGlossaryCategories()
   return (<>
     <section className={styles.glossaryHomeSection}>
-      <Image alt="" src={GlossaryBgImage} className={styles.bgImage} />
+      <Image alt="Glossary Background" src={GlossaryBgImage} className={styles.bgImage} priority={true} fetchPriority="high" />
       <Container className={`pb-0 ${styles.paddingTop}`}>
         <div className="d-flex mb-3">
           <CustomBreadcrumb
@@ -91,6 +91,7 @@ export default async function GlossaryPage() {
                     key={cardIdx}
                     href={card.link}
                     className={styles.termCard}
+                    prefetch={false}
                   >
                     <h3 className={styles.termCardTitle}>{card.heading}</h3>
                     <p className={styles.termCardDescription}>
