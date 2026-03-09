@@ -245,21 +245,6 @@ const VirtualCards = (): React.JSX.Element => {
       />
 
       <FaqSection faqData={faqData} />
-
-      <OtherProducts
-        heading={[
-          {
-            title: "Explore Purpose-Built ",
-            color: "color-black",
-          },
-          {
-            title: "Virtual Card Programs",
-            color: "color-equity-blue",
-          },
-        ]}
-        useOptionalProps={true}
-        cards={cardType}
-      />
       <BlogSection
         heading={[
           {
@@ -274,6 +259,21 @@ const VirtualCards = (): React.JSX.Element => {
         ]}
         cards={[1000, 10503, 13691]}
       />
+      <OtherProducts
+        heading={[
+          {
+            title: "Explore Purpose-Built ",
+            color: "color-black",
+          },
+          {
+            title: "Virtual Card Programs",
+            color: "color-equity-blue",
+          },
+        ]}
+        useOptionalProps={true}
+        cards={cardType}
+      />
+
     </div>
   )
 }
