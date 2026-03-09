@@ -31,6 +31,7 @@ import StepsSection from "@/src/components/steps-section"
 import PolicyCard from "@/src/components/policy-card"
 import SliderSection from "@/src/components/sections/slider-section"
 import OtherProducts from "@/src/components/sections/other-products"
+import BlogSection from "@/src/components/sections/blog-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Virtual Corporate Cards for Smarter Payments | EnKash",
@@ -258,6 +259,20 @@ const VirtualCards = (): React.JSX.Element => {
         ]}
         useOptionalProps={true}
         cards={cardType}
+      />
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[1000, 10503, 13691]}
       />
     </div>
   )
