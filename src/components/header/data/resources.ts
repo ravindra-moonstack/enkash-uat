@@ -21,7 +21,7 @@ const resourseProducts: TProductCategory[] = [
             name: "Blogs",
             description: "Trends, tips, and strategies",
             imageSrcHovered: blogsFilled,
-            link: `${process.env.NEXT_PUBLIC_URL}/resources/blogs`,
+            link: `https://uat.blogs.enkash.com/`,
           },
 
           {
