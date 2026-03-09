@@ -23,8 +23,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     videoSrc,
     ctaLabel,
     ctaHref,
-    features = ["Zero setup fees", "Complete pricing transparency"],
-    featureIcon,
     heading = [
         { title: "Experience ", color: "color-main-black" },
         { title: "truly matters", color: "color-equity-blue" },
@@ -39,16 +37,16 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     const getEmbedUrl = (url: string) => {
         if (url.includes("youtu.be/")) {
             const id = url.split("youtu.be/")[1].split("?")[0]
-            return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=1`
+            return `https://www.youtube.com/embed/${id}?rel=0`
         }
         if (url.includes("watch?v=")) {
             const id = new URL(url).searchParams.get("v")
-            return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=1`
+            return `https://www.youtube.com/embed/${id}?rel=0`
         }
         if (url.includes("/embed/")) {
             return url.includes("?")
-                ? `${url}&autoplay=1&mute=1`
-                : `${url}?autoplay=1&mute=1`
+                ? `${url}&rel=0`
+                : `${url}?rel=0`
         }
         return url
     }
@@ -76,28 +74,43 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         <section ref={sectionRef} className={styles.section}>
             <div className={`${styles.card} max-w-auto`}>
                 <div className={styles.leftCol}>
-                    <DynamicHeading
-                        content={heading}
-                        headingTag="h3"
-                        className="f-6"
-                    />
 
-                    <ul className={styles.featureList}>
-                        {features.map((feature, i) => (
-                            <li key={i} className={styles.featureItem}>
-                                {featureIcon && (
-                                    <div
-                                        className="d-flex justify-content-center align-items-center"
-                                        style={{ width: "32px", height: "32px" }}
-                                    >
-                                        {featureIcon}
-                                    </div>
-                                )}
-                                <span className={styles.featureText}>{feature}</span>
-                            </li>
-                        ))}
-                    </ul>
-                    {ctaLabel && <div>
+                    <div className="d-flex flex-column gap-3">
+                        <div className="mb-2">
+                            <DynamicHeading
+                                content={[
+                                    {
+                                        title: "Watch video ",
+                                        color: "color-equity-blue underline",
+                                    },
+                                ]}
+                                headingTag="p"
+                                className="mb-0"
+                            />
+                        </div>
+                        <DynamicHeading
+                            content={[{ title: "Petty cash from 50 locations.", color: "color-black" }]}
+                            headingTag="p"
+                            className="f-5 m-0"
+                        />
+                        <DynamicHeading
+                            content={[{ title: "50 different spreadsheets.", color: "color-black" }]}
+                            headingTag="p"
+                            className="f-5 m-0"
+                        />
+                        <DynamicHeading
+                            content={[{ title: "Sound familiar?", color: "color-black" }]}
+                            headingTag="p"
+                            className="f-5 m-0"
+                        />
+                        <DynamicHeading
+                            content={heading}
+                            headingTag="h4"
+                            className="f-5"
+                        />
+                    </div>
+
+                    {ctaLabel && <div className="mt-4">
                         <CommonButton
                             title={ctaLabel}
                             url={ctaHref}
@@ -137,4 +150,4 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     )
 }
 
-export default VideoPlayer
+export default VideoPlayer  
