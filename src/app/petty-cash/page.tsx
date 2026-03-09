@@ -20,7 +20,7 @@ import PolicyCard from "@/src/components/policy-card"
 import HeroSection from "@/src/components/sections/hero-section"
 
 //helpers
-import { acceleratedGrowthImg, analytics, paymentSummary, success2, zeroLeakage } from "./img"
+import { acceleratedGrowthImg, analytics, paymentSummary, zeroLeakage } from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -110,9 +110,10 @@ const PettyCash = (): React.JSX.Element => {
       />
       <VideoPlayer
         videoSrc="https://youtu.be/pjeEde3ruiU?si=ZxvNS0h4z1Mxcsga"
-        features={["Petty cash from 50 locations.", "50 different spreadsheets.", "Sound familiar?"]}
-        featureIcon={< Image src={success2} alt="checkIcon" width={24} height={24} />}
-        heading={[{ title: "Watch how ", color: "color-black" }, { title: "EnKash brings everything", color: "color-equity-blue" }, { title: " onto one platform — instantly.", color: "color-black" }]}
+        heading={[{ title: "Watch how EnKash brings everything onto one platform — instantly.", color: "color-black" }]}
+        ctaLabel={"Get Started"}
+        ctaHref={salesUrl}
+
       />
 
       <div className={` ${styles.features_section}`}>
