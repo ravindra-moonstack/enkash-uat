@@ -35,20 +35,20 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         videoSrc.includes("youtube.com") || videoSrc.includes("youtu.be")
 
     const getEmbedUrl = (url: string) => {
+        let videoId = ""
         if (url.includes("youtu.be/")) {
-            const id = url.split("youtu.be/")[1].split("?")[0]
-            return `https://www.youtube.com/embed/${id}?rel=0`
+            videoId = url.split("youtu.be/")[1]?.split("?")[0] || ""
+        } else if (url.includes("watch?v=")) {
+            videoId = new URL(url).searchParams.get("v") || ""
+        } else if (url.includes("/embed/")) {
+            videoId = url.split("embed/")[1]?.split("?")[0] || ""
+        } else {
+            return url
         }
-        if (url.includes("watch?v=")) {
-            const id = new URL(url).searchParams.get("v")
-            return `https://www.youtube.com/embed/${id}?rel=0`
-        }
-        if (url.includes("/embed/")) {
-            return url.includes("?")
-                ? `${url}&rel=0`
-                : `${url}?rel=0`
-        }
-        return url
+
+        if (!videoId) return url
+
+        return `https://www.youtube.com/embed/${videoId}?rel=0`
     }
 
     // Auto-play native video on intersection
@@ -128,8 +128,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
                                 src={getEmbedUrl(videoSrc)}
                                 title="Payment Gateway Video"
                                 frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowFullScreen
+                                referrerPolicy="strict-origin-when-cross-origin"
                                 className={styles.iframe}
                             />
                         ) : (
