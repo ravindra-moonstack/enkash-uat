@@ -1,12 +1,13 @@
-import React from "react"
-import { Container } from "react-bootstrap"
+import React, { Suspense } from "react"
+import Container from "react-bootstrap/Container"
 import Link from "next/link"
 import Image from "next/image"
 import GlossaryBgImage from "../../../public/images/glossaryBgImage.webp"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import styles from "./page.module.scss"
 
-import BlogSection from "@/src/components/sections/blog-section"
+import dynamic from "next/dynamic"
+const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
 import GlossarySearch from "@/src/components/glossary/GlossarySearch"
 import AlphabetBar from "@/src/components/glossary/AlphabetBar"
 import { getApiBaseUrl } from "@/src/utils/api-helpers"
@@ -40,9 +41,53 @@ async function getGlossaryCategories() {
     return []
   }
 }
-export default async function GlossaryPage() {
+
+async function GlossaryContent() {
   const availableLetters = await getLetters()
   const glossaryData = await getGlossaryCategories()
+
+  return (
+    <>
+      <AlphabetBar availableLetters={availableLetters} />
+
+      <div className={styles.termsContainer}>
+        {glossaryData && glossaryData.map((section: any, idx: number) => (
+          <div key={idx} className={styles.letterSection}>
+            <DynamicHeading
+              content={[
+                {
+                  text: `${section.heading}`,
+                  color: "color-black f-3",
+                },
+              ]}
+              headingTag="h2"
+              className={styles.letterHeading}
+            />
+            <div className={styles.termsGrid}>
+              {section.cards.map((card: any, cardIdx: number) => (
+                <Link
+                  key={cardIdx}
+                  href={card.link}
+                  className={styles.termCard}
+                  prefetch={false}
+                >
+                  <h3 className={styles.termCardTitle}>{card.heading}</h3>
+                  <p className={styles.termCardDescription}>
+                    {card.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <AlphabetBar availableLetters={availableLetters} />
+    </>
+  )
+}
+
+export default function GlossaryPage() {
   return (<>
     <section className={styles.glossaryHomeSection}>
       <Image alt="Glossary Background" src={GlossaryBgImage} className={styles.bgImage} priority={true} fetchPriority="high" />
@@ -70,41 +115,11 @@ export default async function GlossaryPage() {
         />
 
         <GlossarySearch />
-        <AlphabetBar availableLetters={availableLetters} />
 
-        <div className={styles.termsContainer}>
-          {glossaryData && glossaryData.map((section: any, idx: number) => (
-            <div key={idx} className={styles.letterSection}>
-              <DynamicHeading
-                content={[
-                  {
-                    text: `${section.heading}`,
-                    color: "color-black f-3",
-                  },
-                ]}
-                headingTag="h2"
-                className={styles.letterHeading}
-              />
-              <div className={styles.termsGrid}>
-                {section.cards.map((card: any, cardIdx: number) => (
-                  <Link
-                    key={cardIdx}
-                    href={card.link}
-                    className={styles.termCard}
-                    prefetch={false}
-                  >
-                    <h3 className={styles.termCardTitle}>{card.heading}</h3>
-                    <p className={styles.termCardDescription}>
-                      {card.description}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <Suspense fallback={<div className="text-center py-5">Loading terms...</div>}>
+          <GlossaryContent />
+        </Suspense>
 
-        <AlphabetBar availableLetters={availableLetters} />
       </Container>
     </section>
     <BlogSection
