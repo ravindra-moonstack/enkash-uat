@@ -2,7 +2,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const uploadToS3 = async ( 
   fileName: string,
-  fileBuffer: Buffer
+  fileBuffer: Buffer,
+  token?: string
 ): Promise<{ url: string; s3Response: any }> => {
   const fileExtension = fileName.split('.').pop()?.toLowerCase();
    
@@ -21,6 +22,7 @@ export const uploadToS3 = async (
       headers: {
         "Content-Type": fileExtension === 'svg' ? 'image/svg+xml' : 'image/webp',
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        ...(token ? { "Authorization": `Bearer ${token}` } : {}),
       },
     });
 

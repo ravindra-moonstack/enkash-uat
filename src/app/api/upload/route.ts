@@ -1,10 +1,18 @@
 
 import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
 import { uploadToS3 } from '@/src/utils/s3Upload';
-
 
 export async function POST(request: Request) {
   try {
+    const authHeader = request.headers.get('Authorization');
+    let token = authHeader ? authHeader.replace(/^Bearer\s+/i, '') : '';
+    
+    if (!token) {
+      const cookieStore = await cookies();
+      token = cookieStore.get('token')?.value || '';
+    }
+
     const formData = await request.formData();
     const file = formData.get('file') as File;
 
@@ -19,7 +27,7 @@ export async function POST(request: Request) {
     let s3Response = null;
     const buffer = Buffer.from(await file.arrayBuffer());
     try {
-        const result = await uploadToS3(file.name, buffer);
+        const result = await uploadToS3(file.name, buffer, token);
         imageUrl = result.url;
         s3Response = result.s3Response;
     } catch (error: any) {
