@@ -86,11 +86,10 @@ const SubProduct = (props: any) => {
                   <Link
                     href={group.subtitleLink}
                     key={group.subtitle}
-                    className={`${styles.sub_product_title} ${
-                      group.subtitle === activeSubtitle
+                    className={`${styles.sub_product_title} ${group.subtitle === activeSubtitle
                         ? "color-equity-blue"
                         : "color-secondry-grey"
-                    }`}
+                      }`}
                     onMouseOver={() => {
                       setActiveSubtitle(group.subtitle)
                     }}
@@ -104,45 +103,38 @@ const SubProduct = (props: any) => {
 
             <div
               key={activeSubtitle}
-              className={`d-flex ${animationClassName} ${
-                props.subProducts.length > 1 ? "mt-4" : "mt-2"
-              }`}
+              className={`d-flex ${animationClassName} ${props.subProducts.length > 1 ? "mt-4" : "mt-2"
+                }`}
             >
               <div
-                className={`${styles.sub_products_container} ${
-                  activeSubtitle === "Receivables"
+                className={`${styles.sub_products_container} ${activeSubtitle === "Receivables"
                     ? styles.receivablesScroll
                     : ""
-                } ${
-                  activeGroup?.list?.length > 6
+                  } ${activeGroup?.list?.length > 6
                     ? styles.grid_layout
                     : styles.flex_layout
-                }`}
+                  }`}
                 onMouseLeave={() => sethoveredProductIndex(null)}
                 ref={scrollingDivRef}
               >
                 {hoveredProductIndex !== null &&
-                refs[hoveredProductIndex]?.current ? (
+                  refs[hoveredProductIndex]?.current ? (
                   <div
                     className={styles.background_slide}
                     style={{
                       transform: scrollingDivRef.current
                         ? `
-                      translateY(${
-                        refs[hoveredProductIndex].current!.offsetTop -
+                      translateY(${refs[hoveredProductIndex].current!.offsetTop -
                         scrollingDivRef.current.scrollTop
-                      }px) 
-                      translateX(${
-                        refs[hoveredProductIndex].current!.offsetLeft
-                      }px)
+                        }px) 
+                      translateX(${refs[hoveredProductIndex].current!.offsetLeft
+                        }px)
                     `
                         : "",
-                      height: `${
-                        refs[hoveredProductIndex].current!.offsetHeight
-                      }px`,
-                      width: `${
-                        refs[hoveredProductIndex].current!.offsetWidth
-                      }px`,
+                      height: `${refs[hoveredProductIndex].current!.offsetHeight
+                        }px`,
+                      width: `${refs[hoveredProductIndex].current!.offsetWidth
+                        }px`,
                     }}
                   ></div>
                 ) : null}
@@ -178,11 +170,10 @@ const SubProduct = (props: any) => {
                         }}
                       >
                         <div
-                          className={`${styles.sub_product_row} d-flex ${
-                            hoveredProductIndex === index
+                          className={`${styles.sub_product_row} d-flex ${hoveredProductIndex === index
                               ? styles.color_highlight
                               : ""
-                          }`}
+                            }`}
                           onClick={handleItemClick}
                         >
                           {product.imageSrcHovered && (
@@ -198,11 +189,10 @@ const SubProduct = (props: any) => {
 
                           <div className="d-flex flex-column ms-3">
                             <div
-                              className={`d-flex align-items-center justify-content-between ${styles.sub_product_name} ${
-                                motherProductName === "For Developers"
+                              className={`d-flex align-items-center justify-content-between ${styles.sub_product_name} ${motherProductName === "For Developers"
                                   ? styles.underline
                                   : ""
-                              }`}
+                                }`}
                             >
                               {product.name}
                               {product?.new && (
@@ -257,16 +247,16 @@ const SubProduct = (props: any) => {
             "Credit Cards",
             "Partnership",
           ].includes(motherProductName) === false && (
-            <div className={styles.exploreProduct}>
-              {props.parentLink ? (
-                <Link href={props.parentLink}>
+              <div className={styles.exploreProduct}>
+                {props.parentLink ? (
+                  <Link href={props.parentLink}>
+                    <h4 className="mb-1">Explore {motherProductName}</h4>
+                  </Link>
+                ) : (
                   <h4 className="mb-1">Explore {motherProductName}</h4>
-                </Link>
-              ) : (
-                <h4 className="mb-1">Explore {motherProductName}</h4>
-              )}
-            </div>
-          )}
+                )}
+              </div>
+            )}
         </>
       )}
     </div>
