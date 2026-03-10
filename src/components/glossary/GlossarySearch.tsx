@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useRef, useEffect } from "react"
-import Form from "react-bootstrap/Form"
+import { Form } from "react-bootstrap"
 import Link from "next/link"
 import Image from "next/image"
 import FaSearch from "@/public/svgs/SearchIcon.svg"

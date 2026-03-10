@@ -1,5 +1,5 @@
-import React, { Suspense } from "react"
-import Container from "react-bootstrap/Container"
+import React from "react"
+import { Container } from "react-bootstrap"
 import Link from "next/link"
 import Image from "next/image"
 import GlossaryBgImage from "../../../public/images/glossaryBgImage.webp"
@@ -41,53 +41,9 @@ async function getGlossaryCategories() {
     return []
   }
 }
-
-async function GlossaryContent() {
+export default async function GlossaryPage() {
   const availableLetters = await getLetters()
   const glossaryData = await getGlossaryCategories()
-
-  return (
-    <>
-      <AlphabetBar availableLetters={availableLetters} />
-
-      <div className={styles.termsContainer}>
-        {glossaryData && glossaryData.map((section: any, idx: number) => (
-          <div key={idx} className={styles.letterSection}>
-            <DynamicHeading
-              content={[
-                {
-                  text: `${section.heading}`,
-                  color: "color-black f-3",
-                },
-              ]}
-              headingTag="h2"
-              className={styles.letterHeading}
-            />
-            <div className={styles.termsGrid}>
-              {section.cards.map((card: any, cardIdx: number) => (
-                <Link
-                  key={cardIdx}
-                  href={card.link}
-                  className={styles.termCard}
-                  prefetch={false}
-                >
-                  <h3 className={styles.termCardTitle}>{card.heading}</h3>
-                  <p className={styles.termCardDescription}>
-                    {card.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <AlphabetBar availableLetters={availableLetters} />
-    </>
-  )
-}
-
-export default function GlossaryPage() {
   return (<>
     <section className={styles.glossaryHomeSection}>
       <Image alt="Glossary Background" src={GlossaryBgImage} className={styles.bgImage} priority={true} fetchPriority="high" />
@@ -115,11 +71,41 @@ export default function GlossaryPage() {
         />
 
         <GlossarySearch />
+        <AlphabetBar availableLetters={availableLetters} />
 
-        <Suspense fallback={<div className="text-center py-5">Loading terms...</div>}>
-          <GlossaryContent />
-        </Suspense>
+        <div className={styles.termsContainer}>
+          {glossaryData && glossaryData.map((section: any, idx: number) => (
+            <div key={idx} className={styles.letterSection}>
+              <DynamicHeading
+                content={[
+                  {
+                    text: `${section.heading}`,
+                    color: "color-black f-3",
+                  },
+                ]}
+                headingTag="h2"
+                className={styles.letterHeading}
+              />
+              <div className={styles.termsGrid}>
+                {section.cards.map((card: any, cardIdx: number) => (
+                  <Link
+                    key={cardIdx}
+                    href={card.link}
+                    className={styles.termCard}
+                    prefetch={false}
+                  >
+                    <h3 className={styles.termCardTitle}>{card.heading}</h3>
+                    <p className={styles.termCardDescription}>
+                      {card.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
 
+        <AlphabetBar availableLetters={availableLetters} />
       </Container>
     </section>
     <BlogSection
