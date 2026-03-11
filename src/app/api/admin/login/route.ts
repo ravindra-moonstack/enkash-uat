@@ -58,7 +58,7 @@ console.log('rows',rows);
   } catch (error) {
     console.error('Login error:', error);
     return NextResponse.json(
-      { success: false, message: 'Internal server error' },
+      { success: false, message: 'Internal server error'+ `${process.env.DB_HOST} ${process.env.DB_USER} ${process.env.DB_PASSWORD} ${process.env.DB_NAME}` },
       { status: 500 }
     );
   }
