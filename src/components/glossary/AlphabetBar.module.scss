@@ -1,0 +1,51 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.alphabetBar {
+    margin-bottom: 20px;
+}
+
+.alphabetScroll {
+    display: flex;
+    gap: 16px;
+    min-width: min-content;
+    flex-wrap: wrap;
+
+    @include for-laptops {
+        gap: 22px;
+        justify-content: space-evenly;
+    }
+}
+
+.alphabetLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 14px;
+    height: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-dark-grey;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    @include for-laptops {
+        min-width: 20px;
+        height: 20px;
+        font-size: 16px;
+    }
+
+    &:hover {
+        color: $color-equity-blue;
+    }
+
+    &.active {
+        color: $color-equity-blue;
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        cursor: default;
+        pointer-events: none;
+    }
+}

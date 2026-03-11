@@ -18,6 +18,7 @@ import {
   paymentValidation,
   TPaymentInitialValueProp,
 } from "./formik"
+import DynamicHeading from "../../dynamic-heading"
 
 const PaymentGatewayPartnershipForm: React.FC = () => {
   //
@@ -77,8 +78,16 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
   return (
     <div className={"contactFormWrapper"}>
       <form action="#" onSubmit={handleSubmit}>
-        <p className={"subtitle"}>We just need a few quick details</p>
-
+       
+        <DynamicHeading
+          content={[
+            {
+              title: "We just need a few quick details",
+              color: "color-black d-block text-center ",
+            },
+          ]}
+          headingTag="h5"
+        />
         <div className={"grid"}>
           <div className="">
             <input
@@ -160,7 +169,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
           <CategoryWithOther
             name="Dropdown6"
             options={Businessoptions}
-            placeholder="Line if Business"
+            placeholder="Line of Business"
             onChange={(data) => {
               setFieldValue("Dropdown6", data)
             }}
