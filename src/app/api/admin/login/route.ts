@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     const [rows]: any = await pool.execute(
       'SELECT id, email, password FROM admins WHERE email = ? LIMIT 1',
       [email]
-    ); 
+    );
     if (rows.length === 0) {
       return NextResponse.json(
         { success: false, message: 'Invalid email or password' },
@@ -57,7 +57,8 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Login error:', error);
     return NextResponse.json(
-      { success: false, message: 'Internal server error' },
+      { success: false,
+         message: 'Internal server error',error },
       { status: 500 }
     );
   }
