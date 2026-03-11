@@ -6,12 +6,11 @@ import GlossaryBgImage from "../../../public/images/glossaryBgImage.webp"
 import { CustomBreadcrumb, DynamicHeading } from "@/src/components"
 import styles from "./page.module.scss"
 
-import dynamic from "next/dynamic"
-const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
+import nextDynamic from "next/dynamic"
+const BlogSection = nextDynamic(() => import("@/src/components/sections/blog-section"))
 import GlossarySearch from "@/src/components/glossary/GlossarySearch"
 import AlphabetBar from "@/src/components/glossary/AlphabetBar"
 import { getApiBaseUrl } from "@/src/utils/api-helpers"
-
 
 export const metadata = {
   title: "FinTech Glossary | Complete Financial Technology Terms",
@@ -29,6 +28,10 @@ async function getLetters() {
     return []
   }
 }
+console.log(" db host", process.env.DB_HOST)
+console.log(" db user", process.env.DB_USER)
+console.log(" db password", process.env.DB_PASSWORD)
+console.log(" db name", process.env.DB_NAME)
 
 async function getGlossaryCategories() {
   try {
