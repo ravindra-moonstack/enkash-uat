@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import pool from '@/src/lib/dbConnect';
+import sequelize from '@/src/lib/dbConnect';
+import { QueryTypes } from 'sequelize';
 
 
 // GET: Fetch a single glossary item by ID
@@ -9,8 +10,11 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const [rows]: any = await pool.execute('SELECT * FROM glossary WHERE id = ? LIMIT 1', [id]);
-    const item = rows[0] || null;
+    const item = await sequelize.query('SELECT * FROM glossary WHERE id = ? LIMIT 1', {
+      replacements: [id],
+      type: QueryTypes.SELECT,
+      plain: true
+    });
 
     if (!item) {
         return NextResponse.json({ success: false, message: 'Item not found' }, { status: 404 });
@@ -42,9 +46,9 @@ export async function PUT(
       );
     }
  
-    const [existing]: any = await pool.execute(
+    const existing = await sequelize.query(
       'SELECT id FROM glossary WHERE slug = ? AND id != ? LIMIT 1',
-      [slug, id]
+      { replacements: [slug, id], type: QueryTypes.SELECT }
     );
 
     if (existing.length > 0) {
@@ -54,9 +58,12 @@ export async function PUT(
       );
     }
 
-    await pool.execute(
+    await sequelize.query(
       'UPDATE glossary SET word = ?, slug = ?, content = ?, showRelatedBlogs = ?, blogWord = ?, meta_title = ?, meta_description = ?, feature_image = ?, feature_image_alt = ? WHERE id = ?',
-      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, feature_image || null, feature_image_alt || null, id]
+      {
+        replacements: [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, feature_image || null, feature_image_alt || null, id],
+        type: QueryTypes.UPDATE
+      }
     );
 
     return NextResponse.json({
@@ -80,7 +87,10 @@ export async function DELETE(
   try {
     const { id } = await params;
 
-    await pool.execute('DELETE FROM glossary WHERE id = ?', [id]);
+    await sequelize.query('DELETE FROM glossary WHERE id = ?', {
+      replacements: [id],
+      type: QueryTypes.DELETE
+    });
 
     return NextResponse.json({
       success: true,

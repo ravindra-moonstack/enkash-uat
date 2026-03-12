@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import pool from '@/src/lib/dbConnect';
+import sequelize from '@/src/lib/dbConnect';
+import { QueryTypes } from 'sequelize';
 
  
 export async function GET(request: Request) {
@@ -28,12 +29,19 @@ export async function GET(request: Request) {
 
     // Get total count for pagination
     const countQuery = `SELECT COUNT(*) as total FROM glossary ${whereClause}`;
-    const [countRows]: any = await pool.query(countQuery, queryParams);
-    const totalItems = countRows[0].total;
+    const countRows: any = await sequelize.query(countQuery, {
+      replacements: queryParams,
+      type: QueryTypes.SELECT,
+      plain: true
+    });
+    const totalItems = countRows?.total || 0;
     const totalPages = Math.ceil(totalItems / limit);
 
     const selectQuery = `SELECT id, word, slug, showRelatedBlogs, blogWord, meta_title, meta_description, feature_image FROM glossary ${whereClause} ORDER BY word ASC LIMIT ? OFFSET ?`;
-    const [rows]: any = await pool.query(selectQuery, [...queryParams, limit, offset]);
+    const rows = await sequelize.query(selectQuery, {
+      replacements: [...queryParams, limit, offset],
+      type: QueryTypes.SELECT
+    });
 
     return NextResponse.json({
       success: true,
@@ -68,9 +76,9 @@ export async function POST(request: Request) {
     }
 
     // Check slug uniqueness
-    const [existing]: any = await pool.execute(
+    const existing = await sequelize.query(
       'SELECT id FROM glossary WHERE slug = ? LIMIT 1',
-      [slug]
+      { replacements: [slug], type: QueryTypes.SELECT }
     );
 
     if (existing.length > 0) {
@@ -80,9 +88,12 @@ export async function POST(request: Request) {
       );
     }
 
-    const [result]: any = await pool.execute(
+    const [result]: any = await sequelize.query(
       'INSERT INTO glossary (word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description, feature_image, feature_image_alt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, feature_image || null, feature_image_alt || null]
+      {
+        replacements: [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, feature_image || null, feature_image_alt || null],
+        type: QueryTypes.INSERT
+      }
     );
 
 
@@ -90,7 +101,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: true,
       message: 'Glossary item created successfully',
-      id: result.insertId,
+      id: result,
     });
   } catch (error: any) {
     console.error('Error creating glossary item:', error);

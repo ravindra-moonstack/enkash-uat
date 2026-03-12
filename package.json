@@ -42,6 +42,7 @@
     "react-slick": "^0.30.3",
     "saas": "^1.0.0",
     "sass": "^1.63.6",
+    "sequelize": "^6.37.8",
     "slick-carousel": "^1.8.1",
     "smooth-scrollbar": "^8.8.4",
     "uuid": "^13.0.0",

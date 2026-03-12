@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import pool from "@/src/lib/dbConnect";
+import sequelize from "@/src/lib/dbConnect";
+import { QueryTypes } from "sequelize";
 
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ letter: string }> }) {
     const { letter } = await params;
@@ -8,14 +9,18 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     
     try {
         if (queryLetter === "#") {
-            const [result]: any = await pool.execute(
-                "SELECT word, slug FROM glossary WHERE word NOT REGEXP '^[A-Za-z]' ORDER BY word ASC"
+            const result: any = await sequelize.query(
+                "SELECT word, slug FROM glossary WHERE word NOT REGEXP '^[A-Za-z]' ORDER BY word ASC",
+                { type: QueryTypes.SELECT }
             );
             rows = result;
         } else {
-            const [result]: any = await pool.execute(
+            const result: any = await sequelize.query(
                 "SELECT word, slug FROM glossary WHERE word LIKE ? ORDER BY word ASC",
-                [`${queryLetter}%`]
+                {
+                    replacements: [`${queryLetter}%`],
+                    type: QueryTypes.SELECT
+                }
             );
             rows = result;
         }

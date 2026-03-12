@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
-import pool from "@/src/lib/dbConnect";
+import sequelize from "@/src/lib/dbConnect";
+import { QueryTypes } from "sequelize";
 
 export async function GET() {
     try {
-        const [rows]: any = await pool.execute(
-            "SELECT * FROM glossary ORDER BY word ASC"
+        const rows: any = await sequelize.query(
+            "SELECT * FROM glossary ORDER BY word ASC",
+            { type: QueryTypes.SELECT }
         );
         
         const groups: Record<string, any[]> = {};

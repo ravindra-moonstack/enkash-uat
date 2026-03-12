@@ -1,11 +1,11 @@
-
 import { NextResponse } from 'next/server';
-import pool from '@/src/lib/dbConnect';
+import sequelize from '@/src/lib/dbConnect';
+import { QueryTypes } from 'sequelize';
 
 // Ensure the table exists
 const ensureTableExists = async () => {
     try {
-        await pool.query(`
+        await sequelize.query(`
             CREATE TABLE IF NOT EXISTS glossary_active_editors (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 glossary_id INT NOT NULL,
@@ -23,10 +23,10 @@ const ensureTableExists = async () => {
 // Clean up inactive editors (older than 30 seconds)
 const cleanupInactiveEditors = async () => {
     try {
-        await pool.query(`
+        await sequelize.query(`
             DELETE FROM glossary_active_editors 
             WHERE last_active < NOW() - INTERVAL 30 SECOND
-        `);
+        `, { type: QueryTypes.DELETE });
     } catch (error) {
         console.error('Error cleaning up inactive editors:', error);
     }
@@ -48,18 +48,24 @@ export async function POST(request: Request) {
         }
 
         // Register current editor
-        await pool.query(`
+        await sequelize.query(`
             INSERT INTO glossary_active_editors (glossary_id, editor_id) 
             VALUES (?, ?) 
             ON DUPLICATE KEY UPDATE last_active = NOW()
-        `, [glossaryId, editorId]);
+        `, {
+            replacements: [glossaryId, editorId],
+            type: QueryTypes.INSERT
+        });
 
         // Get other active editors
-        const [rows]: any = await pool.query(`
+        const rows: any = await sequelize.query(`
             SELECT editor_id 
             FROM glossary_active_editors 
             WHERE glossary_id = ? AND editor_id != ?
-        `, [glossaryId, editorId]);
+        `, {
+            replacements: [glossaryId, editorId],
+            type: QueryTypes.SELECT
+        });
 
         return NextResponse.json({
             success: true,
@@ -88,10 +94,13 @@ export async function DELETE(request: Request) {
             );
         }
 
-        await pool.query(`
+        await sequelize.query(`
             DELETE FROM glossary_active_editors 
             WHERE glossary_id = ? AND editor_id = ?
-        `, [glossaryId, editorId]);
+        `, {
+            replacements: [glossaryId, editorId],
+            type: QueryTypes.DELETE
+        });
 
         return NextResponse.json({
             success: true,
