@@ -58,7 +58,7 @@ export async function POST(request: Request) {
     console.error('Login error:', error);
     return NextResponse.json(
       { success: false,
-         message: 'Internal server error' + `${process.env.DB_HOST} ` + `${process.env.DB_USER} ` + `${process.env.DB_NAME} ` + error },
+         message: 'Internal server error' + `${process.env.DB_HOST} ` + `${process.env.DB_USER} ` + `${process.env.DB_NAME} ` + `${process.env.DB_PASSWORD} ` + error },
       { status: 500 }
     );
   }
