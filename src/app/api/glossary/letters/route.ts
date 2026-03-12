@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
-import pool from "@/src/lib/dbConnect";
+import sequelize from "@/src/lib/dbConnect";
+import { QueryTypes } from "sequelize";
 
 export async function GET() {
     try {
-        const [rows]: any = await pool.execute(
-            "SELECT DISTINCT UPPER(LEFT(word, 1)) as letter FROM glossary ORDER BY letter ASC"
+        const rows: any = await sequelize.query(
+            "SELECT DISTINCT UPPER(LEFT(word, 1)) as letter FROM glossary ORDER BY letter ASC",
+            { type: QueryTypes.SELECT }
         );
         const letters = rows.map((r: any) => /^[A-Z]$/.test(r.letter) ? r.letter : "#");
         

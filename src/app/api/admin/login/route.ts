@@ -1,7 +1,14 @@
 import { NextResponse } from 'next/server';
-import pool from '@/src/lib/dbConnect';
+import sequelize from '@/src/lib/dbConnect';
+import { QueryTypes } from 'sequelize';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+
+interface AdminMember {
+  id: number;
+  email: string;
+  password: string;
+}
 
 export async function POST(request: Request) {
   try {
@@ -13,18 +20,24 @@ export async function POST(request: Request) {
       );
     }
 
-    const [rows]: any = await pool.execute(
+    const rows = await sequelize.query<AdminMember>(
       'SELECT id, email, password FROM admins WHERE email = ? LIMIT 1',
-      [email]
+      { 
+        replacements: [email], 
+        type: QueryTypes.SELECT,
+        plain: true 
+      }
     );
-    if (rows.length === 0) {
+
+    if (!rows) {
       return NextResponse.json(
         { success: false, message: 'Invalid email or password' },
         { status: 401 }
       );
     }
    
-    const admin = rows[0];
+    const admin = rows;
+
 
     const isMatch = await bcrypt.compare(password, admin.password);
 

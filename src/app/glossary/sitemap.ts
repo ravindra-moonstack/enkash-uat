@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
-import pool from '@/src/lib/dbConnect'
+import sequelize from '@/src/lib/dbConnect'
+import { QueryTypes } from 'sequelize'
 
 const BASE_URL = 'https://www.enkash.com'
 
@@ -26,8 +27,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   })
  
   try {
-    const [rows]: any = await pool.execute(
-      'SELECT * FROM glossary'
+    const rows: any = await sequelize.query(
+      'SELECT * FROM glossary',
+      { type: QueryTypes.SELECT }
     )
     
     rows.forEach((row: any) => {

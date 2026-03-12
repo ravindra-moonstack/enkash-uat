@@ -1,14 +1,18 @@
-
 import { NextResponse } from 'next/server';
-import pool from '@/src/lib/dbConnect';
+import sequelize from '@/src/lib/dbConnect';
+import { QueryTypes } from 'sequelize';
 
 export async function GET() {
   try {
     // Fetch categories
-    const [categories]: any = await pool.execute('SELECT * FROM glossary_categories ORDER BY sort_order ASC');
+    const categories: any = await sequelize.query('SELECT * FROM glossary_categories ORDER BY sort_order ASC', {
+      type: QueryTypes.SELECT
+    });
     
     // Fetch cards
-    const [cards]: any = await pool.execute('SELECT * FROM glossary_category_cards ORDER BY sort_order ASC');
+    const cards: any = await sequelize.query('SELECT * FROM glossary_category_cards ORDER BY sort_order ASC', {
+      type: QueryTypes.SELECT
+    });
 
     // Nest cards into categories
     const result = categories.map((cat: any) => {

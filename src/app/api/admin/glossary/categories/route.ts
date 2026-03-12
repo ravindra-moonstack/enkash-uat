@@ -1,6 +1,6 @@
-
 import { NextResponse } from 'next/server';
-import pool from '@/src/lib/dbConnect';
+import sequelize from '@/src/lib/dbConnect';
+import { QueryTypes } from 'sequelize';
 
 // POST: Create a new category
 export async function POST(request: Request) {
@@ -11,12 +11,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Heading is required' }, { status: 400 });
     }
 
-    const [result]: any = await pool.execute(
+    const [result]: any = await sequelize.query(
       'INSERT INTO glossary_categories (heading, sort_order) VALUES (?, ?)',
-      [heading, sort_order || 0]
+      {
+        replacements: [heading, sort_order || 0],
+        type: QueryTypes.INSERT
+      }
     );
 
-    return NextResponse.json({ success: true, id: result.insertId });
+    return NextResponse.json({ success: true, id: result });
   } catch (error) {
     console.error('Error creating category:', error);
     return NextResponse.json({ error: 'Failed to create category' }, { status: 500 });

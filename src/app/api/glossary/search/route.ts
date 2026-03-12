@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
-import pool from "@/src/lib/dbConnect";
-// import { getGlossaryJson } from "@/src/lib/glossaryUtils";
+import sequelize from "@/src/lib/dbConnect";
+import { QueryTypes } from "sequelize";
 
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams
@@ -12,9 +12,12 @@ export async function GET(request: NextRequest) {
 
     try {
         // Database filtering
-        const [rows]: any = await pool.execute(
+        const rows: any = await sequelize.query(
             "SELECT word, slug FROM glossary WHERE word LIKE ? LIMIT 10",
-            [`%${query}%`]
+            {
+                replacements: [`%${query}%`],
+                type: QueryTypes.SELECT
+            }
         )
 
         const formattedResults = rows.map((term: any) => ({
