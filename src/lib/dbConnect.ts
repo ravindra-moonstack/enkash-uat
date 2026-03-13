@@ -28,13 +28,15 @@ sequelize
     console.error("❌ Unable to connect to the database:", err)
   })
 
-sequelize
-  .sync({})
-  .then(() => {
-    console.log("✅ Database synced")
-  })
-  .catch((err) => {
-    console.error("❌ Sync error:", err)
-  })
+if (process.env.NODE_ENV !== "production") {
+  sequelize
+    .sync({})
+    .then(() => {
+      console.log("✅ Database synced")
+    })
+    .catch((err) => {
+      console.error("❌ Sync error:", err)
+    })
+}
 
 export default sequelize
