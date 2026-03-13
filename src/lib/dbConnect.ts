@@ -1,5 +1,5 @@
-import { Sequelize } from 'sequelize';
-import mysql2 from 'mysql2';
+import { Sequelize } from "sequelize"
+import mysql2 from "mysql2"
 
 const sequelize = new Sequelize(
   process.env.DB_NAME!,
@@ -7,7 +7,7 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD!,
   {
     host: process.env.DB_HOST,
-    dialect: 'mysql',
+    dialect: "mysql",
     dialectModule: mysql2, // Needed for many hosting environments
     logging: false,
     pool: {
@@ -17,6 +17,15 @@ const sequelize = new Sequelize(
       idle: 10000,
     },
   }
-);
+)
 
-export default sequelize;
+sequelize
+  .sync({})
+  .then(() => {
+    console.log("✅ Database synced")
+  })
+  .catch((err) => {
+    console.error("❌ Sync error:", err)
+  })
+
+export default sequelize
