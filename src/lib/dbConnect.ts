@@ -11,9 +11,9 @@ const sequelize = new Sequelize(
     dialectModule: mysql2, // Needed for many hosting environments
     logging: false,
     pool: {
-      max: 10000,
+      max: 15,
       min: 0,
-      acquire: 60000,
+      acquire: 30000,
       idle: 10000,
     },
   }
