@@ -1,0 +1,489 @@
+// app/glossary/[letter]/[slug]/page.module.scss
+
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/spacing" as *;
+
+.detailPageSection {
+  position: relative;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 241px;
+  object-fit: cover;
+  z-index: -1;
+
+  @include for-laptops {
+    height: 297px;
+  }
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: $color-main-grey;
+
+  a {
+    color: $color-main-grey;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-equity-blue;
+    }
+  }
+
+  @include for-laptops {
+    font-size: 16px;
+  }
+}
+
+.pageTitle {
+  margin-top: 30px;
+  margin-bottom: 30px !important;
+  text-align: center;
+}
+
+.sectionWrapper {
+  max-width: 100%;
+  padding: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include for-laptops {
+    max-width: 70%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.mainContent {
+  width: 100%;
+  order: 1;
+
+  @include for-laptops {
+    order: unset;
+  }
+}
+
+.sidebar {
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 0;
+  z-index: 10;
+  order: 2;
+
+  @include for-laptops {
+    order: unset;
+    width: 240px;
+    position: absolute;
+    left: -260px;
+    top: 145px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+
+
+  @media (max-width: 1440px) {
+    width: 247px;
+  }
+
+
+  @media (min-width: 1500px) {
+    width: 285px;
+    left: -300px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.aiBox {
+  background: $color-white;
+  border-radius: 12px;
+  padding: 50px 30px;
+  border: 1px solid $color-grey-100;
+  box-shadow: 0px 0px 77px 0px #0000001a;
+}
+
+.aiBoxTitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: $color-black-100;
+  margin-bottom: 10px;
+  text-align: center;
+
+  span {
+    color: $color-equity-blue;
+  }
+
+  @include for-laptops {
+    font-size: 20px;
+  }
+}
+
+.aiOption {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 8px;
+  margin-bottom: 2px;
+  background: $color-white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: $color-black-100;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background: #f8fffe;
+    border-color: #3dd6c8;
+    color: $color-main-black;
+    text-decoration: none;
+  }
+
+  strong {
+    font-weight: 700;
+    margin-left: 2px;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 18px 20px 20px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 20px 12px;
+    font-size: 16px;
+  }
+}
+
+.aiDivider {
+  border: 2.5px solid $color-white;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @include for-laptops {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.aiIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.sectionContent a {
+  color: $color-equity-blue !important;
+  text-decoration: underline !important;
+
+  &:hover {
+    color: darken($color-equity-blue, 12%) !important;
+    text-decoration: underline !important;
+  }
+}
+
+.sectionContent h2 {
+  letter-spacing: -0.04em;
+  color: $color-equity-blue;
+  margin-bottom: 4px;
+  font-size: 28px !important;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+}
+
+.sectionContent p {
+  color: $color-alternate-grey;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+.sectionContent img {
+  max-width: 100%;
+}
+
+.paddingTop {
+  padding: 20px;
+  padding-top: 110px;
+
+  @include for-laptops {
+    padding-top: 130px;
+  }
+}
+
+.searchWrapper {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto 32px;
+
+  @include for-laptops {
+    margin-bottom: 42px;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  font-size: 12px;
+  line-height: 100%;
+  border: 1px solid $color-black-5;
+  border-radius: 8px;
+  height: 40px;
+  color: $color-uncultured;
+  background-color: $color-white;
+  box-shadow: 0px 10px 44px 0px #00000014;
+  padding-right: 35px;
+
+  &:focus {
+    outline: none;
+    border-color: $color-equity-blue;
+    box-shadow: 0 0 0 3px rgba(28, 90, 244, 0.1);
+  }
+
+  &::placeholder {
+    color: $color-slate-grey;
+  }
+}
+
+.searchButton {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: $color-slate-grey;
+  width: 27px;
+  height: 22px;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: $color-white;
+  border: 1px solid $color-grey-100;
+  border-radius: 8px;
+  margin-top: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.suggestionGroup {
+  margin-bottom: 16px;
+  text-align: left;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.suggestionLetter {
+  font-size: 11px;
+  font-weight: 700;
+  color: $color-equity-blue;
+  padding: 4px 12px;
+  background: rgba($color-equity-blue, 0.05);
+  border-radius: 4px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.suggestionItem {
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #f8fafc;
+  }
+
+  a {
+    color: $color-main-black;
+    text-decoration: none;
+    display: block;
+  }
+}
+
+.suggestionKeyword {
+  font-weight: 600;
+  font-size: 14px;
+  color: $color-main-black;
+  margin-bottom: 2px;
+}
+
+.suggestionDescription {
+  font-size: 12px;
+  color: $color-slate-grey;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Top & Bottom Alphabet Bars */
+.topAlphabetBar {
+  margin-bottom: 20px;
+}
+
+.bottomAlphabetBar {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.alphabetScroll {
+  display: flex;
+  gap: 22px;
+  justify-content: space-evenly;
+  min-width: min-content;
+  flex-wrap: wrap;
+}
+
+.slugSectionHeading {
+  margin-bottom: 6px;
+}
+
+.alphabetLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $color-dark-grey;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $color-equity-blue;
+  }
+
+  &.active {
+    color: $color-equity-blue;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  background-color: #9ca3af; // gray like image
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  transition: background-color 0.2s ease;
+
+  @include for-laptops {
+    width: 36px;
+    height: 36px;
+  }
+
+  &:hover {
+    background-color: #6b7280;
+  }
+}
+
+/* Title Section with Social Icons */
+.titleSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-xl;
+  padding-bottom: $spacing-sm + $spacing-xxs;
+  flex-wrap: wrap;
+  gap: $spacing-lg;
+  border-bottom: 1px solid $color-grey-100;
+
+  @include for-laptops {
+    margin-bottom: $spacing-xl;
+    flex-wrap: nowrap;
+    margin-top: $spacing-xl;
+  }
+}
+
+.termTitle {
+  font-size: 28px;
+  font-weight: 200;
+  margin: 0;
+  flex: 1;
+
+  @include for-laptops {
+    font-size: 46px;
+  }
+}
+
+.definitionSection {
+  background: $color-white;
+  padding: $spacing-2xl;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: $spacing-3xl;
+  border-left: 4px solid $color-equity-blue;
+
+  @include for-laptops {
+    padding: $spacing-3xl;
+    margin-bottom: $spacing-4xl;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .titleSection {
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 16px;
+  }
+
+  .socialIcons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .definitionSection {
+    padding: $spacing-lg;
+  }
+}

@@ -13,12 +13,10 @@
   padding-bottom: 36px;
   position: relative;
   background-image:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       rgba(0, 0, 0, 0.6),
       // stronger black overlay (optional)
-      rgba(0, 0, 0, 0.6)
-    ),
+      rgba(0, 0, 0, 0.6)),
     url("./img/first-row-bg.svg"), url("./img/black-bg.webp");
 
   @include for-laptops {
@@ -38,6 +36,7 @@
       }
     }
   }
+
   .subtitle {
     color: $color-equity-blue;
     border-bottom: 2px solid $color-equity-blue;
@@ -64,20 +63,21 @@
   padding: 50px 20px;
   position: relative;
   background-image:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgba(28, 90, 244, 0.8) 0%,
-      rgba(16, 52, 142, 0.8) 100%
-    ),
+      rgba(16, 52, 142, 0.8) 100%),
     url(./img/secongBg.png);
+
   @include for-laptops {
     padding: 90px 20px 90px 20px;
   }
+
   .second_row_title {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
+
   .section {
     max-width: 1200px;
     margin: auto;
@@ -88,10 +88,12 @@
     right: 0;
     left: 0;
     z-index: 2;
+
     @include for-laptops {
       position: absolute;
       gap: 40px;
     }
+
     .card {
       width: 100%;
       max-width: 200px;
@@ -102,6 +104,7 @@
       padding: 10px;
       gap: 10px;
       box-shadow: 0px 20px 50px 0px #3440541a;
+
       @include for-laptops {
         max-width: 300px;
         min-width: 200px;
@@ -109,9 +112,11 @@
         gap: 20px;
         border-radius: 20px;
       }
+
       .card_image {
         height: 24px;
         width: 24px;
+
         @include for-laptops {
           height: 48px;
           width: 48px;
@@ -127,6 +132,7 @@
   background-size: cover;
   background-image: url(./img/ArtboardBg.svg);
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px 90px 20px;
   }
@@ -137,6 +143,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .card_grid {
     display: flex;
     flex-wrap: wrap;
@@ -144,7 +151,7 @@
     justify-content: center;
   }
 
-  .card_grid > div {
+  .card_grid>div {
     flex: 1 1 260px;
     max-width: 300px;
     min-width: 240px;
@@ -156,17 +163,21 @@
   border-radius: 12px;
   position: relative;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
+
   .get_started_button {
     padding: 6px;
     border: 2px solid $color-equity-blue;
     border-radius: 12px;
+
     @include for-laptops {
       padding: 11px 14px;
     }
   }
+
   .custom_list {
     padding-left: 1rem; // optional: controls indentation
     list-style-type: disc;
@@ -185,9 +196,11 @@
   position: relative;
   text-align: center;
   padding: 00px 20px 16px;
+
   @include for-laptops {
     padding: 00px 20px 22px;
   }
+
   .onePlatformSectionCard {
     h5 {
       min-height: 67px;
@@ -197,12 +210,15 @@
 
 .sixth_row {
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 162px 20px 90px;
   }
+
   .list_button {
     padding-left: 48px;
     margin-top: 20px;
+
     @include for-laptops {
       margin-top: 20px;
       padding-left: 66px;
@@ -215,17 +231,21 @@
   border-radius: 12px;
   position: relative;
   padding: 20px;
+
   @include for-laptops {
     padding: 58px;
   }
+
   .get_started_button {
     padding: 6px;
     border: 2px solid $color-equity-blue;
     border-radius: 12px;
+
     @include for-laptops {
       padding: 11px 14px;
     }
   }
+
   .custom_list {
     padding-left: 1rem; // optional: controls indentation
     list-style-type: disc;
@@ -242,6 +262,7 @@
 
 .other_products {
   padding: 0px 20px 50px;
+
   @include for-laptops {
     padding: 0px 20px 66px;
   }
@@ -251,9 +272,11 @@
   position: relative;
   overflow: hidden;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
+
   .list_button {
     padding-left: 76px;
     margin-top: 38px;
