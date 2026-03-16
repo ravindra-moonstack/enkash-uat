@@ -8,7 +8,6 @@ Disallow: /resources/wp-login.php
 # Block Cloudflare email protection
 Disallow: /cdn-cgi/l/email-protection
 Disallow: /admin
-Disallow: /glossary
 
 
 
