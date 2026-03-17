@@ -12,7 +12,6 @@ const pool = createPool({
   connectTimeout: 20000,
   lookup: (
     hostname: string,
-    opts: any,
     cb: (err: Error | null, address?: string, family?: number) => void
   ) => {
     lookup(hostname, { family: 4 })
