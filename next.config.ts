@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
 
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es", "react-bootstrap"],
+    optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
   },
 
   compiler: {
@@ -82,13 +82,13 @@ const nextConfig: NextConfig = {
     ]
   },
 
-  // async rewrites() {
-  //   return [
-  //     { source: "/resources", destination: "https://blogs.enkash.com/blog" },
-  //     { source: "/resources/blog/:path*", destination: "https://blogs.enkash.com/blog/:path*" },
-  //     { source: "/resources/:path*", destination: "https://blogs.enkash.com/:path*" },
-  //   ]
-  // },
+  async rewrites() {
+    return [
+      { source: "/resources", destination: "https://blogs.enkash.com/blog" },
+      { source: "/resources/blog/:path*", destination: "https://blogs.enkash.com/blog/:path*" },
+      { source: "/resources/:path*", destination: "https://blogs.enkash.com/:path*" },
+    ]
+  },
 
   async redirects() {
     return mappedUrls
