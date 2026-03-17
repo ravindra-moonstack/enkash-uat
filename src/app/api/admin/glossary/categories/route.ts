@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import sequelize from "@/src/lib/dbConnect"
 import { QueryTypes } from "sequelize"
+import { recordAuditLog } from "@/src/utils/auditLogger"
 
 // POST: Create a new category
 export async function POST(request: Request) {
@@ -21,6 +22,12 @@ export async function POST(request: Request) {
         type: QueryTypes.INSERT,
       }
     )
+
+    // Record audit log
+    await recordAuditLog("glossary_categories", result, "CREATE", null, {
+      heading,
+      sort_order,
+    })
 
     return NextResponse.json({ success: true, id: result })
   } catch (error) {
