@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
-import sequelize from '@/src/lib/dbConnect';
-import { QueryTypes } from 'sequelize';
-
+import { NextResponse } from "next/server"
+import sequelize from "@/src/lib/dbConnect"
+import { QueryTypes } from "sequelize"
+import { recordAuditLog } from "@/src/utils/auditLogger"
 
 // GET: Fetch a single glossary item by ID
 export async function GET(
@@ -9,73 +9,117 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = await params;
-    const item = await sequelize.query('SELECT * FROM glossary WHERE id = ? LIMIT 1', {
-      replacements: [id],
-      type: QueryTypes.SELECT,
-      plain: true
-    });
+    const { id } = await params
+    const item = await sequelize.query(
+      "SELECT * FROM glossary WHERE id = ? LIMIT 1",
+      {
+        replacements: [id],
+        type: QueryTypes.SELECT,
+        plain: true,
+      }
+    )
 
     if (!item) {
-        return NextResponse.json({ success: false, message: 'Item not found' }, { status: 404 });
+      return NextResponse.json(
+        { success: false, message: "Item not found" },
+        { status: 404 }
+      )
     }
 
-    return NextResponse.json({ success: true, data: item });
+    return NextResponse.json({ success: true, data: item })
   } catch (error: any) {
-    console.error('Error fetching glossary item:', error);
+    console.error("Error fetching glossary item:", error)
     return NextResponse.json(
-      { success: false, message: 'Internal server error' },
+      { success: false, message: "Internal server error" },
       { status: 500 }
-    );
+    )
   }
 }
- 
+
 export async function PUT(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = await params;
-    const body = await request.json();
-    const { word, slug, content, showRelatedBlogs, blogWord, meta_title, meta_description, feature_image, feature_image_alt } = body;
+    const { id } = await params
+    const body = await request.json()
+    const {
+      word,
+      slug,
+      content,
+      showRelatedBlogs,
+      blogWord,
+      meta_title,
+      meta_description,
+      feature_image,
+      feature_image_alt,
+    } = body
 
     if (!word || !slug || !content) {
       return NextResponse.json(
-        { success: false, message: 'Word, slug, and content are required' },
+        { success: false, message: "Word, slug, and content are required" },
         { status: 400 }
-      );
+      )
     }
- 
+
     const existing = await sequelize.query(
-      'SELECT id FROM glossary WHERE slug = ? AND id != ? LIMIT 1',
+      "SELECT id FROM glossary WHERE slug = ? AND id != ? LIMIT 1",
       { replacements: [slug, id], type: QueryTypes.SELECT }
-    );
+    )
 
     if (existing.length > 0) {
       return NextResponse.json(
-        { success: false, message: 'Slug already exists. Please choose a unique slug.' },
+        {
+          success: false,
+          message: "Slug already exists. Please choose a unique slug.",
+        },
         { status: 400 }
-      );
+      )
     }
 
-    await sequelize.query(
-      'UPDATE glossary SET word = ?, slug = ?, content = ?, showRelatedBlogs = ?, blogWord = ?, meta_title = ?, meta_description = ?, feature_image = ?, feature_image_alt = ? WHERE id = ?',
+    // Fetch old data for audit log
+    const oldItem = await sequelize.query(
+      "SELECT * FROM glossary WHERE id = ? LIMIT 1",
       {
-        replacements: [word, slug, content, showRelatedBlogs ? 1 : 0, blogWord || '', meta_title || null, meta_description || null, feature_image || null, feature_image_alt || null, id],
-        type: QueryTypes.UPDATE
+        replacements: [id],
+        type: QueryTypes.SELECT,
+        plain: true,
       }
-    );
+    )
+
+    await sequelize.query(
+      "UPDATE glossary SET word = ?, slug = ?, content = ?, showRelatedBlogs = ?, blogWord = ?, meta_title = ?, meta_description = ?, feature_image = ?, feature_image_alt = ? WHERE id = ?",
+      {
+        replacements: [
+          word,
+          slug,
+          content,
+          showRelatedBlogs ? 1 : 0,
+          blogWord || "",
+          meta_title || null,
+          meta_description || null,
+          feature_image || null,
+          feature_image_alt || null,
+          id,
+        ],
+        type: QueryTypes.UPDATE,
+      }
+    )
+    console.log("Updated glossary item:", oldItem)
+    console.log("Updated glossary item:", body)
+    // Record audit log
+    await recordAuditLog("glossary", id, "UPDATE", oldItem, body)
 
     return NextResponse.json({
       success: true,
-      message: 'Glossary item updated successfully',
-    });
+      message: "Glossary item updated successfully",
+    })
   } catch (error: any) {
-    console.error('Error updating glossary item:', error);
+    console.error("Error updating glossary item:", error)
     return NextResponse.json(
-      { success: false, message: 'Internal server error' },
+      { success: false, message: "Internal server error" },
       { status: 500 }
-    );
+    )
   }
 }
 
@@ -85,22 +129,37 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = await params;
+    const { id } = await params
 
-    await sequelize.query('DELETE FROM glossary WHERE id = ?', {
-      replacements: [id],
-      type: QueryTypes.DELETE
-    });
+    // Fetch old data for audit log
+    const oldItem = await sequelize.query(
+      "SELECT * FROM glossary WHERE id = ? LIMIT 1",
+      {
+        replacements: [id],
+        type: QueryTypes.SELECT,
+        plain: true,
+      }
+    )
+
+    if (oldItem) {
+      await sequelize.query("DELETE FROM glossary WHERE id = ?", {
+        replacements: [id],
+        type: QueryTypes.DELETE,
+      })
+
+      // Record audit log
+      await recordAuditLog("glossary", id, "DELETE", oldItem, null)
+    }
 
     return NextResponse.json({
       success: true,
-      message: 'Glossary item deleted successfully',
-    });
+      message: "Glossary item deleted successfully",
+    })
   } catch (error: any) {
-    console.error('Error deleting glossary item:', error);
+    console.error("Error deleting glossary item:", error)
     return NextResponse.json(
-      { success: false, message: 'Internal server error' },
+      { success: false, message: "Internal server error" },
       { status: 500 }
-    );
+    )
   }
 }

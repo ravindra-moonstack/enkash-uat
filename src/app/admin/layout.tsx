@@ -96,6 +96,13 @@ export default function AdminLayout({
                         <i className="bi bi-layout-text-window-reverse"></i>
                         Glossary Home Sections
                     </Link>
+                    <Link
+                        href="/admin/audit-logs"
+                        className={`${styles.navItem} ${pathname === '/admin/audit-logs' ? styles.active : ''}`}
+                    >
+                        <i className="bi bi-clipboard-data"></i>
+                        Audit Logs
+                    </Link>
                 </nav>
 
                 <div className={styles.footerSection}>
