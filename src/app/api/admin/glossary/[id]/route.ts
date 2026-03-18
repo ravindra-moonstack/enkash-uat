@@ -97,8 +97,15 @@ export async function PUT(
       ]
     )
 
+    // Fetch new data after update for audit log to ensure types and fields match oldItem
+    const [newRows]: any = await pool.execute(
+      "SELECT * FROM glossary WHERE id = ? LIMIT 1",
+      [id]
+    )
+    const newItem = newRows[0]
+
     // Record audit log
-    await recordAuditLog("glossary", id, "UPDATE", oldItem, body)
+    await recordAuditLog("glossary", id, "UPDATE", oldItem, newItem)
 
     return NextResponse.json({
       success: true,

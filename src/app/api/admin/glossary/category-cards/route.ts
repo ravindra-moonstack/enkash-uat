@@ -22,8 +22,21 @@ export async function POST(request: Request) {
 
     const newId = result.insertId
 
+    // Fetch new item for audit log
+    const [newRows]: any = await pool.execute(
+      "SELECT * FROM glossary_category_cards WHERE id = ? LIMIT 1",
+      [newId]
+    )
+    const newItem = newRows[0]
+
     // Record audit log
-    await recordAuditLog("glossary_category_cards", newId, "CREATE", null, body)
+    await recordAuditLog(
+      "glossary_category_cards",
+      newId,
+      "CREATE",
+      null,
+      newItem
+    )
 
     return NextResponse.json({ success: true, id: newId })
   } catch (error) {

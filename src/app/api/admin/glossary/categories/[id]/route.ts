@@ -23,8 +23,16 @@ export async function PUT(
       "UPDATE glossary_categories SET heading = ?, sort_order = ? WHERE id = ?",
       [heading, sort_order, id]
     )
+
+    // Fetch new data after update for audit log
+    const [newRows]: any = await pool.execute(
+      "SELECT * FROM glossary_categories WHERE id = ? LIMIT 1",
+      [id]
+    )
+    const newItem = newRows[0]
+
     // Record audit log
-    await recordAuditLog("glossary_categories", id, "UPDATE", oldItem, body)
+    await recordAuditLog("glossary_categories", id, "UPDATE", oldItem, newItem)
 
     return NextResponse.json({ success: true })
   } catch (error) {
