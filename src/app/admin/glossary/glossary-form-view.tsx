@@ -26,6 +26,8 @@ interface GlossaryFormViewProps {
     setFeatureImageAlt: (alt: string) => void
     handleFeatureImageUpload: (file: File) => Promise<void>
     isSubmitting: boolean
+    isUploading: boolean
+    isDirty: boolean
     metaTitle: string
     setMetaTitle: (title: string) => void
     metaDescription: string
@@ -60,6 +62,8 @@ const GlossaryFormView = ({
     setFeatureImageAlt,
     handleFeatureImageUpload,
     isSubmitting,
+    isUploading,
+    isDirty,
     metaTitle,
     setMetaTitle,
     metaDescription,
@@ -355,12 +359,17 @@ const GlossaryFormView = ({
                 }
 
                 <div className={styles.actionButtons}>
-                    <CommanButton title="Cancel" theme="outline-blue" url={handleCancel} />
+                    <CommanButton
+                        title="Cancel"
+                        theme="outline-blue"
+                        url={handleCancel}
+                        isDisabled={isSubmitting}
+                    />
                     <CommanButton
                         title={isSubmitting ? "Saving..." : editingItem ? "Update Item" : "Save Item"}
                         theme="blue"
                         url={() => handleSubmit()}
-                        isDisabled={isSubmitting}
+                        isDisabled={isSubmitting || !isDirty}
                     />
                 </div>
             </form >
@@ -396,14 +405,16 @@ const GlossaryFormView = ({
                                 title="Cancel"
                                 theme="outline-blue"
                                 url={handleAltCancel}
+                                isDisabled={isUploading}
                             />
                             <CommanButton
-                                title="Insert Image"
+                                title={isUploading ? "Inserting..." : "Insert Image"}
                                 theme="blue"
                                 url={() => {
                                     const input = document.getElementById('alt-text-input') as HTMLInputElement;
                                     handleAltSubmit(input.value);
                                 }}
+                                isDisabled={isUploading}
                             />
                         </div>
                     </div>
