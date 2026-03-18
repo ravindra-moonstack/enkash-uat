@@ -1,6 +1,5 @@
 "use client"
-
-import React, { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import styles from "./glossary-admin.module.scss"
 import { nameToUrl } from "@/src/utils/stringUtils"
 import { useQuillEditor } from "./use-quill-editor"
@@ -22,13 +21,15 @@ interface GlossaryItem {
 
 type ViewMode = "list" | "form"
 
-const GlossaryAdmin = () => {
+const GlossaryAdmin = (): React.JSX.Element => {
     // State management
     const [viewMode, setViewMode] = useState<ViewMode>("list")
     const [items, setItems] = useState<GlossaryItem[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const isSubmittingRef = useRef(false)
     const [editingItem, setEditingItem] = useState<GlossaryItem | null>(null)
+
 
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1)
@@ -37,19 +38,46 @@ const GlossaryAdmin = () => {
     const [itemsPerPage] = useState(10)
 
     // Form fields
-    const [word, setWord] = useState("")
-    const [slug, setSlug] = useState("")
+    const [word, setWord] = useState<string>("")
+    const [slug, setSlug] = useState<string>("")
     const [isSlugModified, setIsSlugModified] = useState(false)
-    const [content, setContent] = useState("")
+    const [content, setContent] = useState<string>("")
     const [showRelatedBlogs, setShowRelatedBlogs] = useState(false)
-    const [blogWord, setBlogWord] = useState("")
-    const [metaTitle, setMetaTitle] = useState("")
-    const [metaDescription, setMetaDescription] = useState("")
+    const [blogWord, setBlogWord] = useState<string>("")
+    const [metaTitle, setMetaTitle] = useState<string>("")
+    const [metaDescription, setMetaDescription] = useState<string>("")
     const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
-    const [searchTerm, setSearchTerm] = useState("")
-    const [featureImage, setFeatureImage] = useState("")
-    const [featureImageAlt, setFeatureImageAlt] = useState("")
+    const [searchTerm, setSearchTerm] = useState<string>("")
+    const [featureImage, setFeatureImage] = useState<string>("")
+    const [featureImageAlt, setFeatureImageAlt] = useState<string>("")
     const [hasManuallyEditedBlogWord, setHasManuallyEditedBlogWord] = useState(false)
+
+    const isDirty = useMemo(() => {
+        if (!editingItem) {
+            return word.trim() !== "" || content.trim() !== "" || slug.trim() !== "";
+        }
+        const hasWordChanged = word !== (editingItem.word || "");
+        const hasSlugChanged = slug !== (editingItem.slug || "");
+        const hasContentChanged = content !== (editingItem.content || "");
+        const hasBlogsChanged = showRelatedBlogs !== (!!editingItem.showRelatedBlogs);
+        const hasBlogWordChanged = blogWord !== (editingItem.blogWord || "");
+        const hasMetaTitleChanged = metaTitle !== (editingItem.meta_title || "");
+        const hasMetaDescriptionChanged = metaDescription !== (editingItem.meta_description || "");
+        const hasFeatureImageChanged = featureImage !== (editingItem.feature_image || "");
+        const hasFeatureImageAltChanged = featureImageAlt !== (editingItem.feature_image_alt || "");
+
+        return (
+            hasWordChanged ||
+            hasSlugChanged ||
+            hasContentChanged ||
+            hasBlogsChanged ||
+            hasBlogWordChanged ||
+            hasMetaTitleChanged ||
+            hasMetaDescriptionChanged ||
+            hasFeatureImageChanged ||
+            hasFeatureImageAltChanged
+        );
+    }, [word, slug, content, showRelatedBlogs, blogWord, metaTitle, metaDescription, featureImage, featureImageAlt, editingItem]);
 
     const {
         editorRef,
@@ -62,6 +90,7 @@ const GlossaryAdmin = () => {
         setShowHtmlView,
         showAltModal,
         pendingImage,
+        isUploading,
         handleAltSubmit,
         handleAltCancel
     } = useQuillEditor({ content, setContent, viewMode })
@@ -174,7 +203,8 @@ const GlossaryAdmin = () => {
 
     const handleSubmit = async (e?: React.FormEvent) => {
         if (e) e.preventDefault()
-        setFieldErrors({})
+        if (isSubmittingRef.current || !isDirty) return
+        isSubmittingRef.current = true
         setIsSubmitting(true)
 
         const finalWord = word.trim()
@@ -247,6 +277,7 @@ const GlossaryAdmin = () => {
         } catch {
             setFieldErrors({ general: "Something went wrong. Please try again." })
         } finally {
+            isSubmittingRef.current = false
             setIsSubmitting(false)
         }
     }
@@ -394,6 +425,8 @@ const GlossaryAdmin = () => {
                     handleFeatureImageUpload={handleFeatureImageUpload}
                     handleBlogWordChange={handleBlogWordChange}
                     isSubmitting={isSubmitting}
+                    isUploading={isUploading}
+                    isDirty={isDirty}
                     showAltModal={showAltModal}
                     pendingImage={pendingImage}
                     handleAltSubmit={handleAltSubmit}
