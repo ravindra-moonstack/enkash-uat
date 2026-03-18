@@ -60,15 +60,6 @@ const AuditLogsPage = () => {
         })
     }
 
-    const renderData = (data: any) => {
-        if (!data) return "N/A"
-        try {
-            const parsed = typeof data === 'string' ? JSON.parse(data) : data
-            return JSON.stringify(parsed, null, 2)
-        } catch {
-            return String(data)
-        }
-    }
 
     return (
         <div className={styles.adminContainer}>
@@ -237,7 +228,7 @@ const renderDiff = (oldData: any, newData: any, type: 'old' | 'new') => {
                 </div>
             )
         })
-    } catch (e) {
+    } catch {
         return "Error parsing data"
     }
 }

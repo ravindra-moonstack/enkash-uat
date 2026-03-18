@@ -3,12 +3,6 @@ import pool from "@/src/lib/dbConnect"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 
-interface AdminMember {
-  id: number
-  email: string
-  password: string
-}
-
 export async function POST(request: Request) {
   try {
     const { email, password } = await request.json()
