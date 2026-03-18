@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react"
 import styles from "./audit-logs.module.scss"
+import moment from "moment"
 
 interface AuditLog {
     id: number
@@ -23,11 +24,13 @@ const AuditLogsPage = () => {
     const [totalPages, setTotalPages] = useState(1)
     const [totalItems, setTotalItems] = useState(0)
     const [selectedLog, setSelectedLog] = useState<AuditLog | null>(null)
+    const [sortBy, setSortBy] = useState("updated_at")
+    const [sortOrder, setSortOrder] = useState("DESC")
 
-    const fetchLogs = useCallback(async (page: number = 1) => {
+    const fetchLogs = useCallback(async (page: number = 1, sort: string = "updated_at", order: string = "DESC") => {
         setIsLoading(true)
         try {
-            const response = await fetch(`/api/admin/audit-logs?page=${page}&limit=15`)
+            const response = await fetch(`/api/admin/audit-logs?page=${page}&limit=15&sortBy=${sort}&sortOrder=${order}`)
             if (response.status === 401) {
                 window.location.href = "/admin"
                 return
@@ -46,8 +49,18 @@ const AuditLogsPage = () => {
     }, [])
 
     useEffect(() => {
-        fetchLogs(currentPage)
-    }, [currentPage, fetchLogs])
+        fetchLogs(currentPage, sortBy, sortOrder)
+    }, [currentPage, sortBy, sortOrder, fetchLogs])
+
+    const handleSort = (column: string) => {
+        if (sortBy === column) {
+            setSortOrder(prev => prev === "ASC" ? "DESC" : "ASC")
+        } else {
+            setSortBy(column)
+            setSortOrder("DESC")
+        }
+        setCurrentPage(1)
+    }
 
     const formatDate = (dateString: string) => {
         return new Date(dateString).toLocaleString('en-IN', {
@@ -63,19 +76,56 @@ const AuditLogsPage = () => {
 
     return (
         <div className={styles.adminContainer}>
-            <h1 className={styles.title}>Audit Logs</h1>
-            <p className={styles.subtitle}>Track all changes made to the Glossary system.</p>
+            <div className="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 className={styles.title}>Audit Logs</h1>
+                    <p className={styles.subtitle} style={{ marginBottom: 0 }}>Track all changes made to the Glossary system.</p>
+                </div>
+                <div className="d-flex gap-2">
+                    <select
+                        className={styles.sortSelect}
+                        value={sortBy}
+                        onChange={(e) => {
+                            setSortBy(e.target.value)
+                            setCurrentPage(1)
+                        }}
+                    >
+                        <option value="updated_at">Sort by: Timestamp</option>
+                        <option value="action_type">Sort by: Action</option>
+                        <option value="table_name">Sort by: Table</option>
+                        <option value="row_id">Sort by: Row ID</option>
+                        <option value="updated_by">Sort by: User</option>
+                    </select>
+                    <button
+                        className={styles.orderBtn}
+                        onClick={() => setSortOrder(prev => prev === "ASC" ? "DESC" : "ASC")}
+                        title={sortOrder === "ASC" ? "Sort Descending" : "Sort Ascending"}
+                    >
+                        {sortOrder === "ASC" ? "↑" : "↓"}
+                    </button>
+                </div>
+            </div>
 
             <div className={styles.tableCard}>
                 <div className={styles.tableContainer}>
                     <table className={styles.table}>
                         <thead>
                             <tr>
-                                <th>Timestamp</th>
-                                <th>Action</th>
-                                <th>Table</th>
-                                <th>ID</th>
-                                <th>User</th>
+                                <th onClick={() => handleSort("updated_at")} className={styles.sortable}>
+                                    Timestamp {sortBy === "updated_at" && (sortOrder === "ASC" ? "🔼" : "🔽")}
+                                </th>
+                                <th onClick={() => handleSort("action_type")} className={styles.sortable}>
+                                    Action {sortBy === "action_type" && (sortOrder === "ASC" ? "🔼" : "🔽")}
+                                </th>
+                                <th onClick={() => handleSort("table_name")} className={styles.sortable}>
+                                    Table {sortBy === "table_name" && (sortOrder === "ASC" ? "🔼" : "🔽")}
+                                </th>
+                                <th onClick={() => handleSort("row_id")} className={styles.sortable}>
+                                    ID {sortBy === "row_id" && (sortOrder === "ASC" ? "🔼" : "🔽")}
+                                </th>
+                                <th onClick={() => handleSort("updated_by")} className={styles.sortable}>
+                                    User {sortBy === "updated_by" && (sortOrder === "ASC" ? "🔼" : "🔽")}
+                                </th>
                                 <th>IP Address</th>
                                 <th>Details</th>
                             </tr>
@@ -96,7 +146,7 @@ const AuditLogsPage = () => {
                             ) : (
                                 logs.map((log) => (
                                     <tr key={log.id}>
-                                        <td>{formatDate(log.updated_at)}</td>
+                                        <td>{moment(log.updated_at).format('DD-MMM-YYYY hh:mm A')}</td>
                                         <td>
                                             <span className={`${styles.badge} ${styles[log.action_type.toLowerCase()]}`}>
                                                 {log.action_type}

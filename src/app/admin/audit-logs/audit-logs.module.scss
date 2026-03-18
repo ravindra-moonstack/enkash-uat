@@ -35,7 +35,9 @@
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-
+  tbody{
+    min-height: 30vh;
+  }
   th {
     background-color: #f8fafc;
     padding: 16px 24px;
@@ -45,6 +47,17 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-bottom: 1px solid #e2e8f0;
+
+    &.sortable {
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #f1f5f9;
+        color: $color-equity-blue;
+      }
+    }
   }
 
   td {
@@ -57,6 +70,42 @@
 
   tr:hover td {
     background-color: #f8fafc;
+  }
+}
+
+.sortSelect {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: $color-main-black;
+  background-color: $color-white;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    border-color: $color-equity-blue;
+  }
+}
+
+.orderBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  background: $color-white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s;
+  color: $color-main-black;
+
+  &:hover {
+    background-color: #f1f5f9;
+    border-color: $color-equity-blue;
+    color: $color-equity-blue;
   }
 }
 
