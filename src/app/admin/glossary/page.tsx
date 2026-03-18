@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import styles from "./glossary-admin.module.scss"
 import { nameToUrl } from "@/src/utils/stringUtils"
 import { useQuillEditor } from "./use-quill-editor"
@@ -28,7 +28,9 @@ const GlossaryAdmin = () => {
     const [items, setItems] = useState<GlossaryItem[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const isSubmittingRef = useRef(false)
     const [editingItem, setEditingItem] = useState<GlossaryItem | null>(null)
+
 
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1)
@@ -51,6 +53,33 @@ const GlossaryAdmin = () => {
     const [featureImageAlt, setFeatureImageAlt] = useState("")
     const [hasManuallyEditedBlogWord, setHasManuallyEditedBlogWord] = useState(false)
 
+    const isDirty = useMemo(() => {
+        if (!editingItem) {
+            return word.trim() !== "" || content.trim() !== "" || slug.trim() !== "";
+        }
+        const hasWordChanged = word !== (editingItem.word || "");
+        const hasSlugChanged = slug !== (editingItem.slug || "");
+        const hasContentChanged = content !== (editingItem.content || "");
+        const hasBlogsChanged = showRelatedBlogs !== (!!editingItem.showRelatedBlogs);
+        const hasBlogWordChanged = blogWord !== (editingItem.blogWord || "");
+        const hasMetaTitleChanged = metaTitle !== (editingItem.meta_title || "");
+        const hasMetaDescriptionChanged = metaDescription !== (editingItem.meta_description || "");
+        const hasFeatureImageChanged = featureImage !== (editingItem.feature_image || "");
+        const hasFeatureImageAltChanged = featureImageAlt !== (editingItem.feature_image_alt || "");
+
+        return (
+            hasWordChanged ||
+            hasSlugChanged ||
+            hasContentChanged ||
+            hasBlogsChanged ||
+            hasBlogWordChanged ||
+            hasMetaTitleChanged ||
+            hasMetaDescriptionChanged ||
+            hasFeatureImageChanged ||
+            hasFeatureImageAltChanged
+        );
+    }, [word, slug, content, showRelatedBlogs, blogWord, metaTitle, metaDescription, featureImage, featureImageAlt, editingItem]);
+
     const {
         editorRef,
         quillInstance,
@@ -62,6 +91,7 @@ const GlossaryAdmin = () => {
         setShowHtmlView,
         showAltModal,
         pendingImage,
+        isUploading,
         handleAltSubmit,
         handleAltCancel
     } = useQuillEditor({ content, setContent, viewMode })
@@ -174,7 +204,8 @@ const GlossaryAdmin = () => {
 
     const handleSubmit = async (e?: React.FormEvent) => {
         if (e) e.preventDefault()
-        setFieldErrors({})
+        if (isSubmittingRef.current || !isDirty) return
+        isSubmittingRef.current = true
         setIsSubmitting(true)
 
         const finalWord = word.trim()
@@ -247,6 +278,7 @@ const GlossaryAdmin = () => {
         } catch {
             setFieldErrors({ general: "Something went wrong. Please try again." })
         } finally {
+            isSubmittingRef.current = false
             setIsSubmitting(false)
         }
     }
@@ -394,6 +426,8 @@ const GlossaryAdmin = () => {
                     handleFeatureImageUpload={handleFeatureImageUpload}
                     handleBlogWordChange={handleBlogWordChange}
                     isSubmitting={isSubmitting}
+                    isUploading={isUploading}
+                    isDirty={isDirty}
                     showAltModal={showAltModal}
                     pendingImage={pendingImage}
                     handleAltSubmit={handleAltSubmit}

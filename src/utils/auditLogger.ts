@@ -20,8 +20,8 @@ export async function recordAuditLog(
       : headerList.get("x-real-ip") || "unknown"
 
     await pool.execute(
-      `INSERT INTO audit_logs (table_name, row_id, action_type, old_data, new_data, updated_by, user_email, user_ip) 
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO audit_logs (table_name, row_id, action_type, old_data, new_data, updated_by, user_email, user_ip, updated_at) 
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, CONVERT_TZ(NOW(), 'SYSTEM', '+05:30'))`,
       [
         tableName,
         rowId,

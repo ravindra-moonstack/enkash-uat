@@ -126,6 +126,13 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
+  color: $color-grey-600;
+  transition: all 0.2s;
+
+  &:hover:not(:disabled):not(.active) {
+    background-color: #f1f5f9;
+    color: $color-main-black;
+  }
 
   &:disabled {
     opacity: 0.5;
