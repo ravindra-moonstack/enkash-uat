@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import styles from "./glossary-admin.module.scss"
 import { nameToUrl } from "@/src/utils/stringUtils"
@@ -22,7 +21,7 @@ interface GlossaryItem {
 
 type ViewMode = "list" | "form"
 
-const GlossaryAdmin = () => {
+const GlossaryAdmin = (): React.JSX.Element => {
     // State management
     const [viewMode, setViewMode] = useState<ViewMode>("list")
     const [items, setItems] = useState<GlossaryItem[]>([])
@@ -39,18 +38,18 @@ const GlossaryAdmin = () => {
     const [itemsPerPage] = useState(10)
 
     // Form fields
-    const [word, setWord] = useState("")
-    const [slug, setSlug] = useState("")
+    const [word, setWord] = useState<string>("")
+    const [slug, setSlug] = useState<string>("")
     const [isSlugModified, setIsSlugModified] = useState(false)
-    const [content, setContent] = useState("")
+    const [content, setContent] = useState<string>("")
     const [showRelatedBlogs, setShowRelatedBlogs] = useState(false)
-    const [blogWord, setBlogWord] = useState("")
-    const [metaTitle, setMetaTitle] = useState("")
-    const [metaDescription, setMetaDescription] = useState("")
+    const [blogWord, setBlogWord] = useState<string>("")
+    const [metaTitle, setMetaTitle] = useState<string>("")
+    const [metaDescription, setMetaDescription] = useState<string>("")
     const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
-    const [searchTerm, setSearchTerm] = useState("")
-    const [featureImage, setFeatureImage] = useState("")
-    const [featureImageAlt, setFeatureImageAlt] = useState("")
+    const [searchTerm, setSearchTerm] = useState<string>("")
+    const [featureImage, setFeatureImage] = useState<string>("")
+    const [featureImageAlt, setFeatureImageAlt] = useState<string>("")
     const [hasManuallyEditedBlogWord, setHasManuallyEditedBlogWord] = useState(false)
 
     const isDirty = useMemo(() => {
