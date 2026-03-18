@@ -10,7 +10,7 @@ export async function GET(request: Request) {
 
     // Get total count for pagination
     const countQuery = `SELECT COUNT(*) as total FROM audit_logs`
-    const [countRows]: any = await pool.query(countQuery)
+    const [countRows]: any = await pool.execute(countQuery)
     const totalItems = countRows[0]?.total || 0
     const totalPages = Math.ceil(totalItems / limit)
 
