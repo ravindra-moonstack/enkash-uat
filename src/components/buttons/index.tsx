@@ -56,6 +56,7 @@ const CommonButton = ({
   const [currentImage, setCurrentImage] = useState(image) // ⭐ NEW
 
   const handleClick = () => {
+    if (isDisabled) return
     if (typeof url === "string") {
       if (openInNewTab) {
         window.open(url, "_blank", "noopener,noreferrer")
