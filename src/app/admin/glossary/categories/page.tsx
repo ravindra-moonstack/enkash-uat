@@ -1,7 +1,7 @@
 
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef, useMemo } from "react"
 import { CommanButton } from "@/src/components"
 import styles from "../glossary-admin.module.scss"
 import { FaEdit, FaTrash, FaArrowLeft, FaList } from "react-icons/fa"
@@ -31,7 +31,14 @@ export default function GlossaryCategoriesAdmin() {
     const [isEditing, setIsEditing] = useState(false)
     const [editId, setEditId] = useState<number | null>(null)
     const [formData, setFormData] = useState<any>({})
+    const [initialData, setInitialData] = useState<any>({})
     const [showModal, setShowModal] = useState(false)
+    const [isSaving, setIsSaving] = useState(false)
+    const isSavingRef = useRef(false)
+
+    const isDirty = useMemo(() => {
+        return JSON.stringify(formData) !== JSON.stringify(initialData);
+    }, [formData, initialData]);
 
     // Fetch all data
     const fetchData = async () => {
@@ -61,14 +68,18 @@ export default function GlossaryCategoriesAdmin() {
     // --- Category Actions ---
 
     const handleAddCategory = () => {
-        setFormData({ heading: "", sort_order: categories.length })
+        const defaultData = { heading: "", sort_order: categories.length };
+        setFormData(defaultData)
+        setInitialData(defaultData)
         setIsEditing(false)
         setEditId(null)
         setShowModal(true)
     }
 
     const handleEditCategory = (cat: Category) => {
-        setFormData({ heading: cat.heading, sort_order: cat.sort_order })
+        const data = { heading: cat.heading, sort_order: cat.sort_order };
+        setFormData(data)
+        setInitialData(data)
         setIsEditing(true)
         setEditId(cat.id)
         setShowModal(true)
@@ -85,6 +96,9 @@ export default function GlossaryCategoriesAdmin() {
     }
 
     const saveCategory = async () => {
+        if (isSavingRef.current || !isDirty) return
+        isSavingRef.current = true
+        setIsSaving(true)
         try {
             const url = isEditing && editId
                 ? `/api/admin/glossary/categories/${editId}`
@@ -103,6 +117,9 @@ export default function GlossaryCategoriesAdmin() {
             }
         } catch (e) {
             console.error(e)
+        } finally {
+            isSavingRef.current = false
+            setIsSaving(false)
         }
     }
 
@@ -115,19 +132,23 @@ export default function GlossaryCategoriesAdmin() {
 
     const handleAddCard = () => {
         if (!selectedCategory) return
-        setFormData({
+        const defaultData = {
             heading: "",
             description: "",
             link: "",
             sort_order: selectedCategory.cards ? selectedCategory.cards.length : 0
-        })
+        };
+        setFormData(defaultData)
+        setInitialData(defaultData)
         setIsEditing(false)
         setEditId(null)
         setShowModal(true)
     }
 
     const handleEditCard = (card: Card) => {
-        setFormData({ ...card })
+        const data = { ...card };
+        setFormData(data)
+        setInitialData(data)
         setIsEditing(true)
         setEditId(card.id)
         setShowModal(true)
@@ -144,13 +165,14 @@ export default function GlossaryCategoriesAdmin() {
     }
 
     const saveCard = async () => {
-        if (!selectedCategory) return
+        if (!selectedCategory || isSavingRef.current || !isDirty) return
+        isSavingRef.current = true
+        setIsSaving(true)
         try {
             const url = isEditing && editId
                 ? `/api/admin/glossary/category-cards/${editId}`
                 : "/api/admin/glossary/category-cards"
             const method = isEditing && editId ? "PUT" : "POST"
-
             const body = {
                 ...formData,
                 category_id: selectedCategory.id
@@ -168,6 +190,9 @@ export default function GlossaryCategoriesAdmin() {
             }
         } catch (e) {
             console.error(e)
+        } finally {
+            isSavingRef.current = false
+            setIsSaving(false)
         }
     }
 
@@ -349,9 +374,10 @@ export default function GlossaryCategoriesAdmin() {
                                 url={() => setShowModal(false)}
                             />
                             <CommanButton
-                                title="Save"
+                                title={isSaving ? "Saving..." : "Save"}
                                 theme="blue"
                                 url={view === "list" ? saveCategory : saveCard}
+                                isDisabled={isSaving || !isDirty}
                             />
                         </div>
                     </div>
