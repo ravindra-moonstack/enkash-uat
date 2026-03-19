@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
@@ -23,6 +24,7 @@ import faqData from "./faq-data"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import FaqSection from "@/src/components/faq-section"
 import DynamicHeading from "@/src/components/dynamic-heading"
+import SuspenseLoading from "@/src/components/loading"
 
 //helpers
 import {
@@ -345,7 +347,9 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <SuspenseLoading>
+        <FaqSection faqData={faqData} />
+      </SuspenseLoading>
 
       <BlogSection
         heading={[
@@ -353,7 +357,6 @@ const PaymentGateway = (): React.JSX.Element => {
             title: "Related  ",
             color: "color-black ",
           },
-
           {
             title: " Resources",
             color: "color-black f-4",
@@ -361,6 +364,7 @@ const PaymentGateway = (): React.JSX.Element => {
         ]}
         cards={[12642, 13675, 12195]}
       />
+
       <OtherProducts
         heading={[
           { title: "Check out ", color: "color-black" },
