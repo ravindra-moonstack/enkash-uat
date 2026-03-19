@@ -61,13 +61,17 @@ const ProductHeroSection: React.FC<ProductHeroSectionProps> = ({
         </div>
 
         <div className="col-12 d-flex justify-content-center align-items-center">
-          <div className={styles.lottie_container}>
-            <LottieDynamicLoadComponent animationName={animationName} loop />
-          </div>
+          <React.Suspense fallback={<div className={styles.lottie_container} style={{ height: '300px' }} />}>
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent animationName={animationName} loop />
+            </div>
+          </React.Suspense>
         </div>
       </div>
 
-      <LogoSlider />
+      <React.Suspense fallback={<div style={{ height: '100px' }} />}>
+        <LogoSlider />
+      </React.Suspense>
     </section>
   )
 }

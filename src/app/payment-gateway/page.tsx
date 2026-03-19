@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
@@ -345,30 +346,36 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <FaqSection faqData={faqData} />
+      </React.Suspense>
 
-      <BlogSection
-        heading={[
-          {
-            title: "Related  ",
-            color: "color-black ",
-          },
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <BlogSection
+          heading={[
+            {
+              title: "Related  ",
+              color: "color-black ",
+            },
+            {
+              title: " Resources",
+              color: "color-black f-4",
+            },
+          ]}
+          cards={[12642, 13675, 12195]}
+        />
+      </React.Suspense>
 
-          {
-            title: " Resources",
-            color: "color-black f-4",
-          },
-        ]}
-        cards={[12642, 13675, 12195]}
-      />
-      <OtherProducts
-        heading={[
-          { title: "Check out ", color: "color-black" },
-          { title: "other collection products", color: "color-equity-blue" },
-          { title: " at EnKash", color: "color-black" },
-        ]}
-        cards={managementCardData}
-      />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <OtherProducts
+          heading={[
+            { title: "Check out ", color: "color-black" },
+            { title: "other collection products", color: "color-equity-blue" },
+            { title: " at EnKash", color: "color-black" },
+          ]}
+          cards={managementCardData}
+        />
+      </React.Suspense>
     </div>
   )
 }

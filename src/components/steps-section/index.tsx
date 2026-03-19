@@ -125,6 +125,9 @@ const StepsSection = ({
                 src={image.src}
                 alt={image.alt}
                 className="w-100 mh-550 object-fit-contain"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={75}
               />
             </div>
           </div>

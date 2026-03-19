@@ -24,9 +24,8 @@ const ManagementCard = ({
 }: CardProps): React.JSX.Element => {
   const cardContent = (
     <div
-      className={`d-flex flex-column justify-content-between ${
-        styles.card_body
-      } ${theme === "dark" ? styles.dark : theme === "black" ? styles.black : styles.light}`}
+      className={`d-flex flex-column justify-content-between ${styles.card_body
+        } ${theme === "dark" ? styles.dark : theme === "black" ? styles.black : styles.light}`}
     >
       <div>
         {titleHtml ? (
@@ -76,6 +75,9 @@ const ManagementCard = ({
             className={styles.card_image}
             width={400}
             height={250}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 33vw"
+            quality={75}
           />
         </div>
       )}
