@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
@@ -19,6 +20,7 @@ import faqData from "./faq-data"
 import CommanButton from "@/src/components/buttons"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import CorporateHeroSection from "@/src/components/sections/corporate-card-hero-section"
+import SuspenseLoading from "@/src/components/loading"
 
 // Dynamic imports for performance
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
@@ -37,6 +39,7 @@ import {
   corporateCardIcon,
   onePlatform,
   heroImg,
+  secongBg,
 } from "./img"
 
 // utils
@@ -118,10 +121,22 @@ const CorporateCards = (): React.JSX.Element => {
         title={"Talk to sales"}
         url={salesUrl}
       />
-      <LogoSlider />
+      <SuspenseLoading>
+        <LogoSlider />
+      </SuspenseLoading>
 
-      <div className={styles.introduction_section}>
-        <div className="max-m-auto">
+      <div className={`${styles.introduction_section} position-relative overflow-hidden`}>
+        <Image
+          src={secongBg}
+          alt="background"
+          fill
+          className="object-fit-cover"
+          sizes="100vw"
+          quality={75}
+          fetchPriority="high"
+          loading="eager"
+        />
+        <div className="max-m-auto position-relative z-index-1">
           <div
             className={`${styles.second_row_title} text-center pb-3 pb-md-5`}
           >
@@ -157,6 +172,11 @@ const CorporateCards = (): React.JSX.Element => {
                   src={item.icon}
                   alt="card visual"
                   className={styles.card_image}
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                  sizes="48px"
+                  quality={75}
                 />
                 <DynamicHeading
                   content={[
@@ -244,6 +264,9 @@ const CorporateCards = (): React.JSX.Element => {
                   src={onePlatform}
                   alt="card background"
                   className="w-100 mh-550 object-fit-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -331,6 +354,9 @@ const CorporateCards = (): React.JSX.Element => {
                   src={spendAnalylicsImg}
                   alt="background image"
                   className="w-100  object-fit-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -346,6 +372,9 @@ const CorporateCards = (): React.JSX.Element => {
               alt="card background"
               height={156}
               width={156}
+              sizes="156px"
+              quality={75}
+              loading="lazy"
             />
           </div>
 
@@ -421,6 +450,9 @@ const CorporateCards = (): React.JSX.Element => {
                 src={corporateCard}
                 alt="background image"
                 className="w-100 mh-550 object-fit-contain"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={75}
+                loading="lazy"
               />
             </div>
             <div className="col-md-6 col-12 pr-md-5">
@@ -554,13 +586,15 @@ const CorporateCards = (): React.JSX.Element => {
             />
           </div>
         </div>
-        <div className={`${styles.onePlatformSectionCard}`}>
-          <AllProducts
-            title="All Features"
-            subtitle="Combine all use cases"
-            data={mergedCards}
-          />
-        </div>
+        <SuspenseLoading>
+          <div className={`${styles.onePlatformSectionCard}`}>
+            <AllProducts
+              title="All Features"
+              subtitle="Combine all use cases"
+              data={mergedCards}
+            />
+          </div>
+        </SuspenseLoading>
       </div>
 
       <div className={`${styles.eight_row} `}>
@@ -588,14 +622,16 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <SuspenseLoading>
+        <FaqSection faqData={faqData} />
+      </SuspenseLoading>
+
       <BlogSection
         heading={[
           {
             title: "Related  ",
-            color: "color-black ",
+            color: "color-black f-4",
           },
-
           {
             title: " Resources",
             color: "color-black f-4",

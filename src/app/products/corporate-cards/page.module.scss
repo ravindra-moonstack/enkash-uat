@@ -62,14 +62,24 @@
   background-size: cover;
   padding: 50px 20px;
   position: relative;
-  background-image:
-    linear-gradient(90deg,
-      rgba(28, 90, 244, 0.8) 0%,
-      rgba(16, 52, 142, 0.8) 100%),
-    url(./img/secongBg.png);
+  background-image: linear-gradient(
+    90deg,
+    rgba(28, 90, 244, 0.8) 0%,
+    rgba(16, 52, 142, 0.8) 100%
+  );
 
   @include for-laptops {
     padding: 90px 20px 90px 20px;
+  }
+
+  .background_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
   }
 
   .second_row_title {

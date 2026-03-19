@@ -11,7 +11,14 @@ const nextConfig: NextConfig = {
 
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
+    optimizePackageImports: [
+      "@gsap/react",
+      "react-icons",
+      "lodash-es",
+      "react-bootstrap",
+      "@novemberfiveco/lottie-react-light",
+      "lucide-react",
+    ],
   },
 
   compiler: {
@@ -30,22 +37,8 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  webpack(config, { dev, isServer }) {
+  webpack(config) {
     config.infrastructureLogging = { level: "error" }
-
-    if (!dev && !isServer) {
-      config.optimization.splitChunks.cacheGroups = {
-        default: false,
-        vendors: false,
-        styles: {
-          name: "styles",
-          type: "css/mini-extract",
-          chunks: "all",
-          enforce: true,
-        },
-      }
-    }
-
     return config
   },
 
@@ -54,29 +47,45 @@ const nextConfig: NextConfig = {
       {
         source: "/(.*)",
         headers: [
-          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
         ],
       },
       {
-        source: "/(.*).(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)",
+        source:
+          "/(.*).(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
       {
         source: "/_next/static/(.*)",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
       {
         source: "/((?!_next/static|.*\\..*).*)",
         headers: [
-          { key: "Cache-Control", value: "no-store, must-revalidate" },
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=60, stale-while-revalidate=3600",
+          },
         ],
       },
     ]
@@ -85,8 +94,14 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       { source: "/resources", destination: "https://blogs.enkash.com/blog" },
-      { source: "/resources/blog/:path*", destination: "https://blogs.enkash.com/blog/:path*" },
-      { source: "/resources/:path*", destination: "https://blogs.enkash.com/:path*" },
+      {
+        source: "/resources/blog/:path*",
+        destination: "https://blogs.enkash.com/blog/:path*",
+      },
+      {
+        source: "/resources/:path*",
+        destination: "https://blogs.enkash.com/:path*",
+      },
     ]
   },
 

@@ -45,7 +45,13 @@ const LottieDynamicLoadComponent = ({
   }, [animationName])
 
   return (
-    <>{animationData && <Lottie animationData={animationData} loop={loop} />}</>
+    <>
+      {animationData ? (
+        <Lottie animationData={animationData} loop={loop} />
+      ) : (
+        <div style={{ width: "100%", height: "100%" }} />
+      )}
+    </>
   )
 }
 
