@@ -76,7 +76,10 @@ const nextConfig: NextConfig = {
       {
         source: "/((?!_next/static|.*\\..*).*)",
         headers: [
-          { key: "Cache-Control", value: "no-store, must-revalidate" },
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=60, stale-while-revalidate=3600",
+          },
         ],
       },
     ]
