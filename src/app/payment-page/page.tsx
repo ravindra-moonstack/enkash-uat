@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
@@ -215,77 +216,88 @@ const PaymentPage = (): React.JSX.Element => {
         buttonUrl={salesUrl}
       />
 
-      <div className={styles.card_stacking_row}>
-        <div className={` max-w-auto  ${styles.section}`}>
-          <CardStacking
-            cards={cards}
-            heading={[
-              {
-                title: "EnKash Payment Pages -",
-                color: "color-black",
-              },
-              {
-                title: " Built for Every Business Need",
-                color: "color-equity-blue",
-              },
-            ]}
-          />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <div className={styles.card_stacking_row}>
+          <div className={` max-w-auto  ${styles.section}`}>
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "EnKash Payment Pages -",
+                  color: "color-black",
+                },
+                {
+                  title: " Built for Every Business Need",
+                  color: "color-equity-blue",
+                },
+              ]}
+            />
+          </div>
         </div>
-      </div>
+      </React.Suspense>
 
-      <SliderSection
-        headingContent={[
-          {
-            title: "EnKash Payment Pages Features for ",
-            color: "color-black",
-          },
-          {
-            title: "Secure Online Payment",
-            color: "color-equity-blue",
-          },
-        ]}
-        productsData={mergedCards}
-        productsTitle="All Features"
-        productsSubtitle="Combine all use cases"
-      />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <SliderSection
+          headingContent={[
+            {
+              title: "EnKash Payment Pages Features for ",
+              color: "color-black",
+            },
+            {
+              title: "Secure Online Payment",
+              color: "color-equity-blue",
+            },
+          ]}
+          productsData={mergedCards}
+          productsTitle="All Features"
+          productsSubtitle="Combine all use cases"
+        />
+      </React.Suspense>
 
       <CtaSection
         title={"Turn Clicks Into Transactions"}
         buttonText={"Get Started  Today "}
       />
 
-      <FaqSection faqData={faqData} />
-      <BlogSection
-        heading={[
-          {
-            title: "Related  ",
-            color: "color-black ",
-          },
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <FaqSection faqData={faqData} />
+      </React.Suspense>
 
-          {
-            title: " Resources",
-            color: "color-black f-4",
-          },
-        ]}
-        cards={[7146, 9045, 8835]}
-      />
-      <OtherProducts
-        heading={[
-          {
-            title: "Check out ",
-            color: "color-black",
-          },
-          {
-            title: "other collection products",
-            color: "color-equity-blue",
-          },
-          {
-            title: " at EnKash",
-            color: "color-black",
-          },
-        ]}
-        cards={managementCardData}
-      />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <BlogSection
+          heading={[
+            {
+              title: "Related  ",
+              color: "color-black ",
+            },
+            {
+              title: " Resources",
+              color: "color-black f-4",
+            },
+          ]}
+          cards={[7146, 9045, 8835]}
+        />
+      </React.Suspense>
+
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <OtherProducts
+          heading={[
+            {
+              title: "Check out ",
+              color: "color-black",
+            },
+            {
+              title: "other collection products",
+              color: "color-equity-blue",
+            },
+            {
+              title: " at EnKash",
+              color: "color-black",
+            },
+          ]}
+          cards={managementCardData}
+        />
+      </React.Suspense>
     </div>
   )
 }

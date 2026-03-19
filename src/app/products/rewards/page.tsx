@@ -1,3 +1,4 @@
+import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
 
@@ -87,16 +88,20 @@ const Rewards = (): React.JSX.Element => {
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
-            <div className={styles.lottie_container}>
-              <LottieDynamicLoadComponent
-                animationName={"RewardAnimationLottie"}
-                loop={true}
-              />
-            </div>
+            <React.Suspense fallback={<div className={styles.lottie_container} style={{ height: '300px' }} />}>
+              <div className={styles.lottie_container}>
+                <LottieDynamicLoadComponent
+                  animationName={"RewardAnimationLottie"}
+                  loop={true}
+                />
+              </div>
+            </React.Suspense>
           </div>
         </div>
         <div>
-          <LogoSlider />
+          <React.Suspense fallback={<div style={{ height: '100px' }} />}>
+            <LogoSlider />
+          </React.Suspense>
         </div>
       </div>
 
@@ -161,8 +166,10 @@ const Rewards = (): React.JSX.Element => {
           data={mergedCards}
         />
       </div>
-      <FaqSection faqData={faqData} />
-    </div>
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <FaqSection faqData={faqData} />
+      </React.Suspense>
+    </div >
   )
 }
 

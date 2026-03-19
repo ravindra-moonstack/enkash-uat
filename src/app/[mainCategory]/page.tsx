@@ -56,12 +56,13 @@ export async function generateMetadata({
   }
 }
 
-const MainCategoryPage = async ({
-  params,
-}: {
+export default async function MainCategoryPage(props: {
   params: Promise<{ mainCategory: string }>
-}) => {
-  const { mainCategory } = await params
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
+  const params = await props.params
+  const mainCategory = params.mainCategory
+
   const isValidCategory = VALID_CATEGORIES.includes(mainCategory)
 
   if (!isValidCategory) {
@@ -70,7 +71,9 @@ const MainCategoryPage = async ({
 
   const pageData = VOUCHER_DATA[mainCategory]
 
-  if (!pageData) notFound()
+  if (!pageData) {
+    notFound()
+  }
 
   const { apiDiscounts } = await fetchVouchers(mainCategory)
 
@@ -146,5 +149,3 @@ const MainCategoryPage = async ({
     </div>
   )
 }
-
-export default MainCategoryPage

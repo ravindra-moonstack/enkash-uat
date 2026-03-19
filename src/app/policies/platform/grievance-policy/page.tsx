@@ -7,8 +7,8 @@ import generateMetaData from "@/src/utils/metaData"
 import dynamic from "next/dynamic"
 
 // Dynamic imports
-const DynamicHeading = dynamic(() => import("@/src/components/dynamic-heading"))
-const CustomBreadcrumb = dynamic(() => import("@/src/components/breadcrumb"))
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Platform Grievance and Redressal Policy",
