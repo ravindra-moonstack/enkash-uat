@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
+import { Suspense } from "react"
 
 //data
 import {
@@ -309,7 +310,12 @@ const PaymentGateway = (): React.JSX.Element => {
                       className="d-flex justify-content-center align-items-center bg-light rounded-circle"
                       style={{ width: "32px", height: "32px" }}
                     >
-                      <Image src={icon} alt="icon" sizes="32px" />
+                      <Image
+                        src={icon}
+                        alt="icon"
+                        width={32}
+                        height={32}
+                      />
                     </div>
                     <div className="d-flex flex-column gap-3">
                       <DynamicHeading
@@ -340,6 +346,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   src={acceleratedGrowthImg}
                   alt="background image"
                   className="w-100 mh-550 object-fit-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -357,6 +364,7 @@ const PaymentGateway = (): React.JSX.Element => {
             title: "Related  ",
             color: "color-black ",
           },
+
           {
             title: " Resources",
             color: "color-black f-4",
@@ -364,7 +372,6 @@ const PaymentGateway = (): React.JSX.Element => {
         ]}
         cards={[12642, 13675, 12195]}
       />
-
       <OtherProducts
         heading={[
           { title: "Check out ", color: "color-black" },
