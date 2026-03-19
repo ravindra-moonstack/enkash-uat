@@ -57,8 +57,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           fetchPriority="high"
           style={{ objectFit: "cover", zIndex: -1 }}
           sizes="100vw"
-          quality={65}
           decoding="async"
+          quality={80}
         />
       )}
 

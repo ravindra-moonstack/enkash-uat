@@ -4,6 +4,8 @@ import "../styles/_base.scss"
 import "../styles/_variables.scss"
 import "./globals.css"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 import { Inter } from "next/font/google"
 import Script from "next/script"
