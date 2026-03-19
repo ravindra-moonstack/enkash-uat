@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
@@ -8,6 +9,8 @@ import faqData from "./faq-data"
 
 // components 
 import dynamic from "next/dynamic"
+import SuspenseLoading from "@/src/components/loading"
+
 // Dynamic imports for performance
 const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"))
 const DynamicHeading = dynamic(() => import("@/src/components/dynamic-heading"))
@@ -290,7 +293,9 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <SuspenseLoading>
+        <FaqSection faqData={faqData} />
+      </SuspenseLoading>
     </div>
   )
 }

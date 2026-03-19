@@ -66,6 +66,12 @@ export default function AdminLayout({
 
     return (
         <div className={styles.adminWrapper}>
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+                media="print"
+                onLoad={(e: any) => (e.currentTarget.media = "all")}
+            />
             {/* Sidebar */}
             <aside className={styles.sidebar}>
                 <div className={styles.logoSection}>

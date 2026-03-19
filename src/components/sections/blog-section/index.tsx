@@ -1,9 +1,8 @@
-
-
 import React, { JSX } from "react"
 import styles from "./blog-section.module.scss"
 import DynamicHeading from "../../dynamic-heading"
 import BlogCard from "../../blog-card"
+import SuspenseLoading from "../../loading"
 
 interface HeadingPart {
   title: string
@@ -73,7 +72,7 @@ async function fetchBlogs(cards?: number[], links?: string[]): Promise<BlogPost[
   }
 }
 
-const BlogSection = async ({
+const BlogSectionContent = async ({
   heading,
   cards,
   links,
@@ -104,4 +103,12 @@ const BlogSection = async ({
   )
 }
 
-export default BlogSection;
+const BlogSection = (props: BlogSectionProps) => {
+  return (
+    <SuspenseLoading>
+      <BlogSectionContent {...props} />
+    </SuspenseLoading>
+  )
+}
+
+export default BlogSection

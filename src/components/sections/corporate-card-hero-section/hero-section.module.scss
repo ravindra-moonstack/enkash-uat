@@ -10,10 +10,6 @@
   padding: 110px 20px 36px;
   position: relative;
 
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/images/corporate-card-first-bg.svg"),
-    url("/images/corporate-card-second-bg.webp");
   @include for-laptops {
     padding: 121px 70px 40px;
   }
@@ -46,4 +42,19 @@
       max-width: none;
     }
   }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: 0;
+  pointer-events: none;
 }
