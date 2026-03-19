@@ -1,3 +1,4 @@
+import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
 // data
@@ -104,15 +105,19 @@ const MakePayment = (): React.JSX.Element => {
           </div>
           <div className=" col-12">
             <div className={styles.lottie_container}>
-              <LottieDynamicLoadComponent
-                animationName={"MakePaymentAnimationLottie"}
-                loop={true}
-              />
+              <React.Suspense fallback={<div className="min-h-300"></div>}>
+                <LottieDynamicLoadComponent
+                  animationName={"MakePaymentAnimationLottie"}
+                  loop={true}
+                />
+              </React.Suspense>
             </div>
           </div>
         </div>
 
-        <LogoSlider />
+        <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+          <LogoSlider />
+        </React.Suspense>
       </div>
 
       <div className={styles.introduction_section}>
@@ -262,27 +267,29 @@ const MakePayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center `}>
-          <div className={``}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "The EnKash Advantage",
-                  color: "color-black ",
-                },
-              ]}
-              headingTag="h2"
-              className="f-5"
-            />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <div className={`${styles.slider_row} relative`}>
+          <div className={`${styles.title} text-center `}>
+            <div className={``}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "The EnKash Advantage",
+                    color: "color-black ",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-5"
+              />
+            </div>
           </div>
+          <AllProducts
+            title="All Features"
+            subtitle="Combine all use cases"
+            data={mergedCards}
+          />
         </div>
-        <AllProducts
-          title="All Features"
-          subtitle="Combine all use cases"
-          data={mergedCards}
-        />
-      </div>
+      </React.Suspense>
 
       <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
@@ -309,7 +316,9 @@ const MakePayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <FaqSection faqData={faqData} />
+      </React.Suspense>
     </div>
   )
 }

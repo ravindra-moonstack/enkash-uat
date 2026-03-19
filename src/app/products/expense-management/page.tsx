@@ -205,41 +205,45 @@ const ExpenseManagement = (): React.JSX.Element => {
       </div>
 
       <div className="bg_white_index">
-        <FeatureSpotlight
-          heading={[
-            { title: "EMS Features ", color: "color-equity-blue" },
-            { title: "in Spotlight", color: "color-black" },
-          ]}
-          cardData={cardData}
-          showButtons
-          primaryButtonTitle="Explore Receipt Management"
-          primaryButtonUrl="/receipts/"
-          secondaryButtonTitle="Explore Reimbursement Management"
-          secondaryButtonUrl="/reimbursements/"
-        />
+        <React.Suspense fallback={<div className="py-5 text-center">Loading Features...</div>}>
+          <FeatureSpotlight
+            heading={[
+              { title: "EMS Features ", color: "color-equity-blue" },
+              { title: "in Spotlight", color: "color-black" },
+            ]}
+            cardData={cardData}
+            showButtons
+            primaryButtonTitle="Explore Receipt Management"
+            primaryButtonUrl="/receipts/"
+            secondaryButtonTitle="Explore Reimbursement Management"
+            secondaryButtonUrl="/reimbursements/"
+          />
+        </React.Suspense>
       </div>
 
       <div className={`${styles.features_section} bg_white_index`}>
-        <SmartPolicySection
-          heading={[
-            { title: "Smart Policy", color: "color-black" },
-            { title: " Enforcement & Approvals", color: "color-equity-blue" },
-          ]}
-          subheading={[
-            {
-              title:
-                "Control spending before it happens with automated policies that keep every transaction within budget. Set custom rules in your expense management platform to manage limits, approvals, and reimbursements without manual intervention. Automate routine checks, reduce policy violations, and give finance teams full control with zero extra effort.",
-              color: "color-main-grey subHeading",
-            },
-          ]}
-          cardsData={cardsData}
-          approvedImage={approved}
-        />
+        <React.Suspense fallback={<div className="py-5 text-center">Loading Section...</div>}>
+          <SmartPolicySection
+            heading={[
+              { title: "Smart Policy", color: "color-black" },
+              { title: " Enforcement & Approvals", color: "color-equity-blue" },
+            ]}
+            subheading={[
+              {
+                title:
+                  "Control spending before it happens with automated policies that keep every transaction within budget. Set custom rules in your expense management platform to manage limits, approvals, and reimbursements without manual intervention. Automate routine checks, reduce policy violations, and give finance teams full control with zero extra effort.",
+                color: "color-main-grey subHeading",
+              },
+            ]}
+            cardsData={cardsData}
+            approvedImage={approved}
+          />
+        </React.Suspense>
       </div>
 
       <div className={`${styles.card_stacking_row} bg_white_index`}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <>
+          <React.Suspense fallback={<div className="py-5 text-center">Loading Analytics...</div>}>
             <CardStacking
               cards={cards}
               heading={[
@@ -257,7 +261,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                 },
               ]}
             />
-          </>
+          </React.Suspense>
         </div>
       </div>
 
@@ -278,7 +282,9 @@ const ExpenseManagement = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6">
               <div>
-                <SecondFaqHtml SecondfaqData={SecondfaqData} />
+                <React.Suspense fallback={<div>Loading FAQ...</div>}>
+                  <SecondFaqHtml SecondfaqData={SecondfaqData} />
+                </React.Suspense>
               </div>
             </div>
             <div className="col-md-6 sm-d-none">
@@ -317,99 +323,109 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
 
         <div>
-          <AllProducts
-            title="All Features"
-            subtitle="Combine all use cases"
-            data={mergedCards}
-          />
+          <React.Suspense fallback={<div className="py-5 text-center">Loading Products...</div>}>
+            <AllProducts
+              title="All Features"
+              subtitle="Combine all use cases"
+              data={mergedCards}
+            />
+          </React.Suspense>
         </div>
       </div>
 
       <div
         className={`${styles.sixth_row} bg_white_index row d-flex bg-white `}
       >
-        <EnkashWay
-          sectionHeading="One Platform. Every Use Case. Total Control."
-          progressItemPadding="15px 12px"
-          progressData={[
-            {
-              itemArray: ["IT & SaaS"],
-              title: "IT & SaaS",
-              description:
-                "No more scattered subscriptions, remote reimbursements, and cloud tool audits. Centralize expenses, automate approvals, and get real-time visibility. Empowering your finance team to stay agile without slowing down your product or people.",
-              icon: itIcon,
-              bgImage: bg1,
-            },
-            {
-              itemArray: ["E-commerce & Retail"],
-              title: "E-commerce & Retail",
-              description:
-                "Forget about juggling vendor payouts, branch-level expenses, and seasonal budgets. Track spends across warehouses and storefronts, enforce policies by category, and simplify GST reporting - all while scaling faster with total financial control.",
-              icon: ecoomerceIcon,
-              bgImage: bg2,
-            },
-            {
-              itemArray: ["Manufacturing"],
-              title: "Manufacturing",
-              description:
-                "Do away with manual approvals, unclear plant-level spends, and poor budget tracking. Get control over every rupee - from raw material procurement to field reimbursements - ensuring compliance and audit-readiness across your supply chain.",
-              icon: manufactureIcon,
-              bgImage: bg3,
-            },
-            {
-              itemArray: ["Logistics & Supply Chain"],
-              title: "Logistics & Supply Chain",
-              description:
-                "Do not lose visibility into fleet expenses, fuel claims, or vendor payments. EnKash EMS connects your expense data with real-time dashboards, automates reconciliations, and flags policy breaches instantly, allowing your operations to run lean and accountable.",
-              icon: logisticIcon,
-              bgImage: bg4,
-            },
-            {
-              itemArray: ["Consulting & Services"],
-              title: "Consulting & Services",
-              description:
-                "Eliminate consultants' overspending, misreporting, or delay in claims. Enjoy fast, mobile-first submissions, real-time approvals, and project-wise expense tagging. Keep clients happy, costs transparent, and your margins intact.",
-              icon: consultancyIcon,
-              bgImage: bg5,
-            },
-            {
-              itemArray: ["Pharma & Healthcare"],
-              title: "Pharma & Healthcare",
-              description:
-                "Do not let MR travel management, hospital branch expenses, and regulatory reporting become a challenge. Automate policy enforcement, capture receipts instantly, and align with compliance standards to focus on patient care, not paperwork.",
-              icon: pharmacyIcon,
-              bgImage: bg6,
-            },
-          ]}
-        />
+        <React.Suspense fallback={<div className="py-5 text-center">Loading EnKash Way...</div>}>
+          <EnkashWay
+            sectionHeading="One Platform. Every Use Case. Total Control."
+            progressItemPadding="15px 12px"
+            progressData={[
+              {
+                itemArray: ["IT & SaaS"],
+                title: "IT & SaaS",
+                description:
+                  "No more scattered subscriptions, remote reimbursements, and cloud tool audits. Centralize expenses, automate approvals, and get real-time visibility. Empowering your finance team to stay agile without slowing down your product or people.",
+                icon: itIcon,
+                bgImage: bg1,
+              },
+              {
+                itemArray: ["E-commerce & Retail"],
+                title: "E-commerce & Retail",
+                description:
+                  "Forget about juggling vendor payouts, branch-level expenses, and seasonal budgets. Track spends across warehouses and storefronts, enforce policies by category, and simplify GST reporting - all while scaling faster with total financial control.",
+                icon: ecoomerceIcon,
+                bgImage: bg2,
+              },
+              {
+                itemArray: ["Manufacturing"],
+                title: "Manufacturing",
+                description:
+                  "Do away with manual approvals, unclear plant-level spends, and poor budget tracking. Get control over every rupee - from raw material procurement to field reimbursements - ensuring compliance and audit-readiness across your supply chain.",
+                icon: manufactureIcon,
+                bgImage: bg3,
+              },
+              {
+                itemArray: ["Logistics & Supply Chain"],
+                title: "Logistics & Supply Chain",
+                description:
+                  "Do not lose visibility into fleet expenses, fuel claims, or vendor payments. EnKash EMS connects your expense data with real-time dashboards, automates reconciliations, and flags policy breaches instantly, allowing your operations to run lean and accountable.",
+                icon: logisticIcon,
+                bgImage: bg4,
+              },
+              {
+                itemArray: ["Consulting & Services"],
+                title: "Consulting & Services",
+                description:
+                  "Eliminate consultants' overspending, misreporting, or delay in claims. Enjoy fast, mobile-first submissions, real-time approvals, and project-wise expense tagging. Keep clients happy, costs transparent, and your margins intact.",
+                icon: consultancyIcon,
+                bgImage: bg5,
+              },
+              {
+                itemArray: ["Pharma & Healthcare"],
+                title: "Pharma & Healthcare",
+                description:
+                  "Do not let MR travel management, hospital branch expenses, and regulatory reporting become a challenge. Automate policy enforcement, capture receipts instantly, and align with compliance standards to focus on patient care, not paperwork.",
+                icon: pharmacyIcon,
+                bgImage: bg6,
+              },
+            ]}
+          />
+        </React.Suspense>
       </div>
 
       <div className="bg_white_index">
-        <CTASection
-          title="Build a leaner, smarter, & future-ready finance team"
-          buttonText="Get Started Today"
-          buttonUrl={salesUrl}
-          actionImage={blueArrow}
-          hoverImage={whiteArrow}
-        />
+        <React.Suspense fallback={null}>
+          <CTASection
+            title="Build a leaner, smarter, & future-ready finance team"
+            buttonText="Get Started Today"
+            buttonUrl={salesUrl}
+            actionImage={blueArrow}
+            hoverImage={whiteArrow}
+          />
+        </React.Suspense>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading FAQ...</div>}>
+        <FaqSection faqData={faqData} />
+      </React.Suspense>
 
-      <BlogSection
-        heading={[
-          {
-            title: "Related  ",
-            color: "color-black ",
-          },
+      <React.Suspense fallback={<div className="py-5 text-center">Loading Resources...</div>}>
+        <BlogSection
+          heading={[
+            {
+              title: "Related  ",
+              color: "color-black ",
+            },
 
-          {
-            title: " Resources",
-            color: "color-black f-4",
-          },
-        ]}
-        cards={[1033, 1, 8740]}
-      />
+            {
+              title: " Resources",
+              color: "color-black f-4",
+            },
+          ]}
+          cards={[1033, 1, 8740]}
+        />
+      </React.Suspense>
     </div>
   )
 }

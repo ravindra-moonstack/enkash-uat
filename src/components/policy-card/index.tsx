@@ -32,6 +32,8 @@ const PolicyCard: React.FC<CardProps> = ({
             alt="icon"
             width={55}
             height={55}
+            loading="lazy"
+            quality={70}
           />
         )}
       </div>

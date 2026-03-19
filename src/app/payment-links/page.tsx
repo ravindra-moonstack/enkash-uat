@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
@@ -253,112 +254,121 @@ const PaymentLinks = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.tab_row}  bg-white `}>
-        <PaymentLinkTab
-          sectionHeading="Payment Link for All Merchants:"
-          secondHeading="Accept Payments Anywhere, Anytime"
-          progressData={[
-            {
-              itemArray: ["Invoicing and Billing"],
-              title: "Invoicing and Billing",
-              subtitleOne: "Invoice Payments",
-              descriptionOne:
-                "Merchants can embed payment links directly into invoices, making it easy for clients to pay outstanding balances with a single click.",
-              subtitleTwo: "Recurring Payments ",
-              descriptionTwo:
-                "Payment links are used to set up recurring payments for subscriptions, memberships, or other recurring services.",
-              icon: invoiceIcon,
-              bgImage: bg1,
-            },
-            {
-              itemArray: ["Fee Collection"],
-              title: "Fee Collection",
-              subtitleOne: "Schools and Educational Institutions",
-              descriptionOne:
-                "Streamline tuition and other fee payments by sending unique payment links to students or parents.",
-              subtitleTwo: "Professional Services",
-              descriptionTwo:
-                " Lawyers, accountants, and consultants can use payment links to collect retainers, invoices, or other professional fees.",
-              icon: feeCancelIcon,
-              bgImage: bg2,
-            },
-            {
-              itemArray: ["Online Sales"],
-              title: "Online Sales",
-              subtitleOne: "Direct Sales",
-              descriptionOne:
-                " Merchants can easily create and share payment links for individual products or services, enabling customers to purchase directly through a simple link.",
-              subtitleTwo: "Social Media Sales",
-              descriptionTwo:
-                "Payment links are ideal for merchants selling through platforms like Instagram or Facebook, where customers can easily click and pay without leaving the platform.",
-              icon: onlinSellsIcon,
-              bgImage: bg3,
-            },
-            {
-              itemArray: ["Registration Fees"],
-              title: "Registration Fees",
-              subtitleOne: "Event Tickets",
-              descriptionOne:
-                " Event organizers can use payment links to sell tickets online, providing a convenient and secure payment option.",
-              subtitleTwo: "Workshop or Class Registration ",
-              descriptionTwo:
-                " Payment links can be used to collect registration fees for workshops, classes, or other events.",
-              icon: registrationFeesIcon,
-              bgImage: bg4,
-            },
-            {
-              itemArray: ["Travel Bookings"],
-              title: "Travel Bookings",
-              subtitleOne: "Travel Agents and Operators",
-              descriptionOne:
-                " Use payment links to collect deposits or full payments for travel packages, flights, accommodations, and other travel-related services. This streamlines the booking process and reduces administrative overhead.",
-              subtitleTwo: "Accommodation Providers",
-              descriptionTwo:
-                "Hotels, hostels, and other accommodation providers can use payment links to collect booking deposits or full payments directly from guests. This can be integrated into booking confirmation emails or used for last-minute bookings.",
-              icon: travelBookingIcon,
-              bgImage: bg5,
-            },
-          ]}
-        />
-      </div>
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <div className={`${styles.tab_row}  bg-white `}>
+          <PaymentLinkTab
+            sectionHeading="Payment Link for All Merchants:"
+            secondHeading="Accept Payments Anywhere, Anytime"
+            progressData={[
+              {
+                itemArray: ["Invoicing and Billing"],
+                title: "Invoicing and Billing",
+                subtitleOne: "Invoice Payments",
+                descriptionOne:
+                  "Merchants can embed payment links directly into invoices, making it easy for clients to pay outstanding balances with a single click.",
+                subtitleTwo: "Recurring Payments ",
+                descriptionTwo:
+                  "Payment links are used to set up recurring payments for subscriptions, memberships, or other recurring services.",
+                icon: invoiceIcon,
+                bgImage: bg1,
+              },
+              {
+                itemArray: ["Fee Collection"],
+                title: "Fee Collection",
+                subtitleOne: "Schools and Educational Institutions",
+                descriptionOne:
+                  "Streamline tuition and other fee payments by sending unique payment links to students or parents.",
+                subtitleTwo: "Professional Services",
+                descriptionTwo:
+                  " Lawyers, accountants, and consultants can use payment links to collect retainers, invoices, or other professional fees.",
+                icon: feeCancelIcon,
+                bgImage: bg2,
+              },
+              {
+                itemArray: ["Online Sales"],
+                title: "Online Sales",
+                subtitleOne: "Direct Sales",
+                descriptionOne:
+                  " Merchants can easily create and share payment links for individual products or services, enabling customers to purchase directly through a simple link.",
+                subtitleTwo: "Social Media Sales",
+                descriptionTwo:
+                  "Payment links are ideal for merchants selling through platforms like Instagram or Facebook, where customers can easily click and pay without leaving the platform.",
+                icon: onlinSellsIcon,
+                bgImage: bg3,
+              },
+              {
+                itemArray: ["Registration Fees"],
+                title: "Registration Fees",
+                subtitleOne: "Event Tickets",
+                descriptionOne:
+                  " Event organizers can use payment links to sell tickets online, providing a convenient and secure payment option.",
+                subtitleTwo: "Workshop or Class Registration ",
+                descriptionTwo:
+                  " Payment links can be used to collect registration fees for workshops, classes, or other events.",
+                icon: registrationFeesIcon,
+                bgImage: bg4,
+              },
+              {
+                itemArray: ["Travel Bookings"],
+                title: "Travel Bookings",
+                subtitleOne: "Travel Agents and Operators",
+                descriptionOne:
+                  " Use payment links to collect deposits or full payments for travel packages, flights, accommodations, and other travel-related services. This streamlines the booking process and reduces administrative overhead.",
+                subtitleTwo: "Accommodation Providers",
+                descriptionTwo:
+                  "Hotels, hostels, and other accommodation providers can use payment links to collect booking deposits or full payments directly from guests. This can be integrated into booking confirmation emails or used for last-minute bookings.",
+                icon: travelBookingIcon,
+                bgImage: bg5,
+              },
+            ]}
+          />
+        </div>
+      </React.Suspense>
 
       <CtaSection
         title={"Ready To Simplify Your Collections?"}
         buttonText={"Get Started  Today "}
       />
 
-      <FaqSection faqData={faqData} />
-      <BlogSection
-        heading={[
-          {
-            title: "Related  ",
-            color: "color-black ",
-          },
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <FaqSection faqData={faqData} />
+      </React.Suspense>
 
-          {
-            title: " Resources",
-            color: "color-black f-4",
-          },
-        ]}
-        cards={[8893, 4695, 9045]}
-      />
-      <OtherProducts
-        heading={[
-          {
-            title: "Check out other ",
-            color: "color-black",
-          },
-          {
-            title: "collection products",
-            color: "color-equity-blue",
-          },
-          {
-            title: " at EnKash",
-            color: "color-black",
-          },
-        ]}
-        cards={managementCards}
-      />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <BlogSection
+          heading={[
+            {
+              title: "Related  ",
+              color: "color-black ",
+            },
+            {
+              title: " Resources",
+              color: "color-black f-4",
+            },
+          ]}
+          cards={[8893, 4695, 9045]}
+        />
+      </React.Suspense>
+
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <OtherProducts
+          heading={[
+            {
+              title: "Check out other ",
+              color: "color-black",
+            },
+            {
+              title: "collection products",
+              color: "color-equity-blue",
+            },
+            {
+              title: " at EnKash",
+              color: "color-black",
+            },
+          ]}
+          cards={managementCards}
+        />
+      </React.Suspense>
     </div>
   )
 }

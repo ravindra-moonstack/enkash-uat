@@ -142,6 +142,7 @@ const EnkashWay = ({
                   alt="icon"
                   width={55}
                   height={55}
+                  loading="lazy"
                 />
               </div>
 
@@ -182,6 +183,9 @@ const EnkashWay = ({
                     alt="icon"
                     width={379}
                     height={322}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 379px"
+                    quality={75}
                   />
                 </div>
               </div>
@@ -280,6 +284,8 @@ const EnkashWay = ({
                     //         width={150}
                     //         height={150}
                     //         style={{ objectFit: "contain" }}
+                    //         loading="lazy"
+                    //         sizes="150px"
                     //       />
                     //     </div>
                     //   </div>
@@ -323,6 +329,8 @@ const EnkashWay = ({
                               alt="center image"
                               width={178}
                               style={{ objectFit: "contain", height: "auto" }}
+                              loading="lazy"
+                              sizes="178px"
                             />
                           </div>
                         </div>
@@ -346,6 +354,7 @@ const EnkashWay = ({
                           alt="icon"
                           width={28}
                           height={28}
+                          loading="lazy"
                         />
                         <div className="d-flex flex-column gap-2">
                           <DynamicHeading

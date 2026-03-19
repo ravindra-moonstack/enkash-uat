@@ -41,7 +41,18 @@ const CorporateHeroSection: React.FC<HeroSectionProps> = ({
   const [open, setOpen] = useState(false)
   //
   return (
-    <div className={styles.hero_section}>
+    <div className={`${styles.hero_section} overflow-hidden`}>
+      <Image
+        src="/images/corporate-card-second-bg.webp"
+        alt="hero background"
+        fill
+        priority
+        fetchPriority="high"
+        className="object-fit-cover z-index-minus-1"
+        sizes="100vw"
+        quality={75}
+      />
+      <div className={styles.overlay}></div>
       <div className="max-w-auto position-relative no-pointer ">
         <div className="d-flex">
           <CustomBreadcrumb items={breadcrumbs} linkColor="white" />
@@ -87,7 +98,15 @@ const CorporateHeroSection: React.FC<HeroSectionProps> = ({
         {/* Hero Image */}
         <div className="col-12 d-flex justify-content-center align-items-center no-pointer">
           <div className={styles.bannerImages}>
-            <Image src={heroImage} alt={"hero"} />
+            <Image
+              src={heroImage}
+              alt={"hero"}
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 768px) 100vw, 80vw"
+              quality={75}
+              decoding="sync"
+            />
           </div>
         </div>
       </div>

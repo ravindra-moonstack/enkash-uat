@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
@@ -290,7 +291,9 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <FaqSection faqData={faqData} />
+      </React.Suspense>
     </div>
   )
 }

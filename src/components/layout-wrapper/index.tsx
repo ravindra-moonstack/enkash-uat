@@ -3,8 +3,9 @@
 import { useEffect } from "react"
 import { usePathname } from "next/navigation"
 import TalkToSales from "../mobile-talks-to-sales"
+import dynamic from "next/dynamic"
 import Header from "../header/header"
-import Footer from "../footer"
+const Footer = dynamic(() => import("../footer"), { ssr: true })
 
 export default function LayoutClientWrapper({
   children,
