@@ -22,6 +22,7 @@ import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
+import SuspenseLoading from "@/src/components/loading"
 
 // Dynamic imports for performance
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
@@ -154,7 +155,9 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
         </div>
         <div className="mt-4">
-          <LogoSlider />
+          <SuspenseLoading>
+            <LogoSlider />
+          </SuspenseLoading>
         </div>
       </div>
 
@@ -205,7 +208,7 @@ const ExpenseManagement = (): React.JSX.Element => {
       </div>
 
       <div className="bg_white_index">
-        <React.Suspense fallback={<div className="py-5 text-center">Loading Features...</div>}>
+        <SuspenseLoading>
           <FeatureSpotlight
             heading={[
               { title: "EMS Features ", color: "color-equity-blue" },
@@ -218,11 +221,11 @@ const ExpenseManagement = (): React.JSX.Element => {
             secondaryButtonTitle="Explore Reimbursement Management"
             secondaryButtonUrl="/reimbursements/"
           />
-        </React.Suspense>
+        </SuspenseLoading>
       </div>
 
       <div className={`${styles.features_section} bg_white_index`}>
-        <React.Suspense fallback={<div className="py-5 text-center">Loading Section...</div>}>
+        <SuspenseLoading>
           <SmartPolicySection
             heading={[
               { title: "Smart Policy", color: "color-black" },
@@ -238,12 +241,12 @@ const ExpenseManagement = (): React.JSX.Element => {
             cardsData={cardsData}
             approvedImage={approved}
           />
-        </React.Suspense>
+        </SuspenseLoading>
       </div>
 
       <div className={`${styles.card_stacking_row} bg_white_index`}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <React.Suspense fallback={<div className="py-5 text-center">Loading Analytics...</div>}>
+          <SuspenseLoading>
             <CardStacking
               cards={cards}
               heading={[
@@ -261,7 +264,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                 },
               ]}
             />
-          </React.Suspense>
+          </SuspenseLoading>
         </div>
       </div>
 
@@ -282,9 +285,9 @@ const ExpenseManagement = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6">
               <div>
-                <React.Suspense fallback={<div>Loading FAQ...</div>}>
+                <SuspenseLoading>
                   <SecondFaqHtml SecondfaqData={SecondfaqData} />
-                </React.Suspense>
+                </SuspenseLoading>
               </div>
             </div>
             <div className="col-md-6 sm-d-none">
@@ -323,24 +326,25 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
 
         <div>
-          <React.Suspense fallback={<div className="py-5 text-center">Loading Products...</div>}>
+          <SuspenseLoading>
             <AllProducts
               title="All Features"
               subtitle="Combine all use cases"
               data={mergedCards}
             />
-          </React.Suspense>
+          </SuspenseLoading>
         </div>
       </div>
 
       <div
         className={`${styles.sixth_row} bg_white_index row d-flex bg-white `}
       >
-        <React.Suspense fallback={<div className="py-5 text-center">Loading EnKash Way...</div>}>
+        <SuspenseLoading>
           <EnkashWay
             sectionHeading="One Platform. Every Use Case. Total Control."
             progressItemPadding="15px 12px"
             progressData={[
+              // ...
               {
                 itemArray: ["IT & SaaS"],
                 title: "IT & SaaS",
@@ -391,11 +395,11 @@ const ExpenseManagement = (): React.JSX.Element => {
               },
             ]}
           />
-        </React.Suspense>
+        </SuspenseLoading>
       </div>
 
       <div className="bg_white_index">
-        <React.Suspense fallback={null}>
+        <SuspenseLoading fallback={null}>
           <CTASection
             title="Build a leaner, smarter, & future-ready finance team"
             buttonText="Get Started Today"
@@ -403,29 +407,27 @@ const ExpenseManagement = (): React.JSX.Element => {
             actionImage={blueArrow}
             hoverImage={whiteArrow}
           />
-        </React.Suspense>
+        </SuspenseLoading>
       </div>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading FAQ...</div>}>
+      <SuspenseLoading>
         <FaqSection faqData={faqData} />
-      </React.Suspense>
+      </SuspenseLoading>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading Resources...</div>}>
-        <BlogSection
-          heading={[
-            {
-              title: "Related  ",
-              color: "color-black ",
-            },
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
 
-            {
-              title: " Resources",
-              color: "color-black f-4",
-            },
-          ]}
-          cards={[1033, 1, 8740]}
-        />
-      </React.Suspense>
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[1033, 1, 8740]}
+      />
     </div>
   )
 }

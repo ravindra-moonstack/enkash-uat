@@ -24,6 +24,7 @@ import faqData from "./faq-data"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import FaqSection from "@/src/components/faq-section"
 import DynamicHeading from "@/src/components/dynamic-heading"
+import SuspenseLoading from "@/src/components/loading"
 
 //helpers
 import {
@@ -346,36 +347,32 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <FaqSection faqData={faqData} />
-      </React.Suspense>
+      </SuspenseLoading>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
-        <BlogSection
-          heading={[
-            {
-              title: "Related  ",
-              color: "color-black ",
-            },
-            {
-              title: " Resources",
-              color: "color-black f-4",
-            },
-          ]}
-          cards={[12642, 13675, 12195]}
-        />
-      </React.Suspense>
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[12642, 13675, 12195]}
+      />
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
-        <OtherProducts
-          heading={[
-            { title: "Check out ", color: "color-black" },
-            { title: "other collection products", color: "color-equity-blue" },
-            { title: " at EnKash", color: "color-black" },
-          ]}
-          cards={managementCardData}
-        />
-      </React.Suspense>
+      <OtherProducts
+        heading={[
+          { title: "Check out ", color: "color-black" },
+          { title: "other collection products", color: "color-equity-blue" },
+          { title: " at EnKash", color: "color-black" },
+        ]}
+        cards={managementCardData}
+      />
     </div>
   )
 }

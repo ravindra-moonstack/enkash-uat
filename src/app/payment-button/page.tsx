@@ -24,6 +24,7 @@ import {
 
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
+import SuspenseLoading from "@/src/components/loading"
 
 // Dynamic imports for performance
 const FaqSection = dynamic(() => import("@/src/components/faq-section"))
@@ -252,36 +253,32 @@ const PaymentButton = (): React.JSX.Element => {
         buttonText={"Get Started Today "}
       />
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <FaqSection faqData={faqData} />
-      </React.Suspense>
+      </SuspenseLoading>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
-        <BlogSection
-          heading={[
-            {
-              title: "Related  ",
-              color: "color-black ",
-            },
-            {
-              title: " Resources",
-              color: "color-black f-4",
-            },
-          ]}
-          cards={[14010, 7146, 12195]}
-        />
-      </React.Suspense>
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[14010, 7146, 12195]}
+      />
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
-        <OtherProducts
-          heading={[
-            { title: "Check out ", color: "color-black" },
-            { title: "other collection products ", color: "color-equity-blue" },
-            { title: " at EnKash", color: "color-black" },
-          ]}
-          cards={managementCardData}
-        />
-      </React.Suspense>
+      <OtherProducts
+        heading={[
+          { title: "Check out ", color: "color-black" },
+          { title: "other collection products ", color: "color-equity-blue" },
+          { title: " at EnKash", color: "color-black" },
+        ]}
+        cards={managementCardData}
+      />
     </div>
   )
 }

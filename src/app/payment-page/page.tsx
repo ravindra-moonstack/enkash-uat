@@ -18,6 +18,7 @@ import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
+import SuspenseLoading from "@/src/components/loading"
 
 //helpers
 import {
@@ -216,7 +217,7 @@ const PaymentPage = (): React.JSX.Element => {
         buttonUrl={salesUrl}
       />
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <div className={styles.card_stacking_row}>
           <div className={` max-w-auto  ${styles.section}`}>
             <CardStacking
@@ -234,9 +235,9 @@ const PaymentPage = (): React.JSX.Element => {
             />
           </div>
         </div>
-      </React.Suspense>
+      </SuspenseLoading>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <SliderSection
           headingContent={[
             {
@@ -252,52 +253,48 @@ const PaymentPage = (): React.JSX.Element => {
           productsTitle="All Features"
           productsSubtitle="Combine all use cases"
         />
-      </React.Suspense>
+      </SuspenseLoading>
 
       <CtaSection
         title={"Turn Clicks Into Transactions"}
         buttonText={"Get Started  Today "}
       />
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <FaqSection faqData={faqData} />
-      </React.Suspense>
+      </SuspenseLoading>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
-        <BlogSection
-          heading={[
-            {
-              title: "Related  ",
-              color: "color-black ",
-            },
-            {
-              title: " Resources",
-              color: "color-black f-4",
-            },
-          ]}
-          cards={[7146, 9045, 8835]}
-        />
-      </React.Suspense>
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[7146, 9045, 8835]}
+      />
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
-        <OtherProducts
-          heading={[
-            {
-              title: "Check out ",
-              color: "color-black",
-            },
-            {
-              title: "other collection products",
-              color: "color-equity-blue",
-            },
-            {
-              title: " at EnKash",
-              color: "color-black",
-            },
-          ]}
-          cards={managementCardData}
-        />
-      </React.Suspense>
+      <OtherProducts
+        heading={[
+          {
+            title: "Check out ",
+            color: "color-black",
+          },
+          {
+            title: "other collection products",
+            color: "color-equity-blue",
+          },
+          {
+            title: " at EnKash",
+            color: "color-black",
+          },
+        ]}
+        cards={managementCardData}
+      />
     </div>
   )
 }
