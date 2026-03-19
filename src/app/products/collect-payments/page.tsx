@@ -9,6 +9,8 @@ import faqData from "./faq-data"
 
 // components 
 import dynamic from "next/dynamic"
+import SuspenseLoading from "@/src/components/loading"
+
 // Dynamic imports for performance
 const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"))
 const DynamicHeading = dynamic(() => import("@/src/components/dynamic-heading"))
@@ -291,9 +293,9 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <FaqSection faqData={faqData} />
-      </React.Suspense>
+      </SuspenseLoading>
     </div>
   )
 }

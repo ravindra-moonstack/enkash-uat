@@ -12,6 +12,7 @@ import dynamic from "next/dynamic"
 import CommanButton from "@/src/components/buttons"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
+import SuspenseLoading from "@/src/components/loading"
 
 const AllInOnePolicy = dynamic(
   () => import("@/src/components/all-in-one-policy")
@@ -88,20 +89,20 @@ const Rewards = (): React.JSX.Element => {
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
-            <React.Suspense fallback={<div className={styles.lottie_container} style={{ height: '300px' }} />}>
+            <SuspenseLoading fallback={<div className={styles.lottie_container} style={{ height: '300px' }} />}>
               <div className={styles.lottie_container}>
                 <LottieDynamicLoadComponent
                   animationName={"RewardAnimationLottie"}
                   loop={true}
                 />
               </div>
-            </React.Suspense>
+            </SuspenseLoading>
           </div>
         </div>
         <div>
-          <React.Suspense fallback={<div style={{ height: '100px' }} />}>
+          <SuspenseLoading fallback={<div style={{ height: '100px' }} />}>
             <LogoSlider />
-          </React.Suspense>
+          </SuspenseLoading>
         </div>
       </div>
 
@@ -166,9 +167,9 @@ const Rewards = (): React.JSX.Element => {
           data={mergedCards}
         />
       </div>
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <FaqSection faqData={faqData} />
-      </React.Suspense>
+      </SuspenseLoading>
     </div >
   )
 }

@@ -20,6 +20,7 @@ import faqData from "./faq-data"
 import CommanButton from "@/src/components/buttons"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import CorporateHeroSection from "@/src/components/sections/corporate-card-hero-section"
+import SuspenseLoading from "@/src/components/loading"
 
 // Dynamic imports for performance
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
@@ -120,9 +121,9 @@ const CorporateCards = (): React.JSX.Element => {
         title={"Talk to sales"}
         url={salesUrl}
       />
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <LogoSlider />
-      </React.Suspense>
+      </SuspenseLoading>
 
       <div className={`${styles.introduction_section} position-relative overflow-hidden`}>
         <Image
@@ -585,7 +586,7 @@ const CorporateCards = (): React.JSX.Element => {
             />
           </div>
         </div>
-        <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+        <SuspenseLoading>
           <div className={`${styles.onePlatformSectionCard}`}>
             <AllProducts
               title="All Features"
@@ -593,7 +594,7 @@ const CorporateCards = (): React.JSX.Element => {
               data={mergedCards}
             />
           </div>
-        </React.Suspense>
+        </SuspenseLoading>
       </div>
 
       <div className={`${styles.eight_row} `}>
@@ -621,25 +622,23 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <FaqSection faqData={faqData} />
-      </React.Suspense>
+      </SuspenseLoading>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
-        <BlogSection
-          heading={[
-            {
-              title: "Related  ",
-              color: "color-black f-4",
-            },
-            {
-              title: " Resources",
-              color: "color-black f-4",
-            },
-          ]}
-          cards={[3198, 11501, 2976]}
-        />
-      </React.Suspense>
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black f-4",
+          },
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[3198, 11501, 2976]}
+      />
     </>
   )
 }

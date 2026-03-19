@@ -12,6 +12,7 @@ import faqData, { SecondfaqData } from "./faq-data"
 // components
 import DynamicHeading from "@/src/components/dynamic-heading"
 import HeroSection from "@/src/components/sections/hero-section"
+import SuspenseLoading from "@/src/components/loading"
 
 //helpers
 import {
@@ -254,7 +255,7 @@ const PaymentLinks = (): React.JSX.Element => {
         </div>
       </div>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <div className={`${styles.tab_row}  bg-white `}>
           <PaymentLinkTab
             sectionHeading="Payment Link for All Merchants:"
@@ -323,52 +324,48 @@ const PaymentLinks = (): React.JSX.Element => {
             ]}
           />
         </div>
-      </React.Suspense>
+      </SuspenseLoading>
 
       <CtaSection
         title={"Ready To Simplify Your Collections?"}
         buttonText={"Get Started  Today "}
       />
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
+      <SuspenseLoading>
         <FaqSection faqData={faqData} />
-      </React.Suspense>
+      </SuspenseLoading>
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
-        <BlogSection
-          heading={[
-            {
-              title: "Related  ",
-              color: "color-black ",
-            },
-            {
-              title: " Resources",
-              color: "color-black f-4",
-            },
-          ]}
-          cards={[8893, 4695, 9045]}
-        />
-      </React.Suspense>
+      <BlogSection
+        heading={[
+          {
+            title: "Related  ",
+            color: "color-black ",
+          },
+          {
+            title: " Resources",
+            color: "color-black f-4",
+          },
+        ]}
+        cards={[8893, 4695, 9045]}
+      />
 
-      <React.Suspense fallback={<div className="py-5 text-center">Loading...</div>}>
-        <OtherProducts
-          heading={[
-            {
-              title: "Check out other ",
-              color: "color-black",
-            },
-            {
-              title: "collection products",
-              color: "color-equity-blue",
-            },
-            {
-              title: " at EnKash",
-              color: "color-black",
-            },
-          ]}
-          cards={managementCards}
-        />
-      </React.Suspense>
+      <OtherProducts
+        heading={[
+          {
+            title: "Check out other ",
+            color: "color-black",
+          },
+          {
+            title: "collection products",
+            color: "color-equity-blue",
+          },
+          {
+            title: " at EnKash",
+            color: "color-black",
+          },
+        ]}
+        cards={managementCards}
+      />
     </div>
   )
 }

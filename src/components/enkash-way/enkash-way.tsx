@@ -265,56 +265,6 @@ const EnkashWay = ({
                   </div>
 
                   {isOpen && (
-                    // <div className={`${styles.dropdownContent} ${styles.show}`}>
-                    //   <div className={styles.dropdownBg}>
-                    //     {/* Background Image */}
-                    //     <Image
-                    //       src={bgSrc}
-                    //       alt="background"
-                    //       width={600}
-                    //       height={200}
-                    //       className={styles.dropdownBackgroundBg}
-                    //     />
-
-                    //     {/* Center Image (rightImg or fallback bgSrc) */}
-                    //     <div className={styles.centerImageWrapper}>
-                    //       <Image
-                    //         src={data.rightImg || bgSrc}
-                    //         alt="center image"
-                    //         width={150}
-                    //         height={150}
-                    //         style={{ objectFit: "contain" }}
-                    //         loading="lazy"
-                    //         sizes="150px"
-                    //       />
-                    //     </div>
-                    //   </div>
-
-                    //   <div className="d-flex align-items-start gap-2 mt-2">
-                    //     <Image
-                    //       src={data.icon}
-                    //       alt="icon"
-                    //       width={28}
-                    //       height={28}
-                    //     />
-                    //     <div className="d-flex flex-column gap-2">
-                    //       <DynamicHeading
-                    //         content={[
-                    //           { title: data.title, color: "color-black" },
-                    //         ]}
-                    //         headingTag="h4"
-                    //         className="f-5"
-                    //       />
-                    //       <DynamicHeading
-                    //         content={[
-                    //           { title: data.description, color: "color-black" },
-                    //         ]}
-                    //         headingTag="p"
-                    //         className="mb-0"
-                    //       />
-                    //     </div>
-                    //   </div>
-                    // </div>
 
                     <div className={`${styles.dropdownContent} ${styles.show}`}>
                       {/* IF rightImg exists */}

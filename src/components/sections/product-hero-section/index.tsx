@@ -1,5 +1,6 @@
 "use client"
 import React from "react"
+import SuspenseLoading from "../../loading"
 import styles from "./styles.module.scss"
 import CustomBreadcrumb from "../../breadcrumb"
 import DynamicHeading from "../../dynamic-heading"
@@ -61,17 +62,17 @@ const ProductHeroSection: React.FC<ProductHeroSectionProps> = ({
         </div>
 
         <div className="col-12 d-flex justify-content-center align-items-center">
-          <React.Suspense fallback={<div className={styles.lottie_container} style={{ height: '300px' }} />}>
+          <SuspenseLoading fallback={<div className={styles.lottie_container} style={{ height: '300px' }} />}>
             <div className={styles.lottie_container}>
               <LottieDynamicLoadComponent animationName={animationName} loop />
             </div>
-          </React.Suspense>
+          </SuspenseLoading>
         </div>
       </div>
 
-      <React.Suspense fallback={<div style={{ height: '100px' }} />}>
+      <SuspenseLoading fallback={<div style={{ height: '100px' }} />}>
         <LogoSlider />
-      </React.Suspense>
+      </SuspenseLoading>
     </section>
   )
 }

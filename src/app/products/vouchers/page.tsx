@@ -2,7 +2,6 @@ import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 import { allInOnePolicyData, categoriesData } from "./data"
-import { Suspense } from "react"
 
 // data
 import faqData from "./faq-data"
@@ -11,10 +10,11 @@ import faqData from "./faq-data"
 import dynamic from "next/dynamic"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
+import SuspenseLoading, { LoadingUI } from "@/src/components/loading"
 
 // Dynamic imports for performance
 const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"), {
-  loading: () => <div className="py-5 text-center">Loading...</div>
+  loading: () => <LoadingUI />
 })
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 const FaqSection = dynamic(() => import("@/src/components/faq-section"))
@@ -114,9 +114,9 @@ const Vouchers = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-        <Suspense fallback={<div style={{ height: '60px' }} />}>
+        <SuspenseLoading>
           <LogoSlider />
-        </Suspense>
+        </SuspenseLoading>
       </div>
 
       <div className={`row ${styles.introduction_section} `}>
@@ -263,17 +263,17 @@ const Vouchers = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.sixth_row} row d-flex bg-white`}>
-        <Suspense fallback={<div className="py-5 text-center">Loading EnKash Way...</div>}>
+        <SuspenseLoading>
           <EnkashWay
             sectionHeading="The Categories You Love, The Discounts You Deserve."
             progressData={categoriesData}
           />
-        </Suspense>
+        </SuspenseLoading>
       </div>
 
-      <Suspense fallback={<div className="py-5 text-center">Loading FAQs...</div>}>
+      <SuspenseLoading>
         <FaqSection faqData={faqData} />
-      </Suspense>
+      </SuspenseLoading>
     </div>
   )
 }
