@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import styles from "./StatsSection.module.scss"
 import { DynamicHeading } from ".."
-import { StaticImageData } from "next/image"
+import Image, { StaticImageData } from "next/image"
 
 interface StatItem {
     value: string | number
@@ -64,9 +64,18 @@ const StatsSection: React.FC<StatsSectionProps> = ({
     return (
         <section
             ref={sectionRef}
-            className={`${styles.statsSection} ${className}`}
-            style={{ backgroundImage: `url(${typeof backgroundImage === 'object' ? (backgroundImage as StaticImageData).src : backgroundImage})` }}
+            className={`${styles.statsSection} ${className} position-relative overflow-hidden`}
         >
+            <Image
+                src={typeof backgroundImage === 'object' ? (backgroundImage as StaticImageData).src : backgroundImage}
+                alt="background"
+                fill
+                priority
+                fetchPriority="high"
+                style={{ objectFit: 'cover', zIndex: -1 }}
+                sizes="100vw"
+                quality={60}
+            />
             <div className={'max-w-auto'}>
                 <div className={styles.content}>
                     <div >

@@ -142,6 +142,7 @@ const EnkashWay = ({
                   alt="icon"
                   width={55}
                   height={55}
+                  loading="lazy"
                 />
               </div>
 
@@ -182,6 +183,9 @@ const EnkashWay = ({
                     alt="icon"
                     width={379}
                     height={322}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 379px"
+                    quality={75}
                   />
                 </div>
               </div>
@@ -261,54 +265,6 @@ const EnkashWay = ({
                   </div>
 
                   {isOpen && (
-                    // <div className={`${styles.dropdownContent} ${styles.show}`}>
-                    //   <div className={styles.dropdownBg}>
-                    //     {/* Background Image */}
-                    //     <Image
-                    //       src={bgSrc}
-                    //       alt="background"
-                    //       width={600}
-                    //       height={200}
-                    //       className={styles.dropdownBackgroundBg}
-                    //     />
-
-                    //     {/* Center Image (rightImg or fallback bgSrc) */}
-                    //     <div className={styles.centerImageWrapper}>
-                    //       <Image
-                    //         src={data.rightImg || bgSrc}
-                    //         alt="center image"
-                    //         width={150}
-                    //         height={150}
-                    //         style={{ objectFit: "contain" }}
-                    //       />
-                    //     </div>
-                    //   </div>
-
-                    //   <div className="d-flex align-items-start gap-2 mt-2">
-                    //     <Image
-                    //       src={data.icon}
-                    //       alt="icon"
-                    //       width={28}
-                    //       height={28}
-                    //     />
-                    //     <div className="d-flex flex-column gap-2">
-                    //       <DynamicHeading
-                    //         content={[
-                    //           { title: data.title, color: "color-black" },
-                    //         ]}
-                    //         headingTag="h4"
-                    //         className="f-5"
-                    //       />
-                    //       <DynamicHeading
-                    //         content={[
-                    //           { title: data.description, color: "color-black" },
-                    //         ]}
-                    //         headingTag="p"
-                    //         className="mb-0"
-                    //       />
-                    //     </div>
-                    //   </div>
-                    // </div>
 
                     <div className={`${styles.dropdownContent} ${styles.show}`}>
                       {/* IF rightImg exists */}
@@ -323,6 +279,8 @@ const EnkashWay = ({
                               alt="center image"
                               width={178}
                               style={{ objectFit: "contain", height: "auto" }}
+                              loading="lazy"
+                              sizes="178px"
                             />
                           </div>
                         </div>
@@ -346,6 +304,7 @@ const EnkashWay = ({
                           alt="icon"
                           width={28}
                           height={28}
+                          loading="lazy"
                         />
                         <div className="d-flex flex-column gap-2">
                           <DynamicHeading

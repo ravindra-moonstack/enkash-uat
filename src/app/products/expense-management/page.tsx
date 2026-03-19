@@ -22,6 +22,7 @@ import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
+import SuspenseLoading from "@/src/components/loading"
 
 // Dynamic imports for performance
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
@@ -154,7 +155,9 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
         </div>
         <div className="mt-4">
-          <LogoSlider />
+          <SuspenseLoading>
+            <LogoSlider />
+          </SuspenseLoading>
         </div>
       </div>
 
@@ -205,41 +208,45 @@ const ExpenseManagement = (): React.JSX.Element => {
       </div>
 
       <div className="bg_white_index">
-        <FeatureSpotlight
-          heading={[
-            { title: "EMS Features ", color: "color-equity-blue" },
-            { title: "in Spotlight", color: "color-black" },
-          ]}
-          cardData={cardData}
-          showButtons
-          primaryButtonTitle="Explore Receipt Management"
-          primaryButtonUrl="/receipts/"
-          secondaryButtonTitle="Explore Reimbursement Management"
-          secondaryButtonUrl="/reimbursements/"
-        />
+        <SuspenseLoading>
+          <FeatureSpotlight
+            heading={[
+              { title: "EMS Features ", color: "color-equity-blue" },
+              { title: "in Spotlight", color: "color-black" },
+            ]}
+            cardData={cardData}
+            showButtons
+            primaryButtonTitle="Explore Receipt Management"
+            primaryButtonUrl="/receipts/"
+            secondaryButtonTitle="Explore Reimbursement Management"
+            secondaryButtonUrl="/reimbursements/"
+          />
+        </SuspenseLoading>
       </div>
 
       <div className={`${styles.features_section} bg_white_index`}>
-        <SmartPolicySection
-          heading={[
-            { title: "Smart Policy", color: "color-black" },
-            { title: " Enforcement & Approvals", color: "color-equity-blue" },
-          ]}
-          subheading={[
-            {
-              title:
-                "Control spending before it happens with automated policies that keep every transaction within budget. Set custom rules in your expense management platform to manage limits, approvals, and reimbursements without manual intervention. Automate routine checks, reduce policy violations, and give finance teams full control with zero extra effort.",
-              color: "color-main-grey subHeading",
-            },
-          ]}
-          cardsData={cardsData}
-          approvedImage={approved}
-        />
+        <SuspenseLoading>
+          <SmartPolicySection
+            heading={[
+              { title: "Smart Policy", color: "color-black" },
+              { title: " Enforcement & Approvals", color: "color-equity-blue" },
+            ]}
+            subheading={[
+              {
+                title:
+                  "Control spending before it happens with automated policies that keep every transaction within budget. Set custom rules in your expense management platform to manage limits, approvals, and reimbursements without manual intervention. Automate routine checks, reduce policy violations, and give finance teams full control with zero extra effort.",
+                color: "color-main-grey subHeading",
+              },
+            ]}
+            cardsData={cardsData}
+            approvedImage={approved}
+          />
+        </SuspenseLoading>
       </div>
 
       <div className={`${styles.card_stacking_row} bg_white_index`}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <>
+          <SuspenseLoading>
             <CardStacking
               cards={cards}
               heading={[
@@ -257,7 +264,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                 },
               ]}
             />
-          </>
+          </SuspenseLoading>
         </div>
       </div>
 
@@ -278,7 +285,9 @@ const ExpenseManagement = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6">
               <div>
-                <SecondFaqHtml SecondfaqData={SecondfaqData} />
+                <SuspenseLoading>
+                  <SecondFaqHtml SecondfaqData={SecondfaqData} />
+                </SuspenseLoading>
               </div>
             </div>
             <div className="col-md-6 sm-d-none">
@@ -317,84 +326,93 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
 
         <div>
-          <AllProducts
-            title="All Features"
-            subtitle="Combine all use cases"
-            data={mergedCards}
-          />
+          <SuspenseLoading>
+            <AllProducts
+              title="All Features"
+              subtitle="Combine all use cases"
+              data={mergedCards}
+            />
+          </SuspenseLoading>
         </div>
       </div>
 
       <div
         className={`${styles.sixth_row} bg_white_index row d-flex bg-white `}
       >
-        <EnkashWay
-          sectionHeading="One Platform. Every Use Case. Total Control."
-          progressItemPadding="15px 12px"
-          progressData={[
-            {
-              itemArray: ["IT & SaaS"],
-              title: "IT & SaaS",
-              description:
-                "No more scattered subscriptions, remote reimbursements, and cloud tool audits. Centralize expenses, automate approvals, and get real-time visibility. Empowering your finance team to stay agile without slowing down your product or people.",
-              icon: itIcon,
-              bgImage: bg1,
-            },
-            {
-              itemArray: ["E-commerce & Retail"],
-              title: "E-commerce & Retail",
-              description:
-                "Forget about juggling vendor payouts, branch-level expenses, and seasonal budgets. Track spends across warehouses and storefronts, enforce policies by category, and simplify GST reporting - all while scaling faster with total financial control.",
-              icon: ecoomerceIcon,
-              bgImage: bg2,
-            },
-            {
-              itemArray: ["Manufacturing"],
-              title: "Manufacturing",
-              description:
-                "Do away with manual approvals, unclear plant-level spends, and poor budget tracking. Get control over every rupee - from raw material procurement to field reimbursements - ensuring compliance and audit-readiness across your supply chain.",
-              icon: manufactureIcon,
-              bgImage: bg3,
-            },
-            {
-              itemArray: ["Logistics & Supply Chain"],
-              title: "Logistics & Supply Chain",
-              description:
-                "Do not lose visibility into fleet expenses, fuel claims, or vendor payments. EnKash EMS connects your expense data with real-time dashboards, automates reconciliations, and flags policy breaches instantly, allowing your operations to run lean and accountable.",
-              icon: logisticIcon,
-              bgImage: bg4,
-            },
-            {
-              itemArray: ["Consulting & Services"],
-              title: "Consulting & Services",
-              description:
-                "Eliminate consultants' overspending, misreporting, or delay in claims. Enjoy fast, mobile-first submissions, real-time approvals, and project-wise expense tagging. Keep clients happy, costs transparent, and your margins intact.",
-              icon: consultancyIcon,
-              bgImage: bg5,
-            },
-            {
-              itemArray: ["Pharma & Healthcare"],
-              title: "Pharma & Healthcare",
-              description:
-                "Do not let MR travel management, hospital branch expenses, and regulatory reporting become a challenge. Automate policy enforcement, capture receipts instantly, and align with compliance standards to focus on patient care, not paperwork.",
-              icon: pharmacyIcon,
-              bgImage: bg6,
-            },
-          ]}
-        />
+        <SuspenseLoading>
+          <EnkashWay
+            sectionHeading="One Platform. Every Use Case. Total Control."
+            progressItemPadding="15px 12px"
+            progressData={[
+              // ...
+              {
+                itemArray: ["IT & SaaS"],
+                title: "IT & SaaS",
+                description:
+                  "No more scattered subscriptions, remote reimbursements, and cloud tool audits. Centralize expenses, automate approvals, and get real-time visibility. Empowering your finance team to stay agile without slowing down your product or people.",
+                icon: itIcon,
+                bgImage: bg1,
+              },
+              {
+                itemArray: ["E-commerce & Retail"],
+                title: "E-commerce & Retail",
+                description:
+                  "Forget about juggling vendor payouts, branch-level expenses, and seasonal budgets. Track spends across warehouses and storefronts, enforce policies by category, and simplify GST reporting - all while scaling faster with total financial control.",
+                icon: ecoomerceIcon,
+                bgImage: bg2,
+              },
+              {
+                itemArray: ["Manufacturing"],
+                title: "Manufacturing",
+                description:
+                  "Do away with manual approvals, unclear plant-level spends, and poor budget tracking. Get control over every rupee - from raw material procurement to field reimbursements - ensuring compliance and audit-readiness across your supply chain.",
+                icon: manufactureIcon,
+                bgImage: bg3,
+              },
+              {
+                itemArray: ["Logistics & Supply Chain"],
+                title: "Logistics & Supply Chain",
+                description:
+                  "Do not lose visibility into fleet expenses, fuel claims, or vendor payments. EnKash EMS connects your expense data with real-time dashboards, automates reconciliations, and flags policy breaches instantly, allowing your operations to run lean and accountable.",
+                icon: logisticIcon,
+                bgImage: bg4,
+              },
+              {
+                itemArray: ["Consulting & Services"],
+                title: "Consulting & Services",
+                description:
+                  "Eliminate consultants' overspending, misreporting, or delay in claims. Enjoy fast, mobile-first submissions, real-time approvals, and project-wise expense tagging. Keep clients happy, costs transparent, and your margins intact.",
+                icon: consultancyIcon,
+                bgImage: bg5,
+              },
+              {
+                itemArray: ["Pharma & Healthcare"],
+                title: "Pharma & Healthcare",
+                description:
+                  "Do not let MR travel management, hospital branch expenses, and regulatory reporting become a challenge. Automate policy enforcement, capture receipts instantly, and align with compliance standards to focus on patient care, not paperwork.",
+                icon: pharmacyIcon,
+                bgImage: bg6,
+              },
+            ]}
+          />
+        </SuspenseLoading>
       </div>
 
       <div className="bg_white_index">
-        <CTASection
-          title="Build a leaner, smarter, & future-ready finance team"
-          buttonText="Get Started Today"
-          buttonUrl={salesUrl}
-          actionImage={blueArrow}
-          hoverImage={whiteArrow}
-        />
+        <SuspenseLoading fallback={null}>
+          <CTASection
+            title="Build a leaner, smarter, & future-ready finance team"
+            buttonText="Get Started Today"
+            buttonUrl={salesUrl}
+            actionImage={blueArrow}
+            hoverImage={whiteArrow}
+          />
+        </SuspenseLoading>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <SuspenseLoading>
+        <FaqSection faqData={faqData} />
+      </SuspenseLoading>
 
       <BlogSection
         heading={[

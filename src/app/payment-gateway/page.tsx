@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
@@ -23,6 +24,7 @@ import faqData from "./faq-data"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import FaqSection from "@/src/components/faq-section"
 import DynamicHeading from "@/src/components/dynamic-heading"
+import SuspenseLoading from "@/src/components/loading"
 
 //helpers
 import {
@@ -307,7 +309,12 @@ const PaymentGateway = (): React.JSX.Element => {
                       className="d-flex justify-content-center align-items-center bg-light rounded-circle"
                       style={{ width: "32px", height: "32px" }}
                     >
-                      <Image src={icon} alt="icon" sizes="32px" />
+                      <Image
+                        src={icon}
+                        alt="icon"
+                        width={32}
+                        height={32}
+                      />
                     </div>
                     <div className="d-flex flex-column gap-3">
                       <DynamicHeading
@@ -338,6 +345,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   src={acceleratedGrowthImg}
                   alt="background image"
                   className="w-100 mh-550 object-fit-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -345,7 +353,9 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <SuspenseLoading>
+        <FaqSection faqData={faqData} />
+      </SuspenseLoading>
 
       <BlogSection
         heading={[

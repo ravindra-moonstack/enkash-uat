@@ -1,3 +1,4 @@
+import React from "react"
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
@@ -17,6 +18,7 @@ import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
+import SuspenseLoading from "@/src/components/loading"
 
 //helpers
 import {
@@ -215,53 +217,59 @@ const PaymentPage = (): React.JSX.Element => {
         buttonUrl={salesUrl}
       />
 
-      <div className={styles.card_stacking_row}>
-        <div className={` max-w-auto  ${styles.section}`}>
-          <CardStacking
-            cards={cards}
-            heading={[
-              {
-                title: "EnKash Payment Pages -",
-                color: "color-black",
-              },
-              {
-                title: " Built for Every Business Need",
-                color: "color-equity-blue",
-              },
-            ]}
-          />
+      <SuspenseLoading>
+        <div className={styles.card_stacking_row}>
+          <div className={` max-w-auto  ${styles.section}`}>
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "EnKash Payment Pages -",
+                  color: "color-black",
+                },
+                {
+                  title: " Built for Every Business Need",
+                  color: "color-equity-blue",
+                },
+              ]}
+            />
+          </div>
         </div>
-      </div>
+      </SuspenseLoading>
 
-      <SliderSection
-        headingContent={[
-          {
-            title: "EnKash Payment Pages Features for ",
-            color: "color-black",
-          },
-          {
-            title: "Secure Online Payment",
-            color: "color-equity-blue",
-          },
-        ]}
-        productsData={mergedCards}
-        productsTitle="All Features"
-        productsSubtitle="Combine all use cases"
-      />
+      <SuspenseLoading>
+        <SliderSection
+          headingContent={[
+            {
+              title: "EnKash Payment Pages Features for ",
+              color: "color-black",
+            },
+            {
+              title: "Secure Online Payment",
+              color: "color-equity-blue",
+            },
+          ]}
+          productsData={mergedCards}
+          productsTitle="All Features"
+          productsSubtitle="Combine all use cases"
+        />
+      </SuspenseLoading>
 
       <CtaSection
         title={"Turn Clicks Into Transactions"}
         buttonText={"Get Started  Today "}
       />
 
-      <FaqSection faqData={faqData} />
+      <SuspenseLoading>
+        <FaqSection faqData={faqData} />
+      </SuspenseLoading>
+
       <BlogSection
         heading={[
           {
             title: "Related  ",
             color: "color-black ",
           },
-
           {
             title: " Resources",
             color: "color-black f-4",
@@ -269,6 +277,7 @@ const PaymentPage = (): React.JSX.Element => {
         ]}
         cards={[7146, 9045, 8835]}
       />
+
       <OtherProducts
         heading={[
           {

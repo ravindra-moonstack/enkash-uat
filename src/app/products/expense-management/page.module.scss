@@ -30,11 +30,20 @@
 
   .lottie_container {
     position: relative;
-    width: 500px;
-    min-height: max-content;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    aspect-ratio: 500 / 387; // Matches the laptop min-height ratio
+    min-height: 250px; // Mobile fallback
 
     @include for-laptops {
       min-height: 387px;
+    }
+
+    // Ensure children (like lottie) take full size
+    & > * {
+      width: 100%;
+      height: 100%;
     }
 
     .button_wrapper {

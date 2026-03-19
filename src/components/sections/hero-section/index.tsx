@@ -56,6 +56,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           priority={true}
           fetchPriority="high"
           style={{ objectFit: "cover", zIndex: -1 }}
+          sizes="100vw"
+          decoding="async"
+          quality={80}
         />
       )}
 
@@ -114,10 +117,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <Image
                   src="/images/groupIcon.png"
                   alt="logo"
-                  width={366}
-                  height={62}
+                  width={180}
+                  height={30}
                   className={styles.group_logo}
-                  priority={true} // prioritize logos if needed
+                  priority={true}
+                  sizes="180px"
                 />
 
                 {button && (
@@ -177,6 +181,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 className="w-100 object-fit-contain"
                 priority={true}
                 fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                quality={80}
+                decoding="sync"
               />
             </div>
           </div>
