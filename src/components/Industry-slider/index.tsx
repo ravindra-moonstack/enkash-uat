@@ -156,8 +156,9 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
                                         alt={slide.imageAlt}
                                         fill
                                         className={styles.slideImage}
-                                        priority={index < 3}
-                                        objectFit="unset"
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        objectFit="cover"
+                                        quality={80}
                                     />
                                 </div>
                                 <div className={styles.overlayContent}>

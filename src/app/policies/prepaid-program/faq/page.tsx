@@ -1,13 +1,11 @@
 import React from "react"
 import { Metadata } from "next"
 
-import dynamic from "next/dynamic"
-
 import styles from "./page.module.scss"
 import generateMetaData from "@/src/utils/metaData"
 
-const DynamicHeading = dynamic(() => import("@/src/components/dynamic-heading"))
-const CustomBreadcrumb = dynamic(() => import("@/src/components/breadcrumb"))
+import DynamicHeading from "@/src/components/dynamic-heading"
+import CustomBreadcrumb from "@/src/components/breadcrumb"
 
 export const metadata: Metadata = generateMetaData({
   title: "FAQ for Prepaid Instruments: EnKash",

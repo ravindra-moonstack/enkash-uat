@@ -46,6 +46,11 @@ const LogoSlider = (): React.JSX.Element => {
               className={`${logo.className} ${styles.logo_img}`}
               src={coloredLogos[i % logos.length]}
               alt={logo.alt}
+              width={150}
+              height={60}
+              sizes="(max-width: 768px) 100px, 150px"
+              loading="lazy"
+              quality={80}
             />
           </div>
         ))}

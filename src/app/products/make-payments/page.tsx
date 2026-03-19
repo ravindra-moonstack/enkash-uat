@@ -1,3 +1,4 @@
+import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
 // data
@@ -10,6 +11,7 @@ import dynamic from "next/dynamic"
 import CommanButton from "@/src/components/buttons"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
+import SuspenseLoading from "@/src/components/loading"
 
 const AllInOnePolicy = dynamic(
   () => import("@/src/components/all-in-one-policy")
@@ -104,15 +106,19 @@ const MakePayment = (): React.JSX.Element => {
           </div>
           <div className=" col-12">
             <div className={styles.lottie_container}>
-              <LottieDynamicLoadComponent
-                animationName={"MakePaymentAnimationLottie"}
-                loop={true}
-              />
+              <SuspenseLoading fallback={<div className="min-h-300"></div>}>
+                <LottieDynamicLoadComponent
+                  animationName={"MakePaymentAnimationLottie"}
+                  loop={true}
+                />
+              </SuspenseLoading>
             </div>
           </div>
         </div>
 
-        <LogoSlider />
+        <SuspenseLoading>
+          <LogoSlider />
+        </SuspenseLoading>
       </div>
 
       <div className={styles.introduction_section}>
@@ -262,27 +268,29 @@ const MakePayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center `}>
-          <div className={``}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "The EnKash Advantage",
-                  color: "color-black ",
-                },
-              ]}
-              headingTag="h2"
-              className="f-5"
-            />
+      <SuspenseLoading>
+        <div className={`${styles.slider_row} relative`}>
+          <div className={`${styles.title} text-center `}>
+            <div className={``}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "The EnKash Advantage",
+                    color: "color-black ",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-5"
+              />
+            </div>
           </div>
+          <AllProducts
+            title="All Features"
+            subtitle="Combine all use cases"
+            data={mergedCards}
+          />
         </div>
-        <AllProducts
-          title="All Features"
-          subtitle="Combine all use cases"
-          data={mergedCards}
-        />
-      </div>
+      </SuspenseLoading>
 
       <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
@@ -309,7 +317,9 @@ const MakePayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <SuspenseLoading>
+        <FaqSection faqData={faqData} />
+      </SuspenseLoading>
     </div>
   )
 }

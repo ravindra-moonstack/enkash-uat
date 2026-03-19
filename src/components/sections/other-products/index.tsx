@@ -4,6 +4,7 @@ import styles from "./other-products.module.scss"
 import DynamicHeading from "../../dynamic-heading"
 import ManagementCard from "../../management-card"
 import { StaticImageData } from "next/image"
+import SuspenseLoading from "../../loading"
 
 interface HeadingPart {
   title: string
@@ -27,7 +28,7 @@ interface OtherProductsProps {
   useOptionalProps?: boolean
 }
 
-const OtherProducts: React.FC<OtherProductsProps> = ({
+const OtherProductsContent: React.FC<OtherProductsProps> = ({
   heading,
   headingTag = "h2",
   cards,
@@ -64,6 +65,14 @@ const OtherProducts: React.FC<OtherProductsProps> = ({
         </div>
       </div>
     </div>
+  )
+}
+
+const OtherProducts = (props: OtherProductsProps) => {
+  return (
+    <SuspenseLoading>
+      <OtherProductsContent {...props} />
+    </SuspenseLoading>
   )
 }
 
