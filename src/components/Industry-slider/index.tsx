@@ -147,7 +147,7 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
 
             <div className={styles.sliderWrapper}>
                 <Slider ref={sliderRef} {...settings}>
-                    {slides.map((slide, index) => (
+                    {slides.map((slide) => (
                         <div key={slide.id} className={styles.slideContainer}>
                             <div className={styles.slideCard}>
                                 <div className={styles.imageWrapper}>
