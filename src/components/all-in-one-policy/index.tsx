@@ -101,6 +101,9 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
               height: "auto",
               objectFit: "contain",
             }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 30vw, 400px"
+            quality={75}
+            loading="lazy"
           />
         )}
       </div>

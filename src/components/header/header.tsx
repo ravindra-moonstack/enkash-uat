@@ -1,6 +1,12 @@
 import React from "react"
-import MobileHeader from "./mobile-header/mobile-header"
-import WebHeader from "./web-header"
+import dynamic from "next/dynamic"
+
+const MobileHeader = dynamic(() => import("./mobile-header/mobile-header"), {
+  ssr: true,
+})
+const WebHeader = dynamic(() => import("./web-header"), {
+  ssr: true,
+})
 
 interface HeaderProps {
   utmSource?: string

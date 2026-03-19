@@ -10,9 +10,12 @@ import faqData from "./faq-data"
 import dynamic from "next/dynamic"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
+import SuspenseLoading, { LoadingUI } from "@/src/components/loading"
 
 // Dynamic imports for performance
-const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"))
+const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"), {
+  loading: () => <LoadingUI />
+})
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 const EnkashWay = dynamic(() => import("@/src/components/enkash-way/enkash-way"))
@@ -38,8 +41,17 @@ const salesUrl = getSalesUrl("/vouchers")
 const Vouchers = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.hero_section}`}>
-        <div className="max-w-auto">
+      <div className={`${styles.hero_section} position-relative overflow-hidden`}>
+        <Image
+          src="/images/collectPaymentBg.webp"
+          alt="Hero background"
+          fill
+          priority
+          fetchPriority="high"
+          style={{ objectFit: "cover", zIndex: -1 }}
+          sizes="100vw"
+        />
+        <div className="max-w-auto position-relative">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
@@ -90,19 +102,21 @@ const Vouchers = (): React.JSX.Element => {
                   src={paymentSummary}
                   alt="card visual"
                   priority={true}
+                  fetchPriority="high"
                   style={{
                     objectFit: "contain",
                     maxHeight: "648px",
                   }}
                   className="w-100"
+                  sizes="(max-width: 768px) 100vw, 80vw"
                 />
               </div>
             </div>
           </div>
         </div>
-        <div>
+        <SuspenseLoading>
           <LogoSlider />
-        </div>
+        </SuspenseLoading>
       </div>
 
       <div className={`row ${styles.introduction_section} `}>
@@ -249,13 +263,17 @@ const Vouchers = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.sixth_row} row d-flex bg-white`}>
-        <EnkashWay
-          sectionHeading="The Categories You Love, The Discounts You Deserve."
-          progressData={categoriesData}
-        />
+        <SuspenseLoading>
+          <EnkashWay
+            sectionHeading="The Categories You Love, The Discounts You Deserve."
+            progressData={categoriesData}
+          />
+        </SuspenseLoading>
       </div>
 
-      <FaqSection faqData={faqData} />
+      <SuspenseLoading>
+        <FaqSection faqData={faqData} />
+      </SuspenseLoading>
     </div>
   )
 }
