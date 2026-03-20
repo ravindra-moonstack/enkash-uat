@@ -1,5 +1,5 @@
 "use client"
-import { Key, useEffect, useState } from "react"
+import { Key, useEffect, useState, useRef } from "react"
 import Image from "next/image"
 
 import styles from "./how-does-it-work.module.scss"
@@ -13,26 +13,42 @@ interface howDoesItWorkProps {
 }
 
 const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
-  //
-
   const salesUrl = useSalesUrl()
-
   const [currentData, setCurrentData] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting)
+      },
+      { threshold: 0.1 }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
     const interval = setInterval(() => {
       setCurrentData((prevData: number) => (prevData + 1) % dataSets.length)
     }, 7500)
 
     return () => clearInterval(interval)
-  }, [dataSets.length])
+  }, [dataSets.length, isVisible])
 
   const handleSpanClick = (index: number) => {
     setCurrentData(index)
   }
 
   return (
-    <div className={styles.home_container}>
+    <div className={styles.home_container} ref={containerRef}>
       <div
         className={`d-flex col-12 flex-column flex-md-row align-items-center ${styles.card}`}
       >
@@ -47,6 +63,7 @@ const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
                     src={dataSets[currentData].iconSrc}
                     alt={dataSets[currentData].altText || "icon"}
                     className={styles.icon_img}
+                    loading="lazy"
                   />
                 )}
                 <div className="text-start">
@@ -96,6 +113,8 @@ const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
                 src={dataSets[currentData].imageSrc}
                 alt={dataSets[currentData].altText}
                 className={styles.right_img}
+                loading="lazy"
+                quality={80}
               />
             </div>
           </div>
@@ -106,9 +125,8 @@ const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
             {dataSets.map((_: any, index: Key) => (
               <span
                 key={index}
-                className={`${styles.bar} ${
-                  currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
-                } cursor-pointer`}
+                className={`${styles.bar} ${currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
+                  } cursor-pointer`}
                 onClick={() => handleSpanClick(index as number)}
               />
             ))}
@@ -120,3 +138,4 @@ const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
 }
 
 export default HowDoesItWork
+

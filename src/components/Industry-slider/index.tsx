@@ -44,8 +44,25 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
     CategoryButtonComponent,
 }) => {
     const sliderRef = useRef<Slider>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
     const [activeCategory, setActiveCategory] = useState<string>(categories[0]?.id || "")
     const [isAutoplayPaused, setIsAutoplayPaused] = useState(false)
+    const [isVisible, setIsVisible] = useState(false)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting)
+            },
+            { threshold: 0.1 }
+        )
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current)
+        }
+
+        return () => observer.disconnect()
+    }, [])
 
     useEffect(() => {
         if (slides.length > 0) {
@@ -79,7 +96,7 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: "25%",
-        autoplay: !isAutoplayPaused,
+        autoplay: !isAutoplayPaused && isVisible, // Only autoplay when in view
         autoplaySpeed: autoplaySpeed,
         afterChange: handleAfterChange,
         pauseOnHover: false,
@@ -102,7 +119,7 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
     }
 
     return (
-        <section className={styles.industrySlider}>
+        <section className={styles.industrySlider} ref={containerRef}>
             <div className={styles.header}>
                 {heading && (
                     <DynamicHeading
@@ -147,7 +164,7 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
 
             <div className={styles.sliderWrapper}>
                 <Slider ref={sliderRef} {...settings}>
-                    {slides.map((slide, index) => (
+                    {slides.map((slide) => (
                         <div key={slide.id} className={styles.slideContainer}>
                             <div className={styles.slideCard}>
                                 <div className={styles.imageWrapper}>
@@ -157,7 +174,7 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
                                         fill
                                         className={styles.slideImage}
                                         sizes="(max-width: 768px) 100vw, 33vw"
-                                        objectFit="cover"
+                                        style={{ objectFit: "cover" }}
                                         quality={80}
                                     />
                                 </div>

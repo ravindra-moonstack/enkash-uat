@@ -13,18 +13,26 @@ const FAQSchema = ({ faqData }: FAQSchemaProps) => {
   useEffect(() => {
     if (!faqData || faqData.length === 0) return
 
-    const extractText = (node: any) => {
-      if (typeof window === "undefined") return ""
+    const stripHtml = (html: string) => {
+      if (typeof window === "undefined") return html
+      const doc = new DOMParser().parseFromString(html, "text/html")
+      return doc.body.textContent || ""
+    }
 
-      // If already a string → return directly
+    const extractText = (node: any): string => {
+      if (!node) return ""
       if (typeof node === "string") return node
+      if (typeof node === "number") return String(node)
 
-      // Convert React element to HTML string
-      const html = ReactDOMServer.renderToStaticMarkup(node)
+      // Fallback for React elements without rendering them fully
+      if (node.props && node.props.children) {
+        if (Array.isArray(node.props.children)) {
+          return node.props.children.map(extractText).join(" ")
+        }
+        return extractText(node.props.children)
+      }
 
-      const div = document.createElement("div")
-      div.innerHTML = html
-      return div.textContent || div.innerText || ""
+      return ""
     }
 
     const schema = {
@@ -33,12 +41,11 @@ const FAQSchema = ({ faqData }: FAQSchemaProps) => {
       mainEntity: faqData.map((faq) => {
         let answerHtml = ""
 
-        if (faq.answerHTML) {
-          answerHtml = extractText(faq.answerHTML)
-        }
-
         if (faq.answer) {
-          answerHtml = faq.answer.map((a: any) => a.heading).join(" ")
+          answerHtml = faq.answer.map((a: any) => a.heading || "").join(" ")
+        } else if (faq.answerHTML) {
+          // Try to extract text without full render if possible
+          answerHtml = extractText(faq.answerHTML)
         }
 
         return {
@@ -46,7 +53,7 @@ const FAQSchema = ({ faqData }: FAQSchemaProps) => {
           name: faq.question,
           acceptedAnswer: {
             "@type": "Answer",
-            text: answerHtml.trim(),
+            text: answerHtml.trim() || "Details available on page",
           },
         }
       }),
@@ -54,11 +61,13 @@ const FAQSchema = ({ faqData }: FAQSchemaProps) => {
 
     const script = document.createElement("script")
     script.type = "application/ld+json"
+    script.id = `faq-schema-${Math.random().toString(36).substr(2, 9)}`
     script.innerHTML = JSON.stringify(schema)
     document.head.appendChild(script)
 
     return () => {
-      document.head.removeChild(script)
+      const el = document.getElementById(script.id)
+      if (el) document.head.removeChild(el)
     }
   }, [faqData])
 
