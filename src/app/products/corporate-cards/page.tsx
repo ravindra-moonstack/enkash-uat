@@ -134,7 +134,7 @@ const CorporateCards = (): React.JSX.Element => {
           sizes="100vw"
           quality={75}
           fetchPriority="high"
-          loading="eager"
+          loading="lazy"
         />
         <div className="max-m-auto position-relative z-index-1">
           <div
