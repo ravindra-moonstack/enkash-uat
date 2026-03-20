@@ -11,6 +11,7 @@ import LogoSlider from "../../logo-slider"
 import VideoModal from "../../vedio-modal"
 import VideoIcon from "../../../../public/svgs/vedio-icon.svg"
 import HoverVideoIcon from "../../../../public/svgs/vedio-icon-dark-theme.svg"
+import SuspenseLoading from "../../loading"
 
 interface TextPart {
   text: string
@@ -201,7 +202,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </>
       )}
       {/* Logo Slider */}
-      <LogoSlider />
+      <SuspenseLoading>
+        <LogoSlider />
+      </SuspenseLoading>
     </div>
   )
 }

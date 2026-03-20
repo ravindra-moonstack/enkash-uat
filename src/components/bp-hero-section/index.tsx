@@ -57,6 +57,9 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
             objectPosition: imgObjectPosition,
             zIndex: 0,
           }}
+          fetchPriority="high"
+          loading="lazy"
+          decoding="sync"
         />
       )}
       <div className={styles.box_white} style={{ position: "relative", zIndex: 1 }}>

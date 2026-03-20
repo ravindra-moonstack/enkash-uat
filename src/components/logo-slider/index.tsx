@@ -1,5 +1,5 @@
 "use client"
-import React, { useMemo } from "react"
+import React, { useMemo, useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Slider, { Settings } from "react-slick"
 
@@ -10,13 +10,29 @@ import "slick-carousel/slick/slick-theme.css"
 import { logos, coloredLogos } from "./data"
 
 const LogoSlider = (): React.JSX.Element => {
-  //
+  const [isVisible, setIsVisible] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting)
+      },
+      { threshold: 0.1 }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const sliderSettings: Settings = useMemo(
     () => ({
       infinite: true,
       speed: 5000,
-      autoplay: true,
+      autoplay: isVisible,
       autoplaySpeed: 0,
       cssEase: "linear",
       slidesToShow: 10,
@@ -31,11 +47,11 @@ const LogoSlider = (): React.JSX.Element => {
         { breakpoint: 480, settings: { slidesToShow: 3 } },
       ],
     }),
-    []
+    [isVisible]
   )
 
   return (
-    <div className={styles.marquee_box}>
+    <div className={styles.marquee_box} ref={containerRef}>
       <Slider {...sliderSettings}>
         {[...logos, ...logos].map((logo, i) => (
           <div
@@ -60,3 +76,4 @@ const LogoSlider = (): React.JSX.Element => {
 }
 
 export default LogoSlider
+
