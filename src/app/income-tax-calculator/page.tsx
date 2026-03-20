@@ -4,8 +4,9 @@ import React, { useState, useCallback, useMemo, memo } from "react"
 import DynamicHeading from "@/components/dynamic-heading"
 import CommonButton from "@/components/buttons"
 import styles from "./income-tax-calculator.module.scss"
-import { useTaxCalculator, computeTax, Regime, FY, AgeGroup, TaxResult } from "./hooks/useTaxCalculator"
+import { useTaxCalculator, computeTax, Regime, FY, AgeGroup } from "./hooks/useTaxCalculator"
 import { faqData, NEW_SLABS } from "./data"
+import Link from "next/link"
 import { FaqSection } from "@/src/components"
 
 // ─── UTILS ────────────────────────────────────────────────────────────────────
@@ -163,7 +164,7 @@ export default function IncomeTaxCalculatorPage() {
                 <div className={styles.heroGrid} />
                 <div className={`${styles.heroInner} max-w-auto`}>
                     <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-                        <a href="https://www.enkash.com">Home</a> <span className={styles.breadcrumbSep}>›</span> <span>Income Tax Calculator</span>
+                        <Link href="https://www.enkash.com">Home</Link> <span className={styles.breadcrumbSep}>›</span> <span>Income Tax Calculator</span>
                     </nav>
 
                     <div className={styles.heroLayout}>
@@ -403,7 +404,7 @@ export default function IncomeTaxCalculatorPage() {
                         </div>
 
                         <p className={styles.contentP}>
-                            <a href="/glossary/income-tax" className="color-equity-blue text-decoration-underline">Income Tax</a> Slab Rates for FY 2026-27 under the Old and New Tax regimes are:
+                            <Link href="/glossary/income-tax" className="color-equity-blue text-decoration-underline">Income Tax</Link> Slab Rates for FY 2026-27 under the Old and New Tax regimes are:
                         </p>
 
                         <div className={styles.slabTabBar}>
