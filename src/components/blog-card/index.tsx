@@ -33,6 +33,8 @@ const BlogCard = ({
                 height={250}
                 alt="card visual"
                 className={styles.card_image}
+                loading="lazy"
+                quality={70}
               />
             </div>
           )}
