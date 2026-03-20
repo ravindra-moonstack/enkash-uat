@@ -1,4 +1,4 @@
-import React, { memo } from "react"
+import React, { memo, useState, useEffect, useRef } from "react"
 import Marquee from "react-fast-marquee"
 
 import styles from "./all-products.module.scss"
@@ -6,12 +6,28 @@ import FeatureCard from "../feature-card"
 import { TAllProductsProp } from "@/src/types"
 
 const AllProducts = ({ data = [] }: TAllProductsProp): React.JSX.Element => {
-  //
+  const [isVisible, setIsVisible] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting)
+      },
+      { threshold: 0.1 }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <div className={`${styles.integration_row} row`}>
+    <div className={`${styles.integration_row} row`} ref={containerRef}>
       <div className={`${styles.container}`}>
-        <Marquee speed={70} pauseOnClick={true} pauseOnHover={true}>
+        <Marquee speed={70} pauseOnClick={true} pauseOnHover={true} play={isVisible}>
           <div className="d-flex align-items-stretch pb-4 pt-4 pt-md-5">
             {data?.map((card, index) => (
               <div key={index.toString()} className="d-flex">
@@ -31,3 +47,4 @@ const AllProducts = ({ data = [] }: TAllProductsProp): React.JSX.Element => {
 }
 
 export default memo(AllProducts)
+
