@@ -1,7 +1,6 @@
 "use client"
 import { useEffect } from "react"
 import { TFAQProps } from "@/src/types/faq"
-import ReactDOMServer from "react-dom/server"
 
 interface FAQSchemaProps {
   faqData: TFAQProps[]
@@ -12,12 +11,6 @@ interface FAQSchemaProps {
 const FAQSchema = ({ faqData }: FAQSchemaProps) => {
   useEffect(() => {
     if (!faqData || faqData.length === 0) return
-
-    const stripHtml = (html: string) => {
-      if (typeof window === "undefined") return html
-      const doc = new DOMParser().parseFromString(html, "text/html")
-      return doc.body.textContent || ""
-    }
 
     const extractText = (node: any): string => {
       if (!node) return ""
