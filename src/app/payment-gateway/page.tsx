@@ -2,7 +2,6 @@ import React from "react"
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
-import { Suspense } from "react"
 
 //data
 import {
