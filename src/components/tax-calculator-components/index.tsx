@@ -64,6 +64,41 @@ export const SummaryBox = memo(({ label, value, sub, variant = "default" }: Summ
 ))
 SummaryBox.displayName = "SummaryBox"
 
+interface RecommendedBoxProps {
+    winner: string
+    oldTax: string
+    newTax: string
+    savings: string
+}
+
+export const RecommendedBox = memo(({ winner, oldTax, newTax, savings }: RecommendedBoxProps) => (
+    <div className={styles.recommendedBox}>
+        <div className={styles.recommendedHead}>
+            <div className={styles.recommendedLabel}>Recommended for You</div>
+            <div className={styles.recommendedWinner}>{winner} Tax Regime</div>
+        </div>
+        <div className={styles.recommendedBody}>
+            <div className={styles.compareRow}>
+                <div className={styles.compareItem}>
+                    <span>Old Regime</span>
+                    <strong>{oldTax}</strong>
+                </div>
+                <div className={styles.compareVs}>VS</div>
+                <div className={styles.compareItem}>
+                    <span>New Regime</span>
+                    <strong>{newTax}</strong>
+                </div>
+            </div>
+            <div className={styles.savingsBox}>
+                <div className={styles.savingsLabel}>YOU SAVE</div>
+                <div className={styles.savingsValue}>{savings}</div>
+            </div>
+        </div>
+    </div>
+))
+RecommendedBox.displayName = "RecommendedBox"
+
+
 interface Slab {
     min: number
     max: number
