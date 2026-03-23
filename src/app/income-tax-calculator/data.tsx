@@ -1,14 +1,25 @@
 import { TFAQProps } from "@/src/types/faq"
+import Link from "next/link"
 
 export const faqData: TFAQProps[] = [
     {
         question: "What is income tax?",
-        answer: [
-            {
-                heading:
-                    "Income tax is a direct tax collected by the Government of India on the income earned by individuals and businesses during a financial year. It is charged based on applicable tax slabs and provisions under the Income Tax Act, 1961.",
-            },
-        ],
+        answerHTML: (
+            <div>
+                <p>
+                    {"Income tax is a"}
+                    <Link
+                        className="mx-1"
+                        href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/direct-tax-in-india`}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        direct tax
+                    </Link>
+                    {"collected by the Government of India on the income earned by individuals and businesses during a financial year. It is charged based on applicable tax slabs and provisions under the Income Tax Act, 1961."}
+                </p>
+            </div>
+        ),
     },
     {
         question: "What is an income tax return?",
