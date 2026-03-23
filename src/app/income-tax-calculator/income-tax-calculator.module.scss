@@ -365,7 +365,6 @@
 .heroResults {
   margin-top: 60px;
   padding-top: 48px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .heroResultsHead {
@@ -572,24 +571,57 @@
   }
 }
 
-.contentWithAside {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 60px;
-  align-items: start;
+  // .contentWithAside {
+  //   display: grid;
+  //   grid-template-columns: 1fr 340px;
+  //   gap: 60px;
+  //   align-items: start;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
+  //   @media (max-width: 1024px) {
+  //     grid-template-columns: 1fr;
+  //     gap: 40px;
+  //   }
+  // }
 
 .contentP {
   font-size: 15px;
   color: $color-grey-600;
   line-height: 1.8;
   margin-bottom: 16px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+}
+
+.contentList {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 24px;
+
+  li {
+    font-size: 15px;
+    color: $color-grey-600;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+
+    strong {
+      color: $color-main-black;
+      font-weight: 700;
+    }
+  }
+}
+
+.contentImgWrap {
+  margin: 20px 0 40px;
+  max-width: 900px;
+}
+
+.contentImg {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid $color-black-10;
+  display: block;
 }
 
 .slabFootnote {

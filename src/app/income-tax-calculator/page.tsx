@@ -1,13 +1,15 @@
 "use client"
 
-import React, { useState, useCallback, useMemo, memo } from "react"
+import React, { useState, useCallback, useMemo, memo, useRef, useEffect } from "react"
 import DynamicHeading from "@/components/dynamic-heading"
 import CommonButton from "@/components/buttons"
 import styles from "./income-tax-calculator.module.scss"
-import { useTaxCalculator, computeTax, Regime, FY, AgeGroup } from "./hooks/useTaxCalculator"
-import { faqData, NEW_SLABS } from "./data"
+import { useTaxCalculator, computeTax, Regime, FY, AgeGroup } from "@/hooks/useTaxCalculator"
+import { faqData } from "./data"
 import Link from "next/link"
-import { FaqSection } from "@/src/components"
+import Image from "next/image"
+import { CustomBreadcrumb, FaqSection } from "@/src/components"
+import { TaxInput, SummaryBox, SlabMini, ContentSection, RecommendedBox } from "@/src/components/tax-calculator-components"
 
 // ─── UTILS ────────────────────────────────────────────────────────────────────
 const fmtInd = (num: number): string => {
@@ -24,77 +26,21 @@ const fc = (num: number): string => (isNaN(num) ? "₹0" : "₹" + fmtInd(Math.r
 const raw = (val: string): number => parseInt(val.replace(/[^0-9]/g, ""), 10) || 0
 
 
-// ─── MEMOIZED SUB-COMPONENTS ──────────────────────────────────────────────────
 
-const TaxInput = memo(({
-    label,
-    value,
-    onChange,
-    placeholder,
-    hint
-}: {
-    label: string;
-    value: string;
-    onChange: (v: string) => void;
-    placeholder?: string;
-    hint?: string
-}) => (
-    <div className={styles.inpGrp}>
-        <label>{label} {hint && <span className={styles.hint}>({hint})</span>}</label>
-        <div className={styles.inpWrap}>
-            <span className={styles.rupee}>₹</span>
-            <input
-                type="text"
-                inputMode="numeric"
-                placeholder={placeholder}
-                value={value}
-                onChange={(e) => {
-                    const digits = e.target.value.replace(/[^0-9]/g, "")
-                    onChange(digits ? fmtInd(parseInt(digits, 10)) : "")
-                }}
-            />
-        </div>
-    </div>
-))
-TaxInput.displayName = "TaxInput"
 
-const SummaryBox = memo(({
-    label,
-    value,
-    sub,
-    variant = "default"
-}: {
-    label: string;
-    value: string;
-    sub: string;
-    variant?: "default" | "primary" | "winner"
-}) => (
-    <div className={`${styles.summaryBox} ${variant === "primary" ? styles.summaryBoxPrimary : (variant === "winner" ? styles.summaryBoxWinner : "")}`}>
-        <div className={styles.summaryBoxLabel}>{label}</div>
-        <div className={styles.summaryBoxValue}>{value}</div>
-        <div className={styles.summaryBoxSub}>{sub}</div>
-    </div>
-))
-SummaryBox.displayName = "SummaryBox"
-
-const SlabMini = memo(({ regime, regimeSlabs }: { regime: Regime, regimeSlabs: any[] }) => (
-    <div className={styles.slabMini}>
-        <div className={styles.slabMiniHeader}>{regime === "new" ? "New" : "Old"} Regime Slabs</div>
-        {regimeSlabs.map((slab, i) => (
-            <div key={i} className={styles.slabMiniRow}>
-                <span>{slab.max === Infinity ? `Above ₹${fmtInd(slab.min / 100000)}L` : `₹${fmtInd(slab.min / 100000)}L – ₹${fmtInd(slab.max / 100000)}L`}</span>
-                <span className={`${styles.slabRate} ${slab.rate === 0 ? styles.slabRateNil : ""}`}>{slab.rate === 0 ? "Nil" : `${slab.rate}%`}</span>
-            </div>
-        ))}
-    </div>
-))
-SlabMini.displayName = "SlabMini"
 
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 export default function IncomeTaxCalculatorPage() {
     const { form, regime, age, fy, setRegime, setAge, setFy, handleInputChange, resetForm } = useTaxCalculator()
     const [showResults, setShowResults] = useState(false)
     const [slabTab, setSlabTab] = useState<"new" | "old">("new")
+    const resultsRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        if (showResults && resultsRef.current) {
+            resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
+        }
+    }, [showResults])
 
     const liveResults = useMemo(() => ({
         old: computeTax(form, "old", age),
@@ -163,10 +109,15 @@ export default function IncomeTaxCalculatorPage() {
                 <div className={styles.heroBgOverlay} />
                 <div className={styles.heroGrid} />
                 <div className={`${styles.heroInner} max-w-auto`}>
-                    <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-                        <Link href="https://www.enkash.com">Home</Link> <span className={styles.breadcrumbSep}>›</span> <span>Income Tax Calculator</span>
-                    </nav>
+                    <CustomBreadcrumb
+                        linkColor="allWhite" items={[
+                            { name: "Home", url: "/" },
+                            {
+                                name: "Income Tax Calculator",
+                                url: "/income-tax-calculator",
+                            },
 
+                        ]} />
                     <div className={styles.heroLayout}>
                         <div className={styles.heroLeft}>
                             <DynamicHeading
@@ -316,7 +267,7 @@ export default function IncomeTaxCalculatorPage() {
                                     {regime === "new" && (
                                         <>
                                             <div className={styles.sectionDivider}><span>Allowed Deductions — New Regime</span></div>
-                                            <div className={styles.infoTeal}>ℹ️ New Regime: Most deductions like 80C, 80D, HRA exemption are <strong>not allowed</strong>. Only employer NPS contribution under 80CCD(2) applies.</div>
+                                            <div className={styles.infoTeal}>New Regime: Most deductions like 80C, 80D, HRA exemption are <strong>not allowed</strong>. Only employer NPS contribution under 80CCD(2) applies.</div>
                                             <TaxInput label="Employer NPS — 80CCD(2)" hint="Up to 14% of basic" value={form.s80CCD_new} onChange={(v) => handleInputChange("s80CCD_new", v)} />
                                         </>
                                     )}
@@ -330,19 +281,19 @@ export default function IncomeTaxCalculatorPage() {
                         </div>
                     </div>
 
-                    {/* ─── TAX BREAKDOWN — inside hero, below the 2-col layout ─── */}
                     {showResults && (
-                        <div className={styles.heroResults}>
+                        <div className={styles.heroResults} ref={resultsRef}>
                             <div className={styles.heroResultsHead}>
                                 <DynamicHeading content={[{ title: "Your Tax Breakdown", color: "color-white", className: "f-7" }]} headingTag="h2" />
                                 <p className={styles.heroResultsSubtitle}>Calculated for FY {fy} · {regime === "new" ? "New" : "Old"} Tax Regime selected</p>
                             </div>
 
-                            <div className={styles.summaryGrid}>
-                                <SummaryBox label="Total Tax Payable" value={fc(currentResult.total)} sub={`${fc(Math.round(currentResult.total / 12))} / month`} variant="primary" />
-                                <SummaryBox label="Taxable Income" value={fc(currentResult.taxable)} sub="After deductions & exemptions" />
-                                <SummaryBox label="Better Regime" value={`${betterRegime} Regime`} sub={`Saves ${fc(totalSavings)} vs ${betterRegime === "New" ? "Old" : "New"} Regime`} variant="winner" />
-                            </div>
+                            <RecommendedBox
+                                winner={betterRegime}
+                                oldTax={fc(liveResults.old.total)}
+                                newTax={fc(liveResults.new.total)}
+                                savings={fc(totalSavings)}
+                            />
 
                             <div className={styles.regimeGrid}>
                                 {(["old", "new"] as Regime[]).map(r => {
@@ -350,7 +301,7 @@ export default function IncomeTaxCalculatorPage() {
                                     const isW = betterRegime.toLowerCase() === r
                                     return (
                                         <div key={r} className={`${styles.regimeCard} ${isW ? styles.regimeCardWinner : ""}`}>
-                                            {isW && <div className={styles.winnerBadge}>✓ Better</div>}
+                                            {isW && <div className={styles.winnerBadge}>Better</div>}
                                             <div className={styles.regimeCardHead}>
                                                 <div className={styles.regimeCardLabel}>{r === "old" ? "Old" : "New"} Tax Regime</div>
                                                 <div className={styles.regimeCardTotal}>{fc(res.total)}</div>
@@ -380,10 +331,10 @@ export default function IncomeTaxCalculatorPage() {
                                 })}
                             </div>
 
-                            <div className={styles.resultActions}>
-                                <CommonButton title="← Recalculate" theme="border-gray" url={() => setShowResults(false)} />
-                                <CommonButton title="📄 Print / Save" theme="blue" url={() => window.print()} />
-                            </div>
+                            {/* <div className={styles.resultActions}>
+                                <CommonButton title="Recalculate" theme="border-gray" url={() => setShowResults(false)} />
+                                <CommonButton title="Print / Save" theme="blue" url={() => window.print()} />
+                            </div> */}
 
                             <p className={styles.disclaimer}>
                                 <strong>Disclaimer:</strong> Estimated tax per IT Act 1961 & Budget 2026. Surcharge applies above ₹50L. Rebate 87A: ₹60K (New, ≤₹12L) / ₹12.5K (Old, ≤₹5L). Consult a tax professional. Not financial/legal advice.
@@ -404,7 +355,7 @@ export default function IncomeTaxCalculatorPage() {
                         </div>
 
                         <p className={styles.contentP}>
-                            <Link href="/glossary/income-tax" className="color-equity-blue text-decoration-underline">Income Tax</Link> Slab Rates for FY 2026-27 under the Old and New Tax regimes are:
+                            <a href="/glossary/income-tax" className="color-equity-blue text-decoration-underline">Income Tax</a> Slab Rates for FY 2026-27 under the Old and New Tax regimes are:
                         </p>
 
                         <div className={styles.slabTabBar}>
@@ -444,13 +395,83 @@ export default function IncomeTaxCalculatorPage() {
                                 </tbody>
                             </table>
                         </div>
-                        <p className={styles.slabFootnote}>
-                            Source: CBDT, Ministry of Finance, Union Budget 2025. 4% Health &amp; Education Cess applies on all tax amounts. Section 87A rebate up to ₹60,000 under new regime (income ≤ ₹12L), ₹12,500 under old regime (income ≤ ₹5L).
+                        {slabTab === "new" && (
+                            <p className={styles.slabFootnote}>
+                                Note: There is NO Tax Liability under the new tax regime for income upto 12 lakhs due to the rebate of 60000 rupees under section 87A. Tax is still calculated as per slabs, but the rebate offsets it fully. This rebate does not apply to income taxed at special rates, such as capital gains or lottery winnings.
+                            </p>
+                        )}
+
+                        <div id="how-calculated">
+                            <DynamicHeading content={[{ title: "How Tax Is Calculated Step by Step", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                        </div>
+                        <p className={styles.contentP}>
+                            Income tax in India is calculated in a sequence. Here is the basic step-by-step method used for salaried individuals:
                         </p>
+                        {[
+                            ["Calculate gross income", "Add salary income, rental income, interest income, and any other taxable income."],
+                            ["Subtract eligible deductions", "Under the old tax regime, subtract deductions such as Section 80C, 80D, 80CCD(1B), HRA exemption, and home loan interest, wherever applicable."],
+                            ["Apply the standard deduction", "Reduce the applicable standard deduction from salary income."],
+                            ["Apply slab rates", "Calculate tax based on the income tax slabs under the selected tax regime."],
+                            ["Add surcharge", "If total income crosses the prescribed threshold, add surcharge as applicable."],
+                            ["Add Health and Education Cess", "Add 4% cess on the income tax plus surcharge."],
+                            ["Apply the rebate under Section 87A", "If your taxable income falls within the eligible limit, reduce tax liability by the applicable rebate."]
+                        ].map((step, idx) => (
+                            <p key={idx} className={styles.contentP}>
+                                <strong>{idx + 1}. {step[0]}</strong>: {step[1]}
+                            </p>
+                        ))}
+
+                        <div id="surcharge">
+                            <DynamicHeading content={[{ title: "Surcharge in Income Tax", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                        </div>
+                        <p className={styles.contentP}>
+                            Surcharge is the extra charge payable on income tax. It is a charge added for taxpayers with high incomes. Surcharge is calculated as a percentage of the income tax that is already payable by the tax assessee. Usually, taxpayers with high incomes are required to pay a surcharge on income tax. If taxpayers cross specific income thresholds, they are liable to pay a surcharge on income tax.
+                        </p>
+
+                        <div id="surcharge-rates">
+                            <DynamicHeading content={[{ title: "Surcharge Rates", color: "color-main-black", className: "fs-22 mb-3" }]} headingTag="h5" />
+                        </div>
+                        <ul className={styles.contentList}>
+                            <li><strong>10% of income tax</strong> if total income &gt; ₹50 Lakhs and &lt; ₹1 crore.</li>
+                            <li><strong>15% of income tax</strong> if total income &gt; ₹1 Crore and &lt; ₹2 Crore.</li>
+                            <li><strong>25% of income tax</strong> if total income &gt; ₹2 crore and &lt; ₹5 Crore.</li>
+                            <li><strong>37% of income tax</strong> if income is more than ₹5 crores.</li>
+                        </ul>
+
+                        <p className={styles.slabFootnote}>
+                            Note: The highest surcharge rate is 25% under the New Tax regime, and additionally, 4% of health and education cess is added in income tax liability of the taxpayer.
+                        </p>
+
+                        <div id="rebate">
+                            <DynamicHeading content={[{ title: "Rebate under Income Tax in India (Rebate u/s 87A)", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                        </div>
+                        <p className={styles.contentP}>
+                            When a taxpayer’s total taxable income falls within the prescribed limit, they can claim a rebate under Section 87A to reduce their tax liability to zero. Under the new tax regime, the rebate has been increased to ₹60,000. For FY 2026–27, the applicable rebate limits are as follows:
+                        </p>
+                        <div className={styles.tblWrap} style={{ maxWidth: '500px' }}>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Regime</th>
+                                        <th>Limit (Rs.)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Old Regime</strong></td>
+                                        <td>5 lakhs</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>New Regime</strong></td>
+                                        <td>12 lakhs*</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
                         {/* ── Old Tax Regime vs New Tax Regime ── */}
                         <div id="comparison">
-                            <DynamicHeading content={[{ title: "Old Tax Regime vs New Tax Regime — Which Is Better?", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "Old Tax Regime Vs New Tax Regime", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
                         </div>
 
                         <p className={styles.contentP}>
@@ -470,12 +491,12 @@ export default function IncomeTaxCalculatorPage() {
                                         ["Standard Deduction", "₹50,000", "₹75,000"],
                                         ["Basic Exemption Limit", "₹2.5L / ₹3L / ₹5L (age-based)", "₹3,00,000 for all ages"],
                                         ["Section 87A Rebate", "₹12,500 for income ≤ ₹5L", "₹60,000 for income ≤ ₹12L"],
-                                        ["Section 80C Deductions", "✅ Up to ₹25,000", "❌ Not available"],
+                                        ["Section 80C Deductions", "Up to ₹25,000", "Not available"],
 
-                                        ["HRA Exemption", "✅ Available", "❌ Not available"],
-                                        ["Section 80D (Health Ins.)", "✅ ₹25,000–₹50,000", "❌ Not available"],
-                                        ["NPS Extra 80CCD(1B)", "✅ ₹50,000 additional", "❌ Not available"],
-                                        ["Home Loan Interest (24b)", "✅ Up to ₹2,00,000", "❌ Not available"],
+                                        ["HRA Exemption", "Available", "Not available"],
+                                        ["Section 80D (Health Ins.)", "₹25,000–₹50,000", "Not available"],
+                                        ["NPS Extra 80CCD(1B)", "₹50,000 additional", "Not available"],
+                                        ["Home Loan Interest (24b)", "Up to ₹2,00,000", "Not available"],
                                         ["Max Surcharge Rate", "37% (income above ₹5 crore)", "25% (Capped)"],
                                         ["Best Suited For", "Those claiming high deductions", "Simpler filing, lower investments"],
                                     ].map((row, i) => (
@@ -489,13 +510,77 @@ export default function IncomeTaxCalculatorPage() {
                             </table>
                         </div>
 
-                        {/* ── Key Deductions Under Old Tax Regime ── */}
+
+
+                        <div id="how-to-calculate">
+                            <DynamicHeading content={[{ title: "How to Calculate Income Tax of a Salaried Person?", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                        </div>
+                        <div className="mb-4">
+                            <DynamicHeading content={[{ title: "Old Regime", color: "color-main-black", className: "fs-22 mb-3" }]} headingTag="h5" />
+                            <div className={styles.contentImgWrap}>
+                                <Image
+                                    src="/images/tax-calc/old-tax-regime-calc.webp"
+                                    alt="How to calculate income tax under the Old Regime"
+                                    width={900}
+                                    height={500}
+                                    className={styles.contentImg}
+                                />
+                            </div>
+                        </div>
+                        <div className="mb-5">
+                            <DynamicHeading content={[{ title: "New Regime", color: "color-main-black", className: "fs-22 mb-3" }]} headingTag="h5" />
+                            <div className={styles.contentImgWrap}>
+                                <Image
+                                    src="/images/tax-calc/new-tax-regime-calc.webp"
+                                    alt="How to calculate income tax under the New Regime"
+                                    width={900}
+                                    height={500}
+                                    className={styles.contentImg}
+                                />
+                            </div>
+                        </div>
+
+
+                        <div id="benefits">
+                            <DynamicHeading content={[{ title: "What are the Benefits of using the Income Tax calculator?", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                        </div>
+                        <p className={styles.contentP}>Key benefits of using the EnKash Income Tax Calculator include:</p>
+                        <ol className={styles.contentList}>
+                            <li><strong>Accuracy</strong>: The Income Tax calculator gives you accurate information about your tax liability.</li>
+                            <li><strong>Regime Comparison</strong>: You can easily compare the tax liability under the old tax regime and the New Tax regime, which will help you to make an informed decision.</li>
+                            <li><strong>Tax Planning</strong>: This calculator helps you to plan your investments accordingly.</li>
+                            <li><strong>Fast and Simplified</strong>: The income tax calculator helps you calculate your tax quickly and accurately.</li>
+                            <li><strong>User-friendly</strong>: It has a user-friendly interface that allows taxpayers to calculate their tax liability easily.</li>
+                        </ol>
+
+                        <div id="exemptions">
+                            <DynamicHeading content={[{ title: "Income Sources Exempted Under the New Tax Regime", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                        </div>
+                        <p className={styles.contentP}>
+                            While calculating the income tax, there are several income sources that are exempted i.e., income from these sources is tax-free, you can claim exemptions on this income. It provides relief to the taxpayers.
+                        </p>
+
+                        <p className={styles.contentP}>Some key Exempted income sources are:</p>
+                        <ol className={styles.contentList}>
+                            <li><strong>Agriculture Income</strong>: Agriculture income is fully exempted in India under section 10(1) of the Income Tax Act.</li>
+                            <li><strong>Gratuity</strong>: Gratuity is tax-exempt under section 10(10) of the Income Tax Act, up to the maximum amount of 20 Lakhs for private employees and is completely exempted for Government employees.</li>
+                            <li><strong>Provident Fund Withdrawal</strong>: Provident Fund withdrawal is generally tax-free if you have completed five continuous years of service.</li>
+                            <li>
+                                <strong>
+                                    <Link href="/resources/blog/what-is-leave-encashment" className="color-equity-blue text-decoration-underline">Leave Encashment</Link>
+                                </strong>: For Government employees, leave encashment is fully exempted, whereas for non-government employees it is exempted up to lifetime limit of 25 lakh, under section 10(10AA) of the Income Tax Act.
+                            </li>
+                            <li><strong>Compensation for Natural Calamities</strong>: Compensation for natural calamities from the government authorities is fully exempted under Section 10(10BC) of the Income Tax Act. It covers the compensation for loss of property or life in natural disasters like floods, landslides, earthquakes, Cyclones etc.</li>
+                            <li><strong>Income from Minor Child</strong>: Income from a minor child is clubbed with the income of the parent, but parents can claim the exemption up to ₹1,500 in a financial year under section 10(32) of the Income Tax Act.</li>
+                            <li><strong>Tax-free bonds</strong>: Interest earned from a special tax-free bond is exempted.</li>
+                        </ol>
+
                         <div id="deductions">
-                            <DynamicHeading content={[{ title: "Key Deductions Under Old Tax Regime", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "Deductions Under the Old Tax Regime", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
                         </div>
 
                         <p className={styles.contentP}>
-                            The old regime allows several deductions that can significantly reduce your taxable income. Here are the most important ones for FY 2025-26:
+                            The old regime allows several deductions that can significantly reduce your taxable income. These deductions are:
                         </p>
                         <div className={styles.tblWrap}>
                             <table>
@@ -533,29 +618,6 @@ export default function IncomeTaxCalculatorPage() {
                         <FaqSection faqData={faqData} />
 
                     </div>
-
-                    <aside className={styles.asideSticky}>
-                        <div className={styles.asideCard}>
-                            <div className={styles.asideCardHead}>
-                                <DynamicHeading content={[{ title: "💰 Live Tax Summary", color: "color-white", className: "fs-18" }]} headingTag="h3" />
-                                <p>Updates as you type</p>
-                            </div>
-                            <div className={styles.asideCompare}>
-                                <div className={styles.compareCol}><div className={styles.compareColLabel}>Old Regime</div><div className={`${styles.compareColAmt} ${liveBetter === "Old" ? styles.compareColAmtWinner : ""}`}>{fc(liveResults.old.total)}</div></div>
-                                <div className={styles.compareVs}>VS</div>
-                                <div className={styles.compareCol}><div className={styles.compareColLabel}>New Regime</div><div className={`${styles.compareColAmt} ${liveBetter === "New" ? styles.compareColAmtWinner : ""}`}>{fc(liveResults.new.total)}</div></div>
-                            </div>
-                            {liveSavings > 0 && (
-                                <div className={styles.saveBox}>
-                                    <div className={styles.saveBoxLabel}>You save</div>
-                                    <div className={styles.saveBoxAmt}>{fc(liveSavings)}</div>
-                                    <div className={styles.saveBoxRegime}>with <strong>{liveBetter} Regime</strong></div>
-                                </div>
-                            )}
-                            <SlabMini regime={regime} regimeSlabs={NEW_SLABS} />
-                            <p className={styles.asideNote}>+4% Health & Education Cess on tax. Surcharge applicable above ₹50L income.</p>
-                        </div>
-                    </aside>
                 </div>
             </section>
         </div>
