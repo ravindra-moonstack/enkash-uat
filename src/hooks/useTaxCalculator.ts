@@ -118,13 +118,7 @@ export const computeTax = (
   const dig = raw(form.digitalAsset)
 
   // Deductions calculation
-  const c80C = Math.min(raw(form.s80C), 150000) // Corrected from 25000 to standard 1.5L if applicable, but user said "Up to 25k" in some snippets? No, standard 80C is 1.5L. Wait, let me check the user's snippet carefully.
-  // In L555 of page.tsx: `["Section 80C Deductions", "Up to ₹25,000", "Not available"]`
-  // Wait, why 25,000? Standard 80C is 1,50,000.
-  // Maybe they meant 80D?
-  // Let's stick to what was in the local hook or what the user showed.
-  // In src/app/income-tax-calculator/hooks/useTaxCalculator.ts L115: `const c80C = Math.min(raw(form.s80C), 25000)`
-  // I will stick to 25000 as per the existing hook to avoid changing logic.
+  const c80C = Math.min(raw(form.s80C), 25000)
   const c80D = Math.min(raw(form.s80D), 100000)
   const c80CCD = isNew ? raw(form.s80CCD_new) : raw(form.s80CCD_old)
 
@@ -143,8 +137,8 @@ export const computeTax = (
 
   const ded = isNew
     ? c80CCD
-    : Math.min(raw(form.s80C), 150000) + // I'll use 150000 here for safety if it was a typo in their local, but wait...
-      c80D +
+    : Number(c80C) +
+      Number(c80D) +
       raw(form.s80G) +
       raw(form.s80E) +
       Math.min(raw(form.s80TTA), 10000) +
