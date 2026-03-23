@@ -8,7 +8,8 @@ import { useTaxCalculator, computeTax, Regime, FY, AgeGroup } from "@/hooks/useT
 import { faqData } from "./data"
 import Link from "next/link"
 import Image from "next/image"
-import { FaqSection } from "@/src/components"
+import { CustomBreadcrumb, FaqSection } from "@/src/components"
+import { TaxInput, SummaryBox, SlabMini, ContentSection, RecommendedBox } from "@/src/components/tax-calculator-components"
 
 // ─── UTILS ────────────────────────────────────────────────────────────────────
 const fmtInd = (num: number): string => {
@@ -25,71 +26,8 @@ const fc = (num: number): string => (isNaN(num) ? "₹0" : "₹" + fmtInd(Math.r
 const raw = (val: string): number => parseInt(val.replace(/[^0-9]/g, ""), 10) || 0
 
 
-// ─── MEMOIZED SUB-COMPONENTS ──────────────────────────────────────────────────
 
-const TaxInput = memo(({
-    label,
-    value,
-    onChange,
-    placeholder,
-    hint
-}: {
-    label: string;
-    value: string;
-    onChange: (v: string) => void;
-    placeholder?: string;
-    hint?: string
-}) => (
-    <div className={styles.inpGrp}>
-        <label>{label} {hint && <span className={styles.hint}>({hint})</span>}</label>
-        <div className={styles.inpWrap}>
-            <span className={styles.rupee}>₹</span>
-            <input
-                type="text"
-                inputMode="numeric"
-                placeholder={placeholder}
-                value={value}
-                onChange={(e) => {
-                    const digits = e.target.value.replace(/[^0-9]/g, "")
-                    onChange(digits ? fmtInd(parseInt(digits, 10)) : "")
-                }}
-            />
-        </div>
-    </div>
-))
-TaxInput.displayName = "TaxInput"
 
-const SummaryBox = memo(({
-    label,
-    value,
-    sub,
-    variant = "default"
-}: {
-    label: string;
-    value: string;
-    sub: string;
-    variant?: "default" | "primary" | "winner"
-}) => (
-    <div className={`${styles.summaryBox} ${variant === "primary" ? styles.summaryBoxPrimary : (variant === "winner" ? styles.summaryBoxWinner : "")}`}>
-        <div className={styles.summaryBoxLabel}>{label}</div>
-        <div className={styles.summaryBoxValue}>{value}</div>
-        <div className={styles.summaryBoxSub}>{sub}</div>
-    </div>
-))
-SummaryBox.displayName = "SummaryBox"
-
-const SlabMini = memo(({ regime, regimeSlabs }: { regime: Regime, regimeSlabs: any[] }) => (
-    <div className={styles.slabMini}>
-        <div className={styles.slabMiniHeader}>{regime === "new" ? "New" : "Old"} Regime Slabs</div>
-        {regimeSlabs.map((slab, i) => (
-            <div key={i} className={styles.slabMiniRow}>
-                <span>{slab.max === Infinity ? `Above ₹${fmtInd(slab.min / 100000)}L` : `₹${fmtInd(slab.min / 100000)}L – ₹${fmtInd(slab.max / 100000)}L`}</span>
-                <span className={`${styles.slabRate} ${slab.rate === 0 ? styles.slabRateNil : ""}`}>{slab.rate === 0 ? "Nil" : `${slab.rate}%`}</span>
-            </div>
-        ))}
-    </div>
-))
-SlabMini.displayName = "SlabMini"
 
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 export default function IncomeTaxCalculatorPage() {
@@ -171,12 +109,15 @@ export default function IncomeTaxCalculatorPage() {
                 <div className={styles.heroBgOverlay} />
                 <div className={styles.heroGrid} />
                 <div className={`${styles.heroInner} max-w-auto`}>
-                    <nav className={styles.breadcrumb}>
-                        <Link href="https://www.enkash.com">Home</Link>
-                        <span className={styles.breadcrumbSep}>›</span>
-                        <span>Income Tax Calculator</span>
-                    </nav>
+                    <CustomBreadcrumb
+                        linkColor="allWhite" items={[
+                            { name: "Home", url: "/" },
+                            {
+                                name: "Income Tax Calculator",
+                                url: "/income-tax-calculator",
+                            },
 
+                        ]} />
                     <div className={styles.heroLayout}>
                         <div className={styles.heroLeft}>
                             <DynamicHeading
@@ -347,11 +288,12 @@ export default function IncomeTaxCalculatorPage() {
                                 <p className={styles.heroResultsSubtitle}>Calculated for FY {fy} · {regime === "new" ? "New" : "Old"} Tax Regime selected</p>
                             </div>
 
-                            <div className={styles.summaryGrid}>
-                                <SummaryBox label="Total Tax Payable" value={fc(currentResult.total)} sub={`${fc(Math.round(currentResult.total / 12))} / month`} variant="primary" />
-                                <SummaryBox label="Taxable Income" value={fc(currentResult.taxable)} sub="After deductions & exemptions" />
-                                <SummaryBox label="Better Regime" value={`${betterRegime} Regime`} sub={`Saves ${fc(totalSavings)} vs ${betterRegime === "New" ? "Old" : "New"} Regime`} variant="winner" />
-                            </div>
+                            <RecommendedBox
+                                winner={betterRegime}
+                                oldTax={fc(liveResults.old.total)}
+                                newTax={fc(liveResults.new.total)}
+                                savings={fc(totalSavings)}
+                            />
 
                             <div className={styles.regimeGrid}>
                                 {(["old", "new"] as Regime[]).map(r => {
@@ -577,7 +519,7 @@ export default function IncomeTaxCalculatorPage() {
                             <DynamicHeading content={[{ title: "Old Regime", color: "color-main-black", className: "fs-22 mb-3" }]} headingTag="h5" />
                             <div className={styles.contentImgWrap}>
                                 <Image
-                                    src="/images/tax-calc/old-tax-regime-calc.png"
+                                    src="/images/tax-calc/old-tax-regime-calc.webp"
                                     alt="How to calculate income tax under the Old Regime"
                                     width={900}
                                     height={500}
@@ -589,7 +531,7 @@ export default function IncomeTaxCalculatorPage() {
                             <DynamicHeading content={[{ title: "New Regime", color: "color-main-black", className: "fs-22 mb-3" }]} headingTag="h5" />
                             <div className={styles.contentImgWrap}>
                                 <Image
-                                    src="/images/tax-calc/new-tax-regime-calc.png"
+                                    src="/images/tax-calc/new-tax-regime-calc.webp"
                                     alt="How to calculate income tax under the New Regime"
                                     width={900}
                                     height={500}
