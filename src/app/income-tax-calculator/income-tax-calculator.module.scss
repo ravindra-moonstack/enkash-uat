@@ -1,23 +1,49 @@
-@import "../../styles/variables";
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
 
 // ── PAGE SHELL ──────────────────────────────────────────────────────────────
 .page {
   background: $color-white;
-  min-height: 100vh;
-  padding-top: 120px;
+  min-height: 100vh; 
   font-family: inherit;
 }
 
 // ── HERO ────────────────────────────────────────────────────────────────────
 .hero {
-  background: linear-gradient(135deg, darken($color-equity-blue, 15%) 0%, $color-equity-blue 50%, lighten($color-equity-blue, 10%) 100%);
+  background: $color-equity-blue;
+  // background: linear-gradient(135deg, darken($color-equity-blue, 15%) 0%, $color-equity-blue 50%, lighten($color-equity-blue, 10%) 100%);
   position: relative;
-  overflow: hidden;
-  // Default: enough padding-bottom so the sticky calc card (margin-bottom: -60px) stays contained
-  padding: 52px 40px 100px;
+  overflow: hidden; 
+  padding: 52px 40px 80px;
 
   @media (max-width: 768px) {
     padding: 36px 16px 60px;
+    
+    :global(.f-7) {
+      font-size: 32px !important;
+      line-height: 1.2 !important;
+    }
+    
+    :global(.f-4) {
+      font-size: 14px !important;
+    }
+    
+    :global(.fs-22) {
+      font-size: 18px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    :global(.f-7) {
+      font-size: 28px !important;
+    }
+  }
+}
+
+.paddingTop{
+  padding-top:  100px;
+  @include for-laptops {
+    padding-top: 120px;
   }
 }
 
@@ -101,7 +127,12 @@
     margin-bottom: 8px;
   }
 }
-
+.heroLeft{
+  order: 2;
+  @include for-laptops {
+    order: 1;
+  }
+}
 .heroList {
   padding-left: 18px;
   font-size: 14px;
@@ -114,7 +145,12 @@
 
 // ── CALCULATOR CARD ─────────────────────────────────────────────────────────
 .heroRight {
-  // Ensures the right column doesn't stretch below hero
+  order: 1;
+  padding-top: 24px;
+  @include for-laptops {
+    order: 2;
+    padding-top: 0;
+  }
 }
 
 .calcCard {
@@ -152,6 +188,10 @@
 
 .calcCardBody {
   padding: 20px 24px 26px;
+
+  @media (max-width: 480px) {
+    padding: 16px 16px 20px;
+  }
 }
 
 .regimeToggle {
@@ -363,8 +403,7 @@
 
 // ── HERO RESULTS (tax breakdown inside hero) ─────────────────────────────────
 .heroResults {
-  margin-top: 60px;
-  padding-top: 48px;
+  margin-top: 60px; 
 }
 
 .heroResultsHead {
@@ -464,6 +503,10 @@
   position: relative;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   border: 1.5px solid transparent;
+
+  @media (max-width: 480px) {
+    border-radius: 12px;
+  }
 }
 
 .regimeCardWinner {
@@ -508,6 +551,10 @@
 
 .regimeCardBody {
   padding: 14px 22px 18px;
+
+  @media (max-width: 480px) {
+    padding: 12px 16px 16px;
+  }
 }
 
 .bdRow {
@@ -531,6 +578,11 @@
   border-bottom: none;
   font-size: 13.5px;
   font-weight: 700;
+
+  @media (max-width: 480px) {
+    margin: 8px -16px 0;
+    padding: 10px 16px;
+  }
 
   .bdRowLabel { color: darken($color-electric-green, 15%) !important; }
   .bdRowValue { color: darken($color-electric-green, 15%) !important; }
@@ -626,11 +678,12 @@
 
 .slabFootnote {
   font-size: 12px;
-  color: $color-slate-grey;
+  color: $color-black-200;
   line-height: 1.7;
   margin-top: -20px;
   margin-bottom: 36px;
   font-style: italic;
+  font-weight: 600;
 }
 
 // ── SLAB TAB SWITCHER ────────────────────────────────────────────────────────
@@ -681,7 +734,8 @@
 // ── TABLES ───────────────────────────────────────────────────────────────────
 .tblWrap {
   border-radius: 12px;
-  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid $color-black-10;
   margin: 16px 0 32px;
 
@@ -689,6 +743,7 @@
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
+    min-width: 600px;
   }
 
   thead th {

@@ -1,3 +1,4 @@
+"use client"
 import React, { memo, useState, useEffect, useRef } from "react"
 import Marquee from "react-fast-marquee"
 
