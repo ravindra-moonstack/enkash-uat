@@ -1,6 +1,7 @@
 "use client"
 
-import React, { useState, useCallback, useMemo, memo, useRef, useEffect } from "react"
+import React, { useState, useCallback, useMemo, useRef, useEffect } from "react"
+
 import DynamicHeading from "@/components/dynamic-heading"
 import CommonButton from "@/components/buttons"
 import styles from "./income-tax-calculator.module.scss"
@@ -9,7 +10,8 @@ import { faqData } from "./data"
 import Link from "next/link"
 import Image from "next/image"
 import { CustomBreadcrumb, FaqSection } from "@/src/components"
-import { TaxInput, SummaryBox, SlabMini, ContentSection, RecommendedBox } from "@/src/components/tax-calculator-components"
+import { TaxInput, RecommendedBox } from "@/src/components/tax-calculator-components"
+
 
 // ─── UTILS ────────────────────────────────────────────────────────────────────
 const fmtInd = (num: number): string => {
@@ -64,8 +66,8 @@ export default function IncomeTaxCalculatorPage() {
         setShowResults(false)
     }, [resetForm])
 
-    const currentResult = liveResults[regime]
     const betterRegime = liveBetter
+
     const totalSavings = liveSavings
 
     // Slab table data — 3 age-group columns matching design
@@ -355,8 +357,9 @@ export default function IncomeTaxCalculatorPage() {
                         </div>
 
                         <p className={styles.contentP}>
-                            <a href="/glossary/income-tax" className="color-equity-blue text-decoration-underline">Income Tax</a> Slab Rates for FY 2026-27 under the Old and New Tax regimes are:
+                            <Link href="/glossary/income-tax" className="color-equity-blue text-decoration-underline">Income Tax</Link> Slab Rates for FY 2026-27 under the Old and New Tax regimes are:
                         </p>
+
 
                         <div className={styles.slabTabBar}>
                             <button
