@@ -16,9 +16,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 2. Add letter pages (#, A-Z)
   const letters = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-  letters.forEach(letter => {
+  letters.forEach((letter) => {
+    let url = `${BASE_URL}/glossary/${letter.toLowerCase()}`
+    if (letter === "#") {
+      url = `${BASE_URL}/glossary/letter-with-numbers`
+    }
+
     sitemapEntries.push({
-      url: `${BASE_URL}/glossary/${letter.toLowerCase()}`,
+      url: url,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,
@@ -26,20 +31,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   })
  
   try {
-    const [rows]: any = await pool.execute(
-      'SELECT * FROM glossary'
-    )
-    
-    rows.forEach((row: any) => {
+    const [rows]: any = await pool.execute("SELECT * FROM glossary")
 
-        const lastMod = row.updated_at || row.created_at || row.update_at || row.create_at || new Date();
-        
-        sitemapEntries.push({
-            url: `${BASE_URL}/glossary/${row.slug}`,
-            lastModified: lastMod,
-            changeFrequency: 'weekly',
-            priority: 0.7,
-        })
+    rows.forEach((row: any) => {
+      const lastMod =
+        row.updated_at ||
+        row.created_at ||
+        row.update_at ||
+        row.create_at ||
+        new Date()
+
+      sitemapEntries.push({
+        url: `${BASE_URL}/glossary/${row.slug}`,
+        lastModified: lastMod,
+        changeFrequency: "weekly",
+        priority: 0.7,
+      })
     })
 
   } catch (error) {
