@@ -105,9 +105,9 @@ export default function IncomeTaxCalculatorPage() {
         slabTab === "new" ? newSlabRows : oldSlabRows
 
     return (
-        <div className={styles.page}>
+        <div className={`${styles.page} `}>
             {/* ─── HERO (contains calculator + results) ─── */}
-            <section className={`${styles.hero}  ${showResults ? styles.heroWithResults : ""}`}>
+            <section className={`${styles.hero} ${styles.paddingTop}  ${showResults ? styles.heroWithResults : ""}`}>
                 <div className={styles.heroBgOverlay} />
                 <div className={styles.heroGrid} />
                 <div className={`${styles.heroInner} max-w-auto`}>
@@ -275,8 +275,8 @@ export default function IncomeTaxCalculatorPage() {
                                     )}
 
                                     <div className={styles.btnRow}>
-                                        <CommonButton title="Reset" theme="border-gray" url={handleReset} width="110px" />
-                                        <CommonButton title="Calculate My Tax" theme="blue" url={handleCalculate} width="100%" />
+                                        <CommonButton title="Reset" theme="border-gray" url={handleReset} width="110px" className="justify-content-center" />
+                                        <CommonButton title="Calculate My Tax" theme="blue" url={handleCalculate} width="100%" className="justify-content-center" />
                                     </div>
                                 </div>
                             </div>
