@@ -113,8 +113,11 @@ export default function IncomeTaxCalculatorPage() {
         <div className={`${styles.page} `}>
             {/* ─── HERO (contains calculator + results) ─── */}
             <section className={`${styles.hero} ${styles.paddingTop}  ${showResults ? styles.heroWithResults : ""}`}>
-                <div className={styles.heroBgOverlay} />
-                <div className={styles.heroGrid} />
+                <div className={styles.heroBgImage}>
+                    <Image src="/images/tax-calc/ifscBg.webp" alt="Background" fill priority className="object-fit-cover" />
+                </div>
+                {/* <div className={styles.heroBgOverlay} />
+                <div className={styles.heroGrid} /> */}
                 <div className={`${styles.heroInner} max-w-auto`}>
                     <CustomBreadcrumb
                         linkColor="allWhite" items={[
@@ -129,8 +132,8 @@ export default function IncomeTaxCalculatorPage() {
                         <div className={styles.heroLeft}>
                             <DynamicHeading
                                 content={[
-                                    { title: "Free Income Tax Calculator.", color: "color-white", className: "f-7" },
-                                    { title: " Calculate Income Tax Online Instantly", color: "color-white", className: "f-7" },
+                                    { title: "ITR Calculator - ", color: "color-white", className: "f-7" },
+                                    { title: " Calculate Your Income Tax for FY 2026-27", color: "color-white", className: "f-7" },
                                 ]}
                                 headingTag="h1"
                             />

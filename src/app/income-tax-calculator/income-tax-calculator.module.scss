@@ -52,6 +52,14 @@
   padding-bottom: 60px;
 }
 
+.heroBgImage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  // opacity: 0.2;
+  z-index: 0;
+}
+
 .heroBgOverlay {
   position: absolute;
   inset: 0;
@@ -73,7 +81,7 @@
 
 .heroInner {  
   position: relative;
-  z-index: 5;
+  // z-index: 5;
 }
 
 .breadcrumb {
@@ -175,12 +183,12 @@
 }
 
 .calcCardHead {
-  background: linear-gradient(90deg, $color-equity-blue, darken($color-equity-blue, 10%));
+  background: $color-blue-100;
   padding: 20px 24px;
 
   p {
     font-size: 12.5px;
-    color: $color-white-73;
+    color: $color-white;
     margin-top: 2px;
     letter-spacing: 0;
   }
@@ -600,15 +608,16 @@
 }
 
 .disclaimer {
-  font-size: 11.5px;
-  color: $color-white-73;
+  font-size: 12px;
+  color: $color-black-200;
   text-align: center;
   line-height: 1.7;
   max-width: 800px;
   margin: 0 auto;
   padding-bottom: 8px;
+  font-weight: 500; 
 
-  strong { color: $color-white-c4; }
+  strong { color: $color-black-200;font-weight: 700; }
 }
 
 // ── PAGE CONTENT ─────────────────────────────────────────────────────────────
