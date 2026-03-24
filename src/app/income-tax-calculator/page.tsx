@@ -14,8 +14,8 @@ import IncomeTaxSlabTable from "@/src/components/income-tax-calculator/IncomeTax
 
 // Hooks & Types & Utils
 import { useTaxCalculator, computeTax } from "@/hooks/useTaxCalculator"
-import { Regime, FY, AgeGroup, SlabRow } from "@/src/types/income-tax"
-import { fc, raw } from "@/src/utils/income-tax-utils"
+import { Regime, SlabRow } from "@/src/types/income-tax"
+import { raw } from "@/src/utils/income-tax-utils"
 import { faqData } from "./data"
 import styles from "./income-tax-calculator.module.scss"
 
@@ -136,7 +136,7 @@ export default function IncomeTaxCalculatorPage() {
                     <div className={styles.mainContent}>
                         {/* ── Income Tax Slabs ── */}
                         <div id="slabs">
-                            <DynamicHeading content={[{ title: `Income Tax Slab Rates in India`, color: "color-main-black", className: "fs-28 mb-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: `Income Tax Slab Rates in India`, color: "color-main-black", className: "fs-28 mb-4 f-7" }]} headingTag="h2" />
                         </div>
 
                         <DynamicHeading
@@ -163,7 +163,7 @@ export default function IncomeTaxCalculatorPage() {
                         )}
 
                         <div id="how-calculated">
-                            <DynamicHeading content={[{ title: "How Tax Is Calculated Step by Step", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "How Tax Is Calculated Step by Step", color: "color-main-black", className: " my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <DynamicHeading content={[{ title: "Income tax in India is calculated in a sequence. Here is the basic step-by-step method used for salaried individuals:", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
                         {[
@@ -187,12 +187,12 @@ export default function IncomeTaxCalculatorPage() {
                         ))}
 
                         <div id="surcharge">
-                            <DynamicHeading content={[{ title: "Surcharge in Income Tax", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "Surcharge in Income Tax", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <DynamicHeading content={[{ title: "Surcharge is the extra charge payable on income tax. It is a charge added for taxpayers with high incomes. Surcharge is calculated as a percentage of the income tax that is already payable by the tax assessee. Usually, taxpayers with high incomes are required to pay a surcharge on income tax. If taxpayers cross specific income thresholds, they are liable to pay a surcharge on income tax.", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
 
                         <div id="surcharge-rates">
-                            <DynamicHeading content={[{ title: "Surcharge Rates", color: "color-main-black", className: "fs-22 mb-3" }]} headingTag="h5" />
+                            <DynamicHeading content={[{ title: "Surcharge Rates", color: "color-main-black", className: "mb-3" }]} headingTag="h3" />
                         </div>
                         <ul className={styles.contentList}>
                             <li><strong>10% of income tax</strong> if total income &gt; ₹50 Lakhs and &lt; ₹1 crore.</li>
@@ -203,7 +203,7 @@ export default function IncomeTaxCalculatorPage() {
                         <DynamicHeading content={[{ title: "Note: The highest surcharge rate is 25% under the New Tax regime, and additionally, 4% of health and education cess is added in income tax liability of the taxpayer.", color: "color-black-200" }]} headingTag="p" className={styles.slabFootnote} />
 
                         <div id="rebate">
-                            <DynamicHeading content={[{ title: "Rebate under Income Tax in India (Rebate u/s 87A)", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "Rebate under Income Tax in India (Rebate u/s 87A)", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <DynamicHeading content={[{ title: "When a taxpayer’s total taxable income falls within the prescribed limit, they can claim a rebate under Section 87A to reduce their tax liability to zero. Under the new tax regime, the rebate has been increased to ₹60,000. For FY 2026–27, the applicable rebate limits are as follows:", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
                         <div className={styles.tblWrap} style={{ maxWidth: '500px' }}>
@@ -222,7 +222,7 @@ export default function IncomeTaxCalculatorPage() {
                         </div>
 
                         <div id="comparison">
-                            <DynamicHeading content={[{ title: "Old Tax Regime Vs New Tax Regime", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "Old Tax Regime Vs New Tax Regime", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <DynamicHeading content={[{ title: "The choice between Old and New regimes depends on how much you claim in deductions. If your total deductions exceed ~₹3.75 lakh, the old regime generally saves more. Our calculator shows you the exact difference for your numbers.", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
                         <div className={styles.tblWrap}>
@@ -250,23 +250,23 @@ export default function IncomeTaxCalculatorPage() {
                         </div>
 
                         <div id="how-to-calculate" style={{ marginBottom: "10px" }}>
-                            <DynamicHeading content={[{ title: "How to Calculate Income Tax of a Salaried Person?", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "How to Calculate Income Tax of a Salaried Person?", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <div className="mb-4">
-                            <DynamicHeading content={[{ title: "Old Regime", color: "color-main-black", className: "fs-22 mb-3" }]} headingTag="h5" />
+                            <DynamicHeading content={[{ title: "Old Regime", color: "color-main-black", className: "mb-3" }]} headingTag="h3" />
                             <div className={styles.contentImgWrap}>
                                 <Image src="/images/tax-calc/old-tax-regime-calc.webp" alt="How to calculate income tax under the Old Regime" width={900} height={500} className={styles.contentImg} />
                             </div>
                         </div>
                         <div className="mb-5">
-                            <DynamicHeading content={[{ title: "New Regime", color: "color-main-black", className: "fs-22 mb-3" }]} headingTag="h5" />
+                            <DynamicHeading content={[{ title: "New Regime", color: "color-main-black", className: "mb-3" }]} headingTag="h3" />
                             <div className={styles.contentImgWrap}>
                                 <Image src="/images/tax-calc/new-tax-regime-calc.webp" alt="How to calculate income tax under the New Regime" width={900} height={500} className={styles.contentImg} />
                             </div>
                         </div>
 
                         <div id="benefits">
-                            <DynamicHeading content={[{ title: "What are the Benefits of using the Income Tax calculator?", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "What are the Benefits of using the Income Tax calculator?", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <DynamicHeading content={[{ title: "Key benefits of using the EnKash Income Tax Calculator include:", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
                         <ol className={styles.contentList}>
@@ -278,10 +278,10 @@ export default function IncomeTaxCalculatorPage() {
                         </ol>
 
                         <div id="exemptions">
-                            <DynamicHeading content={[{ title: "Income Sources Exempted Under the New Tax Regime", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "Income Sources Exempted Under the New Tax Regime", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <DynamicHeading content={[{ title: "While calculating the income tax, there are several income sources that are exempted i.e., income from these sources is tax-free, you can claim exemptions on this income. It provides relief to the taxpayers.", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
-                        <DynamicHeading content={[{ title: "Some key Exempted income sources are:", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
+                        <DynamicHeading content={[{ title: "Some key Exempted income sources are:", color: "color-main-black f-6" }]} headingTag="p" />
                         <ol className={styles.contentList}>
                             <li><strong>Agriculture Income</strong>: Agriculture income is fully exempted in India under section 10(1) of the Income Tax Act.</li>
                             <li><strong>Gratuity</strong>: Gratuity is tax-exempt under section 10(10) of the Income Tax Act, up to the maximum amount of 20 Lakhs for private employees and is completely exempted for Government employees.</li>
@@ -293,7 +293,7 @@ export default function IncomeTaxCalculatorPage() {
                         </ol>
 
                         <div id="deductions">
-                            <DynamicHeading content={[{ title: "Deductions Under the Old Tax Regime", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
+                            <DynamicHeading content={[{ title: "Deductions Under the Old Tax Regime", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <DynamicHeading content={[{ title: "The old regime allows several deductions that can significantly reduce your taxable income. These deductions are:", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
                         <div className={styles.tblWrap}>
