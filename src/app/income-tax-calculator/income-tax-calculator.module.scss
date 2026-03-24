@@ -766,6 +766,10 @@
     font-size: 13.5px;
     white-space: nowrap;
 
+    @include for-laptops{
+      text-align: left;
+    }
+
     &:first-child {
       position: sticky;
       left: 0;
