@@ -7,14 +7,14 @@ const HeroSEOContent: React.FC = () => {
         <>
             <DynamicHeading
                 content={[
-                    { title: "ITR Calculator - ", color: "color-white", className: "f-7" },
-                    { title: " Calculate Your Income Tax for FY 2026-27", color: "color-white", className: "f-7" },
+                    { title: "ITR Calculator - ", color: "color-black-200", className: "f-7" },
+                    { title: " Calculate Your Income Tax for FY 2026-27", color: "color-black-200", className: "f-7" },
                 ]}
                 headingTag="h1"
             />
             <div className={styles.heroSection}>
-                <DynamicHeading content={[{ title: "Calculating income tax in India is complex. You need to consider exemptions, allowances, tax-free components, different tax slabs, and income from multiple sources. If you have not studied taxation, applying the correct slab rates and rules can be difficult.", color: "color-white", className: "f-4 opacity-70" }]} headingTag="p" />
-                <DynamicHeading content={[{ title: "With the EnKash Income Tax Calculator, you can calculate your income tax easily by entering a few key details. The tool is designed to help you estimate your tax liability based on the latest applicable slab rates in India so that you can plan your finances with more clarity and confidence.", color: "color-white", className: "f-4 opacity-70" }]} headingTag="p" />
+                <DynamicHeading content={[{ title: "Calculating income tax in India is complex. You need to consider exemptions, allowances, tax-free components, different tax slabs, and income from multiple sources. If you have not studied taxation, applying the correct slab rates and rules can be difficult.", color: "color-black-200", className: "f-4 opacity-70" }]} headingTag="p" />
+                <DynamicHeading content={[{ title: "With the EnKash Income Tax Calculator, you can calculate your income tax easily by entering a few key details. The tool is designed to help you estimate your tax liability based on the latest applicable slab rates in India so that you can plan your finances with more clarity and confidence.", color: "color-black-200", className: "f-4 opacity-70" }]} headingTag="p" />
             </div>
 
             {[
@@ -34,9 +34,9 @@ const HeroSEOContent: React.FC = () => {
                         "1. Select your tax regime: New (default) or Old.",
                         "2. Enter your annual salary, other income, and rental income.",
                         [
-                            { title: "3. Under the Old Regime, enter deductions: 80C, ", color: "color-white" },
-                            { title: "HRA", color: "color-white text-decoration-underline", link: "/resources/blog/what-is-hra-in-salary" },
-                            { title: ", 80D, home loan interest, NPS, etc.", color: "color-white" },
+                            { title: "3. Under the Old Regime, enter deductions: 80C, ", color: "color-black-200" },
+                            { title: "HRA", color: "color-black-200 text-decoration-underline", link: "/resources/blog/what-is-hra-in-salary" },
+                            { title: ", 80D, home loan interest, NPS, etc.", color: "color-black-200" },
                         ],
                         "4. Click Calculate My Tax to instantly see a detailed breakdown.",
                         "The calculator will display: taxable income, income tax, cess, Gross Salary, net salary income, and Total Tax payable in both regimes."
@@ -47,9 +47,9 @@ const HeroSEOContent: React.FC = () => {
                     p: [
                         "For salaried individuals under the New Regime:",
                         [
-                            { title: "• Taxable Income = ", color: "color-white" },
-                            { title: "Gross Income ", color: "color-white text-decoration-underline", link: "/resources/blog/what-is-gross-salary" },
-                            { title: " - Standard Deduction (₹75,000)", color: "color-white" }
+                            { title: "• Taxable Income = ", color: "color-black-200" },
+                            { title: "Gross Income ", color: "color-black-200 text-decoration-underline", link: "/resources/blog/what-is-gross-salary" },
+                            { title: " - Standard Deduction (₹75,000)", color: "color-black-200" }
                         ],
                         "• Income Tax = Tax as per slab rates on taxable income",
                         "• Total Tax = Tax + Surcharge + 4% Health & Education Cess − Rebate u/s 87A"
@@ -57,17 +57,17 @@ const HeroSEOContent: React.FC = () => {
                 }
             ].map((sec, i) => (
                 <div key={i} className={styles.heroSection}>
-                    <DynamicHeading content={[{ title: sec.t, color: "color-white", className: "fs-22 mb-2" }]} headingTag="h5" />
+                    <DynamicHeading content={[{ title: sec.t, color: "color-black-200", className: "fs-22 mb-2" }]} headingTag="h5" />
                     {Array.isArray(sec.p) ? sec.p.map((para: any, pi: number) => (
                         <div key={pi} className="mb-3">
                             {typeof para === "string" ? (
-                                <DynamicHeading content={[{ title: para, color: "color-white", className: "f-4 opacity-70" }]} headingTag="p" />
+                                <DynamicHeading content={[{ title: para, color: "color-black-200", className: "f-4 opacity-70" }]} headingTag="p" />
                             ) : (
                                 <DynamicHeading content={para} headingTag="p" className="f-4 opacity-70" />
                             )}
                         </div>
                     )) : (
-                        <DynamicHeading content={[{ title: sec.p, color: "color-white", className: "f-4 opacity-70" }]} headingTag="p" />
+                        <DynamicHeading content={[{ title: sec.p, color: "color-black-200", className: "f-4 opacity-70" }]} headingTag="p" />
                     )}
                 </div>
             ))}

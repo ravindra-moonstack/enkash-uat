@@ -25,7 +25,7 @@ const TaxResultsBreakdown: React.FC<TaxResultsBreakdownProps> = ({
     return (
         <div className={styles.heroResults} ref={resultsRef}>
             <div className={styles.heroResultsHead}>
-                <DynamicHeading content={[{ title: "Your Tax Breakdown", color: "color-white", className: "f-7" }]} headingTag="h2" />
+                <DynamicHeading content={[{ title: "Your Tax Breakdown", color: "color-black-200", className: "f-7" }]} headingTag="h2" />
                 <p className={styles.heroResultsSubtitle}>Calculated for FY {fy} · {regime === "new" ? "New" : "Old"} Tax Regime selected</p>
             </div>
 

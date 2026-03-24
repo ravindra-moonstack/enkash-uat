@@ -84,19 +84,18 @@ export default function IncomeTaxCalculatorPage() {
         <div className={styles.page}>
             {/* ─── HERO (contains calculator + results) ─── */}
             <section className={`${styles.hero} ${styles.paddingTop} ${showResults ? styles.heroWithResults : ""}`}>
-                <div className={styles.heroBgImage}>
+                {/* <div className={styles.heroBgImage}>
                     <Image src="/images/tax-calc/ifscBg.webp" alt="Background" fill priority className="object-fit-cover" />
-                </div>
+                </div> */}
 
                 <div className={`${styles.heroInner} max-w-auto`}>
                     <CustomBreadcrumb
-                        linkColor="allWhite"
+                        linkColor="allBlack"
                         items={[
                             { name: "Home", url: "/" },
                             { name: "Income Tax Calculator", url: "/income-tax-calculator" },
                         ]}
                     />
-
                     <div className={styles.heroLayout}>
                         <div className={styles.heroLeft}>
                             <HeroSEOContent />
@@ -222,9 +221,9 @@ export default function IncomeTaxCalculatorPage() {
                                         ["Standard Deduction", "₹50,000", "₹75,000"],
                                         ["Basic Exemption Limit", "₹2.5L / ₹3L / ₹5L (age-based)", "₹3,00,000 for all ages"],
                                         ["Section 87A Rebate", "₹12,500 for income ≤ ₹5L", "₹60,000 for income ≤ ₹12L"],
-                                        ["Section 80C Deductions", "Up to ₹25,000", "Not available"],
+                                        ["Section 80C Deductions", "Up to ₹1.5L", "Not available"],
                                         ["HRA Exemption", "Available", "Not available"],
-                                        ["Section 80D (Health Ins.)", "₹25,000–₹50,000", "Not available"],
+                                        ["Section 80D (Health Ins.)", "₹50,000", "Not available"],
                                         ["NPS Extra 80CCD(1B)", "₹50,000 additional", "Not available"],
                                         ["Home Loan Interest (24b)", "Up to ₹2,00,000", "Not available"],
                                         ["Max Surcharge Rate", "37% (income above ₹5 crore)", "25% (Capped)"],
@@ -290,9 +289,9 @@ export default function IncomeTaxCalculatorPage() {
                                 </thead>
                                 <tbody>
                                     {[
-                                        ["80C", "Tax-Saving Investments", "₹25,000", "PPF, ELSS, LIC, EPF, NSC, 5-yr FD, Home Loan Principal"],
+                                        ["80C", "Tax-Saving Investments", "₹1,50,000", "PPF, ELSS, LIC, EPF, NSC, 5-yr FD, Home Loan Principal"],
                                         ["80CCD(1B)", "Additional NPS Contribution", "₹50,000", "Over and above the ₹1.5L limit under 80C"],
-                                        ["80D", "Health Insurance Premium", "₹25K / ₹50K", "Medical insurance for self, family, and parents"],
+                                        ["80D", "Health Insurance Premium", "₹50,000", "Medical insurance for self, family, and parents"],
                                         ["24(b)", "Home Loan Interest", "₹2,00,000", "Interest on loan for self-occupied property"],
                                         ["10(13A)", "HRA Exemption", "Calculated", "Actual HRA or 40–50% of basic (metro vs non-metro)"],
                                         ["80E", "Education Loan Interest", "No upper limit", "Interest on higher education loan (max 8 years)"],
