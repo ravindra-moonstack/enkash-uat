@@ -21,7 +21,23 @@ const calculatorSchema = {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "INR"
-    }
+    }, "creator": {
+        "@type": "Organization",
+        "name": "EnKash",
+        "url": "https://www.enkash.com"
+    },
+    "areaServed": {
+        "@type": "Country",
+        "name": "India"
+    },
+    "featureList": [
+        "Old vs New Tax Regime Comparison",
+        "FY 2026-27 Updated Slab Rates",
+        "Section 87A Rebate Calculation",
+        "Surcharge and 4% Cess Calculation",
+        "Standard Deduction Support",
+        "Instant Tax Breakdown"
+    ]
 }
 
 const faqSchema = {

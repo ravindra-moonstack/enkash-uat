@@ -1,42 +1,12 @@
 import { useState, useCallback } from "react"
 
-// Types
-export type Regime = "new" | "old"
-export type FY = "2026-27" | "2025-26"
-export type AgeGroup = "0-60" | "60-80" | "80+"
-
-export interface TaxResult {
-  gSal: number
-  sd: number
-  nSal: number
-  hp: number
-  gtiN: number
-  ded: number
-  taxable: number
-  taxBefore: number
-  rebate: number
-  sc: number
-  cess: number
-  total: number
-}
-
-export interface FormState {
-  salary: string
-  exemptAllowances: string
-  interestIncome: string
-  rentalIncome: string
-  hlRented: string
-  hlSelf: string
-  digitalAsset: string
-  s80C: string
-  s80D: string
-  s80G: string
-  s80E: string
-  s80TTA: string
-  s80CCD_old: string
-  s80CCD_new: string
-  otherDed: string
-}
+import {
+  Regime,
+  FY,
+  AgeGroup,
+  TaxResult,
+  FormState,
+} from "@/src/types/income-tax"
 
 export interface Slab {
   min: number
@@ -118,8 +88,8 @@ export const computeTax = (
   const dig = raw(form.digitalAsset)
 
   // Deductions calculation
-  const c80C = Math.min(raw(form.s80C), 25000)
-  const c80D = Math.min(raw(form.s80D), 100000)
+  const c80C = Math.min(raw(form.s80C), 150000)
+  const c80D = Math.min(raw(form.s80D), 50000)
   const c80CCD = isNew ? raw(form.s80CCD_new) : raw(form.s80CCD_old)
 
   const exempt = isNew ? 0 : raw(form.exemptAllowances)
