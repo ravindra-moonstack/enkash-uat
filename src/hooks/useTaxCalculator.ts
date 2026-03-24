@@ -88,8 +88,8 @@ export const computeTax = (
   const dig = raw(form.digitalAsset)
 
   // Deductions calculation
-  const c80C = Math.min(raw(form.s80C), 25000)
-  const c80D = Math.min(raw(form.s80D), 100000)
+  const c80C = Math.min(raw(form.s80C), 150000)
+  const c80D = Math.min(raw(form.s80D), 50000)
   const c80CCD = isNew ? raw(form.s80CCD_new) : raw(form.s80CCD_old)
 
   const exempt = isNew ? 0 : raw(form.exemptAllowances)

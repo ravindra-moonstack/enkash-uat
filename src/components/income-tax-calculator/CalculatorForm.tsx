@@ -87,8 +87,8 @@ const CalculatorForm: React.FC<CalculatorFormProps> = ({
                         <div className={styles.sectionDivider}><span>Deductions & Exemptions — Old Regime</span></div>
                         <div className={styles.infoOrange}>Tip: Maximize deductions below to reduce your taxable income. These are <strong>not available</strong> in the New Regime.</div>
                         <div className={styles.formRow}>
-                            <TaxInput label="Section 80C" hint="Max ₹25K" value={form.s80C} onChange={(v) => handleInputChange("s80C", v)} />
-                            <TaxInput label="Section 80D" hint="Medical, Max ₹1L" value={form.s80D} onChange={(v) => handleInputChange("s80D", v)} />
+                            <TaxInput label="Section 80C" hint="Max ₹1.5L" value={form.s80C} onChange={(v) => handleInputChange("s80C", v)} />
+                            <TaxInput label="Section 80D" hint="Medical, Max ₹50K" value={form.s80D} onChange={(v) => handleInputChange("s80D", v)} />
                         </div>
                         <div className={styles.formRow}>
                             <TaxInput label="Section 80G — Donations" value={form.s80G} onChange={(v) => handleInputChange("s80G", v)} />
