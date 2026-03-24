@@ -166,25 +166,15 @@ export default function IncomeTaxCalculatorPage() {
                             <DynamicHeading content={[{ title: "How Tax Is Calculated Step by Step", color: "color-main-black", className: " my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <DynamicHeading content={[{ title: "Income tax in India is calculated in a sequence. Here is the basic step-by-step method used for salaried individuals:", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
-                        {[
-                            ["Calculate gross income", "Add salary income, rental income, interest income, and any other taxable income."],
-                            ["Subtract eligible deductions", "Under the old tax regime, subtract deductions such as Section 80C, 80D, 80CCD(1B), HRA exemption, and home loan interest, wherever applicable."],
-                            ["Apply the standard deduction", "Reduce the applicable standard deduction from salary income."],
-                            ["Apply slab rates", "Calculate tax based on the income tax slabs under the selected tax regime."],
-                            ["Add surcharge", "If total income crosses the prescribed threshold, add surcharge as applicable."],
-                            ["Add Health and Education Cess", "Add 4% cess on the income tax plus surcharge."],
-                            ["Apply the rebate under Section 87A", "If your taxable income falls within the eligible limit, reduce tax liability by the applicable rebate."]
-                        ].map((step, idx) => (
-                            <DynamicHeading
-                                key={idx}
-                                content={[
-                                    { title: `${idx + 1}. ${step[0]}: `, color: "color-main-black", className: "font-weight-bold" },
-                                    { title: step[1], color: "color-main-grey" }
-                                ]}
-                                headingTag="p"
-                                className={styles.contentP}
-                            />
-                        ))}
+                        <ul className={styles.contentList}>
+                            <li><strong>Calculate gross income</strong>: Add salary income, rental income, interest income, and any other taxable income.</li>
+                            <li><strong>Subtract eligible deductions</strong>: Under the old tax regime, subtract deductions such as Section 80C, 80D, 80CCD(1B), HRA exemption, and home loan interest, wherever applicable.</li>
+                            <li><strong>Apply the standard deduction</strong>: Reduce the applicable standard deduction from salary income.</li>
+                            <li><strong>Apply slab rates</strong>: Calculate tax based on the income tax slabs under the selected tax regime.</li>
+                            <li><strong>Add surcharge</strong>: If total income crosses the prescribed threshold, add surcharge as applicable.</li>
+                            <li><strong>Add Health and Education Cess</strong>: Add 4% cess on the income tax plus surcharge.</li>
+                            <li><strong>Apply the rebate under Section 87A</strong>: If your taxable income falls within the eligible limit, reduce tax liability by the applicable rebate.</li>
+                        </ul>
 
                         <div id="surcharge">
                             <DynamicHeading content={[{ title: "Surcharge in Income Tax", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
@@ -255,42 +245,42 @@ export default function IncomeTaxCalculatorPage() {
                         <div className="mb-4">
                             <DynamicHeading content={[{ title: "Old Regime", color: "color-main-black", className: "mb-3" }]} headingTag="h3" />
                             <div className={styles.contentImgWrap}>
-                                <Image src="/images/tax-calc/old-tax-regime-calc.webp" alt="How to calculate income tax under the Old Regime" width={900} height={500} className={styles.contentImg} />
+                                <Image src="/images/tax-calc/old-tax.webp" alt="How to calculate income tax under the Old Regime" width={900} height={500} className={styles.contentImg} />
                             </div>
                         </div>
                         <div className="mb-5">
                             <DynamicHeading content={[{ title: "New Regime", color: "color-main-black", className: "mb-3" }]} headingTag="h3" />
                             <div className={styles.contentImgWrap}>
-                                <Image src="/images/tax-calc/new-tax-regime-calc.webp" alt="How to calculate income tax under the New Regime" width={900} height={500} className={styles.contentImg} />
+                                <Image src="/images/tax-calc/new-tax.webp" alt="How to calculate income tax under the New Regime" width={900} height={500} className={styles.contentImg} />
                             </div>
                         </div>
 
                         <div id="benefits">
                             <DynamicHeading content={[{ title: "What are the Benefits of using the Income Tax calculator?", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
                         </div>
-                        <DynamicHeading content={[{ title: "Key benefits of using the EnKash Income Tax Calculator include:", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
-                        <ol className={styles.contentList}>
+                        <DynamicHeading content={[{ title: "Key benefits of using the EnKash Income Tax Calculator include:", color: "color-main-grey f-4" }]} headingTag="p" className={styles.contentP} />
+                        <ul className={styles.contentList}>
                             <li><strong>Accuracy</strong>: The Income Tax calculator gives you accurate information about your tax liability.</li>
                             <li><strong>Regime Comparison</strong>: You can easily compare the tax liability under the old tax regime and the New Tax regime, which will help you to make an informed decision.</li>
                             <li><strong>Tax Planning</strong>: This calculator helps you to plan your investments accordingly.</li>
                             <li><strong>Fast and Simplified</strong>: The income tax calculator helps you calculate your tax quickly and accurately.</li>
                             <li><strong>User-friendly</strong>: It has a user-friendly interface that allows taxpayers to calculate their tax liability easily.</li>
-                        </ol>
+                        </ul>
 
                         <div id="exemptions">
                             <DynamicHeading content={[{ title: "Income Sources Exempted Under the New Tax Regime", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />
                         </div>
                         <DynamicHeading content={[{ title: "While calculating the income tax, there are several income sources that are exempted i.e., income from these sources is tax-free, you can claim exemptions on this income. It provides relief to the taxpayers.", color: "color-main-grey" }]} headingTag="p" className={styles.contentP} />
-                        <DynamicHeading content={[{ title: "Some key Exempted income sources are:", color: "color-main-black f-6" }]} headingTag="p" />
-                        <ol className={styles.contentList}>
+                        <DynamicHeading content={[{ title: "Some key Exempted income sources are:", color: "color-main-black f-6" }]} headingTag="p" className="mb-2" />
+                        <ul className={styles.contentList}>
                             <li><strong>Agriculture Income</strong>: Agriculture income is fully exempted in India under section 10(1) of the Income Tax Act.</li>
                             <li><strong>Gratuity</strong>: Gratuity is tax-exempt under section 10(10) of the Income Tax Act, up to the maximum amount of 20 Lakhs for private employees and is completely exempted for Government employees.</li>
                             <li><strong>Provident Fund Withdrawal</strong>: Provident Fund withdrawal is generally tax-free if you have completed five continuous years of service.</li>
-                            <li><strong><Link href="/resources/blog/what-is-leave-encashment" className="color-equity-blue text-decoration-underline">Leave Encashment</Link></strong>: For Government employees, leave encashment is fully exempted, whereas for non-government employees it is exempted up to lifetime limit of 25 lakh, under section 10(10AA) of the Income Tax Act.</li>
+                            <li><strong><Link href="/resources/blog/what-is-leave-encashment" className="color-equity-blue text-decoration-underline f-6">Leave Encashment</Link></strong>: For Government employees, leave encashment is fully exempted, whereas for non-government employees it is exempted up to lifetime limit of 25 lakh, under section 10(10AA) of the Income Tax Act.</li>
                             <li><strong>Compensation for Natural Calamities</strong>: Compensation for natural calamities from the government authorities is fully exempted under Section 10(10BC) of the Income Tax Act.</li>
                             <li><strong>Income from Minor Child</strong>: Income from a minor child is clubbed with the income of the parent, but parents can claim the exemption up to ₹1,500 in a financial year under section 10(32) of the Income Tax Act.</li>
                             <li><strong>Tax-free bonds</strong>: Interest earned from a special tax-free bond is exempted.</li>
-                        </ol>
+                        </ul>
 
                         <div id="deductions">
                             <DynamicHeading content={[{ title: "Deductions Under the Old Tax Regime", color: "color-main-black", className: "my-4 f-7" }]} headingTag="h2" />

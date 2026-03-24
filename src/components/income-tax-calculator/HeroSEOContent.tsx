@@ -37,12 +37,16 @@ const HeroSEOContent: React.FC = () => {
                             { title: "3. Under the Old Regime, enter deductions: 80C, ", color: "color-black-200" },
                             { title: "HRA", color: "color-black-200 text-decoration-underline", link: "/resources/blog/what-is-hra-in-salary" },
                             { title: ", 80D, home loan interest, NPS, etc.", color: "color-black-200" },
-                        ], [
+                        ],
+                        [
                             { title: "4. Click ", color: "color-black-200" },
-                            { title: "Calculate My Tax", color: "color-black-200 f-7", },
+                            { title: "Calculate My Tax", color: "color-black-200 fw-bold", },
                             { title: " to instantly see a detailed breakdown.", color: "color-black-200" },
                         ],
-                        "The calculator will display: taxable income, income tax, cess, Gross Salary, net salary income, and Total Tax payable in both regimes."
+                        [
+                            { title: "The calculator will display:", color: "color-black-200 fw-bold", },
+                            { title: " taxable income, income tax, cess, Gross Salary, net salary income, and Total Tax payable in both regimes.", color: "color-black-200" },
+                        ],
                     ]
                 },
                 {

@@ -33,7 +33,7 @@ const CalculatorForm: React.FC<CalculatorFormProps> = ({
     return (
         <div className={styles.calcCard}>
             <div className={styles.calcCardHead}>
-                <DynamicHeading content={[{ title: `Income Tax Calculator — FY ${fy}`, color: "color-white", className: "" }]} headingTag="h2" />
+                <DynamicHeading content={[{ title: `Income Tax Calculator — FY ${fy}`, color: "color-white", className: "fs-24 font-weight-bold  " }]} headingTag="p" className="mb-0" />
                 <DynamicHeading content={[{ title: `AY ${fy === "2026-27" ? "2027-28" : "2026-27"} · Updated with Union Budget 2026`, color: "color-white", className: "f-4" }]} headingTag="p" />
             </div>
             <div className={styles.calcCardBody}>
