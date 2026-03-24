@@ -301,7 +301,7 @@
 
 .hint {
   font-weight: 400;
-  color: $color-slate-grey;
+  color: $color-black-22;
   margin-left: 3px;
 }
 
@@ -750,6 +750,11 @@
   -webkit-overflow-scrolling: touch;
   border: 1px solid $color-black-10;
   margin: 16px 0 32px;
+  scrollbar-width: none; 
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   table {
     width: 100%;
@@ -762,18 +767,40 @@
     background: $color-equity-blue;
     color: $color-white;
     padding: 13px 16px;
-    text-align: left;
+    text-align: center;
     font-weight: 600;
     font-size: 13.5px;
+    white-space: nowrap;
+
+    &:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      background: $color-equity-blue;
+      text-align: left;
+    }
   }
 
-  tbody tr:nth-child(even) { background: $color-black-2; }
+  tbody tr:nth-child(even) { 
+    background: $color-black-2; 
+    td:first-child { background: $color-black-2; }
+  }
 
   tbody td {
     padding: 11px 16px;
     color: $color-main-grey;
     border-bottom: 1px solid $color-black-5;
     vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+
+    &:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      background: $color-white; 
+      text-align: left;
+    }
   }
 }
 
