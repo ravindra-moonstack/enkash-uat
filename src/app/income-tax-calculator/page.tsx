@@ -78,13 +78,13 @@ export default function IncomeTaxCalculatorPage() {
     // Slab table data — 3 age-group columns matching design
     // New Regime: same rates for all ages
     const newSlabRows = [
-        { range: "Up to ₹2,50,000", col1: "NIL", col2: "NIL", col3: "NIL" },
-        { range: "₹2,50,001 – ₹3,00,000", col1: "NIL", col2: "NIL", col3: "NIL" },
-        { range: "₹3,00,001 – ₹7,00,000", col1: "5%", col2: "5%", col3: "5%" },
-        { range: "₹7,00,001 – ₹10,00,000", col1: "10%", col2: "10%", col3: "10%" },
-        { range: "₹10,00,001 – ₹12,00,000", col1: "15%", col2: "15%", col3: "15%" },
-        { range: "₹12,00,001 – ₹15,00,000", col1: "20%", col2: "20%", col3: "20%" },
-        { range: "Above ₹15,00,000", col1: "30%", col2: "30%", col3: "30%" },
+        { range: "Up to ₹4,00,000", col1: "NIL", col2: "NIL", col3: "NIL" },
+        { range: "₹4,00,001 – ₹8,00,000", col1: "5%", col2: "5%", col3: "5%" },
+        { range: "₹8,00,001 – ₹12,00,000", col1: "10%", col2: "10%", col3: "10%" },
+        { range: "₹12,00,001 – ₹16,00,000", col1: "15%", col2: "15%", col3: "15%" },
+        { range: "₹16,00,001 – ₹20,00,000", col1: "20%", col2: "20%", col3: "20%" },
+        { range: "₹20,00,001 – ₹24,00,000", col1: "25%", col2: "25%", col3: "25%" },
+        { range: "Above ₹24,00,000", col1: "30%", col2: "30%", col3: "30%" },
     ]
 
     // Old Regime: varies by age group
@@ -522,8 +522,7 @@ export default function IncomeTaxCalculatorPage() {
                         </div>
 
 
-
-                        <div id="how-to-calculate">
+                        <div id="how-to-calculate" style={{ marginBottom: "10px" }}>
                             <DynamicHeading content={[{ title: "How to Calculate Income Tax of a Salaried Person?", color: "color-main-black", className: "fs-28 my-4" }]} headingTag="h4" />
                         </div>
                         <div className="mb-4">
