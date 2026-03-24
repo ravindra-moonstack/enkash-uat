@@ -4,6 +4,9 @@ import Script from "next/script"
 export const metadata: Metadata = {
     title: "Calculate Your Income Tax for FY 2026-27.",
     description: "Calculate income tax for FY 2026-27 instantly with EnKash Income Tax Calculator. Compare old vs new regime, check slabs, rebate u/s 87A & surcharge.",
+    alternates: {
+        canonical: "https://www.enkash.com/income-tax-calculator",
+    },
 }
 
 const calculatorSchema = {
