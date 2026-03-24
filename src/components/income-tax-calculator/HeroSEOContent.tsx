@@ -57,11 +57,11 @@ const HeroSEOContent: React.FC = () => {
                 }
             ].map((sec, i) => (
                 <div key={i} className={styles.heroSection}>
-                    <DynamicHeading content={[{ title: sec.t, color: "color-black-200", className: "fs-22 mb-2" }]} headingTag="h5" />
+                    <DynamicHeading content={[{ title: sec.t, color: "color-black-200", className: "mb-2" }]} headingTag="h2" />
                     {Array.isArray(sec.p) ? sec.p.map((para: any, pi: number) => (
                         <div key={pi} className="mb-3">
                             {typeof para === "string" ? (
-                                <DynamicHeading content={[{ title: para, color: "color-black-200", className: "f-4 opacity-70" }]} headingTag="p" />
+                                <DynamicHeading content={[{ title: para, color: "color-black-200", className: "f-4 opacity-70 " }]} headingTag="p" />
                             ) : (
                                 <DynamicHeading content={para} headingTag="p" className="f-4 opacity-70" />
                             )}
