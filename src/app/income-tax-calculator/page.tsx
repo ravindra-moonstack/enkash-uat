@@ -14,8 +14,8 @@ import IncomeTaxSlabTable from "@/src/components/income-tax-calculator/IncomeTax
 
 // Hooks & Types & Utils
 import { useTaxCalculator, computeTax } from "@/hooks/useTaxCalculator"
-import { Regime, FY, AgeGroup, SlabRow } from "@/src/types/income-tax"
-import { fc, raw } from "@/src/utils/income-tax-utils"
+import { Regime, SlabRow } from "@/src/types/income-tax"
+import { raw } from "@/src/utils/income-tax-utils"
 import { faqData } from "./data"
 import styles from "./income-tax-calculator.module.scss"
 
