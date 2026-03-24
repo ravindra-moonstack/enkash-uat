@@ -26,7 +26,7 @@ const TaxResultsBreakdown: React.FC<TaxResultsBreakdownProps> = ({
         <div className={styles.heroResults} ref={resultsRef}>
             <div className={styles.heroResultsHead}>
                 <DynamicHeading content={[{ title: "Your Tax Breakdown", color: "color-black-200", className: "f-7" }]} headingTag="h2" />
-                <p className={styles.heroResultsSubtitle}>Calculated for FY {fy} · {regime === "new" ? "New" : "Old"} Tax Regime selected</p>
+                <DynamicHeading content={[{ title: `Calculated for FY ${fy} · ${regime === "new" ? "New" : "Old"} Tax Regime selected`, color: "color-black-200" }]} headingTag="p" className={styles.heroResultsSubtitle} />
             </div>
 
             <RecommendedBox
@@ -72,9 +72,14 @@ const TaxResultsBreakdown: React.FC<TaxResultsBreakdownProps> = ({
                 })}
             </div>
 
-            <p className={styles.disclaimer}>
-                <strong>Disclaimer:</strong> Estimated tax per IT Act 1961 & Budget 2026. Surcharge applies above ₹50L. Rebate 87A: ₹60K (New, ≤₹12L) / ₹12.5K (Old, ≤₹5L). Consult a tax professional. Not financial/legal advice.
-            </p>
+            <DynamicHeading
+                content={[
+                    { title: "Disclaimer:", color: "color-black-200", className: "font-weight-bold mr-1" },
+                    { title: " Estimated tax per IT Act 1961 & Budget 2026. Surcharge applies above ₹50L. Rebate 87A: ₹60K (New, ≤₹12L) / ₹12.5K (Old, ≤₹5L). Consult a tax professional. Not financial/legal advice.", color: "color-black-200" }
+                ]}
+                headingTag="p"
+                className={styles.disclaimer}
+            />
         </div>
     )
 }
