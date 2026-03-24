@@ -24,11 +24,11 @@ const calculatorSchema = {
     }, "creator": {
         "@type": "Organization",
         "name": "EnKash",
-        "url": "https://www.enkash.com"
-    },
-    "areaServed": {
-        "@type": "Country",
-        "name": "India"
+        "url": "https://www.enkash.com",
+        "areaServed": {
+            "@type": "Country",
+            "name": "India"
+        }
     },
     "featureList": [
         "Old vs New Tax Regime Comparison",
