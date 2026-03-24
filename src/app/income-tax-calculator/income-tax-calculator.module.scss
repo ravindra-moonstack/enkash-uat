@@ -10,8 +10,8 @@
 
 // ── HERO ────────────────────────────────────────────────────────────────────
 .hero {
-  background: $color-equity-blue;
-  // background: linear-gradient(135deg, darken($color-equity-blue, 15%) 0%, $color-equity-blue 50%, lighten($color-equity-blue, 10%) 100%);
+  background: #EAEAEA;
+  color: $color-black-200;
   position: relative;
   overflow: hidden; 
   padding: 52px 40px 80px;
@@ -94,15 +94,15 @@
   list-style: none;
 
   a {
-    color: $color-white-73;
+    color: $color-black-200;
     text-decoration: none;
     transition: color 0.15s;
-    &:hover { color: $color-white; }
+    &:hover { color: $color-equity-blue; }
   }
 }
 
 .breadcrumbSep {
-  color: $color-white-1a;
+  color: $color-black-17;
 }
 
 .heroLayout {
@@ -119,7 +119,7 @@
 
 .heroSub {
   font-size: 16px !important;
-  color: $color-white-c4 !important;
+  color: $color-black-200 !important;
   line-height: 1.75 !important;
   margin-bottom: 32px !important;
   max-width: 520px;
@@ -130,7 +130,7 @@
   
   p {
     font-size: 14px;
-    color: $color-white-c4;
+    color: $color-black-200;
     line-height: 1.8;
     margin-bottom: 8px;
   }
@@ -144,11 +144,11 @@
 .heroList {
   padding-left: 18px;
   font-size: 14px;
-  color: $color-white-c4;
+  color: $color-black-200;
   line-height: 2;
   margin-bottom: 0;
 
-  strong { color: $color-white; }
+  strong { color: $color-black-200; }
 }
 
 // ── CALCULATOR CARD ─────────────────────────────────────────────────────────
@@ -301,7 +301,7 @@
 
 .hint {
   font-weight: 400;
-  color: $color-slate-grey;
+  color: $color-black-22;
   margin-left: 3px;
 }
 
@@ -420,7 +420,7 @@
 
 .heroResultsSubtitle {
   font-size: 14px;
-  color: $color-white-73;
+  color: $color-black-200;
   margin-top: 6px;
   letter-spacing: -0.02em;
 }
@@ -750,6 +750,11 @@
   -webkit-overflow-scrolling: touch;
   border: 1px solid $color-black-10;
   margin: 16px 0 32px;
+  scrollbar-width: none; 
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   table {
     width: 100%;
@@ -762,18 +767,40 @@
     background: $color-equity-blue;
     color: $color-white;
     padding: 13px 16px;
-    text-align: left;
+    text-align: center;
     font-weight: 600;
     font-size: 13.5px;
+    white-space: nowrap;
+
+    &:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      background: $color-equity-blue;
+      text-align: left;
+    }
   }
 
-  tbody tr:nth-child(even) { background: $color-black-2; }
+  tbody tr:nth-child(even) { 
+    background: $color-black-2; 
+    td:first-child { background: $color-black-2; }
+  }
 
   tbody td {
     padding: 11px 16px;
     color: $color-main-grey;
     border-bottom: 1px solid $color-black-5;
     vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+
+    &:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      background: $color-white; 
+      text-align: left;
+    }
   }
 }
 
@@ -818,7 +845,7 @@
 
   p {
     font-size: 12px;
-    color: $color-white-73;
+    color: $color-black-200;
     margin-top: 4px;
   }
 }
