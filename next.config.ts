@@ -11,14 +11,7 @@ const nextConfig: NextConfig = {
 
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: [
-      "@gsap/react",
-      "react-icons",
-      "lodash-es",
-      "react-bootstrap",
-      "@novemberfiveco/lottie-react-light",
-      "lucide-react",
-    ],
+    optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
   },
 
   compiler: {
@@ -37,8 +30,22 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  webpack(config) {
+  webpack(config, { dev, isServer }) {
     config.infrastructureLogging = { level: "error" }
+
+    if (!dev && !isServer) {
+      config.optimization.splitChunks.cacheGroups = {
+        default: false,
+        vendors: false,
+        styles: {
+          name: "styles",
+          type: "css/mini-extract",
+          chunks: "all",
+          enforce: true,
+        },
+      }
+    }
+
     return config
   },
 
