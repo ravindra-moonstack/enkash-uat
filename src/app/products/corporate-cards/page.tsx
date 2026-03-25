@@ -300,7 +300,6 @@ const CorporateCards = (): React.JSX.Element => {
               color: "color-alternate-grey",
             },
           ],
-          headingTag: "p",
           className: "f-5 mb-3 text-center",
         }}
         stats={statsData}

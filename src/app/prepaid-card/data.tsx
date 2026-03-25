@@ -217,7 +217,6 @@ const counterHeadingData = {
       title: "Why Businesses Choose EnKash Prepaid Cards ", color: "color-alternate-grey"
     },
   ],
-  headingTag: "h2",
   className: "f-5 mb-3 text-center",
 }
 const statsData = [
