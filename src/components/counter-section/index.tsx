@@ -16,7 +16,12 @@ interface StatItem {
 interface StatsSectionProps {
     titleContent?: {
         content: { title: string; color: string }[]
-        headingTag?: keyof JSX.IntrinsicElements | string
+        headingTag?: keyof JSX.IntrinsicElements
+        className?: string
+    };
+    preTitle?: {
+        content: { title: string; color: string }[]
+        headingTag?: keyof JSX.IntrinsicElements
         className?: string
     };
     stats: StatItem[];
@@ -26,6 +31,7 @@ interface StatsSectionProps {
 
 const CounterSection: React.FC<StatsSectionProps> = ({
     titleContent,
+    preTitle,
     stats,
     className = '',
     backgroundImage,
@@ -71,10 +77,17 @@ const CounterSection: React.FC<StatsSectionProps> = ({
                 />
             )}
             <div className={'max-w-auto'}>
+                {preTitle && (
+                    <DynamicHeading
+                        content={preTitle.content}
+                        headingTag={preTitle.headingTag || "p"}
+                        className={preTitle.className}
+                    />
+                )}
                 {titleContent && (
                     <DynamicHeading
                         content={titleContent.content}
-                        headingTag={"h2"}
+                        headingTag={titleContent.headingTag || "h2"}
                         className={titleContent.className || "f-5 mb-4 mb-md-5 text-center"}
                     />
                 )}
@@ -180,7 +193,7 @@ const CounterCard: React.FC<CounterCardProps> = ({ stat, isVisible, delay }) => 
                 className={`mb-1 `}
             />
             <DynamicHeading
-                content={[{ text: stat.label, className: 'subHeading' }]}
+                content={[{ text: stat.label, className: 'color-white subHeading' }]}
                 headingTag="p"
                 className={'mb-0'}
             />
