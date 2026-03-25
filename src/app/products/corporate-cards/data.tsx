@@ -74,7 +74,6 @@ const counterHeadingData = {
       title: "The Corporate Card Platform That Just Works ", color: "color-alternate-grey"
     },
   ],
-  headingTag: "h2",
   className: "f-5 mb-3 text-center",
 }
 const spendAnalyticsData = [
