@@ -156,27 +156,4 @@
 
 .buttonContainer {
   width: max-content;
-
-  .connectWithUs {
-    a {
-      box-shadow: 0px 4px 44px 0px #0000001f;
-      border: 2px solid $color-white;
-      background-color: $color-white;
-      color: $color-equity-blue;
-      font-weight: 700;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 16px;
-      border-radius: 8px;
-      align-items: center;
-      font-size: 14px;
-
-      @include for-laptops {
-        padding: 8px 20px;
-        font-size: 16px;
-        justify-content: center;
-      }
-    }
-  }
 }
