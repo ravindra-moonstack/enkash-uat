@@ -206,6 +206,20 @@
     }
   }
 
+  &.white-without-hover {
+    box-shadow: 0px 4px 44px 0px #0000001f;
+    border: 2px solid $color-white;
+    background-color: $color-white;
+    color: $color-equity-blue;
+    transition: none; // Disable transitions to keep it static
+
+    &:hover {
+      background-color: $color-white; // Static on hover
+      color: $color-equity-blue;
+      border: 2px solid $color-white;
+    }
+  }
+
   img {
     display: inline-block;
     // height: auto;

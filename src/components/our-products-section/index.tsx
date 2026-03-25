@@ -1,7 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import styles from "./style.module.scss"
-import { DynamicHeading } from ".."
+import { CommanButton, DynamicHeading } from ".."
+import { JSX } from "react"
 
 interface Product {
   id: number
@@ -19,16 +20,32 @@ interface Product {
 
 interface ProductsSectionProps {
   sectionTitle: string
+  preTitle?: {
+    content: {
+      title: string
+      color: string
+    }[]
+    headingTag: keyof JSX.IntrinsicElements
+    className: string
+  }
   products: Product[]
 }
 
 export default function ProductsSection({
   sectionTitle,
+  preTitle,
   products,
 }: ProductsSectionProps) {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+        {preTitle && (
+          <DynamicHeading
+            content={preTitle.content}
+            headingTag={preTitle.headingTag}
+            className={preTitle.className}
+          />
+        )}
         <DynamicHeading
           content={[{ title: sectionTitle, color: "color-black" }]}
           headingTag="h2"
@@ -63,25 +80,8 @@ export default function ProductsSection({
                   <div className={styles.buttonContainer}>
                     <div className="d-md-block">
                       <div className={`connectWithUs ${styles.connectWithUs}`}>
-                        <Link href={product.button.connectUrl}>
-                          <DynamicHeading
-                            content={[
-                              {
-                                title: product.button.connectText,
-                                color: "color-equity-blue",
-                              },
-                            ]}
-                            headingTag="p"
-                            className="mb-0 f-5"
-                          />
-                          <Image
-                            src={product.button.blueArrow}
-                            alt="blue Arrow"
-                            width={15}
-                            height={15}
-                            className="ms-2"
-                          />
-                        </Link>
+
+                        <CommanButton title={product.button.connectText} theme="white" url={product.button.connectUrl} arrow />
                       </div>
                     </div>
                   </div>

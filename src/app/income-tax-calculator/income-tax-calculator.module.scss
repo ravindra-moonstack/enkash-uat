@@ -752,7 +752,8 @@
 
   table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     font-size: 14px;
     min-width: 600px;
   }
@@ -776,6 +777,7 @@
       z-index: 3;
       background: $color-equity-blue;
       text-align: left;
+      box-shadow: inset -1px 0 0 0 rgba(255, 255, 255, 0.3);
     }
   }
 
@@ -796,8 +798,9 @@
       position: sticky;
       left: 0;
       z-index: 2;
-      background: $color-white; 
+      background: $color-white;
       text-align: left;
+      box-shadow: inset -1px 0 0 0 $color-black-10;
     }
   }
 }
