@@ -1,6 +1,6 @@
 'use client';
 
-import { JSX, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './counterSection.module.scss';
 import { DynamicHeading } from '..';
 import Image from 'next/image';
@@ -16,12 +16,10 @@ interface StatItem {
 interface StatsSectionProps {
     titleContent?: {
         content: { title: string; color: string }[]
-        headingTag?: keyof JSX.IntrinsicElements
         className?: string
     };
     preTitle?: {
         content: { title: string; color: string }[]
-        headingTag?: keyof JSX.IntrinsicElements
         className?: string
     };
     stats: StatItem[];
@@ -80,14 +78,14 @@ const CounterSection: React.FC<StatsSectionProps> = ({
                 {preTitle && (
                     <DynamicHeading
                         content={preTitle.content}
-                        headingTag={preTitle.headingTag || "p"}
+                        headingTag={"p"}
                         className={preTitle.className}
                     />
                 )}
                 {titleContent && (
                     <DynamicHeading
                         content={titleContent.content}
-                        headingTag={titleContent.headingTag || "h2"}
+                        headingTag={"h2"}
                         className={titleContent.className || "f-5 mb-4 mb-md-5 text-center"}
                     />
                 )}
