@@ -292,7 +292,6 @@ const CorporateCards = (): React.JSX.Element => {
       </SuspenseLoading>
 
       <CounterSection
-        //@ts-expect-error
         titleContent={counterHeadingData}
         preTitle={{
           content: [
