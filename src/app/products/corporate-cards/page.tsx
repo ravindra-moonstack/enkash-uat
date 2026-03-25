@@ -76,6 +76,155 @@ const videoSchema = {
   embedUrl: `https://www.youtube.com/embed/${videoId}`,
 }
 
+const webSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.enkash.com/products/corporate-cards#webpage",
+      "url": "https://www.enkash.com/products/corporate-cards",
+      "name": "India’s First Unified Corporate Card Ecosystem | EnKash Corporate Cards",
+      "description": "EnKash Corporate Cards help businesses issue prepaid and credit corporate cards instantly, control spend in real time, eliminate employee reimbursements, and automate reconciliation on one RBI-licensed platform.",
+      "inLanguage": "en-IN",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.enkash.com/#website",
+        "url": "https://www.enkash.com/",
+        "name": "EnKash"
+      },
+      "about": {
+        "@id": "https://www.enkash.com/products/corporate-cards#product"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.enkash.com/path-to-corporate-cards-banner-image.jpg"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.enkash.com/#organization",
+      "name": "EnKash",
+      "url": "https://www.enkash.com/",
+      "logo": "https://www.enkash.com/path-to-logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/enkash/"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.enkash.com/products/corporate-cards#product",
+      "name": "EnKash Corporate Cards",
+      "description": "A unified corporate card platform for Indian businesses to issue prepaid and credit cards instantly, set spend controls, get real-time visibility, automate reconciliation, and eliminate reimbursements.",
+      "brand": {
+        "@type": "Brand",
+        "name": "EnKash"
+      },
+      "category": "Corporate Card Platform",
+      "url": "https://www.enkash.com/products/corporate-cards",
+      "image": [
+        "https://www.enkash.com/path-to-corporate-cards-banner-image.jpg"
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Startups, SMBs, Enterprises, Finance Teams, Operations Teams"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Card issuance time",
+          "value": "Under 60 seconds"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Spend visibility",
+          "value": "100% real-time visibility"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Reimbursements",
+          "value": "Zero employee reimbursements"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Merchant acceptance",
+          "value": "10 Million+ merchant acceptance points"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "License",
+          "value": "RBI-authorised PPI license"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Corporate Card Types and Use Cases",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Card Types",
+            "itemListElement": [
+              {
+                "@type": "Product",
+                "name": "Prepaid Corporate Cards",
+                "description": "Reloadable corporate cards with MCC locks, spend caps, channel controls, and policy compliance."
+              },
+              {
+                "@type": "Product",
+                "name": "Corporate Credit Cards",
+                "description": "Business credit cards with flexible limits, billing cycles, merchant controls, fraud protection, and rewards."
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Use Case Cards",
+            "itemListElement": [
+              {
+                "@type": "Product",
+                "name": "Meal Card",
+                "description": "Digital meal cards for employee meal benefits with nationwide acceptance."
+              },
+              {
+                "@type": "Product",
+                "name": "Fuel Card",
+                "description": "Corporate cards to control and track fuel expenses for travel and fleet spending."
+              },
+              {
+                "@type": "Product",
+                "name": "T&E Card",
+                "description": "Travel and entertainment cards with smart controls and real-time tracking."
+              },
+              {
+                "@type": "Product",
+                "name": "Virtual Card",
+                "description": "Secure virtual cards for one-time or recurring online payments."
+              },
+              {
+                "@type": "Product",
+                "name": "Purchase Card",
+                "description": "Pre-approved cards for procurement, vendor payments, and operational purchases."
+              },
+              {
+                "@type": "Product",
+                "name": "Digital Marketing Card",
+                "description": "Cards for managing online ad spends with limits and real-time spend visibility."
+              },
+              {
+                "@type": "Product",
+                "name": "SaaS Card",
+                "description": "Cards designed to manage software subscriptions and recurring SaaS renewals."
+              }
+            ]
+          }
+        ]
+      },
+      "provider": {
+        "@id": "https://www.enkash.com/#organization"
+      }
+    }
+  ]
+}
+
 export const metadata: Metadata = {
   title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
   description:
@@ -110,6 +259,12 @@ const CorporateCards = (): React.JSX.Element => {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
       />
+      <Script
+        id="web-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSchema) }}
+      />
       <CorporateHeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -143,6 +298,7 @@ const CorporateCards = (): React.JSX.Element => {
       </SuspenseLoading>
 
       <CounterSection
+        //@ts-ignore
         titleContent={counterHeadingData}
         preTitle={{
           content: [
@@ -206,152 +362,6 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
-
-
-      {/*
-      <div className={styles.features_section}>
-        <div className={` ${styles.rbi_section} max-w-auto`}>
-          <div>
-            <Image
-              src={rbiLogo}
-              alt="card background"
-              height={156}
-              width={156}
-              sizes="156px"
-              quality={75}
-              loading="lazy"
-            />
-          </div>
-
-          <div className={`${styles.title} text-center d-inline pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "RBI-Approved,",
-                  color: "color-black",
-                },
-                {
-                  title: "  Business-Ready",
-                  color: "color-equity-blue ",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-
-          <div className={styles.card_grid}>
-            {rbiData.map(({ icon, title, description }, i) => (
-              <div key={i}>
-                <FeatureCard
-                  titleHtml={title}
-                  description={description}
-                  cardImage={icon}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className={`${styles.use_case_section} bg-white`}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <div
-              className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
-            >
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Corporate Card Solutions: Purpose-",
-                    color: "color-black",
-                  },
-                  {
-                    title: " Built for Growing Businesses.",
-                    color: "color-equity-blue",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-            <div>
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "From instant issuance to automated controls, prepaid corporate cards built to manage every business spend.",
-                    color: "color-alternate-grey subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className=" mb-0"
-              />
-            </div>
-          </div>
-          <div className={`row align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 d-none d-md-block pr-md-5">
-              <Image
-                src={corporateCard}
-                alt="background image"
-                className="w-100 mh-550 object-fit-contain"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={75}
-                loading="lazy"
-              />
-            </div>
-            <div className="col-md-6 col-12 pr-md-5">
-              <div className="d-flex  align-items-center mb-4  gap-3">
-                <Image
-                  src={corporateCardIcon}
-                  alt="icon"
-                  height={46}
-                  width={46}
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Prepaid Corporate Cards ",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h5"
-                  className=" f-5"
-                />
-              </div>
-              <ul className={styles.custom_list}>
-                {corporateCardData.map(({ title }, i) => (
-                  <li key={i}>
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: title,
-                          color: "color-alternate-grey",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0"
-                    />
-                  </li>
-                ))}
-              </ul>
-
-              <div className="ml-4">
-                <CommanButton
-                  title="Explore More"
-                  theme="border-gray"
-                  arrow
-                  url="/prepaid-card"
-                  className="d-flex justify-content-between align-items-center"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-
 
       <div className={`${styles.slider_row} relative bg-white`}>
         <div className={`${styles.title} text-center max-w-auto`}>
