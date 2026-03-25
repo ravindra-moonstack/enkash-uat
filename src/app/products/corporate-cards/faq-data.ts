@@ -33,6 +33,29 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
+          "A corporate card allows employees to pay for business expenses without using their personal money. The company issues the card, sets limits and usage rules, and assigns it to employees for official expenses.",
+      },
+      {
+        heading:
+          "When a payment is made, the transaction is recorded instantly with details like user, category, and amount. Finance teams can easily track spending in real time, apply spending controls, and review expenses from a central dashboard.",
+      },
+    ],
+  },
+  {
+    question:
+      "What accounting and ERP systems do you integrate your EnKash corporate cards with?",
+    answer: [
+      {
+        heading:
+          "Tally, SAP, Zoho Books, and QuickBooks directly, with custom export formats and full API access for any other setup. Every transaction syncs reconciliation-ready — no reformatting required.",
+      },
+    ],
+  },
+  {
+    question: "How does a corporate card work?",
+    answer: [
+      {
+        heading:
           "Yes. Virtual cards are available instantly, single-use or recurring — with spend caps, MCC locks, and channel controls applied from the moment of creation. Cancel in seconds from the dashboard with no process involved.",
       },
     ],
