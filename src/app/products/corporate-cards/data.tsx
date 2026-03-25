@@ -1,13 +1,9 @@
 import { TCardTypes } from "@/src/types"
 import {
-  clockIcon,
   fuelCardImg,
   mealCardImg,
-  multiCardIcon,
   purchesCardImg,
-  realTimeTrakingIcon,
   sassCardImg,
-  securityIcon,
   termsAndConCardImg,
   virtualCardImg,
   overviewIcon,
@@ -19,15 +15,6 @@ import {
   detectIcon,
   monitorIcon,
   customizeIcon,
-  instantIcon,
-  onboardingIcon,
-  noThidPartyIcon,
-  diyControlIcon,
-  autoCapture,
-  auditExpense,
-  reconcile,
-  workflow,
-  approve,
   coBrandImage,
   GalaxyTabImage,
   digitalMarketingImg,
@@ -128,49 +115,6 @@ const analyticData = [
   {
     title: "Track and approve spends on the go via mobile",
     icon: pettyIconFive,
-  },
-]
-const rbiData = [
-  {
-    title: "Instant ",
-    description:
-      "Instant card issuance without routing requests through banks.",
-    icon: instantIcon,
-  },
-  {
-    title: " Fast",
-    description: "Faster onboarding and fewer compliance hurdles.",
-    icon: onboardingIcon,
-  },
-  {
-    title: "No Delays",
-    description: "No third-party delays or dependencies.",
-    icon: noThidPartyIcon,
-  },
-  {
-    title: "Customizable ",
-
-    description:
-      "DIY control over how your cards are issued, used, and managed.",
-    icon: diyControlIcon,
-  },
-]
-
-const corporateCardData = [
-  {
-    title: " Reloadable with full/minimum KYC options",
-  },
-  {
-    title: " Set daily, monthly, and category-based limits",
-  },
-  {
-    title: "Instant card creation, blocking, & top-up from a single dashboard",
-  },
-  {
-    title: " Real-time tracking, smart analytics, and full policy compliance",
-  },
-  {
-    title: "Supports digital wallets with future-ready UPI integration",
   },
 ]
 
@@ -374,9 +318,7 @@ const blocksSectionData = [
 export {
   intantActionData,
   spendAnalyticsData,
-  rbiData,
   cardType,
-  corporateCardData,
   allProductSections,
   counterHeadingData,
   statsData,
