@@ -1,4 +1,3 @@
-import Link from "next/link"
 import Image from "next/image"
 import styles from "./style.module.scss"
 import { CommanButton, DynamicHeading } from ".."
