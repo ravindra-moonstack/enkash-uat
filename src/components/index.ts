@@ -103,7 +103,7 @@ const BecomePartnerSteps = dynamic(() => import("./becomepartner"), {
 })
 const CounterSection = dynamic(() => import("./counter-section"), {
   ssr: true,
-}) 
+})
 
 const PartnerShipForm = dynamic(
   () => import("./forms/partnership-form/index"),
@@ -209,6 +209,12 @@ const PaymentGatewayGridSection = dynamic(
   { ssr: true }
 )
 
+const BlocksSection = dynamic(() => import("./blocks-section/BlocksSection"), {
+  ssr: true,
+})
+
+const CtaBanner = dynamic(() => import("./cta-banner"), { ssr: true })
+
 const BuiltforBuildersSection = dynamic(
   () => import("./builtfor-builders-card"),
   {
@@ -234,9 +240,12 @@ const ContactForm = dynamic(() => import("./forms/contact-form"), {
 const ShimmerImage = dynamic(() => import("./shimmer-image"), {
   ssr: true,
 })
-const BankGradeSecurity = dynamic(() => import("./BankGradeSecurity/BankGradeSecurity"), {
-  ssr: true,
-})
+const BankGradeSecurity = dynamic(
+  () => import("./BankGradeSecurity/BankGradeSecurity"),
+  {
+    ssr: true,
+  }
+)
 
 const CommanButton = dynamic(() => import("./buttons/index"), {
   ssr: true,
@@ -306,6 +315,8 @@ export {
   PaymentGatewayPartnershipForm,
   PaymentGatewaySection,
   PaymentGatewayGridSection,
+  BlocksSection,
+  CtaBanner,
   BuiltforBuildersSection,
   UtilityBillPayments,
   PartnerSection,
