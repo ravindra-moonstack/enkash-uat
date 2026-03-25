@@ -292,7 +292,6 @@ const CorporateCards = (): React.JSX.Element => {
       </SuspenseLoading>
 
       <CounterSection
-        //@ts-ignore
         titleContent={counterHeadingData}
         preTitle={{
           content: [
