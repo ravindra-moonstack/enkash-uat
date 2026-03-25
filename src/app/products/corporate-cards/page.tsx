@@ -9,12 +9,10 @@ import {
   allProductSections,
   analyticData,
   cardType,
-  corporateCardData,
   counterHeadingData,
   headingData,
   intantActionData,
   productsData,
-  rbiData,
   spendAnalyticsData,
   statsData,
   stepsData,
@@ -35,7 +33,6 @@ const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 const PolicyCard = dynamic(() => import("@/src/components/policy-card"))
 const FeatureCard = dynamic(() => import("@/src/components/feature-card"))
 const CardProduct = dynamic(() => import("@/src/components/card-product"))
-const AllProducts = dynamic(() => import("@/src/components/all-products"))
 const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
 const CounterSection = dynamic(() => import("@/src/components").then(mod => mod.CounterSection))
 const BlocksSection = dynamic(() => import("@/src/components").then(mod => mod.BlocksSection))
@@ -44,9 +41,6 @@ const CtaBanner = dynamic(() => import("@/src/components").then(mod => mod.CtaBa
 // helpers
 import {
   spendAnalylicsImg,
-  rbiLogo,
-  corporateCard,
-  corporateCardIcon,
   onePlatform,
   heroImg,
   statsBg,
