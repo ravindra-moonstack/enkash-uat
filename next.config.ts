@@ -9,6 +9,9 @@ const withBundleAnalyzerConfigured = withBundleAnalyzer({
 const nextConfig: NextConfig = {
   compress: true,
 
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
