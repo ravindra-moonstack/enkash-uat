@@ -1,4 +1,12 @@
-import React from "react"
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  RefObject,
+  FormEvent,
+  ChangeEvent,
+} from "react"
+import Image from "next/image"
 import { CommanButton } from "@/src/components"
 import styles from "./glossary-admin.module.scss"
 
@@ -73,12 +81,12 @@ const GlossaryFormView = ({
     handleAltSubmit,
     handleAltCancel
 }: GlossaryFormViewProps) => {
-    // Presence / Locking Logic
-    const [activeEditors, setActiveEditors] = React.useState<string[]>([])
-    const editorIdCurrent = React.useRef<string>("")
+  // Presence / Locking Logic
+  const [activeEditors, setActiveEditors] = useState<string[]>([])
+  const editorIdCurrent = useRef<string>("")
 
-    React.useEffect(() => {
-        if (!editingItem || !editingItem.id) return
+  useEffect(() => {
+    if (!editingItem || !editingItem.id) return
 
         // Generate a simplified unique ID for this specific session instance
         // This ensures even duplicated tabs are treated as separate editors
@@ -223,51 +231,51 @@ const GlossaryFormView = ({
                     {fieldErrors.metaDescription && <div className={styles.errorText}>{fieldErrors.metaDescription}</div>}
                 </div>
 
-                <div className={styles.formGroup}>
-                    <label className={styles.label}>Feature Image</label>
-                    <div className={styles.imageUploadWrapper}>
-                        {featureImage && (
-                            <div className={styles.imagePreviewContainer}>
-                                <img src={featureImage} alt="Feature" />
-                                <button
-                                    type="button"
-                                    onClick={() => setFeatureImage("")}
-                                    style={{
-                                        position: 'absolute',
-                                        top: '4px',
-                                        right: '4px',
-                                        background: 'rgba(255, 0, 0, 0.8)',
-                                        color: 'white',
-                                        border: 'none',
-                                        borderRadius: '50%',
-                                        width: '24px',
-                                        height: '24px',
-                                        cursor: 'pointer',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}
-                                    title="Remove Image"
-                                >
-                                    &times;
-                                </button>
-                            </div>
-                        )}
-                        <div className={styles.uploadControls}>
-                            <input
-                                type="file"
-                                accept="image/*"
-                                onChange={(e) => {
-                                    if (e.target.files?.[0]) {
-                                        handleFeatureImageUpload(e.target.files[0])
-                                    }
-                                }}
-                                className={styles.fileInput}
-                            />
-                            <p className={styles.helperText}>Recommended size: 1200x630px</p>
-                        </div>
-                    </div>
-                </div>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Feature Image</label>
+          <div className={styles.imageUploadWrapper}>
+            {featureImage && (
+              <div className={styles.imagePreviewContainer}>
+                <Image src={featureImage} alt="Feature" />
+                <button
+                  type="button"
+                  onClick={() => setFeatureImage("")}
+                  style={{
+                    position: "absolute",
+                    top: "4px",
+                    right: "4px",
+                    background: "rgba(255, 0, 0, 0.8)",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "50%",
+                    width: "24px",
+                    height: "24px",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  title="Remove Image"
+                >
+                  &times;
+                </button>
+              </div>
+            )}
+            <div className={styles.uploadControls}>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => {
+                  if (e.target.files?.[0]) {
+                    handleFeatureImageUpload(e.target.files[0])
+                  }
+                }}
+                className={styles.fileInput}
+              />
+              <p className={styles.helperText}>Recommended size: 1200x630px</p>
+            </div>
+          </div>
+        </div>
 
                 {featureImage && (
                     <div className={styles.formGroup}>
