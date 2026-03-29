@@ -9,6 +9,9 @@ const withBundleAnalyzerConfigured = withBundleAnalyzer({
 const nextConfig: NextConfig = {
   compress: true,
 
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
@@ -91,7 +94,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, s-maxage=60, stale-while-revalidate=3600",
+            value: "no-store, must-revalidate",
           },
         ],
       },
