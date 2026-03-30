@@ -179,9 +179,8 @@ const WebHeader = ({ }: props) => {
                   aria-label="Open support page in new tab"
                 >
                   <button
-                    className={`${styles.button_getStarted} ${
-                      active === "get-support" ? styles.active : ""
-                    }`}
+                    className={`${styles.button_getStarted} ${active === "get-support" ? styles.active : ""
+                      }`}
                     onClick={() => setActive("get-support")}
                     aria-current={active === "get-support" ? "page" : undefined}
                     type="button"
@@ -217,9 +216,8 @@ const WebHeader = ({ }: props) => {
                     aria-label="Talk to Sales page in new tab"
                   >
                     <button
-                      className={`${styles.button} ${styles.sales} ${
-                        activeTab === "sales" ? styles.active : ""
-                      }`}
+                      className={`${styles.button} ${styles.sales} ${activeTab === "sales" ? styles.active : ""
+                        }`}
                       onMouseEnter={() => setActiveTab("sales")}
                       aria-current={activeTab === "sales" ? "page" : undefined}
                       type="button"
