@@ -243,7 +243,6 @@ const SubProduct = (props: any) => {
             "For Developers",
             "Resources",
             "Payable & Receivable+",
-            "Prepaid Cards",
             "Credit Cards",
             "Partnership",
           ].includes(motherProductName) === false && (
