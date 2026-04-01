@@ -17,11 +17,12 @@ interface TextPart {
 interface HeroSectionProps {
   breadcrumbs: BreadcrumbItem[]
   subtitle?: TextPart
+  preHeading?: string
   titleLines: TextPart[]
 
   buttonUrl: string
   title: string
-  url: string
+  url?: string
   apiUrl?: string
   videoUrl?: string
   theme?: "blue" | "black" | "white"
@@ -34,6 +35,7 @@ const CorporateHeroSection: React.FC<HeroSectionProps> = ({
   breadcrumbs,
   titleLines,
   subtitle,
+  preHeading,
   buttonUrl,
   heroImage,
   videoUrl,
@@ -59,6 +61,21 @@ const CorporateHeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         <div className="col-12 d-flex flex-column text-center">
+          {preHeading && (
+            <div className="mt-4">
+              <DynamicHeading
+                content={[
+                  {
+                    title: preHeading,
+                    color: "color-white d-block text-center subHeading mb-0",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-2"
+              />
+            </div>
+          )}
+
           {/* Main Heading */}
           <div className="text-center mb-3 mt-3 ">
             <DynamicHeading
@@ -84,14 +101,14 @@ const CorporateHeroSection: React.FC<HeroSectionProps> = ({
           {/* Buttons */}
           <div className="justify-content-center d-flex mt-3 gap-4 pointer-auto">
             <CommanButton title="Talk to Us" theme="blue" url={buttonUrl} />
-
-            <CommanButton
-              title="Watch Video"
-              theme="vedio-button-dark"
-              iconSize={28}
-              url={() => setOpen(true)}
-              image={VideoIcon}
-            />
+            {videoUrl && (
+              <CommanButton
+                title="Watch Video"
+                theme="vedio-button-dark"
+                iconSize={28}
+                url={() => setOpen(true)}
+                image={VideoIcon}
+              />)}
           </div>
         </div>
 

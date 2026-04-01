@@ -1,6 +1,6 @@
 'use client';
 
-import { JSX, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './counterSection.module.scss';
 import { DynamicHeading } from '..';
 import Image from 'next/image';
@@ -16,7 +16,10 @@ interface StatItem {
 interface StatsSectionProps {
     titleContent?: {
         content: { title: string; color: string }[]
-        headingTag?: keyof JSX.IntrinsicElements | string
+        className?: string
+    };
+    preTitle?: {
+        content: { title: string; color: string }[]
         className?: string
     };
     stats: StatItem[];
@@ -26,6 +29,7 @@ interface StatsSectionProps {
 
 const CounterSection: React.FC<StatsSectionProps> = ({
     titleContent,
+    preTitle,
     stats,
     className = '',
     backgroundImage,
@@ -71,6 +75,13 @@ const CounterSection: React.FC<StatsSectionProps> = ({
                 />
             )}
             <div className={'max-w-auto'}>
+                {preTitle && (
+                    <DynamicHeading
+                        content={preTitle.content}
+                        headingTag={"p"}
+                        className={preTitle.className}
+                    />
+                )}
                 {titleContent && (
                     <DynamicHeading
                         content={titleContent.content}
@@ -180,7 +191,7 @@ const CounterCard: React.FC<CounterCardProps> = ({ stat, isVisible, delay }) => 
                 className={`mb-1 `}
             />
             <DynamicHeading
-                content={[{ text: stat.label, className: 'subHeading' }]}
+                content={[{ text: stat.label, className: 'color-white subHeading' }]}
                 headingTag="p"
                 className={'mb-0'}
             />

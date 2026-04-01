@@ -1,19 +1,23 @@
-<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="27.8245" cy="27.4448" r="24.3941" fill="#1C5AF4"/>
-<rect width="24" height="24" transform="translate(16 16)" fill="#1C5AF4"/>
-<mask id="mask0_11_14" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="18" y="18" width="20" height="20">
-<path d="M35.5 19H20.5C20.1022 19 19.7206 19.158 19.4393 19.4393C19.158 19.7206 19 20.1022 19 20.5V35.5C19 35.8978 19.158 36.2794 19.4393 36.5607C19.7206 36.842 20.1022 37 20.5 37H35.5C35.8978 37 36.2794 36.842 36.5607 36.5607C36.842 36.2794 37 35.8978 37 35.5V20.5C37 20.1022 36.842 19.7206 36.5607 19.4393C36.2794 19.158 35.8978 19 35.5 19Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M26.5 31.5L29 33.5L33 28.5M23 23.5H33M23 27.5H27" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="23.1877" cy="22.8674" r="20.3284" fill="#1C5AF4"/>
+<circle cx="23.1871" cy="23.1871" r="22.8694" stroke="black" stroke-width="0.635262"/>
+<circle cx="23.1871" cy="23.1871" r="22.8694" stroke="url(#paint0_linear_7348_66051)" stroke-width="0.635262"/>
+<g clip-path="url(#clip0_7348_66051)">
+<mask id="mask0_7348_66051" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="13" y="13" width="20" height="20">
+<path d="M30.5 14H15.5C15.1022 14 14.7206 14.158 14.4393 14.4393C14.158 14.7206 14 15.1022 14 15.5V30.5C14 30.8978 14.158 31.2794 14.4393 31.5607C14.7206 31.842 15.1022 32 15.5 32H30.5C30.8978 32 31.2794 31.842 31.5607 31.5607C31.842 31.2794 32 30.8978 32 30.5V15.5C32 15.1022 31.842 14.7206 31.5607 14.4393C31.2794 14.158 30.8978 14 30.5 14Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.5 26.5L24 28.5L28 23.5M18 18.5H28M18 22.5H22" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </mask>
-<g mask="url(#mask0_11_14)">
-<path d="M16 16H40V40H16V16Z" fill="white"/>
+<g mask="url(#mask0_7348_66051)">
+<path d="M11 11H35V35H11V11Z" fill="white"/>
 </g>
-<circle cx="27.8245" cy="27.8245" r="27.4433" stroke="black" stroke-width="0.762314"/>
-<circle cx="27.8245" cy="27.8245" r="27.4433" stroke="url(#paint0_linear_11_14)" stroke-width="0.762314"/>
+</g>
 <defs>
-<linearGradient id="paint0_linear_11_14" x1="27.8245" y1="0" x2="27.8245" y2="55.6489" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_7348_66051" x1="23.1871" y1="0" x2="23.1871" y2="46.3741" gradientUnits="userSpaceOnUse">
 <stop stop-color="#0663FC"/>
 <stop offset="1" stop-color="#043B96"/>
 </linearGradient>
+<clipPath id="clip0_7348_66051">
+<rect width="24" height="24" fill="white" transform="translate(11 11)"/>
+</clipPath>
 </defs>
 </svg>

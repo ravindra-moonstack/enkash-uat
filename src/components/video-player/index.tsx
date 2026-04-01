@@ -17,6 +17,7 @@ interface VideoPlayerProps {
     features?: string[]
     featureIcon?: React.ReactNode
     heading?: HeadingSegment[]
+    subHeadings?: HeadingSegment[][]
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
@@ -26,6 +27,11 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     heading = [
         { title: "Experience ", color: "color-main-black" },
         { title: "truly matters", color: "color-equity-blue" },
+    ],
+    subHeadings = [
+        [{ title: "Petty cash from 50 locations.", color: "color-black" }],
+        [{ title: "50 different spreadsheets.", color: "color-black" }],
+        [{ title: "Sound familiar?", color: "color-black" }],
     ],
 }) => {
     const sectionRef = useRef<HTMLElement>(null)
@@ -88,21 +94,14 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
                                 className="mb-0"
                             />
                         </div>
-                        <DynamicHeading
-                            content={[{ title: "Petty cash from 50 locations.", color: "color-black" }]}
-                            headingTag="p"
-                            className="f-5 m-0"
-                        />
-                        <DynamicHeading
-                            content={[{ title: "50 different spreadsheets.", color: "color-black" }]}
-                            headingTag="p"
-                            className="f-5 m-0"
-                        />
-                        <DynamicHeading
-                            content={[{ title: "Sound familiar?", color: "color-black" }]}
-                            headingTag="p"
-                            className="f-5 m-0"
-                        />
+                        {subHeadings.map((sub, index) => (
+                            <DynamicHeading
+                                key={index}
+                                content={sub}
+                                headingTag="p"
+                                className="f-5 m-0"
+                            />
+                        ))}
                         <DynamicHeading
                             content={heading}
                             headingTag="h4"
