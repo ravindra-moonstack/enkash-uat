@@ -7,12 +7,17 @@ import dynamic from "next/dynamic"
 // data
 import {
   allProductSections,
-  cardData,
+  analyticData,
   cardType,
-  corporateCardData,
+  counterHeadingData,
+  headingData,
   intantActionData,
-  rbiData,
+  productsData,
   spendAnalyticsData,
+  statsData,
+  stepsData,
+  videoSubHeadingData,
+  blocksSectionData,
 } from "./data"
 import faqData from "./faq-data"
 
@@ -28,24 +33,28 @@ const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 const PolicyCard = dynamic(() => import("@/src/components/policy-card"))
 const FeatureCard = dynamic(() => import("@/src/components/feature-card"))
 const CardProduct = dynamic(() => import("@/src/components/card-product"))
-const AllProducts = dynamic(() => import("@/src/components/all-products"))
 const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
+const CounterSection = dynamic(() => import("@/src/components").then(mod => mod.CounterSection))
+const BlocksSection = dynamic(() => import("@/src/components").then(mod => mod.BlocksSection))
+const CtaBanner = dynamic(() => import("@/src/components").then(mod => mod.CtaBanner))
 
 // helpers
 import {
   spendAnalylicsImg,
-  rbiLogo,
-  corporateCard,
-  corporateCardIcon,
   onePlatform,
   heroImg,
-  secongBg,
+  statsBg,
+  analytics,
+  blockAbsolute,
+  GridBgImage,
+  ctaSideImg,
 } from "./img"
 
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 import Script from "next/script"
+import { BecomePartnerSteps, ProductsSection, VideoPlayer } from "@/src/components"
 
 const videoId = "EgWI_tkBpk0"
 const videoSchema = {
@@ -59,6 +68,155 @@ const videoSchema = {
   duration: "PT2M30S",
   contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
   embedUrl: `https://www.youtube.com/embed/${videoId}`,
+}
+
+const webSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.enkash.com/products/corporate-cards#webpage",
+      "url": "https://www.enkash.com/products/corporate-cards",
+      "name": "India’s First Unified Corporate Card Ecosystem | EnKash Corporate Cards",
+      "description": "EnKash Corporate Cards help businesses issue prepaid and credit corporate cards instantly, control spend in real time, eliminate employee reimbursements, and automate reconciliation on one RBI-licensed platform.",
+      "inLanguage": "en-IN",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.enkash.com/#website",
+        "url": "https://www.enkash.com/",
+        "name": "EnKash"
+      },
+      "about": {
+        "@id": "https://www.enkash.com/products/corporate-cards#product"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.enkash.com/path-to-corporate-cards-banner-image.jpg"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.enkash.com/#organization",
+      "name": "EnKash",
+      "url": "https://www.enkash.com/",
+      "logo": "https://www.enkash.com/path-to-logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/enkash/"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.enkash.com/products/corporate-cards#product",
+      "name": "EnKash Corporate Cards",
+      "description": "A unified corporate card platform for Indian businesses to issue prepaid and credit cards instantly, set spend controls, get real-time visibility, automate reconciliation, and eliminate reimbursements.",
+      "brand": {
+        "@type": "Brand",
+        "name": "EnKash"
+      },
+      "category": "Corporate Card Platform",
+      "url": "https://www.enkash.com/products/corporate-cards",
+      "image": [
+        "https://www.enkash.com/path-to-corporate-cards-banner-image.jpg"
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Startups, SMBs, Enterprises, Finance Teams, Operations Teams"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Card issuance time",
+          "value": "Under 60 seconds"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Spend visibility",
+          "value": "100% real-time visibility"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Reimbursements",
+          "value": "Zero employee reimbursements"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Merchant acceptance",
+          "value": "10 Million+ merchant acceptance points"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "License",
+          "value": "RBI-authorised PPI license"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Corporate Card Types and Use Cases",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Card Types",
+            "itemListElement": [
+              {
+                "@type": "Product",
+                "name": "Prepaid Corporate Cards",
+                "description": "Reloadable corporate cards with MCC locks, spend caps, channel controls, and policy compliance."
+              },
+              {
+                "@type": "Product",
+                "name": "Corporate Credit Cards",
+                "description": "Business credit cards with flexible limits, billing cycles, merchant controls, fraud protection, and rewards."
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Use Case Cards",
+            "itemListElement": [
+              {
+                "@type": "Product",
+                "name": "Meal Card",
+                "description": "Digital meal cards for employee meal benefits with nationwide acceptance."
+              },
+              {
+                "@type": "Product",
+                "name": "Fuel Card",
+                "description": "Corporate cards to control and track fuel expenses for travel and fleet spending."
+              },
+              {
+                "@type": "Product",
+                "name": "T&E Card",
+                "description": "Travel and entertainment cards with smart controls and real-time tracking."
+              },
+              {
+                "@type": "Product",
+                "name": "Virtual Card",
+                "description": "Secure virtual cards for one-time or recurring online payments."
+              },
+              {
+                "@type": "Product",
+                "name": "Purchase Card",
+                "description": "Pre-approved cards for procurement, vendor payments, and operational purchases."
+              },
+              {
+                "@type": "Product",
+                "name": "Digital Marketing Card",
+                "description": "Cards for managing online ad spends with limits and real-time spend visibility."
+              },
+              {
+                "@type": "Product",
+                "name": "SaaS Card",
+                "description": "Cards designed to manage software subscriptions and recurring SaaS renewals."
+              }
+            ]
+          }
+        ]
+      },
+      "provider": {
+        "@id": "https://www.enkash.com/#organization"
+      }
+    }
+  ]
 }
 
 export const metadata: Metadata = {
@@ -95,106 +253,151 @@ const CorporateCards = (): React.JSX.Element => {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
       />
+      <Script
+        id="web-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSchema) }}
+      />
       <CorporateHeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
           { name: "Products", url: "/products" },
           { name: "Corporate Card", url: "/products/corporate-card" },
         ]}
+        preHeading="India’s First Unified Corporate Card Ecosystem"
+
         titleLines={[
           {
-            text: "The Only Corporate Cards",
+            text: "Corporate cards that move at ",
             color: "color-white d-block text-center italic f-2",
           },
           {
-            text: "You’ll Ever Need.",
+            text: "the speed of your business.",
             color: "color-white d-block text-center",
           },
         ]}
+
         subtitle={{
-          text: "More control, more flexibility & more security.",
+          text: "Issue instantly. Spend smartly. Close effortlessly. All on one RBI-licensed platform.",
           color: "color-black",
         }}
         heroImage={heroImg}
-        videoUrl="https://youtu.be/EgWI_tkBpk0?si=IPPm7ujd9qxht0s0"
-        buttonUrl=""
+        // videoUrl="https://youtu.be/EgWI_tkBpk0?si=IPPm7ujd9qxht0s0"
+        buttonUrl={salesUrl}
         title={"Talk to sales"}
-        url={salesUrl}
       />
       <SuspenseLoading>
         <LogoSlider />
       </SuspenseLoading>
 
-      <div className={`${styles.introduction_section} position-relative overflow-hidden`}>
-        <Image
-          src={secongBg}
-          alt="background"
-          fill
-          className="object-fit-cover"
-          sizes="100vw"
-          quality={75}
-          fetchPriority="high"
-          loading="lazy"
-        />
-        <div className="max-m-auto position-relative z-index-1">
-          <div
-            className={`${styles.second_row_title} text-center pb-3 pb-md-5`}
-          >
+      <CounterSection
+        titleContent={counterHeadingData}
+        preTitle={{
+          content: [
+            {
+              title: "WHY ENKASH?",
+              color: "color-alternate-grey",
+            },
+          ],
+          className: "f-5 mb-3 text-center",
+        }}
+        stats={statsData}
+        backgroundImage={statsBg}
+      />
+      <ProductsSection preTitle={{
+        content: [
+          {
+            title: "CARD TYPES",
+            color: "color-alternate-grey",
+          },
+        ],
+        headingTag: "p",
+        className: "f-5 mb-3 text-center",
+      }} sectionTitle="Choose the Right Corporate Card for Your Business" products={productsData} />
+
+      <div className={styles.other_products}>
+        <div className="max-w-auto">
+          <div className={`${styles.title} text-center pb-5`}>
             <DynamicHeading
               content={[
                 {
-                  title: " Build for CFOs, Loved by Teams ",
-                  color: "color-white",
+                  title: "A Card Built for ",
+                  color: "color-black",
+                },
+                {
+                  title: "Every Way ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "Your Business Spends",
+                  color: "color-black",
                 },
               ]}
               headingTag="h2"
-              className="f-6 text-center"
-            />
-            <DynamicHeading
-              content={[
-                {
-                  title:
-                    "Instant issuance, smart controls, and cards for every use case. Preloaded team cards or enterprise-level controls.",
-                  color: "color-white subHeading",
-                },
-              ]}
-              headingTag="p"
-              className=" text-center mb-0"
+              className="f-6"
             />
           </div>
-          <div className={`d-flex  flex-wrap  ${styles.section}`}>
-            {cardData.map((item, index) => (
-              <div
-                key={index}
-                className={`d-flex flex-column justify-content-center align-items-center text-center ${styles.card}`}
-              >
-                <Image
-                  src={item.icon}
-                  alt="card visual"
-                  className={styles.card_image}
-                  width={48}
-                  height={48}
-                  loading="lazy"
-                  sizes="48px"
-                  quality={75}
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title: item.title,
-                      color: "color-main-grey",
-                    },
-                  ]}
-                  headingTag="p"
-                  className=""
-                />
-              </div>
-            ))}
+          <div className="row g-3 pb-4">
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
 
-      <div className={`${styles.sixth_row} bg-white `}>
+      <div className={`${styles.slider_row} relative bg-white`}>
+        <div className={`${styles.title} text-center max-w-auto`}>
+          <DynamicHeading
+            content={[
+              {
+                title: "Issue, Track, and Manage Every Card from One Place",
+                color: "color-black ",
+              },
+            ]}
+            headingTag={'h2'}
+            className={'f-6'}
+          />
+        </div>
+
+        <div className="max-w-auto">
+          <div className={`row ${styles.integration_row}`}>
+            <div className="d-flex align-items-stretch gap-3 gap-md-0 flex-wrap flex-md-nowrap pb-4 pt-4 pt-md-5 justify-content-center">
+              {mergedCards?.map((card, index) => (
+                <div key={index.toString()} className="d-flex">
+                  <FeatureCard
+                    titleHtml={card.title}
+                    description={card?.description}
+                    cardImage={card.image}
+                    hoverClass={styles.hoverClass}
+                    iconWidth={48}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={`${styles.video_section}`}>
+        <VideoPlayer
+          videoSrc="https://youtu.be/pjeEde3ruiU?si=ZxvNS0h4z1Mxcsga"
+          heading={[{ title: "Experience Corporate Cards that truly deliver ", color: "color-black" },]}
+          ctaLabel={"Get Started"}
+          subHeadings={videoSubHeadingData}
+          ctaHref={salesUrl}
+        />
+      </div>
+      <div className={`${styles.sixth_row} bg-color-black-2 `}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-2 pb-md-5`}>
             <div
@@ -203,11 +406,11 @@ const CorporateCards = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "One Platform. Total Visibility. ",
+                    title: "Total Control from ",
                     color: "color-black",
                   },
                   {
-                    title: " Instant Actions",
+                    title: " One Dashboard",
                     color: "color-equity-blue",
                   },
                 ]}
@@ -215,21 +418,8 @@ const CorporateCards = (): React.JSX.Element => {
                 className="f-6"
               />
             </div>
-            <div>
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "Experience real-time visibility, smart spend tracking, and actionable insights—capabilities you won’t get with most traditional bank-issued cards or standard prepaid card programs",
-                    color: "color-alternate-grey text-center subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className="mb-0"
-              />
-            </div>
           </div>
-          <div className={`row bg-white align-items-center ${styles.section}`}>
+          <div className={`row align-items-center ${styles.section}`}>
             <div className="col-md-6 col-12  px-md-5">
               <div
                 style={{
@@ -273,6 +463,15 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      <BlocksSection
+        heading={[
+          { title: "Configure Controls Across Every Card ", color: "color-white text-center" },
+        ]}
+        slideData={blocksSectionData}
+        absoluteImage={blockAbsolute}
+        buttons={[{ title: "Get Started", theme: "white", url: { salesUrl } }]}
+        backgroundImage={GridBgImage.src}
+      />
 
       <div className={`${styles.action_row} bg-black-200 row-padding`}>
         <div className="max-w-auto">
@@ -281,15 +480,11 @@ const CorporateCards = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Unrivaled ",
+                    title: "Spend Analytics That ",
                     color: "color-white",
                   },
                   {
-                    title: "Spend Analytics  ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "at Your Fingertips ",
+                    title: "Go Beyond Dashboards",
                     color: "color-white d-block",
                   },
                 ]}
@@ -303,7 +498,7 @@ const CorporateCards = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "Move beyond basic data. Leverage real-time analytics to track spend patterns across prepaid cards, corporate programs, and purchase cards, helping finance teams detect anomalies/ inconsistencies or policy violations instantly.",
+                      "Move beyond raw data. Leverage our  advanced analytics to turn into actionable business insights.",
                     color: "color-grey-100 subHeading",
                   },
                 ]}
@@ -364,263 +559,85 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.features_section}>
-        <div className={` ${styles.rbi_section} max-w-auto`}>
-          <div>
-            <Image
-              src={rbiLogo}
-              alt="card background"
-              height={156}
-              width={156}
-              sizes="156px"
-              quality={75}
-              loading="lazy"
-            />
-          </div>
-
-          <div className={`${styles.title} text-center d-inline pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "RBI-Approved,",
-                  color: "color-black",
-                },
-                {
-                  title: "  Business-Ready",
-                  color: "color-equity-blue ",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-
-          <div className={styles.card_grid}>
-            {rbiData.map(({ icon, title, description }, i) => (
-              <div key={i}>
-                <FeatureCard
-                  titleHtml={title}
-                  description={description}
-                  cardImage={icon}
+      <div className={`${styles.use_case_section}`}>
+        <div className="max-w-auto">
+          <div className="row align-items-end">
+            <div className="col-md-6 col-12 order-2 order-md-1">
+              <div>
+                <Image
+                  src={analytics}
+                  alt="card background"
+                  className="position-relative w-100 h-auto"
                 />
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
+            </div>
 
-      <div className={`${styles.use_case_section} bg-white`}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <div
-              className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
-            >
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Corporate Card Solutions: Purpose-",
-                    color: "color-black",
-                  },
-                  {
-                    title: " Built for Growing Businesses.",
-                    color: "color-equity-blue",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-            <div>
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "From instant issuance to automated controls, prepaid corporate cards built to manage every business spend.",
-                    color: "color-alternate-grey subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className=" mb-0"
-              />
-            </div>
-          </div>
-          <div className={`row align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 d-none d-md-block pr-md-5">
-              <Image
-                src={corporateCard}
-                alt="background image"
-                className="w-100 mh-550 object-fit-contain"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={75}
-                loading="lazy"
-              />
-            </div>
-            <div className="col-md-6 col-12 pr-md-5">
-              <div className="d-flex  align-items-center mb-4  gap-3">
-                <Image
-                  src={corporateCardIcon}
-                  alt="icon"
-                  height={46}
-                  width={46}
-                />
+            <div className="col-md-6 col-12 order-1 order-md-2">
+              <div className={`d-flex flex-column ${styles.subtitle}`}>
+                <div className="mb-2">
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Connected to Your Expense Workflow ",
+                        color: "color-grey-200",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
                 <DynamicHeading
                   content={[
                     {
-                      title: "Prepaid Corporate Cards ",
-                      color: "color-black",
+                      title:
+                        "Connect Corporate Cards with Expense Management for a Unified Experience",
+                      color: "color-main-grey subHeading",
                     },
                   ]}
-                  headingTag="h5"
-                  className=" f-5"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
-              <ul className={styles.custom_list}>
-                {corporateCardData.map(({ title }, i) => (
-                  <li key={i}>
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: title,
-                          color: "color-alternate-grey",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0"
-                    />
-                  </li>
-                ))}
-              </ul>
 
-              <div className="ml-4">
-                <CommanButton
-                  title="Explore More"
-                  theme="border-gray"
-                  arrow
-                  url="/prepaid-card"
-                  className="d-flex justify-content-between align-items-center"
-                />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "24px",
+                }}
+                className="pb-3 pb-md-5"
+              >
+                {analyticData.map(({ icon, title }, i) => (
+                  <div key={i} style={{ direction: "ltr" }}>
+                    <PolicyCard
+                      icon={icon}
+                      title={title}
+                      className="align-items-center"
+                    />
+                  </div>
+                ))}
+                <div className="justify-content-end d-flex">
+
+                  <CommanButton
+                    title="Explore Our Expense Management Suite "
+                    theme="border-gray"
+                    url="/products/expense-management"
+                    arrow
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Choose ",
-                  color: "color-black",
-                },
-                {
-                  title: "the Right Card  ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "for Every Use Case ",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {cardType.map(
-              ({ titleHtml, description, cardImage, linkUrl }, index) => (
-                <div key={index} className="col-12 col-md-4">
-                  <CardProduct
-                    titleHtml={titleHtml}
-                    description={description}
-                    cardImage={cardImage}
-                    linkUrl={linkUrl}
-                  />
-                </div>
-              )
-            )}
-          </div>
-        </div>
+      <div className={`${styles.steps_container}  `}>
+        <BecomePartnerSteps
+          heading={headingData}
+          steps={stepsData}
+        />
       </div>
-
-      <div className={`${styles.cta_section} relative`}>
-        <div className={`${styles.title} text-center `}>
-          <div
-            className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
-          >
-            <DynamicHeading
-              content={[
-                {
-                  title: "One Platform. ",
-                  color: "color-black",
-                },
-                {
-                  title: "End-to-End Control. ",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div>
-            <DynamicHeading
-              content={[
-                {
-                  title:
-                    "Connect your corporate cards and purchase cards programs with a unified expense management suite.",
-                  color: "color-alternate-grey subHeading",
-                },
-              ]}
-              headingTag="p"
-              className="f-4 mb-0"
-            />
-          </div>
-          <div className="pt-4  justify-content-center d-flex">
-            <CommanButton
-              title={"Explore Our Expense Management Suite"}
-              theme="blue"
-              width="auto"
-              url="/products/expense-management"
-            />
-          </div>
-        </div>
-        <SuspenseLoading>
-          <div className={`${styles.onePlatformSectionCard}`}>
-            <AllProducts
-              title="All Features"
-              subtitle="Combine all use cases"
-              data={mergedCards}
-            />
-          </div>
-        </SuspenseLoading>
-      </div>
-
-      <div className={`${styles.eight_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Apply Now for Smarter Business Spending ",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
-          <div className={`${styles.get_started_button} `}>
-            <CommanButton
-              title="Talk to Us"
-              theme="outline-blue"
-              arrow
-              url={salesUrl}
-            />
-          </div>
-        </div>
-      </div>
+      <CtaBanner leftImage={ctaSideImg} rightImage={ctaSideImg} buttonText="Schedule a Demo" buttonUrl={salesUrl} />
 
       <SuspenseLoading>
         <FaqSection faqData={faqData} />

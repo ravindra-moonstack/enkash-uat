@@ -9,6 +9,7 @@ interface SlideData {
     id: number
     icon: any
     title: string
+    description?: string
 }
 
 type PaymentGatewayGridProps = {
@@ -35,6 +36,14 @@ const PaymentGatewayGrid: React.FC<PaymentGatewayGridProps> = ({ slides }) => {
                                     title: slide.title,
                                     color: "color-white f-5",
                                 }]} headingTag="h4" className="fs-24" />
+
+                        <DynamicHeading
+                            content={[
+                                {
+                                    title: slide.description,
+                                    color: "color-white f-3",
+                                }]}
+                            headingTag="p" className="mb-0" />
                     </div>
                 ))}
             </div>
