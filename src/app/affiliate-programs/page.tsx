@@ -60,7 +60,6 @@ export default function PartnershipsPage() {
         }}
       />
 
-      {/* बाकी सारे sections... */}
       <div className={`${styles.boxContainer}`}>
         <BankSolutions
           solutions={bankSolutions}
