@@ -19,6 +19,7 @@ export type ButtonTheme =
   | "white"
   | "grey-text"
   | "vedio-button-dark"
+  | "white-without-hover"
 
 export interface ButtonProps {
   isDisabled?: boolean

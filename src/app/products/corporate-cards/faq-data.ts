@@ -6,133 +6,138 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "Any registered business, startup, SMB, or enterprise is eligible. No personal guarantee required.",
+          "Any registered business — startup, SMB, or enterprise. No personal guarantee, no bank approval process, and no minimum spend threshold. The platform works for a two-card program and scales to thousands of cards across multiple entities.",
       },
     ],
   },
   {
-    question: "Is it a credit card or a prepaid card?",
+    question: "How quickly are cards issued?",
     answer: [
       {
         heading:
-          "We offer both. Choose based on your cash flow needs and preferences.",
+          "Under 60 seconds. EnKash holds its own RBI-authorised PPI license so every card is issued directly on our own infrastructure, never routed through a bank. Most businesses complete KYC online and are issuing cards the same day.",
       },
     ],
   },
   {
-    question: "Can I issue virtual cards to teams or vendors?",
+    question: "Prepaid or credit — which is right for my business?",
     answer: [
       {
         heading:
-          "Yes, instantly. You can create unlimited virtual cards with granular controls.",
+          "Prepaid loads funds in advance and eliminates reimbursements entirely — cards can only spend what's loaded. Credit offers a revolving line assessed on your business profile, with no collateral or personal guarantee required. Both run on the same platform with identical controls, visibility, and reconciliation.",
       },
     ],
   },
   {
-    question: "Is it compliant with tax rules for meal/fuel cards?",
+    question: "Can I issue virtual cards immediately?",
     answer: [
       {
         heading:
-          "Absolutely. Our cards are structured per RBI and IT Act guidelines, including MCC-based restrictions for tax benefits.",
+          "A corporate card allows employees to pay for business expenses without using their personal money. The company issues the card, sets limits and usage rules, and assigns it to employees for official expenses.",
       },
-    ],
-  },
-  {
-    question: "How do I manage multiple teams/entities?",
-    answer: [
       {
         heading:
-          "Our platform supports cost center and multi-entity structures. View and manage all expenses from one place",
-      },
-    ],
-  },
-  {
-    question: "Can I integrate it with our accounting system?",
-    answer: [
-      {
-        heading:
-          "Yes, we support direct integrations with major accounting and ERP tools, and custom exports.",
-      },
-    ],
-  },
-  {
-    question: "What is a Prepaid Card?",
-    answer: [
-      {
-        heading:
-          "A prepaid card is a payment card loaded with a specific amount of money in advance. Unlike credit cards, it doesn’t draw from a credit line—it only allows spending up to the balance that has been preloaded. Prepaid cards are ideal for businesses looking to control budgets, limit overspending, and streamline expense tracking, as they offer real-time control and visibility over every transaction.",
-      },
-    ],
-  },
-  {
-    question: "What is the difference between a Prepaid Card and a Debit Card?",
-    answer: [
-      {
-        heading:
-          "A prepaid card is loaded with a specific amount in advance and isn’t linked to a bank account, making it great for controlled spending. A debit card pulls money directly from your bank account. Prepaid cards offer more flexibility for budgeting and business use.",
+          "When a payment is made, the transaction is recorded instantly with details like user, category, and amount. Finance teams can easily track spending in real time, apply spending controls, and review expenses from a central dashboard.",
       },
     ],
   },
   {
     question:
-      "What is the difference between reloadable and non-reloadable prepaid cards?",
+      "What accounting and ERP systems do you integrate your EnKash corporate cards with?",
     answer: [
       {
         heading:
-          "Reloadable prepaid cards can be topped up with funds multiple times, making them ideal for ongoing expenses like salaries, travel, or business purchases. Non-reloadable prepaid cards, on the other hand, are for one-time use—once the initial balance is spent, they cannot be reloaded. These are often used for gifts, rewards, or limited-time campaigns.",
+          "Tally, SAP, Zoho Books, and QuickBooks directly, with custom export formats and full API access for any other setup. Every transaction syncs reconciliation-ready — no reformatting required.",
       },
     ],
   },
   {
-    question:
-      "What is the difference between a Virtual Card and a Virtual Prepaid Card?",
+    question: "How does a corporate card work?",
     answer: [
       {
         heading:
-          "A Virtual Card is a digitally generated card number linked to an existing credit, debit, or corporate card account. It works like a temporary card for online payments, offering added security without exposing the primary card details.",
-      },
-      {
-        heading:
-          "A Virtual Prepaid Card, on the other hand, is a digital card issued with a preloaded balance. It is not linked to a credit line or bank account. Businesses load funds in advance and set controls, spending limits, and usage rules for employees, teams, or specific transactions.",
-      },
-      {
-        heading:
-          "With EnKash’s prepaid corporate card stack, businesses can issue both virtual and virtual prepaid cards instantly, apply automated controls, and manage all spends from a single dashboard.",
+          "Yes. Virtual cards are available instantly, single-use or recurring — with spend caps, MCC locks, and channel controls applied from the moment of creation. Cancel in seconds from the dashboard with no process involved.",
       },
     ],
   },
   {
-    question: "Can I use corporate  Cards for recurring vendor payments?",
+    question: "How does GST reconciliation work?",
     answer: [
       {
         heading:
-          "Yes. You can use corporate cards for recurring vendor, subscription, and SaaS payments. EnKash’s corporate cards and virtual prepaid cards make these payments seamless by enabling automated billing, faster settlements, and real-time tracking. Businesses in India use them to manage monthly software fees, marketing tools, cloud services, and other repeat expenses with higher control and complete visibility.",
+          "Every transaction is tagged with GST metadata at the point of spend. Export ITC-eligible data in one click or sync directly to your accounting system — no manual classification, no month-end assembly.",
       },
     ],
   },
   {
-    question: "What is a Money Card and where can it be used?",
+    question: "What accounting and ERP systems do you integrate with?",
     answer: [
       {
         heading:
-          "A Money Card is a stored-value payment card that works on a preloaded balance instead of a credit line. Businesses use it to manage controlled, category-based, or employee-driven expenses",
+          "Tally, SAP, Zoho Books, and QuickBooks directly, with custom export formats and full API access for any other setup. Every transaction syncs reconciliation-ready — no reformatting required.",
       },
-      {
-        heading: "Where it can be used:",
-      },
-      {
-        bullets: [
-          "Travel and hotel bookings",
-          " Online purchases and eCommerce",
-          " Vendor and supplier payments",
-          "Subscriptions and SaaS tools",
-          "Marketing and digital spends",
-          "Employee reimbursements and day-to-day expenses",
-        ],
-      },
+    ],
+  },
+  {
+    question: "Can I manage multiple entities from one platform?",
+    answer: [
       {
         heading:
-          "With EnKash’s Money Card solutions, including prepaid corporate cards, purchase cards (P-Cards), travel cards, and category-specific business-use cards. Companies in India can issue cards instantly, set spending rules, automate approvals, and track every payment in real time.",
+          "Yes. Separate card programs per entity or cost centre, distinct controls for each, and consolidated reporting across all of them from one dashboard — with role-based access so each team sees only what they need to.",
+      },
+    ],
+  },
+  {
+    question: "Are meal and fuel cards structured for tax compliance?",
+    answer: [
+      {
+        heading:
+          "Yes. Meal and fuel cards are MCC-locked to compliant merchant categories per RBI and IT Act guidelines. Tax benefits apply automatically at every eligible transaction with no manual categorisation or separate claim process.",
+      },
+    ],
+  },
+  {
+    question: "What happens when a card is lost or an employee leaves?",
+    answer: [
+      {
+        heading:
+          "Block the card in one click from the dashboard — no support ticket, no bank call, no delay. Reissue instantly with existing controls carried over. For employee exits, cards can be bulk-deactivated and reassigned without affecting the program.",
+      },
+    ],
+  },
+  {
+    question: "How is EnKash different from a bank-issued corporate card?",
+    answer: [
+      {
+        heading:
+          "Bank-issued cards run on bank infrastructure — issued in days, controlled through portals that update overnight, and reconciled on the bank's timeline. EnKash owns its full stack through its PPI license: cards in under 60 seconds, controls enforced at the point of spend, and reconciliation that runs automatically with no third party involved. Use case cards — fleet, T&E, digital marketing, SaaS — are configured natively on the same platform, not bolted on as separate products.",
+      },
+    ],
+  },
+  {
+    question: "How do T&E cards work?",
+    answer: [
+      {
+        heading:
+          "T&E cards are configured with per-trip or per-employee limits, MCC restrictions for travel and dining merchants, and receipt capture built into the card workflow. Policy is enforced at the swipe — not reviewed in a month-end expense audit.",
+      },
+    ],
+  },
+  {
+    question: "How do fleet and logistics cards work?",
+    answer: [
+      {
+        heading:
+          "Fleet cards are MCC-locked to fuel, toll, and vehicle maintenance merchants only. Every transaction is categorised automatically at the point of spend, so fleet costs are tracked in real time without manual entry or driver-submitted receipts.",
+      },
+    ],
+  },
+  {
+    question: "How do SaaS and subscription cards work?",
+    answer: [
+      {
+        heading:
+          "Virtual cards issued per vendor with a recurring spend cap tied to the approved subscription value. If a vendor raises their price beyond the approved limit or a subscription is discontinued, the card blocks automatically — no surprise renewals, no manual cancellations required.",
       },
     ],
   },

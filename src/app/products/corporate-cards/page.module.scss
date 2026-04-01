@@ -167,7 +167,23 @@
     min-width: 240px;
   }
 }
+.steps_container {
+  padding: 0px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
 
+  @include for-laptops {
+    gap: 46px;
+    padding: 0px 20px 130px;
+  }
+}
+.video_section{
+  margin-bottom: -80px;
+  @include for-laptops {
+    margin-bottom: -100px;
+  }
+}
 .use_case_section {
   background: $color-black;
   border-radius: 12px;
@@ -201,7 +217,24 @@
     }
   }
 }
+.use_case_section {
+  width: 100%;
+  padding: 50px 20px 50px;
+  background-color: $color-white;
 
+  @include for-laptops {
+    padding: 139px 20px 120px;
+    
+  }
+
+  .subtitle {
+    padding-bottom: 24px;
+
+    @include for-laptops {
+      padding-bottom: 48px;
+    }
+  }
+}
 .cta_section {
   position: relative;
   text-align: center;
@@ -272,9 +305,11 @@
 
 .other_products {
   padding: 0px 20px 50px;
+  margin-top: -140px;
 
   @include for-laptops {
     padding: 0px 20px 66px;
+    margin-top: -255px;
   }
 }
 

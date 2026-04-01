@@ -205,8 +205,8 @@ const stepsData = [
 ]
 const headingData = {
   content: [
-    { title: "Getting Started ", color: "color-black" },
-    { title: "with Prepaid Cards", color: "color-equity-blue" },
+    { title: "Getting Started with ", color: "color-black" },
+    { title: "EnKash Prepaid Cards", color: "color-equity-blue" },
   ],
   headingTag: "h2",
   className: "f-5 mb-4 text-center",
@@ -217,7 +217,6 @@ const counterHeadingData = {
       title: "Why Businesses Choose EnKash Prepaid Cards ", color: "color-alternate-grey"
     },
   ],
-  headingTag: "h2",
   className: "f-5 mb-3 text-center",
 }
 const statsData = [
