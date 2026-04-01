@@ -40,37 +40,6 @@ const calculatorSchema = {
     ]
 }
 
-const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What is income tax?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Income tax is a direct tax collected by the Government of India on the income earned by individuals and businesses during a financial year. It is charged based on applicable tax slabs and provisions under the Income Tax Act, 1961."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How is income tax calculated?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Income tax is calculated by determining total taxable income after exemptions and deductions, applying the relevant tax slab rates, adjusting for rebates if eligible, and adding surcharge and 4% cess if applicable."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How much income is tax-free?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Under the new tax regime, income up to ₹12 lakh can result in zero tax liability due to the Section 87A rebate of up to ₹60,000. Under the old regime, income up to ₹5 lakh can be tax-free after rebate."
-            }
-        }
-    ]
-}
-
 export default function IncomeTaxCalculatorLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
@@ -78,11 +47,6 @@ export default function IncomeTaxCalculatorLayout({ children }: { children: Reac
                 id="calculator-schema"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorSchema) }}
-            />
-            <Script
-                id="faq-schema"
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
             {children}
         </>
