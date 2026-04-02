@@ -176,7 +176,6 @@ const url: {
     destination: "/workflow-management",
   },
 
- 
   { source: "/voucher/zee5", destination: "/vouchers/zee5" },
   { source: "/vouchers/category/apparels", destination: "/apparels-vouchers" },
   {
@@ -336,6 +335,9 @@ const url: {
   { source: "/card-pay", destination: "/products/corporate-cards" },
   { source: "/quick-collect", destination: "/products/collect-payments" },
   { source: "/rental-payments", destination: "/rent-payment" },
+  { source: "/buy-now-pay-later", destination: "/affordability-suite" },
+  { source: "/olympus", destination: "/payment-gateway" },
+  { source: "/department-management", destination: "/" },
 ]
 
 const mappedUrls = url.map((item) => ({
