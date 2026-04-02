@@ -87,8 +87,8 @@ const SubProduct = (props: any) => {
                     href={group.subtitleLink}
                     key={group.subtitle}
                     className={`${styles.sub_product_title} ${group.subtitle === activeSubtitle
-                        ? "color-equity-blue"
-                        : "color-secondry-grey"
+                      ? "color-equity-blue"
+                      : "color-secondry-grey"
                       }`}
                     onMouseOver={() => {
                       setActiveSubtitle(group.subtitle)
@@ -108,8 +108,8 @@ const SubProduct = (props: any) => {
             >
               <div
                 className={`${styles.sub_products_container} ${activeSubtitle === "Receivables"
-                    ? styles.receivablesScroll
-                    : ""
+                  ? styles.receivablesScroll
+                  : ""
                   } ${activeGroup?.list?.length > 6
                     ? styles.grid_layout
                     : styles.flex_layout
@@ -171,8 +171,8 @@ const SubProduct = (props: any) => {
                       >
                         <div
                           className={`${styles.sub_product_row} d-flex ${hoveredProductIndex === index
-                              ? styles.color_highlight
-                              : ""
+                            ? styles.color_highlight
+                            : ""
                             }`}
                           onClick={handleItemClick}
                         >
@@ -190,8 +190,8 @@ const SubProduct = (props: any) => {
                           <div className="d-flex flex-column ms-3">
                             <div
                               className={`d-flex align-items-center justify-content-between ${styles.sub_product_name} ${motherProductName === "For Developers"
-                                  ? styles.underline
-                                  : ""
+                                ? styles.underline
+                                : ""
                                 }`}
                             >
                               {product.name}
@@ -243,13 +243,17 @@ const SubProduct = (props: any) => {
             "For Developers",
             "Resources",
             "Payable & Receivable+",
-            "Prepaid Cards",
             "Credit Cards",
             "Partnership",
           ].includes(motherProductName) === false && (
               <div className={styles.exploreProduct}>
                 {props.parentLink ? (
-                  <Link href={props.parentLink}>
+                  <Link
+                    href={props.parentLink}
+                    onClick={() => {
+                      props.onLinkClick()
+                    }}
+                  >
                     <h4 className="mb-1">Explore {motherProductName}</h4>
                   </Link>
                 ) : (
@@ -258,8 +262,9 @@ const SubProduct = (props: any) => {
               </div>
             )}
         </>
-      )}
-    </div>
+      )
+      }
+    </div >
   )
 }
 
