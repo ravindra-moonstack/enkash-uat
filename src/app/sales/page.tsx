@@ -34,19 +34,19 @@ function Sales(): React.JSX.Element {
     <>
       <div className={`${styles.talk_to_sales} `}>
         <div className="max-w-auto">
+          <div className={`${styles.logo} `}>
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="card visual"
+                className={styles.group_logo}
+              />
+            </Link>
+          </div>
           <div className="row">
-            <div className="col-md-5 col-12">
-              <div className={`${styles.logo} `}>
-                <Link href="/">
-                  <Image
-                    src={logo}
-                    alt="card visual"
-                    className={styles.group_logo}
-                  />
-                </Link>
-              </div>
+            <div className="col-md-5 col-12 order-2 order-md-1">
               <div>
-                <ul>
+                <ul className='pt-4 pt-md-0'>
                   <li>
                     <div className="d-flex gap-3">
                       <Image
@@ -149,7 +149,7 @@ function Sales(): React.JSX.Element {
               </div>
             </div>
 
-            <div className={`${styles.salesForm} col-md-7 col-12 `}>
+            <div className={`${styles.salesForm} col-md-7 col-12 order-1 order-md-2 `}>
               <div className="contactFormWrapper flex flex-col gap-4">
                 <DynamicHeading
                   content={[
@@ -175,7 +175,7 @@ function Sales(): React.JSX.Element {
               </div>
             </div>
 
-            <div>
+            <div className="order-3">
               <div className={`${styles.logoSlider} `}>
                 <LogoSlider />
               </div>
@@ -224,7 +224,7 @@ function Sales(): React.JSX.Element {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     </>
   )
 }

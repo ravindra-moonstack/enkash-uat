@@ -390,7 +390,7 @@ const CorporateCards = (): React.JSX.Element => {
 
       <div className={`${styles.video_section}`}>
         <VideoPlayer
-          videoSrc="https://youtu.be/pjeEde3ruiU?si=ZxvNS0h4z1Mxcsga"
+          videoSrc="https://youtu.be/EgWI_tkBpk0?si=IPPm7ujd9qxht0s0"
           heading={[{ title: "Experience Corporate Cards that truly deliver ", color: "color-black" },]}
           ctaLabel={"Get Started"}
           subHeadings={videoSubHeadingData}
@@ -469,7 +469,7 @@ const CorporateCards = (): React.JSX.Element => {
         ]}
         slideData={blocksSectionData}
         absoluteImage={blockAbsolute}
-        buttons={[{ title: "Get Started", theme: "white", url: { salesUrl } }]}
+        buttons={[{ title: "Get Started", theme: "white", url: salesUrl }]}
         backgroundImage={GridBgImage.src}
       />
 
@@ -605,7 +605,7 @@ const CorporateCards = (): React.JSX.Element => {
                   flexDirection: "column",
                   gap: "24px",
                 }}
-                className="pb-3 pb-md-5"
+                className="pb-5 pb-md-3"
               >
                 {analyticData.map(({ icon, title }, i) => (
                   <div key={i} style={{ direction: "ltr" }}>
@@ -617,7 +617,6 @@ const CorporateCards = (): React.JSX.Element => {
                   </div>
                 ))}
                 <div className="justify-content-end d-flex">
-
                   <CommanButton
                     title="Explore Our Expense Management Suite "
                     theme="border-gray"
@@ -654,7 +653,7 @@ const CorporateCards = (): React.JSX.Element => {
             color: "color-black f-4",
           },
         ]}
-        cards={[3198, 11501, 2976]}
+        cards={[10454, 10040, 15315]}
       />
     </>
   )
