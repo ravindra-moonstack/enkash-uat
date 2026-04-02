@@ -55,11 +55,10 @@ const CorporateHeroSection: React.FC<HeroSectionProps> = ({
         quality={75}
       />
       <div className={styles.overlay}></div>
-      <div className="max-w-auto position-relative no-pointer ">
+      <div className="max-w-auto position-relative">
         <div className="d-flex">
           <CustomBreadcrumb items={breadcrumbs} linkColor="white" />
         </div>
-
         <div className="col-12 d-flex flex-column text-center">
           {preHeading && (
             <div className="mt-4">
