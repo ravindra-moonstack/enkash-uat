@@ -176,7 +176,6 @@ const url: {
     destination: "/workflow-management",
   },
 
- 
   { source: "/voucher/zee5", destination: "/vouchers/zee5" },
   { source: "/vouchers/category/apparels", destination: "/apparels-vouchers" },
   {
@@ -315,6 +314,30 @@ const url: {
     source: "/wp-admin/:path*",
     destination: "/resources/wp-admin/:path*",
   },
+
+  { source: "/corporate-cards", destination: "/products/corporate-cards" },
+  { source: "/bill-payments", destination: "/utility-bill-payment" },
+  { source: "/cardx", destination: "/products/corporate-cards" },
+  { source: "/budget-management", destination: "/budget-and-advances" },
+  { source: "/tax-payments", destination: "/gst-payment" },
+  { source: "/virtual-cards", destination: "/virtual-card" },
+  { source: "/rewards-and-offers", destination: "/products/rewards" },
+  { source: "/approvals", destination: "/approval-flows" },
+  { source: "/bulk-payout", destination: "/bulk-pay" },
+  { source: "/invoices", destination: "/digital-invoicing" },
+  { source: "/vendor-payments", destination: "/vendor-payment" },
+  { source: "/spend-control", destination: "/hierarchy-and-controls" },
+  {
+    source: "/expense-management",
+    destination: "/products/expense-management",
+  },
+  { source: "/reimbursement", destination: "/reimbursements" },
+  { source: "/card-pay", destination: "/products/corporate-cards" },
+  { source: "/quick-collect", destination: "/products/collect-payments" },
+  { source: "/rental-payments", destination: "/rent-payment" },
+  { source: "/buy-now-pay-later", destination: "/affordability-suite" },
+  { source: "/olympus", destination: "/payment-gateway" },
+  { source: "/department-management", destination: "/" },
 ]
 
 const mappedUrls = url.map((item) => ({

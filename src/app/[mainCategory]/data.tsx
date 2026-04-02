@@ -404,7 +404,7 @@ export const VOUCHER_DATA: Record<
         backgroundImage: macdonaldsBg,
         rightImage: macdonaldsImg,
         brandName: "McDonald’s Value Club Gift Voucher",
-        rightImageMarginTop: "-50px",
+        rightImageMarginTop: "0px",
         buttonUrl: "/vouchers/mcdonalds",
         discount: 0,
       },
