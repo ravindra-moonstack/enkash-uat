@@ -9,9 +9,9 @@
     font-size: 16px;
     position: absolute;
     top: 133px;
-    z-index: 2;
+    z-index: 2; 
+    width:100%;
 
-    left: 101px;
     h1 {
       font-size: 16px;
       font-weight: 400;
@@ -20,6 +20,7 @@
       padding: 28px 0px 20px;
       text-align: start;
       top: 153px;
+    left: 101px; 
     }
   }
   .breadcrumb {
