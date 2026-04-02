@@ -113,15 +113,7 @@ const Ifsc = (): React.JSX.Element => {
                   content={[
                     {
                       title:
-                        "IFSC stands for Indian Financial System Code. It is an 11-character alphanumeric code of identify bank branches participating in NEFT, RTGS, and IMPS. Every bank branch has a unique IFSC code that helps the ",
-                      color: "color-grey-200  ",
-                    },
-                    {
-                      link: "https://www.rbi.org.in/",
-                      title: "RBI ",
-                    },
-                    {
-                      title: "ensure secure transactions.",
+                        "An IFSC code (Indian Financial System Code) is an 11-character alphanumeric code assigned by the Reserve Bank of India (RBI) to identify every bank branch participating in electronic fund transfers in India. It is required for transactions made through NEFT, RTGS, and IMPS to ensure that money is transferred to the correct bank and branch. The first four letters of IFSC represent the bank, the fifth character is always zero, and the last six characters identify the specific branch. Entering the correct IFSC code helps prevent transfer errors and ensures secure, accurate processing of digital payments. It is generally found on the Cheque leaf and Passbook",
                       color: "color-grey-200  ",
                     },
                   ]}
@@ -162,9 +154,14 @@ const Ifsc = (): React.JSX.Element => {
                       content={[
                         {
                           title:
-                            "Cheque Book / Passbook: The IFSC code is printed near your account number and branch details, and you can find it on the Cheque Leaf.",
+                            "Cheque Book / Passbook: The IFSC code is printed near your account number and branch details, and you can find it on the ",
                           color: "color-grey-200  ",
                         },
+
+                        {
+                          link: "/resources/blog/what-is-a-cheque",
+                          title: "Cheque Leaf.",
+                        }
                       ]}
                       headingTag="p"
                       className="mb-0 pt-3 text-start"
