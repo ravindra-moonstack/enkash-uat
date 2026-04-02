@@ -53,7 +53,7 @@ const CommonModal = ({
               />
               {isCorporate && (
                 <div className={styles.exploreProduct}>
-                  <Link href="/products/corporate-cards">
+                  <Link className="mb-0" href="/products/corporate-cards" onClick={onLinkClick}>
                     <h4 className="mb-1">Explore Corporate Cards </h4>
                   </Link>
                 </div>

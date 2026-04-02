@@ -25,7 +25,7 @@ interface props {
   utmSource?: string
 }
 
-const WebHeader = ({}: props) => {
+const WebHeader = ({ }: props) => {
   const {
     hoveredIndex,
     isHeaderBgWhite,
@@ -52,9 +52,8 @@ const WebHeader = ({}: props) => {
       </a>
 
       <header
-        className={`w-full absolute z-10 ${styles.header} ${
-          isHeaderBgWhite ? styles.bg_white : styles.bg_blue
-        }`}
+        className={`w-full absolute z-10 ${styles.header} ${isHeaderBgWhite ? styles.bg_white : styles.bg_blue
+          }`}
         onMouseLeave={closeAllModals}
         role="banner"
         aria-label="Primary"
@@ -66,7 +65,7 @@ const WebHeader = ({}: props) => {
             aria-label="Main navigation"
           >
             <div className="row align-items-center">
-        
+
               <div className="col-12 col-md-auto d-flex align-items-center">
                 <Link
                   href="/"
@@ -76,7 +75,7 @@ const WebHeader = ({}: props) => {
                   <Image src={enkashBlueLogo} alt="logo" width={98} />
                 </Link>
 
-      
+
                 <ul
                   role="menubar"
                   aria-label="Main menu"
@@ -85,22 +84,21 @@ const WebHeader = ({}: props) => {
                   {navBarTopTtitle.map((item, index) => (
                     <li
                       key={item.name}
-                      className={`${styles.menu_item} ${styles[`menu_item_${index}`]} ${
-                        hoveredIndex === index ? styles.opacity_selected : ""
-                      }`}
+                      className={`${styles.menu_item} ${styles[`menu_item_${index}`]} ${hoveredIndex === index ? styles.opacity_selected : ""
+                        }`}
                       ref={(el) => {
                         itemRefs.current[index] = el
                       }}
                       id={`menuitem_${index}${styles.box}`}
                       role="none"
-                    
+
                       onBlur={(e) => {
                         if (!e.currentTarget.contains(e.relatedTarget)) {
                           closeAllModals()
                         }
                       }}
                     >
-                  
+
                       <button
                         className={styles.link}
                         type="button"
@@ -112,7 +110,7 @@ const WebHeader = ({}: props) => {
                         tabIndex={0}
                         onMouseEnter={() => handleMouseEnter(index)}
                         onFocus={() => handleMouseEnter(index)}
-                        onClick={() => handleMouseEnter(index)}
+                        onClick={() => { closeAllModals(); handleMouseEnter(index); }}
                       >
                         <span>{item.name}</span>
                         <Image
@@ -124,7 +122,7 @@ const WebHeader = ({}: props) => {
                         />
                       </button>
 
-                    
+
                       {hoveredIndex === index && modalLeft !== null && (
                         <div
                           id={`navbar-submenu-${index}`}
@@ -173,7 +171,7 @@ const WebHeader = ({}: props) => {
                 </ul>
               </div>
 
-         
+
               <div className="col-12 col-md d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
                 <Link
                   href={`/support/?source=nav-bar`}
@@ -181,9 +179,8 @@ const WebHeader = ({}: props) => {
                   aria-label="Open support page in new tab"
                 >
                   <button
-                    className={`${styles.button_getStarted} ${
-                      active === "get-support" ? styles.active : ""
-                    }`}
+                    className={`${styles.button_getStarted} ${active === "get-support" ? styles.active : ""
+                      }`}
                     onClick={() => setActive("get-support")}
                     aria-current={active === "get-support" ? "page" : undefined}
                     type="button"
@@ -203,9 +200,8 @@ const WebHeader = ({}: props) => {
                     aria-label="Login page"
                   >
                     <button
-                      className={`${styles.button} ${styles.login} ${
-                        activeTab === "login" ? styles.active : ""
-                      }`}
+                      className={`${styles.button} ${styles.login} ${activeTab === "login" ? styles.active : ""
+                        }`}
                       onMouseEnter={() => setActiveTab("login")}
                       aria-current={activeTab === "login" ? "page" : undefined}
                       type="button"
@@ -220,9 +216,8 @@ const WebHeader = ({}: props) => {
                     aria-label="Talk to Sales page in new tab"
                   >
                     <button
-                      className={`${styles.button} ${styles.sales} ${
-                        activeTab === "sales" ? styles.active : ""
-                      }`}
+                      className={`${styles.button} ${styles.sales} ${activeTab === "sales" ? styles.active : ""
+                        }`}
                       onMouseEnter={() => setActiveTab("sales")}
                       aria-current={activeTab === "sales" ? "page" : undefined}
                       type="button"
