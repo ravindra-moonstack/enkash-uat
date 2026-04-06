@@ -12,6 +12,8 @@ export interface CardProps {
   cardImage?: string | StaticImageData
   theme?: "light" | "dark" | "black"
   linkUrl?: string
+  headingTag?: keyof React.JSX.IntrinsicElements
+  headingClassName?: string
 }
 
 const ManagementCard = ({
@@ -21,6 +23,8 @@ const ManagementCard = ({
   cardImage,
   theme = "light",
   linkUrl,
+  headingTag,
+  headingClassName,
 }: CardProps): React.JSX.Element => {
   const cardContent = (
     <div
@@ -36,8 +40,8 @@ const ManagementCard = ({
                 color: styles.titleHtml,
               },
             ]}
-            headingTag="h4"
-            className="f-5"
+            headingTag={headingTag ? headingTag : "h4"}
+            className={`${headingClassName} f-5`}
           />
         ) : (
           whiteTitle && (
@@ -48,8 +52,8 @@ const ManagementCard = ({
                   color: styles.whiteTitleHtml,
                 },
               ]}
-              headingTag="h4"
-              className="f-5 min-height-80"
+              headingTag={headingTag ? headingTag : "h4"}
+              className={`${headingClassName} f-5 min-height-80`}
             />
           )
         )}
