@@ -20,6 +20,8 @@ interface SlideContent {
     description: string
     image: string
     imageAlt: string
+    headingTag?: keyof React.JSX.IntrinsicElements
+    headingClassName?: string
 }
 
 interface IndustrySliderProps {
@@ -185,8 +187,8 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
                                                 text: slide.title,
                                                 color: "color-grey-200 f-7"
                                             }]}
-                                            headingTag={"h5"}
-                                            className={`${styles.slideTitle}`}
+                                            headingTag={slide.headingTag ? slide.headingTag : "h3"}
+                                            className={`${slide.headingClassName ? slide.headingClassName : "heading-h5"} ${styles.slideTitle}`}
                                         />
                                         <DynamicHeading
                                             content={[{

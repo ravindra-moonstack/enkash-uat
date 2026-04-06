@@ -6,6 +6,8 @@ import { DynamicHeading } from ".."
 interface SecurityFeature {
     title: string
     description: string
+    headingTag?: keyof React.JSX.IntrinsicElements
+    headingClassName?: string
 }
 
 interface BankGradeSecurityProps {
@@ -118,8 +120,8 @@ const BankGradeSecurity: React.FC<BankGradeSecurityProps> = ({
                                                     color: "color-grey-200 f-6",
                                                 },
                                             ]}
-                                            headingTag="h5"
-                                            className={styles.featureTitle}
+                                            headingTag={feature.headingTag ? feature.headingTag : "h3"}
+                                            className={`${feature.headingClassName ? feature.headingClassName : "heading-h5"} ${styles.featureTitle}`}
                                         />
                                         <DynamicHeading
                                             content={[

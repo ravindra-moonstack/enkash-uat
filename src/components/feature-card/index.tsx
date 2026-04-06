@@ -15,6 +15,8 @@ export interface CardProps {
   padding?: string
   hoverClass?: string
   iconWidth?: number
+  headingTag?: keyof React.JSX.IntrinsicElements
+  headingClassName?: string
 }
 
 const FeatureCard = ({
@@ -27,6 +29,8 @@ const FeatureCard = ({
   padding = "40px 29px",
   hoverClass = "",
   iconWidth = 65,
+  headingTag,
+  headingClassName,
 }: CardProps): React.JSX.Element => {
   //
 
@@ -64,8 +68,8 @@ const FeatureCard = ({
                     color: "color-black",
                   },
                 ]}
-                headingTag="h5"
-                className="f-5"
+                headingTag={headingTag ? headingTag : "h5"}
+                className={`${headingClassName} f-5`}
               />
             ) : (
               whiteTitle && (
@@ -76,8 +80,8 @@ const FeatureCard = ({
                       color: "color-black",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-5"
+                  headingTag={headingTag ? headingTag : "h5"}
+                  className={`${headingClassName} f-5`}
                 />
               )
             )}
