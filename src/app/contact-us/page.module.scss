@@ -134,9 +134,5 @@
 }
 
 .contactForm {
-  margin-top: 60px;
-
-  @include for-laptops {
-    margin-top: 0;
-  }
+  margin-top: 0;
 }

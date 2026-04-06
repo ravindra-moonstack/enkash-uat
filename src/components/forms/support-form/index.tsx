@@ -76,7 +76,7 @@ const SupportForm: React.FC = () => {
 
   return (
     <>
-      <div className={"contactFormWrapper"}>
+      <div>
         <form action="#" onSubmit={handleSubmit} className="">
           <div className={"grid"}>
             <div className="">

@@ -60,8 +60,8 @@ const AdidasCard: React.FC<AdidasCardProps> = ({
                 color: "color-white",
               },
             ]}
-            headingTag="h5"
-            className="f-5"
+            headingTag="h3"
+            className="f-5 heading-h5"
           />
         </div>
       </div>
