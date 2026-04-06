@@ -11,6 +11,8 @@ interface PrepaidCardHomeProps {
   topIcon?: string // Optional icon at the top
   bottomIcon?: string // Optional icon at the bottom
   borderColors?: string // Optional border color, default is #b3b3b3
+  headingTag?: keyof React.JSX.IntrinsicElements
+  headingClassName?: string
 }
 
 const PrepaidCardHome: React.FC<PrepaidCardHomeProps> = ({
@@ -20,6 +22,8 @@ const PrepaidCardHome: React.FC<PrepaidCardHomeProps> = ({
   bottomIcon,
   url,
   borderColors, // Default border color
+  headingTag,
+  headingClassName,
 }) => {
   return (
     <>
@@ -53,8 +57,8 @@ const PrepaidCardHome: React.FC<PrepaidCardHomeProps> = ({
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-5 mb-2 mt-3"
+                  headingTag={headingTag ? headingTag : "h5"}
+                  className={`${headingClassName} f-5 mb-2 mt-3`}
                 />
               </div>
               <DynamicHeading
