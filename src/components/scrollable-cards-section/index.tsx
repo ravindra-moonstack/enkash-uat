@@ -20,12 +20,12 @@ interface ScrollableCardsSectionProps {
   maxHeight?: string
   buttonTitle: string
   buttonTheme?:
-    | "blue"
-    | "green"
-    | "black"
-    | "outline-blue"
-    | "border-gray"
-    | "border-black"
+  | "blue"
+  | "green"
+  | "black"
+  | "outline-blue"
+  | "border-gray"
+  | "border-black"
   buttonUrl?: string
   marginBottoms?: string
   link?: string
@@ -43,9 +43,8 @@ const ScrollableCardsSection = ({
   return (
     <>
       <div
-        className={`mt-md-5 ${styles.scrollBoxOuter} ${
-          showScroll ? "overflow-auto scrollbar-thin" : ""
-        }`}
+        className={`mt-md-5 ${styles.scrollBoxOuter} ${showScroll ? "overflow-auto scrollbar-thin" : ""
+          }`}
         style={{
           maxHeight,
           direction: showScroll ? "rtl" : "ltr",
@@ -66,17 +65,18 @@ const ScrollableCardsSection = ({
               description={item.description}
               url={item.url}
               hoverClass={item.hoverClass}
+              headingTag="h4"
+              headingClassName="heading-h5"
             />
           </div>
         ))}
       </div>
       {buttonTitle && (
         <div
-          className={`${
-            showScroll
-              ? styles["scrollCardButton--scroll"]
-              : styles["scrollCardButton"]
-          }`}
+          className={`${showScroll
+            ? styles["scrollCardButton--scroll"]
+            : styles["scrollCardButton"]
+            }`}
         >
           <div className={styles.list_button}>
             <CommanButton

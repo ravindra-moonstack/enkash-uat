@@ -10,6 +10,8 @@ interface Partner {
   description?: string
   buttonText?: string
   buttonLinks?: string
+  headingTag?: keyof React.JSX.IntrinsicElements
+  headingClassName?: string
 }
 
 interface PartnerSectionData {
@@ -65,8 +67,8 @@ const PartnerSection: React.FC<{ data: PartnerSectionData }> = ({ data }) => {
               {partner.title && (
                 <DynamicHeading
                   content={[{ title: partner.title, color: "color-black  " }]}
-                  headingTag="h6"
-                  className="f-4"
+                  headingTag={partner.headingTag ? partner.headingTag : "h6"}
+                  className={`${partner.headingClassName} f-4`}
                 />
               )}
               {partner.description && (

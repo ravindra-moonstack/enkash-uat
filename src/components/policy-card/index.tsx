@@ -11,6 +11,8 @@ interface CardProps {
   className?: string
   url?: string
   hoverClass?: string
+  headingTag?: keyof React.JSX.IntrinsicElements
+  headingClassName?: string
 }
 
 const PolicyCard: React.FC<CardProps> = ({
@@ -20,6 +22,8 @@ const PolicyCard: React.FC<CardProps> = ({
   className,
   url,
   hoverClass,
+  headingTag,
+  headingClassName,
 }) => {
   const cardContent = (
     <>
@@ -42,8 +46,8 @@ const PolicyCard: React.FC<CardProps> = ({
       <div className="d-flex  flex-column text-start">
         <DynamicHeading
           content={[{ title: title, color: "color-black" }]}
-          headingTag="h5"
-          className="f-5"
+          headingTag={headingTag ? headingTag : "h5"}
+          className={`${headingClassName} f-5`}
         />
 
         {description && (

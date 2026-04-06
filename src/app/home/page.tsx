@@ -268,24 +268,21 @@ const HomePage = (): React.JSX.Element => {
               </div>
               <div className="col-md-6 z-2">
                 <div
-                  className={`${styles.makePaymentExpenseManagementContent}`}
                 >
-                  <div className={`${styles.headings_section}`}>
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "AI-Powered",
-                          color: "color-black",
-                        },
-                        {
-                          title: "Expense Management",
-                          color: "color-black italic f-3 d-block",
-                        },
-                      ]}
-                      headingTag="h3"
-                      className="text-start mb-4 mb-md-5"
-                    />
-                  </div>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "AI-Powered",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Expense Management",
+                        color: "color-black italic f-3 d-block",
+                      },
+                    ]}
+                    headingTag="h3"
+                    className="text-start mb-4 mb-md-5"
+                  />
                   <div className={`${styles.scrollableSection}`}>
                     <ScrollableCardsSection
                       cardsData={scrollCardsData}
@@ -329,7 +326,7 @@ const HomePage = (): React.JSX.Element => {
                 {prepaidCardsData.map((item, index) => (
                   <div className="col-md-6 mb-4 mb-md-0" key={index}>
                     <div className={`${styles.prepaidCardBox}`}>
-                      <PrepaidCardHome {...item} />
+                      <PrepaidCardHome {...item} headingTag="h4" headingClassName="heading-h5" />
                     </div>
                   </div>
                 ))}
@@ -361,7 +358,7 @@ const HomePage = (): React.JSX.Element => {
                   key={index.toString()}
                   className={`${styles.prepaidCardBox} col-md-6 mb-4 mb-md-0`}
                 >
-                  <PrepaidCardHome {...item} />
+                  <PrepaidCardHome {...item} headingTag="h4" headingClassName="heading-h5" />
                 </div>
               ))}
             </div>
@@ -384,8 +381,8 @@ const HomePage = (): React.JSX.Element => {
                     color: "color-black",
                   },
                 ]}
-                headingTag="h2"
-                className="f-6 text-center"
+                headingTag="h3"
+                className="f-6 text-center heading-h2"
               />
             </div>
 
@@ -397,6 +394,8 @@ const HomePage = (): React.JSX.Element => {
                       <HomePageRewardsVouchers
                         {...item}
                         image={item.image.src}
+                        headingTag="h4"
+                        headingClassName="heading-h5"
                       />
                     </div>
                   </div>
@@ -466,8 +465,8 @@ const HomePage = (): React.JSX.Element => {
                     color: "color-black subHeading",
                   },
                 ]}
-                headingTag="p"
-                className="mb-3"
+                headingTag="h3"
+                className="mb-3 paragraph"
               />
 
               <div className="row gap-x-3">
@@ -476,7 +475,7 @@ const HomePage = (): React.JSX.Element => {
                     className={`${styles.ReceivablesPayablesBoxOuter} col-md-4  mb-4`}
                     key={index.toString()}
                   >
-                    <HomeReceivablesPayables {...item} />
+                    <HomeReceivablesPayables {...item} headingTag="h4" headingClassName="heading-h5" />
                   </div>
                 ))}
               </div>
@@ -489,8 +488,8 @@ const HomePage = (): React.JSX.Element => {
                     color: "color-black subHeading",
                   },
                 ]}
-                headingTag="p"
-                className="mb-3 mt-md-5 mt-4"
+                headingTag="h3"
+                className="mb-3 mt-md-5 mt-4 p"
               />
 
               <div className="row">
@@ -501,7 +500,7 @@ const HomePage = (): React.JSX.Element => {
                         key={index.toString()}
                         className={`${styles.ReceivablesPayablesBoxOuter} col-md-6 mb-4`}
                       >
-                        <HomeReceivablesPayables {...item} />
+                        <HomeReceivablesPayables {...item} headingTag="h4" headingClassName="heading-h5" />
                       </div>
                     ))}
                   </div>
@@ -531,6 +530,8 @@ const HomePage = (): React.JSX.Element => {
                         "Launch co-branded cards, gateways, and platforms on our infrastructure - your brand, our tech.",
                       buttonText: "Become a Partner",
                       buttonLinks: "/bank-partnerships",
+                      headingTag: "h3",
+                      headingClassName: "heading-h6",
                     },
                     {
                       icon: bankIcons2,
@@ -539,6 +540,8 @@ const HomePage = (): React.JSX.Element => {
                         "Refer, earn, and empower India’s next 1M digital-first businesses.",
                       buttonText: "Become a Partner",
                       buttonLinks: "/affiliate-programs",
+                      headingTag: "h3",
+                      headingClassName: "heading-h6",
                     },
                   ],
                 }}
@@ -746,8 +749,8 @@ const HomePage = (): React.JSX.Element => {
                   color: "color-equity-blue",
                 },
               ]}
-              headingTag="h5"
-              className="f-5 "
+              headingTag="h3"
+              className="f-5 h5"
             />
           </div>
           <div className={`${styles.topSubHeading}`}>
@@ -770,6 +773,8 @@ const HomePage = (): React.JSX.Element => {
                   className={`${styles.collectPaymentBox} col-md-3`}
                   {...item}
                   key={index.toString()}
+                  headingTag="h3"
+                  headingClassName="heading-h5"
                 />
               ))}
             </div>

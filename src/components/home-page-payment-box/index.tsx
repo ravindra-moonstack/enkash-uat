@@ -40,8 +40,8 @@ const PaymentGatewayCare: React.FC<PaymentGatewayCareProps> = ({
                 color: "color-black",
               },
             ]}
-            headingTag="h5"
-            className="mb-1 f-5 mt-3"
+            headingTag="h4"
+            className="mb-1 f-5 mt-3 heading-h5"
           />
           <DynamicHeading
             content={[
