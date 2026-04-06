@@ -266,6 +266,8 @@ const PaymentGateway = (): React.JSX.Element => {
                     cardImage={card.image}
                     hoverClass={styles.hoverClass}
                     iconWidth={48}
+                    headingTag="h3"
+                    headingClassName={"heading-h5"}
                   />
                 </div>
               ))}
@@ -378,6 +380,8 @@ const PaymentGateway = (): React.JSX.Element => {
           { title: " at EnKash", color: "color-black" },
         ]}
         cards={managementCardData}
+        cardHeadingTag="h3"
+        cardHeadingClassName="heading-h4"
       />
     </div>
   )

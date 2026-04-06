@@ -46,7 +46,7 @@ const ContactUs = (): React.JSX.Element => {
           </div>
 
           <div className="row">
-            <div className="col-md-5 col-12">
+            <div className="col-md-5 col-12 order-2 order-md-1 mt-5 mt-md-0">
               <div className={styles.contactInfoCard}>
                 <ul>
                   {contactData.map((item, idx) => (
@@ -102,7 +102,9 @@ const ContactUs = (): React.JSX.Element => {
                 </ul>
               </div>
             </div>
-            <div className={`${styles.contactForm} col-md-7 col-12 `}>
+            <div
+              className={`${styles.contactForm} col-md-7 col-12 order-1 order-md-2 `}
+            >
               <div className={"contactFormWrapper"}>
                 <DynamicHeading
                   content={[

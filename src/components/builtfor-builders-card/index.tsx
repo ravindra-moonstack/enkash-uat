@@ -12,6 +12,8 @@ interface BuiltforBuildersSectionProps {
   icon: string // can be a local import or remote URL
   url?: string // Destination URL (now optional)
   className?: string
+  headingTag?: keyof React.JSX.IntrinsicElements
+  headingClassName?: string
 }
 
 const BuiltforBuildersSection: React.FC<BuiltforBuildersSectionProps> = ({
@@ -21,6 +23,8 @@ const BuiltforBuildersSection: React.FC<BuiltforBuildersSectionProps> = ({
   icon,
   url,
   className = "",
+  headingTag,
+  headingClassName,
 }) => {
   //
 
@@ -43,8 +47,8 @@ const BuiltforBuildersSection: React.FC<BuiltforBuildersSectionProps> = ({
             color: "color-white",
           },
         ]}
-        headingTag="h5"
-        className="mb-1 f-5 mt-3"
+        headingTag={headingTag ? headingTag : "h5"}
+        className={`${headingClassName} mb-1 f-5 mt-3`}
       />
       {subtitle2 && (
         <DynamicHeading

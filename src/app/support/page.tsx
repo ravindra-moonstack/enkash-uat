@@ -37,7 +37,7 @@ const Suppport = (): React.JSX.Element => {
         <div className="row">
           <div className="col-md-5 col-12"></div>
           <div className="col-md-7 col-12">
-            <div className={"contactFormWrapper"}>
+            <div className={"contactFormWrapper mt-3 mt-md-0"}>
               <DynamicHeading
                 content={[
                   {
@@ -53,8 +53,7 @@ const Suppport = (): React.JSX.Element => {
                 className="text-center "
               />
 
-              <p className={"subtitle"}>We just need a few quick details</p>
-
+              <p className={"subtitle mb-4"}>We just need a few quick details</p>
               <SupportFormWrapper />
             </div>
             <div className="row">

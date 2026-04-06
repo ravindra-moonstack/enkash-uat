@@ -37,8 +37,8 @@ const UtilityBillPayments: React.FC<UtilityBillPaymentsProps> = ({
                       color: "color-black",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-5 mb-2"
+                  headingTag="h4"
+                  className="f-5 mb-2 heading-h5"
                 />
               </div>
               <DynamicHeading
