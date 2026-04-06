@@ -26,6 +26,8 @@ interface OtherProductsProps {
   cards: CardData[]
   className?: string
   useOptionalProps?: boolean
+  cardHeadingTag?: keyof JSX.IntrinsicElements
+  cardHeadingClassName?: string
 }
 
 const OtherProductsContent: React.FC<OtherProductsProps> = ({
@@ -34,6 +36,8 @@ const OtherProductsContent: React.FC<OtherProductsProps> = ({
   cards,
   className = "",
   useOptionalProps = false,
+  cardHeadingTag,
+  cardHeadingClassName,
 }) => {
   return (
     <div className={`${styles.other_products} ${className}`}>
@@ -56,6 +60,8 @@ const OtherProductsContent: React.FC<OtherProductsProps> = ({
                   cardImage={card.cardImage}
                   theme={card.theme ?? "dark"}
                   linkUrl={card.link}
+                  headingTag={cardHeadingTag}
+                  headingClassName={cardHeadingClassName}
                 />
               ) : (
                 <ManagementCard {...card} />
