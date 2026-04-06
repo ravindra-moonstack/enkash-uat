@@ -37,7 +37,7 @@ const Suppport = (): React.JSX.Element => {
         <div className="row">
           <div className="col-md-5 col-12"></div>
           <div className="col-md-7 col-12">
-            <div className={"contactFormWrapper mt-0 mt-md-3"}>
+            <div className={"contactFormWrapper mt-3 mt-md-0"}>
               <DynamicHeading
                 content={[
                   {
