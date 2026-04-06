@@ -16,6 +16,8 @@ interface ContentShowcaseProps {
     icon: string
     title: string
     description: string
+    headingTag?: keyof JSX.IntrinsicElements
+    headingClassName?: string
   }[]
   imageSrc: string | StaticImageData
   imageAlt: string
@@ -27,6 +29,8 @@ interface ContentShowcaseProps {
   imgHeightStyle?: string
   buttonArrow?: boolean
   contentContainerStyle?: string
+  headingTag?: keyof JSX.IntrinsicElements
+  headingClassName?: string
 }
 
 function ContentShowcase({
@@ -45,6 +49,8 @@ function ContentShowcase({
   imgHeightStyle = "mh-550",
   buttonArrow,
   contentContainerStyle,
+  headingTag,
+  headingClassName,
 }: ContentShowcaseProps): JSX.Element {
   return (
     <div className={`${bgColor} ${styles.ContentShowcase}`}>
@@ -99,8 +105,8 @@ function ContentShowcase({
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <DynamicHeading
                   content={[{ title: heading, color: "color-black" }]}
-                  headingTag="h4"
-                  className="f-5"
+                  headingTag={headingTag ? headingTag : "h3"}
+                  className={`${headingClassName ? headingClassName : "heading-h4"} f-5`}
                 />
 
                 <DynamicHeading
@@ -111,12 +117,14 @@ function ContentShowcase({
               </div>
 
               <div className="d-flex flex-column gap-32 mt-4">
-                {data.map(({ icon, title, description }, i) => (
+                {data.map(({ icon, title, description, headingClassName: itemClassName, headingTag: itemTag }, i) => (
                   <PolicyCard
                     key={i}
                     icon={icon}
                     title={title}
                     description={description}
+                    headingClassName={itemClassName ? itemClassName : "heading-h5"}
+                    headingTag={itemTag ? itemTag : "h4"}
                   />
                 ))}
               </div>

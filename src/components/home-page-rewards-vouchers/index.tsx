@@ -12,6 +12,8 @@ interface HomePageRewardsVouchersProps {
   url?: string
   image?: string
   overlayColorClass?: string
+  headingTag?: keyof React.JSX.IntrinsicElements
+  headingClassName?: string
 }
 
 const HomePageRewardsVouchers: React.FC<HomePageRewardsVouchersProps> = ({
@@ -22,6 +24,8 @@ const HomePageRewardsVouchers: React.FC<HomePageRewardsVouchersProps> = ({
   url,
   image,
   overlayColorClass,
+  headingTag,
+  headingClassName,
 }) => {
   const content = (
     <div
@@ -52,8 +56,8 @@ const HomePageRewardsVouchers: React.FC<HomePageRewardsVouchersProps> = ({
                 color: "color-white ",
               },
             ]}
-            headingTag="h5"
-            className="f-5 mb-2"
+            headingTag={headingTag ? headingTag : "h5"}
+            className={`${headingClassName} f-5 mb-2`}
           />
         </div>
         <div className={`${styles.button_wrapper}`}>
