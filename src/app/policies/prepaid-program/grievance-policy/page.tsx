@@ -17,7 +17,7 @@ export const metadata: Metadata = generateMetaData({
 })
 
 const GrievancePolicy = (): React.JSX.Element => {
- 
+
 
   return (
     <>
@@ -562,7 +562,17 @@ const GrievancePolicy = (): React.JSX.Element => {
                           of the complaint, with reasons thereof in writing.
                         </span>
                       </p>
-
+                      <p className="c3 c9">
+                        <span className="c0 c24"></span>
+                      </p>
+                      <p className="c3 c9">
+                        <span className="c0 c24">In case no resolution to your complaint is provided within 30 days or if the resolution is unsatisfactory, you may escalate your concern on the RBI CMS portal: <a
+                          className="c17"
+                          href=" https://cms.rbi.org.in/"
+                        >
+                          https://cms.rbi.org.in/
+                        </a></span>
+                      </p>
                       <p className="c3 c9">
                         <span className="c0 c24"></span>
                       </p>
