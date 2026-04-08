@@ -103,14 +103,17 @@ const nextConfig: NextConfig = {
 
   async rewrites() {
     return [
-      { source: "/resources", destination: "https://blogs.enkash.com/blog" },
+      {
+        source: "/resources",
+        destination: `${process.env.RESOURCE_URL}/blog`,
+      },
       {
         source: "/resources/blog/:path*",
-        destination: "https://blogs.enkash.com/blog/:path*",
+        destination: `${process.env.RESOURCE_URL}/blog/:path*`,
       },
       {
         source: "/resources/:path*",
-        destination: "https://blogs.enkash.com/:path*",
+        destination: `${process.env.RESOURCE_URL}/:path*`,
       },
     ]
   },
