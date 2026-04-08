@@ -270,11 +270,6 @@ const url: {
     source: "/vouchers/health-and-wellness/mamaearth-gift-card",
     destination: "/vouchers/mamaearth",
   },
-
-  {
-    source: "/vouchers/movies-and-music/amazon-prime-gift-card",
-    destination: "/vouchers/amazon-prime-shopping",
-  },
   {
     source: "/vouchers/movies-and-music/amazon-prime-gift-card",
     destination: "/vouchers/amazon-prime-shopping",
@@ -295,17 +290,16 @@ const url: {
     source: "/qr-codes",
     destination: "/qr-code",
   },
-  {
-    source: "/voucher",
-    destination: "/products/vouchers",
-  },
 
   {
     source: "/voucher/:path*",
     destination: "/vouchers/:path*",
     permanent: true,
   },
-
+  {
+    source: "/voucher",
+    destination: "/products/vouchers",
+  },
   {
     source: "/resourcesblog/budget-highlights-2023",
     destination: "/resources/blog/union-budget-2023",
@@ -342,7 +336,7 @@ const url: {
 
 const mappedUrls = url.map((item) => ({
   ...item,
-  permanent: true,
+  permanent: item.permanent ?? false,
 }))
 
 export default mappedUrls
