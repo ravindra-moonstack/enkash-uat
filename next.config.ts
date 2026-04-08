@@ -110,7 +110,6 @@ const nextConfig: NextConfig = {
       {
         source: "/resources",
         destination: `${process.env.RESOURCE_URL}/blog`,
-        permanent: true,
       },
       {
         source: "/resources/:path*",
