@@ -27,6 +27,8 @@ interface UseCaseSectionProps {
   subHeading?: HeadingPart[]
   buttonUrl: string
   className?: string
+  textColClass?: string
+  imageColClass?: string
 }
 
 const UseCaseSection: React.FC<UseCaseSectionProps> = ({
@@ -36,6 +38,8 @@ const UseCaseSection: React.FC<UseCaseSectionProps> = ({
   buttonUrl,
   subHeading,
   className = "",
+  textColClass,
+  imageColClass,
 }) => {
   return (
     <div className={`${styles.use_case_section} ${className}`}>
@@ -64,6 +68,8 @@ const UseCaseSection: React.FC<UseCaseSectionProps> = ({
             buttonUrl={buttonUrl}
             maxImageHeight={item.maxImageHeight}
             reverse={item.reverse}
+            textColClass={textColClass}
+            imageColClass={imageColClass}
           />
         ))}
       </div>

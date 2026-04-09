@@ -1,0 +1,16 @@
+@use "@/src/styles/mixin" as *;
+@use "@/src/styles/variables" as *;
+
+.TaxBenefitDetailsCard {
+  text-align: start;
+  color: #000;
+
+  @include for-laptops {
+    padding: 0 30px;
+  }
+
+  p {
+    color: $color-grey-200;
+    line-height: 28px;
+  }
+}
