@@ -8,6 +8,8 @@ interface SlideData {
     id: number
     icon: any
     title: string
+    amount: string
+    subtitle: string
 }
 
 interface HeadingContent {
@@ -51,7 +53,7 @@ const BenefitGridSection: React.FC<BenefitGridSectionProps> = ({
                             <DynamicHeading
                                 content={heading}
                                 headingTag="h2"
-                                className="f-5 mb-2"
+                                className={`${styles.heading} f-5 mb-2`}
                             />
                         </div>
                         <DynamicHeading

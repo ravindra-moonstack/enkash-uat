@@ -48,7 +48,11 @@
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
+        gap: 66px;
+        
+        @include for-laptops {
         gap: 40px;
+        }
     }
 
     .leftContent {
@@ -57,7 +61,12 @@
         align-items: center;
         padding-right: 0px;
         width: 100%;
-
+        .heading{
+            text-align: center;
+            @include for-laptops {
+                text-align: left;
+            }
+        }
         .descriptionText {
             text-align: center;
 

@@ -42,7 +42,7 @@ const TaxBenefitDetailsCard: React.FC<TaxBenefitDetailsCardProps> = ({
                 <DynamicHeading
                     content={[{ title: title2, color: "color-equity-blue" }]}
                     headingTag="p"
-                    className="f-4 mb-3 heading-h2"
+                    className="f-7 mb-3 heading-h2"
                 />
                 <DynamicHeading
                     content={[{ title: title3, color: "color-electric-green" }]}
