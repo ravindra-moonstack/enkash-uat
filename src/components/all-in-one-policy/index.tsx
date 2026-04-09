@@ -18,6 +18,8 @@ interface AllInOnePolicyProps {
   maxImageHeight?: string
   buttonTheme?: ButtonTheme
   buttonText?: string
+  textColClass?: string
+  imageColClass?: string
 }
 
 const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
@@ -31,12 +33,14 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   maxImageHeight,
   buttonTheme = "outline-blue",
   buttonText = "Get Started",
+  textColClass = "col-md-8",
+  imageColClass = "col-md-4",
 }) => {
   return (
     <div className={`row align-items-center mb-3 ${styles.section}`}>
       {/* Text Block */}
       <div
-        className={`col-md-8 col-12 ${reverse ? "order-md-2" : "order-md-1"}`}
+        className={`${textColClass} col-12 ${reverse ? "order-md-2" : "order-md-1"}`}
       >
         <div className={`d-flex align-items-start ${styles.policyCard}`}>
           {/* Icon */}
@@ -88,7 +92,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
 
       {/* Image Block */}
       <div
-        className={`col-md-4 col-12 d-flex justify-content-end ${reverse ? "order-md-1" : "order-md-2"
+        className={`${imageColClass} col-12 d-flex justify-content-end ${reverse ? "order-md-1" : "order-md-2"
           } ${styles.third_container}`}
       >
         {image && (
