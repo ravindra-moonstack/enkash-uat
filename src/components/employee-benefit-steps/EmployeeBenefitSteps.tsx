@@ -60,13 +60,13 @@ export default function EmployeeBenefitSteps({
 
                             <DynamicHeading
                                 content={[{ title: step.title, color: "color-black" }]}
-                                headingTag="h5"
-                                className="f-5"
+                                headingTag="h3"
+                                className="f-5 heading-h5"
                             />
                             <DynamicHeading
-                                content={[{ title: step.description, color: "color-black" }]}
+                                content={[{ title: step.description, color: "color-alternate-grey" }]}
                                 headingTag="p"
-                                className="f-3 mb-0"
+                                className="f-4 mb-0"
                             />
                         </div>
                     ))}

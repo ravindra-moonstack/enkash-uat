@@ -87,7 +87,7 @@ const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
             />
             <div className={styles.introduction_section}>
                 <div className="d-flex justify-content-center flex-column gap-32 align-items-center max-w-auto">
-                    <div>
+                    <>
                         <DynamicHeading
                             content={[
                                 {
@@ -99,7 +99,7 @@ const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
                             className="f-3 text-center heading-h3"
                         />
                         <div className={styles.cardDivider} />
-                    </div>
+                    </>
 
                     <div className={`d-flex ${styles.section}`}>
                         {introductionCards.map((card, idx) => (

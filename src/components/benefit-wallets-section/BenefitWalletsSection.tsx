@@ -45,7 +45,7 @@ const BenefitWalletsSection: React.FC<BenefitWalletsSectionProps> = ({
         const contentColor = theme === "black" ? "color-alternate-grey" : "color-white"
 
         return (
-            <div key={card.id} className={styles.walletCard}>
+            <div key={card.id} className={`${styles.walletCard} ${theme === 'white' ? styles.whiteTheme : styles.blackTheme}`}>
                 {card.icon && (
                     <div className={styles.cardIcon}>
                         {typeof card.icon === 'string' && card.icon.length < 5 ? (
