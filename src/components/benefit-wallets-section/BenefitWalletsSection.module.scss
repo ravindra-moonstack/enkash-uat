@@ -125,10 +125,38 @@
             gap: 4px;
 
             p {
-                color: #FFFFFF !important;
                 font-size: 16px !important;
                 line-height: 24px !important;
                 letter-spacing: -0.04em !important;
+            }
+        }
+
+        // 1. MOBILE DEFAULTS (Apply to all cards on mobile)
+        [class*="color-"] {
+            color: $color-alternate-grey !important;
+        }
+        .highlights [class*="color-"] {
+            color: $color-electric-green !important;
+        }
+
+        // 2. DESKTOP THEME OVERRIDES
+        @include for-laptops {
+            &.whiteTheme {
+                [class*="color-"] {
+                    color: $color-white !important;
+                }
+                .highlights [class*="color-"] {
+                    color: $color-electric-green !important;
+                }
+            }
+
+            &.blackTheme {
+                [class*="color-"] {
+                    color: $color-alternate-grey !important;
+                }
+                .highlights [class*="color-"] {
+                    color: $color-white !important;
+                }
             }
         }
     }
@@ -144,7 +172,5 @@
             filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.15));
         }
     }
-
-     
 }
  

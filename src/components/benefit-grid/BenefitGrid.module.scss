@@ -10,9 +10,8 @@
     .gridContainer {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 60px 20px;
+        gap: 66px 24px;
         height: 100%;
-
         @include for-laptops {
             grid-template-columns: repeat(3, 1fr);
         }
@@ -22,24 +21,26 @@
 
 .slideCard {
     position: relative; 
-    background: $color-white-10;
-    border-radius: 10px;
+    background: $color-white-1a; 
+    border-radius: 8px;
     border-top-left-radius: 0;
-    padding: 34px 7px 30px 27px;
+    padding: 19px 7px 26px 28px;
+    // padding: 34px 7px 30px 27px; 
     border: 1px solid $color-shocking-blue;
     box-shadow: 0px 0px 42.77px 0px #0000001C;
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: all 0.3s ease;
-    gap: 15.55px;
-
+    transition: all 0.3s ease; 
+    @include for-laptops {
+    width: 100%;
+    }
     .cardDecoration {
         position: absolute;
         top: -39px;
-        left: -1px;
+        left: -0.7px;
         line-height: 0;
         pointer-events: none;
 
@@ -48,32 +49,32 @@
         }
     }
 }
-
 .slideIcon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(53, 231, 235, 0.1);
+            border-radius: 6.24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right:2.5px;
+            margin-bottom: 2.5px;
+            flex-shrink: 0;
 
-}
-
-.slideTitle {
-    font-size: 24px;
-    font-weight: 500;
-    color: #000000;
-    line-height: 31.25px;
-    font-family: "Inter", sans-serif;
-}
-
-.slideDescription {
-    font-size: 16px;
-    color: $color-grey-200;
-    line-height: 21.77px;
-    flex: 1;
-    font-weight: 400;
-}
-
+            img {
+                width: 28.8px !important;
+                height: 28.8px !important;
+                object-fit: contain;
+                filter: none !important;
+            }
+        }
+ .titleWrapper{
+    flex:1;
+    
+ } 
+        .slideAmount{
+            text-shadow: 0 0 17.78px #FFFFFF54;
+        }
 .customButtons {
     a {
         text-decoration: none;
@@ -89,15 +90,7 @@
         }
     }
 }
-
-.slideTitle {
-    font-size: 15px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.88);
-    line-height: 1.4;
-    margin: 0;
-    font-family: "Inter", sans-serif;
-}
+ 
  
 // "₹15,000" large bold amount
 .slideAmount {
