@@ -9,9 +9,18 @@ interface CtaBannerProps {
     rightImage?: any;
     buttonText?: string;
     buttonUrl?: string;
+    titleLight?: string;
+    titleBold?: string;
 }
 
-const CtaBanner: React.FC<CtaBannerProps> = ({ leftImage, rightImage, buttonText, buttonUrl }) => {
+const CtaBanner: React.FC<CtaBannerProps> = ({
+    leftImage,
+    rightImage,
+    buttonText,
+    buttonUrl,
+    titleLight,
+    titleBold
+}) => {
     return (
         <section className={styles.wrapper}>
             <div className={`${styles.sideLines} ${styles.sideLinesLeft}`}>
@@ -31,7 +40,7 @@ const CtaBanner: React.FC<CtaBannerProps> = ({ leftImage, rightImage, buttonText
                     <DynamicHeading
                         content={[
                             {
-                                title: "Smarter Corporate Spending",
+                                title: titleLight || "Smarter Corporate Spending",
                                 color: "color-white",
                             },
                         ]}
@@ -41,7 +50,7 @@ const CtaBanner: React.FC<CtaBannerProps> = ({ leftImage, rightImage, buttonText
                     <DynamicHeading
                         content={[
                             {
-                                title: "Starts Here",
+                                title: titleBold || "Starts Here",
                                 color: "color-white",
                             },
                         ]}
