@@ -23,7 +23,7 @@ const FaqSection = ({
   const connectUrl = `/contact-us?source=${lastSlug}`
 
   return (
-    <div className={`${styles.faq_new_row} relative`}>
+    <div id="faq-section" className={`${styles.faq_new_row} relative`}>
       {/* Inject FAQ JSON-LD for SEO */}
       <FAQSchema faqData={faqData} />
 

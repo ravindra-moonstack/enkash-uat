@@ -139,6 +139,10 @@ const InvestorsLogos = dynamic(() => import("./investors-logos"), { ssr: true })
 const EmployeeSlider = dynamic(() => import("./employee-slider"), { ssr: true })
 
 const CareersCard = dynamic(() => import("./about-careers-card"), { ssr: true })
+const TaxBenefitDetailsCard = dynamic(
+  () => import("./tax-benefit-details-card"),
+  { ssr: true }
+)
 
 const LocationTabsMap = dynamic(() => import("./location-tabs-map"), {
   ssr: true,
@@ -209,11 +213,30 @@ const PaymentGatewayGridSection = dynamic(
   { ssr: true }
 )
 
+const BenefitGridSection = dynamic(
+  () => import("./benefit-grid/BenefitGridSection"),
+  { ssr: true }
+)
+
 const BlocksSection = dynamic(() => import("./blocks-section/BlocksSection"), {
   ssr: true,
 })
 
 const CtaBanner = dynamic(() => import("./cta-banner"), { ssr: true })
+
+const EmployeeBenefitSteps = dynamic(
+  () => import("./employee-benefit-steps/EmployeeBenefitSteps"),
+  { ssr: true }
+)
+
+const BenefitWalletsSection = dynamic(
+  () => import("./benefit-wallets-section/BenefitWalletsSection"),
+  { ssr: true }
+)
+
+const StatisticsSection = dynamic(() => import("./statistics-section"), {
+  ssr: true,
+})
 
 const BuiltforBuildersSection = dynamic(
   () => import("./builtfor-builders-card"),
@@ -324,4 +347,9 @@ export {
   ContactForm,
   CommanButton,
   ShimmerImage,
+  BenefitGridSection,
+  EmployeeBenefitSteps,
+  TaxBenefitDetailsCard,
+  BenefitWalletsSection,
+  StatisticsSection,
 }

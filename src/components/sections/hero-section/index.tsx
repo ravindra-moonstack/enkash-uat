@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image"
 import styles from "./hero-section.module.scss"
 import CustomBreadcrumb from "../../breadcrumb"
 import DynamicHeading from "../../dynamic-heading"
-import CommanButton from "../../buttons"
+import CommanButton, { ButtonProps } from "../../buttons"
 import { BreadcrumbItem } from "@/src/types"
 import LogoSlider from "../../logo-slider"
 import VideoModal from "../../vedio-modal"
@@ -34,6 +34,7 @@ interface HeroSectionProps {
   rightImage: StaticImageData | string
   backgroundImage?: string
   rightImageMaxHeight?: string | number
+  button2?: ButtonProps
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
@@ -45,6 +46,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   rightImage,
   backgroundImage,
   rightImageMaxHeight = "550px",
+  button2,
 }) => {
   const [open, setOpen] = useState(false)
   return (
@@ -134,7 +136,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                       theme={button.theme ?? "blue"}
                       url={button.url}
                     />
+                    {button2 && (
+                      <CommanButton
 
+                        {...button2}
+                      />
+                    )}
                     {button.vedioLink && (
                       <>
                         {button.vedioLink && (
