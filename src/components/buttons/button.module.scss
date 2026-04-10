@@ -220,6 +220,18 @@
     }
   }
 
+  &.blue-hover-white {
+    background-color: $color-equity-blue;
+    border: 1px solid $color-solid-blue-hover;
+    color: $color-white;   
+    transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-equity-blue;
+    }
+  }
+
   img {
     display: inline-block;
     // height: auto;
