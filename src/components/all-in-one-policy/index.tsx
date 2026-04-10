@@ -57,8 +57,8 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
                   color: "color-black",
                 },
               ]}
-              headingTag="h5"
-              className="f-5"
+              headingTag="h3"
+              className="f-5 heading-h5"
             />
             {descriptionHtml ? (
               <div className="color-grey-200 mb-0">

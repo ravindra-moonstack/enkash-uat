@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react"
 import styles from "./BenefitWalletsSection.module.scss"
-import { DynamicHeading } from ".."
+import { CommanButton, DynamicHeading } from ".."
 import Image from "next/image"
 
 export interface WalletCard {
@@ -21,6 +21,7 @@ export interface BenefitWalletsSectionProps {
     cards: WalletCard[]
     centerImage?: any
     backgroundImage?: string
+    buttonUrl?: string
     textColor?: "black" | "white"
 }
 
@@ -31,6 +32,7 @@ const BenefitWalletsSection: React.FC<BenefitWalletsSectionProps> = ({
     cards,
     centerImage,
     backgroundImage,
+    buttonUrl,
     textColor = "black", // Changed default to black for better initial visibility
 }) => {
     const topLeftCards = cards.filter((c) => c.position === "top-left")
@@ -70,7 +72,7 @@ const BenefitWalletsSection: React.FC<BenefitWalletsSectionProps> = ({
                 <DynamicHeading
                     content={[{ title: card.description, color: contentColor }]}
                     headingTag="p"
-                    className="mb-4"
+                    className="mb-3"
                 />
                 {card.highlights && card.highlights.length > 0 && (
                     <div className={styles.highlights}>
@@ -150,6 +152,9 @@ const BenefitWalletsSection: React.FC<BenefitWalletsSectionProps> = ({
                         {bottomRightCards.map(renderCard)}
                     </div>
                 </div>
+            </div>
+            <div className="d-flex justify-content-center w-100 mt-4 mt-md-3">
+                <CommanButton title="Talk to Employee Benefits Expert" url={buttonUrl} theme="blue" />
             </div>
         </section>
     )
