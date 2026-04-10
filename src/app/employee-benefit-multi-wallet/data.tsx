@@ -127,7 +127,7 @@ const benefitGridData = [
     {
         id: 1,
         icon: benefitIcon1,       // use your actual meal icon path
-        title: "Food & Meal Wallet",
+        title: "Food & Meal",
         amount: "₹1,05,600",
         subtitle: "Up to per year",
     },

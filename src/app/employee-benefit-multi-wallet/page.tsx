@@ -47,6 +47,7 @@ const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
     return (
         <div className={`color-white`}>
             <HeroSection
+                breadcrumbColor="allBlack"
                 breadcrumbs={[
                     { name: "Home", url: "/" },
                     {
@@ -60,7 +61,7 @@ const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
                 ]}
                 subtitle={{
                     text: "Employee Benefit Multi-wallet Card",
-                    color: "color-equity-blue",
+                    color: "color-equity-blue text-uppercase",
                     underline: true,
                 }}
                 title={[
@@ -84,6 +85,10 @@ const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
                 button2={{ title: "See Tax Savings", url: "#benefit-section", theme: "white", arrow: true }}
                 rightImage={HeroImage}
                 backgroundImage={HeroImageBg.src}
+                RightImageProps={{
+                    alt: "Employee Benefit Multi-wallet Card",
+                    style: { objectPosition: "right" },
+                }}
             />
             <div className={styles.introduction_section}>
                 <div className="d-flex justify-content-center flex-column gap-32 align-items-center max-w-auto">
