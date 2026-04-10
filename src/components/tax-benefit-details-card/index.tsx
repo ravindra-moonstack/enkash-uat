@@ -52,7 +52,7 @@ const TaxBenefitDetailsCard: React.FC<TaxBenefitDetailsCardProps> = ({
                 <DynamicHeading
                     content={title4}
                     headingTag="p"
-                    className={`${title4?.[3]?.className}  `}
+                    className={`${title4?.[2]?.className}  `}
                 />
             </div>
 
