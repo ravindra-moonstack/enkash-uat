@@ -62,7 +62,7 @@ const CtaBanner: React.FC<CtaBannerProps> = ({
                 {/* CTA Button */}
                 <CommanButton
                     title={buttonText || "Schedule a Demo"}
-                    theme="white-without-hover"
+                    theme="blue-hover-white"
                     arrow
                     className={styles.ctaButton}
                     url={buttonUrl}

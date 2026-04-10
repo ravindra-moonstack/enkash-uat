@@ -15,9 +15,13 @@
         width: 100% !important;
         left: 0;
         right: 0;
-        bottom: 208px !important;
-        top: unset !important;
+        bottom: unset !important;
+        top: 709px !important;
         color: transparent;
+        @include for-laptops {
+            bottom: 208px !important;
+            top: unset !important;
+        }
     } 
     .container {
         position: relative;
@@ -27,15 +31,7 @@
 
     .header {
         text-align: center;
-        margin-bottom: 50px;
-
-        @include for-laptops {
-            margin-bottom: 80px;
-        }
-
-        h2 {
-            line-height: 1.2;
-        }
+        margin-bottom: 43px;  
     }
 
     .grid {
@@ -72,7 +68,7 @@
         // padding: 7px 7px 64px 67px;
         width: 100%;
         max-width: 361px;
-        height: 510px;
+        height: 425px;
         display: flex;
         flex-direction: column;
         transition: all 0.3s ease;
