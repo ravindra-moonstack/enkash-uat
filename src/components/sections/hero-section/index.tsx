@@ -6,7 +6,7 @@ import styles from "./hero-section.module.scss"
 import CustomBreadcrumb from "../../breadcrumb"
 import DynamicHeading from "../../dynamic-heading"
 import CommanButton, { ButtonProps } from "../../buttons"
-import { BreadcrumbItem } from "@/src/types"
+import { BreadcrumbItem, BreadcrumbProps } from "@/src/types"
 import LogoSlider from "../../logo-slider"
 import VideoModal from "../../vedio-modal"
 import VideoIcon from "../../../../public/svgs/vedio-icon.svg"
@@ -21,6 +21,7 @@ interface TextPart {
 
 interface HeroSectionProps {
   breadcrumbs: BreadcrumbItem[]
+  breadcrumbColor?: BreadcrumbProps["linkColor"]
   subtitle?: TextPart
   title: TextPart[]
   description: TextPart
@@ -35,10 +36,12 @@ interface HeroSectionProps {
   backgroundImage?: string
   rightImageMaxHeight?: string | number
   button2?: ButtonProps
+  RightImageProps?: React.ImgHTMLAttributes<HTMLImageElement>
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
   breadcrumbs,
+  breadcrumbColor,
   subtitle,
   title,
   description,
@@ -47,6 +50,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage,
   rightImageMaxHeight = "550px",
   button2,
+  RightImageProps
 }) => {
   const [open, setOpen] = useState(false)
   return (
@@ -69,7 +73,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="d-flex flex-column flex-md-row">
           {/* LEFT CONTENT */}
           <div className="col-12 col-md-6 d-flex flex-column">
-            <CustomBreadcrumb items={breadcrumbs} />
+            <CustomBreadcrumb items={breadcrumbs} linkColor={breadcrumbColor} />
 
             {subtitle && (
               <div
@@ -192,6 +196,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 quality={80}
                 decoding="sync"
+                {...RightImageProps}
               />
             </div>
           </div>

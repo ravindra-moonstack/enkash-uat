@@ -36,23 +36,23 @@ const TaxBenefitDetailsCard: React.FC<TaxBenefitDetailsCardProps> = ({
                     <DynamicHeading
                         content={[{ title: title1, color: "color-black" }]}
                         headingTag="p"
-                        className="f-5 mb-2 heading-h4"
+                        className="f-5 heading-h4"
                     />
                 )}
                 <DynamicHeading
                     content={[{ title: title2, color: "color-equity-blue" }]}
                     headingTag="p"
-                    className="f-7 mb-3 heading-h2"
+                    className="f-7 heading-h2"
                 />
                 <DynamicHeading
                     content={[{ title: title3, color: "color-electric-green" }]}
                     headingTag="p"
-                    className="mb-2"
+                    className={`${styles.title3}`}
                 />
                 <DynamicHeading
                     content={title4}
                     headingTag="p"
-                    className={`${title4?.[3]?.className} mb-1`}
+                    className={`${title4?.[3]?.className}  `}
                 />
             </div>
 
