@@ -18,11 +18,19 @@ const faqData: TFAQProps[] = [
     },
     {
         question: "What are employee benefits in India?",
-        answer: [
-            {
-                heading:
-                    "Employee benefits in India, often called flexi benefits, allow companies to structure salaries in a tax-efficient way. These include meal cards, fuel cards, telecom reimbursements, gift vouchers, and LTA — all designed to increase take-home salary without increasing cost.",
-            },
+        answerHTML: [
+            <p key="1">
+                Employee benefits in India, often called {" "}
+                <Link
+                    href="https://www.enkash.com/resources/blog/flexi-benefits-for-employees-in-india"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="color-equity-blue underline"
+                >
+                    flexi benefits
+                </Link>
+                , allow companies to structure salaries in a tax-efficient way. These include meal cards, fuel cards, telecom reimbursements, gift vouchers, and LTA — all designed to increase take-home salary without increasing cost.
+            </p>
         ],
     },
     {
@@ -65,24 +73,32 @@ const faqData: TFAQProps[] = [
     },
     {
         question: "Is the EnKash Multi-Wallet Card accepted everywhere in India?",
-        answer: [
-            {
-                heading: "Yes.",
-            },
-            {
-                heading:
-                    "The EnKash Multi-Wallet Card operates on the open RuPay network and is accepted at 50 lakh+ merchant touchpoints across all 36 states and Union Territories of India — including:",
-                bullets: [
-                    "Restaurants and grocery stores",
-                    "Fuel stations",
-                    "Online platforms like Swiggy and Zomato",
-                    "POS machines across cities and towns",
-                ],
-            },
-            {
-                heading:
-                    "Each wallet is restricted by merchant category to ensure compliant usage.",
-            },
+        answerHTML: [
+            <div key="1" className="mb-4">
+                <p>Yes.</p>
+                <p className="mt-3">
+                    The EnKash Multi-Wallet Card operates on the open RuPay network and is accepted at 50 lakh+ merchant touchpoints across all 36 states and Union Territories of India — including:
+                </p>
+                <ul className="mt-2">
+                    <li>Restaurants and grocery stores</li>
+                    <li>Fuel stations</li>
+                    <li>Online platforms like Swiggy and Zomato</li>
+                    <li>
+                        <Link
+                            href="https://www.enkash.com/resources/blog/pos-machine-costs-and-fees"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="color-equity-blue underline"
+                        >
+                            POS machines
+                        </Link>
+                        {" "} across cities and towns
+                    </li>
+                </ul>
+                <p className="mt-3">
+                    Each wallet is restricted by merchant category to ensure compliant usage.
+                </p>
+            </div>
         ],
     },
     {
@@ -204,7 +220,7 @@ const faqData: TFAQProps[] = [
         question: "What does the EnKash Multi-Wallet Card cost?",
         answerHTML: [
             "Pricing depends on your company’s size, use case, and benefit structure.",
-            <Link href={salesUrl} target="_blank" rel="noopener noreferrer" className="d-block">Talk to our experts to unlock exclusive pricing and savings.</Link>
+            <Link href={salesUrl} target="_blank" rel="noopener noreferrer" className="d-block color-equity-blue">Talk to our experts to unlock exclusive pricing and savings.</Link>
         ],
     },
 ]

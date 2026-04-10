@@ -3,6 +3,7 @@ import Link from "next/link"
 import DynamicHeading from "../dynamic-heading"
 import styles from "./EmployeeBenefitSteps.module.scss"
 import { FaArrowRight } from "react-icons/fa6"
+import CommonButton from "../buttons"
 
 interface StepData {
     stepNumber: string
@@ -74,21 +75,9 @@ export default function EmployeeBenefitSteps({
                 {button && (
                     <div className={styles.buttonContainer}>
                         <div>
-                            <div className="mt-3 d-none d-md-block">
+                            <div className="d-md-block">
                                 <div className={`connectWithUs ${styles.connectWithUs}`}>
-                                    <Link href={button.connectUrl}>
-                                        <DynamicHeading
-                                            content={[
-                                                {
-                                                    title: button.connectText,
-                                                    color: "color-equity-blue",
-                                                },
-                                            ]}
-                                            headingTag="p"
-                                            className="mb-0 f-5  pe-1"
-                                        />
-                                        <FaArrowRight />
-                                    </Link>
+                                    <CommonButton title={button.connectText} theme="blue" url={button.connectUrl} arrow />
                                 </div>
                             </div>
                         </div>

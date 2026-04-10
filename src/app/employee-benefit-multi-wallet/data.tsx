@@ -1,6 +1,6 @@
 import { TCardTypes, TStackCardsProp } from "@/src/types"
 import { EmployeeBenefitStepsProps } from "@/components/employee-benefit-steps/EmployeeBenefitSteps"
-import { benefitIcon1, benefitIcon2, benefitIcon3, benefitIcon4, benefitIcon5, PolicyIcon1, PolicyIcon2, PolicyIcon3, PolicyIcon4, PolicyIcon5, PolicyImage1, PolicyImage2, PolicyImage3, PolicyImage4, PolicyImage5 } from "./img"
+import { benefitIcon1, benefitIcon2, benefitIcon3, benefitIcon4, benefitIcon5, fuelCardImg, mealCardImg, PettyCashDigitizationImage, PolicyIcon1, PolicyIcon2, PolicyIcon3, PolicyIcon4, PolicyIcon5, PolicyImage1, PolicyImage2, PolicyImage3, PolicyImage4, PolicyImage5, purchesCardImg, sassCardImg, sassCardImg2, termsAndConCardImg, vendorPaymentImage, virtualCardImg, } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
 const benifitsData = [
@@ -239,7 +239,64 @@ const statisticsData = [
         label: "India-only focus",
     },
 ]
-
+const cardType: TCardTypes = [
+    {
+        titleHtml: "Fuel Card",
+        description:
+            "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
+        cardImage: fuelCardImg,
+        linkUrl: "/fuel-card",
+    },
+    {
+        titleHtml: "Digital Marketing Card",
+        description:
+            "Simplify ad payments across platforms while staying within budget and preventing overspending.",
+        cardImage: sassCardImg,
+        linkUrl: "/digital-marketing-card",
+    },
+    {
+        titleHtml: "SaaS Card",
+        description:
+            "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control.",
+        cardImage: sassCardImg2,
+        linkUrl: "/saas-card",
+    },
+    {
+        titleHtml: "Payroll Card",
+        description:
+            "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
+        cardImage: purchesCardImg,
+        linkUrl: salesUrl,
+    },
+    {
+        titleHtml: "Virtual Card",
+        description:
+            "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking.",
+        cardImage: virtualCardImg,
+        linkUrl: salesUrl,
+    },
+    {
+        titleHtml: "Travel & Expense Card",
+        description:
+            "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
+        cardImage: termsAndConCardImg,
+        linkUrl: "/travel-and-expense-card",
+    },
+    {
+        titleHtml: "Purchase Card",
+        description:
+            "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
+        cardImage: purchesCardImg,
+        linkUrl: "/purchase-card",
+    },
+    {
+        titleHtml: "Fleet Card",
+        description:
+            "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
+        cardImage: vendorPaymentImage,
+        linkUrl: salesUrl,
+    },
+]
 export {
     managementCards,
     benifitsData,
@@ -249,5 +306,6 @@ export {
     policies,
     headingData,
     walletCards,
-    statisticsData
+    statisticsData,
+    cardType
 }
