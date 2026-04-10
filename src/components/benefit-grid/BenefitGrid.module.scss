@@ -1,0 +1,114 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.benefitGrid {
+    position: relative;
+    width: 100%;
+    padding-bottom: 18px; 
+    height: 100%;
+
+    .gridContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 66px 24px;
+        height: 100%;
+        @include for-laptops {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+
+.slideCard {
+    position: relative; 
+    background: $color-white-1a; 
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    padding: 19px 7px 26px 28px;
+    // padding: 34px 7px 30px 27px; 
+    border: 1px solid $color-shocking-blue;
+    box-shadow: 0px 0px 42.77px 0px #0000001C;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease; 
+    @include for-laptops {
+    width: 100%;
+    }
+    .cardDecoration {
+        position: absolute;
+        top: -39px;
+        left: -0.7px;
+        line-height: 0;
+        pointer-events: none;
+
+        svg {
+            display: block;
+        }
+    }
+}
+.slideIcon {
+            width: 48px;
+            height: 48px;
+            background: rgba(53, 231, 235, 0.1);
+            border-radius: 6.24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right:2.5px;
+            margin-bottom: 2.5px;
+            flex-shrink: 0;
+
+            img {
+                width: 28.8px !important;
+                height: 28.8px !important;
+                object-fit: contain;
+                filter: none !important;
+            }
+        }
+ .titleWrapper{
+    flex:1;
+    
+ } 
+        .slideAmount{
+            text-shadow: 0 0 17.78px #FFFFFF54;
+        }
+.customButtons {
+    a {
+        text-decoration: none;
+        color: $color-equity-blue;
+        display: inline-block;
+        margin-top: 20px;
+        font-weight: 500; // optional
+        font-size: 14px; // optional
+
+        svg {
+            margin-left: 7px;
+            vertical-align: middle; // keeps arrow aligned
+        }
+    }
+}
+ 
+ 
+// "₹15,000" large bold amount
+.slideAmount {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    letter-spacing: -0.3px;
+}
+ 
+// "Up to per year" teal subtitle
+.slideSubtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: #00c8d4;
+    line-height: 1.4;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}

@@ -43,15 +43,14 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
       />
 
       <nav
-        className={`${styles.breadcrumb} ${
-          linkColor === "white"
-            ? styles.white
-            : linkColor === "allWhite"
-              ? styles.allWhite
-              : linkColor === "allBlack"
-                ? styles.allBlack
-                : ""
-        }`}
+        className={`${styles.breadcrumb} ${linkColor === "white"
+          ? styles.white
+          : linkColor === "allWhite"
+            ? styles.allWhite
+            : linkColor === "allBlack"
+              ? styles.allBlack
+              : ""
+          }`}
         aria-label="Breadcrumb"
       >
         <ol className={styles.list}>

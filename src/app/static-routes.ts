@@ -554,4 +554,9 @@ export const STATIC_ROUTES = [
     lastModified: "2025-09-01T10:32:31+01:00",
     priority: 1.0,
   },
+  {
+    url: "https://www.enkash.com/employee-benefit-multi-wallet",
+    lastModified: "2025-09-01T10:32:31+01:00",
+    priority: 1.0,
+  },
 ]
