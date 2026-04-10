@@ -137,7 +137,7 @@ const BenefitWalletsSection: React.FC<BenefitWalletsSectionProps> = ({
                                     width={332}
                                     height={665}
                                     className={styles.mockup}
-                                    style={{ objectFit: 'contain' }}
+                                    style={{ objectFit: 'cover' }}
                                 />
                             </div>
                         )}
