@@ -184,6 +184,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
             >
               <Image
+                //@ts-ignore
                 src={rightImage}
                 alt="Hero Visual"
                 style={{
