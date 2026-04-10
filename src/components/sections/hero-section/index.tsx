@@ -73,7 +73,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="d-flex flex-column flex-md-row">
           {/* LEFT CONTENT */}
           <div className="col-12 col-md-6 d-flex flex-column">
-            <CustomBreadcrumb items={breadcrumbs} linkColor={breadcrumbColor} />
+            <div className="mt-md-0 mt-2">
+              <CustomBreadcrumb items={breadcrumbs} linkColor={breadcrumbColor} />
+            </div>
 
             {subtitle && (
               <div

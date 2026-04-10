@@ -148,7 +148,6 @@ const cardType: TCardTypes = [
       "Load salaries, bonuses, or incentives directly onto cards. Perfect for gig workers, contract staff, or employees without bank accounts. Instant, secure, zero paperwork.",
     cardImage: purchesCardImg,
   },
-
   {
     titleHtml: "Travel & Expense Cards",
     description:

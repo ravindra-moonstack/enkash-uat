@@ -11,6 +11,7 @@ import {
     policies,
     walletCards,
     statisticsData,
+    cardType,
 } from "./data"
 
 //components 
@@ -27,7 +28,7 @@ import { BenefitBg, careerSectionBanner, ctaSideImg, HeroImage, HeroImageBg, iPh
 import { careerCardIcon } from "@/src/app/about-us/img"
 
 //components
-import { EmployeeBenefitSteps, BenefitGridSection, CtaBanner, DynamicHeading, CareersCard, TaxBenefitDetailsCard, BenefitWalletsSection, StatisticsSection } from "@/src/components"
+import { EmployeeBenefitSteps, BenefitGridSection, CtaBanner, DynamicHeading, CareersCard, TaxBenefitDetailsCard, BenefitWalletsSection, StatisticsSection, CardProduct } from "@/src/components"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 import Image from "next/image"
 
@@ -175,6 +176,7 @@ const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
                 cards={walletCards}
                 centerImage={iPhone17}
                 backgroundImage={walletBg.src}
+                buttonUrl={salesUrl}
             />
 
             <div className={`${styles.features_section} ${styles.steps_container}`}>
@@ -184,6 +186,10 @@ const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
                         content: [{ title: "No complex integration. No IT dependency. EnKash handles the full lifecycle — from card issuance to compliance reporting.", color: "color-black" }]
                     }}
                     steps={stepsData}
+                    button={{
+                        connectText: "Book your Demo",
+                        connectUrl: salesUrl,
+                    }}
                 />
             </div>
 
@@ -217,6 +223,40 @@ const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
                 buttonUrl={salesUrl}
             />
             <FaqSection faqData={faqData} />
+            <div className={styles.other_products}>
+                <div className="max-w-auto">
+                    <div className={`${styles.title} text-center pb-5`}>
+                        <DynamicHeading
+                            content={[
+                                {
+                                    title: "Your Business, Your Cards",
+                                    color: "color-equity-blue",
+                                },
+                                {
+                                    title: " – Tailored by EnKash",
+                                    color: "color-black",
+                                },
+                            ]}
+                            headingTag="h2"
+                            className="f-6"
+                        />
+                    </div>
+                    <div className="row g-3 pb-4">
+                        {cardType.map(
+                            ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                                <div key={index} className="col-12 col-md-4">
+                                    <CardProduct
+                                        titleHtml={titleHtml}
+                                        description={description}
+                                        cardImage={cardImage}
+                                        linkUrl={linkUrl}
+                                    />
+                                </div>
+                            )
+                        )}
+                    </div>
+                </div>
+            </div>
             {/* <BlogSection
                 heading={[
                     {
