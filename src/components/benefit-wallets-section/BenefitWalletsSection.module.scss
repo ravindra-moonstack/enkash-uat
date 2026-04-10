@@ -1,0 +1,175 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.benefitWalletsSection {
+    position: relative;
+    padding: 50px 20px;
+    overflow: hidden; 
+    
+    @include for-laptops {
+        padding: 75px 20px 60px;
+    }
+
+    .background img{ 
+        position: absolute;
+        width: 100% !important;
+        left: 0;
+        right: 0;
+        bottom: unset !important;
+        top: 418px !important;
+        color: transparent;
+        @include for-laptops {
+            bottom: 208px !important;
+            top: unset !important;
+        }
+    } 
+    .container {
+        position: relative;
+        z-index: 10; 
+    }
+
+    .header {
+        text-align: center;
+        // margin-bottom: 43px;  
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        @include for-laptops {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .centerColumn {
+        order: -1; // Bring to top on mobile
+        
+        @include for-laptops {
+            order: 0;
+        }
+    }
+    .walletCard {
+        background: #F5FEFF1A;
+        backdrop-filter: blur(55px);
+        -webkit-backdrop-filter: blur(55px); 
+        border-radius: 8px;
+        padding: 30px;
+        // padding: 7px 7px 64px 67px;
+        width: 100%;
+        max-width: 361px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        @include for-laptops { 
+        height: 425px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 8px; 
+            padding: 1px; 
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.44) 0%, rgba(53, 231, 235, 0.44) 100%); 
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        &:hover {
+            transform: translateY(-5px); 
+        }
+
+        .cardIcon {
+            width: 48px;
+            height: 48px;
+            background: rgba(53, 231, 235, 0.1);
+            border-radius: 6.24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            flex-shrink: 0;
+
+            img {
+                width: 28.8px !important;
+                height: 28.8px !important;
+                object-fit: contain;
+                filter: none !important;
+            }
+        }
+
+        
+
+        .highlights {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            p {
+                font-size: 16px !important;
+                line-height: 24px !important;
+                letter-spacing: -0.04em !important;
+            }
+        }
+
+        // 1. MOBILE DEFAULTS (Apply to all cards on mobile)
+        [class*="color-"] {
+            color: $color-alternate-grey !important;
+        }
+        .highlights [class*="color-"] {
+            color: $color-electric-green !important;
+        }
+
+        // 2. DESKTOP THEME OVERRIDES
+        @include for-laptops {
+            &.whiteTheme {
+                [class*="color-"] {
+                    color: $color-white !important;
+                }
+                .highlights [class*="color-"] {
+                    color: $color-electric-green !important;
+                }
+            }
+
+            &.blackTheme {
+                [class*="color-"] {
+                    color: $color-alternate-grey !important;
+                }
+                .highlights [class*="color-"] {
+                    color: $color-white !important;
+                }
+            }
+        }
+    }
+
+    .mockupContainer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        .mockup {
+            max-width: 100%;
+            height: revert-layer;
+            filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.15));
+        }
+    }
+}
+ 

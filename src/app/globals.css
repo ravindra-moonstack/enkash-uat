@@ -80,6 +80,9 @@ a {
   background: #eaeaea;
 }
 
+.no-underline {
+  text-decoration: none;
+}
 .loader {
   width: 48px;
   height: 48px;
@@ -292,7 +295,9 @@ a {
     text-decoration: none !important;
   }
 }
-
+.mb-12{
+  margin-bottom: 12px !important;
+}
 .skip {
   position: absolute;
   left: -10000px;
