@@ -31,13 +31,19 @@ const cardsProducts: TProductCategory[] = [
         },
         list: [
           {
+            name: "Multi-wallet Card",
+            description: "Multiple wallets, maximum tax benefits",
+            imageSrc: mealCard,
+            imageSrcHovered: mealCardFilled,
+            link: "/employee-benefit-multi-wallet",
+          },
+          {
             name: "Meal Cards",
             description: "Tax-saving food benefit card",
             imageSrc: mealCard,
             imageSrcHovered: mealCardFilled,
             link: "/meal-card",
           },
-
           {
             name: "Fuel Cards",
             description: "Track and limit fuel spends",
