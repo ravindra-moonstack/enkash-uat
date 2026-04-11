@@ -628,6 +628,9 @@ const FooterV2 = (): React.JSX.Element => {
                       </div>
                       <ul>
                         <li>
+                          <Link href="/employee-benefit-multi-wallet">Multi-wallet Card</Link>
+                        </li>
+                        <li>
                           <Link href="/prepaid-card/">Prepaid Cards</Link>
                         </li>
                         <li>
