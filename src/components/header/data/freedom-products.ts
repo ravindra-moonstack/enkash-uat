@@ -28,6 +28,13 @@ const freedomProducts: TSubProduct[] = [
     },
     list: [
       {
+        name: "Multi-wallet Card*",
+        description: "Multiple wallets, maximum tax benefits",
+        imageSrc: mealCard,
+        imageSrcHovered: mealCardFilled,
+        link: "/employee-benefit-multi-wallet",
+      },
+      {
         name: "Meal Cards*",
         description: "Empower employees to take tax break on meals",
         imageSrc: mealCard,
