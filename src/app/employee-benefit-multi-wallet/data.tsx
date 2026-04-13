@@ -135,7 +135,7 @@ const benefitGridData = [
         id: 2,
         icon: benefitIcon2,        // use your actual fuel icon path
         title: "Fuel Wallet",
-        amount: "₹1,80,000",
+        amount: "₹84,000",
         subtitle: "Up to per year",
     },
     {
