@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./mealcardComparison.module.scss"
+import styles from "./mealstyle.module.scss"
 import { DynamicHeading } from ".."
 import CommonButton from "../buttons"
 import { compititorIcon, succesicon } from "@/src/app/meal-card/img"
