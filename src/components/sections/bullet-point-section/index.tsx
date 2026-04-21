@@ -33,10 +33,9 @@ const BulletPointSection: React.FC<BulletPointSectionProps> = ({
     return (
         <div className={`${styles.integration_section} ${className}`}>
             <div className="max-w-auto w-100">
-                <div className={`${styles.section} row`}>
-                    <div
-                        className={`text-start d-flex flex-column pb-4 pb-md-5 col-md-8`}
-                    >
+                <div className={`text-left row`}>
+
+                    <div className="col-md-6 ">
                         <DynamicHeading
                             content={heading}
                             headingTag="h2"
@@ -51,12 +50,9 @@ const BulletPointSection: React.FC<BulletPointSectionProps> = ({
                                     },
                                 ]}
                                 headingTag="p"
-                                className="f-4 mb-0 fs-20"
+                                className="f-4 mb-0 fs-20 pb-4 pb-md-5"
                             />
                         )}
-                    </div>
-
-                    <div className="col-md-6 ">
                         {bulletPoints.map(({ icon, title }, i) => (
                             <div key={i} style={{ direction: "ltr" }}>
                                 <div className="d-flex align-items-start gap-3 pt-2 w-4 h-4">

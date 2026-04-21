@@ -264,6 +264,10 @@ const allProductSections = [
 const mealBenefitUpgradeData = [
   {
     icon: success,
+    title: "Tax-exempt under Section 17(2)(viii) of the Income Tax Act",
+  },
+  {
+    icon: success,
     title: "₹8,800 per month tax-free limit per employee",
   },
   {
@@ -286,11 +290,10 @@ const mealCardComparisonData = {
     content: [
       {
         title: "The Only Meal Card Platform That Gives You Complete Ownership",
-        color: "color-black",
+        color: "color-black f-5",
       },
     ],
     headingTag: "h2" as const,
-    className: "f-7",
   },
   ourColumnLabel: "EnKash",
   competitorColumnLabel: "Competitors",
@@ -353,11 +356,10 @@ const mealCardComparisonData = {
 const acceptedEverywhereData = {
   heading: {
     content: [
-      { title: "Accepted Everywhere Employees ", color: "color-black" },
-      { title: "Eat, Order, and Shop", color: "color-equity-blue" },
+      { title: "Accepted Everywhere Employees ", color: "color-black f-5" },
+      { title: "Eat, Order, and Shop", color: "color-equity-blue f-5" },
     ],
     headingTag: "h2" as const,
-    className: "f-7",
   },
   // To customize categories, override the `categories` prop with your icons + labels.
   autoplayInterval: 3000,
@@ -369,7 +371,7 @@ const benefitsCardsData = {
     content: [
       {
         title: "Benefits That Work for Your Business and Your People",
-        color: "color-black-1f",
+        color: "color-black-1f f-5",
       },
     ],
     headingTag: "h2" as const,
@@ -396,7 +398,7 @@ const benefitsCardsData = {
       ],
       ctaButton: {
         label: "Book a Demo",
-        href: "/book-demo",
+        href: salesUrl,
       },
     },
     {
@@ -419,7 +421,7 @@ const benefitsCardsData = {
       ],
       ctaButton: {
         label: "Book a Demo",
-        href: "/book-demo",
+        href: salesUrl,
       },
     },
   ],

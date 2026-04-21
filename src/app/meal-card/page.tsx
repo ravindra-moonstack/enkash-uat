@@ -33,6 +33,8 @@ import AcceptedEverywhere from "@/src/components/meal-components/AcceptedEverywh
 import MealCardComparison from "@/src/components/meal-components/MealCardComparison"
 import BenefitsCards from "@/src/components/meal-components/benefits-cards"
 
+import MealCtaBanner from "@/src/components/meal-components/MealCtaBanner"
+
 export const metadata: Metadata = generateMetaData({
   title: "Meal Card for Employees | Tax-Free Benefits Up to ₹1,05,600/Year",
   description:
@@ -66,7 +68,7 @@ const MealCards = (): React.JSX.Element => {
         title={[
           {
             text: "Give Every Employee a ",
-            color: "color-black",
+            color: "color-black d-block",
           },
           {
             text: "Tax-Free Meal Benefit ",
@@ -101,18 +103,18 @@ const MealCards = (): React.JSX.Element => {
         heading={[
           {
             title: "India's ",
-            color: "color-black",
+            color: "color-black f-5",
           },
           {
             title: "Biggest Meal Benefit",
-            color: "color-equity-blue",
+            color: "color-equity-blue f-5",
           },
           {
             title: " Upgrade with Zero Change to Your Payroll Cost.",
-            color: "color-black",
+            color: "color-black f-5",
           },
         ]}
-        description="4X increase in tax-free meal allowance limit. Tax-exempt under Section 17(2)(viii) of the Income Tax Act"
+        description="4X increase in tax-free meal allowance limit."
         bulletPoints={mealBenefitUpgradeData}
         buttonTitle="Get Started"
         buttonUrl={salesUrl}
@@ -129,7 +131,7 @@ const MealCards = (): React.JSX.Element => {
             content={[
               {
                 title: "Tap, Swipe, or Scan — Employees Choose How They Pay",
-                color: "color-black ",
+                color: "color-black f-5",
               },
             ]}
             headingTag={'h2'}
@@ -161,19 +163,16 @@ const MealCards = (): React.JSX.Element => {
           <div className={styles.circles_bg}>
             <Image src={circles} alt="background image" />
           </div>
-          <div className={styles.cardRotatingImage}>
-            <Image src={cardRotatingImage} alt="background image" />
-          </div>
 
           <DynamicHeading
             content={[
               {
                 title: "Everything Finance and HR Need to",
-                color: "color-white italic d-block f-3",
+                color: "color-white italic d-block f-1",
               },
               {
                 title: "Run Meal Benefits Without Overhead",
-                color: "color-equity-blue f-7",
+                color: "color-equity-blue f-5",
               },
             ]}
             headingTag="h2"
@@ -190,7 +189,7 @@ const MealCards = (): React.JSX.Element => {
         <EmployeeBenefitSteps
           heading={{
             content: [
-              { title: "How To Get Started with EnKash Meal Cards", color: "color-black text-center" },
+              { title: "How To Get Started with EnKash Meal Cards", color: "color-black text-center f-5" },
             ],
           }}
           description={{
@@ -206,7 +205,6 @@ const MealCards = (): React.JSX.Element => {
         />
       </div>
 
-      {/* ── Section 2: Comparison Table ── */}
       <MealCardComparison
         heading={mealCardComparisonData.heading}
         ourColumnLabel={mealCardComparisonData.ourColumnLabel}
@@ -219,20 +217,18 @@ const MealCards = (): React.JSX.Element => {
       <AcceptedEverywhere
         heading={acceptedEverywhereData.heading}
         autoplayInterval={acceptedEverywhereData.autoplayInterval}
-        // Pass custom categories with icons if needed:
         categories={customCategories}
       />
-      <CtaBanner
+      <MealCtaBanner
         leftImage={ctaSideImg}
         rightImage={ctaSideImg}
-        titleLight="5,000+ Businesses"
-        titleBold="Rely on EnKash for Meal Benefits"
-        buttonText="Talk to a Benefits Expert"
+        titleLight="Rely on EnKash for Meal Benefits"
+        titleBold="5,000+ Businesses"
+        description="From India's largest enterprises to fast-growing startups,  across BFSI, retail, healthcare, logistics, and tech."
+        buttonText="Talk to Experts"
         buttonUrl={salesUrl}
       />
-
       <FaqSection faqData={faqData} />
-
       <BlogSection
         heading={[
           {
