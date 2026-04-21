@@ -23,18 +23,7 @@
         display: flex;
       }
     }
-  }
-  .cardRotatingImage {
-    display: none;
-    position: absolute;
-    position: absolute;
-    bottom: 24%;
-    left: 40%;
-    @include for-laptops {
-      display: flex;
-      justify-content: center;
-    }
-  }
+  } 
 
   .how_it_workssection {
     background: #101318;
@@ -57,18 +46,25 @@
       max-width: 1200px;
       padding: 40px;
       margin: 0;
+      z-index: 0;
     }
   }
 }
-
-.sixth_row {
-  margin-top: 50px;
-
-  @include for-laptops {
-    margin-top: 370px;
-  }
+.use_case_heading{
+  position: relative;
+  z-index: 2;
 }
+.features_section{
+  margin-top: 50px;
+  padding: 0 20px;
+  @include for-laptops {
+    margin-top: 320px;
+  }
 
+} 
+.slider_row{
+  padding: 0 20px;
+}
 .card_stacking_row {
   padding: 0px 20px;
 
