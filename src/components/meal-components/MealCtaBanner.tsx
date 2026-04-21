@@ -137,11 +137,11 @@ const MealCtaBanner: React.FC<MealCtaBannerProps> = ({
                         content={[
                             {
                                 title: description,
-                                color: "color-white f-5",
+                                color: "color-white f-5 mb-0",
                             },
                         ]}
                         headingTag="p"
-                        className={styles.description}
+                        className={`mb-0 ${styles.description}`}
                     />
 
                     <CommanButton
