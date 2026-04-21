@@ -1,8 +1,12 @@
 "use client"
-import React, { useRef, useEffect, useState } from "react"
+import React, { useRef } from "react"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import styles from "./AcceptedEverywhere.module.scss"
 import { DynamicHeading } from ".."
 import Image from "next/image"
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2"
 
 export interface AcceptanceCategory {
     icon: React.ReactNode
@@ -33,38 +37,63 @@ const AcceptedEverywhere: React.FC<AcceptedEverywhereProps> = ({
     categories = [],
     autoplayInterval = 3000,
 }) => {
-    const [activeIndex, setActiveIndex] = useState(0)
-    const [isPaused, setIsPaused] = useState(false)
-    const trackRef = useRef<HTMLDivElement>(null)
+    const sliderRef = useRef<Slider>(null)
 
-    // On mobile: show 2 per slide, desktop: 4 per slide
-    const [itemsPerSlide, setItemsPerSlide] = useState(4)
-
-    useEffect(() => {
-        const handleResize = () => {
-            setItemsPerSlide(window.innerWidth < 768 ? 2 : 4)
-        }
-        handleResize()
-        window.addEventListener("resize", handleResize)
-        return () => window.removeEventListener("resize", handleResize)
-    }, [])
-
-    const totalSlides = Math.ceil(categories.length / itemsPerSlide)
-
-    useEffect(() => {
-        if (isPaused || totalSlides <= 1) return
-        const timer = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % totalSlides)
-        }, autoplayInterval)
-        return () => clearInterval(timer)
-    }, [isPaused, totalSlides, autoplayInterval])
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: autoplayInterval,
+        arrows: false,
+        pauseOnHover: true,
+        appendDots: (dots: React.ReactNode) => (
+            <div className={styles.customNavigation}>
+                <div className={styles.navInner}>
+                    <button
+                        className={styles.arrowBtn}
+                        onClick={() => sliderRef.current?.slickPrev()}
+                        aria-label="Previous slide"
+                    >
+                        <HiOutlineChevronLeft />
+                    </button>
+                    <ul className={styles.dotsList}> {dots} </ul>
+                    <button
+                        className={styles.arrowBtn}
+                        onClick={() => sliderRef.current?.slickNext()}
+                        aria-label="Next slide"
+                    >
+                        <HiOutlineChevronRight />
+                    </button>
+                </div>
+            </div>
+        ),
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    };
 
     return (
-        <section
-            className={`${styles.acceptedSection}`}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-        >
+        <section className={styles.acceptedSection}>
             <div className={styles.headingWrapper}>
                 <DynamicHeading
                     content={heading?.content as any}
@@ -72,44 +101,25 @@ const AcceptedEverywhere: React.FC<AcceptedEverywhereProps> = ({
                     className={heading?.className}
                 />
             </div>
+
             <div className={styles.sliderWrapper}>
-                <div
-                    className={styles.sliderTrack}
-                    style={{
-                        transform: `translateX(-${activeIndex * 100}%)`,
-                    }}
-                >
+                <Slider ref={sliderRef} {...settings}>
                     {categories.map((cat, idx) => (
-                        <div
-                            key={idx}
-                            className={styles.categoryCard}
-                        >
-                            <span className={styles.categoryIcon}>
-                                {cat.icon && typeof cat.icon === 'object' && 'src' in (cat.icon as any) ? (
-                                    <Image src={cat.icon as any} alt={cat.label} width={32} height={32} />
-                                ) : (
-                                    cat.icon
-                                )}
-                            </span>
-                            <span className={styles.categoryLabel}>{cat.label}</span>
+                        <div key={idx} className={styles.slideItem}>
+                            <div className={styles.categoryCard}>
+                                <span className={styles.categoryIcon}>
+                                    {cat.icon && typeof cat.icon === 'object' && 'src' in (cat.icon as any) ? (
+                                        <Image src={cat.icon as any} alt={cat.label} width={32} height={32} />
+                                    ) : (
+                                        cat.icon
+                                    )}
+                                </span>
+                                <span className={styles.categoryLabel}>{cat.label}</span>
+                            </div>
                         </div>
                     ))}
-                </div>
+                </Slider>
             </div>
-
-            {/* Dots */}
-            {totalSlides > 1 && (
-                <div className={styles.dotsWrapper}>
-                    {Array.from({ length: totalSlides }).map((_, i) => (
-                        <button
-                            key={i}
-                            className={`${styles.dot} ${i === activeIndex ? styles.dotActive : ""}`}
-                            onClick={() => setActiveIndex(i)}
-                            aria-label={`Slide ${i + 1}`}
-                        />
-                    ))}
-                </div>
-            )}
         </section>
     )
 }
