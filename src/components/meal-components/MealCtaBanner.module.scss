@@ -1,0 +1,216 @@
+// @use "@/src/styles/variables" as *;
+// @use "@/src/styles/spacing" as *;
+
+// // ─── Outer wrapper ──────────────────────────────────────────────────────────
+// .wrapper {
+//   position: relative;
+//   width: 100%; 
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;   
+//   padding: 0 20px;
+// }
+
+// // ─── Decorative side lines ───────────────────────────────────────────────────
+// .sideLines {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   display: flex;
+//   align-items: center;
+//   pointer-events: none;
+
+//   img {
+//     height: 100%;
+//     width: auto;
+//     object-fit: contain;
+//   }
+
+//   @media (max-width: 640px) {
+//     display: none;
+//   }
+// }
+
+// .sideLinesLeft {
+//   left: 0;
+// }
+
+// .sideLinesRight {
+//   right: 0;
+//   transform: scaleX(-1);
+// }
+
+// // ─── Inner card (darker blue inset) ─────────────────────────────────────────
+// .card {
+//   position: relative;
+//   z-index: 1;
+//   width: 100%; 
+//   background-color: $color-equity-blue-1a;    
+//   border-radius: 12px;
+//   padding: 54px 73px 44px 53px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;                                     
+//   gap: 12px;
+//   @media (max-width: 768px) {
+//     flex-direction: column;
+//     padding: 54px 20px 44px 20px;
+//   }
+ 
+// }
+
+// // ─── Text block ─────────────────────────────────────────────────────────────
+// .textBlock {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 12px;
+//   width: 100%;
+//   border-top-left-radius: 12px;
+//   border-bottom-left-radius: 12px;
+//   border-top-right-radius: 12px; 
+//   max-width: 783px;
+//   padding: 43px 40px 42px;
+//   background: linear-gradient(90.41deg, rgba(255, 255, 255, 0.1) 0.38%, rgba(255, 255, 255, 0) 73.64%); 
+//   @media (max-width: 768px) {
+//     padding: 43px 20px 42px 20px;
+//   }
+
+// }
+
+// .headingLight {
+//   // DynamicHeading will render the <p>; we target it via the className prop
+//   margin: 0 !important;
+//   font-size: clamp(18px, 2.2vw, 24px);
+//   font-weight: 400;
+//   line-height: 1.4;
+//   color: $color-white !important;
+//   letter-spacing: -0.01em;
+// }
+
+// .headingBold {
+//   margin: 0 !important;
+//   font-size: clamp(22px, 2.8vw, 30px);
+//   font-weight: 700;
+//   line-height: 1.2;
+//   color: $color-white !important;
+//   letter-spacing: -0.02em;
+// }
+
+// // ─── CTA wrapper ─────────────────────────────────────────────────────────────
+// .ctaWrapper {
+//   flex-shrink: 0;
+
+//   @media (max-width: 768px) {
+//     width: 100%;
+//   }
+// }
+
+// // ─── CTA Button ──────────────────────────────────────────────────────────────
+// .ctaButton { 
+//     padding: 13px 36px;
+// }
+
+// .arrow {
+//   font-size: 18px;
+//   line-height: 1;
+//   font-weight: 400;
+//   color: $color-solid-blue;
+// }
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.sideLines {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+
+  img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.sideLinesLeft {
+  left: -6px;
+}
+
+.sideLinesRight {
+  right: -6px;
+  transform: scaleX(-1);
+}
+
+.card {
+  width: 100%;
+  background: #1f56ff;
+  border-radius: 12px;
+  padding: 21px 22px 20px;
+  position: relative;
+  z-index: 2;
+  @include for-laptops {
+    padding: 21px 22px 20px;
+  }
+}
+
+.contentBox {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 10px;
+  padding: 20px 36px 20px 36px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  @include for-laptops {
+    padding: 27px 59px 21px 47px;
+  }
+}
+
+.headingBold {
+  margin: 0 !important;
+  font-size: clamp(22px, 2.8vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: $color-white !important;
+  letter-spacing: -0.02em;
+}
+
+.headingLight { 
+  margin: 0 !important;
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: $color-white !important;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  margin-top: 2px;
+}
+
+.ctaButton {
+  margin-top: 22px;
+  padding: 8px 16px;
+  @include for-laptops {
+    padding: 14px 32px;
+  }
+}

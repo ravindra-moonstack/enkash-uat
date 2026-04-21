@@ -52,8 +52,8 @@ const ManagementCard = ({
                   color: styles.whiteTitleHtml,
                 },
               ]}
-              headingTag={headingTag ? headingTag : "h4"}
-              className={`${headingClassName} f-5 min-height-80`}
+              headingTag={headingTag ? headingTag : "h3"}
+              className={`${headingClassName} f-5 min-height-80 heading-h4`}
             />
           )
         )}
