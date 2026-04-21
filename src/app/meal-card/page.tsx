@@ -3,7 +3,7 @@ import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 //data
-import { cardType, dataSets, intantActionData, stackcardData } from "./data"
+import { acceptedEverywhereData, allProductSections, benefitsCardsData, cardType, customCategories, dataSets, intantActionData, mealBenefitUpgradeData, mealCardComparisonData, stackcardData, statsData } from "./data"
 import faqData from "./faq-data"
 
 //components
@@ -14,111 +14,145 @@ import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
 import HowDoesItWork from "@/src/components/how-does-it-work"
-import CardHeroSection from "@/src/components/sections/card-hero-section"
+import HeroSection from "@/src/components/sections/hero-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
 //helpers
-import { circles, mealCardImage, cardRotatingImage, heroCardImg } from "./img"
+import { circles, mealCardImage, cardRotatingImage, heroCardImg, heroImage, statsBg, bulletPointSectionImg } from "./img"
+import { ctaSideImg } from "../employee-benefit-multi-wallet/img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 import BlogSection from "@/src/components/sections/blog-section"
 
+import { FeatureCard, StatsSection, EmployeeBenefitSteps, CtaBanner } from "@/src/components"
+import BulletPointSection from "@/src/components/sections/bullet-point-section"
+import AcceptedEverywhere from "@/src/components/meal-components/AcceptedEverywhere"
+import MealCardComparison from "@/src/components/meal-components/MealCardComparison"
+import BenefitsCards from "@/src/components/meal-components/benefits-cards"
+
 export const metadata: Metadata = generateMetaData({
-  title: "Meal Card: Tax-Saving Digital Benefit for Employees",
+  title: "Meal Card for Employees | Tax-Free Benefits Up to ₹1,05,600/Year",
   description:
-    "Offer tax-free meal allowances with EnKash Meal Cards. Easy to manage, accepted at food outlets and online—boost employee satisfaction and streamline HR processes.",
+    "Offer tax-free meal benefits with EnKash Meal Cards. UPI-enabled, RBI-licensed, accepted at 50,000+ outlets. Save up to ₹1,05,600 per employee annually. Easy to manage, instant to issue.",
   alternates: {
     canonical: `${process.env.URL}/meal-card`,
   },
 })
 const salesUrl = getSalesUrl("/meal-card")
-const cards = stackcardData.map((item, index) => ({
-  content: (
-    <AllInOnePolicy
-      key={index}
-      buttonText="Get Started"
-      icon={item.icon}
-      title={item.title}
-      description={item.description}
-      image={item.image}
-      buttonUrl={salesUrl}
-      maxImageHeight="300px"
-    />
-  ),
-}))
-
+const mergedCards = allProductSections.flatMap((section) => section.items)
 const MealCards = (): React.JSX.Element => {
   return (
     <div className={`color-white`}>
-      <CardHeroSection
+      <HeroSection
         breadcrumbs={[
           { name: "Home", url: "/" },
-          { name: "Corporate Cards ", url: "/corporate-cards" },
+          {
+            name: "Corporate Cards",
+            url: "products/corporate-cards",
+          },
           {
             name: "Meal Card",
-            url: "/corporate-cards/meal-card",
+            url: "/meal-card",
           },
         ]}
-        linkColor="allWhite"
         subtitle={{
-          text: "Meal Card",
-          color: "color-white",
+          text: "MEAL CARD",
+          color: "color-equity-blue",
           underline: true,
         }}
         title={[
           {
-            text: "Empower Your Employees with ",
-            color: "color-white f-3 italic d-block",
+            text: "Give Every Employee a ",
+            color: "color-black",
           },
-          { text: "Tax-Free Meal Cards", color: "color-white" },
+          {
+            text: "Tax-Free Meal Benefit ",
+            color: "color-equity-blue f-7",
+          },
+          {
+            text: "Worth ",
+            color: "color-black",
+          },
+          {
+            text: "₹1,05,600",
+            color: "color-equity-blue f-7",
+          },
+          {
+            text: ", Without Changing Their CTC",
+            color: "color-black",
+          },
         ]}
         description={{
-          text: " Simplify meal benefits with tax-free, paperless cards; easy to manage and widely accepted across merchants.",
-          color: "color-white subHeading",
+          text: "Your employees work hard. They deserve to keep more of what they earn. EnKash Meal Cards restructure your existing meal allowance into a tax-free benefit worth up to ₹1,05,600 per employee annually, more in-hand for them, zero extra cost for you.",
         }}
-        button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
-        heroImage={heroCardImg}
-        backgroundImage="/images/mealCardBg.webp"
-        paddingTop="138px"
-        paddingBottom="60px"
+        button={{ title: "Start Saving", url: salesUrl, theme: "blue" }}
+        rightImage={heroImage}
       />
-
-      <div className="cardsSliderMargin">
-        <LogoSlider />
-      </div>
-
-      <StepsSection
+      <StatsSection
+        title="The Meal Card Built to Deliver More at Every Step."
+        backgroundImage={statsBg}
+        className="whiteTheme"
+        stats={statsData}
+      />
+      <BulletPointSection
         heading={[
           {
-            text: "How To Get Started with Meal Cards",
-            colorClass: "color-black",
+            title: "India's ",
+            color: "color-black",
+          },
+          {
+            title: "Biggest Meal Benefit",
+            color: "color-equity-blue",
+          },
+          {
+            title: " Upgrade with Zero Change to Your Payroll Cost.",
+            color: "color-black",
           },
         ]}
-        steps={intantActionData}
-        button={{
-          title: "Get Started",
-          theme: "border-gray",
-        }}
-        image={{
-          src: mealCardImage,
-          alt: "card background",
-        }}
+        description="4X increase in tax-free meal allowance limit. Tax-exempt under Section 17(2)(viii) of the Income Tax Act"
+        bulletPoints={mealBenefitUpgradeData}
+        buttonTitle="Get Started"
+        buttonUrl={salesUrl}
+        image={bulletPointSectionImg}
+        className="bg-white"
       />
-
-      <div className={styles.card_stacking_row}>
-        <div className={` max-w-auto  ${styles.section}`}>
-          <CardStacking
-            cards={cards}
-            heading={[
+      <BenefitsCards
+        heading={benefitsCardsData.heading}
+        cards={benefitsCardsData.cards}
+      />
+      <div className={`${styles.slider_row} relative bg-white`}>
+        <div className={`${styles.title} text-center max-w-auto`}>
+          <DynamicHeading
+            content={[
               {
-                title: "Meal Cards that your Employees Deserve",
-                color: "color-black",
+                title: "Tap, Swipe, or Scan — Employees Choose How They Pay",
+                color: "color-black ",
               },
             ]}
+            headingTag={'h2'}
+            className={'f-6'}
           />
+        </div>
+
+        <div className="max-w-auto">
+          <div className={`row ${styles.integration_row}`}>
+            <div className="d-flex align-items-stretch gap-3 gap-md-0 flex-wrap flex-md-nowrap pb-4 pt-4 pt-md-5 justify-content-center">
+              {mergedCards?.map((card, index) => (
+                <div key={index.toString()} className="d-flex">
+                  <FeatureCard
+                    titleHtml={card.title}
+                    description={card?.description}
+                    cardImage={card.image}
+                    hoverClass={styles.hoverClass}
+                    iconWidth={48}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -134,16 +168,16 @@ const MealCards = (): React.JSX.Element => {
           <DynamicHeading
             content={[
               {
-                title: "Meal Card Features That Make ",
+                title: "Everything Finance and HR Need to",
                 color: "color-white italic d-block f-3",
               },
               {
-                title: "EnKash the Perfect Choice",
-                color: "color-block",
+                title: "Run Meal Benefits Without Overhead",
+                color: "color-equity-blue f-7",
               },
             ]}
             headingTag="h2"
-            className="f-6 text-center mb-5"
+            className={`${styles.use_case_heading} f-6 text-center mb-5`}
           />
 
           <div className={styles.how_it_workssection}>
@@ -152,13 +186,50 @@ const MealCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.sixth_row}`}>
-        <CtaSection
-          title={"Hassle-Free Meals, Happier Employees"}
-          buttonText={"Get Started "}
-          background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
+      <div className={`${styles.features_section} ${styles.steps_container} bg-white`}>
+        <EmployeeBenefitSteps
+          heading={{
+            content: [
+              { title: "How To Get Started with EnKash Meal Cards", color: "color-black text-center" },
+            ],
+          }}
+          description={{
+            content: [
+              {
+                title:
+                  "No complex integration. No IT dependency. EnKash handles the full lifecycle — from card issuance to compliance reporting.",
+                color: "color-black",
+              },
+            ],
+          }}
+          steps={intantActionData}
         />
       </div>
+
+      {/* ── Section 2: Comparison Table ── */}
+      <MealCardComparison
+        heading={mealCardComparisonData.heading}
+        ourColumnLabel={mealCardComparisonData.ourColumnLabel}
+        competitorColumnLabel={mealCardComparisonData.competitorColumnLabel}
+        rows={mealCardComparisonData.rows}
+        ctaButton={mealCardComparisonData.ctaButton}
+      />
+
+
+      <AcceptedEverywhere
+        heading={acceptedEverywhereData.heading}
+        autoplayInterval={acceptedEverywhereData.autoplayInterval}
+        // Pass custom categories with icons if needed:
+        categories={customCategories}
+      />
+      <CtaBanner
+        leftImage={ctaSideImg}
+        rightImage={ctaSideImg}
+        titleLight="5,000+ Businesses"
+        titleBold="Rely on EnKash for Meal Benefits"
+        buttonText="Talk to a Benefits Expert"
+        buttonUrl={salesUrl}
+      />
 
       <FaqSection faqData={faqData} />
 
@@ -174,22 +245,18 @@ const MealCards = (): React.JSX.Element => {
             color: "color-black f-4",
           },
         ]}
-        cards={[1155, 13983, 1628]}
+        cards={[1155, 1037, 1628]}
       />
 
       <OtherProducts
         heading={[
           {
-            title: "Choose ",
+            title: "Your Business, Your Cards – ",
             color: "color-black",
           },
           {
-            title: "the Right Card ",
+            title: "Tailored by EnKash",
             color: "color-equity-blue",
-          },
-          {
-            title: "for Every Use Case",
-            color: "color-black",
           },
         ]}
         useOptionalProps={true}

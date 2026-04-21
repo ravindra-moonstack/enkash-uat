@@ -2,16 +2,48 @@ import { TFAQProps } from "@/src/types/faq"
 
 const faqData: TFAQProps[] = [
   {
-    question: "What are meal cards?",
+    question: "What changed in meal allowance limits from April 1, 2026?",
     answer: [
       {
         heading:
-          "Meal cards are employer-provided prepaid cards that work similarly to debit cards. Employees can use these meal cards for food and grocery-related purchases across multiple retail outlets, convenience stores, food chains, and food delivery apps like Zomato, Swiggy, Blinkit, etc.",
+          "The Income Tax Rules 2026 increased the meal allowance limit from ₹50 per meal to ₹200 per meal. Employees can now receive up to ₹8,800 per month or ₹1,05,600 per year, in tax-free meal benefits, significantly higher than before.",
       },
     ],
   },
   {
-    question: "Why meal cards are important for any business?",
+    question: "Does restructuring to a meal card cost the company anything extra?",
+    answer: [
+      {
+        heading:
+          "No. Meal card restructuring reallocates an existing component of CTC from taxable cash allowance to a tax-efficient benefit. Your total payroll cost does not increase. Employees receive more in-hand salary from the same package.",
+      },
+    ],
+  },
+  {
+    question: "What are prepaid meal cards?",
+    answer: [
+      {
+        heading:
+          "A prepaid meal card is an employer-issued card designed only for food and grocery expenses. It works like a debit card but is:",
+        bullets: [
+          "Restricted to food-related categories (MCC control)",
+          "Reloaded by the employer",
+          "Fully trackable and compliant",
+        ],
+      },
+    ],
+  },
+  {
+    question: "Can employees use the EnKash Meal Card on Swiggy and Zomato?",
+    answer: [
+      {
+        heading:
+          "Yes. The EnKash Meal Card works on Swiggy, Zomato, Blinkit, Zepto, BigBasket, Amazon Fresh, and all major food delivery and grocery platforms. It is also accepted at 50,000+ physical food and grocery merchant outlets across India.",
+      },
+    ],
+  },
+  {
+    question: "Why are meal cards important for any business?",
     answer: [
       {
         heading:
@@ -25,7 +57,49 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "Meal card is an effective replacement for paper-based food coupons. The easy management and tracking of meal cards help the finance/admin team to refill them instead of issuing monthly food coupons while tracking their balance. The finance team can easily activate, block, unblock, or deactivate the card in case of misuse.",
+          "A meal card is an effective replacement for paper-based food coupons. The easy management and tracking of meal cards help the finance/admin team to refill them instead of issuing monthly food coupons while tracking their balance. The finance team can easily activate, block, unblock, or deactivate the card in case of misuse.",
+      },
+    ],
+  },
+  {
+    question: "What is the tax benefit for employees?",
+    answer: [
+      {
+        heading:
+          "Under Section 17(2)(viii) of the Income Tax Act, meal benefits provided through a structured card are tax-exempt up to ₹8,800 per month. Employees can save up to ₹1,05,600 annually compared to receiving the same amount as a taxable cash allowance.",
+      },
+    ],
+  },
+  {
+    question: "How is EnKash different from Pluxee (Sodexo)?",
+    answer: [
+      {
+        heading:
+          "Pluxee is a French-origin provider operating through its India entity. EnKash is a Made-in-India fintech with its own independent RBI PPI License, meaning no bank dependency and full control over issuance, limits, and usage policies.",
+      },
+      {
+        heading: "EnKash also offers UPI-enabled payments and scan & pay, something Pluxee does not support.",
+      },
+      {
+        heading: "EnKash provides configurable MCC restrictions, real-time unified dashboards, and native ERP integrations with SAP, Tally, and Zoho, compared to Pluxee's more fragmented, manually managed setup.",
+      },
+    ],
+  },
+  {
+    question: "How does EnKash compare to Zaggle for meal cards?",
+    answer: [
+      {
+        heading:
+          "Zaggle operates on a bank-led, co-branded model, meaning card issuance timelines and controls are dependent on its banking partner.",
+      },
+      {
+        heading: "EnKash issues cards under its own RBI PPI License, instantly, digitally, and independently.",
+      },
+      {
+        heading: "EnKash also enforces MCC restrictions at the transaction level rather than just at the policy level, offers real-time spend dashboards instead of post-spend reporting, and provides UPI-enabled scan & pay, which Zaggle does not offer.",
+      },
+      {
+        heading: "For finance teams that need full control and zero bank dependency, EnKash is the stronger choice.",
       },
     ],
   },
@@ -38,7 +112,7 @@ const faqData: TFAQProps[] = [
         bullets: [
           "They have a wider usage and can be used across shops and eateries",
           "Refilling at regular intervals is a matter of a few clicks based on a list of employees",
-          "Onboarding new employees and offering them meal cards is easy",
+          "Onboarding new employees and offering them meal cards is easy.",
           "It is easy to track and control usage for the employees as well as the finance team",
           "Meal cards motivate employees as they believe that the organization is considerate towards their food expenses",
         ],
@@ -46,7 +120,7 @@ const faqData: TFAQProps[] = [
     ],
   },
   {
-    question: "How meal cards reduce fraud instances in business?",
+    question: "How do meal cards reduce fraud instances in business?",
     answer: [
       {
         heading:
@@ -59,12 +133,12 @@ const faqData: TFAQProps[] = [
     answer: [
       {
         heading:
-          "Meal cards are not taxable. However, if the amount spent on a meal exceeds the non-taxable limit of 2200 INR per month, then they are taxable as per Section 17(2)(viii) of the Income Tax Act.",
+          "Meal benefits delivered through a structured prepaid card are exempt from income tax under Section 17(2)(viii) of the Income Tax Act — up to ₹8,800 per month (₹1,05,600 annually) from April 1, 2026. Any benefit above this limit is taxable as a perquisite.",
       },
     ],
   },
   {
-    question: "How to claim meal allowance?",
+    question: "How to claim a meal allowance?",
     answer: [
       {
         heading:
@@ -73,74 +147,71 @@ const faqData: TFAQProps[] = [
     ],
   },
   {
-    question: "How to implement meal cards in the workplace?",
+    question: "Is EnKash compliant with RBI and Income Tax regulations?",
     answer: [
       {
         heading:
-          "In order to implement meal cards at the workplace, follow these easy steps:",
+          "Yes. EnKash holds both an RBI Prepaid Payment Instrument (PPI) License and an RBI Payment Aggregator (PA) License. The platform is SOC 2 Type II and PCI DSS compliant. All meal card benefits are auto-categorized and designed to meet the compliance requirements of Section 17(2)(viii) of the Income Tax Act.",
+      },
+    ],
+  },
+  {
+    question: "How to implement meal cards in the workplace?",
+    answer: [
+      {
+        heading: "To implement meal cards at the workplace, follow these easy steps:",
         bullets: [
           "Register on EnKash, your meal card provider",
           "Define the value of the card according to your organization’s budget",
-          "Create a network of authorized food chains, apps, outlets where all card will be valid",
+          "Create a network of authorized food chains, apps, and outlets where all cards will be valid",
           "Educate your employees about the KYC and usage of the meal card",
-          "Distribute the cards among your employees and encourage them to use it for food purchases and tax-redemption",
+          "Distribute the cards among your employees and encourage them to use them for food purchases and tax redemption",
         ],
       },
     ],
   },
-
   {
-    question: "How do meal cards help employees save tax?",
+    question: "Where can I use my prepaid meal card?",
     answer: [
       {
-        heading:
-          "Meal cards offer tax-free meals for employees under Section 17(2)(viii) of the Income Tax Act. Employees can save up to ₹26,400 annually since meal allowance spent through a compliant card is exempt from tax. Using a prepaid meal card ensures the allowance is used only for eligible food and beverage spends, making it fully compliant and easier for employees to maximise tax benefits while giving companies better control and digital tracking.",
+        heading: "Employees can use the EnKash Meal Card:",
+        bullets: [
+          "Online: Swiggy, Zomato, Blinkit, Zepto, BigBasket, Amazon Fresh",
+          "Offline: Restaurants, cafes, supermarkets, food courts",
+          "Across thousands of food and grocery merchants in India",
+        ],
       },
     ],
   },
   {
-    question:
-      "Why should businesses use prepaid meal cards instead of cash allowances?",
+    question: "Can prepaid meal cards be reloaded every month?",
     answer: [
       {
         heading:
-          "Prepaid meal cards are a better option than cash allowances because they ensure tax compliance, prevent misuse, and offer complete visibility into food-related spends. Cash allowances are usually taxable and difficult to track, while prepaid meal cards restrict usage to eligible food and beverage merchants, making them compliant with Section 17(2)(viii) of the Income Tax Act. For Indian businesses, meal cards provide digital tracking, stronger controls, and guaranteed tax benefits for employees, unlike cash or paper coupons that often lead to leakage and audit issues.",
+          "Absolutely. Employers can easily reload prepaid meal cards monthly or at desired intervals via their EnKash dashboard.",
       },
     ],
   },
   {
-    question: "Can meal cards be reloaded every month?",
+    question: "What happens if an employee loses their meal card?",
     answer: [
       {
         heading:
-          "Yes. Meal cards can be reloaded every month. Employers can add the monthly meal allowance directly through their corporate dashboard, ensuring timely benefits and simple, compliant tracking of all meal-related expenses.",
+          "Employees can instantly block a lost card from within the EnKash app. EnKash carries zero liability on reported lost cards — no waiting, no paperwork. A replacement card can be issued digitally in minutes.",
       },
     ],
   },
   {
-    question: "Are meal cards accepted for online food delivery?",
+    question: "How to activate a meal card?",
     answer: [
       {
-        heading:
-          "Yes. Prepaid meal cards are accepted on major food delivery platforms in India, including Swiggy, Zomato, and other eligible food and beverage merchants. As long as the platform falls under approved F&B MCC codes, employees can use their meal cards to conveniently order meals online and enjoy tax-free meal benefits.",
-      },
-    ],
-  },
-  {
-    question: "How do meal cards improve compliance for companies?",
-    answer: [
-      {
-        heading:
-          "Meal cards improve compliance by ensuring that meal allowances are spent only on eligible food and beverage categories. Prepaid meal cards automatically restrict spending to approved F&B MCC codes, reducing misuse and leakages. Companies also receive real-time tracking, digital audit trails, and clear documentation, making it easier to meet tax and payroll compliance requirements while offering employees tax-free meal benefits.",
-      },
-    ],
-  },
-  {
-    question: "Can startups and small businesses use prepaid meal cards?",
-    answer: [
-      {
-        heading:
-          "Absolutely. Startups and small businesses can use prepaid meal cards to offer tax-efficient, compliant meal benefits. They are easy to issue, reload, monitor, and manage digitally—making them perfect for companies looking for structured employee benefits without heavy administrative work.",
+        heading: "To activate your prepaid meal card, follow these simple steps:",
+        bullets: [
+          "Log in to the EnKash portal using your registered mobile number or email.",
+          "Complete your KYC (Know Your Customer) verification online.",
+          "Once KYC is approved, your meal card will be activated and ready to use for food-related purchases.",
+          "You’ll receive an SMS or email confirmation once the activation is complete.",
+        ],
       },
     ],
   },

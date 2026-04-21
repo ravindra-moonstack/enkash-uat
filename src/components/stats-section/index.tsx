@@ -31,13 +31,15 @@ const defaultStats: StatItem[] = [
 
 const StatsSection: React.FC<StatsSectionProps> = ({
     title = "Payment Gateway That Delivers",
-    description = "Built for businesses that demand more than just payment processing. EnKash combines enterprise-grade infrastructure with SMB-focused solutions.",
+    description,
     stats = defaultStats,
     backgroundImage = "/images/payment-gateway-bg.jpg",
     className = ""
 }) => {
     const [isVisible, setIsVisible] = useState(false)
     const sectionRef = useRef<HTMLDivElement>(null)
+
+    const isWhiteTheme = className.includes("whiteTheme")
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -105,6 +107,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({
                                     stat={stat}
                                     isVisible={isVisible}
                                     delay={index * 100}
+                                    isWhiteTheme={isWhiteTheme}
                                 />
                             ))}
                         </div>
@@ -119,12 +122,15 @@ interface StatCardProps {
     stat: StatItem
     isVisible: boolean
     delay: number
+    isWhiteTheme?: boolean
 }
 
-const StatCard: React.FC<StatCardProps> = ({ stat, isVisible, delay }) => {
+const StatCard: React.FC<StatCardProps> = ({ stat, isVisible, delay, isWhiteTheme }) => {
     const [displayValue, setDisplayValue] = useState<string | number>(
         stat.animate ? 0 : stat.value
     )
+
+    const statColor = isWhiteTheme ? "color-grey-200" : "color-brand-blue"
 
     useEffect(() => {
         if (!stat.animate || !isVisible) return
@@ -169,14 +175,14 @@ const StatCard: React.FC<StatCardProps> = ({ stat, isVisible, delay }) => {
             <DynamicHeading
                 content={[{
                     text: String(formattedValue),
-                    color: "color-brand-blue f-7",
+                    color: `color-brand-blue f-7`,
                 }]}
                 headingTag="h2"
             />
             <DynamicHeading
                 content={[{
                     text: stat.label,
-                    color: "color-brand-blue f-3",
+                    color: `${statColor} f-3`,
                 }]}
                 headingTag="p"
                 className="mb-0"
