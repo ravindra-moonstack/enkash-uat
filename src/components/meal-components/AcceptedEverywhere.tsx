@@ -1,6 +1,6 @@
 "use client"
 import React, { useRef, useEffect, useState } from "react"
-import styles from "./AcceptedEverywhere.module.scss"
+import styles from "./acceptedEveryWhere.module.scss"
 import { DynamicHeading } from ".."
 import Image from "next/image"
 

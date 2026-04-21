@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import styles from "./BenefitsCards.module.scss"
+import styles from "./benefitsCards.module.scss"
 import { DynamicHeading } from ".."
 import CommonButton from "../buttons"
 
