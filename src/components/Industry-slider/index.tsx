@@ -98,7 +98,7 @@ const IndustrySlider: React.FC<IndustrySliderProps> = ({
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: "25%",
-        autoplay: !isAutoplayPaused && isVisible, // Only autoplay when in view
+        autoplay: !isAutoplayPaused,
         autoplaySpeed: autoplaySpeed,
         afterChange: handleAfterChange,
         pauseOnHover: false,
