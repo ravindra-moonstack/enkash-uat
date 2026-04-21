@@ -109,6 +109,12 @@
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
   }
+
+  &:last-child {
+    .faq_inner_row {
+      border-bottom: none;
+    }
+  }
 }
 
 .faq_wrapper {

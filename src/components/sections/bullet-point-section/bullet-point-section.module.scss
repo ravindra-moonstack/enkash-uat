@@ -1,0 +1,29 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.integration_section {
+  background-color: #f1f1f1;
+  position: relative;
+  display: flex; 
+  padding: 50px 20px 40px;
+
+  @include for-laptops {
+    padding: 90px 20px 60px;
+  }
+
+  .section {
+    text-align: start;
+
+    .faq_bg {
+      Img {
+        height: auto;
+
+        @include for-laptops {
+          max-width: 475px;
+          height: auto;
+          margin-top: -100px;
+        }
+      }
+    }
+  }
+}
