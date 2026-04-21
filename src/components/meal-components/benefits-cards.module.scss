@@ -1,0 +1,151 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.benefitsSection {
+}
+
+.headingWrapper {
+    text-align: center; 
+    margin: 0 auto 20px;
+
+  @include for-laptops {
+    margin-bottom: 40px;
+  }
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  padding: 0px 16px 64px; 
+  @include for-laptops {
+    padding: 0px 66px 80px 76px;
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+.card {
+  background: $color-white;
+  border-radius: 8px;
+  overflow: hidden; 
+  box-shadow: 0px 0px 88px 0px #0000001A;
+  display: flex;
+  flex-direction: column; 
+  padding: 20px 20px 24px;
+  gap: 24px;
+
+  @include for-laptops {
+    padding: 58px 52px 53px 65px;
+    gap: 41px;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  border-radius: 12px;
+
+  @include for-laptops {
+    aspect-ratio: 16 / 8;
+  }
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  padding: 12px 20px;
+  background: linear-gradient(360deg, #FFFFFF 0.13%, rgba(255, 255, 255, 0.77) 35.99%, rgba(255, 255, 255, 0.55) 63.58%, rgba(255, 255, 255, 0) 100%);
+  display: flex;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+.cardLabel {
+  color: $color-grey-200;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  @include for-laptops {
+    font-size: 22px;
+  }
+}
+
+.pointsList {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include for-laptops {
+    gap: 33px;
+  }
+}
+
+.pointItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 12px;
+  border-left: 1px solid $color-electric-green;
+}
+
+.pointText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $color-grey-200;
+  letter-spacing: -0.02em;
+
+  @include for-laptops {
+    font-size: 16px;
+  }
+}
+
+.ctaWrapper {
+    width: 190px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: $color-equity-blue;
+  border: 1.5px solid $color-equity-blue;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  letter-spacing: -0.02em;
+
+  @include for-laptops {
+    font-size: 14px;
+    padding: 11px 24px;
+  }
+
+  &:hover {
+    background: $color-equity-blue;
+    color: $color-white;
+    box-shadow: 0 4px 20px rgba(28, 90, 244, 0.2);
+  }
+}

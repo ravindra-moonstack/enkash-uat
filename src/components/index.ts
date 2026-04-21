@@ -270,6 +270,7 @@ const BankGradeSecurity = dynamic(
   }
 )
 
+import BulletPointSection from "./sections/bullet-point-section"
 const CommanButton = dynamic(() => import("./buttons/index"), {
   ssr: true,
 })
@@ -281,6 +282,7 @@ export {
   FAQHtml,
   DynamicHeading,
   StatsSection,
+  BulletPointSection,
   LottieDynamicLoadComponent,
   CustomBreadcrumb,
   AllProducts,
