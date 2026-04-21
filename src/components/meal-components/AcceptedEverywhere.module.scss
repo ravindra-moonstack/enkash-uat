@@ -124,27 +124,25 @@
 .navInner {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
+  justify-content: center;
 }
 
 .arrowBtn {
   background: none;
-  border: 1px solid $color-black-16;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  border: none;
+  width: 16px;
+  height: 16px; 
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: $color-black;
-  font-size: 20px;
+  font-size: 16px;
   transition: all 0.3s ease;
 
-  &:hover {
-    border-color: $color-equity-blue;
-    color: $color-equity-blue;
-    background-color: rgba($color-equity-blue, 0.05);
+  &:hover { 
+    color: $color-equity-blue; 
   }
 
   &:focus {
