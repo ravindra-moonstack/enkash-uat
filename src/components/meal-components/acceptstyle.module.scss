@@ -63,8 +63,7 @@
   background: $color-white;
   border: none;
   transition: all 0.2s;
-  cursor: default;
-  margin: 10px 0; // Add some margin for shadow space
+  cursor: default; 
 
   &::after {
     content: "";
@@ -135,8 +134,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: $color-black;
+  color: $color-e3e3e3;
   font-size: 16px;
+  font-weight: 600;
   transition: all 0.3s ease;
 
   &:hover { 
@@ -166,7 +166,7 @@
         width: 8px;
         height: 8px;
         padding: 0;
-        background: $color-black-16;
+        background: $color-glossy;
         border-radius: 50%;
         border: none;
         font-size: 0;
