@@ -68,6 +68,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({
             ref={sectionRef}
             className={`${styles.statsSection} ${className} position-relative overflow-hidden`}
         >
+            <div className={styles.topOverlay} />
             <Image
                 src={typeof backgroundImage === 'object' ? (backgroundImage as StaticImageData).src : backgroundImage}
                 alt="background"
@@ -114,6 +115,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({
                     </div>
                 </div>
             </div>
+            <div className={styles.bottomOverlay} />
         </section>
     )
 }

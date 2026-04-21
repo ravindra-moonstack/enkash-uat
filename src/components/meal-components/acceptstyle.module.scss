@@ -24,6 +24,7 @@
 .sliderWrapper {
   width: 100%;
   position: relative;
+  margin-bottom: 28px;
 
   :global {
     .slick-list {
@@ -34,7 +35,9 @@
          margin: 0 15px;
       }
     }
-
+    .slick-dots{
+      bottom: -46px;
+    }
     .slick-slide {
       padding: 0 10px;
       
@@ -65,7 +68,12 @@
   transition: all 0.2s;
   cursor: default; 
 
-  &::after {
+
+  @include for-laptops {
+    padding: 21px 16px 20px 18px;
+    gap: 22px;
+
+    &::after {
     content: "";
     position: absolute;
     top: 15px;
@@ -73,16 +81,8 @@
     width: 1px;
     height: 75%;
     background-color: $color-dcdcdc;
-    z-index: 0; 
+    z-index: 0;
   }
-
-  @include for-laptops {
-    padding: 21px 16px 20px 18px;
-    gap: 22px;
-  }
-
-  &:hover { 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
 }
 
