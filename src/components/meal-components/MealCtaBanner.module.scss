@@ -160,6 +160,8 @@
   background: #1f56ff;
   border-radius: 12px;
   padding: 21px 22px 20px;
+  position: relative;
+  z-index: 2;
   @include for-laptops {
     padding: 21px 22px 20px;
   }

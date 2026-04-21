@@ -150,6 +150,8 @@ const MealCards = (): React.JSX.Element => {
                     cardImage={card.image}
                     hoverClass={styles.hoverClass}
                     iconWidth={48}
+                    headingTag="h3"
+                    headingClassName="heading-h5"
                   />
                 </div>
               ))}
