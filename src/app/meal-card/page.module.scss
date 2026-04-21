@@ -23,18 +23,7 @@
         display: flex;
       }
     }
-  }
-  .cardRotatingImage {
-    display: none;
-    position: absolute;
-    position: absolute;
-    bottom: 24%;
-    left: 40%;
-    @include for-laptops {
-      display: flex;
-      justify-content: center;
-    }
-  }
+  } 
 
   .how_it_workssection {
     background: #101318;
@@ -51,7 +40,7 @@
 
     @include for-laptops {
       position: absolute;
-      bottom: 44%;
+      bottom: 50%;
       left: 50%;
       transform: translate(-50%, 106%);
       max-width: 1200px;
@@ -69,7 +58,7 @@
   margin-top: 50px;
   padding: 0 20px;
   @include for-laptops {
-    margin-top: 400px;
+    margin-top: 320px;
   }
 
 } 

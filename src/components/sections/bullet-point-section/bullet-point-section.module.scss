@@ -4,8 +4,7 @@
 .integration_section {
   background-color: #f1f1f1;
   position: relative;
-  display: flex;
-  text-align: center;
+  display: flex; 
   padding: 50px 20px 40px;
 
   @include for-laptops {

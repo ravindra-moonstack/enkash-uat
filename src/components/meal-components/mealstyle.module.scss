@@ -26,11 +26,16 @@
 .tableWrapper {
   width: 100%;
   overflow-x: auto;
- border: 1px solid #1A9FFF;
+  border: 1px solid #1A9FFF;
   border-radius: 16px;
   box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.06);
   background: linear-gradient(148.03deg, rgba(255, 255, 255, 0.0594) 1.57%, rgba(211, 238, 251, 0.18) 98.66%);
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
 }
 
 .comparisonTable {
@@ -55,6 +60,14 @@
 
     .featureCol {
       width: 32%;
+      position: sticky;
+      left: 0;
+      z-index: 10;
+      background: #fdfdfd; 
+      border-right: 1px solid #1A9FFF;
+      @include for-laptops { 
+        border-right: none;
+      }
     }
 
     .ourCol {
@@ -89,10 +102,17 @@ border-bottom: 1px solid #E3E3E354;
   font-size: 13px;
   color: $color-main-grey;
   font-weight: 400;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #fdfdfd; 
+  border-right: 1px solid #1A9FFF;
 
   @include for-laptops {
     padding: 16px 28px;
     font-size: 14px;
+    position: static;
+    border-right: none;
   }
 }
 
