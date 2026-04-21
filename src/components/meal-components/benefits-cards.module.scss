@@ -2,16 +2,11 @@
 @use "@/src/styles/mixin" as *;
 
 .benefitsSection {
-  padding: 0px 16px 64px; 
-  @include for-laptops {
-    padding: 0px 66px 80px 76px;
-  }
 }
 
 .headingWrapper {
-    text-align: center;
-    max-width: 850px;
-    margin: 0 auto 40px;
+    text-align: center; 
+    margin: 0 auto 20px;
 
   @include for-laptops {
     margin-bottom: 40px;
@@ -23,8 +18,9 @@
   grid-template-columns: 1fr;
   gap: 20px;
   width: 100%;
-
+  padding: 0px 16px 64px; 
   @include for-laptops {
+    padding: 0px 66px 80px 76px;
     grid-template-columns: 1fr 1fr; 
   }
 }
