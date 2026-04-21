@@ -1,0 +1,198 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.acceptedSection {
+  padding: 48px 0 56px;
+  background: $color-white;
+  overflow: hidden;
+
+  @include for-laptops {
+    padding: 72px 0 80px;
+  }
+}
+
+.headingWrapper {
+  text-align: center;
+  margin: 0 auto 36px;
+  padding: 0 20px;
+
+  @include for-laptops {
+    margin-bottom: 43px;
+  }
+}
+
+.sliderWrapper {
+  width: 100%;
+  position: relative;
+
+  :global {
+    .slick-list {
+      margin: 0 10px;
+      overflow: visible; // To allow space for card shadows/effects if any
+      
+      @include for-laptops {
+         margin: 0 15px;
+      }
+    }
+
+    .slick-slide {
+      padding: 0 10px;
+      
+      @include for-laptops {
+        padding: 0 15px;
+      }
+
+      > div {
+        outline: none;
+      }
+    }
+  }
+}
+
+.slideItem {
+  outline: none;
+}
+
+.categoryCard {
+  position: relative;
+  display: flex !important; // Slick sometimes overrides display
+  align-items: center;
+  padding: 14px 18px;
+  gap: 14px;
+  border-radius: 8px;
+  background: $color-white;
+  border: 1.5px solid $color-black-10;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  cursor: default;
+  margin: 10px 0; // Add some margin for shadow space
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 1px;
+    height: 75%;
+    background-color: $color-dcdcdc;
+    z-index: 0;
+    display: none; // Hidden by default, maybe show on desktop?
+  }
+
+  @include for-laptops {
+    padding: 21px 16px 20px 18px;
+    gap: 22px;
+  }
+
+  &:hover {
+    border-color: $color-equity-blue;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.categoryIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: $color-black;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include for-laptops {
+    font-size: 20px;
+  }
+}
+
+.customNavigation {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include for-laptops {
+    margin-top: 54px;
+  }
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.arrowBtn {
+  background: none;
+  border: 1px solid $color-black-16;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: $color-black;
+  font-size: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $color-equity-blue;
+    color: $color-equity-blue;
+    background-color: rgba($color-equity-blue, 0.05);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.dotsList {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+
+  :global {
+    li {
+      margin: 0;
+      width: auto;
+      height: auto;
+
+      button {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        background: $color-black-16;
+        border-radius: 50%;
+        border: none;
+        font-size: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          background: $color-equity-blue;
+        }
+      }
+
+      &.slick-active {
+        button {
+          background: $color-equity-blue;
+          width: 24px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
