@@ -32,11 +32,12 @@ interface HeroSectionProps {
     vedioLink?: string
     theme?: "blue" | "black" | "white"
   }
-  rightImage: StaticImageData | string
+  rightImage?: StaticImageData | string
   backgroundImage?: string
   rightImageMaxHeight?: string | number
   button2?: ButtonProps
   RightImageProps?: React.ImgHTMLAttributes<HTMLImageElement>
+  bgImageStyle?: React.CSSProperties
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
@@ -50,7 +51,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage,
   rightImageMaxHeight = "550px",
   button2,
-  RightImageProps
+  RightImageProps,
+  bgImageStyle
 }) => {
   const [open, setOpen] = useState(false)
   return (
@@ -62,7 +64,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           fill
           priority={true}
           fetchPriority="high"
-          style={{ objectFit: "cover", zIndex: -1 }}
+          style={{ objectFit: "cover", zIndex: -1, ...bgImageStyle }}
           sizes="100vw"
           decoding="async"
           quality={80}
@@ -181,7 +183,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           {/* RIGHT HERO IMAGE */}
-          <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
+
+          {rightImage && (<div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
             <div
               className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
             >
@@ -203,6 +206,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               />
             </div>
           </div>
+          )}
         </div>
       </div>
       {button && (

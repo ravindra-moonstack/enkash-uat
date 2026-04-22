@@ -67,6 +67,7 @@
         align-items: center;
         padding-right: 0px;
         width: 100%;
+        min-width: 300px;
 
         .description-text {
             font-size: 16;
@@ -95,6 +96,30 @@
         &::before {
             display: none;
         }
+    }
+
+    &.white-theme {
+      .description-text {
+        color: $color-grey-200 !important;
+      }
+    }
+
+    &.heading-left {
+      .left-content {
+        align-items: flex-start;
+        
+        .slider-header {
+          width: 100%;
+          h2 {
+            text-align: left;
+            margin-bottom: 16px;
+          }
+        }
+
+        .description-text {
+          text-align: left;
+        }
+      }
     }
 
     @include for-laptops {
@@ -147,8 +172,23 @@
                 left: 0;
                 width: 2px;
                 height: 86.5%;
-                background-color: $color-white,
+                background-color: $color-white;
             }
+        }
+
+        &.white-theme {
+          .right-slider {
+            &::before {
+              background-color: $color-56cfff;
+              width: 1px;
+            }
+          }
+        }
+    }
+    
+    &.white-theme { 
+        .button-group {
+            width: auto;
         }
     }
 }

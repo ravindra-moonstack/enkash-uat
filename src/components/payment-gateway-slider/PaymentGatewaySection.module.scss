@@ -95,6 +95,20 @@
         }
     }
 
+    &.whiteTheme {
+        background-color: #FAFAFA; // Very light grey or white
+
+        .descriptionText {
+            color: $color-grey-200;
+        }
+
+        .leftContent {
+            &::before {
+                background-color: $color-equity-blue !important;
+            }
+        }
+    }
+
     @include for-laptops {
         padding: 90px 20px 110px;
 
@@ -145,7 +159,7 @@
                 left: 0;
                 width: 1px;
                 height: 60%;
-                background-color: $color-electric-green,
+                background-color: $color-electric-green;
             }
         }
     }

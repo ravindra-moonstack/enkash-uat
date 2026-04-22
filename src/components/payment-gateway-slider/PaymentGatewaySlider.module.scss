@@ -109,6 +109,27 @@
         }
     }
 
+    &.whiteTheme {
+        :global {
+            .slick-dots {
+                li {
+                    button {
+                        background: $color-grey-100;
+
+                        &:hover {
+                            background: $color-equity-blue;
+                        }
+                    }
+
+                    &.slick-active button {
+                        background: $color-equity-blue;
+                        box-shadow: 0 2px 8px rgba(0, 191, 158, 0.3);
+                    }
+                }
+            }
+        }
+    }
+
     @include for-laptops {
         :global {
             .slick-slider {

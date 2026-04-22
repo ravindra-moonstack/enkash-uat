@@ -22,6 +22,7 @@ export type TStackCardItemProp = {
   icon: string | StaticImageData
   title: string
   description?: string
+  highlightText?: string
   descriptionHtml?: React.ReactNode
   image?: string | StaticImageData
   buttonUrl?: string
@@ -72,6 +73,7 @@ export type TAllProductSections = TAllProductSection[]
 export type TCardTypeItem = {
   titleHtml: string
   description?: string
+  subDescription?: string
   cardImage?: string | StaticImageData
   linkUrl?: string
 }
