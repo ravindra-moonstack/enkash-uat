@@ -583,7 +583,7 @@ const HomePage = (): React.JSX.Element => {
                 <div className="col-md-4" key={index.toString()}>
                   <Counter
                     {...item}
-                    className={`${styles.counterBox} "col-md-4`}
+                    className={`${styles.counterBox}`}
                   />
                 </div>
               ))}

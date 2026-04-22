@@ -1,0 +1,126 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.hero_section {
+  position: relative; // required for Image fill
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: $color-white-73;
+  box-shadow: 0px 0px 77px 0px $color-black-1a;
+  padding: 110px 0px 0;
+
+  @include for-laptops {
+    padding: 124px 0px 0;
+  }
+
+  // Breadcrumb logo
+  .group_logo {
+    width: 250px;
+    height: auto;
+
+    @include for-laptops {
+      width: 366px;
+      height: 62px;
+    }
+  }
+
+  .logoSliderWrap {
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .sliderOverlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    // height: 197px;
+    // background: linear-gradient(360deg, #FFFFFF 0.13%, #ffffffc4 35.99%, #ffffff8c 63.58%, #ffffff00 100%);
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: 0px -30px 100px 167px #ffffff;
+  }
+
+  .logoSlider {
+    position: relative;
+    z-index: 6;
+    padding: 16px 20px 20px;
+    background-color: #ffffff !important;
+
+    @include for-laptops {
+      padding: 24px 20px 20px;
+    }
+  }
+
+  // Right hero image container
+  .right_img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+
+    @include for-laptops {
+      max-height: 500px;
+    }
+
+    img {
+      height: auto;
+      padding-top: 32px;
+
+      @include for-laptops {
+        height: 625px;
+        padding-top: 0px;
+      }
+    }
+  }
+
+  // Subtitle
+  .subtitle {
+    color: $color-equity-blue;
+    border-bottom: 2px solid $color-equity-blue;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  // Hero title
+  .first_row_title {
+    padding-top: 16px;
+
+    @include for-laptops {
+      padding-top: 48px;
+      padding-bottom: 20px;
+    }
+  }
+
+  // Hero button wrapper
+
+  .first_row_button {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    gap: 8px;
+
+    @include for-laptops {
+      padding-top: 32px;
+      padding-bottom: 112px;
+      gap: 12px;
+    }
+  }
+
+  .container {
+    padding: 0 20px;
+
+    @include for-laptops {
+      padding: 0;
+    }
+  }
+
+  .first_row_content {
+    text-align: center;
+
+    @include for-laptops {
+      text-align: start;
+    }
+  }
+}

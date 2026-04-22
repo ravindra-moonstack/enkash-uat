@@ -51,7 +51,6 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
           src={backgroundImage as StaticImageData}
           alt="Hero Background"
           fill
-          priority
           style={{
             objectFit: "cover",
             objectPosition: imgObjectPosition,

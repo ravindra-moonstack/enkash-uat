@@ -19,9 +19,11 @@ interface SlideData {
 
 type PaymentGatewaySliderProps = {
     slides: SlideData[]
+    theme?: "white" | "dark"
 }
 
-const PaymentGatewaySlider: React.FC<PaymentGatewaySliderProps> = ({ slides }) => {
+const PaymentGatewaySlider: React.FC<PaymentGatewaySliderProps> = ({ slides, theme = "dark" }) => {
+    const isWhiteTheme = theme === "white"
     const sliderRef = useRef<Slider>(null)
 
     const settings: Settings = useMemo(
@@ -58,7 +60,7 @@ const PaymentGatewaySlider: React.FC<PaymentGatewaySliderProps> = ({ slides }) =
     )
 
     return (
-        <div className={styles.paymentGatewaySlider}>
+        <div className={`${styles.paymentGatewaySlider} ${isWhiteTheme ? styles.whiteTheme : ""}`}>
             <Slider {...settings} ref={sliderRef}>
                 {slides.map((slide) => (
                     <div key={slide.id} className={styles.slideContainer}>

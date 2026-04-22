@@ -1,0 +1,304 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+// =============================================
+// Feature Section — Alternating Layout
+// =============================================
+
+.featureSection {
+  position: relative;
+  width: 100%;
+  background: #f6fdfb;
+  border-radius: 24px;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.featureInner {
+  position: relative;
+  z-index: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+// =============================================
+// Single Feature Row
+// =============================================
+
+.featureRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 0;
+
+  &.reverse {
+    .featureContent {
+      order: 2;
+    }
+    .featureVisual {
+      order: 1;
+    }
+  }
+
+  @include for-laptops {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 0;
+
+    &.reverse {
+      .featureContent {
+        order: 1;
+      }
+      .featureVisual {
+        order: 2;
+      }
+    }
+  }
+}
+
+// =============================================
+// SVG Connector Lines — positioned behind row
+// =============================================
+
+.connectorLines {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  // Normal row: image is on right → lines on right side
+  .featureRow:not(.reverse) & {
+    right: 0;
+    width: 360px;
+    height: 480px;
+  }
+
+  // Reversed row: image is on left → lines on left, mirrored
+  .featureRow.reverse & {
+    left: 0;
+    width: 360px;
+    height: 480px;
+    transform: translateY(-50%) scaleX(-1);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include for-laptops {
+    display: none;
+  }
+}
+
+// =============================================
+// Text Content Side
+// =============================================
+
+.featureContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.featureIconWrap {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+
+  img,
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.featureHeading {
+  margin-bottom: 16px;
+
+  :global(.pageHeading) {
+    margin: 0;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.17;
+      letter-spacing: -0.04em;
+      color: #000000;
+      margin: 0;
+    }
+  }
+}
+
+.featureDescription {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: -0.04em;
+  color: #2b2b2b;
+  margin: 0 0 16px;
+}
+
+.featureHighlight {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: -0.04em;
+  color: #00bf9e;
+  margin: 0 0 32px;
+}
+
+.featureCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border: 1.5px solid #1c5af4;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  width: fit-content;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1c5af4;
+
+  &:hover {
+    background: #1c5af4;
+    color: #ffffff;
+  }
+}
+
+// =============================================
+// Visual / Image Side
+// =============================================
+
+.featureVisual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+
+  .featureRow:not(.reverse) & {
+    justify-content: flex-end;
+  }
+
+  .featureRow.reverse & {
+    justify-content: flex-start;
+  }
+
+  @include for-laptops {
+    justify-content: flex-start !important;
+  }
+}
+
+.featureVisualInner {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+// Blue accent rectangle that peeks from behind the image
+.blueAccent {
+  position: absolute;
+  width: 38%;
+  height: 88%;
+  background: #caf0ff;
+  border-radius: 23px;
+  bottom: 0;
+  z-index: 0;
+
+  // Normal: accent on left edge of visual block
+  .featureRow:not(.reverse) & {
+    left: 0;
+  }
+
+  // Reversed: accent on right edge
+  .featureRow.reverse & {
+    right: 0;
+  }
+
+  @include for-laptops {
+    display: none;
+  }
+}
+
+// The actual image — takes up full width, floated opposite to accent
+.featureImage {
+  position: relative;
+  z-index: 1;
+  width: 86%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 16px;
+
+  .featureRow:not(.reverse) & {
+    margin-left: auto; // pushes image right, accent peeks left
+  }
+
+  .featureRow.reverse & {
+    margin-right: auto; // pushes image left, accent peeks right
+  }
+
+  @include for-laptops {
+    width: 100%;
+    margin: 0 !important;
+  }
+}
+
+// =============================================
+// Responsive
+// =============================================
+
+@include for-laptops {
+  .featureSection {
+    padding: 48px 0;
+    border-radius: 16px;
+  }
+
+  .featureInner {
+    padding: 0 20px;
+  }
+
+  .featureHeading {
+    :global(.pageHeading) {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .featureDescription,
+  .featureHighlight {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
