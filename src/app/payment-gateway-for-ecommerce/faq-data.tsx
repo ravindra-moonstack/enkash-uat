@@ -7,7 +7,7 @@ const faqData: TFAQProps[] = [
         answerHTML: (
             <p>
                 An e-commerce payment gateway is a secure technology that facilitates{" "}
-                <Link href="/blog/online-payment-processing" className="color-equity-blue">
+                <Link href="https://uat.blogs.enkash.com/blog/online-payment-processing" className="color-equity-blue">
                     online payment processing
                 </Link>{" "}
                 between customers, businesses, and banks. It authorizes online transactions in real time and encrypts sensitive data like card details and net banking information of the user to ensure safe and reliable payments.
@@ -71,7 +71,7 @@ const faqData: TFAQProps[] = [
         answerHTML: (
             <p>
                 Payment gateway charges for an e-commerce website usually range between 1% to 3% per transaction, depending on payment method, monthly volume, industry type, and provider terms. Additional fees may apply for international payments or premium services. Businesses with higher transaction volumes can often negotiate better rates. To get the best payment gateway pricing for your store,{" "}
-                <Link href="/sales" className="color-equity-blue font-bold">
+                <Link href="/contact-us" className="color-equity-blue font-bold">
                     contact us today
                 </Link>
                 .

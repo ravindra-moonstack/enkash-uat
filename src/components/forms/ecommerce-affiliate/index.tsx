@@ -41,6 +41,8 @@ const EcommerceAffiliateForm: React.FC = () => {
         setFieldValue("SingleLine4", utmCampaign)
         setFieldValue("SingleLine5", referringPage)
         setFieldValue("SingleLine6", "Ecommerce and Retail Partnerships")
+        setFieldValue("MultipleChoice", ["Collect Payments"])
+        setFieldValue("MultipleChoice1", ["Payment Gateway"])
     }, [])
 
     const onSubmitForm = async (values: TEcommerceAffiliateInitialValueProp) => {
@@ -50,7 +52,6 @@ const EcommerceAffiliateForm: React.FC = () => {
                 url: process.env.NEXT_PUBLIC_ZOHO_AFFILIATE_URL,
                 data: values,
             })
-
             router.push("/confirmation-partnerships")
             setLoading(false)
         } catch (error) {

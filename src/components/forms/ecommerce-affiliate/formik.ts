@@ -10,6 +10,8 @@ export type TEcommerceAffiliateInitialValueProp = {
   SingleLine4: string // UTM Campaign
   SingleLine5: string // Referring Page
   SingleLine6: string // Department/Form Name
+  MultipleChoice: string[] // Industry/Category
+  MultipleChoice1: string[] // Sub-category
 }
 
 const ecommerceAffiliateInitialValue: TEcommerceAffiliateInitialValueProp = {
@@ -22,6 +24,8 @@ const ecommerceAffiliateInitialValue: TEcommerceAffiliateInitialValueProp = {
   SingleLine4: "",
   SingleLine5: "",
   SingleLine6: "Ecommerce and Retail Partnerships",
+  MultipleChoice: [],
+  MultipleChoice1: [],
 }
 
 const ecommerceAffiliateValidation = Yup.object({

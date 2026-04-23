@@ -70,7 +70,7 @@ const EcommerceUseCaseSection: React.FC<EcommerceUseCaseSectionProps> = ({
                         <div className={`row align-items-center mb-3 ${styles.item_section}`}>
                             {/* Text Block */}
                             <div
-                                className={`${textColClass || "col-md-7"} col-12 ${item.reverse ? "order-md-2" : "order-md-1"}`}
+                                className={`${textColClass || "col-md-7"} col-12 order-2 ${item.reverse ? "order-md-2" : "order-md-1"}`}
                             >
                                 <div className={`d-flex align-items-start ${styles.policyCard}`}>
                                     {/* Icon */}
@@ -131,7 +131,7 @@ const EcommerceUseCaseSection: React.FC<EcommerceUseCaseSectionProps> = ({
                             </div>
 
                             <div
-                                className={`${imageColClass || "col-md-5"} col-12 d-flex justify-content-end ${item.reverse ? "order-md-1" : "order-md-2"
+                                className={`${imageColClass || "col-md-5"} col-12 order-1 d-flex justify-content-end ${item.reverse ? "order-md-1" : "order-md-2"
                                     } ${styles.third_container}`}
                             >
                                 {item.image && (
