@@ -1,15 +1,14 @@
 import React from "react"
 import { Metadata } from "next"
+import Script from "next/script"
 import styles from "./style.module.scss"
 
 //data
-import { integrations, slideData, policies, counterData, partnershipSlideData, managementCards } from "./data"
+import { integrations, policies, counterData, partnershipSlideData, managementCards } from "./data"
 import faqData from "./faq-data"
 
 //components
 import {
-    BpHeroSection,
-    PaymentGatewaySection,
     DynamicHeading,
     PartnerShipForm,
     PartnershipSection
@@ -18,15 +17,12 @@ import FaqSection from "@/src/components/faq-section"
 import SuspenseLoading from "@/src/components/loading"
 
 //images
-import { containerScreen } from "../payment-gateway-partners/img"
-import { capabilityImage } from "../payment-gateway/img"
+import { heroBgBig } from "./img"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import EcommerceHero from "@/src/components/sections/ecommerce-hero"
 import EcommerceUseCaseSection from "@/src/components/sections/ecommerce-use-case-section"
-import { heroBg, heroBgBig } from "./img"
-import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import AffiliateFormClient from "@/src/components/form-wrapper/EcommerceAffiliateFormWrapper"
 import ExistingStackSection from "@/src/components/existing-stack-section"
 import Counter from "@/src/components/home-counter"
@@ -40,17 +36,28 @@ export const metadata: Metadata = generateMetaData({
         canonical: `${process.env.URL}/payment-gateway-for-ecommerce`,
     },
 })
-const salesUrl = getSalesUrl("/payment-gateway-for-ecommerce")
+const salesUrl = "#ecommerce-form"
 const PaymentGatewayForEcommerce = (): React.JSX.Element => {
+    const webPageSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Payment Gateway for E-commerce | EnKash",
+        description: "Empower your e-commerce business with EnKash's secure and fast payment gateway. Optimized for high conversion, mobile-first design, and seamless integration.",
+        url: "https://www.enkash.com/payment-gateway-for-ecommerce",
+    }
+
     return (
         <div className={`color-white`}>
+            <Script
+                id="web-page-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(webPageSchema),
+                }}
+            />
             <EcommerceHero
                 breadcrumbs={[
                     { name: "Home", url: "/", },
-                    {
-                        name: "Industries",
-                        url: "/industries",
-                    },
                     {
                         name: "Payment Gateway",
                         url: "/payment-gateway",
@@ -106,7 +113,7 @@ const PaymentGatewayForEcommerce = (): React.JSX.Element => {
                         {
                             title: "Start payments",
                             theme: "blue",
-                            url: "#partnership-form"
+                            url: "#ecommerce-form"
                         }
                     ]}
                 />
@@ -176,7 +183,7 @@ const PaymentGatewayForEcommerce = (): React.JSX.Element => {
                 <ExistingStackSection integrations={integrations} />
 
 
-                <div id="partnership-form">
+                <div id="ecommerce-form">
                     <PartnerShipForm
                         heading={[
                             { title: "Stop losing", color: "color-grey-200 d-block f-2" },
