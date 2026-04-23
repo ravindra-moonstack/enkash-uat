@@ -1,0 +1,18 @@
+.slick-track {
+    display: flex;
+    animation: scrollSlider 35s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes scrollSlider {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}

@@ -36,6 +36,8 @@ export interface ButtonProps {
   openInNewTab?: boolean
   arrow?: boolean
   arrowType?: "fa" | "ios"
+  icon?: React.ReactNode
+  iconPosition?: "start" | "end"
 }
 
 const CommonButton = ({
@@ -52,6 +54,8 @@ const CommonButton = ({
   changeImageOnHover = false,
   arrow = false,
   arrowType = "fa",
+  icon,
+  iconPosition = "start",
 }: ButtonProps) => {
   const router = useRouter()
 
@@ -108,7 +112,15 @@ const CommonButton = ({
         />
       )}
 
+      {icon && iconPosition === "start" && (
+        <span className={styles.custom_icon_wrap}>{icon}</span>
+      )}
+
       {title}
+
+      {icon && iconPosition === "end" && (
+        <span className={styles.custom_icon_wrap}>{icon}</span>
+      )}
 
       {arrow &&
         (arrowType === "ios" ? <IoIosArrowForward /> : <FaArrowRight />)}

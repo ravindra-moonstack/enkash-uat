@@ -1,0 +1,94 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.blog_nav_wrapper {
+  width: 100%;
+  background: #fff;
+}
+
+// ── Breadcrumb row ────────────────────────────────────────────────────────────
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 20px 0 10px;
+  flex-wrap: wrap;
+  line-height: 1.2;
+
+  @include for-laptops {
+    padding: 40px 0 12px;
+  }
+
+  .crumb {
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-uncultured-light;
+    text-decoration: none;
+    font-weight: 300;
+
+    @include for-laptops {
+      font-size: 16px;
+      line-height: 40px;
+    }
+  }
+
+  .crumb_active {
+    font-weight: 500;
+  }
+
+  .separator {
+    margin: 0 10px;
+    color: #97a3b7;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
+    user-select: none;
+  }
+}
+
+// ── Divider between breadcrumb and tabs ───────────────────────────────────────
+.divider {
+  border: none;
+  border-top: 1px solid $color-dark-grey;
+  margin: 0;
+}
+
+// ── Category tab bar ─────────────────────────────────────────────────────────
+.category_bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 10px;
+  flex-wrap: wrap;
+
+  @include for-laptops {
+    gap: 20px;
+  }
+}
+
+.category_pill {
+  padding: 7px 15px;
+  background: #f3f4f6;
+  border-radius: 7px;
+  color: $color-alternate-grey;
+  font-weight: 500;
+  font-size: 12px; 
+  font-family: inter;
+  z-index: 1;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    background: linear-gradient(#f3f4f6, #f3f4f6) padding-box,
+                linear-gradient(to right, #1c5af4 0, #61d6ff 100%) border-box;
+  }
+
+}
+
+// ── Bottom separator ─────────────────────────────────────────────────────────
+.bottom_divider {
+  border: none;
+  border-top: 1px solid $color-dark-grey;
+  margin: 8px 0 0;
+}

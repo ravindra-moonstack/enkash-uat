@@ -1,3 +1,5 @@
+import { HoneyComb, Vianet } from "./img"
+
 export const tabs = [
     { name: "Case Studies", slug: "case-studies" },
     { name: "Videos", slug: "videos" },
@@ -10,7 +12,7 @@ export const staticCaseStudies = [
         title: "How EnKash helped Vianet optimize their vendor payments",
         slug: "vianet-success-story",
         category: "Case Studies",
-        featured_image: "/resources/vianet.png",
+        image: Vianet.src,
         excerpt: "Discover how Vianet achieved 40% efficiency in their financial operations with EnKash's automated payment solutions."
     },
     {
@@ -18,7 +20,7 @@ export const staticCaseStudies = [
         title: "Modernizing corporate spending for TechCorp globally",
         slug: "techcorp-global-spending",
         category: "Case Studies",
-        featured_image: "/resources/techcorp.png",
+        image: HoneyComb,
         excerpt: "TechCorp transformed their employee reimbursement process using EnKash smart cards, reducing processing time by 60%."
     }
 ]

@@ -4,28 +4,50 @@ import pool from "@/src/lib/dbConnect"
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url)
-    const page = parseInt(searchParams.get("page") || "1")
-    const limit = parseInt(searchParams.get("limit") || "9")
-    const search = searchParams.get("search") || ""
+
+    const page = Math.max(Number(searchParams.get("page")) || 1, 1)
+    const limit = Math.min(
+      Math.max(Number(searchParams.get("limit")) || 9, 1),
+      100
+    )
+    const search = searchParams.get("search")?.trim() || ""
+
     const offset = (page - 1) * limit
 
-    let whereClause = "WHERE 1=1"
+    const conditions: string[] = ["videos.status = 'publish'"]
+    const params: any[] = []
+
     if (search) {
-      whereClause += ` AND (title LIKE ?)`
+      conditions.push(`(videos.title LIKE ?)`)
+      params.push(`%${search}%`)
     }
 
-    const queryParams = search ? [`%${search}%`] : []
+    const whereClause = `WHERE ${conditions.join(" AND ")}`
 
-    const countQuery = `SELECT COUNT(*) as total FROM videos ${whereClause}`
-    const [countResult]: any = await pool.execute(countQuery, queryParams)
-    const total = countResult[0].total
+    // COUNT
+    const countQuery = `
+      SELECT COUNT(*) as total 
+      FROM videos 
+      ${whereClause}
+    `
+    const [countResult]: any = await pool.execute(countQuery, params)
+    const total = countResult?.[0]?.total ?? 0
 
-    const dataQuery = `SELECT * FROM posts ${whereClause} ORDER BY created_at DESC LIMIT ? OFFSET ?`
-    const [rows] = await pool.execute(dataQuery, [
-      ...queryParams,
-      limit.toString(),
-      offset.toString(),
-    ])
+    // DATA
+    const dataQuery = `
+      SELECT 
+        videos.*,
+        attachments.image_url AS featured_image_url,
+        attachments.attachment_image_alt AS featured_image_alt
+      FROM videos
+      LEFT JOIN attachments 
+        ON videos.thumbnail_id = attachments.id
+      ${whereClause}
+      ORDER BY videos.created_at DESC
+      LIMIT ${limit} OFFSET ${offset}
+    `
+
+    const [rows]: any = await pool.execute(dataQuery, params)
 
     return NextResponse.json({
       data: rows,
@@ -34,6 +56,8 @@ export async function GET(req: NextRequest) {
         page,
         limit,
         totalPages: Math.ceil(total / limit),
+        hasNextPage: page * limit < total,
+        hasPrevPage: page > 1,
       },
     })
   } catch (error: any) {

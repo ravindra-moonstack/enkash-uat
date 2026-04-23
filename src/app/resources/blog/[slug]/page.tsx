@@ -1,0 +1,98 @@
+import React from "react"
+import styles from "./styles.module.scss"
+import Link from "next/link"
+import BlogBanner from "@/src/components/blog-components/BlogBanner"
+import BlogBody from "@/src/components/blog-components/BlogBody"
+import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
+import { BlogNav } from "@/src/components"
+
+async function getNavData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/resources/blogs/getCategory`, {
+    cache: "no-store",
+  })
+  if (!res.ok) return null
+  return res.json()
+}
+
+const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/resources/blogs/getPostBySlug?slug=${slug}`, {
+    cache: "no-store",
+  })
+  const json = await res.json()
+  const navData = await getNavData()
+
+  if (json.error || !json.posts || json.posts.length === 0) {
+    return (
+      <div className={styles.noData}>
+        <p>No Data Found</p>
+      </div>
+    )
+  }
+  const result = json.posts
+  console.log("result", result);
+
+  const bannerData = [
+    {
+      title: result[0].title,
+      image: result[0].featured_image_url,
+      imageAlt: result[0].image_alt,
+      category: result[0].category_names,
+      categorySlug: result[0].category_slugs,
+      author: result[0].author,
+      date: result[0].created_at,
+      show_featured_image: result[0].show_featured_image,
+    },
+  ]
+  const bodyData = [
+    {
+      title: result[0].title,
+      content: result[0].content,
+      slug: result[0].slug,
+      show_featured_image: result[0].show_featured_image,
+    },
+  ]
+
+  //   const authorData = [
+  //     {
+  //       author: result[0].author,
+  //       author_image: result[0].author_image,
+  //       author_description: result[0].author_description,
+  //     },
+  //   ]
+
+  const relatedBlogs = [{ relatedBlogs: json?.relatedBlogs }]
+
+  const activeCategory = result[0].category_slugs?.split(",")[0] || ""
+
+  // Prepare breadcrumbs for BlogNav
+  const breadcrumbs = [
+    { label: "Resources", href: "/resources" },
+    { label: "Blog", href: "/resources/blogs" },
+    { label: result[0].title },
+  ]
+
+  const extendedNavData = navData ? { ...navData, breadcrumbs } : null
+
+  return (
+    <div className={`${styles.mainPage}`}>
+      <section className={styles.blog_nav_section}>
+        <div className="max-w-auto">
+          {extendedNavData && (
+            <BlogNav
+              data={extendedNavData}
+              activeCategory={activeCategory}
+              showCategories={false}
+              showDivider={false}
+            />
+          )}
+        </div>
+      </section>
+      <BlogBanner bannerData={bannerData} />
+      <BlogBody bodyData={bodyData[0]} />
+      <RelatedBlogs relatedBlogs={relatedBlogs} />
+    </div>
+  )
+}
+
+export default BlogPage;

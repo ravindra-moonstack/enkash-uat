@@ -274,6 +274,15 @@ const CommanButton = dynamic(() => import("./buttons/index"), {
   ssr: true,
 })
 
+const BlogNav = dynamic(() => import("./blog-nav/index"), { ssr: true })
+const ReceivablesSection = dynamic(
+  () => import("./receivables-section/index"),
+  { ssr: true }
+)
+const SubscribeSection = dynamic(() => import("./subscribe-section/index"), {
+  ssr: true,
+})
+
 export {
   Header,
   Footer,
@@ -352,4 +361,7 @@ export {
   TaxBenefitDetailsCard,
   BenefitWalletsSection,
   StatisticsSection,
+  BlogNav,
+  ReceivablesSection,
+  SubscribeSection,
 }
