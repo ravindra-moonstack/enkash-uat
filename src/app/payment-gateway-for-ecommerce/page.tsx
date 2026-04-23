@@ -29,9 +29,9 @@ import Counter from "@/src/components/home-counter"
 import OtherProducts from "@/src/components/sections/other-products"
 
 export const metadata: Metadata = generateMetaData({
-    title: "Payment Gateway for E-commerce | EnKash",
+    title: "Best Payment Gateway for E-commerce in India | Fast & Reliable",
     description:
-        "Empower your e-commerce business with EnKash's secure and fast payment gateway. Optimized for high conversion, mobile-first design, and seamless integration.",
+        "Power your online store with a secure payment gateway for e-commerce. Enable UPI, cards, net banking & wallets with high success rates and quick integration.",
     alternates: {
         canonical: "https://www.enkash.com/payment-gateway-for-ecommerce",
     },
