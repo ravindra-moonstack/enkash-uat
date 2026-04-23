@@ -3,40 +3,50 @@
 
 // export async function GET(req: NextRequest) {
 //   try {
-//     console.log("---- API HIT ----")
-
 //     const { searchParams } = new URL(req.url)
 
-//     const page = Number(searchParams.get("page") || 1)
-//     const limit = Number(searchParams.get("limit") || 9)
-//     const search = searchParams.get("search")
+//     const page = Math.max(Number(searchParams.get("page")) || 1, 1)
+//     const limit = Math.min(
+//       Math.max(Number(searchParams.get("limit")) || 9, 1),
+//       100
+//     )
+//     const search = searchParams.get("search")?.trim() || ""
 
 //     const offset = (page - 1) * limit
 
-//     let whereClause = ""
-//     let baseParams: any[] = []
+//     const conditions: string[] = []
+//     const params: any[] = []
 
-//     if (search && search.trim().length > 0) {
-//       whereClause = `WHERE (title LIKE ? OR content LIKE ? OR excerpt LIKE ?)`
-//       baseParams.push(`%${search}%`, `%${search}%`, `%${search}%`)
+//     if (search) {
+//       conditions.push(`(title LIKE ? OR content LIKE ? OR excerpt LIKE ?)`)
+//       const searchPattern = `%${search}%`
+//       params.push(searchPattern, searchPattern, searchPattern)
 //     }
 
-//     const countQuery = `SELECT COUNT(*) as total FROM posts ${whereClause}`
+//     const whereClause = conditions.length
+//       ? `WHERE ${conditions.join(" AND ")}`
+//       : ""
 
-//     const [countResult]: any = await pool.execute(countQuery, baseParams)
+//     const countQuery = `
+//       SELECT COUNT(*) AS total
+//       FROM posts
+//       ${whereClause}
+//     `
 
-//     const total = countResult[0]?.total || 0
+//     const [countResult]: any = await pool.execute(countQuery, params)
+//     const total = countResult?.[0]?.total ?? 0
 
 //     const dataQuery = `
-//       SELECT * FROM posts
+//       SELECT posts.*, attachments.image_url AS featured_image_url, attachments.attachment_image_alt AS featured_image_alt
+//       FROM posts
 //       ${whereClause}
+//       LEFT JOIN attachments AS attachments
+//         ON posts.featured_image = attachments.id
 //       ORDER BY created_at DESC
 //       LIMIT ${limit} OFFSET ${offset}
 //     `
 
-//     const dataParams = [...baseParams]
-
-//     const [rows]: any = await pool.execute(dataQuery, dataParams)
+//     const [rows]: any = await pool.execute(dataQuery, params)
 
 //     const response = {
 //       data: rows,
@@ -45,16 +55,18 @@
 //         page,
 //         limit,
 //         totalPages: Math.ceil(total / limit),
+//         hasNextPage: page * limit < total,
+//         hasPrevPage: page > 1,
 //       },
 //     }
 
 //     return NextResponse.json(response)
 //   } catch (error: any) {
-//     console.error("Error Message:", error.message)
-//     console.error("Full Error Object:", error)
-
 //     return NextResponse.json(
-//       { error: error.message || "Something went wrong" },
+//       {
+//         success: false,
+//         error: "Internal Server Error",
+//       },
 //       { status: 500 }
 //     )
 //   }
@@ -75,13 +87,13 @@ export async function GET(req: NextRequest) {
 
     const offset = (page - 1) * limit
 
-    console.log("Params:", { page, limit, search, offset })
-
-    const conditions: string[] = []
+    const conditions: string[] = ["posts.status = 'publish'"]
     const params: any[] = []
 
     if (search) {
-      conditions.push(`(title LIKE ? OR content LIKE ? OR excerpt LIKE ?)`)
+      conditions.push(
+        `(posts.title LIKE ? OR posts.content LIKE ? OR posts.excerpt LIKE ?)`
+      )
       const searchPattern = `%${search}%`
       params.push(searchPattern, searchPattern, searchPattern)
     }
@@ -89,10 +101,6 @@ export async function GET(req: NextRequest) {
     const whereClause = conditions.length
       ? `WHERE ${conditions.join(" AND ")}`
       : ""
-
-    console.log("WHERE clause:", whereClause)
-    console.log("Query params:", params)
-
     const countQuery = `
       SELECT COUNT(*) AS total
       FROM posts
@@ -102,21 +110,20 @@ export async function GET(req: NextRequest) {
     const [countResult]: any = await pool.execute(countQuery, params)
     const total = countResult?.[0]?.total ?? 0
 
-    console.log("Total records:", total)
-
     const dataQuery = `
-      SELECT *
+      SELECT 
+        posts.*, 
+        attachments.image_url AS featured_image_url, 
+        attachments.attachment_image_alt AS featured_image_alt
       FROM posts
+      LEFT JOIN attachments AS attachments
+        ON posts.featured_image = attachments.id 
       ${whereClause}
       ORDER BY created_at DESC
       LIMIT ${limit} OFFSET ${offset}
     `
 
-    console.log("Data Query:", dataQuery)
-
     const [rows]: any = await pool.execute(dataQuery, params)
-
-    console.log("Rows fetched:", rows.length)
 
     const response = {
       data: rows,
@@ -130,18 +137,12 @@ export async function GET(req: NextRequest) {
       },
     }
 
-    console.log("---- SUCCESS ----")
-
     return NextResponse.json(response)
   } catch (error: any) {
-    console.error("---- ERROR ----")
-    console.error("Message:", error.message)
-    console.error("Stack:", error.stack)
-
     return NextResponse.json(
       {
         success: false,
-        error: "Internal Server Error",
+        error: error.message || "Internal Server Error",
       },
       { status: 500 }
     )

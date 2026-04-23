@@ -1,0 +1,285 @@
+.category_banner_wrapper {
+  background: linear-gradient(90deg, #387af6 0%, #63ccfe 100%);
+  padding: 60px 0;
+  margin-top: 150px;
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col_12 {
+    width: 100%;
+  }
+
+  .category_banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .category_banner_content {
+    flex: 1;
+    color: #fff;
+    max-width: 50%;
+  }
+
+  .category_name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+  }
+
+  .category_banner_title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 30px;
+  }
+
+  .btn_wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .btn_primary {
+    background-color: #3b63fa;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #3b63fa;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #2b4cdb;
+      border-color: #2b4cdb;
+    }
+  }
+
+  .btn_secondary {
+    background-color: transparent;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: #fff;
+    }
+  }
+
+  .category_banner_image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    .banner_img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+// --- Blog Card Section ---
+
+.category_blog_card {
+  padding: 60px 0;
+  background-color: transparent;
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+  }
+}
+
+.category_card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* soft shadow */
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.category_card_image {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  width: 100%;
+
+  .category_card_image_img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.category_card_content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.category_card_content_top {
+  margin-bottom: 12px;
+}
+
+.category_card_category {
+  font-size: 15px;
+  color: #555;
+  text-transform: capitalize;
+
+  .category_card_category_link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #387af6;
+    }
+  }
+}
+
+.category_card_title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  color: #222;
+
+  .category_card_title_link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #387af6;
+    }
+  }
+}
+
+.category_card_date {
+  font-size: 14px;
+  color: #777;
+  margin-top: auto; /* Pushes the date to the bottom */
+  font-weight: 500;
+}
+
+.load_more_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.load_more_btn {
+  background-color: transparent;
+  color: #3b63fa;
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid #3b63fa;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover:not(:disabled) {
+    background-color: #3b63fa;
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// --- Recent Blogs Section ---
+
+.recent_blog_section {
+  background-color: #f3faf8; // very subtle light teal/mint background
+  padding: 80px 0;
+  margin-top: 40px;
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col_12 {
+    width: 100%;
+  }
+}
+
+.recent_blog_title {
+  text-align: center;
+  color: #3b63fa; // Exact blue from the image
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+.recent_blog_list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // Ensure exactly 4 cards in a row
+  gap: 25px;
+
+  /* Resizing behavior if it goes smaller than standard desktop container */
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recent_blog_item {
+  display: flex;
+  height: 100%;
+}

@@ -4,16 +4,17 @@ import Image from "next/image"
 import Link from "next/link"
 import { DynamicHeading } from "@/src/components"
 import styles from "./page.module.scss"
+import { getImageSrc } from "@/src/utils/common"
 
-const ResourceCard = ({ post }: { post: any }) => {
-    const imageSrc = post.featured_image || post.category_featured_blog || "/resources/placeholder.png"
+const ResourceCard = ({ post, onClick }: { post: any; onClick?: (post: any) => void }) => {
+    const imageSrc = getImageSrc(post)
 
-    return (
-        <Link href={`/resources/blog/${post.slug}`} className={styles.resource_card}>
+    const CardContent = (
+        <>
             <div className={styles.image_wrapper}>
                 <Image
                     src={imageSrc}
-                    alt={post.title}
+                    alt={post.featured_image_alt || post.title}
                     width={300}
                     height={200}
                     unoptimized
@@ -26,6 +27,21 @@ const ResourceCard = ({ post }: { post: any }) => {
                     className="f-5"
                 />
             </div>
+        </>
+    )
+    console.log("onClick", onClick);
+
+    if (onClick) {
+        return (
+            <div className={styles.resource_card} onClick={() => onClick(post)} style={{ cursor: 'pointer' }}>
+                {CardContent}
+            </div>
+        )
+    }
+
+    return (
+        <Link href={`/resources/blog/${post.slug}`} className={styles.resource_card}>
+            {CardContent}
         </Link>
     )
 }
