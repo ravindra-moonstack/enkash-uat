@@ -7,7 +7,7 @@ const faqData: TFAQProps[] = [
         answerHTML: (
             <p>
                 An e-commerce payment gateway is a secure technology that facilitates{" "}
-                <Link href="https://uat.blogs.enkash.com/blog/online-payment-processing" className="color-equity-blue">
+                <Link href="https://www.enkash.com/resources/blog/online-payment-processing" className="color-equity-blue">
                     online payment processing
                 </Link>{" "}
                 between customers, businesses, and banks. It authorizes online transactions in real time and encrypts sensitive data like card details and net banking information of the user to ensure safe and reliable payments.
