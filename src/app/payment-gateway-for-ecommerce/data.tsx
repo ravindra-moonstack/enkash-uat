@@ -211,7 +211,7 @@ const managementCards: TCardTypes = [
             "Collect for custom orders, B2B wholesale, or social commerce via WhatsApp/SMS",
         description: "Create & send links to get paid instantly",
         cardImage: paymentLink,
-        linkUrl: "/payment-gateway",
+        linkUrl: "/payment-links",
     },
     {
         titleHtml: "Instant Settlement",

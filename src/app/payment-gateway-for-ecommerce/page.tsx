@@ -86,18 +86,6 @@ const PaymentGatewayForEcommerce = (): React.JSX.Element => {
             />
 
             <SuspenseLoading>
-                {/* <PaymentGatewaySection
-                    // backgroundImage={capabilityImage.src}
-                    theme="white"
-                    heading={[
-                        {
-                            title: "Advanced Capabilities for Complex Requirements",
-                        }
-                    ]}
-                    description="Beyond standard payment processing, EnKash handles sophisticated business scenarios for e-commerce enterprises."
-                    slideData={slideData}
-                    className={styles.partnerSectionOverlap}
-                /> */}
 
                 <PartnershipSection
                     theme="white"
@@ -143,7 +131,12 @@ const PaymentGatewayForEcommerce = (): React.JSX.Element => {
                             <DynamicHeading
                                 content={[
                                     {
-                                        title: "What reliable e-commerce payments look like in numbers",
+                                        title: "What reliable ",
+                                        color: "color-black ",
+                                        className: styles.displayblock
+                                    },
+                                    {
+                                        title: "e-commerce payments look like in numbers",
                                         color: "color-black",
                                     },
                                 ]}

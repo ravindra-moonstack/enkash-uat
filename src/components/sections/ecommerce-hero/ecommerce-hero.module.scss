@@ -40,7 +40,11 @@
     // background: linear-gradient(360deg, #FFFFFF 0.13%, #ffffffc4 35.99%, #ffffff8c 63.58%, #ffffff00 100%);
     pointer-events: none;
     z-index: 1;
-    box-shadow: 0px -30px 100px 167px #ffffff;
+    box-shadow: 0px 30px 100px 167px #ffffff;
+
+    @include for-laptops {
+      box-shadow: 0px -30px 100px 167px #ffffff;
+    }
   }
 
   .logoSlider {
