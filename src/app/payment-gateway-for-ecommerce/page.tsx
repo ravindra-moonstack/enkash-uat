@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
     description:
         "Empower your e-commerce business with EnKash's secure and fast payment gateway. Optimized for high conversion, mobile-first design, and seamless integration.",
     alternates: {
-        canonical: `${process.env.URL}/payment-gateway-for-ecommerce`,
+        canonical: "https://www.enkash.com/payment-gateway-for-ecommerce",
     },
 })
 const salesUrl = "#ecommerce-form"
@@ -109,13 +109,13 @@ const PaymentGatewayForEcommerce = (): React.JSX.Element => {
                         }
                     ]}
                     slideData={partnershipSlideData}
-                    buttons={[
-                        {
-                            title: "Start payments",
-                            theme: "blue",
-                            url: "#ecommerce-form"
-                        }
-                    ]}
+                // buttons={[
+                //     {
+                //         title: "Start payments",
+                //         theme: "blue",
+                //         url: "#ecommerce-form"
+                //     }
+                // ]}
                 />
                 <EcommerceUseCaseSection
                     heading={[

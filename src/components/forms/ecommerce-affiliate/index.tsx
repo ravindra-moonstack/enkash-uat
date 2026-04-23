@@ -40,16 +40,14 @@ const EcommerceAffiliateForm: React.FC = () => {
         setFieldValue("SingleLine3", utmMedium)
         setFieldValue("SingleLine4", utmCampaign)
         setFieldValue("SingleLine5", referringPage)
-        setFieldValue("SingleLine6", "Ecommerce and Retail Partnerships")
-        setFieldValue("MultipleChoice", ["Collect Payments"])
-        setFieldValue("MultipleChoice1", ["Payment Gateway"])
+        setFieldValue("SingleLine6", "Website - Payment Gateway")
     }, [])
 
     const onSubmitForm = async (values: TEcommerceAffiliateInitialValueProp) => {
         try {
             setLoading(true)
             await axios.post("/api/zoho", {
-                url: process.env.NEXT_PUBLIC_ZOHO_AFFILIATE_URL,
+                url: "https://forms.zohopublic.in/Enkash/form/WebsitePaymentGateway/formperma/YD_WfaK7EBxBFCdK_d5lwR6s6Oq13FEax-9X867prvQ/htmlRecords/submit",
                 data: values,
             })
             router.push("/confirmation-partnerships")
@@ -100,6 +98,20 @@ const EcommerceAffiliateForm: React.FC = () => {
                         <input
                             type="text"
                             required
+                            placeholder="Company Name*"
+                            {...getFieldProps("SingleLine1")}
+                        />
+                        <ErrorText<TEcommerceAffiliateInitialValueProp>
+                            errors={errors}
+                            touched={touched}
+                            field="SingleLine1"
+                        />
+                    </div>
+
+                    <div className="">
+                        <input
+                            type="text"
+                            required
                             autoComplete="tel"
                             placeholder="Phone Number*"
                             {...getFieldProps("PhoneNumber_countrycode")}
@@ -112,18 +124,48 @@ const EcommerceAffiliateForm: React.FC = () => {
                     </div>
 
                     <div className="">
-                        <input
-                            type="text"
+                        <select
                             required
-                            placeholder="Company Name*"
-                            {...getFieldProps("SingleLine1")}
-                        />
+                            {...getFieldProps("Dropdown5")}
+                        >
+                            <option value="-Select-">Monthly Merchant Volume*</option>
+                            <option value="0 to 5">0 to 5</option>
+                            <option value="5 to 10">5 to 10</option>
+                            <option value="10+">10+</option>
+                        </select>
                         <ErrorText<TEcommerceAffiliateInitialValueProp>
                             errors={errors}
                             touched={touched}
-                            field="SingleLine1"
+                            field="Dropdown5"
                         />
                     </div>
+
+                    <div className="">
+                        <select
+                            required
+                            {...getFieldProps("Dropdown6")}
+                        >
+                            <option value="-Select-">Line of Business*</option>
+                            <option value="Developers">Developers</option>
+                            <option value="ERP/SaaS">ERP/SaaS</option>
+                            <option value="Orchestration">Orchestration</option>
+                            <option value="Digital Marketing Agency">Digital Marketing Agency</option>
+                            <option value="CMS/Plugins">CMS/Plugins</option>
+                        </select>
+                        <ErrorText<TEcommerceAffiliateInitialValueProp>
+                            errors={errors}
+                            touched={touched}
+                            field="Dropdown6"
+                        />
+                    </div>
+                </div>
+
+                <div className="full-width">
+                    <textarea
+                        placeholder="Please provide more details that will enable us to better understand your needs."
+                        rows={3}
+                        {...getFieldProps("MultiLine")}
+                    />
                 </div>
 
                 <p className={"privacy"}>
