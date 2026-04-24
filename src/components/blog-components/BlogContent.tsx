@@ -1,10 +1,12 @@
+"use client"
+
 import React from "react"
 import styles from "./singleBlog.module.scss"
 
-const BlogContent = ({ bodyData }: { bodyData: any }) => {
+const BlogContent = ({ htmlContent }: { htmlContent: string }) => {
   return (
     <div className={styles.blogContent}>
-      <div dangerouslySetInnerHTML={{ __html: bodyData.content }} />
+      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </div>
   )
 }

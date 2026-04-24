@@ -18,7 +18,6 @@ export async function GET() {
       "SELECT term_id as id, name as label, slug FROM terms WHERE slug IN (?) AND taxonomy = 'category' ORDER BY FIELD(slug, ?)",
       [requestedCategories, requestedCategories]
     )
-    console.log("rows", rows)
 
     return NextResponse.json({
       breadcrumbs: [

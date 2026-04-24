@@ -17,11 +17,17 @@ export async function GET(request: Request) {
       pm.focus_keyword,
       pm.meta_title,
       pm.meta_description,
+      u.first_name,
+      u.last_name,
+      u.profile_image_url,
+      u.description AS user_description,
       GROUP_CONCAT(DISTINCT te.name) AS category_names,
       GROUP_CONCAT(DISTINCT te.slug) AS category_slugs
     FROM posts AS p
     LEFT JOIN post_meta AS pm
       ON p.id = pm.post_id
+    LEFT JOIN users AS u
+      ON p.author = u.id
     LEFT JOIN attachments AS att
       ON p.featured_image = att.id
     LEFT JOIN terms AS te

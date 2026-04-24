@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import TalkToSales from "../mobile-talks-to-sales"
 import dynamic from "next/dynamic"
 import Header from "../header/header"
+import ConsultationModal from "../consultation-modal/ConsultationModal"
 const Footer = dynamic(() => import("../footer"), { ssr: true })
 
 export default function LayoutClientWrapper({
@@ -50,6 +51,7 @@ export default function LayoutClientWrapper({
       {!shouldHide && <TalkToSales />}
       <main id="main" className="flex-grow-1">
         {children}
+        <ConsultationModal />
       </main>
       {!shouldHide && <Footer />}
     </div>

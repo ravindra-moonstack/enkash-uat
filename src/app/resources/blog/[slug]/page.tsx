@@ -3,6 +3,7 @@ import styles from "./styles.module.scss"
 import Link from "next/link"
 import BlogBanner from "@/src/components/blog-components/BlogBanner"
 import BlogBody from "@/src/components/blog-components/BlogBody"
+import AuthorSection from "@/src/components/blog-components/AuthorSection"
 import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
 import { BlogNav } from "@/src/components"
 
@@ -40,6 +41,8 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       category: result[0].category_names,
       categorySlug: result[0].category_slugs,
       author: result[0].author,
+      first_name: result[0].first_name,
+      last_name: result[0].last_name,
       date: result[0].created_at,
       show_featured_image: result[0].show_featured_image,
     },
@@ -89,7 +92,12 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         </div>
       </section>
       <BlogBanner bannerData={bannerData} />
-      <BlogBody bodyData={bodyData[0]} />
+      <BlogBody 
+        bodyData={bodyData[0]} 
+        slug={result[0].slug} 
+        title={result[0].title}
+      />
+      <AuthorSection authorData={result[0]} />
       <RelatedBlogs relatedBlogs={relatedBlogs} />
     </div>
   )
