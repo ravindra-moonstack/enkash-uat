@@ -2,7 +2,16 @@ import React from "react"
 import CategoryBanner from "@/components/category-components/CategoryBanner"
 import CategoryBlogCard from "@/components/category-components/CategoryBlogCard"
 import RecentBlog from "@/components/category-components/RecentBlog"
-import { BlogNav } from "@/src/components"
+import BlogNavWrapper from "@/src/components/blog-components/BlogNavWrapper"
+import styles from "./style.module.scss"
+
+async function getNavData() {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/resources/blogs/getCategory`, {
+        cache: "no-store",
+    })
+    if (!res.ok) return null
+    return res.json()
+}
 
 // Trigger recompile
 const Category = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -15,6 +24,7 @@ const Category = async ({ params }: { params: Promise<{ slug: string }> }) => {
         return res.json()
     }
     const data = await getData()
+    const navData = await getNavData()
 
     if (!data?.posts || data.posts.length === 0) {
         return (
@@ -49,8 +59,17 @@ const Category = async ({ params }: { params: Promise<{ slug: string }> }) => {
         })
     }
     return (
-        <div className="blog_page">
-            {/* <BlogNav /> */}
+        <div className={styles.category_page}>
+            <div className="max-w-auto">
+                {navData && (
+                    <div className={styles.blog_nav_wrapper}>
+                        <BlogNavWrapper
+                            navData={navData}
+                            activeCategory={slug}
+                        />
+                    </div>
+                )}
+            </div>
             <CategoryBanner data={BannerData} />
             <CategoryBlogCard data={loadAllPosts} slug={slug} />
             <RecentBlog />

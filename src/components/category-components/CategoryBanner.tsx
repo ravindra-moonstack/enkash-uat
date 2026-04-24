@@ -24,7 +24,7 @@ const CategoryBanner = ({ data }: { data: any }) => {
                   >
                     Read Now
                   </Link>
-                  <Link href="/contact" className={styles.btn_secondary}>
+                  <Link href="/contact-us" className={styles.btn_secondary}>
                     Contact Us &rarr;
                   </Link>
                 </div>

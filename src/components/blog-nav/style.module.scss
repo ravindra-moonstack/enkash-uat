@@ -83,7 +83,52 @@
     background: linear-gradient(#f3f4f6, #f3f4f6) padding-box,
                 linear-gradient(to right, #1c5af4 0, #61d6ff 100%) border-box;
   }
+}
 
+.search_box {
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+
+  @include for-tablet {
+    min-width: 200px;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px 35px 8px 15px;
+    border: 1px solid $color-dark-grey;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+    background: #fff;
+
+    &:focus {
+      border-color: $color-equity-blue;
+      box-shadow: 0 0 0 2px rgba(28, 90, 244, 0.1);
+    }
+  }
+
+  .search_icon {
+    position: absolute;
+    right: 12px;
+    color: $color-uncultured-light;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-equity-blue;
+    }
+  }
 }
 
 // ── Bottom separator ─────────────────────────────────────────────────────────
