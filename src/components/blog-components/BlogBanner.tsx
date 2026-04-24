@@ -16,7 +16,7 @@ const BlogBanner = ({ bannerData }: { bannerData: any }) => {
               <h1 className={`${styles.title}`}>{data.title}</h1>
 
               <div className={styles.meta}>
-                <span className={styles.author}>By {data.author}</span>
+                <span className={styles.author}>By {data.first_name ? `${data.first_name} ${data.last_name || ""}` : data.author}</span>
 
                 <span className={styles.readTime}>
                   16 Min Read

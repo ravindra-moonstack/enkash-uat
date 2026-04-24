@@ -29,9 +29,17 @@
 }
 
 html,
-body {
+body,
+body.blog-body-active {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+body.blog-body-active {
+  overflow: hidden !important;
+  @media (min-width: 768px) {
+    overflow: visible !important;
+  } 
 }
 
 .mh-550 {

@@ -4,33 +4,63 @@ import Link from "next/link"
 import styles from "./singleBlog.module.scss"
 import React, { useEffect, useState } from "react"
 
-const TableOfContents = ({ bodyData }: { bodyData: any }) => {
-  const [headings, setHeadings] = useState<any[]>([])
+const TableOfContents = ({ headings }: { headings: any[] }) => {
+  const [activeId, setActiveId] = useState<string>("")
 
   useEffect(() => {
-    if (!bodyData?.content) return
+    if (headings.length === 0) return
 
-    const parser = new DOMParser()
-    const doc = parser.parseFromString(bodyData.content, "text/html")
+    // Small delay to ensure BlogContent has rendered the HTML with IDs
+    const timer = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveId(entry.target.id)
+            }
+          })
+        },
+        {
+          // Monitor the upper part of the viewport
+          rootMargin: "-20% 0px -70% 0px",
+          threshold: 0,
+        }
+      )
 
-    const h2Elements = Array.from(doc.querySelectorAll("h2"))
+      headings.forEach((item) => {
+        const element = document.getElementById(item.id)
+        if (element) {
+          observer.observe(element)
+        }
+      })
 
-    const mapped = h2Elements.map((el: any) => {
-      const text = el.textContent
-
-      const id = text
-        ?.replace(/\s+/g, "-")
-        .toLowerCase()
-        .replace(/[^\w-]/g, "")
-
-      return {
-        id,
-        text,
+      return () => {
+        observer.disconnect()
       }
-    })
+    }, 100)
 
-    setHeadings(mapped)
-  }, [bodyData])
+    return () => clearTimeout(timer)
+  }, [headings])
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault()
+    const element = document.getElementById(id)
+    if (element) {
+      const offset = 150 // Adjusted offset for fixed header + progress bar
+      const bodyRect = document.body.getBoundingClientRect().top
+      const elementRect = element.getBoundingClientRect().top
+      const elementPosition = elementRect - bodyRect
+      const offsetPosition = elementPosition - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
+
+      window.history.pushState(null, "", `#${id}`)
+      setActiveId(id)
+    }
+  }
 
   return (
     <div className={styles.toc}>
@@ -38,8 +68,15 @@ const TableOfContents = ({ bodyData }: { bodyData: any }) => {
 
       <ul className={styles.tocList}>
         {headings.map((item, index) => (
-          <li key={index} className={styles.tocItem}>
-            <Link href={`#${item.id}`} className={styles.tocLink}>
+          <li
+            key={index}
+            className={`${activeId === item.id ? styles.active : ""}`}
+          >
+            <Link
+              href={`#${item.id}`}
+              className={styles.tocLink}
+              onClick={(e) => handleScroll(e, item.id)}
+            >
               {item.text}
             </Link>
           </li>
