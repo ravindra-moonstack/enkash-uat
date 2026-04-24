@@ -1,7 +1,9 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
 .category_banner_wrapper {
   background: linear-gradient(90deg, #387af6 0%, #63ccfe 100%);
-  padding: 60px 0;
-  margin-top: 150px;
+  padding: 60px 0; 
 
   .container {
     width: 100%;
@@ -21,35 +23,70 @@
 
   .category_banner {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    gap: 30px;
+    text-align: center;
+
+    @include for-laptops {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+      text-align: left;
+    }
   }
 
   .category_banner_content {
     flex: 1;
     color: #fff;
-    max-width: 50%;
+    width: 100%;
+
+    @include for-laptops {
+      max-width: 50%;
+    }
   }
 
   .category_name {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
     text-transform: capitalize;
+
+    @include for-laptops {
+      font-size: 32px;
+    }
   }
 
   .category_banner_title {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.3;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
     margin-bottom: 30px;
+
+    @include for-laptops {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
   }
 
   .btn_wrapper {
     display: flex;
+    flex-direction: column;
     gap: 15px;
     align-items: center;
+    width: 100%;
+
+    @include for-tablet {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    @include for-laptops {
+      flex-direction: row;
+      justify-content: flex-start;
+      width: auto;
+    }
   }
 
   .btn_primary {
@@ -61,6 +98,12 @@
     font-weight: 600;
     border: 1px solid #3b63fa;
     transition: all 0.3s;
+    width: 100%;
+    text-align: center;
+
+    @include for-tablet {
+        width: auto;
+    }
 
     &:hover {
       background-color: #2b4cdb;
@@ -77,6 +120,12 @@
     font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.4);
     transition: all 0.3s;
+    width: 100%;
+    text-align: center;
+
+    @include for-tablet {
+        width: auto;
+    }
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.1);
@@ -87,7 +136,12 @@
   .category_banner_image {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    width: 100%;
+
+    @include for-laptops {
+      justify-content: flex-end;
+    }
 
     .banner_img {
       max-width: 100%;
@@ -239,17 +293,43 @@
   background-color: #f3faf8; // very subtle light teal/mint background
   padding: 80px 0;
   margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    background-image: url("/uploads/2025/01/Clip-path-group.png");
+    --background-overlay: "";
+    background-position: 0px 80px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+    pointer-events: none;
+
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
 
   .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    position: relative;
+    z-index: 1;
   }
 
   .row {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
   }
 
   .col_12 {

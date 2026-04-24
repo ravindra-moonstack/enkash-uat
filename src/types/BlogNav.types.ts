@@ -20,4 +20,5 @@ export interface BlogNavProps {
   showCategories?: boolean
   showDivider?: boolean
   onCategoryChange?: (categorySlug: string) => void
+  onSearch?: (query: string) => void
 }

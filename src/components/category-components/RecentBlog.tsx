@@ -13,6 +13,8 @@ const getRecentBlogs = async () => {
 }
 const RecentBlog = async () => {
   const recentBlogs = await getRecentBlogs()
+  console.log("recentBlogs", recentBlogs);
+
   const postData = []
   for (let i = 0; i < recentBlogs.posts.length; i++) {
     postData.push({
@@ -29,11 +31,13 @@ const RecentBlog = async () => {
 
   return (
     <section className={styles.recent_blog_section}>
-      <div className={styles.container}>
+
+      <div className="max-w-auto">
         <div className={styles.row}>
           <div className={styles.col_12}>
             <div className={styles.recent_blog_content}>
-              <h2 className={styles.recent_blog_title}>Related Blogs</h2>
+              <h2 className={styles.recent_blog_title}>Recent Blogs
+              </h2>
               <div className={styles.recent_blog_list}>
                 {postData.map((post: any, index: number) => (
                   <div className={styles.recent_blog_item} key={index}>

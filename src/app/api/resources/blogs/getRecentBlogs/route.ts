@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server"
 import pool from "@/src/lib/dbConnect"
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url)
+    const limit = parseInt(searchParams.get("limit") || "4")
+    const offset = parseInt(searchParams.get("offset") || "0")
+
     const query = `
     SELECT 
       p.*, 
@@ -18,10 +22,10 @@ export async function GET() {
       AND p.status = 'publish'
     GROUP BY p.id
     ORDER BY p.created_at DESC 
-    LIMIT 10
+    LIMIT ? OFFSET ?
   `
 
-    const [rows] = await pool.query(query)
+    const [rows] = await pool.query(query, [limit, offset])
 
     return NextResponse.json(
       { posts: rows },
