@@ -11,6 +11,7 @@ export async function GET(req: NextRequest) {
       100
     )
     const search = searchParams.get("search")?.trim() || ""
+    const category = searchParams.get("category")?.trim() || ""
 
     const offset = (page - 1) * limit
 
@@ -20,6 +21,11 @@ export async function GET(req: NextRequest) {
     if (search) {
       conditions.push(`(videos.title LIKE ?)`)
       params.push(`%${search}%`)
+    }
+
+    if (category && category !== "all") {
+      conditions.push(`FIND_IN_SET(?, videos.category)`)
+      params.push(category)
     }
 
     const whereClause = `WHERE ${conditions.join(" AND ")}`
@@ -38,7 +44,7 @@ export async function GET(req: NextRequest) {
       SELECT 
         videos.*,
         attachments.image_url AS featured_image_url,
-        attachments.attachment_image_alt AS featured_image_alt
+        attachments.attachment_image_alt AS featured_image_alt  
       FROM videos
       LEFT JOIN attachments 
         ON videos.thumbnail_id = attachments.id

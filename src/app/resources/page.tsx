@@ -229,7 +229,7 @@ const ResourcesPage = () => {
                             <FiX />
                         </div>
                         <div
-                            className={styles.video_wrapper}
+                            // className={styles.video_wrapper}
                             dangerouslySetInnerHTML={{ __html: selectedVideo.external_embed_frame }}
                         />
                     </div>

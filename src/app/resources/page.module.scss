@@ -318,7 +318,7 @@
 .modal_content {
   position: relative;
   width: 90%;
-  max-width: 900px;
+  max-width: 800px;
   background: #000;
   border-radius: 12px;
   overflow: hidden;
@@ -344,7 +344,7 @@
 
   .video_wrapper {
     position: relative;
-    padding-bottom: 56.25%; // 16:9 aspect ratio
+    padding-bottom: 56.25%;  
     height: 0;
     
     iframe {

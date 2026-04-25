@@ -9,10 +9,13 @@ const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
   const [loading, setLoading] = useState(false)
   const [hasMore, setHasMore] = useState(data.length >= 9)
 
-  const loadMore = async () => {
+  const observerRef = React.useRef<HTMLDivElement>(null)
+
+  const loadMore = React.useCallback(async () => {
+    if (loading || !hasMore) return
     setLoading(true)
     try {
-      const res = await fetch(`/api/blogs/categoryPageData?category=${slug}&limit=10&offset=${offset}`)
+      const res = await fetch(`/api/resources/blogs/getCategoryData?category=${slug}&limit=9&offset=${offset}`)
       const resData = await res.json()
       
       if (resData.posts && resData.posts.length > 0) {
@@ -29,7 +32,7 @@ const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
         setPosts((prev: any) => [...prev, ...newPosts])
         setOffset((prev) => prev + resData.posts.length)
         
-        if (resData.posts.length < 10) {
+        if (resData.posts.length < 9) {
           setHasMore(false)
         }
       } else {
@@ -40,7 +43,24 @@ const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
     } finally {
       setLoading(false)
     }
-  }
+  }, [loading, hasMore, slug, offset])
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          loadMore()
+        }
+      },
+      { threshold: 1.0 }
+    )
+
+    if (observerRef.current) {
+      observer.observe(observerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [loadMore, hasMore])
 
   return (
     <section className={styles.category_blog_card}>
@@ -53,7 +73,16 @@ const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
           ))}
         </div>
         
-        {hasMore && (
+        {/* Infinite Scroll trigger */}
+        <div ref={observerRef} style={{ height: "40px", width: "100%" }}>
+          {loading && (
+            <div className={styles.load_more_container}>
+              <p className={styles.loading_text}>Loading more blogs...</p>
+            </div>
+          )}
+        </div>
+        
+        {/* {hasMore && (
           <div className={styles.load_more_container}>
             <button 
               className={styles.load_more_btn} 
@@ -63,7 +92,7 @@ const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
               {loading ? "Loading..." : "Load More"}
             </button>
           </div>
-        )}
+        )} */}
       </div>
     </section>
   )
