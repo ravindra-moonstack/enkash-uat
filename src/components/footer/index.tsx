@@ -748,7 +748,7 @@ const FooterV2 = (): React.JSX.Element => {
                       </li>
                       <li>
                         <Link
-                          href={`${process.env.NEXT_PUBLIC_URL}/resources/media-coverage`}
+                          href={`/resources/media-coverage`}
                           rel="noopener noreferrer"
                         >
                           Media Coverage
