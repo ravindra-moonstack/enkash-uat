@@ -10,15 +10,21 @@ const BlogNav: React.FC<BlogNavProps> = ({
     activeCategory,
     onCategoryChange,
     onSearch,
+    initialSearchQuery = "",
     showCategories = true,
+    showSearch = true,
     showDivider = true,
 }) => {
     const { breadcrumbs, categories } = data;
-    const [searchQuery, setSearchQuery] = React.useState("");
+    const [searchQuery, setSearchQuery] = React.useState(initialSearchQuery);
+
+    React.useEffect(() => {
+        setSearchQuery(initialSearchQuery);
+    }, [initialSearchQuery]);
 
     const handleSearchEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter" && onSearch) {
-            onSearch(searchQuery);
+        if (e.key === "Enter") {
+            onSearch?.(searchQuery);
         }
     };
 
@@ -50,7 +56,7 @@ const BlogNav: React.FC<BlogNavProps> = ({
 
             {showCategories && (
                 <div className={styles.category_bar}  >
-                    {categories.map((cat) => {
+                    {categories?.map((cat) => {
                         const isActive = activeCategory === cat.slug;
 
                         return (
@@ -69,19 +75,21 @@ const BlogNav: React.FC<BlogNavProps> = ({
                         );
                     })}
 
-                    <div className={styles.search_box}>
-                        <FiSearch className={styles.search_icon} onClick={() => onSearch?.(searchQuery)} />
-                        <input
-                            type="text"
-                            placeholder="Search..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            onKeyDown={handleSearchEnter}
-                        />
-                    </div>
+                    {showSearch && (
+                        <div className={styles.search_box}>
+                            <FiSearch className={styles.search_icon} onClick={() => onSearch?.(searchQuery)} />
+                            <input
+                                type="text"
+                                placeholder="Search topic"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                onKeyDown={handleSearchEnter}
+                                onBlur={() => onSearch?.(searchQuery)}
+                            />
+                        </div>
+                    )}
                 </div>
             )}
-
             {showDivider && showCategories && <hr className={styles.bottom_divider} />}
         </div>
     );

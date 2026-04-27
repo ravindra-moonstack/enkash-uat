@@ -5,29 +5,10 @@ import RecentBlogs from "./RecentBlogs"
 import { BlogNav, ReceivablesSection, SubscribeSection } from "@/src/components"
 import styles from "./featured_top.module.scss"
 
-async function getNavData() {
-  const res = await fetch("http://localhost:3000/api/resources/blogs/getCategory", {
-    cache: "no-store",
-  })
-  if (!res.ok) return null
-  return res.json()
-}
-
-async function getCategorySectionData(categoryName: string) {
-  const res = await fetch(
-    `http://localhost:3000/api/resources/blogs/getCategoryData?category=${encodeURIComponent(
-      categoryName
-    )}`,
-    { cache: "no-store" }
-  )
-  console.log("res", res);
-
-  if (!res.ok) return null
-  return res.json()
-}
+import { getBlogCategories, getCategoryData } from "@/src/services/resource-service"
 
 export default async function BlogPageData() {
-  const navData = await getNavData()
+  const navData = await getBlogCategories()
   console.log("navData", navData);
 
   const categories = navData?.categories || []
@@ -35,7 +16,7 @@ export default async function BlogPageData() {
 
   const sectionsData = await Promise.all(
     categories.map(async (cat: any) => {
-      const data = await getCategorySectionData(cat.slug)
+      const data = await getCategoryData(cat.slug)
       return data ? { ...data, categoryLabel: cat.label } : null
     })
   )
@@ -49,6 +30,7 @@ export default async function BlogPageData() {
             <BlogNav
               data={navData}
               activeCategory="receivables" // Default or from URL
+              showSearch={false}
             />
           )}
         </section>

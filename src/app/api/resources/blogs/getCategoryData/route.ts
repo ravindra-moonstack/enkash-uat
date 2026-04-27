@@ -4,8 +4,19 @@ import pool from "@/src/lib/dbConnect"
 export async function getBlogsCategoryName(
   category: string,
   limit: number,
-  offset: number
+  offset: number,
+  search?: string
 ) {
+  let searchClause = ""
+  const params: any[] = [category]
+
+  if (search) {
+    searchClause = ` AND (p.title LIKE ? OR p.slug LIKE ?) `
+    params.push(`%${search}%`, `%${search}%`)
+  }
+
+  params.push(limit, offset)
+
   const query = `
     SELECT 
       p.*,
@@ -26,12 +37,13 @@ export async function getBlogsCategoryName(
         WHERE FIND_IN_SET(t.term_id, p.category)
           AND t.slug = ?
       )
+      ${searchClause}
     GROUP BY p.id
     ORDER BY p.created_at DESC
     LIMIT ? OFFSET ?
   `
 
-  const [rows]: any = await pool.query(query, [category, limit, offset])
+  const [rows]: any = await pool.query(query, params)
   return rows
 }
 
@@ -39,6 +51,7 @@ export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url)
     const categoryName = searchParams.get("category")
+    const search = searchParams.get("search") || ""
     const limit = parseInt(searchParams.get("limit") || "10")
     const offset = parseInt(searchParams.get("offset") || "0")
 
@@ -49,7 +62,12 @@ export async function GET(req: NextRequest) {
       )
     }
 
-    const posts = await getBlogsCategoryName(categoryName, limit, offset)
+    const posts = await getBlogsCategoryName(
+      categoryName,
+      limit,
+      offset,
+      search
+    )
 
     return NextResponse.json({
       posts,

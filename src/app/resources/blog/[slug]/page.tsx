@@ -7,21 +7,12 @@ import AuthorSection from "@/src/components/blog-components/AuthorSection"
 import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
 import { BlogNav } from "@/src/components"
 
-async function getNavData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/resources/blogs/getCategory`, {
-    cache: "no-store",
-  })
-  if (!res.ok) return null
-  return res.json()
-}
+import { getBlogCategories, getPostBySlug } from "@/src/services/resource-service"
 
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/resources/blogs/getPostBySlug?slug=${slug}`, {
-    cache: "no-store",
-  })
-  const json = await res.json()
-  const navData = await getNavData()
+  const json = await getPostBySlug(slug)
+  const navData = await getBlogCategories()
 
   if (json.error || !json.posts || json.posts.length === 0) {
     return (
