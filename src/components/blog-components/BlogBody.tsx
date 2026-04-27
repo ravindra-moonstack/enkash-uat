@@ -88,7 +88,6 @@ const BlogBody = ({ bodyData, slug, title }: { bodyData: any, slug: string, titl
               <TableOfContents headings={headings} />
               <SummarizeWithAI slug={slug} />
             </div>
-
             <div className={`${styles.colLg9}`}>
               <BlogContent htmlContent={processedHtml} />
               <SocialShare slug={slug} title={title} />

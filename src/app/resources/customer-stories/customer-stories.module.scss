@@ -1,7 +1,7 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.video_page {
+.customer_stories_page {
   background-color: #fff;
 }
 
@@ -13,30 +13,9 @@
   }
 }
 
-/* SHIMMER EFFECT */
-@keyframes shimmer {
-  0% { background-position: -468px 0; }
-  100% { background-position: 468px 0; }
-}
-
-.skeleton {
-  background: #f6f7f8;
-  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
-  background-repeat: no-repeat;
-  background-size: 800px 400px;
-  display: inline-block;
-  position: relative;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-name: shimmer;
-  animation-timing-function: linear;
-  border-radius: 10px;
-}
-
 /* BANNER */
 .media_banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/uploads/2025/08/video_image-scaled-1.webp");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/uploads/2025/08/case_study_banner_image-1-scaled-1.webp");
   background-size: cover;
   background-position: center;
   padding: 100px 20px 70px;
@@ -61,12 +40,12 @@
   .banner_content {
     position: relative;
     z-index: 2;
-    text-align: left; // Based on screenshot 1
+    text-align: left;
     width: 100%; 
     margin: 0 auto; 
-  min-height: 300px;
-  display: flex; 
-  flex-direction: column;
+    min-height: 300px;
+    display: flex; 
+    flex-direction: column;
     
     h1 {
       font-size: 70px;
@@ -75,6 +54,7 @@
       margin-bottom: 50px;
       letter-spacing: -2px;
       flex:1;
+      white-space: pre-line;
       @media (max-width: 768px) {
         font-size: 42px;
         padding-left: 20px;
@@ -222,14 +202,14 @@
   }
 }
 
-.video_grid_section {
+.grid_section {
   padding: 20px 20px 60px;
   @include for-laptops{
     padding: 40px 20px 100px;
   }
 }
 
-.video_grid {
+.story_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -244,170 +224,60 @@
   }
 }
 
-/* VIDEO CARD */
-.video_card { 
+/* STORY CARD */
+.story_card { 
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #f3f4f6;  
+  border: 1px solid #f1f3f6;  
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
-  padding: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  text-decoration: none;
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-
-    .thumbnail_overlay {
-        background: rgba(28, 90, 244, 0.2);
-        .play_btn {
-            transform: translate(-50%, -50%) scale(1.1);
-            background: #1c5af4;
-            color: #fff;
-        }
-    }
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
 
   .thumbnail_wrapper {
     position: relative;
-    height: 250px;
-    cursor: pointer;
-    overflow: hidden;
+    height: 240px;
+    background-color: #f7f8f9;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
 
     img {
-      width: 100%;
+      max-width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: 0.6s;
-      border-radius: 10px;
-    }
-
-    .thumbnail_overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.2);
+      object-fit: contain;
       transition: 0.4s;
-      border-radius: 10px;
-
-      .play_btn {
-        position: absolute;
-        top: 29%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70px;
-        height: 70px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #1c5af4;
-        font-size: 30px;
-        transition: 0.4s;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        padding-left: 6px;
-      }
     }
   }
 
   .card_content {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    height: 100%;
-    gap: 3px;
-    flex:1;
-    padding: 0 15px 15px;
-    @include for-laptops{
-      padding: 0 15px 15px;
-    }
-    .card_content_top {
-      max-width: 230px;
-    }
-
-    .tag {
-      font-size: 16px;
-      line-height: 24px;
-      font-family: inter;
-      text-decoration: underline;
-      color: #a5a5a5;
-      font-weight: 400;
-    }
+    padding: 20px 8px 10px;
+    flex: 1;
 
     h3 {
-    font-family: inter;
-    color: #425466;
-    margin-bottom: 0;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -1%;
-    margin-top: 5px;
-    max-height: 47px;
-    min-height: 47px !important;
-    overflow: hidden;
-    }
-
-    .watch_now_btn {
-      margin-top: auto;
-      background: #1c5af4;
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 12px;
+      font-family: inter, sans-serif;
+      color: #344767;
+      margin: 0;
       font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: fit-content;
-      transition: 0.3s;
-      align-self: flex-end;
-      font-size: 16px;
-
-      &:hover {
-        background: #1545c7;
-        color: #fff;
-      }
-    }
-  }
-}
-
-/* PAGINATION */
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 80px;
-  
-  .page_btn {
-    border: none;
-    background: none;
-    padding: 0;
-    font-size: 16px;
-    font-weight: 500;
-    color: #b8c3d1;
-    cursor: pointer;
-    transition: 0.2s;
-    
-    &:hover {
-      color: #1c5af4;
-    }
-    
-    &.active {
-      color: #1c5af4;
-    }
-
-    &.disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: -0.2px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
 }

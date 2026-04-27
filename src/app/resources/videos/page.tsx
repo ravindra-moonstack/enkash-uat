@@ -64,7 +64,7 @@ const VideosPage = () => {
     const handlePageChange = (newPage: number) => {
         if (newPage >= 1 && newPage <= pagination.totalPages) {
             fetchVideos(newPage)
-            window.scrollTo({ top: 600, behavior: "smooth" })
+            window.scrollTo({ top: 0, behavior: "smooth" })
         }
     }
 

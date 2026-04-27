@@ -63,7 +63,32 @@ const ResourcesPage = () => {
         }
     }
 
+    const fetchResourcesInBg = async (tab: string) => {
+        if (cache.current[tab].data.length > 0) return;
+        try {
+            const apiPath = tab === "Videos" ? "/api/resources/videos" : "/api/resources/blogs"
+            const query = new URLSearchParams({ page: "1", limit: "9" })
+            const res = await fetch(`${apiPath}?${query.toString()}`)
+            const result = await res.json()
+            if (result.data) {
+                cache.current[tab] = {
+                    data: result.data,
+                    pagination: {
+                        page: result.pagination.page,
+                        totalPages: result.pagination.totalPages
+                    }
+                }
+            }
+        } catch (error) {
+            console.error(`Background fetch error for ${tab}:`, error)
+        }
+    }
+
     useEffect(() => {
+        // Pre-fetch Videos and Blogs in background
+        if (activeTab !== "Videos") fetchResourcesInBg("Videos")
+        if (activeTab !== "Blogs") fetchResourcesInBg("Blogs")
+
         if (activeTab === "Case Studies") {
             const filtered = searchQuery
                 ? staticCaseStudies.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -92,6 +117,7 @@ const ResourcesPage = () => {
     const handlePageChange = (newPage: number) => {
         if (newPage >= 1 && newPage <= pagination.totalPages) {
             fetchResources(activeTab, searchQuery, newPage)
+            window.scrollTo({ top: 100, behavior: "smooth" })
         }
     }
 
@@ -127,7 +153,6 @@ const ResourcesPage = () => {
                             className={`${styles.heading} f-6`}
                         />
                     </div>
-
                     <div className={styles.tabs_search_row}>
                         <div className={styles.tabs}>
                             {tabs.map((tab) => (
@@ -169,7 +194,7 @@ const ResourcesPage = () => {
                                 <ResourceCard
                                     key={post.id}
                                     post={post}
-                                    onClick={activeTab === "Videos" ? handleCardClick : handleCardClick}
+                                    onClick={activeTab === "Videos" ? handleCardClick : undefined}
                                 />
                             ))
                         ) : (

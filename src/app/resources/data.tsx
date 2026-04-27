@@ -10,7 +10,7 @@ export const staticCaseStudies = [
     {
         id: 1,
         title: "How EnKash helped Vianet optimize their vendor payments",
-        slug: "vianet-success-story",
+        slug: "vianet-achieves-40-improvement-in-business-processes-up-to-50-cost-savings-using-enkash-olympus",
         category: "Case Studies",
         image: Vianet.src,
         excerpt: "Discover how Vianet achieved 40% efficiency in their financial operations with EnKash's automated payment solutions."

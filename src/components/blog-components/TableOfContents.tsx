@@ -14,15 +14,15 @@ const TableOfContents = ({ headings }: { headings: any[] }) => {
     const timer = setTimeout(() => {
       const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveId(entry.target.id)
-            }
-          })
+          // Find all intersecting headers
+          const intersectingHeader = entries.find((entry) => entry.isIntersecting)
+          if (intersectingHeader) {
+            setActiveId(intersectingHeader.target.id)
+          }
         },
         {
-          // Monitor the upper part of the viewport
-          rootMargin: "-20% 0px -70% 0px",
+          // More inclusive margin for better response
+          rootMargin: "-100px 0px -80% 0px",
           threshold: 0,
         }
       )
@@ -46,7 +46,7 @@ const TableOfContents = ({ headings }: { headings: any[] }) => {
     e.preventDefault()
     const element = document.getElementById(id)
     if (element) {
-      const offset = 150 // Adjusted offset for fixed header + progress bar
+      const offset = 150
       const bodyRect = document.body.getBoundingClientRect().top
       const elementRect = element.getBoundingClientRect().top
       const elementPosition = elementRect - bodyRect

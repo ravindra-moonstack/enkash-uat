@@ -282,6 +282,9 @@ const ReceivablesSection = dynamic(
 const SubscribeSection = dynamic(() => import("./subscribe-section/index"), {
   ssr: true,
 })
+const SubscribeBox = dynamic(() => import("./subscribe-box/index"), {
+  ssr: true,
+})
 
 export {
   Header,
@@ -364,4 +367,5 @@ export {
   BlogNav,
   ReceivablesSection,
   SubscribeSection,
+  SubscribeBox,
 }
