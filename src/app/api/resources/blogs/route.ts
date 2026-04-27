@@ -91,11 +91,9 @@ export async function GET(req: NextRequest) {
     const params: any[] = []
 
     if (search) {
-      conditions.push(
-        `(posts.title LIKE ? OR posts.content LIKE ? OR posts.excerpt LIKE ?)`
-      )
+      conditions.push(`(posts.title LIKE ? OR posts.slug LIKE ?)`)
       const searchPattern = `%${search}%`
-      params.push(searchPattern, searchPattern, searchPattern)
+      params.push(searchPattern, searchPattern)
     }
 
     const whereClause = conditions.length

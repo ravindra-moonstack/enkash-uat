@@ -3,11 +3,17 @@ import React, { useState } from "react"
 import styles from "./category_banner.module.scss"
 import CategoryCard from "./CategoryCard"
 
-const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
+const CategoryBlogCard = ({ data, slug, searchQuery }: { data: any, slug: string, searchQuery?: string }) => {
   const [posts, setPosts] = useState(data)
   const [offset, setOffset] = useState(10) // initial limit is 10
   const [loading, setLoading] = useState(false)
   const [hasMore, setHasMore] = useState(data.length >= 9)
+
+  React.useEffect(() => {
+    setPosts(data)
+    setOffset(data.length + 1)
+    setHasMore(data.length >= 9)
+  }, [data])
 
   const observerRef = React.useRef<HTMLDivElement>(null)
 
@@ -15,7 +21,14 @@ const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
     if (loading || !hasMore) return
     setLoading(true)
     try {
-      const res = await fetch(`/api/resources/blogs/getCategoryData?category=${slug}&limit=9&offset=${offset}`)
+      const query = new URLSearchParams({
+        category: slug,
+        limit: "9",
+        offset: offset.toString()
+      })
+      if (searchQuery) query.set("search", searchQuery)
+
+      const res = await fetch(`/api/resources/blogs/getCategoryData?${query.toString()}`)
       const resData = await res.json()
 
       if (resData.posts && resData.posts.length > 0) {

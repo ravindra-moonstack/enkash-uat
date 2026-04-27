@@ -11,14 +11,16 @@ export interface CategoryItem {
 
 export interface BlogNavData {
   breadcrumbs: BreadcrumbItem[]
-  categories: CategoryItem[]
+  categories?: CategoryItem[]
 }
 
 export interface BlogNavProps {
   data: BlogNavData
   activeCategory?: string
   showCategories?: boolean
+  showSearch?: boolean
   showDivider?: boolean
   onCategoryChange?: (categorySlug: string) => void
   onSearch?: (query: string) => void
+  initialSearchQuery?: string
 }

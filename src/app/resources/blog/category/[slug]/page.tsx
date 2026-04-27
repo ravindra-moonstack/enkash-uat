@@ -5,26 +5,20 @@ import RecentBlog from "@/components/category-components/RecentBlog"
 import BlogNavWrapper from "@/src/components/blog-components/BlogNavWrapper"
 import styles from "./style.module.scss"
 
-async function getNavData() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/resources/blogs/getCategory`, {
-        cache: "no-store",
-    })
-    if (!res.ok) return null
-    return res.json()
-}
+import { getBlogCategories, getCategoryData } from "@/src/services/resource-service"
 
 // Trigger recompile
-const Category = async ({ params }: { params: Promise<{ slug: string }> }) => {
+const Category = async ({
+    params,
+    searchParams
+}: {
+    params: Promise<{ slug: string }>,
+    searchParams: Promise<{ q?: string }>
+}) => {
     const { slug } = await params
-    const getData = async () => {
-        const res = await fetch(
-            `http://localhost:3000/api/resources/blogs/getCategoryData?category=${slug}`,
-            { cache: "no-store" }
-        )
-        return res.json()
-    }
-    const data = await getData()
-    const navData = await getNavData()
+    const { q: searchQuery } = await searchParams
+    const data = await getCategoryData(slug, searchQuery)
+    const navData = await getBlogCategories()
 
     if (!data?.posts || data.posts.length === 0) {
         return (
@@ -71,7 +65,7 @@ const Category = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 )}
             </div>
             <CategoryBanner data={BannerData} />
-            <CategoryBlogCard data={loadAllPosts} slug={slug} />
+            <CategoryBlogCard data={loadAllPosts} slug={slug} searchQuery={searchQuery} />
             <RecentBlog />
         </div>
     )
