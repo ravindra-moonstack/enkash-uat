@@ -70,6 +70,7 @@ const BlogNav: React.FC<BlogNavProps> = ({
                     })}
 
                     <div className={styles.search_box}>
+                        <FiSearch className={styles.search_icon} onClick={() => onSearch?.(searchQuery)} />
                         <input
                             type="text"
                             placeholder="Search..."
@@ -77,7 +78,6 @@ const BlogNav: React.FC<BlogNavProps> = ({
                             onChange={(e) => setSearchQuery(e.target.value)}
                             onKeyDown={handleSearchEnter}
                         />
-                        <FiSearch className={styles.search_icon} onClick={() => onSearch?.(searchQuery)} />
                     </div>
                 </div>
             )}

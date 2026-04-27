@@ -65,7 +65,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoUrl, open, onClose }) => {
                 className="w-100 h-100 rounded-3 overflow-hidden shadow-lg"
                 dangerouslySetInnerHTML={{ __html: videoUrl }}
                 style={{
-                   // Ensure the iframe inside matches the container
+                  // Ensure the iframe inside matches the container
                 }}
               />
             ) : (

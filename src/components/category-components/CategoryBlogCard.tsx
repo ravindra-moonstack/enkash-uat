@@ -17,7 +17,7 @@ const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
     try {
       const res = await fetch(`/api/resources/blogs/getCategoryData?category=${slug}&limit=9&offset=${offset}`)
       const resData = await res.json()
-      
+
       if (resData.posts && resData.posts.length > 0) {
         const newPosts = resData.posts.map((post: any) => ({
           categoryName: post.category_names,
@@ -28,10 +28,10 @@ const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
           slug: post.slug,
           date: post.updated_at,
         }))
-        
+
         setPosts((prev: any) => [...prev, ...newPosts])
         setOffset((prev) => prev + resData.posts.length)
-        
+
         if (resData.posts.length < 9) {
           setHasMore(false)
         }
@@ -72,27 +72,27 @@ const CategoryBlogCard = ({ data, slug }: { data: any, slug: string }) => {
             </div>
           ))}
         </div>
-        
+
         {/* Infinite Scroll trigger */}
-        <div ref={observerRef} style={{ height: "40px", width: "100%" }}>
+        {/* <div ref={observerRef} style={{ height: "40px", width: "100%" }}>
           {loading && (
             <div className={styles.load_more_container}>
               <p className={styles.loading_text}>Loading more blogs...</p>
             </div>
           )}
-        </div>
-        
-        {/* {hasMore && (
+        </div> */}
+
+        {hasMore && (
           <div className={styles.load_more_container}>
-            <button 
-              className={styles.load_more_btn} 
-              onClick={loadMore} 
+            <button
+              className={styles.load_more_btn}
+              onClick={loadMore}
               disabled={loading}
             >
               {loading ? "Loading..." : "Load More"}
             </button>
           </div>
-        )} */}
+        )}
       </div>
     </section>
   )

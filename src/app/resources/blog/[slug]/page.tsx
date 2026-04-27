@@ -92,9 +92,9 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         </div>
       </section>
       <BlogBanner bannerData={bannerData} />
-      <BlogBody 
-        bodyData={bodyData[0]} 
-        slug={result[0].slug} 
+      <BlogBody
+        bodyData={bodyData[0]}
+        slug={result[0].slug}
         title={result[0].title}
       />
       <AuthorSection authorData={result[0]} />
