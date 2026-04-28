@@ -25,11 +25,18 @@ const ConsultationModal = () => {
             const hasSeenModal = sessionStorage.getItem("hasSeenConsultationModal")
 
             if (!hasSeenModal) {
-                const timer = setTimeout(() => {
-                    setShow(true)
-                }, 4000)
+                const handleExitIntent = (e: MouseEvent) => {
+                    if (e.clientY <= 0) {
+                        setShow(true)
+                        document.removeEventListener("mouseout", handleExitIntent)
+                    }
+                }
 
-                return () => clearTimeout(timer)
+                document.addEventListener("mouseout", handleExitIntent)
+
+                return () => {
+                    document.removeEventListener("mouseout", handleExitIntent)
+                }
             }
         }
     }, [pathname])
@@ -63,35 +70,24 @@ const ConsultationModal = () => {
                     return ""
                 }
 
-                // Mapping bits to Zoho format based on provided PHP logic
-                const zohoData = {
-                    SingleLine: values.name,
-                    Email: values.email,
-                    SingleLine1: values.company,
-                    PhoneNumber_countrycode: values.phone,
-
-                    // Static Dropdown Values
-                    Dropdown: "",
-                    Dropdown1: "",
-
-                    // UTM Parameters mapped to specific Zoho fields
-                    SingleLine3: searchParams.get("utm_source") || "",
-                    SingleLine2: searchParams.get("utm_medium") || "",
-                    SingleLine4: searchParams.get("utm_campaign") || "",
-
-                    // Required tracking fields
-                    zf_referrer_name: typeof document !== "undefined" ? document.referrer : "",
-                    zf_redirect_url: typeof window !== "undefined" ? `${window.location.origin}/confirmation-sales` : "",
-                    zc_gad: getCookie("zc_gad"),
-
-                    // Additional context fields (optional but kept for internal tracking)
-                    SingleLine5: pathname,
-                    SingleLine6: "Resource Page Consultation Modal",
-                }
+                const formData = new FormData()
+                formData.append("zf_referrer_name", typeof document !== "undefined" ? document.referrer : "")
+                formData.append("zf_redirect_url", "")
+                formData.append("zc_gad", getCookie("zc_gad"))
+                formData.append("SingleLine", values.name)
+                formData.append("Email", values.email)
+                formData.append("SingleLine1", values.company)
+                formData.append("PhoneNumber_countrycode", values.phone)
+                formData.append("Dropdown", "-Select-")
+                formData.append("Dropdown1", "-Select-")
+                formData.append("SingleLine3", searchParams.get("utm_source") || "")
+                formData.append("SingleLine2", searchParams.get("utm_medium") || "")
+                formData.append("SingleLine4", searchParams.get("utm_campaign") || "")
 
                 await axios.post("/api/zoho", {
-                    url: process.env.NEXT_PUBLIC_ZOHO_SALES_URL,
-                    data: zohoData,
+                    url: process.env.NEXT_PUBLIC_ZOHO_EXIT_INTEND_URL,
+                    data: Object.fromEntries(formData),
+                    isFormData: true
                 })
 
                 handleClose()
@@ -119,9 +115,9 @@ const ConsultationModal = () => {
                 </button>
 
                 <div className={styles.content_wrapper}>
-                    <h2 className={styles.title}>Seen the Problem? Now Let's Solve It.</h2>
+                    <h2 className={styles.title}>Reading About Problems Won’t Fix Them.</h2>
                     <p className={styles.subtitle}>
-                        Turn insights into action — book a no obligation quick consult.
+                        Get practical answers for your business from people who’ve built the solutions.
                     </p>
 
                     <form onSubmit={formik.handleSubmit} className={styles.consultation_form}>

@@ -45,6 +45,7 @@ const TableOfContents = ({ headings }: { headings: any[] }) => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
     const element = document.getElementById(id)
+    console.log("element", element);
     if (element) {
       const offset = 150
       const bodyRect = document.body.getBoundingClientRect().top

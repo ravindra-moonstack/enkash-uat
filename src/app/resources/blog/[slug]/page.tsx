@@ -35,7 +35,10 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       first_name: result[0].first_name,
       last_name: result[0].last_name,
       date: result[0].created_at,
+      created_at: result[0].created_at,
+      updated_at: result[0].updated_at,
       show_featured_image: result[0].show_featured_image,
+      slug: result[0].slug,
     },
   ]
   const bodyData = [

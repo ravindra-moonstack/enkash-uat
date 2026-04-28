@@ -1,7 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
-import { emailjs_public_key, emailjs_service_id } from "@/src/constants";
 import styles from "./style.module.scss";
 
 type SubscribeSectionProps = {
@@ -39,19 +37,24 @@ export default function SubscribeSection({
         }
 
         try {
-            await emailjs.sendForm(
-                emailjs_service_id,
-                "template_kpixwp8",
-                form,
-                emailjs_public_key
-            );
-
-            setStatus({
-                type: "success",
-                message: "Your form has been successfully submitted!",
+            const res = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
             });
-            emailInput.value = "";
-            onSubmit?.(email);
+
+            const result = await res.json();
+
+            if (res.ok) {
+                setStatus({
+                    type: "success",
+                    message: "Your form has been successfully submitted!",
+                });
+                emailInput.value = "";
+                onSubmit?.(email);
+            } else {
+                throw new Error(result.error || "Submission failed");
+            }
         } catch (err) {
             console.error("FAILED...", err);
             setStatus({

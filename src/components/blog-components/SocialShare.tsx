@@ -25,7 +25,7 @@ const SocialShare = ({ slug, title }: { slug: string, title: string }) => {
         },
         {
             icon: <FaInstagram />,
-            link: `https://www.instagram.com/enkashbusiness/`,
+            link: `https://www.instagram.com`,
             label: 'Instagram'
         }
     ]

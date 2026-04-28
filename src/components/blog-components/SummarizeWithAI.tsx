@@ -1,7 +1,10 @@
 "use client"
 import React from 'react'
 import styles from './singleBlog.module.scss'
-import { SiClaude, SiOpenai, SiPerplexity } from 'react-icons/si'
+import Image from 'next/image'
+import gpt from "@/src/components/sections/askAISection/img/chatGpt.svg"
+import claude from "@/src/components/sections/askAISection/img/claude.svg"
+import perplixity from "@/src/components/sections/askAISection/img/perplexity.svg"
 
 const SummarizeWithAI = ({ slug }: { slug: string }) => {
     const sourceUrl = `https://www.enkash.com/resources/blog/${slug}`
@@ -21,13 +24,13 @@ const SummarizeWithAI = ({ slug }: { slug: string }) => {
             <h4>Summarize with AI</h4>
             <div className={styles.ai_buttons}>
                 <button onClick={() => handleAI('chatgpt')} className={styles.ai_btn}>
-                    <SiOpenai /> ChatGPT
+                    <Image src={gpt} alt="chatgpt" width={20} height={20} /> {"ChatGPT"}
                 </button>
                 <button onClick={() => handleAI('perplexity')} className={styles.ai_btn}>
-                    <SiPerplexity /> Perplexity
+                    <Image src={perplixity} alt="perplexity" width={20} height={20} /> {"Perplexity"}
                 </button>
                 <button onClick={() => handleAI('claude')} className={styles.ai_btn}>
-                    <SiClaude /> Claude
+                    <Image src={claude} alt="claude" width={20} height={20} /> {"Claude"}
                 </button>
             </div>
         </div>
