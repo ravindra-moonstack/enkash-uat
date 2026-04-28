@@ -81,6 +81,11 @@
     white-space: nowrap;
   }
 
+  .date {
+    font-size: 14px;
+    color: #fff;
+    margin-left: auto;
+  }
   /* RIGHT IMAGE CARD */
 
   .right_box_image {
@@ -146,10 +151,6 @@
           font-weight: 500;
         }
 
-        .date {
-          font-size: 14px;
-          color: #fff;
-        }
       }
     }
   }
@@ -459,6 +460,7 @@
     font-size: 28px !important;
     margin: 10px 0 !important;
     scroll-margin-top: 150px;
+    font-weight: 700;
   }
   h3 {
     font-size: 22px !important;
@@ -484,6 +486,9 @@
     line-height: 1.5;
     font-size: 17px;
     margin: 5px 0 0 20px;
+    &:last-child {
+      margin-bottom: 5px;
+    }
   }
   caption {
     background-color: #dbdbdb;
@@ -587,7 +592,7 @@
   transition: width 0.05s linear;
 }
 .author_section_wrapper {
-  padding: 60px 20px;
+  padding: 0px 20px 60px;
   background-color: transparent;
 
   .author_card {
@@ -670,7 +675,7 @@
 
 .ai_summarize_card {
   margin-top: 30px;
-  background: #f1f5f9;
+  background-color: #ebebeb;
   border-radius: 12px;
   padding: 24px;
 

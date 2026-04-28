@@ -403,3 +403,28 @@ a {
   letter-spacing: -0.04em !important;
   font-weight: 400;
 }
+.highlight_box{
+ padding:20px 20px 20px 20px;
+ border:1px solid #000;
+ border-radius:10px;
+ margin:10px 0px 10px 0px;
+}
+
+
+body .enkash_button{
+ border-radius: 12px 12px 12px 12px;
+    padding: 12px 30px 12px 30px;
+ background:#1c5af4;
+ color:#fff !important ;
+ margin:10px 0 10px 10px;
+ display:inline-block;
+}
+
+
+body .enkash_button:hover{
+ background:#0040df !important;
+}
+ .single.single-post blockquote{
+ border-color:#3359fa !important;
+}
+ 

@@ -16,7 +16,6 @@ const ResourceCard = ({ post, onClick }: { post: any; onClick?: (post: any) => v
                     src={imageSrc}
                     alt={post.featured_image_alt || post.title}
                     width={300}
-                    height={200}
                     unoptimized
                 />
             </div>

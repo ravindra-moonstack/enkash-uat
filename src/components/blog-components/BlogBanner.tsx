@@ -21,6 +21,11 @@ const BlogBanner = ({ bannerData }: { bannerData: any }) => {
                 <span className={styles.readTime}>
                   16 Min Read
                 </span>
+                {data.updated_at && (
+                  <span className={styles.date}>
+                    Updated on: {new Date(data.updated_at).toLocaleDateString()}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -38,10 +43,10 @@ const BlogBanner = ({ bannerData }: { bannerData: any }) => {
                     />
                   </Link>
                   <div className={styles.overlay}>
-                    <span className={styles.category}>{data.category_names}</span>
-                    <span className={styles.date}>
+                    <span className={styles.category}>{data.category}</span>
+                    {/* <span className={styles.date}>
                       {new Date(data.updated_at).toLocaleDateString()}
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </div>
