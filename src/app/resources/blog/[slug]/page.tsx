@@ -14,7 +14,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const json = await getPostBySlug(slug)
   const navData = await getBlogCategories()
 
-  if (json.error || !json.posts || json.posts.length === 0) {
+  if (json?.error || !json?.posts || json?.posts?.length === 0) {
     return (
       <div className={styles.noData}>
         <p>No Data Found</p>

@@ -45,6 +45,42 @@
         gap: 8px;
     }
 
+    .navItemWrapper {
+        position: relative;
+        
+        .subMenu {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: $color-indi-volt;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            display: none;
+            flex-direction: column;
+            min-width: 150px;
+            z-index: 101;
+            
+            .subMenuItem {
+                padding: 10px 16px;
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                font-size: 13px;
+                transition: all 0.2s ease;
+                
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    color: $color-white;
+                }
+            }
+        }
+
+        &:hover {
+            .subMenu {
+                display: flex;
+            }
+        }
+    }
+
     .navItem {
         display: flex;
         align-items: center;
@@ -149,7 +185,7 @@
 
 .pageContainer {
     padding: 32px;
-    max-width: 1200px;
+    // max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
