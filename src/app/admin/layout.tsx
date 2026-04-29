@@ -27,7 +27,7 @@ export default function AdminLayout({
             if (token) {
                 setIsAuthenticated(true)
                 if (isLoginPage) {
-                    router.push("/admin/glossary")
+                    router.push("/admin/dashboard")
                 }
             } else {
                 setIsAuthenticated(false)
@@ -81,19 +81,29 @@ export default function AdminLayout({
 
                 <nav className={styles.navSection}>
                     <Link
-                        href="/admin/glossary"
-                        className={`${styles.navItem} ${pathname === '/admin/glossary' ? styles.active : ''}`}
+                        href="/admin/dashboard"
+                        className={`${styles.navItem} ${pathname === '/admin/dashboard' ? styles.active : ''}`}
                     >
                         <i className="bi bi-journal-text"></i>
                         Glossary
                     </Link>
                     <Link
-                        href="/admin/glossary/categories"
-                        className={`${styles.navItem} ${pathname.includes('/glossary/categories') ? styles.active : ''}`}
+                        href="/admin/dashboard/categories"
+                        className={`${styles.navItem} ${pathname.includes('/dashboard/categories') ? styles.active : ''}`}
                     >
                         <i className="bi bi-layout-text-window-reverse"></i>
                         Glossary Home Sections
                     </Link>
+                    <div className={styles.navItemWrapper}>
+                        <div className={`${styles.navItem} ${pathname.includes('/admin/media') ? styles.active : ''}`}>
+                            <i className="bi bi-images"></i>
+                            Media
+                        </div>
+                        <div className={styles.subMenu}>
+                            <Link href="/admin/media" className={styles.subMenuItem}>Library</Link>
+                            <Link href="/admin/media?add=true" className={styles.subMenuItem}>Add Media File</Link>
+                        </div>
+                    </div>
                     <Link
                         href="/admin/audit-logs"
                         className={`${styles.navItem} ${pathname === '/admin/audit-logs' ? styles.active : ''}`}

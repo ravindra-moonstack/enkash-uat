@@ -6,6 +6,7 @@ import { CommanButton } from "@/src/components"
 import styles from "../glossary-admin.module.scss"
 import { FaEdit, FaTrash, FaArrowLeft, FaList } from "react-icons/fa"
 
+
 interface Card {
     id: number
     heading: string

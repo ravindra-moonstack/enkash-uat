@@ -10,6 +10,7 @@ import Image from "next/image"
 import { CommanButton } from "@/src/components"
 import styles from "./glossary-admin.module.scss"
 
+
 interface GlossaryFormViewProps {
   editingItem: any
   handleCancel: () => void
@@ -433,8 +434,8 @@ const GlossaryFormView = ({
               defaultValue={
                 pendingImage
                   ? pendingImage.name
-                      .replace(/\.[^/.]+$/, "")
-                      .replace(/[-_]/g, " ")
+                    .replace(/\.[^/.]+$/, "")
+                    .replace(/[-_]/g, " ")
                   : ""
               }
               id="alt-text-input"

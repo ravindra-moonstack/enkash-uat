@@ -33,9 +33,9 @@ export async function GET(request: Request) {
     const selectQuery = `
       SELECT * FROM audit_logs 
       ORDER BY ${finalSortBy} ${finalSortOrder} 
-      LIMIT ? OFFSET ?
+      LIMIT ${limit} OFFSET ${offset}
     `
-    const [rows]: any = await pool.execute(selectQuery, [limit, offset])
+    const [rows]: any = await pool.execute(selectQuery)
 
     return NextResponse.json({
       success: true,
