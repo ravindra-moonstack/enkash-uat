@@ -61,7 +61,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                     </div>
                     <div className="word-to-html-null mb-5">
                       <h5 className="c15 mt-6 pb-4">
-                        Last Updated On: 30th November 2025
+                        Last Updated On: 24<sup>th</sup> April, 2026
                       </h5>
                       <p>
                         These Terms and Conditions (“Terms”) constitute a legal
