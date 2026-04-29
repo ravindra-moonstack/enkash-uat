@@ -62,7 +62,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                     </div>
                     <div className="word-to-html-null mb-5">
                       <h5 className="c15 mt-6 pb-4">
-                        Last Updated On: 30th November 2025
+                        Last Updated On: 24<sup>th</sup> April, 2026
                       </h5>
                       <h5 className="c15 mt-6">1. INTRODUCTION</h5>
                       <p>
@@ -3165,7 +3165,7 @@ const CustomerOnboarding = (): React.JSX.Element => {
                               नहीं।
                             </li>
                             <li>
-                             पीपीआई वैधता जारी करने या अंतिम रीलोड/गतिविधि से 3 वर्ष है, उसके बाद समाप्त हो जाता है, और बैलेंस दावा न किए गए के रूप में संभाले जा सकते हैं।
+                              पीपीआई वैधता जारी करने या अंतिम रीलोड/गतिविधि से 3 वर्ष है, उसके बाद समाप्त हो जाता है, और बैलेंस दावा न किए गए के रूप में संभाले जा सकते हैं।
                             </li>
                             <li>
                               एनकैश किसी भी समय अनुबंध की शर्तों या आरबीआई/भारत
