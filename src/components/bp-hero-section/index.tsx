@@ -58,7 +58,6 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
             zIndex: 0,
           }}
           fetchPriority="high"
-          loading="lazy"
           decoding="sync"
         />
       )}
