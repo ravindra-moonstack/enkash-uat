@@ -37,8 +37,7 @@ const ContactForm: React.FC = () => {
   const referringPage = usePathname()
 
   useEffect(() => {
-    const utmSource = "Website Sales Leads"
-
+    const utmSource = params.get("utm_source") || ""
     const utmMedium = params.get("utm_medium") || ""
     const utmCampaign = params.get("utm_campaign") || ""
 
