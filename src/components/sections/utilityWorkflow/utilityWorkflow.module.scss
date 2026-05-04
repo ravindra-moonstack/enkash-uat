@@ -2,7 +2,7 @@
 @use "@/src/styles/mixin" as *;
 
 .wrapper {
-  background: #f3fcff;
+  background: $color-f1feff;
   padding: 40px 24px;
 }
 
@@ -50,8 +50,8 @@
 }
 
 .utilityCard {
-  background: #fff;
-  border: 1px solid $color-baby-blue;
+  background: $color-f1feff;
+  border: 1px solid $color-48b5e81a;
   border-radius: 20px;
   padding: 44px 40px;
   display: flex;
