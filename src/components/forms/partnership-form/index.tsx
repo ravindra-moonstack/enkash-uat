@@ -44,7 +44,7 @@ const PartnerShipForm: React.FC<PartnerShipFormProps> = ({
             </div>
           </div>
         </div>
-        <div className="col-md-6 col-12">
+        <div className="col-md-6 col-12 pt-3 pt-lg-0">
           <div className={styles.rightSection}>{formComponent}</div>
         </div>
       </div>
