@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic"
 import { Suspense } from "react"
 
-// यहाँ dynamic + ssr: false allowed है क्योंकि यह Client Component है
 const BankAffiliatePartnershipForm = dynamic(
   () => import("@/src/components/forms/bank-affiliate-partnership"),
   {

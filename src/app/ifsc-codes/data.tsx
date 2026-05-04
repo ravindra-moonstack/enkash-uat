@@ -1,4 +1,5 @@
 import { TFAQProps } from "@/src/types/faq"
+import Link from "next/link"
 import first from "../../../public/svgs/gst-first-icon.svg"
 import second from "../../../public/svgs/gst-second-icon.svg"
 import third from "../../../public/svgs/gst-third-icon.svg"
@@ -298,7 +299,11 @@ export const ifscData = [
 
 export const bankCodesData = [
   {
-    bankName: "Airtel Payments Bank",
+    bankName: (
+      <Link href="/resources/blog/what-is-airtel-payments-bank-ifsc-code">
+        Airtel Payments Bank
+      </Link>
+    ),
     ifsc: "AIRP0000001",
     micr: "NA",
     swift: "NA",
