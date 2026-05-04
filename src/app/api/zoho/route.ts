@@ -24,16 +24,29 @@ export async function POST(request: Request) {
   try {
     const response = await axios.post(values.url || "", formData, {
       headers: {
-        "Content-Type": "multipart/form-data",
         "Accept-Charset": "UTF-8",
       },
     })
 
     return Response.json(response.data)
-  } catch (error) {
+  } catch (error: any) {
+    const errorData = error.response?.data || error.message
+    const status = error.response?.status || 500
+
+    console.error("Zoho Submission Error:", {
+      status,
+      data: errorData,
+      url: values.url,
+    })
+
     return Response.json(
-      { message: "Zoho submission failed", error: JSON.stringify(error) },
-      { status: 400 }
+      {
+        message: "Zoho submission failed",
+        error:
+          typeof errorData === "object" ? errorData : { message: errorData },
+        status,
+      },
+      { status }
     )
   }
 }

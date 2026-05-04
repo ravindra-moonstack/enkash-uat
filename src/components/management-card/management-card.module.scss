@@ -119,6 +119,13 @@
     color: inherit; // or a hover color
   }
 }
+.subDescription {
+  color: $color-main-grey;
+  font-weight: 400;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
 .black {
   background: linear-gradient(180deg, #353535 0%, $color-black 100%);
 
@@ -126,5 +133,9 @@
   .whiteTitleHtml,
   .description {
     color: $color-white;
+  }
+
+  .subDescription {
+    color: $color-bolt-green; // Use a brighter green on dark backgrounds
   }
 }

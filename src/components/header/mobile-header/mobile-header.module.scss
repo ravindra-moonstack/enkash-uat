@@ -1,14 +1,20 @@
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
-.mobile_header {
+.mobile_header_container {
   position: fixed;
-  top: 21px;
-  left: 20px;
-  right: 20px;
-  width: calc(100% - 40px);
-  border-radius: 12px;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 999;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.mobile_header {
+  padding: 21px 20px;
+  width: 100%;
   align-items: center;
 
   .mobile_header_box {
@@ -16,8 +22,6 @@
     max-height: 90vh;
     overflow-y: scroll;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
