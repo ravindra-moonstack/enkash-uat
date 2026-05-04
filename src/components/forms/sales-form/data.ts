@@ -39,6 +39,7 @@ const categoryOptions: TCategoryOptions = [
       { value: "Employee Cards", label: "Employee Cards" },
       { value: "T&amp;E Cards", label: "Travel and Expense Cards" },
       { value: "Meal Cards", label: "Meal Cards" },
+      { value: "Multi-wallet Card", label: "Multi-wallet Card" },
     ],
   },
   {
