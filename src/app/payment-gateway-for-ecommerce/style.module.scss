@@ -1,0 +1,78 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.partnerSectionOverlap {
+  padding-bottom: 20px !important;
+
+  @include for-laptops {
+    padding-bottom: 40px !important;
+  }
+}
+
+.feature_section_wrapper {
+  padding: 0 20px 80px;
+
+  @include for-laptops {
+    padding: 0 70px 100px;
+  }
+
+  .title_container {
+    margin-bottom: 40px;
+
+    @include for-laptops {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.feature_row {
+  display: flex;
+  justify-content: center;
+
+  .hoverClass {
+    max-width: 100%;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    @include for-laptops {
+      max-width: 327px;
+    }
+  }
+}
+
+.counterSection {
+  padding: 0px 20px;
+
+  @include for-laptops {
+    padding: 0px 20px;
+  }
+
+  .counterSectionOuter {
+    max-width: 1024px;
+    margin: auto;
+  }
+
+  .counterBox {
+    text-align: center;
+    margin: 20px;
+
+    @include for-laptops {
+      text-align: start;
+    }
+  }
+}
+.otherProducts{
+  padding: 53px 20px;
+  @include for-laptops {
+    padding: 121px 20px 53px;
+  }
+}
+.displayblock{
+  display: inline;
+  @media screen and (max-width: 368px) {
+    display: block;
+  }
+}

@@ -14,6 +14,7 @@ interface HeadingPart {
 interface CardData {
   whiteTitle?: string
   description?: string
+  subDescription?: string
   cardImage?: string | StaticImageData
   link?: string
   theme?: "dark" | "light" | "black"
@@ -57,6 +58,7 @@ const OtherProductsContent: React.FC<OtherProductsProps> = ({
                 <ManagementCard
                   whiteTitle={card.whiteTitle}
                   description={card.description}
+                  subDescription={card.subDescription}
                   cardImage={card.cardImage}
                   theme={card.theme ?? "dark"}
                   linkUrl={card.link}

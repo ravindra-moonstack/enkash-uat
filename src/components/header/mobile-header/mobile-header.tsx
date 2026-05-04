@@ -32,6 +32,7 @@ const MobileHeader = ({ utmSource }: Props) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
     null
   )
+
   const [currentStep, setCurrentStep] = useState<number>(0)
 
   const signupUrl =
@@ -134,53 +135,55 @@ const MobileHeader = ({ utmSource }: Props) => {
   }, [sectionConfig, selectedItemIndex])
 
   return (
-    <div className={styles.mobile_header}>
-      <div className={`w-100 fixed z-10 ${styles.mobile_header_box}`}>
-        <Hamburger setCurrentStep={setCurrentStep} currentStep={currentStep} />
+    <div className={styles.mobile_header_container}>
+      <div className={styles.mobile_header}>
+        <div className={`w-100 fixed z-10 ${styles.mobile_header_box}`}>
+          <Hamburger setCurrentStep={setCurrentStep} currentStep={currentStep} />
 
-        {currentStep === 1 && (
-          <div className={`fixed z-10 rounded-bottom ${styles.mobile_modal}`}>
-            <div className="list">
-              <ul>
-                {navBarTopTtitle.map((item: any, index: number) => (
-                  <Fragment key={index}>
-                    <li
-                      className="py-4 px-4"
-                      onClick={() => {
-                        setSelectedItemIndex(index)
-                        setCurrentStep(2)
-                      }}
-                    >
-                      <div className={styles.title}>{item.name}</div>
-                      <Image src={arrowDown} alt="arrow down icon" />
-                    </li>
-                  </Fragment>
-                ))}
-              </ul>
+          {currentStep === 1 && (
+            <div className={`fixed z-10 rounded-bottom ${styles.mobile_modal}`}>
+              <div className="list">
+                <ul>
+                  {navBarTopTtitle.map((item: any, index: number) => (
+                    <Fragment key={index}>
+                      <li
+                        className="py-4 px-4"
+                        onClick={() => {
+                          setSelectedItemIndex(index)
+                          setCurrentStep(2)
+                        }}
+                      >
+                        <div className={styles.title}>{item.name}</div>
+                        <Image src={arrowDown} alt="arrow down icon" />
+                      </li>
+                    </Fragment>
+                  ))}
+                </ul>
+              </div>
+
+              <div
+                className={`d-flex justify-content-center ${styles.buttons_container}`}
+              >
+                <CommanButton
+                  title="Log In"
+                  theme="outline-blue"
+                  url={`${process.env.NEXT_PUBLIC_HOME_URL ?? ""}?source=nav-bar`}
+                  width="100%"
+                  openInNewTab
+                />
+              </div>
             </div>
+          )}
 
-            <div
-              className={`d-flex justify-content-center ${styles.buttons_container}`}
-            >
-              <CommanButton
-                title="Log In"
-                theme="outline-blue"
-                url={`${process.env.NEXT_PUBLIC_HOME_URL ?? ""}?source=nav-bar`}
-                width="100%"
-                openInNewTab
-              />
-            </div>
-          </div>
-        )}
-
-        {currentStep === 2 && selectedItemIndex !== null && (
-          <SubProductListView
-            navTitle={navBarTopTtitle[selectedItemIndex!]?.name || ""}
-            sections={subProductSections}
-            setCurrentStep={setCurrentStep}
-            signupUrl={signupUrl}
-          />
-        )}
+          {currentStep === 2 && selectedItemIndex !== null && (
+            <SubProductListView
+              navTitle={navBarTopTtitle[selectedItemIndex!]?.name || ""}
+              sections={subProductSections}
+              setCurrentStep={setCurrentStep}
+              signupUrl={signupUrl}
+            />
+          )}
+        </div>
       </div>
     </div>
   )

@@ -1,0 +1,71 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixin.scss" as *;
+
+.section {
+    padding:0 20px 32px; 
+    @include for-laptops {
+        padding: 0 20px 53px;
+    }
+}
+ 
+.sliderHeader {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+    @include for-laptops {
+        font-size: 48px;
+    }
+}
+
+.subheading { 
+    margin-bottom: 24px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    @include for-laptops { 
+    margin-bottom: 40px;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+
+    @include for-laptops {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
+    }
+}
+
+.card {
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    @include for-laptops {
+        height: 160px;
+    }
+}
+
+.logo {
+    object-fit: contain;
+    width: 80%;
+    height: auto;
+    max-height: 50px;
+
+    @include for-laptops {
+        width: 70%;
+        max-height: 60px;
+    }
+}

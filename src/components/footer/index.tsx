@@ -96,7 +96,7 @@ const FooterV2 = (): React.JSX.Element => {
                             alt="pci logo"
                             height={48}
                             width={86}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                           />
                         </div>
 
@@ -106,7 +106,7 @@ const FooterV2 = (): React.JSX.Element => {
                             alt="pci logo"
                             height={48}
                             width={48}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                           />
                         </div>
                         <div className={styles.pci_logo}>
@@ -115,7 +115,7 @@ const FooterV2 = (): React.JSX.Element => {
                             alt="pci logo"
                             height={48}
                             width={48}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                           />
                         </div>
                       </div>
@@ -369,7 +369,7 @@ const FooterV2 = (): React.JSX.Element => {
                             alt="pci logo"
                             height={30}
                             width={55}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                           />
                         </div>
 
@@ -379,7 +379,7 @@ const FooterV2 = (): React.JSX.Element => {
                             alt="pci logo"
                             height={32}
                             width={38}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                           />
                         </div>
                         <div className={styles.pci_logo}>
@@ -388,7 +388,7 @@ const FooterV2 = (): React.JSX.Element => {
                             alt="pci logo"
                             height={32}
                             width={38}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                           />
                         </div>
                       </div>

@@ -4,6 +4,7 @@
 .boxContainer {
   margin-top: -200px;
   margin-bottom: 63px;
+  position: relative;
 
   @include for-laptops {
     margin-top: -270px;
