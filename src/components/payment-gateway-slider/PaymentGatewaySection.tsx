@@ -34,6 +34,7 @@ export interface PaymentGatewaySectionProps {
     buttons?: ButtonData[]
     slideData: SlideData[]
     className?: string
+    theme?: "white" | "dark"
 }
 
 const PaymentGatewaySection: React.FC<PaymentGatewaySectionProps> = ({
@@ -43,24 +44,34 @@ const PaymentGatewaySection: React.FC<PaymentGatewaySectionProps> = ({
     buttons = [],
     slideData,
     className = "",
+    theme = "dark"
 }) => {
+    const isWhiteTheme = theme === "white"
+
     return (
-        <section className={`${styles.paymentGatewaySection} ${className}`}>
+        <section className={`${styles.paymentGatewaySection} ${className} ${isWhiteTheme ? styles.whiteTheme : ""}`}>
             <div className={styles.backgroundContainer}>
-                <Image
-                    src={backgroundImage}
-                    alt="Participants background"
-                    className={styles.backgroundImage}
-                    fill
-                />
-                <div className={styles.backgroundOverlay}></div>
+                {backgroundImage && (
+                    <>
+                        <Image
+                            src={backgroundImage}
+                            alt="Participants background"
+                            className={styles.backgroundImage}
+                            fill
+                        />
+                        <div className={styles.backgroundOverlay}></div>
+                    </>
+                )}
             </div>
 
             <div className={`${styles.contentContainer} max-w-auto`}>
                 <div className={styles.contentGrid}>
                     <div className={styles.leftContent}>
                         <DynamicHeading
-                            content={heading}
+                            content={heading.map(h => ({
+                                ...h,
+                                color: isWhiteTheme ? "color-grey-200" : h.color
+                            }))}
                             headingTag="h2"
                             className={`${styles.sliderHeader} f-5 mb-2`}
                         />
@@ -79,7 +90,7 @@ const PaymentGatewaySection: React.FC<PaymentGatewaySectionProps> = ({
                         </div>
                     </div>
                     <div className={styles.rightSlider}>
-                        <PaymentGatewaySlider slides={slideData} />
+                        <PaymentGatewaySlider slides={slideData} theme={theme} />
                     </div>
                 </div>
             </div>

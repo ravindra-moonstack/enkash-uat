@@ -43,7 +43,7 @@ import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
 //utils
 import Script from "next/script"
-import { BankGradeSecurity, CommanButton, ContentShowcase, FeatureCard, PaymentGatewaySection, StatsSection } from "@/src/components"
+import { BankGradeSecurity, BulletPointSection, CommanButton, ContentShowcase, FeatureCard, PaymentGatewaySection, StatsSection } from "@/src/components"
 import IndustrySlider from "@/src/components/Industry-slider"
 
 const videoId = "oApuECjnRIU"
@@ -275,85 +275,19 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <div className={`${styles.integration_section}  `}>
-        <div className="max-w-auto w-100">
-          <div className={`${styles.section} row`}>
-            <div
-              className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-8`}
-            >
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Start Processing Payments Today",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Join thousands of businesses that trust EnKash for reliable, secure, and transparent payment processing.",
-                    color: "color-grey-200",
-                  },
-                ]}
-                headingTag="p"
-                className="f-4 mb-0 fs-20"
-              />
-            </div>
-
-            <div className="col-md-6 ">
-              {acceleratedGrowthData.map(({ icon, title }, i) => (
-                <div key={i} style={{ direction: "ltr" }}>
-                  <div className="d-flex align-items-start gap-3 pt-2 w-4 h-4">
-                    <div
-                      className="d-flex justify-content-center align-items-center bg-light rounded-circle"
-                      style={{ width: "32px", height: "32px" }}
-                    >
-                      <Image
-                        src={icon}
-                        alt="icon"
-                        width={32}
-                        height={32}
-                      />
-                    </div>
-                    <div className="d-flex flex-column gap-3">
-                      <DynamicHeading
-                        content={[
-                          {
-                            title: title,
-                            color: "color-black subHeading",
-                          },
-                        ]}
-                        headingTag="p"
-                        className="f-5"
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
-              <CommanButton
-                title="Get Started Today"
-                theme="white"
-                arrow
-                url={salesUrl}
-                className="mt-4"
-              />
-            </div>
-            <div className="col-md-6">
-              <div className={styles.faq_bg}>
-                <Image
-                  src={acceleratedGrowthImg}
-                  alt="background image"
-                  className="w-100 mh-550 object-fit-contain"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BulletPointSection
+        heading={[
+          {
+            title: "Start Processing Payments Today",
+            color: "color-black",
+          },
+        ]}
+        description="Join thousands of businesses that trust EnKash for reliable, secure, and transparent payment processing."
+        bulletPoints={acceleratedGrowthData}
+        buttonTitle="Get Started Today"
+        buttonUrl={salesUrl}
+        image={acceleratedGrowthImg}
+      />
 
       <SuspenseLoading>
         <FaqSection faqData={faqData} />

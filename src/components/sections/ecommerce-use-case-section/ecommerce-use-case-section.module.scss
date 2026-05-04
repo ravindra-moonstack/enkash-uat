@@ -1,0 +1,122 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.use_case_section {
+  padding: 0px 20px 50px;
+
+  @include for-laptops {
+    padding: 0px 20px 90px;
+  }
+
+  .section {
+    position: relative;
+    gap: 32px;
+    padding: 50px 20px 0px;
+    background-color: $color-soft-mint;
+    .title{
+      @include for-laptops {
+        padding-bottom: 0 !important;
+        margin-bottom: 115px;
+      }
+    }
+    .connector_1,
+    .connector_2 {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      width: 65%;
+      height: auto;
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
+
+       
+    }
+
+    .connector_1 {
+      bottom: 10%;
+      right: 14;
+    }
+
+    .connector_2 {
+      bottom: 40%;
+      left: 14;
+    }
+
+    @include for-laptops {
+      gap: 50px;
+      padding: 61px 20px 59px;
+    }
+
+    .item_section {
+      margin-bottom: 60px;
+      padding: 0;
+      @include for-laptops {
+        margin-bottom: 124px;
+        padding: 0 50px;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+
+    }
+
+    .policyCard {
+        gap: 14px;        
+        @include for-laptops {
+          gap: 20px;
+        }
+
+        img {
+            width: 36px;
+            height: 36px;
+        
+            @include for-laptops {
+              width: 55.65px;
+              height: 55.65px;
+            }
+        }
+        .allInOnePolicy{
+          gap: 11px;
+          display: flex;
+          flex-direction: column;
+          text-align: start; 
+          p{
+            margin-bottom: 3px;
+          }
+        }
+    }
+
+    .list_button {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        padding-left: 40px;
+      
+        @include for-laptops {
+          margin-left: 66px;
+          padding-left: 0;
+          margin-top: 28px;
+        }
+    }
+
+    .third_container {
+        // Image container specific styles if any
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    .allInOnePolicy {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include for-laptops { 
+      }
+    }
+  }
+}

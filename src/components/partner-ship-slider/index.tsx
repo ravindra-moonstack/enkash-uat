@@ -19,9 +19,12 @@ interface SlideData {
 
 type PartnershipSliderProps = {
   slides: SlideData[]
+  theme?: "white" | "dark"
+  slidesToShow?: number
 }
 
-const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
+const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides, theme = "dark", slidesToShow = 4 }) => {
+  const isWhiteTheme = theme === "white"
   const sliderRef = useRef<Slider>(null)
 
   const settings: Settings = useMemo(
@@ -30,7 +33,7 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
       arrows: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 4,
+      slidesToShow: slidesToShow,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 3000,
@@ -41,7 +44,7 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
         {
           breakpoint: 1200,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: Math.max(1, slidesToShow - 1),
             slidesToScroll: 1,
           },
         },
@@ -54,11 +57,11 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
         },
       ],
     }),
-    []
+    [slidesToShow]
   )
 
   return (
-    <div className={styles.partnershipSlider}>
+    <div className={`${styles.partnershipSlider} ${isWhiteTheme ? styles.whiteTheme : ""}`}>
       <Slider {...settings} ref={sliderRef}>
         {slides.map((slide) => (
           <div key={slide.id} className={styles.slideContainer}>
