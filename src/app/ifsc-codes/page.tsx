@@ -15,12 +15,12 @@ import IfscCode from "@/src/components/ifsc-code-list"
 import IfscDetailCard from "@/src/components/ifsc-detail-card"
 
 export const metadata: Metadata = {
-  title: " IFSC Code: Search IFSC & MICR Code of Top Banks in India.",
+  title: "IFSC Code: Find IFSC & MICR Codes of All Banks in India.",
   description:
     "Find IFSC and MICR codes of all Indian banks. Search by bank, state, district or branch to get accurate IFSC, branch address and transfer details instantly.",
 
   openGraph: {
-    title: "  Search IFSC & MICR Code of Top Banks in India.",
+    title: "Find IFSC & MICR Codes of All Banks in India.",
     description:
       "Meta Description: Find IFSC and MICR codes of all Indian banks. Search by bank, state, district or branch to get accurate IFSC, branch address and transfer details instantly.",
     url: `${process.env.NEXT_PUBLIC_URL}/ifsc-codes`,
@@ -779,7 +779,7 @@ const Ifsc = (): React.JSX.Element => {
                     <tr key={index}>
                       <td>
                         <div className="d-flex align-items-center gap-2">
-                          <span>{bank.bankName}</span>
+                          {bank.bankName}
                         </div>
                       </td>
                       <td>{bank.ifsc}</td>
