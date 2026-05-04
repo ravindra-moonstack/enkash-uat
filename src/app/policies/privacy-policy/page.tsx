@@ -60,7 +60,7 @@ const PrivacyPolicy = (): React.JSX.Element => {
 
                       <div className="word-to-html-null">
                         <h5 className="c15 mt-6 pb-4">
-                          Last Updated on 7<sup>th</sup> April, 2025
+                          Last Updated on 24<sup>th</sup> April, 2026
                         </h5>
                         <p className="c5">
                           <span className="c1"></span>
@@ -1504,14 +1504,14 @@ const PrivacyPolicy = (): React.JSX.Element => {
                         <p className="c5">
                           <span className="c2"></span>
                         </p>
-                       
+
                         <div className="table-responsive">
                           <table className="table table-bordered">
                             <tbody>
                               <tr>
                                 <td>
                                   <span className="c8">
-                                  Name of the Data Protection Officer (DPO):
+                                    Name of the Data Protection Officer (DPO):
                                   </span>
                                 </td>
                                 <td>

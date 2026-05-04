@@ -37,8 +37,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
   const referringPage = usePathname()
 
   useEffect(() => {
-    const utmSource = "Website Sales Leads"
-
+    const utmSource = params.get("utm_source") || ""
     const utmMedium = params.get("utm_medium") || ""
     const utmCampaign = params.get("utm_campaign") || ""
 
@@ -59,7 +58,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
     try {
       setLoading(true)
       console.log("Submitted Data:", values)
-      const {} = await axios.post("/api/zoho", {
+      const { } = await axios.post("/api/zoho", {
         url: process.env.NEXT_PUBLIC_ZOHO_AFFILIATE_URL,
         data: values,
       })
