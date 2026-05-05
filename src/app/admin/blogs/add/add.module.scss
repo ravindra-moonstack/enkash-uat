@@ -1,0 +1,452 @@
+.container {
+    padding: 20px;
+    color: #3c434a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 13px;
+
+    .header {
+        h1 {
+            font-size: 23px;
+            font-weight: 400;
+            margin: 0;
+            padding: 9px 0 20px 0;
+            line-height: 1.3;
+            color: #1d2327;
+        }
+    }
+}
+
+.layout {
+    display: flex;
+    gap: 20px;
+}
+
+.leftColumn {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rightColumn {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Box styles */
+.box {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+
+    .boxHeader {
+        border-bottom: 1px solid #c3c4c7;
+        padding: 8px 12px;
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1d2327;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #787c82;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .boxContent {
+        padding: 12px;
+    }
+}
+
+/* Specific elements */
+.titleInput {
+    input {
+        width: 100%;
+        padding: 3px 8px;
+        font-size: 1.7em;
+        line-height: 1.2;
+        outline: none;
+        margin: 0;
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #8c8f94;
+        box-shadow: 0 0 0 transparent;
+        border-radius: 4px;
+
+        &:focus {
+            border-color: #2271b1;
+            box-shadow: 0 0 0 1px #2271b1;
+        }
+    }
+}
+
+.permalink {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+
+    span {
+        color: #646970;
+    }
+
+    a {
+        color: #2271b1;
+        text-decoration: underline;
+    }
+
+    .editBtn {
+        border: 1px solid #2271b1;
+        background: #f6f7f7;
+        color: #2271b1;
+        border-radius: 3px;
+        padding: 0 8px;
+        font-size: 12px;
+        cursor: pointer;
+        line-height: 2;
+
+        &:hover {
+            background: #f0f0f1;
+        }
+    }
+
+    .slugInput {
+        border: 1px solid #8c8f94;
+        border-radius: 3px;
+        padding: 2px 5px;
+    }
+}
+
+.addMediaBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #2271b1;
+    background: #f6f7f7;
+    color: #2271b1;
+    border-radius: 3px;
+    padding: 4px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    i {
+        font-size: 14px;
+    }
+
+    &:hover {
+        background: #f0f0f1;
+    }
+}
+
+.editorContainer {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 10px;
+    .quillEditor {
+        min-height: 400px;
+    }
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #2c3338;
+    }
+
+    input[type="text"], select, textarea {
+        width: 100%;
+        padding: 0 8px;
+        line-height: 2;
+        min-height: 30px;
+        border: 1px solid #8c8f94;
+        border-radius: 3px;
+        background-color: #fff;
+        color: #2c3338;
+    }
+
+    textarea {
+        min-height: 80px;
+    }
+
+    .description {
+        font-size: 12px;
+        color: #646970;
+        margin-top: 4px;
+    }
+}
+
+.checkboxGroup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+
+    input[type="checkbox"] {
+        margin: 0;
+    }
+}
+
+/* Publish Box specific */
+.publishActions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    .actionBtn {
+        border: 1px solid #2271b1;
+        background: #f6f7f7;
+        color: #2271b1;
+        border-radius: 3px;
+        padding: 4px 10px;
+        cursor: pointer;
+
+        &:hover {
+            background: #f0f0f1;
+        }
+    }
+}
+
+.publishStatus {
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f1;
+    border-top: 1px solid #f0f0f1;
+
+    .statusRow {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 5px;
+
+        a {
+            color: #2271b1;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+.publishFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f6f7f7;
+    margin: -12px;
+    padding: 10px 12px;
+    border-top: 1px solid #c3c4c7;
+
+    .trashBtn {
+        color: #b32d2e;
+        text-decoration: underline;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+
+        &:hover {
+            color: #8a2424;
+        }
+    }
+
+    .primaryBtn {
+        background: #2271b1;
+        border-color: #2271b1;
+        color: #fff;
+        text-decoration: none;
+        text-shadow: none;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 3px;
+        padding: 4px 12px;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:hover {
+            background: #135e96;
+            border-color: #135e96;
+        }
+    }
+}
+
+/* Featured Image */
+.setFeaturedImage {
+    color: #2271b1;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        color: #0a4b78;
+    }
+}
+
+.featuredImagePreview {
+    img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .removeImage {
+        color: #b32d2e;
+        text-decoration: underline;
+        cursor: pointer;
+        display: block;
+        margin-top: 5px;
+
+        &:hover {
+            color: #8a2424;
+        }
+    }
+}
+
+/* SEO Preview */
+.seoPreview {
+    border: 1px solid #c3c4c7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-family: arial,sans-serif;
+    background: #fff;
+    transition: all 0.3s ease;
+
+    &.mobile {
+        max-width: 360px;
+        margin: 0 auto 15px auto;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    .mobileFeatured {
+        margin-bottom: 10px;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    }
+
+    .previewTitle {
+        color: #1a0dab;
+        font-size: 20px;
+        margin-bottom: 3px;
+        line-height: 1.3;
+    }
+
+    .previewUrl {
+        color: #202124;
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    .previewDesc {
+        color: #4d5156;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+.previewToggles {
+    display: flex;
+    gap: 10px;
+
+    button {
+        background: none;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 2px 8px;
+        cursor: pointer;
+        color: #646970;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+            background: #2271b1;
+            color: #fff;
+            border-color: #2271b1;
+        }
+
+        i {
+            font-size: 16px;
+        }
+    }
+}
+
+/* Tags UI */
+.tagsContainer {
+    .tagSearch {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 10px;
+
+        input {
+            flex: 1;
+            padding: 4px 8px;
+            border: 1px solid #8c8f94;
+            border-radius: 3px;
+        }
+
+        button {
+            border: 1px solid #8c8f94;
+            border-radius: 3px;
+            padding: 0 12px;
+            background: #f6f7f7;
+            cursor: pointer;
+            font-size: 13px;
+
+            &:hover {
+                background: #f0f0f1;
+            }
+        }
+    }
+
+    .selectedTags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 10px;
+
+        .tagPill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: #f0f0f1;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #2c3338;
+            border: 1px solid #ccd0d4;
+
+            i {
+                cursor: pointer;
+                color: #b32d2e;
+                font-size: 14px;
+
+                &:hover {
+                    color: #8a2424;
+                }
+            }
+        }
+    }
+
+    .description {
+        font-size: 12px;
+        color: #646970;
+    }
+}

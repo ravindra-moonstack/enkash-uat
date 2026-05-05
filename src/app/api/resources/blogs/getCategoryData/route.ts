@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server"
 import pool from "@/src/lib/dbConnect"
+import { cookies } from "next/headers"
 
 export async function getBlogsCategoryName(
   category: string,
   limit: number,
   offset: number,
-  search?: string
+  search?: string,
+  hasAdminToken: boolean = false
 ) {
   let searchClause = ""
   const params: any[] = [category]
@@ -16,6 +18,10 @@ export async function getBlogsCategoryName(
   }
 
   params.push(limit, offset)
+
+  const statusCondition = hasAdminToken
+    ? "p.status IN ('publish', 'draft')"
+    : "p.status = 'publish'"
 
   const query = `
     SELECT 
@@ -30,7 +36,7 @@ export async function getBlogsCategoryName(
     LEFT JOIN terms te
       ON FIND_IN_SET(te.term_id, p.category)
     WHERE p.post_type = 'post'
-      AND p.status = 'publish'
+      AND ${statusCondition}
       AND EXISTS (
         SELECT 1
         FROM terms t
@@ -49,6 +55,9 @@ export async function getBlogsCategoryName(
 
 export async function GET(req: NextRequest) {
   try {
+    const cookieStore = await cookies()
+    const hasAdminToken = cookieStore.has("token")
+
     const { searchParams } = new URL(req.url)
     const categoryName = searchParams.get("category")
     const search = searchParams.get("search") || ""
@@ -66,7 +75,8 @@ export async function GET(req: NextRequest) {
       categoryName,
       limit,
       offset,
-      search
+      search,
+      hasAdminToken
     )
 
     return NextResponse.json({

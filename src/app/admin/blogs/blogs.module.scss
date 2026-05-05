@@ -1,0 +1,359 @@
+.container {
+    padding: 20px;
+    color: #3c434a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 13px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h1 {
+        font-size: 23px;
+        font-weight: 400;
+        margin: 0;
+        padding: 9px 0 4px 0;
+        line-height: 1.3;
+        color: #1d2327;
+    }
+
+    .addBtn {
+        margin-left: 10px;
+        text-decoration: none;
+        border: 1px solid #2271b1;
+        border-radius: 3px;
+        background: #f6f7f7;
+        color: #2271b1;
+        padding: 4px 8px;
+        font-size: 13px;
+        cursor: pointer;
+
+        &:hover {
+            background: #f0f0f1;
+            border-color: #0a4b78;
+            color: #0a4b78;
+        }
+    }
+}
+
+.statusBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .statusLinks {
+        display: flex;
+        gap: 10px;
+        color: #646970;
+
+        a {
+            color: #2271b1;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+                color: #0a4b78;
+            }
+
+            &.active {
+                color: #000;
+                font-weight: 600;
+            }
+        }
+
+        .count {
+            color: #646970;
+            font-weight: 400;
+        }
+
+        .separator {
+            color: #c3c4c7;
+        }
+    }
+
+    .searchBox {
+        display: flex;
+        gap: 5px;
+
+        input {
+            padding: 0 8px;
+            line-height: 2;
+            min-height: 30px;
+            border: 1px solid #8c8f94;
+            border-radius: 3px;
+            background-color: #fff;
+            color: #2b2b2b;
+        }
+
+        button {
+            border: 1px solid #2271b1;
+            background: #f6f7f7;
+            color: #2271b1;
+            border-radius: 3px;
+            padding: 0 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: #f0f0f1;
+            }
+        }
+    }
+}
+
+.filterBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 6px 0;
+
+    .filterLeft {
+        display: flex;
+        gap: 5px;
+
+        select {
+            padding: 0 24px 0 8px;
+            min-height: 30px;
+            max-width: 25rem;
+            border: 1px solid #8c8f94;
+            border-radius: 3px;
+            background-color: #fff;
+            color: #2b2b2b;
+            font-size: 13px;
+        }
+
+        button {
+            border: 1px solid #2271b1;
+            background: #f6f7f7;
+            color: #2271b1;
+            border-radius: 3px;
+            padding: 0 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: #f0f0f1;
+            }
+        }
+    }
+
+    .filterRight {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .itemCount {
+            color: #3c434a;
+        }
+
+        .paginationControls {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            button {
+                background: #f6f7f7;
+                border: 1px solid #c3c4c7;
+                color: #2271b1;
+                padding: 0 8px;
+                height: 28px;
+                min-width: 28px;
+                border-radius: 3px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                line-height: 1;
+
+                &:disabled {
+                    color: #a7aaad;
+                    border-color: #dcdcde;
+                    background: #f6f7f7;
+                    cursor: default;
+                }
+
+                &:hover:not(:disabled) {
+                    background: #f0f0f1;
+                    border-color: #0a4b78;
+                    color: #0a4b78;
+                }
+            }
+
+            .pageInputWrap {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                margin: 0 2px;
+
+                input {
+                    width: 35px;
+                    height: 28px;
+                    padding: 0 4px;
+                    text-align: center;
+                    border: 1px solid #8c8f94;
+                    border-radius: 3px;
+                    font-size: 13px;
+                    background: #fff;
+                    color: #2b2b2b;
+
+                    &:focus {
+                        border-color: #2271b1;
+                        box-shadow: 0 0 0 1px #2271b1;
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.table {
+    width: 100%;
+    border: 1px solid #c3c4c7;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+    margin-bottom: 10px;
+
+    th, td {
+        border-bottom: 1px solid #c3c4c7;
+        padding: 8px 10px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th {
+        font-weight: 400;
+        color: #2c3338;
+        border-bottom-width: 1px;
+
+        .sortBtn {
+            background: none;
+            border: none;
+            color: #2271b1;
+            cursor: pointer;
+            padding: 0 5px;
+            font-size: 14px;
+            vertical-align: middle;
+
+            &:hover {
+                color: #0a4b78;
+            }
+        }
+    }
+
+    thead th, tfoot th {
+        border-bottom: 1px solid #c3c4c7;
+        border-top: 1px solid #c3c4c7;
+    }
+
+    .checkboxCol {
+        width: 2.2em;
+        text-align: center;
+    }
+
+    .titleCol {
+        width: 35%;
+        font-weight: 600;
+        color: #2271b1;
+        position: relative;
+    }
+
+    .rowActions {
+        display: none;
+        gap: 8px;
+        font-weight: 400;
+        font-size: 13px;
+        margin-top: 4px;
+        color: #2271b1;
+
+        a {
+            cursor: pointer;
+            &:hover { color: #0a4b78; }
+        }
+
+        .trash {
+            color: #b32d2e;
+            &:hover { color: #8a2424; }
+        }
+    }
+
+    tr:hover .rowActions {
+        display: flex;
+    }
+}
+
+.paginationBottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .itemCount {
+        color: #3c434a;
+    }
+
+    .paginationControls {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        button {
+            background: #f6f7f7;
+            border: 1px solid #c3c4c7;
+            color: #2271b1;
+            padding: 0 8px;
+            height: 28px;
+            min-width: 28px;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 1;
+
+            &:disabled {
+                color: #a7aaad;
+                border-color: #dcdcde;
+                background: #f6f7f7;
+                cursor: default;
+            }
+
+            &:hover:not(:disabled) {
+                background: #f0f0f1;
+                border-color: #0a4b78;
+                color: #0a4b78;
+            }
+        }
+
+        .pageInputWrap {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0 2px;
+
+            input {
+                width: 35px;
+                height: 28px;
+                padding: 0 4px;
+                text-align: center;
+                border: 1px solid #8c8f94;
+                border-radius: 3px;
+                font-size: 13px;
+                background: #fff;
+                color: #2b2b2b;
+
+                &:focus {
+                    border-color: #2271b1;
+                    box-shadow: 0 0 0 1px #2271b1;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
