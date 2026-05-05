@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useSearchParams } from "next/navigation"
 
-export const useMedia = () => {
+export const useMedia = (initialItemsPerPage: number = 80) => {
   const searchParams = useSearchParams()
 
   const [showUpload, setShowUpload] = useState(
@@ -54,7 +54,7 @@ export const useMedia = () => {
     }
   }, [modalItem])
 
-  const itemsPerPage = 80
+  const itemsPerPage = initialItemsPerPage
 
   const fetchMedia = async (pageNum: number, reset: boolean = false) => {
     setLoading(true)

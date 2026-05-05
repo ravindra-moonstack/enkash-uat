@@ -95,6 +95,18 @@ export default function AdminLayout({
                         Glossary Home Sections
                     </Link>
                     <div className={styles.navItemWrapper}>
+                        <Link href="/admin/blogs" className={`${styles.navItem} ${pathname.includes('/admin/blogs') ? styles.active : ''}`}>
+                            <i className="bi bi-pencil-square"></i>
+                            Blogs
+                        </Link>
+                        <div className={styles.subMenu}>
+                            <Link href="/admin/blogs" className={styles.subMenuItem}>All Posts</Link>
+                            <Link href="/admin/blogs/add" className={styles.subMenuItem}>Add Post</Link>
+                            <Link href="/admin/blogs/categories" className={styles.subMenuItem}>Categories</Link>
+                            <Link href="/admin/blogs/tags" className={styles.subMenuItem}>Tags</Link>
+                        </div>
+                    </div>
+                    <div className={styles.navItemWrapper}>
                         <div className={`${styles.navItem} ${pathname.includes('/admin/media') ? styles.active : ''}`}>
                             <i className="bi bi-images"></i>
                             Media

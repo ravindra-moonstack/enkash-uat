@@ -1,10 +1,14 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
+import { cookies } from "next/headers"
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url)
     const slug = searchParams.get("slug")
+    const cookieStore = await cookies()
+    const hasAdminToken = cookieStore.has("token")
+    const statusCondition = hasAdminToken ? "p.status IN ('publish', 'draft')" : "p.status = 'publish'"
 
     const postQuery = `
     SELECT 
@@ -33,7 +37,7 @@ export async function GET(request: Request) {
     LEFT JOIN terms AS te
       ON FIND_IN_SET(te.term_id, p.category)
     WHERE p.post_type = 'post'
-      AND p.status = 'publish'
+      AND ${statusCondition}
       AND p.slug = ?
     GROUP BY p.id
     ORDER BY p.updated_at DESC
@@ -63,7 +67,7 @@ export async function GET(request: Request) {
     LEFT JOIN terms AS te
       ON FIND_IN_SET(te.term_id, p.category)
     WHERE p.post_type = 'post'
-      AND p.status = 'publish'
+      AND ${statusCondition}
       AND ( ? IS NULL OR ? = 0 OR p.id != ? )
       AND FIND_IN_SET(?, p.category)
     GROUP BY p.id
