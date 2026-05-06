@@ -125,7 +125,7 @@ const BillPaymentForm: React.FC = () => {
           name="MultipleChoice"
           options={billOptions}
           placeholder="Which bills do you want to manage?*"
-          onChange={(parent, children) => {
+          onChange={(parent) => {
             setFieldValue("MultipleChoice", parent)
           }}
         />
