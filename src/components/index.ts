@@ -128,6 +128,10 @@ const SalesForm = dynamic(() => import("./forms/sales-form"), {
   ssr: true,
 })
 
+const BillPaymentForm = dynamic(() => import("./forms/bill-payment-form"), {
+  ssr: true,
+})
+
 const OurStoryCard = dynamic(() => import("./about-our-story-card"), {
   ssr: true,
 })
@@ -354,4 +358,5 @@ export {
   TaxBenefitDetailsCard,
   BenefitWalletsSection,
   StatisticsSection,
+  BillPaymentForm,
 }

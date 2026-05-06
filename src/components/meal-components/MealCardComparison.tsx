@@ -33,6 +33,7 @@ export interface MealCardComparisonProps {
         href?: string
         onClick?: () => void
     }
+    showSuccessIconForCompetitor?: boolean
 }
 
 const defaultHeading = {
@@ -103,6 +104,7 @@ const MealCardComparison: React.FC<MealCardComparisonProps> = ({
         label: "Book a Demo to See the Difference",
         href: "#",
     },
+    showSuccessIconForCompetitor = false,
 }) => {
     return (
         <section className={`${styles.comparisonSection} max-w-auto`}>
@@ -136,8 +138,13 @@ const MealCardComparison: React.FC<MealCardComparisonProps> = ({
                                     <span className={styles.ourValueText}>{row.ourValue}</span>
                                 </td>
                                 <td className={styles.competitorCell}>
-                                    <span className={styles.warnIcon}>
-                                        <Image width={24} height={24} src={compititorIcon} alt="competitor icon" />
+                                    <span className={row.competitorValue === "Yes" && showSuccessIconForCompetitor ? styles.checkIcon : styles.warnIcon}>
+                                        <Image
+                                            width={24}
+                                            height={24}
+                                            src={row.competitorValue === "Yes" && showSuccessIconForCompetitor ? succesicon : compititorIcon}
+                                            alt="competitor icon"
+                                        />
                                     </span>
                                     <span className={styles.competitorValueText}>
                                         {row.competitorValue}

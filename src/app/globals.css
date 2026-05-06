@@ -395,3 +395,6 @@ a {
   letter-spacing: -0.04em !important;
   font-weight: 400;
 }
+.text-center{
+  text-align: center !important;
+}
