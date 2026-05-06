@@ -9,6 +9,8 @@ Disallow: /resources/wp-login.php
 Disallow: /cdn-cgi/l/email-protection
 Disallow: /admin
 
+Disallow: /thank-you
+
 
 
 Sitemap: https://www.enkash.com/sitemap.xml
