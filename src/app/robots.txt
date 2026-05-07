@@ -10,6 +10,7 @@ Disallow: /cdn-cgi/l/email-protection
 Disallow: /admin
 
 Disallow: /thank-you
+Disallow: /campaigns/enterprise-bill-payments
 
 
 

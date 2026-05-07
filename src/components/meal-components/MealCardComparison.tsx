@@ -33,6 +33,9 @@ export interface MealCardComparisonProps {
         href?: string
         onClick?: () => void
     }
+    showSuccessIconForCompetitor?: boolean
+    swapColumns?: boolean
+    centered?: boolean
 }
 
 const defaultHeading = {
@@ -103,6 +106,9 @@ const MealCardComparison: React.FC<MealCardComparisonProps> = ({
         label: "Book a Demo to See the Difference",
         href: "#",
     },
+    showSuccessIconForCompetitor = false,
+    swapColumns = false,
+    centered = false,
 }) => {
     return (
         <section className={`${styles.comparisonSection} max-w-auto`}>
@@ -119,30 +125,72 @@ const MealCardComparison: React.FC<MealCardComparisonProps> = ({
                     <thead>
                         <tr>
                             <th className={styles.featureCol}>Feature</th>
-                            <th className={`${styles.ourCol}`}>
-                                <span className={styles.ourLabel}>{ourColumnLabel}</span>
-                            </th>
-                            <th className={styles.competitorCol}>{competitorColumnLabel}</th>
+                            {swapColumns ? (
+                                <>
+                                    <th className={styles.competitorCol}>{competitorColumnLabel}</th>
+                                    <th className={`${styles.ourCol}`}>
+                                        <span className={styles.ourLabel}>{ourColumnLabel}</span>
+                                    </th>
+                                </>
+                            ) : (
+                                <>
+                                    <th className={`${styles.ourCol}`}>
+                                        <span className={styles.ourLabel}>{ourColumnLabel}</span>
+                                    </th>
+                                    <th className={styles.competitorCol}>{competitorColumnLabel}</th>
+                                </>
+                            )}
                         </tr>
                     </thead>
                     <tbody>
                         {rows.map((row, idx) => (
                             <tr key={idx} className={styles.tableRow}>
                                 <td className={styles.featureCell}>{row.feature}</td>
-                                <td className={styles.ourCell}>
-                                    <span className={styles.checkIcon}>
-                                        <Image width={24} height={24} src={succesicon} alt="success icon" />
-                                    </span>
-                                    <span className={styles.ourValueText}>{row.ourValue}</span>
-                                </td>
-                                <td className={styles.competitorCell}>
-                                    <span className={styles.warnIcon}>
-                                        <Image width={24} height={24} src={compititorIcon} alt="competitor icon" />
-                                    </span>
-                                    <span className={styles.competitorValueText}>
-                                        {row.competitorValue}
-                                    </span>
-                                </td>
+                                {swapColumns ? (
+                                    <>
+                                        <td className={`${styles.competitorCell} ${centered ? styles.centered : ""}`}>
+                                            <span className={row.competitorValue === "Yes" && showSuccessIconForCompetitor ? styles.checkIcon : styles.warnIcon}>
+                                                <Image
+                                                    width={24}
+                                                    height={24}
+                                                    src={row.competitorValue === "Yes" && showSuccessIconForCompetitor ? succesicon : compititorIcon}
+                                                    alt="competitor icon"
+                                                />
+                                            </span>
+                                            <span className={styles.competitorValueText}>
+                                                {row.competitorValue}
+                                            </span>
+                                        </td>
+                                        <td className={`${styles.ourCell} ${centered ? styles.centered : ""}`}>
+                                            <span className={styles.checkIcon}>
+                                                <Image width={24} height={24} src={succesicon} alt="success icon" />
+                                            </span>
+                                            <span className={styles.ourValueText}>{row.ourValue}</span>
+                                        </td>
+                                    </>
+                                ) : (
+                                    <>
+                                        <td className={`${styles.ourCell} ${centered ? styles.centered : ""}`}>
+                                            <span className={styles.checkIcon}>
+                                                <Image width={24} height={24} src={succesicon} alt="success icon" />
+                                            </span>
+                                            <span className={styles.ourValueText}>{row.ourValue}</span>
+                                        </td>
+                                        <td className={`${styles.competitorCell} ${centered ? styles.centered : ""}`}>
+                                            <span className={row.competitorValue === "Yes" && showSuccessIconForCompetitor ? styles.checkIcon : styles.warnIcon}>
+                                                <Image
+                                                    width={24}
+                                                    height={24}
+                                                    src={row.competitorValue === "Yes" && showSuccessIconForCompetitor ? succesicon : compititorIcon}
+                                                    alt="competitor icon"
+                                                />
+                                            </span>
+                                            <span className={styles.competitorValueText}>
+                                                {row.competitorValue}
+                                            </span>
+                                        </td>
+                                    </>
+                                )}
                             </tr>
                         ))}
                     </tbody>
