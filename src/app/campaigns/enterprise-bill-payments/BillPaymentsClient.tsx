@@ -66,7 +66,7 @@ const BillPaymentsClient = () => {
               />
               <div className={styles.heroCtas}>
                 <Image
-                  src="/images/LicenseGroupIcon.webp"
+                  src="/images/LicenseGroupIcon.png"
                   alt="logo"
                   width={366}
                   height={62}
@@ -80,9 +80,9 @@ const BillPaymentsClient = () => {
               <div className="contactFormWrapper">
                 <div className={styles.formHead}>
                   <DynamicHeading
-                    content={[{ title: "We just need a few quick details" }]}
+                    content={[{ title: "We just need a few quick details", color: "f-4" }]}
                     headingTag="h2"
-                    className="heading-h4 mb-2 text-center fs-4"
+                    className="heading-h4 mb-2 text-center fs-4 f-4"
                   />
                 </div>
                 <BillPaymentForm />
