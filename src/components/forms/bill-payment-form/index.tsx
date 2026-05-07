@@ -121,38 +121,15 @@ const BillPaymentForm: React.FC = () => {
       </div>
 
       <div>
-        <CategoryMultiSelect
+        <CategoryWithOther
           name="MultipleChoice"
           options={billOptions}
           placeholder="Which bills do you want to manage?*"
-          onChange={(parent) => {
-            setFieldValue("MultipleChoice", parent)
+          onChange={(val) => {
+            setFieldValue("MultipleChoice", val)
           }}
         />
         <ErrorText errors={errors} touched={touched} field="MultipleChoice" />
-      </div>
-
-      <div className="grid">
-        <div>
-          <input
-            type="text"
-            placeholder="Website or App Link"
-            {...getFieldProps("Website")}
-          />
-          <ErrorText errors={errors} touched={touched} field="Website" />
-        </div>
-
-        <div>
-          <CategoryWithOther
-            name="Dropdown5"
-            options={heardOptions}
-            placeholder="How did you hear about us"
-            onChange={(data) => {
-              setFieldValue("Dropdown5", data)
-            }}
-          />
-          <ErrorText errors={errors} touched={touched} field="Dropdown5" />
-        </div>
       </div>
 
       <div>
@@ -172,7 +149,7 @@ const BillPaymentForm: React.FC = () => {
       </p>
 
       <button type="submit" disabled={loading} className="submitBtn">
-        {loading ? "..." : "Submit request"}
+        {loading ? "..." : "Submit"}
       </button>
     </form>
   )

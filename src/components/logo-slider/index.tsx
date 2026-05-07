@@ -32,7 +32,7 @@ const LogoSlider = (): React.JSX.Element => {
     () => ({
       infinite: true,
       speed: 5000,
-      autoplay: isVisible,
+      autoplay: true,
       autoplaySpeed: 0,
       cssEase: "linear",
       slidesToShow: 10,
@@ -47,7 +47,7 @@ const LogoSlider = (): React.JSX.Element => {
         { breakpoint: 480, settings: { slidesToShow: 3 } },
       ],
     }),
-    [isVisible]
+    []
   )
 
   return (

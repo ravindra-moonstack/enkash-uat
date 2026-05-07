@@ -29,15 +29,19 @@ const mealCardComparisonData = {
     heading: {
         content: [
             {
-                title: "Everything That Other Enterprise Utility Bill Payments Provide. Plus Much More",
-                color: "color-black",
+                title: "Everything That Other Enterprise Utility Bill Payments Provide. ",
+                color: "color-grey-200",
+            },
+            {
+                title: "Plus Much More",
+                color: "color-equity-blue",
             },
         ],
         headingTag: "h2",
-        className: "f-7 text-center",
+        className: "text-center",
     },
-    ourColumnLabel: "EnKash (Recommended)",
-    competitorColumnLabel: "Your Old Provider (Discontinued)",
+    ourColumnLabel: "EnKash",
+    competitorColumnLabel: "Others",
     rows: [
         { feature: "Multi-location bill management", ourValue: "Yes", competitorValue: "Yes" },
         { feature: "Bulk bill payment in one go", ourValue: "Yes", competitorValue: "Yes" },
@@ -56,4 +60,21 @@ const mealCardComparisonData = {
     },
 }
 
-export { allProductSections, mealCardComparisonData }
+const counterData = [
+    {
+        end: 100,
+        suffix: "%",
+        label: "Bill visibility across locations",
+    },
+    {
+        end: "Zero",
+        label: "Missed business bill payments",
+    },
+    {
+        end: 48,
+        suffix: " Hours",
+        label: "Seamless migration",
+    },
+]
+
+export { allProductSections, mealCardComparisonData, counterData }
