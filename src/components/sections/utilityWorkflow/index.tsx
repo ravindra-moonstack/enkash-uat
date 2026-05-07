@@ -11,15 +11,17 @@ interface UtilityWorkflowProps {
   heading: { text: string; colorClass: string }[]
   description: { text: string; colorClass: string }[]
   items: UtilityItem[]
+  className?: string
 }
 
 const UtilityWorkflow: React.FC<UtilityWorkflowProps> = ({
   heading,
   description,
   items,
+  className,
 }) => {
   return (
-    <section className={styles.wrapper}>
+    <section className={`${styles.wrapper} ${className || ""}`}>
       <div className={styles.container}>
         {/* Left Content Card */}
         <div className={styles.leftCard}>

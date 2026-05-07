@@ -517,11 +517,7 @@
 
   .counterBox {
     text-align: center;
-    margin: 20px;
-
-    @include for-laptops {
-      text-align: start;
-    }
+    margin: 20px; 
   }
 }
 
