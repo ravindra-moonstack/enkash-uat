@@ -9,7 +9,9 @@ import { FinanceIcon1, FinanceIcon2, MainImage1, MainImage2, MainImage3, MainIma
 import { CommanButton, BillPaymentForm, LogoSlider, CtaBanner, SuspenseLoading } from "@/src/components"
 import MealCardComparison from "@/src/components/meal-components/MealCardComparison"
 import UtilityBeefitSection from "@/src/components/sections/utilityBenefitSection"
+import UtilityWorkflow from "@/src/components/sections/utilityWorkflow"
 import { mealCardComparisonData, benifitsData } from "./data"
+import { electricity, gas, water, dth, prepaid, broadband } from "../../utility-bill-payment/img"
 import { ctaSideImg } from "../../employee-benefit-multi-wallet/img"
 
 const BillPaymentsClient = () => {
@@ -42,11 +44,11 @@ const BillPaymentsClient = () => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Business bill payments.",
-                    color: "color-white"
+                    title: "Business Bill Payments.",
+                    color: "color-white d-block"
                   },
                   {
-                    title: "Without disruption.",
+                    title: "Without Disruption.",
                     color: "color-white"
                   },
                 ]}
@@ -62,7 +64,7 @@ const BillPaymentsClient = () => {
                   },
                 ]}
                 headingTag="p"
-                className={"mb-1"}
+                className={"mb-3"}
               />
               <div className={styles.heroCtas}>
                 <Image
@@ -75,14 +77,13 @@ const BillPaymentsClient = () => {
                 />
               </div>
             </div>
-
             <div id="form-section">
               <div className="contactFormWrapper">
                 <div className={styles.formHead}>
                   <DynamicHeading
                     content={[{ title: "We just need a few quick details", color: "f-4" }]}
                     headingTag="h2"
-                    className="heading-h4 mb-2 text-center fs-4 "
+                    className={`formH2 mb-2 text-center`}
                   />
                 </div>
                 <BillPaymentForm />
@@ -119,6 +120,38 @@ const BillPaymentsClient = () => {
         centered={true}
       />
 
+      <UtilityWorkflow
+        className={styles.campaignWorkflow}
+        heading={[
+          {
+            text: "All utilities. ",
+            colorClass: "color-black d-block f-3",
+          },
+          {
+            text: "All locations. ",
+            colorClass: "color-black d-block f-3",
+          },
+          {
+            text: "One workflow.",
+            colorClass: "color-black d-block f-7",
+          },
+        ]}
+        description={[
+          {
+            text: "A platform to manage end-to-end utility payment operations.",
+            colorClass: "color-secondry-black f-4",
+          },
+        ]}
+        items={[
+          { label: "Electricity", icon: electricity },
+          { label: "Gas", icon: gas },
+          { label: "Water", icon: water },
+          { label: "DTH", icon: dth },
+          { label: "Electricity Prepaid", icon: prepaid },
+          { label: "Broadband", icon: broadband },
+        ]}
+      />
+
       <section className={`${styles.section} ${styles.sectBlue}`}>
         <div className={"max-w-auto"}>
           <div className={styles.overviewCard}>
@@ -129,7 +162,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={styles.overviewVisual}>
-              <Image src={GraphiteImage} alt="Dashboard Overview" fill priority />
+              <Image src={GraphiteImage} alt="Dashboard Overview" priority style={{ width: "100%", height: "100%" }} />
             </div>
           </div>
         </div>
@@ -230,7 +263,7 @@ const BillPaymentsClient = () => {
       </section>
 
       {/* Feature Grid */}
-      <section className={`${styles.section} pt-0 bg-white`}>
+      <section className={`${styles.section} pb-5 bg-white`}>
         <div className={"max-w-auto"}>
           <div className="text-center mb-5">
             <DynamicHeading content={[{ title: "Every Feature Your Finance Team Actually Needs" }]} headingTag="h2" className={`${styles.h2} h2-40 f-4`} />
@@ -264,8 +297,8 @@ const StopIcon = () => <svg width="12" height="12" viewBox="0 0 24 24" fill="non
 const GridFeatureCard = ({ title, desc, icon }: any) => (
   <div className={styles.fgCard}>
     <div className={styles.icon}>{icon}</div>
-    <DynamicHeading content={[{ title }]} headingTag="h3" />
-    <DynamicHeading content={[{ title: desc }]} headingTag="p" />
+    <DynamicHeading content={[{ title }]} headingTag="h3" className="fs-4 mb-1" />
+    <DynamicHeading content={[{ title: desc, color: "color-grey-200" }]} headingTag="p" />
   </div>
 )
 

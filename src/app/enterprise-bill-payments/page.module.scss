@@ -11,12 +11,12 @@
   $ek-blue-200: #bccfff;
   $ek-ink: #0b1220;
   $ek-ink-2: #1a2236;
-  $ek-text: $color-black;
-  $ek-text-2: $color-grey-200;
+  $ek-text: #2a3450;
+  $ek-text-2: #5a6480;
   $ek-text-3: #8892ad;
   $ek-line: #e6e9f2;
   $ek-line-2: #eef0f7;
-  $ek-bg: #ffffff;
+  $ek-bg: #ffffff; 
   $ek-bg-blue: #f3f6ff;
   $ek-success: #10a76b;
   $ek-warn: #e8a317;
@@ -40,35 +40,13 @@
   line-height: 1.5;
   font-size: 16px;
 
-  .campaignWorkflow {
-    div[class*="leftCard"] {
-      min-height: 350px !important;
-      background-position: bottom !important;
-    }
-    div[class*="utilityCard"] {
-      padding: 32px 40px !important;
-    }
-  }
-
-  .campaignBenefit {
-    padding: 60px 20px 0 !important;
-    div[class*="section"] {
-      div[class*="card"] {
-        @media (max-width: 767px) {
-          width: 100% !important;
-        }
-      }
-    }
-  }
-
-  .slider_row {
-    padding: 60px 20px 0;
-  }
-
-  .hoverClass {
-    width: 100%;
-    height: auto;
-  }
+ .slider_row{
+  padding: 60px 20px 0;
+} 
+.hoverClass{
+  width: 100%;
+  height: auto;
+}
 
   .container {
     max-width: $container-max;
@@ -76,20 +54,18 @@
     padding-left: $pad-x;
     padding-right: $pad-x;
   }
-
+ 
 
   .lead {
     font-size: clamp(16px, 1.2vw, 18px);
     color: $ek-text;
     line-height: 1.55;
   }
-
   .body {
     font-size: 16px;
     color: $ek-text;
     line-height: 1.6;
   }
-
   .muted {
     color: $ek-text-2;
   }
@@ -126,7 +102,6 @@
     box-shadow:
       0 1px 0 rgba(255, 255, 255, 0.2) inset,
       0 6px 16px rgba(29, 90, 245, 0.25);
-
     &:hover {
       background: $ek-blue-600;
     }
@@ -136,7 +111,6 @@
     background: white;
     color: $ek-ink;
     border-color: $ek-line;
-
     &:hover {
       border-color: #c8cee0;
       background: #fafbff;
@@ -157,13 +131,11 @@
 
   /* ============ Sections ============ */
   .section {
-    padding: clamp(64px, 7vw, 100px) 20px 0;
+    padding: clamp(64px, 7vw, 100px) 20px;
   }
-
   .sectSoft {
     background: $ek-bg;
   }
-
   .sectBlue {
     background: linear-gradient(180deg, #f3f6ff 0%, #ffffff 100%);
   }
@@ -171,48 +143,30 @@
   /* ============ Hero ============ */
   .hero {
     position: relative;
-    padding: 0;
+    padding: 64px 20px 54px;
     overflow: hidden;
-    background: #ffffff; 
-
-    .heroBg {
-      object-fit: cover;
-      z-index: 1;
-      object-position: unset;
-      @media (max-width: 767px) {
-      object-position: left;
-        
-      }
-    }
+    background:
+      radial-gradient(1200px 500px at 10% -10%, rgba(29, 90, 245, 0.08), transparent 60%),
+      radial-gradient(900px 500px at 110% 20%, rgba(29, 90, 245, 0.06), transparent 60%),
+      #ffffff;
 
     .heroGrid {
-      position: relative;
-      z-index: 2;
       display: grid;
       grid-template-columns: 1.1fr 1fr;
       gap: clamp(32px, 5vw, 72px);
-      align-items: end;
-      padding: 20px;
-      padding-top: clamp(40px, 5vw, 60px);
+      align-items: start;
 
       @media (max-width: 960px) {
         grid-template-columns: 1fr;
-        text-align: center;
       }
     }
 
     .heroCopy {
-
       .lead {
         max-width: 560px;
-        margin-bottom: 32px;
+        margin-bottom: 28px;
         color: $ek-text-2;
         font-size: 18px;
-
-        @media (max-width: 960px) {
-          margin-left: auto;
-          margin-right: auto;
-        }
       }
     }
 
@@ -220,56 +174,18 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-
+      margin-bottom: 28px;
       @media (max-width: 767px) {
         width: 100%;
         justify-content: center;
-        align-items: center;
+        align-items: center;  
       }
     }
 
     .groupIcon {
-      width: 100%;
-      height: auto;
-      max-width: 366px;
-
       @media (max-width: 767px) {
-        margin-left: auto;
-        margin-right: auto;
-        
-        width: 252px;
-        height: 42px;
-      }
-    }
-
-    .logoSliderWrap {
-      position: relative;
-      width: 100%;
-      margin-top: 40px;
-    }
-
-    .sliderOverlay {
-      position: absolute;
-      bottom: 100%;
-      left: 0;
-      right: 0;
-      pointer-events: none;
-      z-index: 1;
-      box-shadow: 0px 30px 100px 167px #ffffff;
-
-      @include for-laptops {
-        box-shadow: 0px 40px 79px 167px #ffffff;
-      }
-    }
-
-    .logoSlider {
-      position: relative;
-      z-index: 6;
-      padding: 16px 20px 20px;
-      background-color: #ffffff !important;
-
-      @include for-laptops {
-        padding: 24px 20px 20px;
+        width: 250px !important;
+        height: 42px !important;
       }
     }
 
@@ -282,7 +198,6 @@
 
       .heroAvatars {
         display: flex;
-
         span {
           width: 30px;
           height: 30px;
@@ -351,9 +266,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 18px; 
-
-      
+      margin-bottom: 18px;
+      h3 {
+        font-size: 20px;
+      }
     }
 
     .formPill {
@@ -370,14 +286,12 @@
 
     .field {
       margin-bottom: 12px;
-
       label {
         display: block;
         font-size: 13px;
         font-weight: 500;
         color: $ek-text-2;
         margin-bottom: 6px;
-
         .req {
           color: $ek-blue;
           margin-left: 2px;
@@ -419,12 +333,10 @@
         height: auto;
         min-height: 120px;
         padding: 8px;
-
         option {
           padding: 6px 10px;
           border-radius: 6px;
           margin-bottom: 2px;
-
           &:checked {
             background: $ek-blue-50;
             color: $ek-blue;
@@ -438,7 +350,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-
       @media (max-width: 540px) {
         grid-template-columns: 1fr;
       }
@@ -476,7 +387,6 @@
       grid-template-columns: repeat(6, 1fr);
       gap: 24px;
       align-items: center;
-
       @media (max-width: 768px) {
         grid-template-columns: repeat(3, 1fr);
         gap: 32px 16px;
@@ -505,7 +415,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-
     @media (max-width: 880px) {
       grid-template-columns: 1fr;
     }
@@ -521,8 +430,8 @@
     box-shadow: $shadow-card;
 
     .icon {
-      width: 62px;
-      height: 62px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
       background: $ek-blue-50;
       color: $ek-blue;
@@ -538,7 +447,6 @@
       color: $ek-ink;
       letter-spacing: -0.04em;
       line-height: 1;
-
       small {
         font-size: 0.45em;
         color: $ek-text-2;
@@ -580,18 +488,17 @@
       grid-template-columns: 1.4fr 1fr 1fr;
     }
 
-    &>div {
+    & > div {
       padding: 18px 24px;
       display: flex;
       align-items: center;
-
       @media (max-width: 760px) {
         padding: 14px 12px;
         font-size: 13px;
       }
     }
 
-    &+.cmpRow {
+    & + .cmpRow {
       border-top: 1px solid $ek-line-2;
     }
 
@@ -621,8 +528,7 @@
     &.cmpHeadRow {
       background: white;
       border-bottom: 1px solid $ek-line;
-
-      &>div {
+      & > div {
         padding-top: 24px;
         padding-bottom: 24px;
         font-weight: 700;
@@ -630,7 +536,6 @@
         font-size: 16px;
         text-transform: none;
       }
-
       .ekCell {
         background: rgba(29, 90, 245, 0.05);
       }
@@ -665,7 +570,6 @@
       background: rgba(232, 163, 23, 0.1);
       color: $ek-warn;
     }
-
     &.rec {
       background: $ek-blue;
       color: white;
@@ -698,15 +602,14 @@
       }
     }
 
-    // .overviewVisual {
-      // position: relative;
-      // min-height: 380px;
-      // height: 100%;
-
-      // @media (max-width: 767px) {
-      //   min-height: 270px;
-      // }
-    // }
+    .overviewVisual {
+      position: relative; 
+      min-height: 380px;
+      height: 100%;      
+      @media (max-width: 767px) {
+        min-height: 270px;
+      }
+    }
   }
 
   /* ============ Feature blocks ============ */
@@ -718,30 +621,18 @@
 
     @media (max-width: 900px) {
       grid-template-columns: 1fr !important;
-
-      .featureCopy {
-        order: 1 !important;
-      }
-
-      .featureVisual {
-        order: 2 !important;
-      }
+      .featureCopy { order: 1 !important; }
+      .featureVisual { order: 2 !important; }
     }
 
     &.reverse {
       grid-template-columns: 1.05fr 1fr;
-
-      .featureCopy {
-        order: 2;
-      }
-
-      .featureVisual {
-        order: 1;
-      }
+      .featureCopy { order: 2; }
+      .featureVisual { order: 1; }
     }
 
-    &+.featureBlock {
-      margin-top: clamp(30px, 8vw, 120px);
+    & + .featureBlock {
+      margin-top: clamp(64px, 8vw, 120px);
     }
 
     .featureCopy {
@@ -751,7 +642,6 @@
         font-size: 16px;
         margin-bottom: 16px;
       }
-
       .body {
         color: $ek-text-2;
         max-width: 520px;
@@ -778,7 +668,6 @@
         align-items: center;
         gap: 6px;
       }
-
       p {
         margin: 0;
         font-size: 14px;
@@ -787,11 +676,11 @@
       }
     }
 
-    .featureVisual {
+    .featureVisual { 
       position: relative;
       overflow: hidden;
-      min-height: 360px;
-      height: 100%;
+      min-height: 360px; 
+      height:100%;
     }
   }
 
@@ -806,7 +695,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-
     @media (max-width: 760px) {
       grid-template-columns: 1fr;
     }
@@ -821,8 +709,8 @@
     overflow: hidden;
 
     .icon {
-      width: 64px;
-      height: 64px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
       background: $ek-blue-50;
       color: $ek-blue;
@@ -831,7 +719,16 @@
       margin-bottom: 24px;
       border: 1px solid $ek-blue-100;
     }
- 
+    h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    p {
+      color: $ek-text-2;
+      font-size: 15px;
+      margin: 0;
+      line-height: 1.6;
+    }
   }
 
   /* ============ Final CTA ============ */
@@ -888,7 +785,7 @@
       flex-wrap: wrap;
 
       @media (max-width: 640px) {
-        &>* {
+        & > * {
           width: 100%;
         }
       }
@@ -910,14 +807,12 @@
       padding: 8px 12px;
       border-bottom: 1px solid $ek-line-2;
       background: #fafbff;
-
       .dot {
         width: 10px;
         height: 10px;
         border-radius: 50%;
         background: #e1e5ef;
       }
-
       .label {
         margin-left: 8px;
         font-size: 12px;
@@ -936,8 +831,7 @@
     border: 1px solid $ek-line-2;
     border-radius: 10px;
     background: white;
-
-    &+.billRow {
+    & + .billRow {
       margin-top: 8px;
     }
 
@@ -951,26 +845,22 @@
       place-items: center;
       flex-shrink: 0;
     }
-
     .billName {
       font-weight: 600;
       color: $ek-ink-2;
       font-size: 14px;
     }
-
     .billMeta {
       font-size: 12px;
       color: $ek-text-3;
       margin-top: 2px;
     }
-
     .billAmt {
       font-weight: 700;
       color: $ek-ink;
       font-size: 14px;
       text-align: right;
     }
-
     .billStatus {
       font-size: 11px;
       font-weight: 600;
@@ -983,7 +873,6 @@
         background: rgba(16, 167, 107, 0.1);
         color: $ek-success;
       }
-
       &.due {
         background: rgba(232, 163, 23, 0.12);
         color: $ek-warn;
@@ -1001,7 +890,6 @@
     font-weight: 600;
     background: $ek-blue-50;
     color: $ek-blue;
-
     &.green {
       background: rgba(16, 167, 107, 0.12);
       color: $ek-success;
@@ -1009,52 +897,25 @@
   }
 
   /* Utils */
-  .flex {
-    display: flex;
-  }
-
-  .between {
-    justify-content: space-between;
-  }
-
-  .gap8 {
-    gap: 8px;
-  }
-
-  .gap12 {
-    gap: 12px;
-  }
-
-  .gap16 {
-    gap: 16px;
-  }
-
-  .mt8 {
-    margin-top: 8px;
-  }
-
-  .mt16 {
-    margin-top: 16px;
-  }
-
-  .mt24 {
-    margin-top: 24px;
-  }
-
-  .mt32 {
-    margin-top: 32px;
-  }
+  .flex { display: flex; }
+  .between { justify-content: space-between; }
+  .gap8 { gap: 8px; }
+  .gap12 { gap: 12px; }
+  .gap16 { gap: 16px; }
+  .mt8 { margin-top: 8px; }
+  .mt16 { margin-top: 16px; }
+  .mt24 { margin-top: 24px; }
+  .mt32 { margin-top: 32px; }
 
   .customHeader {
-    padding: 20px;
-    background: transparent;
-    border-bottom: none;
-    position: relative;
+    padding: 20px 0;
+    background: white;
+    border-bottom: 1px solid $ek-line-2;
+    position: sticky;
+    top: 0;
     z-index: 100;
-
     .logoLink {
       display: inline-block;
-
       img {
         display: block;
       }
@@ -1062,31 +923,16 @@
   }
 
   .customFooter {
-    padding: 32px 20px;
+    padding: 32px 0;
     background: $ek-bg;
     border-top: 1px solid $ek-line;
-    margin-top: 40px;
-
     .copyrightBar {
       text-align: center;
-    }
-  }
-
-  .counterSection {
-    padding: 50px 20px;
-
-    @include for-laptops {
-      padding: 90px 20px;
-    }
-
-    .counterSectionOuter {
-      max-width: 1024px;
-      margin: auto;
-    }
-
-    .counterBox {
-      text-align: center;
-      margin: 20px;
+      p {
+        font-size: 13px;
+        color: $ek-text-3;
+        margin: 4px 0;
+      }
     }
   }
 }
