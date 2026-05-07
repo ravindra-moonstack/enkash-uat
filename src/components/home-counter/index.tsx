@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import DynamicHeading from "../dynamic-heading"
 
 interface CounterProps {
-  end: number // Target number
+  end: number | string // Target number or string
   suffix?: string // +, %, etc.
   duration?: number // Animation time in ms
   label: string // Text below counter
@@ -43,7 +43,7 @@ const Counter: React.FC<CounterProps> = ({
 
   // Run the count-up animation when visible
   useEffect(() => {
-    if (!isVisible) return
+    if (!isVisible || typeof end !== "number") return
 
     let start = 0
     const increment = end / (duration / 16) // ~60fps
@@ -69,7 +69,7 @@ const Counter: React.FC<CounterProps> = ({
         <DynamicHeading
           content={[
             {
-              title: prefix + " " + count.toLocaleString() + "" + suffix,
+              title: `${prefix}${prefix ? " " : ""}${typeof end === "number" ? count.toLocaleString() : end}${suffix}`,
               color: "color-equity-blue",
             },
           ]}

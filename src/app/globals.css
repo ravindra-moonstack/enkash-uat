@@ -314,7 +314,23 @@ a {
   height: auto;
 }
 
+.h2-40{
+  font-size: 40px !important;
+  line-height: 52px !important;
 
+  @media (max-width: 768px) {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+}
+.formH2 {
+        font-size: 24px !important;
+        font-weight: 400 !important;
+
+        @media (max-width: 767px) {
+          font-size: 20px !important;
+        }
+}
 
 
 /* Tags global classes */
@@ -394,4 +410,11 @@ a {
   line-height: 20px !important;
   letter-spacing: -0.04em !important;
   font-weight: 400;
+}
+.text-center{
+  text-align: center !important;
+}
+.subHeading {
+  font-size: 20px !important;
+  line-height: 26px !important;
 }
