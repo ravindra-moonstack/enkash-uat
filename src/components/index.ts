@@ -98,6 +98,7 @@ const FaqSection = dynamic(() => import("./faq-section"), {
 })
 
 const HowDoesItWork = dynamic(() => import("./how-does-it-work"), { ssr: true })
+const SuspenseLoading = dynamic(() => import("./loading"), { ssr: true })
 const BecomePartnerSteps = dynamic(() => import("./becomepartner"), {
   ssr: true,
 })
@@ -359,4 +360,5 @@ export {
   BenefitWalletsSection,
   StatisticsSection,
   BillPaymentForm,
+  SuspenseLoading,
 }

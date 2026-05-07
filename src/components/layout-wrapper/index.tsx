@@ -14,7 +14,7 @@ export default function LayoutClientWrapper({
 }) {
   const pathname = usePathname()
 
-  const hideLayout = ["/contact-us", "/support", "/sales", "/enterprise-bill-payments"]
+  const hideLayout = ["/contact-us", "/support", "/sales", "/campaigns/enterprise-bill-payments"]
   const shouldHide = hideLayout.includes(pathname) || pathname.startsWith("/admin")
 
   // ⭐ Remove tracking parameters on client-side load
