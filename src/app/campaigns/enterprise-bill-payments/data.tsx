@@ -1,29 +1,3 @@
-import { SwitchIcon1, SwitchIcon2, SwitchIcon3 } from "./img"
-
-const allProductSections = [
-    {
-        items: [
-            {
-                title: "100%",
-                description:
-                    "Bill visibility across locations",
-                image: SwitchIcon1,
-            },
-            {
-                title: "Zero ",
-                description:
-                    "Missed business bill payments",
-                image: SwitchIcon2,
-            },
-            {
-                title: "48 hours",
-                description:
-                    "Seamless migration",
-                image: SwitchIcon3,
-            },
-        ],
-    },
-]
 
 const mealCardComparisonData = {
     heading: {
@@ -38,7 +12,7 @@ const mealCardComparisonData = {
             },
         ],
         headingTag: "h2",
-        className: "text-center",
+        className: "text-center h2-40 f-4",
     },
     ourColumnLabel: "EnKash",
     competitorColumnLabel: "Others",
@@ -60,21 +34,11 @@ const mealCardComparisonData = {
     },
 }
 
-const counterData = [
-    {
-        end: 100,
-        suffix: "%",
-        label: "Bill visibility across locations",
-    },
-    {
-        end: "Zero",
-        label: "Missed business bill payments",
-    },
-    {
-        end: 48,
-        suffix: " Hours",
-        label: "Seamless migration",
-    },
+
+const benifitsData = [
+    { title: "100%", desc: "Bill visibility across locations" },
+    { title: "Zero", desc: "Missed business bill payments" },
+    { title: "48 Hours", desc: "Seamless migration" },
 ]
 
-export { allProductSections, mealCardComparisonData, counterData }
+export { mealCardComparisonData, benifitsData }
