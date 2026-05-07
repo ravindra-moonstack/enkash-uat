@@ -8,8 +8,8 @@ import styles from "./page.module.scss"
 import { FinanceIcon1, FinanceIcon2, MainImage1, MainImage2, MainImage3, MainImage4, MultiLocationImage, GraphiteImage, FinanceIcon3, FinanceIcon4, HeroBg } from "./img"
 import { CommanButton, BillPaymentForm, LogoSlider, CtaBanner, SuspenseLoading } from "@/src/components"
 import MealCardComparison from "@/src/components/meal-components/MealCardComparison"
-import Counter from "@/components/home-counter"
-import { mealCardComparisonData, counterData } from "./data"
+import UtilityBeefitSection from "@/src/components/sections/utilityBenefitSection"
+import { mealCardComparisonData, benifitsData } from "./data"
 import { ctaSideImg } from "../../employee-benefit-multi-wallet/img"
 
 const BillPaymentsClient = () => {
@@ -62,7 +62,7 @@ const BillPaymentsClient = () => {
                   },
                 ]}
                 headingTag="p"
-                className={"mb-0"}
+                className={"mb-1"}
               />
               <div className={styles.heroCtas}>
                 <Image
@@ -82,7 +82,7 @@ const BillPaymentsClient = () => {
                   <DynamicHeading
                     content={[{ title: "We just need a few quick details", color: "f-4" }]}
                     headingTag="h2"
-                    className="heading-h4 mb-2 text-center fs-4 f-4"
+                    className="heading-h4 mb-2 text-center fs-4 "
                   />
                 </div>
                 <BillPaymentForm />
@@ -102,35 +102,11 @@ const BillPaymentsClient = () => {
         </SuspenseLoading>
       </section >
 
-      <section className={`${styles.counterSection} bg-white pb-0`}>
-        <div className="max-w-auto">
-          <div className={`${styles.counterHeading} mb-4 mb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Nothing missed. Nothing hidden. Nothing delayed",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="text-center mb-2"
-            />
-          </div>
-
-          <div className={`${styles.counterSectionOuter}`}>
-            <div className="row">
-              {counterData.map((item, index) => (
-                <div className="col-md-4" key={index.toString()}>
-                  <Counter
-                    {...item}
-                    className={`${styles.counterBox}`}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <UtilityBeefitSection
+        sectionTitle="Nothing missed. Nothing hidden. Nothing delayed"
+        cards={benifitsData}
+        className={styles.campaignBenefit}
+      />
 
       <MealCardComparison
         heading={mealCardComparisonData.heading}
@@ -147,7 +123,7 @@ const BillPaymentsClient = () => {
         <div className={"max-w-auto"}>
           <div className={styles.overviewCard}>
             <div className={styles.overviewCopy}>
-              <DynamicHeading content={[{ title: "One dashboard for every biller, every location." }]} headingTag="h2" className={styles.h2} />
+              <DynamicHeading content={[{ title: "One dashboard for every biller, every location." }]} headingTag="h2" className={`${styles.h2} h2-40 f-4`} />
               <DynamicHeading content={[{ title: "EnKash connects to 20,000+ billers across India through Bharat Connect. Every utility type, every location, one place." }]} headingTag="p" className={styles.lead} />
               {/* <a href="#form-section" className={`${styles.btn} ${styles.btnPrimary} ${styles.btnLg}`}>Make the switch <span className={styles.btnArrow}><ArrowRightIcon /></span></a> */}
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
@@ -163,14 +139,14 @@ const BillPaymentsClient = () => {
       <section className={`${styles.section} ${styles.sectSoft}`}>
         <div className={"max-w-auto"}>
           <div style={{ textAlign: "center", marginBottom: "clamp(48px, 6vw, 80px)" }}>
-            <DynamicHeading content={[{ title: "Everything that used to take days, now happens automatically." }]} headingTag="h2" className={`${styles.h2} mt16`} />
+            <DynamicHeading content={[{ title: "Everything that used to take days, now happens automatically." }]} headingTag="h2" className={`${styles.h2} h2-40 f-4 mt16`} />
           </div>
 
           {/* Feature 1 */}
           <div className={styles.featureBlock}>
             <div className={styles.featureCopy}>
-              <DynamicHeading content={[{ title: "Real-time visibility" }]} headingTag="h2" className={"heading-h4"} />
-              <p className={`${styles.lead}`}>Bills appear in your dashboard. You don't fetch them.</p>
+              <p className="color-equity-blue f-4 mb-2">Real-time visibility</p>
+              <DynamicHeading content={[{ title: "Bills appear in your dashboard. You don't fetch them.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>EnKash connects directly with DISCOMs and BBPS partners to retrieve bills the moment they are generated. Amounts, due dates, and bill copies land in your dashboard automatically — for every location, every biller, every cycle.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Manual bill collection, location-level follow-ups, chasing stores for paper copies.</p></div>
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
@@ -183,8 +159,8 @@ const BillPaymentsClient = () => {
           {/* Feature 2 */}
           <div className={`${styles.featureBlock} ${styles.reverse}`}>
             <div className={styles.featureCopy}>
-              <DynamicHeading content={[{ title: "Multi-location bill management" }]} headingTag="h2" className={"heading-h4"} />
-              <p className={`${styles.lead}`}>1 location or 1,000 — the view is the same.</p>
+              <p className="color-equity-blue f-4 mb-2">Multi-location bill management</p>
+              <DynamicHeading content={[{ title: "1 location or 1,000 — the view is the same.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>Every bill across every branch, office, outlet, or warehouse lives in one dashboard. Tag bills to specific locations using unique branch codes. Filter by location, biller, due date, bill type, or payment status. Pay one bill or a hundred in the same action.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Maintaining separate trackers per city or region, chasing branch managers for payment confirmations.</p></div>
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
@@ -212,8 +188,8 @@ const BillPaymentsClient = () => {
           {/* Feature 3 */}
           <div className={styles.featureBlock}>
             <div className={styles.featureCopy}>
-              <DynamicHeading content={[{ title: "Excess demand and load factor analysis" }]} headingTag="h2" className={"heading-h4"} />
-              <p className={`${styles.lead}`}>See where your electricity bill is higher than it needs to be.</p>
+              <p className="color-equity-blue f-4 mb-2">Excess demand and load factor analysis</p>
+              <DynamicHeading content={[{ title: "See where your electricity bill is higher than it needs to be.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>EnKash flags overconsumption in real time. Excess demand is identified before it becomes a charge. Load factor penalties and incentives are tracked separately, so your team can see trends, not just totals.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Discovering penalties after the fact, paying for overconsumption you could have avoided.</p></div>
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
@@ -226,8 +202,8 @@ const BillPaymentsClient = () => {
           {/* Feature 4 */}
           <div className={`${styles.featureBlock} ${styles.reverse}`}>
             <div className={styles.featureCopy}>
-              <DynamicHeading content={[{ title: "Verified bill copies, auto-attached" }]} headingTag="h2" className={"heading-h4"} />
-              <p className={`${styles.lead}`}>Every payment comes with a CA-registered bill copy. Automatically.</p>
+              <p className="color-equity-blue f-4 mb-2">Verified bill copies, auto-attached</p>
+              <DynamicHeading content={[{ title: "Every payment comes with a CA-registered bill copy. Automatically.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>Bill copies are fetched directly from BBPS partners and DISCOMs and auto-linked to each transaction. They are CA-registered, verified, and suitable for audits, GST filings, and expense claims. View and download any bill copy from the dashboard at any time — no dependency on DISCOM timelines, no dependency on what the local store manager kept or didn't keep.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Collecting physical bill copies, requesting duplicates from DISCOMs, building audit packs from scratch.</p></div>
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
@@ -240,8 +216,8 @@ const BillPaymentsClient = () => {
           {/* Feature 5 */}
           <div className={styles.featureBlock}>
             <div className={styles.featureCopy}>
-              <DynamicHeading content={[{ title: "Bulk payment" }]} headingTag="h2" className={"heading-h4"} />
-              <p className={`${styles.lead}`}>Select. Approve. Pay all. Done.</p>
+              <p className="color-equity-blue f-4 mb-2">Bulk payment</p>
+              <DynamicHeading content={[{ title: "Select. Approve. Pay all. Done.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>Filter bills by any combination of location, due date, or biller. Select the ones you want to pay. One click sends them all. No individual transactions, no repeated authentication, no switching between screens.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Processing payments one by one, logging in to multiple portals.</p></div>
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
@@ -257,13 +233,13 @@ const BillPaymentsClient = () => {
       <section className={`${styles.section} pt-0 bg-white`}>
         <div className={"max-w-auto"}>
           <div className="text-center mb-5">
-            <DynamicHeading content={[{ title: "Every Feature Your Finance Team Actually Needs" }]} headingTag="h2" className={styles.h2} />
+            <DynamicHeading content={[{ title: "Every Feature Your Finance Team Actually Needs" }]} headingTag="h2" className={`${styles.h2} h2-40 f-4`} />
           </div>
           <div className={styles.fgGrid}>
-            <GridFeatureCard title="Approval before payment" desc="Set up maker-checker flows so every payment goes through the right person before it goes out. Finance heads stay in control across all locations without becoming a bottleneck." icon={FinanceIcon1 ? <Image src={FinanceIcon1} alt="financeIcon1" width={24} height={24} /> : null} />
-            <GridFeatureCard title="GST-compliant records" desc="Every payment generates a GST-compliant receipt. Reconciliation reports export in formats your accounts team already uses — Tally, Zoho Books, or custom CSV." icon={FinanceIcon2 ? <Image src={FinanceIcon2} alt="financeIcon2" width={24} height={24} /> : null} />
-            <GridFeatureCard title="Real-time payment status" desc="Know immediately if a payment succeeds or fails. No waiting until the next morning to find out a utility bill went unpaid at a live location." icon={FinanceIcon3 ? <Image src={FinanceIcon3} alt="financeIcon3" width={24} height={24} /> : null} />
-            <GridFeatureCard title="API access for large teams" desc="For enterprises running ERP systems, EnKash offers API access to trigger and track payments without leaving your existing tools. Works with SAP, Oracle, and custom platforms." icon={FinanceIcon4 ? <Image src={FinanceIcon4} alt="financeIcon4" width={24} height={24} /> : null} />
+            <GridFeatureCard title="Approval before payment" desc="Set up maker-checker flows so every payment goes through the right person before it goes out. Finance heads stay in control across all locations without becoming a bottleneck." icon={FinanceIcon1 ? <Image src={FinanceIcon1} alt="financeIcon1" width={32} height={32} /> : null} />
+            <GridFeatureCard title="GST-compliant records" desc="Every payment generates a GST-compliant receipt. Reconciliation reports export in formats your accounts team already uses — Tally, Zoho Books, or custom CSV." icon={FinanceIcon2 ? <Image src={FinanceIcon2} alt="financeIcon2" width={32} height={32} /> : null} />
+            <GridFeatureCard title="Real-time payment status" desc="Know immediately if a payment succeeds or fails. No waiting until the next morning to find out a utility bill went unpaid at a live location." icon={FinanceIcon3 ? <Image src={FinanceIcon3} alt="financeIcon3" width={32} height={32} /> : null} />
+            <GridFeatureCard title="API access for large teams" desc="For enterprises running ERP systems, EnKash offers API access to trigger and track payments without leaving your existing tools. Works with SAP, Oracle, and custom platforms." icon={FinanceIcon4 ? <Image src={FinanceIcon4} alt="financeIcon4" width={32} height={32} /> : null} />
           </div>
         </div>
       </section>
