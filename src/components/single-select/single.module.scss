@@ -50,23 +50,32 @@
   }
 }
 
+.selectedLabel {
+  font-size: 14px;
+  color: $color-black;
+  font-weight: 500;
+}
+
 .arrow {
-  font-size: 0.7rem;
-  color: $color-equity-blue;
+  font-size: 0.6rem;
+  color: #1d5af5;
   margin-left: 8px;
   user-select: none;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown {
-  margin-top: 50px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  top: calc(100% + 4px);
+  border: 1px solid $color-grey-100;
+  border-radius: 8px;
   background: $color-white;
   position: absolute;
   width: 100%;
   z-index: 10;
-  box-shadow: 0 4px 8px $color-black-0d;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   color: $color-black;
+  overflow: hidden;
 }
 
 .option {

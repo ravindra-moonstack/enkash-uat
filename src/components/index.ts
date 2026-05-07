@@ -98,6 +98,7 @@ const FaqSection = dynamic(() => import("./faq-section"), {
 })
 
 const HowDoesItWork = dynamic(() => import("./how-does-it-work"), { ssr: true })
+const SuspenseLoading = dynamic(() => import("./loading"), { ssr: true })
 const BecomePartnerSteps = dynamic(() => import("./becomepartner"), {
   ssr: true,
 })
@@ -125,6 +126,10 @@ const ProductsSection = dynamic(() => import("./our-products-section/index"), {
 })
 
 const SalesForm = dynamic(() => import("./forms/sales-form"), {
+  ssr: true,
+})
+
+const BillPaymentForm = dynamic(() => import("./forms/bill-payment-form"), {
   ssr: true,
 })
 
@@ -354,4 +359,6 @@ export {
   TaxBenefitDetailsCard,
   BenefitWalletsSection,
   StatisticsSection,
+  BillPaymentForm,
+  SuspenseLoading,
 }

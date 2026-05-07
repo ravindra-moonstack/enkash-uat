@@ -56,18 +56,8 @@ const SingleSelect: React.FC<Props> = ({
       <div className={styles.inputBox} onClick={() => setOpen((prev) => !prev)}>
         <div className={styles.inputContent}>
           {selected ? (
-            <span className={styles.tag}>
+            <span className={styles.selectedLabel}>
               {options.find((opt) => opt.value === selected)?.label}
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setSelected("")
-                  onChange?.("")
-                }}
-              >
-                ✕
-              </button>
             </span>
           ) : (
             <span className={styles.placeholder}>{placeholder}</span>

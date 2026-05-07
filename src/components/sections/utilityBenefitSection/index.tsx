@@ -10,14 +10,16 @@ type CardItem = {
 type UtilityBeefitSectionProps = {
   sectionTitle: string
   cards: CardItem[]
+  className?: string
 }
 
 const UtilityBeefitSection: React.FC<UtilityBeefitSectionProps> = ({
   sectionTitle,
   cards,
+  className,
 }) => {
   return (
-    <div className={` ${styles.introduction_section}`}>
+    <div className={` ${styles.introduction_section} ${className || ""}`}>
       <div className=" max-w-auto">
         <div className="d-flex justify-content-center flex-column gap-3">
           <div className="d-inline justify-content-center align-items-center text-center">
