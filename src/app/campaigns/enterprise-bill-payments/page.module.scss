@@ -194,15 +194,21 @@
       gap: clamp(32px, 5vw, 72px);
       align-items: end;
       padding-top: clamp(40px, 5vw, 60px);
+      min-height: 541px; // ✅ Reserve space for hero content
 
       @media (max-width: 960px) {
         grid-template-columns: 1fr;
         text-align: center;
-      padding: 20px;
+        padding: 20px;
+        min-height: auto;
       }
     }
 
     .heroCopy {
+      min-height: 300px; // ✅ Prevent 0x0 displacement
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       .lead {
         max-width: 560px;
@@ -320,6 +326,15 @@
         border-radius: 50%;
         background: $ek-success;
         box-shadow: 0 0 0 4px rgba(16, 167, 107, 0.18);
+      }
+    }
+    .formSection {
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 960px) {
+        min-height: 500px;
       }
     }
   }
