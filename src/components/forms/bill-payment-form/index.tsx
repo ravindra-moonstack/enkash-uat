@@ -73,6 +73,7 @@ const BillPaymentForm: React.FC = () => {
             type="text"
             required
             placeholder="Name*"
+            aria-label="Name*"
             autoComplete="name"
             {...getFieldProps("SingleLine")}
           />
@@ -85,6 +86,7 @@ const BillPaymentForm: React.FC = () => {
             required
             maxLength={13}
             placeholder="Contact No.*"
+            aria-label="Contact No.*"
             autoComplete="tel"
             id="international_PhoneNumber_countrycode"
             {...getFieldProps("PhoneNumber_countrycode")}
@@ -103,6 +105,7 @@ const BillPaymentForm: React.FC = () => {
             type="email"
             required
             placeholder="Business Email ID*"
+            aria-label="Business Email ID*"
             autoComplete="email"
             {...getFieldProps("Email")}
           />
@@ -114,6 +117,7 @@ const BillPaymentForm: React.FC = () => {
             type="text"
             required
             placeholder="Company Name*"
+            aria-label="Company Name*"
             {...getFieldProps("SingleLine1")}
           />
           <ErrorText errors={errors} touched={touched} field="SingleLine1" />
@@ -135,6 +139,7 @@ const BillPaymentForm: React.FC = () => {
       <div>
         <textarea
           placeholder="Tell us more about your requirement (timelines, specific needs, etc.)"
+          aria-label="Requirement details"
           maxLength={500}
           {...getFieldProps("MultiLine")}
         />
