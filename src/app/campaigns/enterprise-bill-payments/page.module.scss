@@ -1,11 +1,12 @@
+@use "sass:color";
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
 .enterpriseBillPayments {
   /* ============ Brand tokens adapted to project ============ */
   $ek-blue: $color-equity-blue;
-  $ek-blue-600: darken($ek-blue, 5%);
-  $ek-blue-700: darken($ek-blue, 10%);
+  $ek-blue-600: color.adjust($ek-blue, $lightness: -5%);
+  $ek-blue-700: color.adjust($ek-blue, $lightness: -10%);
   $ek-blue-50: #eef3ff;
   $ek-blue-100: #dde6ff;
   $ek-blue-200: #bccfff;
