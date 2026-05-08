@@ -78,7 +78,7 @@ const BillPaymentsClient = () => {
                   src="/images/LicenseGroupIcon.png"
                   alt="logo"
                   width={366}
-                  height={62}
+                  height={69}
                   priority={true}
                   className={styles.groupIcon}
                 />
@@ -169,7 +169,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={styles.overviewVisual}>
-              <Image src={GraphiteImage} alt="Dashboard Overview" loading="lazy" style={{ width: "100%", height: "100%" }} />
+              <Image src={GraphiteImage} alt="Dashboard Overview" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ width: "100%", height: "100%" }} />
             </div>
           </div>
         </div>
@@ -192,7 +192,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={`${styles.featureVisual}`}>
-              <Image src={MainImage1} alt="Bills auto-fetched" fill loading="lazy" style={{ objectFit: "contain" }} />
+              <Image src={MainImage1} alt="Bills auto-fetched" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "contain" }} />
             </div>
           </div>
 
@@ -210,6 +210,7 @@ const BillPaymentsClient = () => {
                 src={MultiLocationImage}
                 alt="Multi-location Map"
                 loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 style={{
                   position: "absolute",
                   height: "100%",
@@ -235,7 +236,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={`${styles.featureVisual} `}>
-              <Image src={MainImage2} alt="Load Factor Analysis" fill loading="lazy" style={{ objectFit: "contain" }} />
+              <Image src={MainImage2} alt="Load Factor Analysis" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "contain" }} />
             </div>
           </div>
 
@@ -249,7 +250,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={`${styles.featureVisual}`}>
-              <Image src={MainImage3} alt="Verified Bill Copies" fill loading="lazy" style={{ objectFit: "contain" }} />
+              <Image src={MainImage3} alt="Verified Bill Copies" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "contain" }} />
             </div>
           </div>
 
@@ -263,7 +264,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={`${styles.featureVisual}`}>
-              <Image src={MainImage4} alt="Bulk Payment" fill loading="lazy" style={{ objectFit: "contain" }} />
+              <Image src={MainImage4} alt="Bulk Payment" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "contain" }} />
             </div>
           </div>
         </div>
