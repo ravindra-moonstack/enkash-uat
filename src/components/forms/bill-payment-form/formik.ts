@@ -5,7 +5,7 @@ export type TBillPaymentInitialValueProp = {
   SingleLine1: string
   Email: string
   PhoneNumber_countrycode: string
-  MultipleChoice: string
+  MultipleChoice: string[]
   Website: string
   MultiLine: string
   Dropdown1: string
@@ -22,7 +22,7 @@ const billPaymentInitialValue: TBillPaymentInitialValueProp = {
   SingleLine1: "",
   Email: "",
   PhoneNumber_countrycode: "",
-  MultipleChoice: "",
+  MultipleChoice: [],
   Website: "",
   MultiLine: "",
   Dropdown1: "Marketing",
@@ -44,7 +44,9 @@ const billPaymentValidation = Yup.object({
     .required("Please enter phone number")
     .max(13)
     .min(10, "Please enter valid mobile number"),
-  MultipleChoice: Yup.string()
+  MultipleChoice: Yup.array()
+    .of(Yup.string())
+    .min(1, "Please select at least one bill type")
     .required("Please select bill types"),
   Website: Yup.string(),
   MultiLine: Yup.string().max(500, "Text exceeds"),
