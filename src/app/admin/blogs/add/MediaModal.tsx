@@ -6,9 +6,10 @@ interface MediaModalProps {
     onClose: () => void;
     onSelect: (data: { url: string, id: string, alt: string }) => void;
     title?: string;
+    defaultType?: string;
 }
 
-export default function MediaModal({ onClose, onSelect, title = "Media Library" }: MediaModalProps) {
+export default function MediaModal({ onClose, onSelect, title = "Media Library", defaultType = "all" }: MediaModalProps) {
     const {
         mediaItems,
         loading,
@@ -25,7 +26,7 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library" 
         handleUpdateMedia,
         fileInputRef,
         uploading
-    } = useMedia(40);
+    } = useMedia(40, defaultType);
 
     const [selectedMedia, setSelectedMedia] = useState<any>(null);
     const [activeTab, setActiveTab] = useState<"upload" | "library">("library");

@@ -14,6 +14,19 @@ export async function PATCH(
         data.status,
         id,
       ])
+
+      // Update category counts
+      await pool.query(`
+        UPDATE terms t 
+        SET count = (
+          SELECT COUNT(*) 
+          FROM posts p 
+          WHERE FIND_IN_SET(t.term_id, p.category) > 0 
+          AND p.status = 'publish' 
+          AND p.post_type = 'post'
+        )
+        WHERE t.taxonomy = 'category'
+      `)
     }
 
     return NextResponse.json({ success: true })
@@ -57,7 +70,7 @@ export async function PUT(
     const metaQuery = `
       UPDATE post_meta SET
           show_featured_image = ?, post_schema_markup = ?, 
-          remove_author_details = ?, meta_title = ?, meta_description = ?
+          remove_author_details = ?, meta_title = ?, meta_description = ?, focus_keyword = ?
       WHERE post_id = ?
     `
     await pool.query(metaQuery, [
@@ -66,8 +79,22 @@ export async function PUT(
       data.remove_author_details ? 1 : 0,
       data.meta_title || "",
       data.meta_description || "",
+      data.focus_keyword || "",
       id
     ])
+
+    // Update category counts
+    await pool.query(`
+      UPDATE terms t 
+      SET count = (
+        SELECT COUNT(*) 
+        FROM posts p 
+        WHERE FIND_IN_SET(t.term_id, p.category) > 0 
+        AND p.status = 'publish' 
+        AND p.post_type = 'post'
+      )
+      WHERE t.taxonomy = 'category'
+    `)
 
     return NextResponse.json({ success: true })
   } catch (error: any) {

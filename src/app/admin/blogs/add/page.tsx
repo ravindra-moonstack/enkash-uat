@@ -36,6 +36,12 @@ export default function AddPostPage() {
         showMediaModal, setShowMediaModal,
         mediaTarget, setMediaTarget,
         permalinkBase,
+        focusKeyword, setFocusKeyword,
+        categorySearch, setCategorySearch,
+        showAddCategoryForm, setShowAddCategoryForm,
+        newCategoryName, setNewCategoryName,
+        newCategoryParent, setNewCategoryParent,
+        handleAddCategory,
         handleSave
     } = useAddPost()
 
@@ -106,7 +112,13 @@ export default function AddPostPage() {
                                 </button>
                             </div>
                         </div>
+
                         <div className={styles.boxContent}>
+
+                            <div className={styles.inputGroup}>
+                                <label>Focus keyphrase</label>
+                                <input type="text" value={focusKeyword} onChange={(e) => setFocusKeyword(e.target.value)} placeholder="Separate with commas" />
+                            </div>
                             <div className={`${styles.seoPreview} ${previewMode === "mobile" ? styles.mobile : ""}`}>
                                 {previewMode === "mobile" && featuredImageUrl && (
                                     <div className={styles.mobileFeatured}>
@@ -256,29 +268,100 @@ export default function AddPostPage() {
                     <div className={styles.box}>
                         <div className={styles.boxHeader}>Categories</div>
                         <div className={styles.boxContent}>
-                            <div>
-                                <label style={{ display: "block", marginBottom: 5 }}>All Categories</label>
-                                <div style={{ maxHeight: 150, overflowY: "auto", border: "1px solid #ddd", padding: 10, background: "#f9f9f9" }}>
-                                    {metaOptions.categories.map((c: any) => (
-                                        <div className={styles.checkboxGroup} key={c.slug}>
-                                            <input
-                                                type="checkbox"
-                                                id={`cat_${c.slug}`}
-                                                checked={categories.includes(c.slug)}
-                                                onChange={(e) => {
-                                                    if (e.target.checked) {
-                                                        setCategories([...categories, c.slug])
-                                                    } else {
-                                                        setCategories(categories.filter(cat => cat !== c.slug))
-                                                    }
-                                                }}
-                                            />
-                                            <label htmlFor={`cat_${c.slug}`} style={{ margin: 0, fontWeight: 400 }}>{c.name}</label>
-                                        </div>
-                                    ))}
-                                </div>
-                                <a className={styles.setFeaturedImage} style={{ display: "inline-block", marginTop: 10 }}>+ Add Category</a>
+                            <div className={styles.categorySearch}>
+                                <input
+                                    type="text"
+                                    placeholder="Search categories"
+                                    value={categorySearch}
+                                    onChange={(e) => setCategorySearch(e.target.value)}
+                                    className={styles.searchBar}
+                                />
                             </div>
+                            <div className={styles.categoryList}>
+                                {(() => {
+                                    const filtered = metaOptions.categories.filter((c: any) =>
+                                        c.name.toLowerCase().includes(categorySearch.toLowerCase())
+                                    )
+
+                                    const renderCategory = (cat: any, depth = 0) => {
+                                        const children = metaOptions.categories.filter((c: any) => c.parent === cat.term_id)
+                                        return (
+                                            <React.Fragment key={cat.term_id}>
+                                                <div className={styles.checkboxGroup} style={{ marginLeft: depth * 20 }}>
+                                                    <input
+                                                        type="checkbox"
+                                                        id={`cat_${cat.term_id}`}
+                                                        checked={categories.includes(cat.term_id.toString()) || categories.includes(cat.slug)}
+                                                        onChange={(e) => {
+                                                            const val = cat.term_id.toString()
+                                                            if (e.target.checked) {
+                                                                setCategories([...categories, val])
+                                                            } else {
+                                                                setCategories(categories.filter(c => c !== val && c !== cat.slug))
+                                                            }
+                                                        }}
+                                                    />
+                                                    <label htmlFor={`cat_${cat.term_id}`} style={{ margin: 0, fontWeight: 400 }}>{cat.name}</label>
+                                                </div>
+                                                {children.map(child => renderCategory(child, depth + 1))}
+                                            </React.Fragment>
+                                        )
+                                    }
+
+                                    const rootCategories = filtered.filter((c: any) => {
+                                        if (!categorySearch) return c.parent === 0 || !c.parent
+                                        return true // If searching, show all matches at flat level or maintain structure? Usually WordPress shows search results flat.
+                                    })
+
+                                    return rootCategories.map((c: any) => {
+                                        if (categorySearch) {
+                                            // Simple flat list for search
+                                            return (
+                                                <div className={styles.checkboxGroup} key={c.term_id}>
+                                                    <input
+                                                        type="checkbox"
+                                                        id={`cat_${c.term_id}`}
+                                                        checked={categories.includes(c.term_id.toString()) || categories.includes(c.slug)}
+                                                        onChange={(e) => {
+                                                            const val = c.term_id.toString()
+                                                            if (e.target.checked) {
+                                                                setCategories([...categories, val])
+                                                            } else {
+                                                                setCategories(categories.filter(cat => cat !== val && cat !== c.slug))
+                                                            }
+                                                        }}
+                                                    />
+                                                    <label htmlFor={`cat_${c.term_id}`} style={{ margin: 0, fontWeight: 400 }}>{c.name}</label>
+                                                </div>
+                                            )
+                                        }
+                                        return renderCategory(c)
+                                    })
+                                })()}
+                            </div>
+                            <div className={styles.addCategoryLink}>
+                                <a onClick={() => setShowAddCategoryForm(!showAddCategoryForm)}>+ Add New Category</a>
+                            </div>
+                            {showAddCategoryForm && (
+                                <div className={styles.addCategoryForm}>
+                                    <input
+                                        type="text"
+                                        placeholder="Category Name"
+                                        value={newCategoryName}
+                                        onChange={(e) => setNewCategoryName(e.target.value)}
+                                    />
+                                    <select
+                                        value={newCategoryParent}
+                                        onChange={(e) => setNewCategoryParent(e.target.value)}
+                                    >
+                                        <option value="0">Parent Category</option>
+                                        {metaOptions.categories.map((c: any) => (
+                                            <option key={c.term_id} value={c.term_id}>{c.name}</option>
+                                        ))}
+                                    </select>
+                                    <button onClick={handleAddCategory}>Add New Category</button>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -300,21 +383,16 @@ export default function AddPostPage() {
                                     <input
                                         type="text"
                                         placeholder="Add Tag"
-                                        onChange={(e) => {
-                                            const val = e.target.value.toLowerCase()
-                                            const matches = metaOptions.tags.filter((t: any) => t.name.toLowerCase().includes(val) && !tags.split(',').includes(t.term_id.toString())).slice(0, 5)
-                                            // Show matching tags in a dropdown (simplified here, could use a state for results)
-                                            // For now, let's use a simpler approach: if the user types a full tag name and it matches, we can suggest it.
-                                        }}
-                                        onKeyDown={(e) => {
+                                        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
                                             if (e.key === "Enter") {
-                                                const val = (e.target as HTMLInputElement).value
+                                                e.preventDefault()
+                                                const val = e.currentTarget.value
                                                 const match = metaOptions.tags.find((t: any) => t.name.toLowerCase() === val.toLowerCase())
                                                 if (match) {
-                                                    const currentTags = tags ? tags.split(',') : []
+                                                    const currentTags = tags ? tags.split(',').filter(t => t) : []
                                                     if (!currentTags.includes(match.term_id.toString())) {
                                                         setTags([...currentTags, match.term_id.toString()].join(','))
-                                                            ; (e.target as HTMLInputElement).value = ""
+                                                        e.currentTarget.value = ""
                                                     }
                                                 }
                                             }
@@ -322,31 +400,33 @@ export default function AddPostPage() {
                                         list="tagOptions"
                                     />
                                     <datalist id="tagOptions">
-                                        {metaOptions.tags.map((t: any) => (
+                                        {(metaOptions.tags || []).map((t: any) => (
                                             <option key={t.term_id} value={t.name} />
                                         ))}
                                     </datalist>
                                     <button onClick={(e) => {
-                                        const input = (e.currentTarget.previousSibling as HTMLInputElement)
-                                        const val = input.value
-                                        const match = metaOptions.tags.find((t: any) => t.name.toLowerCase() === val.toLowerCase())
-                                        if (match) {
-                                            const currentTags = tags ? tags.split(',') : []
-                                            if (!currentTags.includes(match.term_id.toString())) {
-                                                setTags([...currentTags, match.term_id.toString()].join(','))
-                                                input.value = ""
+                                        const input = e.currentTarget.parentElement?.querySelector('input')
+                                        if (input) {
+                                            const val = input.value
+                                            const match = metaOptions.tags.find((t: any) => t.name.toLowerCase() === val.toLowerCase())
+                                            if (match) {
+                                                const currentTags = tags ? tags.split(',').filter(t => t) : []
+                                                if (!currentTags.includes(match.term_id.toString())) {
+                                                    setTags([...currentTags, match.term_id.toString()].join(','))
+                                                    input.value = ""
+                                                }
                                             }
                                         }
                                     }}>Add</button>
                                 </div>
                                 <div className={styles.selectedTags}>
-                                    {tags && tags.split(',').map(tid => {
-                                        const tagObj = metaOptions.tags.find((t: any) => t.term_id.toString() === tid)
+                                    {tags && tags.split(',').filter(t => t).map(tid => {
+                                        const tagObj = (metaOptions.tags || []).find((t: any) => t.term_id.toString() === tid)
                                         if (!tagObj) return null
                                         return (
                                             <span key={tid} className={styles.tagPill}>
                                                 <i className="bi bi-x-circle" onClick={() => {
-                                                    const newTags = tags.split(',').filter(t => t !== tid).join(',')
+                                                    const newTags = tags.split(',').filter(t => t !== tid && t).join(',')
                                                     setTags(newTags)
                                                 }}></i> {tagObj.name}
                                             </span>

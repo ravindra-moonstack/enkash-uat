@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import styles from "./categories.module.scss"
+import styles from "../../blogs/categories/categories.module.scss"
 
-export default function CategoriesPage() {
+export default function VideoCategoriesPage() {
     const [terms, setTerms] = useState<any[]>([])
     const [allCategories, setAllCategories] = useState<any[]>([])
     const [loading, setLoading] = useState(true)
@@ -28,7 +28,7 @@ export default function CategoriesPage() {
     const fetchTerms = async () => {
         setLoading(true)
         try {
-            const res = await fetch(`/api/admin/terms?taxonomy=category&page=${page}&limit=${itemsPerPage}&search=${search}&sortBy=${sortBy}&sortOrder=${sortOrder}`)
+            const res = await fetch(`/api/admin/terms?taxonomy=video_category&page=${page}&limit=${itemsPerPage}&search=${search}&sortBy=${sortBy}&sortOrder=${sortOrder}`)
             const data = await res.json()
             if (data.success) {
                 setTerms(data.data)
@@ -80,8 +80,8 @@ export default function CategoriesPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        const payload = { name, slug, description, parent, taxonomy: "category" }
-
+        const payload = { name, slug, description, parent, taxonomy: "video_category" }
+        
         try {
             if (editId) {
                 const res = await fetch(`/api/admin/terms/${editId}`, {
@@ -142,17 +142,12 @@ export default function CategoriesPage() {
         }
     }
 
-    // Build hierarchy for table
     const buildHierarchy = (items: any[]) => {
         const parents = items.filter(i => !i.parent || i.parent === 0)
         const children = items.filter(i => i.parent && i.parent !== 0)
-
+        
         let result: any[] = []
-
-        // Only do hierarchy if no search or sorting by name
-        if (search || sortBy !== 'name') {
-            return items
-        }
+        if (search || sortBy !== 'name') return items
 
         parents.forEach(p => {
             result.push(p)
@@ -160,13 +155,10 @@ export default function CategoriesPage() {
                 result.push({ ...c, isChild: true })
             })
         })
-
-        // Add any orphans
+        
         const addedIds = new Set(result.map(r => r.term_id))
         items.forEach(i => {
-            if (!addedIds.has(i.term_id)) {
-                result.push(i)
-            }
+            if (!addedIds.has(i.term_id)) result.push(i)
         })
 
         return result
@@ -177,22 +169,22 @@ export default function CategoriesPage() {
 
     return (
         <div className={styles.container}>
-            <h1>Categories</h1>
+            <h1>Video Categories</h1>
             <div className={styles.layout}>
                 <div className={styles.leftColumn}>
-                    <h2>{editId ? "Edit Category" : "Add New Category"}</h2>
+                    <h2>{editId ? "Edit Video Category" : "Add New Video Category"}</h2>
                     <form onSubmit={handleSubmit}>
                         <div className={styles.inputGroup}>
                             <label>Name</label>
-                            <input
-                                type="text"
-                                value={name}
+                            <input 
+                                type="text" 
+                                value={name} 
                                 onChange={(e) => {
                                     setName(e.target.value)
                                     if (!editId && !slug) {
                                         setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
                                     }
-                                }}
+                                }} 
                                 required
                             />
                             <div className={styles.description}>The name is how it appears on your site.</div>
@@ -200,13 +192,13 @@ export default function CategoriesPage() {
 
                         <div className={styles.inputGroup}>
                             <label>Slug</label>
-                            <input
-                                type="text"
-                                value={slug}
-                                onChange={(e) => setSlug(e.target.value)}
+                            <input 
+                                type="text" 
+                                value={slug} 
+                                onChange={(e) => setSlug(e.target.value)} 
                                 required
                             />
-                            <div className={styles.description}>The "slug" is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</div>
+                            <div className={styles.description}>The "slug" is the URL-friendly version of the name.</div>
                         </div>
 
                         <div className={styles.inputGroup}>
@@ -217,16 +209,14 @@ export default function CategoriesPage() {
                                     <option key={c.term_id} value={c.term_id}>{c.name}</option>
                                 ))}
                             </select>
-                            <div className={styles.description}>Categories, unlike tags, can have a hierarchy. You might have a Jazz category, and under that have children categories for Bebop and Big Band. Totally optional.</div>
                         </div>
 
                         <div className={styles.inputGroup}>
                             <label>Description</label>
-                            <textarea
-                                value={description}
+                            <textarea 
+                                value={description} 
                                 onChange={(e) => setDescription(e.target.value)}
                             ></textarea>
-                            <div className={styles.description}>The description is not prominent by default; however, some themes may show it.</div>
                         </div>
 
                         <button type="submit" className={styles.submitBtn}>
@@ -243,12 +233,12 @@ export default function CategoriesPage() {
                 <div className={styles.rightColumn}>
                     <div className={styles.filterBar}>
                         <div className={styles.searchBox}>
-                            <input
-                                type="text"
-                                value={searchInput}
-                                onChange={(e) => setSearchInput(e.target.value)}
+                            <input 
+                                type="text" 
+                                value={searchInput} 
+                                onChange={(e) => setSearchInput(e.target.value)} 
                                 onKeyDown={handleSearch}
-                                placeholder="Search Categories..."
+                                placeholder="Search Video Categories..."
                             />
                         </div>
                         <div className={styles.pagination}>
@@ -258,9 +248,9 @@ export default function CategoriesPage() {
                                     <button onClick={() => setPage(1)} disabled={page === 1}>«</button>
                                     <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>‹</button>
                                     <span className={styles.pageInputWrap}>
-                                        <input
-                                            type="text"
-                                            value={pageInput}
+                                        <input 
+                                            type="text" 
+                                            value={pageInput} 
                                             onChange={handlePageInputChange}
                                             onBlur={handlePageInputSubmit}
                                             onKeyDown={(e) => e.key === 'Enter' && handlePageInputSubmit()}
@@ -276,38 +266,25 @@ export default function CategoriesPage() {
                     <table className={styles.table}>
                         <thead>
                             <tr>
-                                <th onClick={() => handleSort("name")}>
-                                    Name {sortBy === "name" && <i className={`bi bi-caret-${sortOrder === 'asc' ? 'up' : 'down'}-fill`}></i>}
-                                </th>
-                                <th onClick={() => handleSort("description")}>
-                                    Description {sortBy === "description" && <i className={`bi bi-caret-${sortOrder === 'asc' ? 'up' : 'down'}-fill`}></i>}
-                                </th>
-                                <th onClick={() => handleSort("slug")}>
-                                    Slug {sortBy === "slug" && <i className={`bi bi-caret-${sortOrder === 'asc' ? 'up' : 'down'}-fill`}></i>}
-                                </th>
-                                <th onClick={() => handleSort("count")}>
-                                    Count {sortBy === "count" && <i className={`bi bi-caret-${sortOrder === 'asc' ? 'up' : 'down'}-fill`}></i>}
-                                </th>
+                                <th onClick={() => handleSort("name")}>Name</th>
+                                <th onClick={() => handleSort("description")}>Description</th>
+                                <th onClick={() => handleSort("slug")}>Slug</th>
+                                <th onClick={() => handleSort("count")}>Count</th>
                             </tr>
                         </thead>
                         <tbody>
                             {loading ? (
-                                <tr>
-                                    <td colSpan={4} style={{ textAlign: 'center', padding: '20px' }}>Loading...</td>
-                                </tr>
+                                <tr><td colSpan={4} style={{ textAlign: 'center', padding: '20px' }}>Loading...</td></tr>
                             ) : displayTerms.length === 0 ? (
-                                <tr>
-                                    <td colSpan={4} style={{ textAlign: 'center', padding: '20px' }}>No categories found.</td>
-                                </tr>
+                                <tr><td colSpan={4} style={{ textAlign: 'center', padding: '20px' }}>No categories found.</td></tr>
                             ) : (
                                 displayTerms.map(term => (
                                     <tr key={term.term_id}>
                                         <td>
                                             <strong>{term.isChild ? "— " : ""}{term.name}</strong>
                                             <div className={styles.rowActions}>
-                                                <a onClick={() => handleEdit(term)}>Edit</a> |
-                                                <a className={styles.deleteAction} onClick={() => handleDelete(term.term_id)}>Delete</a> |
-                                                <Link href={`/category/${term.slug}`} target="_blank">View</Link>
+                                                <a onClick={() => handleEdit(term)}>Edit</a> | 
+                                                <a className={styles.deleteAction} onClick={() => handleDelete(term.term_id)}>Delete</a>
                                             </div>
                                         </td>
                                         <td>{term.description || "—"}</td>
@@ -317,38 +294,7 @@ export default function CategoriesPage() {
                                 ))
                             )}
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th onClick={() => handleSort("name")}>Name</th>
-                                <th onClick={() => handleSort("description")}>Description</th>
-                                <th onClick={() => handleSort("slug")}>Slug</th>
-                                <th onClick={() => handleSort("count")}>Count</th>
-                            </tr>
-                        </tfoot>
                     </table>
-
-                    <div className={styles.filterBar} style={{ marginTop: 10, justifyContent: 'flex-end' }}>
-                        <div className={styles.pagination}>
-                            <span className={styles.itemCount}>{totalItems} items</span>
-                            {totalPages > 0 && (
-                                <div className={styles.paginationControls}>
-                                    <button onClick={() => setPage(1)} disabled={page === 1}>«</button>
-                                    <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>‹</button>
-                                    <span className={styles.pageInputWrap}>
-                                        <input
-                                            type="text"
-                                            value={pageInput}
-                                            onChange={handlePageInputChange}
-                                            onBlur={handlePageInputSubmit}
-                                            onKeyDown={(e) => e.key === 'Enter' && handlePageInputSubmit()}
-                                        /> of {totalPages}
-                                    </span>
-                                    <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}>›</button>
-                                    <button onClick={() => setPage(totalPages)} disabled={page === totalPages}>»</button>
-                                </div>
-                            )}
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

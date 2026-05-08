@@ -138,8 +138,8 @@ export async function POST(request: Request) {
     const metaQuery = `
             INSERT INTO post_meta (
                 post_id, show_featured_image, post_schema_markup, 
-                remove_author_details, meta_title, meta_description
-            ) VALUES (?, ?, ?, ?, ?, ?)
+                remove_author_details, meta_title, meta_description, focus_keyword
+            ) VALUES (?, ?, ?, ?, ?, ?, ?)
         `
 
     await pool.query(metaQuery, [
@@ -149,7 +149,21 @@ export async function POST(request: Request) {
       data.remove_author_details ? 1 : 0,
       data.meta_title || "",
       data.meta_description || "",
+      data.focus_keyword || "",
     ])
+
+    // Update category counts
+    await pool.query(`
+      UPDATE terms t 
+      SET count = (
+        SELECT COUNT(*) 
+        FROM posts p 
+        WHERE FIND_IN_SET(t.term_id, p.category) > 0 
+        AND p.status = 'publish' 
+        AND p.post_type = 'post'
+      )
+      WHERE t.taxonomy = 'category'
+    `)
 
     return NextResponse.json({ success: true, id: postId })
   } catch (error: any) {

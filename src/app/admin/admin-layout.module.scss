@@ -74,9 +74,24 @@
             }
         }
 
-        &:hover {
+        &:not(.activeWrapper):hover {
             .subMenu {
                 display: flex;
+            }
+        }
+
+        &.activeWrapper {
+            .subMenu {
+                position: static;
+                display: flex;
+                background-color: transparent;
+                box-shadow: none;
+                margin-top: 4px;
+                padding-left: 0;
+                
+                .subMenuItem {
+                    padding: 8px 16px 8px 44px;
+                }
             }
         }
     }
@@ -184,13 +199,12 @@
 }
 
 .pageContainer {
-    padding: 32px;
+    padding: 12px;
     // max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
 
-// For pages that don't need the layout (like login)
 .fullScreenWrapper {
     width: 100%;
     min-height: 100vh;

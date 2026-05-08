@@ -1,14 +1,14 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     const [users]: any = await pool.query(
       `SELECT ID, display_name FROM users ORDER BY display_name ASC`
     )
 
     const [categories]: any = await pool.query(
-      `SELECT MIN(term_id) as term_id, MAX(name) as name, slug FROM terms WHERE taxonomy = 'category' GROUP BY slug ORDER BY MAX(name) ASC`
+      `SELECT term_id, name, slug, parent FROM terms WHERE taxonomy = 'category' ORDER BY name ASC`
     )
 
     const [dates]: any = await pool.query(
@@ -19,14 +19,19 @@ export async function GET(request: Request) {
       `SELECT term_id, name, slug FROM terms WHERE taxonomy = 'post_tag' ORDER BY name ASC`
     )
 
+    const [videoCategories]: any = await pool.query(
+      `SELECT term_id, name, slug, parent FROM terms WHERE taxonomy = 'video_category' ORDER BY name ASC`
+    )
+
     return NextResponse.json({
       users,
       categories,
+      videoCategories,
       dates,
-      tags
+      tags,
     })
   } catch (error: any) {
-    console.error("Error fetching blog meta:", error)
+    console.error("Error fetching meta:", error)
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 }

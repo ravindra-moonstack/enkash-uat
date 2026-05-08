@@ -1,4 +1,5 @@
 import React from "react"
+import type { Metadata } from "next"
 import styles from "./styles.module.scss"
 import Link from "next/link"
 import BlogBanner from "@/src/components/blog-components/BlogBanner"
@@ -9,6 +10,25 @@ import { BlogNav } from "@/src/components"
 
 import { getBlogCategories, getPostBySlug } from "@/src/services/resource-service"
 
+export async function generateMetaData({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const json = await getPostBySlug(slug)
+
+  if (json?.error || !json?.posts || json?.posts?.length === 0) {
+    return {
+      title: "Blog Not Found",
+      description: "The requested blog post could not be found.",
+    }
+  }
+
+  const post = json.posts[0]
+
+  return {
+    title: post.meta_title || post.title,
+    description: post.meta_description || "",
+    keywords: post.focus_keyword ? post.focus_keyword.split(",").map((k: string) => k.trim()) : [],
+  }
+}
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
   const json = await getPostBySlug(slug)
@@ -72,28 +92,36 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const extendedNavData = navData ? { ...navData, breadcrumbs } : null
 
   return (
-    <div className={`${styles.mainPage}`}>
-      <section className={styles.blog_nav_section}>
-        <div className="max-w-auto">
-          {extendedNavData && (
-            <BlogNav
-              data={extendedNavData}
-              activeCategory={activeCategory}
-              showCategories={false}
-              showDivider={false}
-            />
-          )}
-        </div>
-      </section>
-      <BlogBanner bannerData={bannerData} />
-      <BlogBody
-        bodyData={bodyData[0]}
-        slug={result[0].slug}
-        title={result[0].title}
-      />
-      <AuthorSection authorData={result[0]} />
-      <RelatedBlogs relatedBlogs={relatedBlogs} />
-    </div>
+    <>
+      {result[0].post_schema_markup && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: result[0].post_schema_markup }}
+        />
+      )}
+      <div className={`${styles.mainPage}`}>
+        <section className={styles.blog_nav_section}>
+          <div className="max-w-auto">
+            {extendedNavData && (
+              <BlogNav
+                data={extendedNavData}
+                activeCategory={activeCategory}
+                showCategories={false}
+                showDivider={false}
+              />
+            )}
+          </div>
+        </section>
+        <BlogBanner bannerData={bannerData} />
+        <BlogBody
+          bodyData={bodyData[0]}
+          slug={result[0].slug}
+          title={result[0].title}
+        />
+        <AuthorSection authorData={result[0]} />
+        <RelatedBlogs relatedBlogs={relatedBlogs} />
+      </div>
+    </>
   )
 }
 

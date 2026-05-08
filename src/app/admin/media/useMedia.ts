@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useSearchParams } from "next/navigation"
 
-export const useMedia = (initialItemsPerPage: number = 80) => {
+export const useMedia = (initialItemsPerPage: number = 80, defaultType: string = "all") => {
   const searchParams = useSearchParams()
 
   const [showUpload, setShowUpload] = useState(
@@ -16,7 +16,7 @@ export const useMedia = (initialItemsPerPage: number = 80) => {
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   // Filters
-  const [typeFilter, setTypeFilter] = useState("all")
+  const [typeFilter, setTypeFilter] = useState(defaultType)
   const [dateFilter, setDateFilter] = useState("all")
   const [search, setSearch] = useState("")
   const [availableDates, setAvailableDates] = useState<string[]>([])

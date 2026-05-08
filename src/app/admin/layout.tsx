@@ -94,7 +94,7 @@ export default function AdminLayout({
                         <i className="bi bi-layout-text-window-reverse"></i>
                         Glossary Home Sections
                     </Link>
-                    <div className={styles.navItemWrapper}>
+                    <div className={`${styles.navItemWrapper} ${pathname.includes('/admin/blogs') ? styles.activeWrapper : ''}`}>
                         <Link href="/admin/blogs" className={`${styles.navItem} ${pathname.includes('/admin/blogs') ? styles.active : ''}`}>
                             <i className="bi bi-pencil-square"></i>
                             Blogs
@@ -106,14 +106,35 @@ export default function AdminLayout({
                             <Link href="/admin/blogs/tags" className={styles.subMenuItem}>Tags</Link>
                         </div>
                     </div>
-                    <div className={styles.navItemWrapper}>
-                        <div className={`${styles.navItem} ${pathname.includes('/admin/media') ? styles.active : ''}`}>
+                    <div className={`${styles.navItemWrapper} ${pathname.includes('/admin/media') && !pathname.includes('/admin/media-coverage') ? styles.activeWrapper : ''}`}>
+                        <Link href="/admin/media" className={`${styles.navItem} ${pathname.includes('/admin/media') && !pathname.includes('/admin/media-coverage') ? styles.active : ''}`}>
                             <i className="bi bi-images"></i>
                             Media
-                        </div>
+                        </Link>
                         <div className={styles.subMenu}>
                             <Link href="/admin/media" className={styles.subMenuItem}>Library</Link>
                             <Link href="/admin/media?add=true" className={styles.subMenuItem}>Add Media File</Link>
+                        </div>
+                    </div>
+                    <div className={`${styles.navItemWrapper} ${pathname.includes('/admin/videos') ? styles.activeWrapper : ''}`}>
+                        <Link href="/admin/videos" className={`${styles.navItem} ${pathname.includes('/admin/videos') ? styles.active : ''}`}>
+                            <i className="bi bi-play-circle"></i>
+                            Videos
+                        </Link>
+                        <div className={styles.subMenu}>
+                            <Link href="/admin/videos" className={styles.subMenuItem}>All Videos</Link>
+                            <Link href="/admin/videos/add" className={styles.subMenuItem}>Add New Video</Link>
+                            <Link href="/admin/videos/categories" className={styles.subMenuItem}>Video Categories</Link>
+                        </div>
+                    </div>
+                    <div className={`${styles.navItemWrapper} ${pathname.includes('/admin/media-coverage') ? styles.activeWrapper : ''}`}>
+                        <Link href="/admin/media-coverage" className={`${styles.navItem} ${pathname.includes('/admin/media-coverage') ? styles.active : ''}`}>
+                            <i className="bi bi-newspaper"></i>
+                            Media Coverage
+                        </Link>
+                        <div className={styles.subMenu}>
+                            <Link href="/admin/media-coverage" className={styles.subMenuItem}>All Coverage</Link>
+                            <Link href="/admin/media-coverage/add" className={styles.subMenuItem}>Add New</Link>
                         </div>
                     </div>
                     <Link
