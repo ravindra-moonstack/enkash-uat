@@ -133,7 +133,9 @@
     font-style: italic;
 
     .privacyLink {
-      text-decoration: none;
+      text-decoration: underline;
+      color: $color-equity-blue;
+      font-weight: 500;
     }
   }
 
