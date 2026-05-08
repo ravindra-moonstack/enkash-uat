@@ -3,13 +3,20 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import dynamic from "next/dynamic"
 import DynamicHeading from "@/components/dynamic-heading"
 import styles from "./page.module.scss"
 import { FinanceIcon1, FinanceIcon2, MainImage1, MainImage2, MainImage3, MainImage4, MultiLocationImage, GraphiteImage, FinanceIcon3, FinanceIcon4, HeroBg } from "./img"
-import { CommanButton, BillPaymentForm, LogoSlider, CtaBanner, SuspenseLoading } from "@/src/components"
-import MealCardComparison from "@/src/components/meal-components/MealCardComparison"
-import UtilityBeefitSection from "@/src/components/sections/utilityBenefitSection"
-import UtilityWorkflow from "@/src/components/sections/utilityWorkflow"
+
+const CommanButton = dynamic(() => import("@/src/components/buttons/index").then(mod => mod.default), { ssr: true })
+const BillPaymentForm = dynamic(() => import("@/src/components/forms/bill-payment-form/index"), { ssr: false })
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider/index"), { ssr: false })
+const CtaBanner = dynamic(() => import("@/src/components/cta-banner/index"), { ssr: false })
+const SuspenseLoading = dynamic(() => import("@/src/components/loading/index"), { ssr: false })
+const MealCardComparison = dynamic(() => import("@/src/components/meal-components/MealCardComparison"), { ssr: false })
+const UtilityBeefitSection = dynamic(() => import("@/src/components/sections/utilityBenefitSection/index"), { ssr: false })
+const UtilityWorkflow = dynamic(() => import("@/src/components/sections/utilityWorkflow/index"), { ssr: false })
+
 import { mealCardComparisonData, benifitsData } from "./data"
 import { electricity, gas, water, dth, prepaid, broadband } from "../../utility-bill-payment/img"
 import { ctaSideImg } from "../../employee-benefit-multi-wallet/img"
@@ -162,7 +169,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={styles.overviewVisual}>
-              <Image src={GraphiteImage} alt="Dashboard Overview" priority style={{ width: "100%", height: "100%" }} />
+              <Image src={GraphiteImage} alt="Dashboard Overview" loading="lazy" style={{ width: "100%", height: "100%" }} />
             </div>
           </div>
         </div>
@@ -185,7 +192,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={`${styles.featureVisual}`}>
-              <Image src={MainImage1} alt="Bills auto-fetched" fill priority style={{ objectFit: "contain" }} />
+              <Image src={MainImage1} alt="Bills auto-fetched" fill loading="lazy" style={{ objectFit: "contain" }} />
             </div>
           </div>
 
@@ -202,7 +209,7 @@ const BillPaymentsClient = () => {
               <Image
                 src={MultiLocationImage}
                 alt="Multi-location Map"
-                priority
+                loading="lazy"
                 style={{
                   position: "absolute",
                   height: "100%",
@@ -228,7 +235,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={`${styles.featureVisual} `}>
-              <Image src={MainImage2} alt="Load Factor Analysis" fill priority style={{ objectFit: "contain" }} />
+              <Image src={MainImage2} alt="Load Factor Analysis" fill loading="lazy" style={{ objectFit: "contain" }} />
             </div>
           </div>
 
@@ -242,7 +249,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={`${styles.featureVisual}`}>
-              <Image src={MainImage3} alt="Verified Bill Copies" fill priority style={{ objectFit: "contain" }} />
+              <Image src={MainImage3} alt="Verified Bill Copies" fill loading="lazy" style={{ objectFit: "contain" }} />
             </div>
           </div>
 
@@ -256,7 +263,7 @@ const BillPaymentsClient = () => {
               <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
             </div>
             <div className={`${styles.featureVisual}`}>
-              <Image src={MainImage4} alt="Bulk Payment" fill priority style={{ objectFit: "contain" }} />
+              <Image src={MainImage4} alt="Bulk Payment" fill loading="lazy" style={{ objectFit: "contain" }} />
             </div>
           </div>
         </div>
