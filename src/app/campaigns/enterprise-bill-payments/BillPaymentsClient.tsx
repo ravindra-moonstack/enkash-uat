@@ -9,7 +9,7 @@ import styles from "./page.module.scss"
 import { FinanceIcon1, FinanceIcon2, MainImage1, MainImage2, MainImage3, MainImage4, MultiLocationImage, GraphiteImage, FinanceIcon3, FinanceIcon4, HeroBg } from "./img"
 
 const CommanButton = dynamic(() => import("@/src/components/buttons/index").then(mod => mod.default), { ssr: true })
-const BillPaymentForm = dynamic(() => import("@/src/components/forms/bill-payment-form/index"), { ssr: true })
+const BillPaymentForm = dynamic(() => import("@/src/components/forms/bill-payment-form/index"), { ssr: false })
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider/index"), { ssr: false })
 const CtaBanner = dynamic(() => import("@/src/components/cta-banner/index"), { ssr: false })
 const SuspenseLoading = dynamic(() => import("@/src/components/loading/index"), { ssr: false })
@@ -78,7 +78,7 @@ const BillPaymentsClient = () => {
                   src="/images/LicenseGroupIcon.png"
                   alt="logo"
                   width={366}
-                  height={62}
+                  height={69}
                   priority={true}
                   className={styles.groupIcon}
                 />
