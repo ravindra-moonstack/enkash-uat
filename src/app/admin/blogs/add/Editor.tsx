@@ -70,7 +70,7 @@ export default function Editor({ value, onChange }: EditorProps) {
                     "insertdatetime", "media", "table", "help", "wordcount", "emoticons",
                     "directionality", "nonbreaking"
                 ],
-                toolbar1: "formatselect | bold italic blockquote | bullist numlist | alignleft aligncenter alignright alignjustify | link unlink undo redo | charmap",
+                toolbar1: "blocks | bold italic blockquote | bullist numlist | alignleft aligncenter alignright alignjustify | link unlink undo redo | charmap",
                 toolbar2: "nonbreaking fontsize | ltr rtl | anchor emoticons | forecolor backcolor | table | help | fullscreen",
                 content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:16px }",
                 branding: false,

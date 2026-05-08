@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
+import { getImageUrl } from "@/src/utils/common"
 
 export function useAddPost() {
   const searchParams = useSearchParams()
@@ -21,7 +22,11 @@ export function useAddPost() {
   const [removeAuthorDetails, setRemoveAuthorDetails] = useState(false)
   const [seoTitle, setSeoTitle] = useState("")
   const [metaDescription, setMetaDescription] = useState("")
-  const [metaOptions, setMetaOptions] = useState({ categories: [], users: [], tags: [] })
+  const [metaOptions, setMetaOptions] = useState({
+    categories: [],
+    users: [],
+    tags: [],
+  })
   const [author, setAuthor] = useState("")
   const [categories, setCategories] = useState<string[]>([])
   const [excerpt, setExcerpt] = useState("")
@@ -32,6 +37,11 @@ export function useAddPost() {
   const [mediaTarget, setMediaTarget] = useState<"editor" | "featured">(
     "editor"
   )
+  const [focusKeyword, setFocusKeyword] = useState("")
+  const [categorySearch, setCategorySearch] = useState("")
+  const [showAddCategoryForm, setShowAddCategoryForm] = useState(false)
+  const [newCategoryName, setNewCategoryName] = useState("")
+  const [newCategoryParent, setNewCategoryParent] = useState("0")
 
   useEffect(() => {
     if (id) {
@@ -44,7 +54,7 @@ export function useAddPost() {
             setContent(data.post.content || "")
             setStatus(data.post.status || "draft")
             setFeaturedImageId(data.post.featured_image || "")
-            setFeaturedImageUrl(data.post.featured_image_url || "")
+            setFeaturedImageUrl(getImageUrl(data.post.featured_image_url) || "")
             setFeaturedImageAlt(data.post.featured_image_alt || "")
             setFeaturedRight(data.post.featured_right || "no")
             setFeaturedLeftSide(data.post.featured_left_side || "no")
@@ -62,6 +72,7 @@ export function useAddPost() {
             setRemoveAuthorDetails(!!data.meta.remove_author_details)
             setSeoTitle(data.meta.meta_title || "")
             setMetaDescription(data.meta.meta_description || "")
+            setFocusKeyword(data.meta.focus_keyword || "")
           }
         })
         .catch((err) => console.error("Error fetching post data", err))
@@ -79,15 +90,56 @@ export function useAddPost() {
         if (!id && data.users && data.users.length > 0) {
           setAuthor(data.users[0].ID.toString())
         }
-          })
-        .catch((err) => console.error("Error fetching meta", err))
+      })
+      .catch((err) => console.error("Error fetching meta", err))
 
     if (typeof window !== "undefined") {
       setPermalinkBase(`${window.location.origin}/resources/blog/`)
     }
   }, [id])
 
-
+  const handleAddCategory = async () => {
+    if (!newCategoryName) return
+    const slug = newCategoryName
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)+/g, "")
+    try {
+      const res = await fetch("/api/admin/terms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: newCategoryName,
+          slug,
+          taxonomy: "category",
+          parent: parseInt(newCategoryParent),
+          description: "",
+        }),
+      })
+      if (res.ok) {
+        const data = await res.json()
+        setMetaOptions((prev) => ({
+          ...prev,
+          categories: [
+            ...prev.categories,
+            {
+              term_id: data.id,
+              name: newCategoryName,
+              slug,
+              parent: parseInt(newCategoryParent),
+            },
+          ] as any,
+        }))
+        setNewCategoryName("")
+        setNewCategoryParent("0")
+        setShowAddCategoryForm(false)
+      } else {
+        alert("Failed to add category")
+      }
+    } catch (error) {
+      console.error("Error adding category:", error)
+    }
+  }
 
   const handleSave = async (isPublish: boolean) => {
     const payload = {
@@ -104,6 +156,7 @@ export function useAddPost() {
       remove_author_details: removeAuthorDetails,
       meta_title: seoTitle,
       meta_description: metaDescription,
+      focus_keyword: focusKeyword,
       author,
       categories: categories.join(","),
       excerpt,
@@ -169,6 +222,8 @@ export function useAddPost() {
     setSeoTitle,
     metaDescription,
     setMetaDescription,
+    focusKeyword,
+    setFocusKeyword,
     metaOptions,
     author,
     setAuthor,
@@ -185,6 +240,15 @@ export function useAddPost() {
     mediaTarget,
     setMediaTarget,
     permalinkBase,
+    categorySearch,
+    setCategorySearch,
+    showAddCategoryForm,
+    setShowAddCategoryForm,
+    newCategoryName,
+    setNewCategoryName,
+    newCategoryParent,
+    setNewCategoryParent,
+    handleAddCategory,
     handleSave,
   }
 }
