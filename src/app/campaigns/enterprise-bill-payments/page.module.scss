@@ -193,12 +193,12 @@
       grid-template-columns: 1.1fr 1fr;
       gap: clamp(32px, 5vw, 72px);
       align-items: end;
-      padding: 20px;
       padding-top: clamp(40px, 5vw, 60px);
 
       @media (max-width: 960px) {
         grid-template-columns: 1fr;
         text-align: center;
+      padding: 20px;
       }
     }
 

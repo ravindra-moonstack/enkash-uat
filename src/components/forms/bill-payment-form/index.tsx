@@ -8,8 +8,7 @@ import "@/src/styles/_forms.scss"
 
 // components
 import ErrorText from "../../error-text"
-import CategoryMultiSelect from "../../category-multi-select"
-import CategoryWithOther from "../../single-select"
+import MultiSelect from "../../multi-select"
 
 import {
   billPaymentInitialValue,
@@ -125,12 +124,12 @@ const BillPaymentForm: React.FC = () => {
       </div>
 
       <div>
-        <CategoryWithOther
+        <MultiSelect
           name="MultipleChoice"
           options={billOptions}
           placeholder="Which bills do you want to manage?*"
-          onChange={(val) => {
-            setFieldValue("MultipleChoice", val)
+          onChange={(data) => {
+            setFieldValue("MultipleChoice", data)
           }}
         />
         <ErrorText errors={errors} touched={touched} field="MultipleChoice" />
