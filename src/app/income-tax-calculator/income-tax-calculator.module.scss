@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "@/src/styles/variables" as *;
 @use "@/src/styles/mixin" as *;
 
@@ -378,7 +379,7 @@
   color: $color-main-grey;
   line-height: 1.6;
 
-  strong { color: darken($color-shocking-blue, 10%); }
+  strong { color: color.adjust($color-shocking-blue, $lightness: -10%); }
 }
 
 .infoTeal {
@@ -391,7 +392,7 @@
   color: $color-main-grey;
   line-height: 1.6;
 
-  strong { color: darken($color-electric-green, 15%); }
+  strong { color: color.adjust($color-electric-green, $lightness: -15%); }
 }
 
 .btnRow {
@@ -454,7 +455,7 @@
   background: rgba($color-electric-green, 0.12);
   border-color: rgba($color-electric-green, 0.4);
 
-  .summaryBoxValue { color: lighten($color-electric-green, 20%) !important; }
+  .summaryBoxValue { color: color.adjust($color-electric-green, $lightness: 20%) !important; }
   .summaryBoxLabel { color: rgba(255, 255, 255, 0.75) !important; }
   .summaryBoxSub { color: rgba(255, 255, 255, 0.6) !important; }
 }
@@ -517,7 +518,7 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background: linear-gradient(135deg, $color-electric-green, darken($color-electric-green, 10%));
+  background: linear-gradient(135deg, $color-electric-green, color.adjust($color-electric-green, $lightness: -10%));
   color: $color-white;
   font-size: 9.5px;
   font-weight: 700;
@@ -583,8 +584,8 @@
     padding: 10px 16px;
   }
 
-  .bdRowLabel { color: darken($color-electric-green, 15%) !important; }
-  .bdRowValue { color: darken($color-electric-green, 15%) !important; }
+  .bdRowLabel { color: color.adjust($color-electric-green, $lightness: -15%) !important; }
+  .bdRowValue { color: color.adjust($color-electric-green, $lightness: -15%) !important; }
 }
 
 .bdRowLabel { color: $color-main-grey; }
