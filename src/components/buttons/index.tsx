@@ -1,10 +1,10 @@
 "use client"
 import Image, { StaticImageData } from "next/image"
 import { useRouter } from "next/navigation"
-import { FaArrowRight } from "react-icons/fa"
-import { IoIosArrowForward } from "react-icons/io"
 import styles from "./button.module.scss"
 import { useState } from "react"
+
+import { ArrowRight, ArrowForward } from "../icons"
 
 export type ButtonTheme =
   | "blue"
@@ -55,7 +55,7 @@ const CommonButton = ({
 }: ButtonProps) => {
   const router = useRouter()
 
-  const [currentImage, setCurrentImage] = useState(image) // ⭐ NEW
+  const [currentImage, setCurrentImage] = useState(image)
 
   const handleClick = () => {
     if (isDisabled) return
@@ -94,8 +94,8 @@ const CommonButton = ({
         ${className ?? ""}
       `}
       onClick={handleClick}
-      onMouseEnter={handleMouseEnter}   // ⭐ NEW
-      onMouseLeave={handleMouseLeave}   // ⭐ NEW
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       style={{ width: width || "auto" }}
     >
       {currentImage && (
@@ -111,7 +111,7 @@ const CommonButton = ({
       {title}
 
       {arrow &&
-        (arrowType === "ios" ? <IoIosArrowForward /> : <FaArrowRight />)}
+        (arrowType === "ios" ? <ArrowForward /> : <ArrowRight />)}
     </button>
   )
 }
