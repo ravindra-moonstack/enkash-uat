@@ -117,7 +117,7 @@ export default function EditPostPage() {
                 <div className={styles.lockBanner}>
                     <i className="bi bi-lock-fill"></i>
                     <div>
-                        <strong>Locked:</strong> {activeEditors.map((e: any) => `${e.user_name} (ID: ${e.user_id})`).join(", ")} is currently editing this post. Editing is disabled to prevent overwriting changes.
+                        <strong>Locked:</strong> {activeEditors.map((e: any) => e.user_name).join(", ")} is currently editing this post. Editing is disabled to prevent overwriting changes.
                     </div>
                 </div>
             )}
