@@ -11,8 +11,6 @@ export default function MediaCoveragePage() {
         loading,
         statusFilter, setStatusFilter,
         search, setSearch,
-        dateFilter, setDateFilter,
-        metaOptions,
         pageInput,
         page, setPage,
         totalPages,
@@ -75,15 +73,6 @@ export default function MediaCoveragePage() {
             </div>
 
             <div className={styles.filterBar}>
-                <div className={styles.filterLeft}>
-                    <select value={dateFilter} onChange={(e) => setDateFilter(e.target.value)}>
-                        <option value="all">All dates</option>
-                        {metaOptions.dates.map((d: any) => (
-                            <option key={d.date_value} value={d.date_value}>{d.date_label}</option>
-                        ))}
-                    </select>
-                    <button onClick={() => { setPage(1); fetchItems() }}>Apply</button>
-                </div>
                 <div className={styles.filterRight}>
                     <span className={styles.itemCount}>{totalItems} items</span>
                     {renderPagination()}
