@@ -22,6 +22,7 @@ export default function CategoriesPage() {
     const [slug, setSlug] = useState("")
     const [parent, setParent] = useState(0)
     const [description, setDescription] = useState("")
+    const [slugManuallyEdited, setSlugManuallyEdited] = useState(false)
 
     const itemsPerPage = 20
 
@@ -104,6 +105,8 @@ export default function CategoriesPage() {
                 if (data.success) {
                     resetForm()
                     fetchTerms()
+                } else {
+                    alert(data.error || "Failed to add category")
                 }
             }
         } catch (error) {
@@ -117,6 +120,7 @@ export default function CategoriesPage() {
         setSlug("")
         setParent(0)
         setDescription("")
+        setSlugManuallyEdited(false)
     }
 
     const handleEdit = (term: any) => {
@@ -125,6 +129,7 @@ export default function CategoriesPage() {
         setSlug(term.slug)
         setParent(term.parent || 0)
         setDescription(term.description || "")
+        setSlugManuallyEdited(true)
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
@@ -189,7 +194,7 @@ export default function CategoriesPage() {
                                 value={name}
                                 onChange={(e) => {
                                     setName(e.target.value)
-                                    if (!editId && !slug) {
+                                    if (!slugManuallyEdited) {
                                         setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
                                     }
                                 }}
@@ -203,7 +208,10 @@ export default function CategoriesPage() {
                             <input
                                 type="text"
                                 value={slug}
-                                onChange={(e) => setSlug(e.target.value)}
+                                onChange={(e) => {
+                                    setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
+                                    setSlugManuallyEdited(true)
+                                }}
                                 required
                             />
                             <div className={styles.description}>The "slug" is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</div>
@@ -307,7 +315,7 @@ export default function CategoriesPage() {
                                             <div className={styles.rowActions}>
                                                 <a onClick={() => handleEdit(term)}>Edit</a> |
                                                 <a className={styles.deleteAction} onClick={() => handleDelete(term.term_id)}>Delete</a> |
-                                                <Link href={`/category/${term.slug}`} target="_blank">View</Link>
+                                                <Link href={`/resources/blog/category/${term.slug}`} target="_blank">View</Link>
                                             </div>
                                         </td>
                                         <td>{term.description || "—"}</td>

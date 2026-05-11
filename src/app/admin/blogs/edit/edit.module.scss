@@ -16,6 +16,32 @@
             color: #1d2327;
         }
     }
+
+    .lockBanner {
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 15px;
+        border-radius: 4px;
+        border: 1px solid #f5c6cb;
+
+        i {
+            font-size: 1.2rem;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    }
+}
+
+.locked {
+    opacity: 0.7;
+    pointer-events: none;
+    user-select: none;
 }
 
 .layout {
@@ -132,6 +158,58 @@
             border-color: #2271b1;
             box-shadow: 0 0 0 1px #2271b1;
         }
+    }
+
+    .slugEditGroup {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .slugInput {
+            width: auto;
+            min-width: 200px;
+        }
+
+        .applyBtn {
+            border: 1px solid #2271b1;
+            background: #f6f7f7;
+            color: #2271b1;
+            border-radius: 3px;
+            padding: 0 10px;
+            font-size: 12px;
+            cursor: pointer;
+            line-height: 2;
+
+            &:hover:not(:disabled) {
+                background: #f0f0f1;
+            }
+            &:disabled {
+                opacity: 0.5;
+                cursor: default;
+            }
+        }
+
+        .cancelBtn {
+            border: 1px solid #c3c4c7;
+            background: #f6f7f7;
+            color: #646970;
+            border-radius: 3px;
+            padding: 0 10px;
+            font-size: 12px;
+            cursor: pointer;
+            line-height: 2;
+
+            &:hover {
+                background: #f0f0f1;
+            }
+        }
+    }
+
+    .errorText {
+        color: #b32d2e;
+        font-size: 12px;
+        margin-top: 5px;
+        width: 100%;
     }
 }
 

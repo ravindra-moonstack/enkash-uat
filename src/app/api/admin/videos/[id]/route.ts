@@ -34,6 +34,20 @@ export async function PUT(
   try {
     const id = (await params).id
     const data = await request.json()
+    const { slug } = data
+
+    if (slug) {
+      const [existing]: any = await pool.query(
+        "SELECT id FROM videos WHERE slug = ? AND id != ? LIMIT 1",
+        [slug, id]
+      )
+      if (existing.length > 0) {
+        return NextResponse.json(
+          { success: false, error: "Slug already exists. Please use a unique slug." },
+          { status: 400 }
+        )
+      }
+    }
 
     const query = `
       UPDATE videos SET

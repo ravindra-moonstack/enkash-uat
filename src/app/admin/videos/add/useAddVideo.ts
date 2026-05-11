@@ -18,6 +18,9 @@ export function useAddVideo() {
   const [featured, setFeatured] = useState("no")
   const [trending, setTrending] = useState("no")
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const [slugManuallyEdited, setSlugManuallyEdited] = useState(false)
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [isDirty, setIsDirty] = useState(false)
   
   const [metaOptions, setMetaOptions] = useState({ categories: [], videoCategories: [], users: [], videos: [] })
   const [showMediaModal, setShowMediaModal] = useState(false)
@@ -66,6 +69,7 @@ export function useAddVideo() {
             setFeatured(data.video.featured || "no")
             setTrending(data.video.trending || "no")
             setSelectedCategories(data.video.category ? data.video.category.split(",") : [])
+            setSlugManuallyEdited(true)
           }
         })
         .catch((err) => console.error("Error fetching video data", err))
@@ -103,10 +107,11 @@ export function useAddVideo() {
         })
       }
       if (res.ok) {
-        alert("Video saved successfully!")
-        router.push("/admin/videos")
+        setIsDirty(false)
+        setShowSuccessModal(true)
       } else {
-        alert("Failed to save video")
+        const data = await res.json()
+        alert(data.error || "Failed to save video")
       }
     } catch (error) {
       console.error("Error saving video:", error)
@@ -138,6 +143,9 @@ export function useAddVideo() {
         setNewCategoryName("")
         setNewCategoryParent("0")
         setShowAddCategoryForm(false)
+      } else {
+        const data = await res.json()
+        alert(data.error || "Failed to add category")
       }
     } catch (error) {
       console.error("Error adding category:", error)
@@ -165,6 +173,9 @@ export function useAddVideo() {
     showAddCategoryForm, setShowAddCategoryForm,
     newCategoryName, setNewCategoryName,
     newCategoryParent, setNewCategoryParent,
+    slugManuallyEdited, setSlugManuallyEdited,
+    showSuccessModal, setShowSuccessModal,
+    isDirty, setIsDirty,
     handleAddCategory,
     handleSave
   }

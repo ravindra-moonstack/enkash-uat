@@ -55,6 +55,15 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ success: false, error: "Name, slug, and taxonomy are required." }, { status: 400 })
         }
 
+        // Check for duplicate slug in the same taxonomy
+        const [existing]: any = await pool.query(
+            "SELECT term_id FROM terms WHERE slug = ? AND taxonomy = ?",
+            [slug, taxonomy]
+        )
+        if (existing.length > 0) {
+            return NextResponse.json({ success: false, error: "Slug already exists in this taxonomy." }, { status: 400 })
+        }
+
         const query = "INSERT INTO terms (name, slug, description, parent, taxonomy, count) VALUES (?, ?, ?, ?, ?, 0)"
         const [result] = await pool.query<ResultSetHeader>(query, [name, slug, description || "", parent || 0, taxonomy])
 

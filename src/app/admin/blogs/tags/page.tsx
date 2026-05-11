@@ -20,6 +20,7 @@ export default function TagsPage() {
     const [name, setName] = useState("")
     const [slug, setSlug] = useState("")
     const [description, setDescription] = useState("")
+    const [slugManuallyEdited, setSlugManuallyEdited] = useState(false)
 
     const itemsPerPage = 20
 
@@ -101,6 +102,8 @@ export default function TagsPage() {
                 if (data.success) {
                     resetForm()
                     fetchTerms()
+                } else {
+                    alert(data.error || "Failed to add tag")
                 }
             }
         } catch (error) {
@@ -113,6 +116,7 @@ export default function TagsPage() {
         setName("")
         setSlug("")
         setDescription("")
+        setSlugManuallyEdited(false)
     }
 
     const handleEdit = (term: any) => {
@@ -120,6 +124,7 @@ export default function TagsPage() {
         setName(term.name)
         setSlug(term.slug)
         setDescription(term.description || "")
+        setSlugManuallyEdited(true) // Editing an existing one counts as manually edited
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
@@ -153,7 +158,7 @@ export default function TagsPage() {
                                 value={name} 
                                 onChange={(e) => {
                                     setName(e.target.value)
-                                    if (!editId && !slug) {
+                                    if (!slugManuallyEdited) {
                                         setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
                                     }
                                 }} 
@@ -167,7 +172,10 @@ export default function TagsPage() {
                             <input 
                                 type="text" 
                                 value={slug} 
-                                onChange={(e) => setSlug(e.target.value)} 
+                                onChange={(e) => {
+                                    setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
+                                    setSlugManuallyEdited(true)
+                                }} 
                                 required
                             />
                             <div className={styles.description}>The "slug" is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</div>
@@ -260,7 +268,7 @@ export default function TagsPage() {
                                             <div className={styles.rowActions}>
                                                 <a onClick={() => handleEdit(term)}>Edit</a> | 
                                                 <a className={styles.deleteAction} onClick={() => handleDelete(term.term_id)}>Delete</a> | 
-                                                <Link href={`/tag/${term.slug}`} target="_blank">View</Link>
+                                                <Link href={`/resources/tag/${term.slug}`} target="_blank">View</Link>
                                             </div>
                                         </td>
                                         <td>{term.description || "—"}</td>

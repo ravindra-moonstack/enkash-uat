@@ -9,11 +9,23 @@ const ensureTableExists = async () => {
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 post_id INT NOT NULL,
                 editor_id VARCHAR(255) NOT NULL,
+                user_id INT NOT NULL,
+                user_name VARCHAR(255) NOT NULL,
                 last_active TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 UNIQUE KEY unique_editor (post_id, editor_id)
             )
         `)
+    // Check if columns exist
+    const [cols]: any = await pool.query("SHOW COLUMNS FROM posts_active_editors")
+    const columnNames = cols.map((c: any) => c.Field)
+
+    if (!columnNames.includes("user_id")) {
+      await pool.execute("ALTER TABLE posts_active_editors ADD COLUMN user_id INT NOT NULL AFTER editor_id")
+    }
+    if (!columnNames.includes("user_name")) {
+      await pool.execute("ALTER TABLE posts_active_editors ADD COLUMN user_name VARCHAR(255) NOT NULL AFTER user_id")
+    }
   } catch (error) {
     console.error("Error ensuring posts_active_editors table exists:", error)
   }
@@ -37,38 +49,38 @@ export async function POST(request: Request) {
     await cleanupInactiveEditors()
 
     const body = await request.json()
-    const { postId, editorId } = body
+    const { postId, editorId, userId, userName } = body
 
-    if (!postId || !editorId) {
+    if (!postId || !editorId || !userId) {
       return NextResponse.json(
-        { success: false, message: "Post ID and Editor ID are required" },
+        { success: false, message: "Post ID, Editor ID and User ID are required" },
         { status: 400 }
       )
     }
 
-    // Register current editor
+    // Register current editor session
     await pool.execute(
       `
-            INSERT INTO posts_active_editors (post_id, editor_id) 
-            VALUES (?, ?) 
-            ON DUPLICATE KEY UPDATE last_active = NOW()
+            INSERT INTO posts_active_editors (post_id, editor_id, user_id, user_name) 
+            VALUES (?, ?, ?, ?) 
+            ON DUPLICATE KEY UPDATE last_active = NOW(), user_name = ?
         `,
-      [postId, editorId]
+      [postId, editorId, userId, userName || "Unknown", userName || "Unknown"]
     )
 
-    // Get other active editors
+    // Get other unique active users (excluding current user)
     const [rows]: any = await pool.execute(
       `
-            SELECT editor_id 
+            SELECT DISTINCT user_id, user_name
             FROM posts_active_editors 
-            WHERE post_id = ? AND editor_id != ?
+            WHERE post_id = ? AND user_id != ?
         `,
-      [postId, editorId]
+      [postId, userId]
     )
 
     return NextResponse.json({
       success: true,
-      activeEditors: rows.map((r: any) => r.editor_id),
+      activeEditors: rows, // Array of {user_id, user_name}
     })
   } catch (error: any) {
     console.error("Error managing active editors:", error)
