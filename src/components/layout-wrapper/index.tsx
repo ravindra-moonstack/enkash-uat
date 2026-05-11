@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, Suspense } from "react"
 import { usePathname } from "next/navigation"
 import TalkToSales from "../mobile-talks-to-sales"
 import dynamic from "next/dynamic"
@@ -51,7 +51,11 @@ export default function LayoutClientWrapper({
       {!shouldHide && <TalkToSales />}
       <main id="main" className="flex-grow-1">
         {children}
-        <ConsultationModal />
+        {pathname.startsWith("/resources") && (
+          <Suspense fallback={null}>
+            <ConsultationModal />
+          </Suspense>
+        )}
       </main>
       {!shouldHide && <Footer />}
     </div>
