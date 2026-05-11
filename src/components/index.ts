@@ -280,6 +280,18 @@ const CommanButton = dynamic(() => import("./buttons/index"), {
   ssr: true,
 })
 
+const BlogNav = dynamic(() => import("./blog-nav/index"), { ssr: true })
+const ReceivablesSection = dynamic(
+  () => import("./receivables-section/index"),
+  { ssr: true }
+)
+const SubscribeSection = dynamic(() => import("./subscribe-section/index"), {
+  ssr: true,
+})
+const SubscribeBox = dynamic(() => import("./subscribe-box/index"), {
+  ssr: true,
+})
+
 export {
   Header,
   Footer,
@@ -361,4 +373,8 @@ export {
   StatisticsSection,
   BillPaymentForm,
   SuspenseLoading,
+  BlogNav,
+  ReceivablesSection,
+  SubscribeSection,
+  SubscribeBox,
 }
