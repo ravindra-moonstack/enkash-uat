@@ -21,7 +21,10 @@ export function useAddMediaCoverage() {
   const [mediaCoverageDescription, setMediaCoverageDescription] = useState("")
   const [mediaCoverageMediaLink, setMediaCoverageMediaLink] = useState("")
 
-  const [metaOptions, setMetaOptions] = useState({
+  const [metaOptions, setMetaOptions] = useState<{
+    users: any[]
+    items: any[]
+  }>({
     users: [],
     items: [],
   })

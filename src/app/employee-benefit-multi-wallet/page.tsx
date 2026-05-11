@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { Suspense } from "react"
 import styles from "./page.module.scss"
 
 //data 
@@ -44,7 +45,7 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/employee-benefit-multi-wallet")
 
 
-const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
+const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
     return (
         <div className={`color-white`}>
             <HeroSection
@@ -282,4 +283,10 @@ const EmployeeBenefitMultiWallet = (): React.JSX.Element => {
     )
 }
 
-export default EmployeeBenefitMultiWallet
+export default function EmployeeBenefitMultiWallet() {
+  return (
+    <Suspense fallback={null}>
+      <EmployeeBenefitMultiWalletContent />
+    </Suspense>
+  )
+}

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Suspense } from "react"
 import { Metadata } from "next"
 
 import styles from "./page.module.scss"
@@ -39,7 +39,7 @@ const cards = [
     buttonUrl: "/policies/prepaid-program/customer-onboarding",
   },
 ]
-const CustomerOnboarding = (): React.JSX.Element => {
+const CustomerOnboardingContent = (): React.JSX.Element => {
   //
 
   return (
@@ -66,4 +66,10 @@ const CustomerOnboarding = (): React.JSX.Element => {
   )
 }
 
-export default CustomerOnboarding
+export default function CustomerOnboarding() {
+  return (
+    <Suspense fallback={null}>
+      <CustomerOnboardingContent />
+    </Suspense>
+  )
+}

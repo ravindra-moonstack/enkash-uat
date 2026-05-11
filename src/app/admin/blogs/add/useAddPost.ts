@@ -22,7 +22,11 @@ export function useAddPost() {
   const [removeAuthorDetails, setRemoveAuthorDetails] = useState(false)
   const [seoTitle, setSeoTitle] = useState("")
   const [metaDescription, setMetaDescription] = useState("")
-  const [metaOptions, setMetaOptions] = useState({
+  const [metaOptions, setMetaOptions] = useState<{
+    categories: any[]
+    users: any[]
+    tags: any[]
+  }>({
     categories: [],
     users: [],
     tags: [],
@@ -148,7 +152,11 @@ export function useAddPost() {
         const href = link.getAttribute("href")
         // If it's an internal link and not a target="_blank"
         if (href && !href.startsWith("#") && link.target !== "_blank") {
-          if (!window.confirm("You have unsaved changes. Your changes will be lost if you leave this page. Are you sure?")) {
+          if (
+            !window.confirm(
+              "You have unsaved changes. Your changes will be lost if you leave this page. Are you sure?"
+            )
+          ) {
             e.preventDefault()
             e.stopImmediatePropagation()
           }
