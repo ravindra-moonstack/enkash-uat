@@ -102,6 +102,20 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const data = await request.json()
+    const { slug } = data
+
+    if (slug) {
+      const [existing]: any = await pool.query(
+        "SELECT id FROM videos WHERE slug = ? LIMIT 1",
+        [slug]
+      )
+      if (existing.length > 0) {
+        return NextResponse.json(
+          { success: false, error: "Slug already exists. Please use a unique slug." },
+          { status: 400 }
+        )
+      }
+    }
 
     const query = `
             INSERT INTO videos (

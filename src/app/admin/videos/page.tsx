@@ -108,7 +108,9 @@ export default function VideosPage() {
                         videos.map(video => (
                             <tr key={video.id}>
                                 <td className={styles.titleCol}>
-                                    {video.title || "(no title)"}
+                                    <Link href={`/admin/videos/add?id=${video.id}`} className={styles.titleLink}>
+                                        {video.title || "(no title)"}
+                                    </Link>
                                     {video.status === "draft" && " — Draft"}
                                     <div className={styles.rowActions}>
                                         <Link href={`/admin/videos/add?id=${video.id}`}>Edit</Link> |

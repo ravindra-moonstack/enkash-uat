@@ -14,11 +14,12 @@ export default function AdminLayout({
     const pathname = usePathname()
     const router = useRouter()
     const isLoginPage = pathname === "/admin"
+    const [currentUser, setCurrentUser] = useState<any>(null)
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        const checkAuth = () => {
+        const checkAuth = async () => {
             const token = document.cookie
                 .split('; ')
                 .find(row => row.startsWith('token='))
@@ -28,6 +29,16 @@ export default function AdminLayout({
                 setIsAuthenticated(true)
                 if (isLoginPage) {
                     router.push("/admin/dashboard")
+                }
+                // Fetch user info
+                try {
+                    const res = await fetch("/api/admin/me")
+                    const data = await res.json()
+                    if (data.success) {
+                        setCurrentUser(data.user)
+                    }
+                } catch (err) {
+                    console.error("Failed to fetch user info", err)
                 }
             } else {
                 setIsAuthenticated(false)
@@ -76,7 +87,6 @@ export default function AdminLayout({
             <aside className={styles.sidebar}>
                 <div className={styles.logoSection}>
                     <Image src="/images/logo.svg" alt="EnKash" width={120} height={40} />
-                    {/* <span className={styles.logoText}>Admin Panel</span> */}
                 </div>
 
                 <nav className={styles.navSection}>
@@ -162,8 +172,8 @@ export default function AdminLayout({
                     </div>
 
                     <div className={styles.userInfo}>
-                        <span className={styles.userName}>Admin User</span>
-                        <div className={styles.userAvatar}>A</div>
+                        <span className={styles.userName}>{currentUser?.name || "Admin User"}</span>
+                        <div className={styles.userAvatar}>{currentUser?.name?.[0] || "A"}</div>
                     </div>
                 </header>
 

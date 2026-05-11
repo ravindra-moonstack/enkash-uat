@@ -261,7 +261,19 @@
         color: #2271b1;
         position: relative;
         padding-bottom: 35px !important;
-        &:first-child{
+
+        .titleLink {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-bottom: 4px;
+
+            &:hover {
+                color: #0a4b78;
+            }
+        }
+
+        &:first-child {
             padding-bottom: 8px !important;
         }
     }

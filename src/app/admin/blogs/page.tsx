@@ -130,7 +130,9 @@ export default function BlogsPage() {
                         posts.map(post => (
                             <tr key={post.id}>
                                 <td className={styles.titleCol}>
-                                    {post.title || "(no title)"}
+                                    <Link href={`/admin/blogs/edit?id=${post.id}`} className={styles.titleLink}>
+                                        {post.title || "(no title)"}
+                                    </Link>
                                     {post.status === "draft" && " — Draft"}
                                     <div className={styles.rowActions}>
                                         <Link href={`/admin/blogs/edit?id=${post.id}`}>Edit</Link> |

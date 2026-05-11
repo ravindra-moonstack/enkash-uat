@@ -46,6 +46,9 @@ export function useEditPost() {
   const [showAddCategoryForm, setShowAddCategoryForm] = useState(false)
   const [newCategoryName, setNewCategoryName] = useState("")
   const [newCategoryParent, setNewCategoryParent] = useState("0")
+  const [slugError, setSlugError] = useState("")
+  const [isCheckingSlug, setIsCheckingSlug] = useState(false)
+  const [currentUser, setCurrentUser] = useState<any>(null)
   const [isDirty, setIsDirty] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const isInitialLoad = useRef(true)
@@ -106,6 +109,16 @@ export function useEditPost() {
     if (typeof window !== "undefined") {
       setPermalinkBase(`${window.location.origin}/resources/blog/`)
     }
+
+    // Fetch current user
+    fetch("/api/admin/me")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setCurrentUser(data.user)
+        }
+      })
+      .catch((err) => console.error("Error fetching current user", err))
 
     // After initial load (and fetch if id exists), we start tracking changes
     const timer = setTimeout(() => {
@@ -214,7 +227,99 @@ export function useEditPost() {
     }
   }
 
+  const handleApplySlug = async (newSlug: string) => {
+    if (!newSlug) {
+      setSlugError("")
+      return false
+    }
+
+    setIsCheckingSlug(true)
+    setSlugError("")
+
+    try {
+      const res = await fetch(`/api/admin/blogs/check-slug?slug=${newSlug}${id ? `&excludeId=${id}` : ""}`)
+      const data = await res.json()
+
+      if (data.exists) {
+        setSlugError("This slug already exists. Please use a unique slug.")
+        setIsCheckingSlug(false)
+        return false
+      }
+
+      setSlug(newSlug)
+      setIsCheckingSlug(false)
+      return true
+    } catch (err) {
+      console.error("Error checking slug:", err)
+      setIsCheckingSlug(false)
+      return false
+    }
+  }
+
+  const handleAddTag = async (tagName: string) => {
+    if (!tagName) return
+
+    // Check if tag already exists in metaOptions
+    let tag = metaOptions.tags.find(t => t.name.toLowerCase() === tagName.toLowerCase())
+
+    if (!tag) {
+      // Create new tag
+      const slug = tagName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "")
+      try {
+        const res = await fetch("/api/admin/terms", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: tagName,
+            slug,
+            taxonomy: "post_tag",
+          }),
+        })
+        if (res.ok) {
+          const data = await res.json()
+          tag = { term_id: data.id, name: tagName, slug }
+          setMetaOptions(prev => ({
+            ...prev,
+            tags: [...prev.tags, tag]
+          }))
+        } else {
+          alert("Failed to create tag")
+          return
+        }
+      } catch (err) {
+        console.error("Error creating tag:", err)
+        return
+      }
+    }
+
+    const currentTags = tags ? tags.split(',').filter(t => t) : []
+    if (!currentTags.includes(tag.term_id.toString())) {
+      setTags([...currentTags, tag.term_id.toString()].join(','))
+    }
+  }
+
   const handleSave = async (isPublish: boolean) => {
+    if (!slug) {
+      alert("Slug is required")
+      return
+    }
+
+    // Double check slug duplicate before saving
+    setIsCheckingSlug(true)
+    try {
+      const checkRes = await fetch(`/api/admin/blogs/check-slug?slug=${slug}${id ? `&excludeId=${id}` : ""}`)
+      const checkData = await checkRes.json()
+      if (checkData.exists) {
+        setSlugError("This slug already exists. Please use a unique slug.")
+        setIsCheckingSlug(false)
+        alert("Cannot save: Slug already exists.")
+        return
+      }
+    } catch (err) {
+      console.error("Error checking slug during save:", err)
+    }
+    setIsCheckingSlug(false)
+
     const payload = {
       title,
       slug,
@@ -321,11 +426,18 @@ export function useEditPost() {
     setNewCategoryName,
     newCategoryParent,
     setNewCategoryParent,
+    slugError,
+    setSlugError,
+    isCheckingSlug,
+    setIsCheckingSlug,
+    currentUser,
     isDirty,
     setIsDirty,
     showSuccessModal,
     setShowSuccessModal,
     handleAddCategory,
+    handleApplySlug,
+    handleAddTag,
     handleSave,
   }
 }

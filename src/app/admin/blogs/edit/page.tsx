@@ -42,6 +42,11 @@ export default function EditPostPage() {
         showAddCategoryForm, setShowAddCategoryForm,
         newCategoryName, setNewCategoryName,
         newCategoryParent, setNewCategoryParent,
+        slugError, setSlugError,
+        isCheckingSlug, setIsCheckingSlug,
+        currentUser,
+        handleApplySlug,
+        handleAddTag,
         handleAddCategory,
         handleSave,
         showSuccessModal,
@@ -50,11 +55,11 @@ export default function EditPostPage() {
     } = useEditPost()
 
     const [previewMode, setPreviewMode] = React.useState<"desktop" | "mobile">("desktop")
-    const [activeEditors, setActiveEditors] = React.useState<string[]>([])
+    const [activeEditors, setActiveEditors] = React.useState<any[]>([])
     const editorSessionId = React.useRef<string>(Math.random().toString(36).substring(2, 10))
 
     React.useEffect(() => {
-        if (!id) return
+        if (!id || !currentUser) return
 
         const checkActiveEditors = async () => {
             try {
@@ -64,6 +69,8 @@ export default function EditPostPage() {
                     body: JSON.stringify({
                         postId: id,
                         editorId: editorSessionId.current,
+                        userId: currentUser.id,
+                        userName: currentUser.name
                     }),
                 })
                 const data = await res.json()
@@ -96,7 +103,7 @@ export default function EditPostPage() {
             window.removeEventListener("beforeunload", releaseLock)
             releaseLock()
         }
-    }, [id])
+    }, [id, currentUser])
 
     const isLocked = activeEditors.length > 0
 
@@ -107,24 +114,10 @@ export default function EditPostPage() {
             </div>
 
             {isLocked && (
-                <div 
-                    className="alert alert-danger" 
-                    role="alert" 
-                    style={{ 
-                        margin: '20px', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        gap: '10px',
-                        backgroundColor: '#f8d7da',
-                        color: '#721c24',
-                        padding: '15px',
-                        borderRadius: '4px',
-                        border: '1px solid #f5c6cb'
-                    }}
-                >
-                    <i className="bi bi-lock-fill" style={{ fontSize: '1.2rem' }}></i>
+                <div className={styles.lockBanner}>
+                    <i className="bi bi-lock-fill"></i>
                     <div>
-                        <strong>Locked:</strong> Another user is currently editing this post. Editing is disabled to prevent overwriting changes.
+                        <strong>Locked:</strong> {activeEditors.map((e: any) => `${e.user_name} (ID: ${e.user_id})`).join(", ")} is currently editing this post. Editing is disabled to prevent overwriting changes.
                     </div>
                 </div>
             )}
@@ -151,16 +144,39 @@ export default function EditPostPage() {
                             <span>Permalink:</span>
                             <a href={permalinkBase + slug} target="_blank">{permalinkBase}{slug}</a>
                             {permalinkEditable ? (
-                                <input
-                                    className={styles.slugInput}
-                                    value={slug}
-                                    onChange={(e) => setSlug(e.target.value)}
-                                    onBlur={() => setPermalinkEditable(false)}
-                                    autoFocus
-                                />
+                                <div className={styles.slugEditGroup}>
+                                    <input
+                                        className={styles.slugInput}
+                                        defaultValue={slug}
+                                        id="tempSlugInput"
+                                        autoFocus
+                                    />
+                                    <button
+                                        className={styles.applyBtn}
+                                        onClick={async () => {
+                                            const input = document.getElementById('tempSlugInput') as HTMLInputElement
+                                            const newSlug = input.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
+                                            if (!newSlug || newSlug === slug) {
+                                                setPermalinkEditable(false)
+                                                setSlugError("")
+                                                return
+                                            }
+                                            const success = await handleApplySlug(newSlug)
+                                            if (success) setPermalinkEditable(false)
+                                        }}
+                                        disabled={isCheckingSlug}
+                                    >
+                                        {isCheckingSlug ? "..." : "Apply"}
+                                    </button>
+                                    <button className={styles.cancelBtn} onClick={() => {
+                                        setPermalinkEditable(false)
+                                        setSlugError("")
+                                    }}>Cancel</button>
+                                </div>
                             ) : (
                                 <button className={styles.editBtn} onClick={() => setPermalinkEditable(true)} disabled={isLocked}>Edit</button>
                             )}
+                            {slugError && <div className={styles.errorText}>{slugError}</div>}
                         </div>
                     )}
 
@@ -215,8 +231,14 @@ export default function EditPostPage() {
 
                             <div className={styles.inputGroup}>
                                 <label>Slug</label>
-                                <input type="text" value={slug} onChange={(e) => setSlug(e.target.value)} />
+                                <input
+                                    type="text"
+                                    value={slug}
+                                    onChange={(e) => setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))}
+                                />
                             </div>
+
+
 
                             <div className={styles.inputGroup}>
                                 <label>Meta description</label>
@@ -225,14 +247,7 @@ export default function EditPostPage() {
                         </div>
                     </div>
 
-                    <div className={styles.box}>
-                        <div className={styles.boxHeader}>Slug</div>
-                        <div className={styles.boxContent}>
-                            <div className={styles.inputGroup} style={{ marginBottom: 0 }}>
-                                <input type="text" value={slug} onChange={(e) => setSlug(e.target.value)} />
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div className={styles.box}>
                         <div className={styles.boxHeader}>Author</div>
@@ -465,14 +480,10 @@ export default function EditPostPage() {
                                         onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
                                             if (e.key === "Enter") {
                                                 e.preventDefault()
-                                                const val = e.currentTarget.value
-                                                const match = metaOptions.tags.find((t: any) => t.name.toLowerCase() === val.toLowerCase())
-                                                if (match) {
-                                                    const currentTags = tags ? tags.split(',').filter(t => t) : []
-                                                    if (!currentTags.includes(match.term_id.toString())) {
-                                                        setTags([...currentTags, match.term_id.toString()].join(','))
-                                                        e.currentTarget.value = ""
-                                                    }
+                                                const val = e.currentTarget.value.trim()
+                                                if (val) {
+                                                    handleAddTag(val)
+                                                    e.currentTarget.value = ""
                                                 }
                                             }
                                         }}
@@ -485,16 +496,9 @@ export default function EditPostPage() {
                                     </datalist>
                                     <button onClick={(e) => {
                                         const input = e.currentTarget.parentElement?.querySelector('input')
-                                        if (input) {
-                                            const val = input.value
-                                            const match = metaOptions.tags.find((t: any) => t.name.toLowerCase() === val.toLowerCase())
-                                            if (match) {
-                                                const currentTags = tags ? tags.split(',').filter(t => t) : []
-                                                if (!currentTags.includes(match.term_id.toString())) {
-                                                    setTags([...currentTags, match.term_id.toString()].join(','))
-                                                    input.value = ""
-                                                }
-                                            }
+                                        if (input && input.value.trim()) {
+                                            handleAddTag(input.value.trim())
+                                            input.value = ""
                                         }
                                     }}>Add</button>
                                 </div>

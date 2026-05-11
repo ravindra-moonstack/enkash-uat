@@ -5,6 +5,7 @@ import Link from "next/link"
 import styles from "../../blogs/add/add.module.scss"
 import { useAddVideo } from "./useAddVideo"
 import MediaModal from "../../blogs/add/MediaModal"
+import SuccessModal from "../../blogs/SuccessModal"
 
 export default function AddVideoPage() {
     const {
@@ -28,6 +29,8 @@ export default function AddVideoPage() {
         showAddCategoryForm, setShowAddCategoryForm,
         newCategoryName, setNewCategoryName,
         newCategoryParent, setNewCategoryParent,
+        slugManuallyEdited, setSlugManuallyEdited,
+        showSuccessModal, setShowSuccessModal,
         handleAddCategory,
         handleSave
     } = useAddVideo()
@@ -47,9 +50,29 @@ export default function AddVideoPage() {
                             value={title}
                             onChange={(e) => {
                                 setTitle(e.target.value)
-                                if (!id) {
+                                if (!slugManuallyEdited) {
                                     setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
                                 }
+                            }}
+                        />
+                    </div>
+
+                    <div className={styles.inputGroup} style={{ marginTop: '10px' }}>
+                        <label style={{ fontSize: '12px', color: '#646970' }}>Slug</label>
+                        <input
+                            type="text"
+                            value={slug}
+                            onChange={(e) => {
+                                setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
+                                setSlugManuallyEdited(true)
+                            }}
+                            className={styles.slugInput}
+                            style={{ 
+                                width: '100%', 
+                                padding: '3px 8px', 
+                                border: '1px solid #8c8f94', 
+                                borderRadius: '4px',
+                                fontSize: '13px'
                             }}
                         />
                     </div>
@@ -237,6 +260,15 @@ export default function AddVideoPage() {
                     defaultType={mediaTarget === "self_hosted" ? "video" : "all"}
                 />
             )}
+
+            <SuccessModal
+                show={showSuccessModal}
+                onClose={() => {
+                    setShowSuccessModal(false)
+                    window.location.href = "/admin/videos"
+                }}
+                message={`Your video has been ${status === 'publish' ? 'published' : 'saved'} successfully!`}
+            />
         </div>
     )
 }

@@ -13,6 +13,15 @@ export async function PUT(req: NextRequest, props: { params: Promise<{ id: strin
             return NextResponse.json({ success: false, error: "Name and slug are required." }, { status: 400 })
         }
 
+        // Check for duplicate slug in the same taxonomy (excluding current term)
+        const [existing]: any = await pool.query(
+            "SELECT term_id FROM terms WHERE slug = ? AND taxonomy = (SELECT taxonomy FROM terms WHERE term_id = ?) AND term_id != ?",
+            [slug, id, id]
+        )
+        if (existing.length > 0) {
+            return NextResponse.json({ success: false, error: "Slug already exists in this taxonomy." }, { status: 400 })
+        }
+
         const query = "UPDATE terms SET name = ?, slug = ?, description = ?, parent = ? WHERE term_id = ?"
         await pool.query<ResultSetHeader>(query, [name, slug, description || "", parent || 0, id])
 
