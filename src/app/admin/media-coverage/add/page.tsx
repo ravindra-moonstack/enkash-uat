@@ -122,7 +122,7 @@ export default function AddMediaCoveragePage() {
                         <div className={styles.boxContent}>
                             {imageUrl ? (
                                 <div style={{ marginBottom: 10 }}>
-                                    <img src={`/uploads/${imageUrl}`} alt="Featured" style={{ width: '100%', height: 'auto', border: '1px solid #ddd', cursor: 'pointer' }} onClick={() => setShowMediaModal(true)} />
+                                    <img src={`${imageUrl}`} alt="Featured" style={{ width: '100%', height: 'auto', border: '1px solid #ddd', cursor: 'pointer' }} onClick={() => setShowMediaModal(true)} />
                                 </div>
                             ) : null}
                             <a className={styles.setFeaturedImage} onClick={() => setShowMediaModal(true)}>
@@ -151,7 +151,7 @@ export default function AddMediaCoveragePage() {
                     onClose={() => setShowMediaModal(false)}
                     onSelect={(media) => {
                         setMediaCoverageImage(media.id)
-                        setImageUrl(media.url.split('/').pop() || "")
+                        setImageUrl(media.url)
                         setShowMediaModal(false)
                     }}
                     title="Set Coverage Image"
