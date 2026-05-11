@@ -4,9 +4,8 @@ export function useMediaCoverage() {
   const [items, setItems] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [statusFilter, setStatusFilter] = useState("all")
-  const [search, setSearch] = useState("")
-  const [dateFilter, setDateFilter] = useState("all")
-  const [metaOptions, setMetaOptions] = useState({ dates: [] })
+  const [search, setSearch] = useState("") // This will be the actual search term used in fetch
+  const [localSearch, setLocalSearch] = useState("") // This will be the value in the input field
   const [page, setPage] = useState(1)
   const [pageInput, setPageInput] = useState("1")
   const [totalPages, setTotalPages] = useState(1)
@@ -17,7 +16,7 @@ export function useMediaCoverage() {
     setLoading(true)
     try {
       const res = await fetch(
-        `/api/admin/media-coverage?status=${statusFilter}&search=${search}&date=${dateFilter}&page=${page}&limit=40`
+        `/api/admin/media-coverage?status=${statusFilter}&search=${search}&page=${page}&limit=40`
       )
       const data = await res.json()
       setItems(data.items || [])
@@ -30,32 +29,16 @@ export function useMediaCoverage() {
     } finally {
       setLoading(false)
     }
-  }, [statusFilter, search, dateFilter, page])
+  }, [statusFilter, search, page])
 
   useEffect(() => {
     fetchItems()
   }, [fetchItems])
 
-  useEffect(() => {
-    fetch("/api/admin/media-coverage?action=getDates")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          setMetaOptions({
-            dates: data.dates || [],
-          })
-        }
-      })
-  }, [])
-
-  const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const handleSearch = () => {
-    if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current)
-    searchTimeoutRef.current = setTimeout(() => {
-      setPage(1)
-      fetchItems()
-    }, 300)
+    setSearch(localSearch)
+    setPage(1)
   }
 
   const handlePageInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -107,11 +90,8 @@ export function useMediaCoverage() {
     loading,
     statusFilter,
     setStatusFilter,
-    search,
-    setSearch,
-    dateFilter,
-    setDateFilter,
-    metaOptions,
+    search: localSearch,
+    setSearch: setLocalSearch,
     page,
     setPage,
     pageInput,
