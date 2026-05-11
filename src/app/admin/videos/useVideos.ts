@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
 
 export function useVideos() {
   const [videos, setVideos] = useState<any[]>([])
@@ -54,9 +54,14 @@ export function useVideos() {
       })
   }, [])
 
+  const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
   const handleSearch = () => {
-    setPage(1)
-    fetchVideos()
+    if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current)
+    searchTimeoutRef.current = setTimeout(() => {
+      setPage(1)
+      fetchVideos()
+    }, 300)
   }
 
   const handlePageInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

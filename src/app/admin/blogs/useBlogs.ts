@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 export function useBlogs() {
   const [posts, setPosts] = useState<any[]>([])
@@ -72,12 +72,17 @@ export function useBlogs() {
     fetchPosts()
     fetchMeta()
     setPageInput(page.toString())
-  }, [statusFilter, page, dateFilter, categoryFilter, sortField, sortOrder])
+  }, [statusFilter, page, sortField, sortOrder])
+
+  const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const handleSearch = () => {
-    setPage(1)
-    setPageInput("1")
-    fetchPosts()
+    if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current)
+    searchTimeoutRef.current = setTimeout(() => {
+      setPage(1)
+      setPageInput("1")
+      fetchPosts()
+    }, 300)
   }
 
   const handlePageInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
