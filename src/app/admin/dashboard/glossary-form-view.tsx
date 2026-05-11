@@ -144,6 +144,8 @@ const GlossaryFormView = ({
     }
   }, [editingItem?.id])
 
+  const isLocked = activeEditors.length > 0
+
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.header}>
@@ -164,8 +166,25 @@ const GlossaryFormView = ({
             ? `Updating details for "${editingItem.word}"`
             : "Add a new term and definition to the glossary"}
         </p>
+        
+        {isLocked && (
+          <div
+            className="alert alert-danger mt-3"
+            role="alert"
+            style={{ display: "flex", alignItems: "center", gap: "10px" }}
+          >
+            <i
+              className="bi bi-lock-fill"
+              style={{ fontSize: "1.2rem" }}
+            ></i>
+            <div>
+              <strong>Locked:</strong> Another user is currently editing this
+              item. Editing is disabled to prevent overwriting changes.
+            </div>
+          </div>
+        )}
 
-        {activeEditors.length > 0 && (
+        {!isLocked && activeEditors.length > 0 && (
           <div
             className="alert alert-warning mt-3"
             role="alert"
@@ -190,213 +209,215 @@ const GlossaryFormView = ({
       )}
 
       <form onSubmit={handleSubmit} className={styles.glossaryForm}>
-        <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="word">
-            Word <span className={styles.required}>*</span>
-          </label>
-          <input
-            id="word"
-            type="text"
-            className={`${styles.input} ${fieldErrors.word ? styles.inputError : ""}`}
-            placeholder="Enter the word or term"
-            value={word}
-            onChange={handleWordChange}
-          />
-          {fieldErrors.word && (
-            <div className={styles.errorText}>{fieldErrors.word}</div>
-          )}
-        </div>
-
-        <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="slug">
-            Slug <span className={styles.required}>*</span>
-          </label>
-          <input
-            id="slug"
-            type="text"
-            className={`${styles.input} ${fieldErrors.slug ? styles.inputError : ""}`}
-            placeholder="url-friendly-slug"
-            value={slug}
-            onChange={handleSlugChange}
-          />
-          {fieldErrors.slug && (
-            <div className={styles.errorText}>{fieldErrors.slug}</div>
-          )}
-        </div>
-
-        <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="metaTitle">
-            Meta Title <span className={styles.required}>*</span>
-          </label>
-          <input
-            id="metaTitle"
-            type="text"
-            className={`${styles.input} ${fieldErrors.metaTitle ? styles.inputError : ""}`}
-            placeholder="Enter SEO Meta Title"
-            value={metaTitle}
-            onChange={(e) => setMetaTitle(e.target.value)}
-          />
-          {fieldErrors.metaTitle && (
-            <div className={styles.errorText}>{fieldErrors.metaTitle}</div>
-          )}
-        </div>
-
-        <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="metaDescription">
-            Meta Description <span className={styles.required}>*</span>
-          </label>
-          <textarea
-            id="metaDescription"
-            className={`${styles.input} ${fieldErrors.metaDescription ? styles.inputError : ""}`}
-            placeholder="Enter SEO Meta Description"
-            value={metaDescription}
-            onChange={(e) => setMetaDescription(e.target.value)}
-            rows={3}
-            style={{ height: "auto" }}
-          />
-          {fieldErrors.metaDescription && (
-            <div className={styles.errorText}>
-              {fieldErrors.metaDescription}
-            </div>
-          )}
-        </div>
-
-        <div className={styles.formGroup}>
-          <label className={styles.label}>Feature Image</label>
-          <div className={styles.imageUploadWrapper}>
-            {featureImage && (
-              <div className={styles.imagePreviewContainer}>
-                <img src={featureImage} alt="Feature" />
-                <button
-                  type="button"
-                  onClick={() => setFeatureImage("")}
-                  style={{
-                    position: "absolute",
-                    top: "4px",
-                    right: "4px",
-                    background: "rgba(255, 0, 0, 0.8)",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "50%",
-                    width: "24px",
-                    height: "24px",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  title="Remove Image"
-                >
-                  &times;
-                </button>
-              </div>
-            )}
-            <div className={styles.uploadControls}>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={(e) => {
-                  if (e.target.files?.[0]) {
-                    handleFeatureImageUpload(e.target.files[0])
-                  }
-                }}
-                className={styles.fileInput}
-              />
-              <p className={styles.helperText}>Recommended size: 1200x630px</p>
-            </div>
-          </div>
-        </div>
-
-        {featureImage && (
+        <fieldset disabled={isLocked}>
           <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="featureImageAlt">
-              Feature Image Alt Text
+            <label className={styles.label} htmlFor="word">
+              Word <span className={styles.required}>*</span>
             </label>
             <input
-              id="featureImageAlt"
+              id="word"
               type="text"
-              className={styles.input}
-              placeholder="Describe the feature image for SEO..."
-              value={featureImageAlt}
-              onChange={(e) => setFeatureImageAlt(e.target.value)}
+              className={`${styles.input} ${fieldErrors.word ? styles.inputError : ""}`}
+              placeholder="Enter the word or term"
+              value={word}
+              onChange={handleWordChange}
             />
-          </div>
-        )}
-
-        <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="content">
-            Definition/Content <span className={styles.required}>*</span>
-          </label>
-
-          <div
-            className={`${styles.editorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}
-            style={{ display: showHtmlView ? "none" : "block" }}
-          >
-            <div ref={editorRef} className={styles.quillEditor} />
+            {fieldErrors.word && (
+              <div className={styles.errorText}>{fieldErrors.word}</div>
+            )}
           </div>
 
-          <div
-            className={`${styles.htmlEditorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}
-            style={{ display: showHtmlView ? "block" : "none" }}
-          >
-            <div className={styles.htmlEditorHeader}>
-              <span className={styles.htmlEditorTitle}>HTML Editor</span>
-              <button
-                type="button"
-                onClick={applyHtmlChanges}
-                className={styles.applyHtmlButton}
-              >
-                Apply Changes
-              </button>
-            </div>
-            <textarea
-              className={styles.htmlEditor}
-              value={htmlContent}
-              onChange={handleHtmlChange}
-              placeholder="Edit HTML here..."
-            />
-          </div>
-
-          {fieldErrors.content && (
-            <div className={styles.errorText}>{fieldErrors.content}</div>
-          )}
-        </div>
-
-        <div className={styles.formGroup}>
-          <label className={styles.checkboxLabel}>
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="slug">
+              Slug <span className={styles.required}>*</span>
+            </label>
             <input
-              type="checkbox"
-              checked={showRelatedBlogs}
-              onChange={(e) => setShowRelatedBlogs(e.target.checked)}
-              className={styles.checkbox}
+              id="slug"
+              type="text"
+              className={`${styles.input} ${fieldErrors.slug ? styles.inputError : ""}`}
+              placeholder="url-friendly-slug"
+              value={slug}
+              onChange={handleSlugChange}
             />
-            <span className={styles.checkboxText}>
-              Show related blogs for this glossary item
-            </span>
-          </label>
-        </div>
+            {fieldErrors.slug && (
+              <div className={styles.errorText}>{fieldErrors.slug}</div>
+            )}
+          </div>
 
-        {showRelatedBlogs && (
-          <div className={styles.blogLinksSection}>
-            <h3 className={styles.sectionTitle}>Related Blog</h3>
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="metaTitle">
+              Meta Title <span className={styles.required}>*</span>
+            </label>
+            <input
+              id="metaTitle"
+              type="text"
+              className={`${styles.input} ${fieldErrors.metaTitle ? styles.inputError : ""}`}
+              placeholder="Enter SEO Meta Title"
+              value={metaTitle}
+              onChange={(e) => setMetaTitle(e.target.value)}
+            />
+            {fieldErrors.metaTitle && (
+              <div className={styles.errorText}>{fieldErrors.metaTitle}</div>
+            )}
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="metaDescription">
+              Meta Description <span className={styles.required}>*</span>
+            </label>
+            <textarea
+              id="metaDescription"
+              className={`${styles.input} ${fieldErrors.metaDescription ? styles.inputError : ""}`}
+              placeholder="Enter SEO Meta Description"
+              value={metaDescription}
+              onChange={(e) => setMetaDescription(e.target.value)}
+              rows={3}
+              style={{ height: "auto" }}
+            />
+            {fieldErrors.metaDescription && (
+              <div className={styles.errorText}>
+                {fieldErrors.metaDescription}
+              </div>
+            )}
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Feature Image</label>
+            <div className={styles.imageUploadWrapper}>
+              {featureImage && (
+                <div className={styles.imagePreviewContainer}>
+                  <img src={featureImage} alt="Feature" />
+                  <button
+                    type="button"
+                    onClick={() => setFeatureImage("")}
+                    style={{
+                      position: "absolute",
+                      top: "4px",
+                      right: "4px",
+                      background: "rgba(255, 0, 0, 0.8)",
+                      color: "white",
+                      border: "none",
+                      borderRadius: "50%",
+                      width: "24px",
+                      height: "24px",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    title="Remove Image"
+                  >
+                    &times;
+                  </button>
+                </div>
+              )}
+              <div className={styles.uploadControls}>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => {
+                    if (e.target.files?.[0]) {
+                      handleFeatureImageUpload(e.target.files[0])
+                    }
+                  }}
+                  className={styles.fileInput}
+                />
+                <p className={styles.helperText}>Recommended size: 1200x630px</p>
+              </div>
+            </div>
+          </div>
+
+          {featureImage && (
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="blogWord">
-                Blog Related Word <span className={styles.required}>*</span>
+              <label className={styles.label} htmlFor="featureImageAlt">
+                Feature Image Alt Text
               </label>
               <input
-                id="blogWord"
+                id="featureImageAlt"
                 type="text"
-                className={`${styles.input} ${fieldErrors.blogWord ? styles.inputError : ""}`}
-                placeholder="Enter one related blog word"
-                value={blogWord}
-                onChange={handleBlogWordChange}
+                className={styles.input}
+                placeholder="Describe the feature image for SEO..."
+                value={featureImageAlt}
+                onChange={(e) => setFeatureImageAlt(e.target.value)}
               />
-              {fieldErrors.blogWord && (
-                <div className={styles.errorText}>{fieldErrors.blogWord}</div>
-              )}
             </div>
+          )}
+
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="content">
+              Definition/Content <span className={styles.required}>*</span>
+            </label>
+
+            <div
+              className={`${styles.editorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}
+              style={{ display: showHtmlView ? "none" : "block" }}
+            >
+              <div ref={editorRef} className={styles.quillEditor} />
+            </div>
+
+            <div
+              className={`${styles.htmlEditorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}
+              style={{ display: showHtmlView ? "block" : "none" }}
+            >
+              <div className={styles.htmlEditorHeader}>
+                <span className={styles.htmlEditorTitle}>HTML Editor</span>
+                <button
+                  type="button"
+                  onClick={applyHtmlChanges}
+                  className={styles.applyHtmlButton}
+                >
+                  Apply Changes
+                </button>
+              </div>
+              <textarea
+                className={styles.htmlEditor}
+                value={htmlContent}
+                onChange={handleHtmlChange}
+                placeholder="Edit HTML here..."
+              />
+            </div>
+
+            {fieldErrors.content && (
+              <div className={styles.errorText}>{fieldErrors.content}</div>
+            )}
           </div>
-        )}
+
+          <div className={styles.formGroup}>
+            <label className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                checked={showRelatedBlogs}
+                onChange={(e) => setShowRelatedBlogs(e.target.checked)}
+                className={styles.checkbox}
+              />
+              <span className={styles.checkboxText}>
+                Show related blogs for this glossary item
+              </span>
+            </label>
+          </div>
+
+          {showRelatedBlogs && (
+            <div className={styles.blogLinksSection}>
+              <h3 className={styles.sectionTitle}>Related Blog</h3>
+              <div className={styles.formGroup}>
+                <label className={styles.label} htmlFor="blogWord">
+                  Blog Related Word <span className={styles.required}>*</span>
+                </label>
+                <input
+                  id="blogWord"
+                  type="text"
+                  className={`${styles.input} ${fieldErrors.blogWord ? styles.inputError : ""}`}
+                  placeholder="Enter one related blog word"
+                  value={blogWord}
+                  onChange={handleBlogWordChange}
+                />
+                {fieldErrors.blogWord && (
+                  <div className={styles.errorText}>{fieldErrors.blogWord}</div>
+                )}
+              </div>
+            </div>
+          )}
+        </fieldset>
 
         <div className={styles.actionButtons}>
           <CommanButton
@@ -415,7 +436,7 @@ const GlossaryFormView = ({
             }
             theme="blue"
             url={() => handleSubmit()}
-            isDisabled={isSubmitting || !isDirty}
+            isDisabled={isSubmitting || !isDirty || isLocked}
           />
         </div>
       </form>

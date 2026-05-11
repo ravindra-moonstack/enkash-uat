@@ -6,9 +6,10 @@ import { Editor as TinyMCEEditor } from "@tinymce/tinymce-react"
 interface EditorProps {
     value: string
     onChange: (value: string) => void
+    disabled?: boolean
 }
 
-export default function Editor({ value, onChange }: EditorProps) {
+export default function Editor({ value, onChange, disabled }: EditorProps) {
     const apiKey = process.env.NEXT_PUBLIC_TINYMCE_API_KEY && process.env.NEXT_PUBLIC_TINYMCE_API_KEY !== "no-api-key"
         ? process.env.NEXT_PUBLIC_TINYMCE_API_KEY
         : "jh7vh9v52fnbaqxly036le6qtmrk1xngd4e3bzqstg3cr2sd";
@@ -17,6 +18,7 @@ export default function Editor({ value, onChange }: EditorProps) {
         <TinyMCEEditor
             apiKey={"jh7vh9v52fnbaqxly036le6qtmrk1xngd4e3bzqstg3cr2sd"}
             value={value}
+            disabled={disabled}
             onEditorChange={(content) => onChange(content)}
             init={{
                 height: 500,

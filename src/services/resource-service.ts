@@ -21,11 +21,17 @@ export const getCategoryData = async (slug: string, search?: string) => {
   return res.json()
 }
 
-export const getPostBySlug = async (slug: string) => {
+export const getPostBySlug = async (slug: string, token?: string) => {
+  const headers: any = {}
+  if (token) {
+    headers["Cookie"] = `token=${token}`
+  }
+
   const res = await fetch(
     `${BASE_URL}/api/resources/blogs/getPostBySlug?slug=${slug}`,
     {
       cache: "no-store",
+      headers,
     }
   )
   if (!res.ok) return null

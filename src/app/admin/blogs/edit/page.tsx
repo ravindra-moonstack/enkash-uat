@@ -50,6 +50,55 @@ export default function EditPostPage() {
     } = useEditPost()
 
     const [previewMode, setPreviewMode] = React.useState<"desktop" | "mobile">("desktop")
+    const [activeEditors, setActiveEditors] = React.useState<string[]>([])
+    const editorSessionId = React.useRef<string>(Math.random().toString(36).substring(2, 10))
+
+    React.useEffect(() => {
+        if (!id) return
+
+        const checkActiveEditors = async () => {
+            try {
+                const res = await fetch("/api/admin/blogs/active-editors", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        postId: id,
+                        editorId: editorSessionId.current,
+                    }),
+                })
+                const data = await res.json()
+                if (data.success) {
+                    setActiveEditors(data.activeEditors || [])
+                }
+            } catch (err) {
+                console.error("Error checking active editors", err)
+            }
+        }
+
+        const releaseLock = () => {
+            if (id) {
+                fetch(
+                    `/api/admin/blogs/active-editors?postId=${id}&editorId=${editorSessionId.current}`,
+                    {
+                        method: "DELETE",
+                        keepalive: true,
+                    }
+                ).catch((e) => console.error("Failed to release lock", e))
+            }
+        }
+
+        checkActiveEditors()
+        const interval = setInterval(checkActiveEditors, 5000)
+        window.addEventListener("beforeunload", releaseLock)
+
+        return () => {
+            clearInterval(interval)
+            window.removeEventListener("beforeunload", releaseLock)
+            releaseLock()
+        }
+    }, [id])
+
+    const isLocked = activeEditors.length > 0
 
     return (
         <div className={styles.container}>
@@ -57,13 +106,37 @@ export default function EditPostPage() {
                 <h1>Edit Post</h1>
             </div>
 
-            <div className={styles.layout}>
-                <div className={styles.leftColumn}>
+            {isLocked && (
+                <div 
+                    className="alert alert-danger" 
+                    role="alert" 
+                    style={{ 
+                        margin: '20px', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        gap: '10px',
+                        backgroundColor: '#f8d7da',
+                        color: '#721c24',
+                        padding: '15px',
+                        borderRadius: '4px',
+                        border: '1px solid #f5c6cb'
+                    }}
+                >
+                    <i className="bi bi-lock-fill" style={{ fontSize: '1.2rem' }}></i>
+                    <div>
+                        <strong>Locked:</strong> Another user is currently editing this post. Editing is disabled to prevent overwriting changes.
+                    </div>
+                </div>
+            )}
+
+            <div className={`${styles.layout} ${isLocked ? styles.locked : ""}`}>
+                <fieldset disabled={isLocked} className={styles.leftColumn}>
                     <div className={styles.titleInput}>
                         <input
                             type="text"
                             placeholder="Add Title"
                             value={title}
+                            disabled={isLocked}
                             onChange={(e) => {
                                 setTitle(e.target.value)
                                 if (!permalinkEditable) {
@@ -86,22 +159,23 @@ export default function EditPostPage() {
                                     autoFocus
                                 />
                             ) : (
-                                <button className={styles.editBtn} onClick={() => setPermalinkEditable(true)}>Edit</button>
+                                <button className={styles.editBtn} onClick={() => setPermalinkEditable(true)} disabled={isLocked}>Edit</button>
                             )}
                         </div>
                     )}
 
                     <div>
                         <button className={styles.addMediaBtn} onClick={() => {
+                            if (isLocked) return
                             setMediaTarget("editor")
                             setShowMediaModal(true)
-                        }}>
+                        }} disabled={isLocked}>
                             <i className="bi bi-camera"></i> Add Media
                         </button>
                     </div>
 
                     <div className={styles.editorContainer}>
-                        <Editor value={content} onChange={setContent} />
+                        <Editor value={content} onChange={setContent} disabled={isLocked} />
                     </div>
 
                     <div className={styles.box}>
@@ -173,14 +247,14 @@ export default function EditPostPage() {
                         </div>
                     </div>
 
-                </div>
+                </fieldset>
 
-                <div className={styles.rightColumn}>
+                <fieldset disabled={isLocked} className={styles.rightColumn}>
                     <div className={styles.box}>
                         <div className={styles.boxHeader}>Publish</div>
                         <div className={styles.boxContent}>
                             <div className={styles.publishActions}>
-                                <button className={styles.actionBtn} onClick={() => handleSave(false)}>Save Draft</button>
+                                <button className={styles.actionBtn} onClick={() => !isLocked && handleSave(false)} disabled={isLocked}>Save Draft</button>
                                 <a href={`${permalinkBase}${slug}`} target="_blank" className={styles.actionBtn} style={{ display: 'inline-block', textAlign: 'center', textDecoration: 'none' }}>Preview</a>
                             </div>
                             <div className={styles.publishStatus}>
@@ -192,8 +266,8 @@ export default function EditPostPage() {
                                 </div>
                             </div>
                             <div className={styles.publishFooter}>
-                                <button className={styles.trashBtn}>Move to Trash</button>
-                                <button className={styles.primaryBtn} onClick={() => handleSave(true)}>
+                                <button className={styles.trashBtn} disabled={isLocked}>Move to Trash</button>
+                                <button className={styles.primaryBtn} onClick={() => !isLocked && handleSave(true)} disabled={isLocked}>
                                     {status === "publish" ? "Update" : "Publish"}
                                 </button>
                             </div>
@@ -442,8 +516,7 @@ export default function EditPostPage() {
                             </div>
                         </div>
                     </div>
-
-                </div>
+                </fieldset>
             </div>
 
             {showMediaModal && (
