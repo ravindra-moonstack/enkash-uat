@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import pool from "@/src/lib/dbConnect"
 import { cookies } from "next/headers"
 
-export async function getBlogsCategoryName(
+async function getBlogsCategoryName(
   category: string,
   limit: number,
   offset: number,
