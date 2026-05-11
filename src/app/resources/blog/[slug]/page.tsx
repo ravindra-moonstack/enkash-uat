@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata } from "next"
 import styles from "./styles.module.scss"
 import Link from "next/link"
+import { cookies } from "next/headers"
 import BlogBanner from "@/src/components/blog-components/BlogBanner"
 import BlogBody from "@/src/components/blog-components/BlogBody"
 import AuthorSection from "@/src/components/blog-components/AuthorSection"
@@ -12,7 +13,9 @@ import { getBlogCategories, getPostBySlug } from "@/src/services/resource-servic
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const json = await getPostBySlug(slug)
+  const cookieStore = await cookies()
+  const token = cookieStore.get("token")?.value
+  const json = await getPostBySlug(slug, token)
 
   if (json?.error || !json?.posts || json?.posts?.length === 0) {
     return {
@@ -57,7 +60,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
-  const json = await getPostBySlug(slug)
+  const cookieStore = await cookies()
+  const token = cookieStore.get("token")?.value
+  const json = await getPostBySlug(slug, token)
   const navData = await getBlogCategories()
 
   if (json?.error || !json?.posts || json?.posts?.length === 0) {

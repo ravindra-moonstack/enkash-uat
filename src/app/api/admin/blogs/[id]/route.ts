@@ -1,5 +1,6 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
+import { recordAuditLog } from "@/src/utils/auditLogger"
 
 export async function PATCH(
   request: Request,
@@ -10,6 +11,13 @@ export async function PATCH(
     const data = await request.json()
 
     if (data.status) {
+      // Get old status for audit log
+      const [oldRows]: any = await pool.query(
+        `SELECT status FROM posts WHERE id = ?`,
+        [id]
+      )
+      const oldStatus = oldRows[0]?.status
+
       await pool.query(`UPDATE posts SET status = ? WHERE id = ?`, [
         data.status,
         id,
@@ -27,6 +35,15 @@ export async function PATCH(
         )
         WHERE t.taxonomy = 'category'
       `)
+
+      // Audit Log
+      await recordAuditLog(
+        "posts",
+        id,
+        "UPDATE",
+        { status: oldStatus },
+        { status: data.status }
+      )
     }
 
     return NextResponse.json({ success: true })
@@ -43,6 +60,12 @@ export async function PUT(
   try {
     const id = (await params).id
     const data = await request.json()
+
+    // Get old data for audit log
+    const [oldRows]: any = await pool.query(`SELECT * FROM posts WHERE id = ?`, [
+      id,
+    ])
+    const oldData = oldRows[0]
 
     const query = `
       UPDATE posts SET
@@ -64,7 +87,7 @@ export async function PUT(
       data.category_featured_blog || "no",
       data.categories || "",
       data.tags || "",
-      id
+      id,
     ])
 
     const metaQuery = `
@@ -80,7 +103,7 @@ export async function PUT(
       data.meta_title || "",
       data.meta_description || "",
       data.focus_keyword || "",
-      id
+      id,
     ])
 
     // Update category counts
@@ -95,6 +118,9 @@ export async function PUT(
       )
       WHERE t.taxonomy = 'category'
     `)
+
+    // Audit Log
+    await recordAuditLog("posts", id, "UPDATE", oldData, data)
 
     return NextResponse.json({ success: true })
   } catch (error: any) {

@@ -1,5 +1,6 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
+import { recordAuditLog } from "@/src/utils/auditLogger"
 
 export async function GET(request: Request) {
   try {
@@ -164,6 +165,9 @@ export async function POST(request: Request) {
       )
       WHERE t.taxonomy = 'category'
     `)
+
+    // Audit Log
+    await recordAuditLog("posts", postId, "CREATE", null, data)
 
     return NextResponse.json({ success: true, id: postId })
   } catch (error: any) {
