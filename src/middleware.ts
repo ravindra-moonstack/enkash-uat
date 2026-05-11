@@ -47,7 +47,7 @@ export async function middleware(request: NextRequest) {
     try {
       const secret = new TextEncoder().encode(process.env.JWT_SECRET)
       await jwtVerify(token, secret)
-      return NextResponse.redirect(new URL("/admin/glossary", request.url))
+      return NextResponse.redirect(new URL("/admin/dashboard", request.url))
     } catch (error) {
       console.error("Middleware Auth Error:", error)
     }

@@ -27,7 +27,7 @@ export default function AdminLayout({
             if (token) {
                 setIsAuthenticated(true)
                 if (isLoginPage) {
-                    router.push("/admin/glossary")
+                    router.push("/admin/dashboard")
                 }
             } else {
                 setIsAuthenticated(false)
@@ -81,19 +81,62 @@ export default function AdminLayout({
 
                 <nav className={styles.navSection}>
                     <Link
-                        href="/admin/glossary"
-                        className={`${styles.navItem} ${pathname === '/admin/glossary' ? styles.active : ''}`}
+                        href="/admin/dashboard"
+                        className={`${styles.navItem} ${pathname === '/admin/dashboard' ? styles.active : ''}`}
                     >
                         <i className="bi bi-journal-text"></i>
                         Glossary
                     </Link>
                     <Link
-                        href="/admin/glossary/categories"
-                        className={`${styles.navItem} ${pathname.includes('/glossary/categories') ? styles.active : ''}`}
+                        href="/admin/dashboard/categories"
+                        className={`${styles.navItem} ${pathname.includes('/dashboard/categories') ? styles.active : ''}`}
                     >
                         <i className="bi bi-layout-text-window-reverse"></i>
                         Glossary Home Sections
                     </Link>
+                    <div className={`${styles.navItemWrapper} ${pathname.includes('/admin/blogs') ? styles.activeWrapper : ''}`}>
+                        <Link href="/admin/blogs" className={`${styles.navItem} ${pathname.includes('/admin/blogs') ? styles.active : ''}`}>
+                            <i className="bi bi-pencil-square"></i>
+                            Blogs
+                        </Link>
+                        <div className={styles.subMenu}>
+                            <Link href="/admin/blogs" className={styles.subMenuItem}>All Posts</Link>
+                            <Link href="/admin/blogs/add" className={styles.subMenuItem}>Add Post</Link>
+                            <Link href="/admin/blogs/categories" className={styles.subMenuItem}>Categories</Link>
+                            <Link href="/admin/blogs/tags" className={styles.subMenuItem}>Tags</Link>
+                        </div>
+                    </div>
+                    <div className={`${styles.navItemWrapper} ${pathname.includes('/admin/media') && !pathname.includes('/admin/media-coverage') ? styles.activeWrapper : ''}`}>
+                        <Link href="/admin/media" className={`${styles.navItem} ${pathname.includes('/admin/media') && !pathname.includes('/admin/media-coverage') ? styles.active : ''}`}>
+                            <i className="bi bi-images"></i>
+                            Media
+                        </Link>
+                        <div className={styles.subMenu}>
+                            <Link href="/admin/media" className={styles.subMenuItem}>Library</Link>
+                            <Link href="/admin/media?add=true" className={styles.subMenuItem}>Add Media File</Link>
+                        </div>
+                    </div>
+                    <div className={`${styles.navItemWrapper} ${pathname.includes('/admin/videos') ? styles.activeWrapper : ''}`}>
+                        <Link href="/admin/videos" className={`${styles.navItem} ${pathname.includes('/admin/videos') ? styles.active : ''}`}>
+                            <i className="bi bi-play-circle"></i>
+                            Videos
+                        </Link>
+                        <div className={styles.subMenu}>
+                            <Link href="/admin/videos" className={styles.subMenuItem}>All Videos</Link>
+                            <Link href="/admin/videos/add" className={styles.subMenuItem}>Add New Video</Link>
+                            <Link href="/admin/videos/categories" className={styles.subMenuItem}>Video Categories</Link>
+                        </div>
+                    </div>
+                    <div className={`${styles.navItemWrapper} ${pathname.includes('/admin/media-coverage') ? styles.activeWrapper : ''}`}>
+                        <Link href="/admin/media-coverage" className={`${styles.navItem} ${pathname.includes('/admin/media-coverage') ? styles.active : ''}`}>
+                            <i className="bi bi-newspaper"></i>
+                            Media Coverage
+                        </Link>
+                        <div className={styles.subMenu}>
+                            <Link href="/admin/media-coverage" className={styles.subMenuItem}>All Coverage</Link>
+                            <Link href="/admin/media-coverage/add" className={styles.subMenuItem}>Add New</Link>
+                        </div>
+                    </div>
                     <Link
                         href="/admin/audit-logs"
                         className={`${styles.navItem} ${pathname === '/admin/audit-logs' ? styles.active : ''}`}
