@@ -133,7 +133,7 @@ export default function BlogsPage() {
                                     {post.title || "(no title)"}
                                     {post.status === "draft" && " — Draft"}
                                     <div className={styles.rowActions}>
-                                        <Link href={`/admin/blogs/add?id=${post.id}`}>Edit</Link> |
+                                        <Link href={`/admin/blogs/edit?id=${post.id}`}>Edit</Link> |
                                         <a className={styles.trash} onClick={() => handleTrash(post.id)}>Trash</a> |
                                         <Link href={`/resources/blog/${post.slug || post.id}`} target="_blank">{post.status === 'publish' ? 'View' : 'Preview'}</Link>
                                     </div>

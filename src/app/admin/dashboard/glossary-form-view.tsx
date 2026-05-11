@@ -266,7 +266,7 @@ const GlossaryFormView = ({
           <div className={styles.imageUploadWrapper}>
             {featureImage && (
               <div className={styles.imagePreviewContainer}>
-                <Image src={featureImage} alt="Feature" />
+                <img src={featureImage} alt="Feature" />
                 <button
                   type="button"
                   onClick={() => setFeatureImage("")}

@@ -10,7 +10,7 @@ import { BlogNav } from "@/src/components"
 
 import { getBlogCategories, getPostBySlug } from "@/src/services/resource-service"
 
-export async function generateMetaData({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const json = await getPostBySlug(slug)
 
@@ -23,10 +23,36 @@ export async function generateMetaData({ params }: { params: Promise<{ slug: str
 
   const post = json.posts[0]
 
+  // Clean up meta title placeholders (%%page%%, %%sep%%, %%sitename%%)
+  let metaTitle = post.meta_title || post.title
+  metaTitle = metaTitle
+    .replace(/%%page%%/g, "")
+    .replace(/%%sep%%/g, "|")
+    .replace(/%%sitename%%/g, "EnKash")
+    .replace(/\s+/g, " ")
+    .trim()
+
+  const imageUrl = post.featured_image_url
+    ? (post.featured_image_url.startsWith("http")
+      ? post.featured_image_url
+      : `/uploads/${post.featured_image_url}`)
+    : ""
+
   return {
-    title: post.meta_title || post.title,
+    title: metaTitle,
     description: post.meta_description || "",
     keywords: post.focus_keyword ? post.focus_keyword.split(",").map((k: string) => k.trim()) : [],
+    openGraph: {
+      title: metaTitle,
+      description: post.meta_description || "",
+      images: imageUrl ? [{ url: imageUrl, alt: post.image_alt || "" }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaTitle,
+      description: post.meta_description || "",
+      images: imageUrl ? [imageUrl] : [],
+    },
   }
 }
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -118,7 +144,9 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           slug={result[0].slug}
           title={result[0].title}
         />
-        <AuthorSection authorData={result[0]} />
+        {(result[0].remove_author_details === 0 || result[0].remove_author_details === null || result[0].remove_author_details === undefined) && (
+          <AuthorSection authorData={result[0]} />
+        )}
         <RelatedBlogs relatedBlogs={relatedBlogs} />
       </div>
     </>

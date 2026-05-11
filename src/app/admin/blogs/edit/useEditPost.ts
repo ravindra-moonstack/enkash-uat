@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { getImageUrl } from "@/src/utils/common"
 
-export function useAddPost() {
+export function useEditPost() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const id = searchParams.get("id")
@@ -79,6 +79,9 @@ export function useAddPost() {
           }
         })
         .catch((err) => console.error("Error fetching post data", err))
+    } else {
+      // If no ID in edit page, maybe redirect back?
+      router.push("/admin/blogs")
     }
 
     // Fetch meta (users, categories)
@@ -105,7 +108,7 @@ export function useAddPost() {
       isInitialLoad.current = false
     }, 1000)
     return () => clearTimeout(timer)
-  }, [id])
+  }, [id, router])
 
   useEffect(() => {
     if (!isInitialLoad.current) {

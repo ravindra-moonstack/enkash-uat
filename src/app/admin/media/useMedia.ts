@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from "react"
 import { useSearchParams } from "next/navigation"
 
-export const useMedia = (initialItemsPerPage: number = 80, defaultType: string = "all") => {
+export const useMedia = (
+  initialItemsPerPage: number = 80,
+  defaultType: string = "all"
+) => {
   const searchParams = useSearchParams()
 
   const [showUpload, setShowUpload] = useState(
@@ -85,12 +88,21 @@ export const useMedia = (initialItemsPerPage: number = 80, defaultType: string =
   useEffect(() => {
     setPage(1)
     fetchMedia(1, true)
-  }, [typeFilter, dateFilter])
+  }, []) // Removed typeFilter, dateFilter
+
+  const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleSearch = () => {
+    if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current)
+    searchTimeoutRef.current = setTimeout(() => {
+      setPage(1)
+      fetchMedia(1, true)
+    }, 300)
+  }
 
   const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      setPage(1)
-      fetchMedia(1, true)
+      handleSearch()
     }
   }
 
@@ -315,6 +327,7 @@ export const useMedia = (initialItemsPerPage: number = 80, defaultType: string =
     setModalIndex,
     itemsPerPage,
     fetchMedia,
+    handleSearch,
     handleSearchKeyDown,
     loadMore,
     toggleBulkMode,

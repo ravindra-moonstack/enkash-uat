@@ -12,7 +12,7 @@ export default function MediaPage() {
         showUpload, setShowUpload,
         mediaItems,
         totalItems,
-        page,
+        page, setPage,
         loading,
         uploading,
         urlCopied,
@@ -26,6 +26,8 @@ export default function MediaPage() {
         modalItem,
         modalIndex,
         itemsPerPage,
+        fetchMedia,
+        handleSearch,
         handleSearchKeyDown,
         loadMore,
         toggleBulkMode,
@@ -99,6 +101,8 @@ export default function MediaPage() {
                         })}
                     </select>
 
+                    <button className={styles.bulkSelectBtn} onClick={() => { setPage(1); fetchMedia(1, true); }}>Apply</button>
+
                     {bulkSelectMode ? (
                         <>
                             <button className={styles.cancelBulkBtn} onClick={toggleBulkMode}>Cancel Bulk Select</button>
@@ -113,13 +117,16 @@ export default function MediaPage() {
 
                 <div className={styles.filterRight}>
                     <label>Search media</label>
-                    <input
-                        type="text"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        onKeyDown={handleSearchKeyDown}
-                        placeholder="Press enter to search"
-                    />
+                    <div style={{ display: 'flex', gap: '5px' }}>
+                        <input
+                            type="text"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            onKeyDown={handleSearchKeyDown}
+                            placeholder="Press enter to search"
+                        />
+                        <button className={styles.bulkSelectBtn} onClick={handleSearch}>Search</button>
+                    </div>
                 </div>
             </div>
 

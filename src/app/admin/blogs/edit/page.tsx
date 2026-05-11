@@ -3,14 +3,14 @@
 import React from "react"
 import Link from "next/link"
 import dynamic from "next/dynamic"
-import styles from "./add.module.scss"
-import { useAddPost } from "./useAddPost"
+import styles from "./edit.module.scss"
+import { useEditPost } from "./useEditPost"
 
 const Editor = dynamic(() => import("./Editor"), { ssr: false })
 import MediaModal from "./MediaModal"
 import SuccessModal from "../SuccessModal"
 
-export default function AddPostPage() {
+export default function EditPostPage() {
     const {
         id,
         title, setTitle,
@@ -47,14 +47,14 @@ export default function AddPostPage() {
         showSuccessModal,
         setShowSuccessModal,
         status: postStatus,
-    } = useAddPost()
+    } = useEditPost()
 
     const [previewMode, setPreviewMode] = React.useState<"desktop" | "mobile">("desktop")
-    console.log("API KEY: ", process.env.NEXT_PUBLIC_TINYMCE_API_KEY)
+
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <h1>{id ? "Edit Post" : "Add Post"}</h1>
+                <h1>Edit Post</h1>
             </div>
 
             <div className={styles.layout}>
@@ -314,12 +314,11 @@ export default function AddPostPage() {
 
                                     const rootCategories = filtered.filter((c: any) => {
                                         if (!categorySearch) return c.parent === 0 || !c.parent
-                                        return true // If searching, show all matches at flat level or maintain structure? Usually WordPress shows search results flat.
+                                        return true
                                     })
 
                                     return rootCategories.map((c: any) => {
                                         if (categorySearch) {
-                                            // Simple flat list for search
                                             return (
                                                 <div className={styles.checkboxGroup} key={c.term_id}>
                                                     <input
@@ -351,8 +350,8 @@ export default function AddPostPage() {
                                     <input
                                         type="text"
                                         placeholder="Category Name"
-                                        value={newCategoryName}
                                         className={styles.searchBar}
+                                        value={newCategoryName}
                                         onChange={(e) => setNewCategoryName(e.target.value)}
                                     />
                                     <select
@@ -387,8 +386,8 @@ export default function AddPostPage() {
                                 <div className={styles.tagSearch}>
                                     <input
                                         type="text"
-                                        className={styles.searchBar}
                                         placeholder="Add Tag"
+                                        className={styles.searchBar}
                                         onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
                                             if (e.key === "Enter") {
                                                 e.preventDefault()
