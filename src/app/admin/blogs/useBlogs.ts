@@ -7,7 +7,15 @@ export function useBlogs() {
   const [search, setSearch] = useState("")
   const [dateFilter, setDateFilter] = useState("all")
   const [categoryFilter, setCategoryFilter] = useState("all")
-  const [metaOptions, setMetaOptions] = useState({ categories: [], dates: [] })
+  const [metaOptions, setMetaOptions] = useState<{
+    categories: any[]
+    dates: any[]
+    tags: any[]
+  }>({
+    categories: [],
+    dates: [],
+    tags: [],
+  })
   const [pageInput, setPageInput] = useState("1")
   const [page, setPage] = useState(1)
   const [sortField, setSortField] = useState("date") // 'title' or 'date'

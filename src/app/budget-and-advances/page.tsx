@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { Suspense } from "react"
 import styles from "./page.module.scss"
 
 // components
@@ -49,7 +50,7 @@ const cards = stackcardData.map((item, index) => ({
   ),
 }))
 
-const BudgetAndAdvances = (): React.JSX.Element => {
+const BudgetAndAdvancesContent = (): React.JSX.Element => {
   //
 
   return (
@@ -171,4 +172,10 @@ const BudgetAndAdvances = (): React.JSX.Element => {
   )
 }
 
-export default BudgetAndAdvances
+export default function BudgetAndAdvances() {
+  return (
+    <Suspense fallback={null}>
+      <BudgetAndAdvancesContent />
+    </Suspense>
+  )
+}

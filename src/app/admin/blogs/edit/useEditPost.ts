@@ -22,7 +22,11 @@ export function useEditPost() {
   const [removeAuthorDetails, setRemoveAuthorDetails] = useState(false)
   const [seoTitle, setSeoTitle] = useState("")
   const [metaDescription, setMetaDescription] = useState("")
-  const [metaOptions, setMetaOptions] = useState({
+  const [metaOptions, setMetaOptions] = useState<{
+    categories: any[]
+    users: any[]
+    tags: any[]
+  }>({
     categories: [],
     users: [],
     tags: [],
