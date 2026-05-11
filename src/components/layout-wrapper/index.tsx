@@ -51,11 +51,6 @@ export default function LayoutClientWrapper({
       {!shouldHide && <TalkToSales />}
       <main id="main" className="flex-grow-1">
         {children}
-        {pathname.startsWith("/resources") && (
-          <Suspense fallback={null}>
-            <ConsultationModal />
-          </Suspense>
-        )}
       </main>
       {!shouldHide && <Footer />}
     </div>
