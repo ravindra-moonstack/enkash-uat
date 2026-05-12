@@ -31,6 +31,7 @@ export default function AddVideoPage() {
         newCategoryParent, setNewCategoryParent,
         slugManuallyEdited, setSlugManuallyEdited,
         showSuccessModal, setShowSuccessModal,
+        categoryError,
         handleAddCategory,
         handleSave
     } = useAddVideo()
@@ -67,10 +68,10 @@ export default function AddVideoPage() {
                                 setSlugManuallyEdited(true)
                             }}
                             className={styles.slugInput}
-                            style={{ 
-                                width: '100%', 
-                                padding: '3px 8px', 
-                                border: '1px solid #8c8f94', 
+                            style={{
+                                width: '100%',
+                                padding: '3px 8px',
+                                border: '1px solid #8c8f94',
                                 borderRadius: '4px',
                                 fontSize: '13px'
                             }}
@@ -94,7 +95,7 @@ export default function AddVideoPage() {
                                 <label>Self Hosted</label>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                     <span>{selfHostedId ? `File ID: ${selfHostedId}` : "No file selected"}</span>
-                                    <button className={styles.actionBtn} onClick={() => {
+                                    <button className={styles.primaryActionBtn} onClick={() => {
                                         setMediaTarget("self_hosted")
                                         setShowMediaModal(true)
                                     }}>Add File</button>
@@ -225,6 +226,7 @@ export default function AddVideoPage() {
                                         ))}
                                     </select>
                                     <button onClick={handleAddCategory}>Add New Category</button>
+                                    {categoryError && <div style={{ color: '#d63638', fontSize: '12px', marginTop: '5px' }}>{categoryError}</div>}
                                 </div>
                             )}
                         </div>

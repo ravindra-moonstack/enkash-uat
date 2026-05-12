@@ -49,7 +49,7 @@ export default function MediaPage() {
         <div className={styles.container}>
             <div className={styles.header}>
                 <h1>Media Library</h1>
-                <button className={styles.addBtn} onClick={() => setShowUpload(!showUpload)}>
+                <button className={styles.addBtn} onClick={() => setShowUpload(prev => !prev)}>
                     Add Media File
                 </button>
             </div>
@@ -116,7 +116,6 @@ export default function MediaPage() {
                 </div>
 
                 <div className={styles.filterRight}>
-                    <label>Search media</label>
                     <div style={{ display: 'flex', gap: '5px' }}>
                         <input
                             type="text"

@@ -260,7 +260,7 @@
         font-weight: 600;
         color: #2271b1;
         position: relative;
-        padding-bottom: 35px !important;
+        padding-bottom: 8px !important;
 
         .titleLink {
             text-decoration: none;
@@ -272,10 +272,10 @@
                 color: #0a4b78;
             }
         }
-
-        &:first-child {
-            padding-bottom: 8px !important;
-        }
+ 
+    }
+    tbody .titleCol {
+        padding-bottom: 35px !important;
     }
 
     .rowActions {

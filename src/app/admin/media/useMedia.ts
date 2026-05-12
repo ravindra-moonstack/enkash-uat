@@ -24,6 +24,12 @@ export const useMedia = (
   const [search, setSearch] = useState("")
   const [availableDates, setAvailableDates] = useState<string[]>([])
 
+  useEffect(() => {
+    if (searchParams.get("add") === "true") {
+      setShowUpload(true)
+    }
+  }, [searchParams])
+
   // Bulk Select
   const [bulkSelectMode, setBulkSelectMode] = useState(false)
   const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set())
