@@ -2,6 +2,7 @@ import React from "react"
 import styles from "./singleBlog.module.scss"
 import Link from "next/link"
 import Image from "next/image"
+import { DynamicHeading } from ".."
 
 const BlogBanner = ({ bannerData }: { bannerData: any }) => {
   const data = bannerData[0]
@@ -13,7 +14,8 @@ const BlogBanner = ({ bannerData }: { bannerData: any }) => {
         <div className={`row align-items-center`}>
           <div className={`col-lg-6 col-12`}>
             <div className={`${styles.blogBannerContent}`}>
-              <h1 className={`${styles.title}`}>{data.title}</h1>
+              {/* <h1 className={`${styles.title}`}>{data.title}</h1> */}
+              <DynamicHeading content={[{ title: data.title }]} className={styles.title} headingTag="h1" />
 
               <div className={styles.meta}>
                 <span className={styles.author}>By {data.first_name ? `${data.first_name} ${data.last_name || ""}` : data.author}</span>
