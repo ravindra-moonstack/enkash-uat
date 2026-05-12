@@ -29,6 +29,7 @@ export function useAddVideo() {
   const [showAddCategoryForm, setShowAddCategoryForm] = useState(false)
   const [newCategoryName, setNewCategoryName] = useState("")
   const [newCategoryParent, setNewCategoryParent] = useState("0")
+  const [categoryError, setCategoryError] = useState("")
 
   useEffect(() => {
     // Fetch meta data
@@ -142,13 +143,15 @@ export function useAddVideo() {
         }))
         setNewCategoryName("")
         setNewCategoryParent("0")
+        setCategoryError("")
         setShowAddCategoryForm(false)
       } else {
         const data = await res.json()
-        alert(data.error || "Failed to add category")
+        setCategoryError(data.error || "Failed to add category")
       }
     } catch (error) {
       console.error("Error adding category:", error)
+      setCategoryError("An unexpected error occurred")
     }
   }
 
@@ -176,6 +179,7 @@ export function useAddVideo() {
     slugManuallyEdited, setSlugManuallyEdited,
     showSuccessModal, setShowSuccessModal,
     isDirty, setIsDirty,
+    categoryError, setCategoryError,
     handleAddCategory,
     handleSave
   }

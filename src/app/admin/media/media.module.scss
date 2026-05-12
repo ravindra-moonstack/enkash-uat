@@ -20,10 +20,10 @@
   }
 
   .addBtn {
-    padding: 6px 12px;
+    padding: 6px 16px;
     border: 1px solid #2271b1;
-    color: #2271b1;
-    background: transparent;
+    color: #fff;
+    background: #2271b1;
     border-radius: 4px;
     font-size: 13px;
     font-weight: 500;
@@ -31,7 +31,7 @@
     transition: all 0.2s;
 
     &:hover {
-      background: #f0f6fc;
+      background: #135e96;
     }
   }
 
@@ -154,17 +154,7 @@
       outline: none;
     }
 
-    .bulkSelectBtn {
-      padding: 0 12px;
-      height: 32px;
-      border: 1px solid #2271b1;
-      color: #2271b1;
-      background: #f6f7f7;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
+    
     .deleteSelectedBtn {
       padding: 0 12px;
       height: 32px;
@@ -213,6 +203,23 @@
       }
     }
   }
+  .bulkSelectBtn {
+      padding: 0 16px;
+      height: 32px;
+      border: 1px solid #2271b1;
+      color: #fff;
+      background: #2271b1;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #135e96;
+        border-color: #135e96;
+      }
+    } 
 }
 
 .mediaGrid {

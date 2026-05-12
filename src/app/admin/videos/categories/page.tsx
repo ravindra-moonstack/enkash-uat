@@ -22,6 +22,7 @@ export default function VideoCategoriesPage() {
     const [slug, setSlug] = useState("")
     const [parent, setParent] = useState(0)
     const [description, setDescription] = useState("")
+    const [error, setError] = useState("")
 
     const itemsPerPage = 20
 
@@ -83,6 +84,7 @@ export default function VideoCategoriesPage() {
         const payload = { name, slug, description, parent, taxonomy: "video_category" }
         
         try {
+            setError("")
             if (editId) {
                 const res = await fetch(`/api/admin/terms/${editId}`, {
                     method: "PUT",
@@ -93,6 +95,8 @@ export default function VideoCategoriesPage() {
                 if (data.success) {
                     resetForm()
                     fetchTerms()
+                } else {
+                    setError(data.error || "Failed to update category")
                 }
             } else {
                 const res = await fetch("/api/admin/terms", {
@@ -104,10 +108,13 @@ export default function VideoCategoriesPage() {
                 if (data.success) {
                     resetForm()
                     fetchTerms()
+                } else {
+                    setError(data.error || "Failed to add category")
                 }
             }
         } catch (error) {
             console.error(error)
+            setError("An unexpected error occurred")
         }
     }
 
@@ -117,6 +124,7 @@ export default function VideoCategoriesPage() {
         setSlug("")
         setParent(0)
         setDescription("")
+        setError("")
     }
 
     const handleEdit = (term: any) => {
@@ -199,6 +207,7 @@ export default function VideoCategoriesPage() {
                                 required
                             />
                             <div className={styles.description}>The "slug" is the URL-friendly version of the name.</div>
+                            {error && <div className={styles.errorText} style={{ color: '#d63638', fontSize: '12px', marginTop: '5px' }}>{error}</div>}
                         </div>
 
                         <div className={styles.inputGroup}>
