@@ -46,11 +46,15 @@ export function useEditPost() {
   const [showAddCategoryForm, setShowAddCategoryForm] = useState(false)
   const [newCategoryName, setNewCategoryName] = useState("")
   const [newCategoryParent, setNewCategoryParent] = useState("0")
-  const [slugError, setSlugError] = useState("")
-  const [isCheckingSlug, setIsCheckingSlug] = useState(false)
   const [currentUser, setCurrentUser] = useState<any>(null)
   const [isDirty, setIsDirty] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
+
+  // New states for error and progress
+  const [slugError, setSlugError] = useState("")
+  const [isCheckingSlug, setIsCheckingSlug] = useState(false)
+  const [isSaving, setIsSaving] = useState(false)
+
   const isInitialLoad = useRef(true)
 
   useEffect(() => {
@@ -87,11 +91,9 @@ export function useEditPost() {
         })
         .catch((err) => console.error("Error fetching post data", err))
     } else {
-      // If no ID in edit page, maybe redirect back?
       router.push("/admin/blogs")
     }
 
-    // Fetch meta (users, categories)
     fetch("/api/admin/blogs/meta")
       .then((res) => res.json())
       .then((data) => {
@@ -110,7 +112,6 @@ export function useEditPost() {
       setPermalinkBase(`${window.location.origin}/resources/blog/`)
     }
 
-    // Fetch current user
     fetch("/api/admin/me")
       .then((res) => res.json())
       .then((data) => {
@@ -120,7 +121,6 @@ export function useEditPost() {
       })
       .catch((err) => console.error("Error fetching current user", err))
 
-    // After initial load (and fetch if id exists), we start tracking changes
     const timer = setTimeout(() => {
       isInitialLoad.current = false
     }, 1000)
@@ -160,15 +160,17 @@ export function useEditPost() {
     }
     window.addEventListener("beforeunload", handleBeforeUnload)
 
-    // Handle internal navigation (Link clicks)
     const handleLinkClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
       const link = target.closest("a")
       if (link && isDirty) {
         const href = link.getAttribute("href")
-        // If it's an internal link and not a target="_blank"
         if (href && !href.startsWith("#") && link.target !== "_blank") {
-          if (!window.confirm("You have unsaved changes. Your changes will be lost if you leave this page. Are you sure?")) {
+          if (
+            !window.confirm(
+              "You have unsaved changes. Your changes will be lost if you leave this page. Are you sure?"
+            )
+          ) {
             e.preventDefault()
             e.stopImmediatePropagation()
           }
@@ -186,6 +188,7 @@ export function useEditPost() {
 
   const handleAddCategory = async () => {
     if (!newCategoryName) return
+    setIsSaving(true)
     const slug = newCategoryName
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
@@ -224,47 +227,32 @@ export function useEditPost() {
       }
     } catch (error) {
       console.error("Error adding category:", error)
+    } finally {
+      setIsSaving(false)
     }
   }
 
   const handleApplySlug = async (newSlug: string) => {
-    if (!newSlug) {
-      setSlugError("")
-      return false
-    }
-
-    setIsCheckingSlug(true)
-    setSlugError("")
-
-    try {
-      const res = await fetch(`/api/admin/blogs/check-slug?slug=${newSlug}${id ? `&excludeId=${id}` : ""}`)
-      const data = await res.json()
-
-      if (data.exists) {
-        setSlugError("This slug already exists. Please use a unique slug.")
-        setIsCheckingSlug(false)
-        return false
-      }
-
-      setSlug(newSlug)
-      setIsCheckingSlug(false)
-      return true
-    } catch (err) {
-      console.error("Error checking slug:", err)
-      setIsCheckingSlug(false)
-      return false
-    }
+    if (!newSlug) return false
+    setSlug(newSlug)
+    return true
   }
 
   const handleAddTag = async (tagName: string) => {
     if (!tagName) return
 
+    setIsSaving(true)
     // Check if tag already exists in metaOptions
-    let tag = metaOptions.tags.find(t => t.name.toLowerCase() === tagName.toLowerCase())
+    let tag = metaOptions.tags.find(
+      (t) => t.name.toLowerCase() === tagName.toLowerCase()
+    )
 
     if (!tag) {
       // Create new tag
-      const slug = tagName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "")
+      const slug = tagName
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "")
       try {
         const res = await fetch("/api/admin/terms", {
           method: "POST",
@@ -278,24 +266,27 @@ export function useEditPost() {
         if (res.ok) {
           const data = await res.json()
           tag = { term_id: data.id, name: tagName, slug }
-          setMetaOptions(prev => ({
+          setMetaOptions((prev) => ({
             ...prev,
-            tags: [...prev.tags, tag]
+            tags: [...prev.tags, tag],
           }))
         } else {
           alert("Failed to create tag")
+          setIsSaving(false)
           return
         }
       } catch (err) {
         console.error("Error creating tag:", err)
+        setIsSaving(false)
         return
       }
     }
 
-    const currentTags = tags ? tags.split(',').filter(t => t) : []
+    const currentTags = tags ? tags.split(",").filter((t) => t) : []
     if (!currentTags.includes(tag.term_id.toString())) {
-      setTags([...currentTags, tag.term_id.toString()].join(','))
+      setTags([...currentTags, tag.term_id.toString()].join(","))
     }
+    setIsSaving(false)
   }
 
   const handleSave = async (isPublish: boolean) => {
@@ -304,22 +295,7 @@ export function useEditPost() {
       return
     }
 
-    // Double check slug duplicate before saving
-    setIsCheckingSlug(true)
-    try {
-      const checkRes = await fetch(`/api/admin/blogs/check-slug?slug=${slug}${id ? `&excludeId=${id}` : ""}`)
-      const checkData = await checkRes.json()
-      if (checkData.exists) {
-        setSlugError("This slug already exists. Please use a unique slug.")
-        setIsCheckingSlug(false)
-        alert("Cannot save: Slug already exists.")
-        return
-      }
-    } catch (err) {
-      console.error("Error checking slug during save:", err)
-    }
-    setIsCheckingSlug(false)
-
+    setIsSaving(true)
     const payload = {
       title,
       slug,
@@ -365,6 +341,33 @@ export function useEditPost() {
     } catch (error) {
       console.error("Error saving post:", error)
       alert("Error saving post")
+    } finally {
+      setIsSaving(false)
+    }
+  }
+
+  const handleTrash = async () => {
+    if (!id) return
+    if (!confirm("Are you sure you want to move this post to trash?")) return
+
+    setIsSaving(true)
+    try {
+      const res = await fetch(`/api/admin/blogs/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "trash" }),
+      })
+      if (res.ok) {
+        setIsDirty(false)
+        router.push("/admin/blogs")
+      } else {
+        alert("Failed to move to trash")
+      }
+    } catch (error) {
+      console.error("Error moving to trash:", error)
+      alert("Error moving to trash")
+    } finally {
+      setIsSaving(false)
     }
   }
 
@@ -426,18 +429,21 @@ export function useEditPost() {
     setNewCategoryName,
     newCategoryParent,
     setNewCategoryParent,
-    slugError,
-    setSlugError,
-    isCheckingSlug,
-    setIsCheckingSlug,
     currentUser,
     isDirty,
     setIsDirty,
     showSuccessModal,
     setShowSuccessModal,
+    slugError,
+    setSlugError,
+    isCheckingSlug,
+    setIsCheckingSlug,
+    isSaving,
     handleAddCategory,
     handleApplySlug,
     handleAddTag,
     handleSave,
+    handleTrash,
+    router,
   }
 }

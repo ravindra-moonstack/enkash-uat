@@ -1,6 +1,7 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
 import { recordAuditLog } from "@/src/utils/auditLogger"
+import { getUniqueSlug } from "@/src/utils/slugUtils"
 
 export async function GET(request: Request) {
   try {
@@ -67,7 +68,8 @@ export async function GET(request: Request) {
     // Fetch paginated posts
     const query = `
             SELECT p.*, u.display_name as author_name,
-                   GROUP_CONCAT(DISTINCT te.name SEPARATOR ', ') as categories
+                   GROUP_CONCAT(DISTINCT te.name SEPARATOR ', ') as categories,
+                   (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'blogs' AND pae.post_id = p.id AND pae.last_active > NOW() - INTERVAL 30 SECOND) as locked_by
             FROM posts p
             LEFT JOIN users u ON p.author = u.ID
             LEFT JOIN terms te ON FIND_IN_SET(te.term_id, p.category) > 0 AND te.taxonomy = 'category'
@@ -109,6 +111,16 @@ export async function POST(request: Request) {
   try {
     const data = await request.json()
 
+    // Ensure unique slug
+    const baseSlug =
+      data.slug ||
+      data.title
+        ?.toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "") ||
+      "untitled"
+    const uniqueSlug = await getUniqueSlug("posts", baseSlug)
+
     // Basic insert for now
     const query = `
             INSERT INTO posts (
@@ -120,7 +132,7 @@ export async function POST(request: Request) {
 
     const [result]: any = await pool.query(query, [
       data.title || "",
-      data.slug || "",
+      uniqueSlug,
       data.content || "",
       data.excerpt || "",
       data.status || "draft",

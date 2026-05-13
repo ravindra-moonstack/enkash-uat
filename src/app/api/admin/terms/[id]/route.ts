@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import pool from "@/src/lib/dbConnect"
-import { ResultSetHeader } from "mysql2"
+import { ResultSetHeader, RowDataPacket } from "mysql2"
+import { getUniqueSlug } from "@/src/utils/slugUtils"
 
 export async function PUT(req: NextRequest, props: { params: Promise<{ id: string }> }) {
     try {
@@ -9,21 +10,19 @@ export async function PUT(req: NextRequest, props: { params: Promise<{ id: strin
         const body = await req.json()
         const { name, slug, description, parent } = body
 
-        if (!name || !slug) {
-            return NextResponse.json({ success: false, error: "Name and slug are required." }, { status: 400 })
+        if (!name) {
+            return NextResponse.json({ success: false, error: "Name is required." }, { status: 400 })
         }
 
-        // Check for duplicate slug in the same taxonomy (excluding current term)
-        const [existing]: any = await pool.query(
-            "SELECT term_id FROM terms WHERE slug = ? AND taxonomy = (SELECT taxonomy FROM terms WHERE term_id = ?) AND term_id != ?",
-            [slug, id, id]
-        )
-        if (existing.length > 0) {
-            return NextResponse.json({ success: false, error: "Slug already exists in this taxonomy." }, { status: 400 })
-        }
+        // Get taxonomy of the current term
+        const [termRows]: any = await pool.query<RowDataPacket[]>("SELECT taxonomy FROM terms WHERE term_id = ?", [id])
+        const taxonomy = termRows[0]?.taxonomy
+
+        const baseSlug = slug || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
+        const uniqueSlug = await getUniqueSlug("terms", baseSlug, id, "term_id", { taxonomy })
 
         const query = "UPDATE terms SET name = ?, slug = ?, description = ?, parent = ? WHERE term_id = ?"
-        await pool.query<ResultSetHeader>(query, [name, slug, description || "", parent || 0, id])
+        await pool.query<ResultSetHeader>(query, [name, uniqueSlug, description || "", parent || 0, id])
 
         return NextResponse.json({ success: true })
     } catch (error: any) {
