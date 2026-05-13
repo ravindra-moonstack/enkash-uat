@@ -42,31 +42,51 @@ export default function EditPostPage() {
         showAddCategoryForm, setShowAddCategoryForm,
         newCategoryName, setNewCategoryName,
         newCategoryParent, setNewCategoryParent,
-        slugError, setSlugError,
-        isCheckingSlug, setIsCheckingSlug,
+        status: postStatus,
+        setIsDirty,
+        router,
+        slugError,
+        setSlugError,
+        isCheckingSlug,
+        setIsCheckingSlug,
+        isSaving,
+        handleTrash,
         currentUser,
-        handleApplySlug,
-        handleAddTag,
-        handleAddCategory,
-        handleSave,
         showSuccessModal,
         setShowSuccessModal,
-        status: postStatus,
+        handleSave,
+        isDirty,
+        handleAddCategory,
+        handleAddTag,
+        handleApplySlug
     } = useEditPost()
 
     const [previewMode, setPreviewMode] = React.useState<"desktop" | "mobile">("desktop")
     const [activeEditors, setActiveEditors] = React.useState<any[]>([])
-    const editorSessionId = React.useRef<string>(Math.random().toString(36).substring(2, 10))
+    const editorSessionId = React.useRef<string>("")
+
+    React.useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const key = `editor_session_${id || 'new'}`
+            let sid = sessionStorage.getItem(key)
+            if (!sid) {
+                sid = Math.random().toString(36).substring(2, 12)
+                sessionStorage.setItem(key, sid)
+            }
+            editorSessionId.current = sid
+        }
+    }, [id])
 
     React.useEffect(() => {
         if (!id || !currentUser) return
 
         const checkActiveEditors = async () => {
             try {
-                const res = await fetch("/api/admin/blogs/active-editors", {
+                const res = await fetch("/api/admin/active-editors", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
+                        module: "blogs",
                         postId: id,
                         editorId: editorSessionId.current,
                         userId: currentUser.id,
@@ -74,8 +94,10 @@ export default function EditPostPage() {
                     }),
                 })
                 const data = await res.json()
-                if (data.success) {
-                    setActiveEditors(data.activeEditors || [])
+                if (data.success && data.isLocked) {
+                    setActiveEditors([{ user_name: data.lockedBy }])
+                } else {
+                    setActiveEditors([])
                 }
             } catch (err) {
                 console.error("Error checking active editors", err)
@@ -85,7 +107,7 @@ export default function EditPostPage() {
         const releaseLock = () => {
             if (id) {
                 fetch(
-                    `/api/admin/blogs/active-editors?postId=${id}&editorId=${editorSessionId.current}`,
+                    `/api/admin/active-editors?module=blogs&postId=${id}&editorId=${editorSessionId.current}`,
                     {
                         method: "DELETE",
                         keepalive: true,
@@ -114,10 +136,20 @@ export default function EditPostPage() {
             </div>
 
             {isLocked && (
-                <div className={styles.lockBanner}>
-                    <i className="bi bi-lock-fill"></i>
-                    <div>
-                        <strong>Locked:</strong> {activeEditors.map((e: any) => e.user_name).join(", ")} is currently editing this post. Editing is disabled to prevent overwriting changes.
+                <div className={styles.lockModalOverlay}>
+                    <div className={styles.lockModal}>
+                        <i className="bi bi-lock-fill"></i>
+                        <h2>Item Locked</h2>
+                        <p>
+                            <strong>{activeEditors.map((e: any) => e.user_name).join(", ")}</strong> is currently editing this post.
+                            To prevent overwriting changes, editing has been disabled.
+                        </p>
+                        <div className={styles.modalFooter}>
+                            <button className={styles.cancelBtn} onClick={() => {
+                                setIsDirty(false);
+                                router.push("/admin/blogs");
+                            }}>OK</button>
+                        </div>
                     </div>
                 </div>
             )}
@@ -274,16 +306,22 @@ export default function EditPostPage() {
                             </div>
                             <div className={styles.publishStatus}>
                                 <div className={styles.statusRow}>
-                                    <i className="bi bi-key"></i> Status: <strong>{status.charAt(0).toUpperCase() + status.slice(1)}</strong> <a>Edit</a>
+                                    <i className="bi bi-key"></i> Status: <strong>{postStatus.charAt(0).toUpperCase() + postStatus.slice(1)}</strong>
                                 </div>
                                 <div className={styles.statusRow}>
-                                    <i className="bi bi-eye"></i> Visibility: <strong>Public</strong> <a>Edit</a>
+                                    <i className="bi bi-eye"></i> Visibility: <strong>Public</strong>
                                 </div>
                             </div>
-                            <div className={styles.publishFooter}>
-                                <button className={styles.trashBtn} disabled={isLocked}>Move to Trash</button>
-                                <button className={styles.primaryBtn} onClick={() => !isLocked && handleSave(true)} disabled={isLocked}>
-                                    {status === "publish" ? "Update" : "Publish"}
+                            <div className={styles.publishActions}>
+                                <button
+                                    className={styles.trashBtn}
+                                    disabled={isLocked || isSaving}
+                                    onClick={handleTrash}
+                                >
+                                    Move to Trash
+                                </button>
+                                <button className={styles.primaryBtn} onClick={() => !isLocked && handleSave(true)} disabled={isLocked || isSaving}>
+                                    {isSaving ? "Processing..." : postStatus === "publish" ? "Update" : "Publish"}
                                 </button>
                             </div>
                         </div>
@@ -544,7 +582,8 @@ export default function EditPostPage() {
                 show={showSuccessModal}
                 onClose={() => {
                     setShowSuccessModal(false)
-                    window.location.href = "/admin/blogs"
+                    setIsDirty(false)
+                    router.push("/admin/blogs")
                 }}
                 message={`Your post has been ${postStatus === 'publish' ? 'published' : 'saved'} successfully!`}
             />

@@ -129,14 +129,27 @@ export default function BlogsPage() {
                     ) : (
                         posts.map(post => (
                             <tr key={post.id}>
-                                <td className={styles.titleCol}>
-                                    <Link href={`/admin/blogs/edit?id=${post.id}`} className={styles.titleLink}>
-                                        {post.title || "(no title)"}
-                                    </Link>
+                                <td className={`${styles.titleCol} ${post.locked_by ? styles.itemLocked : ""}`}>
+                                    {post.locked_by ? (
+                                        <span className={styles.titleLinkDisabled}>
+                                            {post.title || "(no title)"}
+                                            <span className={styles.lockInfo}>
+                                                <i className="bi bi-lock-fill"></i> Locked by: {post.locked_by}
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <Link href={`/admin/blogs/edit?id=${post.id}`} className={styles.titleLink}>
+                                            {post.title || "(no title)"}
+                                        </Link>
+                                    )}
                                     {post.status === "draft" && " — Draft"}
                                     <div className={styles.rowActions}>
-                                        <Link href={`/admin/blogs/edit?id=${post.id}`}>Edit</Link> |
-                                        <a className={styles.trash} onClick={() => handleTrash(post.id)}>Trash</a> |
+                                        {post.locked_by ? (
+                                            <span className={styles.disabledAction}>Edit</span>
+                                        ) : (
+                                            <Link href={`/admin/blogs/edit?id=${post.id}`}>Edit</Link>
+                                        )} |
+                                        <a className={post.locked_by ? styles.disabledAction : styles.trash} onClick={() => !post.locked_by && handleTrash(post.id)}>Trash</a> |
                                         <Link href={`/resources/blog/${post.slug || post.id}`} target="_blank">{post.status === 'publish' ? 'View' : 'Preview'}</Link>
                                     </div>
                                 </td>

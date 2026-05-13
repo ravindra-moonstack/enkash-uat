@@ -107,14 +107,27 @@ export default function VideosPage() {
                     ) : (
                         videos.map(video => (
                             <tr key={video.id}>
-                                <td className={styles.titleCol}>
-                                    <Link href={`/admin/videos/add?id=${video.id}`} className={styles.titleLink}>
-                                        {video.title || "(no title)"}
-                                    </Link>
+                                <td className={`${styles.titleCol} ${video.locked_by ? styles.itemLocked : ""}`}>
+                                    {video.locked_by ? (
+                                        <span className={styles.titleLinkDisabled}>
+                                            {video.title || "(no title)"}
+                                            <span className={styles.lockInfo}>
+                                                <i className="bi bi-lock-fill"></i> Locked by: {video.locked_by}
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <Link href={`/admin/videos/add?id=${video.id}`} className={styles.titleLink}>
+                                            {video.title || "(no title)"}
+                                        </Link>
+                                    )}
                                     {video.status === "draft" && " — Draft"}
                                     <div className={styles.rowActions}>
-                                        <Link href={`/admin/videos/add?id=${video.id}`}>Edit</Link> |
-                                        <a className={styles.trash} onClick={() => handleTrash(video.id)}>Trash</a>
+                                        {video.locked_by ? (
+                                            <span className={styles.disabledAction}>Edit</span>
+                                        ) : (
+                                            <Link href={`/admin/videos/add?id=${video.id}`}>Edit</Link>
+                                        )} |
+                                        <a className={video.locked_by ? styles.disabledAction : styles.trash} onClick={() => !video.locked_by && handleTrash(video.id)}>Trash</a>
                                     </div>
                                 </td>
                                 <td>{video.author_name || video.author}</td>

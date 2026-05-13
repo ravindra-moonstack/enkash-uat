@@ -21,6 +21,10 @@ export function useAddVideo() {
   const [slugManuallyEdited, setSlugManuallyEdited] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [isDirty, setIsDirty] = useState(false)
+  const [currentUser, setCurrentUser] = useState<any>(null)
+  
+  // Progress state
+  const [isSaving, setIsSaving] = useState(false)
   
   const [metaOptions, setMetaOptions] = useState({ categories: [], videoCategories: [], users: [], videos: [] })
   const [showMediaModal, setShowMediaModal] = useState(false)
@@ -32,11 +36,10 @@ export function useAddVideo() {
   const [categoryError, setCategoryError] = useState("")
 
   useEffect(() => {
-    // Fetch meta data
     const fetchMeta = async () => {
         const [metaRes, videosRes] = await Promise.all([
             fetch("/api/admin/blogs/meta"),
-            fetch("/api/admin/videos?limit=1000") // To get all videos for parent selection
+            fetch("/api/admin/videos?limit=1000")
         ])
         const metaData = await metaRes.json()
         const videosData = await videosRes.json()
@@ -54,7 +57,7 @@ export function useAddVideo() {
     fetchMeta()
 
     if (id) {
-      fetch(`/api/admin/videos/${id}`)
+       fetch(`/api/admin/videos/${id}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.video) {
@@ -75,9 +78,19 @@ export function useAddVideo() {
         })
         .catch((err) => console.error("Error fetching video data", err))
     }
+
+    fetch("/api/admin/me")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setCurrentUser(data.user)
+        }
+      })
+      .catch((err) => console.error("Error fetching current user", err))
   }, [id])
 
   const handleSave = async (isPublish: boolean) => {
+    setIsSaving(true)
     const payload = {
       title,
       slug,
@@ -117,11 +130,39 @@ export function useAddVideo() {
     } catch (error) {
       console.error("Error saving video:", error)
       alert("Error saving video")
+    } finally {
+      setIsSaving(false)
+    }
+  }
+
+  const handleTrash = async () => {
+    if (!id) return
+    if (!confirm("Are you sure you want to move this video to trash?")) return
+    
+    setIsSaving(true)
+    try {
+      const res = await fetch(`/api/admin/videos/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "trash" }),
+      })
+      if (res.ok) {
+        setIsDirty(false)
+        router.push("/admin/videos")
+      } else {
+        alert("Failed to move to trash")
+      }
+    } catch (error) {
+      console.error("Error trashing video:", error)
+      alert("Error moving to trash")
+    } finally {
+      setIsSaving(false)
     }
   }
 
   const handleAddCategory = async () => {
     if (!newCategoryName) return
+    setIsSaving(true)
     const categorySlug = newCategoryName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
     try {
       const res = await fetch("/api/admin/terms", {
@@ -152,6 +193,8 @@ export function useAddVideo() {
     } catch (error) {
       console.error("Error adding category:", error)
       setCategoryError("An unexpected error occurred")
+    } finally {
+      setIsSaving(false)
     }
   }
 
@@ -180,7 +223,10 @@ export function useAddVideo() {
     showSuccessModal, setShowSuccessModal,
     isDirty, setIsDirty,
     categoryError, setCategoryError,
+    isSaving,
     handleAddCategory,
-    handleSave
+    handleSave,
+    handleTrash,
+    currentUser
   }
 }

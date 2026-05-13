@@ -1,6 +1,7 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
 import { recordAuditLog } from "@/src/utils/auditLogger"
+import { getUniqueSlug } from "@/src/utils/slugUtils"
 
 export async function PATCH(
   request: Request,
@@ -67,6 +68,10 @@ export async function PUT(
     ])
     const oldData = oldRows[0]
 
+    // Ensure unique slug
+    const baseSlug = data.slug || data.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || oldData.slug
+    const uniqueSlug = await getUniqueSlug("posts", baseSlug, id)
+
     const query = `
       UPDATE posts SET
           title = ?, slug = ?, content = ?, excerpt = ?, status = ?, author = ?, 
@@ -76,7 +81,7 @@ export async function PUT(
     `
     await pool.query(query, [
       data.title || "",
-      data.slug || "",
+      uniqueSlug,
       data.content || "",
       data.excerpt || "",
       data.status || "draft",

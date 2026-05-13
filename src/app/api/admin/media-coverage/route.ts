@@ -1,5 +1,6 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
+import { getUniqueSlug } from "@/src/utils/slugUtils"
 
 export async function GET(request: Request) {
   try {
@@ -54,7 +55,8 @@ export async function GET(request: Request) {
     // Fetch items
     const query = `
             SELECT m.*, u.display_name as author_name,
-                   a.image_url as image_url
+                   a.image_url as image_url,
+                   (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'media-coverage' AND pae.post_id = m.id AND pae.last_active > NOW() - INTERVAL 30 SECOND) as locked_by
             FROM media_coverage m
             LEFT JOIN users u ON m.author = u.ID
             LEFT JOIN attachments a ON m.media_coverage_image = a.id
@@ -94,6 +96,10 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const data = await request.json()
+    
+    // Ensure unique slug
+    const baseSlug = data.slug || data.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
+    const uniqueSlug = await getUniqueSlug("media_coverage", baseSlug)
 
     const query = `
             INSERT INTO media_coverage (
@@ -105,7 +111,7 @@ export async function POST(request: Request) {
 
     const [result]: any = await pool.query(query, [
       data.title || "",
-      data.slug || "",
+      uniqueSlug,
       data.status || "draft",
       data.author || 1,
       data.post_parent || 0,

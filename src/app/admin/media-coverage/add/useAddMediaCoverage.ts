@@ -6,6 +6,8 @@ export function useAddMediaCoverage() {
   const router = useRouter()
   const id = searchParams.get("id")
 
+  const [isDirty, setIsDirty] = useState(false)
+  const [currentUser, setCurrentUser] = useState<any>(null)
   const [title, setTitle] = useState("")
   const [slug, setSlug] = useState("")
   const [status, setStatus] = useState("draft")
@@ -29,6 +31,9 @@ export function useAddMediaCoverage() {
     items: [],
   })
   const [showMediaModal, setShowMediaModal] = useState(false)
+  
+  // Progress state
+  const [isSaving, setIsSaving] = useState(false)
 
   useEffect(() => {
     const fetchMeta = async () => {
@@ -75,10 +80,21 @@ export function useAddMediaCoverage() {
             setMediaCoverageMediaLink(data.item.media_coverage_media_link || "")
           }
         })
+        .catch((err) => console.error("Error fetching media coverage data", err))
     }
+
+    fetch("/api/admin/me")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setCurrentUser(data.user)
+        }
+      })
+      .catch((err) => console.error("Error fetching current user", err))
   }, [id])
 
   const handleSave = async (isPublish: boolean) => {
+    setIsSaving(true)
     const payload = {
       title,
       slug,
@@ -113,10 +129,38 @@ export function useAddMediaCoverage() {
       }
       if (res.ok) {
         alert("Media coverage saved successfully!")
+        setIsDirty(false)
         router.push("/admin/media-coverage")
       }
     } catch (error) {
       console.error("Error saving:", error)
+    } finally {
+      setIsSaving(false)
+    }
+  }
+
+  const handleTrash = async () => {
+    if (!id) return
+    if (!confirm("Are you sure you want to move this item to trash?")) return
+    
+    setIsSaving(true)
+    try {
+      const res = await fetch(`/api/admin/media-coverage/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "trash" }),
+      })
+      if (res.ok) {
+        setIsDirty(false)
+        router.push("/admin/media-coverage")
+      } else {
+        alert("Failed to move to trash")
+      }
+    } catch (error) {
+      console.error("Error trashing item:", error)
+      alert("Error moving to trash")
+    } finally {
+      setIsSaving(false)
     }
   }
 
@@ -147,6 +191,11 @@ export function useAddMediaCoverage() {
     metaOptions,
     showMediaModal,
     setShowMediaModal,
+    isDirty,
+    setIsDirty,
+    isSaving,
     handleSave,
+    handleTrash,
+    currentUser,
   }
 }

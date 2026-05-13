@@ -69,7 +69,7 @@ export default function GlossaryCategoriesAdmin() {
     // --- Category Actions ---
 
     const handleAddCategory = () => {
-        const defaultData = { heading: "", sort_order: categories.length };
+        const defaultData = { heading: "", sort_order: categories.length + 1 };
         setFormData(defaultData)
         setInitialData(defaultData)
         setIsEditing(false)
@@ -137,7 +137,7 @@ export default function GlossaryCategoriesAdmin() {
             heading: "",
             description: "",
             link: "",
-            sort_order: selectedCategory.cards ? selectedCategory.cards.length : 0
+            sort_order: (selectedCategory.cards?.length || 0) + 1
         };
         setFormData(defaultData)
         setInitialData(defaultData)
@@ -363,8 +363,12 @@ export default function GlossaryCategoriesAdmin() {
                             <input
                                 type="number"
                                 className={styles.input}
-                                value={formData.sort_order || 0}
-                                onChange={e => setFormData({ ...formData, sort_order: parseInt(e.target.value) })}
+                                min="1"
+                                value={formData.sort_order || 1}
+                                onChange={e => {
+                                    const val = parseInt(e.target.value);
+                                    setFormData({ ...formData, sort_order: isNaN(val) || val < 1 ? 1 : val });
+                                }}
                             />
                         </div>
 

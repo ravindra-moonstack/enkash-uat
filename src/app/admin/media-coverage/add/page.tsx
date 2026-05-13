@@ -5,6 +5,7 @@ import Link from "next/link"
 import styles from "../../blogs/add/add.module.scss"
 import { useAddMediaCoverage } from "./useAddMediaCoverage"
 import MediaModal from "../../blogs/add/MediaModal"
+import { useRouter } from "next/navigation"
 
 export default function AddMediaCoveragePage() {
     const {
@@ -22,8 +23,66 @@ export default function AddMediaCoveragePage() {
         mediaCoverageMediaLink, setMediaCoverageMediaLink,
         metaOptions,
         showMediaModal, setShowMediaModal,
-        handleSave
+        handleSave,
+        currentUser,
+        setIsDirty
     } = useAddMediaCoverage()
+
+    const router = useRouter()
+    const [activeEditors, setActiveEditors] = React.useState<any[]>([])
+    const editorSessionId = React.useRef<string>(Math.random().toString(36).substring(2, 10))
+
+    React.useEffect(() => {
+        if (!id || !currentUser) return
+
+        const checkActiveEditors = async () => {
+            try {
+                const res = await fetch("/api/admin/active-editors", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        module: "media-coverage",
+                        postId: id,
+                        editorId: editorSessionId.current,
+                        userId: currentUser.id,
+                        userName: currentUser.name
+                    }),
+                })
+                const data = await res.json()
+                if (data.success && data.isLocked) {
+                    setActiveEditors([{ user_name: data.lockedBy }])
+                } else {
+                    setActiveEditors([])
+                }
+            } catch (err) {
+                console.error("Error checking active editors", err)
+            }
+        }
+
+        const releaseLock = () => {
+            if (id) {
+                fetch(
+                    `/api/admin/active-editors?module=media-coverage&postId=${id}&editorId=${editorSessionId.current}`,
+                    {
+                        method: "DELETE",
+                        keepalive: true,
+                    }
+                ).catch((e) => console.error("Failed to release lock", e))
+            }
+        }
+
+        checkActiveEditors()
+        const interval = setInterval(checkActiveEditors, 5000)
+        window.addEventListener("beforeunload", releaseLock)
+
+        return () => {
+            clearInterval(interval)
+            window.removeEventListener("beforeunload", releaseLock)
+            releaseLock()
+        }
+    }, [id, currentUser])
+
+    const isLocked = activeEditors.length > 0
 
     return (
         <div className={styles.container}>
@@ -31,8 +90,27 @@ export default function AddMediaCoveragePage() {
                 <h1>{id ? "Edit Media Coverage" : "Add Media Coverage"}</h1>
             </div>
 
-            <div className={styles.layout}>
-                <div className={styles.leftColumn}>
+            {isLocked && (
+                <div className={styles.lockModalOverlay}>
+                    <div className={styles.lockModal}>
+                        <i className="bi bi-lock-fill"></i>
+                        <h2>Item Locked</h2>
+                        <p>
+                            <strong>{activeEditors.map((e: any) => e.user_name).join(", ")}</strong> is currently editing this item.
+                            To prevent overwriting changes, editing has been disabled.
+                        </p>
+                        <div className={styles.modalFooter}>
+                            <button className={styles.cancelBtn} onClick={() => {
+                                setIsDirty(false);
+                                router.push("/admin/media-coverage");
+                            }}>OK</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <div className={`${styles.layout} ${isLocked ? styles.locked : ""}`}>
+                <fieldset disabled={isLocked} className={styles.leftColumn}>
                     <div className={styles.titleInput}>
                         <input
                             type="text"
@@ -95,9 +173,9 @@ export default function AddMediaCoveragePage() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </fieldset>
 
-                <div className={styles.rightColumn}>
+                <fieldset disabled={isLocked} className={styles.rightColumn}>
                     <div className={styles.box}>
                         <div className={styles.boxHeader}>Publish</div>
                         <div className={styles.boxContent}>
@@ -143,7 +221,7 @@ export default function AddMediaCoveragePage() {
                             </select>
                         </div>
                     </div>
-                </div>
+                </fieldset>
             </div>
 
             {showMediaModal && (
