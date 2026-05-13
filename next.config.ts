@@ -7,6 +7,7 @@ const withBundleAnalyzerConfigured = withBundleAnalyzer({
 })
 
 const nextConfig: NextConfig = {
+  productionBrowserSourceMaps: true,
   compress: true,
 
   eslint: {
