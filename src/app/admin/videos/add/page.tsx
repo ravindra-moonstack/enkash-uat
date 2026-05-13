@@ -3,9 +3,11 @@
 import React from "react"
 import Link from "next/link"
 import styles from "../../blogs/add/add.module.scss"
+import editStyles from "../../blogs/edit/edit.module.scss"
 import { useAddVideo } from "./useAddVideo"
 import MediaModal from "../../blogs/add/MediaModal"
 import SuccessModal from "../../blogs/SuccessModal"
+import { useRouter } from "next/navigation"
 
 export default function AddVideoPage() {
     const {
@@ -33,8 +35,80 @@ export default function AddVideoPage() {
         showSuccessModal, setShowSuccessModal,
         categoryError,
         handleAddCategory,
-        handleSave
+        handleSave,
+        handleTrash,
+        isSaving,
+        currentUser,
+        setIsDirty
     } = useAddVideo()
+
+    const router = useRouter()
+    const [activeEditors, setActiveEditors] = React.useState<any[]>([])
+    const editorSessionId = React.useRef<string>("")
+
+    React.useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const key = `video_session_${id || 'new'}`
+            let sid = sessionStorage.getItem(key)
+            if (!sid) {
+                sid = Math.random().toString(36).substring(2, 12)
+                sessionStorage.setItem(key, sid)
+            }
+            editorSessionId.current = sid
+        }
+    }, [id])
+
+    React.useEffect(() => {
+        if (!id || !currentUser) return
+
+        const checkActiveEditors = async () => {
+            try {
+                const res = await fetch("/api/admin/active-editors", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        module: "videos",
+                        itemId: id,
+                        sessionId: editorSessionId.current,
+                        userId: currentUser.id,
+                        userName: currentUser.name
+                    }),
+                })
+                const data = await res.json()
+                if (data.success && data.isLocked) {
+                    setActiveEditors([{ user_name: data.lockedBy }])
+                } else {
+                    setActiveEditors([])
+                }
+            } catch (err) {
+                console.error("Error checking active editors", err)
+            }
+        }
+
+        const releaseLock = () => {
+            if (id) {
+                fetch(
+                    `/api/admin/active-editors?module=videos&itemId=${id}&sessionId=${editorSessionId.current}`,
+                    {
+                        method: "DELETE",
+                        keepalive: true,
+                    }
+                ).catch((e) => console.error("Failed to release lock", e))
+            }
+        }
+
+        checkActiveEditors()
+        const interval = setInterval(checkActiveEditors, 5000)
+        window.addEventListener("beforeunload", releaseLock)
+
+        return () => {
+            clearInterval(interval)
+            window.removeEventListener("beforeunload", releaseLock)
+            releaseLock()
+        }
+    }, [id, currentUser])
+
+    const isLocked = activeEditors.length > 0
 
     return (
         <div className={styles.container}>
@@ -42,8 +116,27 @@ export default function AddVideoPage() {
                 <h1>{id ? "Edit Video" : "Add Video"}</h1>
             </div>
 
-            <div className={styles.layout}>
-                <div className={styles.leftColumn}>
+            {isLocked && (
+                <div className={editStyles.lockModalOverlay}>
+                    <div className={editStyles.lockModal}>
+                        <i className="bi bi-lock-fill"></i>
+                        <h2>Item Locked</h2>
+                        <p>
+                            <strong>{activeEditors.map((e: any) => e.user_name).join(", ")}</strong> is currently editing this video.
+                            To prevent overwriting changes, editing has been disabled.
+                        </p>
+                        <div className={editStyles.modalFooter}>
+                            <button className={editStyles.cancelBtn} onClick={() => {
+                                setIsDirty(false);
+                                router.push("/admin/videos");
+                            }}>OK</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <div className={`${styles.layout} ${isLocked ? styles.locked : ""}`}>
+                <fieldset disabled={isLocked} className={styles.leftColumn}>
                     <div className={styles.titleInput}>
                         <input
                             type="text"
@@ -130,24 +223,32 @@ export default function AddVideoPage() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </fieldset>
 
-                <div className={styles.rightColumn}>
+                <fieldset disabled={isLocked} className={styles.rightColumn}>
                     <div className={styles.box}>
                         <div className={styles.boxHeader}>Publish</div>
                         <div className={styles.boxContent}>
                             <div className={styles.publishActions}>
-                                <button className={styles.actionBtn} onClick={() => handleSave(false)}>Save Draft</button>
+                                <button className={styles.actionBtn} onClick={() => handleSave(false)} disabled={isSaving}>
+                                    {isSaving ? "Saving..." : "Save Draft"}
+                                </button>
                             </div>
                             <div className={styles.publishStatus}>
                                 <div className={styles.statusRow}>
-                                    <i className="bi bi-key"></i> Status: <strong>{status.charAt(0).toUpperCase() + status.slice(1)}</strong> <a>Edit</a>
+                                    <i className="bi bi-key"></i> Status: <strong>{status.charAt(0).toUpperCase() + status.slice(1)}</strong>
                                 </div>
                             </div>
                             <div className={styles.publishFooter}>
-                                <button className={styles.trashBtn}>Move to Trash</button>
-                                <button className={styles.primaryBtn} onClick={() => handleSave(true)}>
-                                    {status === "publish" ? "Update" : "Publish"}
+                                <button
+                                    className={styles.trashBtn}
+                                    disabled={isLocked || isSaving}
+                                    onClick={handleTrash}
+                                >
+                                    Move to Trash
+                                </button>
+                                <button className={styles.primaryBtn} onClick={() => handleSave(true)} disabled={isSaving}>
+                                    {isSaving ? "Processing..." : (status === "publish" ? "Update" : "Publish")}
                                 </button>
                             </div>
                         </div>
@@ -243,7 +344,7 @@ export default function AddVideoPage() {
                             </select>
                         </div>
                     </div>
-                </div>
+                </fieldset>
             </div>
 
             {showMediaModal && (
@@ -267,7 +368,8 @@ export default function AddVideoPage() {
                 show={showSuccessModal}
                 onClose={() => {
                     setShowSuccessModal(false)
-                    window.location.href = "/admin/videos"
+                    setIsDirty(false)
+                    router.push("/admin/videos")
                 }}
                 message={`Your video has been ${status === 'publish' ? 'published' : 'saved'} successfully!`}
             />

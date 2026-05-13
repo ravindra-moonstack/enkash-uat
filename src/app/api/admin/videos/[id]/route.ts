@@ -1,5 +1,6 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
+import { getUniqueSlug } from "@/src/utils/slugUtils"
 
 export async function GET(
   _request: Request,
@@ -34,20 +35,10 @@ export async function PUT(
   try {
     const id = (await params).id
     const data = await request.json()
-    const { slug } = data
-
-    if (slug) {
-      const [existing]: any = await pool.query(
-        "SELECT id FROM videos WHERE slug = ? AND id != ? LIMIT 1",
-        [slug, id]
-      )
-      if (existing.length > 0) {
-        return NextResponse.json(
-          { success: false, error: "Slug already exists. Please use a unique slug." },
-          { status: 400 }
-        )
-      }
-    }
+    
+    // Ensure unique slug
+    const baseSlug = data.slug || data.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
+    const uniqueSlug = await getUniqueSlug("videos", baseSlug, id)
 
     const query = `
       UPDATE videos SET
@@ -58,7 +49,7 @@ export async function PUT(
     `
     await pool.query(query, [
       data.title || "",
-      data.slug || "",
+      uniqueSlug,
       data.status || "draft",
       data.author || 1,
       data.post_parent || 0,
