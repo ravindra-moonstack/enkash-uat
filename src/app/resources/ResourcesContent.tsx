@@ -15,9 +15,14 @@ const ResourcesContent = () => {
     const [activeTab, setActiveTab] = useState("Case Studies")
     const [searchQuery, setSearchQuery] = useState("")
     const [selectedVideo, setSelectedVideo] = useState<any | null>(null)
+    const [isClient, setIsClient] = useState(false)
 
     const blogsRes = useResource("Blogs")
     const videosRes = useResource("Videos")
+
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
 
     // Determine current resource interface based on activeTab
     const currentRes = activeTab === "Videos" ? videosRes : blogsRes
@@ -82,6 +87,8 @@ const ResourcesContent = () => {
     const closeVideoModal = () => {
         setSelectedVideo(null)
     }
+
+    if (!isClient) return null
 
     return (
         <div className={styles.resources_container}>

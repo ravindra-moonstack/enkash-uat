@@ -7,13 +7,11 @@ export default function ResourcesLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
-            <body>
-                <main>{children}</main>
-                <Suspense fallback={null}>
-                    <ConsultationModal />
-                </Suspense>
-            </body>
-        </html>
+        <>
+            {children}
+            <Suspense fallback={null}>
+                <ConsultationModal />
+            </Suspense>
+        </>
     )
 }
