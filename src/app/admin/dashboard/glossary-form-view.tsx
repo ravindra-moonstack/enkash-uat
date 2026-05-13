@@ -166,7 +166,7 @@ const GlossaryFormView = ({
             ? `Updating details for "${editingItem.word}"`
             : "Add a new term and definition to the glossary"}
         </p>
-        
+
         {isLocked && (
           <div
             className="alert alert-danger mt-3"

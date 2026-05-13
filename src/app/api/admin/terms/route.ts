@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import pool from "@/src/lib/dbConnect"
 import { RowDataPacket, ResultSetHeader } from "mysql2"
+import { getUniqueSlug } from "@/src/utils/slugUtils"
 
 export async function GET(req: NextRequest) {
     try {
@@ -51,21 +52,15 @@ export async function POST(req: NextRequest) {
         const body = await req.json()
         const { name, slug, description, parent, taxonomy } = body
 
-        if (!name || !slug || !taxonomy) {
-            return NextResponse.json({ success: false, error: "Name, slug, and taxonomy are required." }, { status: 400 })
+        if (!name || !taxonomy) {
+            return NextResponse.json({ success: false, error: "Name and taxonomy are required." }, { status: 400 })
         }
 
-        // Check for duplicate slug in the same taxonomy
-        const [existing]: any = await pool.query(
-            "SELECT term_id FROM terms WHERE slug = ? AND taxonomy = ?",
-            [slug, taxonomy]
-        )
-        if (existing.length > 0) {
-            return NextResponse.json({ success: false, error: "Slug already exists in this taxonomy." }, { status: 400 })
-        }
+        const baseSlug = slug || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
+        const uniqueSlug = await getUniqueSlug("terms", baseSlug, undefined, "term_id", { taxonomy })
 
         const query = "INSERT INTO terms (name, slug, description, parent, taxonomy, count) VALUES (?, ?, ?, ?, ?, 0)"
-        const [result] = await pool.query<ResultSetHeader>(query, [name, slug, description || "", parent || 0, taxonomy])
+        const [result] = await pool.query<ResultSetHeader>(query, [name, uniqueSlug, description || "", parent || 0, taxonomy])
 
         return NextResponse.json({ success: true, id: result.insertId })
     } catch (error: any) {

@@ -1,5 +1,6 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
+import { getUniqueSlug } from "@/src/utils/slugUtils"
 
 export async function GET(
   _request: Request,
@@ -35,6 +36,10 @@ export async function PUT(
     const id = (await params).id
     const data = await request.json()
 
+    // Ensure unique slug
+    const baseSlug = data.slug || data.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
+    const uniqueSlug = await getUniqueSlug("media_coverage", baseSlug, id)
+
     const query = `
       UPDATE media_coverage SET
           title = ?, slug = ?, status = ?, author = ?, post_parent = ?,
@@ -44,7 +49,7 @@ export async function PUT(
     `
     await pool.query(query, [
       data.title || "",
-      data.slug || "",
+      uniqueSlug,
       data.status || "draft",
       data.author || 1,
       data.post_parent || 0,

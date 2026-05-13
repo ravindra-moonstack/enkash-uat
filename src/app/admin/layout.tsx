@@ -52,6 +52,7 @@ export default function AdminLayout({
         checkAuth();
     }, [isLoginPage, router]);
 
+
     const handleLogout = () => {
         document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Strict";
         router.push("/admin")
@@ -181,6 +182,7 @@ export default function AdminLayout({
                     {children}
                 </div>
             </main>
+
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
+import { getUniqueSlug } from "@/src/utils/slugUtils"
 
 export async function GET(request: Request) {
   try {
@@ -61,7 +62,8 @@ export async function GET(request: Request) {
     // Fetch paginated videos
     const query = `
             SELECT v.*, u.display_name as author_name,
-                   GROUP_CONCAT(DISTINCT te.name SEPARATOR ', ') as categories_names
+                   GROUP_CONCAT(DISTINCT te.name SEPARATOR ', ') as categories_names,
+                   (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'videos' AND pae.post_id = v.id AND pae.last_active > NOW() - INTERVAL 30 SECOND) as locked_by
             FROM videos v
             LEFT JOIN users u ON v.author = u.ID
             LEFT JOIN terms te ON FIND_IN_SET(te.term_id, v.category) > 0 AND te.taxonomy = 'category'
@@ -102,20 +104,10 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const data = await request.json()
-    const { slug } = data
-
-    if (slug) {
-      const [existing]: any = await pool.query(
-        "SELECT id FROM videos WHERE slug = ? LIMIT 1",
-        [slug]
-      )
-      if (existing.length > 0) {
-        return NextResponse.json(
-          { success: false, error: "Slug already exists. Please use a unique slug." },
-          { status: 400 }
-        )
-      }
-    }
+    
+    // Ensure unique slug
+    const baseSlug = data.slug || data.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
+    const uniqueSlug = await getUniqueSlug("videos", baseSlug)
 
     const query = `
             INSERT INTO videos (
@@ -127,7 +119,7 @@ export async function POST(request: Request) {
 
     const [result]: any = await pool.query(query, [
       data.title || "",
-      data.slug || "",
+      uniqueSlug,
       data.status || "draft",
       data.author || 1,
       data.post_parent || 0,

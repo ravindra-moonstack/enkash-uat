@@ -96,12 +96,27 @@ export default function MediaCoveragePage() {
                     ) : (
                         items.map(item => (
                             <tr key={item.id}>
-                                <td className={styles.titleCol}>
-                                    {item.title || "(no title)"}
+                                <td className={`${styles.titleCol} ${item.locked_by ? styles.itemLocked : ""}`}>
+                                    {item.locked_by ? (
+                                        <span className={styles.titleLinkDisabled}>
+                                            {item.title || "(no title)"}
+                                            <span className={styles.lockInfo}>
+                                                <i className="bi bi-lock-fill"></i> Locked by: {item.locked_by}
+                                            </span>
+                                        </span>
+                                    ) : (
+                                        <Link href={`/admin/media-coverage/add?id=${item.id}`} className={styles.titleLink}>
+                                            {item.title || "(no title)"}
+                                        </Link>
+                                    )}
                                     {item.status === "draft" && " — Draft"}
                                     <div className={styles.rowActions}>
-                                        <Link href={`/admin/media-coverage/add?id=${item.id}`}>Edit</Link> |
-                                        <a className={styles.trash} onClick={() => handleTrash(item.id)}>Trash</a>
+                                        {item.locked_by ? (
+                                            <span className={styles.disabledAction}>Edit</span>
+                                        ) : (
+                                            <Link href={`/admin/media-coverage/add?id=${item.id}`}>Edit</Link>
+                                        )} |
+                                        <a className={item.locked_by ? styles.disabledAction : styles.trash} onClick={() => !item.locked_by && handleTrash(item.id)}>Trash</a>
                                     </div>
                                 </td>
                                 <td>{item.author_name || item.author}</td>
