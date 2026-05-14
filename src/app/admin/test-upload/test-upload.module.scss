@@ -1,0 +1,177 @@
+@use "../../../styles/variables" as *;
+
+.testUploadContainer {
+    padding: 30px;
+    background: $color-white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    .header {
+        margin-bottom: 30px;
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: $color-indi-volt;
+            margin-bottom: 8px;
+        }
+        
+        p {
+            color: $color-grey-600;
+            font-size: 14px;
+        }
+    }
+
+    .actionSection {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 800px;
+    }
+
+    .createCard {
+        padding: 24px;
+        background: #f8fafc;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        
+        .createBtn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: $color-equity-blue;
+            color: $color-white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba($color-equity-blue, 0.3);
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba($color-equity-blue, 0.4);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .detailsCard {
+        margin-top: 20px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        border-left: 4px solid $color-equity-blue;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: $color-main-black;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .detailItem {
+            label {
+                display: block;
+                font-size: 11px;
+                color: $color-grey-200;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+                letter-spacing: 0.5px;
+            }
+            span {
+                font-size: 14px;
+                font-weight: 500;
+                color: $color-main-black;
+                word-break: break-all;
+            }
+        }
+    }
+
+    .listCard {
+        padding: 24px;
+        background: #fff;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+
+        .listHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            
+            h2 {
+                font-size: 18px;
+                font-weight: 600;
+            }
+            
+            .count {
+                background: #edf2f7;
+                padding: 4px 10px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 600;
+                color: $color-grey-600;
+            }
+        }
+
+        .fileTable {
+            width: 100%;
+            border-collapse: collapse;
+            
+            th {
+                text-align: left;
+                padding: 12px;
+                border-bottom: 2px solid #f1f5f9;
+                font-size: 13px;
+                color: $color-grey-600;
+                font-weight: 600;
+            }
+            
+            td {
+                padding: 12px;
+                border-bottom: 1px solid #f1f5f9;
+                font-size: 14px;
+                
+                .fileName {
+                    font-weight: 500;
+                    color: $color-main-black;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    
+                    i {
+                        color: #ffb800;
+                    }
+                }
+                
+                .link {
+                    color: $color-equity-blue;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            tr:last-child td {
+                border-bottom: none;
+            }
+        }
+    }
+}
