@@ -8,7 +8,9 @@ export async function GET(request: Request) {
     const slug = searchParams.get("slug")
     const cookieStore = await cookies()
     const hasAdminToken = cookieStore.has("token")
-    const statusCondition = hasAdminToken ? "p.status IN ('publish', 'draft')" : "p.status = 'publish'"
+    const statusCondition = hasAdminToken
+      ? "p.status IN ('publish', 'draft')"
+      : "p.status = 'publish'"
 
     const postQuery = `
     SELECT 
