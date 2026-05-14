@@ -155,6 +155,13 @@ export default function AdminLayout({
                         <i className="bi bi-clipboard-data"></i>
                         Audit Logs
                     </Link>
+                    <Link
+                        href="/admin/test-upload"
+                        className={`${styles.navItem} ${pathname === '/admin/test-upload' ? styles.active : ''}`}
+                    >
+                        <i className="bi bi-file-earmark-plus"></i>
+                        Test File Upload
+                    </Link>
                 </nav>
 
                 <div className={styles.footerSection}>
