@@ -15,7 +15,7 @@ app.prepare().then(() => {
   createServer((req, res) => {
 
     // Serve uploads folder publicly
-    if (req.url.startsWith("/uploads/")) {
+    if (req.url.startsWith("/public/uploads/")) {
       const filePath = path.join(__dirname, req.url);
 
       fs.readFile(filePath, (err, content) => {
