@@ -115,9 +115,17 @@ const nextConfig: NextConfig = {
   //     {
   //       source: "/resources/:path*",
   //       destination: `${process.env.RESOURCE_URL}/:path*`,
-  //     },
   //   ]
   // },
+
+  async rewrites() {
+    return [
+      {
+        source: "/uploads/:path*",
+        destination: "/api/uploads/:path*",
+      },
+    ];
+  },
 
   async redirects() {
     return mappedUrls
