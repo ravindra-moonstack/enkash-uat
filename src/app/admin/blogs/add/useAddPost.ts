@@ -5,7 +5,7 @@ import { getImageUrl } from "@/src/utils/common"
 export function useAddPost() {
   const searchParams = useSearchParams()
   const router = useRouter()
-  const id = searchParams.get("id")
+  const id = searchParams?.get("id")
 
   const [title, setTitle] = useState("")
   const [slug, setSlug] = useState("")
@@ -238,7 +238,9 @@ export function useAddPost() {
     setSlugError("")
 
     try {
-      const res = await fetch(`/api/admin/blogs/check-slug?slug=${newSlug}${id ? `&excludeId=${id}` : ""}`)
+      const res = await fetch(
+        `/api/admin/blogs/check-slug?slug=${newSlug}${id ? `&excludeId=${id}` : ""}`
+      )
       const data = await res.json()
 
       if (data.exists) {
@@ -261,11 +263,16 @@ export function useAddPost() {
     if (!tagName) return
 
     // Check if tag already exists in metaOptions
-    let tag = metaOptions.tags.find(t => t.name.toLowerCase() === tagName.toLowerCase())
+    let tag = metaOptions.tags.find(
+      (t) => t.name.toLowerCase() === tagName.toLowerCase()
+    )
 
     if (!tag) {
       // Create new tag
-      const slug = tagName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "")
+      const slug = tagName
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "")
       try {
         const res = await fetch("/api/admin/terms", {
           method: "POST",
@@ -279,9 +286,9 @@ export function useAddPost() {
         if (res.ok) {
           const data = await res.json()
           tag = { term_id: data.id, name: tagName, slug }
-          setMetaOptions(prev => ({
+          setMetaOptions((prev) => ({
             ...prev,
-            tags: [...prev.tags, tag]
+            tags: [...prev.tags, tag],
           }))
         } else {
           alert("Failed to create tag")
@@ -293,9 +300,9 @@ export function useAddPost() {
       }
     }
 
-    const currentTags = tags ? tags.split(',').filter(t => t) : []
+    const currentTags = tags ? tags.split(",").filter((t) => t) : []
     if (!currentTags.includes(tag.term_id.toString())) {
-      setTags([...currentTags, tag.term_id.toString()].join(','))
+      setTags([...currentTags, tag.term_id.toString()].join(","))
     }
   }
 
@@ -308,7 +315,9 @@ export function useAddPost() {
     // Double check slug duplicate before saving
     setIsCheckingSlug(true)
     try {
-      const checkRes = await fetch(`/api/admin/blogs/check-slug?slug=${slug}${id ? `&excludeId=${id}` : ""}`)
+      const checkRes = await fetch(
+        `/api/admin/blogs/check-slug?slug=${slug}${id ? `&excludeId=${id}` : ""}`
+      )
       const checkData = await checkRes.json()
       if (checkData.exists) {
         setSlugError("This slug already exists. Please use a unique slug.")
