@@ -165,14 +165,60 @@ export async function DELETE(request: Request) {
   }
 }
 
+function splitBuffer(buffer: Buffer, delimiter: Buffer): Buffer[] {
+  const parts: Buffer[] = []
+  let start = 0
+  let index = buffer.indexOf(delimiter, start)
+
+  while (index !== -1) {
+    parts.push(buffer.slice(start, index))
+    start = index + delimiter.length
+    index = buffer.indexOf(delimiter, start)
+  }
+
+  parts.push(buffer.slice(start))
+  return parts
+}
+
 export async function POST(request: Request) {
   try {
-    const formData = await request.formData()
-    const file = formData.get("file") as File | null
-
-    if (!file) {
+    const contentType = request.headers.get("content-type") || ""
+    const boundaryMatch = contentType.match(/boundary=(.+)/)
+    if (!boundaryMatch) {
       return NextResponse.json(
-        { success: false, message: "No file uploaded" },
+        { success: false, message: "No boundary found" },
+        { status: 400 }
+      )
+    }
+    const boundary = boundaryMatch[1]
+
+    const arrayBuffer = await request.arrayBuffer()
+    const buffer = Buffer.from(arrayBuffer)
+
+    const boundaryBuffer = Buffer.from(`--${boundary}`)
+    const parts = splitBuffer(buffer, boundaryBuffer)
+
+    let fileData: Buffer | null = null
+    let fileName: string | null = null
+
+    for (const part of parts) {
+      if (part.length === 0 || part.toString().trim() === "--") continue
+
+      const headerEnd = part.indexOf("\r\n\r\n")
+      if (headerEnd === -1) continue
+
+      const headers = part.slice(0, headerEnd).toString()
+      if (headers.includes('filename="')) {
+        const nameMatch = headers.match(/filename="(.+?)"/)
+        fileName = nameMatch ? nameMatch[1] : "uploaded_file"
+        fileData = part.slice(headerEnd + 4, part.lastIndexOf("\r\n"))
+        break
+      }
+    }
+
+    if (!fileData || !fileName) {
+      return NextResponse.json(
+        { success: false, message: "No file found in request" },
         { status: 400 }
       )
     }
@@ -180,15 +226,52 @@ export async function POST(request: Request) {
     const { verifyToken } = await import("@/src/utils/auth")
     const user: any = await verifyToken()
 
-    const bytes = await file.arrayBuffer()
-    const buffer = Buffer.from(bytes)
+    const { isImageFile, sanitizeFileName } = await import(
+      "@/src/lib/upload-storage"
+    )
 
-    let baseSlug = file.name
-      .replace(/\.[^/.]+$/, "")
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
+    if (!isImageFile(fileName)) {
+      return NextResponse.json(
+        { success: false, message: "Only image uploads are supported" },
+        { status: 400 }
+      )
+    }
 
-    // Fallback if totally empty
+    fileName = sanitizeFileName(fileName)
+
+    const dateDir = new Date().toISOString().slice(0, 7).replace("-", "/") // e.g. "2026/05"
+    const uploadDir = path.join(process.cwd(), "uploads", dateDir)
+
+    const fs = await import("fs")
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true })
+    }
+
+    // Ensure unique filename inside the new directory
+    let candidate = fileName
+    const parsed = path.parse(candidate)
+    let counter = 1
+    while (fs.existsSync(path.join(uploadDir, candidate))) {
+      candidate = `${parsed.name}-${counter}${parsed.ext}`
+      counter += 1
+    }
+    fileName = candidate
+
+    const filePath = path.join(uploadDir, fileName)
+    fs.writeFileSync(filePath, fileData)
+
+    const relativePath = dateDir + "/" + fileName
+
+    let file_size = "0 KB"
+    if (fileData.length < 1024 * 1024) {
+      file_size = (fileData.length / 1024).toFixed(2) + " KB"
+    } else {
+      file_size = (fileData.length / (1024 * 1024)).toFixed(2) + " MB"
+    }
+
+    const title = fileName.replace(/\.[^/.]+$/, "")
+
+    let baseSlug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-")
     if (!baseSlug || baseSlug === "-") baseSlug = "media"
 
     let slug = baseSlug
@@ -207,53 +290,25 @@ export async function POST(request: Request) {
       slugSuffix++
     }
 
-    // Now use this strictly unique slug as the underlying file name to match WordPress behavior perfectly
-    const fileName = slug + path.extname(file.name)
-    const dateDir = new Date().toISOString().slice(0, 7).replace("-", "/")
-    const relativePath = dateDir + "/" + fileName
-
-    const fs = await import("fs/promises")
-    const uploadDir = path.join(process.cwd(), "public/uploads", dateDir)
-
-    // Ensure directory exists
-    await fs.mkdir(uploadDir, { recursive: true })
-
-    // Write file to disk
-    await fs.writeFile(
-      path.join(process.cwd(), "public/uploads", relativePath),
-      buffer
-    )
-
-    let file_size = "0 KB"
-    if (file.size < 1024 * 1024) {
-      file_size = (file.size / 1024).toFixed(2) + " KB"
-    } else {
-      file_size = (file.size / (1024 * 1024)).toFixed(2) + " MB"
-    }
-
-    const title = file.name.replace(/\.[^/.]+$/, "")
-
-    // Manually calculate next ID to bypass missing AUTO_INCREMENT
     const [maxIdRows]: any = await pool.execute(
       "SELECT COALESCE(MAX(id), 0) + 1 as nextId FROM attachments"
     )
     const nextId = maxIdRows[0].nextId
 
-    // Insert into DB (Mapping user's full table schema structure to prevent missing field errors)
-    const [result]: any = await pool.execute(
+    await pool.execute(
       "INSERT INTO attachments (id, title, content, status, post_type, slug, author, post_parent, image_url, attachment_image_alt, file_size, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())",
       [
-        nextId, // id
-        title, // title
-        "", // content
-        "inherit", // status
-        "attachment", // post_type
-        slug, // slug
-        user?.id || 1, // author
-        0, // post_parent
-        relativePath, // image_url
-        "", // attachment_image_alt
-        file_size, // file_size
+        nextId,
+        title,
+        "",
+        "inherit",
+        "attachment",
+        slug,
+        user?.id || 1,
+        0,
+        relativePath,
+        "",
+        file_size,
       ]
     )
 
