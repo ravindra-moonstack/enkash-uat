@@ -18,7 +18,7 @@ export function useEditPost() {
   const [featuredRight, setFeaturedRight] = useState("no")
   const [featuredLeftSide, setFeaturedLeftSide] = useState("no")
   const [categoryFeaturedBlog, setCategoryFeaturedBlog] = useState("no")
-  const [showFeaturedImage, setShowFeaturedImage] = useState("hide")
+  const [showFeaturedImage, setShowFeaturedImage] = useState("right")
   const [schemaMarkup, setSchemaMarkup] = useState("")
   const [removeAuthorDetails, setRemoveAuthorDetails] = useState(false)
   const [seoTitle, setSeoTitle] = useState("")
@@ -115,7 +115,7 @@ export function useEditPost() {
             }
           }
           if (data.meta) {
-            setShowFeaturedImage(data.meta.show_featured_image || "hide")
+            setShowFeaturedImage(data.meta.show_featured_image || "right")
             setSchemaMarkup(data.meta.post_schema_markup || "")
             setRemoveAuthorDetails(!!data.meta.remove_author_details)
             setSeoTitle(data.meta.meta_title || "")

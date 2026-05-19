@@ -294,8 +294,8 @@ export default function AddPostPage() {
                             <div className={styles.inputGroup}>
                                 <label>Show Featured Image</label>
                                 <select value={showFeaturedImage} onChange={(e) => setShowFeaturedImage(e.target.value)}>
-                                    <option value="hide">Hide</option>
                                     <option value="right">Right</option>
+                                    <option value="hide">Hide</option>
                                     <option value="bottom">Bottom</option>
                                 </select>
                             </div>

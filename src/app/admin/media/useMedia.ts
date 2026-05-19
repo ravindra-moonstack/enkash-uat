@@ -105,7 +105,7 @@ export const useMedia = (
   useEffect(() => {
     setPage(1)
     fetchMedia(1, true)
-  }, []) // Removed typeFilter, dateFilter
+  }, [])
 
   const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -286,10 +286,13 @@ export const useMedia = (
     field: string,
     value: string
   ) => {
-    if (!modalItem || modalItem[field] === value) return // skip if untouched
+    const itemToUpdate = modalItem || mediaItems.find((item) => item.id === id)
+    if (!itemToUpdate || itemToUpdate[field] === value) return // skip if untouched
 
-    const updatedItem = { ...modalItem, [field]: value }
-    setModalItem(updatedItem)
+    const updatedItem = { ...itemToUpdate, [field]: value }
+    if (modalItem) {
+      setModalItem(updatedItem)
+    }
     setMediaItems((prev) =>
       prev.map((item) => (item.id === id ? { ...item, [field]: value } : item))
     )
@@ -300,9 +303,9 @@ export const useMedia = (
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           id,
-          title: updatedItem.title,
-          attachment_image_alt: updatedItem.attachment_image_alt,
-          content: updatedItem.content,
+          title: updatedItem.title || "",
+          attachment_image_alt: updatedItem.attachment_image_alt || "",
+          content: updatedItem.content || "",
         }),
       })
     } catch (err) {

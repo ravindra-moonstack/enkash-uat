@@ -240,7 +240,7 @@ export async function POST(request: Request) {
     fileName = sanitizeFileName(fileName)
 
     const dateDir = new Date().toISOString().slice(0, 7).replace("-", "/") // e.g. "2026/05"
-    const uploadDir = path.join(process.cwd(), "uploads", dateDir)
+    const uploadDir = path.join(process.cwd(), "public", "uploads", dateDir)
 
     const fs = await import("fs")
     if (!fs.existsSync(uploadDir)) {

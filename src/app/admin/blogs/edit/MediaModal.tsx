@@ -188,7 +188,8 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library",
                                         <label style={{ display: 'block', fontSize: '12px', color: '#646970', textAlign: 'left' }}>Alt Text</label>
                                         <textarea
                                             value={selectedMedia.attachment_image_alt || ""}
-                                            onChange={(e) => handleUpdateMedia(selectedMedia.id, "attachment_image_alt", e.target.value)}
+                                            onChange={(e) => setSelectedMedia({ ...selectedMedia, attachment_image_alt: e.target.value })}
+                                            onBlur={(e) => handleUpdateMedia(selectedMedia.id, "attachment_image_alt", e.target.value)}
                                             style={{ width: '100%', minHeight: '50px', padding: '5px', border: '1px solid #8c8f94', borderRadius: '3px', color: "#2b2b2b" }}
                                         />
                                         <div style={{ fontSize: '11px', color: '#646970', marginTop: '3px' }}>
@@ -200,7 +201,8 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library",
                                         <input
                                             type="text"
                                             value={selectedMedia.title || ""}
-                                            onChange={(e) => handleUpdateMedia(selectedMedia.id, "title", e.target.value)}
+                                            onChange={(e) => setSelectedMedia({ ...selectedMedia, title: e.target.value })}
+                                            onBlur={(e) => handleUpdateMedia(selectedMedia.id, "title", e.target.value)}
                                             style={{ width: '100%', padding: '5px', border: '1px solid #8c8f94', borderRadius: '3px' }}
                                         />
                                     </div>
@@ -209,7 +211,8 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library",
                                         <label style={{ display: 'block', fontSize: '12px', color: '#646970', marginBottom: '5px' }}>Description</label>
                                         <textarea
                                             value={selectedMedia.content || ""}
-                                            onChange={(e) => handleUpdateMedia(selectedMedia.id, "content", e.target.value)}
+                                            onChange={(e) => setSelectedMedia({ ...selectedMedia, content: e.target.value })}
+                                            onBlur={(e) => handleUpdateMedia(selectedMedia.id, "content", e.target.value)}
                                             style={{ width: '100%', minHeight: '80px', padding: '5px', border: '1px solid #8c8f94', borderRadius: '3px' }}
                                         />
                                     </div>
