@@ -22,7 +22,7 @@ export default function VideosPage() {
         handleSearch,
         handlePageInputChange,
         handlePageInputSubmit,
-        handleTrash,
+        deleteVideo,
         formatDate
     } = useVideos()
 
@@ -127,7 +127,7 @@ export default function VideosPage() {
                                         ) : (
                                             <Link href={`/admin/videos/add?id=${video.id}`}>Edit</Link>
                                         )} |
-                                        <a className={video.locked_by ? styles.disabledAction : styles.trash} onClick={() => !video.locked_by && handleTrash(video.id)}>Trash</a>
+                                        <a className={video.locked_by ? styles.disabledAction : styles.trash} onClick={() => !video.locked_by && deleteVideo(video.id)}>Trash</a>
                                     </div>
                                 </td>
                                 <td>{video.author_name || video.author}</td>
