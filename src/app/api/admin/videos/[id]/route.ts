@@ -72,7 +72,8 @@ export async function PUT(
       UPDATE videos SET
           title = ?, slug = ?, status = ?, author = ?, post_parent = ?,
           external_embed_frame = ?, self_hosted_id = ?, thumbnail_id = ?,
-          featured = ?, trending = ?, category = ?, updated_at = COALESCE(?, NOW())
+          featured = ?, trending = ?, category = ?, 
+          created_at = COALESCE(?, created_at), updated_at = NOW()
       WHERE id = ?
     `
     await pool.query(query, [
@@ -87,7 +88,7 @@ export async function PUT(
       data.featured || "no",
       data.trending || "no",
       data.category || "",
-      data.updated_at || null,
+      data.created_at || null,
       id,
     ])
 

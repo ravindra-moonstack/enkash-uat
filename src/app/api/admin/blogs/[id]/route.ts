@@ -104,7 +104,7 @@ export async function PUT(
       UPDATE posts SET
           title = ?, slug = ?, content = ?, excerpt = ?, status = ?, author = ?, 
           featured_image = ?, featured_left_side = ?, featured_right = ?, category_featured_blog = ?, 
-          category = ?, tags = ?, updated_at = COALESCE(?, NOW())
+          category = ?, tags = ?, created_at = COALESCE(?, created_at), updated_at = NOW()
       WHERE id = ?
     `
     await pool.query(query, [
@@ -120,7 +120,7 @@ export async function PUT(
       data.category_featured_blog || "no",
       data.categories || "",
       data.tags || "",
-      data.updated_at || null,
+      data.created_at || null,
       id,
     ])
 
