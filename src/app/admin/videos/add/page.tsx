@@ -94,14 +94,14 @@ export default function AddVideoPage() {
         }
 
         const releaseLock = () => {
-            if (id) {
-                fetch(
-                    `/api/admin/active-editors?module=videos&itemId=${id}&sessionId=${editorSessionId.current}`,
-                    {
-                        method: "DELETE",
-                        keepalive: true,
-                    }
-                ).catch((e) => console.error("Failed to release lock", e))
+            if (id && editorSessionId.current) {
+                try {
+                    const url = `/api/admin/active-editors?module=videos&itemId=${id}&sessionId=${editorSessionId.current}`
+                    const payload = new Blob([JSON.stringify({ action: "release" })], { type: 'application/json' })
+                    navigator.sendBeacon(url, payload)
+                } catch (e) {
+                    console.error("Failed to release lock", e)
+                }
             }
         }
 
