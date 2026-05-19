@@ -50,12 +50,18 @@ export async function POST(request: Request) {
     await ensureTableExists()
     await cleanupInactiveEditors()
 
-    const body = await request.json()
-    const action = body.action
+    let body: any = {}
+    try {
+      body = await request.json()
+    } catch (e) {
+      // Body might be empty or invalid JSON (e.g. from sendBeacon with Blob)
+    }
+
+    const action = body.action || searchParams?.get("action")
     const userId = body.userId
-    const editorId = body.editorId || body.sessionId || searchParams?.get("editorId")
+    const editorId = body.editorId || body.sessionId || searchParams?.get("editorId") || searchParams?.get("sessionId")
     const module = body.module || searchParams?.get("module") || 'blogs'
-    const postId = body.postId || body.itemId || searchParams?.get("postId")
+    const postId = body.postId || body.itemId || searchParams?.get("postId") || searchParams?.get("itemId")
     const userName = body.userName
 
     if (action === "release") {
