@@ -88,6 +88,20 @@ const BlogBody = ({ bodyData, slug, title }: { bodyData: any, slug: string, titl
               <SummarizeWithAI slug={slug} />
             </div>
             <div className={`${styles.colLg9}`}>
+              {bodyData.show_featured_image === "bottom" && bodyData.image && (
+                <img
+                  src={"/uploads/" + bodyData.image}
+                  alt={bodyData.imageAlt || title}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    maxHeight: "480px",
+                    objectFit: "cover",
+                    borderRadius: "20px",
+                    marginBottom: "30px"
+                  }}
+                />
+              )}
               <BlogContent htmlContent={processedHtml} />
               <SocialShare slug={slug} title={title} />
             </div>
