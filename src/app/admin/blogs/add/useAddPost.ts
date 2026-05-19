@@ -17,7 +17,7 @@ export function useAddPost() {
   const [featuredRight, setFeaturedRight] = useState("no")
   const [featuredLeftSide, setFeaturedLeftSide] = useState("no")
   const [categoryFeaturedBlog, setCategoryFeaturedBlog] = useState("no")
-  const [showFeaturedImage, setShowFeaturedImage] = useState("hide")
+  const [showFeaturedImage, setShowFeaturedImage] = useState("right")
   const [schemaMarkup, setSchemaMarkup] = useState("")
   const [removeAuthorDetails, setRemoveAuthorDetails] = useState(false)
   const [seoTitle, setSeoTitle] = useState("")
