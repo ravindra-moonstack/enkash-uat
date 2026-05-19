@@ -100,6 +100,14 @@
                 
                 .subMenuItem {
                     padding: 8px 16px 8px 44px;
+                    display: block;
+                    width: 100%;
+
+                    &.activeSubItem {
+                        background-color: rgba(255, 255, 255, 0.1);
+                        color: $color-white;
+                        font-weight: 600;
+                    }
                 }
             }
         }
@@ -203,6 +211,52 @@
             justify-content: center;
             color: $color-equity-blue;
             font-weight: 700;
+        }
+
+        .userDropdown {
+            position: absolute;
+            top: calc(78% + 10px);
+            right: 2%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            min-width: 180px;
+            z-index: 1000;
+            border: 1px solid #edf2f7;
+
+            .dropdownItem {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 12px;
+                color: #4a5568;
+                font-size: 14px;
+                font-weight: 500;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    background-color: #f7fafc;
+                    color: $color-equity-blue;
+                }
+
+                i {
+                    font-size: 16px;
+                }
+
+                &.logout {
+                    color: $color-error-red;
+                    border-top: 1px solid #edf2f7;
+                    margin-top: 4px;
+                    border-radius: 0 0 6px 6px;
+
+                    &:hover {
+                        background-color: rgba($color-error-red, 0.05);
+                    }
+                }
+            }
         }
     }
 }

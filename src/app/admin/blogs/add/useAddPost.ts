@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { getImageUrl } from "@/src/utils/common"
+import { useToast } from "@/src/context/ToastContext"
 
 export function useAddPost() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const id = searchParams.get("id")
-
   const [title, setTitle] = useState("")
   const [slug, setSlug] = useState("")
   const [content, setContent] = useState("")
@@ -22,6 +22,7 @@ export function useAddPost() {
   const [removeAuthorDetails, setRemoveAuthorDetails] = useState(false)
   const [seoTitle, setSeoTitle] = useState("")
   const [metaDescription, setMetaDescription] = useState("")
+  const [seoRobots, setSeoRobots] = useState("follow")
   const [metaOptions, setMetaOptions] = useState<{
     categories: any[]
     users: any[]
@@ -51,6 +52,27 @@ export function useAddPost() {
   const [currentUser, setCurrentUser] = useState<any>(null)
   const [isDirty, setIsDirty] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [isSavingDraft, setIsSavingDraft] = useState(false)
+  const [isPublishing, setIsPublishing] = useState(false)
+  const [successMessage, setSuccessMessage] = useState("")
+
+  const [customDate, setCustomDate] = useState("")
+
+  const [lastEditedBy, setLastEditedBy] = useState("System")
+  const [updatedAt, setUpdatedAt] = useState("")
+
+  // Confirmation Modal State
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [confirmConfig, setConfirmConfig] = useState<{
+    title: string
+    message: string
+    onConfirm: () => void
+    type: "primary" | "danger"
+  } | null>(null)
+
+  const { showToast } = useToast()
+
+  const isSaving = isSavingDraft || isPublishing
   const isInitialLoad = useRef(true)
 
   useEffect(() => {
@@ -59,6 +81,7 @@ export function useAddPost() {
         .then((res) => res.json())
         .then((data) => {
           if (data.post) {
+            console.log("data.post.author", data.post.author)
             setTitle(data.post.title || "")
             setSlug(data.post.slug || "")
             setContent(data.post.content || "")
@@ -83,12 +106,12 @@ export function useAddPost() {
             setSeoTitle(data.meta.meta_title || "")
             setMetaDescription(data.meta.meta_description || "")
             setFocusKeyword(data.meta.focus_keyword || "")
+            setSeoRobots(data.meta.seo_robots || "follow")
           }
         })
         .catch((err) => console.error("Error fetching post data", err))
     }
 
-    // Fetch meta (users, categories)
     fetch("/api/admin/blogs/meta")
       .then((res) => res.json())
       .then((data) => {
@@ -97,9 +120,9 @@ export function useAddPost() {
           users: data.users || [],
           tags: data.tags || [],
         })
-        if (!id && data.users && data.users.length > 0) {
-          setAuthor(data.users[0].ID.toString())
-        }
+        // if (!id && data.users && data.users.length > 0) {
+        //   setAuthor(data.users[0].ID.toString())
+        // }
       })
       .catch((err) => console.error("Error fetching meta", err))
 
@@ -113,6 +136,9 @@ export function useAddPost() {
       .then((data) => {
         if (data.success) {
           setCurrentUser(data.user)
+          if (!id && data.user?.id) {
+            setAuthor(data.user.id.toString())
+          }
         }
       })
       .catch((err) => console.error("Error fetching current user", err))
@@ -220,8 +246,9 @@ export function useAddPost() {
         setNewCategoryName("")
         setNewCategoryParent("0")
         setShowAddCategoryForm(false)
+        showToast("Category added successfully", "success")
       } else {
-        alert("Failed to add category")
+        showToast("Failed to add category", "error")
       }
     } catch (error) {
       console.error("Error adding category:", error)
@@ -238,7 +265,9 @@ export function useAddPost() {
     setSlugError("")
 
     try {
-      const res = await fetch(`/api/admin/blogs/check-slug?slug=${newSlug}${id ? `&excludeId=${id}` : ""}`)
+      const res = await fetch(
+        `/api/admin/blogs/check-slug?slug=${newSlug}${id ? `&excludeId=${id}` : ""}`
+      )
       const data = await res.json()
 
       if (data.exists) {
@@ -261,11 +290,16 @@ export function useAddPost() {
     if (!tagName) return
 
     // Check if tag already exists in metaOptions
-    let tag = metaOptions.tags.find(t => t.name.toLowerCase() === tagName.toLowerCase())
+    let tag = metaOptions.tags.find(
+      (t) => t.name.toLowerCase() === tagName.toLowerCase()
+    )
 
     if (!tag) {
       // Create new tag
-      const slug = tagName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "")
+      const slug = tagName
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "")
       try {
         const res = await fetch("/api/admin/terms", {
           method: "POST",
@@ -279,12 +313,12 @@ export function useAddPost() {
         if (res.ok) {
           const data = await res.json()
           tag = { term_id: data.id, name: tagName, slug }
-          setMetaOptions(prev => ({
+          setMetaOptions((prev) => ({
             ...prev,
-            tags: [...prev.tags, tag]
+            tags: [...prev.tags, tag],
           }))
         } else {
-          alert("Failed to create tag")
+          showToast("Failed to create tag", "error")
           return
         }
       } catch (err) {
@@ -293,33 +327,38 @@ export function useAddPost() {
       }
     }
 
-    const currentTags = tags ? tags.split(',').filter(t => t) : []
+    const currentTags = tags ? tags.split(",").filter((t) => t) : []
     if (!currentTags.includes(tag.term_id.toString())) {
-      setTags([...currentTags, tag.term_id.toString()].join(','))
+      setTags([...currentTags, tag.term_id.toString()].join(","))
     }
   }
 
   const handleSave = async (isPublish: boolean) => {
     if (!slug) {
-      alert("Slug is required")
+      showToast("Slug is required", "error")
       return
     }
 
     // Double check slug duplicate before saving
     setIsCheckingSlug(true)
     try {
-      const checkRes = await fetch(`/api/admin/blogs/check-slug?slug=${slug}${id ? `&excludeId=${id}` : ""}`)
+      const checkRes = await fetch(
+        `/api/admin/blogs/check-slug?slug=${slug}${id ? `&excludeId=${id}` : ""}`
+      )
       const checkData = await checkRes.json()
       if (checkData.exists) {
         setSlugError("This slug already exists. Please use a unique slug.")
         setIsCheckingSlug(false)
-        alert("Cannot save: Slug already exists.")
+        showToast("Cannot save: Slug already exists.", "error")
         return
       }
     } catch (err) {
       console.error("Error checking slug during save:", err)
     }
     setIsCheckingSlug(false)
+
+    if (isPublish) setIsPublishing(true)
+    else setIsSavingDraft(true)
 
     const payload = {
       title,
@@ -336,10 +375,14 @@ export function useAddPost() {
       meta_title: seoTitle,
       meta_description: metaDescription,
       focus_keyword: focusKeyword,
+      seo_robots: seoRobots,
       author,
       categories: categories.join(","),
       excerpt,
       tags,
+      updated_at: customDate
+        ? new Date(customDate).toISOString().slice(0, 19).replace("T", " ")
+        : undefined,
     }
 
     try {
@@ -359,13 +402,31 @@ export function useAddPost() {
       }
       if (res.ok) {
         setIsDirty(false)
+        if (isPublish) {
+          setSuccessMessage("Your post has been published successfully!")
+          setStatus("publish")
+        } else {
+          setSuccessMessage("Your post has been saved as draft successfully!")
+          setStatus("draft")
+        }
         setShowSuccessModal(true)
+        if (customDate) {
+          setUpdatedAt(customDate)
+        } else {
+          setUpdatedAt(new Date().toISOString())
+        }
+        if (currentUser?.name) {
+          setLastEditedBy(currentUser.name)
+        }
       } else {
-        alert("Failed to save post")
+        showToast("Failed to save post", "error")
       }
     } catch (error) {
       console.error("Error saving post:", error)
-      alert("Error saving post")
+      showToast("Error saving post", "error")
+    } finally {
+      setIsPublishing(false)
+      setIsSavingDraft(false)
     }
   }
 
@@ -401,6 +462,8 @@ export function useAddPost() {
     setSeoTitle,
     metaDescription,
     setMetaDescription,
+    seoRobots,
+    setSeoRobots,
     focusKeyword,
     setFocusKeyword,
     metaOptions,
@@ -431,6 +494,15 @@ export function useAddPost() {
     setSlugError,
     isCheckingSlug,
     setIsCheckingSlug,
+    isSaving,
+    isSavingDraft,
+    isPublishing,
+    successMessage,
+    customDate,
+    setCustomDate,
+    showConfirm,
+    setShowConfirm,
+    confirmConfig,
     currentUser,
     isDirty,
     setIsDirty,
@@ -440,5 +512,7 @@ export function useAddPost() {
     handleApplySlug,
     handleAddTag,
     handleSave,
+    lastEditedBy,
+    updatedAt
   }
 }

@@ -4,6 +4,7 @@ import React from "react"
 import Link from "next/link"
 import styles from "./blogs.module.scss"
 import { useBlogs } from "./useBlogs"
+import ConfirmationModal from "./ConfirmationModal"
 
 export default function BlogsPage() {
     const {
@@ -26,7 +27,10 @@ export default function BlogsPage() {
         handlePageInputChange,
         handlePageInputSubmit,
         handleTrash,
-        formatDate
+        formatDate,
+        showConfirm,
+        setShowConfirm,
+        confirmConfig
     } = useBlogs()
 
     return (
@@ -193,6 +197,18 @@ export default function BlogsPage() {
                     </div>
                 )}
             </div>
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Confirm"
+                />
+            )}
         </div>
     )
 }

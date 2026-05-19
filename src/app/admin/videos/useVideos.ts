@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from "react"
+import { useToast } from "@/src/context/ToastContext"
 
 export function useVideos() {
+  const { showToast } = useToast()
   const [videos, setVideos] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [statusFilter, setStatusFilter] = useState("all")
@@ -11,6 +13,14 @@ export function useVideos() {
   const [pageInput, setPageInput] = useState("1")
   const [totalPages, setTotalPages] = useState(1)
   const [totalItems, setTotalItems] = useState(0)
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [confirmConfig, setConfirmConfig] = useState<{
+    title: string
+    message: string
+    onConfirm: () => void
+    type: "primary" | "danger"
+  } | null>(null)
+
   const [counts, setCounts] = useState({
     all: 0,
     published: 0,
@@ -18,12 +28,18 @@ export function useVideos() {
     trash: 0,
   })
 
-  const fetchVideos = useCallback(async () => {
+  const fetchVideos = useCallback(async (overrides?: { status?: string; search?: string }) => {
     setLoading(true)
     try {
-      const res = await fetch(
-        `/api/admin/videos?status=${statusFilter}&search=${search}&date=${dateFilter}&page=${page}&limit=40`
-      )
+      const query = new URLSearchParams({
+        status: overrides?.status ?? statusFilter,
+        search: overrides?.search ?? search,
+        date: dateFilter,
+        page: page.toString(),
+        limit: "40",
+      }).toString()
+      const res = await fetch(`/api/admin/videos?${query}`)
+
       const data = await res.json()
       setVideos(data.videos || [])
       setTotalItems(data.totalItems || 0)
@@ -32,10 +48,11 @@ export function useVideos() {
       setPageInput(page.toString())
     } catch (error) {
       console.error("Error fetching videos:", error)
+      showToast("Failed to fetch videos", "error")
     } finally {
       setLoading(false)
     }
-  }, [statusFilter, search, dateFilter, page])
+  }, [statusFilter, search, dateFilter, page, showToast])
 
   useEffect(() => {
     fetchVideos()
@@ -79,23 +96,31 @@ export function useVideos() {
     }
   }
 
-  const handleTrash = async (id: number) => {
-    if (confirm("Are you sure you want to move this video to trash?")) {
-      try {
-        const res = await fetch(`/api/admin/videos/${id}`, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ status: "trash" }),
-        })
-        if (res.ok) {
-          fetchVideos()
+  const deleteVideo = (id: number) => {
+    setConfirmConfig({
+      title: "Delete Video",
+      message: "Are you sure you want to delete this video?",
+      type: "danger",
+      onConfirm: async () => {
+        try {
+          const res = await fetch(`/api/admin/videos/${id}`, {
+            method: "DELETE",
+          })
+          const data = await res.json()
+          if (data.success) {
+            fetchVideos()
+            showToast("Video deleted successfully", "success")
+          } else {
+            showToast(data.error || "Failed to delete video", "error")
+          }
+        } catch (err) {
+          console.error(err)
+          showToast("An error occurred", "error")
         }
-      } catch (error) {
-        console.error("Error trashing video:", error)
-      }
-    }
+      },
+    })
+    setShowConfirm(true)
   }
-
   const formatDate = (dateStr: string) => {
     if (!dateStr) return ""
     const date = new Date(dateStr)
@@ -128,7 +153,10 @@ export function useVideos() {
     handleSearch,
     handlePageInputChange,
     handlePageInputSubmit,
-    handleTrash,
+    deleteVideo,
+    showConfirm,
+    setShowConfirm,
+    confirmConfig,
     formatDate,
   }
 }

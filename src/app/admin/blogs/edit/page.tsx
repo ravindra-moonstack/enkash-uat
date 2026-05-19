@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { Fragment, useEffect, useRef, useState, useCallback } from "react"
 import Link from "next/link"
 import dynamic from "next/dynamic"
 import styles from "./edit.module.scss"
@@ -9,6 +9,7 @@ import { useEditPost } from "./useEditPost"
 const Editor = dynamic(() => import("./Editor"), { ssr: false })
 import MediaModal from "./MediaModal"
 import SuccessModal from "../SuccessModal"
+import ConfirmationModal from "../ConfirmationModal"
 
 export default function EditPostPage() {
     const {
@@ -50,22 +51,32 @@ export default function EditPostPage() {
         isCheckingSlug,
         setIsCheckingSlug,
         isSaving,
+        isSavingDraft,
+        isPublishing,
+        successMessage,
         handleTrash,
         currentUser,
         showSuccessModal,
         setShowSuccessModal,
+        showConfirm,
+        setShowConfirm,
+        confirmConfig,
         handleSave,
         isDirty,
         handleAddCategory,
         handleAddTag,
-        handleApplySlug
+        handleApplySlug,
+        customDate,
+        setCustomDate,
+        lastEditedBy,
+        updatedAt,
     } = useEditPost()
 
-    const [previewMode, setPreviewMode] = React.useState<"desktop" | "mobile">("desktop")
-    const [activeEditors, setActiveEditors] = React.useState<any[]>([])
-    const editorSessionId = React.useRef<string>("")
+    const [previewMode, setPreviewMode] = useState<"desktop" | "mobile">("desktop")
+    const [activeEditors, setActiveEditors] = useState<any[]>([])
+    const editorSessionId = useRef<string>("")
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (typeof window !== 'undefined') {
             const key = `editor_session_${id || 'new'}`
             let sid = sessionStorage.getItem(key)
@@ -77,47 +88,49 @@ export default function EditPostPage() {
         }
     }, [id])
 
-    React.useEffect(() => {
+    const releaseLock = useCallback(() => {
+        if (id && editorSessionId.current) {
+            try {
+                const url = `/api/admin/active-editors?module=blogs&postId=${id}&editorId=${editorSessionId.current}`
+                const payload = new Blob([JSON.stringify({ action: "release" })], { type: 'application/json' })
+                navigator.sendBeacon(url, payload)
+            } catch (e) {
+                console.error("Failed to release lock", e)
+            }
+        }
+    }, [id])
+
+    const checkActiveEditors = useCallback(async () => {
+        if (!id || !editorSessionId.current || !currentUser) return
+
+        try {
+            const res = await fetch("/api/admin/active-editors", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    module: "blogs",
+                    postId: id,
+                    editorId: editorSessionId.current,
+                    userId: currentUser.id,
+                    userName: currentUser.name
+                }),
+            })
+            const data = await res.json()
+            if (data.success && data.isLocked) {
+                setActiveEditors([{ user_name: data.lockedBy }])
+            } else {
+                setActiveEditors([])
+            }
+        } catch (err) {
+            console.error("Error checking active editors", err)
+        }
+    }, [id, currentUser])
+
+    useEffect(() => {
         if (!id || !currentUser) return
 
-        const checkActiveEditors = async () => {
-            try {
-                const res = await fetch("/api/admin/active-editors", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        module: "blogs",
-                        postId: id,
-                        editorId: editorSessionId.current,
-                        userId: currentUser.id,
-                        userName: currentUser.name
-                    }),
-                })
-                const data = await res.json()
-                if (data.success && data.isLocked) {
-                    setActiveEditors([{ user_name: data.lockedBy }])
-                } else {
-                    setActiveEditors([])
-                }
-            } catch (err) {
-                console.error("Error checking active editors", err)
-            }
-        }
-
-        const releaseLock = () => {
-            if (id) {
-                fetch(
-                    `/api/admin/active-editors?module=blogs&postId=${id}&editorId=${editorSessionId.current}`,
-                    {
-                        method: "DELETE",
-                        keepalive: true,
-                    }
-                ).catch((e) => console.error("Failed to release lock", e))
-            }
-        }
-
         checkActiveEditors()
-        const interval = setInterval(checkActiveEditors, 5000)
+        const interval = setInterval(checkActiveEditors, 3000)
         window.addEventListener("beforeunload", releaseLock)
 
         return () => {
@@ -125,7 +138,7 @@ export default function EditPostPage() {
             window.removeEventListener("beforeunload", releaseLock)
             releaseLock()
         }
-    }, [id, currentUser])
+    }, [id, currentUser, checkActiveEditors, releaseLock])
 
     const isLocked = activeEditors.length > 0
 
@@ -261,6 +274,7 @@ export default function EditPostPage() {
                                 <input type="text" value={seoTitle} onChange={(e) => setSeoTitle(e.target.value)} />
                             </div>
 
+
                             <div className={styles.inputGroup}>
                                 <label>Slug</label>
                                 <input
@@ -293,7 +307,16 @@ export default function EditPostPage() {
                             </div>
                         </div>
                     </div>
-
+                    <div className={styles.box} style={{ background: '#f9f9f9', borderTop: '2px solid #e2e4e7' }}>
+                        <div className={styles.boxContent} style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                            <div className={styles.statusRow} style={{ fontSize: '12px', color: '#666', }}>
+                                <i className="bi bi-info-circle me-1"></i> Last Updated By: <strong>{lastEditedBy}</strong>
+                            </div>
+                            <div className={styles.statusRow} style={{ fontSize: '12px', color: '#666', }}>
+                                <i className="bi bi-clock me-1"></i> Last Updated At: {updatedAt ? new Date(updatedAt).toLocaleString() : "Never"}
+                            </div>
+                        </div>
+                    </div>
                 </fieldset>
 
                 <fieldset disabled={isLocked} className={styles.rightColumn}>
@@ -301,7 +324,9 @@ export default function EditPostPage() {
                         <div className={styles.boxHeader}>Publish</div>
                         <div className={styles.boxContent}>
                             <div className={styles.publishActions}>
-                                <button className={styles.actionBtn} onClick={() => !isLocked && handleSave(false)} disabled={isLocked}>Save Draft</button>
+                                <button className={styles.actionBtn} onClick={() => !isLocked && handleSave(false)} disabled={isLocked || isSavingDraft}>
+                                    {isSavingDraft ? "Saving..." : "Save Draft"}
+                                </button>
                                 <a href={`${permalinkBase}${slug}`} target="_blank" className={styles.actionBtn} style={{ display: 'inline-block', textAlign: 'center', textDecoration: 'none' }}>Preview</a>
                             </div>
                             <div className={styles.publishStatus}>
@@ -310,6 +335,18 @@ export default function EditPostPage() {
                                 </div>
                                 <div className={styles.statusRow}>
                                     <i className="bi bi-eye"></i> Visibility: <strong>Public</strong>
+                                </div>
+                                <div className={styles.statusRow}>
+                                    <i className="bi bi-calendar"></i> Publish Date:
+                                    <div className={styles.datePickerWrapper}>
+                                        <input
+                                            type="datetime-local"
+                                            value={customDate}
+                                            onChange={(e) => setCustomDate(e.target.value)}
+                                            className={styles.datePickerInput}
+                                            disabled={isLocked}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div className={styles.publishActions}>
@@ -320,8 +357,8 @@ export default function EditPostPage() {
                                 >
                                     Move to Trash
                                 </button>
-                                <button className={styles.primaryBtn} onClick={() => !isLocked && handleSave(true)} disabled={isLocked || isSaving}>
-                                    {isSaving ? "Processing..." : postStatus === "publish" ? "Update" : "Publish"}
+                                <button className={styles.primaryBtn} onClick={() => !isLocked && handleSave(true)} disabled={isLocked || isPublishing}>
+                                    {isPublishing ? "Processing..." : postStatus === "publish" ? "Update" : "Publish"}
                                 </button>
                             </div>
                         </div>
@@ -417,7 +454,7 @@ export default function EditPostPage() {
                                     const renderCategory = (cat: any, depth = 0) => {
                                         const children = metaOptions.categories.filter((c: any) => c.parent === cat.term_id)
                                         return (
-                                            <React.Fragment key={cat.term_id}>
+                                            <Fragment key={cat.term_id}>
                                                 <div className={styles.checkboxGroup} style={{ marginLeft: depth * 20 }}>
                                                     <input
                                                         type="checkbox"
@@ -435,7 +472,7 @@ export default function EditPostPage() {
                                                     <label htmlFor={`cat_${cat.term_id}`} style={{ margin: 0, fontWeight: 400 }}>{cat.name}</label>
                                                 </div>
                                                 {children.map(child => renderCategory(child, depth + 1))}
-                                            </React.Fragment>
+                                            </Fragment>
                                         )
                                     }
 
@@ -566,7 +603,11 @@ export default function EditPostPage() {
                     onClose={() => setShowMediaModal(false)}
                     onSelect={(media) => {
                         if (mediaTarget === "editor") {
-                            setContent(prev => prev + `<p><img src="${media.url}" alt="${media.alt}" /></p>`)
+                            if ((window as any).tinymce && (window as any).tinymce.activeEditor) {
+                                (window as any).tinymce.activeEditor.insertContent(`<img src="${media.url}" alt="${media.alt}" />`)
+                            } else {
+                                setContent(prev => prev + `<p><img src="${media.url}" alt="${media.alt}" /></p>`)
+                            }
                         } else {
                             setFeaturedImageId(media.id)
                             setFeaturedImageUrl(media.url)
@@ -580,13 +621,24 @@ export default function EditPostPage() {
 
             <SuccessModal
                 show={showSuccessModal}
-                onClose={() => {
+                onClose={async () => {
                     setShowSuccessModal(false)
                     setIsDirty(false)
-                    router.push("/admin/blogs")
                 }}
-                message={`Your post has been ${postStatus === 'publish' ? 'published' : 'saved'} successfully!`}
+                message={successMessage}
             />
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Confirm"
+                />
+            )}
         </div>
     )
 }
