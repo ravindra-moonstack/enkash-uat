@@ -59,7 +59,8 @@ export async function PUT(
       UPDATE media_coverage SET
           title = ?, slug = ?, status = ?, author = ?, post_parent = ?,
           media_coverage_image = ?, media_coverage_date = ?, media_coverage_heading = ?,
-          media_coverage_description = ?, media_coverage_media_link = ?, updated_at = COALESCE(?, NOW())
+          media_coverage_description = ?, media_coverage_media_link = ?, 
+          created_at = COALESCE(?, created_at), updated_at = NOW()
       WHERE id = ?
     `
     await pool.query(query, [
@@ -73,7 +74,7 @@ export async function PUT(
       data.media_coverage_heading || "",
       data.media_coverage_description || "",
       data.media_coverage_media_link || "",
-      data.updated_at || null,
+      data.created_at || null,
       id
     ])
 

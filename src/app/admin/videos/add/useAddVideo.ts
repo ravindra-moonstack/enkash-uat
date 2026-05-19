@@ -100,8 +100,8 @@ export function useAddVideo() {
             setSelectedCategories(data.video.category ? data.video.category.split(",") : [])
             setSlugManuallyEdited(true)
             
-            if (data.video.updated_at || data.video.created_at) {
-              const dateStr = data.video.updated_at || data.video.created_at;
+            if (data.video.created_at) {
+              const dateStr = data.video.created_at;
               const dateObj = new Date(dateStr);
               if (!isNaN(dateObj.getTime())) {
                   const offset = dateObj.getTimezoneOffset() * 60000;
@@ -147,8 +147,9 @@ export function useAddVideo() {
       featured,
       trending,
       category: selectedCategories.join(","),
-      created_at: customDate || undefined,
-      updated_at: customDate || undefined
+      created_at: customDate
+        ? customDate.replace("T", " ") + (customDate.length === 16 ? ":00" : "")
+        : undefined,
     }
 
     try {
@@ -168,6 +169,10 @@ export function useAddVideo() {
       }
       if (res.ok) {
         setIsDirty(false)
+        setUpdatedAt(new Date().toISOString())
+        if (currentUser?.name) {
+          setLastEditedBy(currentUser.name)
+        }
         setShowSuccessModal(true)
       } else {
         const data = await res.json()

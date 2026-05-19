@@ -103,10 +103,15 @@ export function useEditPost() {
             setTags(data.post.tags || "")
             setLastEditedBy(data.post.last_edited_by || "System")
             setUpdatedAt(data.post.updated_at || "")
-            if (data.post.updated_at) {
-              setCustomDate(
-                new Date(data.post.updated_at).toISOString().slice(0, 16)
-              )
+            if (data.post.created_at) {
+              const dateObj = new Date(data.post.created_at)
+              if (!isNaN(dateObj.getTime())) {
+                const offset = dateObj.getTimezoneOffset() * 60000
+                const localISOTime = new Date(dateObj.getTime() - offset)
+                  .toISOString()
+                  .slice(0, 16)
+                setCustomDate(localISOTime)
+              }
             }
           }
           if (data.meta) {
@@ -338,8 +343,8 @@ export function useEditPost() {
       categories: categories.join(","),
       excerpt,
       tags,
-      updated_at: customDate
-        ? new Date(customDate).toISOString().slice(0, 19).replace("T", " ")
+      created_at: customDate
+        ? customDate.replace("T", " ") + (customDate.length === 16 ? ":00" : "")
         : undefined,
     }
 
@@ -372,11 +377,7 @@ export function useEditPost() {
           setStatus("draft")
         }
         setShowSuccessModal(true)
-        if (customDate) {
-          setUpdatedAt(customDate)
-        } else {
-          setUpdatedAt(new Date().toISOString())
-        }
+        setUpdatedAt(new Date().toISOString())
         if (currentUser?.name) {
           setLastEditedBy(currentUser.name)
         }

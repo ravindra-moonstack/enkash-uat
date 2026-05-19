@@ -92,8 +92,8 @@ export function useAddMediaCoverage() {
             )
             setMediaCoverageMediaLink(data.item.media_coverage_media_link || "")
             
-            if (data.item.updated_at || data.item.created_at) {
-              const dateStr = data.item.updated_at || data.item.created_at;
+            if (data.item.created_at) {
+              const dateStr = data.item.created_at;
               const dateObj = new Date(dateStr);
               if (!isNaN(dateObj.getTime())) {
                   const offset = dateObj.getTimezoneOffset() * 60000;
@@ -142,8 +142,9 @@ export function useAddMediaCoverage() {
       media_coverage_heading: mediaCoverageHeading,
       media_coverage_description: mediaCoverageDescription,
       media_coverage_media_link: mediaCoverageMediaLink,
-      created_at: customDate || undefined,
-      updated_at: customDate || undefined,
+      created_at: customDate
+        ? customDate.replace("T", " ") + (customDate.length === 16 ? ":00" : "")
+        : undefined,
     }
 
     try {
