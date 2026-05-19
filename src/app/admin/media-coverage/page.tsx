@@ -4,6 +4,7 @@ import React from "react"
 import Link from "next/link"
 import styles from "../blogs/blogs.module.scss"
 import { useMediaCoverage } from "./useMediaCoverage"
+import ConfirmationModal from "../blogs/ConfirmationModal"
 
 export default function MediaCoveragePage() {
     const {
@@ -21,7 +22,10 @@ export default function MediaCoveragePage() {
         handlePageInputChange,
         handlePageInputSubmit,
         handleTrash,
-        formatDate
+        formatDate,
+        showConfirm,
+        setShowConfirm,
+        confirmConfig
     } = useMediaCoverage()
 
     const renderPagination = () => (
@@ -135,6 +139,18 @@ export default function MediaCoveragePage() {
                 <span className={styles.itemCount}>{totalItems} items</span>
                 {renderPagination()}
             </div>
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Confirm"
+                />
+            )}
         </div>
     )
 }

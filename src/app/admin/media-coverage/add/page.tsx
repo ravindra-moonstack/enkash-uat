@@ -5,6 +5,7 @@ import Link from "next/link"
 import styles from "../../blogs/add/add.module.scss"
 import { useAddMediaCoverage } from "./useAddMediaCoverage"
 import MediaModal from "../../blogs/add/MediaModal"
+import ConfirmationModal from "../../blogs/ConfirmationModal"
 import { useRouter } from "next/navigation"
 
 export default function AddMediaCoveragePage() {
@@ -25,7 +26,14 @@ export default function AddMediaCoveragePage() {
         showMediaModal, setShowMediaModal,
         handleSave,
         currentUser,
-        setIsDirty
+        setIsDirty,
+        showConfirm,
+        setShowConfirm,
+        confirmConfig,
+        customDate,
+        setCustomDate,
+        lastEditedBy,
+        updatedAt
     } = useAddMediaCoverage()
 
     const router = useRouter()
@@ -186,12 +194,33 @@ export default function AddMediaCoveragePage() {
                                 <div className={styles.statusRow}>
                                     <i className="bi bi-key"></i> Status: <strong>{status.charAt(0).toUpperCase() + status.slice(1)}</strong>
                                 </div>
+                                <div className={styles.statusRow}>
+                                    <i className="bi bi-calendar"></i> Publish Date:
+                                    <div className={styles.datePickerWrapper}>
+                                        <input
+                                            type="datetime-local"
+                                            value={customDate}
+                                            onChange={(e) => setCustomDate(e.target.value)}
+                                            className={styles.datePickerInput}
+                                        />
+                                    </div>
+                                </div>
                             </div>
                             <div className={styles.publishFooter}>
                                 <button className={styles.primaryBtn} onClick={() => handleSave(true)}>
                                     {status === "publish" ? "Update" : "Publish"}
                                 </button>
                             </div>
+                            {id && (
+                                <div className={styles.publishStatus} style={{ borderTop: "1px solid #dcdcde", marginTop: 15, paddingTop: 15 }}>
+                                    <div className={styles.statusRow}>
+                                        <i className="bi bi-info-circle me-1"></i> Last Updated By: <strong>{lastEditedBy}</strong>
+                                    </div>
+                                    <div className={styles.statusRow}>
+                                        <i className="bi bi-clock me-1"></i> Last Updated At: {updatedAt ? new Date(updatedAt).toLocaleString() : "Never"}
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -233,6 +262,18 @@ export default function AddMediaCoveragePage() {
                         setShowMediaModal(false)
                     }}
                     title="Set Coverage Image"
+                />
+            )}
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Confirm"
                 />
             )}
         </div>

@@ -605,3 +605,39 @@
         }
     }
 }
+
+.datePickerWrapper {
+    margin-top: 5px;
+    width: 100%;
+}
+.datePickerInput {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #2c3338;
+    background-color: #fff;
+    box-shadow: 0 0 0 transparent;
+    transition: box-shadow .1s linear;
+    color-scheme: light;
+    &::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &:focus {
+        border-color: #2271b1;
+        box-shadow: 0 0 0 1px #2271b1;
+        outline: 2px solid transparent;
+    }
+    &:disabled {
+        background-color: #f0f0f1;
+        color: #8c8f94;
+        cursor: not-allowed;
+    }
+}

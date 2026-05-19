@@ -5,7 +5,8 @@ import { nameToUrl } from "@/src/utils/stringUtils"
 import { useQuillEditor } from "./use-quill-editor"
 import GlossaryListView from "./glossary-list-view"
 import GlossaryFormView from "./glossary-form-view"
-
+import ConfirmationModal from "../blogs/ConfirmationModal"
+import { useToast } from "@/src/context/ToastContext"
 
 interface GlossaryItem {
     id?: number
@@ -30,7 +31,15 @@ const GlossaryAdmin = (): React.JSX.Element => {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const isSubmittingRef = useRef(false)
     const [editingItem, setEditingItem] = useState<GlossaryItem | null>(null)
-
+    
+    const { showToast } = useToast()
+    const [showConfirm, setShowConfirm] = useState(false)
+    const [confirmConfig, setConfirmConfig] = useState<{
+        onConfirm: () => void;
+        message: string;
+        title?: string;
+        type?: "danger" | "primary";
+    } | null>(null)
 
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1)
@@ -322,31 +331,38 @@ const GlossaryAdmin = (): React.JSX.Element => {
     }
 
     const handleDelete = async (id: number) => {
-        if (!confirm("Are you sure you want to delete this item?")) return
+        setConfirmConfig({
+            title: "Delete Glossary Item",
+            message: "Are you sure you want to delete this item?",
+            type: "danger",
+            onConfirm: async () => {
+                try {
+                    const response = await fetch(`/api/admin/glossary/${id}`, {
+                        method: 'DELETE'
+                    })
 
-        try {
-            const response = await fetch(`/api/admin/glossary/${id}`, {
-                method: 'DELETE'
-            })
+                    if (response.status === 401) {
+                        window.location.href = "/admin"
+                        return
+                    }
 
-            if (response.status === 401) {
-                window.location.href = "/admin"
-                return
-            }
-
-            const data = await response.json()
-            if (data.success) {
-                if (items.length === 1 && currentPage > 1) {
-                    setCurrentPage(prev => prev - 1)
-                } else {
-                    fetchItems(currentPage)
+                    const data = await response.json()
+                    if (data.success) {
+                        showToast("Item deleted successfully", "success")
+                        if (items.length === 1 && currentPage > 1) {
+                            setCurrentPage(prev => prev - 1)
+                        } else {
+                            fetchItems(currentPage)
+                        }
+                    } else {
+                        showToast(data.message || "Delete failed", "error")
+                    }
+                } catch {
+                    showToast("Internal server error", "error")
                 }
-            } else {
-                alert(data.message || "Delete failed")
             }
-        } catch {
-            alert("Internal server error")
-        }
+        })
+        setShowConfirm(true)
     }
 
     const handleAddNew = () => {
@@ -434,6 +450,18 @@ const GlossaryAdmin = (): React.JSX.Element => {
                     handleAltCancel={handleAltCancel}
                     featureImageAlt={featureImageAlt}
                     setFeatureImageAlt={setFeatureImageAlt}
+                />
+            )}
+            
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Delete"
                 />
             )}
         </div>

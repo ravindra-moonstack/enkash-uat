@@ -51,10 +51,13 @@ export default function AddPostPage() {
         showSuccessModal,
         setShowSuccessModal,
         status: postStatus,
+        customDate,
+        setCustomDate,
+        lastEditedBy,
+        updatedAt
     } = useAddPost()
 
     const [previewMode, setPreviewMode] = React.useState<"desktop" | "mobile">("desktop")
-    console.log("API KEY: ", process.env.NEXT_PUBLIC_TINYMCE_API_KEY)
     return (
         <div className={styles.container}>
             <div className={styles.header}>
@@ -89,8 +92,8 @@ export default function AddPostPage() {
                                         id="tempSlugInput"
                                         autoFocus
                                     />
-                                    <button 
-                                        className={styles.applyBtn} 
+                                    <button
+                                        className={styles.applyBtn}
                                         onClick={async () => {
                                             const input = document.getElementById('tempSlugInput') as HTMLInputElement
                                             const newSlug = input.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
@@ -166,12 +169,13 @@ export default function AddPostPage() {
                                 <input type="text" value={seoTitle} onChange={(e) => setSeoTitle(e.target.value)} />
                             </div>
 
+
                             <div className={styles.inputGroup}>
                                 <label>Slug</label>
-                                <input 
-                                    type="text" 
-                                    value={slug} 
-                                    onChange={(e) => setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))} 
+                                <input
+                                    type="text"
+                                    value={slug}
+                                    onChange={(e) => setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))}
                                 />
                             </div>
 
@@ -211,10 +215,21 @@ export default function AddPostPage() {
                             </div>
                             <div className={styles.publishStatus}>
                                 <div className={styles.statusRow}>
-                                    <i className="bi bi-key"></i> Status: <strong>{status.charAt(0).toUpperCase() + status.slice(1)}</strong> <a>Edit</a>
+                                    <i className="bi bi-key"></i> Status: <strong>{status.charAt(0).toUpperCase() + status.slice(1)}</strong>
                                 </div>
                                 <div className={styles.statusRow}>
-                                    <i className="bi bi-eye"></i> Visibility: <strong>Public</strong> <a>Edit</a>
+                                    <i className="bi bi-eye"></i> Visibility: <strong>Public</strong>
+                                </div>
+                                <div className={styles.statusRow}>
+                                    <i className="bi bi-calendar"></i> Publish Date:
+                                    <div className={styles.datePickerWrapper}>
+                                        <input
+                                            type="datetime-local"
+                                            value={customDate}
+                                            onChange={(e) => setCustomDate(e.target.value)}
+                                            className={styles.datePickerInput}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div className={styles.publishFooter}>
@@ -459,6 +474,19 @@ export default function AddPostPage() {
                         </div>
                     </div>
 
+                    {id && (
+                        <div className={styles.box} style={{ background: '#f9f9f9', borderTop: '2px solid #e2e4e7' }}>
+                            <div className={styles.boxContent} style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                                <div className={styles.statusRow} style={{ fontSize: '12px', color: '#666', }}>
+                                    <i className="bi bi-info-circle me-1"></i> Last Updated By: <strong>{lastEditedBy}</strong>
+                                </div>
+                                <div className={styles.statusRow} style={{ fontSize: '12px', color: '#666', }}>
+                                    <i className="bi bi-clock me-1"></i> Last Updated At: {updatedAt ? new Date(updatedAt).toLocaleString() : "Never"}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
                 </div>
             </div>
 
@@ -467,7 +495,11 @@ export default function AddPostPage() {
                     onClose={() => setShowMediaModal(false)}
                     onSelect={(media) => {
                         if (mediaTarget === "editor") {
-                            setContent(prev => prev + `<p><img src="${media.url}" alt="${media.alt}" /></p>`)
+                            if ((window as any).tinymce && (window as any).tinymce.activeEditor) {
+                                (window as any).tinymce.activeEditor.insertContent(`<img src="${media.url}" alt="${media.alt}" />`)
+                            } else {
+                                setContent(prev => prev + `<p><img src="${media.url}" alt="${media.alt}" /></p>`)
+                            }
                         } else {
                             setFeaturedImageId(media.id)
                             setFeaturedImageUrl(media.url)
@@ -483,7 +515,6 @@ export default function AddPostPage() {
                 show={showSuccessModal}
                 onClose={() => {
                     setShowSuccessModal(false)
-                    window.location.href = "/admin/blogs"
                 }}
                 message={`Your post has been ${postStatus === 'publish' ? 'published' : 'saved'} successfully!`}
             />

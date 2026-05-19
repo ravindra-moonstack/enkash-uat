@@ -8,6 +8,7 @@ import BlogBody from "@/src/components/blog-components/BlogBody"
 import AuthorSection from "@/src/components/blog-components/AuthorSection"
 import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
 import { BlogNav } from "@/src/components"
+import { notFound, redirect } from "next/navigation"
 
 import { getBlogCategories, getPostBySlug } from "@/src/services/resource-service"
 
@@ -16,6 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const cookieStore = await cookies()
   const token = cookieStore.get("token")?.value
   const json = await getPostBySlug(slug, token)
+
+  if (json?.redirect) {
+    redirect(`/resources/blog/${json.redirect}`)
+  }
 
   if (json?.error || !json?.posts || json?.posts?.length === 0) {
     return {
@@ -65,15 +70,14 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const json = await getPostBySlug(slug, token)
   const navData = await getBlogCategories()
 
+  if (json?.redirect) {
+    redirect(`/resources/blog/${json.redirect}`)
+  }
+
   if (json?.error || !json?.posts || json?.posts?.length === 0) {
-    return (
-      <div className={styles.noData}>
-        <p>No Data Found</p>
-      </div>
-    )
+    notFound()
   }
   const result = json.posts
-  console.log("result", result);
 
   const bannerData = [
     {
@@ -101,13 +105,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     },
   ]
 
-  //   const authorData = [
-  //     {
-  //       author: result[0].author,
-  //       author_image: result[0].author_image,
-  //       author_description: result[0].author_description,
-  //     },
-  //   ]
+
 
   const relatedBlogs = [{ relatedBlogs: json?.relatedBlogs }]
 

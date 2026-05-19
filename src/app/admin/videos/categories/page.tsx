@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import styles from "../../blogs/categories/categories.module.scss"
+import ConfirmationModal from "../../blogs/ConfirmationModal"
+import { useToast } from "@/src/context/ToastContext"
 
 export default function VideoCategoriesPage() {
     const [terms, setTerms] = useState<any[]>([])
@@ -23,6 +25,16 @@ export default function VideoCategoriesPage() {
     const [parent, setParent] = useState(0)
     const [description, setDescription] = useState("")
     const [error, setError] = useState("")
+    const { showToast } = useToast()
+
+    // Confirmation Modal State
+    const [showConfirm, setShowConfirm] = useState(false)
+    const [confirmConfig, setConfirmConfig] = useState<{
+        title: string;
+        message: string;
+        onConfirm: () => void;
+        type: "primary" | "danger";
+    } | null>(null)
 
     const itemsPerPage = 20
 
@@ -137,17 +149,27 @@ export default function VideoCategoriesPage() {
     }
 
     const handleDelete = async (id: number) => {
-        if (confirm("Are you sure you want to delete this category?")) {
-            try {
-                const res = await fetch(`/api/admin/terms/${id}`, { method: "DELETE" })
-                const data = await res.json()
-                if (data.success) {
-                    fetchTerms()
+        setConfirmConfig({
+            title: "Delete Category",
+            message: "Are you sure you want to delete this category?",
+            type: "danger",
+            onConfirm: async () => {
+                try {
+                    const res = await fetch(`/api/admin/terms/${id}`, { method: "DELETE" })
+                    const data = await res.json()
+                    if (data.success) {
+                        fetchTerms()
+                        showToast("Category deleted successfully", "success")
+                    } else {
+                        showToast(data.error || "Failed to delete category", "error")
+                    }
+                } catch (error) {
+                    console.error(error)
+                    showToast("An error occurred", "error")
                 }
-            } catch (error) {
-                console.error(error)
             }
-        }
+        })
+        setShowConfirm(true)
     }
 
     const buildHierarchy = (items: any[]) => {
@@ -306,6 +328,18 @@ export default function VideoCategoriesPage() {
                     </table>
                 </div>
             </div>
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Confirm"
+                />
+            )}
         </div>
     )
 }

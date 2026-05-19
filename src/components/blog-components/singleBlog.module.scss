@@ -577,7 +577,7 @@
 
 .progressBarContainer {
   position: fixed;
-  top: 105px;
+  top: 100.5px;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 30px);
@@ -585,6 +585,7 @@
   height: 8px;
   background-color: transparent;
   z-index: 9999;
+  pointer-events: none;
 }
 
 .progressBar {

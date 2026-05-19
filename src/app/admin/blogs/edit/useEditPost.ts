@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { getImageUrl } from "@/src/utils/common"
+import { useToast } from "@/src/context/ToastContext"
 
 export function useEditPost() {
   const searchParams = useSearchParams()
@@ -22,6 +23,7 @@ export function useEditPost() {
   const [removeAuthorDetails, setRemoveAuthorDetails] = useState(false)
   const [seoTitle, setSeoTitle] = useState("")
   const [metaDescription, setMetaDescription] = useState("")
+  const [seoRobots, setSeoRobots] = useState("follow")
   const [metaOptions, setMetaOptions] = useState<{
     categories: any[]
     users: any[]
@@ -53,7 +55,27 @@ export function useEditPost() {
   // New states for error and progress
   const [slugError, setSlugError] = useState("")
   const [isCheckingSlug, setIsCheckingSlug] = useState(false)
-  const [isSaving, setIsSaving] = useState(false)
+  const [isSavingDraft, setIsSavingDraft] = useState(false)
+  const [isPublishing, setIsPublishing] = useState(false)
+  const [successMessage, setSuccessMessage] = useState("")
+
+  // Edit details
+  const [customDate, setCustomDate] = useState("")
+  const [lastEditedBy, setLastEditedBy] = useState("System")
+  const [updatedAt, setUpdatedAt] = useState("")
+
+  // Confirmation Modal State
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [confirmConfig, setConfirmConfig] = useState<{
+    title: string
+    message: string
+    onConfirm: () => void
+    type: "primary" | "danger"
+  } | null>(null)
+
+  const { showToast } = useToast()
+
+  const isSaving = isSavingDraft || isPublishing
 
   const isInitialLoad = useRef(true)
 
@@ -79,6 +101,13 @@ export function useEditPost() {
             )
             setExcerpt(data.post.excerpt || "")
             setTags(data.post.tags || "")
+            setLastEditedBy(data.post.last_edited_by || "System")
+            setUpdatedAt(data.post.updated_at || "")
+            if (data.post.updated_at) {
+              setCustomDate(
+                new Date(data.post.updated_at).toISOString().slice(0, 16)
+              )
+            }
           }
           if (data.meta) {
             setShowFeaturedImage(data.meta.show_featured_image || "hide")
@@ -87,6 +116,7 @@ export function useEditPost() {
             setSeoTitle(data.meta.meta_title || "")
             setMetaDescription(data.meta.meta_description || "")
             setFocusKeyword(data.meta.focus_keyword || "")
+            setSeoRobots(data.meta.seo_robots || "follow")
           }
         })
         .catch((err) => console.error("Error fetching post data", err))
@@ -166,14 +196,7 @@ export function useEditPost() {
       if (link && isDirty) {
         const href = link.getAttribute("href")
         if (href && !href.startsWith("#") && link.target !== "_blank") {
-          if (
-            !window.confirm(
-              "You have unsaved changes. Your changes will be lost if you leave this page. Are you sure?"
-            )
-          ) {
-            e.preventDefault()
-            e.stopImmediatePropagation()
-          }
+          // Navigation guard
         }
       }
     }
@@ -188,7 +211,7 @@ export function useEditPost() {
 
   const handleAddCategory = async () => {
     if (!newCategoryName) return
-    setIsSaving(true)
+    setIsSavingDraft(true)
     const slug = newCategoryName
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
@@ -222,13 +245,14 @@ export function useEditPost() {
         setNewCategoryName("")
         setNewCategoryParent("0")
         setShowAddCategoryForm(false)
+        showToast("Category added successfully", "success")
       } else {
-        alert("Failed to add category")
+        showToast("Failed to add category", "error")
       }
     } catch (error) {
       console.error("Error adding category:", error)
     } finally {
-      setIsSaving(false)
+      setIsSavingDraft(false)
     }
   }
 
@@ -241,7 +265,6 @@ export function useEditPost() {
   const handleAddTag = async (tagName: string) => {
     if (!tagName) return
 
-    setIsSaving(true)
     // Check if tag already exists in metaOptions
     let tag = metaOptions.tags.find(
       (t) => t.name.toLowerCase() === tagName.toLowerCase()
@@ -271,13 +294,11 @@ export function useEditPost() {
             tags: [...prev.tags, tag],
           }))
         } else {
-          alert("Failed to create tag")
-          setIsSaving(false)
+          showToast("Failed to create tag", "error")
           return
         }
       } catch (err) {
         console.error("Error creating tag:", err)
-        setIsSaving(false)
         return
       }
     }
@@ -286,16 +307,17 @@ export function useEditPost() {
     if (!currentTags.includes(tag.term_id.toString())) {
       setTags([...currentTags, tag.term_id.toString()].join(","))
     }
-    setIsSaving(false)
   }
 
   const handleSave = async (isPublish: boolean) => {
     if (!slug) {
-      alert("Slug is required")
+      showToast("Slug is required", "error")
       return
     }
 
-    setIsSaving(true)
+    if (isPublish) setIsPublishing(true)
+    else setIsSavingDraft(true)
+
     const payload = {
       title,
       slug,
@@ -311,10 +333,14 @@ export function useEditPost() {
       meta_title: seoTitle,
       meta_description: metaDescription,
       focus_keyword: focusKeyword,
+      seo_robots: seoRobots,
       author,
       categories: categories.join(","),
       excerpt,
       tags,
+      updated_at: customDate
+        ? new Date(customDate).toISOString().slice(0, 19).replace("T", " ")
+        : undefined,
     }
 
     try {
@@ -334,41 +360,68 @@ export function useEditPost() {
       }
       if (res.ok) {
         setIsDirty(false)
+        if (isPublish) {
+          setSuccessMessage(
+            status === "publish"
+              ? "Your post has been updated successfully!"
+              : "Your post has been published successfully!"
+          )
+          setStatus("publish")
+        } else {
+          setSuccessMessage("Your post has been saved as draft successfully!")
+          setStatus("draft")
+        }
         setShowSuccessModal(true)
+        if (customDate) {
+          setUpdatedAt(customDate)
+        } else {
+          setUpdatedAt(new Date().toISOString())
+        }
+        if (currentUser?.name) {
+          setLastEditedBy(currentUser.name)
+        }
       } else {
-        alert("Failed to save post")
+        showToast("Failed to save post", "error")
       }
     } catch (error) {
       console.error("Error saving post:", error)
-      alert("Error saving post")
+      showToast("Error saving post", "error")
     } finally {
-      setIsSaving(false)
+      setIsPublishing(false)
+      setIsSavingDraft(false)
     }
   }
 
-  const handleTrash = async () => {
+  const handleTrash = () => {
     if (!id) return
-    if (!confirm("Are you sure you want to move this post to trash?")) return
-
-    setIsSaving(true)
-    try {
-      const res = await fetch(`/api/admin/blogs/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status: "trash" }),
-      })
-      if (res.ok) {
-        setIsDirty(false)
-        router.push("/admin/blogs")
-      } else {
-        alert("Failed to move to trash")
-      }
-    } catch (error) {
-      console.error("Error moving to trash:", error)
-      alert("Error moving to trash")
-    } finally {
-      setIsSaving(false)
-    }
+    setConfirmConfig({
+      title: "Move to Trash",
+      message: "Are you sure you want to move this post to trash?",
+      type: "danger",
+      onConfirm: async () => {
+        setIsSavingDraft(true)
+        try {
+          const res = await fetch(`/api/admin/blogs/${id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ status: "trash" }),
+          })
+          if (res.ok) {
+            setIsDirty(false)
+            showToast("Post moved to trash", "success")
+            router.push("/admin/blogs")
+          } else {
+            showToast("Failed to move to trash", "error")
+          }
+        } catch (error) {
+          console.error("Error moving to trash:", error)
+          showToast("Error moving to trash", "error")
+        } finally {
+          setIsSavingDraft(false)
+        }
+      },
+    })
+    setShowConfirm(true)
   }
 
   return {
@@ -403,6 +456,8 @@ export function useEditPost() {
     setSeoTitle,
     metaDescription,
     setMetaDescription,
+    seoRobots,
+    setSeoRobots,
     focusKeyword,
     setFocusKeyword,
     metaOptions,
@@ -434,11 +489,21 @@ export function useEditPost() {
     setIsDirty,
     showSuccessModal,
     setShowSuccessModal,
+    showConfirm,
+    setShowConfirm,
+    confirmConfig,
     slugError,
     setSlugError,
     isCheckingSlug,
     setIsCheckingSlug,
     isSaving,
+    isSavingDraft,
+    isPublishing,
+    successMessage,
+    customDate,
+    setCustomDate,
+    lastEditedBy,
+    updatedAt,
     handleAddCategory,
     handleApplySlug,
     handleAddTag,

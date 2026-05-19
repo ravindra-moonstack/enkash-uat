@@ -1,6 +1,7 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
 import { getUniqueSlug } from "@/src/utils/slugUtils"
+import { recordAuditLog } from "@/src/utils/auditLogger"
 
 export async function GET(
   _request: Request,
@@ -19,8 +20,20 @@ export async function GET(
       return NextResponse.json({ error: "Media coverage not found" }, { status: 404 })
     }
 
+    const [audit]: any = await pool.query(
+      `SELECT u.display_name as last_edited_by, a.updated_at as audit_updated_at
+       FROM audit_logs a 
+       LEFT JOIN users u ON a.updated_by = u.ID 
+       WHERE a.table_name = 'media_coverage' AND a.row_id = ? 
+       ORDER BY a.id DESC LIMIT 1`,
+      [id]
+    )
+
     return NextResponse.json({
-      item: items[0]
+      item: {
+        ...items[0],
+        last_edited_by: audit.length > 0 ? audit[0].last_edited_by : "System"
+      }
     })
   } catch (error: any) {
     console.error("Error fetching media coverage:", error)
@@ -40,11 +53,13 @@ export async function PUT(
     const baseSlug = data.slug || data.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
     const uniqueSlug = await getUniqueSlug("media_coverage", baseSlug, id)
 
+    const [oldItem]: any = await pool.query(`SELECT * FROM media_coverage WHERE id = ?`, [id])
+
     const query = `
       UPDATE media_coverage SET
           title = ?, slug = ?, status = ?, author = ?, post_parent = ?,
           media_coverage_image = ?, media_coverage_date = ?, media_coverage_heading = ?,
-          media_coverage_description = ?, media_coverage_media_link = ?
+          media_coverage_description = ?, media_coverage_media_link = ?, updated_at = COALESCE(?, NOW())
       WHERE id = ?
     `
     await pool.query(query, [
@@ -58,8 +73,11 @@ export async function PUT(
       data.media_coverage_heading || "",
       data.media_coverage_description || "",
       data.media_coverage_media_link || "",
+      data.updated_at || null,
       id
     ])
+
+    await recordAuditLog("media_coverage", id, "UPDATE", oldItem.length > 0 ? oldItem[0] : null, data)
 
     return NextResponse.json({ success: true })
   } catch (error: any) {

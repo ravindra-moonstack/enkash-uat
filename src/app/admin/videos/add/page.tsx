@@ -7,6 +7,7 @@ import editStyles from "../../blogs/edit/edit.module.scss"
 import { useAddVideo } from "./useAddVideo"
 import MediaModal from "../../blogs/add/MediaModal"
 import SuccessModal from "../../blogs/SuccessModal"
+import ConfirmationModal from "../../blogs/ConfirmationModal"
 import { useRouter } from "next/navigation"
 
 export default function AddVideoPage() {
@@ -39,7 +40,14 @@ export default function AddVideoPage() {
         handleTrash,
         isSaving,
         currentUser,
-        setIsDirty
+        setIsDirty,
+        showConfirm,
+        setShowConfirm,
+        confirmConfig,
+        customDate,
+        setCustomDate,
+        lastEditedBy,
+        updatedAt
     } = useAddVideo()
 
     const router = useRouter()
@@ -98,7 +106,7 @@ export default function AddVideoPage() {
         }
 
         checkActiveEditors()
-        const interval = setInterval(checkActiveEditors, 5000)
+        const interval = setInterval(checkActiveEditors, 3000)
         window.addEventListener("beforeunload", releaseLock)
 
         return () => {
@@ -145,7 +153,7 @@ export default function AddVideoPage() {
                             onChange={(e) => {
                                 setTitle(e.target.value)
                                 if (!slugManuallyEdited) {
-                                    setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
+                                    setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9-]+/g, '-'))
                                 }
                             }}
                         />
@@ -157,7 +165,7 @@ export default function AddVideoPage() {
                             type="text"
                             value={slug}
                             onChange={(e) => {
-                                setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
+                                setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9-]+/g, '-'))
                                 setSlugManuallyEdited(true)
                             }}
                             className={styles.slugInput}
@@ -223,6 +231,18 @@ export default function AddVideoPage() {
                             </div>
                         </div>
                     </div>
+                    {id && (
+                        <div className={styles.box} style={{ background: '#f9f9f9', borderTop: '2px solid #e2e,margint4e7' }}>
+                            <div className={styles.boxContent} style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                                <div className={styles.statusRow} style={{ fontSize: '12px', color: '#666', }}>
+                                    <i className="bi bi-info-circle me-1"></i> Last Updated By: <strong>{lastEditedBy}</strong>
+                                </div>
+                                <div className={styles.statusRow} style={{ fontSize: '12px', color: '#666', }}>
+                                    <i className="bi bi-clock me-1"></i> Last Updated At: {updatedAt ? new Date(updatedAt).toLocaleString() : "Never"}
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </fieldset>
 
                 <fieldset disabled={isLocked} className={styles.rightColumn}>
@@ -237,6 +257,17 @@ export default function AddVideoPage() {
                             <div className={styles.publishStatus}>
                                 <div className={styles.statusRow}>
                                     <i className="bi bi-key"></i> Status: <strong>{status.charAt(0).toUpperCase() + status.slice(1)}</strong>
+                                </div>
+                                <div className={styles.statusRow}>
+                                    <i className="bi bi-calendar"></i> Publish Date:
+                                    <div className={styles.datePickerWrapper}>
+                                        <input
+                                            type="datetime-local"
+                                            value={customDate}
+                                            onChange={(e) => setCustomDate(e.target.value)}
+                                            className={styles.datePickerInput}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div className={styles.publishFooter}>
@@ -373,6 +404,18 @@ export default function AddVideoPage() {
                 }}
                 message={`Your video has been ${status === 'publish' ? 'published' : 'saved'} successfully!`}
             />
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Confirm"
+                />
+            )}
         </div>
     )
 }

@@ -405,24 +405,24 @@
     animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.successIcon {
+    width: 64px;
+    height: 64px;
+    background: #ecfdf5;
+    color: #10b981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    
+    svg {
+        animation: checkmark 0.5s ease-in-out forwards;
+    }
+}
+
 .modalHeader {
     margin-bottom: 20px;
-
-    .successIcon {
-        width: 64px;
-        height: 64px;
-        background: #ecfdf5;
-        color: #10b981;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 16px;
-        
-        svg {
-            animation: checkmark 0.5s ease-in-out forwards;
-        }
-    }
 
     h2 {
         margin: 0;
@@ -444,21 +444,22 @@
 }
 
 .modalFooter {
-    .okBtn {
-        width: 100%;
-        padding: 12px;
-        background: #10b981;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.2s;
+}
 
-        &:hover {
-            background: #059669;
-        }
+.okBtn {
+    width: 100%;
+    padding: 12px;
+    background: #10b981;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #059669;
     }
 }
 
@@ -509,4 +510,26 @@
     color: #a7aaad !important;
     cursor: not-allowed !important;
     text-decoration: none !important;
+}
+
+.dangerIcon, .confirmIcon {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.cancelBtn {
+    padding: 10px 24px;
+    background: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #5a6268;
+    }
 }

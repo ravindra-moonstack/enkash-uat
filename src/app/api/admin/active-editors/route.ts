@@ -45,15 +45,28 @@ const cleanupInactiveEditors = async () => {
 
 export async function POST(request: Request) {
   try {
+    const { searchParams } = new URL(request.url)
+    
     await ensureTableExists()
     await cleanupInactiveEditors()
 
     const body = await request.json()
+    const action = body.action
     const userId = body.userId
-    const editorId = body.editorId || body.sessionId
-    const module = body.module || 'blogs'
-    const postId = body.postId || body.itemId
+    const editorId = body.editorId || body.sessionId || searchParams?.get("editorId")
+    const module = body.module || searchParams?.get("module") || 'blogs'
+    const postId = body.postId || body.itemId || searchParams?.get("postId")
     const userName = body.userName
+
+    if (action === "release") {
+      if (editorId && postId) {
+        await pool.execute(
+          `DELETE FROM posts_active_editors WHERE editor_id = ? AND module = ? AND post_id = ?`,
+          [editorId, module, postId]
+        )
+      }
+      return NextResponse.json({ success: true })
+    }
 
     if (!userId || !editorId || !postId) {
       return NextResponse.json(
