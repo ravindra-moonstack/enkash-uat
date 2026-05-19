@@ -1,9 +1,14 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
 import { getUniqueSlug } from "@/src/utils/slugUtils"
+import { verifyToken } from "@/src/utils/auth"
+import { recordAuditLog } from "@/src/utils/auditLogger"
 
 export async function GET(request: Request) {
   try {
+    const user: any = await verifyToken()
+    const userId = user?.id || 0
+
     const { searchParams } = new URL(request.url)
     const action = searchParams.get("action")
 
@@ -63,7 +68,7 @@ export async function GET(request: Request) {
     const query = `
             SELECT v.*, u.display_name as author_name,
                    GROUP_CONCAT(DISTINCT te.name SEPARATOR ', ') as categories_names,
-                   (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'videos' AND pae.post_id = v.id AND pae.last_active > NOW() - INTERVAL 30 SECOND) as locked_by
+                   (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'videos' AND pae.post_id = v.id AND pae.last_active > NOW() - INTERVAL 10 SECOND) as locked_by
             FROM videos v
             LEFT JOIN users u ON v.author = u.ID
             LEFT JOIN terms te ON FIND_IN_SET(te.term_id, v.category) > 0 AND te.taxonomy = 'category'
@@ -113,8 +118,8 @@ export async function POST(request: Request) {
             INSERT INTO videos (
                 title, slug, status, post_type, author, post_parent,
                 external_embed_frame, self_hosted_id, thumbnail_id,
-                featured, trending, category
-            ) VALUES (?, ?, ?, 'video', ?, ?, ?, ?, ?, ?, ?, ?)
+                featured, trending, category, created_at, updated_at
+            ) VALUES (?, ?, ?, 'video', ?, ?, ?, ?, ?, ?, ?, ?, COALESCE(?, NOW()), COALESCE(?, NOW()))
         `
 
     const [result]: any = await pool.query(query, [
@@ -129,7 +134,11 @@ export async function POST(request: Request) {
       data.featured || "no",
       data.trending || "no",
       data.category || "",
+      data.created_at || null,
+      data.updated_at || null,
     ])
+
+    await recordAuditLog("videos", result.insertId, "CREATE", null, data)
 
     return NextResponse.json({ success: true, id: result.insertId })
   } catch (error: any) {

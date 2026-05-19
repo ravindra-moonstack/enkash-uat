@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { useSearchParams } from "next/navigation"
+import { useToast } from "@/src/context/ToastContext"
 
 export const useMedia = (
   initialItemsPerPage: number = 80,
@@ -10,6 +11,7 @@ export const useMedia = (
   const [showUpload, setShowUpload] = useState(
     searchParams.get("add") === "true"
   )
+  const { showToast } = useToast()
   const [mediaItems, setMediaItems] = useState<any[]>([])
   const [totalItems, setTotalItems] = useState(0)
   const [page, setPage] = useState(1)
@@ -21,6 +23,15 @@ export const useMedia = (
   // Filters
   const [typeFilter, setTypeFilter] = useState(defaultType)
   const [dateFilter, setDateFilter] = useState("all")
+
+  // Confirm Modal
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [confirmConfig, setConfirmConfig] = useState<{
+    onConfirm: () => void
+    message: string
+    title?: string
+    type?: "danger" | "primary"
+  } | null>(null)
   const [search, setSearch] = useState("")
   const [availableDates, setAvailableDates] = useState<string[]>([])
 
@@ -144,50 +155,62 @@ export const useMedia = (
   }
 
   const handleDeleteSingle = async (id: number) => {
-    if (confirm(`Are you sure you want to permanently delete this item?`)) {
-      try {
-        const res = await fetch(`/api/admin/media?ids=${id}`, {
-          method: "DELETE",
-        })
-        const data = await res.json()
-        if (data.success) {
-          setModalItem(null)
-          setPage(1)
-          fetchMedia(1, true)
-        } else {
-          alert("Error deleting item")
+    setConfirmConfig({
+      title: "Delete Item",
+      message: "Are you sure you want to permanently delete this item?",
+      type: "danger",
+      onConfirm: async () => {
+        try {
+          const res = await fetch(`/api/admin/media?ids=${id}`, {
+            method: "DELETE",
+          })
+          const data = await res.json()
+          if (data.success) {
+            setModalItem(null)
+            setPage(1)
+            fetchMedia(1, true)
+            showToast("Item deleted successfully", "success")
+          } else {
+            showToast("Error deleting item", "error")
+          }
+        } catch (err) {
+          showToast("Error deleting item", "error")
         }
-      } catch (err) {
-        alert("Error deleting item")
-      }
-    }
+      },
+    })
+    setShowConfirm(true)
   }
 
   const handleDeleteSelected = async () => {
     if (selectedItems.size === 0) return
-    if (
-      confirm(`Are you sure you want to delete ${selectedItems.size} items?`)
-    ) {
-      try {
-        const res = await fetch(
-          `/api/admin/media?ids=${Array.from(selectedItems).join(",")}`,
-          {
-            method: "DELETE",
+    setConfirmConfig({
+      title: "Delete Items",
+      message: `Are you sure you want to delete ${selectedItems.size} items?`,
+      type: "danger",
+      onConfirm: async () => {
+        try {
+          const res = await fetch(
+            `/api/admin/media?ids=${Array.from(selectedItems).join(",")}`,
+            {
+              method: "DELETE",
+            }
+          )
+          const data = await res.json()
+          if (data.success) {
+            setSelectedItems(new Set())
+            setBulkSelectMode(false)
+            setPage(1)
+            fetchMedia(1, true)
+            showToast("Items deleted successfully", "success")
+          } else {
+            showToast("Error deleting items", "error")
           }
-        )
-        const data = await res.json()
-        if (data.success) {
-          setSelectedItems(new Set())
-          setBulkSelectMode(false)
-          setPage(1)
-          fetchMedia(1, true)
-        } else {
-          alert("Error deleting items")
+        } catch (err) {
+          showToast("Error deleting items", "error")
         }
-      } catch (err) {
-        alert("Error deleting items")
-      }
-    }
+      },
+    })
+    setShowConfirm(true)
   }
 
   const handleModalNavigate = (direction: "next" | "prev") => {
@@ -208,16 +231,20 @@ export const useMedia = (
 
   const handleFileUpload = async (files: File[]) => {
     setUploading(true)
+    let successCount = 0
 
     for (const file of files) {
       const formData = new FormData()
       formData.append("file", file)
 
       try {
-        await fetch("/api/admin/media", {
+        const res = await fetch("/api/admin/media", {
           method: "POST",
           body: formData,
         })
+        if (res.ok) {
+          successCount++
+        }
       } catch (err) {
         console.error("Upload failed", err)
       }
@@ -226,6 +253,12 @@ export const useMedia = (
     setUploading(false)
     setShowUpload(false)
     if (fileInputRef.current) fileInputRef.current.value = ""
+
+    if (successCount > 0) {
+      showToast(`${successCount} file(s) uploaded successfully!`, "success")
+    } else {
+      showToast("File upload failed", "error")
+    }
 
     // Refresh media collection
     setPage(1)
@@ -350,5 +383,8 @@ export const useMedia = (
     handleUpdateMedia,
     copyToClipboard,
     handleDownload,
+    showConfirm,
+    setShowConfirm,
+    confirmConfig,
   }
 }

@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import styles from "./tags.module.scss"
+import ConfirmationModal from "../ConfirmationModal"
+import { useToast } from "@/src/context/ToastContext"
 
 export default function TagsPage() {
     const [terms, setTerms] = useState<any[]>([])
@@ -21,6 +23,15 @@ export default function TagsPage() {
     const [slug, setSlug] = useState("")
     const [description, setDescription] = useState("")
     const [slugManuallyEdited, setSlugManuallyEdited] = useState(false)
+
+    const { showToast } = useToast()
+    const [showConfirm, setShowConfirm] = useState(false)
+    const [confirmConfig, setConfirmConfig] = useState<{
+        onConfirm: () => void;
+        message: string;
+        title?: string;
+        type?: "danger" | "primary";
+    } | null>(null)
 
     const itemsPerPage = 20
 
@@ -129,17 +140,27 @@ export default function TagsPage() {
     }
 
     const handleDelete = async (id: number) => {
-        if (confirm("Are you sure you want to delete this tag?")) {
-            try {
-                const res = await fetch(`/api/admin/terms/${id}`, { method: "DELETE" })
-                const data = await res.json()
-                if (data.success) {
-                    fetchTerms()
+        setConfirmConfig({
+            title: "Delete Tag",
+            message: "Are you sure you want to delete this tag?",
+            type: "danger",
+            onConfirm: async () => {
+                try {
+                    const res = await fetch(`/api/admin/terms/${id}`, { method: "DELETE" })
+                    const data = await res.json()
+                    if (data.success) {
+                        fetchTerms()
+                        showToast("Tag deleted successfully", "success")
+                    } else {
+                        showToast("Error deleting tag", "error")
+                    }
+                } catch (error) {
+                    console.error(error)
+                    showToast("Error deleting tag", "error")
                 }
-            } catch (error) {
-                console.error(error)
             }
-        }
+        })
+        setShowConfirm(true)
     }
 
     const totalPages = Math.ceil(totalItems / itemsPerPage)
@@ -312,6 +333,18 @@ export default function TagsPage() {
                     </div>
                 </div>
             </div>
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Delete"
+                />
+            )}
         </div>
     )
 }

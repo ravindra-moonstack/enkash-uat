@@ -1,9 +1,14 @@
 import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
 import { getUniqueSlug } from "@/src/utils/slugUtils"
+import { verifyToken } from "@/src/utils/auth"
+import { recordAuditLog } from "@/src/utils/auditLogger"
 
 export async function GET(request: Request) {
   try {
+    const user: any = await verifyToken()
+    const userId = user?.id || 0
+
     const { searchParams } = new URL(request.url)
     const action = searchParams.get("action")
 
@@ -56,7 +61,7 @@ export async function GET(request: Request) {
     const query = `
             SELECT m.*, u.display_name as author_name,
                    a.image_url as image_url,
-                   (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'media-coverage' AND pae.post_id = m.id AND pae.last_active > NOW() - INTERVAL 30 SECOND) as locked_by
+                   (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'media-coverage' AND pae.post_id = m.id AND pae.last_active > NOW() - INTERVAL 10 SECOND) as locked_by
             FROM media_coverage m
             LEFT JOIN users u ON m.author = u.ID
             LEFT JOIN attachments a ON m.media_coverage_image = a.id
@@ -96,17 +101,23 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const data = await request.json()
-    
+
     // Ensure unique slug
-    const baseSlug = data.slug || data.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
+    const baseSlug =
+      data.slug ||
+      data.title
+        ?.toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "") ||
+      "untitled"
     const uniqueSlug = await getUniqueSlug("media_coverage", baseSlug)
 
     const query = `
             INSERT INTO media_coverage (
                 title, slug, status, author, post_parent,
                 media_coverage_image, media_coverage_date, media_coverage_heading,
-                media_coverage_description, media_coverage_media_link
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                media_coverage_description, media_coverage_media_link, created_at, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, COALESCE(?, NOW()), COALESCE(?, NOW()))
         `
 
     const [result]: any = await pool.query(query, [
@@ -120,7 +131,11 @@ export async function POST(request: Request) {
       data.media_coverage_heading || "",
       data.media_coverage_description || "",
       data.media_coverage_media_link || "",
+      data.created_at || null,
+      data.updated_at || null,
     ])
+
+    await recordAuditLog("media_coverage", result.insertId, "CREATE", null, data)
 
     return NextResponse.json({ success: true, id: result.insertId })
   } catch (error: any) {

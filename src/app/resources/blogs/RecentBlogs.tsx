@@ -40,6 +40,7 @@ export default function RecentBlogs() {
         settings: { slidesToShow: 1 },
       },
     ],
+    classNames: styles.recent_track,
   }
 
   if (!posts.length) return null
@@ -50,33 +51,31 @@ export default function RecentBlogs() {
 
       <Slider {...settings}>
         {posts.map((post: any, index: number) => (
-          <div key={post.id || index}>
-            <div className={styles.recent_blog_item}>
-              <div className={styles.recent_blog_image}>
-                <Link href={`/resources/blog/${post.slug}`}>
-                  <Image
-                    src={"/uploads/" + post.featured_image_url}
-                    alt={post.image_alt || post.title}
-                    width={400}
-                    height={220}
-                    className={styles.img}
-                  />
-                </Link>
-              </div>
+          <div className={styles.recent_blog_item} key={post.id || index}>
+            <div className={styles.recent_blog_image}>
+              <Link href={`/resources/blog/${post.slug}`}>
+                <Image
+                  src={"/uploads/" + post.featured_image_url}
+                  alt={post.image_alt || post.title}
+                  width={400}
+                  height={220}
+                  className={styles.img}
+                />
+              </Link>
+            </div>
 
-              <div className={styles.recent_blog_content}>
-                <span className={styles.category}>
-                  {post.category_names?.split(",")[0]}
-                </span>
+            <div className={styles.recent_blog_content}>
+              <span className={styles.category}>
+                {post.category_names?.split(",")[0]}
+              </span>
 
-                <h3 className={styles.title}>
-                  <Link href={`/resources/blog/${post.slug}`}>{post.title}</Link>
-                </h3>
+              <h3 className={styles.title}>
+                <Link href={`/resources/blog/${post.slug}`}>{post.title}</Link>
+              </h3>
 
-                <span className={styles.date}>
-                  {new Date(post.created_at).toLocaleDateString()}
-                </span>
-              </div>
+              <span className={styles.date}>
+                {new Date(post.created_at).toLocaleDateString()}
+              </span>
             </div>
           </div>
         ))}

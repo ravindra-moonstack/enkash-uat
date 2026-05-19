@@ -36,6 +36,17 @@ export default function Editor({ value, onChange, disabled }: EditorProps) {
                 promotion: false,
                 toolbar_sticky: true,
                 fontsize_formats: "8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt",
+                link_rel_list: [
+                    { title: 'Do Follow (Standard)', value: '' },
+                    { title: 'No Follow', value: 'nofollow' },
+                    { title: 'Sponsored', value: 'sponsored' }
+                ],
+                link_list: [
+                    { title: 'Home Page', value: '/' },
+                    { title: 'About Page', value: '/about' },
+                    { title: 'Contact Page', value: '/contact' },
+                    { title: 'Blogs Page', value: '/blogs' }
+                ]
             }}
         />
     )

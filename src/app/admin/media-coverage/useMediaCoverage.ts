@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from "react"
+import { useToast } from "@/src/context/ToastContext"
 
 export function useMediaCoverage() {
+  const { showToast } = useToast()
   const [items, setItems] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [statusFilter, setStatusFilter] = useState("all")
@@ -11,6 +13,14 @@ export function useMediaCoverage() {
   const [totalPages, setTotalPages] = useState(1)
   const [totalItems, setTotalItems] = useState(0)
   const [counts, setCounts] = useState({ all: 0, published: 0, draft: 0, trash: 0 })
+  
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [confirmConfig, setConfirmConfig] = useState<{
+    onConfirm: () => void;
+    message: string;
+    title?: string;
+    type?: "danger" | "primary";
+  } | null>(null)
 
   const fetchItems = useCallback(async () => {
     setLoading(true)
@@ -57,20 +67,30 @@ export function useMediaCoverage() {
   }
 
   const handleTrash = async (id: number) => {
-    if (confirm("Are you sure you want to move this item to trash?")) {
-      try {
-        const res = await fetch(`/api/admin/media-coverage/${id}`, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ status: "trash" }),
-        })
-        if (res.ok) {
-          fetchItems()
+    setConfirmConfig({
+      title: "Move to Trash",
+      message: "Are you sure you want to move this item to trash?",
+      type: "danger",
+      onConfirm: async () => {
+        try {
+          const res = await fetch(`/api/admin/media-coverage/${id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ status: "trash" }),
+          })
+          if (res.ok) {
+            fetchItems()
+            showToast("Item moved to trash", "success")
+          } else {
+            showToast("Error moving item to trash", "error")
+          }
+        } catch (error) {
+          console.error("Error trashing item:", error)
+          showToast("Error moving item to trash", "error")
         }
-      } catch (error) {
-        console.error("Error trashing item:", error)
       }
-    }
+    })
+    setShowConfirm(true)
   }
 
   const formatDate = (dateStr: string) => {
@@ -104,5 +124,8 @@ export function useMediaCoverage() {
     handlePageInputSubmit,
     handleTrash,
     formatDate,
+    showConfirm,
+    setShowConfirm,
+    confirmConfig,
   }
 }

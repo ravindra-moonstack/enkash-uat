@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react"
+import { useToast } from "@/src/context/ToastContext"
 
 export function useBlogs() {
+  const { showToast } = useToast()
   const [posts, setPosts] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [statusFilter, setStatusFilter] = useState("all")
@@ -22,6 +24,14 @@ export function useBlogs() {
   const [sortOrder, setSortOrder] = useState("desc") // 'asc' or 'desc'
   const [totalPages, setTotalPages] = useState(1)
   const [totalItems, setTotalItems] = useState(0)
+  
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [confirmConfig, setConfirmConfig] = useState<{
+    onConfirm: () => void;
+    message: string;
+    title?: string;
+    type?: "danger" | "primary";
+  } | null>(null)
 
   // For later: counts
   const [counts, setCounts] = useState({
@@ -116,19 +126,30 @@ export function useBlogs() {
   }
 
   const handleTrash = async (id: number) => {
-    if (!confirm("Are you sure you want to move this post to trash?")) return
-    try {
-      const res = await fetch(`/api/admin/blogs/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status: "trash" }),
-      })
-      if (res.ok) {
-        fetchPosts()
+    setConfirmConfig({
+      title: "Move to Trash",
+      message: "Are you sure you want to move this post to trash?",
+      type: "danger",
+      onConfirm: async () => {
+        try {
+          const res = await fetch(`/api/admin/blogs/${id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ status: "trash" }),
+          })
+          if (res.ok) {
+            fetchPosts()
+            showToast("Post moved to trash", "success")
+          } else {
+            showToast("Failed to move to trash", "error")
+          }
+        } catch (error) {
+          console.error("Failed to move to trash", error)
+          showToast("Failed to move to trash", "error")
+        }
       }
-    } catch (error) {
-      console.error("Failed to move to trash", error)
-    }
+    })
+    setShowConfirm(true)
   }
 
   const formatDate = (dateString: string) => {
@@ -168,5 +189,8 @@ export function useBlogs() {
     handlePageInputSubmit,
     handleTrash,
     formatDate,
+    showConfirm,
+    setShowConfirm,
+    confirmConfig,
   }
 }

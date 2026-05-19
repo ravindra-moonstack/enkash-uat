@@ -6,6 +6,7 @@ import styles from "./media.module.scss"
 import Link from "next/link"
 
 import { useMedia } from "./useMedia"
+import ConfirmationModal from "../blogs/ConfirmationModal"
 
 export default function MediaPage() {
     const {
@@ -42,7 +43,10 @@ export default function MediaPage() {
         handleDrop,
         handleUpdateMedia,
         copyToClipboard,
-        handleDownload
+        handleDownload,
+        showConfirm,
+        setShowConfirm,
+        confirmConfig
     } = useMedia()
 
     return (
@@ -277,6 +281,18 @@ export default function MediaPage() {
                         </div>
                     </div>
                 </div>
+            )}
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Delete"
+                />
             )}
         </div>
     )

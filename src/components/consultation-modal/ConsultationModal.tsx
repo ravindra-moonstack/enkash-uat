@@ -20,24 +20,37 @@ const ConsultationModal = () => {
 
     useEffect(() => {
         const isResourcePage = pathname.startsWith("/resources")
+        if (!isResourcePage) return
 
-        if (isResourcePage) {
-            const hasSeenModal = sessionStorage.getItem("hasSeenConsultationModal")
+        const hasSeenModal = sessionStorage.getItem("hasSeenConsultationModal")
+        if (hasSeenModal) return
 
-            if (!hasSeenModal) {
-                const handleExitIntent = (e: MouseEvent) => {
-                    if (e.clientY <= 0) {
-                        setShow(true)
-                        document.removeEventListener("mouseout", handleExitIntent)
-                    }
-                }
+        const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768
+        let timer: NodeJS.Timeout
 
-                document.addEventListener("mouseout", handleExitIntent)
-
-                return () => {
+        if (isMobile) {
+            // Mobile: Show after 10 seconds
+            timer = setTimeout(() => {
+                setShow(true)
+            }, 10000)
+        } else {
+            // Desktop: Exit Intent (top of browser)
+            const handleExitIntent = (e: MouseEvent) => {
+                if (e.clientY <= 20) {
+                    setShow(true)
                     document.removeEventListener("mouseout", handleExitIntent)
                 }
             }
+
+            document.addEventListener("mouseout", handleExitIntent)
+
+            return () => {
+                document.removeEventListener("mouseout", handleExitIntent)
+            }
+        }
+
+        return () => {
+            if (timer) clearTimeout(timer)
         }
     }, [pathname])
 
