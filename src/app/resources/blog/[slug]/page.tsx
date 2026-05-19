@@ -102,6 +102,8 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       content: result[0].content,
       slug: result[0].slug,
       show_featured_image: result[0].show_featured_image,
+      image: result[0].featured_image_url,
+      imageAlt: result[0].image_alt,
     },
   ]
 

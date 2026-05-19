@@ -19,12 +19,14 @@ interface DynamicHeadingProps {
   content?: HeadingSegment[] // ✅ Made content optional
   headingTag?: HeadingTag
   className?: string
+  style?: React.CSSProperties // ✅ Added style prop support
 }
 
 const DynamicHeading: React.FC<DynamicHeadingProps> = ({
   content = [], // ✅ Default to empty array
   headingTag = "h2",
   className,
+  style,
 }) => {
   const Tag = headingTag
 
@@ -34,14 +36,14 @@ const DynamicHeading: React.FC<DynamicHeadingProps> = ({
       "DynamicHeading: 'content' prop is not an array. Using empty array."
     )
     return (
-      <div className={`${styles.pageHeading}`}>
+      <div className={`${styles.pageHeading}`} style={style}>
         <Tag className={className || undefined}></Tag>
       </div>
     )
   }
 
   return (
-    <div className={`${styles.pageHeading}`}>
+    <div className={`${styles.pageHeading}`} style={style}>
       <Tag className={className || undefined}>
         {content.map((item, i) => {
           const Element = item.tag || "span"
