@@ -77,7 +77,6 @@ const BlogBody = ({ bodyData, slug, title }: { bodyData: any, slug: string, titl
       processedHtml: doc.body.innerHTML,
     }
   }, [bodyData?.content])
-  console.log("headings", headings);
   return (
     <>
       <ReadingProgressBar />

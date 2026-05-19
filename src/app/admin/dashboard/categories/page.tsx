@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef, useMemo } from "react"
 import { CommanButton } from "@/src/components"
 import styles from "../glossary-admin.module.scss"
 import { FaEdit, FaTrash, FaArrowLeft, FaList } from "react-icons/fa"
+import ConfirmationModal from "../../blogs/ConfirmationModal"
 
 
 interface Card {
@@ -36,6 +37,15 @@ export default function GlossaryCategoriesAdmin() {
     const [showModal, setShowModal] = useState(false)
     const [isSaving, setIsSaving] = useState(false)
     const isSavingRef = useRef(false)
+
+    // Confirmation Modal State
+    const [showConfirm, setShowConfirm] = useState(false)
+    const [confirmConfig, setConfirmConfig] = useState<{
+        title: string;
+        message: string;
+        onConfirm: () => void;
+        type: "primary" | "danger";
+    } | null>(null)
 
     const isDirty = useMemo(() => {
         return JSON.stringify(formData) !== JSON.stringify(initialData);
@@ -87,13 +97,20 @@ export default function GlossaryCategoriesAdmin() {
     }
 
     const handleDeleteCategory = async (id: number) => {
-        if (!confirm("Are you sure? This will delete the category and all its cards.")) return
-        try {
-            const res = await fetch(`/api/admin/glossary/categories/${id}`, { method: "DELETE" })
-            if (res.ok) fetchData()
-        } catch (e) {
-            console.error(e)
-        }
+        setConfirmConfig({
+            title: "Delete Category",
+            message: "Are you sure? This will delete the category and all its cards.",
+            type: "danger",
+            onConfirm: async () => {
+                try {
+                    const res = await fetch(`/api/admin/glossary/categories/${id}`, { method: "DELETE" })
+                    if (res.ok) fetchData()
+                } catch (e) {
+                    console.error(e)
+                }
+            }
+        })
+        setShowConfirm(true)
     }
 
     const saveCategory = async () => {
@@ -156,13 +173,20 @@ export default function GlossaryCategoriesAdmin() {
     }
 
     const handleDeleteCard = async (id: number) => {
-        if (!confirm("Are you sure?")) return
-        try {
-            const res = await fetch(`/api/admin/glossary/category-cards/${id}`, { method: "DELETE" })
-            if (res.ok) fetchData()
-        } catch (e) {
-            console.error(e)
-        }
+        setConfirmConfig({
+            title: "Delete Card",
+            message: "Are you sure you want to delete this card?",
+            type: "danger",
+            onConfirm: async () => {
+                try {
+                    const res = await fetch(`/api/admin/glossary/category-cards/${id}`, { method: "DELETE" })
+                    if (res.ok) fetchData()
+                } catch (e) {
+                    console.error(e)
+                }
+            }
+        })
+        setShowConfirm(true)
     }
 
     const saveCard = async () => {
@@ -387,6 +411,18 @@ export default function GlossaryCategoriesAdmin() {
                         </div>
                     </div>
                 </div>
+            )}
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Confirm"
+                />
             )}
         </div>
     )

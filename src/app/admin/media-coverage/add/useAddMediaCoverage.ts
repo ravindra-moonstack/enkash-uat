@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
+import { useToast } from "@/src/context/ToastContext"
 
 export function useAddMediaCoverage() {
+  const { showToast } = useToast()
   const searchParams = useSearchParams()
   const router = useRouter()
   const id = searchParams.get("id")
@@ -22,6 +24,9 @@ export function useAddMediaCoverage() {
   const [mediaCoverageHeading, setMediaCoverageHeading] = useState("")
   const [mediaCoverageDescription, setMediaCoverageDescription] = useState("")
   const [mediaCoverageMediaLink, setMediaCoverageMediaLink] = useState("")
+  const [customDate, setCustomDate] = useState("")
+  const [lastEditedBy, setLastEditedBy] = useState<string>("")
+  const [updatedAt, setUpdatedAt] = useState<string>("")
 
   const [metaOptions, setMetaOptions] = useState<{
     users: any[]
@@ -32,6 +37,14 @@ export function useAddMediaCoverage() {
   })
   const [showMediaModal, setShowMediaModal] = useState(false)
   
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [confirmConfig, setConfirmConfig] = useState<{
+    onConfirm: () => void;
+    message: string;
+    title?: string;
+    type?: "danger" | "primary";
+  } | null>(null)
+
   // Progress state
   const [isSaving, setIsSaving] = useState(false)
 
@@ -78,6 +91,22 @@ export function useAddMediaCoverage() {
               data.item.media_coverage_description || ""
             )
             setMediaCoverageMediaLink(data.item.media_coverage_media_link || "")
+            
+            if (data.item.updated_at || data.item.created_at) {
+              const dateStr = data.item.updated_at || data.item.created_at;
+              const dateObj = new Date(dateStr);
+              if (!isNaN(dateObj.getTime())) {
+                  const offset = dateObj.getTimezoneOffset() * 60000;
+                  const localISOTime = (new Date(dateObj.getTime() - offset)).toISOString().slice(0, 16);
+                  setCustomDate(localISOTime);
+              }
+            }
+            if (data.item.last_edited_by) {
+                setLastEditedBy(data.item.last_edited_by)
+            }
+            if (data.item.updated_at) {
+                setUpdatedAt(data.item.updated_at)
+            }
           }
         })
         .catch((err) => console.error("Error fetching media coverage data", err))
@@ -88,6 +117,9 @@ export function useAddMediaCoverage() {
       .then((data) => {
         if (data.success) {
           setCurrentUser(data.user)
+          if (!id) {
+            setAuthor(data.user.id.toString())
+          }
         }
       })
       .catch((err) => console.error("Error fetching current user", err))
@@ -110,6 +142,8 @@ export function useAddMediaCoverage() {
       media_coverage_heading: mediaCoverageHeading,
       media_coverage_description: mediaCoverageDescription,
       media_coverage_media_link: mediaCoverageMediaLink,
+      created_at: customDate || undefined,
+      updated_at: customDate || undefined,
     }
 
     try {
@@ -141,27 +175,34 @@ export function useAddMediaCoverage() {
 
   const handleTrash = async () => {
     if (!id) return
-    if (!confirm("Are you sure you want to move this item to trash?")) return
-    
-    setIsSaving(true)
-    try {
-      const res = await fetch(`/api/admin/media-coverage/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status: "trash" }),
-      })
-      if (res.ok) {
-        setIsDirty(false)
-        router.push("/admin/media-coverage")
-      } else {
-        alert("Failed to move to trash")
+    setConfirmConfig({
+      title: "Move to Trash",
+      message: "Are you sure you want to move this item to trash?",
+      type: "danger",
+      onConfirm: async () => {
+        setIsSaving(true)
+        try {
+          const res = await fetch(`/api/admin/media-coverage/${id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ status: "trash" }),
+          })
+          if (res.ok) {
+            setIsDirty(false)
+            showToast("Item moved to trash", "success")
+            router.push("/admin/media-coverage")
+          } else {
+            showToast("Failed to move to trash", "error")
+          }
+        } catch (error) {
+          console.error("Error trashing item:", error)
+          showToast("Error moving item to trash", "error")
+        } finally {
+          setIsSaving(false)
+        }
       }
-    } catch (error) {
-      console.error("Error trashing item:", error)
-      alert("Error moving to trash")
-    } finally {
-      setIsSaving(false)
-    }
+    })
+    setShowConfirm(true)
   }
 
   return {
@@ -197,5 +238,12 @@ export function useAddMediaCoverage() {
     handleSave,
     handleTrash,
     currentUser,
+    showConfirm,
+    setShowConfirm,
+    confirmConfig,
+    customDate,
+    setCustomDate,
+    lastEditedBy,
+    updatedAt
   }
 }

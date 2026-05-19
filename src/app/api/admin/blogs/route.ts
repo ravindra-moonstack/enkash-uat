@@ -2,9 +2,13 @@ import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
 import { recordAuditLog } from "@/src/utils/auditLogger"
 import { getUniqueSlug } from "@/src/utils/slugUtils"
+import { verifyToken } from "@/src/utils/auth"
 
 export async function GET(request: Request) {
   try {
+    const user: any = await verifyToken()
+    const userId = user?.id || 0
+
     const { searchParams } = new URL(request.url)
     const status = searchParams.get("status") || "all"
     const search = searchParams.get("search") || ""
@@ -69,7 +73,7 @@ export async function GET(request: Request) {
     const query = `
             SELECT p.*, u.display_name as author_name,
                    GROUP_CONCAT(DISTINCT te.name SEPARATOR ', ') as categories,
-                   (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'blogs' AND pae.post_id = p.id AND pae.last_active > NOW() - INTERVAL 30 SECOND) as locked_by
+                   (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'blogs' AND pae.post_id = p.id AND pae.last_active > NOW() - INTERVAL 10 SECOND) as locked_by
             FROM posts p
             LEFT JOIN users u ON p.author = u.ID
             LEFT JOIN terms te ON FIND_IN_SET(te.term_id, p.category) > 0 AND te.taxonomy = 'category'
@@ -123,13 +127,12 @@ export async function POST(request: Request) {
 
     // Basic insert for now
     const query = `
-            INSERT INTO posts (
-                title, slug, content, excerpt, status, post_type, author, 
-                featured_image, featured_left_side, featured_right, category_featured_blog, 
-                category, tags
-            ) VALUES (?, ?, ?, ?, ?, 'post', ?, ?, ?, ?, ?, ?, ?)
-        `
-
+      INSERT INTO posts (
+          title, slug, content, excerpt, status, author, 
+          featured_image, featured_left_side, featured_right, category_featured_blog, 
+          category, tags, post_type, created_at, updated_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'post', NOW(), ?)
+    `
     const [result]: any = await pool.query(query, [
       data.title || "",
       uniqueSlug,
@@ -137,22 +140,33 @@ export async function POST(request: Request) {
       data.excerpt || "",
       data.status || "draft",
       data.author || 1,
-      data.featured_image || "",
+      data.featured_image || null,
       data.featured_left_side || "no",
       data.featured_right || "no",
       data.category_featured_blog || "no",
       data.categories || "",
       data.tags || "",
+      data.updated_at || null, // pass null to let mysql default to current timestamp if omitted
     ])
 
     const postId = result.insertId
+
+    // Ensure seo_robots exists
+    try {
+      const [metaCols]: any = await pool.query("SHOW COLUMNS FROM post_meta")
+      if (!metaCols.find((c: any) => c.Field === "seo_robots")) {
+        await pool.query("ALTER TABLE post_meta ADD COLUMN seo_robots VARCHAR(50) DEFAULT 'follow'")
+      }
+    } catch (e) {
+      console.error("Error checking post_meta table", e)
+    }
 
     // Insert meta
     const metaQuery = `
             INSERT INTO post_meta (
                 post_id, show_featured_image, post_schema_markup, 
-                remove_author_details, meta_title, meta_description, focus_keyword
-            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                remove_author_details, meta_title, meta_description, focus_keyword, seo_robots
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         `
 
     await pool.query(metaQuery, [
@@ -163,6 +177,7 @@ export async function POST(request: Request) {
       data.meta_title || "",
       data.meta_description || "",
       data.focus_keyword || "",
+      data.seo_robots || "follow",
     ])
 
     // Update category counts

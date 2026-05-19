@@ -10,6 +10,8 @@ const pool = createPool({
   connectionLimit: 10,
   queueLimit: 0,
   connectTimeout: 20000,
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 10000,
   //   lookup: (
   //     hostname: string,
   //     cb: (err: Error | null, address?: string, family?: number) => void

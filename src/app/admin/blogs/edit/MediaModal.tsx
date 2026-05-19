@@ -183,18 +183,18 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library",
 
                                     <hr style={{ border: 'none', borderTop: '1px solid #ddd', margin: '20px 0' }} />
 
-                                    <div className={styles.inputGroup} style={{ marginBottom: '10px' }}>
-                                        <label style={{ display: 'block', fontSize: '12px', color: '#646970', marginBottom: '5px' }}>Alt Text</label>
+
+                                    <div className={styles.inputGroup} style={{ marginBottom: '10px', flexDirection: 'column', gap: "6px" }}>
+                                        <label style={{ display: 'block', fontSize: '12px', color: '#646970', textAlign: 'left' }}>Alt Text</label>
                                         <textarea
                                             value={selectedMedia.attachment_image_alt || ""}
                                             onChange={(e) => handleUpdateMedia(selectedMedia.id, "attachment_image_alt", e.target.value)}
-                                            style={{ width: '100%', minHeight: '60px', padding: '5px', border: '1px solid #8c8f94', borderRadius: '3px' }}
+                                            style={{ width: '100%', minHeight: '50px', padding: '5px', border: '1px solid #8c8f94', borderRadius: '3px', color: "#2b2b2b" }}
                                         />
                                         <div style={{ fontSize: '11px', color: '#646970', marginTop: '3px' }}>
                                             <a href="https://www.w3.org/WAI/tutorials/images/decision-tree/" target="_blank" style={{ color: '#2271b1' }}>Learn how to describe the purpose of the image</a>. Leave empty if the image is purely decorative.
                                         </div>
                                     </div>
-
                                     <div className={styles.inputGroup} style={{ marginBottom: '10px' }}>
                                         <label style={{ display: 'block', fontSize: '12px', color: '#646970', marginBottom: '5px' }}>Title</label>
                                         <input
