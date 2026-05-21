@@ -166,7 +166,7 @@ export default function BlogsPage() {
                                     }).join(', ') : "—"}
                                 </td>
                                 <td>
-                                    {post.status === "publish" ? "Publish" : "Last Modified"}<br />
+                                    {post.status === "publish" ? "Published" : post.status === "draft" ? "Draft" : "Trash"}<br />
                                     {formatDate(post.updated_at || post.created_at)}
                                 </td>
                             </tr>

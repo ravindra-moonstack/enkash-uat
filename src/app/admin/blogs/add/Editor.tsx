@@ -63,6 +63,7 @@ export default function Editor({ value, onChange }: EditorProps) {
             onEditorChange={(content) => onChange(content)}
             init={{
                 height: 500,
+                relative_urls: false,
                 menubar: "file edit view insert format tools table",
                 plugins: [
                     "advlist", "autolink", "lists", "link", "image", "charmap", "preview",

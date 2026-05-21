@@ -42,6 +42,7 @@ export function useAddPost() {
   const [mediaTarget, setMediaTarget] = useState<"editor" | "featured">(
     "editor"
   )
+
   const [focusKeyword, setFocusKeyword] = useState("")
   const [categorySearch, setCategorySearch] = useState("")
   const [showAddCategoryForm, setShowAddCategoryForm] = useState(false)
