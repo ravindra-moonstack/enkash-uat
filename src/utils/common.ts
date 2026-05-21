@@ -12,7 +12,14 @@ export const getImageSrc = (post: any) => {
 
 export const getImageUrl = (url?: string) => {
   if (!url) return "/resources/placeholder.png"
-  if (url.startsWith("http") || url.startsWith("/")) return url
+  if (url.startsWith("http://") || url.startsWith("https://")) return url
+  if (url.startsWith("../uploads/")) {
+    return url.replace("../uploads/", "/uploads/")
+  }
+  if (url.startsWith("uploads/")) {
+    return `/uploads/${url.substring("uploads/".length)}`
+  }
+  if (url.startsWith("/")) return url
   return `/uploads/${url}`
 }
 

@@ -57,7 +57,7 @@ export const useMedia = (
         if (data.success) {
           setAvailableDates(data.data)
         }
-      } catch (err) {}
+      } catch (err) { }
     }
     fetchDates()
   }, [])
@@ -226,7 +226,22 @@ export const useMedia = (
   }
 
   const getFileUrl = (filePath: string) => {
-    return filePath ? `/uploads/${filePath}` : "/images/placeholder.png"
+
+    if (!filePath) return "/images/placeholder.png"
+    if (filePath.startsWith("http://") || filePath.startsWith("https://")) {
+      return filePath
+    }
+    if (filePath.startsWith("../uploads/")) {
+      return filePath.replace("../uploads/", "/uploads/")
+    }
+    if (filePath.startsWith("uploads/")) {
+      return `/uploads/${filePath.substring("uploads/".length)}`
+    }
+    if (filePath.startsWith("/uploads/")) {
+      return filePath
+    }
+
+    return `/uploads/${filePath}`
   }
 
   const handleFileUpload = async (files: File[]) => {

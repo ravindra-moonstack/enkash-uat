@@ -22,6 +22,7 @@ export default function Editor({ value, onChange, disabled }: EditorProps) {
             onEditorChange={(content) => onChange(content)}
             init={{
                 height: 500,
+                relative_urls: false,
                 menubar: "file edit view insert format tools table",
                 plugins: [
                     "advlist", "autolink", "lists", "link", "image", "charmap", "preview",
@@ -43,9 +44,9 @@ export default function Editor({ value, onChange, disabled }: EditorProps) {
                 ],
                 link_list: [
                     { title: 'Home Page', value: '/' },
-                    { title: 'About Page', value: '/about' },
-                    { title: 'Contact Page', value: '/contact' },
-                    { title: 'Blogs Page', value: '/blogs' }
+                    { title: 'About Page', value: '/about-us' },
+                    { title: 'Contact Page', value: '/contact-us' },
+                    { title: 'Blogs Page', value: '/resources/blogs' }
                 ]
             }}
         />
