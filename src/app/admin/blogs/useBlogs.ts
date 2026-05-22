@@ -90,6 +90,17 @@ export function useBlogs() {
     fetchPosts()
     fetchMeta()
     setPageInput(page.toString())
+
+    const handleRefresh = () => {
+      fetchPosts()
+    }
+    window.addEventListener("pageshow", handleRefresh)
+    window.addEventListener("focus", handleRefresh)
+
+    return () => {
+      window.removeEventListener("pageshow", handleRefresh)
+      window.removeEventListener("focus", handleRefresh)
+    }
   }, [statusFilter, page, sortField, sortOrder])
 
   const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null)

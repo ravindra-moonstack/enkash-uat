@@ -56,6 +56,17 @@ export function useVideos() {
 
   useEffect(() => {
     fetchVideos()
+
+    const handleRefresh = () => {
+      fetchVideos()
+    }
+    window.addEventListener("pageshow", handleRefresh)
+    window.addEventListener("focus", handleRefresh)
+
+    return () => {
+      window.removeEventListener("pageshow", handleRefresh)
+      window.removeEventListener("focus", handleRefresh)
+    }
   }, [fetchVideos])
 
   useEffect(() => {

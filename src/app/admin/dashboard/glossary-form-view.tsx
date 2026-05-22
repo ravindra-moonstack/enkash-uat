@@ -136,10 +136,14 @@ const GlossaryFormView = ({
 
     // Add beforeunload listener for browser close/refresh
     window.addEventListener("beforeunload", releaseLock)
+    window.addEventListener("pageshow", checkActiveEditors)
+    window.addEventListener("focus", checkActiveEditors)
 
     return () => {
       clearInterval(interval)
       window.removeEventListener("beforeunload", releaseLock)
+      window.removeEventListener("pageshow", checkActiveEditors)
+      window.removeEventListener("focus", checkActiveEditors)
       releaseLock()
     }
   }, [editingItem?.id])

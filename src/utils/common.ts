@@ -10,17 +10,27 @@ export const getImageSrc = (post: any) => {
   return "/resources/placeholder.png"
 }
 
-export const getImageUrl = (url?: string) => {
+export const getImageUrl = (url?: string): string => {
   if (!url) return "/resources/placeholder.png"
-  if (url.startsWith("http://") || url.startsWith("https://")) return url
-  if (url.startsWith("../uploads/")) {
-    return url.replace("../uploads/", "/uploads/")
+
+  const trimmed = url.trim()
+  if (trimmed.includes("<img") || trimmed.includes("&lt;img") || trimmed.includes("<IMG") || trimmed.includes("&lt;IMG")) {
+    const decoded = decodeHTML(trimmed)
+    const match = decoded.match(/src="([^"]+)"/i) || decoded.match(/src='([^']+)'/i)
+    if (match) {
+      return getImageUrl(match[1])
+    }
   }
-  if (url.startsWith("uploads/")) {
-    return `/uploads/${url.substring("uploads/".length)}`
+
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) return trimmed
+  if (trimmed.startsWith("../uploads/")) {
+    return trimmed.replace("../uploads/", "/uploads/")
   }
-  if (url.startsWith("/")) return url
-  return `/uploads/${url}`
+  if (trimmed.startsWith("uploads/")) {
+    return `/uploads/${trimmed.substring("uploads/".length)}`
+  }
+  if (trimmed.startsWith("/")) return trimmed
+  return `/uploads/${trimmed}`
 }
 
 export const getBlogLink = (slug?: string) => {
