@@ -17,10 +17,10 @@ export const staticCaseStudies = [
     },
     {
         id: 2,
-        title: "Modernizing corporate spending for TechCorp globally",
-        slug: "techcorp-global-spending",
+        title: "100% Accuracy & Higher Efficiency: Honeycomb’s EnKash Story",
+        slug: "honeycomb-creative-onboards-enkash-as-a-trusted-partner-for-streamlining-department-wise-payment-processes",
         category: "Case Studies",
-        image: HoneyComb,
-        excerpt: "TechCorp transformed their employee reimbursement process using EnKash smart cards, reducing processing time by 60%."
+        image: HoneyComb.src,
+        excerpt: "Learn how Honeycomb Creative improved payment visibility, streamlined approvals, and achieved 30% process efficiency using EnKash virtual cards and automation tools."
     }
 ]
