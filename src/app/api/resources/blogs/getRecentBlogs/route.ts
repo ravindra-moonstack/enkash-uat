@@ -15,7 +15,7 @@ export async function GET(request: Request) {
       GROUP_CONCAT(te.name) AS category_names
     FROM posts AS p
     LEFT JOIN attachments AS att 
-      ON p.featured_image = att.id
+      ON p.featured_image = att.old_id
     LEFT JOIN terms AS te 
       ON FIND_IN_SET(te.term_id, p.category)
     WHERE p.post_type = 'post'

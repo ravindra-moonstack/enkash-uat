@@ -52,6 +52,12 @@
     z-index: 10;
     transition: transform 0.2s;
 
+    @media (max-width: 767px) {
+
+      top: 6px;
+      right: 12px;
+    }
+
     &:hover {
       transform: rotate(90deg);
       color: $color-equity-blue;
@@ -79,9 +85,8 @@
   .subtitle {
     font-size: 16px;
     color: #172640;
-    margin-bottom: 32px; 
+    margin-bottom: 32px;
     text-align: center;
-    line-height: 0;
   }
 }
 
@@ -98,6 +103,10 @@
 
   .input_group {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
     input {
       width: 92%;
@@ -120,22 +129,42 @@
       &::placeholder {
         color: #9ca3af;
       }
+
+      &.input_error {
+        border-color: #dc2626;
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.05);
+
+        &:focus {
+          border-color: #b91c1c;
+          box-shadow: 0 8px 32px rgba(220, 38, 38, 0.1);
+        }
+      }
+    }
+
+    .error_message {
+      display: block;
+      color: #dc2626;
+      font-size: 12px;
+      margin-top: 6px;
+      text-align: left;
+      width: 92%;
+      font-weight: 500;
     }
   }
 
 }
 
-  .submit_btn_wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 32px;
-    align-items: center;
-  }
+.submit_btn_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  align-items: center;
+}
 
-  .submit_btn {
-    grid-column: 1 / -1;
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.submit_btn {
+  grid-column: 1 / -1;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}

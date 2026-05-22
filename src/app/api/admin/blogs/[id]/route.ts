@@ -148,7 +148,7 @@ export async function PUT(
       data.meta_description || "",
       data.focus_keyword || "",
       data.seo_robots || "follow",
-      id,
+      oldData.old_id,
     ])
 
     // Update category counts
@@ -184,7 +184,7 @@ export async function GET(
       `
       SELECT p.*, a.image_url as featured_image_url, a.attachment_image_alt as featured_image_alt
       FROM posts p
-      LEFT JOIN attachments a ON p.featured_image = a.id
+      LEFT JOIN attachments a ON p.featured_image = a.old_id
       WHERE p.id = ?`,
       [id]
     )
@@ -194,7 +194,7 @@ export async function GET(
 
     const [meta]: any = await pool.query(
       `SELECT * FROM post_meta WHERE post_id = ?`,
-      [id]
+      [posts[0].old_id]
     )
 
     const [audit]: any = await pool.query(

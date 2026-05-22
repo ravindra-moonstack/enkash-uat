@@ -13,6 +13,7 @@ import CommonButton from "../buttons"
 const ConsultationModal = () => {
     const [show, setShow] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [submitError, setSubmitError] = useState<string | null>(null)
     const pathname = usePathname()
     const router = useRouter()
 
@@ -56,6 +57,7 @@ const ConsultationModal = () => {
 
     const handleClose = () => {
         setShow(false)
+        setSubmitError(null)
         sessionStorage.setItem("hasSeenConsultationModal", "true")
     }
 
@@ -68,12 +70,29 @@ const ConsultationModal = () => {
         },
         validationSchema: Yup.object({
             name: Yup.string().required("Required"),
-            email: Yup.string().email("Invalid email").required("Required"),
+            email: Yup.string()
+                .email("Invalid email")
+                .required("Required")
+                .test("is-business-email", "Personal domains are not allowed. Please enter your business email.", (value) => {
+                    if (!value) return true;
+                    const restrictedDomains = ["gmail.com", "hotmail.com", "yahoo.com", "email.com"];
+                    const domain = value.split("@")[1]?.toLowerCase().trim();
+                    if (!domain) return false;
+                    return !restrictedDomains.some(d => domain === d || domain.endsWith("." + d));
+                }),
             company: Yup.string().required("Required"),
-            phone: Yup.string().required("Required").matches(/^[0-9+ ]+$/, "Invalid phone number"),
+            phone: Yup.string()
+                .required("Required")
+                .matches(/^[0-9+\-\s()]+$/, "Invalid phone number format")
+                .test("is-valid-phone", "Please enter a valid 10-digit phone number", (value) => {
+                    if (!value) return false;
+                    const cleaned = value.replace(/\D/g, "");
+                    return cleaned.length >= 10 && cleaned.length <= 15;
+                }),
         }),
         onSubmit: async (values) => {
             setLoading(true)
+            setSubmitError(null)
             try {
                 const getCookie = (name: string) => {
                     if (typeof document === "undefined") return ""
@@ -83,6 +102,10 @@ const ConsultationModal = () => {
                     return ""
                 }
 
+                // Sanitize phone number to exactly 10 digits for Zoho
+                const cleanedPhone = values.phone.replace(/\D/g, "");
+                const sanitizedPhone = cleanedPhone.length > 10 ? cleanedPhone.slice(-10) : cleanedPhone;
+
                 const formData = new FormData()
                 formData.append("zf_referrer_name", typeof document !== "undefined" ? document.referrer : "")
                 formData.append("zf_redirect_url", "")
@@ -90,7 +113,7 @@ const ConsultationModal = () => {
                 formData.append("SingleLine", values.name)
                 formData.append("Email", values.email)
                 formData.append("SingleLine1", values.company)
-                formData.append("PhoneNumber_countrycode", values.phone)
+                formData.append("PhoneNumber_countrycode", sanitizedPhone)
                 formData.append("Dropdown", "-Select-")
                 formData.append("Dropdown1", "-Select-")
                 formData.append("SingleLine3", searchParams.get("utm_source") || "")
@@ -105,8 +128,64 @@ const ConsultationModal = () => {
 
                 handleClose()
                 router.push("/confirmation-sales")
-            } catch (error) {
+            } catch (error: any) {
                 console.error("Submission error:", error)
+                
+                let rawHtml = "";
+                if (error.response?.data?.error?.message) {
+                    rawHtml = error.response.data.error.message;
+                } else if (typeof error.response?.data?.error === "string") {
+                    rawHtml = error.response.data.error;
+                } else if (error.response?.data?.message) {
+                    rawHtml = error.response.data.message;
+                } else {
+                    rawHtml = error.message || "";
+                }
+
+                // If it contains Zoho error signature, extract clean messages
+                if (rawHtml && rawHtml.includes("Error Occurred!")) {
+                    const regex = /<p><b>(.*?)<\/b>(.*?)<\/p>/gi;
+                    let match;
+                    const fieldErrors: { [key: string]: string } = {};
+                    const generalErrors: string[] = [];
+                    
+                    while ((match = regex.exec(rawHtml)) !== null) {
+                        const field = match[1].replace(/<[^>]*>/g, "").trim();
+                        const msg = match[2].replace(/<[^>]*>/g, "").trim();
+                        
+                        const fieldLower = field.toLowerCase();
+                        if (fieldLower.includes("email")) {
+                            fieldErrors.email = msg;
+                        } else if (fieldLower.includes("phone") || fieldLower.includes("contact") || fieldLower.includes("number")) {
+                            fieldErrors.phone = msg;
+                        } else if (fieldLower.includes("company")) {
+                            fieldErrors.company = msg;
+                        } else if (fieldLower.includes("name")) {
+                            fieldErrors.name = msg;
+                        } else {
+                            generalErrors.push(`${field}: ${msg}`);
+                        }
+                    }
+
+                    if (Object.keys(fieldErrors).length > 0) {
+                        formik.setErrors(fieldErrors);
+                        // Mark the fields as touched so the errors are displayed immediately
+                        const touchedState = Object.keys(fieldErrors).reduce((acc, key) => {
+                            acc[key] = true;
+                            return acc;
+                        }, {} as { [key: string]: boolean });
+                        formik.setTouched(touchedState);
+                    }
+
+                    if (generalErrors.length > 0) {
+                        setSubmitError(generalErrors.join(" | "));
+                    } else if (Object.keys(fieldErrors).length > 0) {
+                        setSubmitError(null);
+                    }
+                    return;
+                }
+
+                setSubmitError("Submission failed. Please check your details and try again.");
             } finally {
                 setLoading(false)
             }
@@ -138,31 +217,54 @@ const ConsultationModal = () => {
                             <input
                                 type="text"
                                 placeholder="Name"
+                                className={formik.touched.name && formik.errors.name ? styles.input_error : ""}
                                 {...formik.getFieldProps("name")}
                             />
+                            {formik.touched.name && formik.errors.name && (
+                                <span className={styles.error_message}>{formik.errors.name}</span>
+                            )}
                         </div>
                         <div className={styles.input_group}>
                             <input
                                 type="email"
                                 placeholder="Business Email ID"
+                                className={formik.touched.email && formik.errors.email ? styles.input_error : ""}
                                 {...formik.getFieldProps("email")}
                             />
+                            {formik.touched.email && formik.errors.email && (
+                                <span className={styles.error_message}>{formik.errors.email}</span>
+                            )}
                         </div>
                         <div className={styles.input_group}>
                             <input
                                 type="text"
                                 placeholder="Company Name"
+                                className={formik.touched.company && formik.errors.company ? styles.input_error : ""}
                                 {...formik.getFieldProps("company")}
                             />
+                            {formik.touched.company && formik.errors.company && (
+                                <span className={styles.error_message}>{formik.errors.company}</span>
+                            )}
                         </div>
                         <div className={styles.input_group}>
                             <input
                                 type="text"
                                 placeholder="Contact No."
+                                className={formik.touched.phone && formik.errors.phone ? styles.input_error : ""}
                                 {...formik.getFieldProps("phone")}
                             />
+                            {formik.touched.phone && formik.errors.phone && (
+                                <span className={styles.error_message}>{formik.errors.phone}</span>
+                            )}
                         </div>
                     </form>
+
+                    {submitError && (
+                        <div className={styles.form_error_message}>
+                            {submitError}
+                        </div>
+                    )}
+
                     <div className={styles.submit_btn_wrapper}>
                         <CommonButton title={loading ? "Submitting..." : "Let's Do This"} theme="blue" url={formik.handleSubmit} isDisabled={loading} className={styles.submit_btn} />
                     </div>

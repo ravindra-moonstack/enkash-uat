@@ -290,15 +290,9 @@ export async function POST(request: Request) {
       slugSuffix++
     }
 
-    const [maxIdRows]: any = await pool.execute(
-      "SELECT COALESCE(MAX(id), 0) + 1 as nextId FROM attachments"
-    )
-    const nextId = maxIdRows[0].nextId
-
-    await pool.execute(
-      "INSERT INTO attachments (id, title, content, status, post_type, slug, author, post_parent, image_url, attachment_image_alt, file_size, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())",
+    const [result]: any = await pool.execute(
+      "INSERT INTO attachments (title, content, status, post_type, slug, author, post_parent, image_url, attachment_image_alt, file_size, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())",
       [
-        nextId,
         title,
         "",
         "inherit",
@@ -312,11 +306,16 @@ export async function POST(request: Request) {
       ]
     )
 
+    const insertId = result.insertId
+
+    // Sync old_id with surrogate id for new attachments
+    await pool.execute("UPDATE attachments SET old_id = id WHERE id = ?", [insertId])
+
     return NextResponse.json({
       success: true,
       message: "File uploaded successfully",
       data: {
-        id: nextId,
+        id: insertId,
         image_url: relativePath,
         title: title,
       },
