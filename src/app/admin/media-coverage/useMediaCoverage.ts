@@ -43,6 +43,17 @@ export function useMediaCoverage() {
 
   useEffect(() => {
     fetchItems()
+
+    const handleRefresh = () => {
+      fetchItems()
+    }
+    window.addEventListener("pageshow", handleRefresh)
+    window.addEventListener("focus", handleRefresh)
+
+    return () => {
+      window.removeEventListener("pageshow", handleRefresh)
+      window.removeEventListener("focus", handleRefresh)
+    }
   }, [fetchItems])
 
 

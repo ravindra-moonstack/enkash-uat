@@ -29,7 +29,6 @@ const ResourceCard = ({ post, onClick }: { post: any; onClick?: (post: any) => v
             </div>
         </>
     )
-    console.log("onClick", onClick);
 
     if (onClick) {
         return (

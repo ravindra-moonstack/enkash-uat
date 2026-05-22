@@ -96,9 +96,8 @@ export default function AddVideoPage() {
         const releaseLock = () => {
             if (id && editorSessionId.current) {
                 try {
-                    const url = `/api/admin/active-editors?module=videos&itemId=${id}&sessionId=${editorSessionId.current}`
-                    const payload = new Blob([JSON.stringify({ action: "release" })], { type: 'application/json' })
-                    navigator.sendBeacon(url, payload)
+                    const url = `/api/admin/active-editors?module=videos&itemId=${id}&sessionId=${editorSessionId.current}&action=release`
+                    navigator.sendBeacon(url)
                 } catch (e) {
                     console.error("Failed to release lock", e)
                 }
@@ -108,10 +107,14 @@ export default function AddVideoPage() {
         checkActiveEditors()
         const interval = setInterval(checkActiveEditors, 3000)
         window.addEventListener("beforeunload", releaseLock)
+        window.addEventListener("pageshow", checkActiveEditors)
+        window.addEventListener("focus", checkActiveEditors)
 
         return () => {
             clearInterval(interval)
             window.removeEventListener("beforeunload", releaseLock)
+            window.removeEventListener("pageshow", checkActiveEditors)
+            window.removeEventListener("focus", checkActiveEditors)
             releaseLock()
         }
     }, [id, currentUser])

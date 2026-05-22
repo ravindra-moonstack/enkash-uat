@@ -44,7 +44,6 @@ async function handleGetRelatedBlogs(
       [ids]
     );
 
-    // Map and sort matching the order of passed IDs
     const sorted = ids
       .map((id) => rows.find((r: any) => r.old_id === id))
       .filter(Boolean);
