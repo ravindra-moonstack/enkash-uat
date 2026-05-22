@@ -12,7 +12,7 @@ export async function GET() {
       GROUP_CONCAT(te.slug) AS category_slugs
     FROM posts AS p
     LEFT JOIN attachments AS att 
-      ON p.featured_image = att.id
+      ON p.featured_image = att.old_id
     LEFT JOIN terms AS te 
       ON FIND_IN_SET(te.term_id, p.category)
     WHERE p.post_type = 'post'

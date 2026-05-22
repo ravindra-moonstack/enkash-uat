@@ -31,11 +31,11 @@ export async function GET(request: Request) {
       GROUP_CONCAT(DISTINCT te.slug) AS category_slugs
     FROM posts AS p
     LEFT JOIN post_meta AS pm
-      ON p.id = pm.post_id
+      ON p.old_id = pm.post_id
     LEFT JOIN users AS u
       ON p.author = u.id
     LEFT JOIN attachments AS att
-      ON p.featured_image = att.id
+      ON p.featured_image = att.old_id
     LEFT JOIN terms AS te
       ON FIND_IN_SET(te.term_id, p.category)
     WHERE p.post_type = 'post'
@@ -84,7 +84,7 @@ export async function GET(request: Request) {
           GROUP_CONCAT(DISTINCT te.name) AS category_names,
           GROUP_CONCAT(DISTINCT te.slug) AS category_slugs
         FROM posts AS p
-        LEFT JOIN attachments AS att ON p.featured_image = att.id
+        LEFT JOIN attachments AS att ON p.featured_image = att.old_id
         LEFT JOIN terms AS te ON FIND_IN_SET(te.term_id, p.category)
         WHERE p.post_type = 'post'
           AND ${statusCondition}
@@ -114,7 +114,7 @@ export async function GET(request: Request) {
           GROUP_CONCAT(DISTINCT te.name) AS category_names,
           GROUP_CONCAT(DISTINCT te.slug) AS category_slugs
         FROM posts AS p
-        LEFT JOIN attachments AS att ON p.featured_image = att.id
+        LEFT JOIN attachments AS att ON p.featured_image = att.old_id
         LEFT JOIN terms AS te ON FIND_IN_SET(te.term_id, p.category)
         WHERE p.post_type = 'post'
           AND ${statusCondition}

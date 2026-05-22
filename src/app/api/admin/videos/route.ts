@@ -138,6 +138,8 @@ export async function POST(request: Request) {
       data.updated_at || null,
     ])
 
+    await pool.query("UPDATE videos SET old_id = id WHERE id = ?", [result.insertId])
+
     await recordAuditLog("videos", result.insertId, "CREATE", null, data)
 
     return NextResponse.json({ success: true, id: result.insertId })

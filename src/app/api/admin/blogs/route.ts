@@ -150,6 +150,9 @@ export async function POST(request: Request) {
     ])
 
     const postId = result.insertId
+    
+    // Sync old_id with surrogate id for new posts
+    await pool.query("UPDATE posts SET old_id = id WHERE id = ?", [postId])
 
     // Ensure seo_robots exists
     try {
@@ -169,7 +172,7 @@ export async function POST(request: Request) {
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         `
 
-    await pool.query(metaQuery, [
+    const [metaResult]: any = await pool.query(metaQuery, [
       postId,
       data.show_featured_image || "hide",
       data.post_schema_markup || "",
@@ -179,6 +182,11 @@ export async function POST(request: Request) {
       data.focus_keyword || "",
       data.seo_robots || "follow",
     ])
+
+    const metaId = metaResult.insertId
+    
+    // Sync old_id with surrogate id for new post_meta
+    await pool.query("UPDATE post_meta SET old_id = id WHERE id = ?", [metaId])
 
     // Update category counts
     await pool.query(`
