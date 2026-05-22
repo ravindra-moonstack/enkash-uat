@@ -48,7 +48,7 @@ const CustomerStoriesContent = () => {
             <section className={styles.media_banner}>
                 <div className="max-w-auto">
                     <div className={styles.banner_content}>
-                        <h1>{`Turning Complexity into Clarity:\nResults That Speak for Themselves`}</h1>
+                        <h1><span>Turning Complexity into Clarity: </span><span>Results That Speak for Themselves</span></h1>
                         <div className={styles.banner_cta}>
                             <a href="https://www.enkash.com/contact-us" className={styles.talk_to_us_btn}>Talk to Us</a>
                         </div>
