@@ -38,8 +38,17 @@ const ResourceCard = ({ post, onClick }: { post: any; onClick?: (post: any) => v
         )
     }
 
+    const isCaseStudy = post.category === "Case Studies" ||
+        (typeof post.category === "string" && post.category.toLowerCase() === "case studies") ||
+        post.category_name === "Case Studies";
+
+    const cardHref = isCaseStudy
+        ? `/resources/customer-stories/${post.slug}`
+        : `/resources/blog/${post.slug}`;
+    console.log("cardHref", cardHref);
+
     return (
-        <Link href={`/resources/blog/${post.slug}`} className={styles.resource_card}>
+        <Link href={cardHref} className={styles.resource_card}>
             {CardContent}
         </Link>
     )
