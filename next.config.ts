@@ -7,6 +7,7 @@ const withBundleAnalyzerConfigured = withBundleAnalyzer({
 })
 
 const nextConfig: NextConfig = {
+  productionBrowserSourceMaps: true,
   compress: true,
 
   eslint: {
@@ -104,16 +105,8 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: "/resources/blog/:path*",
-        destination: `${process.env.RESOURCE_URL}/blog/:path*`,
-      },
-      {
-        source: "/resources",
-        destination: `${process.env.RESOURCE_URL}/blog`,
-      },
-      {
-        source: "/resources/:path*",
-        destination: `${process.env.RESOURCE_URL}/:path*`,
+        source: "/uploads/:path*",
+        destination: "/api/uploads/:path*",
       },
     ]
   },

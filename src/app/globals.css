@@ -29,9 +29,17 @@
 }
 
 html,
-body {
+body,
+body.blog-body-active {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+body.blog-body-active {
+  overflow: hidden !important;
+  @media (min-width: 768px) {
+    overflow: visible !important;
+  } 
 }
 
 .mh-550 {
@@ -418,3 +426,28 @@ a {
   font-size: 20px !important;
   line-height: 26px !important;
 }
+.highlight_box{
+ padding:20px 20px 20px 20px;
+ border:1px solid #000;
+ border-radius:10px;
+ margin:10px 0px 10px 0px;
+}
+
+
+body .enkash_button{
+ border-radius: 12px 12px 12px 12px;
+    padding: 12px 30px 12px 30px;
+ background:#1c5af4;
+ color:#fff !important ;
+ margin:10px 0 10px 10px;
+ display:inline-block;
+}
+
+
+body .enkash_button:hover{
+ background:#0040df !important;
+}
+ .single.single-post blockquote{
+ border-color:#3359fa !important;
+}
+ 

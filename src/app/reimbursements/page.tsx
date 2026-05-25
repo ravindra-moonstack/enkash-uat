@@ -1,5 +1,6 @@
 import styles from "./page.module.scss"
 import { Metadata } from "next"
+import { Suspense } from "react"
 
 // data
 import {
@@ -52,7 +53,7 @@ const cards = stackcardData.map((item, index) => ({
   ),
 }))
 
-const Reimbursements = (): React.JSX.Element => {
+const ReimbursementsContent = (): React.JSX.Element => {
   //
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -174,4 +175,10 @@ const Reimbursements = (): React.JSX.Element => {
   )
 }
 
-export default Reimbursements
+export default function Reimbursements() {
+  return (
+    <Suspense fallback={null}>
+      <ReimbursementsContent />
+    </Suspense>
+  )
+}
