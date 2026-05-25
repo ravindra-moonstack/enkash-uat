@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react"
 import styles from "./videos.module.scss"
 import { BlogNav, LogoSlider } from "@/src/components"
-import VideoModal from "@/src/components/vedio-modal"
 import VideoCard from "./VideoCard"
 import { IoSearchOutline } from "react-icons/io5"
+import { FiX } from "react-icons/fi"
 import CtaSection from "@/src/components/sections/cta-section"
 
 import { useResource } from "@/src/hooks/useResource"
@@ -191,11 +191,37 @@ const VideosContent = ({ initialVideos, initialCategories }: { initialVideos?: a
                 background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
             />
 
-            <VideoModal
-                open={videoModal.open}
-                videoUrl={videoModal.url}
-                onClose={() => setVideoModal({ open: false, url: "" })}
-            />
+            {videoModal.open && (
+                <div className={styles.video_modal_overlay} onClick={() => setVideoModal({ open: false, url: "" })}>
+                    <div className={styles.modal_content} onClick={(e) => e.stopPropagation()}>
+                        <div className={styles.close_btn} onClick={() => setVideoModal({ open: false, url: "" })}>
+                            <FiX />
+                        </div>
+                        {videoModal.url.trim().startsWith("<iframe") ? (
+                            <div
+                                dangerouslySetInnerHTML={{ __html: videoModal.url }}
+                            />
+                        ) : (
+                            <div className={styles.video_wrapper}>
+                                <iframe
+                                    src={
+                                        videoModal.url.includes("youtu.be/")
+                                            ? `https://www.youtube-nocookie.com/embed/${videoModal.url.split("youtu.be/")[1]?.split("?")[0] || ""}?autoplay=1&rel=0`
+                                            : videoModal.url.includes("youtube.com/watch")
+                                            ? `https://www.youtube-nocookie.com/embed/${videoModal.url.split("v=")[1]?.split("&")[0] || ""}?autoplay=1&rel=0`
+                                            : videoModal.url.includes("youtube.com/embed/")
+                                            ? videoModal.url
+                                            : videoModal.url
+                                    }
+                                    title="Video Player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                />
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
