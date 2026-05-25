@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"
-import { useSearchParams } from "next/navigation"
+import { useSearchParams, useRouter } from "next/navigation"
 import { useToast } from "@/src/context/ToastContext"
 
 export const useMedia = (
@@ -7,6 +7,7 @@ export const useMedia = (
   defaultType: string = "all"
 ) => {
   const searchParams = useSearchParams()
+  const router = useRouter()
 
   const [showUpload, setShowUpload] = useState(
     searchParams.get("add") === "true"
@@ -40,6 +41,12 @@ export const useMedia = (
       setShowUpload(true)
     }
   }, [searchParams])
+
+  useEffect(() => {
+    if (!showUpload && searchParams.get("add") === "true") {
+      router.replace("/admin/media")
+    }
+  }, [showUpload, searchParams, router])
 
   // Bulk Select
   const [bulkSelectMode, setBulkSelectMode] = useState(false)
