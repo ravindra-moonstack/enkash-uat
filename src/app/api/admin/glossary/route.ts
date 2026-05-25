@@ -32,12 +32,8 @@ export async function GET(request: Request) {
     const totalItems = countRows[0]?.total || 0
     const totalPages = Math.ceil(totalItems / limit)
 
-    const selectQuery = `SELECT id, word, slug, showRelatedBlogs, blogWord, meta_title, meta_description, feature_image FROM glossary ${whereClause} ORDER BY word ASC LIMIT ? OFFSET ?`
-    const [rows]: any = await pool.execute(selectQuery, [
-      ...queryParams,
-      limit,
-      offset,
-    ])
+    const selectQuery = `SELECT id, word, slug, showRelatedBlogs, blogWord, meta_title, meta_description, feature_image FROM glossary ${whereClause} ORDER BY word ASC LIMIT ${limit} OFFSET ${offset}`
+    const [rows]: any = await pool.execute(selectQuery, queryParams)
 
     return NextResponse.json({
       success: true,

@@ -1,10 +1,11 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, Suspense } from "react"
 import { usePathname } from "next/navigation"
 import TalkToSales from "../mobile-talks-to-sales"
 import dynamic from "next/dynamic"
 import Header from "../header/header"
+import ConsultationModal from "../consultation-modal/ConsultationModal"
 const Footer = dynamic(() => import("../footer"), { ssr: true })
 
 export default function LayoutClientWrapper({

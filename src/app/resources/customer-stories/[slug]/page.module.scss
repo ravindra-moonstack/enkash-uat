@@ -1,0 +1,650 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.caseStudyPage {
+  background-color: #ffffff;
+  color: #333333;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  padding: 151px 10px 20px;
+  background-color: #0c101a;
+  color: #ffffff;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 991px) {
+    padding: 120px 20px 60px;
+  }
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // z-index: 1;
+
+  .bgImage {
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+// .heroOverlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: linear-gradient(180deg, rgba(12, 16, 26, 0.9) 0%, rgba(12, 16, 26, 0.95) 100%);
+//   z-index: 2;
+// }
+
+.heroHeaderContainer {
+  margin-bottom: 40px;
+}
+
+.heroHeading {
+  h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: #ffffff;
+    width: 80%;
+
+    @media (max-width: 768px) {
+      font-size: 32px;
+      width: 100%;
+    }
+  }
+}
+
+.heroHeadingBold {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.heroHeadingNormal {
+  font-weight: 400;
+  display: block;
+}
+
+.heroContentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  margin-bottom: 60px;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+  width: 74%;
+
+  @media (max-width:767px) {
+    width: 100%;
+  }
+}
+
+/* Quote */
+.quoteContainer {
+  position: relative;
+  padding-left: 0;
+  border-left: none;
+
+  .quoteText {
+    span {
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+  }
+
+  p.quoteAuthor {
+    letter-spacing: 0.5px;
+    font-style: italic;
+  }
+}
+
+/* About Organisation */
+
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p.sectionHeadingSmall {
+    margin-bottom: 0;
+  }
+}
+
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Org Details Card */
+.orgDetailsCard {
+  background: #FFFFFF26;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px 44px;
+  width: 645px;
+
+  @media (max-width:767px) {
+    width: 100%;
+  }
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+.detailCol {
+  display: flex;
+  flex-direction: column;
+
+  .detailHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+
+    .verticalBar {
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    .detailLabel {
+      margin: 0;
+
+      h4 {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        color: rgba(255, 255, 255, 0.6) !important;
+        margin: 0;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .detailValue {
+    margin: 0;
+    padding-left: 14px;
+
+    &p {
+      font-size: 15px;
+      margin: 0;
+    }
+  }
+}
+
+/* Impact Section */
+.impactContainer {
+  margin-top: 60px;
+  position: relative;
+  background-image: url("https://www.enkash.com/resources/wp-content/uploads/2025/08/Rectangle-23813-scaled-1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  padding: 100px 80px 43px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  margin-bottom: 14px;
+
+  @media (max-width: 768px) {
+    padding: 48px 32px 31px;
+  }
+
+
+  h2.impactLabel {
+    letter-spacing: 10px;
+    margin: 0;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.metricCard {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 230, 118, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.metricIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  background: transparent;
+  flex-shrink: 0;
+  margin-bottom: 10px;
+}
+
+.checkmarkIcon {
+  filter: none;
+}
+
+.metricText {
+  margin: 0;
+
+  p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #ffffff !important;
+    margin: 0;
+    max-width: 240px;
+  }
+}
+
+/* Challenges Section */
+.challengesSection {
+  position: relative;
+  padding: 100px 24px 20px;
+  background-color: #121620;
+  color: #ffffff;
+
+  @media (max-width: 768px) {
+    padding: 60px 20px 20px;
+  }
+}
+
+.challengesBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .bgImage {
+    object-fit: cover;
+  }
+}
+
+.challengesOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(18, 22, 32, 0.94);
+  z-index: 2;
+}
+
+.challengesContainer {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 60px;
+  padding-left: 100px;
+  padding-right: 10px;
+  width: 710px;
+  gap: 20px;
+  flex-direction: column;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.challengesList {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-left: 30px;
+}
+
+.challengeItem {
+  display: flex;
+  align-items: flex-start;
+}
+
+p.challengeParagraph {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  color: $color-grey-100;
+
+  .challengeNumber {
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-grey-100;
+  }
+
+  .challengeBoldTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-grey-100;
+  }
+
+  .challengeSeparator {
+    font-size: 16px;
+    font-weight: 400;
+    color: $color-grey-100;
+  }
+
+  .challengeDesc {
+    font-size: 16px;
+    font-weight: 400;
+    color: $color-grey-100;
+  }
+}
+
+
+/* Solutions section overlap customization if any */
+.securitySectionOverlap {
+  margin-top: 0 !important;
+  background-color: #ffffff !important;
+}
+
+/* Business Results Section */
+.resultsSectionNew {
+
+  .resultsGetStartedBox {
+    background-image: url("https://www.enkash.com/resources/wp-content/uploads/2025/08/sec-last-1-scaled-1.webp");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding: 60px 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 992px) {
+      padding: 80px 60px;
+      min-height: 520px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 40px 16px;
+    }
+
+    .resultsGetStartedBoxInner {
+      background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 70%);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 40px;
+      border-radius: 16px;
+      // max-width: 720px;
+      width: 100%;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+
+      @media (max-width: 768px) {
+        padding: 24px;
+      }
+    }
+  }
+
+  .resultsHeading {
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+
+      @media (max-width: 768px) {
+        font-size: 26px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .resultsContentRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 50%;
+
+    @media (max-width: 480px) {
+      gap: 12px;
+      max-width: 100%;
+    }
+  }
+
+  .customListIndicator {
+    width: 3px;
+    height: 48px;
+    background-color: #00bf9e;
+    flex-shrink: 0;
+    border-radius: 2px;
+    margin-top: 4px;
+
+    @media (max-width: 768px) {
+      height: 36px;
+    }
+  }
+
+  .customBulletList {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .customBulletItem {
+      font-size: 15px;
+      line-height: 1.6;
+      font-weight: 500;
+      color: $color-grey-200;
+
+      div {
+        display: inline;
+      }
+
+      :global(.pageHeading) {
+        display: inline;
+      }
+
+      .bulletBoldText {
+        font-weight: 700;
+        color: $color-black;
+        display: inline;
+        margin-right: 4px;
+      }
+
+      span {
+        font-size: 15px;
+        line-height: 1.6;
+        font-weight: 500;
+        color: $color-grey-200;
+      }
+    }
+  }
+}
+
+/* Bottom CTA Wrapper */
+.ctaWrapper {
+  background-color: $color-white;
+  padding-bottom: 40px;
+}
+
+/* Custom Solutions Section */
+
+.solutionsContentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  background-color: $color-white;
+  box-shadow: 0px 0px 77px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 46px 20px;
+
+  @include for-laptops {
+    flex-direction: row;
+    gap: 60px;
+    padding: 73px 59px 73px 69px;
+  }
+
+
+  .solutionsLeft {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+
+    @include for-laptops {
+      max-width: 41%;
+    }
+  }
+
+  .solutionsImageWrapper {
+    flex-shrink: 0;
+    width: 100%;
+    // max-width: 280px;
+    display: flex;
+    justify-content: center;
+
+    @include for-laptops {
+      // width: 266px;
+      // max-width: 266px;
+    }
+  }
+
+  .solutionsImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .solutionsRight {
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+
+    @include for-laptops {
+      max-width: 59%;
+    }
+  }
+
+  .solutionsMainHeading {
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 32px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: $color-black;
+
+      @include for-laptops {
+        font-size: 42px;
+      }
+
+      @include for-large-screen {
+        font-size: 48px;
+      }
+    }
+  }
+
+  .solutionsFeaturesList {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .solutionsFeatureCard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 16px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 1.5px;
+      min-height: 40px;
+      background-color: #00bf9e;
+      border-radius: 1px;
+    }
+
+    .solutionsFeatureTitle {
+      h3 {
+        font-size: 18px;
+        line-height: 1.3;
+        font-weight: 700;
+        color: $color-black;
+
+        @include for-laptops {
+          font-size: 20px;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: $color-grey-200;
+
+      @include for-laptops {
+        font-size: 16px;
+      }
+    }
+  }
+}

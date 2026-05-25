@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect, useCallback, Suspense } from "react"
 import styles from "./audit-logs.module.scss"
 import moment from "moment"
 
@@ -272,4 +272,10 @@ const renderDiff = (oldData: any, newData: any, type: 'old' | 'new') => {
     }
 }
 
-export default AuditLogsPage
+export default function AuditLogs() {
+    return (
+        <Suspense fallback={null}>
+            <AuditLogsPage />
+        </Suspense>
+    )
+}
