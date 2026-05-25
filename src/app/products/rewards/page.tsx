@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
+import { Suspense } from "react"
 
 // data
 import { allProductSections, policiesData } from "./data"
@@ -39,7 +40,7 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/rewards")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const Rewards = (): React.JSX.Element => {
+const RewardsContent = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.hero_section}`}>
@@ -174,4 +175,10 @@ const Rewards = (): React.JSX.Element => {
   )
 }
 
-export default Rewards
+export default function Rewards() {
+  return (
+    <Suspense fallback={null}>
+      <RewardsContent />
+    </Suspense>
+  )
+}

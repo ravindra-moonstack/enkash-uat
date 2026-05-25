@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Metadata } from "next"
+import { Suspense } from "react"
 import styles from "./page.module.scss"
 
 //data
@@ -55,7 +56,7 @@ const cards = stackcardData.map((item, index) => ({
   ),
 }))
 
-const HierarchyAndControl = (): React.JSX.Element => {
+const HierarchyAndControlContent = (): React.JSX.Element => {
   //
 
   return (
@@ -321,4 +322,10 @@ const HierarchyAndControl = (): React.JSX.Element => {
   )
 }
 
-export default HierarchyAndControl
+export default function HierarchyAndControl() {
+  return (
+    <Suspense fallback={null}>
+      <HierarchyAndControlContent />
+    </Suspense>
+  )
+}

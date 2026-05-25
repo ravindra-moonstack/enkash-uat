@@ -10,14 +10,49 @@ const pool = createPool({
   connectionLimit: 10,
   queueLimit: 0,
   connectTimeout: 20000,
-  lookup: (
-    hostname: string,
-    cb: (err: Error | null, address?: string, family?: number) => void
-  ) => {
-    lookup(hostname, { family: 4 })
-      .then((res) => cb(null, res.address, res.family))
-      .catch((err) => cb(err))
-  },
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 10000,
+  //   lookup: (
+  //     hostname: string,
+  //     cb: (err: Error | null, address?: string, family?: number) => void
+  //   ) => {
+  //     lookup(hostname, { family: 4 })
+  //       .then((res) => cb(null, res.address, res.family))
+  //       .catch((err) => cb(err))
+  //   },
 } as any)
 
+pool.on("connection", () => {
+  console.log("DB Pool: New connection established")
+})
+
 export default pool
+// import { createPool, Pool } from "mysql2/promise"
+
+// declare global {
+//   var pool: Pool | undefined
+// }
+
+// const poolConfig = {
+//   host: "localhost",
+//   user: "enkash_website",
+//   password: "Rsrathore@7773",
+//   database: "enkash_testing_for_blogs",
+//   waitForConnections: true,
+//   connectionLimit: 20,
+//   queueLimit: 0,
+//   connectTimeout: 20000,
+// }
+
+// const pool = global.pool || createPool(poolConfig)
+
+// if (process.env.NODE_ENV !== "production") {
+//   global.pool = pool
+// }
+
+// // Connection log
+// pool.on("connection", () => {
+//   console.log("DB Pool: New connection established")
+// })
+
+// export default pool

@@ -43,6 +43,74 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+        height: 100%;
+        max-height: 512px;
+        overflow-y: scroll;  
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .navItemWrapper {
+        position: relative;
+        
+        .subMenu {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: $color-indi-volt;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            display: none;
+            flex-direction: column;
+            min-width: 150px;
+            z-index: 101;
+            
+            .subMenuItem {
+                padding: 10px 16px;
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                font-size: 13px;
+                transition: all 0.2s ease;
+                
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    color: $color-white;
+                }
+            }
+        }
+
+        &:not(.activeWrapper):hover {
+            .subMenu {
+                display: flex;
+            }
+        }
+
+        &.activeWrapper {
+            .subMenu {
+                position: static;
+                display: flex;
+                background-color: transparent;
+                box-shadow: none;
+                margin-top: 4px;
+                padding-left: 0;
+                
+                .subMenuItem {
+                    padding: 8px 16px 8px 44px;
+                    display: block;
+                    width: 100%;
+
+                    &.activeSubItem {
+                        background-color: rgba(255, 255, 255, 0.1);
+                        color: $color-white;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
     }
 
     .navItem {
@@ -144,17 +212,62 @@
             color: $color-equity-blue;
             font-weight: 700;
         }
+
+        .userDropdown {
+            position: absolute;
+            top: calc(78% + 10px);
+            right: 2%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            min-width: 180px;
+            z-index: 1000;
+            border: 1px solid #edf2f7;
+
+            .dropdownItem {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 12px;
+                color: #4a5568;
+                font-size: 14px;
+                font-weight: 500;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    background-color: #f7fafc;
+                    color: $color-equity-blue;
+                }
+
+                i {
+                    font-size: 16px;
+                }
+
+                &.logout {
+                    color: $color-error-red;
+                    border-top: 1px solid #edf2f7;
+                    margin-top: 4px;
+                    border-radius: 0 0 6px 6px;
+
+                    &:hover {
+                        background-color: rgba($color-error-red, 0.05);
+                    }
+                }
+            }
+        }
     }
 }
 
 .pageContainer {
-    padding: 32px;
-    max-width: 1200px;
+    padding: 12px;
+    // max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
 
-// For pages that don't need the layout (like login)
 .fullScreenWrapper {
     width: 100%;
     min-height: 100vh;
@@ -162,4 +275,62 @@
     align-items: center;
     justify-content: center;
     background: radial-gradient(circle at top right, #f3fcff, #ffffff);
+}
+
+.globalLockOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lockModal {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+    i {
+        font-size: 60px;
+        color: #ffc107;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    p {
+        font-size: 15px;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    button {
+        padding: 10px 30px;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            background: #0056b3;
+        }
+    }
 }

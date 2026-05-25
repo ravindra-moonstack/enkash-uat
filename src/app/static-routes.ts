@@ -564,4 +564,19 @@ export const STATIC_ROUTES = [
     lastModified: "2025-09-01T10:32:31+01:00",
     priority: 1.0,
   },
+  {
+    url: "https://www.enkash.com/resources/customer-stories",
+    lastModified: "2025-09-01T10:32:31+01:00",
+    priority: 1.0,
+  },
+  {
+    url: "https://www.enkash.com/resources/customer-stories/vianet-achieves-40-improvement-in-business-processes-up-to-50-cost-savings-using-enkash-olympus",
+    lastModified: "2025-09-01T10:32:31+01:00",
+    priority: 1.0,
+  },
+  {
+    url: "https://www.enkash.com/resources/customer-stories/honeycomb-creative-onboards-enkash-as-a-trusted-partner-for-streamlining-department-wise-payment-processes",
+    lastModified: "2025-09-01T10:32:31+01:00",
+    priority: 1.0,
+  },
 ]

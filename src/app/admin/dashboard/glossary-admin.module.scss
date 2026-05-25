@@ -1,0 +1,815 @@
+@use "sass:color";
+@use "@/src/styles/variables" as *;
+
+.adminContainer {
+    width: 100%;
+    font-family: inherit;
+}
+
+.contentWrapper {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+.header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid $color-grey-100;
+    padding-bottom: 20px;
+}
+
+// Search Bar Styling
+.searchContainer {
+    position: relative;
+    width: 320px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-top: 16px;
+    }
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 16px 10px 40px;
+    font-size: 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: $color-white;
+    transition: all 0.2s;
+    outline: none;
+    color: $color-main-black;
+    height: 42px;
+
+    &:focus {
+        border-color: $color-equity-blue;
+        box-shadow: 0 0 0 3px rgba($color-equity-blue, 0.1);
+    }
+
+    &::placeholder {
+        color: $color-quick-silver;
+    }
+}
+
+.searchIcon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-grey-600;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+// Image Upload Styling
+.imageUploadWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 8px;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
+}
+
+.imagePreviewContainer {
+    width: 200px;
+    height: 120px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f8fafc;
+    position: relative;
+    flex-shrink: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.uploadControls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.fileInput {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    color: $color-grey-600;
+
+    &::file-selector-button {
+        margin-right: 16px;
+        padding: 8px 16px;
+        border-radius: 6px;
+        border: 1px solid #e2e8f0;
+        background-color: $color-white;
+        color: $color-main-black;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-weight: 500;
+    }
+
+    &::file-selector-button:hover {
+        background-color: #f8fafc;
+        border-color: $color-equity-blue;
+        color: $color-equity-blue;
+    }
+}
+
+.helperText {
+    font-size: 13px;
+    color: $color-quick-silver;
+    margin: 0;
+}
+
+.headerTop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.backBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+    background-color: $color-white;
+    color: $color-grey-600;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: #f8fafc;
+        color: $color-equity-blue;
+        border-color: $color-equity-blue;
+    }
+
+    i {
+        font-size: 20px;
+    }
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    color: $color-main-black;
+    margin-bottom: 0;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: $color-grey-600;
+    margin: 0;
+
+}
+
+.glossaryForm {
+    background-color: $color-white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    border: 1px solid #e2e8f0;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 14px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-grey-600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.required {
+    color: $color-error-red;
+    font-weight: 700;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    color: $color-main-black;
+    background-color: $color-white;
+    border: 1px solid $color-grey-100;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    outline: none;
+    font-family: inherit;
+
+    &:focus {
+        border-color: $color-equity-blue;
+        box-shadow: 0 0 0 3px rgba($color-equity-blue, 0.1);
+    }
+
+    &::placeholder {
+        color: $color-quick-silver;
+    }
+}
+
+.errorText {
+    color: $color-error-red;
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &::before {
+        content: "\F33A"; // bi-exclamation-circle icon from bootstrap icons
+        font-family: "bootstrap-icons";
+    }
+}
+
+.inputError {
+    border-color: $color-error-red !important;
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba($color-error-red, 0.1) !important;
+    }
+}
+
+.editorWrapper {
+    border: 1px solid $color-grey-100;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    box-shadow: 6px 6px 6px 0 rgba(0, 0, 0, 0.1);
+
+    &:focus-within {
+        border-color: $color-equity-blue;
+        box-shadow: 0 0 0 3px rgba($color-equity-blue, 0.1);
+    }
+
+    // Move toolbar styling here as it is often a sibling to the editor container
+    :global(.ql-toolbar) {
+        border: none;
+        border-bottom: 1px solid $color-grey-100;
+        background-color: $color-white;
+        padding: 12px;
+
+
+    }
+
+    :global(.ql-snow .ql-picker.ql-size .ql-picker-label::before),
+    :global(.ql-snow .ql-picker.ql-size .ql-picker-item::before) {
+        content: attr(data-value) !important;
+    }
+
+    :global(.ql-container) {
+        border: none;
+        font-size: 15px;
+        font-family: inherit;
+        min-height: 375px;
+        background-color: $color-white;
+    }
+
+    // Custom Show HTML Button
+    :global(.ql-showHtml) {
+        margin-right: 8px;
+        background-color: $color-equity-blue !important;
+        color: $color-white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: auto !important;
+        padding: 0 8px;
+    }
+
+    :global(.ql-showHtml::after) {
+        content: 'HTML';
+        font-size: 12px;
+        font-weight: 600;
+        color: $color-white;
+        vertical-align: super;
+    }
+
+    :global(.ql-showHtml:hover) {
+        background-color: $color-dark-blue;
+    }
+}
+
+.quillEditor {
+    background-color: $color-white;
+    min-height: 375px;
+
+    :global(.ql-editor) {
+        min-height: 375px;
+        padding: 16px;
+        color: $color-main-black;
+        background-color: $color-white;
+
+        :global(ul),
+        :global(ol) {
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+
+        :global(li) {
+            margin-bottom: 4px;
+        }
+
+
+        :global(blockquote) {
+            border-left: 4px solid #e2e8f0;
+            padding-left: 16px;
+            color: #64748b;
+            font-style: italic;
+            margin: 12px 0;
+        }
+
+        &::placeholder {
+            color: $color-quick-silver;
+            font-style: italic;
+        }
+    }
+
+    // :global(.ql-tooltip) {
+    //     display: none !important;
+    // }
+
+    :global(.ql-snow .ql-stroke) {
+        stroke: $color-grey-600;
+    }
+
+    :global(.ql-snow .ql-fill) {
+        fill: $color-grey-600;
+    }
+
+    :global(.ql-snow .ql-picker-label) {
+        color: $color-grey-600;
+    }
+
+
+    :global(.ql-toolbar button:hover),
+    :global(.ql-toolbar button:focus),
+    :global(.ql-toolbar button.ql-active) {
+        :global(.ql-stroke) {
+            stroke: $color-equity-blue;
+        }
+
+        :global(.ql-fill) {
+            fill: $color-equity-blue;
+        }
+    }
+
+    :global(.ql-snow.ql-toolbar button:hover),
+    :global(.ql-snow .ql-toolbar button:hover),
+    :global(.ql-snow.ql-toolbar button:focus),
+    :global(.ql-snow .ql-toolbar button:focus),
+    :global(.ql-snow.ql-toolbar button.ql-active),
+    :global(.ql-snow .ql-toolbar button.ql-active) {
+        color: $color-equity-blue;
+    }
+
+    :global(.ql-snow a) {
+        color: $color-equity-blue;
+    }
+
+
+    :global(.ql-snow .ql-picker.ql-size) {
+        width: 98px;
+    }
+
+}
+
+// HTML Editor Styling
+.htmlEditorWrapper {
+    border: 1px solid $color-grey-100;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #1d1d1d;
+    box-shadow: 6px 6px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.htmlEditorHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #2d2d2d;
+    border-bottom: 1px solid #3d3d3d;
+
+    :global(.ql-tooltip) {
+        display: none !important;
+    }
+}
+
+.htmlEditorTitle {
+    color: #cccccc;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
+}
+
+.applyHtmlButton {
+    padding: 6px 12px;
+    background-color: $color-equity-blue;
+    color: $color-white;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: $color-dark-blue;
+    }
+}
+
+.htmlEditor {
+    width: 100%;
+    min-height: 375px;
+    padding: 20px;
+    background-color: #1d1d1d;
+    color: #cccccc;
+    font-size: 15px;
+    font-family: 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
+    line-height: 24px;
+    border: none;
+    outline: none;
+    resize: vertical;
+    box-sizing: border-box;
+
+    &::placeholder {
+        color: #666666;
+    }
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    padding: 16px;
+    background-color: $color-silver-grey;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: color.adjust($color-silver-grey, $lightness: -2%);
+    }
+}
+
+.checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $color-equity-blue;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: $color-white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    position: relative;
+
+    &:checked {
+        background-color: $color-equity-blue;
+        border-color: $color-equity-blue;
+    }
+
+    &:checked::after {
+        content: "✓";
+        position: absolute;
+        color: $color-white;
+        font-size: 14px;
+        font-weight: bold;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($color-equity-blue, 0.1);
+    }
+}
+
+.checkboxText {
+    font-size: 15px;
+    font-weight: 500;
+    color: $color-grey-600;
+}
+
+.blogLinksSection {
+    background-color: $color-sky-hint;
+    border: 1px solid $color-bolt-light;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 8px;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: $color-main-black;
+    margin: 0 0 4px 0;
+}
+
+
+.actionButtons {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 16px;
+    padding-top: 24px;
+    border-top: 1px solid $color-grey-100;
+}
+
+
+
+.listHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.tableContainer {
+    background-color: $color-white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+
+    th {
+        background-color: #f8fafc;
+        padding: 16px 24px;
+        font-size: 13px;
+        font-weight: 700;
+        color: $color-grey-600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    td {
+        padding: 16px 24px;
+        font-size: 15px;
+        color: $color-main-black;
+        border-bottom: 1px solid #f1f5f9;
+        vertical-align: middle;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    tr:hover td {
+        background-color: #f8fafc;
+    }
+}
+
+.wordCell {
+    font-weight: 600;
+    color: $color-equity-blue;
+}
+
+.slugCell {
+    font-family: 'Consolas', monospace;
+    font-size: 13px;
+    color: $color-grey-600;
+    background-color: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.actionsCell {
+    display: flex;
+    gap: 12px;
+}
+
+.iconBtn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    background: transparent;
+
+    &.edit {
+        color: $color-equity-blue;
+        background-color: rgba($color-equity-blue, 0.08);
+
+        &:hover {
+            background-color: $color-equity-blue;
+            color: $color-white;
+        }
+    }
+
+    &.delete {
+        color: $color-error-red;
+        background-color: rgba($color-error-red, 0.08);
+
+        &:hover {
+            background-color: $color-error-red;
+            color: $color-white;
+        }
+    }
+}
+
+.emptyState {
+    padding: 60px;
+    text-align: center;
+    color: $color-grey-600;
+
+    p {
+        margin: 0;
+        font-size: 15px;
+    }
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid rgba($color-equity-blue, 0.1);
+    border-top-color: $color-equity-blue;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 12px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tableCard {
+    background-color: $color-white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+
+    .tableContainer {
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: $color-white;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+.paginationInfo {
+    font-size: 14px;
+    color: $color-grey-600;
+}
+
+.paginationControls {
+    display: flex;
+    gap: 8px;
+}
+
+.pageBtn {
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background-color: $color-white;
+    color: $color-grey-600;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover:not(:disabled) {
+        border-color: $color-equity-blue;
+        color: $color-equity-blue;
+        background-color: rgba($color-equity-blue, 0.05);
+    }
+
+    &.active {
+        background-color: $color-equity-blue;
+        color: $color-white;
+        border-color: $color-equity-blue;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+// Alt Text Modal Styling
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    backdrop-filter: blur(2px);
+}
+
+.modalContent {
+    background: $color-white;
+    padding: 32px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modalTitle {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-main-black;
+    letter-spacing: -0.5px;
+}
+
+.modalDescription {
+    margin: 0 0 24px;
+    font-size: 15px;
+    color: $color-grey-600;
+    line-height: 1.5;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}

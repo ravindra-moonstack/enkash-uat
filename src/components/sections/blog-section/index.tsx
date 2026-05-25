@@ -14,6 +14,7 @@ interface BlogSectionProps {
   headingTag?: keyof JSX.IntrinsicElements
   cards?: number[]
   links?: string[]
+  slug?: string
   className?: string
 }
 
@@ -30,42 +31,38 @@ function decodeHTML(str: string) {
     .replace(/&amp;/g, "&")
 }
 
-async function fetchBlogs(cards?: number[], links?: string[]): Promise<BlogPost[]> {
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+
+async function fetchBlogs(cards?: number[], links?: string[], slug?: string): Promise<BlogPost[]> {
   try {
-    if (links && links.length > 0) {
-      const blogSlugs = links;
-      const API_KEY = process.env.NEXT_PUBLIC_ENKASH_API_KEY || "YOUR_X_API_KEY_HERE"
-      const res = await fetch(
-        `https://www.enkash.com/resources/wp-json/enkash/v1/blogs?posts=${blogSlugs}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": API_KEY,
-          },
-          next: { revalidate: 3600 }
-        }
-      )
-      if (!res.ok) return []
-      const data = await res.json()
-      return data.data || []
+    const query = new URLSearchParams()
+
+    if (slug) {
+      query.set("slug", slug)
+    } else if (links && links.length === 1) {
+      query.set("slug", links[0])
+    } else if (links && links.length > 1) {
+      query.set("slugs", links.join(","))
     } else if (cards && cards.length > 0) {
-      const res = await fetch(
-        "https://www.enkash.com/resources/wp-json/custom-api/v2/send-post",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ post_ids: cards }),
-          next: { revalidate: 3600 },
-        }
-      )
-
-      if (!res.ok) return []
-      const data = await res.json()
-      return data.posts || []
+      query.set("ids", cards.join(","))
+    } else {
+      return []
     }
-    return []
 
+    const res = await fetch(
+      `${BASE_URL}/api/related-blogs?${query.toString()}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        next: { revalidate: 3600 },
+      }
+    )
+
+    if (!res.ok) return []
+    const data = await res.json()
+    return data.posts || []
   } catch (error) {
     console.error("Error fetching blogs:", error)
     return []
@@ -76,9 +73,10 @@ const BlogSectionContent = async ({
   heading,
   cards,
   links,
+  slug,
   className = "",
 }: BlogSectionProps) => {
-  const posts = await fetchBlogs(cards, links)
+  const posts = await fetchBlogs(cards, links, slug)
   if (!posts || posts.length < 3) return null
 
   return (
