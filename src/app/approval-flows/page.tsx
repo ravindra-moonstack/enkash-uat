@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { Suspense } from "react"
 import styles from "./page.module.scss"
 
 // data
@@ -51,7 +52,7 @@ const cards = stackcardData.map((item, index) => ({
   ),
 }))
 
-const ApprovalFlows = (): React.JSX.Element => {
+const ApprovalFlowsContent = (): React.JSX.Element => {
   //
 
   return (
@@ -165,4 +166,10 @@ const ApprovalFlows = (): React.JSX.Element => {
   )
 }
 
-export default ApprovalFlows
+export default function ApprovalFlows() {
+  return (
+    <Suspense fallback={null}>
+      <ApprovalFlowsContent />
+    </Suspense>
+  )
+}

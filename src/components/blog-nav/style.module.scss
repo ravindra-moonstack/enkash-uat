@@ -1,0 +1,149 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.blog_nav_wrapper {
+  width: 100%;
+  background: #fff;
+}
+
+// ── Breadcrumb row ────────────────────────────────────────────────────────────
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 20px 0 10px;
+  flex-wrap: wrap;
+  line-height: 1.2;
+
+  @include for-laptops {
+    padding: 20px 10px 10px;
+  }
+
+  .crumb {
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-uncultured-light;
+    text-decoration: none;
+    font-weight: 300;
+
+    @include for-laptops {
+      font-size: 16px;
+      line-height: 40px;
+    }
+  }
+
+  .crumb_active {
+    font-weight: 500;
+  }
+
+  .separator {
+    margin: 0 10px;
+    color: #97a3b7;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
+    user-select: none;
+  }
+}
+
+// ── Divider between breadcrumb and tabs ───────────────────────────────────────
+.divider {
+  border: none;
+  border-top: 1px solid $color-dark-grey;
+  margin: 0;
+}
+
+// ── Category tab bar ─────────────────────────────────────────────────────────
+.category_bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 10px;
+  flex-wrap: wrap;
+
+  @include for-laptops {
+    gap: 20px;
+  }
+}
+
+.category_pill {
+  padding: 7px 15px;
+  background: #f3f4f6;
+  border-radius: 7px;
+  color: $color-alternate-grey;
+  font-weight: 500;
+  font-size: 12px; 
+  font-family: inter;
+  z-index: 1;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    background: linear-gradient(#f3f4f6, #f3f4f6) padding-box,
+                linear-gradient(to right, #1c5af4 0, #61d6ff 100%) border-box;
+  }
+}
+
+.search_box {
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+
+  @include for-tablet {
+    min-width: 200px;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    height: 44px;
+    padding: 0 15px 0 42px;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    background-color: #f1f3f6;
+    color: #333;
+
+    &::placeholder {
+      color: #999999;
+      font-weight: 300;
+      font-family: inherit;
+      opacity: 0.8;
+    }
+
+    &:focus {
+      background-color: #f1f3f6;
+      box-shadow: 0 0 0 1px #e2e8f0;
+    }
+  }
+
+  .search_icon {
+    position: absolute;
+    left: 14px;
+    color: #999999;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+    z-index: 1;
+
+    &:hover {
+      color: #1c5af4;
+    }
+  }
+}
+
+// ── Bottom separator ─────────────────────────────────────────────────────────
+.bottom_divider {
+  border: none;
+  border-top: 1px solid $color-dark-grey;
+  margin: 8px 0 0;
+}

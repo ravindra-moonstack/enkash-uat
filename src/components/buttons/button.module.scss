@@ -241,4 +241,10 @@
   .border_radius {
     border-radius: 40px !important;
   }
+
+  .custom_icon_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

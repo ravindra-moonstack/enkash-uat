@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Suspense } from "react"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
@@ -37,7 +37,7 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-const PartnershipsPage = (): React.JSX.Element => {
+const PartnershipsPageContent = (): React.JSX.Element => {
   return (
     <div className={`color-white  `}>
       <BpHeroSection
@@ -127,4 +127,10 @@ const PartnershipsPage = (): React.JSX.Element => {
   )
 }
 
-export default PartnershipsPage
+export default function PartnershipsPage() {
+  return (
+    <Suspense fallback={null}>
+      <PartnershipsPageContent />
+    </Suspense>
+  )
+}
