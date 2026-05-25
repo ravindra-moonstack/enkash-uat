@@ -441,12 +441,34 @@
 
 .modal_content {
   position: relative;
-//   width: 90%;
-//   max-width: 476px;
-//   max-height: 450px;
+  width: 90%;
+  max-width: 800px;
   background: #000;
   border-radius: 12px; 
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    display: block;
+    max-width: 100%;
+    border: none;
+  }
+
+  &:has(iframe[width="476"]),
+  &:has(iframe[height="476"]),
+  &:has(iframe[width="500"]),
+  &:has(iframe[height="500"]) {
+    max-width: 476px;
+    
+    iframe {
+      aspect-ratio: 1 / 1 !important;
+    }
+  }
 
   .close_btn {
     position: absolute;
@@ -460,9 +482,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
     
     &:hover {
       color: $color-equity-blue;
+    }
+
+    @media (max-width: 576px) {
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      padding: 4px;
+      font-size: 24px;
     }
   }
 
