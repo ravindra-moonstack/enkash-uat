@@ -18,7 +18,7 @@ export default function RecentBlogs() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1500,
+    speed: 3000,
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
