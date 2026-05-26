@@ -332,6 +332,126 @@ const url: {
   { source: "/buy-now-pay-later", destination: "/affordability-suite" },
   { source: "/olympus", destination: "/payment-gateway" },
   { source: "/department-management", destination: "/" },
+  {
+    source: "/resources/blogs/aadhaar-card",
+    destination: "/resources/blog/category/aadhaar-card",
+  },
+  {
+    source: "/resources/blogs/accounting-and-finance",
+    destination: "/resources/blog/category/accounting-and-finance",
+  },
+  {
+    source: "/resources/blogs/banking",
+    destination: "/resources/blog/category/banking",
+  },
+  {
+    source: "/resources/blogs/be-inspired",
+    destination: "/resources/blog/category/be-inspired",
+  },
+  {
+    source: "/resources/blogs/brand-vouchers",
+    destination: "/resources/blog/category/brand-vouchers",
+  },
+  {
+    source: "/resources/blogs/cards",
+    destination: "/resources/blog/category/cards",
+  },
+  {
+    source: "/resources/blogs/corporate-card",
+    destination: "/resources/blog/category/corporate-card",
+  },
+  {
+    source: "/resources/blogs/funding-guide",
+    destination: "/resources/blog/category/funding-guide",
+  },
+  {
+    source: "/resources/blogs/gift-cards",
+    destination: "/resources/blog/category/gift-cards",
+  },
+  {
+    source: "/resources/blogs/gift-vouchers",
+    destination: "/resources/blog/category/gift-vouchers",
+  },
+  {
+    source: "/resources/blogs/growth-guide",
+    destination: "/resources/blog/category/growth-guide",
+  },
+  {
+    source: "/resources/blogs/gst",
+    destination: "/resources/blog/category/gst",
+  },
+  {
+    source: "/resources/blogs/guest-article",
+    destination: "/resources/blog/category/guest-article",
+  },
+  {
+    source: "/resources/blogs/ilearn",
+    destination: "/resources/blog/category/ilearn",
+  },
+  {
+    source: "/resources/blogs/invoices",
+    destination: "/resources/blog/category/invoices",
+  },
+  {
+    source: "/resources/blogs/loyalty-lounge",
+    destination: "/resources/blog/category/loyalty-lounge",
+  },
+  {
+    source: "/resources/blogs/pan-card",
+    destination: "/resources/blog/category/pan-card",
+  },
+  {
+    source: "/resources/blogs/payables",
+    destination: "/resources/blog/category/payables",
+  },
+  {
+    source: "/resources/blogs/payables-expenses",
+    destination: "/resources/blog/category/payables-expenses",
+  },
+  {
+    source: "/resources/blogs/payment-gateway",
+    destination: "/resources/blog/category/payment-gateway",
+  },
+  {
+    source: "/resources/blogs/payments",
+    destination: "/resources/blog/category/payments",
+  },
+  {
+    source: "/resources/blogs/receivables",
+    destination: "/resources/blog/category/receivables",
+  },
+  {
+    source: "/resources/blogs/recent-news",
+    destination: "/resources/blog/category/recent-news",
+  },
+  {
+    source: "/resources/blogs/rewards-recognition",
+    destination: "/resources/blog/category/rewards-recognition",
+  },
+  {
+    source: "/resources/blogs/tax-payment",
+    destination: "/resources/blog/category/tax-payment",
+  },
+  {
+    source: "/resources/blogs/trending-topics",
+    destination: "/resources/blog/category/trending-topics",
+  },
+  {
+    source: "/resources/blogs/wallets",
+    destination: "/resources/blog/category/wallets",
+  },
+  {
+    source: "/resources/video-category/Corporate%20Card",
+    destination: "/resources/videos",
+  },
+  {
+    source: "/resources/video-category/Corporate Card",
+    destination: "/resources/videos",
+  },
+  {
+    source: "/resources/video-category/Marketing",
+    destination: "/resources/videos",
+  },
 ]
 
 const mappedUrls = url.map((item) => ({
