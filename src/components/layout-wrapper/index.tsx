@@ -18,32 +18,32 @@ export default function LayoutClientWrapper({
   const hideLayout = ["/contact-us", "/support", "/sales", "/campaigns/enterprise-bill-payments"]
   const shouldHide = hideLayout.includes(pathname) || pathname.startsWith("/admin")
 
-  // ⭐ Remove tracking parameters on client-side load
-  useEffect(() => {
-    const url = new URL(window.location.href)
-    const paramsToRemove = [
-      "utm_source",
-      "utm_medium",
-      "utm_campaign",
-      "_gl",
-      "_ga",
-      "_gcl_au",
-    ]
+  // // ⭐ Remove tracking parameters on client-side load 
+  // useEffect(() => {
+  //   const url = new URL(window.location.href)
+  //   const paramsToRemove = [
+  //     "utm_source",
+  //     "utm_medium",
+  //     "utm_campaign",
+  //     "_gl",
+  //     "_ga",
+  //     "_gcl_au",
+  //   ]
 
-    let changed = false
+  //   let changed = false
 
-    paramsToRemove.forEach((param) => {
-      if (url.searchParams.has(param)) {
-        url.searchParams.delete(param)
-        changed = true
-      }
-    })
+  //   paramsToRemove.forEach((param) => {
+  //     if (url.searchParams.has(param)) {
+  //       url.searchParams.delete(param)
+  //       changed = true
+  //     }
+  //   })
 
-    if (changed) {
-      // Replace the URL WITHOUT reloading the page
-      window.history.replaceState({}, document.title, url.pathname)
-    }
-  }, [])
+  //   if (changed) {
+  //     // Replace the URL WITHOUT reloading the page
+  //     window.history.replaceState({}, document.title, url.pathname)
+  //   }
+  // }, [])
 
   return (
     <div className="d-flex flex-column min-vh-100">
