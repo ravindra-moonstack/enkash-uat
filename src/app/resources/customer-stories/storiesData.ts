@@ -45,8 +45,8 @@ export const caseStudiesData: Record<string, CaseStudy> = {
     slug: "vianet-achieves-40-improvement-in-business-processes-up-to-50-cost-savings-using-enkash-olympus",
     meta: {
       title: "From Manual to Fully Accurate: Vianet’s 100% Accuracy and Efficiency Gains with EnKash",
-      metaTitle: "Vianet Achieves 40% Improvement in Business Processes with EnKash",
-      metaDescription: "Discover how Vianet improved business process efficiency by 40%, achieved 100% accounting accuracy, and reduced operational costs by up to 50% using EnKash automation solutions.",
+      metaTitle: "Vianet Achieves 40% Process Improvement with EnKash",
+      metaDescription: "See how Vianet improved operational efficiency and reduced costs by 40% with EnKash's payment and expense management solutions.",
     },
     title: "From Manual to Fully Accurate: Vianet’s 100% Accuracy and Efficiency Gains with EnKash",
     category: "Case Study",
@@ -152,8 +152,8 @@ export const caseStudiesData: Record<string, CaseStudy> = {
     slug: "honeycomb-creative-onboards-enkash-as-a-trusted-partner-for-streamlining-department-wise-payment-processes",
     meta: {
       title: "100% Accuracy & Higher Efficiency: Honeycomb’s EnKash Story",
-      metaTitle: "Honeycomb Creative Streamlines Department-Wise Payments with EnKash",
-      metaDescription: "Learn how Honeycomb Creative improved payment visibility, streamlined approvals, and achieved 30% process efficiency using EnKash virtual cards and automation tools.",
+      metaTitle: "Honeycomb Creative Streamlines Payments with EnKash",
+      metaDescription: "Discover how Honeycomb Creative streamlined department-wise payment processes, improved financial visibility, and simplified business payments with EnKash.",
     },
     title: "100% Accuracy & Higher Efficiency: Honeycomb’s EnKash Story",
     category: "Case Study",

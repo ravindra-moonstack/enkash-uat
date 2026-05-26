@@ -730,6 +730,14 @@ const FooterV2 = (): React.JSX.Element => {
                         <li>
                           <Link href="/gst-calculator/">GST Calculator</Link>
                         </li>
+                        <li>
+                          <Link
+                            href={`${process.env.NEXT_PUBLIC_URL}/glossary`}
+                            rel="noopener noreferrer"
+                          >
+                            Glossary
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                   </div>
