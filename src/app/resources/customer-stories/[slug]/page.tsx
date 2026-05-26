@@ -88,7 +88,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
       <section className={styles.heroSection}>
         <div className={styles.heroBackground}>
           <Image
-            src="https://www.enkash.com/resources/wp-content/uploads/2025/08/banner-scaled-1.webp"
+            src="/uploads/2025/08/banner-scaled-1.webp"
             alt="Hero Background"
             fill
             priority
@@ -212,7 +212,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 <div key={i} className={styles.metricCard}>
                   <div className={styles.metricIconWrapper}>
                     <Image
-                      src="https://www.enkash.com/resources/wp-content/uploads/2025/08/Frame-1.svg"
+                      src="/uploads/2025/08/Frame-1.svg"
                       alt="Success metric icon"
                       width={30}
                       height={31}
@@ -235,7 +235,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
       <section className={styles.challengesSection}>
         <div className={styles.challengesBackground}>
           <Image
-            src="https://www.enkash.com/resources/wp-content/uploads/2025/08/Group-1171277148-scaled-1.webp"
+            src="/uploads/2025/08/Group-1171277148-scaled-1.webp"
             alt="Challenges background overlay"
             fill
             className={styles.bgImage}
@@ -286,7 +286,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
             <div className={styles.solutionsLeft}>
               <div className={styles.solutionsImageWrapper}>
                 <Image
-                  src="https://www.enkash.com/resources/wp-content/uploads/2025/08/image-17957.webp"
+                  src="/uploads/2025/08/image-17957.webp"
                   alt="Solutions Puzzle Illustration"
                   width={320}
                   height={320}
