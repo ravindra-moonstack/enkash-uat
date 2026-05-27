@@ -83,6 +83,8 @@ const StatsSection: React.FC<StatsSectionProps> = ({
             />
             <div className={'max-w-auto'}>
                 <div className={styles.content}> 
+                    {/* don't remove this empty div  */}
+                    <div></div>
                     <div className={styles.statsGrid}>
                         <div className={styles.textContent}>
                             <DynamicHeading
