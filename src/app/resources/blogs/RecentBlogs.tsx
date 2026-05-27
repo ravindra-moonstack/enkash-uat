@@ -7,6 +7,10 @@ import styles from "./featured_top.module.scss"
 import Image from "next/image"
 import Link from "next/link"
 
+// Import Slick Carousel stylesheets to render slider layouts and arrow icons
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+
 export default function RecentBlogs() {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const { fetchRecentBlogs, loading } = useBlog()
@@ -18,13 +22,13 @@ export default function RecentBlogs() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1500,
+    speed: 800,
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
+    autoplaySpeed: 3000,
+    cssEase: "ease-in-out",
     pauseOnHover: true,
     responsive: [
       {
@@ -40,13 +44,13 @@ export default function RecentBlogs() {
         settings: { slidesToShow: 1 },
       },
     ],
-    classNames: styles.recent_track,
+    className: styles.recent_track,
   }
 
   if (!posts.length) return null
 
   return (
-    <div className={styles.recent_blogs_section}>
+    <div className={styles.blog_page_recent_section}>
       <h3 className={styles.heading}>Recent Blogs</h3>
 
       <Slider {...settings}>

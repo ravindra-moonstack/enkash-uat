@@ -14,18 +14,20 @@
     width: 100%;
   }
 }
-.blog_page{
+
+.blog_page {
   padding: 100px 0px 60px;
 }
 
-  .container {
-    padding: 0 15px;
+.container {
+  padding: 0 15px;
 
-    @include for-laptops {
-      padding: 0;
-    }
+  @include for-laptops {
+    padding: 0;
   }
-.blog_page_top_section { 
+}
+
+.blog_page_top_section {
   .row {
     display: flex;
     flex-direction: column;
@@ -35,18 +37,21 @@
     @include for-laptops {
       flex-direction: row;
     }
-    
+
     .left_box {
       width: 100%;
       padding: 0;
+
       @include for-laptops {
         width: calc(50% - 10px);
         padding: 10px;
       }
     }
+
     .right_box {
       width: 100%;
       padding: 0;
+
       @include for-laptops {
         width: calc(50% - 10px);
         padding: 10px;
@@ -58,13 +63,14 @@
 .left_box_inner {
   border: 2.5px solid transparent;
   background: linear-gradient(#fff, #fff) padding-box,
-              linear-gradient(to right, #4eddad 0, #4eddad 37%, #61d6ff 100%) border-box;
+    linear-gradient(to right, #4eddad 0, #4eddad 37%, #61d6ff 100%) border-box;
   border-radius: 24px;
   padding: 10px;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
-  &:hover{
+
+  &:hover {
     box-shadow: 0 0 10px 0 #00000050;
   }
 
@@ -72,6 +78,7 @@
     position: relative;
     border-radius: 20px;
     overflow: hidden;
+
     a {
       text-decoration: none;
       display: block;
@@ -83,26 +90,27 @@
       display: block;
       border-radius: 20px;
     }
- 
-    .overlay {  
+
+    .overlay {
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-            display: flex;
-      flex-direction: row; 
+      display: flex;
+      flex-direction: row;
       justify-content: space-between;
       border-radius: 0px 0px 25px 25px;
-    box-shadow: 51px 72px 76px 0px rgba(135.5962448120117, 134.12237258579418, 134.12237258579418, 0.3333333333333333) inset;
+      box-shadow: 51px 72px 76px 0px rgba(135.5962448120117, 134.12237258579418, 134.12237258579418, 0.3333333333333333) inset;
       margin-top: -77px;
       margin-bottom: 0px;
       margin-left: 0px;
       margin-right: 0px;
-      padding: 12px; 
+      padding: 12px;
       position: relative;
       z-index: 1;
-      @include for-laptops{
+
+      @include for-laptops {
         padding: 20px;
       }
 
@@ -125,17 +133,18 @@
     h1 {
       font-size: 20px;
       line-height: 28px;
-    font-weight: 400;
-    color: $color-black-303135;
+      font-weight: 400;
+      color: $color-black-303135;
 
-    @include for-laptops {
-      font-size: 26px;
-      line-height: 35px;
-    }
+      @include for-laptops {
+        font-size: 26px;
+        line-height: 35px;
+      }
 
       a {
         text-decoration: none;
         color: $color-black-303135;
+
         &:hover {
           color: #2f6fed;
         }
@@ -187,7 +196,7 @@
 
   .heading {
     color: $color-equity-blue;
-    font-size: 30px; 
+    font-size: 30px;
     font-weight: 600;
     line-height: 41px;
     margin-bottom: 0;
@@ -195,11 +204,11 @@
 
   .content {
     .content_box {
-      padding: 10px; 
+      padding: 10px;
       border: none;
-        border-bottom: 1px solid $color-dark-grey;
-         
-        .title {  
+      border-bottom: 1px solid $color-dark-grey;
+
+      .title {
         font-size: 21px;
         font-weight: 400;
         line-height: 32px;
@@ -222,13 +231,15 @@
         color: $color-black-303135;
         line-height: 1.6;
       }
- 
+
     }
   }
 }
-.recent_track{
+
+.recent_track {
   height: inherit;
 }
+
 .blog_page_recent_section {
   padding: 40px 0;
   margin-top: 33px;
@@ -241,6 +252,7 @@
   .container {
     padding: 0 20px;
   }
+
   .heading {
     text-align: center;
     font-size: 28px;
@@ -262,6 +274,7 @@
     .recent_blog_image {
       border-radius: 10px;
       overflow: hidden;
+
       a {
         text-decoration: none;
         display: block;
@@ -303,6 +316,7 @@
         a {
           text-decoration: none;
           color: inherit;
+
           &:hover {
             color: #2f6fed;
           }
@@ -321,10 +335,12 @@
   :global(.slick-track) {
     display: flex !important;
   }
+
   :global(.slick-slide) {
     height: auto !important;
     display: flex !important;
   }
+
   :global(.slick-slide > div) {
     width: 100%;
     display: flex;
@@ -340,8 +356,8 @@
     z-index: 2;
     display: flex;
     align-items: center;
-    justify-content: center; 
-    
+    justify-content: center;
+
 
     &:before {
       color: #fff;
@@ -351,30 +367,34 @@
 
   :global(.slick-prev) {
     left: 10px;
+
     @include for-large-screen {
-    left: -45px;
+      left: -45px;
     }
   }
 
   :global(.slick-next) {
     right: 10px;
+
     @include for-large-screen {
-    right: -45px;
+      right: -45px;
     }
   }
 }
 
 .blog_nav_section {
   padding: 0 0 20px;
-  background: #fff; 
+  background: #fff;
 }
 
 .category_section_wrap {
-  padding: 60px 20px 0; 
-  &:last-child{
+  padding: 60px 20px 0;
+
+  &:last-child {
     padding-bottom: 60px;
   }
 }
+
 .subscribe_box {
   display: flex;
   align-items: center;
@@ -382,7 +402,7 @@
 
   width: 100%;
   padding: 8px;
-  border-radius: 50px; 
+  border-radius: 50px;
   border: 1px solid #e0e0e0;
 }
 
@@ -395,22 +415,24 @@
   outline: none;
   width: 100%;
   color: $color-grey-200;
-  @include for-laptops{
-  padding: 12px 16px;
-    
+
+  @include for-laptops {
+    padding: 12px 16px;
+
   }
 
   &::placeholder {
     color: #777;
   }
 }
- 
+
 
 .icon {
   display: flex;
   align-items: center;
   font-size: 16px;
 }
-.subscribe_btn{
+
+.subscribe_btn {
   border-radius: 50px !important;
 }

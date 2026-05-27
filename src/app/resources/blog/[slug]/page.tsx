@@ -11,6 +11,7 @@ import { BlogNav } from "@/src/components"
 import { notFound, redirect } from "next/navigation"
 
 import { getBlogCategories, getPostBySlug } from "@/src/services/resource-service"
+import { generateBreadcrumbSchema } from "@/src/utils/metaData"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
@@ -50,10 +51,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: metaTitle,
     description: post.meta_description || "",
     keywords: post.focus_keyword ? post.focus_keyword.split(",").map((k: string) => k.trim()) : [],
+    alternates: {
+      canonical: `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`,
+    },
     openGraph: {
       title: metaTitle,
       description: post.meta_description || "",
       images: imageUrl ? [{ url: imageUrl, alt: post.image_alt || "" }] : [],
+      type: "article",
+      url: `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`,
     },
     twitter: {
       card: "summary_large_image",
@@ -78,6 +84,9 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     notFound()
   }
   const result = json.posts
+
+  const canonicalUrl = `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`
+  const breadcrumbSchema = generateBreadcrumbSchema(canonicalUrl)
 
   const bannerData = [
     {
@@ -130,6 +139,10 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           dangerouslySetInnerHTML={{ __html: result[0].post_schema_markup }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className={`${styles.mainPage}`}>
         <section className={styles.blog_nav_section}>
           <div className="max-w-auto">

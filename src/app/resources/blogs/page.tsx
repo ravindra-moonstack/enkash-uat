@@ -1,4 +1,5 @@
 import React from "react"
+import { Metadata } from "next"
 import FeaturedLeftBlog from "./FeaturedLeftBlog"
 import FeaturedRightBlogs from "./FeaturedRightBlogs"
 import RecentBlogs from "./RecentBlogs"
@@ -6,6 +7,17 @@ import { BlogNav, ReceivablesSection, SubscribeSection } from "@/src/components"
 import styles from "./featured_top.module.scss"
 
 import { getBlogCategories, getCategoryData } from "@/src/services/resource-service"
+import generateMetaData from "@/src/utils/metaData"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Finance, Payments & Corporate Card Insights | EnKash Blogs",
+  description:
+    "Explore expert insights on business payments, utility bills, GST, expense management, and fintech for Indian enterprises. Read the EnKash blog.",
+  alternates: {
+    canonical: `${process.env.URL || "https://www.enkash.com"}/resources/blogs`,
+  },
+})
+
 
 export default async function BlogPageData() {
   const navData = await getBlogCategories()
