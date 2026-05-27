@@ -98,6 +98,7 @@ const MealCards = (): React.JSX.Element => {
         backgroundImage={statsBg}
         className="whiteTheme"
         stats={statsData}
+        showOverlays={true}
       />
       <BulletPointSection
         heading={[
