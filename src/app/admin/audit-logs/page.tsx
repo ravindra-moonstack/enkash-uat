@@ -133,8 +133,8 @@ const AuditLogsPage = () => {
                                     </td>
                                 </tr>
                             ) : (
-                                logs.map((log) => (
-                                    <tr key={log.id}>
+                                logs.map((log, index) => (
+                                    <tr key={log.id || (log as any).ID || `log-${index}`}>
                                         <td>{moment(log.updated_at).format('DD-MMM-YYYY hh:mm A')}</td>
                                         <td>
                                             <span className={`${styles.badge} ${styles[log.action_type.toLowerCase()]}`}>

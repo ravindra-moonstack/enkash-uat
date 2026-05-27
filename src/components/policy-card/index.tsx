@@ -64,10 +64,8 @@ const PolicyCard: React.FC<CardProps> = ({
   return (
     <div className={`${className} ${styles.policyCard} ${hoverClass}`}>
       {url ? (
-        <Link href={url} passHref legacyBehavior>
-          <a className="d-flex gap-3 align-items-start text-decoration-none">
-            {cardContent}
-          </a>
+        <Link href={url} className="d-flex gap-3 align-items-start text-decoration-none">
+          {cardContent}
         </Link>
       ) : (
         <div className="d-flex gap-3 align-items-start">{cardContent}</div>
