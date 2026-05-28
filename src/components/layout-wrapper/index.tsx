@@ -15,10 +15,13 @@ export default function LayoutClientWrapper({
 }) {
   const pathname = usePathname()
 
-  const hideLayout = ["/contact-us", "/support", "/sales", "/campaigns/enterprise-bill-payments"]
-  const shouldHide = hideLayout.includes(pathname) || pathname.startsWith("/admin")
+  const hideLayout = ["/contact-us", "/support", "/sales"]
+  const shouldHide =
+    hideLayout.includes(pathname) ||
+    pathname.startsWith("/admin") ||
+    pathname.startsWith("/campaigns")
 
-  // // ⭐ Remove tracking parameters on client-side load 
+  // // ⭐ Remove tracking parameters on client-side load
   // useEffect(() => {
   //   const url = new URL(window.location.href)
   //   const paramsToRemove = [
