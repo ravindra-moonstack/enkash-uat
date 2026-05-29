@@ -81,22 +81,30 @@ export async function POST(request: Request) {
       )
     }
 
-    // 1. Check if ANY other session has a lock on this item
-    const [existing]: any = await pool.execute(
-        `SELECT editor_id, user_name FROM posts_active_editors WHERE module = ? AND post_id = ? AND editor_id != ?`,
-        [module, postId, editorId]
-    )
+    if (action === "takeover") {
+      // Delete all existing locks for this module and post
+      await pool.execute(
+        `DELETE FROM posts_active_editors WHERE module = ? AND post_id = ?`,
+        [module, postId]
+      )
+    } else {
+      // 1. Check if ANY other session has a lock on this item
+      const [existing]: any = await pool.execute(
+          `SELECT editor_id, user_name FROM posts_active_editors WHERE module = ? AND post_id = ? AND editor_id != ?`,
+          [module, postId, editorId]
+      )
 
-    if (existing.length > 0) {
-        return NextResponse.json({
-            success: true,
-            isLocked: true,
-            lockedBy: existing[0].user_name,
-            activeEditors: [{ user_name: existing[0].user_name }]
-        })
+      if (existing.length > 0) {
+          return NextResponse.json({
+              success: true,
+              isLocked: true,
+              lockedBy: existing[0].user_name,
+              activeEditors: [{ user_name: existing[0].user_name }]
+          })
+      }
     }
 
-    // 2. No other session has a lock, upsert my lock
+    // 2. Upsert my lock
     await pool.execute(
       `
             INSERT INTO posts_active_editors (post_id, editor_id, user_id, user_name, module) 
