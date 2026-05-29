@@ -72,7 +72,9 @@ function ContentShowcase({
           />
         )}
 
-        <div className={`${styles.ContentShowcaseContent} ${contentContainerStyle}`}>
+        <div
+          className={`${styles.ContentShowcaseContent} ${contentContainerStyle}`}
+        >
           <div className={`row`}>
             {/* IMAGE COLUMN — Mobile second, Desktop based on reverse */}
             <div
@@ -117,16 +119,29 @@ function ContentShowcase({
               </div>
 
               <div className="d-flex flex-column gap-32 mt-4">
-                {data.map(({ icon, title, description, headingClassName: itemClassName, headingTag: itemTag }, i) => (
-                  <PolicyCard
-                    key={i}
-                    icon={icon}
-                    title={title}
-                    description={description}
-                    headingClassName={itemClassName ? itemClassName : "heading-h5"}
-                    headingTag={itemTag ? itemTag : "h4"}
-                  />
-                ))}
+                {data.map(
+                  (
+                    {
+                      icon,
+                      title,
+                      description,
+                      headingClassName: itemClassName,
+                      headingTag: itemTag,
+                    },
+                    i
+                  ) => (
+                    <PolicyCard
+                      key={i}
+                      icon={icon}
+                      title={title}
+                      description={description}
+                      headingClassName={
+                        itemClassName ? itemClassName : "heading-h5"
+                      }
+                      headingTag={itemTag ? itemTag : "h4"}
+                    />
+                  )
+                )}
               </div>
 
               <div className={styles.list_button}>

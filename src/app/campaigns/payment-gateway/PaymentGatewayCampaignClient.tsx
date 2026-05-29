@@ -32,17 +32,17 @@ import {
   acceleratedGrowthImg,
   stateBg,
   capabilityImage,
-  vaultSecurity
+  vaultSecurity,
 } from "../../payment-gateway/img"
 
 // Components
-import { 
-  BankGradeSecurity, 
-  BulletPointSection, 
-  ContentShowcase, 
-  FeatureCard, 
-  PaymentGatewaySection, 
-  StatsSection 
+import {
+  BankGradeSecurity,
+  BulletPointSection,
+  ContentShowcase,
+  FeatureCard,
+  PaymentGatewaySection,
+  StatsSection,
 } from "@/src/components"
 
 import IndustrySlider from "@/src/components/Industry-slider"
@@ -51,14 +51,17 @@ import FaqSection from "@/src/components/faq-section"
 import SuspenseLoading from "@/src/components/loading"
 
 // Forms & LogoSlider loaded dynamically
-const PaymentGatewayPartnershipForm = dynamic(() => import("@/src/components/forms/payment-gateway"), {
-  ssr: false,
-  loading: () => <div style={{ minHeight: '541px' }} />
-})
+const PpcPaymentGatewayForm = dynamic(
+  () => import("@/src/components/forms/ppc-payment-gateway"),
+  {
+    ssr: false,
+    loading: () => <div style={{ minHeight: "541px" }} />,
+  }
+)
 
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: '100px' }} />
+  loading: () => <div style={{ minHeight: "100px" }} />,
 })
 
 const mergedCards = allProductSections.flatMap((section) => section?.items)
@@ -82,7 +85,13 @@ const PaymentGatewayCampaignClient = () => {
         <header className={styles.customHeader}>
           <div className={"max-w-auto"}>
             <Link href="/" className={styles.logoLink}>
-              <Image src={"/images/logo.svg"} alt="Enkash Logo" width={120} height={40} priority />
+              <Image
+                src={"/images/logo.svg"}
+                alt="Enkash Logo"
+                width={120}
+                height={40}
+                priority
+              />
             </Link>
           </div>
         </header>
@@ -95,7 +104,7 @@ const PaymentGatewayCampaignClient = () => {
                   {
                     text: "India's Best Payment Gateway Truly Built for SMBs",
                     color: "color-black",
-                  }
+                  },
                 ]}
                 headingTag="h1"
                 className={"mb-0"}
@@ -105,7 +114,7 @@ const PaymentGatewayCampaignClient = () => {
                   {
                     text: "Accept online payments instantly with a RBI-authorised, merchant payment gateway designed for MSMEs, D2C brands, SaaS platforms, marketplaces, and enterprises.",
                     color: "color-black subHeading",
-                  }
+                  },
                 ]}
                 headingTag="p"
                 className={"mb-3 mt-3"}
@@ -114,18 +123,17 @@ const PaymentGatewayCampaignClient = () => {
                 <Image
                   src="/images/LicenseGroupIcon.png"
                   alt="logo"
-                  width={180}
-                  height={30}
+                  width={366}
+                  height={69}
                   className={styles.groupIcon}
                   priority={true}
-                  sizes="180px"
                 />
               </div>
             </div>
 
             {/* Campaign Form replacing right-side hero image */}
             <div id="form-section" className={styles.formSection}>
-              <PaymentGatewayPartnershipForm />
+              <PpcPaymentGatewayForm />
             </div>
           </div>
         </div>
@@ -155,7 +163,10 @@ const PaymentGatewayCampaignClient = () => {
               title: "The ",
               color: "color-black",
             },
-            { title: "Backbone of Modern Business", color: "color-equity-blue" },
+            {
+              title: "Backbone of Modern Business",
+              color: "color-equity-blue",
+            },
             {
               title: " Payments",
               color: "color-black",
@@ -163,7 +174,8 @@ const PaymentGatewayCampaignClient = () => {
           ]}
           mainDescription={[
             {
-              title: "A complete payments setup that supports growth, complexity, and volume.",
+              title:
+                "A complete payments setup that supports growth, complexity, and volume.",
               color: "color-black",
             },
           ]}
@@ -173,12 +185,12 @@ const PaymentGatewayCampaignClient = () => {
           imageSrc={integration}
           imageAlt="card background"
           buttonUrl="#form-section"
-          buttonTitle="Make The Switch ->"
+          buttonTitle="Get Started"
           bgColor="bg-color-black-30"
           buttonArrow
           reverse
-          imgHeightStyle={'mh-760'}
-          contentContainerStyle={'pb-0'}
+          imgHeightStyle={"mh-760"}
+          contentContainerStyle={"pb-0"}
         />
 
         <ContentShowcase
@@ -187,7 +199,7 @@ const PaymentGatewayCampaignClient = () => {
           data={paymentMethodData}
           imageSrc={paymenyMethod}
           imageAlt="card background"
-          buttonTitle="Make The Switch ->"
+          buttonTitle="Get Started"
           buttonUrl="#form-section"
           buttonArrow
         />
@@ -200,10 +212,10 @@ const PaymentGatewayCampaignClient = () => {
           imageAlt="card background"
           bgColor="bg-color-black-30"
           buttonUrl="#form-section"
-          buttonTitle="Make The Switch ->"
+          buttonTitle="Get Started"
           buttonArrow
           reverse
-          imgHeightStyle={'mh-650'}
+          imgHeightStyle={"mh-650"}
         />
 
         <ContentShowcase
@@ -213,7 +225,7 @@ const PaymentGatewayCampaignClient = () => {
           imageSrc={rank}
           imageAlt="card background"
           buttonUrl="#form-section"
-          buttonTitle="Make The Switch ->"
+          buttonTitle="Get Started"
           buttonArrow
         />
       </div>
@@ -221,7 +233,9 @@ const PaymentGatewayCampaignClient = () => {
       {/* Industry Slider */}
       <IndustrySlider
         heading={"Designed for How Businesses Collect Payments"}
-        subheading={"Whether you're scaling an e-commerce store or launching a subscription service, EnKash adapts to your unique needs."}
+        subheading={
+          "Whether you're scaling an e-commerce store or launching a subscription service, EnKash adapts to your unique needs."
+        }
         categories={categories}
         slides={slides}
         autoplaySpeed={4000}
@@ -230,7 +244,12 @@ const PaymentGatewayCampaignClient = () => {
       {/* Payment Gateway Section */}
       <PaymentGatewaySection
         backgroundImage={capabilityImage.src}
-        heading={[{ title: "Advanced Capabilities for Complex Requirements", color: "color-white" }]}
+        heading={[
+          {
+            title: "Advanced Capabilities for Complex Requirements",
+            color: "color-white",
+          },
+        ]}
         description="Beyond standard payment processing, EnKash handles sophisticated business scenarios."
         slideData={slideData}
         className={styles.partnerSectionOverlap}
@@ -262,13 +281,14 @@ const PaymentGatewayCampaignClient = () => {
                 color: "color-equity-blue ",
               },
             ]}
-            headingTag={'h2'}
-            className={'f-6'}
+            headingTag={"h2"}
+            className={"f-6"}
           />
           <DynamicHeading
             content={[
               {
-                title: "Fast, frictionless checkout experience designed to maximize conversion rates and minimize cart abandonment.",
+                title:
+                  "Fast, frictionless checkout experience designed to maximize conversion rates and minimize cart abandonment.",
                 color: "color-grey-200 f-4 ",
               },
             ]}
@@ -308,22 +328,28 @@ const PaymentGatewayCampaignClient = () => {
         ]}
         description="Join thousands of businesses that trust EnKash for reliable, secure, and transparent payment processing."
         bulletPoints={acceleratedGrowthData}
-        buttonTitle="Make The Switch ->"
+        buttonTitle="Get Started"
         buttonUrl="#form-section"
         image={acceleratedGrowthImg}
       />
 
       {/* FAQ Section */}
       <SuspenseLoading>
-        <FaqSection faqData={faqData} />
+        <FaqSection faqData={faqData} connectUrl="#form-section" />
       </SuspenseLoading>
 
       {/* Custom Campaign Footer */}
       <footer className={styles.customFooter}>
         <div className={"max-w-auto"}>
           <div className={styles.copyrightBar}>
-            <p>Copyright © 2026 | Nehat Tech Solutions Pvt. Ltd. All rights reserved.</p>
-            <p>Copyright © 2026 | Nehat Business Services Pvt. Ltd. All rights reserved.</p>
+            <p>
+              Copyright © 2026 | Nehat Tech Solutions Pvt. Ltd. All rights
+              reserved.
+            </p>
+            <p>
+              Copyright © 2026 | Nehat Business Services Pvt. Ltd. All rights
+              reserved.
+            </p>
           </div>
         </div>
       </footer>
