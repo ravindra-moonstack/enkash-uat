@@ -151,9 +151,6 @@ export async function POST(request: Request) {
 
     const postId = result.insertId
 
-    // Sync old_id with surrogate id for new posts
-    await pool.execute("UPDATE posts SET old_id = id WHERE id = ?", [postId])
-
     // Ensure seo_robots exists
     try {
       const [metaCols]: any = await pool.query("SHOW COLUMNS FROM post_meta")
@@ -186,11 +183,6 @@ export async function POST(request: Request) {
     ])
 
     const metaId = metaResult.insertId
-
-    // Sync old_id with surrogate id for new post_meta
-    await pool.execute("UPDATE post_meta SET old_id = id WHERE id = ?", [
-      metaId,
-    ])
 
     // Update category counts
     await pool.query(`

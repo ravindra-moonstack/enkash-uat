@@ -10,10 +10,17 @@ import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
 import { BlogNav } from "@/src/components"
 import { notFound, redirect } from "next/navigation"
 
-import { getBlogCategories, getPostBySlug } from "@/src/services/resource-service"
+import {
+  getBlogCategories,
+  getPostBySlug,
+} from "@/src/services/resource-service"
 import { generateBreadcrumbSchema } from "@/src/utils/metaData"
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
   const { slug } = await params
   const cookieStore = await cookies()
   const token = cookieStore.get("token")?.value
@@ -42,15 +49,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     .trim()
 
   const imageUrl = post.featured_image_url
-    ? (post.featured_image_url.startsWith("http")
+    ? post.featured_image_url.startsWith("http")
       ? post.featured_image_url
-      : `/uploads/${post.featured_image_url}`)
+      : `/uploads/${post.featured_image_url}`
     : ""
 
   return {
     title: metaTitle,
     description: post.meta_description || "",
-    keywords: post.focus_keyword ? post.focus_keyword.split(",").map((k: string) => k.trim()) : [],
+    keywords: post.focus_keyword
+      ? post.focus_keyword.split(",").map((k: string) => k.trim())
+      : [],
     alternates: {
       canonical: `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`,
     },
@@ -105,6 +114,8 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       slug: result[0].slug,
     },
   ]
+  console.log("bannerData", bannerData)
+
   const bodyData = [
     {
       title: result[0].title,
@@ -115,8 +126,6 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       imageAlt: result[0].image_alt,
     },
   ]
-
-
 
   const relatedBlogs = [{ relatedBlogs: json?.relatedBlogs }]
 
@@ -162,7 +171,9 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           slug={result[0].slug}
           title={result[0].title}
         />
-        {(result[0].remove_author_details === 0 || result[0].remove_author_details === null || result[0].remove_author_details === undefined) && (
+        {(result[0].remove_author_details === 0 ||
+          result[0].remove_author_details === null ||
+          result[0].remove_author_details === undefined) && (
           <AuthorSection authorData={result[0]} />
         )}
         <RelatedBlogs relatedBlogs={relatedBlogs} />
@@ -171,4 +182,4 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   )
 }
 
-export default BlogPage;
+export default BlogPage

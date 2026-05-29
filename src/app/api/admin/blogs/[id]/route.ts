@@ -128,7 +128,9 @@ export async function PUT(
     try {
       const [metaCols]: any = await pool.query("SHOW COLUMNS FROM post_meta")
       if (!metaCols.find((c: any) => c.Field === "seo_robots")) {
-        await pool.query("ALTER TABLE post_meta ADD COLUMN seo_robots VARCHAR(50) DEFAULT 'follow'")
+        await pool.query(
+          "ALTER TABLE post_meta ADD COLUMN seo_robots VARCHAR(50) DEFAULT 'follow'"
+        )
       }
     } catch (e) {
       console.error("Error checking post_meta table", e)
@@ -148,7 +150,7 @@ export async function PUT(
       data.meta_description || "",
       data.focus_keyword || "",
       data.seo_robots || "follow",
-      oldData.old_id,
+      oldData.id,
     ])
 
     // Update category counts
@@ -184,7 +186,7 @@ export async function GET(
       `
       SELECT p.*, a.image_url as featured_image_url, a.attachment_image_alt as featured_image_alt
       FROM posts p
-      LEFT JOIN attachments a ON p.featured_image = a.old_id
+      LEFT JOIN attachments a ON p.featured_image = a.id
       WHERE p.id = ?`,
       [id]
     )
@@ -194,7 +196,7 @@ export async function GET(
 
     const [meta]: any = await pool.query(
       `SELECT * FROM post_meta WHERE post_id = ?`,
-      [posts[0].old_id]
+      [posts[0].id]
     )
 
     const [audit]: any = await pool.query(

@@ -115,7 +115,7 @@ export async function GET(req: NextRequest) {
         attachments.attachment_image_alt AS featured_image_alt
       FROM posts
       LEFT JOIN attachments AS attachments
-        ON posts.featured_image = attachments.old_id 
+        ON posts.featured_image = attachments.id 
       ${whereClause}
       ORDER BY created_at DESC
       LIMIT ${limit} OFFSET ${offset}
