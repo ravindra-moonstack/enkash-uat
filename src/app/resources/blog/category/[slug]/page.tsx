@@ -1,4 +1,5 @@
 import React from "react"
+import type { Metadata } from "next"
 import CategoryBanner from "@/components/category-components/CategoryBanner"
 import CategoryBlogCard from "@/components/category-components/CategoryBlogCard"
 import RecentBlog from "@/components/category-components/RecentBlog"
@@ -6,6 +7,55 @@ import BlogNavWrapper from "@/src/components/blog-components/BlogNavWrapper"
 import styles from "./style.module.scss"
 
 import { getBlogCategories, getCategoryData } from "@/src/services/resource-service"
+
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+    const { slug } = await params
+    const data = await getCategoryData(slug)
+
+    if (!data || !data.categoryInfo) {
+        const fallbackTitle = slug
+            ? slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())
+            : "Category"
+        return {
+            title: `${fallbackTitle} - EnKash Blogs`,
+            description: `Browse all blog posts under ${fallbackTitle} category on EnKash.`,
+        }
+    }
+
+    const category = data.categoryInfo
+    let metaTitle = category.meta_title || `${category.name} - EnKash Blogs`
+    metaTitle = metaTitle
+        .replace(/%%page%%/g, "")
+        .replace(/%%sep%%/g, "|")
+        .replace(/%%sitename%%/g, "EnKash")
+        .replace(/\s+/g, " ")
+        .trim()
+
+    const metaDescription = category.meta_description || category.description || `Browse all blog posts under ${category.name} category on EnKash.`
+
+    return {
+        title: metaTitle,
+        description: metaDescription,
+        alternates: {
+            canonical: `${process.env.URL || "https://www.enkash.com"}/resources/blog/category/${slug}`,
+        },
+        openGraph: {
+            title: metaTitle,
+            description: metaDescription,
+            type: "website",
+            url: `${process.env.URL || "https://www.enkash.com"}/resources/blog/category/${slug}`,
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: metaTitle,
+            description: metaDescription,
+        },
+    }
+}
 
 // Trigger recompile
 const Category = async ({

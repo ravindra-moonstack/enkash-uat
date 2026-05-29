@@ -3,6 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import styles from "../../blogs/add/add.module.scss"
+import editStyles from "../../blogs/edit/edit.module.scss"
 import { useAddMediaCoverage } from "./useAddMediaCoverage"
 import MediaModal from "../../blogs/add/MediaModal"
 import ConfirmationModal from "../../blogs/ConfirmationModal"
@@ -40,43 +41,80 @@ export default function AddMediaCoveragePage() {
     const [activeEditors, setActiveEditors] = React.useState<any[]>([])
     const editorSessionId = React.useRef<string>(Math.random().toString(36).substring(2, 10))
 
+    const releaseLock = React.useCallback(async (isUnload: any = false) => {
+        if (id && editorSessionId.current) {
+            try {
+                const url = `/api/admin/active-editors?module=media-coverage&postId=${id}&editorId=${editorSessionId.current}&action=release`
+                if (isUnload === true || (typeof isUnload === 'object' && isUnload !== null)) {
+                    if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+                        navigator.sendBeacon(url)
+                    } else {
+                        fetch(url, { method: "POST", keepalive: true })
+                    }
+                } else {
+                    await fetch(url, { method: "POST" })
+                }
+            } catch (e) {
+                console.error("Failed to release lock", e)
+            }
+        }
+    }, [id])
+
+    const handleTakeOver = async () => {
+        if (!id || !editorSessionId.current || !currentUser) return
+
+        try {
+            const res = await fetch("/api/admin/active-editors", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    module: "media-coverage",
+                    postId: id,
+                    editorId: editorSessionId.current,
+                    userId: currentUser.id,
+                    userName: currentUser.name,
+                    action: "takeover"
+                }),
+            })
+            const data = await res.json()
+            if (data.success && !data.isLocked) {
+                setActiveEditors([])
+            } else {
+                alert("Failed to take over editing. Please try again.")
+            }
+        } catch (err) {
+            console.error("Error during takeover", err)
+        }
+    }
+
+    const checkActiveEditors = React.useCallback(async () => {
+        if (!id || !editorSessionId.current || !currentUser) return
+
+        try {
+            const res = await fetch("/api/admin/active-editors", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    module: "media-coverage",
+                    postId: id,
+                    editorId: editorSessionId.current,
+                    userId: currentUser.id,
+                    userName: currentUser.name
+                }),
+            })
+            const data = await res.json()
+            if (data.success && data.isLocked) {
+                setActiveEditors([{ user_name: data.lockedBy }])
+            } else {
+                setActiveEditors([])
+            }
+        } catch (err) {
+            console.error("Error checking active editors", err)
+        }
+    }, [id, currentUser])
+
     React.useEffect(() => {
         if (!id || !currentUser) return
-
-        const checkActiveEditors = async () => {
-            try {
-                const res = await fetch("/api/admin/active-editors", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        module: "media-coverage",
-                        postId: id,
-                        editorId: editorSessionId.current,
-                        userId: currentUser.id,
-                        userName: currentUser.name
-                    }),
-                })
-                const data = await res.json()
-                if (data.success && data.isLocked) {
-                    setActiveEditors([{ user_name: data.lockedBy }])
-                } else {
-                    setActiveEditors([])
-                }
-            } catch (err) {
-                console.error("Error checking active editors", err)
-            }
-        }
-
-        const releaseLock = () => {
-            if (id && editorSessionId.current) {
-                try {
-                    const url = `/api/admin/active-editors?module=media-coverage&postId=${id}&editorId=${editorSessionId.current}&action=release`
-                    navigator.sendBeacon(url)
-                } catch (e) {
-                    console.error("Failed to release lock", e)
-                }
-            }
-        }
 
         checkActiveEditors()
         const interval = setInterval(checkActiveEditors, 5000)
@@ -89,9 +127,9 @@ export default function AddMediaCoveragePage() {
             window.removeEventListener("beforeunload", releaseLock)
             window.removeEventListener("pageshow", checkActiveEditors)
             window.removeEventListener("focus", checkActiveEditors)
-            releaseLock()
+            releaseLock(false)
         }
-    }, [id, currentUser])
+    }, [id, currentUser, checkActiveEditors, releaseLock])
 
     const isLocked = activeEditors.length > 0
 
@@ -102,19 +140,20 @@ export default function AddMediaCoveragePage() {
             </div>
 
             {isLocked && (
-                <div className={styles.lockModalOverlay}>
-                    <div className={styles.lockModal}>
+                <div className={editStyles.lockModalOverlay}>
+                    <div className={editStyles.lockModal}>
                         <i className="bi bi-lock-fill"></i>
                         <h2>Item Locked</h2>
                         <p>
                             <strong>{activeEditors.map((e: any) => e.user_name).join(", ")}</strong> is currently editing this item.
                             To prevent overwriting changes, editing has been disabled.
                         </p>
-                        <div className={styles.modalFooter}>
-                            <button className={styles.cancelBtn} onClick={() => {
+                        <div className={editStyles.modalFooter}>
+                            <button className={editStyles.cancelBtn} onClick={() => {
                                 setIsDirty(false);
                                 router.push("/admin/media-coverage");
-                            }}>OK</button>
+                            }}>Go Back</button>
+                            <button className={editStyles.takeOverBtn} onClick={handleTakeOver}>Take Over</button>
                         </div>
                     </div>
                 </div>

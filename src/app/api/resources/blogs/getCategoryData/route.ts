@@ -79,9 +79,17 @@ export async function GET(req: NextRequest) {
       hasAdminToken
     )
 
+    // Fetch the category term details including custom SEO metadata
+    const [termRows]: any = await pool.query(
+      "SELECT * FROM terms WHERE slug = ? AND taxonomy = 'category'",
+      [categoryName]
+    )
+    const categoryInfo = termRows[0] || null
+
     return NextResponse.json({
       posts,
       category: categoryName,
+      categoryInfo,
     })
   } catch (error: any) {
     console.error("API Error:", error)
