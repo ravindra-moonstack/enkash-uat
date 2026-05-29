@@ -12,15 +12,17 @@ import FAQSchema from "../faq-schema"
 interface FaqSectionProps {
   faqData: any
   connectText?: string
+  connectUrl?: string
 }
 
 const FaqSection = ({
   faqData,
   connectText = "Connect with us",
+  connectUrl: customConnectUrl,
 }: FaqSectionProps): React.JSX.Element => {
   const pathname = usePathname()
   const lastSlug = pathname?.split("/").filter(Boolean).pop() || "default"
-  const connectUrl = `/contact-us?source=${lastSlug}`
+  const connectUrl = customConnectUrl || `/contact-us?source=${lastSlug}`
 
   return (
     <div id="faq-section" className={`${styles.faq_new_row} relative`}>
