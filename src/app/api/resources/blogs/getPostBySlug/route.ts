@@ -31,11 +31,11 @@ export async function GET(request: Request) {
       GROUP_CONCAT(DISTINCT te.slug) AS category_slugs
     FROM posts AS p
     LEFT JOIN post_meta AS pm
-      ON p.old_id = pm.post_id
+      ON p.id = pm.post_id
     LEFT JOIN users AS u
       ON p.author = u.id
     LEFT JOIN attachments AS att
-      ON p.featured_image = att.old_id
+      ON p.featured_image = att.id
     LEFT JOIN terms AS te
       ON FIND_IN_SET(te.term_id, p.category)
     WHERE p.post_type = 'post'
@@ -68,11 +68,13 @@ export async function GET(request: Request) {
 
     const category = data[0].category?.split(",")[0]
     const tags = data[0].tags?.split(",").filter((t: string) => t) || []
-    
+
     let relatedBlogs: any[] = []
-    
+
     if (tags.length > 0) {
-      const tagConditions = tags.map(() => `FIND_IN_SET(?, p.tags)`).join(" OR ")
+      const tagConditions = tags
+        .map(() => `FIND_IN_SET(?, p.tags)`)
+        .join(" OR ")
       const relatedQueryByTags = `
         SELECT 
           p.id,
@@ -84,7 +86,7 @@ export async function GET(request: Request) {
           GROUP_CONCAT(DISTINCT te.name) AS category_names,
           GROUP_CONCAT(DISTINCT te.slug) AS category_slugs
         FROM posts AS p
-        LEFT JOIN attachments AS att ON p.featured_image = att.old_id
+        LEFT JOIN attachments AS att ON p.featured_image = att.id
         LEFT JOIN terms AS te ON FIND_IN_SET(te.term_id, p.category)
         WHERE p.post_type = 'post'
           AND ${statusCondition}
@@ -94,15 +96,18 @@ export async function GET(request: Request) {
         ORDER BY p.created_at DESC
         LIMIT 4
       `
-      const [tagRelated]: any = await pool.query(relatedQueryByTags, [data[0].id, ...tags])
+      const [tagRelated]: any = await pool.query(relatedQueryByTags, [
+        data[0].id,
+        ...tags,
+      ])
       relatedBlogs = tagRelated
     }
 
     if (relatedBlogs.length < 4 && category) {
       const remaining = 4 - relatedBlogs.length
       const excludeIds = [data[0].id, ...relatedBlogs.map((r: any) => r.id)]
-      const placeholders = excludeIds.map(() => '?').join(',')
-      
+      const placeholders = excludeIds.map(() => "?").join(",")
+
       const relatedQueryByCategories = `
         SELECT 
           p.id,
@@ -114,7 +119,7 @@ export async function GET(request: Request) {
           GROUP_CONCAT(DISTINCT te.name) AS category_names,
           GROUP_CONCAT(DISTINCT te.slug) AS category_slugs
         FROM posts AS p
-        LEFT JOIN attachments AS att ON p.featured_image = att.old_id
+        LEFT JOIN attachments AS att ON p.featured_image = att.id
         LEFT JOIN terms AS te ON FIND_IN_SET(te.term_id, p.category)
         WHERE p.post_type = 'post'
           AND ${statusCondition}
@@ -124,7 +129,10 @@ export async function GET(request: Request) {
         ORDER BY p.created_at DESC
         LIMIT ${remaining}
       `
-      const [categoryRelated]: any = await pool.query(relatedQueryByCategories, [...excludeIds, category])
+      const [categoryRelated]: any = await pool.query(
+        relatedQueryByCategories,
+        [...excludeIds, category]
+      )
       relatedBlogs = [...relatedBlogs, ...categoryRelated]
     }
 

@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
         attachments.attachment_image_alt AS featured_image_alt  
       FROM videos
       LEFT JOIN attachments 
-        ON videos.thumbnail_id = attachments.old_id
+        ON videos.thumbnail_id = attachments.id
       ${whereClause}
       ORDER BY videos.created_at DESC
       LIMIT ${limit} OFFSET ${offset}

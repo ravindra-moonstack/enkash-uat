@@ -64,7 +64,7 @@ export async function GET(request: Request) {
                    (SELECT GROUP_CONCAT(user_name SEPARATOR ', ') FROM posts_active_editors pae WHERE pae.module = 'media-coverage' AND pae.post_id = m.id AND pae.last_active > NOW() - INTERVAL 10 SECOND) as locked_by
             FROM media_coverage m
             LEFT JOIN users u ON m.author = u.ID
-            LEFT JOIN attachments a ON m.media_coverage_image = a.old_id
+            LEFT JOIN attachments a ON m.media_coverage_image = a.id
             ${whereClause}
             ORDER BY m.media_coverage_date DESC
             LIMIT ? OFFSET ?

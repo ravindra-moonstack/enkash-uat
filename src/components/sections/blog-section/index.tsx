@@ -33,7 +33,11 @@ function decodeHTML(str: string) {
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
 
-async function fetchBlogs(cards?: number[], links?: string[], slug?: string): Promise<BlogPost[]> {
+async function fetchBlogs(
+  cards?: number[],
+  links?: string[],
+  slug?: string
+): Promise<BlogPost[]> {
   try {
     const query = new URLSearchParams()
 

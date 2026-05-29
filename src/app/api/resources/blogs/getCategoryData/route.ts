@@ -32,7 +32,7 @@ async function getBlogsCategoryName(
       GROUP_CONCAT(DISTINCT te.slug) AS category_slugs
     FROM posts p
     LEFT JOIN attachments att 
-      ON p.featured_image = att.old_id
+      ON p.featured_image = att.id
     LEFT JOIN terms te
       ON FIND_IN_SET(te.term_id, p.category)
     WHERE p.post_type = 'post'
