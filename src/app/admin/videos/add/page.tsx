@@ -66,43 +66,80 @@ export default function AddVideoPage() {
         }
     }, [id])
 
+    const releaseLock = React.useCallback(async (isUnload: any = false) => {
+        if (id && editorSessionId.current) {
+            try {
+                const url = `/api/admin/active-editors?module=videos&itemId=${id}&sessionId=${editorSessionId.current}&action=release`
+                if (isUnload === true || (typeof isUnload === 'object' && isUnload !== null)) {
+                    if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+                        navigator.sendBeacon(url)
+                    } else {
+                        fetch(url, { method: "POST", keepalive: true })
+                    }
+                } else {
+                    await fetch(url, { method: "POST" })
+                }
+            } catch (e) {
+                console.error("Failed to release lock", e)
+            }
+        }
+    }, [id])
+
+    const handleTakeOver = async () => {
+        if (!id || !editorSessionId.current || !currentUser) return
+
+        try {
+            const res = await fetch("/api/admin/active-editors", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    module: "videos",
+                    itemId: id,
+                    sessionId: editorSessionId.current,
+                    userId: currentUser.id,
+                    userName: currentUser.name,
+                    action: "takeover"
+                }),
+            })
+            const data = await res.json()
+            if (data.success && !data.isLocked) {
+                setActiveEditors([])
+            } else {
+                alert("Failed to take over editing. Please try again.")
+            }
+        } catch (err) {
+            console.error("Error during takeover", err)
+        }
+    }
+
+    const checkActiveEditors = React.useCallback(async () => {
+        if (!id || !editorSessionId.current || !currentUser) return
+
+        try {
+            const res = await fetch("/api/admin/active-editors", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    module: "videos",
+                    itemId: id,
+                    sessionId: editorSessionId.current,
+                    userId: currentUser.id,
+                    userName: currentUser.name
+                }),
+            })
+            const data = await res.json()
+            if (data.success && data.isLocked) {
+                setActiveEditors([{ user_name: data.lockedBy }])
+            } else {
+                setActiveEditors([])
+            }
+        } catch (err) {
+            console.error("Error checking active editors", err)
+        }
+    }, [id, currentUser])
+
     React.useEffect(() => {
         if (!id || !currentUser) return
-
-        const checkActiveEditors = async () => {
-            try {
-                const res = await fetch("/api/admin/active-editors", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        module: "videos",
-                        itemId: id,
-                        sessionId: editorSessionId.current,
-                        userId: currentUser.id,
-                        userName: currentUser.name
-                    }),
-                })
-                const data = await res.json()
-                if (data.success && data.isLocked) {
-                    setActiveEditors([{ user_name: data.lockedBy }])
-                } else {
-                    setActiveEditors([])
-                }
-            } catch (err) {
-                console.error("Error checking active editors", err)
-            }
-        }
-
-        const releaseLock = () => {
-            if (id && editorSessionId.current) {
-                try {
-                    const url = `/api/admin/active-editors?module=videos&itemId=${id}&sessionId=${editorSessionId.current}&action=release`
-                    navigator.sendBeacon(url)
-                } catch (e) {
-                    console.error("Failed to release lock", e)
-                }
-            }
-        }
 
         checkActiveEditors()
         const interval = setInterval(checkActiveEditors, 3000)
@@ -115,9 +152,9 @@ export default function AddVideoPage() {
             window.removeEventListener("beforeunload", releaseLock)
             window.removeEventListener("pageshow", checkActiveEditors)
             window.removeEventListener("focus", checkActiveEditors)
-            releaseLock()
+            releaseLock(false)
         }
-    }, [id, currentUser])
+    }, [id, currentUser, checkActiveEditors, releaseLock])
 
     const isLocked = activeEditors.length > 0
 
@@ -140,7 +177,8 @@ export default function AddVideoPage() {
                             <button className={editStyles.cancelBtn} onClick={() => {
                                 setIsDirty(false);
                                 router.push("/admin/videos");
-                            }}>OK</button>
+                            }}>Go Back</button>
+                            <button className={editStyles.takeOverBtn} onClick={handleTakeOver}>Take Over</button>
                         </div>
                     </div>
                 </div>

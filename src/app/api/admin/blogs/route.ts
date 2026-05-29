@@ -133,7 +133,7 @@ export async function POST(request: Request) {
           category, tags, post_type, created_at, updated_at
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'post', NOW(), ?)
     `
-    const [result]: any = await pool.query(query, [
+    const [result]: any = await pool.execute(query, [
       data.title || "",
       uniqueSlug,
       data.content || "",
@@ -150,15 +150,17 @@ export async function POST(request: Request) {
     ])
 
     const postId = result.insertId
-    
+
     // Sync old_id with surrogate id for new posts
-    await pool.query("UPDATE posts SET old_id = id WHERE id = ?", [postId])
+    await pool.execute("UPDATE posts SET old_id = id WHERE id = ?", [postId])
 
     // Ensure seo_robots exists
     try {
       const [metaCols]: any = await pool.query("SHOW COLUMNS FROM post_meta")
       if (!metaCols.find((c: any) => c.Field === "seo_robots")) {
-        await pool.query("ALTER TABLE post_meta ADD COLUMN seo_robots VARCHAR(50) DEFAULT 'follow'")
+        await pool.query(
+          "ALTER TABLE post_meta ADD COLUMN seo_robots VARCHAR(50) DEFAULT 'follow'"
+        )
       }
     } catch (e) {
       console.error("Error checking post_meta table", e)
@@ -172,7 +174,7 @@ export async function POST(request: Request) {
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         `
 
-    const [metaResult]: any = await pool.query(metaQuery, [
+    const [metaResult]: any = await pool.execute(metaQuery, [
       postId,
       data.show_featured_image || "hide",
       data.post_schema_markup || "",
@@ -184,9 +186,11 @@ export async function POST(request: Request) {
     ])
 
     const metaId = metaResult.insertId
-    
+
     // Sync old_id with surrogate id for new post_meta
-    await pool.query("UPDATE post_meta SET old_id = id WHERE id = ?", [metaId])
+    await pool.execute("UPDATE post_meta SET old_id = id WHERE id = ?", [
+      metaId,
+    ])
 
     // Update category counts
     await pool.query(`

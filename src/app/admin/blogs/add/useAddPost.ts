@@ -75,6 +75,7 @@ export function useAddPost() {
 
   const isSaving = isSavingDraft || isPublishing
   const isInitialLoad = useRef(true)
+  const isSavingRef = useRef(false)
 
   useEffect(() => {
     if (id) {
@@ -347,8 +348,12 @@ export function useAddPost() {
   }
 
   const handleSave = async (isPublish: boolean) => {
+    if (isSavingRef.current) return
+    isSavingRef.current = true
+
     if (!slug) {
       showToast("Slug is required", "error")
+      isSavingRef.current = false
       return
     }
 
@@ -363,6 +368,7 @@ export function useAddPost() {
         setSlugError("This slug already exists. Please use a unique slug.")
         setIsCheckingSlug(false)
         showToast("Cannot save: Slug already exists.", "error")
+        isSavingRef.current = false
         return
       }
     } catch (err) {
@@ -414,6 +420,7 @@ export function useAddPost() {
         })
       }
       if (res.ok) {
+        const data = await res.json()
         setIsDirty(false)
         if (isPublish) {
           setSuccessMessage("Your post has been published successfully!")
@@ -427,6 +434,9 @@ export function useAddPost() {
         if (currentUser?.name) {
           setLastEditedBy(currentUser.name)
         }
+        if (data.id) {
+          router.push(`/admin/blogs/edit?id=${data.id}`)
+        }
       } else {
         showToast("Failed to save post", "error")
       }
@@ -436,6 +446,7 @@ export function useAddPost() {
     } finally {
       setIsPublishing(false)
       setIsSavingDraft(false)
+      isSavingRef.current = false
     }
   }
 
