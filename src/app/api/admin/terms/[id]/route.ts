@@ -3,12 +3,29 @@ import pool from "@/src/lib/dbConnect"
 import { ResultSetHeader, RowDataPacket } from "mysql2"
 import { getUniqueSlug } from "@/src/utils/slugUtils"
 
+const ensureMetaColumnsExist = async () => {
+    try {
+        const [cols]: any = await pool.query("SHOW COLUMNS FROM terms")
+        const columnNames = cols.map((c: any) => c.Field.toLowerCase())
+
+        if (!columnNames.includes("meta_title")) {
+            await pool.execute("ALTER TABLE terms ADD COLUMN meta_title VARCHAR(255) DEFAULT NULL")
+        }
+        if (!columnNames.includes("meta_description")) {
+            await pool.execute("ALTER TABLE terms ADD COLUMN meta_description TEXT DEFAULT NULL")
+        }
+    } catch (error) {
+        console.error("Error ensuring metadata columns in terms table:", error)
+    }
+}
+
 export async function PUT(req: NextRequest, props: { params: Promise<{ id: string }> }) {
     try {
+        await ensureMetaColumnsExist()
         const params = await props.params;
         const id = parseInt(params.id, 10)
         const body = await req.json()
-        const { name, slug, description, parent } = body
+        const { name, slug, description, parent, meta_title, meta_description } = body
 
         if (!name) {
             return NextResponse.json({ success: false, error: "Name is required." }, { status: 400 })
@@ -21,8 +38,8 @@ export async function PUT(req: NextRequest, props: { params: Promise<{ id: strin
         const baseSlug = slug || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
         const uniqueSlug = await getUniqueSlug("terms", baseSlug, id, "term_id", { taxonomy })
 
-        const query = "UPDATE terms SET name = ?, slug = ?, description = ?, parent = ? WHERE term_id = ?"
-        await pool.query<ResultSetHeader>(query, [name, uniqueSlug, description || "", parent || 0, id])
+        const query = "UPDATE terms SET name = ?, slug = ?, description = ?, parent = ?, meta_title = ?, meta_description = ? WHERE term_id = ?"
+        await pool.query<ResultSetHeader>(query, [name, uniqueSlug, description || "", parent || 0, meta_title || null, meta_description || null, id])
 
         return NextResponse.json({ success: true })
     } catch (error: any) {

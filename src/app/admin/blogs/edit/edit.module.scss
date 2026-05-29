@@ -704,6 +704,7 @@
     .modalFooter {
         display: flex;
         justify-content: center;
+        gap: 12px;
 
         .cancelBtn {
             padding: 8px 24px;
@@ -718,6 +719,22 @@
             &:hover {
                 background: #f0f0f1;
                 border-color: #8c8f94;
+            }
+        }
+
+        .takeOverBtn {
+            padding: 8px 24px;
+            background: #b32d2e;
+            border: 1px solid #b32d2e;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+
+            &:hover {
+                background: #8a2424;
+                border-color: #8a2424;
             }
         }
     }

@@ -1,0 +1,178 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.writeForUsPage {
+  background-color: #ffffff;
+  line-height: 1.6;
+  padding-top: 115px;
+
+  @include for-laptops {
+    padding-top: 110px;
+  }
+}
+
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #475467;
+
+  a {
+    color: #475467;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-equity-blue;
+    }
+  }
+
+  span:first-of-type {
+    margin: 0 8px;
+    color: #d0d5dd;
+  }
+
+  span:last-of-type {
+    color: #344054;
+    font-weight: 600;
+  }
+}
+
+.banner {
+  background: linear-gradient(90deg, $color-equity-blue 0%, $color-56cfff 100%);
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+
+  @include for-laptops {
+    padding: 80px 20px;
+  }
+
+  .bannerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 4px;
+    color: #ffffff !important;
+
+    @include for-laptops {
+      font-size: 42px;
+    }
+  }
+
+  .subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 850px;
+    margin: 0;
+
+    @include for-laptops {
+      font-size: 17px;
+    }
+  }
+}
+
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px 20px;
+
+  section {
+    margin-bottom: 35px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0c111d !important;
+    margin-top: 30px;
+    margin-bottom: 16px;
+    line-height: 1.3;
+
+    @include for-laptops {
+      font-size: 28px;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1d2939 !important;
+    margin-top: 24px;
+    margin-bottom: 12px;
+
+    @include for-laptops {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    color: #344054;
+    margin-bottom: 16px;
+    line-height: 1.6;
+
+    @include for-laptops {
+      font-size: 16px;
+    }
+
+    a {
+      color: #2b5cff;
+      text-decoration: underline;
+      font-weight: 600;
+
+      &:hover {
+        color: #1d39c4;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+
+    li {
+      font-size: 15px;
+      color: #344054;
+      margin-bottom: 8px;
+      line-height: 1.6;
+
+      @include for-laptops {
+        font-size: 16px;
+      }
+
+      strong {
+        color: #1d2939;
+        font-weight: 600;
+      }
+
+      a {
+        color: #2b5cff;
+        text-decoration: underline;
+        font-weight: 600;
+
+        &:hover {
+          color: #1d39c4;
+        }
+      }
+    }
+  }
+}

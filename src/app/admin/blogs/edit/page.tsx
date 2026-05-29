@@ -88,16 +88,51 @@ export default function EditPostPage() {
         }
     }, [id])
 
-    const releaseLock = useCallback(() => {
+    const releaseLock = useCallback(async (isUnload: any = false) => {
         if (id && editorSessionId.current) {
             try {
                 const url = `/api/admin/active-editors?module=blogs&postId=${id}&editorId=${editorSessionId.current}&action=release`
-                navigator.sendBeacon(url)
+                if (isUnload === true || (typeof isUnload === 'object' && isUnload !== null)) {
+                    if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+                        navigator.sendBeacon(url)
+                    } else {
+                        fetch(url, { method: "POST", keepalive: true })
+                    }
+                } else {
+                    await fetch(url, { method: "POST" })
+                }
             } catch (e) {
                 console.error("Failed to release lock", e)
             }
         }
     }, [id])
+
+    const handleTakeOver = async () => {
+        if (!id || !editorSessionId.current || !currentUser) return
+
+        try {
+            const res = await fetch("/api/admin/active-editors", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    module: "blogs",
+                    postId: id,
+                    editorId: editorSessionId.current,
+                    userId: currentUser.id,
+                    userName: currentUser.name,
+                    action: "takeover"
+                }),
+            })
+            const data = await res.json()
+            if (data.success && !data.isLocked) {
+                setActiveEditors([])
+            } else {
+                alert("Failed to take over editing. Please try again.")
+            }
+        } catch (err) {
+            console.error("Error during takeover", err)
+        }
+    }
 
     const checkActiveEditors = useCallback(async () => {
         if (!id || !editorSessionId.current || !currentUser) return
@@ -139,7 +174,7 @@ export default function EditPostPage() {
             window.removeEventListener("beforeunload", releaseLock)
             window.removeEventListener("pageshow", checkActiveEditors)
             window.removeEventListener("focus", checkActiveEditors)
-            releaseLock()
+            releaseLock(false)
         }
     }, [id, currentUser, checkActiveEditors, releaseLock])
 
@@ -164,7 +199,8 @@ export default function EditPostPage() {
                             <button className={styles.cancelBtn} onClick={() => {
                                 setIsDirty(false);
                                 router.push("/admin/blogs");
-                            }}>OK</button>
+                            }}>Go Back</button>
+                            <button className={styles.takeOverBtn} onClick={handleTakeOver}>Take Over</button>
                         </div>
                     </div>
                 </div>
