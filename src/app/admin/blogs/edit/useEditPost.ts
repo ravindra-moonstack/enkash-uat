@@ -78,6 +78,7 @@ export function useEditPost() {
   const isSaving = isSavingDraft || isPublishing
 
   const isInitialLoad = useRef(true)
+  const isSavingRef = useRef(false)
 
   useEffect(() => {
     if (id) {
@@ -315,8 +316,12 @@ export function useEditPost() {
   }
 
   const handleSave = async (isPublish: boolean) => {
+    if (isSavingRef.current) return
+    isSavingRef.current = true
+
     if (!slug) {
       showToast("Slug is required", "error")
+      isSavingRef.current = false
       return
     }
 
@@ -390,6 +395,7 @@ export function useEditPost() {
     } finally {
       setIsPublishing(false)
       setIsSavingDraft(false)
+      isSavingRef.current = false
     }
   }
 

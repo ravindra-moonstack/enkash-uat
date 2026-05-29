@@ -24,6 +24,8 @@ export default function CategoriesPage() {
     const [slug, setSlug] = useState("")
     const [parent, setParent] = useState(0)
     const [description, setDescription] = useState("")
+    const [metaTitle, setMetaTitle] = useState("")
+    const [metaDescription, setMetaDescription] = useState("")
     const [slugManuallyEdited, setSlugManuallyEdited] = useState(false)
     const { showToast } = useToast()
 
@@ -93,7 +95,15 @@ export default function CategoriesPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        const payload = { name, slug, description, parent, taxonomy: "category" }
+        const payload = { 
+            name, 
+            slug, 
+            description, 
+            parent, 
+            taxonomy: "category",
+            meta_title: metaTitle,
+            meta_description: metaDescription
+        }
 
         try {
             if (editId) {
@@ -134,6 +144,8 @@ export default function CategoriesPage() {
         setSlug("")
         setParent(0)
         setDescription("")
+        setMetaTitle("")
+        setMetaDescription("")
         setSlugManuallyEdited(false)
     }
 
@@ -143,6 +155,8 @@ export default function CategoriesPage() {
         setSlug(term.slug)
         setParent(term.parent || 0)
         setDescription(term.description || "")
+        setMetaTitle(term.meta_title || "")
+        setMetaDescription(term.meta_description || "")
         setSlugManuallyEdited(true)
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
@@ -259,6 +273,25 @@ export default function CategoriesPage() {
                                 onChange={(e) => setDescription(e.target.value)}
                             ></textarea>
                             <div className={styles.description}>The description is not prominent by default; however, some themes may show it.</div>
+                        </div>
+
+                        <div className={styles.inputGroup}>
+                            <label>Meta Title</label>
+                            <input
+                                type="text"
+                                value={metaTitle}
+                                onChange={(e) => setMetaTitle(e.target.value)}
+                            />
+                            <div className={styles.description}>The title to display in search engine results.</div>
+                        </div>
+
+                        <div className={styles.inputGroup}>
+                            <label>Meta Description</label>
+                            <textarea
+                                value={metaDescription}
+                                onChange={(e) => setMetaDescription(e.target.value)}
+                            ></textarea>
+                            <div className={styles.description}>The description to display in search engine results.</div>
                         </div>
 
                         <button type="submit" className={styles.submitBtn}>

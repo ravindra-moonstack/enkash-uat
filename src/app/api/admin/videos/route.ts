@@ -50,8 +50,8 @@ export async function GET(request: Request) {
     }
 
     if (category !== "all") {
-       whereClause += ` AND FIND_IN_SET(?, category) > 0`
-       queryParams.push(category)
+      whereClause += ` AND FIND_IN_SET(?, category) > 0`
+      queryParams.push(category)
     }
 
     // Fetch counts
@@ -109,9 +109,15 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const data = await request.json()
-    
+
     // Ensure unique slug
-    const baseSlug = data.slug || data.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') || "untitled"
+    const baseSlug =
+      data.slug ||
+      data.title
+        ?.toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "") ||
+      "untitled"
     const uniqueSlug = await getUniqueSlug("videos", baseSlug)
 
     const query = `
@@ -122,7 +128,7 @@ export async function POST(request: Request) {
             ) VALUES (?, ?, ?, 'video', ?, ?, ?, ?, ?, ?, ?, ?, COALESCE(?, NOW()), COALESCE(?, NOW()))
         `
 
-    const [result]: any = await pool.query(query, [
+    const [result]: any = await pool.execute(query, [
       data.title || "",
       uniqueSlug,
       data.status || "draft",
@@ -138,7 +144,9 @@ export async function POST(request: Request) {
       data.updated_at || null,
     ])
 
-    await pool.query("UPDATE videos SET old_id = id WHERE id = ?", [result.insertId])
+    await pool.execute("UPDATE videos SET old_id = id WHERE id = ?", [
+      result.insertId,
+    ])
 
     await recordAuditLog("videos", result.insertId, "CREATE", null, data)
 
