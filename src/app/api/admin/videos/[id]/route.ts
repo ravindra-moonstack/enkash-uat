@@ -13,7 +13,7 @@ export async function GET(
       `
       SELECT v.*, a.image_url as thumbnail_url, a.attachment_image_alt as thumbnail_alt
       FROM videos v
-      LEFT JOIN attachments a ON v.thumbnail_id = a.old_id
+      LEFT JOIN attachments a ON v.thumbnail_id = a.id
       WHERE v.id = ?`,
       [id]
     )

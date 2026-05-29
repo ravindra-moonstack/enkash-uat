@@ -308,9 +308,6 @@ export async function POST(request: Request) {
 
     const insertId = result.insertId
 
-    // Sync old_id with surrogate id for new attachments
-    await pool.execute("UPDATE attachments SET old_id = id WHERE id = ?", [insertId])
-
     return NextResponse.json({
       success: true,
       message: "File uploaded successfully",

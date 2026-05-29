@@ -12,7 +12,7 @@ export async function GET(
     const [items]: any = await pool.query(`
       SELECT m.*, a.image_url as image_url, a.attachment_image_alt as image_alt
       FROM media_coverage m
-      LEFT JOIN attachments a ON m.media_coverage_image = a.old_id
+      LEFT JOIN attachments a ON m.media_coverage_image = a.id
       WHERE m.id = ?`, [
       id,
     ])
