@@ -495,10 +495,21 @@ export default function AddPostPage() {
                     onClose={() => setShowMediaModal(false)}
                     onSelect={(media) => {
                         if (mediaTarget === "editor") {
+                            const isPdf = media.url && media.url.toLowerCase().endsWith('.pdf');
                             if ((window as any).tinymce && (window as any).tinymce.activeEditor) {
-                                (window as any).tinymce.activeEditor.insertContent(`<img src="${media.url}" alt="${media.alt}" />`)
+                                if (isPdf) {
+                                    const fileName = media.url.split('/').pop() || "Download PDF";
+                                    (window as any).tinymce.activeEditor.insertContent(`<a href="${media.url}" target="_blank" rel="noopener noreferrer">${decodeURIComponent(fileName)}</a>`);
+                                } else {
+                                    (window as any).tinymce.activeEditor.insertContent(`<img src="${media.url}" alt="${media.alt}" />`);
+                                }
                             } else {
-                                setContent(prev => prev + `<p><img src="${media.url}" alt="${media.alt}" /></p>`)
+                                if (isPdf) {
+                                    const fileName = media.url.split('/').pop() || "Download PDF";
+                                    setContent(prev => prev + `<p><a href="${media.url}" target="_blank" rel="noopener noreferrer">${decodeURIComponent(fileName)}</a></p>`);
+                                } else {
+                                    setContent(prev => prev + `<p><img src="${media.url}" alt="${media.alt}" /></p>`);
+                                }
                             }
                         } else {
                             setFeaturedImageId(media.id)

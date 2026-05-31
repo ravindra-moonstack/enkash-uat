@@ -40,7 +40,7 @@ export function getUniqueFileName(uploadDir: string, fileName: string) {
 }
 
 export function isImageFile(fileName: string) {
-  return /\.(jpg|jpeg|png|gif|webp)$/i.test(fileName)
+  return /\.(jpg|jpeg|png|gif|webp|svg|pdf)$/i.test(fileName)
 }
 
 export function getUploadUrl(fileName: string) {
