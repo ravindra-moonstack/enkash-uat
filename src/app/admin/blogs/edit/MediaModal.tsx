@@ -85,6 +85,7 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library",
                                     <option value="all">All Media Items</option>
                                     <option value="images">Images</option>
                                     <option value="video">Video</option>
+                                    <option value="documents">Documents</option>
                                 </select>
 
                                 <select value={dateFilter} onChange={(e) => setDateFilter(e.target.value)} style={{ padding: '4px 8px', borderRadius: '4px', border: '1px solid #8c8f94' }}>

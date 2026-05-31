@@ -6,10 +6,10 @@ export const uploadToS3 = async (
 ): Promise<{ url: string; s3Response: any }> => {
   const fileExtension = fileName.split('.').pop()?.toLowerCase();
    
-  const allowedExtensions = ['webp', 'svg'];
+  const allowedExtensions = ['webp', 'svg', 'pdf'];
   
   if (!allowedExtensions.includes(fileExtension || '')) {
-    throw new Error(`Only ${allowedExtensions.join(', ')} images are allowed. Please convert your image before uploading.`);
+    throw new Error(`Only ${allowedExtensions.join(', ')} files are allowed. Please convert your file before uploading.`);
   }
   const uniqueFileName = `${uuidv4()}.${fileExtension}`;
   const uploadUrl = `https://glossary.enkash.com/${uniqueFileName}`;
@@ -19,7 +19,7 @@ export const uploadToS3 = async (
       method: "PUT",
       body: fileBuffer as any,
       headers: {
-        "Content-Type": fileExtension === 'svg' ? 'image/svg+xml' : 'image/webp',
+        "Content-Type": fileExtension === 'pdf' ? 'application/pdf' : fileExtension === 'svg' ? 'image/svg+xml' : 'image/webp',
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
       },
     });
