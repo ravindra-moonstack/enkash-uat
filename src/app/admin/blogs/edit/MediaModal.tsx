@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useMedia } from "@/src/app/admin/media/useMedia"
 import styles from "@/src/app/admin/media/media.module.scss"
+import ConfirmationModal from "../ConfirmationModal"
 
 interface MediaModalProps {
     onClose: () => void;
@@ -25,14 +26,38 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library",
         handleFileSelect,
         handleUpdateMedia,
         fileInputRef,
-        uploading
+        uploading,
+        handleDeleteSingle,
+        showConfirm,
+        setShowConfirm,
+        confirmConfig
     } = useMedia(40, defaultType);
 
     const [selectedMedia, setSelectedMedia] = useState<any>(null);
     const [activeTab, setActiveTab] = useState<"upload" | "library">("library");
+    const [isDragging, setIsDragging] = useState(false);
 
     const handleUploadClick = () => {
         fileInputRef.current?.click();
+    };
+
+    const handleDragOver = (e: React.DragEvent) => {
+        e.preventDefault();
+        setIsDragging(true);
+    };
+
+    const handleDragLeave = (e: React.DragEvent) => {
+        e.preventDefault();
+        setIsDragging(false);
+    };
+
+    const handleDrop = async (e: React.DragEvent) => {
+        e.preventDefault();
+        setIsDragging(false);
+        if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+            await handleFileUpload(Array.from(e.dataTransfer.files));
+            setActiveTab("library");
+        }
     };
 
     return (
@@ -63,9 +88,27 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library",
                 </div>
 
                 {activeTab === "upload" ? (
-                    <div className={styles.modalBody} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff' }}>
-                        <div className={styles.uploadBox} style={{ border: '2px dashed #c3c4c7', padding: '60px', textAlign: 'center', background: '#f0f0f1' }}>
-                            <h2 style={{ fontSize: '20px', fontWeight: 400, marginBottom: '20px' }}>Drop files to upload</h2>
+                    <div 
+                        className={styles.modalBody} 
+                        style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff' }}
+                        onDragOver={handleDragOver}
+                        onDragLeave={handleDragLeave}
+                        onDrop={handleDrop}
+                    >
+                        <div 
+                            className={styles.uploadBox} 
+                            style={{ 
+                                border: isDragging ? '2px dashed #2271b1' : '2px dashed #c3c4c7', 
+                                padding: '60px', 
+                                textAlign: 'center', 
+                                background: isDragging ? '#e5f5fa' : '#f0f0f1',
+                                transition: 'all 0.2s ease-in-out',
+                                borderRadius: '8px'
+                            }}
+                        >
+                            <h2 style={{ fontSize: '20px', fontWeight: 400, marginBottom: '20px', color: isDragging ? '#2271b1' : 'inherit' }}>
+                                {isDragging ? "Drop files now!" : "Drop files to upload"}
+                            </h2>
                             <p style={{ marginBottom: '20px', color: '#50575e' }}>or</p>
                             <input type="file" ref={fileInputRef} onChange={(e) => {
                                 handleFileSelect(e);
@@ -178,7 +221,15 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library",
                                         <div style={{ fontSize: '12px', flex: 1 }}>
                                             <div style={{ fontWeight: 700, wordBreak: 'break-all' }}>{selectedMedia.image_url.split('/').pop()}</div>
                                             <div>{new Date(selectedMedia.created_at).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</div>
-                                            <a style={{ color: '#d63638', textDecoration: 'none', cursor: 'pointer' }}>Delete Permanently</a>
+                                            <a 
+                                                onClick={() => {
+                                                    handleDeleteSingle(selectedMedia.id);
+                                                    setSelectedMedia(null);
+                                                }} 
+                                                style={{ color: '#d63638', textDecoration: 'none', cursor: 'pointer' }}
+                                            >
+                                                Delete Permanently
+                                            </a>
                                         </div>
                                     </div>
 
@@ -236,6 +287,18 @@ export default function MediaModal({ onClose, onSelect, title = "Media Library",
                     </>
                 )}
             </div>
+
+            {confirmConfig && (
+                <ConfirmationModal
+                    show={showConfirm}
+                    onClose={() => setShowConfirm(false)}
+                    onConfirm={confirmConfig.onConfirm}
+                    title={confirmConfig.title}
+                    message={confirmConfig.message}
+                    type={confirmConfig.type}
+                    confirmLabel="Confirm"
+                />
+            )}
         </div>
     )
 }
