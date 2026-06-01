@@ -460,13 +460,23 @@
   span {
     font-family: var(--font-inter), sans-serif !important;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700 !important;
+  }
   h2 {
     font-size: 28px !important;
     margin: 10px 0 !important;
     scroll-margin-top: 150px;
-    font-weight: 700;
   }
   h3 {
+    font-size: 27px !important;
+    margin: 10px 0 !important;
+  }
+  h4 {
+    font-size: 24px !important;
+    margin: 10px 0 !important;
+  }
+  h5 {
     font-size: 22px !important;
     margin: 10px 0 !important;
   }
@@ -478,6 +488,18 @@
     color: $color-equity-blue;
     font-size: 17px;
     text-decoration: none;
+  }
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    font-family: inherit !important;
+    line-height: inherit !important;
+    text-decoration: inherit !important;
   }
   ol,
   ul {
@@ -498,7 +520,7 @@
     color: $color-black;
   }
   table {
-    border: 1px solid #dcd7ca;
+    border: 1px solid #e2e8f0;
     border-collapse: separate; // Needed for sticky headers/cols to work correctly with borders
     border-spacing: 0;
     empty-cells: show;
@@ -532,15 +554,16 @@
 
     th {
       font-weight: 700;
-      background-color: #1c5af4;
+      background-color: #1c5af4 !important;
+      color: #ffffff !important;
     }
 
     th,
     td {
-      border: 1px solid #dcd7ca;
+      border: 1px solid #e2e8f0;
       line-height: 1.4;
       margin: 0;
-      padding: 12px 15px;
+      padding: 14px 18px; // Premium spacious padding from second image
       min-width: 150px;
       white-space: nowrap;
 
@@ -553,7 +576,7 @@
         position: sticky;
         left: 0;
         z-index: 10;
-        border-right: 1px solid #dcd7ca !important;
+        border-right: 1px solid #e2e8f0 !important;
         background: #fff;
 
         &::after {
@@ -563,14 +586,29 @@
           top: 0;
           bottom: 0;
           width: 1px;
-          background: #dcd7ca;
+          background: #e2e8f0;
         }
       }
+    }
+
+    // Bold, premium first column for body cells
+    td:first-child {
+      font-weight: 700 !important;
+      color: #1f2937 !important;
+      background-color: #ffffff !important;
+    }
+
+    // Ensure header cell in first column is always blue with white text, even without thead
+    th:first-child {
+      z-index: 11;
+      background-color: #1c5af4 !important;
+      color: #ffffff !important;
     }
 
     thead th:first-child {
       z-index: 11; // Ensure sticky header and sticky column intersect correctly
       background-color: #1c5af4 !important;
+      color: #ffffff !important;
     }
   }
 }

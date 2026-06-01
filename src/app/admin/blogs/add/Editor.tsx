@@ -176,48 +176,122 @@ export default function Editor({ value, onChange }: EditorProps) {
                                 
                                 editor.setContent(newHtmlWithMarker);
                                 
-                                // Find marker in the DOM and position selection
-                                const newMarker = editor.getDoc().getElementById('temp-cursor-marker');
-                                if (newMarker) {
-                                    editor.focus();
-                                    const body = editor.getBody();
-                                    
-                                    if (newMarker.parentNode === body) {
-                                        // If marker is directly inside body (root level), wrap in a paragraph or insert empty paragraph
-                                        const p = editor.getDoc().createElement('p');
-                                        const br = editor.getDoc().createElement('br');
-                                        br.setAttribute('data-mce-bogus', '1');
-                                        p.appendChild(br);
+                                // Close dialog first, then asynchronously restore selection to bypass automatic close bookmarker
+                                setTimeout(() => {
+                                    const newMarker = editor.getDoc().getElementById('temp-cursor-marker');
+                                    if (newMarker) {
+                                        editor.focus();
+                                        const body = editor.getBody();
                                         
-                                        newMarker.parentNode.insertBefore(p, newMarker);
-                                        
-                                        const newRange = editor.dom.createRng();
-                                        newRange.setStart(p, 0);
-                                        newRange.setEnd(p, 0);
-                                        editor.selection.setRng(newRange);
-                                        newMarker.parentNode.removeChild(newMarker);
-                                    } else {
-                                        // Standard cursor position
-                                        const newRange = editor.dom.createRng();
-                                        newRange.setStartBefore(newMarker);
-                                        newRange.setEndBefore(newMarker);
-                                        editor.selection.setRng(newRange);
-                                        newMarker.parentNode.removeChild(newMarker);
+                                        if (newMarker.parentNode === body) {
+                                            // If marker is directly inside body (root level), wrap in a paragraph or insert empty paragraph
+                                            const p = editor.getDoc().createElement('p');
+                                            const br = editor.getDoc().createElement('br');
+                                            br.setAttribute('data-mce-bogus', '1');
+                                            p.appendChild(br);
+                                            
+                                            newMarker.parentNode.insertBefore(p, newMarker);
+                                            
+                                            const newRange = editor.dom.createRng();
+                                            newRange.setStart(p, 0);
+                                            newRange.setEnd(p, 0);
+                                            editor.selection.setRng(newRange);
+                                            newMarker.parentNode.removeChild(newMarker);
+                                        } else {
+                                            // Standard cursor position
+                                            const newRange = editor.dom.createRng();
+                                            newRange.setStartBefore(newMarker);
+                                            newRange.setEndBefore(newMarker);
+                                            editor.selection.setRng(newRange);
+                                            newMarker.parentNode.removeChild(newMarker);
+                                        }
+                                        editor.nodeChanged();
                                     }
-                                }
+                                }, 50);
                                 
                                 api.close();
                             }
                         });
                         
-                        // Set selection inside the modal's textarea once it's rendered
-                        setTimeout(() => {
+                        // Poll for the textarea inside the newly opened modal to focus and set selection range
+                        let attempts = 0;
+                        const interval = setInterval(() => {
+                            attempts++;
                             const textarea = document.querySelector('.tox-dialog textarea') as HTMLTextAreaElement;
                             if (textarea) {
+                                clearInterval(interval);
                                 textarea.focus();
                                 textarea.setSelectionRange(cursorIndex, cursorIndex);
+                            } else if (attempts > 30) {
+                                clearInterval(interval);
                             }
-                        }, 80);
+                        }, 50);
+                    });
+
+                    // Intercept Enter key inside <div> elements to create a new block outside/inside instead of cloning <div>
+                    editor.on('keydown', (e: any) => {
+                        if (e.keyCode === 13 && !e.shiftKey) {
+                            const startNode = editor.selection.getStart();
+                            const div = editor.dom.getParent(startNode, 'div');
+                            if (div) {
+                                e.preventDefault();
+                                
+                                // Insert a temporary marker at selection
+                                const marker = editor.getDoc().createElement('span');
+                                marker.id = 'temp-enter-marker';
+                                
+                                const rng = editor.selection.getRng();
+                                const collapsedRng = rng.cloneRange();
+                                collapsedRng.collapse(true);
+                                collapsedRng.insertNode(marker);
+                                
+                                // Split the div at the marker using TinyMCE's robust DOM split utility
+                                const secondPart = editor.dom.split(div, marker);
+                                
+                                if (secondPart) {
+                                    const firstChild = secondPart.firstChild;
+                                    const isBlock = firstChild && editor.dom.isBlock(firstChild);
+                                    
+                                    if (isBlock) {
+                                        // Unwrap the secondPart div so its block children are at the root level (outside the div)
+                                        editor.dom.remove(secondPart, true);
+                                    } else {
+                                        // Rename the secondPart div itself to 'p'
+                                        editor.dom.rename(secondPart, 'p');
+                                    }
+                                }
+                                
+                                // Set selection right at the marker
+                                editor.focus();
+                                const targetParent = marker.parentNode;
+                                if (targetParent) {
+                                    const markerIndex = Array.from(targetParent.childNodes).indexOf(marker);
+                                    
+                                    // Remove the marker first
+                                    targetParent.removeChild(marker);
+                                    
+                                    const newRng = editor.dom.createRng();
+                                    if (targetParent.childNodes.length === 0 || 
+                                        (targetParent.childNodes.length === 1 && targetParent.firstChild?.nodeName === 'BR')) {
+                                        
+                                        // Ensure there is a bogus BR for visual caret rendering
+                                        if (targetParent.childNodes.length === 0) {
+                                            const br = editor.getDoc().createElement('br');
+                                            br.setAttribute('data-mce-bogus', '1');
+                                            targetParent.appendChild(br);
+                                        }
+                                        newRng.setStart(targetParent, 0);
+                                        newRng.setEnd(targetParent, 0);
+                                    } else {
+                                        newRng.setStart(targetParent, markerIndex);
+                                        newRng.setEnd(targetParent, markerIndex);
+                                    }
+                                    editor.selection.setRng(newRng);
+                                }
+                                
+                                editor.nodeChanged();
+                            }
+                        }
                     });
                 }
             }}
