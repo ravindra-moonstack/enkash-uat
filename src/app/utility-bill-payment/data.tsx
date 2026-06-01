@@ -48,25 +48,26 @@ import {
 const cardsData: TStackCardsProp = [
   {
     title: "Onboard in Minutes",
-    description: "Sign up and link your business locations to our platform.",
+    description:
+      "Sign up and map all your business locations to a single dashboard.",
     icon: scrollIconOne,
   },
   {
     title: "Add and Auto-Fetch Bills",
     description:
-      "Add utility bill details or let EnKash auto-fetch them for you.",
+      "Add utility bill details manually or let EnKash auto-fetch bills directly from authorized billers.",
     icon: scrollIconTwo,
   },
   {
     title: "Pay in One Click",
     description:
-      "Make single or bulk payments instantly with robust security measures.",
+      "Make single or bulk bill payments instantly with secure and reliable payment rails.",
     icon: scrollIconThree,
   },
   {
     title: "Track & Reconcile",
     description:
-      "Monitor all payment statuses and reconcile them effortlessly.",
+      "Track payment status in real time and reconcile bills effortlessly with linked records.",
     icon: scrollIconFour,
   },
 ]
@@ -77,32 +78,40 @@ const allProductSections = [
     subtitle: "Manage every spend effortlessly",
     items: [
       {
-        title: "Automated Reminders ",
-        description: "Never miss a due date with timely alerts.",
+        title: "Automated Reminders",
+        description:
+          "Never miss a due date with timely alerts via Bharat Connect.",
         image: crouselIconOne,
       },
       {
-        title: "Flexible Payments ",
-        description: "Partial payments, bulk payments, or auto-pay options.",
+        title: "Flexible Payments",
+        description:
+          "Partial payments, bulk payments, auto-pay, or financing options are at your service.",
         image: crouselIconTwo,
       },
       {
-        title: "Security First ",
+        title: "Security First",
         description:
           "Multi-layer encryption and fraud monitoring ensure safe transactions.",
         image: crouselIconThree,
       },
       {
         title: "Centralized Insights",
-        description: "Consolidated view of all bills and payment history.",
+        description:
+          "One view of all bills, all payments, and all locations, reporting without reconstruction.",
         image: crouselIconFour,
       },
       {
-        title: "APIs for Automation ",
-
+        title: "APIs for Automation",
         description:
           "Seamlessly integrate with your ERP or accounting software.",
         image: crouselIconFive,
+      },
+      {
+        title: "Invoice Management",
+        description:
+          "Upload multiple invoices in bulk and start receiving payments faster.",
+        image: crouselIconFive, // keeping standard icon
       },
     ],
   },
@@ -159,35 +168,35 @@ const allInOnePolicyData: TStackCardsProp = [
 ]
 
 const benifitsData = [
-  { desc: "Monthly Savings*", title: "10 cr" },
-  { desc: "Enterprises", title: "500+" },
+  { desc: "Monthly Savings*", title: "10 Cr" },
+  { desc: "Enterprises", title: "5000+" },
   { desc: "Payment Success Rate", title: "99.99%" },
-  { desc: "Monthly Bills Processed", title: "3 lakhs+" },
+  { desc: "Monthly Bills Processed", title: "5 Lakhs+" },
 ]
 
 const integrationData = [
   {
-    title: "All Utilities in One View",
+    title: "All Utilities In One Place",
     description:
-      "Track electricity, water, internet, gas, and telecom bills from one centralized dashboard.",
+      "Track and pay electricity, water, gas, broadband, and telecom bills across all locations from a single dashboard.",
     icon: dashboardIconOne,
   },
   {
-    title: "Auto-Fetched Bill Details",
+    title: "Auto-Fetched Bills with Structured Data",
     description:
-      "View bill amounts, due dates, and billing cycles without manual entry or branch dependency.",
+      "Multiple electricity bills are fetched directly from authorized billers with structured data, including amounts, due dates, billing cycles, and 99+ standardized fields.",
     icon: dashboardIconTwo,
   },
   {
-    title: "Location-Wise Mapping",
+    title: "Location-Level Mapping",
     description:
-      "Each bill is tagged to the correct branch or business location for clear and accurate tracking.",
+      "Each bill is tagged to the correct branch or business unit for accurate tracking and reporting.",
     icon: dashboardIconThree,
   },
   {
-    title: "Linked Bill Copies",
+    title: "Linked Bill Copies with OCR",
     description:
-      "Access official bill copies directly from the dashboard, mapped to each bill and its respective location.",
+      "Official bill copies are mapped to each bill and payment, with OCR-enabled extraction for faster review and validation.",
     icon: dashboardIconFour,
   },
 ]
@@ -196,25 +205,25 @@ const paymentMethodData = [
   {
     title: "Bulk and Single Payments",
     description:
-      "Pay multiple utility bills together or clear individual bills when needed, all from one platform.",
+      "Clear multiple bills together or pay individual bills as needed.",
     icon: paymentIconOne,
   },
   {
     title: "Smart Filtering",
     description:
-      "Filter bills by location, service provider, or due date before initiating payments for better control.",
+      "Filter bills by location, provider, or due date before initiating payments.",
     icon: paymentIconTwo,
   },
   {
-    title: "Payment-Bill Linking",
+    title: "Payment–Bill Linkage",
     description:
-      "Every payment is linked to the original bill and its bill copy, ensuring complete traceability.",
+      "Every payment is automatically linked to its bill and bill copy.",
     icon: paymentIconThree,
   },
   {
-    title: "Timely Payments",
+    title: "Timely Execution",
     description:
-      "Reduce missed due dates and late fees with a streamlined, on-time payment execution process.",
+      "Reduce missed due dates and late fees with clear visibility and streamlined workflows.",
     icon: paymentIconFour,
   },
 ]
@@ -223,52 +232,49 @@ const dashboardData = [
   {
     title: "Branch-Level Tagging",
     description:
-      "Tag every bill and bill copy to its respective branch or business unit for accurate tracking.",
+      "Bills are tagged to their respective locations from the moment they enter the system.",
     icon: locationIconOne,
   },
   {
-    title: "Central Oversight",
+    title: "Central Finance Control",
     description:
-      "Manage utility bills and payments across all locations from a single finance dashboard.",
+      "Manage business utility bill payments across all locations from one dashboard.",
     icon: locationIconTwo,
   },
   {
     title: "Reduced Branch Dependency",
     description:
-      "Eliminate manual sharing of bill copies and payment details from local teams or vendors.",
+      "Eliminate manual bill sharing and follow-ups with local teams.",
     icon: locationIconThree,
   },
   {
-    title: "Consistent Processes",
+    title: "Consistent Workflows",
     description:
-      "Apply a standardized billing and payment workflow across all locations for better control.",
+      "Apply uniform approval and payment processes across every location.",
     icon: locationIconFour,
   },
 ]
 
 const rankData = [
   {
-    title: "Live Payment Status",
-    description:
-      "Track paid, pending, and failed utility payments in real time for complete visibility.",
+    title: "Live Bill Payment Status",
+    description: "Track paid, pending, and failed transactions in real time.",
     icon: realIconOne,
   },
   {
-    title: "Bills and Payments in One Place",
-    description:
-      "Reconcile using bill details, payment data, and linked bill copies from a single, unified view.",
+    title: "Bills And Payments Together",
+    description: "Match bills, payments, and bill copies from a single source.",
     icon: realIconTwo,
   },
   {
     title: "Audit-Ready Records",
     description:
-      "Maintain structured, well-mapped records that are always ready for audits and internal reviews.",
+      "Maintain structured, traceable documentation for audits and internal reviews.",
     icon: realIconThree,
   },
   {
     title: "Faster Period Closures",
-    description:
-      "Reduce delays during month-end or year-end reconciliation with streamlined payment tracking.",
+    description: "Reduce delays during month-end and year-end closing cycles.",
     icon: realIconFour,
   },
 ]
@@ -277,52 +283,52 @@ const approvalData = [
   {
     title: "Maker-Checker Workflows",
     description:
-      "Route utility bills automatically to the right approvers based on predefined rules and workflows.",
+      "Route bills automatically to the right approvers based on rules you define.",
     icon: approvalIconOne,
   },
   {
     title: "Role-Based Access",
     description:
-      "Control who can view, approve, or make payments on bills across branches and locations.",
+      "Control who can view, approve, or pay bills across locations.",
     icon: approvalIconTwo,
   },
   {
     title: "Bill Copy Review Before Approval",
     description:
-      "Approvers can review verified bill copies directly before providing final sign-off.",
+      "Approvers can review verified bill copies and OCR-extracted data before sign-off.",
     icon: approvalIconThree,
   },
   {
     title: "Complete Audit Trail",
     description:
-      "Track every action taken on a bill—from submission to payment—for compliance and accountability.",
+      "Track every action taken on a bill for compliance and accountability.",
     icon: approvalIconFour,
   },
 ]
 
 const centerData = [
   {
-    title: "Auto-Fetched from Authorized Sources",
+    title: "Audit-Ready Bill Copies",
     description:
-      "Bill copies are automatically fetched from authorized sources via Bharat Connect and BBPS partners.",
+      "CA-registered and approved bill copies suitable for audits, compliance checks, and expense claims.",
     icon: centerlizeIconOne,
   },
   {
-    title: "Payment-Linked Bill Copies",
+    title: "Fetched from Authorized Sources",
     description:
-      "Each bill copy is mapped to the exact payment, billing cycle, and business location for clear traceability.",
+      "Bill copies are fetched via BBPS partners, DISCOMs, or user uploads when required.",
     icon: centerlizeIconTwo,
   },
   {
-    title: "Audit and Compliance Ready",
+    title: "Platform-Integrated Documentation",
     description:
-      "Use verified and structured bill copies confidently for audits and internal compliance checks.",
+      "Bill copies are auto-generated and linked to each bill and payment within the workflow.",
     icon: centerlizeIconThree,
   },
   {
-    title: "Always Accessible",
+    title: "Always Accessible from the Dashboard",
     description:
-      "View or download official bill copies anytime directly from the centralized dashboard.",
+      "View or download bill copies anytime without manual sharing or follow-ups.",
     icon: centerlizeIconFour,
   },
 ]
