@@ -11,7 +11,7 @@ interface ContentShowcaseProps {
   mainHeading?: { title: string; color: string }[]
   mainDescription?: { title: string; color: string }[]
   heading?: string
-  subheading?: string
+  subheading?: string | string[]
   data: {
     icon: string
     title: string
@@ -111,11 +111,25 @@ function ContentShowcase({
                   className={`${headingClassName ? headingClassName : "heading-h4"} f-5`}
                 />
 
-                <DynamicHeading
-                  content={[{ title: subheading, color: "color-main-grey" }]}
-                  headingTag="p"
-                  className="f-4 mt-2 mb-0"
-                />
+                {subheading &&
+                  (Array.isArray(subheading) ? (
+                    subheading.map((sub, idx) => (
+                      <DynamicHeading
+                        key={idx}
+                        content={[{ title: sub, color: "color-main-grey" }]}
+                        headingTag="p"
+                        className="f-4 mt-2 mb-0"
+                      />
+                    ))
+                  ) : (
+                    <DynamicHeading
+                      content={[
+                        { title: subheading, color: "color-main-grey" },
+                      ]}
+                      headingTag="p"
+                      className="f-4 mt-2 mb-0"
+                    />
+                  ))}
               </div>
 
               <div className="d-flex flex-column gap-32 mt-4">

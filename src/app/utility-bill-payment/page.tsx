@@ -25,6 +25,7 @@ import UtilityBeefitSection from "@/src/components/sections/utilityBenefitSectio
 import ContentShowcase from "@/src/components/content-showcase"
 import EnterpriseSection from "@/src/components/enterprise-section"
 import UtilityWorkflow from "@/src/components/sections/utilityWorkflow"
+import SupportedElectricityBillers from "@/src/components/sections/supported-electricity-billers"
 
 // helpers
 import {
@@ -42,6 +43,7 @@ import {
   dth,
   prepaid,
   broadband,
+  elecBg,
 } from "./img"
 
 // utils
@@ -76,18 +78,18 @@ const UtilityBillPayment = (): React.JSX.Element => {
           },
         ]}
         subtitle={{
-          text: "Business Bill Payment",
+          text: "Business Utility Bill Payment",
           color: "color-equity-blue",
           underline: true,
         }}
         title={[
           {
-            text: "One Platform to Control, Pay, and Audit Every Business Utility Bill",
+            text: "All-in-One Utility Bill Payment Platform for Businesses to Control, Pay, and Audit Every Bill",
             color: "color-black",
           },
         ]}
         description={{
-          text: "Manage electricity, water, gas, broadband, telecom, and other recurring business utility bills across all locations from one unified dashboard powered by Bharat Connect.",
+          text: "Manage, approve, and bulk pay electricity, water, gas, broadband, telecom, and other recurring business utility bills across all locations from one unified dashboard powered by Bharat Connect.",
         }}
         button={{ title: "Get Started", url: salesUrl, theme: "blue" }}
         rightImage={paymentSummary}
@@ -96,23 +98,29 @@ const UtilityBillPayment = (): React.JSX.Element => {
       />
 
       <UtilityBeefitSection
-        sectionTitle="Best Online Payment Solution"
+        sectionTitle="Turning Business Bill Payments into Measurable Cost Savings"
         cards={benifitsData}
       />
 
       <StepsSection
         heading={[
           {
-            text: "Steps for ",
+            text: "Steps to Manage ",
             colorClass: "color-black",
           },
           {
-            text: "Effortless Utility Bill Payments",
+            text: "Multi-Location Utility Bill Payments",
             colorClass: "color-equity-blue",
           },
           {
             text: " for Your Business",
             colorClass: "color-black",
+          },
+        ]}
+        subHeading={[
+          {
+            text: "Manage bulk utility bills, automate bill payments, and simplify all recurring bill payments for your business without switching between multiple portals.",
+            colorClass: "color-grey-200 f-5",
           },
         ]}
         steps={cardsData}
@@ -142,7 +150,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
         ]}
         description={[
           {
-            text: "A platform to manage end-to-end utility payment operations.",
+            text: "A single platform to manage end-to-end utility payment operations across your business.",
             colorClass: "color-secondry-black f-4",
           },
         ]}
@@ -156,6 +164,8 @@ const UtilityBillPayment = (): React.JSX.Element => {
         ]}
       />
 
+      <SupportedElectricityBillers backgroundImage={elecBg} />
+
       <div className="bg_white_index">
         <ContentShowcase
           mainHeading={[
@@ -165,57 +175,82 @@ const UtilityBillPayment = (): React.JSX.Element => {
             },
             { title: " Business Cost Savings", color: "color-equity-blue" },
           ]}
-          heading="One Dashboard for All Bills"
-          subheading="When your utility bills come from multiple providers and locations, tracking quickly turns manual and error-prone. EnKash brings every business utility bill into one dashboard, so you always know what’s due, what’s paid, and what needs action."
+          mainDescription={[
+            {
+              title:
+                "Ensure timely payments for all business electricity bills and avoid late fee penalties with due reminders and single-click bill payments.",
+              color: "color-grey-200 f-5",
+            },
+          ]}
+          heading="One Dashboard for All Utility Bills"
+          subheading={[
+            "When utility bills arrive from multiple billers, visibility breaks down quickly. Finance teams struggle to track dues, confirm payments, and locate bill copies on time.",
+            "EnKash centralizes all business utility bills into one dashboard, giving finance teams a clear, real-time view of every bill across the organization.",
+          ]}
           data={integrationData}
           imageSrc={dashbordImg}
-          imageAlt="card background"
+          imageAlt="business utility bill payment dashboard"
           buttonUrl={salesUrl}
           bgColor="bg-color-grey-100"
           reverse
         />
         <ContentShowcase
-          heading="One-click Payments"
-          subheading="Multiple portals slow payments and increase errors. Pay one or many utility bills in a single click, while keeping every payment linked and traceable."
+          heading="One-Click Payments"
+          subheading={[
+            "Managing payments across multiple portals increases the risk of missed deadlines, partial visibility, and reconciliation delays.",
+            "EnKash simplifies execution by bringing all utility payments into one controlled flow.",
+          ]}
           data={paymentMethodData}
           imageSrc={paymentImg}
-          imageAlt="card background"
+          imageAlt="Pay business bill in single click"
           buttonUrl={salesUrl}
         />
         <ContentShowcase
           heading="Manage Utility Bills Across Multiple Business Locations"
-          subheading="Managing utility bills location by location leads to fragmented data and weak oversight. Get central control over all payments, without losing branch-level visibility."
+          subheading={[
+            "As businesses scale, branch-level bill handling often leads to inconsistent processes and delayed visibility at the central level.",
+            "EnKash gives finance teams centralized oversight while maintaining location-level accountability.",
+          ]}
           data={dashboardData}
           imageSrc={locationImg}
-          imageAlt="card background"
-          bgColor="bg-color-grey-100"
-          buttonUrl={salesUrl}
-          reverse
-        />
-        <ContentShowcase
-          heading="Real-Time Reconciliation"
-          subheading="When bills, payments, and documents sit in different places, reconciliation slows you down. EnKash brings everything into one view, so you match payments with verified bill copies and close faster with confidence."
-          data={rankData}
-          imageSrc={realTimeImg}
-          imageAlt="card background"
-          buttonUrl={salesUrl}
-        />
-        <ContentShowcase
-          heading="Streamlined Approvals, Built for Governance"
-          subheading="As utility spending grows, unstructured approvals create delays and risk. Keep approvals controlled, transparent, and consistent across every location."
-          data={approvalData}
-          imageSrc={approvalImg}
-          imageAlt="card background"
+          imageAlt="multi-location utility bill management"
           bgColor="bg-color-grey-100"
           buttonUrl={salesUrl}
           reverse
         />
         <ContentShowcase
           heading="Centralized Bill Copies, Instantly Available"
-          subheading="Missing or delayed bill copies create audit risk. Access verified utility bill copies, including electricity bill copies, automatically fetched and mapped to each payment and billing cycle."
+          subheading={[
+            "Missing or delayed bill copies create audit risk and slow down reviews.",
+            "EnKash fetches and stores verified bill copies automatically, keeping documentation accessible and audit-ready.",
+          ]}
           data={centerData}
           imageSrc={centerlizeImg}
-          imageAlt="card background"
+          imageAlt="get bill copies instantly"
+          buttonUrl={salesUrl}
+        />
+        <ContentShowcase
+          heading="Streamlined Approvals, Built for Governance"
+          subheading={[
+            "As utility spends increase, informal approvals introduce risk and reduce accountability.",
+            "EnKash enforces structured approval workflows designed for governance and control.",
+          ]}
+          data={approvalData}
+          imageSrc={approvalImg}
+          imageAlt="bill-payments-approvals"
+          bgColor="bg-color-grey-100"
+          buttonUrl={salesUrl}
+          reverse
+        />
+        <ContentShowcase
+          heading="Real-Time Reconciliation"
+          subheading={[
+            "When bills, payments, and documents live in different systems, reconciliation becomes slow and error-prone.",
+            "EnKash brings everything into one view, helping teams responsible for reconciliation and reporting close periods faster and with confidence.",
+          ]}
+          data={rankData}
+          imageSrc={realTimeImg}
+          imageAlt="real-time reconciliation of utility bill payments"
           buttonUrl={salesUrl}
         />
       </div>

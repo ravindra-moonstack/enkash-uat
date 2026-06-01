@@ -18,9 +18,10 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
   headingPart2 = "Built on Bharat Connect",
   subText = [
     "Secure utility payments via Bharat Connect",
+    "Pay Utility Bills from 20,000+ Billers in One Place",
     "Multi-layer encryption and fraud monitoring",
     "Automated reminders and alerts",
-    "Flexible payment options, including bulk and auto-pay",
+    "Flexible payment options, including bulk and auto-pay for all business bills",
     "APIs for ERP and accounting integrations",
   ],
   buttonText = "Get Started",
@@ -77,7 +78,7 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
             </div>
           </div>
           <div className={styles.transitionImgWrapper}>
-            <Image src={transitionImg} alt="transitionImg" />
+            <Image src={transitionImg} alt="pay bills with bbps platform" />
           </div>
         </div>
       </div>

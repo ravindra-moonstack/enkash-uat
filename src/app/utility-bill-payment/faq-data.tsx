@@ -1,319 +1,126 @@
-import Link from "next/link"
 import { TFAQProps } from "@/src/types/faq"
 
 const faqData: TFAQProps[] = [
   {
-    question: "What is bill payment?",
+    question: "What is EnKash Business Utility Bill Payment?",
     answer: [
       {
         heading:
-          "Bill payment is the process of paying dues for services like electricity, water, internet, credit cards, and telecom within the billing period. For businesses, a digital bill payment platform like EnKash helps automate payments, avoid late fees, and maintain accurate records for reconciliation and compliance.",
+          "A centralized platform to manage the full lifecycle of business utility bills — fetching, tracking, approving, paying, and storing bill copies — from a single dashboard. Built for enterprises and multi-location businesses handling recurring utility bills.",
       },
     ],
   },
   {
-    question: "Why is timely bill payment important for my business?",
+    question: "How does EnKash online bill pay services help businesses?",
     answer: [
       {
         heading:
-          "When your business pays bills on time via bill pay solutions, it helps keep the business running smoothly. With on-time utility payments, you can avoid late fees and keep your business cash flow steady.",
+          "EnKash bill pay services reduce manual work, prevent late fees, and improve visibility across locations. By automating bill fetching, approvals, and payments, finance teams avoid multiple portals, manual tracking, and follow-ups, leading to faster closures and better control.",
       },
     ],
   },
   {
-    question:
-      "Does the bill payment module help improve the finance team’s performance? If yes, how?",
+    question: "What types of utility bills can businesses pay on EnKash?",
     answer: [
       {
         heading:
-          "Yes, the bill pay solution helps improve the finance team’s efficiency by speeding up the process of retrieving, checking, approving, and making payments.",
+          "Businesses can manage and pay a wide range of recurring utility bills, including:",
       },
-    ],
-  },
-  {
-    question: "Why should a startup consider streamlining bill payments?",
-    answer: [
       {
-        heading:
-          "Startups need to consider streamlining their bill payments for the following reasons:",
         bullets: [
-          "Bill payments are processed faster and seamlessly",
-          "It helps to gain a competitive advantage in the industry",
-          "It positively increases your market reputation",
-          "The possibility of acquiring more consumers increases marginally",
+          "Pay bulk electricity and power bills (postpaid and prepaid meters)",
+          "Water bills",
+          "Postpaid mobile and telecom bills",
+          "Corporate internet and broadband bills",
+          "Gas bills, municipal charges, and DTH services",
         ],
       },
-    ],
-  },
-  {
-    question:
-      "How does a digitized bill payment module help cut down business fraud?",
-      answerHTML: (
-        <div> 
-          <p>
-            {"The digitized bill payment module works on verified and encrypted payments through different payment modes, to name a few, net banking, NEFT,"} 
-            <Link
-              className="mx-1"
-              href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/what-is-rtgs-in-banking-full-form-meaning-process-and-key-features-in-india`}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              RTGS
-            </Link>
-            {", IMPS, UPI, debit cards, connected banking, and more, and is preferable over other manual modes, which helps in cutting down the business fraud."}
-          </p>
-        </div>
-      ),
-  },
-
-  {
-    question: "How to make bill payments on the EnKash platform?",
-    answer: [
       {
         heading:
-          "You can upload all the relevant bills on EnKash and set internal processes to get the relevant approvals from different departments. Once you do that, every time the bill is due, you will be notified by email to take action, such as approve, reject, or pay, based on which you can take action. Once approved, you can pay using different payment methods on the EnKash Platform.",
+          "All BBPS-supported utility categories can be managed from one dashboard.",
       },
     ],
   },
   {
-    question: "What types of utility bills can I pay?",
-    answerHTML: (
-      <div> 
-        <p>
-          {"You can pay various"} 
-          <Link
-            className="mx-1"
-            href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/benefits-of-paying-utility-bill-payment-online`}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            utility bills
-          </Link>
-          {"like electricity, water, internet bills, etc., using the EnKash platform."}
-        </p>
-      </div>
-    ),
-  },
-  {
-    question: "How do I know my bills are paid?",
+    question: "How does the bill payment process work on EnKash?",
     answer: [
       {
         heading:
-          "Once the bills are paid, you can log in to the platform and check the status of the bills paid on the dashboard, including the date of bill payment and the amount paid.",
+          "Bills are uploaded manually or auto-fetched from authorized billers via Bharat Connect. They move through your approval workflow, payments are executed, and status updates in real time. Bill copies are linked automatically. Auto Pay can be enabled for recurring bills.",
       },
     ],
   },
   {
-    question: "What are the different modes used for online bill payment?",
-    answerHTML: (
-      <div> 
-        <p>
-          {"The different modes you can use for online bill payment include"} 
-          <Link
-            className="mx-1"
-            href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/what-is-neft`}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            NEFT
-          </Link>
-          {", RTGS,"}
-          <Link
-            className="mx-1"
-            href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/imps-meaning-and-full-form-a-comprehensive-guide-to-imps-neft-and-rtgs`}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            IMPS
-          </Link>
-          {", UPI, debit cards, connected banking, and more. Each of the modes of payment has its own set of features and benefits."}
-        </p>
-      </div>
-    ),
-  },
-  {
-    question: "What is a utility bill payment?",
+    question: "What is Auto Bill Payment and how does it work?",
     answer: [
       {
         heading:
-          "Utility bill payment refers to the process of paying for essential services such as electricity, water, gas, internet, and mobile or landline connections. For businesses, managing utility bill payments digitally helps avoid late fees, ensures uninterrupted services, and provides better tracking of operational expenses. Platforms like EnKash allow automated, scheduled, and bulk utility payments to streamline this process.",
+          "Auto Bill Payment allows businesses to schedule recurring utility payments in advance. Once enabled, bills are paid automatically on the due date, ensuring on-time settlements while retaining full visibility and control.",
       },
     ],
   },
   {
-    question: "How to pay the water bill online?",
-    answerHTML: (
-      <div> 
-        <p>
-          {"To"} 
-          <Link
-            className="mx-1"
-            href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/how-to-check-and-pay-water-bills-online-in-india`}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            pay your water bill online
-          </Link>
-          {", log in to your preferred payment platform or banking app, go to the “Bill Payments” section, and select “Water” as the biller category. Choose your water service provider, enter your customer/account number, and verify the bill details. Then, select a payment method like UPI, net banking, or card, and complete the transaction securely."}
-        </p>
-      </div>
-    ),
-  },
-  {
-    question: "How do Online Bill Pay Services help Businesses?",
+    question: "How are bills fetched automatically?",
     answer: [
       {
         heading:
-          "Online bill pay services automate recurring payments, centralise bills to pay, and eliminate manual processing. Companies can effortlessly handle business bill payments, corporate internet bill payment, and all utility service bills through one secure dashboard like EnKash, avoiding late fees and improving cash-flow control.",
+          "EnKash connects to authorized billers via Bharat Connect and BBPS to fetch bills directly from the source. Bill amount, due date, billing cycle, and the official bill copy are captured together, removing reliance on branch teams or manual uploads.",
       },
     ],
   },
   {
-    question: "What is Auto Bill Payment?",
+    question: "Where do the bill copies come from? Are they official?",
     answer: [
       {
         heading:
-          "Auto bill payments enable businesses to schedule payments for utilities like power bills, water bills, and postpaid bills. Once Auto Pay is set up, the system deducts the amount automatically from the registered bill pay account, ensuring on-time settlements without manual intervention.",
+          "Bill copies are retrieved directly from authorized billers through Bharat Connect and BBPS channels. They are official, timestamped, and linked to the correct bill, payment, and location, making them suitable for audits, compliance, and expense validation.",
       },
     ],
   },
   {
     question:
-      "How Does EnKash, as a Utility Bill Payment Platform, helps businesses to reduce their operational workload?",
+      "How does EnKash handle bills across multiple business locations?",
     answer: [
       {
         heading:
-          "EnKash reduces manual efforts, prevents missed deadlines, and ensures secure bill settlement for utilities, telecom, internet, and more. It improves operational efficiency by centralizing all utility bill payment workflows under one system.",
+          "Each bill is tagged to its respective branch or unit when it enters the system. Finance teams get a centralized view across all locations, with filters for reporting and reconciliation. Bulk payments allow settling bills for multiple locations in one action.",
+      },
+    ],
+  },
+  {
+    question: "What payment modes does EnKash support?",
+    answer: [
+      {
+        heading:
+          "UPI, net banking, IMPS, NEFT, RTGS, debit cards, and connected banking. Bulk payments and Auto Pay are also supported, depending on configuration.",
+      },
+    ],
+  },
+  {
+    question: "How secure are payments on EnKash?",
+    answer: [
+      {
+        heading:
+          "Payments run on Bharat Connect, India’s RBI-regulated bill payment network. EnKash adds encryption, fraud monitoring, and complete audit logs to ensure secure, traceable transactions.",
       },
     ],
   },
   {
     question:
-      "Which Bills Can Businesses Pay Using EnKash as a Bill Payment Platform?",
-      answerHTML: (
-        <div>
-          <p>EnKash supports a comprehensive range of business and commercial utility bill payments, helping you centralize and automate all your recurring expenses. You can easily manage and pay for:</p>
-          <ul>
-            <li>
-              <p>Electricity and power bills</p>
-            </li>
-            <li>
-              <p>Water bill payments</p>
-            </li>
-            <li>
-              <p>Post-paid mobile bills</p>
-            </li>
-            <li>
-              <p>Corporate internet bills</p>
-            </li>
-            <li>
-              <p>Municipal charges, gas bills, and other essential utilities</p>
-            </li>
-          </ul>
-          <p>
-            {"No more juggling multiple portals or missing deadlines - handle every bill from one unified dashboard. Want to streamline your utility bill payments?"}
-            <Link
-              className="mx-1"
-              href={`${process.env.NEXT_PUBLIC_URL}/sales`}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Talk to us today.
-            </Link> 
-          </p>
-        </div>
-      ),
-  },
-  {
-    question:
-      "Why Should Enterprises Switch to a Centralized Business Bill Payment Platform?",
+      "Why should enterprises switch to a centralized bill payment platform?",
     answer: [
       {
         heading:
-          "Enterprises should switch to centralized business bill payment platforms like EnKash to reduce costs, avoid penalties, prevent service disruptions, and gain complete visibility across utility bill payments across all branches. It also supports automation through bill payment APIs.",
+          "Centralized platforms eliminate fragmented processes across branches. Enterprises gain consolidated visibility, automated bill fetching, approval workflows, real-time payment status, and audit-ready records, helping prevent late fees, service disruptions, and operational inefficiencies.",
       },
     ],
   },
   {
-    question: "How can businesses make electricity bill payments online?",
-    answerHTML: (
-      <div> 
-        <p>
-          {"Businesses can make"} 
-          <Link
-            className="mx-1"
-            href={`${process.env.NEXT_PUBLIC_URL}/resources/blog/what-is-an-electricity-bill-meaning-components-calculation`}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            electricity bill payments
-          </Link>
-          {"by using a centralized bill pay platform like EnKash. Simply select the electricity biller, fetch the bill using the consumer number, verify details, and complete the payment through secure modes like UPI, net banking, or connected banking."}
-        </p>
-      </div>
-    ),
-  },
-  {
-    question: "How to pay electricity bills through EnKash?", 
-    answerHTML: (
-      <div>
-        <p>To pay electricity bills through EnKash’s bill payment platform,</p>
-        <ul>
-          <li>
-            <p>Add your electricity biller</p>
-          </li>
-          <li>
-            <p>Auto-fetch the bill details</p>
-          </li>
-          <li>
-            <p>Review the amount</p>
-          </li>
-          <li>
-            <p>Get internal approval, and complete the electricity bill payment in one click.</p>
-          </li> 
-        </ul>
-        <p>You can also make bulk payments across multiple locations.
-        </p>
-      </div>
-    ),
-  },
-  {
-    question:
-      "Can businesses manage multiple electricity bill payments together?",
+    question: "How does EnKash integrate with ERP and accounting systems?",
     answer: [
       {
         heading:
-          "Yes, businesses can manage and pay multiple electricity bills together using bulk electricity bill payment feature of EnKash. This is especially useful for enterprises operating across multiple offices or locations.",
-      },
-    ],
-  },
-  {
-    question:
-      "Why electricity bills copies are important for businesses?",
-    answer: [
-      {
-        heading:
-          "Electricity bill copies serve as official proof of consumption and electricity bill payment. Businesses use Bill Copies for audits, expense validation, tax filings, and branch-level cost tracking.",
-      },
-    ],
-  },
-  {
-    question:
-      "Can businesses manage electricity bill copies for multiple locations using EnKash?",
-    answer: [
-      {
-        heading:
-          "Yes. EnKash allows businesses to centrally manage electricity bill copies across all branches, offices, and locations from a single dashboard. Each electricity bill copy is automatically mapped to the correct location, cost center, or business unit, giving finance teams complete visibility and control over electricity expenses without relying on local teams.",
-      },
-    ],
-  },
-  {
-    question:
-      "How can businesses get electricity bill copies?",
-    answer: [
-      {
-        heading:
-          "Businesses can get electricity bill copies online by logging into a digital bill pay or utility bills management platform like EnKash, selecting the relevant electricity biller, and downloading the verified bill copy linked to the billing cycle and payment.",
+          "EnKash offers APIs to sync bill data, payment confirmations, and reconciliation records directly with ERP and accounting systems. This removes manual exports and ensures financial reports reflect up-to-date utility payments.",
       },
     ],
   },

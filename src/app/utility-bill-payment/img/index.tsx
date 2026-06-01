@@ -71,3 +71,5 @@ export { default as water } from "./water.svg"
 export { default as broadband } from "./broadband.svg"
 export { default as prepaid } from "./prepaid.svg"
 export { default as dth } from "./dth.svg"
+export { default as elecBg } from "./elec.webp"
+
