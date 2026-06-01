@@ -27,6 +27,7 @@ export default function BlogsPage() {
         handlePageInputChange,
         handlePageInputSubmit,
         handleTrash,
+        handleTakeOver,
         formatDate,
         showConfirm,
         setShowConfirm,
@@ -138,7 +139,14 @@ export default function BlogsPage() {
                                         <span className={styles.titleLinkDisabled}>
                                             {post.title || "(no title)"}
                                             <span className={styles.lockInfo}>
-                                                <i className="bi bi-lock-fill"></i> Locked by: {post.locked_by}
+                                                <i className="bi bi-lock-fill"></i> Locked by: {post.locked_by}{" "}
+                                                <button
+                                                    type="button"
+                                                    className={styles.takeOverLink}
+                                                    onClick={() => handleTakeOver(post.id)}
+                                                >
+                                                    Take Over
+                                                </button>
                                             </span>
                                         </span>
                                     ) : (
@@ -149,7 +157,10 @@ export default function BlogsPage() {
                                     {post.status === "draft" && " — Draft"}
                                     <div className={styles.rowActions}>
                                         {post.locked_by ? (
-                                            <span className={styles.disabledAction}>Edit</span>
+                                            <>
+                                                <span className={styles.disabledAction}>Edit</span> |{" "}
+                                                <a onClick={() => handleTakeOver(post.id)}>Take Over</a>
+                                            </>
                                         ) : (
                                             <Link href={`/admin/blogs/edit?id=${post.id}`}>Edit</Link>
                                         )} |

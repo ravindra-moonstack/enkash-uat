@@ -506,6 +506,24 @@
     }
 }
 
+.takeOverLink {
+    color: #b32d2e;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 8px;
+    font-size: 11px;
+    font-style: normal;
+    font-family: inherit;
+    display: inline-block;
+
+    &:hover {
+        color: #8a2424;
+    }
+}
+
 .disabledAction {
     color: #a7aaad !important;
     cursor: not-allowed !important;

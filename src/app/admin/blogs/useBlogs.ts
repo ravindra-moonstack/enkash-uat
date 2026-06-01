@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef } from "react"
 import { useToast } from "@/src/context/ToastContext"
+import { useRouter } from "next/navigation"
 
 export function useBlogs() {
+  const router = useRouter()
   const { showToast } = useToast()
+  const [currentUser, setCurrentUser] = useState<any>(null)
   const [posts, setPosts] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [statusFilter, setStatusFilter] = useState("all")
@@ -87,6 +90,17 @@ export function useBlogs() {
   }
 
   useEffect(() => {
+    fetch("/api/admin/me")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setCurrentUser(data.user)
+        }
+      })
+      .catch((err) => console.error("Error fetching current user", err))
+  }, [])
+
+  useEffect(() => {
     fetchPosts()
     fetchMeta()
     setPageInput(page.toString())
@@ -163,6 +177,47 @@ export function useBlogs() {
     setShowConfirm(true)
   }
 
+  const handleTakeOver = async (postId: number) => {
+    if (!currentUser) {
+      showToast("User session not loaded yet. Please try again.", "error")
+      return
+    }
+
+    setConfirmConfig({
+      title: "Take Over Editing",
+      message: "Are you sure you want to take over editing this post? This will release the lock for the current editor.",
+      type: "primary",
+      onConfirm: async () => {
+        try {
+          const sessionId = Math.random().toString(36).substring(2, 12)
+          const res = await fetch("/api/admin/active-editors", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              module: "blogs",
+              postId: postId,
+              editorId: sessionId,
+              userId: currentUser.id,
+              userName: currentUser.name,
+              action: "takeover"
+            }),
+          })
+          const data = await res.json()
+          if (res.ok && data.success) {
+            showToast("Post taken over successfully!", "success")
+            router.push(`/admin/blogs/edit?id=${postId}`)
+          } else {
+            showToast(data.message || "Failed to take over. Please try again.", "error")
+          }
+        } catch (error) {
+          console.error("Failed to take over", error)
+          showToast("Failed to take over editing. Please try again.", "error")
+        }
+      }
+    })
+    setShowConfirm(true)
+  }
+
   const formatDate = (dateString: string) => {
     const d = new Date(dateString)
     return d.toLocaleDateString("en-US", {
@@ -199,9 +254,11 @@ export function useBlogs() {
     handlePageInputChange,
     handlePageInputSubmit,
     handleTrash,
+    handleTakeOver,
     formatDate,
     showConfirm,
     setShowConfirm,
     confirmConfig,
+    currentUser,
   }
 }
