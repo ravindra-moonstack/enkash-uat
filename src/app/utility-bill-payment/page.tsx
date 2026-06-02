@@ -189,7 +189,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           ]}
           data={integrationData}
           imageSrc={dashbordImg}
-          imageAlt="business utility bill payment dashboard"
+          imageAlt="business-utility-bill-payment-dashboard"
           buttonUrl={salesUrl}
           bgColor="bg-color-grey-100"
           reverse
@@ -202,7 +202,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           ]}
           data={paymentMethodData}
           imageSrc={paymentImg}
-          imageAlt="Pay business bill in single click"
+          imageAlt="pay-business-bill-in-single-click"
           buttonUrl={salesUrl}
         />
         <ContentShowcase
@@ -213,7 +213,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           ]}
           data={dashboardData}
           imageSrc={locationImg}
-          imageAlt="multi-location utility bill management"
+          imageAlt="multi-location-utility-bill-management"
           bgColor="bg-color-grey-100"
           buttonUrl={salesUrl}
           reverse
@@ -226,7 +226,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           ]}
           data={centerData}
           imageSrc={centerlizeImg}
-          imageAlt="get bill copies instantly"
+          imageAlt="get-bill-copies-instantly"
           buttonUrl={salesUrl}
         />
         <ContentShowcase
@@ -250,7 +250,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
           ]}
           data={rankData}
           imageSrc={realTimeImg}
-          imageAlt="real-time reconciliation of utility bill payments"
+          imageAlt="real-time-reconciliation-of-utility-bill-payments"
           buttonUrl={salesUrl}
         />
       </div>
@@ -261,16 +261,19 @@ const UtilityBillPayment = (): React.JSX.Element => {
       <SliderSection
         headingContent={[
           {
-            title: "From Chaos to Control: ",
+            title: "Everything You Need to ",
             color: "color-black ",
           },
           {
-            title: "EnKash Enterprise Bill Payments Features ",
+            title: "Manage Business Utility Bills ",
             color: "color-equity-blue ",
           },
+        ]}
+        descriptionContent={[
           {
-            title: "at a Glance ",
-            color: "color-black ",
+            title:
+              "Manage, approve, and pay all business utility bills, including electricity, power, water, broadband, and telecom from one secure, compliant, and audit-ready bill payment platform.",
+            color: "color-grey-200 f-5",
           },
         ]}
         productsData={mergedCards}
