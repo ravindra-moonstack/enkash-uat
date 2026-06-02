@@ -15,7 +15,7 @@ import {
   billPaymentValidation,
   TBillPaymentInitialValueProp,
 } from "./formik"
-import { billOptions, heardOptions } from "./data"
+import { billOptions } from "./data"
 
 const BillPaymentForm: React.FC = () => {
   const router = useRouter()

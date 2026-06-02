@@ -28,6 +28,15 @@ import { electricity, gas, water, dth, prepaid, broadband } from "../../utility-
 import { ctaSideImg } from "../../employee-benefit-multi-wallet/img"
 
 const BillPaymentsClient = () => {
+  const [isMobile, setIsMobile] = React.useState(false)
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
   return (
     <div className={styles.enterpriseBillPayments}>
       <section className={`${styles.hero}`}>
@@ -90,7 +99,7 @@ const BillPaymentsClient = () => {
                 />
               </div>
             </div>
-            <div id="form-section" className={styles.formSection}>
+            <div id="form-section" className={`${styles.formSection} ${styles.hideOnMobile}`}>
               <div className="contactFormWrapper">
                 <div className={styles.formHead}>
                   <DynamicHeading
@@ -155,7 +164,20 @@ const BillPaymentsClient = () => {
 
       <FeaturesSection />
 
-      <CtaBanner leftImage={ctaSideImg} rightImage={ctaSideImg} buttonText="Make the Switch" buttonUrl={"#form-section"} titleLight="Move your bill payments before disruption" titleBold="becomes downtime." />
+      <CtaBanner leftImage={ctaSideImg} rightImage={ctaSideImg} buttonText="Make the Switch" buttonUrl={isMobile ? "#form-section-mobile" : "#form-section"} titleLight="Move your bill payments before disruption" titleBold="becomes downtime." />
+
+      <div id="form-section-mobile" className={styles.showOnlyOnMobile}>
+        <div className="contactFormWrapper">
+          <div className={styles.formHead}>
+            <DynamicHeading
+              content={[{ title: "We just need a few quick details", color: "f-4" }]}
+              headingTag="h2"
+              className={`formH2 mb-2 text-center`}
+            />
+          </div>
+          <BillPaymentForm />
+        </div>
+      </div>
 
       <footer className={styles.customFooter}>
         <div className={"max-w-auto"}>

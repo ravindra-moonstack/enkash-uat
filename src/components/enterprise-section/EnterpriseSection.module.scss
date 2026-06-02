@@ -7,12 +7,52 @@
   background-position: center;
   background-repeat: no-repeat;
   padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
 
   @include for-laptops {
     padding: 50px;
   }
 
+  .gradientTopLeft {
+    display: none;
+    position: absolute;
+    background-image: url("./img/Rectangle1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 483px;
+    height: 514px;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    @include for-laptops {
+      display: block;
+    }
+  }
+
+  .gradientBottomRight {
+    display: none;
+    position: absolute;
+    background-image: url("./img/Rectangle2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 742px;
+    height: 586px;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    @include for-laptops {
+      display: block;
+    }
+  }
+
   .getStartedBox {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     .getStartedBoxInner {
@@ -23,6 +63,7 @@
       );
       padding: 20px 20px 30px;
       border-radius: 10px;
+      border-left: 3px solid #06BF9E;
       max-width: 738px;
       width: 738px;
 

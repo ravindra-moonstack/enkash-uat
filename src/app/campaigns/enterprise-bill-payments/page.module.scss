@@ -1103,4 +1103,22 @@
       margin: 20px;
     }
   }
+
+  .hideOnMobile {
+    display: none !important;
+    @include for-laptops {
+      display: flex !important;
+    }
+  }
+
+  .showOnlyOnMobile {
+    display: block !important;
+    max-width: 540px;
+    margin: 40px auto;
+    padding: 0 20px;
+    
+    @include for-laptops {
+      display: none !important;
+    }
+  }
 }
