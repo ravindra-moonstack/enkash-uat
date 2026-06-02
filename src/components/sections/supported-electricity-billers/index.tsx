@@ -106,7 +106,7 @@ const SupportedElectricityBillers: React.FC<
                 theme="outline-blue"
                 title="Pre-paid Billers"
                 url={
-                  "/uploads/2026/06/Enkash-BBPS-prepaid-electricity-bill-posters.pdf"
+                  "/uploads/2026/06/Enkash-BBPS-prepaid-electricity-bill-posters-2.pdf"
                 }
                 openInNewTab
               />
@@ -114,7 +114,7 @@ const SupportedElectricityBillers: React.FC<
                 theme="outline-blue"
                 title="Post-paid Billers"
                 url={
-                  "/uploads/2026/06/Enkash-BBPS-postpaid-electricity-bill-posters.pdf"
+                  "/uploads/2026/06/Enkash-BBPS-postpaid-electricity-bill-posters-1.pdf"
                 }
                 openInNewTab
               />

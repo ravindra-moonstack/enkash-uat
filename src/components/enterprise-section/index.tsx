@@ -30,6 +30,8 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
 }) => {
   return (
     <div className={`${styles.EnterpriseSection} ${className}`}>
+      <div className={styles.gradientTopLeft} />
+      <div className={styles.gradientBottomRight} />
       <div className="max-w-auto">
         <div className={styles.getStartedBox}>
           <div className={styles.getStartedBoxInner}>
