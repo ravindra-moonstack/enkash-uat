@@ -103,11 +103,12 @@ const SupportedElectricityBillers: React.FC<
 
             <div className={styles.btnGroup}>
               <CommanButton
-                theme="blue"
+                theme="outline-blue"
                 title="Pre-paid Billers"
                 url={
                   "/uploads/2026/06/Enkash-BBPS-prepaid-electricity-bill-posters.pdf"
                 }
+                openInNewTab
               />
               <CommanButton
                 theme="outline-blue"
@@ -115,6 +116,7 @@ const SupportedElectricityBillers: React.FC<
                 url={
                   "/uploads/2026/06/Enkash-BBPS-postpaid-electricity-bill-posters.pdf"
                 }
+                openInNewTab
               />
             </div>
           </div>
