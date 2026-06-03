@@ -6,7 +6,10 @@ import RecentBlogs from "./RecentBlogs"
 import { BlogNav, ReceivablesSection, SubscribeSection } from "@/src/components"
 import styles from "./featured_top.module.scss"
 
-import { getBlogCategories, getCategoryData } from "@/src/services/resource-service"
+import {
+  getBlogCategories,
+  getCategoryData,
+} from "@/src/services/resource-service"
 import generateMetaData from "@/src/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
@@ -18,13 +21,10 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-
 export default async function BlogPageData() {
   const navData = await getBlogCategories()
-  console.log("navData", navData);
 
   const categories = navData?.categories || []
-  console.log("categories", categories);
 
   const sectionsData = await Promise.all(
     categories.map(async (cat: any) => {
@@ -32,7 +32,6 @@ export default async function BlogPageData() {
       return data ? { ...data, categoryLabel: cat.label } : null
     })
   )
-  console.log("sectionsData", sectionsData);
 
   return (
     <div className={`${styles.blog_page}`}>
@@ -71,7 +70,7 @@ export default async function BlogPageData() {
       <div className="max-w-auto">
         {/* Category Sections with alternating layout */}
         {sectionsData.map((data, index) => {
-          if (!data || data.error) return null;
+          if (!data || data.error) return null
           return (
             <div key={index} className={styles.category_section_wrap}>
               <ReceivablesSection

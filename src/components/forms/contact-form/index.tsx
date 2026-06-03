@@ -41,13 +41,6 @@ const ContactForm: React.FC = () => {
     const utmMedium = params.get("utm_medium") || ""
     const utmCampaign = params.get("utm_campaign") || ""
 
-    console.log({
-      utmSource,
-      utmMedium,
-      utmCampaign,
-      referringPage,
-    })
-
     setFieldValue("SingleLine2", utmSource)
     setFieldValue("SingleLine3", utmMedium)
     setFieldValue("SingleLine4", utmCampaign)
@@ -58,7 +51,6 @@ const ContactForm: React.FC = () => {
   const onSubmitForm = async (values: TContactInitialValueProp) => {
     try {
       setLoading(true)
-      console.log("Submitted Data:", values)
       await axios.post("/api/zoho", {
         url: process.env.NEXT_PUBLIC_ZOHO_CONTACT_URL,
         data: values,

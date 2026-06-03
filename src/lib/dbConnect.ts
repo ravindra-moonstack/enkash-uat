@@ -27,32 +27,3 @@ pool.on("connection", () => {
 })
 
 export default pool
-// import { createPool, Pool } from "mysql2/promise"
-
-// declare global {
-//   var pool: Pool | undefined
-// }
-
-// const poolConfig = {
-//   host: "localhost",
-//   user: "enkash_website",
-//   password: "Rsrathore@7773",
-//   database: "enkash_testing_for_blogs",
-//   waitForConnections: true,
-//   connectionLimit: 20,
-//   queueLimit: 0,
-//   connectTimeout: 20000,
-// }
-
-// const pool = global.pool || createPool(poolConfig)
-
-// if (process.env.NODE_ENV !== "production") {
-//   global.pool = pool
-// }
-
-// // Connection log
-// pool.on("connection", () => {
-//   console.log("DB Pool: New connection established")
-// })
-
-// export default pool

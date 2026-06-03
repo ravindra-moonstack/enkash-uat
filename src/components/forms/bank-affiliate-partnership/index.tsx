@@ -41,13 +41,6 @@ const BankAffiliatePartnershipForm: React.FC = () => {
     const utmMedium = params.get("utm_medium") || ""
     const utmCampaign = params.get("utm_campaign") || ""
 
-    console.log({
-      utmSource,
-      utmMedium,
-      utmCampaign,
-      referringPage,
-    })
-
     setFieldValue("SingleLine2", utmSource)
     setFieldValue("SingleLine3", utmMedium)
     setFieldValue("SingleLine4", utmCampaign)
@@ -57,8 +50,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
   const onSubmitForm = async (values: TBankAffiliateInitialValueProp) => {
     try {
       setLoading(true)
-      console.log("Submitted Data:", values)
-      const { } = await axios.post("/api/zoho", {
+      const {} = await axios.post("/api/zoho", {
         url: process.env.NEXT_PUBLIC_ZOHO_AFFILIATE_URL,
         data: values,
       })

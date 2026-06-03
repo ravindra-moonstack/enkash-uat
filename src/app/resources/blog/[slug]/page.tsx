@@ -114,7 +114,6 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       slug: result[0].slug,
     },
   ]
-  console.log("bannerData", bannerData)
 
   const bodyData = [
     {
