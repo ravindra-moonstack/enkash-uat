@@ -49,13 +49,6 @@ export function getUploadUrl(fileName: string) {
   return `${cleanBaseUrl}/uploads/${UPLOAD_SEGMENT}/${encodeURIComponent(fileName)}`
 }
 
-export function listStoredImages(): StoredImage[] {
-  // Return empty array and do not use readdirSync.
-  // This prevents Next.js static analysis (NFT) from scanning and bundling the 166k+ uploaded files,
-  // which was causing the 50-minute startup 503 timeouts on UAT.
-  return []
-}
-
 export function resolveStoredUploadPath(segments: string[]) {
   if (
     segments.length === 0 ||

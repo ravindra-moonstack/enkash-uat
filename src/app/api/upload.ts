@@ -6,7 +6,6 @@ import {
   getUploadDir,
   getUploadUrl,
   isImageFile,
-  listStoredImages,
   sanitizeFileName,
 } from "@/src/lib/upload-storage"
 
@@ -70,9 +69,6 @@ export default async function handler(
       }
 
       const uploadDir = getUploadDir()
-      if (!fs.existsSync(uploadDir)) {
-        fs.mkdirSync(uploadDir, { recursive: true })
-      }
 
       fileName = getUniqueFileName(uploadDir, fileName)
       const filePath = path.join(uploadDir, fileName)
@@ -89,7 +85,7 @@ export default async function handler(
     }
   } else if (req.method === "GET") {
     try {
-      return res.status(200).json({ images: listStoredImages() })
+      return res.status(200).json({ images: [] })
     } catch (error: unknown) {
       console.error("Fetch error:", error)
       return res.status(500).json({ error: getErrorMessage(error) })
