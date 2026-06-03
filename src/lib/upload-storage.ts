@@ -44,32 +44,16 @@ export function isImageFile(fileName: string) {
 }
 
 export function getUploadUrl(fileName: string) {
-  return `/uploads/${UPLOAD_SEGMENT}/${encodeURIComponent(fileName)}`
+  const baseUrl = process.env.NEXT_PUBLIC_BAE_URL || ""
+  const cleanBaseUrl = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl
+  return `${cleanBaseUrl}/uploads/${UPLOAD_SEGMENT}/${encodeURIComponent(fileName)}`
 }
 
 export function listStoredImages(): StoredImage[] {
-  const uploadDir = getUploadDir()
-  if (!fs.existsSync(uploadDir)) return []
-
-  return fs
-    .readdirSync(uploadDir)
-    .filter((file) => {
-      const filePath = path.join(uploadDir, file)
-      const stats = fs.statSync(filePath)
-
-      return isImageFile(file) && stats.isFile()
-    })
-    .map((file) => {
-      const filePath = path.join(uploadDir, file)
-      const stats = fs.statSync(filePath)
-
-      return {
-        name: file,
-        url: getUploadUrl(file),
-        mtime: stats.mtimeMs,
-      }
-    })
-    .sort((a, b) => b.mtime - a.mtime)
+  // Return empty array and do not use readdirSync.
+  // This prevents Next.js static analysis (NFT) from scanning and bundling the 166k+ uploaded files,
+  // which was causing the 50-minute startup 503 timeouts on UAT.
+  return []
 }
 
 export function resolveStoredUploadPath(segments: string[]) {
