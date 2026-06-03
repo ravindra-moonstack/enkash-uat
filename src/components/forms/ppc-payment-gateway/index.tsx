@@ -41,13 +41,6 @@ const PpcPaymentGatewayForm: React.FC = () => {
     const utmMedium = params.get("utm_medium") || ""
     const utmCampaign = params.get("utm_campaign") || ""
 
-    console.log({
-      utmSource,
-      utmMedium,
-      utmCampaign,
-      referringPage,
-    })
-
     setFieldValue("SingleLine2", utmSource)
     setFieldValue("SingleLine3", utmMedium)
     setFieldValue("SingleLine4", utmCampaign)
@@ -58,9 +51,10 @@ const PpcPaymentGatewayForm: React.FC = () => {
   const onSubmitForm = async (values: TPpcPaymentInitialValueProp) => {
     try {
       setLoading(true)
-      console.log("PPC Submitted Data:", values)
       await axios.post("/api/zoho", {
-        url: process.env.NEXT_PUBLIC_ZOHO_PPC_PAYMENT_GATEWAY_URL || "https://forms.zohopublic.in/Enkash/form/PPCPaymentGateway1/formperma/LIhk3r5I-UeCjtcNux8drLLKexJ-ogkK-AZaUP1fsvY/htmlRecords/submit",
+        url:
+          process.env.NEXT_PUBLIC_ZOHO_PPC_PAYMENT_GATEWAY_URL ||
+          "https://forms.zohopublic.in/Enkash/form/PPCPaymentGateway1/formperma/LIhk3r5I-UeCjtcNux8drLLKexJ-ogkK-AZaUP1fsvY/htmlRecords/submit",
         data: values,
       })
 

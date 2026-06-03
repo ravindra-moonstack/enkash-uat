@@ -83,7 +83,6 @@ export function useAddPost() {
         .then((res) => res.json())
         .then((data) => {
           if (data.post) {
-            console.log("data.post.author", data.post.author)
             setTitle(data.post.title || "")
             setSlug(data.post.slug || "")
             setContent(data.post.content || "")

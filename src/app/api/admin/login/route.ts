@@ -6,7 +6,6 @@
 // import { CheckPassword } from "wordpress-hash-node"
 
 // export async function POST(request: Request) {
-//   console.log("--- Login Attempt Started ---")
 //   try {
 //     const { email, password } = await request.json()
 
@@ -35,7 +34,6 @@
 
 //     // 1. WordPress 6.8+ Bcrypt ($wp$2y$ prefix)
 //     if (storedHash.startsWith("$wp$2y$")) {
-//       console.log("Debug: Detected WordPress 6.8+ Bcrypt format")
 
 //       // WP 6.8 uses 'wp-sha384' as the default key if PASSWORD_PEPPER is not defined
 //       const pepper = process.env.WP_PASSWORD_PEPPER || "wp-sha384"
@@ -45,8 +43,6 @@
 //         .createHmac("sha384", pepper)
 //         .update(password.trim())
 //         .digest("base64")
-
-//       console.log(`Debug: Next.js Pre-hash: ${preHashedPassword}`)
 
 //       // Standard bcrypt strips the '$wp' prefix to compare the actual hash string
 //       const standardBcryptHash = storedHash.substring(3)
@@ -121,26 +117,21 @@ export async function POST(request: Request) {
       )
 
     const storedHash: string = user.user_pass
-    console.log("DEV: storedHash length:", storedHash.length)
-    console.log("DEV: storedHash prefix:", storedHash.slice(0, 6))
 
     const pepper = process.env.WP_PASSWORD_PEPPER || "wp-sha384"
     const preHashed = crypto
       .createHmac("sha384", pepper)
       .update(String(password).trim())
       .digest("base64")
-    console.log("DEV: preHashed length:", preHashed.length)
 
     let isMatch = false
 
     if (storedHash.startsWith("$wp$2y$")) {
       const bcryptPart = storedHash.substring(3)
-      console.log("DEV: bcryptPart length:", bcryptPart.length)
 
       // try twin-bcrypt first
       try {
         isMatch = twinBcrypt.compareSync(preHashed, bcryptPart)
-        console.log("DEV: twin-bcrypt result:", isMatch)
       } catch (e: any) {
         console.warn("DEV: twin-bcrypt failed:", e.message)
       }
@@ -149,7 +140,6 @@ export async function POST(request: Request) {
       if (!isMatch) {
         const normalized = bcryptPart.replace(/^\$2y/, "$2a")
         isMatch = await bcrypt.compare(preHashed, normalized)
-        console.log("DEV: node-bcrypt normalized result:", isMatch)
       }
     } else if (storedHash.startsWith("$2y$")) {
       const normalized = storedHash.replace(/^\$2y/, "$2a")

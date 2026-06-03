@@ -49,7 +49,6 @@ const BillPaymentForm: React.FC = () => {
   const onSubmitForm = async (values: TBillPaymentInitialValueProp) => {
     try {
       setLoading(true)
-      console.log("Submitted Bill Payment Data:", values)
 
       await axios.post("/api/zoho", {
         url: "https://forms.zohopublic.in/Enkash/form/PPCBillPayments/formperma/UTWVV_9G5Xfft83hv4cxWUw1JalSjqpNqQbuwtuPjjo/htmlRecords/submit",

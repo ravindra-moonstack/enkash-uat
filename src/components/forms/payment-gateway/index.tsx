@@ -44,13 +44,6 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
     const utmMedium = params.get("utm_medium") || ""
     const utmCampaign = params.get("utm_campaign") || ""
 
-    console.log({
-      utmSource,
-      utmMedium,
-      utmCampaign,
-      referringPage,
-    })
-
     setFieldValue("SingleLine2", utmSource)
     setFieldValue("SingleLine3", utmMedium)
     setFieldValue("SingleLine4", utmCampaign)
@@ -61,7 +54,6 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
   const onSubmitForm = async (values: TPaymentInitialValueProp) => {
     try {
       setLoading(true)
-      console.log("Submitted Data:", values)
       await axios.post("/api/zoho", {
         url: process.env.NEXT_PUBLIC_ZOHO_PARTNERSHIP_URL,
         data: values,
@@ -78,7 +70,6 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
   return (
     <div className={"contactFormWrapper"}>
       <form action="#" onSubmit={handleSubmit}>
-
         <DynamicHeading
           content={[
             {

@@ -15,7 +15,9 @@ const TableOfContents = ({ headings }: { headings: any[] }) => {
       const observer = new IntersectionObserver(
         (entries) => {
           // Find all intersecting headers
-          const intersectingHeader = entries.find((entry) => entry.isIntersecting)
+          const intersectingHeader = entries.find(
+            (entry) => entry.isIntersecting
+          )
           if (intersectingHeader) {
             setActiveId(intersectingHeader.target.id)
           }
@@ -45,7 +47,6 @@ const TableOfContents = ({ headings }: { headings: any[] }) => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
     const element = document.getElementById(id)
-    console.log("element", element);
     if (element) {
       const offset = 150
       const bodyRect = document.body.getBoundingClientRect().top

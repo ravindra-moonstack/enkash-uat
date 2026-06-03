@@ -396,7 +396,6 @@ export const useQuillEditor = ({
 
       if (res.ok) {
         const data = await res.json()
-        console.log("S3 Upload Success Response:", data.s3Response)
         quill.insertEmbed(range.index, "image", data.url)
 
         setTimeout(() => {
@@ -496,12 +495,6 @@ export const useQuillEditor = ({
                 alert("Only .webp and .svg images are allowed.")
                 return
               }
-
-              // Instead of direct upload, trigger Modal
-              console.log(
-                "File selected, triggering Alt Text Modal:",
-                file.name
-              )
               setPendingImage(file)
               setShowAltModal(true)
             }

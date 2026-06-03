@@ -23,7 +23,6 @@ export async function GET(request: NextRequest) {
     }))
 
     // const allTerms = await getGlossaryJson();
-    // console.log("allTerms", allTerms);
     // const filteredTerms = allTerms.filter((term: any) =>
     //     term.word.toLowerCase().includes(query)
     // ).slice(0, 10);

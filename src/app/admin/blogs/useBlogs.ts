@@ -27,13 +27,13 @@ export function useBlogs() {
   const [sortOrder, setSortOrder] = useState("desc") // 'asc' or 'desc'
   const [totalPages, setTotalPages] = useState(1)
   const [totalItems, setTotalItems] = useState(0)
-  
+
   const [showConfirm, setShowConfirm] = useState(false)
   const [confirmConfig, setConfirmConfig] = useState<{
-    onConfirm: () => void;
-    message: string;
-    title?: string;
-    type?: "danger" | "primary";
+    onConfirm: () => void
+    message: string
+    title?: string
+    type?: "danger" | "primary"
   } | null>(null)
 
   // For later: counts
@@ -75,7 +75,6 @@ export function useBlogs() {
     try {
       const res = await fetch("/api/admin/blogs/meta")
       const data = await res.json()
-      console.log("data.categories", data.categories)
 
       if (res.ok) {
         setMetaOptions({
@@ -172,7 +171,7 @@ export function useBlogs() {
           console.error("Failed to move to trash", error)
           showToast("Failed to move to trash", "error")
         }
-      }
+      },
     })
     setShowConfirm(true)
   }
@@ -185,7 +184,8 @@ export function useBlogs() {
 
     setConfirmConfig({
       title: "Take Over Editing",
-      message: "Are you sure you want to take over editing this post? This will release the lock for the current editor.",
+      message:
+        "Are you sure you want to take over editing this post? This will release the lock for the current editor.",
       type: "primary",
       onConfirm: async () => {
         try {
@@ -199,7 +199,7 @@ export function useBlogs() {
               editorId: sessionId,
               userId: currentUser.id,
               userName: currentUser.name,
-              action: "takeover"
+              action: "takeover",
             }),
           })
           const data = await res.json()
@@ -207,13 +207,16 @@ export function useBlogs() {
             showToast("Post taken over successfully!", "success")
             router.push(`/admin/blogs/edit?id=${postId}`)
           } else {
-            showToast(data.message || "Failed to take over. Please try again.", "error")
+            showToast(
+              data.message || "Failed to take over. Please try again.",
+              "error"
+            )
           }
         } catch (error) {
           console.error("Failed to take over", error)
           showToast("Failed to take over editing. Please try again.", "error")
         }
-      }
+      },
     })
     setShowConfirm(true)
   }
