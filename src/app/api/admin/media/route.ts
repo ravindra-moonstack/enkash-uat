@@ -243,9 +243,6 @@ export async function POST(request: Request) {
     const uploadDir = path.join(process.cwd(), "public", "uploads", dateDir)
 
     const fs = await import("fs")
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true })
-    }
 
     // Ensure unique filename inside the new directory
     let candidate = fileName
