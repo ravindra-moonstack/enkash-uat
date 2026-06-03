@@ -8,23 +8,52 @@ import DynamicHeading from "@/components/dynamic-heading"
 import styles from "./page.module.scss"
 import { HeroBg } from "./img"
 
-const BillPaymentForm = dynamic(() => import("@/src/components/forms/bill-payment-form/index"), {
-  ssr: false,
-  loading: () => <div style={{ minHeight: '541px' }} />
-})
+const BillPaymentForm = dynamic(
+  () => import("@/src/components/forms/bill-payment-form/index"),
+  {
+    ssr: false,
+    loading: () => <div style={{ minHeight: "541px" }} />,
+  }
+)
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider/index"), {
   ssr: false,
-  loading: () => <div style={{ minHeight: '100px' }} />
+  loading: () => <div style={{ minHeight: "100px" }} />,
 })
-const CtaBanner = dynamic(() => import("@/src/components/cta-banner/index"), { ssr: true })
-const MealCardComparison = dynamic(() => import("@/src/components/meal-components/MealCardComparison"), { ssr: true })
-const UtilityBeefitSection = dynamic(() => import("@/src/components/sections/utilityBenefitSection/index"), { ssr: true })
-const UtilityWorkflow = dynamic(() => import("@/src/components/sections/utilityWorkflow/index"), { ssr: true })
-const OverviewSection = dynamic(() => import("./OverviewSection"), { ssr: true })
-const FeaturesSection = dynamic(() => import("./FeaturesSection"), { ssr: true })
+const CtaBanner = dynamic(() => import("@/src/components/cta-banner/index"), {
+  ssr: true,
+})
+const MealCardComparison = dynamic(
+  () => import("@/src/components/meal-components/MealCardComparison"),
+  { ssr: true }
+)
+const UtilityBeefitSection = dynamic(
+  () => import("@/src/components/sections/utilityBenefitSection/index"),
+  { ssr: true }
+)
+const UtilityWorkflow = dynamic(
+  () => import("@/src/components/sections/utilityWorkflow/index"),
+  { ssr: true }
+)
+const OverviewSection = dynamic(() => import("./OverviewSection"), {
+  ssr: true,
+})
+const FeaturesSection = dynamic(() => import("./FeaturesSection"), {
+  ssr: true,
+})
+const CommanButton = dynamic(
+  () => import("@/src/components/buttons/index").then((mod) => mod.default),
+  { ssr: true }
+)
 
 import { mealCardComparisonData, benifitsData } from "./data"
-import { electricity, gas, water, dth, prepaid, broadband } from "../../utility-bill-payment/img"
+import {
+  electricity,
+  gas,
+  water,
+  dth,
+  prepaid,
+  broadband,
+} from "../../utility-bill-payment/img"
 import { ctaSideImg } from "../../employee-benefit-multi-wallet/img"
 
 const BillPaymentsClient = () => {
@@ -56,7 +85,13 @@ const BillPaymentsClient = () => {
         <header className={styles.customHeader}>
           <div className={"max-w-auto"}>
             <Link href="/" className={styles.logoLink}>
-              <Image src={"/images/Logo-white.svg"} alt="Enkash Logo" width={120} height={40} priority />
+              <Image
+                src={"/images/Logo-white.svg"}
+                alt="Enkash Logo"
+                width={120}
+                height={40}
+                priority
+              />
             </Link>
           </div>
         </header>
@@ -67,11 +102,11 @@ const BillPaymentsClient = () => {
                 content={[
                   {
                     title: "Business Bill Payments.",
-                    color: "color-white d-block"
+                    color: "color-white d-block",
                   },
                   {
                     title: "Without Disruption.",
-                    color: "color-white"
+                    color: "color-white",
                   },
                 ]}
                 headingTag="h1"
@@ -82,7 +117,7 @@ const BillPaymentsClient = () => {
                   {
                     title:
                       "Manage electricity, water, gas, broadband, telecom, and other recurring business utility bills across all locations from one unified dashboard powered by Bharat Connect.",
-                    color: "color-white f-3"
+                    color: "color-white f-3",
                   },
                 ]}
                 headingTag="p"
@@ -97,13 +132,29 @@ const BillPaymentsClient = () => {
                   priority={true}
                   className={styles.groupIcon}
                 />
+                {isMobile && (
+                  <CommanButton
+                    title="Get Started"
+                    arrow
+                    url="#form-section-mobile"
+                    className="mt-5"
+                  />
+                )}
               </div>
             </div>
-            <div id="form-section" className={`${styles.formSection} ${styles.hideOnMobile}`}>
+            <div
+              id="form-section"
+              className={`${styles.formSection} ${styles.hideOnMobile}`}
+            >
               <div className="contactFormWrapper">
                 <div className={styles.formHead}>
                   <DynamicHeading
-                    content={[{ title: "We just need a few quick details", color: "f-4" }]}
+                    content={[
+                      {
+                        title: "We just need a few quick details",
+                        color: "f-4",
+                      },
+                    ]}
                     headingTag="h2"
                     className={`formH2 mb-2 text-center`}
                   />
@@ -121,7 +172,7 @@ const BillPaymentsClient = () => {
             <LogoSlider />
           </div>
         </div>
-      </section >
+      </section>
 
       <UtilityBeefitSection
         sectionTitle="Nothing missed. Nothing hidden. Nothing delayed"
@@ -134,10 +185,14 @@ const BillPaymentsClient = () => {
         ourColumnLabel={mealCardComparisonData.ourColumnLabel}
         competitorColumnLabel={mealCardComparisonData.competitorColumnLabel}
         rows={mealCardComparisonData.rows}
-        ctaButton={mealCardComparisonData.ctaButton ? {
-          ...mealCardComparisonData.ctaButton,
-          href: isMobile ? "#form-section-mobile" : "#form-section"
-        } : undefined}
+        ctaButton={
+          mealCardComparisonData.ctaButton
+            ? {
+                ...mealCardComparisonData.ctaButton,
+                href: isMobile ? "#form-section-mobile" : "#form-section",
+              }
+            : undefined
+        }
         showSuccessIconForCompetitor={true}
         swapColumns={true}
         centered={true}
@@ -151,7 +206,10 @@ const BillPaymentsClient = () => {
           { text: "One workflow.", colorClass: "color-black d-block f-7" },
         ]}
         description={[
-          { text: "A platform to manage end-to-end utility payment operations.", colorClass: "color-secondry-black f-4" },
+          {
+            text: "A platform to manage end-to-end utility payment operations.",
+            colorClass: "color-secondry-black f-4",
+          },
         ]}
         items={[
           { label: "Electricity", icon: electricity },
@@ -167,13 +225,22 @@ const BillPaymentsClient = () => {
 
       <FeaturesSection isMobile={isMobile} />
 
-      <CtaBanner leftImage={ctaSideImg} rightImage={ctaSideImg} buttonText="Make the Switch" buttonUrl={isMobile ? "#form-section-mobile" : "#form-section"} titleLight="Move your bill payments before disruption" titleBold="becomes downtime." />
+      <CtaBanner
+        leftImage={ctaSideImg}
+        rightImage={ctaSideImg}
+        buttonText="Make the Switch"
+        buttonUrl={isMobile ? "#form-section-mobile" : "#form-section"}
+        titleLight="Move your bill payments before disruption"
+        titleBold="becomes downtime."
+      />
 
       <div id="form-section-mobile" className={styles.showOnlyOnMobile}>
         <div className="contactFormWrapper">
           <div className={styles.formHead}>
             <DynamicHeading
-              content={[{ title: "We just need a few quick details", color: "f-4" }]}
+              content={[
+                { title: "We just need a few quick details", color: "f-4" },
+              ]}
               headingTag="h2"
               className={`formH2 mb-2 text-center`}
             />
@@ -185,12 +252,18 @@ const BillPaymentsClient = () => {
       <footer className={styles.customFooter}>
         <div className={"max-w-auto"}>
           <div className={styles.copyrightBar}>
-            <p>Copyright © 2026 | Nehat Tech Solutions Pvt. Ltd. All rights reserved.</p>
-            <p>Copyright © 2026 | Nehat Business Services Pvt. Ltd. All rights reserved.</p>
+            <p>
+              Copyright © 2026 | Nehat Tech Solutions Pvt. Ltd. All rights
+              reserved.
+            </p>
+            <p>
+              Copyright © 2026 | Nehat Business Services Pvt. Ltd. All rights
+              reserved.
+            </p>
           </div>
         </div>
       </footer>
-    </div >
+    </div>
   )
 }
 
