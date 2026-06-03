@@ -18,7 +18,7 @@ const GridFeatureCard = ({ title, desc, icon }: any) => (
   </div>
 )
 
-const FeaturesSection = () => {
+const FeaturesSection = ({ isMobile }: { isMobile: boolean }) => {
   return (
     <>
       <section className={`${styles.section} ${styles.sectSoft}`}>
@@ -34,7 +34,7 @@ const FeaturesSection = () => {
               <DynamicHeading content={[{ title: "Bills appear in your dashboard. You don't fetch them.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>EnKash connects directly with DISCOMs and BBPS partners to retrieve bills the moment they are generated. Amounts, due dates, and bill copies land in your dashboard automatically — for every location, every biller, every cycle.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Manual bill collection, location-level follow-ups, chasing stores for paper copies.</p></div>
-              <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
+              <CommanButton title="Make the switch" arrow theme="outline-blue" url={isMobile ? "#form-section-mobile" : "#form-section"} />
             </div>
             <div className={`${styles.featureVisual}`}>
               <Image src={MainImage1} alt="Bills auto-fetched" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "contain" }} />
@@ -48,7 +48,7 @@ const FeaturesSection = () => {
               <DynamicHeading content={[{ title: "1 location or 1,000 — the view is the same.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>Every bill across every branch, office, outlet, or warehouse lives in one dashboard. Tag bills to specific locations using unique branch codes. Filter by location, biller, due date, bill type, or payment status. Pay one bill or a hundred in the same action.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Maintaining separate trackers per city or region, chasing branch managers for payment confirmations.</p></div>
-              <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
+              <CommanButton title="Make the switch" arrow theme="outline-blue" url={isMobile ? "#form-section-mobile" : "#form-section"} />
             </div>
             <div className={`${styles.featureVisual} `}>
               <Image src={MultiLocationImage} alt="Multi-location Map" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ position: "absolute", height: "100%", width: "auto", left: 0, top: 0, right: 0, bottom: 0, objectFit: "contain", color: "transparent" }} />
@@ -62,7 +62,7 @@ const FeaturesSection = () => {
               <DynamicHeading content={[{ title: "See where your electricity bill is higher than it needs to be.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>EnKash flags overconsumption in real time. Excess demand is identified before it becomes a charge. Load factor penalties and incentives are tracked separately, so your team can see trends, not just totals.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Discovering penalties after the fact, paying for overconsumption you could have avoided.</p></div>
-              <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
+              <CommanButton title="Make the switch" arrow theme="outline-blue" url={isMobile ? "#form-section-mobile" : "#form-section"} />
             </div>
             <div className={`${styles.featureVisual} `}>
               <Image src={MainImage2} alt="Load Factor Analysis" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "contain" }} />
@@ -76,7 +76,7 @@ const FeaturesSection = () => {
               <DynamicHeading content={[{ title: "Every payment comes with a CA-registered bill copy. Automatically.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>Bill copies are fetched directly from BBPS partners and DISCOMs and auto-linked to each transaction. They are CA-registered, verified, and suitable for audits, GST filings, and expense claims. View and download any bill copy from the dashboard at any time — no dependency on DISCOM timelines, no dependency on what the local store manager kept or didn't keep.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Collecting physical bill copies, requesting duplicates from DISCOMs, building audit packs from scratch.</p></div>
-              <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
+              <CommanButton title="Make the switch" arrow theme="outline-blue" url={isMobile ? "#form-section-mobile" : "#form-section"} />
             </div>
             <div className={`${styles.featureVisual}`}>
               <Image src={MainImage3} alt="Verified Bill Copies" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "contain" }} />
@@ -90,7 +90,7 @@ const FeaturesSection = () => {
               <DynamicHeading content={[{ title: "Select. Approve. Pay all. Done.", color: "color-black" }]} headingTag="h2" className={"h2-40 f-4 mb-3"} />
               <p className={`${styles.body}`}>Filter bills by any combination of location, due date, or biller. Select the ones you want to pay. One click sends them all. No individual transactions, no repeated authentication, no switching between screens.</p>
               <div className={styles.stopDoing}><div className={styles.stopLabel}><StopIcon /> What you stop doing</div><p>Processing payments one by one, logging in to multiple portals.</p></div>
-              <CommanButton title="Make the switch" arrow theme="outline-blue" url={"#form-section"} />
+              <CommanButton title="Make the switch" arrow theme="outline-blue" url={isMobile ? "#form-section-mobile" : "#form-section"} />
             </div>
             <div className={`${styles.featureVisual}`}>
               <Image src={MainImage4} alt="Bulk Payment" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "contain" }} />

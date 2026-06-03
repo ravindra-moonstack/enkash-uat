@@ -134,7 +134,10 @@ const BillPaymentsClient = () => {
         ourColumnLabel={mealCardComparisonData.ourColumnLabel}
         competitorColumnLabel={mealCardComparisonData.competitorColumnLabel}
         rows={mealCardComparisonData.rows}
-        ctaButton={mealCardComparisonData.ctaButton}
+        ctaButton={mealCardComparisonData.ctaButton ? {
+          ...mealCardComparisonData.ctaButton,
+          href: isMobile ? "#form-section-mobile" : "#form-section"
+        } : undefined}
         showSuccessIconForCompetitor={true}
         swapColumns={true}
         centered={true}
@@ -160,9 +163,9 @@ const BillPaymentsClient = () => {
         ]}
       />
 
-      <OverviewSection />
+      <OverviewSection isMobile={isMobile} />
 
-      <FeaturesSection />
+      <FeaturesSection isMobile={isMobile} />
 
       <CtaBanner leftImage={ctaSideImg} rightImage={ctaSideImg} buttonText="Make the Switch" buttonUrl={isMobile ? "#form-section-mobile" : "#form-section"} titleLight="Move your bill payments before disruption" titleBold="becomes downtime." />
 
