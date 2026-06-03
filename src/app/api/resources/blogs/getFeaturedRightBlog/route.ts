@@ -12,7 +12,6 @@ export async function GET() {
       AND p.featured_right = 'yes'
     ORDER BY p.updated_at DESC LIMIT 3
   `
-
     const [rows] = await pool.query(query)
     return NextResponse.json(
       { posts: rows },
