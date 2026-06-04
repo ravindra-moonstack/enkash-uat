@@ -17,7 +17,9 @@ const nextConfig: NextConfig = {
     optimizeCss: true,
     optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
   },
-
+  outputFileTracingExcludes: {
+    "*": ["./public/uploads/**","./uploads/**"],
+  },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
     styledComponents: true,
