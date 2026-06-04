@@ -3,6 +3,21 @@ import { NextResponse } from "next/server"
 import { recordAuditLog } from "@/src/utils/auditLogger"
 import { getUniqueSlug } from "@/src/utils/slugUtils"
 import { verifyToken } from "@/src/utils/auth"
+let postMetaInitialized = false
+const ensurePostMetaColumns = async () => {
+  if (postMetaInitialized) return
+  try {
+    const [metaCols]: any = await pool.query("SHOW COLUMNS FROM post_meta")
+    if (!metaCols.find((c: any) => c.Field === "seo_robots")) {
+      await pool.query(
+        "ALTER TABLE post_meta ADD COLUMN seo_robots VARCHAR(50) DEFAULT 'follow'"
+      )
+    }
+    postMetaInitialized = true
+  } catch (e) {
+    console.error("Error checking post_meta table", e)
+  }
+}
 
 export async function GET(request: Request) {
   try {
@@ -151,17 +166,7 @@ export async function POST(request: Request) {
 
     const postId = result.insertId
 
-    // Ensure seo_robots exists
-    try {
-      const [metaCols]: any = await pool.query("SHOW COLUMNS FROM post_meta")
-      if (!metaCols.find((c: any) => c.Field === "seo_robots")) {
-        await pool.query(
-          "ALTER TABLE post_meta ADD COLUMN seo_robots VARCHAR(50) DEFAULT 'follow'"
-        )
-      }
-    } catch (e) {
-      console.error("Error checking post_meta table", e)
-    }
+    await ensurePostMetaColumns()
 
     // Insert meta
     const metaQuery = `

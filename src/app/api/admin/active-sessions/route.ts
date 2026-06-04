@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server"
 import pool from "@/src/lib/dbConnect"
-
+let tableInitialized = false
 const ensureTableExists = async () => {
+  if (tableInitialized) return
   try {
     await pool.execute(`
             CREATE TABLE IF NOT EXISTS admin_active_sessions (
@@ -12,6 +13,7 @@ const ensureTableExists = async () => {
                 UNIQUE KEY unique_session (user_id, session_id)
             )
         `)
+    tableInitialized = true
   } catch (error) {
     console.error("Error ensuring admin_active_sessions table exists:", error)
   }

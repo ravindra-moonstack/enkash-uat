@@ -6,8 +6,10 @@ import RecentBlog from "./RecentBlog"
 // Trigger recompile
 const CategoryPageData = async ({ slug }: { slug: string }) => {
   const getData = async () => {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
     const data = await fetch(
-      `http://localhost:3000/api/blogs/categoryPageData?category=${slug}`
+      `${baseUrl}/api/blogs/categoryPageData?category=${slug}`,
+      { next: { revalidate: 300 } }
     )
     return data.json()
   }

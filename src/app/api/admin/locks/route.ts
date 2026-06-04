@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server"
 import pool from "@/src/lib/dbConnect"
-
+let tableInitialized = false
 const ensureTableExists = async () => {
+  if (tableInitialized) return
   try {
     await pool.execute(`
             CREATE TABLE IF NOT EXISTS admin_locks (
@@ -15,6 +16,7 @@ const ensureTableExists = async () => {
                 UNIQUE KEY unique_lock (user_id, module, item_id, session_id)
             )
         `)
+    tableInitialized = true
   } catch (error) {
     console.error("Error ensuring admin_locks table exists:", error)
   }
@@ -49,38 +51,38 @@ export async function POST(request: Request) {
     // 1. Check for concurrency (Same user, different session)
     // If we are checking 'global', we check if user has ANY other session
     // If we are checking an item, we check if ANYONE else is editing it
-    
+
     let isLocked = false
     let lockedBy: any = null
 
-    if (module === 'global') {
-        // Global lock: Check if this user has any other active session
-        const [rows]: any = await pool.execute(
-            `SELECT session_id, user_name FROM admin_locks WHERE user_id = ? AND session_id != ? AND module = 'global'`,
-            [userId, sessionId]
-        )
-        if (rows.length > 0) {
-            isLocked = true
-            lockedBy = rows[0].user_name
-        }
+    if (module === "global") {
+      // Global lock: Check if this user has any other active session
+      const [rows]: any = await pool.execute(
+        `SELECT session_id, user_name FROM admin_locks WHERE user_id = ? AND session_id != ? AND module = 'global'`,
+        [userId, sessionId]
+      )
+      if (rows.length > 0) {
+        isLocked = true
+        lockedBy = rows[0].user_name
+      }
     } else {
-        // Item lock: Check if anyone else is editing this item
-        const [rows]: any = await pool.execute(
-            `SELECT session_id, user_name FROM admin_locks WHERE module = ? AND item_id = ? AND session_id != ?`,
-            [module, itemId, sessionId]
-        )
-        if (rows.length > 0) {
-            isLocked = true
-            lockedBy = rows[0].user_name
-        }
+      // Item lock: Check if anyone else is editing this item
+      const [rows]: any = await pool.execute(
+        `SELECT session_id, user_name FROM admin_locks WHERE module = ? AND item_id = ? AND session_id != ?`,
+        [module, itemId, sessionId]
+      )
+      if (rows.length > 0) {
+        isLocked = true
+        lockedBy = rows[0].user_name
+      }
     }
 
     if (isLocked) {
-        return NextResponse.json({
-            success: true,
-            isLocked: true,
-            lockedBy: lockedBy
-        })
+      return NextResponse.json({
+        success: true,
+        isLocked: true,
+        lockedBy: lockedBy,
+      })
     }
 
     // 2. Register/Update current lock
@@ -90,12 +92,19 @@ export async function POST(request: Request) {
             VALUES (?, ?, ?, ?, ?) 
             ON DUPLICATE KEY UPDATE last_active = NOW(), user_name = ?
         `,
-      [userId, sessionId, module, itemId || null, userName || "Unknown", userName || "Unknown"]
+      [
+        userId,
+        sessionId,
+        module,
+        itemId || null,
+        userName || "Unknown",
+        userName || "Unknown",
+      ]
     )
 
     return NextResponse.json({
       success: true,
-      isLocked: false
+      isLocked: false,
     })
   } catch (error: any) {
     console.error("Error managing locks:", error)
@@ -114,15 +123,15 @@ export async function DELETE(request: Request) {
     const itemId = searchParams.get("itemId")
 
     if (!sessionId || !module) {
-        return NextResponse.json({ success: false }, { status: 400 })
+      return NextResponse.json({ success: false }, { status: 400 })
     }
 
     let query = `DELETE FROM admin_locks WHERE session_id = ? AND module = ?`
     const params = [sessionId, module]
 
-    if (itemId && itemId !== 'null') {
-        query += ` AND item_id = ?`
-        params.push(itemId)
+    if (itemId && itemId !== "null") {
+      query += ` AND item_id = ?`
+      params.push(itemId)
     }
 
     await pool.execute(query, params)

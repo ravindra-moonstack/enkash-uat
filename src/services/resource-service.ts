@@ -2,7 +2,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
 
 export const getBlogCategories = async () => {
   const res = await fetch(`${BASE_URL}/api/resources/blogs/getCategory`, {
-    cache: "no-store",
+    next: { revalidate: 300 },
   })
   if (!res.ok) return null
   return res.json()
@@ -15,7 +15,7 @@ export const getCategoryData = async (slug: string, search?: string) => {
 
   const res = await fetch(
     `${BASE_URL}/api/resources/blogs/getCategoryData?${query.toString()}`,
-    { cache: "no-store" }
+    { next: { revalidate: 60 } }
   )
   if (!res.ok) return null
   return res.json()
@@ -30,7 +30,7 @@ export const getPostBySlug = async (slug: string, token?: string) => {
   const res = await fetch(
     `${BASE_URL}/api/resources/blogs/getPostBySlug?slug=${slug}`,
     {
-      cache: "no-store",
+      next: { revalidate: 60 },
       headers,
     }
   )
@@ -40,7 +40,7 @@ export const getPostBySlug = async (slug: string, token?: string) => {
 
 export const getVideoCategories = async () => {
   const res = await fetch(`${BASE_URL}/api/resources/videos/getCategories`, {
-    cache: "no-store",
+    next: { revalidate: 300 },
   })
   if (!res.ok) return null
   return res.json()
@@ -62,7 +62,7 @@ export const getVideos = async (params: {
   const res = await fetch(
     `${BASE_URL}/api/resources/videos?${query.toString()}`,
     {
-      cache: "no-store",
+      next: { revalidate: 60 },
     }
   )
   if (!res.ok) return null

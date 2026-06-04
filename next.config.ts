@@ -7,7 +7,6 @@ const withBundleAnalyzerConfigured = withBundleAnalyzer({
 })
 
 const nextConfig: NextConfig = {
-  productionBrowserSourceMaps: true,
   compress: true,
 
   eslint: {
@@ -18,7 +17,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
   },
   outputFileTracingExcludes: {
-    "*": ["./public/uploads/**","./uploads/**"],
+    "*": ["./public/uploads/**", "./uploads/**"],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
@@ -97,7 +96,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "no-store, must-revalidate",
+            value: "public, s-maxage=60, stale-while-revalidate=300",
           },
         ],
       },

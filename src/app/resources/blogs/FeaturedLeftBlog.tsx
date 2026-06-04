@@ -4,11 +4,10 @@ import styles from "./featured_top.module.scss"
 import { CommanButton, DynamicHeading } from "@/src/components"
 
 async function getData() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
   const res = await fetch(
-    "http://localhost:3000/api/resources/blogs/getFeaturedLeftBlog",
-    {
-      cache: "no-store",
-    }
+    `${baseUrl}/api/resources/blogs/getFeaturedLeftBlog`,
+    { next: { revalidate: 300 } }
   )
 
   if (!res.ok) throw new Error("Failed to fetch")
@@ -48,13 +47,20 @@ export default async function FeaturedLeftBlog() {
         <DynamicHeading
           content={[
             {
-              title: (post.excerpt || post.content || "").replace(/<[^>]+>/g, "").slice(0, 120),
+              title: (post.excerpt || post.content || "")
+                .replace(/<[^>]+>/g, "")
+                .slice(0, 120),
               color: "color-black",
             },
           ]}
           headingTag="p"
         />
-        <CommanButton theme="outline-blue" title="Read Now" arrow url={`/resources/blog/${post.slug}`} />
+        <CommanButton
+          theme="outline-blue"
+          title="Read Now"
+          arrow
+          url={`/resources/blog/${post.slug}`}
+        />
       </div>
     </div>
   )

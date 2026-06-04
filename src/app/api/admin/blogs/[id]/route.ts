@@ -2,7 +2,40 @@ import pool from "@/src/lib/dbConnect"
 import { NextResponse } from "next/server"
 import { recordAuditLog } from "@/src/utils/auditLogger"
 import { getUniqueSlug } from "@/src/utils/slugUtils"
+let slugHistoryInitialized = false
+const ensureSlugHistory = async () => {
+  if (slugHistoryInitialized) return
+  try {
+    await pool.execute(`
+      CREATE TABLE IF NOT EXISTS slug_history (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          post_id INT NOT NULL,
+          old_slug VARCHAR(255) NOT NULL,
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          UNIQUE KEY unique_slug (post_id, old_slug)
+      )
+    `)
+    slugHistoryInitialized = true
+  } catch (e) {
+    console.error("Error creating slug_history table", e)
+  }
+}
 
+let postMetaInitialized = false
+const ensurePostMetaColumns = async () => {
+  if (postMetaInitialized) return
+  try {
+    const [metaCols]: any = await pool.query("SHOW COLUMNS FROM post_meta")
+    if (!metaCols.find((c: any) => c.Field === "seo_robots")) {
+      await pool.query(
+        "ALTER TABLE post_meta ADD COLUMN seo_robots VARCHAR(50) DEFAULT 'follow'"
+      )
+    }
+    postMetaInitialized = true
+  } catch (e) {
+    console.error("Error checking post_meta table", e)
+  }
+}
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -82,15 +115,7 @@ export async function PUT(
     // Ensure slug_history exists and insert old slug if changed
     if (oldData.slug && oldData.slug !== uniqueSlug) {
       try {
-        await pool.execute(`
-          CREATE TABLE IF NOT EXISTS slug_history (
-              id INT AUTO_INCREMENT PRIMARY KEY,
-              post_id INT NOT NULL,
-              old_slug VARCHAR(255) NOT NULL,
-              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-              UNIQUE KEY unique_slug (post_id, old_slug)
-          )
-        `)
+        await ensureSlugHistory()
         await pool.execute(
           `INSERT IGNORE INTO slug_history (post_id, old_slug) VALUES (?, ?)`,
           [id, oldData.slug]
@@ -125,17 +150,7 @@ export async function PUT(
     ])
 
     // Ensure seo_robots exists
-    try {
-      const [metaCols]: any = await pool.query("SHOW COLUMNS FROM post_meta")
-      if (!metaCols.find((c: any) => c.Field === "seo_robots")) {
-        await pool.query(
-          "ALTER TABLE post_meta ADD COLUMN seo_robots VARCHAR(50) DEFAULT 'follow'"
-        )
-      }
-    } catch (e) {
-      console.error("Error checking post_meta table", e)
-    }
-
+    await ensurePostMetaColumns()
     const metaQuery = `
       UPDATE post_meta SET
           show_featured_image = ?, post_schema_markup = ?, 
