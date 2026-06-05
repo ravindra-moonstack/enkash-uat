@@ -8,7 +8,9 @@ const dev = process.env.NODE_ENV !== "production"
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-const uploadsDir = path.resolve(process.cwd(), "../uploads")
+import { UPLOADS_DIR } from "./src/lib/upload-config"
+
+const uploadsDir = UPLOADS_DIR
 
 app.prepare().then(() => {
   const server = express()
