@@ -84,6 +84,91 @@ export default function UploadsManagerPage() {
   >([])
   const [isDeleting, setIsDeleting] = useState(false)
 
+  // Batch Operations State
+  const [selectedPaths, setSelectedPaths] = useState<string[]>([])
+  const [batchProcessing, setBatchProcessing] = useState(false)
+  const [batchProgress, setBatchProgress] = useState<{
+    current: number
+    total: number
+  } | null>(null)
+
+  // Clear selection when source, filters, sorting, search, or page changes
+  useEffect(() => {
+    setSelectedPaths([])
+  }, [page, typeFilter, usageFilter, source, sortField, sortOrder, search])
+
+  const toggleFileSelection = (filePath: string) => {
+    setSelectedPaths((prev) =>
+      prev.includes(filePath)
+        ? prev.filter((p) => p !== filePath)
+        : [...prev, filePath]
+    )
+  }
+
+  const handleSelectAll = () => {
+    const visiblePaths = files.map((f) => f.path)
+    const allSelected = visiblePaths.every((p) => selectedPaths.includes(p))
+    if (allSelected) {
+      setSelectedPaths((prev) => prev.filter((p) => !visiblePaths.includes(p)))
+    } else {
+      setSelectedPaths((prev) => {
+        const next = [...prev]
+        visiblePaths.forEach((p) => {
+          if (!next.includes(p)) next.push(p)
+        })
+        return next
+      })
+    }
+  }
+
+  const executeBatchAction = async (action: "batchBackup" | "batchRestore") => {
+    if (selectedPaths.length === 0) return
+    setBatchProcessing(true)
+    setBatchProgress({ current: 0, total: selectedPaths.length })
+
+    const batchSize = 10
+    const pathsToProcess = [...selectedPaths]
+    let succeededCount = 0
+    let failedCount = 0
+
+    try {
+      for (let i = 0; i < pathsToProcess.length; i += batchSize) {
+        const chunk = pathsToProcess.slice(i, i + batchSize)
+        const res = await fetch(`/api/admin/uploads?action=${action}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ filePaths: chunk }),
+        })
+        const data = await res.json()
+        if (data.success) {
+          succeededCount += chunk.length
+        } else {
+          failedCount += chunk.length
+          showToast(data.error || "Batch operation failed partially", "error")
+        }
+        setBatchProgress({
+          current: Math.min(i + chunk.length, pathsToProcess.length),
+          total: pathsToProcess.length,
+        })
+      }
+
+      showToast(
+        `Batch ${action === "batchBackup" ? "backup" : "restore"} completed. Succeeded: ${succeededCount}, Failed: ${failedCount}`,
+        failedCount > 0 ? "warning" : "success"
+      )
+
+      setSelectedPaths([])
+      setSelectedFile(null)
+      await fetchFiles()
+    } catch (err) {
+      console.error(err)
+      showToast("Network error during batch operation", "error")
+    } finally {
+      setBatchProcessing(false)
+      setBatchProgress(null)
+    }
+  }
+
   // Fetch files
   const fetchFiles = async () => {
     setLoading(true)
@@ -715,19 +800,67 @@ export default function UploadsManagerPage() {
         </div>
       ) : (
         <div className={styles.explorerLayout}>
+          {/* Selection Control Header */}
+          <div className={styles.selectionHeaderBar}>
+            <div className={styles.selectionHeaderLeft}>
+              <label className={styles.selectAllLabel}>
+                <input
+                  type="checkbox"
+                  checked={
+                    files.length > 0 &&
+                    files.every((f) => selectedPaths.includes(f.path))
+                  }
+                  onChange={handleSelectAll}
+                />
+                <span>Select All ({files.length} files on page)</span>
+              </label>
+              {selectedPaths.length > 0 && (
+                <span className={styles.selectedCountBadge}>
+                  {selectedPaths.length} selected
+                </span>
+              )}
+            </div>
+            {selectedPaths.length > 0 && (
+              <button
+                className={styles.clearAllBtn}
+                onClick={() => setSelectedPaths([])}
+              >
+                Clear Selection
+              </button>
+            )}
+          </div>
+
           <div className={styles.filesGrid}>
             {files.map((file) => {
               const hasUsages = file.usages && file.usages.length > 0
               const isUntracked = !file.dbInfo
+              const isSelected = selectedPaths.includes(file.path)
 
               return (
                 <div
                   key={file.path}
-                  className={`${styles.fileCard} ${selectedFile?.path === file.path ? styles.activeCard : ""}`}
+                  className={`${styles.fileCard} ${selectedFile?.path === file.path ? styles.activeCard : ""} ${isSelected ? styles.selectedCard : ""}`}
                   onClick={() => handleSelectFile(file)}
                 >
                   <div className={styles.cardPreview}>
                     {renderPreviewIcon(file, styles.imagePreview)}
+
+                    {/* Checkbox Overlay */}
+                    <div
+                      className={`${styles.cardCheckboxWrapper} ${isSelected ? styles.cardCheckboxWrapperSelected : ""}`}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        toggleFileSelection(file.path)
+                      }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={isSelected}
+                        onChange={() => {}}
+                        className={styles.cardCheckbox}
+                      />
+                    </div>
+
                     {source === "uploads" && hasUsages && (
                       <span
                         className={`${styles.badge} ${styles.badgeInUse}`}
@@ -1065,6 +1198,82 @@ export default function UploadsManagerPage() {
           type="danger"
           confirmLabel={isDeleting ? "Deleting..." : "Delete Permanently"}
         />
+      )}
+
+      {/* Floating Batch Action Bar */}
+      {selectedPaths.length > 0 && (
+        <div className={styles.batchActionBar}>
+          <div className={styles.batchInfo}>
+            <span className={styles.selectedCount}>
+              <strong>{selectedPaths.length}</strong>{" "}
+              {selectedPaths.length === 1 ? "file" : "files"} selected
+            </span>
+            <button
+              className={styles.clearSelectionBtn}
+              onClick={() => setSelectedPaths([])}
+            >
+              Clear Selection
+            </button>
+          </div>
+
+          <div className={styles.batchActions}>
+            <label className={styles.selectAllLabel}>
+              <input
+                type="checkbox"
+                checked={
+                  files.length > 0 &&
+                  files.every((f) => selectedPaths.includes(f.path))
+                }
+                onChange={handleSelectAll}
+              />
+              <span>Select All on Page</span>
+            </label>
+
+            {source === "uploads" ? (
+              <button
+                className={`${styles.batchBtn} ${styles.batchBackupBtn}`}
+                onClick={() => executeBatchAction("batchBackup")}
+                disabled={batchProcessing}
+              >
+                <i className="bi bi-archive"></i>
+                Move Selected to Backup
+              </button>
+            ) : (
+              <button
+                className={`${styles.batchBtn} ${styles.batchRestoreBtn}`}
+                onClick={() => executeBatchAction("batchRestore")}
+                disabled={batchProcessing}
+              >
+                <i className="bi bi-folder-check"></i>
+                Restore Selected
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Batch Progress Overlay */}
+      {batchProcessing && batchProgress && (
+        <div className={styles.batchOverlay}>
+          <div className={styles.batchModal}>
+            <div className="spinner-border text-primary" role="status"></div>
+            <h3>Processing Batch Operation...</h3>
+            <p>Please wait, processing files in performance batches.</p>
+
+            <div className={styles.progressBarWrapper}>
+              <div
+                className={styles.progressBar}
+                style={{
+                  width: `${(batchProgress.current / batchProgress.total) * 100}%`,
+                }}
+              ></div>
+            </div>
+
+            <span className={styles.progressStatus}>
+              {batchProgress.current} / {batchProgress.total} files completed
+            </span>
+          </div>
+        </div>
       )}
     </div>
   )

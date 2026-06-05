@@ -466,6 +466,10 @@
     border-color: #5469d4;
     box-shadow: 0 4px 12px rgba(84, 105, 212, 0.1);
     transform: translateY(-2px);
+
+    .cardCheckboxWrapper {
+      opacity: 1 !important;
+    }
   }
 
   &.activeCard {
@@ -1029,4 +1033,329 @@
 @keyframes slideIn {
   from { transform: translateX(100%); }
   to { transform: translateX(0); }
+}
+
+/* Batch Operations Styling */
+/* Batch Operations Styling */
+.selectedCard {
+  border-color: #5469d4 !important;
+  background-color: #f7f9ff !important;
+  box-shadow: 0 0 0 2px #5469d4 !important;
+
+  .cardCheckboxWrapper {
+    opacity: 1 !important;
+    background: #5469d4 !important;
+    border-color: #5469d4 !important;
+  }
+}
+
+.cardCheckboxWrapper {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  width: 22px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid #a3acb9;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.4; /* Semi-visible by default so users know they can select */
+  transition: all 0.2s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    border-color: #5469d4;
+    background: #ffffff;
+    transform: scale(1.05);
+    opacity: 1 !important;
+  }
+
+  .cardCheckbox {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    accent-color: #5469d4;
+    border: none;
+    outline: none;
+  }
+}
+
+.cardCheckboxWrapperSelected {
+  opacity: 1 !important;
+  background: #5469d4 !important;
+  border-color: #5469d4 !important;
+
+  .cardCheckbox {
+    accent-color: #ffffff;
+  }
+}
+
+/* Selection Header Bar */
+.selectionHeaderBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #e3e8ee;
+  margin-bottom: 16px;
+}
+
+.selectionHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.selectedCountBadge {
+  font-size: 12px;
+  font-weight: 700;
+  background: #e8f0fe;
+  color: #1a73e8;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.clearAllBtn {
+  background: none;
+  border: none;
+  color: #c5221f;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #a81c19;
+  }
+}
+
+/* Floating Batch Action Bar */
+.batchActionBar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 28px;
+  width: auto;
+  min-width: 550px;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(84, 105, 212, 0.25);
+  border-radius: 14px;
+  box-shadow: 0px 12px 36px rgba(84, 105, 212, 0.18);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  .batchInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .selectedCount {
+      font-size: 14px;
+      color: #1a1f36;
+      font-weight: 500;
+
+      strong {
+        color: #5469d4;
+        font-size: 16px;
+      }
+    }
+
+    .clearSelectionBtn {
+      background: none;
+      border: none;
+      color: #697386;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #c5221f;
+      }
+    }
+  }
+
+  .batchActions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .batchBtn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+      transition: all 0.2s ease;
+
+      i {
+        font-size: 15px;
+      }
+
+      &:disabled {
+        background: #e3e8ee !important;
+        color: #a3acb9 !important;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+    }
+
+    .batchBackupBtn {
+      background: #fef7e0;
+      color: #b06000;
+      border: 1px solid #fcd88a;
+
+      &:hover:not(:disabled) {
+        background: #fdf0cd;
+        transform: translateY(-1px);
+      }
+    }
+
+    .batchRestoreBtn {
+      background: #e6f4ea;
+      color: #137333;
+      border: 1px solid #a8dab5;
+
+      &:hover:not(:disabled) {
+        background: #d4edd9;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+/* Batch Operations Progress Overlay */
+.batchOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+
+  .batchModal {
+    background: #ffffff;
+    padding: 36px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0px 20px 48px rgba(0, 0, 0, 0.15);
+    animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1f36;
+      margin: 16px 0 8px 0;
+    }
+
+    p {
+      font-size: 13px;
+      color: #697386;
+      margin: 0 0 20px 0;
+    }
+
+    .progressBarWrapper {
+      width: 100%;
+      height: 8px;
+      background: #e3e8ee;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .progressBar {
+      height: 100%;
+      background: #5469d4;
+      border-radius: 6px;
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .progressStatus {
+      font-size: 12px;
+      font-weight: 700;
+      color: #4f566b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 40px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.selectAllLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4f566b;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    accent-color: #5469d4;
+  }
+
+  &:hover {
+    color: #1a1f36;
+  }
 }
