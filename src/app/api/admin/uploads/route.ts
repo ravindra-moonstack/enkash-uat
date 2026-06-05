@@ -60,6 +60,31 @@ function clearScanCache() {
 // Background scanning state
 const activeScans: Record<string, Promise<any> | undefined> = {}
 
+let cachedReferenceIndex: Map<string, string[]> | null = null
+let indexBuildPromise: Promise<Map<string, string[]>> | null = null
+
+function triggerCodeReferenceIndexBuild() {
+  if (cachedReferenceIndex || indexBuildPromise) return
+
+  indexBuildPromise = (async () => {
+    console.log("[Uploads API] Starting background code reference index build...")
+    const startTime = Date.now()
+    try {
+      const srcDir = path.resolve(process.cwd(), "src")
+      const codeFiles = await getCodeFilesRecursively(srcDir)
+      const index = await buildCodeReferenceIndex(codeFiles)
+      cachedReferenceIndex = index
+      console.log(`[Uploads API] Code reference index built successfully in ${Date.now() - startTime}ms. Indexed ${codeFiles.length} files.`)
+      return index
+    } catch (err) {
+      console.error("[Uploads API] Failed to build code reference index:", err)
+      return new Map<string, string[]>()
+    } finally {
+      indexBuildPromise = null
+    }
+  })()
+}
+
 async function triggerBackgroundScan(
   source: string,
   scanDir: string,
@@ -631,6 +656,8 @@ export async function GET(request: Request) {
       )
     }
 
+    triggerCodeReferenceIndexBuild()
+
     const { searchParams } = new URL(request.url)
     const action = searchParams.get("action")
 
@@ -709,14 +736,24 @@ export async function GET(request: Request) {
         })
       }
 
-      // FIX 2: build inverted index once — O(1) per file lookup
-      const srcDir = path.resolve(process.cwd(), "src")
-      const codeFiles = await getCodeFilesRecursively(srcDir)
-      const referenceIndex = await buildCodeReferenceIndex(codeFiles)
+      // Trigger background build if not ready
+      triggerCodeReferenceIndexBuild()
+      const referenceIndex = cachedReferenceIndex
 
       const rows: any[] = []
 
-      const uploadsFiles = await getAllFilesRecursively(UPLOADS_DIR)
+      let uploadsFiles: string[] = []
+      const uploadsCacheKey = `uploads:${UPLOADS_DIR}`
+      if (scanCache[uploadsCacheKey]) {
+        uploadsFiles = scanCache[uploadsCacheKey].enrichedFiles.map(
+          (f) => path.resolve(UPLOADS_DIR, f.path)
+        )
+      } else {
+        uploadsFiles = await getAllFilesRecursively(UPLOADS_DIR)
+        // Trigger background scan to populate it for next time
+        triggerBackgroundScan("uploads", UPLOADS_DIR, uploadsCacheKey)
+      }
+
       for (const uFile of uploadsFiles) {
         if (uFile.endsWith(".meta.json")) continue
 
@@ -741,9 +778,10 @@ export async function GET(request: Request) {
           references.push(`DB Attachment ID: ${matchingAtt.id}`)
         }
 
-        // FIX 2: O(1) index lookup
-        const codeRefs =
-          referenceIndex.get(relPath) || referenceIndex.get(normPath) || []
+        // FIX 2: O(1) index lookup (safely handles when index build is in progress)
+        const codeRefs = referenceIndex
+          ? (referenceIndex.get(relPath) || referenceIndex.get(normPath) || [])
+          : []
         if (codeRefs.length > 0) {
           inUse = true
           references.push(...codeRefs)
@@ -757,7 +795,7 @@ export async function GET(request: Request) {
             .replace(/\\/g, "/"),
           webPath: `/uploads/${relPath}`,
           status: inUse ? "In Use" : "Unused",
-          references: references.join(" | ") || "No active references found",
+          references: references.join(" | ") || (referenceIndex ? "No active references found" : "No active references found (Indexing in progress...)"),
         })
       }
 
@@ -780,12 +818,13 @@ export async function GET(request: Request) {
         const references: string[] = []
         let inUse = false
 
-        // FIX 2: O(1) index lookup
-        const codeRefs =
-          referenceIndex.get(relPath) ||
-          referenceIndex.get(webPath.replace(/^\//, "")) ||
-          referenceIndex.get(baseName) ||
-          []
+        // FIX 2: O(1) index lookup (safely handles when index build is in progress)
+        const codeRefs = referenceIndex
+          ? (referenceIndex.get(relPath) ||
+             referenceIndex.get(webPath.replace(/^\//, "")) ||
+             referenceIndex.get(baseName) ||
+             [])
+          : []
         if (codeRefs.length > 0) {
           inUse = true
           references.push(...codeRefs)
@@ -1692,3 +1731,5 @@ export async function DELETE(request: Request) {
     )
   }
 }
+
+triggerCodeReferenceIndexBuild()
