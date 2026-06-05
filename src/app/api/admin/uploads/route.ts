@@ -21,13 +21,34 @@ function getNormalizePath(p: string): string {
   return normalized
 }
 
+// FIX 1: Batched async executor — prevents file descriptor exhaustion
+async function batchAll<T>(
+  thunks: (() => Promise<T>)[],
+  batchSize = 50
+): Promise<T[]> {
+  const results: T[] = []
+  for (let i = 0; i < thunks.length; i += batchSize) {
+    const batch = await Promise.all(
+      thunks.slice(i, i + batchSize).map((fn) => fn())
+    )
+    results.push(...batch)
+  }
+  return results
+}
+
 interface CacheEntry {
   timestamp: number
-  files: any[]
+  enrichedFiles: any[] // FIX 4: cache enriched files, not just raw disk scan
+  stats: {
+    totalFiles: number
+    totalSize: number
+    filesInUse: number
+    untrackedFiles: number
+  }
 }
 
 const scanCache: Record<string, CacheEntry> = {}
-const CACHE_TTL = 30000 // 30 seconds
+const CACHE_TTL = 30000
 
 function clearScanCache() {
   for (const key in scanCache) {
@@ -38,10 +59,10 @@ function clearScanCache() {
 
 async function scanDirectory(dir: string, baseDir: string): Promise<any[]> {
   if (!fsSync.existsSync(dir)) return []
-
   const list = await fs.readdir(dir, { withFileTypes: true })
 
-  const tasks = list.map(async (file) => {
+  // FIX 1: use batched execution
+  const thunks = list.map((file) => async () => {
     const filePath = path.resolve(dir, file.name)
     const relativePath = path.relative(baseDir, filePath).replace(/\\/g, "/")
 
@@ -49,7 +70,6 @@ async function scanDirectory(dir: string, baseDir: string): Promise<any[]> {
       return await scanDirectory(filePath, baseDir)
     } else {
       if (file.name.endsWith(".meta.json")) return null
-
       try {
         const stat = await fs.stat(filePath)
         return {
@@ -59,24 +79,19 @@ async function scanDirectory(dir: string, baseDir: string): Promise<any[]> {
           mtime: stat.mtimeMs,
           birthtime: stat.birthtimeMs,
         }
-      } catch (e) {
+      } catch {
         return null
       }
     }
   })
 
-  const rawResults = await Promise.all(tasks)
-
+  const rawResults = await batchAll(thunks)
   let results: any[] = []
   for (const r of rawResults) {
     if (!r) continue
-    if (Array.isArray(r)) {
-      results = results.concat(r)
-    } else {
-      results.push(r)
-    }
+    if (Array.isArray(r)) results = results.concat(r)
+    else results.push(r)
   }
-
   return results
 }
 
@@ -84,23 +99,18 @@ async function getAllFilesRecursively(dir: string): Promise<string[]> {
   if (!fsSync.existsSync(dir)) return []
   const list = await fs.readdir(dir, { withFileTypes: true })
 
-  const tasks = list.map(async (file) => {
+  // FIX 1: use batched execution
+  const thunks = list.map((file) => async () => {
     const filePath = path.resolve(dir, file.name)
-    if (file.isDirectory()) {
-      return await getAllFilesRecursively(filePath)
-    } else {
-      return filePath
-    }
+    if (file.isDirectory()) return await getAllFilesRecursively(filePath)
+    return filePath
   })
 
-  const rawResults = await Promise.all(tasks)
+  const rawResults = await batchAll(thunks)
   let results: string[] = []
   for (const r of rawResults) {
-    if (Array.isArray(r)) {
-      results = results.concat(r)
-    } else {
-      results.push(r)
-    }
+    if (Array.isArray(r)) results = results.concat(r)
+    else results.push(r as string)
   }
   return results
 }
@@ -109,17 +119,14 @@ async function getCodeFilesRecursively(dir: string): Promise<string[]> {
   if (!fsSync.existsSync(dir)) return []
   const list = await fs.readdir(dir, { withFileTypes: true })
 
-  const tasks = list.map(async (file) => {
-    const filePath = path.resolve(dir, file.name)
-    if (file.isDirectory()) {
-      if (
-        file.name === "node_modules" ||
-        file.name === ".next" ||
-        file.name === ".git"
-      )
-        return null
-      return await getCodeFilesRecursively(filePath)
-    } else {
+  // FIX 1: use batched execution
+  const thunks = list.map(
+    (file) => async (): Promise<string | string[] | null> => {
+      const filePath = path.resolve(dir, file.name)
+      if (file.isDirectory()) {
+        if (["node_modules", ".next", ".git"].includes(file.name)) return null
+        return await getCodeFilesRecursively(filePath)
+      }
       const ext = path.extname(file.name).toLowerCase()
       if (
         [
@@ -137,19 +144,58 @@ async function getCodeFilesRecursively(dir: string): Promise<string[]> {
       }
       return null
     }
-  })
+  )
 
-  const rawResults = await Promise.all(tasks)
+  const rawResults = await batchAll(thunks)
   let results: string[] = []
   for (const r of rawResults) {
     if (!r) continue
-    if (Array.isArray(r)) {
-      results = results.concat(r)
-    } else {
-      results.push(r)
-    }
+    if (Array.isArray(r)) results = results.concat(r)
+    else results.push(r as string)
   }
   return results
+}
+
+// FIX 2: Build an inverted index (path fragment → code files referencing it)
+// O(total_code_chars) once, then O(1) per upload file lookup
+async function buildCodeReferenceIndex(
+  codeFiles: string[]
+): Promise<Map<string, string[]>> {
+  const index = new Map<string, string[]>()
+
+  // FIX 1: batch file reads too
+  const thunks = codeFiles.map((file) => async () => {
+    try {
+      return { file, content: await fs.readFile(file, "utf-8") }
+    } catch {
+      return { file, content: "" }
+    }
+  })
+  const fileContents = await batchAll(thunks, 30)
+
+  for (const { file, content } of fileContents) {
+    if (!content) continue
+    const fileRel = path.relative(process.cwd(), file).replace(/\\/g, "/")
+    const matches =
+      content.match(/(?:\/uploads\/|uploads\/)([^\s"'`)<>]+)/g) || []
+    for (const m of matches) {
+      const normalized = m.replace(/^\/uploads\//, "").replace(/^uploads\//, "")
+      if (!index.has(normalized)) index.set(normalized, [])
+      const refs = index.get(normalized)!
+      if (!refs.includes(`Code: ${fileRel}`)) refs.push(`Code: ${fileRel}`)
+    }
+    // Also index bare filenames for public asset lookup
+    const bareMatches =
+      content.match(/["'`(]\/([^"'`()<>\s]+\.[a-z]{2,5})["'`)?]/gi) || []
+    for (const m of bareMatches) {
+      const stripped = m.replace(/^["'`(\/]+/, "").replace(/["'`)?]+$/, "")
+      if (!index.has(stripped)) index.set(stripped, [])
+      const refs = index.get(stripped)!
+      if (!refs.includes(`Code: ${fileRel}`)) refs.push(`Code: ${fileRel}`)
+    }
+  }
+
+  return index
 }
 
 function escapeCSVField(val: string): string {
@@ -166,6 +212,24 @@ function escapeCSVField(val: string): string {
   return str
 }
 
+// FIX 5: Safe empty-directory cleanup — handles race conditions
+async function cleanEmptyParents(fullPath: string, rootDir: string) {
+  let parentDir = path.dirname(fullPath)
+  while (parentDir !== rootDir && parentDir.startsWith(rootDir)) {
+    try {
+      const files = await fs.readdir(parentDir)
+      if (files.length === 0) {
+        await fs.rmdir(parentDir)
+        parentDir = path.dirname(parentDir)
+      } else {
+        break
+      }
+    } catch {
+      break
+    }
+  }
+}
+
 export async function GET(request: Request) {
   try {
     const user = await verifyToken()
@@ -179,6 +243,32 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url)
     const action = searchParams.get("action")
 
+    // GET raw backup file
+    const filePathParam = searchParams.get("filePath")
+    const source = searchParams.get("source") || "uploads"
+    if (filePathParam && source === "backup") {
+      const fullBackupPath = path.join(BACKUP_DIR, filePathParam)
+      if (fsSync.existsSync(fullBackupPath)) {
+        const fileContent = await fs.readFile(fullBackupPath)
+        const ext = path.extname(fullBackupPath).toLowerCase()
+        const contentTypes: Record<string, string> = {
+          ".gif": "image/gif",
+          ".jpeg": "image/jpeg",
+          ".jpg": "image/jpeg",
+          ".png": "image/png",
+          ".svg": "image/svg+xml",
+          ".webp": "image/webp",
+        }
+        return new Response(fileContent, {
+          headers: {
+            "Content-Type": contentTypes[ext] || "application/octet-stream",
+            "Content-Length": String(fileContent.length),
+          },
+          status: 200,
+        })
+      }
+    }
+
     if (action === "exportSheet") {
       const IMAGE_EXTS = [
         ".png",
@@ -190,7 +280,7 @@ export async function GET(request: Request) {
         ".ico",
       ]
 
-      // Get DB attachments and references
+      // FIX 3: targeted DB queries instead of SELECT * + JS filter
       const [attachments]: any = await pool.execute("SELECT * FROM attachments")
       const [posts]: any = await pool.execute(
         "SELECT id, title, featured_image FROM posts WHERE featured_image IS NOT NULL AND status != 'trash'"
@@ -207,49 +297,34 @@ export async function GET(request: Request) {
         { type: string; id: number; title: string }[]
       >()
       for (const p of posts) {
-        const id = p.featured_image
-        if (!usageMap.has(id)) usageMap.set(id, [])
+        if (!usageMap.has(p.featured_image)) usageMap.set(p.featured_image, [])
         usageMap
-          .get(id)!
+          .get(p.featured_image)!
           .push({ type: "Blog", id: p.id, title: p.title || "Untitled Blog" })
       }
       for (const v of videos) {
-        const id = v.thumbnail_id
-        if (!usageMap.has(id)) usageMap.set(id, [])
+        if (!usageMap.has(v.thumbnail_id)) usageMap.set(v.thumbnail_id, [])
         usageMap
-          .get(id)!
+          .get(v.thumbnail_id)!
           .push({ type: "Video", id: v.id, title: v.title || "Untitled Video" })
       }
       for (const mc of mediaCoverage) {
-        const id = mc.media_coverage_image
-        if (!usageMap.has(id)) usageMap.set(id, [])
-        usageMap
-          .get(id)!
-          .push({
-            type: "Media Coverage",
-            id: mc.id,
-            title: mc.title || "Untitled Media Coverage",
-          })
+        if (!usageMap.has(mc.media_coverage_image))
+          usageMap.set(mc.media_coverage_image, [])
+        usageMap.get(mc.media_coverage_image)!.push({
+          type: "Media Coverage",
+          id: mc.id,
+          title: mc.title || "Untitled Media Coverage",
+        })
       }
 
+      // FIX 2: build inverted index once — O(1) per file lookup
       const srcDir = path.resolve(process.cwd(), "src")
       const codeFiles = await getCodeFilesRecursively(srcDir)
-      const codeFileContents = await Promise.all(
-        codeFiles.map(async (file: string) => {
-          try {
-            return await fs.readFile(file, "utf-8")
-          } catch {
-            return ""
-          }
-        })
-      )
-
-      // Join all codebase contents in memory once for O(1) checks
-      const unifiedCodeContent = codeFileContents.join("\n---FILE-BREAK---\n")
+      const referenceIndex = await buildCodeReferenceIndex(codeFiles)
 
       const rows: any[] = []
 
-      // Scan physical uploads
       const uploadsFiles = await getAllFilesRecursively(UPLOADS_DIR)
       for (const uFile of uploadsFiles) {
         if (uFile.endsWith(".meta.json")) continue
@@ -275,25 +350,12 @@ export async function GET(request: Request) {
           references.push(`DB Attachment ID: ${matchingAtt.id}`)
         }
 
-        // Check unified codebase content first
-        const inUseInCode =
-          unifiedCodeContent.includes(relPath) ||
-          unifiedCodeContent.includes("/uploads/" + relPath)
-        if (inUseInCode) {
+        // FIX 2: O(1) index lookup
+        const codeRefs =
+          referenceIndex.get(relPath) || referenceIndex.get(normPath) || []
+        if (codeRefs.length > 0) {
           inUse = true
-          for (let i = 0; i < codeFiles.length; i++) {
-            const content = codeFileContents[i]
-            const filePath = codeFiles[i]
-            if (
-              content.includes(relPath) ||
-              content.includes("/uploads/" + relPath)
-            ) {
-              const fileRel = path
-                .relative(process.cwd(), filePath)
-                .replace(/\\/g, "/")
-              references.push(`Code: ${fileRel}`)
-            }
-          }
+          references.push(...codeRefs)
         }
 
         rows.push({
@@ -308,15 +370,15 @@ export async function GET(request: Request) {
         })
       }
 
-      // Scan root images (excluding public/uploads)
       const publicDir = path.resolve(process.cwd(), "public")
       const publicFiles = await getAllFilesRecursively(publicDir)
 
       for (const pFile of publicFiles) {
-        const isUploads =
-          pFile.includes("public/uploads") || pFile.includes("public\\uploads")
-        if (isUploads) continue
-
+        if (
+          pFile.includes("public/uploads") ||
+          pFile.includes("public\\uploads")
+        )
+          continue
         const ext = path.extname(pFile).toLowerCase()
         if (!IMAGE_EXTS.includes(ext)) continue
 
@@ -327,28 +389,15 @@ export async function GET(request: Request) {
         const references: string[] = []
         let inUse = false
 
-        // Check unified codebase content first
-        const inUseInCode =
-          unifiedCodeContent.includes(relPath) ||
-          unifiedCodeContent.includes(webPath) ||
-          unifiedCodeContent.includes(baseName)
-
-        if (inUseInCode) {
+        // FIX 2: O(1) index lookup
+        const codeRefs =
+          referenceIndex.get(relPath) ||
+          referenceIndex.get(webPath.replace(/^\//, "")) ||
+          referenceIndex.get(baseName) ||
+          []
+        if (codeRefs.length > 0) {
           inUse = true
-          for (let i = 0; i < codeFiles.length; i++) {
-            const content = codeFileContents[i]
-            const filePath = codeFiles[i]
-            if (
-              content.includes(relPath) ||
-              content.includes(webPath) ||
-              content.includes(baseName)
-            ) {
-              const fileRel = path
-                .relative(process.cwd(), filePath)
-                .replace(/\\/g, "/")
-              references.push(`Code: ${fileRel}`)
-            }
-          }
+          references.push(...codeRefs)
         }
 
         for (const att of attachments) {
@@ -369,7 +418,7 @@ export async function GET(request: Request) {
             physicalLocation: path
               .relative(process.cwd(), pFile)
               .replace(/\\/g, "/"),
-            webPath: webPath,
+            webPath,
             status: "In Use",
             references: references.join(" | "),
           })
@@ -385,17 +434,18 @@ export async function GET(request: Request) {
         "Codebase/DB References",
       ]
       let csvContent = csvHeaders.map(escapeCSVField).join(",") + "\n"
-
       for (const row of rows) {
-        const csvRow = [
-          row.type,
-          row.relativePath,
-          row.physicalLocation,
-          row.webPath,
-          row.status,
-          row.references,
-        ]
-        csvContent += csvRow.map(escapeCSVField).join(",") + "\n"
+        csvContent +=
+          [
+            row.type,
+            row.relativePath,
+            row.physicalLocation,
+            row.webPath,
+            row.status,
+            row.references,
+          ]
+            .map(escapeCSVField)
+            .join(",") + "\n"
       }
 
       const csvFilePath = path.resolve(process.cwd(), "uploads_sheet.csv")
@@ -412,183 +462,113 @@ export async function GET(request: Request) {
 
     const search = searchParams.get("search") || ""
     const type = searchParams.get("type") || "all"
-    const source = searchParams.get("source") || "uploads" // uploads or backup
-    const usageFilter = searchParams.get("usageFilter") || "all" // all, used, unused
+    const usageFilter = searchParams.get("usageFilter") || "all"
     const sortField = searchParams.get("sortField") || "mtime"
     const sortOrder = searchParams.get("sortOrder") === "asc" ? "asc" : "desc"
     const page = parseInt(searchParams.get("page") || "1")
     const limit = parseInt(searchParams.get("limit") || "40")
 
-    const uploadsRootDir = UPLOADS_DIR
-    const backupRootDir = BACKUP_DIR
-    const scanDir = source === "backup" ? backupRootDir : uploadsRootDir
+    const scanDir = source === "backup" ? BACKUP_DIR : UPLOADS_DIR
 
-    // Memory cache lookup for folder scan to resolve 504 Gateway Timeout
+    // FIX 4: cache the fully enriched file list including DB data
     const cacheKey = `${source}:${scanDir}`
-    let allFiles: any[] = []
     const now = Date.now()
+
+    let enrichedFiles: any[]
+    let stats: CacheEntry["stats"]
+
     if (
       scanCache[cacheKey] &&
       now - scanCache[cacheKey].timestamp < CACHE_TTL
     ) {
-      allFiles = scanCache[cacheKey].files
-      console.log(
-        `[Uploads API] Serving files list from cache for key: ${cacheKey}`
-      )
+      enrichedFiles = scanCache[cacheKey].enrichedFiles
+      stats = scanCache[cacheKey].stats
+      console.log(`[Uploads API] Cache hit for key: ${cacheKey}`)
     } else {
-      allFiles = await scanDirectory(scanDir, scanDir)
-      scanCache[cacheKey] = {
-        timestamp: now,
-        files: allFiles,
-      }
+      // Disk scan
+      const allFiles = await scanDirectory(scanDir, scanDir)
       console.log(
-        `[Uploads API] Cache miss. Scanned ${allFiles.length} files from disk for key: ${cacheKey}`
+        `[Uploads API] Scanned ${allFiles.length} files from disk for key: ${cacheKey}`
       )
-    }
 
-    // DB Sync & Usage Check
-    const [attachments]: any = await pool.execute("SELECT * FROM attachments")
-    console.log(
-      `[Uploads API] scanDir: ${scanDir}, physical files found: ${allFiles.length}, DB attachments count: ${attachments?.length || 0}`
-    )
-    const [posts]: any = await pool.execute(
-      "SELECT id, title, featured_image FROM posts WHERE featured_image IS NOT NULL AND status != 'trash'"
-    )
-    const [videos]: any = await pool.execute(
-      "SELECT id, title, thumbnail_id FROM videos WHERE thumbnail_id IS NOT NULL AND status != 'trash'"
-    )
-    const [mediaCoverage]: any = await pool.execute(
-      "SELECT id, title, media_coverage_image FROM media_coverage WHERE media_coverage_image IS NOT NULL AND status != 'trash'"
-    )
+      // FIX 3: fetch DB data once per cache miss
+      const [attachments]: any = await pool.execute("SELECT * FROM attachments")
+      const [posts]: any = await pool.execute(
+        "SELECT id, title, featured_image FROM posts WHERE featured_image IS NOT NULL AND status != 'trash'"
+      )
+      const [videos]: any = await pool.execute(
+        "SELECT id, title, thumbnail_id FROM videos WHERE thumbnail_id IS NOT NULL AND status != 'trash'"
+      )
+      const [mediaCoverage]: any = await pool.execute(
+        "SELECT id, title, media_coverage_image FROM media_coverage WHERE media_coverage_image IS NOT NULL AND status != 'trash'"
+      )
 
-    // Map database attachments by normalized path
-    const attachmentMap = new Map<string, any>()
-    for (const att of attachments) {
-      if (att.image_url) {
-        attachmentMap.set(att.image_url, att)
+      console.log(
+        `[Uploads API] physical files: ${allFiles.length}, DB attachments: ${attachments?.length || 0}`
+      )
+
+      const attachmentMap = new Map<string, any>()
+      for (const att of attachments) {
+        if (att.image_url) attachmentMap.set(att.image_url.toLowerCase(), att)
       }
-    }
 
-    // Map attachment usage
-    const usageMap = new Map<
-      number,
-      { type: string; id: number; title: string }[]
-    >()
+      const usageMap = new Map<
+        number,
+        { type: string; id: number; title: string }[]
+      >()
+      for (const p of posts) {
+        if (!usageMap.has(p.featured_image)) usageMap.set(p.featured_image, [])
+        usageMap
+          .get(p.featured_image)!
+          .push({ type: "Blog", id: p.id, title: p.title || "Untitled Blog" })
+      }
+      for (const v of videos) {
+        if (!usageMap.has(v.thumbnail_id)) usageMap.set(v.thumbnail_id, [])
+        usageMap
+          .get(v.thumbnail_id)!
+          .push({ type: "Video", id: v.id, title: v.title || "Untitled Video" })
+      }
+      for (const mc of mediaCoverage) {
+        if (!usageMap.has(mc.media_coverage_image))
+          usageMap.set(mc.media_coverage_image, [])
+        usageMap.get(mc.media_coverage_image)!.push({
+          type: "Media Coverage",
+          id: mc.id,
+          title: mc.title || "Untitled Media Coverage",
+        })
+      }
 
-    for (const p of posts) {
-      const imgId = p.featured_image
-      if (!usageMap.has(imgId)) usageMap.set(imgId, [])
-      usageMap
-        .get(imgId)!
-        .push({ type: "Blog", id: p.id, title: p.title || "Untitled Blog" })
-    }
+      enrichedFiles = []
+      const seenPaths = new Set<string>()
 
-    for (const v of videos) {
-      const imgId = v.thumbnail_id
-      if (!usageMap.has(imgId)) usageMap.set(imgId, [])
-      usageMap
-        .get(imgId)!
-        .push({ type: "Video", id: v.id, title: v.title || "Untitled Video" })
-    }
+      for (const file of allFiles) {
+        const normPath = file.path.toLowerCase()
+        seenPaths.add(normPath)
+        let usages: any[] = []
+        let dbInfo: any = null
 
-    for (const mc of mediaCoverage) {
-      const imgId = mc.media_coverage_image
-      if (!usageMap.has(imgId)) usageMap.set(imgId, [])
-      usageMap.get(imgId)!.push({
-        type: "Media Coverage",
-        id: mc.id,
-        title: mc.title || "Untitled Media Coverage",
-      })
-    }
-
-    // Build enriched file list
-    const enrichedFiles = []
-    const seenPaths = new Set<string>()
-
-    for (const file of allFiles) {
-      const normPath = file.path.toLowerCase()
-      seenPaths.add(normPath)
-      let usages: any[] = []
-      let dbInfo: any = null
-
-      if (source === "backup") {
-        // Read metadata from .meta.json if exists
-        const metaFullPath = path.join(backupRootDir, file.path + ".meta.json")
-        if (fsSync.existsSync(metaFullPath)) {
-          try {
-            const metaContent = await fs.readFile(metaFullPath, "utf-8")
-            const meta = JSON.parse(metaContent)
-            dbInfo = {
-              id: meta.id,
-              title: meta.title,
-              content: meta.content,
-              attachment_image_alt: meta.attachment_image_alt,
-              file_size: meta.file_size,
-              created_at: meta.created_at,
-              updated_at: meta.updated_at,
+        if (source === "backup") {
+          const metaFullPath = path.join(BACKUP_DIR, file.path + ".meta.json")
+          if (fsSync.existsSync(metaFullPath)) {
+            try {
+              const meta = JSON.parse(await fs.readFile(metaFullPath, "utf-8"))
+              dbInfo = {
+                id: meta.id,
+                title: meta.title,
+                content: meta.content,
+                attachment_image_alt: meta.attachment_image_alt,
+                file_size: meta.file_size,
+                created_at: meta.created_at,
+                updated_at: meta.updated_at,
+              }
+            } catch (err) {
+              console.error("Error reading meta file:", err)
             }
-          } catch (err) {
-            console.error("Error reading meta file:", err)
           }
-        }
-      } else {
-        const dbEntry = attachmentMap.get(normPath)
-        if (dbEntry) {
-          dbInfo = {
-            id: dbEntry.id,
-            title: dbEntry.title,
-            content: dbEntry.content,
-            attachment_image_alt: dbEntry.attachment_image_alt,
-            file_size: dbEntry.file_size,
-            created_at: dbEntry.created_at,
-            updated_at: dbEntry.updated_at,
-          }
-          usages = usageMap.get(dbEntry.id) || []
-        }
-      }
-
-      enrichedFiles.push({
-        ...file,
-        url:
-          source === "backup"
-            ? `/api/admin/uploads?filePath=${encodeURIComponent(file.path)}&source=backup`
-            : `/uploads/${file.path}`,
-        dbInfo,
-        usages,
-        missingOnDisk: false,
-      })
-    }
-
-    // Include database attachments not physically present on disk
-    if (source === "uploads") {
-      for (const [normPath, dbEntry] of attachmentMap.entries()) {
-        if (!seenPaths.has(normPath)) {
-          const usages = usageMap.get(dbEntry.id) || []
-          const fileName = dbEntry.image_url.split("/").pop() || "unknown-file"
-
-          let size = 0
-          try {
-            const sizeStr = dbEntry.file_size || ""
-            if (sizeStr.includes("KB")) size = parseFloat(sizeStr) * 1024
-            else if (sizeStr.includes("MB"))
-              size = parseFloat(sizeStr) * 1024 * 1024
-            else size = parseInt(sizeStr) || 0
-          } catch (e) {}
-
-          enrichedFiles.push({
-            name: fileName,
-            path: dbEntry.image_url,
-            url: dbEntry.image_url.startsWith("http")
-              ? dbEntry.image_url
-              : `/uploads/${dbEntry.image_url}`,
-            size,
-            mtime: dbEntry.updated_at
-              ? new Date(dbEntry.updated_at).getTime()
-              : 0,
-            birthtime: dbEntry.created_at
-              ? new Date(dbEntry.created_at).getTime()
-              : 0,
-            dbInfo: {
+        } else {
+          const dbEntry = attachmentMap.get(normPath)
+          if (dbEntry) {
+            dbInfo = {
               id: dbEntry.id,
               title: dbEntry.title,
               content: dbEntry.content,
@@ -596,16 +576,89 @@ export async function GET(request: Request) {
               file_size: dbEntry.file_size,
               created_at: dbEntry.created_at,
               updated_at: dbEntry.updated_at,
-            },
-            usages,
-            missingOnDisk: true,
-          })
+            }
+            usages = usageMap.get(dbEntry.id) || []
+          }
+        }
+
+        enrichedFiles.push({
+          ...file,
+          url:
+            source === "backup"
+              ? `/api/admin/uploads?filePath=${encodeURIComponent(file.path)}&source=backup`
+              : `/uploads/${file.path}`,
+          dbInfo,
+          usages,
+          missingOnDisk: false,
+        })
+      }
+
+      // DB-only attachments (missing on disk)
+      if (source === "uploads") {
+        for (const [normPath, dbEntry] of attachmentMap.entries()) {
+          if (!seenPaths.has(normPath)) {
+            const usages = usageMap.get(dbEntry.id) || []
+            const fileName =
+              dbEntry.image_url.split("/").pop() || "unknown-file"
+            let size = 0
+            try {
+              const sizeStr = dbEntry.file_size || ""
+              if (sizeStr.includes("KB")) size = parseFloat(sizeStr) * 1024
+              else if (sizeStr.includes("MB"))
+                size = parseFloat(sizeStr) * 1024 * 1024
+              else size = parseInt(sizeStr) || 0
+            } catch {}
+
+            enrichedFiles.push({
+              name: fileName,
+              path: dbEntry.image_url,
+              url: dbEntry.image_url.startsWith("http")
+                ? dbEntry.image_url
+                : `/uploads/${dbEntry.image_url}`,
+              size,
+              mtime: dbEntry.updated_at
+                ? new Date(dbEntry.updated_at).getTime()
+                : 0,
+              birthtime: dbEntry.created_at
+                ? new Date(dbEntry.created_at).getTime()
+                : 0,
+              dbInfo: {
+                id: dbEntry.id,
+                title: dbEntry.title,
+                content: dbEntry.content,
+                attachment_image_alt: dbEntry.attachment_image_alt,
+                file_size: dbEntry.file_size,
+                created_at: dbEntry.created_at,
+                updated_at: dbEntry.updated_at,
+              },
+              usages,
+              missingOnDisk: true,
+            })
+          }
         }
       }
+
+      stats = {
+        totalFiles: enrichedFiles.length,
+        totalSize: enrichedFiles.reduce((acc, f) => acc + f.size, 0),
+        filesInUse:
+          source === "backup"
+            ? 0
+            : enrichedFiles.filter((f) => f.dbInfo && f.usages.length > 0)
+                .length,
+        untrackedFiles:
+          source === "backup"
+            ? 0
+            : enrichedFiles.filter((f) => !f.dbInfo).length,
+      }
+
+      // FIX 4: store enriched result in cache — no DB queries on cache hit
+      scanCache[cacheKey] = { timestamp: now, enrichedFiles, stats }
     }
 
-    // Search Filter
+    // Filters
     let filteredFiles = enrichedFiles
+
     if (search) {
       const searchLower = search.toLowerCase()
       filteredFiles = filteredFiles.filter((f: any) =>
@@ -613,22 +666,16 @@ export async function GET(request: Request) {
       )
     }
 
-    // Type Filter
     if (type !== "all") {
       filteredFiles = filteredFiles.filter((f: any) => {
         const ext = path.extname(f.name).toLowerCase()
-        if (type === "images") {
+        if (type === "images")
           return [".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"].includes(
             ext
           )
-        }
-        if (type === "audio") {
-          return [".mp3", ".wav", ".ogg"].includes(ext)
-        }
-        if (type === "video") {
-          return [".mp4", ".webm", ".mov"].includes(ext)
-        }
-        if (type === "documents") {
+        if (type === "audio") return [".mp3", ".wav", ".ogg"].includes(ext)
+        if (type === "video") return [".mp4", ".webm", ".mov"].includes(ext)
+        if (type === "documents")
           return [
             ".pdf",
             ".doc",
@@ -640,7 +687,6 @@ export async function GET(request: Request) {
             ".ppt",
             ".pptx",
           ].includes(ext)
-        }
         if (type === "other") {
           const allExts = [
             ".png",
@@ -671,7 +717,6 @@ export async function GET(request: Request) {
       })
     }
 
-    // Usage Filter (only applicable to Active Uploads)
     if (source !== "backup" && usageFilter !== "all") {
       filteredFiles = filteredFiles.filter((f: any) => {
         const hasUsage = f.usages && f.usages.length > 0
@@ -679,11 +724,9 @@ export async function GET(request: Request) {
       })
     }
 
-    // Sort
     filteredFiles.sort((a: any, b: any) => {
       let valA: any = a[sortField as keyof typeof a]
       let valB: any = b[sortField as keyof typeof b]
-
       if (sortField === "name") {
         valA = a.name.toLowerCase()
         valB = b.name.toLowerCase()
@@ -691,68 +734,20 @@ export async function GET(request: Request) {
         valA = (a.dbInfo?.title || a.name).toLowerCase()
         valB = (b.dbInfo?.title || b.name).toLowerCase()
       }
-
       if (valA < valB) return sortOrder === "asc" ? -1 : 1
       if (valA > valB) return sortOrder === "asc" ? 1 : -1
       return 0
     })
 
-    // Pagination
     const totalItems = filteredFiles.length
     const offset = (page - 1) * limit
     const paginatedFiles = filteredFiles.slice(offset, offset + limit)
-
-    // Calculate Stats
-    let totalFiles = 0
-    let totalSize = 0
-    let filesInUse = 0
-    let untrackedFiles = 0
-
-    if (source === "backup") {
-      totalFiles = enrichedFiles.length
-      totalSize = enrichedFiles.reduce((acc, f) => acc + f.size, 0)
-    } else {
-      totalFiles = enrichedFiles.length
-      totalSize = enrichedFiles.reduce((acc, f) => acc + f.size, 0)
-      filesInUse = enrichedFiles.filter(
-        (f) => f.dbInfo && f.usages.length > 0
-      ).length
-      untrackedFiles = enrichedFiles.filter((f) => !f.dbInfo).length
-    }
-
-    // GET serving raw file if filePath is provided (specifically for backup thumbnails)
-    const filePathParam = searchParams.get("filePath")
-    if (filePathParam && source === "backup") {
-      const fullBackupPath = path.join(backupRootDir, filePathParam)
-      if (fsSync.existsSync(fullBackupPath)) {
-        const fileContent = await fs.readFile(fullBackupPath)
-        const ext = path.extname(fullBackupPath).toLowerCase()
-        const contentTypes: Record<string, string> = {
-          ".gif": "image/gif",
-          ".jpeg": "image/jpeg",
-          ".jpg": "image/jpeg",
-          ".png": "image/png",
-          ".svg": "image/svg+xml",
-          ".webp": "image/webp",
-        }
-        const headers = new Headers({
-          "Content-Type": contentTypes[ext] || "application/octet-stream",
-          "Content-Length": String(fileContent.length),
-        })
-        return new Response(fileContent, { headers, status: 200 })
-      }
-    }
 
     return NextResponse.json({
       success: true,
       files: paginatedFiles,
       totalItems,
-      stats: {
-        totalFiles,
-        totalSize,
-        filesInUse,
-        untrackedFiles,
-      },
+      stats,
     })
   } catch (error: any) {
     console.error("Error reading uploads folder:", error)
@@ -786,16 +781,13 @@ export async function POST(request: Request) {
       )
     }
 
-    // Sanitize targetFolder to prevent directory traversal
     targetFolder = targetFolder.replace(/\\/g, "/")
     const segments = targetFolder
       .split("/")
       .filter((s) => s && s !== "." && s !== "..")
     const subPath = segments.join("/")
 
-    const rootDir = UPLOADS_DIR
-    const targetDir = subPath ? path.join(rootDir, subPath) : rootDir
-
+    const targetDir = subPath ? path.join(UPLOADS_DIR, subPath) : UPLOADS_DIR
     if (!fsSync.existsSync(targetDir)) {
       await fs.mkdir(targetDir, { recursive: true })
     }
@@ -804,14 +796,12 @@ export async function POST(request: Request) {
 
     for (const file of files) {
       let fileName = sanitizeFileName(file.name)
-
-      // Ensure unique filename inside that custom folder
       let candidate = fileName
       const parsed = path.parse(candidate)
       let counter = 1
       while (fsSync.existsSync(path.join(targetDir, candidate))) {
         candidate = `${parsed.name}-${counter}${parsed.ext}`
-        counter += 1
+        counter++
       }
       fileName = candidate
 
@@ -820,18 +810,12 @@ export async function POST(request: Request) {
       await fs.writeFile(filePath, buffer)
 
       const relativePath = subPath ? subPath + "/" + fileName : fileName
-
-      // File Size String
-      let fileSizeStr = "0 KB"
-      if (buffer.length < 1024 * 1024) {
-        fileSizeStr = (buffer.length / 1024).toFixed(2) + " KB"
-      } else {
-        fileSizeStr = (buffer.length / (1024 * 1024)).toFixed(2) + " MB"
-      }
+      const fileSizeStr =
+        buffer.length < 1024 * 1024
+          ? (buffer.length / 1024).toFixed(2) + " KB"
+          : (buffer.length / (1024 * 1024)).toFixed(2) + " MB"
 
       const title = fileName.replace(/\.[^/.]+$/, "")
-
-      // Generate slug
       let baseSlug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-")
       if (!baseSlug || baseSlug === "-") baseSlug = "media"
 
@@ -847,7 +831,6 @@ export async function POST(request: Request) {
         slugSuffix++
       }
 
-      // Insert DB record
       const [result]: any = await pool.execute(
         "INSERT INTO attachments (title, content, status, post_type, slug, author, post_parent, image_url, attachment_image_alt, file_size, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())",
         [
@@ -904,22 +887,15 @@ export async function PUT(request: Request) {
     const { searchParams } = new URL(request.url)
     const action = searchParams.get("action")
 
-    const uploadsRootDir = UPLOADS_DIR
-    const backupRootDir = BACKUP_DIR
-
-    // 1. Move file to backup
     if (action === "backup") {
-      const data = await request.json()
-      const { filePath } = data
-
-      if (!filePath) {
+      const { filePath } = await request.json()
+      if (!filePath)
         return NextResponse.json(
           { success: false, error: "Missing filePath" },
           { status: 400 }
         )
-      }
 
-      const oldFullPath = path.join(uploadsRootDir, filePath)
+      const oldFullPath = path.join(UPLOADS_DIR, filePath)
       if (!fsSync.existsSync(oldFullPath)) {
         return NextResponse.json(
           { success: false, error: "File not found in active uploads" },
@@ -927,52 +903,34 @@ export async function PUT(request: Request) {
         )
       }
 
-      const backupFileFullPath = path.join(backupRootDir, filePath)
+      const backupFileFullPath = path.join(BACKUP_DIR, filePath)
       const backupDirName = path.dirname(backupFileFullPath)
-
       if (!fsSync.existsSync(backupDirName)) {
         await fs.mkdir(backupDirName, { recursive: true })
       }
 
-      // Check if attachment row exists in database
-      const normPath = filePath.toLowerCase()
-      const [attachments]: any = await pool.execute("SELECT * FROM attachments")
-      const matchingAttachment = attachments.find(
-        (att: any) => getNormalizePath(att.image_url) === normPath
+      // FIX 3: targeted query instead of SELECT * + JS find
+      const normPath = getNormalizePath(filePath)
+      const [rows]: any = await pool.execute(
+        "SELECT * FROM attachments WHERE LOWER(image_url) = ? LIMIT 1",
+        [normPath]
       )
+      const matchingAttachment = rows[0] ?? null
 
       if (matchingAttachment) {
-        // Save database metadata into .meta.json file next to the backup file
-        const metaPath = backupFileFullPath + ".meta.json"
         await fs.writeFile(
-          metaPath,
+          backupFileFullPath + ".meta.json",
           JSON.stringify(matchingAttachment),
           "utf-8"
         )
-
-        // Delete from database
         await pool.execute("DELETE FROM attachments WHERE id = ?", [
           matchingAttachment.id,
         ])
       }
 
-      // Move file physically to backup directory
       await fs.rename(oldFullPath, backupFileFullPath)
-
-      // Clean empty parent directories in uploads
-      let parentDir = path.dirname(oldFullPath)
-      while (
-        parentDir !== uploadsRootDir &&
-        parentDir.startsWith(uploadsRootDir)
-      ) {
-        const files = await fs.readdir(parentDir)
-        if (files.length === 0) {
-          await fs.rmdir(parentDir)
-          parentDir = path.dirname(parentDir)
-        } else {
-          break
-        }
-      }
+      // FIX 5: safe cleanup
+      await cleanEmptyParents(oldFullPath, UPLOADS_DIR)
 
       return NextResponse.json({
         success: true,
@@ -980,19 +938,15 @@ export async function PUT(request: Request) {
       })
     }
 
-    // 2. Restore file from backup
     if (action === "restore") {
-      const data = await request.json()
-      const { filePath } = data
-
-      if (!filePath) {
+      const { filePath } = await request.json()
+      if (!filePath)
         return NextResponse.json(
           { success: false, error: "Missing filePath" },
           { status: 400 }
         )
-      }
 
-      const backupFullPath = path.join(backupRootDir, filePath)
+      const backupFullPath = path.join(BACKUP_DIR, filePath)
       if (!fsSync.existsSync(backupFullPath)) {
         return NextResponse.json(
           { success: false, error: "File not found in backup folder" },
@@ -1000,24 +954,18 @@ export async function PUT(request: Request) {
         )
       }
 
-      const uploadFileFullPath = path.join(uploadsRootDir, filePath)
+      const uploadFileFullPath = path.join(UPLOADS_DIR, filePath)
       const uploadDirName = path.dirname(uploadFileFullPath)
-
       if (!fsSync.existsSync(uploadDirName)) {
         await fs.mkdir(uploadDirName, { recursive: true })
       }
 
-      // Move file physically back to active uploads
       await fs.rename(backupFullPath, uploadFileFullPath)
 
-      // Check for .meta.json file to restore DB row
       const metaPath = backupFullPath + ".meta.json"
       if (fsSync.existsSync(metaPath)) {
         try {
-          const metaContent = await fs.readFile(metaPath, "utf-8")
-          const meta = JSON.parse(metaContent)
-
-          // Re-insert matching row using its original database ID to restore references
+          const meta = JSON.parse(await fs.readFile(metaPath, "utf-8"))
           await pool.execute(
             "INSERT INTO attachments (id, title, content, status, post_type, slug, author, post_parent, image_url, attachment_image_alt, file_size, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())",
             [
@@ -1035,29 +983,14 @@ export async function PUT(request: Request) {
               meta.created_at ? new Date(meta.created_at) : new Date(),
             ]
           )
-
-          // Remove meta file
           await fs.unlink(metaPath)
         } catch (err: any) {
           console.error("Error restoring metadata:", err)
         }
       }
 
-      // Clean empty parent directories in backup
-      let parentDir = path.dirname(backupFullPath)
-      while (
-        parentDir !== backupRootDir &&
-        parentDir.startsWith(backupRootDir)
-      ) {
-        // Look for any remaining files (excluding folder contents)
-        const files = await fs.readdir(parentDir)
-        if (files.length === 0) {
-          await fs.rmdir(parentDir)
-          parentDir = path.dirname(parentDir)
-        } else {
-          break
-        }
-      }
+      // FIX 5: safe cleanup
+      await cleanEmptyParents(backupFullPath, BACKUP_DIR)
 
       return NextResponse.json({
         success: true,
@@ -1065,18 +998,16 @@ export async function PUT(request: Request) {
       })
     }
 
-    // Default metadata updating details
-    const data = await request.json()
-    const { filePath, newFileName, title, attachment_image_alt, content } = data
-
-    if (!filePath) {
+    // Default: update metadata
+    const { filePath, newFileName, title, attachment_image_alt, content } =
+      await request.json()
+    if (!filePath)
       return NextResponse.json(
         { success: false, error: "Missing filePath" },
         { status: 400 }
       )
-    }
 
-    const oldFullPath = path.join(uploadsRootDir, filePath)
+    const oldFullPath = path.join(UPLOADS_DIR, filePath)
     if (!fsSync.existsSync(oldFullPath)) {
       return NextResponse.json(
         { success: false, error: "File not found on disk" },
@@ -1086,14 +1017,13 @@ export async function PUT(request: Request) {
 
     let resolvedPath = filePath
 
-    // Handle Renaming
     if (newFileName && newFileName !== path.basename(filePath)) {
       const cleanNewName = sanitizeFileName(newFileName)
       const dirName = path.dirname(filePath)
       const newRelativePath = path
         .join(dirName, cleanNewName)
         .replace(/\\/g, "/")
-      const newFullPath = path.join(uploadsRootDir, newRelativePath)
+      const newFullPath = path.join(UPLOADS_DIR, newRelativePath)
 
       if (fsSync.existsSync(newFullPath)) {
         return NextResponse.json(
@@ -1106,12 +1036,13 @@ export async function PUT(request: Request) {
       resolvedPath = newRelativePath
     }
 
-    // Synchronize database record if one exists
-    const normOldPath = filePath.toLowerCase()
-    const [attachments]: any = await pool.execute("SELECT * FROM attachments")
-    const matchingAttachment = attachments.find(
-      (att: any) => getNormalizePath(att.image_url) === normOldPath
+    // FIX 3: targeted query instead of SELECT * + JS find
+    const normOldPath = getNormalizePath(filePath)
+    const [rows]: any = await pool.execute(
+      "SELECT * FROM attachments WHERE LOWER(image_url) = ? LIMIT 1",
+      [normOldPath]
     )
+    const matchingAttachment = rows[0] ?? null
 
     if (matchingAttachment) {
       const updateFields: string[] = []
@@ -1120,29 +1051,22 @@ export async function PUT(request: Request) {
       if (newFileName) {
         updateFields.push("image_url = ?")
         updateParams.push(resolvedPath)
-
-        // Automatically update title if it was default filename base
         const oldBaseName = path.basename(filePath, path.extname(filePath))
         if (!title && matchingAttachment.title === oldBaseName) {
-          const newBaseName = path.basename(
-            resolvedPath,
-            path.extname(resolvedPath)
-          )
           updateFields.push("title = ?")
-          updateParams.push(newBaseName)
+          updateParams.push(
+            path.basename(resolvedPath, path.extname(resolvedPath))
+          )
         }
       }
-
       if (title !== undefined) {
         updateFields.push("title = ?")
         updateParams.push(title)
       }
-
       if (attachment_image_alt !== undefined) {
         updateFields.push("attachment_image_alt = ?")
         updateParams.push(attachment_image_alt)
       }
-
       if (content !== undefined) {
         updateFields.push("content = ?")
         updateParams.push(content)
@@ -1151,7 +1075,6 @@ export async function PUT(request: Request) {
       if (updateFields.length > 0) {
         updateFields.push("updated_at = NOW()")
         updateParams.push(matchingAttachment.id)
-
         await pool.execute(
           `UPDATE attachments SET ${updateFields.join(", ")} WHERE id = ?`,
           updateParams
@@ -1190,57 +1113,38 @@ export async function DELETE(request: Request) {
     const force = searchParams.get("force") === "true"
     const source = searchParams.get("source") || "uploads"
 
-    if (!filePath) {
+    if (!filePath)
       return NextResponse.json(
         { success: false, error: "Missing filePath" },
         { status: 400 }
       )
-    }
 
-    const uploadsRootDir = UPLOADS_DIR
-    const backupRootDir = BACKUP_DIR
-    const rootDir = source === "backup" ? backupRootDir : uploadsRootDir
+    const rootDir = source === "backup" ? BACKUP_DIR : UPLOADS_DIR
     const fullPath = path.join(rootDir, filePath)
 
     if (source === "backup") {
-      // Just delete backup file and its .meta.json file physically
-      if (fsSync.existsSync(fullPath)) {
-        await fs.unlink(fullPath)
-      }
+      if (fsSync.existsSync(fullPath)) await fs.unlink(fullPath)
       const metaPath = fullPath + ".meta.json"
-      if (fsSync.existsSync(metaPath)) {
-        await fs.unlink(metaPath)
-      }
-
-      // Recursively delete empty parent folders in backup
-      let parentDir = path.dirname(fullPath)
-      while (parentDir !== rootDir && parentDir.startsWith(rootDir)) {
-        const files = await fs.readdir(parentDir)
-        if (files.length === 0) {
-          await fs.rmdir(parentDir)
-          parentDir = path.dirname(parentDir)
-        } else {
-          break
-        }
-      }
-
+      if (fsSync.existsSync(metaPath)) await fs.unlink(metaPath)
+      // FIX 5: safe cleanup
+      await cleanEmptyParents(fullPath, rootDir)
       return NextResponse.json({
         success: true,
         message: "File deleted from backup",
       })
     }
 
-    // Active uploads deletion
-    const normPath = filePath.toLowerCase()
-    const [attachments]: any = await pool.execute("SELECT * FROM attachments")
-    const matchingAttachment = attachments.find(
-      (att: any) => getNormalizePath(att.image_url) === normPath
+    // FIX 3: targeted query instead of SELECT * + JS find
+    const normPath = getNormalizePath(filePath)
+    const [rows]: any = await pool.execute(
+      "SELECT * FROM attachments WHERE LOWER(image_url) = ? LIMIT 1",
+      [normPath]
     )
+    const matchingAttachment = rows[0] ?? null
 
     if (matchingAttachment) {
       const attId = matchingAttachment.id
 
-      // Check usage in posts, videos, media coverage
       const [posts]: any = await pool.execute(
         "SELECT id, title FROM posts WHERE featured_image = ? AND status != 'trash'",
         [attId]
@@ -1280,25 +1184,13 @@ export async function DELETE(request: Request) {
         )
       }
 
-      // Delete DB record
       await pool.execute("DELETE FROM attachments WHERE id = ?", [attId])
     }
 
-    // Physically delete file from disk
     if (fsSync.existsSync(fullPath)) {
       await fs.unlink(fullPath)
-
-      // Recursively delete empty parent folders up to root uploads directory
-      let parentDir = path.dirname(fullPath)
-      while (parentDir !== rootDir && parentDir.startsWith(rootDir)) {
-        const files = await fs.readdir(parentDir)
-        if (files.length === 0) {
-          await fs.rmdir(parentDir)
-          parentDir = path.dirname(parentDir)
-        } else {
-          break
-        }
-      }
+      // FIX 5: safe cleanup
+      await cleanEmptyParents(fullPath, rootDir)
     }
 
     return NextResponse.json({
