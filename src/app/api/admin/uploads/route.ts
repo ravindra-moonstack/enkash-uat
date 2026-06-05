@@ -67,14 +67,18 @@ function triggerCodeReferenceIndexBuild() {
   if (cachedReferenceIndex || indexBuildPromise) return
 
   indexBuildPromise = (async () => {
-    console.log("[Uploads API] Starting background code reference index build...")
+    console.log(
+      "[Uploads API] Starting background code reference index build..."
+    )
     const startTime = Date.now()
     try {
       const srcDir = path.resolve(process.cwd(), "src")
       const codeFiles = await getCodeFilesRecursively(srcDir)
       const index = await buildCodeReferenceIndex(codeFiles)
       cachedReferenceIndex = index
-      console.log(`[Uploads API] Code reference index built successfully in ${Date.now() - startTime}ms. Indexed ${codeFiles.length} files.`)
+      console.log(
+        `[Uploads API] Code reference index built successfully in ${Date.now() - startTime}ms. Indexed ${codeFiles.length} files.`
+      )
       return index
     } catch (err) {
       console.error("[Uploads API] Failed to build code reference index:", err)
@@ -745,8 +749,8 @@ export async function GET(request: Request) {
       let uploadsFiles: string[] = []
       const uploadsCacheKey = `uploads:${UPLOADS_DIR}`
       if (scanCache[uploadsCacheKey]) {
-        uploadsFiles = scanCache[uploadsCacheKey].enrichedFiles.map(
-          (f) => path.resolve(UPLOADS_DIR, f.path)
+        uploadsFiles = scanCache[uploadsCacheKey].enrichedFiles.map((f) =>
+          path.resolve(UPLOADS_DIR, f.path)
         )
       } else {
         uploadsFiles = await getAllFilesRecursively(UPLOADS_DIR)
@@ -780,7 +784,7 @@ export async function GET(request: Request) {
 
         // FIX 2: O(1) index lookup (safely handles when index build is in progress)
         const codeRefs = referenceIndex
-          ? (referenceIndex.get(relPath) || referenceIndex.get(normPath) || [])
+          ? referenceIndex.get(relPath) || referenceIndex.get(normPath) || []
           : []
         if (codeRefs.length > 0) {
           inUse = true
@@ -795,7 +799,11 @@ export async function GET(request: Request) {
             .replace(/\\/g, "/"),
           webPath: `/uploads/${relPath}`,
           status: inUse ? "In Use" : "Unused",
-          references: references.join(" | ") || (referenceIndex ? "No active references found" : "No active references found (Indexing in progress...)"),
+          references:
+            references.join(" | ") ||
+            (referenceIndex
+              ? "No active references found"
+              : "No active references found (Indexing in progress...)"),
         })
       }
 
@@ -820,10 +828,10 @@ export async function GET(request: Request) {
 
         // FIX 2: O(1) index lookup (safely handles when index build is in progress)
         const codeRefs = referenceIndex
-          ? (referenceIndex.get(relPath) ||
-             referenceIndex.get(webPath.replace(/^\//, "")) ||
-             referenceIndex.get(baseName) ||
-             [])
+          ? referenceIndex.get(relPath) ||
+            referenceIndex.get(webPath.replace(/^\//, "")) ||
+            referenceIndex.get(baseName) ||
+            []
           : []
         if (codeRefs.length > 0) {
           inUse = true
@@ -1168,24 +1176,20 @@ export async function GET(request: Request) {
             for (const p of posts) {
               if (!usageMap.has(p.featured_image))
                 usageMap.set(p.featured_image, [])
-              usageMap
-                .get(p.featured_image)!
-                .push({
-                  type: "Blog",
-                  id: p.id,
-                  title: p.title || "Untitled Blog",
-                })
+              usageMap.get(p.featured_image)!.push({
+                type: "Blog",
+                id: p.id,
+                title: p.title || "Untitled Blog",
+              })
             }
             for (const v of videos) {
               if (!usageMap.has(v.thumbnail_id))
                 usageMap.set(v.thumbnail_id, [])
-              usageMap
-                .get(v.thumbnail_id)!
-                .push({
-                  type: "Video",
-                  id: v.id,
-                  title: v.title || "Untitled Video",
-                })
+              usageMap.get(v.thumbnail_id)!.push({
+                type: "Video",
+                id: v.id,
+                title: v.title || "Untitled Video",
+              })
             }
             for (const mc of mediaCoverage) {
               if (!usageMap.has(mc.media_coverage_image))
@@ -1400,6 +1404,136 @@ export async function PUT(request: Request) {
 
     const { searchParams } = new URL(request.url)
     const action = searchParams.get("action")
+
+    if (action === "batchBackup") {
+      const { filePaths } = await request.json()
+      if (!filePaths || !Array.isArray(filePaths) || filePaths.length === 0) {
+        return NextResponse.json(
+          { success: false, error: "Missing or invalid filePaths" },
+          { status: 400 }
+        )
+      }
+
+      const thunks = filePaths.map((filePath: string) => async () => {
+        try {
+          const oldFullPath = path.join(UPLOADS_DIR, filePath)
+          if (!fsSync.existsSync(oldFullPath))
+            return { filePath, status: "not_found" }
+
+          const backupFileFullPath = path.join(BACKUP_DIR, filePath)
+          const backupDirName = path.dirname(backupFileFullPath)
+          if (!fsSync.existsSync(backupDirName)) {
+            await fs.mkdir(backupDirName, { recursive: true })
+          }
+
+          const normPath = getNormalizePath(filePath)
+          const [rows]: any = await pool.execute(
+            "SELECT * FROM attachments WHERE LOWER(image_url) = ? LIMIT 1",
+            [normPath]
+          )
+          const matchingAttachment = rows[0] ?? null
+
+          if (matchingAttachment) {
+            await fs.writeFile(
+              backupFileFullPath + ".meta.json",
+              JSON.stringify(matchingAttachment),
+              "utf-8"
+            )
+            await pool.execute("DELETE FROM attachments WHERE id = ?", [
+              matchingAttachment.id,
+            ])
+          }
+
+          await fs.rename(oldFullPath, backupFileFullPath)
+          await cleanEmptyParents(oldFullPath, UPLOADS_DIR)
+          return { filePath, status: "success" }
+        } catch (err: any) {
+          console.error(`Error backing up file ${filePath}:`, err)
+          return { filePath, status: "error", error: err.message }
+        }
+      })
+
+      const results = await batchAll(thunks, 10)
+
+      triggerBackgroundScan("uploads", UPLOADS_DIR, `uploads:${UPLOADS_DIR}`)
+      triggerBackgroundScan("backup", BACKUP_DIR, `backup:${BACKUP_DIR}`)
+
+      return NextResponse.json({
+        success: true,
+        message: "Batch backup processed",
+        results,
+      })
+    }
+
+    if (action === "batchRestore") {
+      const { filePaths } = await request.json()
+      if (!filePaths || !Array.isArray(filePaths) || filePaths.length === 0) {
+        return NextResponse.json(
+          { success: false, error: "Missing or invalid filePaths" },
+          { status: 400 }
+        )
+      }
+
+      const thunks = filePaths.map((filePath: string) => async () => {
+        try {
+          const backupFullPath = path.join(BACKUP_DIR, filePath)
+          if (!fsSync.existsSync(backupFullPath))
+            return { filePath, status: "not_found" }
+
+          const uploadFileFullPath = path.join(UPLOADS_DIR, filePath)
+          const uploadDirName = path.dirname(uploadFileFullPath)
+          if (!fsSync.existsSync(uploadDirName)) {
+            await fs.mkdir(uploadDirName, { recursive: true })
+          }
+
+          await fs.rename(backupFullPath, uploadFileFullPath)
+
+          const metaPath = backupFullPath + ".meta.json"
+          if (fsSync.existsSync(metaPath)) {
+            try {
+              const meta = JSON.parse(await fs.readFile(metaPath, "utf-8"))
+              await pool.execute(
+                "INSERT INTO attachments (id, title, content, status, post_type, slug, author, post_parent, image_url, attachment_image_alt, file_size, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())",
+                [
+                  meta.id,
+                  meta.title || "",
+                  meta.content || "",
+                  meta.status || "inherit",
+                  meta.post_type || "attachment",
+                  meta.slug || "",
+                  meta.author || 1,
+                  meta.post_parent || 0,
+                  meta.image_url || filePath,
+                  meta.attachment_image_alt || "",
+                  meta.file_size || "0 KB",
+                  meta.created_at ? new Date(meta.created_at) : new Date(),
+                ]
+              )
+              await fs.unlink(metaPath)
+            } catch (err: any) {
+              console.error(`Error restoring metadata for ${filePath}:`, err)
+            }
+          }
+
+          await cleanEmptyParents(backupFullPath, BACKUP_DIR)
+          return { filePath, status: "success" }
+        } catch (err: any) {
+          console.error(`Error restoring file ${filePath}:`, err)
+          return { filePath, status: "error", error: err.message }
+        }
+      })
+
+      const results = await batchAll(thunks, 10)
+
+      triggerBackgroundScan("uploads", UPLOADS_DIR, `uploads:${UPLOADS_DIR}`)
+      triggerBackgroundScan("backup", BACKUP_DIR, `backup:${BACKUP_DIR}`)
+
+      return NextResponse.json({
+        success: true,
+        message: "Batch restore processed",
+        results,
+      })
+    }
 
     if (action === "backup") {
       const { filePath } = await request.json()
