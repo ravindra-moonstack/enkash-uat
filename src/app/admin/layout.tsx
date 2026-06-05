@@ -144,6 +144,13 @@ export default function AdminLayout({
                                 <Link href="/admin/media?add=true" className={`${styles.subMenuItem} ${isAddMediaActive ? styles.activeSubItem : ''}`}>Add Media File</Link>
                             </div>
                         </div>
+                        <Link
+                            href="/admin/uploads"
+                            className={`${styles.navItem} ${pathname === '/admin/uploads' ? styles.active : ''}`}
+                        >
+                            <i className="bi bi-folder2-open"></i>
+                            Uploads Manager
+                        </Link>
                         <div className={`${styles.navItemWrapper} ${pathname.includes('/admin/videos') ? styles.activeWrapper : ''}`}>
                             <Link href="/admin/videos" className={`${styles.navItem} ${pathname.includes('/admin/videos') ? styles.active : ''}`}>
                                 <i className="bi bi-play-circle"></i>

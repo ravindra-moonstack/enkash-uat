@@ -49,6 +49,8 @@ export function getUploadUrl(fileName: string) {
   return `${cleanBaseUrl}/uploads/${UPLOAD_SEGMENT}/${encodeURIComponent(fileName)}`
 }
 
+import { UPLOADS_DIR } from "./upload-config"
+
 export function resolveStoredUploadPath(segments: string[]) {
   if (
     segments.length === 0 ||
@@ -64,25 +66,18 @@ export function resolveStoredUploadPath(segments: string[]) {
     return null
   }
 
-  const uploadRoots = [
-    path.join(process.cwd(), "uploads"),
-    path.join(process.cwd(), "public", "uploads"),
-  ]
+  const resolvedRoot = path.resolve(UPLOADS_DIR)
+  const filePath = path.resolve(resolvedRoot, ...segments)
 
-  for (const uploadRoot of uploadRoots) {
-    const resolvedRoot = path.resolve(uploadRoot)
-    const filePath = path.resolve(resolvedRoot, ...segments)
+  if (
+    filePath !== resolvedRoot &&
+    !filePath.startsWith(`${resolvedRoot}${path.sep}`)
+  ) {
+    return null
+  }
 
-    if (
-      filePath !== resolvedRoot &&
-      !filePath.startsWith(`${resolvedRoot}${path.sep}`)
-    ) {
-      continue
-    }
-
-    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-      return filePath
-    }
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    return filePath
   }
 
   return null
