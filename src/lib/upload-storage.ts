@@ -44,7 +44,7 @@ export function isImageFile(fileName: string) {
 }
 
 export function getUploadUrl(fileName: string) {
-  const baseUrl = process.env.NEXT_PUBLIC_BAE_URL || ""
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ""
   const cleanBaseUrl = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl
   return `${cleanBaseUrl}/uploads/${UPLOAD_SEGMENT}/${encodeURIComponent(fileName)}`
 }
