@@ -57,6 +57,397 @@ function clearScanCache() {
   console.log("[Uploads API] Cleared file scan cache due to write operation.")
 }
 
+// Background scanning state
+const activeScans: Record<string, Promise<any> | undefined> = {}
+
+async function triggerBackgroundScan(
+  source: string,
+  scanDir: string,
+  cacheKey: string
+) {
+  if (activeScans[cacheKey] !== undefined) {
+    console.log(
+      `[Uploads API] Background scan already running for key: ${cacheKey}`
+    )
+    return activeScans[cacheKey]
+  }
+
+  const promise = (async () => {
+    console.log(`[Uploads API] Starting background scan for key: ${cacheKey}`)
+    try {
+      const allFiles = await scanDirectory(scanDir, scanDir)
+      console.log(
+        `[Uploads API] Background disk scan completed for key: ${cacheKey}. Found ${allFiles.length} files.`
+      )
+
+      const [attachments]: any = await pool.execute("SELECT * FROM attachments")
+      const [posts]: any = await pool.execute(
+        "SELECT id, title, featured_image FROM posts WHERE featured_image IS NOT NULL AND status != 'trash'"
+      )
+      const [videos]: any = await pool.execute(
+        "SELECT id, title, thumbnail_id FROM videos WHERE thumbnail_id IS NOT NULL AND status != 'trash'"
+      )
+      const [mediaCoverage]: any = await pool.execute(
+        "SELECT id, title, media_coverage_image FROM media_coverage WHERE media_coverage_image IS NOT NULL AND status != 'trash'"
+      )
+
+      const attachmentMap = new Map<string, any>()
+      for (const att of attachments) {
+        if (att.image_url) attachmentMap.set(att.image_url.toLowerCase(), att)
+      }
+
+      const usageMap = new Map<
+        number,
+        { type: string; id: number; title: string }[]
+      >()
+      for (const p of posts) {
+        if (!usageMap.has(p.featured_image)) usageMap.set(p.featured_image, [])
+        usageMap
+          .get(p.featured_image)!
+          .push({ type: "Blog", id: p.id, title: p.title || "Untitled Blog" })
+      }
+      for (const v of videos) {
+        if (!usageMap.has(v.thumbnail_id)) usageMap.set(v.thumbnail_id, [])
+        usageMap
+          .get(v.thumbnail_id)!
+          .push({ type: "Video", id: v.id, title: v.title || "Untitled Video" })
+      }
+      for (const mc of mediaCoverage) {
+        if (!usageMap.has(mc.media_coverage_image))
+          usageMap.set(mc.media_coverage_image, [])
+        usageMap.get(mc.media_coverage_image)!.push({
+          type: "Media Coverage",
+          id: mc.id,
+          title: mc.title || "Untitled Media Coverage",
+        })
+      }
+
+      const enrichedFiles: any[] = []
+      const seenPaths = new Set<string>()
+
+      for (const file of allFiles) {
+        const normPath = file.path.toLowerCase()
+        seenPaths.add(normPath)
+        let usages: any[] = []
+        let dbInfo: any = null
+
+        if (source === "backup") {
+          const metaFullPath = path.join(BACKUP_DIR, file.path + ".meta.json")
+          if (fsSync.existsSync(metaFullPath)) {
+            try {
+              const meta = JSON.parse(await fs.readFile(metaFullPath, "utf-8"))
+              dbInfo = {
+                id: meta.id,
+                title: meta.title,
+                content: meta.content,
+                attachment_image_alt: meta.attachment_image_alt,
+                file_size: meta.file_size,
+                created_at: meta.created_at,
+                updated_at: meta.updated_at,
+              }
+            } catch (err) {
+              console.error("Error reading meta file:", err)
+            }
+          }
+        } else {
+          const dbEntry = attachmentMap.get(normPath)
+          if (dbEntry) {
+            dbInfo = {
+              id: dbEntry.id,
+              title: dbEntry.title,
+              content: dbEntry.content,
+              attachment_image_alt: dbEntry.attachment_image_alt,
+              file_size: dbEntry.file_size,
+              created_at: dbEntry.created_at,
+              updated_at: dbEntry.updated_at,
+            }
+            usages = usageMap.get(dbEntry.id) || []
+          }
+        }
+
+        enrichedFiles.push({
+          ...file,
+          url:
+            source === "backup"
+              ? `/api/admin/uploads?filePath=${encodeURIComponent(file.path)}&source=backup`
+              : `/uploads/${file.path}`,
+          dbInfo,
+          usages,
+          missingOnDisk: false,
+        })
+      }
+
+      // DB-only attachments (missing on disk)
+      if (source === "uploads") {
+        for (const [normPath, dbEntry] of attachmentMap.entries()) {
+          if (!seenPaths.has(normPath)) {
+            const usages = usageMap.get(dbEntry.id) || []
+            const fileName =
+              dbEntry.image_url.split("/").pop() || "unknown-file"
+            let size = 0
+            try {
+              const sizeStr = dbEntry.file_size || ""
+              if (sizeStr.includes("KB")) size = parseFloat(sizeStr) * 1024
+              else if (sizeStr.includes("MB"))
+                size = parseFloat(sizeStr) * 1024 * 1024
+              else size = parseInt(sizeStr) || 0
+            } catch {}
+
+            enrichedFiles.push({
+              name: fileName,
+              path: dbEntry.image_url,
+              url: dbEntry.image_url.startsWith("http")
+                ? dbEntry.image_url
+                : `/uploads/${dbEntry.image_url}`,
+              size,
+              mtime: dbEntry.updated_at
+                ? new Date(dbEntry.updated_at).getTime()
+                : 0,
+              birthtime: dbEntry.created_at
+                ? new Date(dbEntry.created_at).getTime()
+                : 0,
+              dbInfo: {
+                id: dbEntry.id,
+                title: dbEntry.title,
+                content: dbEntry.content,
+                attachment_image_alt: dbEntry.attachment_image_alt,
+                file_size: dbEntry.file_size,
+                created_at: dbEntry.created_at,
+                updated_at: dbEntry.updated_at,
+              },
+              usages,
+              missingOnDisk: true,
+            })
+          }
+        }
+      }
+
+      const stats = {
+        totalFiles: enrichedFiles.length,
+        totalSize: enrichedFiles.reduce((acc, f) => acc + f.size, 0),
+        filesInUse:
+          source === "backup"
+            ? 0
+            : enrichedFiles.filter((f) => f.dbInfo && f.usages.length > 0)
+                .length,
+        untrackedFiles:
+          source === "backup"
+            ? 0
+            : enrichedFiles.filter((f) => !f.dbInfo).length,
+      }
+
+      scanCache[cacheKey] = { timestamp: Date.now(), enrichedFiles, stats }
+      console.log(
+        `[Uploads API] Background scan cache updated for key: ${cacheKey}`
+      )
+    } catch (error) {
+      console.error(
+        `[Uploads API] Background scan failed for key: ${cacheKey}`,
+        error
+      )
+    } finally {
+      delete activeScans[cacheKey]
+    }
+  })()
+
+  activeScans[cacheKey] = promise
+  return promise
+}
+
+async function queryDbFallback(
+  search: string,
+  type: string,
+  usageFilter: string,
+  sortField: string,
+  sortOrder: string,
+  page: number,
+  limit: number
+) {
+  const whereClauses: string[] = []
+  const params: any[] = []
+
+  if (search) {
+    whereClauses.push("(title LIKE ? OR image_url LIKE ?)")
+    params.push(`%${search}%`, `%${search}%`)
+  }
+
+  if (type !== "all") {
+    if (type === "images") {
+      whereClauses.push(
+        "(image_url LIKE '%.png' OR image_url LIKE '%.jpg' OR image_url LIKE '%.jpeg' OR image_url LIKE '%.gif' OR image_url LIKE '%.webp' OR image_url LIKE '%.svg' OR image_url LIKE '%.ico')"
+      )
+    } else if (type === "audio") {
+      whereClauses.push(
+        "(image_url LIKE '%.mp3' OR image_url LIKE '%.wav' OR image_url LIKE '%.ogg')"
+      )
+    } else if (type === "video") {
+      whereClauses.push(
+        "(image_url LIKE '%.mp4' OR image_url LIKE '%.webm' OR image_url LIKE '%.mov')"
+      )
+    } else if (type === "documents") {
+      whereClauses.push(
+        "(image_url LIKE '%.pdf' OR image_url LIKE '%.doc' OR image_url LIKE '%.docx' OR image_url LIKE '%.xls' OR image_url LIKE '%.xlsx' OR image_url LIKE '%.txt' OR image_url LIKE '%.csv' OR image_url LIKE '%.ppt' OR image_url LIKE '%.pptx')"
+      )
+    } else if (type === "other") {
+      whereClauses.push(
+        "NOT (image_url LIKE '%.png' OR image_url LIKE '%.jpg' OR image_url LIKE '%.jpeg' OR image_url LIKE '%.gif' OR image_url LIKE '%.webp' OR image_url LIKE '%.svg' OR image_url LIKE '%.ico' OR image_url LIKE '%.mp3' OR image_url LIKE '%.wav' OR image_url LIKE '%.ogg' OR image_url LIKE '%.mp4' OR image_url LIKE '%.webm' OR image_url LIKE '%.mov' OR image_url LIKE '%.pdf' OR image_url LIKE '%.doc' OR image_url LIKE '%.docx' OR image_url LIKE '%.xls' OR image_url LIKE '%.xlsx' OR image_url LIKE '%.txt' OR image_url LIKE '%.csv' OR image_url LIKE '%.ppt' OR image_url LIKE '%.pptx')"
+      )
+    }
+  }
+
+  if (usageFilter !== "all") {
+    const usageSubquery = `
+      id IN (SELECT featured_image FROM posts WHERE featured_image IS NOT NULL AND status != 'trash')
+      OR id IN (SELECT thumbnail_id FROM videos WHERE thumbnail_id IS NOT NULL AND status != 'trash')
+      OR id IN (SELECT media_coverage_image FROM media_coverage WHERE media_coverage_image IS NOT NULL AND status != 'trash')
+    `
+    if (usageFilter === "used") {
+      whereClauses.push(`(${usageSubquery})`)
+    } else if (usageFilter === "unused") {
+      whereClauses.push(`NOT (${usageSubquery})`)
+    }
+  }
+
+  const whereStr =
+    whereClauses.length > 0 ? "WHERE " + whereClauses.join(" AND ") : ""
+
+  let orderCol = "updated_at"
+  if (sortField === "name") {
+    orderCol = "image_url"
+  } else if (sortField === "dbTitle") {
+    orderCol = "title"
+  } else if (sortField === "size") {
+    orderCol = "file_size"
+  }
+
+  const countSql = `SELECT COUNT(*) as count FROM attachments ${whereStr}`
+  const [countResult]: any = await pool.execute(countSql, params)
+  const totalItems = countResult[0]?.count || 0
+
+  const parsedLimit = Number.isInteger(limit) && limit > 0 ? limit : 40
+  const offset = (page - 1) * limit
+  const parsedOffset = Number.isInteger(offset) && offset >= 0 ? offset : 0
+
+  const selectSql = `SELECT * FROM attachments ${whereStr} ORDER BY ${orderCol} ${sortOrder === "asc" ? "ASC" : "DESC"} LIMIT ${parsedLimit} OFFSET ${parsedOffset}`
+  const [attachments]: any = await pool.execute(selectSql, params)
+
+  return { attachments, totalItems }
+}
+
+async function queryBackupFallback(
+  search: string,
+  type: string,
+  sortField: string,
+  sortOrder: string,
+  page: number,
+  limit: number
+) {
+  if (!fsSync.existsSync(BACKUP_DIR)) {
+    return { files: [], totalItems: 0 }
+  }
+  const allFiles = await scanDirectory(BACKUP_DIR, BACKUP_DIR)
+  let filtered = allFiles
+
+  if (search) {
+    const searchLower = search.toLowerCase()
+    filtered = filtered.filter((f: any) =>
+      f.name.toLowerCase().includes(searchLower)
+    )
+  }
+
+  if (type !== "all") {
+    filtered = filtered.filter((f: any) => {
+      const ext = path.extname(f.name).toLowerCase()
+      if (type === "images")
+        return [".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"].includes(ext)
+      if (type === "audio") return [".mp3", ".wav", ".ogg"].includes(ext)
+      if (type === "video") return [".mp4", ".webm", ".mov"].includes(ext)
+      if (type === "documents")
+        return [
+          ".pdf",
+          ".doc",
+          ".docx",
+          ".xls",
+          ".xlsx",
+          ".txt",
+          ".csv",
+          ".ppt",
+          ".pptx",
+        ].includes(ext)
+      if (type === "other")
+        return ![
+          ".png",
+          ".jpg",
+          ".jpeg",
+          ".gif",
+          ".webp",
+          ".svg",
+          ".mp3",
+          ".wav",
+          ".ogg",
+          ".mp4",
+          ".webm",
+          ".mov",
+          ".pdf",
+          ".doc",
+          ".docx",
+          ".xls",
+          ".xlsx",
+          ".txt",
+          ".csv",
+          ".ppt",
+          ".pptx",
+        ].includes(ext)
+      return true
+    })
+  }
+
+  filtered.sort((a: any, b: any) => {
+    let valA: any = a[sortField as keyof typeof a]
+    let valB: any = b[sortField as keyof typeof b]
+    if (sortField === "name") {
+      valA = a.name.toLowerCase()
+      valB = b.name.toLowerCase()
+    }
+    if (valA < valB) return sortOrder === "asc" ? -1 : 1
+    if (valA > valB) return sortOrder === "asc" ? 1 : -1
+    return 0
+  })
+
+  const totalItems = filtered.length
+  const offset = (page - 1) * limit
+  const paginated = filtered.slice(offset, offset + limit)
+
+  const enriched = []
+  for (const file of paginated) {
+    let dbInfo = null
+    const metaFullPath = path.join(BACKUP_DIR, file.path + ".meta.json")
+    if (fsSync.existsSync(metaFullPath)) {
+      try {
+        const meta = JSON.parse(await fs.readFile(metaFullPath, "utf-8"))
+        dbInfo = {
+          id: meta.id,
+          title: meta.title,
+          content: meta.content,
+          attachment_image_alt: meta.attachment_image_alt,
+          file_size: meta.file_size,
+          created_at: meta.created_at,
+          updated_at: meta.updated_at,
+        }
+      } catch {}
+    }
+    enriched.push({
+      ...file,
+      url: `/api/admin/uploads?filePath=${encodeURIComponent(file.path)}&source=backup`,
+      dbInfo,
+      usages: [],
+      missingOnDisk: false,
+    })
+  }
+
+  return { files: enriched, totalItems }
+}
+
 async function scanDirectory(dir: string, baseDir: string): Promise<any[]> {
   if (!fsSync.existsSync(dir)) return []
   const list = await fs.readdir(dir, { withFileTypes: true })
@@ -474,278 +865,360 @@ export async function GET(request: Request) {
     const cacheKey = `${source}:${scanDir}`
     const now = Date.now()
 
-    let enrichedFiles: any[]
-    let stats: CacheEntry["stats"]
+    let enrichedFiles: any[] = []
+    let stats: CacheEntry["stats"] | null = null
+    let totalItems = 0
 
     if (
       scanCache[cacheKey] &&
       now - scanCache[cacheKey].timestamp < CACHE_TTL
     ) {
-      enrichedFiles = scanCache[cacheKey].enrichedFiles
+      const allCached = scanCache[cacheKey].enrichedFiles
       stats = scanCache[cacheKey].stats
       console.log(`[Uploads API] Cache hit for key: ${cacheKey}`)
-    } else {
-      // Disk scan
-      const allFiles = await scanDirectory(scanDir, scanDir)
-      console.log(
-        `[Uploads API] Scanned ${allFiles.length} files from disk for key: ${cacheKey}`
-      )
 
-      // FIX 3: fetch DB data once per cache miss
-      const [attachments]: any = await pool.execute("SELECT * FROM attachments")
-      const [posts]: any = await pool.execute(
-        "SELECT id, title, featured_image FROM posts WHERE featured_image IS NOT NULL AND status != 'trash'"
-      )
-      const [videos]: any = await pool.execute(
-        "SELECT id, title, thumbnail_id FROM videos WHERE thumbnail_id IS NOT NULL AND status != 'trash'"
-      )
-      const [mediaCoverage]: any = await pool.execute(
-        "SELECT id, title, media_coverage_image FROM media_coverage WHERE media_coverage_image IS NOT NULL AND status != 'trash'"
-      )
+      // Filters
+      let filteredFiles = allCached
 
-      console.log(
-        `[Uploads API] physical files: ${allFiles.length}, DB attachments: ${attachments?.length || 0}`
-      )
-
-      const attachmentMap = new Map<string, any>()
-      for (const att of attachments) {
-        if (att.image_url) attachmentMap.set(att.image_url.toLowerCase(), att)
+      if (search) {
+        const searchLower = search.toLowerCase()
+        filteredFiles = filteredFiles.filter((f: any) =>
+          f.name.toLowerCase().includes(searchLower)
+        )
       }
 
-      const usageMap = new Map<
-        number,
-        { type: string; id: number; title: string }[]
-      >()
-      for (const p of posts) {
-        if (!usageMap.has(p.featured_image)) usageMap.set(p.featured_image, [])
-        usageMap
-          .get(p.featured_image)!
-          .push({ type: "Blog", id: p.id, title: p.title || "Untitled Blog" })
-      }
-      for (const v of videos) {
-        if (!usageMap.has(v.thumbnail_id)) usageMap.set(v.thumbnail_id, [])
-        usageMap
-          .get(v.thumbnail_id)!
-          .push({ type: "Video", id: v.id, title: v.title || "Untitled Video" })
-      }
-      for (const mc of mediaCoverage) {
-        if (!usageMap.has(mc.media_coverage_image))
-          usageMap.set(mc.media_coverage_image, [])
-        usageMap.get(mc.media_coverage_image)!.push({
-          type: "Media Coverage",
-          id: mc.id,
-          title: mc.title || "Untitled Media Coverage",
+      if (type !== "all") {
+        filteredFiles = filteredFiles.filter((f: any) => {
+          const ext = path.extname(f.name).toLowerCase()
+          if (type === "images")
+            return [".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"].includes(
+              ext
+            )
+          if (type === "audio") return [".mp3", ".wav", ".ogg"].includes(ext)
+          if (type === "video") return [".mp4", ".webm", ".mov"].includes(ext)
+          if (type === "documents")
+            return [
+              ".pdf",
+              ".doc",
+              ".docx",
+              ".xls",
+              ".xlsx",
+              ".txt",
+              ".csv",
+              ".ppt",
+              ".pptx",
+            ].includes(ext)
+          if (type === "other") {
+            const allExts = [
+              ".png",
+              ".jpg",
+              ".jpeg",
+              ".gif",
+              ".webp",
+              ".svg",
+              ".mp3",
+              ".wav",
+              ".ogg",
+              ".mp4",
+              ".webm",
+              ".mov",
+              ".pdf",
+              ".doc",
+              ".docx",
+              ".xls",
+              ".xlsx",
+              ".txt",
+              ".csv",
+              ".ppt",
+              ".pptx",
+            ]
+            return !allExts.includes(ext)
+          }
+          return true
         })
       }
 
-      enrichedFiles = []
-      const seenPaths = new Set<string>()
+      if (source !== "backup" && usageFilter !== "all") {
+        filteredFiles = filteredFiles.filter((f: any) => {
+          const hasUsage = f.usages && f.usages.length > 0
+          return usageFilter === "used" ? hasUsage : !hasUsage
+        })
+      }
 
-      for (const file of allFiles) {
-        const normPath = file.path.toLowerCase()
-        seenPaths.add(normPath)
-        let usages: any[] = []
-        let dbInfo: any = null
+      filteredFiles.sort((a: any, b: any) => {
+        let valA: any = a[sortField as keyof typeof a]
+        let valB: any = b[sortField as keyof typeof b]
+        if (sortField === "name") {
+          valA = a.name.toLowerCase()
+          valB = b.name.toLowerCase()
+        } else if (sortField === "dbTitle") {
+          valA = (a.dbInfo?.title || a.name).toLowerCase()
+          valB = (b.dbInfo?.title || b.name).toLowerCase()
+        }
+        if (valA < valB) return sortOrder === "asc" ? -1 : 1
+        if (valA > valB) return sortOrder === "asc" ? 1 : -1
+        return 0
+      })
 
-        if (source === "backup") {
-          const metaFullPath = path.join(BACKUP_DIR, file.path + ".meta.json")
-          if (fsSync.existsSync(metaFullPath)) {
-            try {
-              const meta = JSON.parse(await fs.readFile(metaFullPath, "utf-8"))
-              dbInfo = {
-                id: meta.id,
-                title: meta.title,
-                content: meta.content,
-                attachment_image_alt: meta.attachment_image_alt,
-                file_size: meta.file_size,
-                created_at: meta.created_at,
-                updated_at: meta.updated_at,
-              }
-            } catch (err) {
-              console.error("Error reading meta file:", err)
-            }
-          }
-        } else {
-          const dbEntry = attachmentMap.get(normPath)
-          if (dbEntry) {
-            dbInfo = {
-              id: dbEntry.id,
-              title: dbEntry.title,
-              content: dbEntry.content,
-              attachment_image_alt: dbEntry.attachment_image_alt,
-              file_size: dbEntry.file_size,
-              created_at: dbEntry.created_at,
-              updated_at: dbEntry.updated_at,
-            }
-            usages = usageMap.get(dbEntry.id) || []
-          }
+      totalItems = filteredFiles.length
+      const offset = (page - 1) * limit
+      enrichedFiles = filteredFiles.slice(offset, offset + limit)
+    } else {
+      // Cache expired or missing! Trigger background scan asynchronously
+      triggerBackgroundScan(source, scanDir, cacheKey)
+
+      if (scanCache[cacheKey]) {
+        console.log(`[Uploads API] Serving stale cache for key: ${cacheKey}`)
+        const allCached = scanCache[cacheKey].enrichedFiles
+        stats = scanCache[cacheKey].stats
+
+        // Filters
+        let filteredFiles = allCached
+
+        if (search) {
+          const searchLower = search.toLowerCase()
+          filteredFiles = filteredFiles.filter((f: any) =>
+            f.name.toLowerCase().includes(searchLower)
+          )
         }
 
-        enrichedFiles.push({
-          ...file,
-          url:
-            source === "backup"
-              ? `/api/admin/uploads?filePath=${encodeURIComponent(file.path)}&source=backup`
-              : `/uploads/${file.path}`,
-          dbInfo,
-          usages,
-          missingOnDisk: false,
-        })
-      }
+        if (type !== "all") {
+          filteredFiles = filteredFiles.filter((f: any) => {
+            const ext = path.extname(f.name).toLowerCase()
+            if (type === "images")
+              return [
+                ".png",
+                ".jpg",
+                ".jpeg",
+                ".gif",
+                ".webp",
+                ".svg",
+              ].includes(ext)
+            if (type === "audio") return [".mp3", ".wav", ".ogg"].includes(ext)
+            if (type === "video") return [".mp4", ".webm", ".mov"].includes(ext)
+            if (type === "documents")
+              return [
+                ".pdf",
+                ".doc",
+                ".docx",
+                ".xls",
+                ".xlsx",
+                ".txt",
+                ".csv",
+                ".ppt",
+                ".pptx",
+              ].includes(ext)
+            if (type === "other") {
+              const allExts = [
+                ".png",
+                ".jpg",
+                ".jpeg",
+                ".gif",
+                ".webp",
+                ".svg",
+                ".mp3",
+                ".wav",
+                ".ogg",
+                ".mp4",
+                ".webm",
+                ".mov",
+                ".pdf",
+                ".doc",
+                ".docx",
+                ".xls",
+                ".xlsx",
+                ".txt",
+                ".csv",
+                ".ppt",
+                ".pptx",
+              ]
+              return !allExts.includes(ext)
+            }
+            return true
+          })
+        }
 
-      // DB-only attachments (missing on disk)
-      if (source === "uploads") {
-        for (const [normPath, dbEntry] of attachmentMap.entries()) {
-          if (!seenPaths.has(normPath)) {
-            const usages = usageMap.get(dbEntry.id) || []
-            const fileName =
-              dbEntry.image_url.split("/").pop() || "unknown-file"
+        if (source !== "backup" && usageFilter !== "all") {
+          filteredFiles = filteredFiles.filter((f: any) => {
+            const hasUsage = f.usages && f.usages.length > 0
+            return usageFilter === "used" ? hasUsage : !hasUsage
+          })
+        }
+
+        filteredFiles.sort((a: any, b: any) => {
+          let valA: any = a[sortField as keyof typeof a]
+          let valB: any = b[sortField as keyof typeof b]
+          if (sortField === "name") {
+            valA = a.name.toLowerCase()
+            valB = b.name.toLowerCase()
+          } else if (sortField === "dbTitle") {
+            valA = (a.dbInfo?.title || a.name).toLowerCase()
+            valB = (b.dbInfo?.title || b.name).toLowerCase()
+          }
+          if (valA < valB) return sortOrder === "asc" ? -1 : 1
+          if (valA > valB) return sortOrder === "asc" ? 1 : -1
+          return 0
+        })
+
+        totalItems = filteredFiles.length
+        const offset = (page - 1) * limit
+        enrichedFiles = filteredFiles.slice(offset, offset + limit)
+      } else {
+        // Cache is completely empty. Serve from fast SQL DB/Backup fallback!
+        console.log(
+          `[Uploads API] Cache completely empty. Using fast fallback for key: ${cacheKey}`
+        )
+        if (source === "backup") {
+          const res = await queryBackupFallback(
+            search,
+            type,
+            sortField,
+            sortOrder,
+            page,
+            limit
+          )
+          enrichedFiles = res.files
+          totalItems = res.totalItems
+          stats = {
+            totalFiles: totalItems,
+            totalSize: res.files.reduce(
+              (acc: number, f: any) => acc + f.size,
+              0
+            ),
+            filesInUse: 0,
+            untrackedFiles: 0,
+          }
+        } else {
+          const { attachments, totalItems: count } = await queryDbFallback(
+            search,
+            type,
+            usageFilter,
+            sortField,
+            sortOrder,
+            page,
+            limit
+          )
+          totalItems = count
+
+          // Quick total count estimate for stats
+          const [totalCountRes]: any = await pool.execute(
+            "SELECT COUNT(*) as count FROM attachments"
+          )
+          const totalFilesCount = totalCountRes[0]?.count || 0
+
+          stats = {
+            totalFiles: totalFilesCount,
+            totalSize: 0,
+            filesInUse: 0,
+            untrackedFiles: 0,
+          }
+
+          const attachmentIds = attachments.map((a: any) => a.id)
+          const usageMap = new Map<number, any[]>()
+          if (attachmentIds.length > 0) {
+            const [posts]: any = await pool.execute(
+              `SELECT id, title, featured_image FROM posts WHERE featured_image IN (${attachmentIds.join(",")}) AND status != 'trash'`
+            )
+            const [videos]: any = await pool.execute(
+              `SELECT id, title, thumbnail_id FROM videos WHERE thumbnail_id IN (${attachmentIds.join(",")}) AND status != 'trash'`
+            )
+            const [mediaCoverage]: any = await pool.execute(
+              `SELECT id, title, media_coverage_image FROM media_coverage WHERE media_coverage_image IN (${attachmentIds.join(",")}) AND status != 'trash'`
+            )
+
+            for (const p of posts) {
+              if (!usageMap.has(p.featured_image))
+                usageMap.set(p.featured_image, [])
+              usageMap
+                .get(p.featured_image)!
+                .push({
+                  type: "Blog",
+                  id: p.id,
+                  title: p.title || "Untitled Blog",
+                })
+            }
+            for (const v of videos) {
+              if (!usageMap.has(v.thumbnail_id))
+                usageMap.set(v.thumbnail_id, [])
+              usageMap
+                .get(v.thumbnail_id)!
+                .push({
+                  type: "Video",
+                  id: v.id,
+                  title: v.title || "Untitled Video",
+                })
+            }
+            for (const mc of mediaCoverage) {
+              if (!usageMap.has(mc.media_coverage_image))
+                usageMap.set(mc.media_coverage_image, [])
+              usageMap.get(mc.media_coverage_image)!.push({
+                type: "Media Coverage",
+                id: mc.id,
+                title: mc.title || "Untitled Media Coverage",
+              })
+            }
+          }
+
+          enrichedFiles = []
+          for (const att of attachments) {
+            const fileName = att.image_url.split("/").pop() || "unknown-file"
+            const relativePath = att.image_url
+            const fullPath = path.join(UPLOADS_DIR, relativePath)
+
             let size = 0
-            try {
-              const sizeStr = dbEntry.file_size || ""
-              if (sizeStr.includes("KB")) size = parseFloat(sizeStr) * 1024
-              else if (sizeStr.includes("MB"))
-                size = parseFloat(sizeStr) * 1024 * 1024
-              else size = parseInt(sizeStr) || 0
-            } catch {}
+            let mtime = att.updated_at ? new Date(att.updated_at).getTime() : 0
+            let birthtime = att.created_at
+              ? new Date(att.created_at).getTime()
+              : 0
+            let missingOnDisk = true
+
+            if (fsSync.existsSync(fullPath)) {
+              missingOnDisk = false
+              try {
+                const stat = await fs.stat(fullPath)
+                size = stat.size
+                mtime = stat.mtimeMs
+                birthtime = stat.birthtimeMs
+              } catch {}
+            } else {
+              try {
+                const sizeStr = att.file_size || ""
+                if (sizeStr.includes("KB")) size = parseFloat(sizeStr) * 1024
+                else if (sizeStr.includes("MB"))
+                  size = parseFloat(sizeStr) * 1024 * 1024
+                else size = parseInt(sizeStr) || 0
+              } catch {}
+            }
 
             enrichedFiles.push({
               name: fileName,
-              path: dbEntry.image_url,
-              url: dbEntry.image_url.startsWith("http")
-                ? dbEntry.image_url
-                : `/uploads/${dbEntry.image_url}`,
+              path: relativePath,
+              url: att.image_url.startsWith("http")
+                ? att.image_url
+                : `/uploads/${relativePath}`,
               size,
-              mtime: dbEntry.updated_at
-                ? new Date(dbEntry.updated_at).getTime()
-                : 0,
-              birthtime: dbEntry.created_at
-                ? new Date(dbEntry.created_at).getTime()
-                : 0,
+              mtime,
+              birthtime,
               dbInfo: {
-                id: dbEntry.id,
-                title: dbEntry.title,
-                content: dbEntry.content,
-                attachment_image_alt: dbEntry.attachment_image_alt,
-                file_size: dbEntry.file_size,
-                created_at: dbEntry.created_at,
-                updated_at: dbEntry.updated_at,
+                id: att.id,
+                title: att.title,
+                content: att.content,
+                attachment_image_alt: att.attachment_image_alt,
+                file_size: att.file_size,
+                created_at: att.created_at,
+                updated_at: att.updated_at,
               },
-              usages,
-              missingOnDisk: true,
+              usages: usageMap.get(att.id) || [],
+              missingOnDisk,
             })
           }
         }
       }
-
-      stats = {
-        totalFiles: enrichedFiles.length,
-        totalSize: enrichedFiles.reduce((acc, f) => acc + f.size, 0),
-        filesInUse:
-          source === "backup"
-            ? 0
-            : enrichedFiles.filter((f) => f.dbInfo && f.usages.length > 0)
-                .length,
-        untrackedFiles:
-          source === "backup"
-            ? 0
-            : enrichedFiles.filter((f) => !f.dbInfo).length,
-      }
-
-      // FIX 4: store enriched result in cache — no DB queries on cache hit
-      scanCache[cacheKey] = { timestamp: now, enrichedFiles, stats }
     }
-
-    // Filters
-    let filteredFiles = enrichedFiles
-
-    if (search) {
-      const searchLower = search.toLowerCase()
-      filteredFiles = filteredFiles.filter((f: any) =>
-        f.name.toLowerCase().includes(searchLower)
-      )
-    }
-
-    if (type !== "all") {
-      filteredFiles = filteredFiles.filter((f: any) => {
-        const ext = path.extname(f.name).toLowerCase()
-        if (type === "images")
-          return [".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"].includes(
-            ext
-          )
-        if (type === "audio") return [".mp3", ".wav", ".ogg"].includes(ext)
-        if (type === "video") return [".mp4", ".webm", ".mov"].includes(ext)
-        if (type === "documents")
-          return [
-            ".pdf",
-            ".doc",
-            ".docx",
-            ".xls",
-            ".xlsx",
-            ".txt",
-            ".csv",
-            ".ppt",
-            ".pptx",
-          ].includes(ext)
-        if (type === "other") {
-          const allExts = [
-            ".png",
-            ".jpg",
-            ".jpeg",
-            ".gif",
-            ".webp",
-            ".svg",
-            ".mp3",
-            ".wav",
-            ".ogg",
-            ".mp4",
-            ".webm",
-            ".mov",
-            ".pdf",
-            ".doc",
-            ".docx",
-            ".xls",
-            ".xlsx",
-            ".txt",
-            ".csv",
-            ".ppt",
-            ".pptx",
-          ]
-          return !allExts.includes(ext)
-        }
-        return true
-      })
-    }
-
-    if (source !== "backup" && usageFilter !== "all") {
-      filteredFiles = filteredFiles.filter((f: any) => {
-        const hasUsage = f.usages && f.usages.length > 0
-        return usageFilter === "used" ? hasUsage : !hasUsage
-      })
-    }
-
-    filteredFiles.sort((a: any, b: any) => {
-      let valA: any = a[sortField as keyof typeof a]
-      let valB: any = b[sortField as keyof typeof b]
-      if (sortField === "name") {
-        valA = a.name.toLowerCase()
-        valB = b.name.toLowerCase()
-      } else if (sortField === "dbTitle") {
-        valA = (a.dbInfo?.title || a.name).toLowerCase()
-        valB = (b.dbInfo?.title || b.name).toLowerCase()
-      }
-      if (valA < valB) return sortOrder === "asc" ? -1 : 1
-      if (valA > valB) return sortOrder === "asc" ? 1 : -1
-      return 0
-    })
-
-    const totalItems = filteredFiles.length
-    const offset = (page - 1) * limit
-    const paginatedFiles = filteredFiles.slice(offset, offset + limit)
 
     return NextResponse.json({
       success: true,
-      files: paginatedFiles,
+      files: enrichedFiles,
       totalItems,
       stats,
     })
@@ -862,6 +1335,8 @@ export async function POST(request: Request) {
       })
     }
 
+    triggerBackgroundScan("uploads", UPLOADS_DIR, `uploads:${UPLOADS_DIR}`)
+
     return NextResponse.json({ success: true, files: uploadedFiles })
   } catch (error: any) {
     console.error("Upload error:", error)
@@ -932,6 +1407,9 @@ export async function PUT(request: Request) {
       // FIX 5: safe cleanup
       await cleanEmptyParents(oldFullPath, UPLOADS_DIR)
 
+      triggerBackgroundScan("uploads", UPLOADS_DIR, `uploads:${UPLOADS_DIR}`)
+      triggerBackgroundScan("backup", BACKUP_DIR, `backup:${BACKUP_DIR}`)
+
       return NextResponse.json({
         success: true,
         message: "File backed up successfully",
@@ -991,6 +1469,9 @@ export async function PUT(request: Request) {
 
       // FIX 5: safe cleanup
       await cleanEmptyParents(backupFullPath, BACKUP_DIR)
+
+      triggerBackgroundScan("uploads", UPLOADS_DIR, `uploads:${UPLOADS_DIR}`)
+      triggerBackgroundScan("backup", BACKUP_DIR, `backup:${BACKUP_DIR}`)
 
       return NextResponse.json({
         success: true,
@@ -1082,6 +1563,8 @@ export async function PUT(request: Request) {
       }
     }
 
+    triggerBackgroundScan("uploads", UPLOADS_DIR, `uploads:${UPLOADS_DIR}`)
+
     return NextResponse.json({
       success: true,
       message: "File details updated successfully",
@@ -1128,6 +1611,8 @@ export async function DELETE(request: Request) {
       if (fsSync.existsSync(metaPath)) await fs.unlink(metaPath)
       // FIX 5: safe cleanup
       await cleanEmptyParents(fullPath, rootDir)
+      triggerBackgroundScan("backup", BACKUP_DIR, `backup:${BACKUP_DIR}`)
+
       return NextResponse.json({
         success: true,
         message: "File deleted from backup",
@@ -1192,6 +1677,8 @@ export async function DELETE(request: Request) {
       // FIX 5: safe cleanup
       await cleanEmptyParents(fullPath, rootDir)
     }
+
+    triggerBackgroundScan("uploads", UPLOADS_DIR, `uploads:${UPLOADS_DIR}`)
 
     return NextResponse.json({
       success: true,
