@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 
 const UPLOADS_DIR = path.resolve(process.cwd(), "../uploads");
 const USED_LIST = path.resolve(process.cwd(), "used_files.txt");
-const UNUSED_LIST = path.resolve(process.cwd(), "unused_files.txt");
 const CODE_DIRS = ["src", "public"];
 const ALLOWED_EXTENSIONS = new Set([
   ".ts",
@@ -158,7 +157,6 @@ async function main() {
   if (!fs.existsSync(UPLOADS_DIR)) {
     console.log(`\x1b[31m[Error] Uploads directory not found at ${UPLOADS_DIR}!\x1b[0m`);
     fs.writeFileSync(USED_LIST, "");
-    fs.writeFileSync(UNUSED_LIST, "");
     process.exit(1);
   }
 
@@ -166,76 +164,55 @@ async function main() {
   console.log(`Found ${physicalFiles.length} files in active uploads.`);
 
   const usedFiles: string[] = [];
-  const unusedFiles: string[] = [];
 
   for (const filepath of physicalFiles) {
     const relPath = path.relative(UPLOADS_DIR, filepath).replace(/\\/g, "/");
     const normRelPath = relPath.toLowerCase();
     const filename = path.basename(filepath);
     const lowerFilename = filename.toLowerCase();
-
     const checkPathCode = "uploads/" + relPath;
-    const checkPathCodeLower = checkPathCode.toLowerCase();
 
     let isUsed = false;
 
-    // Check 1: Check database attachments.image_url
+    // Check 1: DB attachments.image_url
     if (dbUrlsNormalized.has(normRelPath) || dbUrlsFilenames.has(lowerFilename)) {
       isUsed = true;
     }
 
-    // Check 2: Check database posts.content (contains filename or relative path)
+    // Check 2: DB posts.content
     if (!isUsed && isDbConnected) {
       for (const content of dbPostsContent) {
-        if (
-          content.includes(filename) ||
-          content.includes(relPath) ||
-          content.includes(checkPathCode)
-        ) {
+        if (content.includes(filename) || content.includes(relPath) || content.includes(checkPathCode)) {
           isUsed = true;
           break;
         }
       }
     }
 
-    // Check 3: Check codebase files
+    // Check 3: Codebase files
     if (!isUsed) {
       for (const codeFile of codeFiles) {
-        if (
-          codeFile.content.includes(filename) ||
-          codeFile.content.includes(checkPathCode) ||
-          codeFile.content.includes(relPath)
-        ) {
+        if (codeFile.content.includes(filename) || codeFile.content.includes(checkPathCode) || codeFile.content.includes(relPath)) {
           isUsed = true;
           break;
         }
       }
     }
 
-    // Format target paths starting with "../uploads/"
-    const outputFormat = `../uploads/${relPath}`;
-
     if (isUsed) {
-      usedFiles.push(outputFormat);
-    } else {
-      unusedFiles.push(outputFormat);
+      usedFiles.push(`uploads/${relPath}`);
     }
   }
 
-  // Sort lists
   usedFiles.sort();
-  unusedFiles.sort();
 
-  // Write files
   fs.writeFileSync(USED_LIST, usedFiles.join("\n") + (usedFiles.length ? "\n" : ""), "utf8");
-  fs.writeFileSync(UNUSED_LIST, unusedFiles.join("\n") + (unusedFiles.length ? "\n" : ""), "utf8");
 
   console.log("\n\x1b[35m=== Scan Complete ===\x1b[0m");
   console.log(`Total upload files scanned : ${physicalFiles.length}`);
-  console.log(`- Used assets (Referenced) : \x1b[32m${usedFiles.length}\x1b[0m`);
-  console.log(`- Unused assets            : \x1b[33m${unusedFiles.length}\x1b[0m`);
+  console.log(`Used assets (referenced)   : \x1b[32m${usedFiles.length}\x1b[0m`);
+  console.log(`Not referenced             : \x1b[33m${physicalFiles.length - usedFiles.length}\x1b[0m`);
   console.log(`Used files listed in       : ${path.relative(process.cwd(), USED_LIST)}`);
-  console.log(`Unused files listed in     : ${path.relative(process.cwd(), UNUSED_LIST)}`);
   console.log("=====================\n");
 }
 
