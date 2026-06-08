@@ -12,7 +12,12 @@
     "prepare": "husky && husky install",
     "test": "jest",
     "test:watch": "jest --watch",
-    "analyze": "cross-env ANALYZE=true next build"
+    "analyze": "cross-env ANALYZE=true next build",
+    "scan": "tsx scan_assets.ts",
+    "files:list": "tsx folder-manager/index.ts --action=list",
+    "files:backup": "tsx folder-manager/index.ts --action=backup",
+    "files:backup:all": "tsx folder-manager/index.ts --action=backup --type=all",
+    "files:restore": "tsx folder-manager/index.ts --action=restore"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
