@@ -424,7 +424,21 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((err) => {
-  console.error(`\x1b[31m[Fatal] ${err.message}\x1b[0m`)
-  process.exit(1)
-})
+if (
+  process.argv.some(
+    (arg) => arg.startsWith("--action=") || arg === "--help" || arg === "-h"
+  )
+) {
+  main().catch((err) => {
+    console.error(`\x1b[31m[Fatal] ${err.message}\x1b[0m`)
+    process.exit(1)
+  })
+}
+
+export default (req: any, res: any) => {
+  res.json({
+    message: "Uploads Folder Manager CLI is running.",
+    usage:
+      "Run this tool via command line: npx tsx folder-manager/index.ts --action=<action> [options]",
+  })
+}
