@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "tsx watch server.ts",
+    "dev": "cross-env NODE_ENV=development tsx watch server.ts",
     "build-uat": "NODE_ENV=test NEXT_PUBLIC_ENV=test next build && tsc --project tsconfig.server.json",
     "build-prod": "NODE_ENV=production NEXT_PUBLIC_ENV=production next build && tsc --project tsconfig.server.json",
     "start": "next start",
