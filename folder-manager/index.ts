@@ -122,8 +122,9 @@ Options:
 function loadEnv(): void {
   const candidates = [
     ".env.local",
-    ".env.production",
+    ".env.test",
     ".env.development",
+    ".env.production",
     ".env",
   ]
   for (const f of candidates) {
