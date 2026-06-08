@@ -1414,11 +1414,40 @@ export async function PUT(request: Request) {
         )
       }
 
-      const thunks = filePaths.map((filePath: string) => async () => {
+      // Step 1: Bulk SELECT from database (FAST query using index on image_url)
+      const normPaths = filePaths.map((p: string) => getNormalizePath(p))
+      const queryPaths = Array.from(new Set([...filePaths, ...normPaths, ...filePaths.map((p: string) => p.toLowerCase())]))
+      
+      let matchingAttachments: any[] = []
+      if (queryPaths.length > 0) {
+        const placeholders = queryPaths.map(() => "?").join(",")
+        const [rows]: any = await pool.execute(
+          `SELECT * FROM attachments WHERE image_url IN (${placeholders})`,
+          queryPaths
+        )
+        matchingAttachments = rows
+      }
+
+      // Map attachments for quick lookup
+      const attachmentMap = new Map<string, any>()
+      for (const att of matchingAttachments) {
+        if (att.image_url) {
+          attachmentMap.set(att.image_url.toLowerCase(), att)
+          attachmentMap.set(getNormalizePath(att.image_url), att)
+        }
+      }
+
+      const results = []
+      const idsToDelete: number[] = []
+
+      // Step 2: Loop to perform filesystem operations
+      for (const filePath of filePaths) {
         try {
           const oldFullPath = path.join(UPLOADS_DIR, filePath)
-          if (!fsSync.existsSync(oldFullPath))
-            return { filePath, status: "not_found" }
+          if (!fsSync.existsSync(oldFullPath)) {
+            results.push({ filePath, status: "not_found" })
+            continue
+          }
 
           const backupFileFullPath = path.join(BACKUP_DIR, filePath)
           const backupDirName = path.dirname(backupFileFullPath)
@@ -1427,11 +1456,7 @@ export async function PUT(request: Request) {
           }
 
           const normPath = getNormalizePath(filePath)
-          const [rows]: any = await pool.execute(
-            "SELECT * FROM attachments WHERE LOWER(image_url) = ? LIMIT 1",
-            [normPath]
-          )
-          const matchingAttachment = rows[0] ?? null
+          const matchingAttachment = attachmentMap.get(normPath) || attachmentMap.get(filePath.toLowerCase()) || null
 
           if (matchingAttachment) {
             await fs.writeFile(
@@ -1439,21 +1464,26 @@ export async function PUT(request: Request) {
               JSON.stringify(matchingAttachment),
               "utf-8"
             )
-            await pool.execute("DELETE FROM attachments WHERE id = ?", [
-              matchingAttachment.id,
-            ])
+            idsToDelete.push(matchingAttachment.id)
           }
 
           await fs.rename(oldFullPath, backupFileFullPath)
           await cleanEmptyParents(oldFullPath, UPLOADS_DIR)
-          return { filePath, status: "success" }
+          results.push({ filePath, status: "success" })
         } catch (err: any) {
           console.error(`Error backing up file ${filePath}:`, err)
-          return { filePath, status: "error", error: err.message }
+          results.push({ filePath, status: "error", error: err.message })
         }
-      })
+      }
 
-      const results = await batchAll(thunks, 10)
+      // Step 3: Bulk DELETE from database (FAST query)
+      if (idsToDelete.length > 0) {
+        const placeholders = idsToDelete.map(() => "?").join(",")
+        await pool.execute(
+          `DELETE FROM attachments WHERE id IN (${placeholders})`,
+          idsToDelete
+        )
+      }
 
       triggerBackgroundScan("uploads", UPLOADS_DIR, `uploads:${UPLOADS_DIR}`)
       triggerBackgroundScan("backup", BACKUP_DIR, `backup:${BACKUP_DIR}`)
@@ -1474,11 +1504,17 @@ export async function PUT(request: Request) {
         )
       }
 
-      const thunks = filePaths.map((filePath: string) => async () => {
+      const results = []
+      const attachmentsToInsert: any[] = []
+      const metaPathsToUnlink: string[] = []
+
+      for (const filePath of filePaths) {
         try {
           const backupFullPath = path.join(BACKUP_DIR, filePath)
-          if (!fsSync.existsSync(backupFullPath))
-            return { filePath, status: "not_found" }
+          if (!fsSync.existsSync(backupFullPath)) {
+            results.push({ filePath, status: "not_found" })
+            continue
+          }
 
           const uploadFileFullPath = path.join(UPLOADS_DIR, filePath)
           const uploadDirName = path.dirname(uploadFileFullPath)
@@ -1492,38 +1528,54 @@ export async function PUT(request: Request) {
           if (fsSync.existsSync(metaPath)) {
             try {
               const meta = JSON.parse(await fs.readFile(metaPath, "utf-8"))
-              await pool.execute(
-                "INSERT INTO attachments (id, title, content, status, post_type, slug, author, post_parent, image_url, attachment_image_alt, file_size, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())",
-                [
-                  meta.id,
-                  meta.title || "",
-                  meta.content || "",
-                  meta.status || "inherit",
-                  meta.post_type || "attachment",
-                  meta.slug || "",
-                  meta.author || 1,
-                  meta.post_parent || 0,
-                  meta.image_url || filePath,
-                  meta.attachment_image_alt || "",
-                  meta.file_size || "0 KB",
-                  meta.created_at ? new Date(meta.created_at) : new Date(),
-                ]
-              )
-              await fs.unlink(metaPath)
+              attachmentsToInsert.push([
+                meta.id,
+                meta.title || "",
+                meta.content || "",
+                meta.status || "inherit",
+                meta.post_type || "attachment",
+                meta.slug || "",
+                meta.author || 1,
+                meta.post_parent || 0,
+                meta.image_url || filePath,
+                meta.attachment_image_alt || "",
+                meta.file_size || "0 KB",
+                meta.created_at ? new Date(meta.created_at) : new Date(),
+              ])
+              metaPathsToUnlink.push(metaPath)
             } catch (err: any) {
-              console.error(`Error restoring metadata for ${filePath}:`, err)
+              console.error(`Error reading metadata for ${filePath}:`, err)
             }
           }
 
           await cleanEmptyParents(backupFullPath, BACKUP_DIR)
-          return { filePath, status: "success" }
+          results.push({ filePath, status: "success" })
         } catch (err: any) {
           console.error(`Error restoring file ${filePath}:`, err)
-          return { filePath, status: "error", error: err.message }
+          results.push({ filePath, status: "error", error: err.message })
         }
-      })
+      }
 
-      const results = await batchAll(thunks, 10)
+      // Step 3: Bulk INSERT restored metadata
+      if (attachmentsToInsert.length > 0) {
+        const placeholders = attachmentsToInsert.map(() => "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())").join(",")
+        const flatValues = attachmentsToInsert.flat()
+        await pool.execute(
+          `INSERT INTO attachments (id, title, content, status, post_type, slug, author, post_parent, image_url, attachment_image_alt, file_size, created_at, updated_at) VALUES ${placeholders}`,
+          flatValues
+        )
+
+        // Delete metadata files after successful insert
+        for (const metaPath of metaPathsToUnlink) {
+          try {
+            if (fsSync.existsSync(metaPath)) {
+              await fs.unlink(metaPath)
+            }
+          } catch (err) {
+            console.error(`Error unlinking metadata file ${metaPath}:`, err)
+          }
+        }
+      }
 
       triggerBackgroundScan("uploads", UPLOADS_DIR, `uploads:${UPLOADS_DIR}`)
       triggerBackgroundScan("backup", BACKUP_DIR, `backup:${BACKUP_DIR}`)
@@ -1560,8 +1612,8 @@ export async function PUT(request: Request) {
       // FIX 3: targeted query instead of SELECT * + JS find
       const normPath = getNormalizePath(filePath)
       const [rows]: any = await pool.execute(
-        "SELECT * FROM attachments WHERE LOWER(image_url) = ? LIMIT 1",
-        [normPath]
+        "SELECT * FROM attachments WHERE image_url = ? OR image_url = ? LIMIT 1",
+        [filePath, normPath]
       )
       const matchingAttachment = rows[0] ?? null
 
@@ -1693,8 +1745,8 @@ export async function PUT(request: Request) {
     // FIX 3: targeted query instead of SELECT * + JS find
     const normOldPath = getNormalizePath(filePath)
     const [rows]: any = await pool.execute(
-      "SELECT * FROM attachments WHERE LOWER(image_url) = ? LIMIT 1",
-      [normOldPath]
+      "SELECT * FROM attachments WHERE image_url = ? OR image_url = ? LIMIT 1",
+      [filePath, normOldPath]
     )
     const matchingAttachment = rows[0] ?? null
 
@@ -1795,8 +1847,8 @@ export async function DELETE(request: Request) {
     // FIX 3: targeted query instead of SELECT * + JS find
     const normPath = getNormalizePath(filePath)
     const [rows]: any = await pool.execute(
-      "SELECT * FROM attachments WHERE LOWER(image_url) = ? LIMIT 1",
-      [normPath]
+      "SELECT * FROM attachments WHERE image_url = ? OR image_url = ? LIMIT 1",
+      [filePath, normPath]
     )
     const matchingAttachment = rows[0] ?? null
 
