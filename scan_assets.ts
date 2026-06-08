@@ -54,7 +54,7 @@ async function main() {
   )
 
   // Load Environment Variables
-  const envFiles = [".env.local", ".env.production", ".env.development", ".env"]
+  const envFiles = [".env.local", ".env.test", ".env.development", ".env.production", ".env"]
   let envLoaded = false
   for (const file of envFiles) {
     const envPath = path.resolve(process.cwd(), file)
