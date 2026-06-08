@@ -3,11 +3,16 @@ import next from "next"
 import path from "path"
 
 const port = parseInt(process.env.PORT || "3000", 10)
+if (!process.env.NODE_ENV) {
+  (process.env as any).NODE_ENV = "development"
+}
+console.log("DEBUG: NODE_ENV is:", process.env.NODE_ENV)
 const dev = process.env.NODE_ENV === "development"
 
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
+import fileManger from "./folder-manager"
 import { UPLOADS_DIR } from "./src/lib/upload-config"
 
 app.prepare().then(() => {
@@ -15,6 +20,7 @@ app.prepare().then(() => {
 
   server.use("/uploads", express.static(UPLOADS_DIR))
 
+  server.use("/file-manager", fileManger)
   // Next.js handles everything else
   server.use((req, res) => handle(req, res))
 
