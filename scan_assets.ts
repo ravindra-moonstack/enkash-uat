@@ -95,9 +95,9 @@ async function main() {
       }
       console.log(`Loaded ${dbUrls.length} image URLs from attachments table.`);
 
-      // Query posts content
+      // Query posts content (exclude trash; content may embed /uploads/ file references)
       const [posts]: [any[], any] = await pool.execute(
-        "SELECT content FROM posts WHERE content IS NOT NULL"
+        "SELECT content FROM posts WHERE content IS NOT NULL AND status != 'trash'"
       );
       for (const row of posts) {
         if (row.content) {
@@ -128,6 +128,34 @@ async function main() {
       dbUrlsNormalized.add(norm);
       dbUrlsFilenames.add(path.basename(norm).toLowerCase());
     }
+  }
+
+  // Extract all upload file paths embedded in rich-text content.
+  // Handles: absolute URLs, root-relative /uploads/..., JSON-escaped \/uploads\/...,
+  // percent-encoded paths, srcset, href (PDFs), style url(), data-src.
+  function extractContentUploadPaths(text: string): string[] {
+    const unescaped = text.replace(/\\\//g, "/"); // unescape JSON-encoded slashes
+    const results = new Set<string>();
+    const re = /\/uploads\/([\w%+.\-][^\s"'<>()\[\]?#,\\]*)/gi;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(unescaped)) !== null) {
+      let captured = m[1].replace(/[.;]+$/, ""); // strip trailing prose punctuation
+      if (!captured) continue;
+      try { captured = decodeURIComponent(captured); } catch { /* keep raw */ }
+      results.add(captured);
+    }
+    return Array.from(results);
+  }
+
+  const contentEmbeddedNorms = new Set<string>();
+  for (const text of dbPostsContent) {
+    for (const fp of extractContentUploadPaths(text)) {
+      const norm = getNormalizePath(fp);
+      if (norm) contentEmbeddedNorms.add(norm);
+    }
+  }
+  if (isDbConnected) {
+    console.log(`Content-embedded upload paths: ${contentEmbeddedNorms.size}`);
   }
 
   // 2. Scan codebase content
@@ -179,13 +207,10 @@ async function main() {
       isUsed = true;
     }
 
-    // Check 2: DB posts.content
+    // Check 2: file path embedded in post content (e.g. <img src="/uploads/...">)
     if (!isUsed && isDbConnected) {
-      for (const content of dbPostsContent) {
-        if (content.includes(filename) || content.includes(relPath) || content.includes(checkPathCode)) {
-          isUsed = true;
-          break;
-        }
+      if (contentEmbeddedNorms.has(normRelPath)) {
+        isUsed = true;
       }
     }
 

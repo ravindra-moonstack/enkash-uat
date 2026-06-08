@@ -193,6 +193,41 @@ async function main(): Promise<void> {
   const pool = await getPool()
   let attachmentByPath: Map<string, number>
   let usedAttachmentIds: Set<number>
+  // Files referenced directly inside rich-text content (not via attachments table)
+  const contentEmbeddedPaths = new Set<string>()
+
+  /**
+   * Extract all upload file paths from a rich-text blob.
+   *
+   * Handles:
+   *   /uploads/2024/01/file.png          (root-relative)
+   *   https://domain.com/uploads/...     (absolute URL)
+   *   \/uploads\/2024\/01\/file.png      (JSON-escaped slashes stored in DB)
+   *   /uploads/2024/01/my%20file.pdf     (percent-encoded)
+   *   srcset="... /uploads/x.png 800w"   (srcset, style url(), href)
+   *
+   * Returns raw (still-encoded) path strings; caller should normalizePath() them.
+   */
+  function extractUploadPaths(text: string): string[] {
+    // Unescape JSON-encoded slashes first (\/ → /)
+    const unescaped = text.replace(/\\\//g, "/")
+
+    const results = new Set<string>()
+    // Match /uploads/ preceded by anything (absolute URL domain, quote, whitespace, =)
+    // Capture the path until a hard terminator: whitespace, quotes, <>, ), ], ?, #, comma (srcset)
+    const re = /\/uploads\/([\w%+.\-][^\s"'<>()\[\]?#,\\]*)/gi
+    let m: RegExpExecArray | null
+    while ((m = re.exec(unescaped)) !== null) {
+      let captured = m[1]
+      // Strip trailing punctuation that may bleed in from prose (period, semicolon)
+      captured = captured.replace(/[.;]+$/, "")
+      if (!captured) continue
+      // URL-decode percent-encoding (e.g. %20 → space, %2F → /)
+      try { captured = decodeURIComponent(captured) } catch { /* keep raw */ }
+      results.add(captured)
+    }
+    return Array.from(results)
+  }
 
   try {
     const [attachments] = await pool.execute(
@@ -200,7 +235,7 @@ async function main(): Promise<void> {
     ) as [mysql.RowDataPacket[], mysql.FieldPacket[]]
 
     const [posts] = await pool.execute(
-      "SELECT featured_image FROM posts WHERE featured_image IS NOT NULL AND status != 'trash'"
+      "SELECT featured_image, content FROM posts WHERE status != 'trash'"
     ) as [mysql.RowDataPacket[], mysql.FieldPacket[]]
 
     const [videos] = await pool.execute(
@@ -217,15 +252,25 @@ async function main(): Promise<void> {
       attachmentByPath.set(normalizePath(att.image_url), att.id)
     }
 
-    // Set of attachment ids that are actively referenced
+    // Set of attachment ids that are actively referenced via FK columns
     usedAttachmentIds = new Set<number>()
     for (const p of posts) if (p.featured_image) usedAttachmentIds.add(p.featured_image)
     for (const v of videos) if (v.thumbnail_id) usedAttachmentIds.add(v.thumbnail_id)
     for (const mc of mediaCoverage) if (mc.media_coverage_image) usedAttachmentIds.add(mc.media_coverage_image)
 
+    // Extract file paths embedded in rich-text content columns
+    for (const p of posts) {
+      if (p.content) {
+        for (const fp of extractUploadPaths(p.content)) {
+          contentEmbeddedPaths.add(normalizePath(fp))
+        }
+      }
+    }
+
     console.log(
       `  attachments: ${attachments.length}  |  active refs: ${usedAttachmentIds.size}` +
-      `  (posts: ${posts.length}, videos: ${videos.length}, media-coverage: ${mediaCoverage.length})`
+      `  (posts: ${posts.length}, videos: ${videos.length}, media-coverage: ${mediaCoverage.length})` +
+      `\n  content-embedded paths: ${contentEmbeddedPaths.size}`
     )
   } finally {
     await pool.end()
@@ -233,7 +278,10 @@ async function main(): Promise<void> {
 
   // Classify a file relative path into: "used" | "unused" | "untracked"
   function classify(relPath: string): "used" | "unused" | "untracked" {
-    const id = attachmentByPath.get(normalizePath(relPath))
+    const norm = normalizePath(relPath)
+    // Used if embedded directly in post content (even without an attachments row)
+    if (contentEmbeddedPaths.has(norm)) return "used"
+    const id = attachmentByPath.get(norm)
     if (id === undefined) return "untracked"
     return usedAttachmentIds.has(id) ? "used" : "unused"
   }
