@@ -44,15 +44,23 @@ const CardHeroSection: React.FC<CardHeroSectionProps> = ({
 }) => {
   return (
     <div
-      className={styles.hero_section}
+      className={`${styles.hero_section} position-relative`}
       style={{
-        backgroundImage: backgroundImage
-          ? `url(${backgroundImage})`
-          : undefined,
         paddingTop: paddingTop ?? undefined,
         paddingBottom: paddingBottom ?? undefined,
       }}
     >
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt="Hero Background"
+          fill
+          priority={true}
+          fetchPriority="high"
+          style={{ objectFit: "cover", zIndex: -1 }}
+          sizes="100vw"
+        />
+      )}
       <div className="max-w-auto">
         {breadcrumbs && (
           <div className="d-flex mb-3">
@@ -120,6 +128,8 @@ const CardHeroSection: React.FC<CardHeroSectionProps> = ({
             alt="hero visual"
             style={{ objectFit: "contain", maxHeight: "672px" }}
             className="w-100 object-fit-contain"
+            priority={true}
+            fetchPriority="high"
           />
         </div>
       </div>

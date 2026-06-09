@@ -35,20 +35,17 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
   customCSS,
   imgObjectPosition = "center",
 }) => {
-  const isStaticImage = typeof backgroundImage === "object"
-
   return (
     <div
-      className={`${styles.hero_section} ${isStaticImage ? "relative" : ""}`}
+      className={`${styles.hero_section} relative`}
       style={{
-        backgroundImage: !isStaticImage ? `url(${backgroundImage})` : "none",
-        position: isStaticImage ? "relative" : undefined,
+        position: "relative",
         ...customCSS,
       }}
     >
-      {isStaticImage && (
+      {backgroundImage && (
         <Image
-          src={backgroundImage as StaticImageData}
+          src={backgroundImage}
           alt="Hero Background"
           fill
           style={{
@@ -56,8 +53,10 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
             objectPosition: imgObjectPosition,
             zIndex: 0,
           }}
+          priority={true}
           fetchPriority="high"
           decoding="sync"
+          sizes="100vw"
         />
       )}
       <div className={styles.box_white} style={{ position: "relative", zIndex: 1 }}>

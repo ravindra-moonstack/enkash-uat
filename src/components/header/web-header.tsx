@@ -72,7 +72,12 @@ const WebHeader = ({ }: props) => {
                   className={styles.logo_container}
                   aria-label="Enkash Home"
                 >
-                  <Image src={enkashBlueLogo} alt="logo" width={98} />
+                  <Image
+                    src={enkashBlueLogo}
+                    alt="logo"
+                    width={98}
+                    priority={true}
+                  />
                 </Link>
 
 
