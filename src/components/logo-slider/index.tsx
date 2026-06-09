@@ -16,9 +16,12 @@ const LogoSlider = (): React.JSX.Element => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: "200px" }
     )
 
     if (containerRef.current) {
@@ -52,25 +55,27 @@ const LogoSlider = (): React.JSX.Element => {
 
   return (
     <div className={styles.marquee_box} ref={containerRef}>
-      <Slider {...sliderSettings}>
-        {[...logos, ...logos].map((logo, i) => (
-          <div
-            key={i}
-            className={`d-flex  justify-content-center  ${styles.logo_wrapper}`}
-          >
-            <Image
-              className={`${logo.className} ${styles.logo_img}`}
-              src={coloredLogos[i % logos.length]}
-              alt={logo.alt}
-              width={150}
-              height={60}
-              sizes="(max-width: 768px) 100px, 150px"
-              loading="lazy"
-              quality={80}
-            />
-          </div>
-        ))}
-      </Slider>
+      {isVisible ? (
+        <Slider {...sliderSettings}>
+          {[...logos, ...logos].map((logo, i) => (
+            <div
+              key={i}
+              className={`d-flex  justify-content-center  ${styles.logo_wrapper}`}
+            >
+              <Image
+                className={`${logo.className} ${styles.logo_img}`}
+                src={coloredLogos[i % logos.length]}
+                alt={logo.alt}
+                width={150}
+                height={60}
+                sizes="(max-width: 768px) 100px, 150px"
+                loading="lazy"
+                quality={80}
+              />
+            </div>
+          ))}
+        </Slider>
+      ) : null}
     </div>
   )
 }

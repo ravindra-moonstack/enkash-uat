@@ -9,6 +9,7 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import LayoutClientWrapper from "@/src/components/layout-wrapper"
 import { WebVitals } from "@/src/components/web-vitals"
+import DeferredScripts from "@/src/components/deferred-scripts"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -41,20 +42,21 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://scripts.clarity.ms" />
         <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="RWOqrBamBY0cC_WQwIz55vCzZRBv97CtZYwlpUCIjY4" />
-
-        <Script
-          id="gtm-script"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TR7NDT8C');`,
-          }}
+        <meta
+          name="google-site-verification"
+          content="RWOqrBamBY0cC_WQwIz55vCzZRBv97CtZYwlpUCIjY4"
         />
-
       </head>
       <body className={inter.variable}>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR7NDT8C"
-          height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TR7NDT8C"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        <DeferredScripts />
         <WebVitals />
         <LayoutClientWrapper>{children}</LayoutClientWrapper>
       </body>

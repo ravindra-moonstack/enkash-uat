@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react"
 
 import styles from "./cardStacking.module.scss"
 import DynamicHeading from "../dynamic-heading"
+import { debounce } from "@/src/utils/debounce"
 
 interface HeadingPart {
   title: string
@@ -32,8 +33,9 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards, heading }) => {
   useEffect(() => {
     const checkScreen = () => setIsDesktop(window.innerWidth >= 768)
     checkScreen()
-    window.addEventListener("resize", checkScreen)
-    return () => window.removeEventListener("resize", checkScreen)
+    const debouncedCheckScreen = debounce(checkScreen, 150)
+    window.addEventListener("resize", debouncedCheckScreen)
+    return () => window.removeEventListener("resize", debouncedCheckScreen)
   }, [])
 
   const titleRef = useRef<HTMLDivElement>(null)

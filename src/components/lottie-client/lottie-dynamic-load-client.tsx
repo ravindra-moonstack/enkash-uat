@@ -1,7 +1,7 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import {
   collectPaymentAnimation,
   expenseAnimation,
@@ -30,8 +30,30 @@ const LottieDynamicLoadComponent = ({
   loop = true,
 }: LottieDynamicLoadComponentProps) => {
   const [animationData, setAnimationData] = useState<any | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.05, rootMargin: "200px" }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
     const loadAnimation = async () => {
       if (animationMap.hasOwnProperty(animationName)) {
         const dynamicAnimationModule = await animationMap[animationName]()
@@ -42,16 +64,14 @@ const LottieDynamicLoadComponent = ({
     }
 
     loadAnimation()
-  }, [animationName])
+  }, [animationName, isVisible])
 
   return (
-    <>
-      {animationData ? (
+    <div ref={containerRef} style={{ width: "100%", height: "100%", minHeight: "150px" }}>
+      {isVisible && animationData ? (
         <Lottie animationData={animationData} loop={loop} />
-      ) : (
-        <div style={{ width: "100%", height: "100%" }} />
-      )}
-    </>
+      ) : null}
+    </div>
   )
 }
 
