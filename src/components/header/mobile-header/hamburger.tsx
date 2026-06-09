@@ -33,6 +33,7 @@ const Hamburger = ({
               src={enkashBlueLogo}
               alt="Enkash White logo"
               className={styles.enkash_logo}
+              priority={true}
             />
           </Link>
           <div className="d-flex gap-2">
@@ -67,6 +68,7 @@ const Hamburger = ({
                 alt="Enkash Blue logo"
                 width={100}
                 className={`${styles.enkash_logo} `}
+                priority={true}
               />
             </Link>
           </div>

@@ -452,6 +452,110 @@ const url: {
     source: "/resources/video-category/Marketing",
     destination: "/resources/videos",
   },
+  {
+    source: "/resources/blog/press_release/press-note-pa-license-in-principle-approval",
+    destination: "/resources/blogs",
+  },
+  {
+    source: "/resources/blogs/expenses",
+    destination: "/resources/blog/category/expenses",
+  },
+  {
+    source: "/resources/blogs/industry-news",
+    destination: "/resources/blog/category/industry-news",
+  },
+  {
+    source: "/resources/form",
+    destination: "/sales",
+  },
+  {
+    source: "/account-payable",
+    destination: "/products/make-payments",
+  },
+  {
+    source: "/resources/blog/ultimate-guide-ACH-debit",
+    destination: "/resources/blog/ultimate-guide-ach-debit",
+  },
+  {
+    source: "/bolt",
+    destination: "/products/vouchers",
+  },
+  {
+    source: "/bulk-payment-collection",
+    destination: "/bulk-pay",
+  },
+  {
+    source: "/business-bill-payment",
+    destination: "/utility-bill-payment",
+  },
+  {
+    source: "/cards",
+    destination: "/products/corporate-cards",
+  },
+  {
+    source: "/collect-payments",
+    destination: "/products/collect-payments",
+  },
+  {
+    source: "/employee-reward",
+    destination: "/products/rewards",
+  },
+  {
+    source: "/express-pay",
+    destination: "/bulk-pay",
+  },
+  {
+    source: "/integrated-accounting",
+    destination: "/",
+  },
+  {
+    source: "/integrated-cards",
+    destination: "/products/corporate-cards",
+  },
+  {
+    source: "/loyalty-lounge",
+    destination: "/products/vouchers",
+  },
+  {
+    source: "/make-payments",
+    destination: "/products/make-payments",
+  },
+  {
+    source: "/ofex",
+    destination: "/products/expense-management",
+  },
+  {
+    source: "/partnerships",
+    destination: "/affiliate-programs",
+  },
+  {
+    source: "/payment-link",
+    destination: "/payment-links",
+  },
+  {
+    source: "/qr-c",
+    destination: "/qr-code",
+  },
+  {
+    source: "/rewards",
+    destination: "/products/rewards",
+  },
+  {
+    source: "/utility-bill-payment class=",
+    destination: "/utility-bill-payment",
+  },
+  {
+    source: "/virtual-account",
+    destination: "/",
+  },
+  {
+    source: "/virtual-card",
+    destination: "/products/corporate-cards",
+  },
+  {
+    source: "/vouchers",
+    destination: "/products/vouchers",
+  },
 ]
 
 const mappedUrls = url.map((item) => ({
