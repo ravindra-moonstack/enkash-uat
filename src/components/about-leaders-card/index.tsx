@@ -6,6 +6,7 @@ import styles from "./styles.module.scss"
 import DynamicHeading from "../dynamic-heading"
 import { linkDinIcon } from "./img"
 import { Leader, leaders } from "./data"
+import { debounce } from "@/src/utils/debounce"
 
 const LeadersSection: React.FC = () => {
   //
@@ -16,8 +17,9 @@ const LeadersSection: React.FC = () => {
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth < 768)
     checkScreen()
-    window.addEventListener("resize", checkScreen)
-    return () => window.removeEventListener("resize", checkScreen)
+    const debouncedCheckScreen = debounce(checkScreen, 150)
+    window.addEventListener("resize", debouncedCheckScreen)
+    return () => window.removeEventListener("resize", debouncedCheckScreen)
   }, [])
 
   const handleOpen = (leader: Leader) => setSelectedLeader(leader)

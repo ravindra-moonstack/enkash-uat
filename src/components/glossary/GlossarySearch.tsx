@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, useMemo } from "react"
 import { Form } from "react-bootstrap"
 import Link from "next/link"
 import Image from "next/image"
@@ -49,10 +49,14 @@ const GlossarySearch = () => {
                     { cache: 'no-store' }
                 )
                 const data = await response.json()
-                setSuggestions(data.results || [])
+                React.startTransition(() => {
+                    setSuggestions(data.results || [])
+                })
             } catch (err) {
                 console.error("Search error:", err)
-                setSuggestions([])
+                React.startTransition(() => {
+                    setSuggestions([])
+                })
             } finally {
                 setIsLoading(false)
             }
@@ -62,7 +66,9 @@ const GlossarySearch = () => {
             if (search.trim()) {
                 fetchSuggestions(search)
             } else {
-                setSuggestions([])
+                React.startTransition(() => {
+                    setSuggestions([])
+                })
                 setIsLoading(false)
                 setShowSuggestions(false)
             }
@@ -76,14 +82,17 @@ const GlossarySearch = () => {
     }
 
     // Grouping suggestions by first letter
-    const groupedSuggestions: Record<string, SearchResult[]> = {}
-    suggestions.forEach(item => {
-        if (!item || !item.word) return;
-        const firstLetter = item.word.charAt(0).toUpperCase();
-        const letter = /^[A-Z]$/.test(firstLetter) ? firstLetter : "#";
-        if (!groupedSuggestions[letter]) groupedSuggestions[letter] = []
-        groupedSuggestions[letter].push(item)
-    })
+    const groupedSuggestions = useMemo(() => {
+        const grouped: Record<string, SearchResult[]> = {}
+        suggestions.forEach(item => {
+            if (!item || !item.word) return;
+            const firstLetter = item.word.charAt(0).toUpperCase();
+            const letter = /^[A-Z]$/.test(firstLetter) ? firstLetter : "#";
+            if (!grouped[letter]) grouped[letter] = []
+            grouped[letter].push(item)
+        })
+        return grouped
+    }, [suggestions])
 
     return (
         <div className={styles.searchWrapper}>
