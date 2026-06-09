@@ -29,20 +29,22 @@ const RelatedBlogs = ({ relatedBlogs }: { relatedBlogs: any }) => {
                 </div>
 
                 <div className={styles.relatedBlogCardBody}>
-                  <div className={styles.relatedBlogCategories}>
-                    {slugs.map((slug: string, i: number) => (
-                      <span key={i} className={styles.relatedBlogCategory}>
-                        {names[i] || slug}
-                      </span>
-                    ))}
-                  </div>
+                  <div className={styles.relatedBlogContentText}>
+                    <div className={styles.relatedBlogCategories}>
+                      {slugs.map((slug: string, i: number) => (
+                        <span key={i} className={styles.relatedBlogCategory}>
+                          {names[i] || slug}
+                        </span>
+                      ))}
+                    </div>
 
-                  <h4 className={styles.relatedBlogTitle}>
-                    <Link
-                      href={`/resources/blog/${blog.slug}`}
-                      dangerouslySetInnerHTML={{ __html: blog.title }}
-                    />
-                  </h4>
+                    <h4 className={styles.relatedBlogTitle}>
+                      <Link
+                        href={`/resources/blog/${blog.slug}`}
+                        dangerouslySetInnerHTML={{ __html: blog.title }}
+                      />
+                    </h4>
+                  </div>
 
                   <div className={styles.relatedBlogFooter}>
                     <Link

@@ -434,17 +434,25 @@ a {
 }
 
 
-body .enkash_button{
- border-radius: 12px 12px 12px 12px;
+body .enkash_button,
+body a.enkash_button{
+ border-radius: 8px;
     padding: 12px 30px 12px 30px;
  background:#1c5af4;
- color:#fff !important ;
+ color:#fff !important;
  margin:10px 0 10px 10px;
  display:inline-block;
+     font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
 }
 
 
-body .enkash_button:hover{
+body .enkash_button:hover,
+body a.enkash_button:hover{
  background:#0040df !important;
 }
  .single.single-post blockquote{

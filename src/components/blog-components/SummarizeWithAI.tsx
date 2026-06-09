@@ -28,15 +28,20 @@ const SummarizeWithAI = ({ slug }: { slug: string }) => {
   return (
     <div className={styles.ai_summarize_card}>
       <h4>Summarise with AI</h4>
+      <div className={styles.divider} />
       <div className={styles.ai_buttons}>
         <button onClick={() => handleAI("chatgpt")} className={styles.ai_btn}>
-          <Image src={gpt} alt="chatgpt" width={20} height={20} />
+          <div className={styles.ai_icon_container}>
+            <Image src={gpt} alt="chatgpt" className={styles.chatgpt_icon} />
+          </div>
           <span>
             Ask <strong>Chat GPT</strong>
           </span>
         </button>
         <button onClick={() => handleAI("claude")} className={styles.ai_btn}>
-          <Image src={claude} alt="claude" width={20} height={20} />
+          <div className={styles.ai_icon_container}>
+            <Image src={claude} alt="claude" className={styles.claude_icon} />
+          </div>
           <span>
             Ask <strong>Claude</strong>
           </span>
@@ -45,13 +50,21 @@ const SummarizeWithAI = ({ slug }: { slug: string }) => {
           onClick={() => handleAI("perplexity")}
           className={styles.ai_btn}
         >
-          <Image src={perplixity} alt="perplexity" width={20} height={20} />
+          <div className={styles.ai_icon_container}>
+            <Image
+              src={perplixity}
+              alt="perplexity"
+              className={styles.perplexity_icon}
+            />
+          </div>
           <span>
             Ask <strong>Perplexity</strong>
           </span>
         </button>
         <button onClick={() => handleAI("gemini")} className={styles.ai_btn}>
-          <Image src={gemini} alt="gemini" width={20} height={20} />
+          <div className={styles.ai_icon_container}>
+            <Image src={gemini} alt="gemini" className={styles.gemini_icon} />
+          </div>
           <span>
             Ask <strong>Gemini</strong>
           </span>
