@@ -11,11 +11,11 @@ const RelatedBlogs = ({ relatedBlogs }: { relatedBlogs: any }) => {
     <section className={styles.relatedBlogs}>
       <div className="max-w-auto">
         <div className={styles.relatedBlogsContent}>
-          <h3>Related Blogs</h3>
+          <h3>Related Resources</h3>
         </div>
 
         <div className={styles.relatedBlogsList}>
-          {relatedBlogsData.map((blog: any, index: number) => {
+          {relatedBlogsData.slice(0, 3).map((blog: any, index: number) => {
             const slugs = blog.category_slugs?.split(",") || []
             const names = blog.category_names?.split(",") || []
 
@@ -28,32 +28,30 @@ const RelatedBlogs = ({ relatedBlogs }: { relatedBlogs: any }) => {
                   />
                 </div>
 
-                <div className={styles.relatedBlogContent}>
+                <div className={styles.relatedBlogCardBody}>
                   <div className={styles.relatedBlogCategories}>
                     {slugs.map((slug: string, i: number) => (
-                      <Link key={i} href={`/resources/blogs/${slug}`}>
-                        <span className={styles.relatedBlogCategory}>
-                          {names[i] || slug}
-                        </span>
-                      </Link>
+                      <span key={i} className={styles.relatedBlogCategory}>
+                        {names[i] || slug}
+                      </span>
                     ))}
                   </div>
 
-                  <h3>
+                  <h4 className={styles.relatedBlogTitle}>
                     <Link
                       href={`/resources/blog/${blog.slug}`}
-                      className={styles.relatedBlogTitle}
                       dangerouslySetInnerHTML={{ __html: blog.title }}
                     />
-                  </h3>
+                  </h4>
 
-                  <p className={styles.relatedBlogDate}>
-                    {new Date(blog.created_at).toLocaleDateString("en-IN", {
-                      day: "2-digit",
-                      month: "2-digit",
-                      year: "numeric",
-                    }).replace(/\//g, "/")}
-                  </p>
+                  <div className={styles.relatedBlogFooter}>
+                    <Link
+                      href={`/resources/blog/${blog.slug}`}
+                      className={styles.readMoreBtn}
+                    >
+                      Read more &rsaquo;
+                    </Link>
+                  </div>
                 </div>
               </div>
             )
