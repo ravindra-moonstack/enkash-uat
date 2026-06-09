@@ -22,35 +22,44 @@ const TableOfContents = ({ headings }: { headings: any[] }) => {
   useEffect(() => {
     if (headings.length === 0) return
 
-    const timer = setTimeout(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          const intersectingHeader = entries.find(
-            (entry) => entry.isIntersecting
-          )
-          if (intersectingHeader) {
-            setActiveId(intersectingHeader.target.id)
+    let ticking = false
+
+    const handleScrollActive = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const threshold = 170
+          let currentActiveId = ""
+
+          for (const heading of headings) {
+            const element = document.getElementById(heading.id)
+            if (element) {
+              const rect = element.getBoundingClientRect()
+              if (rect.top <= threshold) {
+                currentActiveId = heading.id
+              } else {
+                break
+              }
+            }
           }
-        },
-        {
-          rootMargin: "-100px 0px -80% 0px",
-          threshold: 0,
-        }
-      )
 
-      headings.forEach((item) => {
-        const element = document.getElementById(item.id)
-        if (element) {
-          observer.observe(element)
-        }
-      })
-
-      return () => {
-        observer.disconnect()
+          if (currentActiveId) {
+            setActiveId(currentActiveId)
+          } else if (headings.length > 0) {
+            setActiveId(headings[0].id)
+          }
+          ticking = false
+        })
+        ticking = true
       }
-    }, 100)
+    }
 
-    return () => clearTimeout(timer)
+    // Run initially
+    handleScrollActive()
+
+    window.addEventListener("scroll", handleScrollActive, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScrollActive)
+    }
   }, [headings])
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
