@@ -7,7 +7,8 @@ import BlogBanner from "@/src/components/blog-components/BlogBanner"
 import BlogBody from "@/src/components/blog-components/BlogBody"
 import AuthorSection from "@/src/components/blog-components/AuthorSection"
 import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
-import { BlogNav } from "@/src/components"
+import NewsletterSection from "@/src/components/blog-components/NewsletterSection"
+import { BlogNav, CustomBreadcrumb } from "@/src/components"
 import { notFound, redirect } from "next/navigation"
 
 import {
@@ -15,6 +16,14 @@ import {
   getPostBySlug,
 } from "@/src/services/resource-service"
 import { generateBreadcrumbSchema } from "@/src/utils/metaData"
+
+const calculateReadTime = (htmlContent: string): string => {
+  const wordsPerMinute = 200
+  const cleanText = htmlContent ? htmlContent.replace(/<[^>]*>/g, "") : ""
+  const words = cleanText.split(/\s+/).filter((word) => word.length > 0).length
+  const readTime = Math.ceil(words / wordsPerMinute)
+  return `${readTime} Min Read`
+}
 
 export async function generateMetadata({
   params,
@@ -93,6 +102,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     notFound()
   }
   const result = json.posts
+  const readTime = calculateReadTime(result[0].content || "")
 
   const canonicalUrl = `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`
   const breadcrumbSchema = generateBreadcrumbSchema(canonicalUrl)
@@ -112,6 +122,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       updated_at: result[0].updated_at,
       show_featured_image: result[0].show_featured_image,
       slug: result[0].slug,
+      readTime: readTime,
     },
   ]
 
@@ -130,38 +141,81 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   const activeCategory = result[0].category_slugs?.split(",")[0] || ""
 
-  // Prepare breadcrumbs for BlogNav
-  const breadcrumbs = [
-    { label: "Resources", href: "/resources" },
-    { label: "Blog", href: "/resources/blogs" },
-    { label: result[0].title },
+  const BreadCrumbItems = [
+    { name: "Resources", url: "/resources" },
+    { name: "Blogs", url: "/resources/blogs" },
+    { name: result[0].title, url: `/resources/blog/${result[0].slug}` },
   ]
 
-  const extendedNavData = navData ? { ...navData, breadcrumbs } : null
+  const schemaMarkup = result[0].post_schema_markup
+  const hasScriptTag =
+    typeof schemaMarkup === "string" && /<script/i.test(schemaMarkup)
 
   return (
     <>
-      {result[0].post_schema_markup && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: result[0].post_schema_markup }}
-        />
-      )}
+      {schemaMarkup &&
+        (hasScriptTag ? (
+          <div
+            style={{ display: "none" }}
+            dangerouslySetInnerHTML={{ __html: schemaMarkup }}
+          />
+        ) : (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: schemaMarkup }}
+          />
+        ))}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className={`${styles.mainPage}`}>
+        {/* <div className="max-w-auto">
+          <CustomBreadcrumb items={BreadCrumbItems} linkColor="allBlack" />
+        </div> */}
         <section className={styles.blog_nav_section}>
           <div className="max-w-auto">
-            {extendedNavData && (
-              <BlogNav
-                data={extendedNavData}
-                activeCategory={activeCategory}
-                showCategories={false}
-                showDivider={false}
-              />
-            )}
+            <nav aria-label="Breadcrumb" className={styles.customBreadcrumb}>
+              <Link href="/resources" className={styles.breadcrumbLink}>
+                Resources
+              </Link>
+              <svg
+                className={styles.breadcrumbChevron}
+                width="22.51"
+                height="22.51"
+                viewBox="91 5 9 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M92.0938 6.66406L98.4252 12.9955L92.0938 19.327"
+                  stroke="#C8C8C8"
+                  strokeWidth="2.11049"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <Link href="/resources/blogs" className={styles.breadcrumbLink}>
+                Blogs
+              </Link>
+              <svg
+                className={styles.breadcrumbChevron}
+                width="22.51"
+                height="22.51"
+                viewBox="91 5 9 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M92.0938 6.66406L98.4252 12.9955L92.0938 19.327"
+                  stroke="#C8C8C8"
+                  strokeWidth="2.11049"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className={styles.breadcrumbActive}>{result[0].title}</span>
+            </nav>
           </div>
         </section>
         <BlogBanner bannerData={bannerData} />
@@ -176,6 +230,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           <AuthorSection authorData={result[0]} />
         )}
         <RelatedBlogs relatedBlogs={relatedBlogs} />
+        <NewsletterSection />
       </div>
     </>
   )

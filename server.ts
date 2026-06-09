@@ -4,7 +4,7 @@ import path from "path"
 
 const port = parseInt(process.env.PORT || "3000", 10)
 if (!process.env.NODE_ENV) {
-  (process.env as any).NODE_ENV = "development"
+  ;(process.env as any).NODE_ENV = "development"
 }
 console.log("DEBUG: NODE_ENV is:", process.env.NODE_ENV)
 const dev = process.env.NODE_ENV === "development"

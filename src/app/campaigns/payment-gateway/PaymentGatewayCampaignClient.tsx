@@ -49,6 +49,7 @@ import IndustrySlider from "@/src/components/Industry-slider"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import FaqSection from "@/src/components/faq-section"
 import SuspenseLoading from "@/src/components/loading"
+import { PgBackground } from "./img"
 
 // Forms & LogoSlider loaded dynamically
 const PpcPaymentGatewayForm = dynamic(
@@ -72,7 +73,7 @@ const PaymentGatewayCampaignClient = () => {
       {/* Custom Campaign Header + Hero */}
       <section className={`${styles.hero}`}>
         <Image
-          src="/images/collectPaymentBg.webp"
+          src={PgBackground}
           alt="Hero Background"
           fill
           priority={true}
@@ -103,7 +104,7 @@ const PaymentGatewayCampaignClient = () => {
                 content={[
                   {
                     text: "India's Best Payment Gateway Truly Built for SMBs",
-                    color: "color-black",
+                    color: "color-white",
                   },
                 ]}
                 headingTag="h1"
@@ -113,7 +114,7 @@ const PaymentGatewayCampaignClient = () => {
                 content={[
                   {
                     text: "Accept online payments instantly with a RBI-authorised, merchant payment gateway designed for MSMEs, D2C brands, SaaS platforms, marketplaces, and enterprises.",
-                    color: "color-black subHeading",
+                    color: "color-white subHeading",
                   },
                 ]}
                 headingTag="p"

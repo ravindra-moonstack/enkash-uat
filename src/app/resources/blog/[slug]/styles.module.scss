@@ -1,3 +1,59 @@
 .blog_nav_section {
   padding: 100px 20px 0px; 
+
+  @media (max-width: 991px) {
+    padding: 80px 20px 0px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 60px 15px 0px;
+  }
+}
+
+.customBreadcrumb {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0px 10px;
+  gap: 5.23px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+
+  .breadcrumbLink { 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.04em;
+    color: #6C6C6C;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #1A56FE;
+    }
+  }
+
+  .breadcrumbChevron {
+    width: 14.51px;
+    height: 14.51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .breadcrumbActive {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.02em;
+    color: #6C6C6C;
+    text-decoration: none;
+    display: inline-block;
+  }
 }
