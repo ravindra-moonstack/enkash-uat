@@ -37,8 +37,7 @@ export default function DeferredScripts() {
 
     // Load GTM on requestIdleCallback if supported, fallback to timeout after 1s
     const idleCallback =
-      window.requestIdleCallback ||
-      ((cb: any) => setTimeout(cb, 1000))
+      window.requestIdleCallback || ((cb: any) => setTimeout(cb, 1000))
     const idleId = idleCallback(() => {
       loadGTM()
     })
@@ -46,26 +45,31 @@ export default function DeferredScripts() {
     // Absolute fallback of 4 seconds
     const timeoutId = setTimeout(loadGTM, 4000)
 
-    // Global override to make scroll, touch, and wheel event listeners passive by default
-    const originalAddEventListener = EventTarget.prototype.addEventListener
-    EventTarget.prototype.addEventListener = function (
-      type: string,
-      listener: EventListenerOrEventListenerObject,
-      options?: boolean | AddEventListenerOptions
-    ) {
-      let newOptions = options
-      if (["touchstart", "touchmove", "wheel", "mousewheel"].includes(type)) {
-        if (typeof options === "boolean") {
-          newOptions = { capture: options, passive: true }
-        } else if (typeof options === "object") {
-          if (options.passive === undefined) {
-            newOptions = { ...options, passive: true }
+    const originalAddEventListener =
+      typeof window !== "undefined" && window.EventTarget
+        ? window.EventTarget.prototype.addEventListener
+        : null
+
+    if (originalAddEventListener) {
+      window.EventTarget.prototype.addEventListener = function (
+        type: string,
+        listener: EventListenerOrEventListenerObject,
+        options?: boolean | AddEventListenerOptions
+      ) {
+        let newOptions = options
+        if (["touchstart", "touchmove", "wheel", "mousewheel"].includes(type)) {
+          if (typeof options === "boolean") {
+            newOptions = { capture: options, passive: true }
+          } else if (typeof options === "object") {
+            if (options.passive === undefined) {
+              newOptions = { ...options, passive: true }
+            }
+          } else {
+            newOptions = { passive: true }
           }
-        } else {
-          newOptions = { passive: true }
         }
+        return originalAddEventListener.call(this, type, listener, newOptions)
       }
-      return originalAddEventListener.call(this, type, listener, newOptions)
     }
 
     return () => {
@@ -78,7 +82,13 @@ export default function DeferredScripts() {
         window.cancelIdleCallback(idleId)
       }
       // Restore original addEventListener
-      EventTarget.prototype.addEventListener = originalAddEventListener
+      if (
+        originalAddEventListener &&
+        typeof window !== "undefined" &&
+        window.EventTarget
+      ) {
+        window.EventTarget.prototype.addEventListener = originalAddEventListener
+      }
     }
   }, [])
 
