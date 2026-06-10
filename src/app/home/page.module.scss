@@ -2,7 +2,8 @@
 @use "@/src/styles/mixin" as *;
 
 .topBanner {
-  background-image: url("./img/banner_bg_image.webp");
+  position: relative;
+  z-index: 1;
   padding: 116px 20px;
   text-align: center;
   background-size: cover;
