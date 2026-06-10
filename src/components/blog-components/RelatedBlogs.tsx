@@ -31,11 +31,25 @@ const RelatedBlogs = ({ relatedBlogs }: { relatedBlogs: any }) => {
                 <div className={styles.relatedBlogCardBody}>
                   <div className={styles.relatedBlogContentText}>
                     <div className={styles.relatedBlogCategories}>
-                      {slugs.map((slug: string, i: number) => (
-                        <span key={i} className={styles.relatedBlogCategory}>
-                          {names[i] || slug}
-                        </span>
-                      ))}
+                      {slugs.map((slug: string, i: number) => {
+                        const trimmedSlug = slug.trim()
+                        const trimmedName = (names[i] || slug).trim()
+                        return (
+                          <React.Fragment key={i}>
+                            <Link
+                              href={`/resources/blog/category/${trimmedSlug}`}
+                              className={styles.relatedBlogCategory}
+                            >
+                              {trimmedName}
+                            </Link>
+                            {i < slugs.length - 1 && (
+                              <span className={styles.categorySeparator}>
+                                |
+                              </span>
+                            )}
+                          </React.Fragment>
+                        )
+                      })}
                     </div>
 
                     <h4 className={styles.relatedBlogTitle}>
