@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import styles from "./singleBlog.module.scss"
 import { ctaSideImg } from "@/src/app/employee-benefit-multi-wallet/img"
+import { useToast } from "@/src/context/ToastContext"
 
 const NewsletterSection = () => {
+  const { showToast } = useToast()
   const [redirectUrl, setRedirectUrl] = useState("")
 
   useEffect(() => {
@@ -12,6 +14,26 @@ const NewsletterSection = () => {
       setRedirectUrl(window.location.origin + "/thank-you")
     }
   }, [])
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formEl = e.currentTarget
+    const formData = new FormData(formEl)
+
+    try {
+      await fetch(formEl.action, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      })
+      const emailInput = formEl.querySelector('input[name="Email"]') as HTMLInputElement
+      if (emailInput) emailInput.value = ""
+      showToast("Thank you for subscribing to our newsletter!", "success")
+    } catch (error) {
+      console.error("Subscription error:", error)
+      showToast("Something went wrong. Please try again.", "error")
+    }
+  }
 
   return (
     <section className={styles.newsletterSection}>
@@ -58,6 +80,7 @@ const NewsletterSection = () => {
               acceptCharset="UTF-8"
               encType="multipart/form-data"
               className={styles.newsletterForm}
+              onSubmit={handleSubmit}
             >
               <input type="hidden" name="zf_referrer_name" value="" />
               <input type="hidden" name="zf_redirect_url" value={redirectUrl} />

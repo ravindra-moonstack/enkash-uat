@@ -29,7 +29,7 @@ const TableOfContents = ({ headings }: { headings: any[] }) => {
     const handleScrollActive = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const threshold = 170
+          const threshold = 350
           let currentActiveId = ""
 
           for (const heading of headings) {
