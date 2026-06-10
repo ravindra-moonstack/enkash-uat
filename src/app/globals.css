@@ -459,3 +459,14 @@ body a.enkash_button:hover{
  border-color:#3359fa !important;
 }
  
+/* ✅ Slick Carousel CLS Mitigation */
+.slick-slider:not(.slick-initialized) .slick-track {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  overflow: hidden !important;
+}
+
+.slick-slider:not(.slick-initialized) .slick-slide:not(:first-child) {
+  display: none !important;
+}

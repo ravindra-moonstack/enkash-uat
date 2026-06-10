@@ -75,7 +75,28 @@ const LogoSlider = (): React.JSX.Element => {
             </div>
           ))}
         </Slider>
-      ) : null}
+      ) : (
+        <div className={styles.static_logos_row}>
+          {logos.slice(0, 10).map((logo, i) => (
+            <div
+              key={i}
+              className={`d-flex justify-content-center ${styles.logo_wrapper}`}
+            >
+              <Image
+                className={`${logo.className} ${styles.logo_img}`}
+                src={coloredLogos[i]}
+                alt={logo.alt}
+                width={150}
+                height={60}
+                sizes="(max-width: 768px) 100px, 150px"
+                loading="eager"
+                priority={true}
+                quality={80}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

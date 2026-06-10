@@ -48,7 +48,7 @@ import {
   ctaButtonData,
 } from "./data"
 import generateMetaData from "@/utils/metaData"
-import Head from "next/head"
+import bannerBg from "./img/banner_bg_image.webp"
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Expense Management & Payment Solutions for Businesses.",
@@ -64,15 +64,18 @@ const HomePage = (): React.JSX.Element => {
 
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Head>
-        <link
-          rel="preload"
-          as="image"
-          href="/img/banner_bg_image.webp"
+      <section
+        className={`${styles.topBanner} position-relative overflow-hidden`}
+      >
+        <Image
+          src={bannerBg}
+          alt="Banner Background"
+          fill
+          priority
           fetchPriority="high"
+          quality={80}
+          style={{ objectFit: "cover", zIndex: -1 }}
         />
-      </Head>
-      <section className={`${styles.topBanner}`}>
         <div className="max-w-auto">
           <div className={`${styles.banner_heading}`}>
             <DynamicHeading
@@ -267,8 +270,7 @@ const HomePage = (): React.JSX.Element => {
                 </div>
               </div>
               <div className="col-md-6 z-2">
-                <div
-                >
+                <div>
                   <DynamicHeading
                     content={[
                       {
@@ -326,7 +328,11 @@ const HomePage = (): React.JSX.Element => {
                 {prepaidCardsData.map((item, index) => (
                   <div className="col-md-6 mb-4 mb-md-0" key={index}>
                     <div className={`${styles.prepaidCardBox}`}>
-                      <PrepaidCardHome {...item} headingTag="h4" headingClassName="heading-h5" />
+                      <PrepaidCardHome
+                        {...item}
+                        headingTag="h4"
+                        headingClassName="heading-h5"
+                      />
                     </div>
                   </div>
                 ))}
@@ -358,7 +364,11 @@ const HomePage = (): React.JSX.Element => {
                   key={index.toString()}
                   className={`${styles.prepaidCardBox} col-md-6 mb-4 mb-md-0`}
                 >
-                  <PrepaidCardHome {...item} headingTag="h4" headingClassName="heading-h5" />
+                  <PrepaidCardHome
+                    {...item}
+                    headingTag="h4"
+                    headingClassName="heading-h5"
+                  />
                 </div>
               ))}
             </div>
@@ -475,7 +485,11 @@ const HomePage = (): React.JSX.Element => {
                     className={`${styles.ReceivablesPayablesBoxOuter} col-md-4  mb-4`}
                     key={index.toString()}
                   >
-                    <HomeReceivablesPayables {...item} headingTag="h4" headingClassName="heading-h5" />
+                    <HomeReceivablesPayables
+                      {...item}
+                      headingTag="h4"
+                      headingClassName="heading-h5"
+                    />
                   </div>
                 ))}
               </div>
@@ -500,7 +514,11 @@ const HomePage = (): React.JSX.Element => {
                         key={index.toString()}
                         className={`${styles.ReceivablesPayablesBoxOuter} col-md-6 mb-4`}
                       >
-                        <HomeReceivablesPayables {...item} headingTag="h4" headingClassName="heading-h5" />
+                        <HomeReceivablesPayables
+                          {...item}
+                          headingTag="h4"
+                          headingClassName="heading-h5"
+                        />
                       </div>
                     ))}
                   </div>
@@ -581,10 +599,7 @@ const HomePage = (): React.JSX.Element => {
             <div className="row">
               {counterData.map((item, index) => (
                 <div className="col-md-4" key={index.toString()}>
-                  <Counter
-                    {...item}
-                    className={`${styles.counterBox}`}
-                  />
+                  <Counter {...item} className={`${styles.counterBox}`} />
                 </div>
               ))}
             </div>

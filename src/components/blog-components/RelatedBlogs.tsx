@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./singleBlog.module.scss"
 import Link from "next/link"
+import { getImageUrl } from "@/src/utils/common"
 
 const RelatedBlogs = ({ relatedBlogs }: { relatedBlogs: any }) => {
   const relatedBlogsData = relatedBlogs?.[0]?.relatedBlogs || []
@@ -23,7 +24,7 @@ const RelatedBlogs = ({ relatedBlogs }: { relatedBlogs: any }) => {
               <div key={index} className={styles.relatedBlog}>
                 <div className={styles.relatedBlogImage}>
                   <img
-                    src={"/uploads/" + blog.featured_image_url}
+                    src={getImageUrl(blog.featured_image_url)}
                     alt={blog.image_alt || blog.title}
                   />
                 </div>

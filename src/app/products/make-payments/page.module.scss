@@ -13,6 +13,22 @@
     padding-bottom: 0px;
   }
   .lottie_container {
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include for-laptops {
+      min-height: 625px;
+      height: 672px;
+    }
+
+    & > div > svg {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
     Img {
       height: auto;
       padding-top: 32px;

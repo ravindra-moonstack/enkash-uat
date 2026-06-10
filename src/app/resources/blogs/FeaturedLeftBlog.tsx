@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "./featured_top.module.scss"
 import { CommanButton, DynamicHeading } from "@/src/components"
+import { getImageUrl } from "@/src/utils/common"
 
 async function getData() {
   const res = await fetch(
@@ -27,7 +28,7 @@ export default async function FeaturedLeftBlog() {
       <div className={styles.left_box_image}>
         <Link href={`/resources/blog/${post.slug}`}>
           <Image
-            src={"/uploads/" + post.featured_image_url}
+            src={getImageUrl(post.featured_image_url)}
             alt={post.image_alt || post.title}
             width={600}
             height={350}

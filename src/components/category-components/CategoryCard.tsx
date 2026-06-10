@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 import styles from "./category_banner.module.scss"
 import Link from "next/link"
+import { getImageUrl } from "@/src/utils/common"
 
 const CategoryCard = ({ data }: { data: any }) => {
   const categoryNames = data.categoryName?.split(",") || []
@@ -11,7 +12,7 @@ const CategoryCard = ({ data }: { data: any }) => {
     <div className={styles.category_card}>
       <div className={styles.category_card_image}>
         <Image
-          src={"/uploads/" + data.image}
+          src={getImageUrl(data.image)}
           alt={data.imageAlt}
           width={600}
           height={350}
