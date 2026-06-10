@@ -666,7 +666,7 @@
 
   p, span {
     font-size: 16px !important;
-    font-weight: 200 !important;
+    font-weight: 400 !important;
     line-height: 28px !important;
     letter-spacing: -0.02em !important;
     color: #5B5B5B !important;
@@ -675,7 +675,7 @@
 
     em, i {
       font-style: italic !important;
-      font-weight: 200 !important;
+      font-weight: 400 !important;
       font-size: 16px !important;
       line-height: 28px !important;
       letter-spacing: -0.02em !important;
@@ -972,6 +972,10 @@
         line-height: 24px !important;
       }
     }
+  }
+  img{
+    max-width: 100%;
+    height: auto;
   }
 }
 
