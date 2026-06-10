@@ -9,6 +9,7 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import LayoutClientWrapper from "@/src/components/layout-wrapper"
 import { WebVitals } from "@/src/components/web-vitals"
+import { ToastProvider } from "@/src/context/ToastContext"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -40,8 +41,15 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://scripts.clarity.ms" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
         <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="RWOqrBamBY0cC_WQwIz55vCzZRBv97CtZYwlpUCIjY4" />
+        <meta
+          name="google-site-verification"
+          content="RWOqrBamBY0cC_WQwIz55vCzZRBv97CtZYwlpUCIjY4"
+        />
 
         <Script
           id="gtm-script"
@@ -50,13 +58,26 @@ export default function RootLayout({
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TR7NDT8C');`,
           }}
         />
-
+        <Script
+          src="https://cdn.tiny.cloud/1/jh7vh9v52fnbaqxly036le6qtmrk1xngd4e3bzqstg3cr2sd/tinymce/8/tinymce.min.js"
+          strategy="beforeInteractive"
+          referrerPolicy="origin"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={inter.variable}>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR7NDT8C"
-          height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TR7NDT8C"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <WebVitals />
-        <LayoutClientWrapper>{children}</LayoutClientWrapper>
+        <ToastProvider>
+          <LayoutClientWrapper>{children}</LayoutClientWrapper>
+        </ToastProvider>
       </body>
     </html>
   )

@@ -13,7 +13,9 @@ interface HeadingNode {
 
 const TableOfContents = ({ headings }: { headings: any[] }) => {
   const [activeId, setActiveId] = useState<string>("")
-  const [expandedState, setExpandedState] = useState<Record<string, boolean>>({})
+  const [expandedState, setExpandedState] = useState<Record<string, boolean>>(
+    {}
+  )
 
   useEffect(() => {
     setExpandedState({})
@@ -115,16 +117,18 @@ const TableOfContents = ({ headings }: { headings: any[] }) => {
       <ul className={styles.tocList}>
         {headingTree.map((item, index) => {
           const isParentActive = activeId === item.id
-          const hasActiveChild = item.children.some((child) => child.id === activeId)
+          const hasActiveChild = item.children.some(
+            (child) => child.id === activeId
+          )
           const defaultExpanded = isParentActive || hasActiveChild
-          const isExpanded = expandedState[item.id] !== undefined ? expandedState[item.id] : defaultExpanded
+          const isExpanded =
+            expandedState[item.id] !== undefined
+              ? expandedState[item.id]
+              : defaultExpanded
 
           return (
-            <li
-              key={index}
-              className={styles.tocItem}
-            >
-              <div 
+            <li key={index} className={styles.tocItem}>
+              <div
                 className={`${styles.tocHeaderRow} ${isParentActive ? styles.active : ""}`}
                 onClick={() => {
                   if (item.children.length > 0) {
@@ -143,8 +147,15 @@ const TableOfContents = ({ headings }: { headings: any[] }) => {
                   {item.text}
                 </Link>
                 {item.children.length > 0 && (
-                  <span className={`${styles.tocCaret} ${isExpanded ? styles.expanded : ""}`}>
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <span
+                    className={`${styles.tocCaret} ${isExpanded ? styles.expanded : ""}`}
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                    >
                       <path d="M7 10l5 5 5-5z" />
                     </svg>
                   </span>
