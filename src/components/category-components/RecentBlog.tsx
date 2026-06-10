@@ -2,7 +2,7 @@ import styles from "./category_banner.module.scss"
 import CategoryCard from "./CategoryCard"
 
 const getRecentBlogs = async () => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+  const baseUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000"
   const res = await fetch(
     `${baseUrl}/api/resources/blogs/getRecentBlogs?limit=4&offset=0`,
     { cache: "no-store" }
