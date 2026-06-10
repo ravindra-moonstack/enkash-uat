@@ -10,6 +10,7 @@ import Script from "next/script"
 import LayoutClientWrapper from "@/src/components/layout-wrapper"
 import { WebVitals } from "@/src/components/web-vitals"
 import { ToastProvider } from "@/src/context/ToastContext"
+import DeferredScripts from "@/src/components/deferred-scripts"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -74,6 +75,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        <DeferredScripts />
         <WebVitals />
         <ToastProvider>
           <LayoutClientWrapper>{children}</LayoutClientWrapper>

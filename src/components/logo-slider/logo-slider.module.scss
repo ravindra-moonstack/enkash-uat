@@ -4,6 +4,7 @@
 .marquee_box {
   display: block;
   cursor: pointer;
+  min-height: 60px;
 
   &:hover .logo_img {
     filter: grayscale(0%);
