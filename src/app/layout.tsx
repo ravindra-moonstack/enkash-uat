@@ -42,10 +42,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://scripts.clarity.ms" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        />
         <meta name="robots" content="index, follow" />
         <meta
           name="google-site-verification"
@@ -58,12 +54,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TR7NDT8C');`,
           }}
-        />
-        <Script
-          src="https://cdn.tiny.cloud/1/jh7vh9v52fnbaqxly036le6qtmrk1xngd4e3bzqstg3cr2sd/tinymce/8/tinymce.min.js"
-          strategy="beforeInteractive"
-          referrerPolicy="origin"
-          crossOrigin="anonymous"
         />
       </head>
       <body className={inter.variable}>

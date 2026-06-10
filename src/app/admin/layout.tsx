@@ -6,6 +6,7 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "./admin-layout.module.scss"
 import { ToastProvider } from "@/src/context/ToastContext"
+import Script from "next/script"
 
 export default function AdminLayout({
     children,
@@ -94,6 +95,12 @@ export default function AdminLayout({
 
     return (
         <ToastProvider>
+            <Script
+                src="https://cdn.tiny.cloud/1/jh7vh9v52fnbaqxly036le6qtmrk1xngd4e3bzqstg3cr2sd/tinymce/8/tinymce.min.js"
+                strategy="afterInteractive"
+                referrerPolicy="origin"
+                crossOrigin="anonymous"
+            />
             <div className={styles.adminWrapper}>
                 <link
                     rel="stylesheet"
