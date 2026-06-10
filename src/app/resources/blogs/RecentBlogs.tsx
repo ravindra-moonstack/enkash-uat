@@ -6,6 +6,7 @@ import Slider from "react-slick"
 import styles from "./featured_top.module.scss"
 import Image from "next/image"
 import Link from "next/link"
+import { getImageUrl } from "@/src/utils/common"
 
 // Import Slick Carousel stylesheets to render slider layouts and arrow icons
 import "slick-carousel/slick/slick.css"
@@ -59,7 +60,7 @@ export default function RecentBlogs() {
             <div className={styles.recent_blog_image}>
               <Link href={`/resources/blog/${post.slug}`}>
                 <Image
-                  src={"/uploads/" + post.featured_image_url}
+                  src={getImageUrl(post.featured_image_url)}
                   alt={post.image_alt || post.title}
                   width={400}
                   height={220}

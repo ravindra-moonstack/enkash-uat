@@ -54,3 +54,15 @@
     max-height: 40px;
   }
 }
+
+.static_logos_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  width: 100%;
+}
