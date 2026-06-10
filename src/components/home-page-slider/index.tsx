@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useMemo } from "react"
+import React, { useMemo, useState, useEffect, useRef } from "react"
 import Slider, { Settings } from "react-slick"
 import styles from "./homePageSlider.module.scss"
 import "slick-carousel/slick/slick.css"
@@ -33,7 +33,26 @@ const HomePageSlider: React.FC<HomePageSliderProps> = ({
   slidesToShow = 2,
   className = "",
 }) => {
-  //
+  const [isVisible, setIsVisible] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.05, rootMargin: "200px" }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const sliderSettings: Settings = useMemo(
     () => ({
@@ -58,43 +77,47 @@ const HomePageSlider: React.FC<HomePageSliderProps> = ({
   )
 
   return (
-    <div className={`col-12 ${styles.banking_wrapper} ${className}`}>
+    <div className={`col-12 ${styles.banking_wrapper} ${className}`} ref={containerRef}>
       <div className={styles.marquee_box}>
-        <Slider {...sliderSettings} className={styles.custom_slider}>
-          {testimonials.map((item, index) => (
-            <div key={index} className={styles.slide_item}>
-              <AdidasCard
-                image={
-                  typeof item.image === "string" ? item.image : item.image.src
-                }
-                title1={item.title1}
-                title2={item.title2}
-                description={item.description}
-                name={item.name}
-                role={item.role}
-                profileImg={
-                  typeof item.profileImg === "string"
-                    ? item.profileImg
-                    : item.profileImg.src
-                }
-                rightTopIcon={
-                  item.rightTopIcon &&
-                  (typeof item.rightTopIcon === "string"
-                    ? item.rightTopIcon
-                    : item.rightTopIcon.src)
-                }
-                backLogo={
-                  item.backLogo
-                    ? typeof item.backLogo === "string"
-                      ? item.backLogo
-                      : item.backLogo.src
-                    : ""
-                }
-                ourlayClass={item.ourlayClass}
-              />
-            </div>
-          ))}
-        </Slider>
+        {isVisible ? (
+          <Slider {...sliderSettings} className={styles.custom_slider}>
+            {testimonials.map((item, index) => (
+              <div key={index} className={styles.slide_item}>
+                <AdidasCard
+                  image={
+                    typeof item.image === "string" ? item.image : item.image.src
+                  }
+                  title1={item.title1}
+                  title2={item.title2}
+                  description={item.description}
+                  name={item.name}
+                  role={item.role}
+                  profileImg={
+                    typeof item.profileImg === "string"
+                      ? item.profileImg
+                      : item.profileImg.src
+                  }
+                  rightTopIcon={
+                    item.rightTopIcon &&
+                    (typeof item.rightTopIcon === "string"
+                      ? item.rightTopIcon
+                      : item.rightTopIcon.src)
+                  }
+                  backLogo={
+                    item.backLogo
+                      ? typeof item.backLogo === "string"
+                        ? item.backLogo
+                        : item.backLogo.src
+                      : ""
+                  }
+                  ourlayClass={item.ourlayClass}
+                />
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          <div style={{ minHeight: "350px" }} />
+        )}
       </div>
     </div>
   )
