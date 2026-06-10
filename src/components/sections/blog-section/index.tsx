@@ -31,7 +31,7 @@ function decodeHTML(str: string) {
     .replace(/&amp;/g, "&")
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+const BASE_URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3000"
 
 async function fetchBlogs(
   cards?: number[],

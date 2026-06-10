@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+const BASE_URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3000"
 
 export const getBlogCategories = async () => {
   const res = await fetch(`${BASE_URL}/api/resources/blogs/getCategory`, {
