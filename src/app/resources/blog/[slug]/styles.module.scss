@@ -1,12 +1,7 @@
 .blog_nav_section {
-  padding: 100px 20px 0px; 
-
-  @media (max-width: 991px) {
-    padding: 80px 20px 0px;
-  }
-
+  padding: 100px 20px 0px;  
   @media (max-width: 767px) {
-    padding: 60px 15px 0px;
+    padding: 106px 15px 0px;
   }
 }
 
@@ -21,6 +16,11 @@
   margin: 0 auto;
   flex-wrap: wrap;
 
+  @media (max-width: 767px) {
+    padding: 10px 0px 5px;
+    gap: 4px;
+  }
+
   .breadcrumbLink { 
     font-style: normal;
     font-weight: 400;
@@ -34,6 +34,11 @@
     &:hover {
       color: #1A56FE;
     }
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 
   .breadcrumbChevron {
@@ -43,6 +48,11 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+
+    @media (max-width: 767px) {
+      width: 10px;
+      height: 10px;
+    }
   }
 
   .breadcrumbActive {
@@ -55,5 +65,16 @@
     color: #6C6C6C;
     text-decoration: none;
     display: inline-block;
+    max-width: 100%;
+
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 20px;
+      max-width: 150px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: bottom;
+    }
   }
 }
