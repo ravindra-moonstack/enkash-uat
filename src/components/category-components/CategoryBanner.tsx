@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 import styles from "./category_banner.module.scss"
 import Link from "next/link"
+import { getImageUrl } from "@/src/utils/common"
 
 const CategoryBanner = ({ data }: { data: any }) => {
   return (
@@ -31,7 +32,7 @@ const CategoryBanner = ({ data }: { data: any }) => {
               </div>
               <div className={styles.category_banner_image}>
                 <Image
-                  src={`/uploads/${data[0].image}`}
+                  src={getImageUrl(data[0].image)}
                   alt={data[0].title}
                   width={600}
                   height={350}

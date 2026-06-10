@@ -4,7 +4,8 @@ import styles from "./singleBlog.module.scss"
 import TableOfContents from "./TableOfContents"
 import BlogContent from "./BlogContent"
 import SummarizeWithAI from "./SummarizeWithAI"
-import { addPTags } from "@/src/utils/common"
+import { addPTags, getImageUrl } from "@/src/utils/common"
+import Image from "next/image"
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { FiPhoneCall, FiHeadphones } from "react-icons/fi"
@@ -133,11 +134,7 @@ const BlogBody = ({
     bodyData.show_featured_image !== "hide" &&
     bodyData.show_featured_image !== null &&
     bodyData.show_featured_image !== undefined
-  const imageUrl = bodyData.image
-    ? bodyData.image.startsWith("http")
-      ? bodyData.image
-      : `/uploads/${bodyData.image}`
-    : ""
+  const imageUrl = bodyData.image ? getImageUrl(bodyData.image) : ""
 
   return (
     <>
@@ -157,10 +154,14 @@ const BlogBody = ({
             <div className={styles.colLg9Center}>
               {showFeaturedImage && imageUrl && (
                 <div className={styles.featuredImageWrapper}>
-                  <img
+                  <Image
                     src={imageUrl}
                     alt={bodyData.imageAlt || title}
                     className={styles.featuredImage}
+                    width={777}
+                    height={437}
+                    priority={true}
+                    fetchPriority="high"
                   />
                 </div>
               )}
