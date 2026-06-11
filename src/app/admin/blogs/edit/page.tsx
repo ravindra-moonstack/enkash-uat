@@ -101,6 +101,8 @@ export default function EditPostPage() {
     handleApplySlug,
     customDate,
     setCustomDate,
+    scheduledDate,
+    setScheduledDate,
     lastEditedBy,
     updatedAt,
   } = useEditPost()
@@ -530,6 +532,18 @@ export default function EditPostPage() {
                       type="datetime-local"
                       value={customDate}
                       onChange={(e) => setCustomDate(e.target.value)}
+                      className={styles.datePickerInput}
+                      disabled={isLocked}
+                    />
+                  </div>
+                </div>
+                <div className={styles.statusRow}>
+                  <i className="bi bi-calendar-check"></i> Scheduled Publish Date:
+                  <div className={styles.datePickerWrapper}>
+                    <input
+                      type="datetime-local"
+                      value={scheduledDate}
+                      onChange={(e) => setScheduledDate(e.target.value)}
                       className={styles.datePickerInput}
                       disabled={isLocked}
                     />

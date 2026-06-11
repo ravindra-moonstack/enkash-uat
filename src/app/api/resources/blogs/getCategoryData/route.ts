@@ -21,7 +21,7 @@ async function getBlogsCategoryName(
 
   const statusCondition = hasAdminToken
     ? "p.status IN ('publish', 'draft')"
-    : "p.status = 'publish'"
+    : "p.status = 'publish' AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())"
 
   const query = `
     SELECT 

@@ -9,6 +9,7 @@ export async function GET() {
     FROM posts AS p
     WHERE p.post_type = 'post'
       AND p.status = 'publish'
+      AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())
       AND p.featured_right = 'yes'
     ORDER BY p.updated_at DESC LIMIT 3
   `

@@ -125,13 +125,25 @@ export async function POST(request: Request) {
       "untitled"
     const uniqueSlug = await getUniqueSlug("posts", baseSlug)
 
+    // Ensure scheduled_publish_date exists
+    try {
+      const [cols]: any = await pool.query("SHOW COLUMNS FROM posts")
+      if (!cols.find((c: any) => c.Field === "scheduled_publish_date")) {
+        await pool.query(
+          "ALTER TABLE posts ADD COLUMN scheduled_publish_date DATETIME DEFAULT NULL"
+        )
+      }
+    } catch (e) {
+      console.error("Error checking posts table", e)
+    }
+
     // Basic insert for now
     const query = `
       INSERT INTO posts (
           title, slug, content, excerpt, status, author, 
           featured_image, featured_left_side, featured_right, category_featured_blog, 
-          category, tags, post_type, created_at, updated_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'post', NOW(), ?)
+          category, tags, post_type, created_at, updated_at, scheduled_publish_date
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'post', NOW(), ?, ?)
     `
     const [result]: any = await pool.execute(query, [
       data.title || "",
@@ -147,6 +159,7 @@ export async function POST(request: Request) {
       data.categories || "",
       data.tags || "",
       data.updated_at || null, // pass null to let mysql default to current timestamp if omitted
+      data.scheduled_publish_date || null,
     ])
 
     const postId = result.insertId
@@ -193,6 +206,7 @@ export async function POST(request: Request) {
         WHERE FIND_IN_SET(t.term_id, p.category) > 0 
         AND p.status = 'publish' 
         AND p.post_type = 'post'
+        AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())
       )
       WHERE t.taxonomy = 'category'
     `)

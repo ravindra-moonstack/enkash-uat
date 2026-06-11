@@ -53,6 +53,8 @@ export default function AddPostPage() {
         status: postStatus,
         customDate,
         setCustomDate,
+        scheduledDate,
+        setScheduledDate,
         lastEditedBy,
         updatedAt
     } = useAddPost()
@@ -227,6 +229,17 @@ export default function AddPostPage() {
                                             type="datetime-local"
                                             value={customDate}
                                             onChange={(e) => setCustomDate(e.target.value)}
+                                            className={styles.datePickerInput}
+                                        />
+                                    </div>
+                                </div>
+                                <div className={styles.statusRow}>
+                                    <i className="bi bi-calendar-check"></i> Scheduled Publish Date:
+                                    <div className={styles.datePickerWrapper}>
+                                        <input
+                                            type="datetime-local"
+                                            value={scheduledDate}
+                                            onChange={(e) => setScheduledDate(e.target.value)}
                                             className={styles.datePickerInput}
                                         />
                                     </div>

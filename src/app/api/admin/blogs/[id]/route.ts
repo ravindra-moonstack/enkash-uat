@@ -33,6 +33,7 @@ export async function PATCH(
           WHERE FIND_IN_SET(t.term_id, p.category) > 0 
           AND p.status = 'publish' 
           AND p.post_type = 'post'
+          AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())
         )
         WHERE t.taxonomy = 'category'
       `)
@@ -100,11 +101,24 @@ export async function PUT(
       }
     }
 
+    // Ensure scheduled_publish_date exists
+    try {
+      const [cols]: any = await pool.query("SHOW COLUMNS FROM posts")
+      if (!cols.find((c: any) => c.Field === "scheduled_publish_date")) {
+        await pool.query(
+          "ALTER TABLE posts ADD COLUMN scheduled_publish_date DATETIME DEFAULT NULL"
+        )
+      }
+    } catch (e) {
+      console.error("Error checking posts table", e)
+    }
+
     const query = `
       UPDATE posts SET
           title = ?, slug = ?, content = ?, excerpt = ?, status = ?, author = ?, 
           featured_image = ?, featured_left_side = ?, featured_right = ?, category_featured_blog = ?, 
-          category = ?, tags = ?, created_at = COALESCE(?, created_at), updated_at = NOW()
+          category = ?, tags = ?, created_at = COALESCE(?, created_at), updated_at = NOW(),
+          scheduled_publish_date = ?
       WHERE id = ?
     `
     await pool.query(query, [
@@ -121,6 +135,7 @@ export async function PUT(
       data.categories || "",
       data.tags || "",
       data.created_at || null,
+      data.scheduled_publish_date || null,
       id,
     ])
 
@@ -162,6 +177,7 @@ export async function PUT(
         WHERE FIND_IN_SET(t.term_id, p.category) > 0 
         AND p.status = 'publish' 
         AND p.post_type = 'post'
+        AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())
       )
       WHERE t.taxonomy = 'category'
     `)
