@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./singleBlog.module.scss"
 import { DynamicHeading } from ".."
+import Link from "next/link"
 
 const formatDate = (dateStr: string) => {
   if (!dateStr) return ""
@@ -27,9 +28,20 @@ const BlogBanner = ({ bannerData }: { bannerData: any }) => {
           <div className={styles.meta}>
             <span className={styles.author}>
               By{" "}
-              {data.first_name
-                ? `${data.first_name} ${data.last_name || ""}`
-                : data.author}
+              {data.user_login ? (
+                <Link
+                  href={`/resources/blog/author/${data.user_login}`}
+                  className={styles.authorLink}
+                >
+                  {data.first_name
+                    ? `${data.first_name} ${data.last_name || ""}`
+                    : data.author}
+                </Link>
+              ) : (
+                data.first_name
+                  ? `${data.first_name} ${data.last_name || ""}`
+                  : data.author
+              )}
             </span>
 
             <div className={styles.readTimeContainer}>
