@@ -414,6 +414,7 @@ export default function EditPostPage() {
                   value={seoTitle}
                   onChange={(e) => setSeoTitle(e.target.value)}
                 />
+                <span className={styles.charCount}>{seoTitle.length} characters</span>
               </div>
 
               <div className={styles.inputGroup}>
@@ -438,6 +439,7 @@ export default function EditPostPage() {
                   value={metaDescription}
                   onChange={(e) => setMetaDescription(e.target.value)}
                 ></textarea>
+                <span className={styles.charCount}>{metaDescription.length} characters</span>
               </div>
             </div>
           </div>
