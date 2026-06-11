@@ -453,7 +453,8 @@ const url: {
     destination: "/resources/videos",
   },
   {
-    source: "/resources/blog/press_release/press-note-pa-license-in-principle-approval",
+    source:
+      "/resources/blog/press_release/press-note-pa-license-in-principle-approval",
     destination: "/resources/blogs",
   },
   {
@@ -471,10 +472,6 @@ const url: {
   {
     source: "/account-payable",
     destination: "/products/make-payments",
-  },
-  {
-    source: "/resources/blog/ultimate-guide-ACH-debit",
-    destination: "/resources/blog/ultimate-guide-ach-debit",
   },
   {
     source: "/bolt",
