@@ -169,6 +169,7 @@ export default function AddPostPage() {
                             <div className={styles.inputGroup}>
                                 <label>SEO title</label>
                                 <input type="text" value={seoTitle} onChange={(e) => setSeoTitle(e.target.value)} />
+                                <span className={styles.charCount}>{seoTitle.length} characters</span>
                             </div>
 
 
@@ -186,6 +187,7 @@ export default function AddPostPage() {
                             <div className={styles.inputGroup}>
                                 <label>Meta description</label>
                                 <textarea value={metaDescription} onChange={(e) => setMetaDescription(e.target.value)}></textarea>
+                                <span className={styles.charCount}>{metaDescription.length} characters</span>
                             </div>
                         </div>
                     </div>
