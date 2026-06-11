@@ -70,6 +70,10 @@ export default async function handler(
 
       const uploadDir = getUploadDir()
 
+      if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true })
+      }
+
       fileName = getUniqueFileName(uploadDir, fileName)
       const filePath = path.join(uploadDir, fileName)
       fs.writeFileSync(filePath, fileData)
