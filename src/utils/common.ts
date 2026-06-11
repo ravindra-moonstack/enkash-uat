@@ -14,22 +14,53 @@ export const getImageUrl = (url?: string): string => {
   if (!url) return "/resources/placeholder.png"
 
   const trimmed = url.trim()
-  if (trimmed.includes("<img") || trimmed.includes("&lt;img") || trimmed.includes("<IMG") || trimmed.includes("&lt;IMG")) {
+
+  // Handle HTML image tags
+  if (
+    trimmed.includes("<img") ||
+    trimmed.includes("&lt;img") ||
+    trimmed.includes("<IMG") ||
+    trimmed.includes("&lt;IMG")
+  ) {
     const decoded = decodeHTML(trimmed)
-    const match = decoded.match(/src="([^"]+)"/i) || decoded.match(/src='([^']+)'/i)
+    const match =
+      decoded.match(/src="([^"]+)"/i) || decoded.match(/src='([^']+)'/i)
+
     if (match) {
       return getImageUrl(match[1])
     }
   }
 
-  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) return trimmed
+  // Convert WordPress upload URLs to local upload paths
+  const wpUploadsMatch = trimmed.match(/\/wp-content\/uploads\/(.+)$/i)
+  if (wpUploadsMatch) {
+    return `/uploads/${wpUploadsMatch[1]}`
+  }
+
+  // Normalize existing upload paths
   if (trimmed.startsWith("../uploads/")) {
     return trimmed.replace("../uploads/", "/uploads/")
   }
+
   if (trimmed.startsWith("uploads/")) {
     return `/uploads/${trimmed.substring("uploads/".length)}`
   }
-  if (trimmed.startsWith("/")) return trimmed
+
+  if (trimmed.startsWith("/uploads/")) {
+    return trimmed
+  }
+
+  // Keep other absolute URLs unchanged
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+    return trimmed
+  }
+
+  // Keep other root-relative paths unchanged
+  if (trimmed.startsWith("/")) {
+    return trimmed
+  }
+
+  // Treat any remaining value as an uploads file name/path
   return `/uploads/${trimmed}`
 }
 

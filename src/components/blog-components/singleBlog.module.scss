@@ -682,7 +682,13 @@
       text-align: justify !important;
     }
   }
-
+  div{
+    font-size: 16px!important;
+    font-weight: 400!important;
+    line-height: 28px!important;
+    letter-spacing: -.02em!important;
+    color: #5b5b5b!important;
+  }
   ol,
   ul {
     margin-bottom: 1.5em !important;
@@ -701,6 +707,10 @@
   a {
     color: #1c5af4 !important;
     text-decoration: none !important;
+
+    * {
+      color: #1c5af4 !important;
+    }
 
     &:hover {
       text-decoration: underline !important;
