@@ -87,7 +87,10 @@ export async function GET(req: NextRequest) {
 
     const offset = (page - 1) * limit
 
-    const conditions: string[] = ["posts.status = 'publish'"]
+    const conditions: string[] = [
+      "posts.status = 'publish'",
+      "(posts.scheduled_publish_date IS NULL OR posts.scheduled_publish_date <= NOW())"
+    ]
     const params: any[] = []
 
     if (search) {

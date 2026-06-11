@@ -30,7 +30,7 @@ async function handleGetRelatedBlogs(
   ids?: number[] | null,
   slugs?: string[] | null
 ): Promise<BlogPost[]> {
-  const statusCondition = "p.status = 'publish'"
+  const statusCondition = "p.status = 'publish' AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())"
 
   // 1. Fetch by list of IDs if provided
   if (ids && ids.length > 0) {
@@ -38,9 +38,10 @@ async function handleGetRelatedBlogs(
       `SELECT p.old_id, p.title, p.slug, p.created_at, att.image_url AS featured_image_url
        FROM posts AS p
        LEFT JOIN attachments AS att ON p.featured_image = att.id
-       WHERE p.post_type = 'post'
-         AND p.status = 'publish'
-         AND p.old_id IN (?)`,
+        WHERE p.post_type = 'post'
+          AND p.status = 'publish'
+          AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())
+          AND p.old_id IN (?)`,
       [ids]
     )
 
@@ -57,9 +58,10 @@ async function handleGetRelatedBlogs(
       `SELECT p.old_id, p.title, p.slug, p.created_at, att.image_url AS featured_image_url
        FROM posts AS p
        LEFT JOIN attachments AS att ON p.featured_image = att.id
-       WHERE p.post_type = 'post'
-         AND p.status = 'publish'
-         AND p.slug IN (?)`,
+        WHERE p.post_type = 'post'
+          AND p.status = 'publish'
+          AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())
+          AND p.slug IN (?)`,
       [slugs]
     )
 
@@ -75,7 +77,7 @@ async function handleGetRelatedBlogs(
   if (slug) {
     // Get target post category and tags
     const [postData]: any = await pool.query(
-      `SELECT old_id, category, tags FROM posts WHERE post_type = 'post' AND status = 'publish' AND slug = ? LIMIT 1`,
+      `SELECT old_id, category, tags FROM posts WHERE post_type = 'post' AND status = 'publish' AND (scheduled_publish_date IS NULL OR scheduled_publish_date <= NOW()) AND slug = ? LIMIT 1`,
       [slug]
     )
 

@@ -20,6 +20,7 @@ export async function GET(request: Request) {
       ON FIND_IN_SET(te.term_id, p.category)
     WHERE p.post_type = 'post'
       AND p.status = 'publish'
+      AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())
     GROUP BY p.id
     ORDER BY p.created_at DESC 
     LIMIT ? OFFSET ?

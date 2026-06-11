@@ -3,7 +3,7 @@ import pool from "@/src/lib/dbConnect"
 export async function fetchBlogSlugs(): Promise<string[]> {
   try {
     const [rows]: any = await pool.execute(
-      "SELECT slug FROM posts WHERE status = 'publish' AND post_type = 'post' ORDER BY created_at DESC"
+      "SELECT slug FROM posts WHERE status = 'publish' AND post_type = 'post' AND (scheduled_publish_date IS NULL OR scheduled_publish_date <= NOW()) ORDER BY created_at DESC"
     )
     return rows.map((row: any) => row.slug as string)
   } catch (error) {

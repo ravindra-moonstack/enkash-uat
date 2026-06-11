@@ -61,6 +61,7 @@ export function useEditPost() {
 
   // Edit details
   const [customDate, setCustomDate] = useState("")
+  const [scheduledDate, setScheduledDate] = useState("")
   const [lastEditedBy, setLastEditedBy] = useState("System")
   const [updatedAt, setUpdatedAt] = useState("")
 
@@ -113,6 +114,18 @@ export function useEditPost() {
                   .slice(0, 16)
                 setCustomDate(localISOTime)
               }
+            }
+            if (data.post.scheduled_publish_date) {
+              const dateObj = new Date(data.post.scheduled_publish_date)
+              if (!isNaN(dateObj.getTime())) {
+                const offset = dateObj.getTimezoneOffset() * 60000
+                const localISOTime = new Date(dateObj.getTime() - offset)
+                  .toISOString()
+                  .slice(0, 16)
+                setScheduledDate(localISOTime)
+              }
+            } else {
+              setScheduledDate("")
             }
           }
           if (data.meta) {
@@ -185,6 +198,7 @@ export function useEditPost() {
     categories,
     excerpt,
     tags,
+    scheduledDate,
   ])
 
   useEffect(() => {
@@ -351,6 +365,9 @@ export function useEditPost() {
       created_at: customDate
         ? customDate.replace("T", " ") + (customDate.length === 16 ? ":00" : "")
         : undefined,
+      scheduled_publish_date: scheduledDate
+        ? scheduledDate.replace("T", " ") + (scheduledDate.length === 16 ? ":00" : "")
+        : null,
     }
 
     try {
@@ -509,6 +526,8 @@ export function useEditPost() {
     successMessage,
     customDate,
     setCustomDate,
+    scheduledDate,
+    setScheduledDate,
     lastEditedBy,
     updatedAt,
     handleAddCategory,

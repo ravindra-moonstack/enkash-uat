@@ -10,7 +10,7 @@ export async function GET(request: Request) {
     const hasAdminToken = cookieStore.has("token")
     const statusCondition = hasAdminToken
       ? "p.status IN ('publish', 'draft')"
-      : "p.status = 'publish'"
+      : "p.status = 'publish' AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())"
 
     const postQuery = `
     SELECT 
