@@ -239,8 +239,9 @@ export async function POST(request: Request) {
 
     fileName = sanitizeFileName(fileName)
 
+    const { UPLOADS_DIR } = await import("@/src/lib/upload-config")
     const dateDir = new Date().toISOString().slice(0, 7).replace("-", "/") // e.g. "2026/05"
-    const uploadDir = path.join(process.cwd(), "public", "uploads", dateDir)
+    const uploadDir = path.join(UPLOADS_DIR, dateDir)
 
     const fs = await import("fs")
 

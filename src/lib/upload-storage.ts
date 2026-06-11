@@ -10,7 +10,7 @@ export interface StoredImage {
 export const UPLOAD_SEGMENT = "test"
 
 export function getUploadDir() {
-  return path.join(process.cwd(), "public", "uploads", UPLOAD_SEGMENT)
+  return path.join(UPLOADS_DIR, UPLOAD_SEGMENT)
 }
 
 export function sanitizeFileName(fileName: string) {
