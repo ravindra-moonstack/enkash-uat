@@ -152,7 +152,7 @@ const BlogBody = ({
 
             {/* CENTER COLUMN */}
             <div className={styles.colLg9Center}>
-              {showFeaturedImage && imageUrl && (
+              {imageUrl && (
                 <div className={styles.featuredImageWrapper}>
                   <Image
                     src={imageUrl}
