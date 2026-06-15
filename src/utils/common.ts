@@ -89,17 +89,5 @@ export const formatDate = (dateString: string) => {
   })
 }
 export function addPTags(html: string) {
-  return html
-    .split(/\n+/)
-    .map((line) => {
-      const trimmed = line.trim()
-
-      if (!trimmed) return ""
-
-      if (/^<[^>]+>/.test(trimmed)) {
-        return trimmed
-      }
-      return `<p>${trimmed}</p>`
-    })
-    .join("")
+  return html.replace(/\r?\n/g, " ")
 }

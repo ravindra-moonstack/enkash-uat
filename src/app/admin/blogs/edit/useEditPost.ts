@@ -81,6 +81,15 @@ export function useEditPost() {
   const isInitialLoad = useRef(true)
   const isSavingRef = useRef(false)
 
+  const decodeContent = (content: string) => {
+    return content
+      .replace(/\\r\\n/g, "\n")
+      .replace(/\\n/g, "\n")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&")
+  }
+
   useEffect(() => {
     if (id) {
       fetch(`/api/admin/blogs/${id}`)
@@ -89,7 +98,7 @@ export function useEditPost() {
           if (data.post) {
             setTitle(data.post.title || "")
             setSlug(data.post.slug || "")
-            setContent(data.post.content || "")
+            setContent(decodeContent(data.post.content) || "")
             setStatus(data.post.status || "draft")
             setFeaturedImageId(data.post.featured_image || "")
             setFeaturedImageUrl(getImageUrl(data.post.featured_image_url) || "")
@@ -366,7 +375,8 @@ export function useEditPost() {
         ? customDate.replace("T", " ") + (customDate.length === 16 ? ":00" : "")
         : undefined,
       scheduled_publish_date: scheduledDate
-        ? scheduledDate.replace("T", " ") + (scheduledDate.length === 16 ? ":00" : "")
+        ? scheduledDate.replace("T", " ") +
+          (scheduledDate.length === 16 ? ":00" : "")
         : null,
     }
 
