@@ -12,7 +12,8 @@ import {
   FaDatabase, 
   FaCode, 
   FaBookOpen,
-  FaFile
+  FaFile,
+  FaFileExcel
 } from "react-icons/fa"
 
 interface UsedFile {
@@ -37,6 +38,45 @@ export default function UsedAssetsPage() {
     frontend_code: true,
     admin_code: true
   })
+
+  const exportToExcel = () => {
+    if (filteredFiles.length === 0) return
+
+    // Header row
+    const headers = ["File Name", "File Path", "URL", "Type", "Sources"]
+    
+    // Data rows
+    const csvRows = filteredFiles.map(file => [
+      file.name,
+      file.path,
+      file.url,
+      file.type,
+      file.sources.join("; ")
+    ])
+
+    // Convert rows to CSV string
+    const csvContent = [
+      headers.join(","),
+      ...csvRows.map(row => 
+        row.map(val => {
+          // Escape quotes and wrap in quotes
+          const escaped = String(val).replace(/"/g, '""')
+          return `"${escaped}"`
+        }).join(",")
+      )
+    ].join("\r\n")
+
+    // Create a Blob with BOM for Excel to open it correctly as UTF-8
+    const blob = new Blob(["\uFEFF" + csvContent], { type: "text/csv;charset=utf-8;" })
+    const url = URL.createObjectURL(blob)
+    
+    const link = document.createElement("a")
+    link.href = url
+    link.setAttribute("download", `used_assets_export_${new Date().toISOString().split('T')[0]}.csv`)
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -191,6 +231,16 @@ export default function UsedAssetsPage() {
               </button>
             ))}
           </div>
+
+          {/* Export Button */}
+          <button 
+            className={styles.exportButton}
+            onClick={exportToExcel}
+            title="Export filtered assets to Excel (CSV)"
+          >
+            <FaFileExcel />
+            Export to Excel
+          </button>
         </div>
 
         {/* Source Checkboxes */}
