@@ -1,290 +1,160 @@
 "use client"
 
-import React from "react"
-import { Editor as TinyMCEEditor } from "@tinymce/tinymce-react"
+import React, { useEffect, useRef, useState } from "react"
 
 interface EditorProps {
   value: string
   onChange: (value: string) => void
   disabled?: boolean
+  placeholder?: string
 }
 
-export default function Editor({ value, onChange, disabled }: EditorProps) {
-  const apiKey =
-    process.env.NEXT_PUBLIC_TINYMCE_API_KEY &&
-    process.env.NEXT_PUBLIC_TINYMCE_API_KEY !== "no-api-key"
-      ? process.env.NEXT_PUBLIC_TINYMCE_API_KEY
-      : "jh7vh9v52fnbaqxly036le6qtmrk1xngd4e3bzqstg3cr2sd"
+declare global {
+  interface Window {
+    CKEDITOR: any
+  }
+}
+
+export default function Editor({
+  value,
+  onChange,
+  disabled,
+  placeholder,
+}: EditorProps) {
+  const editorRef = useRef<any>(null)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [isReady, setIsReady] = useState(false)
+  const valueRef = useRef(value)
+  const isInternalChange = useRef(false)
+
+  // Keep valueRef updated with the latest prop
+  useEffect(() => {
+    valueRef.current = value
+  }, [value])
+
+  useEffect(() => {
+    // Load CKEditor script if not already present
+    if (window.CKEDITOR) {
+      setIsLoaded(true)
+      return
+    }
+
+    const script = document.createElement("script")
+    script.src = "/ckeditor/ckeditor.js"
+    script.async = true
+    script.onload = () => {
+      setIsLoaded(true)
+    }
+    script.onerror = () => {
+      console.error("Failed to load CKEditor 4 script from /public/ckeditor/")
+    }
+    document.head.appendChild(script)
+  }, [])
+
+  useEffect(() => {
+    if (isLoaded && textareaRef.current && !editorRef.current) {
+      // Initialize CKEditor
+      const editor = window.CKEDITOR.replace(textareaRef.current)
+
+      editor.on("instanceReady", () => {
+        setIsReady(true)
+        editor.setData(valueRef.current || "")
+        if (disabled) {
+          editor.setReadOnly(true)
+        }
+      })
+
+      editor.on("change", () => {
+        const data = editor.getData()
+        isInternalChange.current = true
+        onChange(data)
+      })
+
+      editorRef.current = editor
+    }
+
+    return () => {
+      if (editorRef.current) {
+        editorRef.current.destroy()
+        editorRef.current = null
+        setIsReady(false)
+      }
+    }
+  }, [isLoaded, placeholder])
+
+  // Synchronize value from props to editor (one-way from state if needed)
+  useEffect(() => {
+    if (editorRef.current && isReady) {
+      if (isInternalChange.current) {
+        isInternalChange.current = false
+        return
+      }
+      const currentData = editorRef.current.getData()
+      if (currentData !== value) {
+        editorRef.current.setData(value || "")
+      }
+    }
+  }, [value, isReady])
+
+  // Handle read-only state dynamically
+  useEffect(() => {
+    if (editorRef.current && isReady) {
+      editorRef.current.setReadOnly(!!disabled)
+    }
+  }, [disabled, isReady])
+
+  // Expose tinymce bridge for Add Media modal cursor insertions
+  useEffect(() => {
+    if (editorRef.current && isReady) {
+      ;(window as any).tinymce = {
+        activeEditor: {
+          insertContent: (contentHtml: string) => {
+            if (editorRef.current) {
+              editorRef.current.insertHtml(contentHtml)
+            }
+          },
+        },
+      }
+    }
+  }, [isReady])
 
   return (
-    <TinyMCEEditor
-      apiKey={"jh7vh9v52fnbaqxly036le6qtmrk1xngd4e3bzqstg3cr2sd"}
-      value={value}
-      disabled={disabled}
-      onEditorChange={(content) => onChange(content)}
-      init={{
-        height: 500,
-        relative_urls: false,
-        menubar: "file edit view insert format tools table",
-        plugins: [
-          "advlist",
-          "autolink",
-          "lists",
-          "link",
-          "image",
-          "charmap",
-          "preview",
-          "anchor",
-          "searchreplace",
-          "visualblocks",
-          "code",
-          "fullscreen",
-          "insertdatetime",
-          "media",
-          "table",
-          "help",
-          "wordcount",
-          "emoticons",
-          "directionality",
-          "nonbreaking",
-        ],
-        toolbar1:
-          "blocks | bold italic blockquote | bullist numlist | alignleft aligncenter alignright alignjustify | link unlink undo redo | charmap",
-        toolbar2:
-          "nonbreaking fontsize | ltr rtl | anchor emoticons | forecolor backcolor | table | help | fullscreen",
-        content_style:
-          "body { font-family:Helvetica,Arial,sans-serif; font-size:16px }",
-        branding: false,
-        promotion: false,
-        toolbar_sticky: true,
-        fontsize_formats: "8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt",
-        link_rel_list: [
-          { title: "Do Follow (Standard)", value: "" },
-          { title: "No Follow", value: "nofollow" },
-          { title: "Sponsored", value: "sponsored" },
-        ],
-        link_list: [
-          { title: "Home Page", value: "/" },
-          { title: "About Page", value: "/about-us" },
-          { title: "Contact Page", value: "/contact-us" },
-          { title: "Blogs Page", value: "/resources/blogs" },
-        ],
-        setup: (editor: any) => {
-          editor.addCommand("mceCodeEditor", () => {
-            const originalHtml = editor.getContent({ source_view: true })
+    <div className="ckeditor-container w-full rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+      {!isLoaded && (
+        <div className="flex items-center justify-center p-8 bg-gray-50 text-gray-500 italic">
+          <div className="animate-spin rounded-full h-5 w-5 border-2 border-purple-600 border-t-transparent mr-3"></div>
+          Loading Editor...
+        </div>
+      )}
 
-            // Insert marker at cursor
-            const rng = editor.selection.getRng()
-            const marker = editor.getDoc().createElement("span")
-            marker.id = "temp-cursor-marker"
-
-            try {
-              const collapsedRng = rng.cloneRange()
-              collapsedRng.collapse(true)
-              collapsedRng.insertNode(marker)
-            } catch (e) {
-              // If inserting marker fails
-            }
-
-            const htmlWithMarker = editor.getContent({ source_view: true })
-
-            // Clean up marker in the editor DOM immediately
-            if (marker.parentNode) {
-              marker.parentNode.removeChild(marker)
-            }
-
-            // Locate marker in HTML string to get cursor position
-            const markerString = '<span id="temp-cursor-marker"></span>'
-            let cursorIndex = htmlWithMarker.indexOf(markerString)
-            let cleanHtml = originalHtml
-
-            if (cursorIndex !== -1) {
-              // Strip marker from HTML
-              cleanHtml = htmlWithMarker.replace(markerString, "")
-            } else {
-              // Try variations (self-closing or empty attributes)
-              const markerRegex =
-                /<span\s+id="temp-cursor-marker"[^>]*><\/span>/
-              const match = markerRegex.exec(htmlWithMarker)
-              if (match) {
-                cursorIndex = match.index
-                cleanHtml = htmlWithMarker.replace(markerRegex, "")
-              } else {
-                cursorIndex = originalHtml.length
-              }
-            }
-
-            // Open TinyMCE custom dialog
-            editor.windowManager.open({
-              title: "Source Code",
-              size: "large",
-              body: {
-                type: "panel",
-                items: [
-                  {
-                    type: "textarea",
-                    name: "code",
-                    label: "HTML Source Code",
-                  },
-                ],
-              },
-              buttons: [
-                {
-                  type: "cancel",
-                  text: "Cancel",
-                },
-                {
-                  type: "submit",
-                  text: "Save",
-                  primary: true,
-                },
-              ],
-              initialData: {
-                code: cleanHtml,
-              },
-              onSubmit: (api: any) => {
-                const data = api.getData()
-                const newHtml = data.code || ""
-
-                // Retrieve selection index from textarea
-                const textarea = document.querySelector(
-                  ".tox-dialog textarea"
-                ) as HTMLTextAreaElement
-                const newCursorIndex = textarea
-                  ? textarea.selectionStart
-                  : newHtml.length
-
-                // Insert marker in new HTML
-                const newHtmlWithMarker =
-                  newHtml.substring(0, newCursorIndex) +
-                  '<span id="temp-cursor-marker"></span>' +
-                  newHtml.substring(newCursorIndex)
-
-                editor.setContent(newHtmlWithMarker)
-
-                // Close dialog first, then asynchronously restore selection to bypass automatic close bookmarker
-                setTimeout(() => {
-                  const newMarker = editor
-                    .getDoc()
-                    .getElementById("temp-cursor-marker")
-                  if (newMarker) {
-                    editor.focus()
-                    const body = editor.getBody()
-
-                    if (newMarker.parentNode === body) {
-                      // If marker is directly inside body (root level), wrap in a paragraph or insert empty paragraph
-                      const p = editor.getDoc().createElement("p")
-                      const br = editor.getDoc().createElement("br")
-                      br.setAttribute("data-mce-bogus", "1")
-                      p.appendChild(br)
-
-                      newMarker.parentNode.insertBefore(p, newMarker)
-
-                      const newRange = editor.dom.createRng()
-                      newRange.setStart(p, 0)
-                      newRange.setEnd(p, 0)
-                      editor.selection.setRng(newRange)
-                      newMarker.parentNode.removeChild(newMarker)
-                    } else {
-                      // Standard cursor position
-                      const newRange = editor.dom.createRng()
-                      newRange.setStartBefore(newMarker)
-                      newRange.setEndBefore(newMarker)
-                      editor.selection.setRng(newRange)
-                      newMarker.parentNode.removeChild(newMarker)
-                    }
-                    editor.nodeChanged()
-                  }
-                }, 50)
-
-                api.close()
-              },
-            })
-
-            // Poll for the textarea inside the newly opened modal to focus and set selection range
-            let attempts = 0
-            const interval = setInterval(() => {
-              attempts++
-              const textarea = document.querySelector(
-                ".tox-dialog textarea"
-              ) as HTMLTextAreaElement
-              if (textarea) {
-                clearInterval(interval)
-                textarea.focus()
-                textarea.setSelectionRange(cursorIndex, cursorIndex)
-              } else if (attempts > 30) {
-                clearInterval(interval)
-              }
-            }, 50)
-          })
-
-          // Intercept Enter key inside <div> elements to create a new block outside/inside instead of cloning <div>
-          editor.on("keydown", (e: any) => {
-            if (e.keyCode === 13 && !e.shiftKey) {
-              const startNode = editor.selection.getStart()
-              const div = editor.dom.getParent(startNode, "div")
-              if (div) {
-                e.preventDefault()
-
-                // Insert a temporary marker at selection
-                const marker = editor.getDoc().createElement("span")
-                marker.id = "temp-enter-marker"
-
-                const rng = editor.selection.getRng()
-                const collapsedRng = rng.cloneRange()
-                collapsedRng.collapse(true)
-                collapsedRng.insertNode(marker)
-
-                // Split the div at the marker using TinyMCE's robust DOM split utility
-                const secondPart = editor.dom.split(div, marker)
-
-                if (secondPart) {
-                  const firstChild = secondPart.firstChild
-                  const isBlock = firstChild && editor.dom.isBlock(firstChild)
-
-                  if (isBlock) {
-                    // Unwrap the secondPart div so its block children are at the root level (outside the div)
-                    editor.dom.remove(secondPart, true)
-                  } else {
-                    // Rename the secondPart div itself to 'p'
-                    editor.dom.rename(secondPart, "p")
-                  }
-                }
-
-                // Set selection right at the marker
-                editor.focus()
-                const targetParent = marker.parentNode
-                if (targetParent) {
-                  const markerIndex = Array.from(targetParent.childNodes).indexOf(marker)
-
-                  // Remove the marker first
-                  targetParent.removeChild(marker)
-
-                  const newRng = editor.dom.createRng()
-                  if (targetParent.childNodes.length === 0 || 
-                      (targetParent.childNodes.length === 1 && targetParent.firstChild?.nodeName === 'BR')) {
-
-                    // Ensure there is a bogus BR for visual caret rendering
-                    if (targetParent.childNodes.length === 0) {
-                      const br = editor.getDoc().createElement("br")
-                      br.setAttribute("data-mce-bogus", "1")
-                      targetParent.appendChild(br)
-                    }
-                    newRng.setStart(targetParent, 0)
-                    newRng.setEnd(targetParent, 0)
-                  } else {
-                    newRng.setStart(targetParent, markerIndex)
-                    newRng.setEnd(targetParent, markerIndex)
-                  }
-                  editor.selection.setRng(newRng)
-                }
-
-                editor.nodeChanged()
-              }
-            }
-          })
-        },
-      }}
-    />
+      <textarea
+        ref={textareaRef}
+        defaultValue={value}
+        className="invisible h-0 w-0"
+      />
+      <style jsx global>{`
+        /* Minimalist customization for CKEditor 4 UI */
+        .cke_chrome {
+          border: none !important;
+          box-shadow: none !important;
+        }
+        .cke_top {
+          background: #f9fafb !important;
+          border-bottom: 1px solid #f3f4f6 !important;
+          padding: 8px !important;
+        }
+        .cke_bottom {
+          background: #f9fafb !important;
+          border-top: 1px solid #f3f4f6 !important;
+        }
+        .cke_contents {
+          padding: 0 !important;
+        }
+        .cke_notification_warning {
+          display: none !important;
+        }
+      `}</style>
+    </div>
   )
 }
