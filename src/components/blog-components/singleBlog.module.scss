@@ -663,7 +663,7 @@
     margin: 20px 0 10px 0 !important;
   }
 
-  p, span {
+  p, > span {
     font-size: 16px !important;
     font-weight: 400 !important;
     line-height: 28px !important;
@@ -907,7 +907,7 @@
       margin: 18px 0 8px 0 !important;
     }
 
-    p, span {
+    p, > span {
       font-size: 14px !important;
       line-height: 24px !important;
       text-align: left !important;
