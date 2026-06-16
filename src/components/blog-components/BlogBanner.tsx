@@ -25,12 +25,16 @@ const BlogBanner = ({ bannerData }: { bannerData: any }) => {
           />
 
           <div className={styles.meta}>
-            <span className={styles.author}>
-              By{" "}
-              {data.first_name
-                ? `${data.first_name} ${data.last_name || ""}`
-                : data.author}
-            </span>
+            {(data.remove_author_details === 0 ||
+              data.remove_author_details === null ||
+              data.remove_author_details === undefined) && (
+              <span className={styles.author}>
+                By{" "}
+                {data.first_name
+                  ? `${data.first_name} ${data.last_name || ""}`
+                  : data.author}
+              </span>
+            )}
 
             <div className={styles.readTimeContainer}>
               <span className={styles.readTime}>{data.readTime}</span>
