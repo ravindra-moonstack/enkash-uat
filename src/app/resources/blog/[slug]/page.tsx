@@ -8,7 +8,6 @@ import BlogBody from "@/src/components/blog-components/BlogBody"
 import AuthorSection from "@/src/components/blog-components/AuthorSection"
 import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
 import NewsletterSection from "@/src/components/blog-components/NewsletterSection"
-import { BlogNav, CustomBreadcrumb } from "@/src/components"
 import { notFound, redirect } from "next/navigation"
 
 import {
@@ -123,6 +122,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       show_featured_image: result[0].show_featured_image,
       slug: result[0].slug,
       readTime: readTime,
+      remove_author_details: result[0].remove_author_details,
     },
   ]
 
@@ -138,14 +138,6 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   ]
 
   const relatedBlogs = [{ relatedBlogs: json?.relatedBlogs }]
-
-  const activeCategory = result[0].category_slugs?.split(",")[0] || ""
-
-  const BreadCrumbItems = [
-    { name: "Resources", url: "/resources" },
-    { name: "Blogs", url: "/resources/blogs" },
-    { name: result[0].title, url: `/resources/blog/${result[0].slug}` },
-  ]
 
   const schemaMarkup = result[0].post_schema_markup
   const hasScriptTag =
@@ -170,9 +162,6 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className={`${styles.mainPage}`}>
-        {/* <div className="max-w-auto">
-          <CustomBreadcrumb items={BreadCrumbItems} linkColor="allBlack" />
-        </div> */}
         <section className={styles.blog_nav_section}>
           <div className="max-w-auto">
             <nav aria-label="Breadcrumb" className={styles.customBreadcrumb}>
