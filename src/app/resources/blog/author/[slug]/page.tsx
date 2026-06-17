@@ -14,7 +14,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const data = await getAuthorData(slug)
+  const decodedSlug = decodeURIComponent(slug)
+  const data = await getAuthorData(decodedSlug)
 
   if (!data || !data.authorInfo) {
     const fallbackTitle = slug
@@ -39,13 +40,13 @@ export async function generateMetadata({
     title: metaTitle,
     description: metaDescription,
     alternates: {
-      canonical: `${process.env.URL || "https://www.enkash.com"}/resources/blog/author/${slug}`,
+      canonical: `${process.env.URL || "https://www.enkash.com"}/resources/blog/author/${slug.toLowerCase()}`,
     },
     openGraph: {
       title: metaTitle,
       description: metaDescription,
       type: "profile",
-      url: `${process.env.URL || "https://www.enkash.com"}/resources/blog/author/${slug}`,
+      url: `${process.env.URL || "https://www.enkash.com"}/resources/blog/author/${slug.toLowerCase()}`,
       username: author.user_login,
       firstName: author.first_name,
       lastName: author.last_name,
@@ -67,7 +68,8 @@ const AuthorPage = async ({
 }) => {
   const { slug } = await params
   const { q: searchQuery } = await searchParams
-  const data = await getAuthorData(slug, searchQuery)
+  const decodedSlug = decodeURIComponent(slug)
+  const data = await getAuthorData(decodedSlug, searchQuery)
   const navData = await getBlogCategories()
 
   if (!data || !data.authorInfo) {
@@ -159,7 +161,7 @@ const AuthorPage = async ({
                 src={
                   author.profile_image_url
                     ? author.profile_image_url
-                    : "/uploads/2026/02/default-avatar.webp"
+                    : "/images/default-avatar.svg"
                 }
                 alt={authorName}
                 width={160}
@@ -206,7 +208,7 @@ const AuthorPage = async ({
       {cardPosts.length > 0 ? (
         <AuthorBlogCard
           data={cardPosts}
-          author={slug}
+          author={decodedSlug}
           searchQuery={searchQuery}
         />
       ) : (

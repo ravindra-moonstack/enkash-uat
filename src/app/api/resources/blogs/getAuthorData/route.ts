@@ -10,7 +10,7 @@ async function getBlogsByAuthor(
   hasAdminToken: boolean = false
 ) {
   let searchClause = ""
-  const params: any[] = [authorLogin]
+  const params: any[] = [authorLogin.toLowerCase(), authorLogin]
 
   if (search) {
     searchClause = ` AND (p.title LIKE ? OR p.slug LIKE ?) `
@@ -39,7 +39,7 @@ async function getBlogsByAuthor(
       ON p.author = u.id
     WHERE p.post_type = 'post'
       AND ${statusCondition}
-      AND u.user_login = ?
+      AND (REPLACE(LOWER(u.user_login), ' ', '-') = ? OR u.user_login = ?)
       ${searchClause}
     GROUP BY p.id
     ORDER BY p.created_at DESC
@@ -70,8 +70,8 @@ export async function GET(req: NextRequest) {
 
     // Fetch the author details
     const [authorRows]: any = await pool.query(
-      "SELECT ID, user_login, user_email, first_name, last_name, nickname, description, profile_image_url FROM users WHERE user_login = ?",
-      [authorLogin]
+      "SELECT ID, user_login, user_email, first_name, last_name, nickname, description, profile_image_url FROM users WHERE REPLACE(LOWER(user_login), ' ', '-') = ? OR user_login = ?",
+      [authorLogin.toLowerCase(), authorLogin]
     )
     const authorInfo = authorRows[0] || null
 

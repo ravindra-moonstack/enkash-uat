@@ -28,11 +28,11 @@ const BlogBanner = ({ bannerData }: { bannerData: any }) => {
           <div className={styles.meta}>
             <span className={styles.author}>
               By{" "}
-              {data.user_login ? (
-                <Link
-                  href={`/resources/blog/author/${data.user_login}`}
-                  className={styles.authorLink}
-                >
+                {data.user_login ? (
+                  <Link
+                    href={`/resources/blog/author/${(data.user_login || "").toLowerCase().replace(/\s+/g, "-")}`}
+                    className={styles.authorLink}
+                  >
                   {data.first_name
                     ? `${data.first_name} ${data.last_name || ""}`
                     : data.author}
