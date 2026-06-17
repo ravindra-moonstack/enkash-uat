@@ -69,14 +69,15 @@ export async function generateMetadata({
       ? post.focus_keyword.split(",").map((k: string) => k.trim())
       : [],
     alternates: {
-      canonical: `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`,
+      canonical:
+        `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`.toLowerCase(),
     },
     openGraph: {
       title: metaTitle,
       description: post.meta_description || "",
       images: imageUrl ? [{ url: imageUrl, alt: post.image_alt || "" }] : [],
       type: "article",
-      url: `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`,
+      url: `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`.toLowerCase(),
     },
     twitter: {
       card: "summary_large_image",
@@ -103,7 +104,8 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const result = json.posts
   const readTime = calculateReadTime(result[0].content || "")
 
-  const canonicalUrl = `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`
+  const canonicalUrl =
+    `${process.env.URL || "https://www.enkash.com"}/resources/blog/${slug}`.toLowerCase()
   const breadcrumbSchema = generateBreadcrumbSchema(canonicalUrl)
 
   const bannerData = [
