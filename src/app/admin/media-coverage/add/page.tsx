@@ -10,314 +10,398 @@ import ConfirmationModal from "../../blogs/ConfirmationModal"
 import { useRouter } from "next/navigation"
 
 export default function AddMediaCoveragePage() {
-    const {
-        id,
-        title, setTitle,
-        slug, setSlug,
-        status, setStatus,
-        author, setAuthor,
-        postParent, setPostParent,
-        imageUrl, setImageUrl,
-        setMediaCoverageImage,
-        mediaCoverageDate, setMediaCoverageDate,
-        mediaCoverageHeading, setMediaCoverageHeading,
-        mediaCoverageDescription, setMediaCoverageDescription,
-        mediaCoverageMediaLink, setMediaCoverageMediaLink,
-        metaOptions,
-        showMediaModal, setShowMediaModal,
-        handleSave,
-        currentUser,
-        setIsDirty,
-        showConfirm,
-        setShowConfirm,
-        confirmConfig,
-        customDate,
-        setCustomDate,
-        lastEditedBy,
-        updatedAt
-    } = useAddMediaCoverage()
+  const {
+    id,
+    title,
+    setTitle,
+    slug,
+    setSlug,
+    status,
+    setStatus,
+    author,
+    setAuthor,
+    postParent,
+    setPostParent,
+    imageUrl,
+    setImageUrl,
+    mediaCoverageImage,
+    setMediaCoverageImage,
+    mediaCoverageDate,
+    setMediaCoverageDate,
+    mediaCoverageHeading,
+    setMediaCoverageHeading,
+    mediaCoverageDescription,
+    setMediaCoverageDescription,
+    mediaCoverageMediaLink,
+    setMediaCoverageMediaLink,
+    metaOptions,
+    showMediaModal,
+    setShowMediaModal,
+    handleSave,
+    currentUser,
+    setIsDirty,
+    showConfirm,
+    setShowConfirm,
+    confirmConfig,
+    customDate,
+    setCustomDate,
+    lastEditedBy,
+    updatedAt,
+  } = useAddMediaCoverage()
 
-    const router = useRouter()
-    const [activeEditors, setActiveEditors] = React.useState<any[]>([])
-    const editorSessionId = React.useRef<string>(Math.random().toString(36).substring(2, 10))
+  const router = useRouter()
+  const [activeEditors, setActiveEditors] = React.useState<any[]>([])
+  const editorSessionId = React.useRef<string>(
+    Math.random().toString(36).substring(2, 10)
+  )
 
-    const releaseLock = React.useCallback(async (isUnload: any = false) => {
-        if (id && editorSessionId.current) {
-            try {
-                const url = `/api/admin/active-editors?module=media-coverage&postId=${id}&editorId=${editorSessionId.current}&action=release`
-                if (isUnload === true || (typeof isUnload === 'object' && isUnload !== null)) {
-                    if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
-                        navigator.sendBeacon(url)
-                    } else {
-                        fetch(url, { method: "POST", keepalive: true })
-                    }
-                } else {
-                    await fetch(url, { method: "POST" })
-                }
-            } catch (e) {
-                console.error("Failed to release lock", e)
-            }
-        }
-    }, [id])
-
-    const handleTakeOver = async () => {
-        if (!id || !editorSessionId.current || !currentUser) return
-
+  const releaseLock = React.useCallback(
+    async (isUnload: any = false) => {
+      if (id && editorSessionId.current) {
         try {
-            const res = await fetch("/api/admin/active-editors", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    module: "media-coverage",
-                    postId: id,
-                    editorId: editorSessionId.current,
-                    userId: currentUser.id,
-                    userName: currentUser.name,
-                    action: "takeover"
-                }),
-            })
-            const data = await res.json()
-            if (data.success && !data.isLocked) {
-                setActiveEditors([])
+          const url = `/api/admin/active-editors?module=media-coverage&postId=${id}&editorId=${editorSessionId.current}&action=release`
+          if (
+            isUnload === true ||
+            (typeof isUnload === "object" && isUnload !== null)
+          ) {
+            if (typeof navigator !== "undefined" && navigator.sendBeacon) {
+              navigator.sendBeacon(url)
             } else {
-                alert("Failed to take over editing. Please try again.")
+              fetch(url, { method: "POST", keepalive: true })
             }
-        } catch (err) {
-            console.error("Error during takeover", err)
+          } else {
+            await fetch(url, { method: "POST" })
+          }
+        } catch (e) {
+          console.error("Failed to release lock", e)
         }
+      }
+    },
+    [id]
+  )
+
+  const handleTakeOver = async () => {
+    if (!id || !editorSessionId.current || !currentUser) return
+
+    try {
+      const res = await fetch("/api/admin/active-editors", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          module: "media-coverage",
+          postId: id,
+          editorId: editorSessionId.current,
+          userId: currentUser.id,
+          userName: currentUser.name,
+          action: "takeover",
+        }),
+      })
+      const data = await res.json()
+      if (data.success && !data.isLocked) {
+        setActiveEditors([])
+      } else {
+        alert("Failed to take over editing. Please try again.")
+      }
+    } catch (err) {
+      console.error("Error during takeover", err)
     }
+  }
 
-    const checkActiveEditors = React.useCallback(async () => {
-        if (!id || !editorSessionId.current || !currentUser) return
+  const checkActiveEditors = React.useCallback(async () => {
+    if (!id || !editorSessionId.current || !currentUser) return
 
-        try {
-            const res = await fetch("/api/admin/active-editors", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    module: "media-coverage",
-                    postId: id,
-                    editorId: editorSessionId.current,
-                    userId: currentUser.id,
-                    userName: currentUser.name
-                }),
-            })
-            const data = await res.json()
-            if (data.success && data.isLocked) {
-                setActiveEditors([{ user_name: data.lockedBy }])
-            } else {
-                setActiveEditors([])
-            }
-        } catch (err) {
-            console.error("Error checking active editors", err)
-        }
-    }, [id, currentUser])
+    try {
+      const res = await fetch("/api/admin/active-editors", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          module: "media-coverage",
+          postId: id,
+          editorId: editorSessionId.current,
+          userId: currentUser.id,
+          userName: currentUser.name,
+        }),
+      })
+      const data = await res.json()
+      if (data.success && data.isLocked) {
+        setActiveEditors([{ user_name: data.lockedBy }])
+      } else {
+        setActiveEditors([])
+      }
+    } catch (err) {
+      console.error("Error checking active editors", err)
+    }
+  }, [id, currentUser])
 
-    React.useEffect(() => {
-        if (!id || !currentUser) return
+  React.useEffect(() => {
+    if (!id || !currentUser) return
 
-        checkActiveEditors()
-        const interval = setInterval(checkActiveEditors, 5000)
-        window.addEventListener("beforeunload", releaseLock)
-        window.addEventListener("pageshow", checkActiveEditors)
-        window.addEventListener("focus", checkActiveEditors)
+    checkActiveEditors()
+    const interval = setInterval(checkActiveEditors, 5000)
+    window.addEventListener("beforeunload", releaseLock)
+    window.addEventListener("pageshow", checkActiveEditors)
+    window.addEventListener("focus", checkActiveEditors)
 
-        return () => {
-            clearInterval(interval)
-            window.removeEventListener("beforeunload", releaseLock)
-            window.removeEventListener("pageshow", checkActiveEditors)
-            window.removeEventListener("focus", checkActiveEditors)
-            releaseLock(false)
-        }
-    }, [id, currentUser, checkActiveEditors, releaseLock])
+    return () => {
+      clearInterval(interval)
+      window.removeEventListener("beforeunload", releaseLock)
+      window.removeEventListener("pageshow", checkActiveEditors)
+      window.removeEventListener("focus", checkActiveEditors)
+      releaseLock(false)
+    }
+  }, [id, currentUser, checkActiveEditors, releaseLock])
 
-    const isLocked = activeEditors.length > 0
+  const isLocked = activeEditors.length > 0
 
-    return (
-        <div className={styles.container}>
-            <div className={styles.header}>
-                <h1>{id ? "Edit Media Coverage" : "Add Media Coverage"}</h1>
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1>{id ? "Edit Media Coverage" : "Add Media Coverage"}</h1>
+      </div>
+
+      {isLocked && (
+        <div className={editStyles.lockModalOverlay}>
+          <div className={editStyles.lockModal}>
+            <i className="bi bi-lock-fill"></i>
+            <h2>Item Locked</h2>
+            <p>
+              <strong>
+                {activeEditors.map((e: any) => e.user_name).join(", ")}
+              </strong>{" "}
+              is currently editing this item. To prevent overwriting changes,
+              editing has been disabled.
+            </p>
+            <div className={editStyles.modalFooter}>
+              <button
+                className={editStyles.cancelBtn}
+                onClick={() => {
+                  setIsDirty(false)
+                  router.push("/admin/media-coverage")
+                }}
+              >
+                Go Back
+              </button>
+              <button
+                className={editStyles.takeOverBtn}
+                onClick={handleTakeOver}
+              >
+                Take Over
+              </button>
             </div>
-
-            {isLocked && (
-                <div className={editStyles.lockModalOverlay}>
-                    <div className={editStyles.lockModal}>
-                        <i className="bi bi-lock-fill"></i>
-                        <h2>Item Locked</h2>
-                        <p>
-                            <strong>{activeEditors.map((e: any) => e.user_name).join(", ")}</strong> is currently editing this item.
-                            To prevent overwriting changes, editing has been disabled.
-                        </p>
-                        <div className={editStyles.modalFooter}>
-                            <button className={editStyles.cancelBtn} onClick={() => {
-                                setIsDirty(false);
-                                router.push("/admin/media-coverage");
-                            }}>Go Back</button>
-                            <button className={editStyles.takeOverBtn} onClick={handleTakeOver}>Take Over</button>
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            <div className={`${styles.layout} ${isLocked ? styles.locked : ""}`}>
-                <fieldset disabled={isLocked} className={styles.leftColumn}>
-                    <div className={styles.titleInput}>
-                        <input
-                            type="text"
-                            placeholder="Add Title"
-                            value={title}
-                            onChange={(e) => {
-                                setTitle(e.target.value)
-                                if (!id) {
-                                    setSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''))
-                                }
-                            }}
-                        />
-                    </div>
-
-                    <div className={styles.box}>
-                        <div className={styles.boxHeader}>Media Coverage Data</div>
-                        <div className={styles.boxContent}>
-                            <div className={styles.inputGroup}>
-                                <label>Date</label>
-                                <input
-                                    type="date"
-                                    value={mediaCoverageDate}
-                                    onChange={(e) => setMediaCoverageDate(e.target.value)}
-                                />
-                            </div>
-
-                            <div className={styles.inputGroup}>
-                                <label>Heading</label>
-                                <input
-                                    type="text"
-                                    value={mediaCoverageHeading}
-                                    onChange={(e) => setMediaCoverageHeading(e.target.value)}
-                                />
-                            </div>
-
-                            <div className={styles.inputGroup}>
-                                <label>Description</label>
-                                <textarea
-                                    value={mediaCoverageDescription}
-                                    onChange={(e) => setMediaCoverageDescription(e.target.value)}
-                                ></textarea>
-                            </div>
-
-                            <div className={styles.inputGroup}>
-                                <label>Media Link</label>
-                                <input
-                                    type="text"
-                                    value={mediaCoverageMediaLink}
-                                    onChange={(e) => setMediaCoverageMediaLink(e.target.value)}
-                                />
-                            </div>
-
-                            <div className={styles.inputGroup}>
-                                <label>Author</label>
-                                <select value={author} onChange={(e) => setAuthor(e.target.value)}>
-                                    {metaOptions.users.map((u: any) => (
-                                        <option key={u.ID} value={u.ID}>{u.display_name}</option>
-                                    ))}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset disabled={isLocked} className={styles.rightColumn}>
-                    <div className={styles.box}>
-                        <div className={styles.boxHeader}>Publish</div>
-                        <div className={styles.boxContent}>
-                            <div className={styles.publishActions}>
-                                <button className={styles.actionBtn} onClick={() => handleSave(false)}>Save Draft</button>
-                            </div>
-                            <div className={styles.publishStatus}>
-                                <div className={styles.statusRow}>
-                                    <i className="bi bi-key"></i> Status: <strong>{status.charAt(0).toUpperCase() + status.slice(1)}</strong>
-                                </div>
-                                <div className={styles.statusRow}>
-                                    <i className="bi bi-calendar"></i> Publish Date:
-                                    <div className={styles.datePickerWrapper}>
-                                        <input
-                                            type="datetime-local"
-                                            value={customDate}
-                                            onChange={(e) => setCustomDate(e.target.value)}
-                                            className={styles.datePickerInput}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.publishFooter}>
-                                <button className={styles.primaryBtn} onClick={() => handleSave(true)}>
-                                    {status === "publish" ? "Update" : "Publish"}
-                                </button>
-                            </div>
-                            {id && (
-                                <div className={styles.publishStatus} style={{ borderTop: "1px solid #dcdcde", marginTop: 15, paddingTop: 15 }}>
-                                    <div className={styles.statusRow}>
-                                        <i className="bi bi-info-circle me-1"></i> Last Updated By: <strong>{lastEditedBy}</strong>
-                                    </div>
-                                    <div className={styles.statusRow}>
-                                        <i className="bi bi-clock me-1"></i> Last Updated At: {updatedAt ? new Date(updatedAt).toLocaleString() : "Never"}
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-
-                    <div className={styles.box}>
-                        <div className={styles.boxHeader}>Coverage Image</div>
-                        <div className={styles.boxContent}>
-                            {imageUrl ? (
-                                <div style={{ marginBottom: 10 }}>
-                                    <img src={`${imageUrl}`} alt="Featured" style={{ width: '100%', height: 'auto', border: '1px solid #ddd', cursor: 'pointer' }} onClick={() => setShowMediaModal(true)} />
-                                </div>
-                            ) : null}
-                            <a className={styles.setFeaturedImage} onClick={() => setShowMediaModal(true)}>
-                                {imageUrl ? "Replace image" : "Set coverage image"}
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <div className={styles.box}>
-                        <div className={styles.boxHeader}>Parent</div>
-                        <div className={styles.boxContent}>
-                            <select value={postParent} onChange={(e) => setPostParent(e.target.value)} style={{ width: '100%', padding: '5px' }}>
-                                <option value="0">(no parent)</option>
-                                {metaOptions.items?.filter((v: any) => v.id.toString() !== id).map((v: any) => (
-                                    <option key={v.id} value={v.id}>{v.title}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-
-            {showMediaModal && (
-                <MediaModal
-                    onClose={() => setShowMediaModal(false)}
-                    onSelect={(media) => {
-                        setMediaCoverageImage(media.id)
-                        setImageUrl(media.url)
-                        setShowMediaModal(false)
-                    }}
-                    title="Set Coverage Image"
-                />
-            )}
-
-            {confirmConfig && (
-                <ConfirmationModal
-                    show={showConfirm}
-                    onClose={() => setShowConfirm(false)}
-                    onConfirm={confirmConfig.onConfirm}
-                    title={confirmConfig.title}
-                    message={confirmConfig.message}
-                    type={confirmConfig.type}
-                    confirmLabel="Confirm"
-                />
-            )}
+          </div>
         </div>
-    )
+      )}
+
+      <div className={`${styles.layout} ${isLocked ? styles.locked : ""}`}>
+        <fieldset disabled={isLocked} className={styles.leftColumn}>
+          <div className={styles.titleInput}>
+            <input
+              type="text"
+              placeholder="Add Title"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value)
+                if (!id) {
+                  setSlug(
+                    e.target.value
+                      .toLowerCase()
+                      .replace(/[^a-z0-9]+/g, "-")
+                      .replace(/(^-|-$)+/g, "")
+                  )
+                }
+              }}
+            />
+          </div>
+
+          <div className={styles.box}>
+            <div className={styles.boxHeader}>Media Coverage Data</div>
+            <div className={styles.boxContent}>
+              <div className={styles.inputGroup}>
+                <label>Date</label>
+                <input
+                  type="date"
+                  value={mediaCoverageDate}
+                  onChange={(e) => setMediaCoverageDate(e.target.value)}
+                />
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label>Heading</label>
+                <input
+                  type="text"
+                  value={mediaCoverageHeading}
+                  onChange={(e) => setMediaCoverageHeading(e.target.value)}
+                />
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label>Description</label>
+                <textarea
+                  value={mediaCoverageDescription}
+                  onChange={(e) => setMediaCoverageDescription(e.target.value)}
+                ></textarea>
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label>Media Link</label>
+                <input
+                  type="text"
+                  value={mediaCoverageMediaLink}
+                  onChange={(e) => setMediaCoverageMediaLink(e.target.value)}
+                />
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label>Author</label>
+                <select
+                  value={author}
+                  onChange={(e) => setAuthor(e.target.value)}
+                >
+                  {metaOptions.users.map((u: any) => (
+                    <option key={u.ID} value={u.ID}>
+                      {u.display_name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset disabled={isLocked} className={styles.rightColumn}>
+          <div className={styles.box}>
+            <div className={styles.boxHeader}>Publish</div>
+            <div className={styles.boxContent}>
+              <div className={styles.publishActions}>
+                <button
+                  className={styles.actionBtn}
+                  onClick={() => handleSave(false)}
+                >
+                  Save Draft
+                </button>
+              </div>
+              <div className={styles.publishStatus}>
+                <div className={styles.statusRow}>
+                  <i className="bi bi-key"></i> Status:{" "}
+                  <strong>
+                    {status.charAt(0).toUpperCase() + status.slice(1)}
+                  </strong>
+                </div>
+                <div className={styles.statusRow}>
+                  <i className="bi bi-calendar"></i> Publish Date:
+                  <div className={styles.datePickerWrapper}>
+                    <input
+                      type="datetime-local"
+                      value={customDate}
+                      onChange={(e) => setCustomDate(e.target.value)}
+                      className={styles.datePickerInput}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className={styles.publishFooter}>
+                <button
+                  className={styles.primaryBtn}
+                  onClick={() => handleSave(true)}
+                >
+                  {status === "publish" ? "Update" : "Publish"}
+                </button>
+              </div>
+              {id && (
+                <div
+                  className={styles.publishStatus}
+                  style={{
+                    borderTop: "1px solid #dcdcde",
+                    marginTop: 15,
+                    paddingTop: 15,
+                  }}
+                >
+                  <div className={styles.statusRow}>
+                    <i className="bi bi-info-circle me-1"></i> Last Updated By:{" "}
+                    <strong>{lastEditedBy}</strong>
+                  </div>
+                  <div className={styles.statusRow}>
+                    <i className="bi bi-clock me-1"></i> Last Updated At:{" "}
+                    {updatedAt ? new Date(updatedAt).toLocaleString() : "Never"}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className={styles.box}>
+            <div className={styles.boxHeader}>Coverage Image</div>
+            <div className={styles.boxContent}>
+              {imageUrl ? (
+                <div style={{ marginBottom: 10 }}>
+                  <img
+                    src={`${imageUrl}`}
+                    alt="Featured"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      border: "1px solid #ddd",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => setShowMediaModal(true)}
+                  />
+                </div>
+              ) : null}
+              <a
+                className={styles.setFeaturedImage}
+                onClick={() => setShowMediaModal(true)}
+              >
+                {imageUrl ? "Replace image" : "Set coverage image"}
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.box}>
+            <div className={styles.boxHeader}>Parent</div>
+            <div className={styles.boxContent}>
+              <select
+                value={postParent}
+                onChange={(e) => setPostParent(e.target.value)}
+                style={{ width: "100%", padding: "5px" }}
+              >
+                <option value="0">(no parent)</option>
+                {metaOptions.items
+                  ?.filter((v: any) => v.id.toString() !== id)
+                  .map((v: any) => (
+                    <option key={v.id} value={v.id}>
+                      {v.title}
+                    </option>
+                  ))}
+              </select>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {showMediaModal && (
+        <MediaModal
+          onClose={() => setShowMediaModal(false)}
+          onSelect={(media) => {
+            setMediaCoverageImage(media.id)
+            setImageUrl(media.url)
+            setShowMediaModal(false)
+          }}
+          title="Set Coverage Image"
+          selectedId={mediaCoverageImage || undefined}
+        />
+      )}
+
+      {confirmConfig && (
+        <ConfirmationModal
+          show={showConfirm}
+          onClose={() => setShowConfirm(false)}
+          onConfirm={confirmConfig.onConfirm}
+          title={confirmConfig.title}
+          message={confirmConfig.message}
+          type={confirmConfig.type}
+          confirmLabel="Confirm"
+        />
+      )}
+    </div>
+  )
 }

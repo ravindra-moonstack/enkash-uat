@@ -964,6 +964,7 @@ export default function EditPostPage() {
             setShowMediaModal(false)
           }}
           title={mediaTarget === "editor" ? "Insert Media" : "Featured Image"}
+          selectedId={mediaTarget === "featured" ? featuredImageId : undefined}
         />
       )}
 

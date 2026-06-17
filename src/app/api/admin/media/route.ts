@@ -5,6 +5,29 @@ import path from "path"
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url)
+    const idParam = searchParams.get("id")
+    if (idParam) {
+      const parsedId = parseInt(idParam)
+      if (!isNaN(parsedId)) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const [rows]: any = await pool.execute(
+          "SELECT * FROM attachments WHERE id = ? LIMIT 1",
+          [parsedId]
+        )
+        if (rows.length > 0) {
+          return NextResponse.json({
+            success: true,
+            data: rows[0],
+          })
+        } else {
+          return NextResponse.json(
+            { success: false, message: "Media item not found" },
+            { status: 404 }
+          )
+        }
+      }
+    }
+
     const page = parseInt(searchParams.get("page") || "1")
     const limit = parseInt(searchParams.get("limit") || "80")
     const search = searchParams.get("search") || ""

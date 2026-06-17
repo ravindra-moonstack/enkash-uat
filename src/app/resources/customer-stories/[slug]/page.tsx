@@ -46,13 +46,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: data.meta.metaTitle,
     description: data.meta.metaDescription,
     alternates: {
-      canonical: `${process.env.URL || "https://www.enkash.com"}/resources/customer-stories/${slug}`,
+      canonical: `${process.env.URL || "https://www.enkash.com"}/resources/customer-stories/${slug}`.toLowerCase(),
     },
     openGraph: {
       title: data.meta.metaTitle,
       description: data.meta.metaDescription,
       type: "article",
-      url: `${process.env.URL || "https://www.enkash.com"}/resources/customer-stories/${slug}`,
+      url: `${process.env.URL || "https://www.enkash.com"}/resources/customer-stories/${slug}`.toLowerCase(),
       images: [
         {
           url: `${process.env.URL || "https://www.enkash.com"}/uploads/2025/08/banner-scaled-1.webp`,
@@ -71,7 +71,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
     notFound()
   }
 
-  const canonicalUrl = `${process.env.URL || "https://www.enkash.com"}/resources/customer-stories/${slug}`
+  const canonicalUrl = `${process.env.URL || "https://www.enkash.com"}/resources/customer-stories/${slug}`.toLowerCase()
   const breadcrumbSchema = generateBreadcrumbSchema(canonicalUrl)
 
   const organizationName = data.slug.startsWith("vianet") ? "Vianet" : "Honeycomb Creative"

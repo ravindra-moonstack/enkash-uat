@@ -433,6 +433,7 @@ export default function AddVideoPage() {
                     }}
                     title={mediaTarget === "thumbnail" ? "Set Featured Image" : "Select Video File"}
                     defaultType={mediaTarget === "self_hosted" ? "video" : "all"}
+                    selectedId={mediaTarget === "thumbnail" ? thumbnailId : mediaTarget === "self_hosted" ? selfHostedId : undefined}
                 />
             )}
 
