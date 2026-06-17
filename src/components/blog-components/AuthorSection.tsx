@@ -10,7 +10,7 @@ const AuthorSection = ({ authorData }: { authorData: any }) => {
         <div className={styles.author_card}>
             <div className={styles.author_image_box}>
                 <Image
-                    src={authorData.profile_image_url ? `${authorData.profile_image_url}` : "/uploads/2026/02/default-avatar.webp"}
+                    src={authorData.profile_image_url ? `${authorData.profile_image_url}` : "/images/default-avatar.svg"}
                     alt={authorData.first_name}
                     width={200}
                     height={200}
@@ -33,7 +33,7 @@ const AuthorSection = ({ authorData }: { authorData: any }) => {
         <section className={styles.author_section_wrapper}>
             <div className="max-w-auto">
                 {authorData.user_login ? (
-                    <Link href={`/resources/blog/author/${authorData.user_login}`} className={styles.authorCardLink}>
+                    <Link href={`/resources/blog/author/${(authorData.user_login || "").toLowerCase().replace(/\s+/g, "-")}`} className={styles.authorCardLink}>
                         {cardContent}
                     </Link>
                 ) : (
