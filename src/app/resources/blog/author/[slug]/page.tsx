@@ -6,7 +6,10 @@ import styles from "./styles.module.scss"
 import BlogNavWrapper from "@/src/components/blog-components/BlogNavWrapper"
 import AuthorBlogCard from "@/src/components/author-components/AuthorBlogCard"
 import RecentBlog from "@/components/category-components/RecentBlog"
-import { getBlogCategories, getAuthorData } from "@/src/services/resource-service"
+import {
+  getBlogCategories,
+  getAuthorData,
+} from "@/src/services/resource-service"
 
 export async function generateMetadata({
   params,
@@ -100,14 +103,6 @@ const AuthorPage = async ({
 
   return (
     <div className={styles.author_page}>
-      <div className="max-w-auto">
-        {navData && (
-          <div className={styles.blog_nav_wrapper}>
-            <BlogNavWrapper navData={navData} activeCategory="" />
-          </div>
-        )}
-      </div>
-
       {/* Premium Author Banner */}
       <section className={styles.author_banner_wrapper}>
         <div className={styles.container}>
@@ -192,7 +187,7 @@ const AuthorPage = async ({
                     <path d="M6 6h10" />
                     <path d="M6 10h10" />
                   </svg>
-                  {data.posts ? data.posts.length : 0} Blogs
+                  {data.total ?? 0} Blogs
                 </span>
               </div>
             </div>
