@@ -68,3 +68,24 @@ export const getVideos = async (params: {
   if (!res.ok) return null
   return res.json()
 }
+
+export const getAuthorData = async (
+  username: string,
+  search?: string,
+  limit?: number,
+  offset?: number
+) => {
+  const query = new URLSearchParams()
+  query.set("author", username)
+  if (search) query.set("search", search)
+  if (limit) query.set("limit", limit.toString())
+  if (offset) query.set("offset", offset.toString())
+
+  const res = await fetch(
+    `${BASE_URL}/api/resources/blogs/getAuthorData?${query.toString()}`,
+    { cache: "no-store" }
+  )
+  if (!res.ok) return null
+  return res.json()
+}
+

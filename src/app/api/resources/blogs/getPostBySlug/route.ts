@@ -25,6 +25,7 @@ export async function GET(request: Request) {
       pm.meta_description,
       u.first_name,
       u.last_name,
+      u.user_login,
       u.profile_image_url,
       u.description AS user_description,
       GROUP_CONCAT(DISTINCT te.name) AS category_names,
