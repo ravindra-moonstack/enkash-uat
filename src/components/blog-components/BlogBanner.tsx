@@ -31,9 +31,20 @@ const BlogBanner = ({ bannerData }: { bannerData: any }) => {
               data.remove_author_details === undefined) && (
               <span className={styles.author}>
                 By{" "}
-                {data.first_name
-                  ? `${data.first_name} ${data.last_name || ""}`
-                  : data.author}
+                {data.user_login ? (
+                  <Link
+                    href={`/resources/blog/author/${(data.user_login || "").toLowerCase().replace(/\s+/g, "-")}`}
+                    className={styles.authorLink}
+                  >
+                    {data.first_name
+                      ? `${data.first_name} ${data.last_name || ""}`
+                      : data.author}
+                  </Link>
+                ) : data.first_name ? (
+                  `${data.first_name} ${data.last_name || ""}`
+                ) : (
+                  data.author
+                )}
               </span>
             )}
 
