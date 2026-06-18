@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { fetchAllLetters, generateTermParams } from '@/utils/glossaryData'
 import { STATIC_ROUTES } from './static-routes'
-import { fetchBlogSlugs, fetchBlogCategorySlugs } from '@/utils/sitemapData'
+import { fetchBlogSlugs, fetchBlogCategorySlugs, fetchBlogAuthorSlugs } from '@/utils/sitemapData'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -14,6 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const terms = await generateTermParams()
   const blogSlugs = await fetchBlogSlugs()
   const categorySlugs = await fetchBlogCategorySlugs()
+  const authorSlugs = await fetchBlogAuthorSlugs()
 
   // Resource landing pages
   const resourceRoutes = [
@@ -44,6 +45,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }))
 
+  // Dynamic Blog Authors
+  const authorRoutes = authorSlugs.map(slug => ({
+    url: `${BASE_URL}/resources/blog/author/${slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.5,
+  }))
+
   const letterRoutes = letters.map(letter => ({
     url: `${BASE_URL}/glossary/${letter.toLowerCase()}`,
     lastModified: new Date().toISOString(),
@@ -70,6 +79,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...resourceRoutes, 
     ...blogRoutes, 
     ...categoryRoutes, 
+    ...authorRoutes,
     ...letterRoutes, 
     ...termRoutes
   ]

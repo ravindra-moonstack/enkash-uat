@@ -11,20 +11,21 @@ const getRecentBlogs = async () => {
   const data = await res.json()
   return data
 }
-const RecentBlog = async () => {
-  const recentBlogs = await getRecentBlogs()
+const RecentBlog = async ({ posts }: { posts?: any[] } = {}) => {
+  const postsList = posts || (await getRecentBlogs()).posts || []
 
   const postData = []
-  for (let i = 0; i < recentBlogs.posts.length; i++) {
+  const limit = Math.min(postsList.length, 4)
+  for (let i = 0; i < limit; i++) {
+    const post = postsList[i]
     postData.push({
-      categoryName: recentBlogs.posts[i].category_names,
-      categorySlug: recentBlogs.posts[i].category_slugs,
-      title: recentBlogs.posts[i].title,
-      image:
-        recentBlogs.posts[i].featured_image_url || recentBlogs.posts[i].image,
-      imageAlt: recentBlogs.posts[i].image_alt,
-      slug: recentBlogs.posts[i].slug,
-      date: recentBlogs.posts[i].created_at,
+      categoryName: post.category_names || post.categoryName,
+      categorySlug: post.category_slugs || post.categorySlug,
+      title: post.title,
+      image: post.featured_image_url || post.image,
+      imageAlt: post.image_alt || post.imageAlt,
+      slug: post.slug,
+      date: post.created_at || post.date,
     })
   }
 

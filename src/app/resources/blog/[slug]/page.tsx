@@ -24,6 +24,29 @@ const calculateReadTime = (htmlContent: string): string => {
   return `${readTime} Min Read`
 }
 
+const cleanSchemaMarkup = (markup: string): string => {
+  if (!markup) return ""
+  let cleaned = markup
+  const scriptMatch = markup.match(/<script[^>]*>([\s\S]*?)<\/script>/i)
+  if (scriptMatch) {
+    cleaned = scriptMatch[1]
+  } else {
+    cleaned = cleaned.replace(/<[^>]*>/g, "")
+  }
+  cleaned = cleaned.replace(/<[^>]*>/g, "")
+  cleaned = cleaned
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&rsquo;/g, "'")
+    .replace(/&ldquo;/g, '"')
+    .replace(/&rdquo;/g, '"')
+    .replace(/&nbsp;/g, " ")
+  return cleaned.trim()
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -143,13 +166,20 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const relatedBlogs = [{ relatedBlogs: json?.relatedBlogs }]
 
   const schemaMarkup = result[0].post_schema_markup
+  const cleanedSchema = typeof schemaMarkup === "string" ? cleanSchemaMarkup(schemaMarkup) : ""
+  const isJsonSchema = cleanedSchema.startsWith("{") || cleanedSchema.startsWith("[")
   const hasScriptTag =
     typeof schemaMarkup === "string" && /<script/i.test(schemaMarkup)
 
   return (
     <>
       {schemaMarkup &&
-        (hasScriptTag ? (
+        (isJsonSchema ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: cleanedSchema }}
+          />
+        ) : hasScriptTag ? (
           <div
             style={{ display: "none" }}
             dangerouslySetInnerHTML={{ __html: schemaMarkup }}
