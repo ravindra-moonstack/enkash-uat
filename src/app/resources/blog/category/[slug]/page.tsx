@@ -11,6 +11,14 @@ import {
   getCategoryData,
 } from "@/src/services/resource-service"
 
+const formatCategoryName = (slug: string): string => {
+  if (!slug) return ""
+  const lower = slug.toLowerCase()
+  if (lower === "ilearn") return "iLearn"
+  if (lower === "rewards-recognition") return "Rewards & Recognition"
+  return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -20,9 +28,7 @@ export async function generateMetadata({
   const data = await getCategoryData(slug)
 
   if (!data || !data.categoryInfo) {
-    const fallbackTitle = slug
-      ? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
-      : "Category"
+    const fallbackTitle = slug ? formatCategoryName(slug) : "Category"
     return {
       title: `${fallbackTitle} - EnKash Blogs`,
       description: `Browse all blog posts under ${fallbackTitle} category on EnKash.`,
@@ -91,11 +97,7 @@ const Category = async ({
 
   const BannerData = [
     {
-      categoryName: slug
-        ? slug.toLowerCase() === "ilearn"
-          ? "iLearn"
-          : slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
-        : "",
+      categoryName: formatCategoryName(slug),
       title: data.posts[0]?.title,
       image: data.posts[0]?.featured_image_url || data.posts[0]?.image,
       slug: data.posts[0]?.slug,
