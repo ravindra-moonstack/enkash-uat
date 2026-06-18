@@ -24,20 +24,18 @@ const BlogCard = ({
       <div className={`d-flex flex-column ${styles.card_body}`}>
         {/* Whole card clickable */}
 
-        <div className="flex-grow-1 justify-between">
-          {cardImage && (
-            <div className={styles.image_wrapper}>
-              <Image
-                src={cardImage}
-                width={400}
-                height={250}
-                alt="card visual"
-                className={styles.card_image}
-                loading="lazy"
-                quality={70}
-              />
-            </div>
-          )}
+        <div className="flex-grow-1 justify-between d-flex flex-column">
+          <div className={styles.image_wrapper}>
+            <Image
+              src={cardImage || "/images/placeholder.svg"}
+              width={400}
+              height={250}
+              alt="card visual"
+              className={styles.card_image}
+              loading="lazy"
+              quality={70}
+            />
+          </div>
 
           <div className={styles.voucher_card_title}>
             <DynamicHeading
