@@ -24,3 +24,15 @@ export async function fetchBlogCategorySlugs(): Promise<string[]> {
     return []
   }
 }
+
+export async function fetchBlogAuthorSlugs(): Promise<string[]> {
+  try {
+    const [rows]: any = await pool.execute(
+      "SELECT DISTINCT REPLACE(LOWER(u.user_login), ' ', '-') AS slug FROM users u INNER JOIN posts p ON p.author = u.id WHERE p.status = 'publish' AND p.post_type = 'post' AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())"
+    )
+    return rows.map((row: any) => row.slug as string)
+  } catch (error) {
+    console.error("Error fetching blog author slugs for sitemap:", error)
+    return []
+  }
+}

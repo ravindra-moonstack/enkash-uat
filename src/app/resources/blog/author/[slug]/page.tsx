@@ -212,7 +212,7 @@ const AuthorPage = async ({
         </div>
       )}
 
-      <RecentBlog />
+      <RecentBlog posts={data.posts} />
     </div>
   )
 }
