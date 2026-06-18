@@ -19,7 +19,6 @@ import {
 import FaqSection from "@/components/faq-section"
 import HeroSection from "@/src/components/sections/hero-section"
 import BlogSection from "@/src/components/sections/blog-section"
-import TaxSavingsCalculator from "./TaxSavingsCalculator"
 
 //utils
 import generateMetaData from "@/src/utils/metaData"
@@ -173,8 +172,6 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
         slideData={benefitGridData}
         backgroundImage={BenefitBg.src}
       />
-
-      <TaxSavingsCalculator />
 
       <section className={`${styles.careerSection}`}>
         <div className={styles.careerBg}>
