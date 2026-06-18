@@ -24,6 +24,7 @@
   justify-content: space-between;
   background: #f7f8fc;
   border-radius: 16px;
+  flex:1;
 }
 
 .card_image {
@@ -32,6 +33,7 @@
   max-height: 100%;
   object-fit: inherit;
   border-radius: 16px;
+  min-height: 209px;
 }
 
 .voucher_card_title {
