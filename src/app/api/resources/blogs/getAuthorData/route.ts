@@ -17,11 +17,22 @@ async function getBlogsByAuthor(
     params.push(`%${search}%`, `%${search}%`)
   }
 
+  const countParams = [...params]
   params.push(limit, offset)
 
   const statusCondition = hasAdminToken
     ? "p.status IN ('publish', 'draft')"
     : "p.status = 'publish' AND (p.scheduled_publish_date IS NULL OR p.scheduled_publish_date <= NOW())"
+
+  const countQuery = `
+    SELECT COUNT(DISTINCT p.id) AS total
+    FROM posts p
+    LEFT JOIN users u ON p.author = u.id
+    WHERE p.post_type = 'post'
+      AND ${statusCondition}
+      AND (REPLACE(LOWER(u.user_login), ' ', '-') = ? OR u.user_login = ?)
+      ${searchClause}
+  `
 
   const query = `
     SELECT 
@@ -46,8 +57,11 @@ async function getBlogsByAuthor(
     LIMIT ? OFFSET ?
   `
 
+  const [countRows]: any = await pool.query(countQuery, countParams)
+  const total = countRows[0]?.total || 0
+
   const [rows]: any = await pool.query(query, params)
-  return rows
+  return { posts: rows, total }
 }
 
 export async function GET(req: NextRequest) {
@@ -82,7 +96,7 @@ export async function GET(req: NextRequest) {
       )
     }
 
-    const posts = await getBlogsByAuthor(
+    const { posts, total } = await getBlogsByAuthor(
       authorLogin,
       limit,
       offset,
@@ -92,6 +106,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({
       posts,
+      total,
       author: authorLogin,
       authorInfo,
     })
