@@ -116,6 +116,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       category: result[0].category_names,
       categorySlug: result[0].category_slugs,
       author: result[0].author,
+      user_login: result[0].user_login,
       first_name: result[0].first_name,
       last_name: result[0].last_name,
       date: result[0].created_at,
