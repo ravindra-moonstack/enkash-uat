@@ -553,6 +553,10 @@ const url: {
     source: "/vouchers",
     destination: "/products/vouchers",
   },
+  {
+    source: "/resources/blog/category/video-monitorisation",
+    destination: "/resources/videos",
+  },
 ]
 
 const mappedUrls = url.map((item) => ({
