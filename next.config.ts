@@ -15,10 +15,14 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: false,
-    optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
+    optimizePackageImports: [
+      "@gsap/react",
+      "react-icons",
+      "lodash-es",
+    ],
   },
   outputFileTracingExcludes: {
-    "*": ["./public/uploads/**","./uploads/**"],
+    "*": ["./public/uploads/**", "./uploads/**"],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",

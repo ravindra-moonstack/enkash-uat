@@ -21,6 +21,7 @@ interface StatsSectionProps {
     backgroundImage?: StaticImageData | string
     className?: string
     showOverlays?: boolean
+    priority?: boolean
 }
 
 const defaultStats: StatItem[] = [
@@ -36,7 +37,8 @@ const StatsSection: React.FC<StatsSectionProps> = ({
     stats = defaultStats,
     backgroundImage = "/images/payment-gateway-bg.jpg",
     className = "",
-    showOverlays = false
+    showOverlays = false,
+    priority = false
 }) => {
     const [isVisible, setIsVisible] = useState(false)
     const sectionRef = useRef<HTMLDivElement>(null)
@@ -75,12 +77,12 @@ const StatsSection: React.FC<StatsSectionProps> = ({
                 src={typeof backgroundImage === 'object' ? (backgroundImage as StaticImageData).src : backgroundImage}
                 alt="background"
                 fill
-                priority
-                fetchPriority="high"
+                priority={priority}
+                {...(priority ? { fetchPriority: "high" } : {})}
                 style={{ objectFit: 'cover', zIndex: -1 }}
                 sizes="100vw"
                 quality={60}
-                unoptimized={true}
+                unoptimized={false}
             />
             <div className={'max-w-auto'}>
                 <div className={styles.content}> 

@@ -22,7 +22,7 @@ import faqData from "./faq-data"
 //components
 // import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import FaqSection from "@/src/components/faq-section"
+import dynamic from "next/dynamic"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import SuspenseLoading from "@/src/components/loading"
 
@@ -39,13 +39,25 @@ import {
   vaultSecurity,
 } from "./img"
 import HeroSection from "@/src/components/sections/hero-section"
-import OtherProducts from "@/src/components/sections/other-products"
-import BlogSection from "@/src/components/sections/blog-section"
+
+const FaqSection = dynamic(() => import("@/src/components/faq-section"), {
+  ssr: true,
+})
+const OtherProducts = dynamic(
+  () => import("@/src/components/sections/other-products"),
+  { ssr: true }
+)
+const BlogSection = dynamic(
+  () => import("@/src/components/sections/blog-section"),
+  { ssr: true }
+)
 //utils
 import Script from "next/script"
-import dynamic from "next/dynamic"
 import BulletPointSection from "@/src/components/sections/bullet-point-section"
-import IndustrySlider from "@/src/components/Industry-slider"
+const IndustrySlider = dynamic(
+  () => import("@/src/components/Industry-slider"),
+  { ssr: true }
+)
 
 const BankGradeSecurity = dynamic(
   () => import("@/src/components/BankGradeSecurity/BankGradeSecurity"),

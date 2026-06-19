@@ -3,11 +3,13 @@ import type { Metadata } from "next"
 import styles from "./styles.module.scss"
 import Link from "next/link"
 import { cookies } from "next/headers"
+import dynamic from "next/dynamic"
 import BlogBanner from "@/src/components/blog-components/BlogBanner"
 import BlogBody from "@/src/components/blog-components/BlogBody"
-import AuthorSection from "@/src/components/blog-components/AuthorSection"
-import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
-import NewsletterSection from "@/src/components/blog-components/NewsletterSection"
+
+const AuthorSection = dynamic(() => import("@/src/components/blog-components/AuthorSection"), { ssr: true })
+const RelatedBlogs = dynamic(() => import("@/src/components/blog-components/RelatedBlogs"), { ssr: true })
+const NewsletterSection = dynamic(() => import("@/src/components/blog-components/NewsletterSection"), { ssr: true })
 import { notFound, redirect } from "next/navigation"
 
 import {
