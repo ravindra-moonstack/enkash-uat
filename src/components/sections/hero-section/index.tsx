@@ -68,6 +68,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           sizes="100vw"
           decoding="async"
           quality={80}
+          unoptimized={true}
         />
       )}
 
@@ -202,6 +203,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 quality={80}
                 decoding="sync"
+                unoptimized={true}
                 {...RightImageProps}
               />
             </div>

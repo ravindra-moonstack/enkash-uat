@@ -1,11 +1,16 @@
 const BASE_URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3000"
 
 export const getBlogCategories = async () => {
-  const res = await fetch(`${BASE_URL}/api/resources/blogs/getCategory`, {
-    cache: "no-store",
-  })
-  if (!res.ok) return null
-  return res.json()
+  try {
+    const res = await fetch(`${BASE_URL}/api/resources/blogs/getCategory`, {
+      next: { revalidate: 60 },
+    })
+    if (!res.ok) return null
+    return res.json()
+  } catch (error) {
+    console.error("Error in getBlogCategories:", error)
+    return null
+  }
 }
 
 export const getCategoryData = async (slug: string, search?: string) => {
@@ -13,12 +18,17 @@ export const getCategoryData = async (slug: string, search?: string) => {
   query.set("category", slug)
   if (search) query.set("search", search)
 
-  const res = await fetch(
-    `${BASE_URL}/api/resources/blogs/getCategoryData?${query.toString()}`,
-    { cache: "no-store" }
-  )
-  if (!res.ok) return null
-  return res.json()
+  try {
+    const res = await fetch(
+      `${BASE_URL}/api/resources/blogs/getCategoryData?${query.toString()}`,
+      { next: { revalidate: 60 } }
+    )
+    if (!res.ok) return null
+    return res.json()
+  } catch (error) {
+    console.error("Error in getCategoryData:", error)
+    return null
+  }
 }
 
 export const getPostBySlug = async (slug: string, token?: string) => {
@@ -27,24 +37,36 @@ export const getPostBySlug = async (slug: string, token?: string) => {
     headers["Cookie"] = `token=${token}`
   }
 
-  const res = await fetch(
-    `${BASE_URL}/api/resources/blogs/getPostBySlug?slug=${slug}`,
-    {
-      cache: "no-store",
-      headers,
-    }
-  )
-  if (!res.ok) return null
-  return res.json()
+  try {
+    const res = await fetch(
+      `${BASE_URL}/api/resources/blogs/getPostBySlug?slug=${slug}`,
+      {
+        cache: token ? "no-store" : "force-cache",
+        next: token ? undefined : { revalidate: 60 },
+        headers,
+      }
+    )
+    if (!res.ok) return null
+    return res.json()
+  } catch (error) {
+    console.error("Error in getPostBySlug:", error)
+    return null
+  }
 }
 
 export const getVideoCategories = async () => {
-  const res = await fetch(`${BASE_URL}/api/resources/videos/getCategories`, {
-    cache: "no-store",
-  })
-  if (!res.ok) return null
-  return res.json()
+  try {
+    const res = await fetch(`${BASE_URL}/api/resources/videos/getCategories`, {
+      next: { revalidate: 60 },
+    })
+    if (!res.ok) return null
+    return res.json()
+  } catch (error) {
+    console.error("Error in getVideoCategories:", error)
+    return null
+  }
 }
+
 export const getVideos = async (params: {
   page?: number
   limit?: string
@@ -59,14 +81,19 @@ export const getVideos = async (params: {
     query.set("category", params.category)
   if (params.search) query.set("search", params.search)
 
-  const res = await fetch(
-    `${BASE_URL}/api/resources/videos?${query.toString()}`,
-    {
-      cache: "no-store",
-    }
-  )
-  if (!res.ok) return null
-  return res.json()
+  try {
+    const res = await fetch(
+      `${BASE_URL}/api/resources/videos?${query.toString()}`,
+      {
+        next: { revalidate: 60 },
+      }
+    )
+    if (!res.ok) return null
+    return res.json()
+  } catch (error) {
+    console.error("Error in getVideos:", error)
+    return null
+  }
 }
 
 export const getAuthorData = async (
@@ -81,11 +108,16 @@ export const getAuthorData = async (
   if (limit) query.set("limit", limit.toString())
   if (offset) query.set("offset", offset.toString())
 
-  const res = await fetch(
-    `${BASE_URL}/api/resources/blogs/getAuthorData?${query.toString()}`,
-    { cache: "no-store" }
-  )
-  if (!res.ok) return null
-  return res.json()
+  try {
+    const res = await fetch(
+      `${BASE_URL}/api/resources/blogs/getAuthorData?${query.toString()}`,
+      { next: { revalidate: 60 } }
+    )
+    if (!res.ok) return null
+    return res.json()
+  } catch (error) {
+    console.error("Error in getAuthorData:", error)
+    return null
+  }
 }
 

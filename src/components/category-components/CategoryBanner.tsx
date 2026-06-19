@@ -39,6 +39,7 @@ const CategoryBanner = ({ data }: { data: any }) => {
                   className={styles.banner_img}
                   priority={true}
                   fetchPriority="high"
+                  unoptimized={true}
                 />
               </div>
             </div>

@@ -50,6 +50,7 @@ const Vouchers = (): React.JSX.Element => {
           fetchPriority="high"
           style={{ objectFit: "cover", zIndex: -1 }}
           sizes="100vw"
+          unoptimized={true}
         />
         <div className="max-w-auto position-relative">
           <div className="d-flex">
@@ -109,6 +110,7 @@ const Vouchers = (): React.JSX.Element => {
                   }}
                   className="w-100"
                   sizes="(max-width: 768px) 100vw, 80vw"
+                  unoptimized={true}
                 />
               </div>
             </div>

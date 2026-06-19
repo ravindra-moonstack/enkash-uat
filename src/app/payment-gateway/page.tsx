@@ -36,15 +36,35 @@ import {
   acceleratedGrowthImg,
   stateBg,
   capabilityImage,
-  vaultSecurity
+  vaultSecurity,
 } from "./img"
 import HeroSection from "@/src/components/sections/hero-section"
 import OtherProducts from "@/src/components/sections/other-products"
 import BlogSection from "@/src/components/sections/blog-section"
 //utils
 import Script from "next/script"
-import { BankGradeSecurity, BulletPointSection, CommanButton, ContentShowcase, FeatureCard, PaymentGatewaySection, StatsSection } from "@/src/components"
+import dynamic from "next/dynamic"
+import BulletPointSection from "@/src/components/sections/bullet-point-section"
 import IndustrySlider from "@/src/components/Industry-slider"
+
+const BankGradeSecurity = dynamic(
+  () => import("@/src/components/BankGradeSecurity/BankGradeSecurity"),
+  { ssr: true }
+)
+const ContentShowcase = dynamic(
+  () => import("@/src/components/content-showcase"),
+  { ssr: true }
+)
+const FeatureCard = dynamic(() => import("@/src/components/feature-card"), {
+  ssr: true,
+})
+const PaymentGatewaySection = dynamic(
+  () => import("@/src/components/payment-gateway-slider/PaymentGatewaySection"),
+  { ssr: true }
+)
+const StatsSection = dynamic(() => import("@/src/components/stats-section"), {
+  ssr: true,
+})
 
 const videoId = "oApuECjnRIU"
 const videoSchema = {
@@ -144,7 +164,10 @@ const PaymentGateway = (): React.JSX.Element => {
               title: "The ",
               color: "color-black",
             },
-            { title: "Backbone of Modern Business", color: "color-equity-blue" },
+            {
+              title: "Backbone of Modern Business",
+              color: "color-equity-blue",
+            },
             {
               title: " Payments",
               color: "color-black",
@@ -152,7 +175,8 @@ const PaymentGateway = (): React.JSX.Element => {
           ]}
           mainDescription={[
             {
-              title: "A complete payments setup that supports growth, complexity, and volume.",
+              title:
+                "A complete payments setup that supports growth, complexity, and volume.",
               color: "color-black",
             },
           ]}
@@ -166,8 +190,8 @@ const PaymentGateway = (): React.JSX.Element => {
           bgColor="bg-color-black-30"
           buttonArrow
           reverse
-          imgHeightStyle={'mh-760'}
-          contentContainerStyle={'pb-0'}
+          imgHeightStyle={"mh-760"}
+          contentContainerStyle={"pb-0"}
         />
         <ContentShowcase
           heading="Built for Developers Who Demand Excellence"
@@ -190,7 +214,7 @@ const PaymentGateway = (): React.JSX.Element => {
           buttonTitle="Get Started Today"
           buttonArrow
           reverse
-          imgHeightStyle={'mh-650'}
+          imgHeightStyle={"mh-650"}
         />
         <ContentShowcase
           heading="Complete Visibility Into Your Payments"
@@ -205,14 +229,21 @@ const PaymentGateway = (): React.JSX.Element => {
       </div>
       <IndustrySlider
         heading={"Designed for How Businesses Collect Payments"}
-        subheading={"Whether you're scaling an e-commerce store or launching a subscription service, EnKash adapts to your unique needs."}
+        subheading={
+          "Whether you're scaling an e-commerce store or launching a subscription service, EnKash adapts to your unique needs."
+        }
         categories={categories}
         slides={slides}
         autoplaySpeed={4000}
       />
       <PaymentGatewaySection
         backgroundImage={capabilityImage.src}
-        heading={[{ title: "Advanced Capabilities for Complex Requirements", color: "color-white" }]}
+        heading={[
+          {
+            title: "Advanced Capabilities for Complex Requirements",
+            color: "color-white",
+          },
+        ]}
         description="Beyond standard payment processing, EnKash handles sophisticated business scenarios."
         slideData={slideData}
         className={styles.partnerSectionOverlap}
@@ -240,13 +271,14 @@ const PaymentGateway = (): React.JSX.Element => {
                 color: "color-equity-blue ",
               },
             ]}
-            headingTag={'h2'}
-            className={'f-6'}
+            headingTag={"h2"}
+            className={"f-6"}
           />
           <DynamicHeading
             content={[
               {
-                title: "Fast, frictionless checkout experience designed to maximize conversion rates and minimize cart abandonment.",
+                title:
+                  "Fast, frictionless checkout experience designed to maximize conversion rates and minimize cart abandonment.",
                 color: "color-grey-200 f-4 ",
               },
             ]}

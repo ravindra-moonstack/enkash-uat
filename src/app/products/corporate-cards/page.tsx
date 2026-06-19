@@ -27,16 +27,15 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 import CorporateHeroSection from "@/src/components/sections/corporate-card-hero-section"
 import SuspenseLoading from "@/src/components/loading"
 
-// Dynamic imports for performance
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 const PolicyCard = dynamic(() => import("@/src/components/policy-card"))
 const FeatureCard = dynamic(() => import("@/src/components/feature-card"))
 const CardProduct = dynamic(() => import("@/src/components/card-product"))
 const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
-const CounterSection = dynamic(() => import("@/src/components").then(mod => mod.CounterSection))
-const BlocksSection = dynamic(() => import("@/src/components").then(mod => mod.BlocksSection))
-const CtaBanner = dynamic(() => import("@/src/components").then(mod => mod.CtaBanner))
+const CounterSection = dynamic(() => import("@/src/components/counter-section"))
+const BlocksSection = dynamic(() => import("@/src/components/blocks-section/BlocksSection"))
+const CtaBanner = dynamic(() => import("@/src/components/cta-banner"))
 
 // helpers
 import {
@@ -53,8 +52,11 @@ import {
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
+const BecomePartnerSteps = dynamic(() => import("@/src/components/becomepartner"), { ssr: true })
+const ProductsSection = dynamic(() => import("@/src/components/our-products-section"), { ssr: true })
+const VideoPlayer = dynamic(() => import("@/src/components/video-player"), { ssr: true })
+
 import Script from "next/script"
-import { BecomePartnerSteps, ProductsSection, VideoPlayer } from "@/src/components"
 
 const videoId = "EgWI_tkBpk0"
 const videoSchema = {
