@@ -14,10 +14,8 @@ import {
 import faqData from "./faq-data"
 
 //components
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import dynamic from "next/dynamic"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import CardStacking from "@/src/components/card-stacking"
-import FaqSection from "@/src/components/faq-section"
 import SuspenseLoading from "@/src/components/loading"
 
 //helpers
@@ -31,13 +29,17 @@ import {
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
-import SliderSection from "@/src/components/sections/slider-section"
 import HeroSection from "@/src/components/sections/hero-section"
-import StepsSection from "@/src/components/steps-section"
-import UseCaseSection from "@/src/components/sections/use-case-section"
-import CtaSection from "@/src/components/sections/cta-section"
-import OtherProducts from "@/src/components/sections/other-products"
-import BlogSection from "@/src/components/sections/blog-section"
+
+const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"), { ssr: true })
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"), { ssr: true })
+const FaqSection = dynamic(() => import("@/src/components/faq-section"), { ssr: true })
+const SliderSection = dynamic(() => import("@/src/components/sections/slider-section"), { ssr: true })
+const StepsSection = dynamic(() => import("@/src/components/steps-section"), { ssr: true })
+const UseCaseSection = dynamic(() => import("@/src/components/sections/use-case-section"), { ssr: true })
+const CtaSection = dynamic(() => import("@/src/components/sections/cta-section"), { ssr: true })
+const OtherProducts = dynamic(() => import("@/src/components/sections/other-products"), { ssr: true })
+const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"), { ssr: true })
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Page: Create Custom Branded Checkout Pages",

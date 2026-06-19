@@ -52,7 +52,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   rightImageMaxHeight = "550px",
   button2,
   RightImageProps,
-  bgImageStyle
+  bgImageStyle,
 }) => {
   const [open, setOpen] = useState(false)
   return (
@@ -68,7 +68,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           sizes="100vw"
           decoding="async"
           quality={80}
-          unoptimized={true}
+          unoptimized={false}
         />
       )}
 
@@ -77,7 +77,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           {/* LEFT CONTENT */}
           <div className="col-12 col-md-6 d-flex flex-column">
             <div className="mt-md-0 mt-2">
-              <CustomBreadcrumb items={breadcrumbs} linkColor={breadcrumbColor} />
+              <CustomBreadcrumb
+                items={breadcrumbs}
+                linkColor={breadcrumbColor}
+              />
             </div>
 
             {subtitle && (
@@ -88,8 +91,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   content={[
                     {
                       title: subtitle.text,
-                      color: `${subtitle.color ?? "color-equity-blue"} ${subtitle.underline ? "underline" : ""
-                        }`,
+                      color: `${subtitle.color ?? "color-equity-blue"} ${
+                        subtitle.underline ? "underline" : ""
+                      }`,
                     },
                   ]}
                   headingTag="p"
@@ -145,12 +149,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                       theme={button.theme ?? "blue"}
                       url={button.url}
                     />
-                    {button2 && (
-                      <CommanButton
-
-                        {...button2}
-                      />
-                    )}
+                    {button2 && <CommanButton {...button2} />}
                     {button.vedioLink && (
                       <>
                         {button.vedioLink && (
@@ -185,29 +184,30 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* RIGHT HERO IMAGE */}
 
-          {rightImage && (<div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-            <div
-              className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
-            >
-              <Image
-                //@ts-ignore
-                src={rightImage}
-                alt="Hero Visual"
-                style={{
-                  objectFit: "contain",
-                  maxHeight: rightImageMaxHeight,
-                }}
-                className="w-100 object-fit-contain"
-                priority={true}
-                fetchPriority="high"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                quality={80}
-                decoding="sync"
-                unoptimized={true}
-                {...RightImageProps}
-              />
+          {rightImage && (
+            <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
+              <div
+                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
+              >
+                <Image
+                  //@ts-ignore
+                  src={rightImage}
+                  alt="Hero Visual"
+                  style={{
+                    objectFit: "contain",
+                    maxHeight: rightImageMaxHeight,
+                  }}
+                  className="w-100 object-fit-contain"
+                  priority={true}
+                  fetchPriority="high"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  quality={80}
+                  decoding="sync"
+                  unoptimized={false}
+                  {...RightImageProps}
+                />
+              </div>
             </div>
-          </div>
           )}
         </div>
       </div>

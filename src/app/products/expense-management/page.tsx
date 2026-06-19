@@ -17,12 +17,12 @@ import { faqData, SecondfaqData } from "./faq-data"
 
 import dynamic from "next/dynamic"
 
-// components
 import CommanButton from "@/src/components/buttons"
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import SuspenseLoading from "@/src/components/loading"
+
+const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"), { ssr: true })
 
 // Dynamic imports for performance
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
