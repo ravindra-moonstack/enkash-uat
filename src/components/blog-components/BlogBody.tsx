@@ -162,6 +162,7 @@ const BlogBody = ({
                     height={437}
                     priority={true}
                     fetchPriority="high"
+                    unoptimized={true}
                   />
                 </div>
               )}

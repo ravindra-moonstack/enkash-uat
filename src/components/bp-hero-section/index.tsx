@@ -57,6 +57,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
           fetchPriority="high"
           decoding="sync"
           sizes="100vw"
+          unoptimized={true}
         />
       )}
       <div className={styles.box_white} style={{ position: "relative", zIndex: 1 }}>

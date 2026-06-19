@@ -6,7 +6,6 @@ import "./globals.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import { Inter } from "next/font/google"
-import Script from "next/script"
 import LayoutClientWrapper from "@/src/components/layout-wrapper"
 import { WebVitals } from "@/src/components/web-vitals"
 import { ToastProvider } from "@/src/context/ToastContext"
@@ -46,14 +45,6 @@ export default function RootLayout({
         <meta
           name="google-site-verification"
           content="RWOqrBamBY0cC_WQwIz55vCzZRBv97CtZYwlpUCIjY4"
-        />
-
-        <Script
-          id="gtm-script"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TR7NDT8C');`,
-          }}
         />
       </head>
       <body className={inter.variable}>

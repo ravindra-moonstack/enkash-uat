@@ -37,7 +37,7 @@ const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 const SecondFaqHtml = dynamic(() => import("@/src/components/second-faq/secondFaqHtml"))
 const AllProducts = dynamic(() => import("@/src/components/all-products"))
 const EnkashWay = dynamic(() => import("@/src/components/enkash-way/enkash-way"))
-const CTASection = dynamic(() => import("@/src/components").then(mod => mod.CTASection))
+const CTASection = dynamic(() => import("@/src/components/sections/cta-section"))
 const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
 
 // helper

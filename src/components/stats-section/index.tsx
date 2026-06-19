@@ -80,6 +80,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({
                 style={{ objectFit: 'cover', zIndex: -1 }}
                 sizes="100vw"
                 quality={60}
+                unoptimized={true}
             />
             <div className={'max-w-auto'}>
                 <div className={styles.content}> 
