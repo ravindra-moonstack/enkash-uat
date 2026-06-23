@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    optimizeCss: true,
+    inlineCss: true,
     optimizePackageImports: [
       "@gsap/react",
       "react-icons",
