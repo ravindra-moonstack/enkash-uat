@@ -36,7 +36,7 @@ const Page = (): React.JSX.Element => {
   return (
     <div className={` ${styles.body_container} relative`}>
       <div className={`${styles.bgImg_container} absolute`}>
-        <Image src={bgImg} alt={"bgImg"} />
+        <Image src={bgImg} alt={"bgImg"} priority fetchPriority="high" />
       </div>
       <div className={`color-white ${styles.home_container}`}>
         <div className="max-w-auto">

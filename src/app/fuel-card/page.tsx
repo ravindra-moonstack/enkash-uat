@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 
 //data
@@ -9,11 +10,9 @@ import faqData from "./faq-data"
 import { mealCardImage, heroCardImg } from "./img"
 
 // components
-import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import LogoSlider from "@/src/components/logo-slider"
 import CardHeroSection from "@/src/components/sections/card-hero-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
@@ -21,6 +20,9 @@ import OtherProducts from "@/src/components/sections/other-products"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import BlogSection from "@/src/components/sections/blog-section"
+
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 
 export const metadata: Metadata = generateMetaData({
   title: "Fuel Card for Fleet & Employee Travel Management",

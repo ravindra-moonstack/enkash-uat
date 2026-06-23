@@ -17,8 +17,10 @@ import { paymentSummary, mealCardImage } from "./img"
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
-import SliderSection from "@/src/components/sections/slider-section"
 import BlogSection from "@/src/components/sections/blog-section"
+import dynamic from "next/dynamic"
+
+const SliderSection = dynamic(() => import("@/src/components/sections/slider-section"))
 
 export const metadata: Metadata = generateMetaData({
   title: "Bulk Payment: Smart, Fast & Secure Payouts ",

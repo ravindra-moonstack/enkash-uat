@@ -9,8 +9,9 @@ import faqData from "./faq-data"
 //components
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
-import CardStacking from "@/src/components/card-stacking"
+import dynamic from "next/dynamic"
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
 import HowDoesItWork from "@/src/components/how-does-it-work"

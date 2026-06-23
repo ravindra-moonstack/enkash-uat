@@ -16,7 +16,8 @@ import faqData from "./faq-data"
 //components
 import BpHeroSection from "@/src/components/bp-hero-section"
 import BankSolutions from "@/src/components/partnerships/BankSolutions"
-import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
+import dynamic from "next/dynamic"
+const PartnershipSection = dynamic(() => import("@/src/components/partner-ship-slider/PartnershipSection"))
 import BecomePartnerSteps from "@/src/components/becomepartner"
 import ProductsSection from "@/src/components/our-products-section"
 import BottomCtaSection from "@/src/components/bottom-cta-section"

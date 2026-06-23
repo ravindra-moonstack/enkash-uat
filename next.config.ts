@@ -7,14 +7,14 @@ const withBundleAnalyzerConfigured = withBundleAnalyzer({
 })
 
 const nextConfig: NextConfig = {
-  productionBrowserSourceMaps: true,
+  productionBrowserSourceMaps: false,
   compress: true,
 
   eslint: {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    optimizeCss: false,
+    optimizeCss: true,
     optimizePackageImports: [
       "@gsap/react",
       "react-icons",
@@ -29,8 +29,8 @@ const nextConfig: NextConfig = {
     styledComponents: true,
   },
 
-  // ✅ ADD THIS PART FOR BLOG IMAGE SUPPORT
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",
@@ -45,8 +45,7 @@ const nextConfig: NextConfig = {
 
     if (!dev && !isServer) {
       config.optimization.splitChunks.cacheGroups = {
-        default: false,
-        vendors: false,
+        ...config.optimization.splitChunks.cacheGroups,
         styles: {
           name: "styles",
           type: "css/mini-extract",

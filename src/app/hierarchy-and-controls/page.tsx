@@ -16,11 +16,11 @@ import faqData from "./faq-data"
 
 import CommonButton from "@/components/buttons"
 import CustomBreadcrumb from "@/components/breadcrumb"
-import CardStacking from "@/components/card-stacking"
+const CardStacking = dynamic(() => import("@/components/card-stacking"))
 import FaqSection from "@/components/faq-section"
 import AllInOnePolicy from "@/components/all-in-one-policy"
 import DynamicHeading from "@/components/dynamic-heading"
-import LogoSlider from "@/components/logo-slider"
+const LogoSlider = dynamic(() => import("@/components/logo-slider"))
 import ManagementCard from "@/components/management-card"
 import EasyStepCard from "@/components/easy-step-card"
 
@@ -30,6 +30,7 @@ import { groupIcon, paymentSummary } from "./img"
 //utils
 import { getSalesUrl } from "@/utils/getSalesUrl"
 import generateMetaData from "@/utils/metaData"
+import dynamic from "next/dynamic"
 
 export const metadata: Metadata = generateMetaData({
   title: "Hierarchy & Controls: Streamline Spend Permissions",
@@ -133,6 +134,8 @@ const HierarchyAndControlContent = (): React.JSX.Element => {
                     src={groupIcon}
                     alt="card visual"
                     className={styles.group_logo}
+                    priority
+                    fetchPriority="high"
                   />
                   <div
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}

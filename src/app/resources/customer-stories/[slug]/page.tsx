@@ -107,6 +107,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               alt="Hero Background"
               fill
               priority
+              sizes="100vw"
               className={styles.bgImage}
             />
           </div>
@@ -253,6 +254,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               src="/uploads/2025/08/Group-1171277148-scaled-1.webp"
               alt="Challenges background overlay"
               fill
+              sizes="100vw"
               className={styles.bgImage}
             />
           </div>

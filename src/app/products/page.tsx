@@ -10,12 +10,13 @@ import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 import AllProducts from "@/src/components/all-products"
 import SalesFormWrapper from "@/src/components/form-wrapper/SalesFormWrapper"
 
 // utils
 import generateMetaData from "@/src/utils/metaData"
+import dynamic from "next/dynamic"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash Product Suite",

@@ -175,7 +175,7 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
 
       <section className={`${styles.careerSection}`}>
         <div className={styles.careerBg}>
-          <Image src={careerSectionBanner} alt="Career background" fill />
+          <Image src={careerSectionBanner} alt="Career background" fill sizes="100vw" />
         </div>
         <div className="max-w-auto">
           <div className="row">

@@ -18,7 +18,7 @@ import faqData from "./faq-data"
 import FaqSection from "@/src/components/faq-section"
 import HeroSection from "@/src/components/sections/hero-section"
 import StepsSection from "@/src/components/steps-section"
-import SliderSection from "@/src/components/sections/slider-section"
+const SliderSection = dynamic(() => import("@/src/components/sections/slider-section"))
 import CtaSection from "@/src/components/sections/cta-section"
 import BlogSection from "@/src/components/sections/blog-section"
 import UtilityBeefitSection from "@/src/components/sections/utilityBenefitSection"
@@ -50,6 +50,7 @@ import {
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 import AskAiSection from "@/src/components/sections/askAISection"
+import dynamic from "next/dynamic"
 
 export const metadata: Metadata = generateMetaData({
   title: "Utility Bill Payment: Pay All Business Utility Bills Seamlessly",

@@ -2,12 +2,13 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 
 import styles from "./page.module.scss"
 
 // components
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 import SupportCard from "@/src/components/support-card/support-card"
 
 import { location, logo } from "./img"
@@ -31,7 +32,7 @@ const Suppport = (): React.JSX.Element => {
     <div className={styles.talk_to_sales}>
       <div className="max-w-auto">
         <Link href="/" className={styles.logo}>
-          <Image src={logo} alt="card visual" className={styles.group_logo} />
+          <Image src={logo} alt="card visual" className={styles.group_logo} priority fetchPriority="high" />
         </Link>
 
         <div className="row">
