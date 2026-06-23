@@ -52,6 +52,7 @@ import {
   securityIcon4,
   securityIcon5,
   bankIcons2,
+  collectPaymentBg,
 } from "./img"
 import {
   counterData,
@@ -159,6 +160,18 @@ const HomePage = (): React.JSX.Element => {
       </section>
 
       <section className={`${styles.collectPaymentSection}`}>
+        <Image
+          src={collectPaymentBg}
+          alt="Collect Payment Background"
+          fill
+          priority
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+            zIndex: -2,
+          }}
+        />
         <div className="max-w-auto">
           <div className={`${styles.collectPaymentHeadingBox}`}>
             <div className={`${styles.collectPaymentHeading}`}>
