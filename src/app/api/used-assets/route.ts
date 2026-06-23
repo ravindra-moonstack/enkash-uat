@@ -36,6 +36,21 @@ function getNormalizePath(p: string): string {
   return normalized
 }
 
+// Helper to clean path while preserving casing
+function getCleanPath(p: string): string {
+  if (!p) return ""
+  let cleaned = p.trim().replace(/\\/g, "/")
+  if (cleaned.startsWith("uploads/")) {
+    cleaned = cleaned.substring("uploads/".length)
+  } else if (cleaned.startsWith("/uploads/")) {
+    cleaned = cleaned.substring("/uploads/".length)
+  }
+  if (cleaned.startsWith("/")) {
+    cleaned = cleaned.substring(1)
+  }
+  return cleaned
+}
+
 // Recursive function to scan directories for codebase files (excluding uploads/node_modules/.next/.git)
 async function getFilesRecursive(dir: string): Promise<string[]> {
   let results: string[] = []
@@ -169,17 +184,19 @@ export async function GET() {
       const norm = getNormalizePath(relPath)
       if (!norm || !norm.includes(".")) return null
       
-      const fullPath = `uploads/${norm}`
-      if (!usedFilesMap.has(fullPath)) {
-        usedFilesMap.set(fullPath, {
+      const fullPathLower = `uploads/${norm}`
+      if (!usedFilesMap.has(fullPathLower)) {
+        const cleaned = getCleanPath(relPath)
+        const fullPath = `uploads/${cleaned}`
+        usedFilesMap.set(fullPathLower, {
           path: fullPath,
-          name: path.basename(norm),
-          url: `/uploads/${norm}`,
-          type: getFileType(norm),
+          name: path.basename(cleaned),
+          url: `/uploads/${cleaned}`,
+          type: getFileType(cleaned),
           sources: new Set<string>(),
         })
       }
-      return usedFilesMap.get(fullPath)!
+      return usedFilesMap.get(fullPathLower)!
     }
 
     // 1. Process attachments.image_url
@@ -214,7 +231,7 @@ export async function GET() {
 
     // 4. Check codebase substring references for all initialized entries
     for (const [fullPath, entry] of usedFilesMap.entries()) {
-      const relPath = fullPath.substring("uploads/".length)
+      const relPath = entry.path.substring("uploads/".length)
       const filename = entry.name
       const checkPathCode = "uploads/" + relPath
 
@@ -249,9 +266,10 @@ export async function GET() {
 
     // Write to used_files.txt asynchronously to keep workspace file in sync
     try {
+      const filePathsToWrite = detailedList.map(entry => entry.path)
       await fs.promises.writeFile(
         USED_LIST_PATH,
-        sortedKeys.join("\n") + (sortedKeys.length ? "\n" : ""),
+        filePathsToWrite.join("\n") + (filePathsToWrite.length ? "\n" : ""),
         "utf8"
       )
     } catch (writeErr) {
