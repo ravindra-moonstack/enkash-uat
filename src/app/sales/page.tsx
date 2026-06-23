@@ -2,10 +2,11 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 
 // components
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 import TestimonialSlider from "@/src/components/testimonial-slider"
 
 import styles from "./page.module.scss"
@@ -40,6 +41,8 @@ function Sales(): React.JSX.Element {
                 src={logo}
                 alt="card visual"
                 className={styles.group_logo}
+                priority
+                fetchPriority="high"
               />
             </Link>
           </div>

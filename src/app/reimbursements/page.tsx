@@ -15,7 +15,7 @@ import faqData from "./faq-data"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import FaqSection from "@/src/components/faq-section"
-import CardStacking from "@/src/components/card-stacking"
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 import EasyStepCard from "@/src/components/easy-step-card"
 import HeroSection from "@/src/components/sections/hero-section"
 import IntroductionSection from "@/src/components/sections/introduction-section"
@@ -28,6 +28,7 @@ import { paymentSummary } from "./img"
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import dynamic from "next/dynamic"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automate Reimbursements for Easy Claim Submission & Approval",

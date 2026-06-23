@@ -18,13 +18,15 @@ import BpHeroSection from "@/src/components/bp-hero-section"
 import BottomCtaSection from "@/src/components/bottom-cta-section"
 import FaqSection from "@/src/components/faq-section"
 import BankSolutions from "@/src/components/partnerships/BankSolutions"
-import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
 import BecomePartnerSteps from "@/src/components/becomepartner"
 import ProductsSection from "@/src/components/our-products-section"
 import PartnerShipForm from "@/src/components/forms/partnership-form"
 import { containerScreen, participantBg } from "."
 import generateMetaData from "@/src/utils/metaData"
 import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper"
+import dynamic from "next/dynamic"
+
+const PartnershipSection = dynamic(() => import("@/src/components/partner-ship-slider/PartnershipSection"))
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",

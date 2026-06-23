@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 
 //data
@@ -14,17 +15,17 @@ import faqData from "./faq-data"
 
 //components
 import CustomBreadcrumb from "@/components/breadcrumb"
-import LogoSlider from "@/components/logo-slider"
 import DynamicHeading from "@/components/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy"
-import FaqSection from "@/components/faq-section"
 import Heading from "@/components/heading"
 import AllProducts from "@/components/all-products"
-import CardStacking from "@/components/card-stacking"
 import CommonButton from "@/src/components/buttons"
 import StepsSection from "@/src/components/steps-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
+import FaqSection from "@/components/faq-section"
+const LogoSlider = dynamic(() => import("@/components/logo-slider"))
+const CardStacking = dynamic(() => import("@/components/card-stacking"))
 
 //helpers
 import { mealCardImage, heroCardImg } from "./img"
@@ -124,7 +125,7 @@ const InstantCardManagement = (): React.JSX.Element => {
         </div>
 
         <div className={styles.lottie_container}>
-          <Image src={heroCardImg} alt="card background" className=" " />
+          <Image src={heroCardImg} alt="card background" className=" " priority fetchPriority="high" />
         </div>
       </div>
 

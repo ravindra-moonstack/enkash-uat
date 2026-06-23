@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 
 // data
 import { allInOnePolicyData, allProductSections, cardsData } from "./data"
@@ -9,7 +10,6 @@ import FaqSection from "@/src/components/faq-section"
 import HeroSection from "@/src/components/sections/hero-section"
 import StepsSection from "@/src/components/steps-section"
 import UseCaseSection from "@/src/components/sections/use-case-section"
-import SliderSection from "@/src/components/sections/slider-section"
 import CtaSection from "@/src/components/sections/cta-section"
 
 // helpers
@@ -19,6 +19,8 @@ import { paymentSummary, mealCardImage } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 import BlogSection from "@/src/components/sections/blog-section"
+
+const SliderSection = dynamic(() => import("@/src/components/sections/slider-section"))
 
 export const metadata: Metadata = generateMetaData({
   title: "Rent Payments: Pay Office & Property Rent Digitally",

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 
 //data
@@ -8,12 +9,12 @@ import faqData from "./faq-data"
 //components
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import RewardsCarousel from "@/src/components/rewards-carousel"
+const RewardsCarousel = dynamic(() => import("@/src/components/rewards-carousel"))
 import FaqSection from "@/src/components/faq-section"
 import HeroSection from "@/src/components/sections/hero-section"
 import CoreBenefitsSection from "@/src/components/sections/core-benifits-section"
 import StepsSection from "@/src/components/steps-section"
-import CardStacking from "@/src/components/card-stacking"
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 import CtaSection from "@/src/components/sections/cta-section"
 
 //helpers

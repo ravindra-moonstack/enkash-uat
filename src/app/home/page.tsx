@@ -1,26 +1,47 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
+import dynamic from "next/dynamic"
 
 import styles from "./page.module.scss"
 
-// components
+// components — above-fold (static imports)
 import DynamicHeading from "@/components/dynamic-heading"
 import LogoSlider from "@/components/logo-slider"
-import FeatureCard from "@/components/feature-card"
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import CommanButton from "@/components/buttons"
-import UtilityBillPayments from "@/components/utility-bill-payments"
-import PartnerSection from "@/components/partner-section-data"
 import PaymentGatewayCare from "@/components/home-page-payment-box"
-import ScrollableCardsSection from "@/src/components/scrollable-cards-section"
-import PrepaidCardHome from "@/components/prepaid-card-home/PrepaidCardHome"
-import HomePageRewardsVouchers from "@/components/home-page-rewards-vouchers"
-import HomeReceivablesPayables from "@/components/home-receivables-payables"
-import Counter from "@/components/home-counter"
-import HomePageSlider from "@/components/home-page-slider"
-import BuiltforBuildersSection from "@/components/builtfor-builders-card"
-import BottomCtaSection from "@/components/bottom-cta-section"
+
+// components — below-fold (dynamic imports)
+const FeatureCard = dynamic(() => import("@/components/feature-card"))
+const LottieDynamicLoadComponent = dynamic(
+  () => import("@/components/lottie-client/lottie-dynamic-load-client")
+)
+const UtilityBillPayments = dynamic(
+  () => import("@/components/utility-bill-payments")
+)
+const PartnerSection = dynamic(
+  () => import("@/components/partner-section-data")
+)
+const ScrollableCardsSection = dynamic(
+  () => import("@/src/components/scrollable-cards-section")
+)
+const PrepaidCardHome = dynamic(
+  () => import("@/components/prepaid-card-home/PrepaidCardHome")
+)
+const HomePageRewardsVouchers = dynamic(
+  () => import("@/components/home-page-rewards-vouchers")
+)
+const HomeReceivablesPayables = dynamic(
+  () => import("@/components/home-receivables-payables")
+)
+const Counter = dynamic(() => import("@/components/home-counter"))
+const HomePageSlider = dynamic(() => import("@/components/home-page-slider"))
+const BuiltforBuildersSection = dynamic(
+  () => import("@/components/builtfor-builders-card")
+)
+const BottomCtaSection = dynamic(
+  () => import("@/components/bottom-cta-section")
+)
 
 // helpers
 import {

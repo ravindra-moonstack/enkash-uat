@@ -2,6 +2,7 @@ import React from "react"
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 
 import styles from "./page.module.scss"
 
@@ -9,9 +10,10 @@ import styles from "./page.module.scss"
 import {
   DynamicHeading,
   LocationCard,
-  LogoSlider,
-  TestimonialSlider,
 } from "@/src/components"
+
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const TestimonialSlider = dynamic(() => import("@/src/components/testimonial-slider"))
 
 // helpers
 import { location, logo } from "./img"

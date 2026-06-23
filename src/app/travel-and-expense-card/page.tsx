@@ -1,4 +1,5 @@
 import Image from "next/image"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
 
@@ -17,12 +18,12 @@ import faqData from "./faq-data"
 // components
 import CommanButton from "@/src/components/buttons"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
 import StepCard from "@/src/components/step-card"
 import CardHeroSection from "@/src/components/sections/card-hero-section"
-import SliderSection from "@/src/components/sections/slider-section"
+const SliderSection = dynamic(() => import("@/src/components/sections/slider-section"))
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
