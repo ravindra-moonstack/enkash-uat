@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Image from "next/image"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 
 //data
@@ -11,11 +12,11 @@ import { getSalesUrl } from "@/utils/getSalesUrl"
 import generateMetaData from "@/utils/metaData"
 import DynamicHeading from "@/components/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy"
-import CardStacking from "@/components/card-stacking"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
 import FaqSection from "@/components/faq-section"
-import RewardsCarousel from "@/components/rewards-carousel"
 import HeroSection from "@/src/components/sections/hero-section"
+const CardStacking = dynamic(() => import("@/components/card-stacking"))
+const RewardsCarousel = dynamic(() => import("@/components/rewards-carousel"))
 import CoreBenefitsSection from "@/src/components/sections/core-benifits-section"
 import { StepsSection } from "@/src/components"
 import CtaSection from "@/src/components/sections/cta-section"

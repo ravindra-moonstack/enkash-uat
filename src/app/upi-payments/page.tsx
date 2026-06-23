@@ -15,7 +15,6 @@ import faqData from "./faq-data"
 // components
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import FeatureCard from "@/src/components/feature-card"
 import HeroSection from "@/src/components/sections/hero-section"
@@ -35,6 +34,9 @@ import {
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import BlogSection from "@/src/components/sections/blog-section"
+import dynamic from "next/dynamic"
+
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 
 export const metadata: Metadata = generateMetaData({
   title: "UPI Payments: Fast, Secure, and Instant Online Payment",

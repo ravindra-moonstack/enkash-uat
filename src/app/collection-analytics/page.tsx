@@ -13,7 +13,8 @@ import faqData from "./faq-data"
 
 //components
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import CardStacking from "@/src/components/card-stacking"
+import dynamic from "next/dynamic"
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 import { FaqSection } from "@/src/components"
 import HeroSection from "@/src/components/sections/hero-section"
 import CoreBenefitsSection from "@/src/components/sections/core-benifits-section"

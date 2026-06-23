@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 
 // components
@@ -8,8 +9,9 @@ import DynamicHeading from "@/src/components/dynamic-heading"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import OurStoryCard from "@/src/components/about-our-story-card"
 import InvestorsLogos from "@/src/components/investors-logos"
-import EmployeeSlider from "@/src/components/employee-slider"
 import LocationTabsMap from "@/src/components/location-tabs-map"
+
+const EmployeeSlider = dynamic(() => import("@/src/components/employee-slider"))
 
 // helpers
 import { aboutBannerBottomIcon, careerCardIcon } from "./img"

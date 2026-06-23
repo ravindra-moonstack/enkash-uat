@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 
 //data
@@ -12,8 +13,8 @@ import faqData from "./faq-data"
 
 //components
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import LogoSlider from "@/src/components/logo-slider"
-import CardStacking from "@/src/components/card-stacking"
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
 import CardHeroSection from "@/src/components/sections/card-hero-section"

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 
 //data
 import { allInOnePolicyData, allProductSections, cardsData } from "./data"
@@ -10,7 +11,7 @@ import HeroSection from "@/src/components/sections/hero-section"
 import StepsSection from "@/src/components/steps-section"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 import CtaSection from "@/src/components/sections/cta-section"
-import SliderSection from "@/src/components/sections/slider-section"
+const SliderSection = dynamic(() => import("@/src/components/sections/slider-section"))
 
 //helpers
 import { paymentSummary, mealCardImage } from "./img"

@@ -1,12 +1,13 @@
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 
 import styles from "./page.module.scss"
 
 // components
 import DynamicHeading from "@/src/components/dynamic-heading"
 import HiringProcessModal from "@/src/components/hiring-process-modal"
-import CareersTestimonialSlider from "@/src/components/careers-testimonial-slider"
-import CareersHero from "@/src/components/careers-hero-slider"
+const CareersTestimonialSlider = dynamic(() => import("@/src/components/careers-testimonial-slider"))
+const CareersHero = dynamic(() => import("@/src/components/careers-hero-slider"))
 import CareersPaycheck from "@/src/components/careers-paycheck"
 import CoreValuesData from "@/src/components/core-values-data"
 
