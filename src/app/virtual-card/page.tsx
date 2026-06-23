@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic"
 import Image from "next/image"
 import styles from "./page.module.scss"
 import { Metadata } from "next"
@@ -17,9 +18,9 @@ import CommanButton from "@/src/components/buttons"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import LogoSlider from "@/src/components/logo-slider"
-import CardStacking from "@/src/components/card-stacking"
-import FaqSection from "@/src/components/faq-section"
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 
 // helpers
 import { mealCardImage, instantActionImg, heroCardImg } from "./img"
@@ -29,9 +30,9 @@ import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import StepsSection from "@/src/components/steps-section"
 import PolicyCard from "@/src/components/policy-card"
-import SliderSection from "@/src/components/sections/slider-section"
-import OtherProducts from "@/src/components/sections/other-products"
-import BlogSection from "@/src/components/sections/blog-section"
+const SliderSection = dynamic(() => import("@/src/components/sections/slider-section"))
+const OtherProducts = dynamic(() => import("@/src/components/sections/other-products"))
+const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
 
 export const metadata: Metadata = generateMetaData({
   title: "Virtual Corporate Cards for Smarter Payments | EnKash",
@@ -128,7 +129,7 @@ const VirtualCards = (): React.JSX.Element => {
         </div>
         <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
-            <Image src={heroCardImg} alt="card background" className=" " />
+            <Image src={heroCardImg} alt="card background" className=" " priority fetchPriority="high" />
           </div>
         </div>
       </div>

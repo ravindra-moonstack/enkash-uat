@@ -1,5 +1,6 @@
 import styles from "./page.module.scss"
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
 
 // data
 import {
@@ -12,8 +13,6 @@ import faqData from "./faq-data"
 
 // components
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import LogoSlider from "@/src/components/logo-slider"
-import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import StepsSection from "@/src/components/steps-section"
 
@@ -24,9 +23,11 @@ import { mealCardImage, heroCardImg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import CardHeroSection from "@/src/components/sections/card-hero-section"
-import SliderSection from "@/src/components/sections/slider-section"
 import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
+const SliderSection = dynamic(() => import("@/src/components/sections/slider-section"))
 
 export const metadata: Metadata = generateMetaData({
   title: "SaaS Card: Manage & Track All SaaS Payments",

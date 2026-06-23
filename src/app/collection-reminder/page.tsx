@@ -14,7 +14,7 @@ import faqData from "./faq-data"
 //components
 
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import CardStacking from "@/src/components/card-stacking"
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 import FaqSection from "@/src/components/faq-section"
 import HeroSection from "@/src/components/sections/hero-section"
 import CoreBenefitsSection from "@/src/components/sections/core-benifits-section"
@@ -30,6 +30,7 @@ import { paymentSummary, mealCardImage } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import BlogSection from "@/src/components/sections/blog-section"
+import dynamic from "next/dynamic"
 
 export const metadata: Metadata = generateMetaData({
   title: "Collection Reminder: Automate Payment Reminders",

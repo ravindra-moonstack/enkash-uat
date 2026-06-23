@@ -1,12 +1,13 @@
 import { Metadata } from "next"
 import { Suspense } from "react"
+import dynamic from "next/dynamic"
 import styles from "./page.module.scss"
 
 // components
 import DynamicHeading from "@/components/dynamic-heading"
 import FaqSection from "@/components/faq-section"
-import CardStacking from "@/components/card-stacking"
 import EasyStepCard from "@/components/easy-step-card"
+const CardStacking = dynamic(() => import("@/components/card-stacking"))
 import AllInOnePolicy from "@/components/all-in-one-policy"
 import HeroSection from "@/src/components/sections/hero-section"
 import IntroductionSection from "@/src/components/sections/introduction-section"

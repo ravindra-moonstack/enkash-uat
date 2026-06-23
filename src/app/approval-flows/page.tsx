@@ -15,7 +15,6 @@ import faqData from "./faq-data"
 import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import EasyStepCard from "@/src/components/easy-step-card"
-import CardStacking from "@/src/components/card-stacking"
 import FaqSection from "@/src/components/faq-section"
 import HeroSection from "@/src/components/sections/hero-section"
 import IntroductionSection from "@/src/components/sections/introduction-section"
@@ -26,6 +25,9 @@ import OtherProducts from "@/src/components/sections/other-products"
 import { paymentSummary } from "./img"
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
+import dynamic from "next/dynamic"
+
+const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Approval System: Streamline & Automate Approvals",

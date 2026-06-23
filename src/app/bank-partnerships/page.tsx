@@ -13,9 +13,9 @@ import {
 import { ThirdfaqData } from "./faq-data"
 
 //components
+import dynamic from "next/dynamic"
 import BpHeroSection from "@/src/components/bp-hero-section"
 import BankSolutions from "@/src/components/partnerships/BankSolutions"
-import PartnershipSection from "@/src/components/partner-ship-slider/PartnershipSection"
 import BecomePartnerSteps from "@/src/components/becomepartner"
 import BottomCtaSection from "@/src/components/bottom-cta-section"
 import FaqSection from "@/src/components/faq-section"
@@ -27,6 +27,8 @@ import { containerScreen, participantBg } from "./img"
 //utils
 import generateMetaData from "@/src/utils/metaData"
 import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper"
+
+const PartnershipSection = dynamic(() => import("@/src/components/partner-ship-slider/PartnershipSection"))
 
 export const metadata: Metadata = generateMetaData({
   title: "Partner with Us: Bank Partnerships",
