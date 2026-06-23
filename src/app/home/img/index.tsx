@@ -113,3 +113,4 @@ export { default as BuiltforBuildersCardIcon } from "./BuiltforBuildersCardIcon.
 export { default as BuiltforBuildersCardIcon2 } from "./BuiltforBuildersCardIcon2.svg"
 export { default as BuiltforBuildersCardIcon3 } from "./BuiltforBuildersCardIcon3.svg"
 export { default as HomeBgImg } from "./banner_bg_image.webp"
+export { default as collectPaymentBg } from "./collect_payment_bg.webp"
