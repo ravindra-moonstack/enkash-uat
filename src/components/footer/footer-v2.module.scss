@@ -20,11 +20,13 @@
     line-height: 16px;
     text-decoration: none;
     font-weight: 500;
-    color: $color-alternate-grey;
+    color: $color-grey-200;
     white-space: nowrap;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.25px;
 
     @include for-laptops {
+      letter-spacing: -0.5px;
+      color: $color-alternate-grey;
       font-size: 16px;
       line-height: 28px;
     }

@@ -15,11 +15,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     inlineCss: true,
-    optimizePackageImports: [
-      "@gsap/react",
-      "react-icons",
-      "lodash-es",
-    ],
+    optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
   },
   outputFileTracingExcludes: {
     "*": ["./public/uploads/**", "./uploads/**"],
@@ -96,7 +92,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/((?!_next/static|.*\\..*).*)",
+        source: "/((?!_next/static|_next/image|.*\\..*).*)",
         headers: [
           {
             key: "Cache-Control",
