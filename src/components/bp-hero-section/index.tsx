@@ -51,7 +51,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
           style={{
             objectFit: "cover",
             objectPosition: imgObjectPosition,
-            zIndex: 0,
+            zIndex: -1,
           }}
           priority={true}
           fetchPriority="high"
@@ -60,7 +60,10 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
           unoptimized={true}
         />
       )}
-      <div className={styles.box_white} style={{ position: "relative", zIndex: 1 }}>
+      <div
+        className={styles.box_white}
+        style={{ position: "relative", zIndex: 1 }}
+      >
         <div className="max-w-auto">
           {/* Breadcrumb */}
           {breadcrumbs && (
@@ -92,7 +95,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
 
               {/* CTA Button */}
               <div
-                className={`${styles.button_wrapper} text-md-start text-center`}
+                className={`${styles.button_wrapper} text-md-start text-center d-flex justify-content-center justify-content-md-start`}
               >
                 <CommanButton
                   title={button.title}

@@ -38,7 +38,7 @@ async function serveUpload(segments: string[], headOnly: boolean) {
   const stats = await fs.promises.stat(filePath)
   const ext = path.extname(filePath).toLowerCase()
   const headers = new Headers({
-    "Cache-Control": "public, max-age=0, must-revalidate",
+    "Cache-Control": "public, max-age=300, immutable",
     "Content-Length": String(stats.size),
     "Content-Type": contentTypes[ext] || "application/octet-stream",
   })
