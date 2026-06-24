@@ -102,6 +102,16 @@ const BlogBody = ({
     }
   }, [bodyData?.content])
 
+  const finalHtml = useMemo(() => {
+    if (!processedHtml) return ""
+    return processedHtml
+      .replace(
+        /<table([\s\S]*?)>/gi,
+        (match: any) => `<div class="${styles.tableWrapper}">${match}`
+      )
+      .replace(/<\/table>/gi, "</table></div>")
+  }, [processedHtml])
+
   const shareUrl =
     typeof window !== "undefined"
       ? window.location.href
@@ -186,7 +196,7 @@ const BlogBody = ({
                 <hr className={styles.shareDivider} />
               </div>
 
-              <BlogContent htmlContent={processedHtml} />
+              <BlogContent htmlContent={finalHtml} />
               <div className={styles.mobileAiBox}>
                 <SummarizeWithAI slug={slug} />
               </div>
