@@ -761,6 +761,19 @@
     }
   }
 
+  .tableWrapper {
+    @include for-laptops {
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 40px 0;
+
+      table {
+        margin: 0 !important;
+      }
+    }
+  }
+
   table {
     border: 1px solid #e2e8f0;
     border-collapse: separate; // Needed for sticky headers/cols to work correctly with borders
