@@ -4,7 +4,7 @@
 .hero_section {
   background-color: $color-black; // set pure black
   box-shadow: 0px 0px 77px 0px $color-black-1a;
-  padding: 100px 20px 0px;
+  padding: 120px 20px 0px;
 
   @include for-laptops {
     padding: 112px 20px 0;
