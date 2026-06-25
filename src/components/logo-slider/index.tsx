@@ -89,8 +89,7 @@ const LogoSlider = (): React.JSX.Element => {
                 width={150}
                 height={60}
                 sizes="(max-width: 768px) 100px, 150px"
-                loading="eager"
-                priority={true}
+                loading="lazy"
                 quality={80}
               />
             </div>

@@ -1,6 +1,7 @@
 import type { NextConfig } from "next"
 import withBundleAnalyzer from "@next/bundle-analyzer"
 import mappedUrls from "./src/helpers/redirection-urls"
+import path from "path"
 
 const withBundleAnalyzerConfigured = withBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
@@ -38,6 +39,12 @@ const nextConfig: NextConfig = {
 
   webpack(config, { dev, isServer }) {
     config.infrastructureLogging = { level: "error" }
+
+    // Alias the third-party slick theme to our performance optimized local version
+    config.resolve.alias["slick-carousel/slick/slick-theme.css"] = path.resolve(
+      __dirname,
+      "src/styles/slick-theme.css"
+    )
 
     if (!dev && !isServer) {
       config.optimization.splitChunks.cacheGroups = {

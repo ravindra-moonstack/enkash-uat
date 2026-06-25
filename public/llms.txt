@@ -1,0 +1,21 @@
+# EnKash
+
+> EnKash is India's leading spend management and online payments platform, simplifying payments, corporate cards, expenses, vouchers, and rewards for businesses.
+
+## Core Products
+
+- [Payment Gateway](/payment-gateway): Robust online payment aggregator for credit cards, UPI, net banking, and EMI.
+- [Payment Links](/payment-links): Generate and share unique links to collect customer payments instantly.
+- [UPI Payments](/upi-payments): Simple, reliable, and secure UPI payment collection for businesses.
+- [Corporate Cards](/products/corporate-cards): Commercial cards for business payments, travel, and meals.
+- [Expense Management](/products/expense-management): Automate approvals, scan receipts, and manage budgets.
+- [Vouchers](/products/vouchers): Digital vouchers for employee rewards and business gifts.
+
+## For Developers
+
+- [Developer Documentation](https://docs.enkash.com/): Official API reference, SDKs, and integration guides for EnKash Payment Gateway, prepaid cards, and expense management.
+
+## Company
+
+- [About Us](/about-us): Learn more about Nehat Tech Solutions and our mission.
+- [Contact Us](/contact-us): Get in touch with our sales or support teams.
