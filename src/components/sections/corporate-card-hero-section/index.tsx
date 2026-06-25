@@ -53,7 +53,6 @@ const CorporateHeroSection: React.FC<HeroSectionProps> = ({
         className="object-fit-cover z-index-minus-1"
         sizes="100vw"
         quality={75}
-        unoptimized={true}
       />
       <div className={styles.overlay}></div>
       <div className="max-w-auto position-relative">
@@ -123,7 +122,6 @@ const CorporateHeroSection: React.FC<HeroSectionProps> = ({
               sizes="(max-width: 768px) 100vw, 80vw"
               quality={75}
               decoding="sync"
-              unoptimized={true}
             />
           </div>
         </div>

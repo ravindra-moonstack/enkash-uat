@@ -34,6 +34,11 @@ const nextConfig: NextConfig = {
         hostname: "www.enkash.com",
         pathname: "/resources/wp-content/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+        pathname: "/vi/**",
+      },
     ],
   },
 
@@ -46,7 +51,17 @@ const nextConfig: NextConfig = {
       "src/styles/slick-theme.css"
     )
 
-
+    if (!dev && !isServer) {
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        styles: {
+          name: "styles",
+          type: "css/mini-extract",
+          chunks: "all",
+          enforce: true,
+        },
+      }
+    }
 
     return config
   },

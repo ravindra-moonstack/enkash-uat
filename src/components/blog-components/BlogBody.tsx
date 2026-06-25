@@ -104,12 +104,19 @@ const BlogBody = ({
 
   const finalHtml = useMemo(() => {
     if (!processedHtml) return ""
-    return processedHtml
+    let html = processedHtml
       .replace(
         /<table([\s\S]*?)>/gi,
         (match: any) => `<div class="${styles.tableWrapper}">${match}`
       )
       .replace(/<\/table>/gi, "</table></div>")
+
+    // Optimize native inline images: add lazy loading and async decoding
+    html = html
+      .replace(/<img\s+(?![^>]*\bloading\s*=)([^>]*)/gi, '<img loading="lazy" $1')
+      .replace(/<img\s+(?![^>]*\bdecoding\s*=)([^>]*)/gi, '<img decoding="async" $1')
+
+    return html
   }, [processedHtml])
 
   const shareUrl =

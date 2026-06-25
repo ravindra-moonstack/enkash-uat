@@ -1,8 +1,9 @@
 "use client"
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import DynamicHeading from "@/components/dynamic-heading"
 import styles from "./page.module.scss"
 import CommonButton from "../buttons"
+import Image from "next/image"
 
 type HeadingSegment = {
     title?: string
@@ -34,8 +35,21 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         [{ title: "Sound familiar?", color: "color-black" }],
     ],
 }) => {
+    const [isPlaying, setIsPlaying] = useState(false)
     const sectionRef = useRef<HTMLElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
+
+    const getYouTubeId = (url: string) => {
+        let videoId = ""
+        if (url.includes("youtu.be/")) {
+            videoId = url.split("youtu.be/")[1]?.split("?")[0] || ""
+        } else if (url.includes("watch?v=")) {
+            videoId = new URL(url).searchParams.get("v") || ""
+        } else if (url.includes("/embed/")) {
+            videoId = url.split("embed/")[1]?.split("?")[0] || ""
+        }
+        return videoId
+    }
 
     const isYoutube =
         videoSrc.includes("youtube.com") || videoSrc.includes("youtu.be")
@@ -123,15 +137,33 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
                 <div className={styles.rightCol}>
                     <div className={styles.videoWrapper}>
                         {isYoutube ? (
-                            <iframe
-                                src={getEmbedUrl(videoSrc)}
-                                title="Payment Gateway Video"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                                referrerPolicy="strict-origin-when-cross-origin"
-                                className={styles.iframe}
-                            />
+                            isPlaying ? (
+                                <iframe
+                                    src={`${getEmbedUrl(videoSrc)}&autoplay=1`}
+                                    title="Payment Gateway Video"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    className={styles.iframe}
+                                />
+                            ) : (
+                                <div className={styles.videoPreview} onClick={() => setIsPlaying(true)}>
+                                    <Image
+                                        src={`https://img.youtube.com/vi/${getYouTubeId(videoSrc)}/maxresdefault.jpg`}
+                                        alt="Video preview"
+                                        fill
+                                        style={{ objectFit: "cover" }}
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+                                    <div className={styles.playButton}>
+                                        <svg viewBox="0 0 68 48" width="68" height="48">
+                                            <path className={styles.playButtonBg} d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,0,34,0,34,0S12.21,0,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0,13.05,0,24,0,24s0,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19C12.21,48,34,48,34,48 s21.79,0,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C68,34.95,68,24,68,24S68,13.05,66.52,7.74z" fill="#f00"></path>
+                                            <path d="M 45 24 L 27 14 L 27 34" fill="#fff"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            )
                         ) : (
                             <video
                                 ref={videoRef}
