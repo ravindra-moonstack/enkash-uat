@@ -57,7 +57,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
           fetchPriority="high"
           decoding="sync"
           sizes="100vw"
-          unoptimized={true}
+          unoptimized={false}
         />
       )}
       <div

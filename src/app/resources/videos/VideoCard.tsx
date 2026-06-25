@@ -25,7 +25,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ data, onPlay }) => {
           alt={featured_image_alt || title}
           width={400}
           height={240}
-          unoptimized
+          loading="lazy"
         />
         <div className={styles.thumbnail_overlay}>
           <div className={styles.play_btn}>

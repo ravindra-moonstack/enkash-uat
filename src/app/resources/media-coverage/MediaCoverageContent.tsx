@@ -86,8 +86,8 @@ const MediaCoverageContent = () => {
                                 width={500}
                                 height={600}
                                 className={styles.tablet_img}
-                                priority
-                                unoptimized
+                                priority={true}
+                                fetchPriority="high"
                                 onError={(e) => {
                                     e.currentTarget.style.display = 'none'; // Background only if image missing
                                 }}
@@ -117,7 +117,7 @@ const MediaCoverageContent = () => {
                                                 alt={item.title}
                                                 width={400}
                                                 height={250}
-                                                unoptimized
+                                                loading="lazy"
                                             />
                                             {/* <div className={styles.overlay_logo}>
                                                 <Image src="/uploads/2025/09/favicon.png" alt="Icon" width={30} height={30} />

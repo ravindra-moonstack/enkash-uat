@@ -62,8 +62,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           src={backgroundImage}
           alt="Hero Background"
           fill
-          loading="eager"
-          fetchPriority="auto"
+          priority={true}
+          fetchPriority="high"
           style={{ objectFit: "cover", zIndex: -1, ...bgImageStyle }}
           sizes="100vw"
           decoding="async"

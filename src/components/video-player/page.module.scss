@@ -115,3 +115,35 @@
         opacity: 0.65;
     }
 }
+
+.videoPreview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.playButton {
+    position: absolute;
+    z-index: 2;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.15);
+    }
+}
+
+.playButtonBg {
+    fill: #ff0000;
+    transition: fill 0.2s ease-in-out;
+}
+
+.videoPreview:hover .playButtonBg {
+    fill: #cc0000;
+}
