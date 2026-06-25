@@ -2,9 +2,10 @@
 
 import { useEffect, Suspense } from "react"
 import { usePathname } from "next/navigation"
+import dynamic from "next/dynamic"
 import TalkToSales from "../mobile-talks-to-sales"
 import Header from "../header/header"
-import ConsultationModal from "../consultation-modal/ConsultationModal"
+const ConsultationModal = dynamic(() => import("../consultation-modal/ConsultationModal"), { ssr: false })
 import Footer from "../footer"
 
 export default function LayoutClientWrapper({
