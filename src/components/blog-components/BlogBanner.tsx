@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./singleBlog.module.scss"
-import { DynamicHeading } from ".."
+import DynamicHeading from "../dynamic-heading"
 import Link from "next/link"
 
 const formatDate = (dateStr: string) => {
