@@ -20,7 +20,7 @@
     line-height: 16px;
     text-decoration: none;
     font-weight: 500;
-    color: $color-black;
+    color: $color-grey-200;
     white-space: nowrap;
     letter-spacing: -0.25px;
 
@@ -191,9 +191,9 @@
     a {
       display: inline-flex;
       align-items: center;
-      min-height: 36px;
+      min-height: 18px;
       width: 100%;
-      padding: 4px 0;
+      padding: 2px 0;
     }
   }
 
