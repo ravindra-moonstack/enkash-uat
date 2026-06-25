@@ -53,8 +53,6 @@ const Vouchers = (): React.JSX.Element => {
           src="/images/collectPaymentBg.webp"
           alt="Hero background"
           fill
-          priority
-          fetchPriority="high"
           style={{ objectFit: "cover", zIndex: -1 }}
           sizes="100vw"
         />
@@ -90,7 +88,7 @@ const Vouchers = (): React.JSX.Element => {
                   {
                     title:
                       "Save More. Reward Smarter. Delight Better with Gift Voucher Deals.",
-                    color: "color-dark-grey ",
+                    color: "color-alternate-grey ",
                   },
                 ]}
                 headingTag="h2"

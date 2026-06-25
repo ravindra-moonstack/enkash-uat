@@ -126,7 +126,7 @@
   }
 
   .footer_section {
-    background-color: #ffff;
+    background-color: $color-white;
     border-radius: 16px;
     padding: 20px;
     position: relative;
@@ -285,7 +285,7 @@
   text-align: left;
   font-size: 9px;
 
-  color: $color-dark-grey;
+  color: $color-alternate-grey;
 
   @include for-laptops {
     padding: 48px 0;
