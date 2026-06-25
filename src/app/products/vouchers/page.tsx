@@ -6,19 +6,24 @@ import { allInOnePolicyData, categoriesData } from "./data"
 // data
 import faqData from "./faq-data"
 
-// components 
+// components
 import dynamic from "next/dynamic"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import SuspenseLoading, { LoadingUI } from "@/src/components/loading"
 
 // Dynamic imports for performance
-const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"), {
-  loading: () => <LoadingUI />
-})
+const AllInOnePolicy = dynamic(
+  () => import("@/src/components/all-in-one-policy"),
+  {
+    loading: () => <LoadingUI />,
+  }
+)
 const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
 const FaqSection = dynamic(() => import("@/src/components/faq-section"))
-const EnkashWay = dynamic(() => import("@/src/components/enkash-way/enkash-way"))
+const EnkashWay = dynamic(
+  () => import("@/src/components/enkash-way/enkash-way")
+)
 const CommanButton = dynamic(() => import("@/src/components/buttons"))
 
 // helpers
@@ -41,7 +46,9 @@ const salesUrl = getSalesUrl("/vouchers")
 const Vouchers = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className={`${styles.hero_section} position-relative overflow-hidden`}>
+      <div
+        className={`${styles.hero_section} position-relative overflow-hidden`}
+      >
         <Image
           src="/images/collectPaymentBg.webp"
           alt="Hero background"
@@ -50,7 +57,6 @@ const Vouchers = (): React.JSX.Element => {
           fetchPriority="high"
           style={{ objectFit: "cover", zIndex: -1 }}
           sizes="100vw"
-          unoptimized={true}
         />
         <div className="max-w-auto position-relative">
           <div className="d-flex">
@@ -87,8 +93,8 @@ const Vouchers = (): React.JSX.Element => {
                     color: "color-dark-grey ",
                   },
                 ]}
-                headingTag="h5"
-                className="f-4"
+                headingTag="h2"
+                className="f-4 heading-h5"
               />
             </div>
 
@@ -110,7 +116,6 @@ const Vouchers = (): React.JSX.Element => {
                   }}
                   className="w-100"
                   sizes="(max-width: 768px) 100vw, 80vw"
-                  unoptimized={true}
                 />
               </div>
             </div>
@@ -147,8 +152,8 @@ const Vouchers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-7"
+                  headingTag="h4"
+                  className="f-7 heading-h5"
                 />
               </div>
               <div
@@ -175,8 +180,8 @@ const Vouchers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-7"
+                  headingTag="h4"
+                  className="f-7 heading-h5"
                 />
               </div>
               <div
@@ -203,8 +208,8 @@ const Vouchers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-7 "
+                  headingTag="h4"
+                  className="f-7 heading-h5"
                 />
               </div>
               <div
