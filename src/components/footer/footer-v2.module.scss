@@ -187,6 +187,14 @@
 
   @media (max-width: 767px) {
     width: 46% !important; // 2 columns on mobile (with a small gap)
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      width: 100%;
+      padding: 4px 0;
+    }
   }
 
   @media (min-width: 768px) {
@@ -544,6 +552,16 @@
         margin-bottom: 16px;
       }
     }
+  }
+}
+
+.logo_img {
+  display: inline-block;
+
+  @media (max-width: 767px) {
+    display: block;
+    min-height: 48px;
+    min-width: 48px; 
   }
 }
 
