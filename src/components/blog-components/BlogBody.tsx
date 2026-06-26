@@ -64,41 +64,51 @@ const BlogBody = ({
   }, [])
 
   const { headings, processedHtml } = useMemo(() => {
-    if (typeof window === "undefined" || !bodyData?.content) {
-      return { headings: [], processedHtml: bodyData?.content || "" }
+    if (!bodyData?.content) {
+      return { headings: [], processedHtml: "" }
     }
 
     const htmlWithPTags = addPTags(bodyData.content)
-    const parser = new DOMParser()
-    const doc = parser.parseFromString(htmlWithPTags, "text/html")
-    const headingElements = Array.from(doc.querySelectorAll("h2, h3"))
-
+    const headings: { id: string; text: string; tagName: string }[] = []
     const usedIds = new Set<string>()
-    const mappedHeadings = headingElements.map((el) => {
-      const text = el.textContent || ""
-      const baseId = text
-        .replace(/\s+/g, "-")
-        .toLowerCase()
-        .replace(/[^\w-]/g, "")
 
-      let id = baseId || "heading"
-      let counter = 1
-      while (usedIds.has(id)) {
-        id = `${baseId}-${counter}`
-        counter++
+    // Regex to match h2/h3 tags
+    const headingRegex = /<(h2|h3)([^>]*)>([\s\S]*?)<\/\1>/gi
+
+    const processedHtml = htmlWithPTags.replace(
+      headingRegex,
+      (fullMatch, tag, attrs, innerHtml) => {
+        const text = innerHtml.replace(/<[^>]*>/g, "").trim()
+        const baseId = text
+          .replace(/\s+/g, "-")
+          .toLowerCase()
+          .replace(/[^\w-]/g, "")
+
+        let id = baseId || "heading"
+        let counter = 1
+        while (usedIds.has(id)) {
+          id = `${baseId}-${counter}`
+          counter++
+        }
+        usedIds.add(id)
+
+        headings.push({
+          id,
+          text,
+          tagName: tag.toLowerCase(),
+        })
+
+        const cleanAttrs = attrs
+          .replace(/\bid\s*=\s*['"][^'"]*['"]/gi, "")
+          .trim()
+        const space = cleanAttrs ? " " : ""
+        return `<${tag} id="${id}"${space}${cleanAttrs}>${innerHtml}</${tag}>`
       }
-      usedIds.add(id)
-      el.id = id
-      return {
-        id,
-        text,
-        tagName: el.tagName.toLowerCase(),
-      }
-    })
+    )
 
     return {
-      headings: mappedHeadings,
-      processedHtml: doc.body.innerHTML,
+      headings,
+      processedHtml,
     }
   }, [bodyData?.content])
 
@@ -113,8 +123,14 @@ const BlogBody = ({
 
     // Optimize native inline images: add lazy loading and async decoding
     html = html
-      .replace(/<img\s+(?![^>]*\bloading\s*=)([^>]*)/gi, '<img loading="lazy" $1')
-      .replace(/<img\s+(?![^>]*\bdecoding\s*=)([^>]*)/gi, '<img decoding="async" $1')
+      .replace(
+        /<img\s+(?![^>]*\bloading\s*=)([^>]*)/gi,
+        '<img loading="lazy" $1'
+      )
+      .replace(
+        /<img\s+(?![^>]*\bdecoding\s*=)([^>]*)/gi,
+        '<img decoding="async" $1'
+      )
 
     return html
   }, [processedHtml])
@@ -147,10 +163,6 @@ const BlogBody = ({
     },
   ]
 
-  const showFeaturedImage =
-    bodyData.show_featured_image !== "hide" &&
-    bodyData.show_featured_image !== null &&
-    bodyData.show_featured_image !== undefined
   const imageUrl = bodyData.image ? getImageUrl(bodyData.image) : ""
 
   return (
@@ -179,6 +191,7 @@ const BlogBody = ({
                     height={437}
                     priority={true}
                     fetchPriority="high"
+                    sizes="(max-width: 767px) 100vw, 777px"
                   />
                 </div>
               )}

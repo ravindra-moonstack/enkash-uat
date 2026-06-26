@@ -42,7 +42,7 @@ const SalesForm: React.FC<SalesFormProps> = () => {
   const referringPage = usePathname()
 
   useEffect(() => {
-    const utmSource = params.get("utm_source") || ""
+    const utmSource = params.get("utm_source") || "Website Sales Lead"
     const utmMedium = params.get("utm_medium") || ""
     const utmCampaign = params.get("utm_campaign") || ""
 
