@@ -29,23 +29,32 @@ const calculateReadTime = (htmlContent: string): string => {
 const cleanSchemaMarkup = (markup: string): string => {
   if (!markup) return ""
   let cleaned = markup
-  const scriptMatch = markup.match(/<script[^>]*>([\s\S]*?)<\/script>/i)
-  if (scriptMatch) {
-    cleaned = scriptMatch[1]
+
+  const startIdx = cleaned.toLowerCase().indexOf('<script')
+  const endIdx = cleaned.toLowerCase().lastIndexOf('</script>')
+  
+  if (startIdx !== -1 && endIdx !== -1 && startIdx < endIdx) {
+    const firstCloseBracket = cleaned.indexOf('>', startIdx)
+    if (firstCloseBracket !== -1 && firstCloseBracket < endIdx) {
+      cleaned = cleaned.substring(firstCloseBracket + 1, endIdx)
+    }
   } else {
     cleaned = cleaned.replace(/<[^>]*>/g, "")
   }
-  cleaned = cleaned.replace(/<[^>]*>/g, "")
+
   cleaned = cleaned
     .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
+    .replace(/&quot;/g, '\\"')
     .replace(/&#39;/g, "'")
     .replace(/&rsquo;/g, "'")
-    .replace(/&ldquo;/g, '"')
-    .replace(/&rdquo;/g, '"')
+    .replace(/&ldquo;/g, '\\"')
+    .replace(/&rdquo;/g, '\\"')
     .replace(/&nbsp;/g, " ")
+
+  cleaned = cleaned.replace(/</g, "\\u003c")
+
   return cleaned.trim()
 }
 
