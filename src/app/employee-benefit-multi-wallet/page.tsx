@@ -32,7 +32,6 @@ import {
   HeroImage,
   HeroImageBg,
   iPhone17,
-  walletBg,
 } from "./img"
 import { careerCardIcon } from "@/src/app/about-us/img"
 
@@ -175,7 +174,12 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
 
       <section className={`${styles.careerSection}`}>
         <div className={styles.careerBg}>
-          <Image src={careerSectionBanner} alt="Career background" fill sizes="100vw" />
+          <Image
+            src={careerSectionBanner}
+            alt="Career background"
+            fill
+            sizes="100vw"
+          />
         </div>
         <div className="max-w-auto">
           <div className="row">
@@ -218,7 +222,7 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
         description="Each wallet is purpose-built, tax-optimised, and compliant with Indian income tax law. No confusion, no fumbling — just seamless benefits."
         cards={walletCards}
         centerImage={iPhone17}
-        backgroundImage={walletBg.src}
+        backgroundImage={"/images/walletBg.webp"}
         buttonUrl={salesUrl}
       />
 
