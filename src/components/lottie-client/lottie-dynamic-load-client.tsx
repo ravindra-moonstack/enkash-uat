@@ -22,18 +22,22 @@ const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"))
 
 interface LottieDynamicLoadComponentProps {
   animationName: string
-  loop: boolean
+  loop?: boolean
+  priority?: boolean
 }
 
 const LottieDynamicLoadComponent = ({
   animationName,
   loop = true,
+  priority = false,
 }: LottieDynamicLoadComponentProps) => {
   const [animationData, setAnimationData] = useState<any | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(priority)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (priority) return
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -49,7 +53,7 @@ const LottieDynamicLoadComponent = ({
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [priority])
 
   useEffect(() => {
     if (!isVisible) return

@@ -64,7 +64,7 @@ const ProductHeroSection: React.FC<ProductHeroSectionProps> = ({
         <div className="col-12 d-flex justify-content-center align-items-center">
           <SuspenseLoading fallback={<div className={styles.lottie_container} style={{ height: '300px' }} />}>
             <div className={styles.lottie_container}>
-              <LottieDynamicLoadComponent animationName={animationName} loop />
+              <LottieDynamicLoadComponent animationName={animationName} loop priority={true} />
             </div>
           </SuspenseLoading>
         </div>

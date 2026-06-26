@@ -13,7 +13,7 @@ export { default as taskIconFour } from "./img/task-icon-four.svg"
 export { default as taskIconFive } from "./img/task-icon-five.svg"
 export { default as taskIconSix } from "./img/task-icon-six.svg"
 
-export { default as secondBg } from "./img/secongBg.png"
+export { default as secondBg } from "./img/secongBg.webp"
 
 // Crousel Icons
 export { default as crouselIconOne } from "./img/crouselIconOne.svg"

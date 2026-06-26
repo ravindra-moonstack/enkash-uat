@@ -11,17 +11,16 @@ import dynamic from "next/dynamic"
 import CommanButton from "@/src/components/buttons"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import SuspenseLoading from "@/src/components/loading"
 
-const AllInOnePolicy = dynamic(
-  () => import("@/src/components/all-in-one-policy")
-)
-const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
-const FaqSection = dynamic(() => import("@/src/components/faq-section"))
+import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import LogoSlider from "@/src/components/logo-slider"
+import FaqSection from "@/src/components/faq-section"
+import AllProducts from "@/src/components/all-products"
+
 const LottieDynamicLoadComponent = dynamic(
-  () => import("@/src/components/lottie-client/lottie-dynamic-load-client")
+  () => import("@/src/components/lottie-client/lottie-dynamic-load-client"),
+  { loading: () => <div className="w-100 h-100"></div> }
 )
-const AllProducts = dynamic(() => import("@/src/components/all-products"))
 
 // helpers
 import {
@@ -106,19 +105,15 @@ const MakePayment = (): React.JSX.Element => {
           </div>
           <div className=" col-12">
             <div className={styles.lottie_container}>
-              <SuspenseLoading fallback={<div className="min-h-300"></div>}>
-                <LottieDynamicLoadComponent
-                  animationName={"MakePaymentAnimationLottie"}
-                  loop={true}
-                />
-              </SuspenseLoading>
+              <LottieDynamicLoadComponent
+                animationName={"MakePaymentAnimationLottie"}
+                loop={true}
+              />
             </div>
           </div>
         </div>
 
-        <SuspenseLoading>
-          <LogoSlider />
-        </SuspenseLoading>
+        <LogoSlider />
       </div>
 
       <div className={styles.introduction_section}>
@@ -268,29 +263,27 @@ const MakePayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <SuspenseLoading>
-        <div className={`${styles.slider_row} relative`}>
-          <div className={`${styles.title} text-center `}>
-            <div className={``}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "The EnKash Advantage",
-                    color: "color-black ",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-5"
-              />
-            </div>
+      <div className={`${styles.slider_row} relative`}>
+        <div className={`${styles.title} text-center `}>
+          <div className={``}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "The EnKash Advantage",
+                  color: "color-black ",
+                },
+              ]}
+              headingTag="h2"
+              className="f-5"
+            />
           </div>
-          <AllProducts
-            title="All Features"
-            subtitle="Combine all use cases"
-            data={mergedCards}
-          />
         </div>
-      </SuspenseLoading>
+        <AllProducts
+          title="All Features"
+          subtitle="Combine all use cases"
+          data={mergedCards}
+        />
+      </div>
 
       <div className={`${styles.cta_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
@@ -317,9 +310,7 @@ const MakePayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <SuspenseLoading>
-        <FaqSection faqData={faqData} />
-      </SuspenseLoading>
+      <FaqSection faqData={faqData} />
     </div>
   )
 }
