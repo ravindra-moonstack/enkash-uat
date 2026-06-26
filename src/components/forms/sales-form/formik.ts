@@ -31,7 +31,7 @@ const salesInitialValue: TSalesInitialValueProp = {
   Dropdown3: "First Choice",
   Dropdown4: "First Choice",
   Dropdown5: "",
-  SingleLine2: "Website Sales Leads", // ✅ UTM Source default
+  SingleLine2: "Website Sales Lead", // ✅ UTM Source default
   SingleLine3: "", // ✅ UTM Medium
   SingleLine4: "", // ✅ UTM Campaign
   SingleLine5: "", // ✅ Referring Page
