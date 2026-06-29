@@ -558,26 +558,26 @@ const url: {
     destination: "/resources/videos",
   },
   {
-    source:
-      "/resources/blog/private-limited-company-vs-limited-liability-partnership-llp",
-    destination: "/resources/blog/llp-vs-company-key-differences-explained",
-    permanent: true,
-  },
-  {
-    source: "/resources/blog/what-is-tds-and-how-is-it-different-from-tcs",
+    source: "/resources/blog/llp-vs-company-key-differences-explained",
     destination:
-      "/resources/blog/tax-deducted-at-source-tds-vs-tax-collected-at-source-tcs-key-differences",
-    permanent: true,
-  },
-  {
-    source: "/resources/blog/top-payment-apis-for-developers-in-2026",
-    destination: "/resources/blog/top-payment-apis-for-developers",
+      "/resources/blog/private-limited-company-vs-limited-liability-partnership-llp",
     permanent: true,
   },
   {
     source:
+      "/resources/blog/tax-deducted-at-source-tds-vs-tax-collected-at-source-tcs-key-differences",
+    destination: "/resources/blog/what-is-tds-and-how-is-it-different-from-tcs",
+    permanent: true,
+  },
+  {
+    source: "/resources/blog/top-payment-apis-for-developers",
+    destination: "/resources/blog/top-payment-apis-for-developers-in-2026",
+    permanent: true,
+  },
+  {
+    source: "/resources/blog/top-private-banks-in-india",
+    destination:
       "/resources/blog/private-banks-in-india-list-of-top-private-sector-banks-in-2026",
-    destination: "/resources/blog/top-private-banks-in-india",
     permanent: true,
   },
 ]

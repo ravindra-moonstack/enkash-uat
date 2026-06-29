@@ -7,9 +7,18 @@ import dynamic from "next/dynamic"
 import BlogBanner from "@/src/components/blog-components/BlogBanner"
 import BlogBody from "@/src/components/blog-components/BlogBody"
 
-const AuthorSection = dynamic(() => import("@/src/components/blog-components/AuthorSection"), { ssr: true })
-const RelatedBlogs = dynamic(() => import("@/src/components/blog-components/RelatedBlogs"), { ssr: true })
-const NewsletterSection = dynamic(() => import("@/src/components/blog-components/NewsletterSection"), { ssr: true })
+const AuthorSection = dynamic(
+  () => import("@/src/components/blog-components/AuthorSection"),
+  { ssr: true }
+)
+const RelatedBlogs = dynamic(
+  () => import("@/src/components/blog-components/RelatedBlogs"),
+  { ssr: true }
+)
+const NewsletterSection = dynamic(
+  () => import("@/src/components/blog-components/NewsletterSection"),
+  { ssr: true }
+)
 import { notFound, redirect } from "next/navigation"
 
 import {
@@ -30,11 +39,11 @@ const cleanSchemaMarkup = (markup: string): string => {
   if (!markup) return ""
   let cleaned = markup
 
-  const startIdx = cleaned.toLowerCase().indexOf('<script')
-  const endIdx = cleaned.toLowerCase().lastIndexOf('</script>')
-  
+  const startIdx = cleaned.toLowerCase().indexOf("<script")
+  const endIdx = cleaned.toLowerCase().lastIndexOf("</script>")
+
   if (startIdx !== -1 && endIdx !== -1 && startIdx < endIdx) {
-    const firstCloseBracket = cleaned.indexOf('>', startIdx)
+    const firstCloseBracket = cleaned.indexOf(">", startIdx)
     if (firstCloseBracket !== -1 && firstCloseBracket < endIdx) {
       cleaned = cleaned.substring(firstCloseBracket + 1, endIdx)
     }
@@ -52,10 +61,30 @@ const cleanSchemaMarkup = (markup: string): string => {
     .replace(/&ldquo;/g, '\\"')
     .replace(/&rdquo;/g, '\\"')
     .replace(/&nbsp;/g, " ")
+    .replace(/[\u200B-\u200D\uFEFF]/g, "") // Remove zero-width characters
 
-  cleaned = cleaned.replace(/</g, "\\u003c")
+  // Fix literal newlines and tabs which break JSON strings
+  cleaned = cleaned.replace(/[\n\r\t]/g, " ")
 
-  return cleaned.trim()
+  // Fix trailing commas
+  cleaned = cleaned.replace(/,\s*([}\]])/g, "$1")
+
+  try {
+    const parsed = JSON.parse(cleaned)
+    return JSON.stringify(parsed).replace(/</g, "\\u003c")
+  } catch (err) {
+    try {
+      const parsed = JSON.parse(cleaned + "}")
+      return JSON.stringify(parsed).replace(/</g, "\\u003c")
+    } catch (err2) {
+      try {
+        const parsed = JSON.parse(cleaned + "]}")
+        return JSON.stringify(parsed).replace(/</g, "\\u003c")
+      } catch (err3) {
+        return cleaned.replace(/</g, "\\u003c").trim()
+      }
+    }
+  }
 }
 
 export async function generateMetadata({
@@ -177,14 +206,16 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const relatedBlogs = [{ relatedBlogs: json?.relatedBlogs }]
 
   const schemaMarkup = result[0].post_schema_markup
-  const cleanedSchema = typeof schemaMarkup === "string" ? cleanSchemaMarkup(schemaMarkup) : ""
-  const isJsonSchema = cleanedSchema.startsWith("{") || cleanedSchema.startsWith("[")
+  const cleanedSchema =
+    typeof schemaMarkup === "string" ? cleanSchemaMarkup(schemaMarkup) : ""
+  const isJsonSchema =
+    cleanedSchema.startsWith("{") || cleanedSchema.startsWith("[")
   const hasScriptTag =
     typeof schemaMarkup === "string" && /<script/i.test(schemaMarkup)
 
   return (
     <>
-      {schemaMarkup &&
+      {/* {schemaMarkup &&
         (isJsonSchema ? (
           <script
             type="application/ld+json"
@@ -200,7 +231,9 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: schemaMarkup }}
           />
-        ))}
+        )) 
+        } */}
+      {schemaMarkup}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
