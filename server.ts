@@ -12,15 +12,12 @@ const dev = process.env.NODE_ENV === "development"
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-import fileManger from "./folder-manager"
 import { UPLOADS_DIR } from "./src/lib/upload-config"
 
 app.prepare().then(() => {
   const server = express()
 
   server.use("/uploads", express.static(UPLOADS_DIR))
-
-  server.use("/file-manager", fileManger)
   // Next.js handles everything else
   server.use((req, res) => handle(req, res))
 
