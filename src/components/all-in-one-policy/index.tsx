@@ -20,6 +20,7 @@ interface AllInOnePolicyProps {
   buttonText?: string
   textColClass?: string
   imageColClass?: string
+  priority?: boolean
 }
 
 const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
@@ -35,6 +36,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   buttonText = "Get Started",
   textColClass = "col-md-8",
   imageColClass = "col-md-4",
+  priority = false,
 }) => {
   return (
     <div className={`row align-items-center mb-3 ${styles.section}`}>
@@ -107,7 +109,8 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
             }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 30vw, 400px"
             quality={75}
-            loading="lazy"
+            priority={priority}
+            loading={priority ? undefined : "lazy"}
           />
         )}
       </div>

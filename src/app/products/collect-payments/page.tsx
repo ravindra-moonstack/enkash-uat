@@ -7,12 +7,13 @@ import { Metadata } from "next"
 import { allInOnePolicyData, cardData, dataSets } from "./data"
 import faqData from "./faq-data"
 
-// components
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
+import dynamic from "next/dynamic"
+
+const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"))
 import DynamicHeading from "@/src/components/dynamic-heading"
-import FaqSection from "@/src/components/faq-section"
-import HowDoesItWork from "@/src/components/how-does-it-work"
-import PolicyCard from "@/src/components/policy-card"
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
+const HowDoesItWork = dynamic(() => import("@/src/components/how-does-it-work"))
+const PolicyCard = dynamic(() => import("@/src/components/policy-card"))
 import CommanButton from "@/src/components/buttons"
 
 // helpers
@@ -133,6 +134,7 @@ const CollectPayment = (): React.JSX.Element => {
                     {...item}
                     buttonUrl={item.buttonUrl}
                     buttonText="Learn more"
+                    priority={i === 0}
                   />
                 ))}
               </div>

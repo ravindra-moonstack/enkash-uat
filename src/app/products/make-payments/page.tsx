@@ -12,10 +12,12 @@ import CommanButton from "@/src/components/buttons"
 import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
-import LogoSlider from "@/src/components/logo-slider"
-import FaqSection from "@/src/components/faq-section"
-import AllProducts from "@/src/components/all-products"
+const AllInOnePolicy = dynamic(
+  () => import("@/src/components/all-in-one-policy")
+)
+const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
+const FaqSection = dynamic(() => import("@/src/components/faq-section"))
+const AllProducts = dynamic(() => import("@/src/components/all-products"))
 
 const LottieDynamicLoadComponent = dynamic(
   () => import("@/src/components/lottie-client/lottie-dynamic-load-client"),
@@ -194,6 +196,7 @@ const MakePayment = (): React.JSX.Element => {
                   buttonUrl="/vendor-payment"
                   maxImageHeight="264px"
                   buttonText="Explore Vendor Payments"
+                  priority={true}
                 />
 
                 <AllInOnePolicy
