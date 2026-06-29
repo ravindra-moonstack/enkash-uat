@@ -8,6 +8,7 @@ const withBundleAnalyzerConfigured = withBundleAnalyzer({
 })
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   productionBrowserSourceMaps: false,
   compress: true,
 
@@ -81,6 +82,11 @@ const nextConfig: NextConfig = {
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
+          },
+          {
+            key: "Content-Security-Policy",
+            value:
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'self';",
           },
         ],
       },

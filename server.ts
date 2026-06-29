@@ -16,6 +16,7 @@ import { UPLOADS_DIR } from "./src/lib/upload-config"
 
 app.prepare().then(() => {
   const server = express()
+  server.disable("x-powered-by")
 
   server.use("/uploads", express.static(UPLOADS_DIR))
   // Next.js handles everything else
