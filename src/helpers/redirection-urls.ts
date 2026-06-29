@@ -557,6 +557,29 @@ const url: {
     source: "/resources/blog/category/video-monitorisation",
     destination: "/resources/videos",
   },
+  {
+    source:
+      "/resources/blog/private-limited-company-vs-limited-liability-partnership-llp",
+    destination: "/resources/blog/llp-vs-company-key-differences-explained",
+    permanent: true,
+  },
+  {
+    source: "/resources/blog/what-is-tds-and-how-is-it-different-from-tcs",
+    destination:
+      "/resources/blog/tax-deducted-at-source-tds-vs-tax-collected-at-source-tcs-key-differences",
+    permanent: true,
+  },
+  {
+    source: "/resources/blog/top-payment-apis-for-developers-in-2026",
+    destination: "/resources/blog/top-payment-apis-for-developers",
+    permanent: true,
+  },
+  {
+    source:
+      "/resources/blog/private-banks-in-india-list-of-top-private-sector-banks-in-2026",
+    destination: "/resources/blog/top-private-banks-in-india",
+    permanent: true,
+  },
 ]
 
 const mappedUrls = url.map((item) => ({
