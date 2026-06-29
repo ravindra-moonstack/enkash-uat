@@ -365,11 +365,6 @@ export const STATIC_ROUTES = [
     priority: 1,
   },
   {
-    url: "https://www.enkash.com/virtual-card",
-    lastModified: "2025-09-01T10:32:38+01:00",
-    priority: 1,
-  },
-  {
     url: "https://www.enkash.com/policies/payments/merchant-onboarding",
     lastModified: "2025-09-01T10:32:49+01:00",
     priority: 0.9,
