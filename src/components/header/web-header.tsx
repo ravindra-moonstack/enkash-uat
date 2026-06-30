@@ -25,7 +25,7 @@ interface props {
   utmSource?: string
 }
 
-const WebHeader = ({ }: props) => {
+const WebHeader = ({}: props) => {
   const {
     hoveredIndex,
     isHeaderBgWhite,
@@ -46,14 +46,14 @@ const WebHeader = ({ }: props) => {
 
   return (
     <div className={styles.header_wrapper}>
-
       <a href="#main" className="sr-only sr-only-focusable skip" tabIndex={0}>
         Skip to main content
       </a>
 
       <header
-        className={`w-full absolute z-10 ${styles.header} ${isHeaderBgWhite ? styles.bg_white : styles.bg_blue
-          }`}
+        className={`w-full absolute z-10 ${styles.header} ${
+          isHeaderBgWhite ? styles.bg_white : styles.bg_blue
+        }`}
         onMouseLeave={closeAllModals}
         aria-label="Primary"
       >
@@ -72,7 +72,7 @@ const WebHeader = ({ }: props) => {
                 >
                   <Image
                     src={enkashBlueLogo}
-                    alt="Enkash"
+                    alt="logo"
                     width={98}
                     priority={true}
                   />
@@ -87,8 +87,9 @@ const WebHeader = ({ }: props) => {
                   {navBarTopTtitle.map((item, index) => (
                     <li
                       key={item.name}
-                      className={`${styles.menu_item} ${styles[`menu_item_${index}`]} ${hoveredIndex === index ? styles.opacity_selected : ""
-                        }`}
+                      className={`${styles.menu_item} ${styles[`menu_item_${index}`]} ${
+                        hoveredIndex === index ? styles.opacity_selected : ""
+                      }`}
                       ref={(el) => {
                         itemRefs.current[index] = el
                       }}
@@ -113,7 +114,10 @@ const WebHeader = ({ }: props) => {
                         tabIndex={0}
                         onMouseEnter={() => handleMouseEnter(index)}
                         onFocus={() => handleMouseEnter(index)}
-                        onClick={() => { closeAllModals(); handleMouseEnter(index); }}
+                        onClick={() => {
+                          closeAllModals()
+                          handleMouseEnter(index)
+                        }}
                       >
                         <span>{item.name}</span>
                         <Image
@@ -179,12 +183,17 @@ const WebHeader = ({ }: props) => {
                   href={`/support/?source=nav-bar`}
                   target="_blank"
                   aria-label="Open support page in new tab"
-                  className={`${styles.button_getStarted} ${active === "get-support" ? styles.active : ""
-                    }`}
-                  onClick={() => setActive("get-support")}
-                  aria-current={active === "get-support" ? "page" : undefined}
                 >
-                  Get Support
+                  <button
+                    className={`${styles.button_getStarted} ${
+                      active === "get-support" ? styles.active : ""
+                    }`}
+                    onClick={() => setActive("get-support")}
+                    aria-current={active === "get-support" ? "page" : undefined}
+                    type="button"
+                  >
+                    Get Support
+                  </button>
                 </Link>
 
                 <div
@@ -196,24 +205,34 @@ const WebHeader = ({ }: props) => {
                     target="_blank"
                     href={`${process.env.NEXT_PUBLIC_HOME_URL}?source=nav-bar`}
                     aria-label="Login page"
-                    className={`${styles.button} ${styles.login} ${activeTab === "login" ? styles.active : ""
-                      }`}
-                    onMouseEnter={() => setActiveTab("login")}
-                    aria-current={activeTab === "login" ? "page" : undefined}
                   >
-                    Login
+                    <button
+                      className={`${styles.button} ${styles.login} ${
+                        activeTab === "login" ? styles.active : ""
+                      }`}
+                      onMouseEnter={() => setActiveTab("login")}
+                      aria-current={activeTab === "login" ? "page" : undefined}
+                      type="button"
+                    >
+                      Login
+                    </button>
                   </Link>
 
                   <Link
                     href={`/sales/?source=nav-bar`}
                     target="_blank"
                     aria-label="Talk to Sales page in new tab"
-                    className={`${styles.button} ${styles.sales} ${activeTab === "sales" ? styles.active : ""
-                      }`}
-                    onMouseEnter={() => setActiveTab("sales")}
-                    aria-current={activeTab === "sales" ? "page" : undefined}
                   >
-                    Talk to Sales
+                    <button
+                      className={`${styles.button} ${styles.sales} ${
+                        activeTab === "sales" ? styles.active : ""
+                      }`}
+                      onMouseEnter={() => setActiveTab("sales")}
+                      aria-current={activeTab === "sales" ? "page" : undefined}
+                      type="button"
+                    >
+                      Talk to Sales
+                    </button>
                   </Link>
 
                   <span
