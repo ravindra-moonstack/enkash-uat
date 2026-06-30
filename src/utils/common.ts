@@ -89,6 +89,8 @@ export const formatDate = (dateString: string) => {
   })
 }
 export function addPTags(html: string) {
+  let insideRawBlock = false
+
   return html
     .split(/\n+/)
     .map((line) => {
@@ -96,9 +98,24 @@ export function addPTags(html: string) {
 
       if (!trimmed) return ""
 
+      // Check if this line opens a raw block (script/style/pre)
+      if (/^<(script|style|pre)(\s|>)/i.test(trimmed)) {
+        insideRawBlock = true
+      }
+
+      // If we're inside a raw block, don't touch the line at all
+      if (insideRawBlock) {
+        // Check if this same line also closes the block (single-line script)
+        if (/<\/(script|style|pre)>/i.test(trimmed)) {
+          insideRawBlock = false
+        }
+        return trimmed
+      }
+
       if (/^<[^>]+>/.test(trimmed)) {
         return trimmed
       }
+
       return `<p>${trimmed}</p>`
     })
     .join("")
