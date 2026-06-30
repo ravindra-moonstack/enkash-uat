@@ -45,7 +45,7 @@ const FeatureCard = ({
             <div className={`pb-2 ${styles.image_wrapper}`}>
               <Image
                 src={cardImage}
-                alt="card visual"
+                alt="Feature card illustration"
                 className={styles.card_image}
                 width={iconWidth}
                 height={iconWidth}

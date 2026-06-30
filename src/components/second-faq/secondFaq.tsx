@@ -66,16 +66,18 @@ const SECONDFAQ = ({
         className={`${styles.faq_inner_row} ${answerVisible && "activeClass"} `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onKeyDown={handleKeyDown}
-        onClick={handleClick}
-        tabIndex={0}
-        role="button"
-        aria-expanded={answerVisible}
       >
-        <div className={`d-flex gap-4  align-items-center`}>
+        <div 
+          className={`d-flex gap-4  align-items-center`}
+          onKeyDown={handleKeyDown}
+          onClick={handleClick}
+          tabIndex={0}
+          role="button"
+          aria-expanded={answerVisible}
+        >
           <Image
             src={arrowDown}
-            alt="faq arrow icon"
+            alt="Toggle answer visibility"
             className={`${answerVisible ? styles.rotated : styles.normal} ${
               styles.arrow
             }`}

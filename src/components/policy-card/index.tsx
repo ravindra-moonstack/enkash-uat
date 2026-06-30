@@ -33,7 +33,7 @@ const PolicyCard: React.FC<CardProps> = ({
           <Image
             className={`${styles.icons}`}
             src={icon}
-            alt="icon"
+            alt="Policy feature icon"
             width={55}
             height={55}
             loading="lazy"

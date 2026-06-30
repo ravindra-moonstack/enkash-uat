@@ -56,7 +56,7 @@ const BulletPointSection: React.FC<BulletPointSectionProps> = ({
                         {bulletPoints.map(({ icon, title }, i) => (
                             <div key={i} style={{ direction: "ltr" }}>
                                 <div className="d-flex align-items-start gap-3 pt-2 w-4 h-4">
-                                    <Image src={icon} alt="icon" width={34} height={34} />
+                                    <Image src={icon} alt="Bullet point icon" width={34} height={34} />
                                     <div className="d-flex flex-column gap-3">
                                         <DynamicHeading
                                             content={[
@@ -84,7 +84,7 @@ const BulletPointSection: React.FC<BulletPointSectionProps> = ({
                         <div className={styles.faq_bg}>
                             <Image
                                 src={image}
-                                alt="background image"
+                                alt="Section background image"
                                 className="w-100 mh-550 object-fit-contain"
                                 sizes="(max-width: 768px) 100vw, 50vw"
                             />

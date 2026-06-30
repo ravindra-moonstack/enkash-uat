@@ -256,7 +256,7 @@ const slides = [
     description:
       "Accept payments seamlessly across your online store with checkout optimized for conversions. Support for COD-to-prepaid incentives, split settlements for marketplaces, and instant refund processing.",
     image: ecommerceImage.src,
-    imageAlt: "E-commerce retail business",
+    imageAlt: "E-commerce and retail checkout dashboard",
   },
   {
     id: "nbfcs-1",
@@ -265,7 +265,7 @@ const slides = [
     description:
       "Enable structured collections with recurring and one-time payments, installment-based flows, partner split settlements, and clear reconciliation across loans, policies, and investments.",
     image: nbfcsImage.src,
-    imageAlt: "Financial institutions business",
+    imageAlt: "Financial institutions recurring payments dashboard",
   },
   {
     id: "education-1",
@@ -274,7 +274,7 @@ const slides = [
     description:
       "Flexible payment options including EMI and Pay Later for course fees. Automated installment collection, bulk fee collection for institutions, and seamless student payment tracking.",
     image: educationImage.src,
-    imageAlt: "Education and EdTech classroom",
+    imageAlt: "Education and EdTech payment solutions",
   },
   {
     id: "healthcare-1",
@@ -283,7 +283,7 @@ const slides = [
     description:
       "HIPAA-compliant payment processing for consultations and treatments. Support for insurance copays, installment plans for procedures, and automated appointment payment reminders.",
     image: healthcareImage.src,
-    imageAlt: "Healthcare and wellness services",
+    imageAlt: "Healthcare and wellness payment plans",
   },
   {
     id: "food-1",
@@ -292,7 +292,7 @@ const slides = [
     description:
       "QR-based contactless payments for dine-in. Online ordering integration, split bills, tip collection, and real-time settlement for daily cash flow management.",
     image: foodImage.src,
-    imageAlt: "Food and beverage industry",
+    imageAlt: "Food and beverage contactless payments",
   },
   {
     id: "travel-1",
@@ -301,7 +301,7 @@ const slides = [
     description:
       "Multi-currency support for international bookings. Partial payment collection, cancellation, and refund automation, and flexible payment plans for packages.",
     image: travelImage.src,
-    imageAlt: "Travel and hospitality services",
+    imageAlt: "Travel and hospitality multi-currency bookings",
   },
 ]
 

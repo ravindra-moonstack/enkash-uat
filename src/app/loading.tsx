@@ -8,7 +8,7 @@ const Loading = (): React.JSX.Element => {
     <div className="d-flex justify-content-center align-items-center vh-100">
       <Image
         src="/images/loader.gif"
-        alt="funny gif"
+        alt="Loading indicator"
         width={75}
         height={75}
         priority

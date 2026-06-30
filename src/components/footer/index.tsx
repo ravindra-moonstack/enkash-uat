@@ -21,16 +21,14 @@ const FooterV2 = (): React.JSX.Element => {
   return (
     <div className={` ${styles.footer}`}>
       <div className={`max-w-auto  ${styles.footer_padding}`}>
-        <div
-          className={`d-flex flex-column  ${styles.footer_section}`}
-        >
+        <div className={`d-flex flex-column  ${styles.footer_section}`}>
           {/* 1st col */}
           <div className="d-flex flex-column flex-md-row ">
             <div className={`order-2 order-md-1 ${styles.logo_container}`}>
               <Link href="/" className={`${styles.logo_img} d-none d-md-block`}>
                 <Image
                   src={enkashBlueLogo}
-                  alt="logo"
+                  alt="Enkash"
                   width={120}
                   className="me-3"
                 />
@@ -45,19 +43,19 @@ const FooterV2 = (): React.JSX.Element => {
                     <p className={styles.logo_container_info}>
                       EnKash is India’s leading spend management platform,
                       simplifying payments, expenses, cards, and rewards for
-                      businesses. Backed by $23M in funding and trusted by 5,000+
-                      businesses, it holds key RBI licenses and partners with
-                      Visa, Mastercard, and NPCI. Its powerful financial suite
-                      empowers CFOs with automation, compliance, and real-time
-                      insights across the payment ecosystem.
+                      businesses. Backed by $23M in funding and trusted by
+                      5,000+ businesses, it holds key RBI licenses and partners
+                      with Visa, Mastercard, and NPCI. Its powerful financial
+                      suite empowers CFOs with automation, compliance, and
+                      real-time insights across the payment ecosystem.
                     </p>
                     <p className={styles.logo_container_info}>
                       EnKash Payment Gateway, is a licensed online payment
                       aggregator authorised by the RBI
                     </p>
                     <p className={styles.logo_container_info}>
-                      EnKash is a commercial trade name owned by the legal entity,
-                      Nehat Tech Solutions Pvt. Ltd.
+                      EnKash is a commercial trade name owned by the legal
+                      entity, Nehat Tech Solutions Pvt. Ltd.
                     </p>
                   </div>
                 </div>
@@ -78,7 +76,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div className={styles.soc_logo}>
                           <Image
                             src={sovSvg}
-                            alt="soc logo"
+                            alt="SOC 2 Type II Certification"
                             height={0} // remove fixed height
                             width={0} // remove fixed width
                             sizes="(max-width: 768px) 48px, 86px"
@@ -93,7 +91,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div className={styles.pci_logo}>
                           <Image
                             src={pci}
-                            alt="pci logo"
+                            alt="PCI DSS Level 1 Certification"
                             height={48}
                             width={86}
                             style={{ objectFit: "cover" }}
@@ -103,7 +101,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div className={styles.pci_logo}>
                           <Image
                             src={ppi}
-                            alt="pci logo"
+                            alt="PPI Certification"
                             height={48}
                             width={48}
                             style={{ objectFit: "cover" }}
@@ -112,7 +110,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div className={styles.pci_logo}>
                           <Image
                             src={ppa}
-                            alt="pci logo"
+                            alt="PA Certification"
                             height={48}
                             width={48}
                             style={{ objectFit: "cover" }}
@@ -225,8 +223,8 @@ const FooterV2 = (): React.JSX.Element => {
                       className={`col-12 col-md-10 text-left ${styles.disclaimer}`}
                     >
                       Corporate cards, payments, and other related services are
-                      provided by RBI-licensed banks and/or in accordance with RBI
-                      regulations and/or compliance maintained by banks and
+                      provided by RBI-licensed banks and/or in accordance with
+                      RBI regulations and/or compliance maintained by banks and
                       regulated entities. EnKash is not a bank and does not hold
                       or claim to hold a banking license.
                       <div className="color-alternate-grey">
@@ -235,7 +233,9 @@ const FooterV2 = (): React.JSX.Element => {
                     </div>
                   </div>
 
-                  <p className={`${styles.footer_copy_right} d-block d-md-none`}>
+                  <p
+                    className={`${styles.footer_copy_right} d-block d-md-none`}
+                  >
                     Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All right
                     reserved.
                   </p>
@@ -357,7 +357,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div className={styles.soc_logo}>
                           <Image
                             src={sovSvg}
-                            alt="soc logo"
+                            alt="SOC 2 Type II Certification"
                             height={34}
                             width={30}
                           />
@@ -366,7 +366,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div className={styles.pci_logo}>
                           <Image
                             src={pci}
-                            alt="pci logo"
+                            alt="PCI DSS Level 1 Certification"
                             height={30}
                             width={55}
                             style={{ objectFit: "cover" }}
@@ -376,7 +376,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div className={styles.pci_logo}>
                           <Image
                             src={ppi}
-                            alt="pci logo"
+                            alt="PPI Certification"
                             height={32}
                             width={38}
                             style={{ objectFit: "cover" }}
@@ -385,7 +385,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div className={styles.pci_logo}>
                           <Image
                             src={ppa}
-                            alt="pci logo"
+                            alt="PA Certification"
                             height={32}
                             width={38}
                             style={{ objectFit: "cover" }}
@@ -399,8 +399,8 @@ const FooterV2 = (): React.JSX.Element => {
                       className={`col-12 col-md-10 text-left ${styles.disclaimer}`}
                     >
                       Corporate cards, payments, and other related services are
-                      provided by RBI-licensed banks and/or in accordance with RBI
-                      regulations and/or compliance maintained by banks and
+                      provided by RBI-licensed banks and/or in accordance with
+                      RBI regulations and/or compliance maintained by banks and
                       regulated entities. EnKash is not a bank and does not hold
                       or claim to hold a banking license.
                       <div className="color-alternate-grey">
@@ -409,11 +409,17 @@ const FooterV2 = (): React.JSX.Element => {
                     </div>
                   </div>
 
-                  <p className={`${styles.footer_copy_right} d-block d-md-none`}>
-                    Copyright © 2026 | Nehat Tech Solutions Pvt. Ltd. All rights reserved.
+                  <p
+                    className={`${styles.footer_copy_right} d-block d-md-none`}
+                  >
+                    Copyright © 2026 | Nehat Tech Solutions Pvt. Ltd. All
+                    rights reserved.
                   </p>
-                  <p className={`${styles.footer_copy_right} ${styles.footer_copy_left} d-block d-md-none`}>
-                    Copyright © 2026 | Nehat Business Services Pvt. Ltd. All rights reserved.
+                  <p
+                    className={`${styles.footer_copy_right} ${styles.footer_copy_left} d-block d-md-none`}
+                  >
+                    Copyright © 2026 | Nehat Business Services Pvt. Ltd. All
+                    rights reserved.
                   </p>
                 </div>
               </div>
@@ -422,7 +428,7 @@ const FooterV2 = (): React.JSX.Element => {
               <Link href="/" className={`${styles.logo_img} d-block d-md-none`}>
                 <Image
                   src={enkashBlueLogo}
-                  alt="logo"
+                  alt="Enkash"
                   width={100}
                   className="me-3 mb-3"
                 />
@@ -523,7 +529,9 @@ const FooterV2 = (): React.JSX.Element => {
                       <ul className="mb-0">
                         <li>
                           <Link href="/products/make-payments">
-                            <h4 className={` ${styles.title}`}>Make Payments</h4>
+                            <h4 className={` ${styles.title}`}>
+                              Make Payments
+                            </h4>
                           </Link>
                         </li>
                         <li>
@@ -601,7 +609,9 @@ const FooterV2 = (): React.JSX.Element => {
                       </Link>
                       <ul>
                         <li>
-                          <Link href="/employee-rewards/">Employee Rewards</Link>
+                          <Link href="/employee-rewards/">
+                            Employee Rewards
+                          </Link>
                         </li>
                         <li>
                           <Link href="/channel-incentives/">
@@ -628,7 +638,9 @@ const FooterV2 = (): React.JSX.Element => {
                       </div>
                       <ul>
                         <li>
-                          <Link href="/employee-benefit-multi-wallet">Multi-wallet Card</Link>
+                          <Link href="/employee-benefit-multi-wallet">
+                            Multi-wallet Card
+                          </Link>
                         </li>
                         <li>
                           <Link href="/prepaid-card/">Prepaid Cards</Link>
@@ -648,7 +660,9 @@ const FooterV2 = (): React.JSX.Element => {
                           <Link href="/saas-card/">SaaS Cards</Link>
                         </li>
                         <li>
-                          <Link href="/travel-and-expense-card">T & E Cards</Link>
+                          <Link href="/travel-and-expense-card">
+                            T & E Cards
+                          </Link>
                         </li>
                         <li>
                           <Link href="/purchase-card/">Purchase Cards</Link>
@@ -815,7 +829,9 @@ const FooterV2 = (): React.JSX.Element => {
                   </div>
                   <div className="mt-3">
                     <Link href="https://docs.enkash.com/" target="_blank">
-                      <h4 className={`col-12 ${styles.title}`}>For Developers</h4>
+                      <h4 className={`col-12 ${styles.title}`}>
+                        For Developers
+                      </h4>
                     </Link>
                     <ul>
                       <li>
@@ -857,14 +873,16 @@ const FooterV2 = (): React.JSX.Element => {
             </div>
           </div>
 
-
-          <p className={`${styles.footer_copy_right} ${styles.footer_copy_left} d-none d-md-block`}>
-            Copyright © 2026 | Nehat Tech Solutions Pvt. Ltd. All rights reserved.
+          <p
+            className={`${styles.footer_copy_right} ${styles.footer_copy_left} d-none d-md-block`}
+          >
+            Copyright © 2026 | Nehat Tech Solutions Pvt. Ltd. All rights
+            reserved.
           </p>
 
           <p className={`${styles.footer_copy_right}  d-none d-md-block`}>
-
-            Copyright © 2026 | Nehat Business Services Pvt. Ltd. All rights reserved.
+            Copyright © 2026 | Nehat Business Services Pvt. Ltd. All rights
+            reserved.
           </p>
         </div>
 

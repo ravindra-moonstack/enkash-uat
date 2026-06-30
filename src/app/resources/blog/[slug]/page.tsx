@@ -213,6 +213,31 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const hasScriptTag =
     typeof schemaMarkup === "string" && /<script/i.test(schemaMarkup)
 
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: result[0].title,
+    image: result[0].featured_image_url
+      ? result[0].featured_image_url.startsWith("http")
+        ? result[0].featured_image_url
+        : `${process.env.URL || "https://www.enkash.com"}/uploads/${result[0].featured_image_url}`
+      : "",
+    author: {
+      "@type": "Organization",
+      name: result[0].author || "EnKash",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "EnKash",
+      logo: {
+        "@type": "ImageObject",
+        url: `${process.env.URL || "https://www.enkash.com"}/logo.png`,
+      },
+    },
+    datePublished: result[0].created_at,
+    description: result[0].meta_description || "",
+  }
+
   return (
     <>
       {/* {schemaMarkup &&
@@ -237,6 +262,10 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
       <div className={`${styles.mainPage}`}>
         <section className={styles.blog_nav_section}>

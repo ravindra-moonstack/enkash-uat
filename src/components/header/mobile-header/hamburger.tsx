@@ -31,7 +31,7 @@ const Hamburger = ({
           <Link href={"/"}>
             <Image
               src={enkashBlueLogo}
-              alt="Enkash White logo"
+              alt="Enkash"
               className={styles.enkash_logo}
               priority={true}
             />
@@ -39,13 +39,13 @@ const Hamburger = ({
           <div className="d-flex gap-2">
             <div title="Support" className={`${styles.mobile_right_icon}`}>
               <Link href="tel:8530490475">
-                <Image src={callIcon} alt="call  icon" />
+                <Image src={callIcon} alt="Call Support" />
               </Link>
             </div>
             <div title="Menu" className={`${styles.mobile_right_icon}`}>
               <Image
                 src={hamnburgerIcon}
-                alt="hamburger menu icon"
+                alt="Open Menu"
                 onClick={() => {
                   setCurrentStep(1)
                 }}
@@ -65,7 +65,7 @@ const Hamburger = ({
             <Link href={"/"}>
               <Image
                 src={enkashBlueLogo}
-                alt="Enkash Blue logo"
+                alt="Enkash"
                 width={100}
                 className={`${styles.enkash_logo} `}
                 priority={true}
@@ -75,7 +75,7 @@ const Hamburger = ({
           <div>
             <Image
               src={crossMenu}
-              alt="Close menu icon"
+              alt="Close Menu"
               onClick={resetState}
               width={20}
             />

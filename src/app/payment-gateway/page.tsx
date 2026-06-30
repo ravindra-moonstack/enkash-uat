@@ -195,7 +195,7 @@ const PaymentGateway = (): React.JSX.Element => {
           subheading="Offer your customers complete payment flexibility with 100+ integrated payment options that work seamlessly across all channels."
           data={integrationData}
           imageSrc={integration}
-          imageAlt="card background"
+          imageAlt="Supported payment methods and integrations overview"
           buttonUrl={salesUrl}
           buttonTitle="Get Started Today"
           bgColor="bg-color-black-30"
@@ -209,7 +209,7 @@ const PaymentGateway = (): React.JSX.Element => {
           subheading="Enterprise-grade APIs and SDKs designed for rapid integration. Comprehensive documentation that eliminates guesswork."
           data={paymentMethodData}
           imageSrc={paymenyMethod}
-          imageAlt="card background"
+          imageAlt="Developer API and SDK documentation"
           buttonTitle="Get Started Today"
           buttonUrl={salesUrl}
           buttonArrow
@@ -219,7 +219,7 @@ const PaymentGateway = (): React.JSX.Element => {
           subheading="EnKash provides dedicated technical and merchant support teams that understand your business and respond when you need them."
           data={dashboardData}
           imageSrc={dashboard}
-          imageAlt="card background"
+          imageAlt="Merchant support and technical dashboard"
           bgColor="bg-color-black-30"
           buttonUrl={salesUrl}
           buttonTitle="Get Started Today"
@@ -232,7 +232,7 @@ const PaymentGateway = (): React.JSX.Element => {
           subheading="Access comprehensive analytics and reporting tools that provide deep insights into transaction performance, settlement status, and business metrics."
           data={rankData}
           imageSrc={rank}
-          imageAlt="card background"
+          imageAlt="Transaction performance and analytics overview"
           buttonUrl={salesUrl}
           buttonTitle="Get Started Today"
           buttonArrow
@@ -266,7 +266,7 @@ const PaymentGateway = (): React.JSX.Element => {
         subtitle="Every transaction is protected by the same security standards used by major financial institutions."
         features={customFeatures}
         imageSrc={vaultSecurity.src}
-        imageAlt="Bank vault with security lock"
+        imageAlt="Bank vault lock representing payment security"
         className={styles.securitySectionOverlap}
       />
       <div className={`${styles.slider_row} relative bg-white`}>
