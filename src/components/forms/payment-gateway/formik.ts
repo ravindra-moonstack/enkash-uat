@@ -15,7 +15,7 @@ export type TPaymentInitialValueProp = {
   SingleLine3: string // ✅ UTM Medium
   SingleLine4: string // ✅ UTM Campaign
   SingleLine5: string // ✅ Referring Page
-   SingleLine6: string 
+  SingleLine6: string
 }
 
 const paymentInitialValue: TPaymentInitialValueProp = {
@@ -28,11 +28,11 @@ const paymentInitialValue: TPaymentInitialValueProp = {
   Dropdown1: "Marketing",
   Dropdown5: "",
   Dropdown6: "",
-  SingleLine2: "Website Sales Leads", // ✅ UTM Source default
+  SingleLine2: "Website Sales Lead", // ✅ UTM Source default
   SingleLine3: "", // ✅ UTM Medium
   SingleLine4: "", // ✅ UTM Campaign
   SingleLine5: "", // ✅ Referring Page
-   SingleLine6: "Payment Gateway Partnerships",
+  SingleLine6: "Payment Gateway Partnerships",
 }
 
 const paymentValidation = Yup.object({
