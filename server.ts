@@ -23,7 +23,9 @@ app.prepare().then(() => {
   server.use((req, res) => handle(req, res))
 
   server.listen(port, () => {
-    console.log(`Server listening on http://localhost:${port}`)
+    console.log(
+      `Server listening on ${process.env.NODE_ENV} ||  http://localhost:${port}`
+    )
     console.log(`Serving uploads from ${UPLOADS_DIR}`)
   })
 })
