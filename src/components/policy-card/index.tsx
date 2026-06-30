@@ -36,7 +36,6 @@ const PolicyCard: React.FC<CardProps> = ({
             alt="Policy feature icon"
             width={55}
             height={55}
-            loading="lazy"
             quality={70}
           />
         )}
@@ -64,7 +63,10 @@ const PolicyCard: React.FC<CardProps> = ({
   return (
     <div className={`${className} ${styles.policyCard} ${hoverClass}`}>
       {url ? (
-        <Link href={url} className="d-flex gap-3 align-items-start text-decoration-none">
+        <Link
+          href={url}
+          className="d-flex gap-3 align-items-start text-decoration-none"
+        >
           {cardContent}
         </Link>
       ) : (

@@ -63,7 +63,6 @@ const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
                     src={dataSets[currentData].iconSrc}
                     alt={dataSets[currentData].altText || "icon"}
                     className={styles.icon_img}
-                    loading="lazy"
                   />
                 )}
                 <div className="text-start">
@@ -113,7 +112,6 @@ const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
                 src={dataSets[currentData].imageSrc}
                 alt={dataSets[currentData].altText}
                 className={styles.right_img}
-                loading="lazy"
                 quality={80}
               />
             </div>
@@ -125,8 +123,9 @@ const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
             {dataSets.map((_: any, index: Key) => (
               <span
                 key={index}
-                className={`${styles.bar} ${currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
-                  } cursor-pointer`}
+                className={`${styles.bar} ${
+                  currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
+                } cursor-pointer`}
                 onClick={() => handleSpanClick(index as number)}
               />
             ))}
@@ -138,4 +137,3 @@ const HowDoesItWork = ({ dataSets, ctaText }: howDoesItWorkProps) => {
 }
 
 export default HowDoesItWork
-

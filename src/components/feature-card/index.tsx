@@ -49,7 +49,6 @@ const FeatureCard = ({
                 className={styles.card_image}
                 width={iconWidth}
                 height={iconWidth}
-                loading="lazy"
                 quality={70}
                 sizes={`${iconWidth}px`}
               />

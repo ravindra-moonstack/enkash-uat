@@ -5,155 +5,160 @@ import CommonButton from "../../buttons"
 import Image, { StaticImageData } from "next/image"
 
 interface HeadingPart {
-    title: string
-    color: string
+  title: string
+  color: string
 }
 
 interface EcommerceUseCaseItem {
-    icon: string | StaticImageData
-    title: string
-    description?: string
-    highlightText?: string
-    descriptionHtml?: React.ReactNode
-    image?: string | StaticImageData
-    buttonUrl?: string
-    maxImageHeight?: string
-    reverse?: boolean
+  icon: string | StaticImageData
+  title: string
+  description?: string
+  highlightText?: string
+  descriptionHtml?: React.ReactNode
+  image?: string | StaticImageData
+  buttonUrl?: string
+  maxImageHeight?: string
+  reverse?: boolean
 }
 
 interface EcommerceUseCaseSectionProps {
-    heading?: HeadingPart[]
-    headingTag?: keyof JSX.IntrinsicElements
-    items: EcommerceUseCaseItem[]
-    subHeading?: HeadingPart[]
-    buttonUrl?: string
-    className?: string
-    textColClass?: string
-    imageColClass?: string
+  heading?: HeadingPart[]
+  headingTag?: keyof JSX.IntrinsicElements
+  items: EcommerceUseCaseItem[]
+  subHeading?: HeadingPart[]
+  buttonUrl?: string
+  className?: string
+  textColClass?: string
+  imageColClass?: string
 }
 
 const EcommerceUseCaseSection: React.FC<EcommerceUseCaseSectionProps> = ({
-    heading,
-    headingTag = "h2",
-    items,
-    buttonUrl = "#",
-    subHeading,
-    className = "",
-    textColClass,
-    imageColClass,
+  heading,
+  headingTag = "h2",
+  items,
+  buttonUrl = "#",
+  subHeading,
+  className = "",
+  textColClass,
+  imageColClass,
 }) => {
+  return (
+    <div className={`${styles.use_case_section} ${className}`}>
+      <div className={`${styles.section} max-w-auto`}>
+        {(heading || subHeading) && (
+          <div className={`${styles.title} text-center pb-4 pb-md-5`}>
+            {heading && (
+              <DynamicHeading
+                content={heading}
+                headingTag={headingTag}
+                className="f-6"
+              />
+            )}
+            {subHeading && (
+              <DynamicHeading
+                content={subHeading}
+                headingTag="p"
+                className="mt-2"
+              />
+            )}
+          </div>
+        )}
 
-    return (
-        <div className={`${styles.use_case_section} ${className}`}>
-            <div className={`${styles.section} max-w-auto`}>
-                {(heading || subHeading) && (
-                    <div className={`${styles.title} text-center pb-4 pb-md-5`}>
-                        {heading && (
-                            <DynamicHeading
-                                content={heading}
-                                headingTag={headingTag}
-                                className="f-6"
-                            />
-                        )}
-                        {subHeading && (
-                            <DynamicHeading
-                                content={subHeading}
-                                headingTag="p"
-                                className="mt-2"
-                            />
-                        )}
-                    </div>
+        {items.map((item, index) => (
+          <React.Fragment key={index}>
+            <div
+              className={`row align-items-center mb-3 ${styles.item_section}`}
+            >
+              {/* Text Block */}
+              <div
+                className={`${textColClass || "col-md-7"} col-12 order-2 ${item.reverse ? "order-md-2" : "order-md-1"}`}
+              >
+                <div
+                  className={`d-flex align-items-start ${styles.policyCard}`}
+                >
+                  {/* Icon */}
+                  <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
+                    <Image src={item.icon} alt="icon" width={55} height={55} />
+                  </div>
+
+                  {/* Title and Description */}
+                  <div className={`${styles.allInOnePolicy}`}>
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: item.title,
+                          color: "color-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 heading-h5"
+                    />
+                    {item.descriptionHtml ? (
+                      <div className="color-grey-200 mb-0">
+                        {item.descriptionHtml}
+                      </div>
+                    ) : (
+                      item.description && (
+                        <DynamicHeading
+                          content={[
+                            {
+                              title: item.description,
+                              color: "color-grey-200",
+                            },
+                          ]}
+                          headingTag="p"
+                          className="mb-0"
+                        />
+                      )
+                    )}
+                    {item.highlightText && (
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: item.highlightText,
+                            color: "color-electric-green f-7",
+                          },
+                        ]}
+                        headingTag="p"
+                        className="mb-0"
+                      />
+                    )}
+                  </div>
+                </div>
+
+                <div className={styles.list_button}>
+                  <CommonButton
+                    title="Get Started"
+                    theme="outline-blue"
+                    url={item.buttonUrl || buttonUrl}
+                  />
+                </div>
+              </div>
+
+              <div
+                className={`${imageColClass || "col-md-5"} col-12 order-1 d-flex justify-content-end ${
+                  item.reverse ? "order-md-1" : "order-md-2"
+                } ${styles.third_container}`}
+              >
+                {item.image && (
+                  <Image
+                    src={item.image}
+                    alt="card visual"
+                    className="w-100"
+                    style={{
+                      maxHeight: item.maxImageHeight || "auto",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 30vw, 400px"
+                    quality={75}
+                  />
                 )}
+              </div>
+            </div>
 
-                {items.map((item, index) => (
-                    <React.Fragment key={index}>
-                        <div className={`row align-items-center mb-3 ${styles.item_section}`}>
-                            {/* Text Block */}
-                            <div
-                                className={`${textColClass || "col-md-7"} col-12 order-2 ${item.reverse ? "order-md-2" : "order-md-1"}`}
-                            >
-                                <div className={`d-flex align-items-start ${styles.policyCard}`}>
-                                    {/* Icon */}
-                                    <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-                                        <Image src={item.icon} alt="icon" width={55} height={55} />
-                                    </div>
-
-                                    {/* Title and Description */}
-                                    <div className={`${styles.allInOnePolicy}`}>
-                                        <DynamicHeading
-                                            content={[
-                                                {
-                                                    title: item.title,
-                                                    color: "color-black",
-                                                },
-                                            ]}
-                                            headingTag="h3"
-                                            className="f-7 heading-h5"
-                                        />
-                                        {item.descriptionHtml ? (
-                                            <div className="color-grey-200 mb-0">
-                                                {item.descriptionHtml}
-                                            </div>
-                                        ) : item.description && (
-                                            <DynamicHeading
-                                                content={[
-                                                    {
-                                                        title: item.description,
-                                                        color: "color-grey-200",
-                                                    },
-                                                ]}
-                                                headingTag="p"
-                                                className="mb-0"
-                                            />
-                                        )}
-                                        {item.highlightText && (
-                                            <DynamicHeading
-                                                content={[
-                                                    {
-                                                        title: item.highlightText,
-                                                        color: "color-electric-green f-7",
-                                                    },
-                                                ]}
-                                                headingTag="p"
-                                                className="mb-0"
-                                            />
-                                        )}
-                                    </div>
-                                </div>
-
-                                <div className={styles.list_button}>
-                                    <CommonButton
-                                        title="Get Started"
-                                        theme="outline-blue"
-                                        url={item.buttonUrl || buttonUrl}
-                                    />
-                                </div>
-                            </div>
-
-                            <div
-                                className={`${imageColClass || "col-md-5"} col-12 order-1 d-flex justify-content-end ${item.reverse ? "order-md-1" : "order-md-2"
-                                    } ${styles.third_container}`}
-                            >
-                                {item.image && (
-                                    <Image
-                                        src={item.image}
-                                        alt="card visual"
-                                        className="w-100"
-                                        style={{
-                                            maxHeight: item.maxImageHeight || "auto",
-                                            height: "auto",
-                                            objectFit: "contain",
-                                        }}
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 30vw, 400px"
-                                        quality={75}
-                                        loading="lazy"
-                                    />
-                                )}
-                            </div>
-                        </div>
-
-                        {/* Connectors */}
-                        {/* {items.length - 1 && (
+            {/* Connectors */}
+            {/* {items.length - 1 && (
                             <div className={item.reverse ? styles.connector_1 : styles.connector_2}>
                                 {item.reverse ? (
                                     <svg width="699" height="945" viewBox="0 0 699 945" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -180,11 +185,11 @@ const EcommerceUseCaseSection: React.FC<EcommerceUseCaseSectionProps> = ({
                                 )}
                             </div>
                         )} */}
-                    </React.Fragment>
-                ))}
-            </div>
-        </div>
-    )
+          </React.Fragment>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default EcommerceUseCaseSection

@@ -142,7 +142,6 @@ const EnkashWay = ({
                   alt="icon"
                   width={55}
                   height={55}
-                  loading="lazy"
                 />
               </div>
 
@@ -183,7 +182,6 @@ const EnkashWay = ({
                     alt="icon"
                     width={379}
                     height={322}
-                    loading="lazy"
                     sizes="(max-width: 768px) 100vw, 379px"
                     quality={75}
                   />
@@ -265,7 +263,6 @@ const EnkashWay = ({
                   </div>
 
                   {isOpen && (
-
                     <div className={`${styles.dropdownContent} ${styles.show}`}>
                       {/* IF rightImg exists */}
                       {data.rightImg ? (
@@ -279,7 +276,6 @@ const EnkashWay = ({
                               alt="center image"
                               width={178}
                               style={{ objectFit: "contain", height: "auto" }}
-                              loading="lazy"
                               sizes="178px"
                             />
                           </div>
@@ -304,7 +300,6 @@ const EnkashWay = ({
                           alt="icon"
                           width={28}
                           height={28}
-                          loading="lazy"
                         />
                         <div className="d-flex flex-column gap-2">
                           <DynamicHeading

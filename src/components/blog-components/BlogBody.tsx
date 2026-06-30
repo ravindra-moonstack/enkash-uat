@@ -123,10 +123,7 @@ const BlogBody = ({
 
     // Optimize native inline images: add lazy loading and async decoding
     html = html
-      .replace(
-        /<img\s+(?![^>]*\bloading\s*=)([^>]*)/gi,
-        '<img loading="lazy" $1'
-      )
+      .replace(/<img\s+(?![^>]*\bloading\s*=)([^>]*)/gi, "<img   $1")
       .replace(
         /<img\s+(?![^>]*\bdecoding\s*=)([^>]*)/gi,
         '<img decoding="async" $1'
