@@ -465,7 +465,6 @@ export const useQuillEditor = ({
       import("quill").then(async (QuillModule) => {
         const QuillNamespace = QuillModule.default || QuillModule
 
-        //@ts-expect-error Quill is not typed directly on window
         window.Quill = QuillNamespace
 
         const showHtmlHandler = function (this: any) {
