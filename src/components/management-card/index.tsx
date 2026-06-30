@@ -92,7 +92,7 @@ const ManagementCard = ({
         <div className={styles.image_wrapper}>
           <Image
             src={cardImage}
-            alt="card visual"
+            alt="Management card illustration"
             className={styles.card_image}
             width={400}
             height={250}

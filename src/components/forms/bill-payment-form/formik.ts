@@ -27,7 +27,7 @@ const billPaymentInitialValue: TBillPaymentInitialValueProp = {
   MultiLine: "",
   Dropdown1: "Marketing",
   Dropdown5: "",
-  SingleLine2: "Website Sales Leads",
+  SingleLine2: "Website Sales Lead",
   SingleLine3: "",
   SingleLine4: "",
   SingleLine5: "",

@@ -27,7 +27,7 @@ const ppcPaymentInitialValue: TPpcPaymentInitialValueProp = {
   Dropdown6: "",
   MultiLine: "",
   Dropdown1: "Marketing", // ✅ Channel
-  SingleLine2: "", // ✅ UTM Source
+  SingleLine2: "Website Sales Lead", // ✅ UTM Source
   SingleLine3: "", // ✅ UTM Medium
   SingleLine4: "", // ✅ UTM Campaign
   SingleLine5: "", // ✅ Referring Page

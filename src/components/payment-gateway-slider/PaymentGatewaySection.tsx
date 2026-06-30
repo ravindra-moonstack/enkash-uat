@@ -55,7 +55,7 @@ const PaymentGatewaySection: React.FC<PaymentGatewaySectionProps> = ({
                     <>
                         <Image
                             src={backgroundImage}
-                            alt="Participants background"
+                            alt="Payment gateway features background"
                             className={styles.backgroundImage}
                             fill
                         />

@@ -55,21 +55,21 @@ const FAQ = ({
         className={`${styles.faq_inner_row} ${answerVisible && "activeClass"} `}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onKeyDown={handleKeyDown}
-        onClick={handleClick}
-        tabIndex={0}
-        role="button"
-        aria-expanded={answerVisible}
       >
         <div
           className={`d-flex gap-4 my-md-4 my-2 justify-content-between align-items-center`}
+          onKeyDown={handleKeyDown}
+          onClick={handleClick}
+          tabIndex={0}
+          role="button"
+          aria-expanded={answerVisible}
         >
           <p className={`${styles.question} subHeading mb-0`}>
             {String(index + 1).padStart(2, "0")}. {question}
           </p>
           <Image
             src={arrowDown}
-            alt="faq arrow icon"
+            alt="Toggle answer visibility"
             className={`${answerVisible ? styles.rotated : styles.normal} ${
               styles.arrow
             }`}

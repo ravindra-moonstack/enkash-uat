@@ -55,13 +55,11 @@ const WebHeader = ({ }: props) => {
         className={`w-full absolute z-10 ${styles.header} ${isHeaderBgWhite ? styles.bg_white : styles.bg_blue
           }`}
         onMouseLeave={closeAllModals}
-        role="banner"
         aria-label="Primary"
       >
         <div className="container">
           <nav
             className="position-relative mb-0"
-            role="navigation"
             aria-label="Main navigation"
           >
             <div className="row align-items-center">
@@ -74,7 +72,7 @@ const WebHeader = ({ }: props) => {
                 >
                   <Image
                     src={enkashBlueLogo}
-                    alt="logo"
+                    alt="Enkash"
                     width={98}
                     priority={true}
                   />
@@ -121,7 +119,6 @@ const WebHeader = ({ }: props) => {
                         <Image
                           src={getArrowImageSource(index)}
                           alt=""
-                          role="presentation"
                           height={16}
                           width={16}
                         />
@@ -182,16 +179,12 @@ const WebHeader = ({ }: props) => {
                   href={`/support/?source=nav-bar`}
                   target="_blank"
                   aria-label="Open support page in new tab"
+                  className={`${styles.button_getStarted} ${active === "get-support" ? styles.active : ""
+                    }`}
+                  onClick={() => setActive("get-support")}
+                  aria-current={active === "get-support" ? "page" : undefined}
                 >
-                  <button
-                    className={`${styles.button_getStarted} ${active === "get-support" ? styles.active : ""
-                      }`}
-                    onClick={() => setActive("get-support")}
-                    aria-current={active === "get-support" ? "page" : undefined}
-                    type="button"
-                  >
-                    Get Support
-                  </button>
+                  Get Support
                 </Link>
 
                 <div
@@ -203,32 +196,24 @@ const WebHeader = ({ }: props) => {
                     target="_blank"
                     href={`${process.env.NEXT_PUBLIC_HOME_URL}?source=nav-bar`}
                     aria-label="Login page"
+                    className={`${styles.button} ${styles.login} ${activeTab === "login" ? styles.active : ""
+                      }`}
+                    onMouseEnter={() => setActiveTab("login")}
+                    aria-current={activeTab === "login" ? "page" : undefined}
                   >
-                    <button
-                      className={`${styles.button} ${styles.login} ${activeTab === "login" ? styles.active : ""
-                        }`}
-                      onMouseEnter={() => setActiveTab("login")}
-                      aria-current={activeTab === "login" ? "page" : undefined}
-                      type="button"
-                    >
-                      Login
-                    </button>
+                    Login
                   </Link>
 
                   <Link
                     href={`/sales/?source=nav-bar`}
                     target="_blank"
                     aria-label="Talk to Sales page in new tab"
+                    className={`${styles.button} ${styles.sales} ${activeTab === "sales" ? styles.active : ""
+                      }`}
+                    onMouseEnter={() => setActiveTab("sales")}
+                    aria-current={activeTab === "sales" ? "page" : undefined}
                   >
-                    <button
-                      className={`${styles.button} ${styles.sales} ${activeTab === "sales" ? styles.active : ""
-                        }`}
-                      onMouseEnter={() => setActiveTab("sales")}
-                      aria-current={activeTab === "sales" ? "page" : undefined}
-                      type="button"
-                    >
-                      Talk to Sales
-                    </button>
+                    Talk to Sales
                   </Link>
 
                   <span

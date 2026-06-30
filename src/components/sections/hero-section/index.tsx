@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       {backgroundImage && (
         <Image
           src={backgroundImage}
-          alt="Hero Background"
+          alt="Hero background design"
           fill
           priority={true}
           fetchPriority="high"
@@ -132,7 +132,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="d-flex flex-column align-items-center align-items-md-start">
                 <Image
                   src="/images/groupIcon.png"
-                  alt="logo"
+                  alt="Trusted by businesses"
                   width={180}
                   height={30}
                   className={styles.group_logo}
@@ -193,7 +193,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <Image
                   //@ts-ignore
                   src={rightImage}
-                  alt="Hero Visual"
+                  alt="Hero visual illustration"
                   style={{
                     objectFit: "contain",
                     maxHeight: rightImageMaxHeight,
