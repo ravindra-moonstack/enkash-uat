@@ -45,7 +45,6 @@ const OverviewSection = ({ isMobile }: { isMobile: boolean }) => {
             <Image
               src={GraphiteImage}
               alt="Dashboard Overview"
-              loading="lazy"
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ width: "100%", height: "100%" }}
             />

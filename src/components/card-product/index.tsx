@@ -76,7 +76,6 @@ const CardProduct = ({
             height={250}
             sizes="(max-width: 768px) 100vw, 33vw"
             quality={75}
-            loading="lazy"
           />
         </div>
       )}

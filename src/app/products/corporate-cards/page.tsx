@@ -32,9 +32,13 @@ const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 const PolicyCard = dynamic(() => import("@/src/components/policy-card"))
 const FeatureCard = dynamic(() => import("@/src/components/feature-card"))
 const CardProduct = dynamic(() => import("@/src/components/card-product"))
-const BlogSection = dynamic(() => import("@/src/components/sections/blog-section"))
+const BlogSection = dynamic(
+  () => import("@/src/components/sections/blog-section")
+)
 const CounterSection = dynamic(() => import("@/src/components/counter-section"))
-const BlocksSection = dynamic(() => import("@/src/components/blocks-section/BlocksSection"))
+const BlocksSection = dynamic(
+  () => import("@/src/components/blocks-section/BlocksSection")
+)
 const CtaBanner = dynamic(() => import("@/src/components/cta-banner"))
 
 // helpers
@@ -52,9 +56,17 @@ import {
 // utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
 
-const BecomePartnerSteps = dynamic(() => import("@/src/components/becomepartner"), { ssr: true })
-const ProductsSection = dynamic(() => import("@/src/components/our-products-section"), { ssr: true })
-const VideoPlayer = dynamic(() => import("@/src/components/video-player"), { ssr: true })
+const BecomePartnerSteps = dynamic(
+  () => import("@/src/components/becomepartner"),
+  { ssr: true }
+)
+const ProductsSection = dynamic(
+  () => import("@/src/components/our-products-section"),
+  { ssr: true }
+)
+const VideoPlayer = dynamic(() => import("@/src/components/video-player"), {
+  ssr: true,
+})
 
 import Script from "next/script"
 
@@ -78,147 +90,157 @@ const webSchema = {
     {
       "@type": "WebPage",
       "@id": "https://www.enkash.com/products/corporate-cards#webpage",
-      "url": "https://www.enkash.com/products/corporate-cards",
-      "name": "India’s First Unified Corporate Card Ecosystem | EnKash Corporate Cards",
-      "description": "EnKash Corporate Cards help businesses issue prepaid and credit corporate cards instantly, control spend in real time, eliminate employee reimbursements, and automate reconciliation on one RBI-licensed platform.",
-      "inLanguage": "en-IN",
-      "isPartOf": {
+      url: "https://www.enkash.com/products/corporate-cards",
+      name: "India’s First Unified Corporate Card Ecosystem | EnKash Corporate Cards",
+      description:
+        "EnKash Corporate Cards help businesses issue prepaid and credit corporate cards instantly, control spend in real time, eliminate employee reimbursements, and automate reconciliation on one RBI-licensed platform.",
+      inLanguage: "en-IN",
+      isPartOf: {
         "@type": "WebSite",
         "@id": "https://www.enkash.com/#website",
-        "url": "https://www.enkash.com/",
-        "name": "EnKash"
+        url: "https://www.enkash.com/",
+        name: "EnKash",
       },
-      "about": {
-        "@id": "https://www.enkash.com/products/corporate-cards#product"
+      about: {
+        "@id": "https://www.enkash.com/products/corporate-cards#product",
       },
-      "primaryImageOfPage": {
+      primaryImageOfPage: {
         "@type": "ImageObject",
-        "url": "https://www.enkash.com/path-to-corporate-cards-banner-image.jpg"
-      }
+        url: "https://www.enkash.com/path-to-corporate-cards-banner-image.jpg",
+      },
     },
     {
       "@type": "Organization",
       "@id": "https://www.enkash.com/#organization",
-      "name": "EnKash",
-      "url": "https://www.enkash.com/",
-      "logo": "https://www.enkash.com/path-to-logo.png",
-      "sameAs": [
-        "https://www.linkedin.com/company/enkash/"
-      ]
+      name: "EnKash",
+      url: "https://www.enkash.com/",
+      logo: "https://www.enkash.com/path-to-logo.png",
+      sameAs: ["https://www.linkedin.com/company/enkash/"],
     },
     {
       "@type": "Product",
       "@id": "https://www.enkash.com/products/corporate-cards#product",
-      "name": "EnKash Corporate Cards",
-      "description": "A unified corporate card platform for Indian businesses to issue prepaid and credit cards instantly, set spend controls, get real-time visibility, automate reconciliation, and eliminate reimbursements.",
-      "brand": {
+      name: "EnKash Corporate Cards",
+      description:
+        "A unified corporate card platform for Indian businesses to issue prepaid and credit cards instantly, set spend controls, get real-time visibility, automate reconciliation, and eliminate reimbursements.",
+      brand: {
         "@type": "Brand",
-        "name": "EnKash"
+        name: "EnKash",
       },
-      "category": "Corporate Card Platform",
-      "url": "https://www.enkash.com/products/corporate-cards",
-      "image": [
-        "https://www.enkash.com/path-to-corporate-cards-banner-image.jpg"
+      category: "Corporate Card Platform",
+      url: "https://www.enkash.com/products/corporate-cards",
+      image: [
+        "https://www.enkash.com/path-to-corporate-cards-banner-image.jpg",
       ],
-      "audience": {
+      audience: {
         "@type": "BusinessAudience",
-        "audienceType": "Startups, SMBs, Enterprises, Finance Teams, Operations Teams"
+        audienceType:
+          "Startups, SMBs, Enterprises, Finance Teams, Operations Teams",
       },
-      "additionalProperty": [
+      additionalProperty: [
         {
           "@type": "PropertyValue",
-          "name": "Card issuance time",
-          "value": "Under 60 seconds"
+          name: "Card issuance time",
+          value: "Under 60 seconds",
         },
         {
           "@type": "PropertyValue",
-          "name": "Spend visibility",
-          "value": "100% real-time visibility"
+          name: "Spend visibility",
+          value: "100% real-time visibility",
         },
         {
           "@type": "PropertyValue",
-          "name": "Reimbursements",
-          "value": "Zero employee reimbursements"
+          name: "Reimbursements",
+          value: "Zero employee reimbursements",
         },
         {
           "@type": "PropertyValue",
-          "name": "Merchant acceptance",
-          "value": "10 Million+ merchant acceptance points"
+          name: "Merchant acceptance",
+          value: "10 Million+ merchant acceptance points",
         },
         {
           "@type": "PropertyValue",
-          "name": "License",
-          "value": "RBI-authorised PPI license"
-        }
+          name: "License",
+          value: "RBI-authorised PPI license",
+        },
       ],
-      "hasOfferCatalog": {
+      hasOfferCatalog: {
         "@type": "OfferCatalog",
-        "name": "Corporate Card Types and Use Cases",
-        "itemListElement": [
+        name: "Corporate Card Types and Use Cases",
+        itemListElement: [
           {
             "@type": "OfferCatalog",
-            "name": "Card Types",
-            "itemListElement": [
+            name: "Card Types",
+            itemListElement: [
               {
                 "@type": "Product",
-                "name": "Prepaid Corporate Cards",
-                "description": "Reloadable corporate cards with MCC locks, spend caps, channel controls, and policy compliance."
+                name: "Prepaid Corporate Cards",
+                description:
+                  "Reloadable corporate cards with MCC locks, spend caps, channel controls, and policy compliance.",
               },
               {
                 "@type": "Product",
-                "name": "Corporate Credit Cards",
-                "description": "Business credit cards with flexible limits, billing cycles, merchant controls, fraud protection, and rewards."
-              }
-            ]
+                name: "Corporate Credit Cards",
+                description:
+                  "Business credit cards with flexible limits, billing cycles, merchant controls, fraud protection, and rewards.",
+              },
+            ],
           },
           {
             "@type": "OfferCatalog",
-            "name": "Use Case Cards",
-            "itemListElement": [
+            name: "Use Case Cards",
+            itemListElement: [
               {
                 "@type": "Product",
-                "name": "Meal Card",
-                "description": "Digital meal cards for employee meal benefits with nationwide acceptance."
+                name: "Meal Card",
+                description:
+                  "Digital meal cards for employee meal benefits with nationwide acceptance.",
               },
               {
                 "@type": "Product",
-                "name": "Fuel Card",
-                "description": "Corporate cards to control and track fuel expenses for travel and fleet spending."
+                name: "Fuel Card",
+                description:
+                  "Corporate cards to control and track fuel expenses for travel and fleet spending.",
               },
               {
                 "@type": "Product",
-                "name": "T&E Card",
-                "description": "Travel and entertainment cards with smart controls and real-time tracking."
+                name: "T&E Card",
+                description:
+                  "Travel and entertainment cards with smart controls and real-time tracking.",
               },
               {
                 "@type": "Product",
-                "name": "Virtual Card",
-                "description": "Secure virtual cards for one-time or recurring online payments."
+                name: "Virtual Card",
+                description:
+                  "Secure virtual cards for one-time or recurring online payments.",
               },
               {
                 "@type": "Product",
-                "name": "Purchase Card",
-                "description": "Pre-approved cards for procurement, vendor payments, and operational purchases."
+                name: "Purchase Card",
+                description:
+                  "Pre-approved cards for procurement, vendor payments, and operational purchases.",
               },
               {
                 "@type": "Product",
-                "name": "Digital Marketing Card",
-                "description": "Cards for managing online ad spends with limits and real-time spend visibility."
+                name: "Digital Marketing Card",
+                description:
+                  "Cards for managing online ad spends with limits and real-time spend visibility.",
               },
               {
                 "@type": "Product",
-                "name": "SaaS Card",
-                "description": "Cards designed to manage software subscriptions and recurring SaaS renewals."
-              }
-            ]
-          }
-        ]
+                name: "SaaS Card",
+                description:
+                  "Cards designed to manage software subscriptions and recurring SaaS renewals.",
+              },
+            ],
+          },
+        ],
       },
-      "provider": {
-        "@id": "https://www.enkash.com/#organization"
-      }
-    }
-  ]
+      provider: {
+        "@id": "https://www.enkash.com/#organization",
+      },
+    },
+  ],
 }
 
 export const metadata: Metadata = {
@@ -268,7 +290,6 @@ const CorporateCards = (): React.JSX.Element => {
           { name: "Corporate Card", url: "/products/corporate-card" },
         ]}
         preHeading="India’s First Unified Corporate Card Ecosystem"
-
         titleLines={[
           {
             text: "Corporate cards that move at ",
@@ -279,7 +300,6 @@ const CorporateCards = (): React.JSX.Element => {
             color: "color-white d-block text-center",
           },
         ]}
-
         subtitle={{
           text: "Issue instantly. Spend smartly. Close effortlessly. All on one RBI-licensed platform.",
           color: "color-black",
@@ -307,16 +327,20 @@ const CorporateCards = (): React.JSX.Element => {
         stats={statsData}
         backgroundImage={statsBg}
       />
-      <ProductsSection preTitle={{
-        content: [
-          {
-            title: "CARD TYPES",
-            color: "color-alternate-grey",
-          },
-        ],
-        headingTag: "p",
-        className: "f-5 mb-3 text-center",
-      }} sectionTitle="Choose the Right Corporate Card for Your Business" products={productsData} />
+      <ProductsSection
+        preTitle={{
+          content: [
+            {
+              title: "CARD TYPES",
+              color: "color-alternate-grey",
+            },
+          ],
+          headingTag: "p",
+          className: "f-5 mb-3 text-center",
+        }}
+        sectionTitle="Choose the Right Corporate Card for Your Business"
+        products={productsData}
+      />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -366,8 +390,8 @@ const CorporateCards = (): React.JSX.Element => {
                 color: "color-black ",
               },
             ]}
-            headingTag={'h2'}
-            className={'f-6'}
+            headingTag={"h2"}
+            className={"f-6"}
           />
         </div>
 
@@ -393,7 +417,12 @@ const CorporateCards = (): React.JSX.Element => {
       <div className={`${styles.video_section}`}>
         <VideoPlayer
           videoSrc="https://youtu.be/EgWI_tkBpk0?si=IPPm7ujd9qxht0s0"
-          heading={[{ title: "Experience Corporate Cards that truly deliver ", color: "color-black" },]}
+          heading={[
+            {
+              title: "Experience Corporate Cards that truly deliver ",
+              color: "color-black",
+            },
+          ]}
           ctaLabel={"Get Started"}
           subHeadings={videoSubHeadingData}
           ctaHref={salesUrl}
@@ -458,7 +487,6 @@ const CorporateCards = (): React.JSX.Element => {
                   className="w-100 mh-550 object-fit-contain"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={75}
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -467,7 +495,10 @@ const CorporateCards = (): React.JSX.Element => {
       </div>
       <BlocksSection
         heading={[
-          { title: "Configure Controls Across Every Card ", color: "color-white text-center" },
+          {
+            title: "Configure Controls Across Every Card ",
+            color: "color-white text-center",
+          },
         ]}
         slideData={blocksSectionData}
         absoluteImage={blockAbsolute}
@@ -553,7 +584,6 @@ const CorporateCards = (): React.JSX.Element => {
                   className="w-100  object-fit-contain"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={75}
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -633,12 +663,14 @@ const CorporateCards = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.steps_container}  `}>
-        <BecomePartnerSteps
-          heading={headingData}
-          steps={stepsData}
-        />
+        <BecomePartnerSteps heading={headingData} steps={stepsData} />
       </div>
-      <CtaBanner leftImage={ctaSideImg} rightImage={ctaSideImg} buttonText="Schedule a Demo" buttonUrl={salesUrl} />
+      <CtaBanner
+        leftImage={ctaSideImg}
+        rightImage={ctaSideImg}
+        buttonText="Schedule a Demo"
+        buttonUrl={salesUrl}
+      />
 
       <SuspenseLoading>
         <FaqSection faqData={faqData} />

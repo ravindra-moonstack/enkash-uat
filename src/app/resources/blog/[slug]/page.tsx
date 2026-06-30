@@ -240,7 +240,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   return (
     <>
-      {/* {schemaMarkup &&
+      {schemaMarkup &&
         (isJsonSchema ? (
           <script
             type="application/ld+json"
@@ -256,9 +256,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: schemaMarkup }}
           />
-        )) 
-        } */}
-      {schemaMarkup}
+        ))}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

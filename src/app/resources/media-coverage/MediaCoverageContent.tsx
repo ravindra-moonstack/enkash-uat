@@ -122,7 +122,6 @@ const MediaCoverageContent = () => {
                           alt={item.title}
                           width={400}
                           height={250}
-                          loading="lazy"
                         />
                       </div>
                       <div className={styles.card_content}>

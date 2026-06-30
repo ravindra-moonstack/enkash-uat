@@ -14,18 +14,30 @@ interface VideoCardProps {
 }
 
 const VideoCard: React.FC<VideoCardProps> = ({ data, onPlay }) => {
-  const { title, featured_image_url, featured_image_alt, video_url, category_name, external_embed_frame } = data
+  const {
+    title,
+    featured_image_url,
+    featured_image_alt,
+    video_url,
+    category_name,
+    external_embed_frame,
+  } = data
   const videoSource = external_embed_frame || video_url
 
   return (
     <div className={styles.video_card}>
-      <div className={styles.thumbnail_wrapper} onClick={() => onPlay?.(videoSource)}>
+      <div
+        className={styles.thumbnail_wrapper}
+        onClick={() => onPlay?.(videoSource)}
+      >
         <Image
-          src={getImageUrl(featured_image_url) || "/uploads/2026/01/placeholder.png"}
+          src={
+            getImageUrl(featured_image_url) ||
+            "/uploads/2026/01/placeholder.png"
+          }
           alt={featured_image_alt || title}
           width={400}
           height={240}
-          loading="lazy"
         />
         <div className={styles.thumbnail_overlay}>
           <div className={styles.play_btn}>
@@ -35,10 +47,19 @@ const VideoCard: React.FC<VideoCardProps> = ({ data, onPlay }) => {
       </div>
       <div className={styles.card_content}>
         <div className={styles.card_content_top}>
-          <a className={styles.tag} href={`/resources/video-category/${category_name}`}>{category_name}</a>
+          <a
+            className={styles.tag}
+            href={`/resources/video-category/${category_name}`}
+          >
+            {category_name}
+          </a>
           <h3>{title}</h3>
         </div>
-        <CommonButton title="Watch Now" theme="small-blue" url={() => onPlay?.(videoSource)} />
+        <CommonButton
+          title="Watch Now"
+          theme="small-blue"
+          url={() => onPlay?.(videoSource)}
+        />
       </div>
     </div>
   )
