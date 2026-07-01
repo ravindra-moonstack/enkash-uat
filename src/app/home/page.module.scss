@@ -69,6 +69,7 @@
   padding: 50px 20px 50px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 
   @include for-laptops {
     padding: 50px 20px;
