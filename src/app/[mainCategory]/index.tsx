@@ -1,5 +1,5 @@
 export { default as sliderOneBg } from "./img/e-commerce/sliderOneBg.webp"
-export { default as sliderTwoBg } from "./img/e-commerce/sliderTwoBgg.jpg"
+export { default as sliderTwoBg } from "./img/e-commerce/sliderTwoBgg.webp"
 export { default as sliderThreeBg } from "./img/e-commerce/sliderThreeBg.webp"
 export { default as sliderFourBg } from "./img/e-commerce/sliderFourBg.webp"
 

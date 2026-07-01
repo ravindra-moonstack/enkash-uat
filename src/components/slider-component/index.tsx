@@ -66,20 +66,30 @@ export default function SliderComponent({
           <div key={index}>
             <div
               className={styles.voucherSlider}
-              style={{
-                background: slide.backgroundImage
-                  ? `url('${
-                      typeof slide.backgroundImage === "string"
-                        ? slide.backgroundImage
-                        : slide.backgroundImage.src
-                    }')`
-                  : slide.backgroundColor,
-                backgroundSize: "cover",
-                backgroundPosition: "top center",
-                backgroundRepeat: "no-repeat",
-                width: "100%",
-              }}
+              // style={{
+              //   background: slide.backgroundImage
+              //     ? `url('${
+              //         typeof slide.backgroundImage === "string"
+              //           ? slide.backgroundImage
+              //           : slide.backgroundImage.src
+              //       }')`
+              //     : slide.backgroundColor,
+              //   backgroundSize: "cover",
+              //   backgroundPosition: "top center",
+              //   backgroundRepeat: "no-repeat",
+              //   width: "100%",
+              // }}
             >
+              <Image
+                src={
+                  typeof slide?.backgroundImage === "string"
+                    ? slide?.backgroundImage
+                    : slide?.backgroundImage?.src || ""
+                }
+                fill
+                alt="background"
+                style={{ zIndex: -1 }}
+              />
               <div className="max-w-auto">
                 <div className="row">
                   <div className="col-12 col-md-7">
