@@ -2,6 +2,8 @@
 @use "@/src/styles/mixin" as *;
 
 .hero_section {
+  position: relative;
+  overflow: hidden;
   .voucher_card {
     background-color: $color-white;
     margin-top: -38px;

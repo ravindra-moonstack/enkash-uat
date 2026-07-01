@@ -115,7 +115,7 @@ export default async function MainCategoryPage(props: {
             <div className="row">
               {voucherCardsWithDiscount.map((card, index) => (
                 <div key={index} className="col-12 col-md-3 mb-4">
-                  <VoucherCard {...card} />
+                  <VoucherCard {...card} priority={index < 4} />
                 </div>
               ))}
             </div>
