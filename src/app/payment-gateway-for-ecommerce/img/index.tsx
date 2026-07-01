@@ -1,5 +1,5 @@
 export { default as heroBg } from "./hero-bg.webp"
-export { default as heroBgBig } from "./hero-bg-big2.png"
+export { default as heroBgBig } from "./hero-bg-big2.webp"
 export { default as Stack1 } from "./stack1.svg"
 export { default as Stack2 } from "./stack2.svg"
 export { default as Stack3 } from "./stack3.svg"

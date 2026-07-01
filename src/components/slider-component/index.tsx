@@ -89,6 +89,11 @@ export default function SliderComponent({
                 fill
                 alt="background"
                 style={{ zIndex: -1 }}
+                priority={index === 0}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                sizes="100vw"
+                quality={80}
+                decoding={index === 0 ? "sync" : "async"}
               />
               <div className="max-w-auto">
                 <div className="row">
@@ -150,6 +155,11 @@ export default function SliderComponent({
                             marginTop: slide.rightImageMarginTop ?? "0px",
                           }}
                           className="w-100 mh-550 object-fit-contain"
+                          priority={index === 0}
+                          fetchPriority={index === 0 ? "high" : "auto"}
+                          quality={80}
+                          decoding={index === 0 ? "sync" : "async"}
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
                       </div>
                     </div>

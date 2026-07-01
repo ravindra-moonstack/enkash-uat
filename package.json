@@ -53,6 +53,7 @@
     "react-slick": "^0.30.3",
     "saas": "^1.0.0",
     "sass": "^1.63.6",
+    "sharp": "^0.35.2",
     "slick-carousel": "^1.8.1",
     "smooth-scrollbar": "^8.8.4",
     "twin-bcrypt": "^2.1.1",
@@ -100,5 +101,8 @@
     "last 2 Edge versions",
     "last 2 Safari versions",
     "not dead"
-  ]
+  ],
+  "optionalDependencies": {
+    "@img/sharp-linuxmusl-x64": "^0.35.2"
+  }
 }
