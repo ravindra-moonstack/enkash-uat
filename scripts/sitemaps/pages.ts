@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { STATIC_ROUTES } from '../static-routes'
+import { STATIC_ROUTES } from '../../src/app/static-routes'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0

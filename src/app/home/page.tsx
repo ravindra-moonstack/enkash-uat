@@ -96,6 +96,7 @@ const HomePage = (): React.JSX.Element => {
           priority
           fetchPriority="high"
           quality={80}
+          sizes="100vw"
           style={{ objectFit: "cover", zIndex: -1 }}
         />
         <div className="max-w-auto">
