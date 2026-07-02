@@ -56,7 +56,7 @@ const CardHeroSection: React.FC<CardHeroSectionProps> = ({
           alt="Hero Background"
           fill
           priority={true}
-          fetchPriority="high"
+          // fetchPriority="high"
           style={{ objectFit: "cover", zIndex: -1 }}
           sizes="100vw"
         />
@@ -129,7 +129,8 @@ const CardHeroSection: React.FC<CardHeroSectionProps> = ({
             style={{ objectFit: "contain", maxHeight: "672px" }}
             className="w-100 object-fit-contain"
             priority={true}
-            fetchPriority="high"
+            // fetchPriority="high"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
       </div>
