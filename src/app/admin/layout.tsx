@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState, useRef, Suspense } from "react"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -8,7 +8,7 @@ import styles from "./admin-layout.module.scss"
 import { ToastProvider } from "@/src/context/ToastContext"
 import Script from "next/script"
 
-export default function AdminLayout({
+function AdminLayoutInner({
     children,
 }: {
     children: React.ReactNode
@@ -233,5 +233,17 @@ export default function AdminLayout({
 
             </div>
         </ToastProvider>
+    )
+}
+
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <Suspense fallback={
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100vw' }}>
+                <Image src="/images/loader.gif" alt="Loading..." width={75} height={75} priority />
+            </div>
+        }>
+            <AdminLayoutInner>{children}</AdminLayoutInner>
+        </Suspense>
     )
 }

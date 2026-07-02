@@ -13,13 +13,22 @@ import {
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa6"
-import { locationPin, pci, enkashBlueLogo, ppi, ppa, sovSvg } from "./img"
+import {
+  locationPin,
+  pci,
+  enkashBlueLogo,
+  ppi,
+  ppa,
+  sovSvg,
+  footerBg,
+} from "./img"
 
 const FooterV2 = (): React.JSX.Element => {
   //
 
   return (
     <div className={` ${styles.footer}`}>
+      <Image src={footerBg} alt="footerBg" fill />
       <div className={`max-w-auto  ${styles.footer_padding}`}>
         <div className={`d-flex flex-column  ${styles.footer_section}`}>
           {/* 1st col */}
