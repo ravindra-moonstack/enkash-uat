@@ -1,19 +1,23 @@
 import type { MetadataRoute } from "next"
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.enkash.com"
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.enkash.com"
 
+export const dynamic = "force-dynamic"
+export const revalidate = 86400
+
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${baseUrl}/pages/sitemap.xml`,
+      url: `${BASE_URL}/pages/sitemap.xml`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/resources/sitemap.xml`,
+      url: `${BASE_URL}/resources/sitemap.xml`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/glossary/sitemap.xml`,
+      url: `${BASE_URL}/glossary/sitemap.xml`,
       lastModified: new Date(),
     },
   ]

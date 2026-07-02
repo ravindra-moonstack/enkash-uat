@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development tsx watch server.ts",
-    "generate-sitemaps": "tsx scripts/generate-sitemaps.ts",
-    "build-uat": "NODE_ENV=test NEXT_PUBLIC_ENV=test npm run generate-sitemaps && NODE_ENV=test NEXT_PUBLIC_ENV=test next build && tsc --project tsconfig.server.json",
-    "build-prod": "NODE_ENV=production NEXT_PUBLIC_ENV=production npm run generate-sitemaps && NODE_ENV=production NEXT_PUBLIC_ENV=production next build && tsc --project tsconfig.server.json",
+    "build-uat": "NODE_ENV=test NEXT_PUBLIC_ENV=test next build && tsc --project tsconfig.server.json",
+    "build-prod": "NODE_ENV=production NEXT_PUBLIC_ENV=production next build && tsc --project tsconfig.server.json",
     "start": "next start",
     "start-uat": "NODE_ENV=test NEXT_PUBLIC_ENV=test node dist/server.js",
     "lint": "eslint",
