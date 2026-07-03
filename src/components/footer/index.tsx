@@ -28,7 +28,7 @@ const FooterV2 = (): React.JSX.Element => {
 
   return (
     <div className={` ${styles.footer}`}>
-      <Image src={footerBg} alt="footerBg" fill />
+      <Image src={footerBg} alt="footerBg" fill style={{ zIndex: -1 }} />
       <div className={`max-w-auto  ${styles.footer_padding}`}>
         <div className={`d-flex flex-column  ${styles.footer_section}`}>
           {/* 1st col */}

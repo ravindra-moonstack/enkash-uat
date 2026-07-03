@@ -284,10 +284,10 @@ const HomePage = (): React.JSX.Element => {
                   key={index}
                 >
                   <div className={`${styles.makesPaymentsBox} `}>
-                    <UtilityBillPayments
+                    {/* <UtilityBillPayments
                       {...item}
                       womanImg={item.womanImg.src}
-                    />
+                    /> */}
                   </div>
                 </div>
               ))}
@@ -438,7 +438,7 @@ const HomePage = (): React.JSX.Element => {
                     <div className={`${styles.rewardVauchersBox}`}>
                       <HomePageRewardsVouchers
                         {...item}
-                        image={item.image.src}
+                        // image={item.image.src}
                         headingTag="h4"
                         headingClassName="heading-h5"
                       />
@@ -671,7 +671,7 @@ const HomePage = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-7 mb-4 mb-md-0">
               <div className={`${styles.securityLeft}`}>
-                <Image src={securityIcon1} alt={""}></Image>
+                <Image src={securityIcon1} alt={""} width={42} height={38} />
                 <DynamicHeading
                   content={[
                     {
@@ -700,7 +700,12 @@ const HomePage = (): React.JSX.Element => {
                 <div className="row">
                   <div className="col-sm-6 mb-3">
                     <div className={`${styles.card}`}>
-                      <Image src={securityIcon2} alt={""}></Image>
+                      <Image
+                        src={securityIcon2}
+                        alt={""}
+                        width={42}
+                        height={38}
+                      />
                       <DynamicHeading
                         content={[
                           {
@@ -719,7 +724,12 @@ const HomePage = (): React.JSX.Element => {
                   </div>
                   <div className="col-sm-6  mb-3">
                     <div className={`${styles.card}`}>
-                      <Image src={securityIcon3} alt={""}></Image>
+                      <Image
+                        src={securityIcon3}
+                        alt={""}
+                        width={42}
+                        height={38}
+                      />
                       <DynamicHeading
                         content={[
                           {
@@ -742,7 +752,9 @@ const HomePage = (): React.JSX.Element => {
                         src={securityIcon4}
                         className={`${styles.bharatBillPaymentImg}`}
                         alt={""}
-                      ></Image>
+                        width={42}
+                        height={38}
+                      />
                       <DynamicHeading
                         content={[
                           {
@@ -761,7 +773,12 @@ const HomePage = (): React.JSX.Element => {
                   </div>
                   <div className="col-sm-6">
                     <div className={`${styles.card}`}>
-                      <Image src={securityIcon5} alt={""}></Image>
+                      <Image
+                        src={securityIcon5}
+                        alt={""}
+                        width={42}
+                        height={38}
+                      />
                       <DynamicHeading
                         content={[
                           {
