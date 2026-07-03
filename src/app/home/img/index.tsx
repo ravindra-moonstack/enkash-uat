@@ -231,3 +231,4 @@ export const BuiltforBuildersCardIcon2 = `${process.env.NEXT_PUBLIC_CDN}/home/Bu
 export const BuiltforBuildersCardIcon3 = `${process.env.NEXT_PUBLIC_CDN}/home/BuiltforBuildersCardIcon3.svg`
 export const HomeBgImg = `${process.env.NEXT_PUBLIC_CDN}/home/banner_bg_image.webp`
 export const collectPaymentBg = `${process.env.NEXT_PUBLIC_CDN}/home/collect_payment_bg.webp`
+export const bannerBg = `${process.env.NEXT_PUBLIC_CDN}/home/banner_bg_image.webp`

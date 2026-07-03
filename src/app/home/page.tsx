@@ -53,6 +53,7 @@ import {
   securityIcon5,
   bankIcons2,
   collectPaymentBg,
+  bannerBg,
 } from "./img"
 import {
   counterData,
@@ -70,7 +71,6 @@ import {
   ctaButtonData,
 } from "./data"
 import generateMetaData from "@/utils/metaData"
-import bannerBg from "./img/banner_bg_image.webp"
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Expense Management & Payment Solutions for Businesses.",
