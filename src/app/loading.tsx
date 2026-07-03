@@ -7,7 +7,7 @@ const Loading = (): React.JSX.Element => {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <Image
-        src="/images/loader.gif"
+        src={`${process.env.NEXT_PUBLIC_CDN}/images/loader.gif`}
         alt="Loading indicator"
         width={75}
         height={75}

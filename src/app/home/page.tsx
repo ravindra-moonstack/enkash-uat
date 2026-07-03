@@ -668,7 +668,7 @@ const HomePage = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-7 mb-4 mb-md-0">
               <div className={`${styles.securityLeft}`}>
-                <Image src={securityIcon1} alt={""} width={42} height={38} />
+                <Image src={securityIcon1} alt={""} width={50} height={50} />
                 <DynamicHeading
                   content={[
                     {
@@ -700,8 +700,8 @@ const HomePage = (): React.JSX.Element => {
                       <Image
                         src={securityIcon2}
                         alt={""}
-                        width={42}
-                        height={38}
+                        width={90}
+                        height={90}
                       />
                       <DynamicHeading
                         content={[
@@ -724,8 +724,8 @@ const HomePage = (): React.JSX.Element => {
                       <Image
                         src={securityIcon3}
                         alt={""}
-                        width={42}
-                        height={38}
+                        width={90}
+                        height={90}
                       />
                       <DynamicHeading
                         content={[
@@ -749,8 +749,8 @@ const HomePage = (): React.JSX.Element => {
                         src={securityIcon4}
                         className={`${styles.bharatBillPaymentImg}`}
                         alt={""}
-                        width={42}
-                        height={38}
+                        width={130}
+                        height={90}
                       />
                       <DynamicHeading
                         content={[
@@ -773,8 +773,8 @@ const HomePage = (): React.JSX.Element => {
                       <Image
                         src={securityIcon5}
                         alt={""}
-                        width={42}
-                        height={38}
+                        width={90}
+                        height={90}
                       />
                       <DynamicHeading
                         content={[
