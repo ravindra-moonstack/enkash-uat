@@ -107,7 +107,7 @@ const productsData = [
     button: {
       connectText: "Explore Corporate Cards",
       connectUrl: "/products/corporate-cards",
-      blueArrow: blueArrow.src,
+      blueArrow: blueArrow,
     },
   },
   {
@@ -120,7 +120,7 @@ const productsData = [
     button: {
       connectUrl: "/payment-gateway",
       connectText: "Explore Payment Gateway",
-      blueArrow: blueArrow.src,
+      blueArrow: blueArrow,
     },
   },
 ]

@@ -71,7 +71,8 @@ const intantActionData = [
 const counterHeadingData = {
   content: [
     {
-      title: "The Corporate Card Platform That Just Works ", color: "color-alternate-grey"
+      title: "The Corporate Card Platform That Just Works ",
+      color: "color-alternate-grey",
     },
   ],
   className: "f-5 mb-3 text-center",
@@ -142,7 +143,6 @@ const cardType: TCardTypes = [
   {
     titleHtml: "Virtual Card",
     description:
-
       "Generate secure, one-time or recurring virtual cards for safer, faster, and trackable online payments.",
     cardImage: virtualCardImg,
     linkUrl: "/virtual-card",
@@ -174,17 +174,20 @@ const stepsData = [
   {
     stepNumber: "Step 1",
     title: "Configure",
-    description: "Define merchants, limits, and usage policies for your corporate cards.",
+    description:
+      "Define merchants, limits, and usage policies for your corporate cards.",
   },
   {
     stepNumber: "Step 2",
     title: "Issue Cards",
-    description: "Issue physical or virtual cards to employees, partners, or teams.",
+    description:
+      "Issue physical or virtual cards to employees, partners, or teams.",
   },
   {
     stepNumber: "Step 3",
     title: "Track and Manage",
-    description: "Monitor transactions in real time and reconcile automatically.",
+    description:
+      "Monitor transactions in real time and reconcile automatically.",
   },
 ]
 const headingData = {
@@ -201,12 +204,14 @@ const allProductSections = [
     items: [
       {
         title: "Cards Issued in Seconds ",
-        description: "Checkout optimized to load in under 300ms. Every millisecond matters, faster checkouts directly translate to higher conversion rates.",
+        description:
+          "Checkout optimized to load in under 300ms. Every millisecond matters, faster checkouts directly translate to higher conversion rates.",
         image: caraouselIcon11,
       },
       {
         title: "Full Visibility in Real Time ",
-        description: "Tokenized card saving for one-click repeat purchases. Customers complete future transactions instantly while maintaining complete security.",
+        description:
+          "Tokenized card saving for one-click repeat purchases. Customers complete future transactions instantly while maintaining complete security.",
         image: caraouselIcon12,
       },
       {
@@ -217,7 +222,8 @@ const allProductSections = [
       },
       {
         title: "Policies That Enforce Themselves",
-        description: "Spend limits, approval workflows, and MCC restrictions are built into every card. There's nothing for employees to remember and nothing for finance to chase.",
+        description:
+          "Spend limits, approval workflows, and MCC restrictions are built into every card. There's nothing for employees to remember and nothing for finance to chase.",
         image: caraouselIcon14,
       },
     ],
@@ -226,26 +232,26 @@ const allProductSections = [
 
 const statsData = [
   {
-    value: '60',
-    label: 'seconds to issue cards',
+    value: "60",
+    label: "seconds to issue cards",
     animationDuration: 1500,
-    prefix: "<"
+    prefix: "<",
   },
   {
-    value: '100',
-    label: 'real-time spend visibility',
-    suffix: "%"
+    value: "100",
+    label: "real-time spend visibility",
+    suffix: "%",
   },
   {
-    value: 'ZERO',
-    label: 'employee reimbursements',
+    value: "ZERO",
+    label: "employee reimbursements",
   },
   {
-    value: '10',
-    suffix: ' Million+',
-    label: 'merchant acceptance points'
-  }
-];
+    value: "10",
+    suffix: " Million+",
+    label: "merchant acceptance points",
+  },
+]
 const productsData = [
   {
     id: 1,
@@ -257,7 +263,7 @@ const productsData = [
     button: {
       connectText: "Explore Prepaid Cards ",
       connectUrl: "/prepaid-card",
-      blueArrow: blueArrow.src,
+      blueArrow: blueArrow,
     },
   },
   {
@@ -270,15 +276,19 @@ const productsData = [
     button: {
       connectUrl: getSalesUrl("/products/corporate-cards"),
       connectText: "Talk to Us",
-      blueArrow: blueArrow.src,
+      blueArrow: blueArrow,
     },
   },
 ]
 
-
 const videoSubHeadingData = [
   [{ title: "Issue cards in under 60 seconds", color: "color-black" }],
-  [{ title: "Real-time spend visibility across every card", color: "color-black" }],
+  [
+    {
+      title: "Real-time spend visibility across every card",
+      color: "color-black",
+    },
+  ],
 ]
 
 const blocksSectionData = [
@@ -286,31 +296,36 @@ const blocksSectionData = [
     id: 1,
     icon: caraouselIcon1,
     title: "User and Department Rules",
-    description: "Spending rules defined by individual user, department, or vendor and applied automatically at every transaction with no manual oversight required.",
+    description:
+      "Spending rules defined by individual user, department, or vendor and applied automatically at every transaction with no manual oversight required.",
   },
   {
     id: 2,
     icon: caraouselIcon2,
     title: "Channel-Level Restrictions",
-    description: "POS, online, ATM, and contactless channels enabled or disabled per card. An online-only card physically cannot be used at a POS terminal.",
+    description:
+      "POS, online, ATM, and contactless channels enabled or disabled per card. An online-only card physically cannot be used at a POS terminal.",
   },
   {
     id: 3,
     icon: caraouselIcon3,
     title: "Define Your Limits",
-    description: "Daily, weekly, or monthly limits set once and enforced automatically with no manual resets, no monitoring, and no intervention.",
+    description:
+      "Daily, weekly, or monthly limits set once and enforced automatically with no manual resets, no monitoring, and no intervention.",
   },
   {
     id: 4,
     icon: caraouselIcon4,
     title: "Instant Block and Reactivation",
-    description: "Lost or compromised card? Instantly block or reactivate it from the dashboard with one click, no paperwork, no support tickets, no delay.",
+    description:
+      "Lost or compromised card? Instantly block or reactivate it from the dashboard with one click, no paperwork, no support tickets, no delay.",
   },
   {
     id: 5,
     icon: caraouselIcon5,
     title: "Maker-Checker Approval Flows",
-    description: "Role-based approval workflows with complete accountability. Every transaction has a clear owner and a full audit trail.",
+    description:
+      "Role-based approval workflows with complete accountability. Every transaction has a clear owner and a full audit trail.",
   },
 ]
 
