@@ -35,9 +35,13 @@ export const metadata: Metadata = {
 const Page = (): React.JSX.Element => {
   return (
     <div className={` ${styles.body_container} relative`}>
-      <div className={`${styles.bgImg_container} absolute`}>
-        <Image src={bgImg} alt={"bgImg"} priority fetchPriority="high" />
-      </div>
+      <Image
+        src={bgImg}
+        alt={"bgImg"}
+        priority
+        fetchPriority="high"
+        className={`${styles.bgImg_container} absolute`}
+      />
       <div className={`color-white ${styles.home_container}`}>
         <div className="max-w-auto">
           <CustomBreadcrumb

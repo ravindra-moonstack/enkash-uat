@@ -6,12 +6,15 @@
   .bgImg_container {
     position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 0;
-    img {
-      height: 1384px;
-      @include for-laptops {
-        height: 100%;
-      }
+    height: 1384px;
+    width: unset;
+ 
+   @include for-laptops {
+    height: 100%;
+    width: 100%;
     }
   }
 }
