@@ -284,10 +284,7 @@ const HomePage = (): React.JSX.Element => {
                   key={index}
                 >
                   <div className={`${styles.makesPaymentsBox} `}>
-                    {/* <UtilityBillPayments
-                      {...item}
-                      womanImg={item.womanImg.src}
-                    /> */}
+                    <UtilityBillPayments {...item} womanImg={item.womanImg} />
                   </div>
                 </div>
               ))}
@@ -438,7 +435,7 @@ const HomePage = (): React.JSX.Element => {
                     <div className={`${styles.rewardVauchersBox}`}>
                       <HomePageRewardsVouchers
                         {...item}
-                        // image={item.image.src}
+                        image={item.image}
                         headingTag="h4"
                         headingClassName="heading-h5"
                       />
