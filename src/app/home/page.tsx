@@ -12,35 +12,46 @@ import CommanButton from "@/components/buttons"
 import PaymentGatewayCare from "@/components/home-page-payment-box"
 
 // components — below-fold (dynamic imports)
-const FeatureCard = dynamic(() => import("@/components/feature-card"))
+import { LoadingUI } from "@/components/loading"
+
+const FeatureCard = dynamic(() => import("@/components/feature-card"), { loading: LoadingUI })
 const LottieDynamicLoadComponent = dynamic(
-  () => import("@/components/lottie-client/lottie-dynamic-load-client")
+  () => import("@/components/lottie-client/lottie-dynamic-load-client"),
+  { loading: LoadingUI }
 )
 const UtilityBillPayments = dynamic(
-  () => import("@/components/utility-bill-payments")
+  () => import("@/components/utility-bill-payments"),
+  { loading: LoadingUI }
 )
 const PartnerSection = dynamic(
-  () => import("@/components/partner-section-data")
+  () => import("@/components/partner-section-data"),
+  { loading: LoadingUI }
 )
 const ScrollableCardsSection = dynamic(
-  () => import("@/src/components/scrollable-cards-section")
+  () => import("@/src/components/scrollable-cards-section"),
+  { loading: LoadingUI }
 )
 const PrepaidCardHome = dynamic(
-  () => import("@/components/prepaid-card-home/PrepaidCardHome")
+  () => import("@/components/prepaid-card-home/PrepaidCardHome"),
+  { loading: LoadingUI }
 )
 const HomePageRewardsVouchers = dynamic(
-  () => import("@/components/home-page-rewards-vouchers")
+  () => import("@/components/home-page-rewards-vouchers"),
+  { loading: LoadingUI }
 )
 const HomeReceivablesPayables = dynamic(
-  () => import("@/components/home-receivables-payables")
+  () => import("@/components/home-receivables-payables"),
+  { loading: LoadingUI }
 )
-const Counter = dynamic(() => import("@/components/home-counter"))
-const HomePageSlider = dynamic(() => import("@/components/home-page-slider"))
+const Counter = dynamic(() => import("@/components/home-counter"), { loading: LoadingUI })
+const HomePageSlider = dynamic(() => import("@/components/home-page-slider"), { loading: LoadingUI })
 const BuiltforBuildersSection = dynamic(
-  () => import("@/components/builtfor-builders-card")
+  () => import("@/components/builtfor-builders-card"),
+  { loading: LoadingUI }
 )
 const BottomCtaSection = dynamic(
-  () => import("@/components/bottom-cta-section")
+  () => import("@/components/bottom-cta-section"),
+  { loading: LoadingUI }
 )
 
 // helpers

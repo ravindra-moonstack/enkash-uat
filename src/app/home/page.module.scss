@@ -139,7 +139,7 @@ $cdn-url: "https://res.cloudinary.com/ycgwu4ay/image/upload";
 
     @include for-laptops {
       display: block;
-      background-image: url("#{$cdn-url}/home/EnKash_PG_ Dashboard_collect_payment.jpeg");
+      background-image: url("#{$cdn-url}/home/EnKash_PG_Dashboard_collect_payment.jpeg");
       content: "";
       position: absolute;
       left: calc(100% - 80px);
