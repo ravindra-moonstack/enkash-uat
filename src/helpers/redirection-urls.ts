@@ -699,9 +699,12 @@ const url: {
   },
 ]
 
-const mappedUrls = url.map((item) => ({
-  ...item,
-  permanent: item.permanent ?? false,
-}))
+const mappedUrls = url.map((item) => {
+  const { permanent, ...rest } = item
+  return {
+    ...rest,
+    statusCode: permanent ? 301 : 302,
+  }
+})
 
 export default mappedUrls
