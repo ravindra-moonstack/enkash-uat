@@ -19,6 +19,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "https://www.enkash.com"),
   title: "Enkash",
   description:
     "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",

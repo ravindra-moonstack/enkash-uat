@@ -5,8 +5,14 @@ import styles from "./header.module.scss"
 // components
 import navBarTopTtitle from "./data/nav-bar"
 import { enkashBlueLogo, arrowDownBlack, arrowDownWhite } from "."
-import PaymentModal from "./modal/payment-modal"
-import CommonModal from "./modal/common-modal"
+import dynamic from "next/dynamic"
+
+const PaymentModal = dynamic(() => import("./modal/payment-modal"), {
+  ssr: false,
+})
+const CommonModal = dynamic(() => import("./modal/common-modal"), {
+  ssr: false,
+})
 
 // helpers
 import { useHeaderHover } from "@/src/hooks/useHeaderHover"
@@ -58,12 +64,8 @@ const WebHeader = ({}: props) => {
         aria-label="Primary"
       >
         <div className="container">
-          <nav
-            className="position-relative mb-0"
-            aria-label="Main navigation"
-          >
+          <nav className="position-relative mb-0" aria-label="Main navigation">
             <div className="row align-items-center">
-
               <div className="col-12 col-md-auto d-flex align-items-center">
                 <Link
                   href="/"
@@ -77,7 +79,6 @@ const WebHeader = ({}: props) => {
                     priority={true}
                   />
                 </Link>
-
 
                 <ul
                   role="menubar"
@@ -95,14 +96,12 @@ const WebHeader = ({}: props) => {
                       }}
                       id={`menuitem_${index}${styles.box}`}
                       role="none"
-
                       onBlur={(e) => {
                         if (!e.currentTarget.contains(e.relatedTarget)) {
                           closeAllModals()
                         }
                       }}
                     >
-
                       <button
                         className={styles.link}
                         type="button"
@@ -127,7 +126,6 @@ const WebHeader = ({}: props) => {
                           width={16}
                         />
                       </button>
-
 
                       {hoveredIndex === index && modalLeft !== null && (
                         <div
@@ -176,7 +174,6 @@ const WebHeader = ({}: props) => {
                   ))}
                 </ul>
               </div>
-
 
               <div className="col-12 col-md d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
                 <Link

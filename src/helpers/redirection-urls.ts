@@ -7,7 +7,11 @@ const url: {
     source: "/resource",
     destination: "/resources",
   },
-  { source: "/bolt/category/404", destination: "/products/vouchers/" },
+  {
+    source: "/bolt/category/404",
+    destination: "/products/vouchers/",
+    permanent: true,
+  },
   { source: "/bolt/category/apparels", destination: "/apparels-vouchers/" },
   { source: "/bolt/category/e-commerce", destination: "/e-commerce-vouchers/" },
   {
@@ -46,17 +50,34 @@ const url: {
     destination: "/diy-card-module",
   },
   { source: "/corporate-cards/fuel-cards", destination: "/fuel-card" },
-  { source: "/corporate-cards/meal-cards", destination: "/meal-card" },
-  { source: "/corporate-cards/purchase-cards", destination: "/purchase-card" },
-  { source: "/corporate-cards/saas-cards", destination: "/saas-card" },
+  {
+    source: "/corporate-cards/meal-cards",
+    destination: "/meal-card",
+    permanent: true,
+  },
+  {
+    source: "/corporate-cards/purchase-cards",
+    destination: "/purchase-card",
+    permanent: true,
+  },
+  {
+    source: "/corporate-cards/saas-cards",
+    destination: "/saas-card",
+    permanent: true,
+  },
   {
     source: "/corporate-cards/travel-and-expense-cards",
     destination: "/travel-and-expense-card",
   },
-  { source: "/corporate-cards/virtual-cards", destination: "/virtual-card" },
+  {
+    source: "/corporate-cards/virtual-cards",
+    destination: "/virtual-card",
+    permanent: true,
+  },
   {
     source: "/loyalty-lounge/brand-voucher",
     destination: "/products/vouchers",
+    permanent: true,
   },
   {
     source: "/loyalty-lounge/channel-incentive",
@@ -65,35 +86,75 @@ const url: {
   {
     source: "/loyalty-lounge/employee-rewards",
     destination: "/employee-rewards",
+    permanent: true,
   },
-  { source: "/loyalty-lounge/gift-cards", destination: "/gift-cards" },
+  {
+    source: "/loyalty-lounge/gift-cards",
+    destination: "/gift-cards",
+    permanent: true,
+  },
   { source: "/loyalty-lounge/offers", destination: "/offers" },
-  { source: "/ofex/budget-and-advances", destination: "/budget-and-advances" },
+  {
+    source: "/ofex/budget-and-advances",
+    destination: "/budget-and-advances",
+    permanent: true,
+  },
   {
     source: "/ofex/hierarchy-and-controls",
     destination: "/hierarchy-and-controls",
   },
   { source: "/ofex/insights", destination: "/expense-analytics-and-insights" },
-  { source: "/ofex/policy-and-approval-flows", destination: "/approval-flows" },
-  { source: "/ofex/reimbursement", destination: "/reimbursements" },
+  {
+    source: "/ofex/policy-and-approval-flows",
+    destination: "/approval-flows",
+    permanent: true,
+  },
+  {
+    source: "/ofex/reimbursement",
+    destination: "/reimbursements",
+    permanent: true,
+  },
   { source: "/ofex/scan-and-drop-receipts", destination: "/receipts" },
-  { source: "/olympus/payables", destination: "/products/make-payments" },
+  {
+    source: "/olympus/payables",
+    destination: "/products/make-payments",
+    permanent: true,
+  },
   {
     source: "/olympus/payables/bill-payment",
     destination: "/utility-bill-payment",
+    permanent: true,
   },
-  { source: "/olympus/payables/bulk-payout", destination: "/bulk-pay" },
-  { source: "/olympus/payables/gst-payments", destination: "/gst-payment" },
+  {
+    source: "/olympus/payables/bulk-payout",
+    destination: "/bulk-pay",
+    permanent: true,
+  },
+  {
+    source: "/olympus/payables/gst-payments",
+    destination: "/gst-payment",
+    permanent: true,
+  },
   {
     source: "/olympus/payables/invoice-management",
     destination: "/invoice-management",
+    permanent: true,
   },
   {
     source: "/olympus/payables/payable-analytics",
     destination: "/payable-analytics",
+    permanent: true,
   },
-  { source: "/olympus/payables/payroll-processing", destination: "/payroll" },
-  { source: "/olympus/payables/rental-payment", destination: "/rent-payment" },
+  {
+    source: "/olympus/payables/payroll-processing",
+    destination: "/payroll",
+    permanent: true,
+  },
+  {
+    source: "/olympus/payables/rental-payment",
+    destination: "/rent-payment",
+    permanent: true,
+  },
   {
     source: "/olympus/payables/seamless-banking",
     destination: "/connected-banking",
@@ -101,18 +162,31 @@ const url: {
   {
     source: "/olympus/payables/vendor-management",
     destination: "/vendor-management",
+    permanent: true,
   },
   {
     source: "/olympus/payables/vendor-payment",
     destination: "/vendor-payment",
   },
-  { source: "/olympus/receivables", destination: "/products/collect-payments" },
-  { source: "/olympus/receivables/auto-collect", destination: "/auto-collect" },
+  {
+    source: "/olympus/receivables",
+    destination: "/products/collect-payments",
+    permanent: true,
+  },
+  {
+    source: "/olympus/receivables/auto-collect",
+    destination: "/auto-collect",
+    permanent: true,
+  },
   {
     source: "/olympus/receivables/automated-reconciliation",
     destination: "/auto-reconciliation",
   },
-  { source: "/olympus/receivables/bulk-collect", destination: "/bulk-collect" },
+  {
+    source: "/olympus/receivables/bulk-collect",
+    destination: "/bulk-collect",
+    permanent: true,
+  },
   {
     source: "/olympus/receivables/collection-analytics",
     destination: "/collection-analytics",
@@ -129,6 +203,7 @@ const url: {
   {
     source: "/olympus/receivables/invoices",
     destination: "/digital-invoicing",
+    permanent: true,
   },
   {
     source: "/olympus/receivables/payment-button",
@@ -137,35 +212,60 @@ const url: {
   {
     source: "/olympus/receivables/payment-gateway",
     destination: "/payment-gateway",
+    permanent: true,
   },
   {
     source: "/olympus/receivables/payment-links",
     destination: "/payment-links",
+    permanent: true,
   },
-  { source: "/olympus/receivables/qr-codes", destination: "/qr-code" },
+  {
+    source: "/olympus/receivables/qr-codes",
+    destination: "/qr-code",
+    permanent: true,
+  },
   {
     source: "/olympus/receivables/reminder-engine",
     destination: "/collection-reminder",
+    permanent: true,
   },
   {
     source: "/olympus/receivables/subscription-management",
     destination: "/subscriptions",
+    permanent: true,
   },
-  { source: "/olympus/receivables/upi-payments", destination: "/upi-payments" },
+  {
+    source: "/olympus/receivables/upi-payments",
+    destination: "/upi-payments",
+    permanent: true,
+  },
   { source: "/olympus/receivables/virtual-accounts", destination: "/" },
-  { source: "/policies/payments", destination: "/policies" },
-  { source: "/policies/platform", destination: "/policies" },
-  { source: "/policies/prepaid-program", destination: "/policies" },
+  { source: "/policies/payments", destination: "/policies", permanent: true },
+  { source: "/policies/platform", destination: "/policies", permanent: true },
+  {
+    source: "/policies/prepaid-program",
+    destination: "/policies",
+    permanent: true,
+  },
 
   // ✅ Solutions redirects
   { source: "/solutions/apis-modules", destination: "/" },
-  { source: "/solutions/cashflow-analytics", destination: "/" },
+  {
+    source: "/solutions/cashflow-analytics",
+    destination: "/",
+    permanent: true,
+  },
   { source: "/solutions/cfo-insights", destination: "/" },
   { source: "/solutions/cfo-suite", destination: "/" },
-  { source: "/solutions/customized-reporting", destination: "/" },
+  {
+    source: "/solutions/customized-reporting",
+    destination: "/",
+    permanent: true,
+  },
   {
     source: "/solutions/instant-card-management",
     destination: "/instant-card-management",
+    permanent: true,
   },
   {
     source: "/solutions/integrations",
@@ -174,6 +274,7 @@ const url: {
   {
     source: "/solutions/workflow-management",
     destination: "/workflow-management",
+    permanent: true,
   },
 
   { source: "/voucher/zee5", destination: "/vouchers/zee5" },
@@ -181,10 +282,12 @@ const url: {
   {
     source: "/vouchers/category/e-commerce",
     destination: "/e-commerce-vouchers",
+    permanent: true,
   },
   {
     source: "/vouchers/category/food-and-beverages",
     destination: "/food-and-beverages-vouchers",
+    permanent: true,
   },
   {
     source: "/vouchers/category/health-and-wellness",
@@ -206,6 +309,7 @@ const url: {
   {
     source: "/vouchers/e-commerce/flipkart-supercoins-e-gift-card",
     destination: "/vouchers/flipkart-super-coins",
+    permanent: true,
   },
 
   {
@@ -221,14 +325,17 @@ const url: {
   {
     source: "/vouchers/food-and-beverages/zomato-e-gift-card",
     destination: "/vouchers/zomato",
+    permanent: true,
   },
   {
     source: "/vouchers/food-and-beverages/swiggy-e-gift-card",
     destination: "/vouchers/swiggy",
+    permanent: true,
   },
   {
     source: "/vouchers/food-and-beverages/dominos-gift-card",
     destination: "/vouchers/dominos",
+    permanent: true,
   },
   {
     source: "/vouchers/food-and-beverages/mcdonalds-gift-card",
@@ -309,7 +416,11 @@ const url: {
     destination: "/resources/wp-admin/:path*",
   },
 
-  { source: "/corporate-cards", destination: "/products/corporate-cards" },
+  {
+    source: "/corporate-cards",
+    destination: "/products/corporate-cards",
+    permanent: true,
+  },
   { source: "/bill-payments", destination: "/utility-bill-payment" },
   { source: "/cardx", destination: "/products/corporate-cards" },
   { source: "/budget-management", destination: "/budget-and-advances" },
@@ -447,10 +558,12 @@ const url: {
   {
     source: "/resources/video-category/Corporate Card",
     destination: "/resources/videos",
+    permanent: true,
   },
   {
     source: "/resources/video-category/Marketing",
     destination: "/resources/videos",
+    permanent: true,
   },
   {
     source:
@@ -520,10 +633,12 @@ const url: {
   {
     source: "/ofex",
     destination: "/products/expense-management",
+    permanent: true,
   },
   {
     source: "/partnerships",
     destination: "/affiliate-programs",
+    permanent: true,
   },
   {
     source: "/payment-link",
@@ -532,6 +647,7 @@ const url: {
   {
     source: "/qr-c",
     destination: "/qr-code",
+    permanent: true,
   },
   {
     source: "/rewards",
@@ -548,6 +664,7 @@ const url: {
   {
     source: "/virtual-card",
     destination: "/products/corporate-cards",
+    permanent: true,
   },
   {
     source: "/vouchers",
