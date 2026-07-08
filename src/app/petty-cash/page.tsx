@@ -20,7 +20,12 @@ import PolicyCard from "@/src/components/policy-card"
 import HeroSection from "@/src/components/sections/hero-section"
 
 //helpers
-import { acceleratedGrowthImg, analytics, paymentSummary, zeroLeakage } from "./img"
+import {
+  acceleratedGrowthImg,
+  analytics,
+  paymentSummary,
+  zeroLeakage,
+} from "./img"
 
 //utils
 import { getSalesUrl } from "@/src/utils/getSalesUrl"
@@ -31,7 +36,7 @@ import UseCaseSection from "@/src/components/sections/use-case-section"
 
 export const metadata: Metadata = generateMetaData({
   title:
-    "Digital Petty Cash Management – Petty Cash Application for Business Spending.",
+    "Petty Cash Management: Manage Petty Cash with UPI",
   description:
     "Manage petty cash with a digital petty cash management system. Track expenses in real time, use petty cash cards, and simplify petty cash expense management.",
   alternates: {
@@ -39,7 +44,6 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 const salesUrl = getSalesUrl("/petty-cash")
-
 
 const PettyCash = (): React.JSX.Element => {
   //
@@ -110,10 +114,15 @@ const PettyCash = (): React.JSX.Element => {
       />
       <VideoPlayer
         videoSrc="https://youtu.be/pjeEde3ruiU?si=ZxvNS0h4z1Mxcsga"
-        heading={[{ title: "Watch how EnKash brings everything onto one platform — instantly.", color: "color-black" }]}
+        heading={[
+          {
+            title:
+              "Watch how EnKash brings everything onto one platform — instantly.",
+            color: "color-black",
+          },
+        ]}
         ctaLabel={"Get Started"}
         ctaHref={salesUrl}
-
       />
 
       <div className={` ${styles.features_section}`}>
@@ -250,7 +259,8 @@ const PettyCash = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Join multi-location enterprises managing expenses with complete visibility and automated control.",
+                    title:
+                      "Join multi-location enterprises managing expenses with complete visibility and automated control.",
                     color: "color-grey-200",
                   },
                 ]}

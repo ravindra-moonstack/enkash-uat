@@ -51,13 +51,13 @@ export async function generateMetadata({
   const imageUrl = `${process.env.URL}/images/voucher-bg/${voucher.urlName}.webp`
 
   return {
-    title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
+    title: voucher.metaTitle || `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
     description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
     alternates: {
       canonical: `${process.env.URL}/vouchers/${voucher.urlName}`,
     },
     openGraph: {
-      title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
+      title: voucher.metaTitle || `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
       description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
       images: [
         {
@@ -70,7 +70,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
+      title: voucher.metaTitle || `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
       description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
       images: [imageUrl],
     },

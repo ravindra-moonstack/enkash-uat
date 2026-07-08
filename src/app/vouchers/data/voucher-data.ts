@@ -1,4 +1,5 @@
 export type TVoucher = {
+  metaTitle?: string
   name: string
   urlName: string
   brandName: string
@@ -213,6 +214,7 @@ const VoucherData: Record<string, TVoucher> = {
       "Your loved ones will be delighted to get this exclusive FNP E-Gift Card on their birthdays.",
   },
   "flipkart-super-coins": {
+    metaTitle: "Flipkart Gift Card Vouchers: How to Buy and Redeem",
     name: "Flipkart SuperCoins E-Gift Card",
     urlName: "flipkart-super-coins",
     brandName: "Flipkart",
@@ -957,6 +959,7 @@ const VoucherData: Record<string, TVoucher> = {
       "The recipient of the McDonald’s gift card will thank you for making the festive season better for them.",
   },
   swiggy: {
+    metaTitle: "Swiggy Gift Card Vouchers: How to Buy and Redeem",
     name: "Swiggy E-Gift Card",
     urlName: "swiggy",
     brandName: "Swiggy",
@@ -1081,6 +1084,7 @@ const VoucherData: Record<string, TVoucher> = {
       "The recipient of the KFC gift card will thank you for making the festive season better for them.",
   },
   zomato: {
+    metaTitle: "Zomato Gift Card Vouchers: How to Buy and reddeem",
     name: "Zomato E-Gift Card",
     urlName: "zomato",
     brandName: "Zomato",
@@ -1152,6 +1156,7 @@ const VoucherData: Record<string, TVoucher> = {
     blogCards: [10043, 10579, 13986],
   },
   dominos: {
+    metaTitle: "Domino's Gift Voucher: How to Buy and Redeem ",
     name: "Domino’s Gift Card",
     urlName: "dominos",
     brandName: "Domino's",
