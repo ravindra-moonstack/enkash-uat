@@ -6,7 +6,7 @@ import "./globals.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import { Inter } from "next/font/google"
-import { GoogleTagManager } from "@next/third-parties/google"
+import LazyAnalytics from "@/src/components/LazyAnalytics"
 import LayoutClientWrapper from "@/src/components/layout-wrapper"
 import { WebVitals } from "@/src/components/web-vitals"
 import { ToastProvider } from "@/src/context/ToastContext"
@@ -19,7 +19,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "https://www.enkash.com"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_URL || "https://www.enkash.com"
+  ),
   title: "Enkash",
   description:
     "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
@@ -54,7 +56,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.variable}>
-        <GoogleTagManager gtmId="GTM-TR7NDT8C" />
+        <LazyAnalytics gtmId="GTM-TR7NDT8C" />
         <DeferredScripts />
         <WebVitals />
         <ToastProvider>
