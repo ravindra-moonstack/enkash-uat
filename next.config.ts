@@ -17,7 +17,12 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es", "react-bootstrap"],
+    optimizePackageImports: [
+      "@gsap/react",
+      "react-icons",
+      "lodash-es",
+      "react-bootstrap",
+    ],
   },
   outputFileTracingExcludes: {
     "*": ["./public/uploads/**", "./uploads/**"],
