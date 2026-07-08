@@ -48,25 +48,23 @@ const FooterV2 = (): React.JSX.Element => {
               >
                 <div>
                   <hr className={`${styles.custom_hr}`} />
-                  <div>
-                    <p className={styles.logo_container_info}>
-                      EnKash is India’s leading spend management platform,
-                      simplifying payments, expenses, cards, and rewards for
-                      businesses. Backed by $23M in funding and trusted by
-                      5,000+ businesses, it holds key RBI licenses and partners
-                      with Visa, Mastercard, and NPCI. Its powerful financial
-                      suite empowers CFOs with automation, compliance, and
-                      real-time insights across the payment ecosystem.
-                    </p>
-                    <p className={styles.logo_container_info}>
-                      EnKash Payment Gateway, is a licensed online payment
-                      aggregator authorised by the RBI
-                    </p>
-                    <p className={styles.logo_container_info}>
-                      EnKash is a commercial trade name owned by the legal
-                      entity, Nehat Tech Solutions Pvt. Ltd.
-                    </p>
-                  </div>
+                  <p className={styles.logo_container_info}>
+                    EnKash is India’s leading spend management platform,
+                    simplifying payments, expenses, cards, and rewards for
+                    businesses. Backed by $23M in funding and trusted by
+                    5,000+ businesses, it holds key RBI licenses and partners
+                    with Visa, Mastercard, and NPCI. Its powerful financial
+                    suite empowers CFOs with automation, compliance, and
+                    real-time insights across the payment ecosystem.
+                  </p>
+                  <p className={styles.logo_container_info}>
+                    EnKash Payment Gateway, is a licensed online payment
+                    aggregator authorised by the RBI
+                  </p>
+                  <p className={styles.logo_container_info}>
+                    EnKash is a commercial trade name owned by the legal
+                    entity, Nehat Tech Solutions Pvt. Ltd.
+                  </p>
                 </div>
 
                 {/* col-1 resources */}

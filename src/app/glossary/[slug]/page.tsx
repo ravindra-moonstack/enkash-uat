@@ -145,7 +145,11 @@ export default async function GlossarySlugPage({ params }: PageProps) {
     let letter = decodeURIComponent(slug)
     if (letter === "letter-with-numbers") letter = "#"
 
-    const terms = await getTerms(letter)
+    const rawTerms = await getTerms(letter)
+    const terms = rawTerms.map((t: any) => ({
+      word: t.word,
+      slug: t.slug,
+    }))
     return <LetterPageClient letter={letter} initialTerms={terms} />
   } else {
     // Render Term Page
