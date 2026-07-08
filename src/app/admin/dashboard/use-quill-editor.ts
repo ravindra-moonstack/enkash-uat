@@ -465,7 +465,7 @@ export const useQuillEditor = ({
       import("quill").then(async (QuillModule) => {
         const QuillNamespace = QuillModule.default || QuillModule
 
-        window.Quill = QuillNamespace
+        ;(window as any).Quill = QuillNamespace
 
         const showHtmlHandler = function (this: any) {
           // Switch to HTML view
