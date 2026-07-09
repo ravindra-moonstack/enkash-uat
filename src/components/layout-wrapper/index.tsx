@@ -45,11 +45,11 @@ export default function LayoutClientWrapper({
   //   }
   // }, [])
 
-  const canonicalUrl = `https://www.enkash.com${pathname}`
+
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      <link rel="canonical" href={canonicalUrl} />
+
       {!shouldHide && <Header />}
       {!shouldHide && <TalkToSales />}
       <main id="main" className="flex-grow-1">

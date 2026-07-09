@@ -73,7 +73,6 @@ const AuthorPage = async ({
   const { q: searchQuery } = await searchParams
   const decodedSlug = decodeURIComponent(slug)
   const data = await getAuthorData(decodedSlug, searchQuery)
-  const navData = await getBlogCategories()
 
   if (!data || !data.authorInfo) {
     return (

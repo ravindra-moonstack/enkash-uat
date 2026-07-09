@@ -10,7 +10,6 @@ import CTASection from "@/src/components/sections/cta-section"
 import SliderComponent from "@/src/components/slider-component"
 import VoucherFaqComponent from "./voucher-faq"
 import VoucherFaqSection from "@/src/components/voucher-faq"
-import NotFound from "../not-found"
 
 // helpers
 import { VOUCHER_DATA, CATEGORY_META, VALID_CATEGORIES } from "./data"
@@ -66,7 +65,7 @@ export default async function MainCategoryPage(props: {
   const isValidCategory = VALID_CATEGORIES.includes(mainCategory)
 
   if (!isValidCategory) {
-    return <NotFound />
+    notFound()
   }
 
   const pageData = VOUCHER_DATA[mainCategory]

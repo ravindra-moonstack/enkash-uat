@@ -66,6 +66,11 @@ const url: {
     permanent: true,
   },
   {
+    source: "/saas-cards",
+    destination: "/saas-card",
+    permanent: true,
+  },
+  {
     source: "/corporate-cards/travel-and-expense-cards",
     destination: "/travel-and-expense-card",
   },
@@ -430,7 +435,7 @@ const url: {
   { source: "/approvals", destination: "/approval-flows" },
   { source: "/bulk-payout", destination: "/bulk-pay" },
   { source: "/invoices", destination: "/digital-invoicing" },
-  { source: "/vendor-payments", destination: "/vendor-payment" },
+  { source: "/vendor-payments", destination: "/vendor-payment", permanent: true },
   { source: "/spend-control", destination: "/hierarchy-and-controls" },
   {
     source: "/expense-management",
@@ -554,6 +559,7 @@ const url: {
   {
     source: "/resources/video-category/Corporate%20Card",
     destination: "/resources/videos",
+    permanent: true,
   },
   {
     source: "/resources/video-category/Corporate Card",

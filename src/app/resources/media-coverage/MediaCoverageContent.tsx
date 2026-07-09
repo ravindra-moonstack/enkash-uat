@@ -51,23 +51,6 @@ const MediaCoverageContent = () => {
 
   return (
     <div className={styles.media_coverage_page}>
-      {/* Breadcrumb / Nav */}
-      <div className="max-w-auto" style={{ paddingTop: "100px" }}>
-        {/* {categoriesData && (
-                    <BlogNav
-                        data={{
-                            ...categoriesData,
-                            breadcrumbs: [
-                                { label: "Resources", href: "/resources" },
-                                { label: "Media Coverage" }
-                            ]
-                        }}
-                        showCategories={false}
-                        showDivider={false}
-                    />
-                )} */}
-      </div>
-
       {/* Banner */}
       <section className={styles.media_banner}>
         <div className="max-w-auto">
@@ -82,6 +65,8 @@ const MediaCoverageContent = () => {
                     color: "color-white f-7",
                   },
                 ]}
+                headingTag="h1"
+                className="heading-h2"
               />
               <CommonButton
                 title="Read More"

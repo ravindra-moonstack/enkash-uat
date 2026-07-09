@@ -17,7 +17,7 @@ import { linkifyText, nameToUrl } from "@/src/utils/stringUtils"
 import VoucherFaqComponent from "@/src/components/voucher-page/voucher-faq"
 import CommanButton from "@/src/components/buttons"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import NotFound from "../../not-found"
+import { notFound } from "next/navigation"
 import BlogSection from "@/src/components/sections/blog-section"
 const SavingsCalculator = dynamic(
   () =>
@@ -145,6 +145,10 @@ const CategoryPage = async ({
 
   const voucherData = await fetchVoucher(voucherName)
 
+  if (!voucherData) {
+    notFound()
+  }
+
   const voucherCategory = voucherData?.category || ""
   const voucherImage = voucherData
     ? `/images/voucher-bg/${voucherData.urlName}.webp`
@@ -176,7 +180,6 @@ const CategoryPage = async ({
 
   return (
     <>
-      {voucherData ? (
         <div className={`color-white ${styles.home_container}`}>
           <div className={`${styles.voucher_detail}`}>
             <div className={`mx-auto ${styles.voucher_detail_container}`}>
@@ -670,9 +673,6 @@ const CategoryPage = async ({
             />
           )}
         </div>
-      ) : (
-        <NotFound />
-      )}
     </>
   )
 }

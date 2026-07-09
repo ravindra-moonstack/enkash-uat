@@ -204,7 +204,7 @@ export const generateMetaData = ({
   ogImage,
   video,
 }: MetadataInput) => {
-  const canonicalUrl = alternates.canonical
+  const canonicalUrl = alternates.canonical.toLowerCase()
   const faqSchema = generateFaqSchema(faqData)
   const videoSchema = video ? generateVideoSchema(video) : null
   const baseImage =
@@ -238,7 +238,7 @@ export const generateMetaData = ({
   return {
     title,
     description,
-    alternates,
+    alternates: { ...alternates, canonical: canonicalUrl },
     openGraph: {
       title,
       description,

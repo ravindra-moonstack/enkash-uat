@@ -17,9 +17,9 @@ const RelatedBlogs = dynamic(
 )
 const NewsletterSection = dynamic(
   () => import("@/src/components/blog-components/NewsletterSection"),
-  { ssr: true }
+  { ssr: false }
 )
-import { notFound, redirect } from "next/navigation"
+import { notFound, permanentRedirect } from "next/navigation"
 
 import {
   getBlogCategories,
@@ -98,7 +98,7 @@ export async function generateMetadata({
   const json = await getPostBySlug(slug, token)
 
   if (json?.redirect) {
-    redirect(`/resources/blog/${json.redirect}`)
+    permanentRedirect(`/resources/blog/${json.redirect}`)
   }
 
   if (json?.error || !json?.posts || json?.posts?.length === 0) {
@@ -155,10 +155,9 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const cookieStore = await cookies()
   const token = cookieStore.get("token")?.value
   const json = await getPostBySlug(slug, token)
-  const navData = await getBlogCategories()
 
   if (json?.redirect) {
-    redirect(`/resources/blog/${json.redirect}`)
+    permanentRedirect(`/resources/blog/${json.redirect}`)
   }
 
   if (json?.error || !json?.posts || json?.posts?.length === 0) {
