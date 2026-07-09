@@ -85,7 +85,7 @@ const Category = async ({
 
   if (!data?.posts || data.posts.length === 0) {
     return (
-      <div className="blog_page">
+      <div className={styles.category_not}>
         <div className="container">
           <p style={{ padding: "100px 0", textAlign: "center" }}>
             No posts found in this category.

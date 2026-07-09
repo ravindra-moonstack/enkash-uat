@@ -370,6 +370,12 @@ export function useAddPost() {
       return
     }
 
+    if (isPublish && categories.length === 0) {
+      showToast("Please select at least one category before publishing.", "error")
+      isSavingRef.current = false
+      return
+    }
+
     // Double check slug duplicate before saving
     setIsCheckingSlug(true)
     try {

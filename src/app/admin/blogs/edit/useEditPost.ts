@@ -339,6 +339,12 @@ export function useEditPost() {
       return
     }
 
+    if (isPublish && categories.length === 0) {
+      showToast("Please select at least one category before publishing.", "error")
+      isSavingRef.current = false
+      return
+    }
+
     if (isPublish) setIsPublishing(true)
     else setIsSavingDraft(true)
 
