@@ -8,16 +8,13 @@ import BlogBanner from "@/src/components/blog-components/BlogBanner"
 import BlogBody from "@/src/components/blog-components/BlogBody"
 
 const AuthorSection = dynamic(
-  () => import("@/src/components/blog-components/AuthorSection"),
-  { ssr: true }
+  () => import("@/src/components/blog-components/AuthorSection")
 )
 const RelatedBlogs = dynamic(
-  () => import("@/src/components/blog-components/RelatedBlogs"),
-  { ssr: true }
+  () => import("@/src/components/blog-components/RelatedBlogs")
 )
 const NewsletterSection = dynamic(
-  () => import("@/src/components/blog-components/NewsletterSection"),
-  { ssr: false }
+  () => import("@/src/components/blog-components/NewsletterSection")
 )
 import { notFound, permanentRedirect } from "next/navigation"
 
