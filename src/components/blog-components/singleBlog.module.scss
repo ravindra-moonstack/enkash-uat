@@ -844,6 +844,9 @@
         z-index: 10;
         border-right: 1px solid #e2e8f0 !important;
         background: #fff;
+        max-width: 250px;
+        white-space: normal;
+        word-break: break-word;
 
         &::after {
           content: "";
@@ -976,7 +979,7 @@
 
       th, td {
         padding: 10px 12px !important;
-        min-width: 120px;
+        min-width: 150px;
       }
 
       td:first-child {

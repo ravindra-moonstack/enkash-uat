@@ -10,7 +10,6 @@ import Image from "next/image"
 import { CommanButton } from "@/src/components"
 import styles from "./glossary-admin.module.scss"
 
-
 interface GlossaryFormViewProps {
   editingItem: any
   handleCancel: () => void
@@ -89,9 +88,14 @@ const GlossaryFormView = ({
   useEffect(() => {
     if (!editingItem || !editingItem.id) return
 
-    // Generate a simplified unique ID for this specific session instance
-    // This ensures even duplicated tabs are treated as separate editors
-    const eId = Math.random().toString(36).substring(2, 10)
+    // Generate or retrieve a unique ID for this specific session instance
+    // This ensures that refreshing the same tab doesn't cause self-locking,
+    // while duplicated/new tabs will still be treated as separate editors.
+    let eId = sessionStorage.getItem("glossary_editor_id")
+    if (!eId) {
+      eId = Math.random().toString(36).substring(2, 10)
+      sessionStorage.setItem("glossary_editor_id", eId)
+    }
     editorIdCurrent.current = eId
 
     const checkActiveEditors = async () => {
@@ -177,10 +181,7 @@ const GlossaryFormView = ({
             role="alert"
             style={{ display: "flex", alignItems: "center", gap: "10px" }}
           >
-            <i
-              className="bi bi-lock-fill"
-              style={{ fontSize: "1.2rem" }}
-            ></i>
+            <i className="bi bi-lock-fill" style={{ fontSize: "1.2rem" }}></i>
             <div>
               <strong>Locked:</strong> Another user is currently editing this
               item. Editing is disabled to prevent overwriting changes.
@@ -326,7 +327,9 @@ const GlossaryFormView = ({
                   }}
                   className={styles.fileInput}
                 />
-                <p className={styles.helperText}>Recommended size: 1200x630px</p>
+                <p className={styles.helperText}>
+                  Recommended size: 1200x630px
+                </p>
               </div>
             </div>
           </div>
@@ -459,8 +462,8 @@ const GlossaryFormView = ({
               defaultValue={
                 pendingImage
                   ? pendingImage.name
-                    .replace(/\.[^/.]+$/, "")
-                    .replace(/[-_]/g, " ")
+                      .replace(/\.[^/.]+$/, "")
+                      .replace(/[-_]/g, " ")
                   : ""
               }
               id="alt-text-input"

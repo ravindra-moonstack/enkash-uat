@@ -517,6 +517,50 @@ export const useQuillEditor = ({
         Size.whitelist = outputSizeList
         QuillNamespace.register(Size, true)
 
+        // Custom TableEmbedBlot to preserve raw HTML tables
+        const BlockEmbed = QuillNamespace.import('blots/block/embed')
+        class TableEmbedBlot extends BlockEmbed {
+          static create(value: any) {
+            const node = super.create() as HTMLElement
+            
+            if (value instanceof HTMLElement) {
+              node.innerHTML = value.innerHTML
+              Array.from(value.attributes).forEach(attr => {
+                node.setAttribute(attr.name, attr.value)
+              })
+            } else if (typeof value === 'object' && value.html) {
+              node.innerHTML = value.html
+              if (value.attributes) {
+                Object.keys(value.attributes).forEach(key => {
+                  node.setAttribute(key, value.attributes[key])
+                })
+              }
+            } else if (typeof value === 'string') {
+              node.innerHTML = value
+            }
+            
+            // Make uneditable in Quill visual mode so it's not destroyed by typing
+            node.setAttribute('contenteditable', 'false')
+            
+            return node
+          }
+
+          static value(node: HTMLElement) {
+            return {
+              html: node.innerHTML,
+              attributes: Array.from(node.attributes).reduce((acc: any, attr) => {
+                if (attr.name !== 'contenteditable') {
+                  acc[attr.name] = attr.value
+                }
+                return acc
+              }, {})
+            }
+          }
+        }
+        TableEmbedBlot.blotName = 'tableEmbed'
+        TableEmbedBlot.tagName = 'TABLE'
+        QuillNamespace.register(TableEmbedBlot, true)
+
         const editorElement = editorRef.current
         if (!editorElement) return
 
