@@ -1178,6 +1178,17 @@
     user-select: none;
   }
 
+  .blogContent {
+    color: #4b4b4b;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    word-wrap: break-word;
+
+    iframe, video, object, embed {
+      max-width: 100%;
+    }
+  }
+
   .relatedBlogTitle {
     font-family: var(--font-inter), sans-serif !important;
     font-size: 18px !important;
