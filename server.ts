@@ -19,6 +19,10 @@ app.prepare().then(() => {
   server.disable("x-powered-by")
 
   server.use("/uploads", express.static(UPLOADS_DIR))
+  
+  // Health check endpoint for Playwright webServer
+  server.get("/health", (req, res) => res.status(200).send("OK"))
+
   // Next.js handles everything else
   server.use((req, res) => handle(req, res))
 

@@ -1,0 +1,121 @@
+{
+  "tests/jest/sum.test.ts": [
+    "sum function",
+    "adds 1 + 2 to equal 3"
+  ],
+  "tests/jest/utils.test.ts": [
+    "getSalesUrl",
+    "should return sales URL with last slug",
+    "getLoginUrl",
+    "should return login URL with last slug",
+    "getSupportUrl",
+    "should return support URL with last slug"
+  ],
+  "tests/playwright/about-us.spec.ts": [
+    "Website loads properly",
+    "has main heading",
+    "View Open Roles button navigates to Careers page"
+  ],
+  "tests/playwright/careers.spec.ts": [
+    "Website loads properly",
+    "has main heading",
+    "View Open Roles button scrolls to opportunity section"
+  ],
+  "tests/playwright/collect-payments.spec.ts": [
+    "Website loads properly",
+    "has main heading",
+    "Talk to Us button navigates to Sales page with source param",
+    "Explore More button navigates to Auto Collect page"
+  ],
+  "tests/playwright/contact-form.spec.ts": [
+    "fills and submits Contact Us form"
+  ],
+  "tests/playwright/corporate-card.spec.ts": [
+    "Website loads properly",
+    "has main heading",
+    "Talk to Us button navigates to Sales page with source param",
+    "Explore More button navigates to Prepaid Card page",
+    "Explore Our Expense Management Suite button navigates to Expense Management Suite page"
+  ],
+  "tests/playwright/demo-todo-app.spec.ts": [
+    "New Todo",
+    "should allow me to add todo items",
+    "should clear text input field when an item is added",
+    "should append new items to the bottom of the list",
+    "Mark all as completed",
+    "should allow me to mark all items as completed",
+    "should allow me to clear the complete state of all items",
+    "complete all checkbox should update state when items are completed / cleared",
+    "Item",
+    "should allow me to mark items as complete",
+    "should allow me to un-mark items as complete",
+    "should allow me to edit an item",
+    "Editing",
+    "should hide other controls when editing",
+    "should save edits on blur",
+    "should trim entered text",
+    "should remove the item if an empty text string was entered",
+    "should cancel edits on escape",
+    "Counter",
+    "should display the current number of todo items",
+    "Clear completed button",
+    "should display the correct text",
+    "should remove completed items when clicked",
+    "should be hidden when there are no items that are completed",
+    "Persistence",
+    "should persist its data",
+    "Routing",
+    "should allow me to display active items",
+    "should respect the back button",
+    "should allow me to display completed items",
+    "should allow me to display all items",
+    "should highlight the currently applied filter"
+  ],
+  "tests/playwright/example.spec.ts": [
+    "has title",
+    "get started link"
+  ],
+  "tests/playwright/fuel-card.spec.ts": [
+    "Website loads properly",
+    "has main heading",
+    "Get Started button navigates to Sales page with source param"
+  ],
+  "tests/playwright/home.spec.ts": [
+    "Website loads properly",
+    "has main heading",
+    "Connect with Us button navigates or opens contact form"
+  ],
+  "tests/playwright/make-payments.spec.ts": [
+    "Website loads properly",
+    "has main heading",
+    "Talk to Us button navigates to Sales page with source param",
+    "Explore Vendor Payments button navigates to Vendor Payments page"
+  ],
+  "tests/playwright/partnership-form.spec.ts": [
+    "fills and submits Bank and Affiliate Partnerships form"
+  ],
+  "tests/playwright/payment-gateway-partners.spec.ts": [
+    "fills and submits Payment Gateway Partnership form"
+  ],
+  "tests/playwright/sales-form.spec.ts": [
+    "fills and submits Sales form"
+  ],
+  "tests/playwright/support-form.spec.ts": [
+    "submits the support form using field name selectors"
+  ],
+  "tests/playwright/virtual-card.spec.ts": [
+    "Website loads properly",
+    "has main heading",
+    "Get Started button navigates to Sales page with source param"
+  ],
+  "tests/playwright/vouchers.spec.ts": [
+    "Website loads properly",
+    "has main heading",
+    "Talk to Us button navigates to Sales page with source param",
+    "Explore More button navigates to Prepaid Card page",
+    "Explore Our Expense Management Suite button navigates to Expense Management Suite page"
+  ],
+  "tests/support-form.spec.ts": [
+    "test"
+  ]
+}

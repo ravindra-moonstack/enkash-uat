@@ -1,0 +1,44 @@
+{
+  "tests/jest/blog/api/getPostBySlug.test.ts": [
+    "getPostBySlug API",
+    "should return 404 if post is not found and no slug history exists",
+    "should redirect if slug history is found",
+    "should return a published post and fetch related posts by tag",
+    "should apply admin status condition if token cookie is present"
+  ],
+  "tests/playwright/blog/a11y.spec.ts": [
+    "Accessibility Tests",
+    "Blog Listing Page should not have any automatically detectable accessibility issues",
+    "Single Blog Post should not have any automatically detectable accessibility issues"
+  ],
+  "tests/playwright/blog/error-handling.spec.ts": [
+    "Error Handling",
+    "Should show 404 for non-existent blog post",
+    "Should handle missing category query gracefully",
+    "Should handle out of bounds pagination"
+  ],
+  "tests/playwright/blog/navigation.spec.ts": [
+    "Blog Navigation & Listing",
+    "should display the blog listing page correctly",
+    "should allow searching for blogs",
+    "should navigate to a single post when clicking a blog card",
+    "should filter blogs by category",
+    "should have functional pagination"
+  ],
+  "tests/playwright/blog/performance-images.spec.ts": [
+    "Performance & Image Optimization",
+    "Blog listing images should be optimized and lazy loaded",
+    "Single post images should be optimized"
+  ],
+  "tests/playwright/blog/post-view.spec.ts": [
+    "Single Blog Post View",
+    "should render post title and content",
+    "should render related blogs section",
+    "should render breadcrumbs"
+  ],
+  "tests/playwright/blog/seo-schema.spec.ts": [
+    "SEO and Schema Validation",
+    "Blog Listing Page SEO",
+    "Single Post SEO and JSON-LD Schema"
+  ]
+}

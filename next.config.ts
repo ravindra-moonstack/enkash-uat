@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es"],
+    optimizePackageImports: ["@gsap/react", "react-icons", "lodash-es", "react-bootstrap"],
   },
   outputFileTracingExcludes: {
     "*": ["./public/uploads/**", "./uploads/**"],
