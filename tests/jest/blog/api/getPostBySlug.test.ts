@@ -1,3 +1,6 @@
+/**
+ * @jest-environment node
+ */
 import { GET } from "@/src/app/api/resources/blogs/getPostBySlug/route"
 import pool from "@/src/lib/dbConnect"
 import { cookies } from "next/headers"

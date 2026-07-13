@@ -205,8 +205,11 @@ const config: Config = {
   // watchman: true,
 
   // setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/$1",
+  },
   collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!src/**/*.d.ts"],
-  testPathIgnorePatterns: ["/node_modules/", "/tests/playwright/"],
+  testPathIgnorePatterns: ["/node_modules/", "/tests/playwright/", "\\.spec\\.ts$"],
   verbose: true,
 }
 
