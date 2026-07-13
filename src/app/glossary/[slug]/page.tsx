@@ -4,7 +4,7 @@ import { stripHtml } from "@/src/utils/format"
 import { getApiBaseUrl } from "@/src/utils/api-helpers"
 import React from "react"
 import { Container } from "react-bootstrap"
-import { notFound } from "next/navigation"
+import { notFound, permanentRedirect } from "next/navigation"
 import { FaLinkedinIn, FaFacebookF, FaXTwitter } from "react-icons/fa6"
 import Image from "next/image"
 import GlossaryBgImage from "../../../../public/images/glossaryBgImage.webp"
@@ -89,20 +89,21 @@ function isLetter(slug: string): boolean {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
+  const lowercaseSlug = slug.toLowerCase()
 
-  if (isLetter(slug)) {
-    let letter = decodeURIComponent(slug).toUpperCase()
+  if (isLetter(lowercaseSlug)) {
+    let letter = decodeURIComponent(lowercaseSlug).toUpperCase()
     if (letter === "LETTER-WITH-NUMBERS") letter = "#"
 
     return {
       title: `FinTech Glossary - ${letter} Terms | Financial Technology Dictionary`,
       description: `Browse all financial technology terms starting with ${letter}. Comprehensive definitions and explanations.`,
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_URL}/glossary/${slug}`,
+        canonical: `${process.env.NEXT_PUBLIC_URL}/glossary/${lowercaseSlug}`,
       },
     }
   } else {
-    const term = await getTerm(slug)
+    const term = await getTerm(lowercaseSlug)
     if (!term) {
       return {
         title: "Term Not Found",
@@ -115,13 +116,13 @@ export async function generateMetadata({ params }: PageProps) {
       description:
         term.meta_description || stripHtml(term.content).substring(0, 160),
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_URL}/glossary/${slug}`,
+        canonical: `${process.env.NEXT_PUBLIC_URL}/glossary/${lowercaseSlug}`,
       },
       openGraph: {
         title: term.meta_title || `${term.word} | FinTech Glossary`,
         description:
           term.meta_description || stripHtml(term.content).substring(0, 160),
-        url: `${process.env.NEXT_PUBLIC_URL}/glossary/${slug}`,
+        url: `${process.env.NEXT_PUBLIC_URL}/glossary/${lowercaseSlug}`,
         type: "website",
         images: term.feature_image ? [term.feature_image] : [],
         imageAlt: term.feature_image_alt || "",
@@ -139,10 +140,16 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function GlossarySlugPage({ params }: PageProps) {
   const { slug } = await params
+  const lowercaseSlug = slug.toLowerCase()
 
-  if (isLetter(slug)) {
+  // Redirect to lowercase if URL contains uppercase
+  if (slug !== lowercaseSlug) {
+    permanentRedirect(`/glossary/${lowercaseSlug}`)
+  }
+
+  if (isLetter(lowercaseSlug)) {
     // Render Letter Page
-    let letter = decodeURIComponent(slug)
+    let letter = decodeURIComponent(lowercaseSlug)
     if (letter === "letter-with-numbers") letter = "#"
 
     const rawTerms = await getTerms(letter)
@@ -153,7 +160,7 @@ export default async function GlossarySlugPage({ params }: PageProps) {
     return <LetterPageClient letter={letter} initialTerms={terms} />
   } else {
     // Render Term Page
-    const term = await getTerm(slug)
+    const term = await getTerm(lowercaseSlug)
 
     if (!term) {
       notFound()
@@ -166,7 +173,7 @@ export default async function GlossarySlugPage({ params }: PageProps) {
       letter = "#"
     }
 
-    const url = `${process.env.NEXT_PUBLIC_URL}/glossary/${slug}`
+    const url = `${process.env.NEXT_PUBLIC_URL}/glossary/${lowercaseSlug}`
     const encodedUrl = encodeURIComponent(url)
     const encodedTitle = encodeURIComponent(term.word)
 
@@ -200,7 +207,7 @@ export default async function GlossarySlugPage({ params }: PageProps) {
                     name: letter.toUpperCase(),
                     url: `/glossary/${letter === "#" ? "letter-with-numbers" : letter.toLowerCase()}`,
                   },
-                  { name: term.word, url: `/glossary/${slug}` },
+                  { name: term.word, url: `/glossary/${lowercaseSlug}` },
                 ]}
               />
             </div>
