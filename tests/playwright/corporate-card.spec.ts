@@ -10,7 +10,7 @@ test("has main heading", async ({ page }) => {
   await page.goto("/products/corporate-cards")
 
   const heading = page.getByRole("heading", {
-    name: /The Only Corporate Cards You’ll Ever Need./i,
+    name: /Corporate cards that move at the speed of your business./i,
   })
   await expect(heading).toBeVisible()
 })
