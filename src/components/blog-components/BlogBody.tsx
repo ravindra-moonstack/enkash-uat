@@ -4,7 +4,7 @@ import styles from "./singleBlog.module.scss"
 import TableOfContents from "./TableOfContents"
 import BlogContent from "./BlogContent"
 import SummarizeWithAI from "./SummarizeWithAI"
-import { addPTags, getImageUrl } from "@/src/utils/common"
+import { getImageUrl } from "@/src/utils/common"
 import Image from "next/image"
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
@@ -51,10 +51,14 @@ const BlogBody = ({
   bodyData,
   slug,
   title,
+  processedHtml,
+  headings,
 }: {
   bodyData: any
   slug: string
   title: string
+  processedHtml: string
+  headings: any[]
 }) => {
   useEffect(() => {
     document.body.classList.add("blog-body-active")
@@ -62,75 +66,6 @@ const BlogBody = ({
       document.body.classList.remove("blog-body-active")
     }
   }, [])
-
-  const { headings, processedHtml } = useMemo(() => {
-    if (!bodyData?.content) {
-      return { headings: [], processedHtml: "" }
-    }
-
-    const htmlWithPTags = addPTags(bodyData.content)
-    const headings: { id: string; text: string; tagName: string }[] = []
-    const usedIds = new Set<string>()
-
-    // Regex to match h2/h3 tags
-    const headingRegex = /<(h2|h3)([^>]*)>([\s\S]*?)<\/\1>/gi
-
-    const processedHtml = htmlWithPTags.replace(
-      headingRegex,
-      (fullMatch, tag, attrs, innerHtml) => {
-        const text = innerHtml.replace(/<[^>]*>/g, "").trim()
-        const baseId = text
-          .replace(/\s+/g, "-")
-          .toLowerCase()
-          .replace(/[^\w-]/g, "")
-
-        let id = baseId || "heading"
-        let counter = 1
-        while (usedIds.has(id)) {
-          id = `${baseId}-${counter}`
-          counter++
-        }
-        usedIds.add(id)
-
-        headings.push({
-          id,
-          text,
-          tagName: tag.toLowerCase(),
-        })
-
-        const cleanAttrs = attrs
-          .replace(/\bid\s*=\s*['"][^'"]*['"]/gi, "")
-          .trim()
-        const space = cleanAttrs ? " " : ""
-        return `<${tag} id="${id}"${space}${cleanAttrs}>${innerHtml}</${tag}>`
-      }
-    )
-
-    return {
-      headings,
-      processedHtml,
-    }
-  }, [bodyData?.content])
-
-  const finalHtml = useMemo(() => {
-    if (!processedHtml) return ""
-    let html = processedHtml
-      .replace(
-        /<table([\s\S]*?)>/gi,
-        (match: any) => `<div class="${styles.tableWrapper}">${match}`
-      )
-      .replace(/<\/table>/gi, "</table></div>")
-
-    // Optimize native inline images: add lazy loading and async decoding
-    html = html
-      .replace(/<img\s+(?![^>]*\bloading\s*=)([^>]*)/gi, "<img   $1")
-      .replace(
-        /<img\s+(?![^>]*\bdecoding\s*=)([^>]*)/gi,
-        '<img decoding="async" $1'
-      )
-
-    return html
-  }, [processedHtml])
 
   const shareUrl =
     typeof window !== "undefined"
@@ -212,7 +147,7 @@ const BlogBody = ({
                 <hr className={styles.shareDivider} />
               </div>
 
-              <BlogContent htmlContent={finalHtml} />
+              <BlogContent htmlContent={processedHtml} />
               <div className={styles.mobileAiBox}>
                 <SummarizeWithAI slug={slug} />
               </div>

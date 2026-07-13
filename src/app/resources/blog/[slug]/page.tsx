@@ -2,7 +2,8 @@ import React from "react"
 import type { Metadata } from "next"
 import styles from "./styles.module.scss"
 import Link from "next/link"
-import { cookies } from "next/headers"
+import { addPTags } from "@/src/utils/common"
+import blogStyles from "@/src/components/blog-components/singleBlog.module.scss"
 import dynamic from "next/dynamic"
 import BlogBanner from "@/src/components/blog-components/BlogBanner"
 import BlogBody from "@/src/components/blog-components/BlogBody"
@@ -90,9 +91,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const cookieStore = await cookies()
-  const token = cookieStore.get("token")?.value
-  const json = await getPostBySlug(slug, token)
+  const json = await getPostBySlug(slug)
 
   if (json?.redirect) {
     permanentRedirect(`/resources/blog/${json.redirect}`)
@@ -149,9 +148,7 @@ export async function generateMetadata({
 }
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
-  const cookieStore = await cookies()
-  const token = cookieStore.get("token")?.value
-  const json = await getPostBySlug(slug, token)
+  const json = await getPostBySlug(slug)
 
   if (json?.redirect) {
     permanentRedirect(`/resources/blog/${json.redirect}`)
@@ -200,6 +197,53 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   ]
 
   const relatedBlogs = [{ relatedBlogs: json?.relatedBlogs }]
+
+  const rawContent = result[0].content || ""
+  const htmlWithPTags = addPTags(rawContent)
+  const headings: { id: string; text: string; tagName: string }[] = []
+  const usedIds = new Set<string>()
+
+  const headingRegex = /<(h2|h3)([^>]*)>([\s\S]*?)<\/\1>/gi
+  const processedHtml = htmlWithPTags.replace(
+    headingRegex,
+    (fullMatch, tag, attrs, innerHtml) => {
+      const text = innerHtml.replace(/<[^>]*>/g, "").trim()
+      const baseId = text
+        .replace(/\s+/g, "-")
+        .toLowerCase()
+        .replace(/[^\w-]/g, "")
+
+      let id = baseId || "heading"
+      let counter = 1
+      while (usedIds.has(id)) {
+        id = `${baseId}-${counter}`
+        counter++
+      }
+      usedIds.add(id)
+
+      headings.push({
+        id,
+        text,
+        tagName: tag.toLowerCase(),
+      })
+
+      const cleanAttrs = attrs.replace(/\bid\s*=\s*['"][^'"]*['"]/gi, "").trim()
+      const space = cleanAttrs ? " " : ""
+      return `<${tag} id="${id}"${space}${cleanAttrs}>${innerHtml}</${tag}>`
+    }
+  )
+
+  const finalHtml = processedHtml
+    .replace(
+      /<table([\s\S]*?)>/gi,
+      (match: any) => `<div class="${blogStyles.tableWrapper}">${match}`
+    )
+    .replace(/<\/table>/gi, "</table></div>")
+    .replace(/<img\s+(?![^>]*\bloading\s*=)([^>]*)/gi, '<img loading="lazy" $1')
+    .replace(
+      /<img\s+(?![^>]*\bdecoding\s*=)([^>]*)/gi,
+      '<img decoding="async" $1'
+    )
 
   const schemaMarkup = result[0].post_schema_markup
   const cleanedSchema =
@@ -312,6 +356,8 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           bodyData={bodyData[0]}
           slug={result[0].slug}
           title={result[0].title}
+          processedHtml={finalHtml}
+          headings={headings}
         />
         {(result[0].remove_author_details === 0 ||
           result[0].remove_author_details === null ||
