@@ -476,11 +476,13 @@ npm install --save-dev @next/bundle-analyzer
 ```bash
 npm install --save-dev jest @testing-library/react @testing-library/jest-dom
 ```
+*Note: Includes URL Slug Validation (`tests/jest/url-slugs.test.ts`) to ensure all static and dynamic pages (from CMS/DB) strictly use lowercase slugs, failing if any uppercase character is found.*
 
 2. **E2E Testing:**
 ```bash
 npm install --save-dev playwright
 ```
+*Note: Includes URL Slug Validation (`tests/playwright/url-slugs.spec.ts`) that fetches all production sitemaps to verify that no uppercase slugs are rendered by the live application.*
 
 3. **Code Quality:**
 ```bash
