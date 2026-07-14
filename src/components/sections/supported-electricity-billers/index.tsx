@@ -105,17 +105,13 @@ const SupportedElectricityBillers: React.FC<
               <CommanButton
                 theme="outline-blue"
                 title="Pre-paid Billers"
-                url={
-                  "/uploads/2026/06/Enkash-BBPS-prepaid-electricity-bill-posters-2.pdf"
-                }
+                url={"/uploads/2026/07/Pre-paid-Biller_-F2.pdf"}
                 openInNewTab
               />
               <CommanButton
                 theme="outline-blue"
                 title="Post-paid Billers"
-                url={
-                  "/uploads/2026/06/Enkash-BBPS-postpaid-electricity-bill-posters-1.pdf"
-                }
+                url={"/uploads/2026/07/Post-paid-Biller-F1.pdf"}
                 openInNewTab
               />
             </div>
