@@ -13,6 +13,8 @@ import {
   walletCards,
   statisticsData,
   cardType,
+  multiWalletProductsData,
+  multiWalletComparisonData,
 } from "./data"
 
 //components
@@ -48,6 +50,8 @@ import {
   CardProduct,
 } from "@/src/components"
 import UseCaseSection from "@/src/components/sections/use-case-section"
+import ProductsSection from "@/src/components/our-products-section"
+import MealCardComparison from "@/src/components/meal-components/MealCardComparison"
 import Image from "next/image"
 
 export const metadata: Metadata = generateMetaData({
@@ -84,20 +88,16 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "One wallet that puts ",
+            text: "India's Only Employee Tax Benefit Wallet Your Team Can Spend",
             color: "color-black",
           },
           {
-            text: "more money ",
+            text: " on UPI",
             color: "color-equity-blue",
-          },
-          {
-            text: "in your employees' pockets",
-            color: "color-black",
           },
         ]}
         description={{
-          text: "India’s most powerful employee tax benefit card for flexi-benefits. Built to deliver financial freedom and effortless compliance. Made in India. Made for India.",
+          text: "Meal, fuel, gift, telecom, and travel allowances — in one wallet, on one RuPay card, and the one thing no other provider offers: pay by scanning any UPI QR. More take-home pay for your team. No increase to CTC.",
         }}
         button={{ title: "Talk to us", url: salesUrl, theme: "blue" }}
         button2={{
@@ -119,7 +119,7 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "India's #1 Employee Benefit Card Platform",
+                  title: "India's Best Employee Benefit Card Platform",
                   color: "color-white",
                 },
               ]}
@@ -214,16 +214,21 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
 
       <BenefitWalletsSection
         Heading={[
-          { title: "Everything your ", color: "color-black" },
-          { title: "employees need", color: "color-equity-blue" },
-          { title: ", nothing they don't", color: "color-black" },
+          { title: "Purpose-built wallets. ", color: "color-black" },
+          { title: "All on UPI.", color: "color-equity-blue" },
+          { title: " All compliant.", color: "color-black" },
         ]}
         subtitle="Multiple Wallets. Single Card."
-        description="Each wallet is purpose-built, tax-optimised, and compliant with Indian income tax law. No confusion, no fumbling — just seamless benefits."
+        description="Everything your employees need in one flexible benefits platform. Offer tax-optimised meal, fuel, telecom, gift and LTA wallets aligned with Indian income tax rules, accessible through UPI and a single RuPay card. No confusion, no fumbling — just seamless benefits."
         cards={walletCards}
         centerImage={iPhone17}
         backgroundImage={"/images/walletBg.webp"}
         buttonUrl={salesUrl}
+      />
+
+      <ProductsSection
+        sectionTitle="Benefits of Using EnKash Multi-Wallet"
+        products={multiWalletProductsData}
       />
 
       <div className={`${styles.features_section} ${styles.steps_container}`}>
@@ -263,6 +268,15 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
         textColClass="col-md-7"
         imageColClass="col-md-5"
         className={styles.useCaseSection}
+      />
+
+      <MealCardComparison
+        heading={multiWalletComparisonData.heading}
+        description={multiWalletComparisonData.description}
+        ourColumnLabel={multiWalletComparisonData.ourColumnLabel}
+        competitorColumnLabel={multiWalletComparisonData.competitorColumnLabel}
+        rows={multiWalletComparisonData.rows}
+        hideIcons={true}
       />
 
       <StatisticsSection
