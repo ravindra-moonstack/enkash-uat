@@ -3,16 +3,20 @@ import styles from "./featured_top.module.scss"
 import { SubscribeBox } from "@/src/components"
 
 async function getData() {
-  const res = await fetch(
-    "http://localhost:3000/api/resources/blogs/getFeaturedRightBlog",
-    {
-      next: { revalidate: 600 },
-    }
-  )
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/api/resources/blogs/getFeaturedRightBlog`,
+      {
+        next: { revalidate: 600 },
+      }
+    )
 
-  if (!res.ok) throw new Error("Failed to fetch")
-
-  return res.json()
+    if (!res.ok) return { posts: [] }
+    return res.json()
+  } catch (error) {
+    console.error("Failed to fetch featured right blog during prerender:", error)
+    return { posts: [] }
+  }
 }
 
 export default async function FeaturedRightBlogs() {

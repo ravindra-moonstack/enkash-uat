@@ -5,16 +5,20 @@ import { CommanButton, DynamicHeading } from "@/src/components"
 import { getImageUrl } from "@/src/utils/common"
 
 async function getData() {
-  const res = await fetch(
-    "http://localhost:3000/api/resources/blogs/getFeaturedLeftBlog",
-    {
-      next: { revalidate: 600 },
-    }
-  )
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/api/resources/blogs/getFeaturedLeftBlog`,
+      {
+        next: { revalidate: 600 },
+      }
+    )
 
-  if (!res.ok) throw new Error("Failed to fetch")
-
-  return res.json()
+    if (!res.ok) return { posts: [] }
+    return res.json()
+  } catch (error) {
+    console.error("Failed to fetch featured left blog during prerender:", error)
+    return { posts: [] }
+  }
 }
 
 export default async function FeaturedLeftBlog() {

@@ -24,13 +24,18 @@ export const metadata: Metadata = generateMetaData({
 export const revalidate = 600 // Enable ISR for 1 hour
 
 async function getRecentBlogs() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/api/resources/blogs/getRecentBlogs`,
-    { next: { revalidate: 600 } }
-  )
-  if (!res.ok) return []
-  const data = await res.json()
-  return data.posts || []
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/api/resources/blogs/getRecentBlogs`,
+      { next: { revalidate: 600 } }
+    )
+    if (!res.ok) return []
+    const data = await res.json()
+    return data.posts || []
+  } catch (error) {
+    console.error("Failed to fetch recent blogs during prerender:", error)
+    return []
+  }
 }
 
 export default async function BlogPageData() {
