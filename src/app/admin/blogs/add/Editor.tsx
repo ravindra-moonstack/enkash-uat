@@ -49,9 +49,10 @@ import { Editor as TinyMCEEditor } from "@tinymce/tinymce-react"
 interface EditorProps {
     value: string
     onChange: (value: string) => void
+    images_upload_handler?: (blobInfo: any, progress: (p: number) => void) => Promise<string>
 }
 
-export default function Editor({ value, onChange }: EditorProps) {
+export default function Editor({ value, onChange, images_upload_handler }: EditorProps) {
     const apiKey = process.env.NEXT_PUBLIC_TINYMCE_API_KEY && process.env.NEXT_PUBLIC_TINYMCE_API_KEY !== "no-api-key"
         ? process.env.NEXT_PUBLIC_TINYMCE_API_KEY
         : "jh7vh9v52fnbaqxly036le6qtmrk1xngd4e3bzqstg3cr2sd";
@@ -71,6 +72,7 @@ export default function Editor({ value, onChange }: EditorProps) {
                     "insertdatetime", "media", "table", "help", "wordcount", "emoticons",
                     "directionality", "nonbreaking"
                 ],
+                images_upload_handler: images_upload_handler,
                 toolbar1: "blocks | bold italic blockquote | bullist numlist | alignleft aligncenter alignright alignjustify | link unlink undo redo | charmap",
                 toolbar2: "nonbreaking fontsize | ltr rtl | anchor emoticons | forecolor backcolor | table | help | fullscreen",
                 content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:16px }",

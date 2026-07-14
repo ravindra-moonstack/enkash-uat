@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import styles from "./glossary-admin.module.scss"
 import { nameToUrl } from "@/src/utils/stringUtils"
-import { useQuillEditor } from "./use-quill-editor"
 import GlossaryListView from "./glossary-list-view"
 import GlossaryFormView from "./glossary-form-view"
 import ConfirmationModal from "../blogs/ConfirmationModal"
@@ -104,22 +103,6 @@ const GlossaryAdmin = (): React.JSX.Element => {
     editingItem,
   ])
 
-  const {
-    editorRef,
-    quillInstance,
-    showHtmlView,
-    htmlContent,
-    handleHtmlChange,
-    applyHtmlChanges,
-    setHtmlContent,
-    setShowHtmlView,
-    showAltModal,
-    pendingImage,
-    isUploading,
-    handleAltSubmit,
-    handleAltCancel,
-  } = useQuillEditor({ content, setContent, viewMode })
-
   const fetchItems = useCallback(
     async (page: number = 1, search: string = "") => {
       setIsLoading(true)
@@ -215,6 +198,38 @@ const GlossaryAdmin = (): React.JSX.Element => {
     } catch (e: any) {
       console.error("Error uploading image:", e)
       alert(e.message || "Error uploading image")
+    }
+  }
+
+  const imagesUploadHandler = async (blobInfo: any, progress: (p: number) => void): Promise<string> => {
+    const formData = new FormData()
+    formData.append("file", blobInfo.blob(), blobInfo.filename())
+
+    try {
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+        },
+      })
+
+      if (res.ok) {
+        const data = await res.json()
+        return data.url
+      } else {
+        const text = await res.text()
+        let errorMessage = `Image upload failed: ${res.status}`
+        try {
+          const errorData = JSON.parse(text)
+          errorMessage = errorData.details?.message || errorData.details || errorData.message || errorData.error || errorMessage
+        } catch {
+          errorMessage = `Image upload failed: ${text.substring(0, 500)}`
+        }
+        return Promise.reject(errorMessage)
+      }
+    } catch (e: any) {
+      return Promise.reject(e.message || "Error uploading image")
     }
   }
 
@@ -352,7 +367,6 @@ const GlossaryAdmin = (): React.JSX.Element => {
         setBlogWord(fullItem.blogWord || "")
         setMetaTitle(fullItem.meta_title || "")
         setMetaDescription(fullItem.meta_description || "")
-        setMetaDescription(fullItem.meta_description || "")
         setFeatureImage(fullItem.feature_image || "")
         setFeatureImageAlt(fullItem.feature_image_alt || "")
         setHasManuallyEditedBlogWord(!!fullItem.blogWord) // If it has a value, assume manually edited or previously saved
@@ -413,9 +427,7 @@ const GlossaryAdmin = (): React.JSX.Element => {
     setSlug("")
     setIsSlugModified(false)
     setContent("")
-    setHtmlContent("")
     setShowRelatedBlogs(false)
-    setShowHtmlView(false)
     setBlogWord("")
     setMetaTitle("")
     setMetaDescription("")
@@ -424,10 +436,6 @@ const GlossaryAdmin = (): React.JSX.Element => {
     setHasManuallyEditedBlogWord(false)
     setFieldErrors({})
     setEditingItem(null)
-
-    if (quillInstance.current) {
-      quillInstance.current.setText("")
-    }
   }
 
   const handleCancel = () => {
@@ -462,11 +470,8 @@ const GlossaryAdmin = (): React.JSX.Element => {
           slug={slug}
           handleSlugChange={handleSlugChange}
           fieldErrors={fieldErrors}
-          showHtmlView={showHtmlView}
-          editorRef={editorRef}
-          htmlContent={htmlContent}
-          handleHtmlChange={handleHtmlChange}
-          applyHtmlChanges={applyHtmlChanges}
+          content={content}
+          handleContentChange={setContent}
           showRelatedBlogs={showRelatedBlogs}
           setShowRelatedBlogs={setShowRelatedBlogs}
           blogWord={blogWord}
@@ -479,14 +484,11 @@ const GlossaryAdmin = (): React.JSX.Element => {
           handleFeatureImageUpload={handleFeatureImageUpload}
           handleBlogWordChange={handleBlogWordChange}
           isSubmitting={isSubmitting}
-          isUploading={isUploading}
+          isUploading={false}
           isDirty={isDirty}
-          showAltModal={showAltModal}
-          pendingImage={pendingImage}
-          handleAltSubmit={handleAltSubmit}
-          handleAltCancel={handleAltCancel}
           featureImageAlt={featureImageAlt}
           setFeatureImageAlt={setFeatureImageAlt}
+          imagesUploadHandler={imagesUploadHandler}
         />
       )}
 

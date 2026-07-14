@@ -2,13 +2,13 @@ import React, {
   useState,
   useEffect,
   useRef,
-  RefObject,
   FormEvent,
   ChangeEvent,
 } from "react"
 import Image from "next/image"
 import { CommanButton } from "@/src/components"
 import styles from "./glossary-admin.module.scss"
+import Editor from "../blogs/add/Editor"
 
 interface GlossaryFormViewProps {
   editingItem: any
@@ -19,11 +19,8 @@ interface GlossaryFormViewProps {
   slug: string
   handleSlugChange: (e: ChangeEvent<HTMLInputElement>) => void
   fieldErrors: Record<string, string>
-  showHtmlView: boolean
-  editorRef: RefObject<HTMLDivElement | null>
-  htmlContent: string
-  handleHtmlChange: (e: ChangeEvent<HTMLTextAreaElement>) => void
-  applyHtmlChanges: () => void
+  content: string
+  handleContentChange: React.Dispatch<React.SetStateAction<string>>
   showRelatedBlogs: boolean
   setShowRelatedBlogs: (show: boolean) => void
   blogWord: string
@@ -31,19 +28,16 @@ interface GlossaryFormViewProps {
   featureImage: string
   setFeatureImage: (url: string) => void
   featureImageAlt: string
-  setFeatureImageAlt: (alt: string) => void
+  setFeatureImageAlt: React.Dispatch<React.SetStateAction<string>>
   handleFeatureImageUpload: (file: File) => Promise<void>
   isSubmitting: boolean
   isUploading: boolean
   isDirty: boolean
   metaTitle: string
-  setMetaTitle: (title: string) => void
+  setMetaTitle: React.Dispatch<React.SetStateAction<string>>
   metaDescription: string
-  setMetaDescription: (description: string) => void
-  showAltModal: boolean
-  pendingImage: File | null
-  handleAltSubmit: (altText: string) => void
-  handleAltCancel: () => void
+  setMetaDescription: React.Dispatch<React.SetStateAction<string>>
+  imagesUploadHandler: (blobInfo: any, progress: (p: number) => void) => Promise<string>
 }
 
 const GlossaryFormView = ({
@@ -55,11 +49,8 @@ const GlossaryFormView = ({
   slug,
   handleSlugChange,
   fieldErrors,
-  showHtmlView,
-  editorRef,
-  htmlContent,
-  handleHtmlChange,
-  applyHtmlChanges,
+  content,
+  handleContentChange,
   showRelatedBlogs,
   setShowRelatedBlogs,
   blogWord,
@@ -76,10 +67,7 @@ const GlossaryFormView = ({
   setMetaTitle,
   metaDescription,
   setMetaDescription,
-  showAltModal,
-  pendingImage,
-  handleAltSubmit,
-  handleAltCancel,
+  imagesUploadHandler
 }: GlossaryFormViewProps) => {
   // Presence / Locking Logic
   const [activeEditors, setActiveEditors] = useState<string[]>([])
@@ -357,30 +345,11 @@ const GlossaryFormView = ({
 
             <div
               className={`${styles.editorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}
-              style={{ display: showHtmlView ? "none" : "block" }}
             >
-              <div ref={editorRef} className={styles.quillEditor} />
-            </div>
-
-            <div
-              className={`${styles.htmlEditorWrapper} ${fieldErrors.content ? styles.inputError : ""}`}
-              style={{ display: showHtmlView ? "block" : "none" }}
-            >
-              <div className={styles.htmlEditorHeader}>
-                <span className={styles.htmlEditorTitle}>HTML Editor</span>
-                <button
-                  type="button"
-                  onClick={applyHtmlChanges}
-                  className={styles.applyHtmlButton}
-                >
-                  Apply Changes
-                </button>
-              </div>
-              <textarea
-                className={styles.htmlEditor}
-                value={htmlContent}
-                onChange={handleHtmlChange}
-                placeholder="Edit HTML here..."
+              <Editor
+                value={content}
+                onChange={handleContentChange}
+                images_upload_handler={imagesUploadHandler}
               />
             </div>
 
@@ -447,60 +416,6 @@ const GlossaryFormView = ({
           />
         </div>
       </form>
-
-      {showAltModal && (
-        <div key={pendingImage?.name} className={styles.modalOverlay}>
-          <div className={styles.modalContent}>
-            <h3 className={styles.modalTitle}>Image Description (Alt Text)</h3>
-            <p className={styles.modalDescription}>
-              Add a description for this image to improve accessibility and SEO.
-            </p>
-            <input
-              autoFocus
-              type="text"
-              placeholder="e.g. Credit Card Terminal"
-              defaultValue={
-                pendingImage
-                  ? pendingImage.name
-                      .replace(/\.[^/.]+$/, "")
-                      .replace(/[-_]/g, " ")
-                  : ""
-              }
-              id="alt-text-input"
-              className={styles.input}
-              style={{ marginBottom: "24px" }}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault()
-                  const input = document.getElementById(
-                    "alt-text-input"
-                  ) as HTMLInputElement
-                  handleAltSubmit(input.value)
-                }
-              }}
-            />
-            <div className={styles.modalActions}>
-              <CommanButton
-                title="Cancel"
-                theme="outline-blue"
-                url={handleAltCancel}
-                isDisabled={isUploading}
-              />
-              <CommanButton
-                title={isUploading ? "Inserting..." : "Insert Image"}
-                theme="blue"
-                url={() => {
-                  const input = document.getElementById(
-                    "alt-text-input"
-                  ) as HTMLInputElement
-                  handleAltSubmit(input.value)
-                }}
-                isDisabled={isUploading}
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
