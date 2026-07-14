@@ -13,6 +13,14 @@
   @include for-laptops {
     padding: 50px 20px 320px;
   }
+
+  &.noImageSection {
+    padding: 40px 16px 40px;
+
+    @include for-laptops {
+      padding: 50px 20px 50px;
+    }
+  }
 }
 
 .container {
@@ -39,6 +47,14 @@
     ); // ✅ sab equal ho jayenge
     gap: 32px; // default laptop gap
     margin-top: 156px;
+  }
+
+  &.noImageGrid {
+    margin-top: 40px;
+
+    @include for-laptops {
+      margin-top: 50px;
+    }
   }
 
   @include for-laptops {
