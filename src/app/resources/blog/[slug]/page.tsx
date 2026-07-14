@@ -9,15 +9,9 @@ import dynamic from "next/dynamic"
 import BlogBanner from "@/src/components/blog-components/BlogBanner"
 import BlogBody from "@/src/components/blog-components/BlogBody"
 
-const AuthorSection = dynamic(
-  () => import("@/src/components/blog-components/AuthorSection")
-)
-const RelatedBlogs = dynamic(
-  () => import("@/src/components/blog-components/RelatedBlogs")
-)
-const NewsletterSection = dynamic(
-  () => import("@/src/components/blog-components/NewsletterSection")
-)
+import AuthorSection from "@/src/components/blog-components/AuthorSection"
+import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
+import NewsletterSection from "@/src/components/blog-components/NewsletterSection"
 import { notFound, permanentRedirect } from "next/navigation"
 
 import {
@@ -26,6 +20,10 @@ import {
 } from "@/src/services/resource-service"
 import { generateBreadcrumbSchema } from "@/src/utils/metaData"
 
+export const revalidate = 600
+export async function generateStaticParams() {
+  return []
+}
 const calculateReadTime = (htmlContent: string): string => {
   const wordsPerMinute = 200
   const cleanText = htmlContent ? htmlContent.replace(/<[^>]*>/g, "") : ""
@@ -96,8 +94,10 @@ export async function generateMetadata({
   const draft = await draftMode()
   let token = undefined
   if (draft.isEnabled) {
-    const cookieStore = await cookies()
-    token = cookieStore.get("token")?.value
+    try {
+      const cookieStore = await cookies()
+      token = cookieStore.get("token")?.value
+    } catch (e) {}
   }
 
   const json = await getPostBySlug(slug, token)
@@ -161,8 +161,10 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const draft = await draftMode()
   let token = undefined
   if (draft.isEnabled) {
-    const cookieStore = await cookies()
-    token = cookieStore.get("token")?.value
+    try {
+      const cookieStore = await cookies()
+      token = cookieStore.get("token")?.value
+    } catch (e) {}
   }
 
   const json = await getPostBySlug(slug, token)

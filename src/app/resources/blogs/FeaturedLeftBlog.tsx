@@ -8,7 +8,7 @@ async function getData() {
   const res = await fetch(
     "http://localhost:3000/api/resources/blogs/getFeaturedLeftBlog",
     {
-      cache: "no-store",
+      next: { revalidate: 600 },
     }
   )
 
@@ -32,6 +32,7 @@ export default async function FeaturedLeftBlog() {
             alt={post.image_alt || post.title}
             width={600}
             height={350}
+            priority
           />
         </Link>
         <div className={styles.overlay}>
@@ -49,13 +50,20 @@ export default async function FeaturedLeftBlog() {
         <DynamicHeading
           content={[
             {
-              title: (post.excerpt || post.content || "").replace(/<[^>]+>/g, "").slice(0, 120),
+              title: (post.excerpt || post.content || "")
+                .replace(/<[^>]+>/g, "")
+                .slice(0, 120),
               color: "color-black",
             },
           ]}
           headingTag="p"
         />
-        <CommanButton theme="outline-blue" title="Read Now" arrow url={`/resources/blog/${post.slug}`} />
+        <CommanButton
+          theme="outline-blue"
+          title="Read Now"
+          arrow
+          url={`/resources/blog/${post.slug}`}
+        />
       </div>
     </div>
   )

@@ -1,51 +1,14 @@
-"use client"
-import React, { useState, useEffect, useMemo } from "react"
+import React from "react"
 import styles from "./singleBlog.module.scss"
 import TableOfContents from "./TableOfContents"
 import BlogContent from "./BlogContent"
 import SummarizeWithAI from "./SummarizeWithAI"
+import ReadingProgressBar from "./ReadingProgressBar"
 import { getImageUrl } from "@/src/utils/common"
 import Image from "next/image"
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa"
 import { FaXTwitter } from "react-icons/fa6"
 import { FiPhoneCall, FiHeadphones } from "react-icons/fi"
-
-const ReadingProgressBar = () => {
-  const [scrollProgress, setScrollProgress] = useState(0)
-
-  useEffect(() => {
-    let ticking = false
-
-    const updateScrollProgress = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollHeight =
-            document.documentElement.scrollHeight - window.innerHeight
-          if (scrollHeight > 0) {
-            const scrolled = (window.scrollY / scrollHeight) * 100
-            setScrollProgress(Math.min(100, Math.max(0, scrolled)))
-          }
-          ticking = false
-        })
-        ticking = true
-      }
-    }
-
-    window.addEventListener("scroll", updateScrollProgress, { passive: true })
-    updateScrollProgress()
-
-    return () => window.removeEventListener("scroll", updateScrollProgress)
-  }, [])
-
-  return (
-    <div className={styles.progressBarContainer}>
-      <div
-        className={styles.progressBar}
-        style={{ width: `${scrollProgress}%` }}
-      />
-    </div>
-  )
-}
 
 const BlogBody = ({
   bodyData,
@@ -60,13 +23,6 @@ const BlogBody = ({
   processedHtml: string
   headings: any[]
 }) => {
-  useEffect(() => {
-    document.body.classList.add("blog-body-active")
-    return () => {
-      document.body.classList.remove("blog-body-active")
-    }
-  }, [])
-
   const shareUrl =
     typeof window !== "undefined"
       ? window.location.href
