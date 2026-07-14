@@ -14,7 +14,9 @@ import PaymentGatewayCare from "@/components/home-page-payment-box"
 // components — below-fold (dynamic imports)
 import { LoadingUI } from "@/components/loading"
 
-const FeatureCard = dynamic(() => import("@/components/feature-card"), { loading: LoadingUI })
+const FeatureCard = dynamic(() => import("@/components/feature-card"), {
+  loading: LoadingUI,
+})
 const LottieDynamicLoadComponent = dynamic(
   () => import("@/components/lottie-client/lottie-dynamic-load-client"),
   { loading: LoadingUI }
@@ -43,8 +45,12 @@ const HomeReceivablesPayables = dynamic(
   () => import("@/components/home-receivables-payables"),
   { loading: LoadingUI }
 )
-const Counter = dynamic(() => import("@/components/home-counter"), { loading: LoadingUI })
-const HomePageSlider = dynamic(() => import("@/components/home-page-slider"), { loading: LoadingUI })
+const Counter = dynamic(() => import("@/components/home-counter"), {
+  loading: LoadingUI,
+})
+const HomePageSlider = dynamic(() => import("@/components/home-page-slider"), {
+  loading: LoadingUI,
+})
 const BuiltforBuildersSection = dynamic(
   () => import("@/components/builtfor-builders-card"),
   { loading: LoadingUI }
@@ -64,7 +70,7 @@ import {
   securityIcon5,
   bankIcons2,
   collectPaymentBg,
-  bannerBg,
+  HomeBgImg,
 } from "./img"
 import {
   counterData,
@@ -101,7 +107,7 @@ const HomePage = (): React.JSX.Element => {
         className={`${styles.topBanner} position-relative overflow-hidden`}
       >
         <Image
-          src={bannerBg}
+          src={HomeBgImg}
           alt="Banner Background"
           fill
           priority
@@ -295,7 +301,10 @@ const HomePage = (): React.JSX.Element => {
                   key={index}
                 >
                   <div className={`${styles.makesPaymentsBox} `}>
-                    <UtilityBillPayments {...item} womanImg={item.womanImg} />
+                    <UtilityBillPayments
+                      {...item}
+                      womanImg={item.womanImg.src}
+                    />
                   </div>
                 </div>
               ))}
@@ -446,7 +455,7 @@ const HomePage = (): React.JSX.Element => {
                     <div className={`${styles.rewardVauchersBox}`}>
                       <HomePageRewardsVouchers
                         {...item}
-                        image={item.image}
+                        image={item.image.src}
                         headingTag="h4"
                         headingClassName="heading-h5"
                       />

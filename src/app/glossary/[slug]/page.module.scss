@@ -488,3 +488,146 @@
     padding: $spacing-lg;
   }
 }
+
+/* Table styles to match blogs */
+.sectionContent {
+  .tableWrapper {
+    @include for-laptops {
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 40px 0;
+
+      table {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  table {
+    border: 1px solid #e2e8f0;
+    border-collapse: separate; // Needed for sticky headers/cols to work correctly with borders
+    border-spacing: 0;
+    empty-cells: show;
+    margin: 40px 0;
+    width: 100%;
+    caption-side: top;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari and Opera */
+    }
+
+    @include for-laptops {
+      display: table;
+      overflow-x: visible;
+    }
+
+    thead {
+      background-color: #1c5af4 !important;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    th {
+      font-family: var(--font-inter), sans-serif !important;
+      font-style: normal !important;
+      font-weight: 400 !important;
+      font-size: 20px !important;
+      line-height: 28px !important;
+      letter-spacing: -0.02em !important;
+      color: #ffffff !important;
+      background-color: #1c5af4 !important;
+    }
+
+    td {
+      font-family: var(--font-inter), sans-serif !important;
+      font-style: normal !important;
+      font-weight: 300 !important;
+      font-size: 16px !important;
+      line-height: 31px !important;
+      letter-spacing: -0.02em !important;
+      color: #5B5B5B !important;
+    }
+
+    th,
+    td {
+      border: 1px solid #e2e8f0;
+      margin: 0;
+      padding: 14px 18px; // Premium spacious padding
+      min-width: 150px;
+      white-space: nowrap;
+
+      @include for-laptops {
+        white-space: normal;
+        min-width: unset;
+      }
+
+      &:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 10;
+        border-right: 1px solid #e2e8f0 !important;
+        background: #fff;
+        
+        @media (max-width: 991px) {
+          max-width: 250px;
+          white-space: normal;
+          word-break: break-word;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: -1px;
+          top: 0;
+          bottom: 0;
+          width: 1px;
+          background: #e2e8f0;
+        }
+      }
+    }
+
+    // Bold, premium first column for body cells
+    td:first-child {
+      font-family: var(--font-inter), sans-serif !important;
+      font-style: normal !important;
+      font-weight: 300 !important;
+      font-size: 16px !important;
+      line-height: 31px !important;
+      letter-spacing: -0.02em !important;
+      color: #1f2937 !important;
+      background-color: #ffffff !important;
+    }
+
+    // Ensure header cell in first column is always blue
+    th:first-child {
+      z-index: 11;
+      background-color: #1c5af4 !important;
+      font-family: var(--font-inter), sans-serif !important;
+      font-style: normal !important;
+      font-weight: 400 !important;
+      font-size: 20px !important;
+      line-height: 31px !important;
+      letter-spacing: -0.02em !important;
+      color: #ffffff !important;
+    }
+
+    thead th:first-child {
+      z-index: 11; // Ensure sticky header and sticky column intersect correctly
+      background-color: #1c5af4 !important;
+      font-family: var(--font-inter), sans-serif !important;
+      font-style: normal !important;
+      font-weight: 400 !important;
+      font-size: 20px !important;
+      line-height: 31px !important;
+      letter-spacing: -0.02em !important;
+      color: #ffffff !important;
+    }
+  }
+}

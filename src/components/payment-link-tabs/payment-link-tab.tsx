@@ -112,7 +112,7 @@ const PaymentLinkTab = ({
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 transition: "background-image 0.5s ease-in-out",
-                height: "100vh",
+                height: "76vh",
               }}
             >
               <div className=" max-w-auto">

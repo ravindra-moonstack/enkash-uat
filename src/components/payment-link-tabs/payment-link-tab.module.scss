@@ -21,7 +21,7 @@
   padding: 50px 20px;
 
   @include for-laptops {
-    padding: 90px 20px;
+    padding: 90px 20px 0;
     // padding-bottom: 50px;
   }
 }

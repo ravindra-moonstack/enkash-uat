@@ -43,8 +43,8 @@ export { default as websiteIcon } from "./websiteIcon.svg"
 
 // Backgrounds
 export { default as faqBg } from "./faq-bg.webp"
-export { default as bg1 } from "./bg5.jpg"
-export { default as bg2 } from "./bg4.jpg"
-export { default as bg3 } from "./bg3.jpg"
-export { default as bg4 } from "./bg2.jpg"
-export { default as bg5 } from "./bg1.jpg"
+export { default as bg1 } from "./bg5.webp"
+export { default as bg2 } from "./bg4.webp"
+export { default as bg3 } from "./bg3.webp"
+export { default as bg4 } from "./bg2.webp"
+export { default as bg5 } from "./bg1.webp"
