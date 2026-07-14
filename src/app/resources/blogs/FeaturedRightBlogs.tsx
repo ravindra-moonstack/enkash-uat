@@ -6,7 +6,7 @@ async function getData() {
   const res = await fetch(
     "http://localhost:3000/api/resources/blogs/getFeaturedRightBlog",
     {
-      cache: "no-store",
+      next: { revalidate: 600 },
     }
   )
 
