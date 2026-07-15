@@ -124,9 +124,7 @@ const MealCardComparisonScrollable: React.FC<MealCardComparisonProps> = ({
           headingTag={(heading.headingTag as any) || "h2"}
           className={heading.className}
         />
-        {description && (
-          <p className="f-6 color-grey-200 mt-3">{description}</p>
-        )}
+        {description && <p className="color-grey-200 mt-3">{description}</p>}
       </div>
 
       <div className={styles.tableWrapper}>
@@ -146,20 +144,17 @@ const MealCardComparisonScrollable: React.FC<MealCardComparisonProps> = ({
                 <>
                   {Array.isArray(competitorColumnLabel) ? (
                     competitorColumnLabel.map((label, idx) => (
-                      <th
-                        key={idx}
-                        className={`${styles.competitorCol} fw-bold`}
-                      >
+                      <th key={idx} className={`${styles.competitorCol}`}>
                         {label}
                       </th>
                     ))
                   ) : (
-                    <th className={`${styles.competitorCol} fw-bold`}>
+                    <th className={`${styles.competitorCol}`}>
                       {competitorColumnLabel}
                     </th>
                   )}
                   <th
-                    className={`${highlightFeatureColumn ? styles.competitorCol : styles.ourCol} fw-bold`}
+                    className={`${highlightFeatureColumn ? styles.competitorCol : `${styles.ourCol} fw-bold`}`}
                   >
                     {highlightFeatureColumn ? (
                       ourColumnLabel
@@ -171,7 +166,7 @@ const MealCardComparisonScrollable: React.FC<MealCardComparisonProps> = ({
               ) : (
                 <>
                   <th
-                    className={`${highlightFeatureColumn ? styles.competitorCol : styles.ourCol} fw-bold`}
+                    className={`${highlightFeatureColumn ? styles.competitorCol : `${styles.ourCol} fw-bold`}`}
                   >
                     {highlightFeatureColumn ? (
                       ourColumnLabel
@@ -181,15 +176,12 @@ const MealCardComparisonScrollable: React.FC<MealCardComparisonProps> = ({
                   </th>
                   {Array.isArray(competitorColumnLabel) ? (
                     competitorColumnLabel.map((label, idx) => (
-                      <th
-                        key={idx}
-                        className={`${styles.competitorCol} fw-bold`}
-                      >
+                      <th key={idx} className={`${styles.competitorCol}`}>
                         {label}
                       </th>
                     ))
                   ) : (
-                    <th className={`${styles.competitorCol} fw-bold`}>
+                    <th className={`${styles.competitorCol}`}>
                       {competitorColumnLabel}
                     </th>
                   )}

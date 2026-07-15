@@ -9,7 +9,7 @@
   align-items: center;
 
   @include for-laptops {
-    padding: 80px 24px 100px;
+    padding: 80px 24px 0px;
   }
 }
 
@@ -48,13 +48,13 @@
     box-shadow: 0px 0px 55px 0px #0000001C;
     th {
       padding: 16px 20px;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 500;
       color: $color-main-grey;
       text-align: center;
 
       @include for-laptops {
-        font-size: 15px;
+        font-size: 16px;
         padding: 18px 28px;
       }
     }
@@ -72,13 +72,14 @@
     }
 
     .competitorCol {
+
     }
   }
 }
 
 .ourLabel { 
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
 
   @include for-laptops {
     font-size: 16px;
@@ -94,14 +95,14 @@ border-bottom: 1px solid #E3E3E354;
 
 .featureCell {
   padding: 14px 20px;
-  font-size: 13px;
+  font-size: 16px;
   color: $color-main-grey;
   font-weight: 400;
   border-right: 1px solid #1A9FFF;
 
   @include for-laptops {
     padding: 16px 28px;
-    font-size: 14px;
+    font-size: 16px;
     border-right: none;
   }
 }
@@ -143,22 +144,22 @@ border-bottom: 1px solid #E3E3E354;
   }
 }
 .ourValueText {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: $color-electric-green;
 
   @include for-laptops {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 .competitorValueText {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
   color: $color-main-grey;
 
   @include for-laptops {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -185,7 +186,7 @@ border-bottom: 1px solid #E3E3E354;
   cursor: pointer;
 
   @include for-laptops {
-    font-size: 15px;
+    font-size: 16px;
     padding: 16px 32px;
   }
 
