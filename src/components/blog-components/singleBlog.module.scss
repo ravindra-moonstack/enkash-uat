@@ -762,15 +762,23 @@
   }
 
   .tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 40px 0;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari and Opera */
+    }
+
+    table {
+      margin: 0 !important;
+    }
+
     @include for-laptops {
       max-width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 40px 0;
-
-      table {
-        margin: 0 !important;
-      }
     }
   }
 
@@ -779,23 +787,10 @@
     border-collapse: separate; // Needed for sticky headers/cols to work correctly with borders
     border-spacing: 0;
     empty-cells: show;
-    margin: 40px 0;
-    width: 100%;
+    width: auto !important;
+    table-layout: fixed;
     caption-side: top;
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-
-    &::-webkit-scrollbar {
-      display: none; /* Chrome, Safari and Opera */
-    }
-
-    @include for-laptops {
-      display: table;
-      overflow-x: visible;
-    }
+    display: table;
 
     thead {
       background-color: #1c5af4 !important;
@@ -831,35 +826,12 @@
       margin: 0;
       padding: 14px 18px; // Premium spacious padding
       min-width: 150px;
-      white-space: nowrap;
-
-      @include for-laptops {
-        white-space: normal;
-        min-width: unset;
-      }
+      white-space: normal;
+      word-break: break-word;
 
       &:first-child {
-        position: sticky;
-        left: 0;
-        z-index: 10;
         border-right: 1px solid #e2e8f0 !important;
         background: #fff;
-        
-        @media (max-width: 991px) {
-          max-width: 250px;
-          white-space: normal;
-          word-break: break-word;
-        }
-
-        &::after {
-          content: "";
-          position: absolute;
-          right: -1px;
-          top: 0;
-          bottom: 0;
-          width: 1px;
-          background: #e2e8f0;
-        }
       }
     }
 
@@ -877,7 +849,6 @@
 
     // Ensure header cell in first column is always blue
     th:first-child {
-      z-index: 11;
       background-color: #1c5af4 !important;
       font-family: var(--font-inter), sans-serif !important;
       font-style: normal !important;
@@ -889,7 +860,6 @@
     }
 
     thead th:first-child {
-      z-index: 11; // Ensure sticky header and sticky column intersect correctly
       background-color: #1c5af4 !important;
       font-family: var(--font-inter), sans-serif !important;
       font-style: normal !important;
