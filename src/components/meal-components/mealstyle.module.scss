@@ -115,11 +115,9 @@ border-bottom: 1px solid #E3E3E354;
 }
 
 .ourCell {
-  padding: 14px 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  padding: 14px 20px; 
   background-color: $color-blue-1a;
+  border-bottom: 2px solid $color-white;
 
   @include for-laptops {
     padding: 16px 28px;
@@ -128,9 +126,7 @@ border-bottom: 1px solid #E3E3E354;
 
 .checkIcon,
 .warnIcon {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
+  margin-right: 10px;
 }
 
 
