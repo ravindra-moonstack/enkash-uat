@@ -1,8 +1,13 @@
-const BASE_URL = process.env.NEXT_PUBLIC_URL || "http://localhost:3000"
+const getBaseUrl = () => {
+  if (typeof window === "undefined") {
+    return process.env.INTERNAL_API_URL || `http://127.0.0.1:${process.env.PORT || 3000}`
+  }
+  return process.env.NEXT_PUBLIC_URL || "http://localhost:3000"
+}
 
 export const getBlogCategories = async () => {
   try {
-    const res = await fetch(`${BASE_URL}/api/resources/blogs/getCategory`, {
+    const res = await fetch(`${getBaseUrl()}/api/resources/blogs/getCategory`, {
       next: { revalidate: 60 },
     })
     if (!res.ok) return null
@@ -20,7 +25,7 @@ export const getCategoryData = async (slug: string, search?: string) => {
 
   try {
     const res = await fetch(
-      `${BASE_URL}/api/resources/blogs/getCategoryData?${query.toString()}`,
+      `${getBaseUrl()}/api/resources/blogs/getCategoryData?${query.toString()}`,
       { next: { revalidate: 60 } }
     )
     if (!res.ok) return null
@@ -39,7 +44,7 @@ export const getPostBySlug = async (slug: string, token?: string) => {
 
   try {
     const res = await fetch(
-      `${BASE_URL}/api/resources/blogs/getPostBySlug?slug=${slug}`,
+      `${getBaseUrl()}/api/resources/blogs/getPostBySlug?slug=${slug}`,
       {
         cache: token ? "no-store" : "force-cache",
         next: token ? undefined : { revalidate: 60 },
@@ -56,7 +61,7 @@ export const getPostBySlug = async (slug: string, token?: string) => {
 
 export const getVideoCategories = async () => {
   try {
-    const res = await fetch(`${BASE_URL}/api/resources/videos/getCategories`, {
+    const res = await fetch(`${getBaseUrl()}/api/resources/videos/getCategories`, {
       next: { revalidate: 60 },
     })
     if (!res.ok) return null
@@ -83,7 +88,7 @@ export const getVideos = async (params: {
 
   try {
     const res = await fetch(
-      `${BASE_URL}/api/resources/videos?${query.toString()}`,
+      `${getBaseUrl()}/api/resources/videos?${query.toString()}`,
       {
         next: { revalidate: 60 },
       }
@@ -110,7 +115,7 @@ export const getAuthorData = async (
 
   try {
     const res = await fetch(
-      `${BASE_URL}/api/resources/blogs/getAuthorData?${query.toString()}`,
+      `${getBaseUrl()}/api/resources/blogs/getAuthorData?${query.toString()}`,
       { next: { revalidate: 60 } }
     )
     if (!res.ok) return null
