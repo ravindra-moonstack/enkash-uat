@@ -54,10 +54,14 @@
   }
 
   .cardDivider{
-    width: 372px;
+    width: 100%;
     height: 1.15px;
     background-color: $color-white-5c;
     margin: 0 auto;
+
+    @include for-laptops {
+      width: 371px;
+    }
   }
   .section {
     margin: auto;

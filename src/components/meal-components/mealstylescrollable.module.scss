@@ -1,0 +1,201 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.comparisonSection {
+  padding: 48px 16px 64px;
+  background: $color-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include for-laptops {
+    padding: 80px 24px 100px;
+  }
+}
+
+.headingWrapper {
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto 40px;
+
+  @include for-laptops {
+    margin-bottom: 56px;
+  }
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #1A9FFF;
+  border-radius: 16px;
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.06);
+  background: linear-gradient(148.03deg, rgba(255, 255, 255, 0.0594) 1.57%, rgba(211, 238, 251, 0.18) 98.66%);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  table-layout: fixed;
+ 
+  thead tr { 
+    box-shadow: 0px 0px 55px 0px #0000001C;
+    th {
+      padding: 16px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: $color-main-grey;
+      text-align: center;
+
+      @include for-laptops {
+        font-size: 15px;
+        padding: 18px 28px;
+      }
+    }
+
+    .featureCol {
+      width: 25%;
+      border-right: 1px solid #1A9FFF;
+      @include for-laptops { 
+        border-right: none;
+      }
+    }
+
+    .ourCol {
+      background-color: $color-blue-1a;
+    }
+
+    .competitorCol {
+    }
+  }
+}
+
+.ourLabel { 
+  font-weight: 700;
+  font-size: 15px;
+
+  @include for-laptops {
+    font-size: 16px;
+  }
+}
+
+.tableRow { 
+border-bottom: 1px solid #E3E3E354;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.featureCell {
+  padding: 14px 20px;
+  font-size: 13px;
+  color: $color-main-grey;
+  font-weight: 400;
+  border-right: 1px solid #1A9FFF;
+
+  @include for-laptops {
+    padding: 16px 28px;
+    font-size: 14px;
+    border-right: none;
+  }
+}
+
+.ourCell {
+  padding: 14px 20px; 
+  background-color: $color-blue-1a;
+  border-bottom: 2px solid $color-white;
+
+  @include for-laptops {
+    padding: 16px 28px;
+  }
+}
+
+.checkIcon,
+.warnIcon {
+  margin-right: 10px;
+}
+
+
+.centered {
+  justify-content: center;
+  text-align: center;
+}
+
+.competitorCell {
+  padding: 14px 20px;
+
+  @include for-laptops {
+    padding: 16px 28px;
+  }
+  .warnIcon{
+    margin-right: 10px !important;
+    display: inline-block !important;
+  }
+  .checkIcon{
+    margin-right: 10px !important;
+    display: inline-block !important;
+  }
+}
+.ourValueText {
+  font-size: 13px;
+  font-weight: 600;
+  color: $color-electric-green;
+
+  @include for-laptops {
+    font-size: 14px;
+  }
+}
+
+.competitorValueText {
+  font-size: 13px;
+  font-weight: 400;
+  color: $color-main-grey;
+
+  @include for-laptops {
+    font-size: 14px;
+  }
+}
+
+.ctaWrapper {
+  margin-top: 40px;
+
+  @include for-laptops {
+    margin-top: 56px;
+  }
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: $color-equity-blue;
+  color: $color-white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  cursor: pointer;
+
+  @include for-laptops {
+    font-size: 15px;
+    padding: 16px 32px;
+  }
+
+  &:hover {
+    background: $color-dark-blue;
+    box-shadow: 0 4px 24px rgba(28, 90, 244, 0.3);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./mealstyle.module.scss"
+import styles from "./mealstylescrollable.module.scss"
 import { DynamicHeading } from ".."
 import CommonButton from "../buttons"
 import { compititorIcon, succesicon } from "@/src/app/meal-card/img"
@@ -100,7 +100,7 @@ const defaultRows: ComparisonRow[] = [
   },
 ]
 
-const MealCardComparison: React.FC<MealCardComparisonProps> = ({
+const MealCardComparisonScrollable: React.FC<MealCardComparisonProps> = ({
   heading = defaultHeading,
   ourColumnLabel = "EnKash",
   competitorColumnLabel = "Competitors",
@@ -408,4 +408,4 @@ const MealCardComparison: React.FC<MealCardComparisonProps> = ({
   )
 }
 
-export default MealCardComparison
+export default MealCardComparisonScrollable

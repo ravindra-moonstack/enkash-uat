@@ -435,7 +435,11 @@ const url: {
   { source: "/approvals", destination: "/approval-flows" },
   { source: "/bulk-payout", destination: "/bulk-pay" },
   { source: "/invoices", destination: "/digital-invoicing" },
-  { source: "/vendor-payments", destination: "/vendor-payment", permanent: true },
+  {
+    source: "/vendor-payments",
+    destination: "/vendor-payment",
+    permanent: true,
+  },
   { source: "/spend-control", destination: "/hierarchy-and-controls" },
   {
     source: "/expense-management",
@@ -702,6 +706,10 @@ const url: {
     destination:
       "/resources/blog/private-banks-in-india-list-of-top-private-sector-banks-in-2026",
     permanent: true,
+  },
+  {
+    source: "/resources/blog/category/undefined",
+    destination: "/resources/blogs",
   },
 ]
 

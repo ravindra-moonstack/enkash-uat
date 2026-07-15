@@ -49,7 +49,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <meta name="robots" content="index, follow" />
+        <meta
+          name="robots"
+          content={
+            process.env.NEXT_PUBLIC_URL?.includes("uat")
+              ? "noindex, nofollow"
+              : "index, follow"
+          }
+        />
         <meta
           name="google-site-verification"
           content="RWOqrBamBY0cC_WQwIz55vCzZRBv97CtZYwlpUCIjY4"

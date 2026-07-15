@@ -51,7 +51,7 @@ import {
 } from "@/src/components"
 import UseCaseSection from "@/src/components/sections/use-case-section"
 import ProductsSection from "@/src/components/our-products-section"
-import MealCardComparison from "@/src/components/meal-components/MealCardComparison"
+import MealCardComparisonScrollable from "@/src/components/meal-components/MealCardComparisonScrollable"
 import Image from "next/image"
 
 export const metadata: Metadata = generateMetaData({
@@ -270,13 +270,14 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
         className={styles.useCaseSection}
       />
 
-      <MealCardComparison
+      <MealCardComparisonScrollable
         heading={multiWalletComparisonData.heading}
         description={multiWalletComparisonData.description}
         ourColumnLabel={multiWalletComparisonData.ourColumnLabel}
         competitorColumnLabel={multiWalletComparisonData.competitorColumnLabel}
         rows={multiWalletComparisonData.rows}
         hideIcons={true}
+        highlightFeatureColumn={true}
       />
 
       <StatisticsSection

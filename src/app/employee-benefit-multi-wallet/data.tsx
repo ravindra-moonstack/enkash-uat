@@ -405,61 +405,97 @@ const multiWalletComparisonData = {
   heading: {
     content: [
       { title: "EnKash vs Pluxee vs Zaggle: ", color: "color-black" },
-      { title: "Employee Benefit Card Comparison", color: "color-equity-blue" }
+      { title: "Employee Benefit Card Comparison", color: "color-equity-blue" },
     ],
     headingTag: "h2" as const,
-    className: "text-center f-5 mb-4"
+    className: "text-center f-5 mb-4",
   },
-  description: "Compare EnKash, Pluxee and Zaggle across UPI payments, employee benefit wallets, RBI PPI licensing and spend management capabilities.",
+  description:
+    "Compare EnKash, Pluxee and Zaggle across UPI payments, employee benefit wallets, RBI PPI licensing and spend management capabilities.",
   ourColumnLabel: "EnKash",
   competitorColumnLabel: ["Pluxee, formerly Sodexo", "Zaggle"],
   rows: [
     {
       feature: "UPI payments",
-      ourValue: "Native UPI-on-PPI experience for payments at eligible UPI QR codes across India",
-      competitorValue: ["QR payments through supported Pluxee acceptance channels, along with card payments", "UPI availability may vary by card programme and issuing partner"]
+      ourValue:
+        "Native UPI-on-PPI experience for payments at eligible UPI QR codes across India",
+      competitorValue: [
+        "QR payments through supported Pluxee acceptance channels, along with card payments",
+        "UPI availability may vary by card programme and issuing partner",
+      ],
     },
     {
       feature: "RBI PPI licence",
       ourValue: "Direct RBI-authorised PPI issuer with in-house issuance",
-      competitorValue: ["Direct RBI-authorised PPI issuer", "Cards are issued through banking or authorised issuing partners"]
+      competitorValue: [
+        "Direct RBI-authorised PPI issuer",
+        "Cards are issued through banking or authorised issuing partners",
+      ],
     },
     {
       feature: "Employee benefit wallets",
-      ourValue: "Meal, fuel, gift, telecom, LTA and other benefits on one multi-wallet card",
-      competitorValue: ["Meal and multiple employee benefit categories", "Multi-category employee benefit and prepaid card programmes"]
+      ourValue:
+        "Meal, fuel, gift, telecom, LTA and other benefits on one multi-wallet card",
+      competitorValue: [
+        "Meal and multiple employee benefit categories",
+        "Multi-category employee benefit and prepaid card programmes",
+      ],
     },
     {
       feature: "Card and wallet management",
-      ourValue: "Real-time wallet loading, controls, blocking and spend visibility from one dashboard",
-      competitorValue: ["Benefit allocation and card management through the Pluxee platform", "Card and spend controls through Zaggle’s SaaS platform"]
+      ourValue:
+        "Real-time wallet loading, controls, blocking and spend visibility from one dashboard",
+      competitorValue: [
+        "Benefit allocation and card management through the Pluxee platform",
+        "Card and spend controls through Zaggle’s SaaS platform",
+      ],
     },
     {
       feature: "Solutions beyond employee benefits",
-      ourValue: "Expense management, corporate cards, petty cash, payables and rewards on one platform",
-      competitorValue: ["Primarily focused on employee benefits, rewards and engagement", "Spend management, employee benefits, corporate cards and SaaS solutions"]
+      ourValue:
+        "Expense management, corporate cards, petty cash, payables and rewards on one platform",
+      competitorValue: [
+        "Primarily focused on employee benefits, rewards and engagement",
+        "Spend management, employee benefits, corporate cards and SaaS solutions",
+      ],
     },
     {
       feature: "Issuing and operating model",
-      ourValue: "PPI issuance and platform management handled within the EnKash ecosystem",
-      competitorValue: ["Operates employee benefit programmes through its licensed Indian entity", "Platform services may involve Zaggle and its issuing partners"]
+      ourValue:
+        "PPI issuance and platform management handled within the EnKash ecosystem",
+      competitorValue: [
+        "Operates employee benefit programmes through its licensed Indian entity",
+        "Platform services may involve Zaggle and its issuing partners",
+      ],
     },
     {
       feature: "India focus",
-      ourValue: "Built for Indian tax rules, UPI payments and business spend requirements",
-      competitorValue: ["Indian operations supported by a global employee benefits group", "India-focused spend management company listed on the NSE"]
+      ourValue:
+        "Built for Indian tax rules, UPI payments and business spend requirements",
+      competitorValue: [
+        "Indian operations supported by a global employee benefits group",
+        "India-focused spend management company listed on the NSE",
+      ],
     },
     {
       feature: "Fund safety",
-      ourValue: "Funds managed under RBI requirements applicable to authorised PPI issuers",
-      competitorValue: ["Funds managed under RBI requirements applicable to authorised PPI issuers", "Funds managed under the regulatory framework of the issuing bank or PPI partner"]
+      ourValue:
+        "Funds managed under RBI requirements applicable to authorised PPI issuers",
+      competitorValue: [
+        "Funds managed under RBI requirements applicable to authorised PPI issuers",
+        "Funds managed under the regulatory framework of the issuing bank or PPI partner",
+      ],
     },
     {
       feature: "Best suited for",
-      ourValue: "Businesses seeking UPI-enabled employee benefits with broader spend management capabilities",
-      competitorValue: ["Businesses focused primarily on meal, benefits and employee rewards", "Businesses seeking employee benefits combined with SaaS-led spend management"]
-    }
-  ]
+      ourValue:
+        "Businesses seeking UPI-enabled employee benefits with broader spend management capabilities",
+      competitorValue: [
+        "Businesses focused primarily on meal, benefits and employee rewards",
+        "Businesses seeking employee benefits combined with SaaS-led spend management",
+      ],
+    },
+  ],
 }
 
 export {

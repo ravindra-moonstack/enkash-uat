@@ -73,7 +73,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
         backgroundImage="/images/collectPaymentBg.webp"
       />
 
-      <div className={`row ${styles.introduction_section} `}>
+      <div className={`${styles.introduction_section} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <DynamicHeading
