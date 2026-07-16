@@ -716,11 +716,11 @@ const url: {
     destination: "/glossary/non-banking-financial-company",
     permanent: true,
   },
-  {
-    source: "/glossary/Prepaid Payment Instruments (PPI)",
-    destination: "/glossary/prepaid-payment-instruments-ppi",
-    permanent: true,
-  },
+  // {
+  //   source: "/glossary/Prepaid%20Payment%20Instruments%20\\(PPI\\)",
+  //   destination: "/glossary/prepaid-payment-instruments-ppi",
+  //   permanent: true,
+  // },
 ]
 
 const mappedUrls = url.map((item) => {

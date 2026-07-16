@@ -105,10 +105,7 @@ export async function generateMetadata({ params }: PageProps) {
   } else {
     const term = await getTerm(lowercaseSlug)
     if (!term) {
-      return {
-        title: "Term Not Found",
-        description: "The requested glossary term was not found.",
-      }
+      notFound()
     }
 
     return {
