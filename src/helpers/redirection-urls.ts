@@ -711,6 +711,16 @@ const url: {
     source: "/resources/blog/category/undefined",
     destination: "/resources/blogs",
   },
+  {
+    source: "/glossary/NBFCs",
+    destination: "/glossary/non-banking-financial-company",
+    permanent: true,
+  },
+  {
+    source: "/glossary/Prepaid Payment Instruments (PPI)",
+    destination: "/glossary/prepaid-payment-instruments-ppi",
+    permanent: true,
+  },
 ]
 
 const mappedUrls = url.map((item) => {
