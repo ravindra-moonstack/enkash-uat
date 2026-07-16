@@ -43,8 +43,7 @@ const BenefitWalletsSection: React.FC<BenefitWalletsSectionProps> = ({
 
   const renderCard = (card: WalletCard) => {
     const theme = card.textColor || textColor
-    const highlightsColor =
-      theme === "white" ? "color-electric-green" : "color-white"
+    const highlightsColor = "color-white"
     const contentColor =
       theme === "black" ? "color-alternate-grey" : "color-white"
 
@@ -103,7 +102,7 @@ const BenefitWalletsSection: React.FC<BenefitWalletsSectionProps> = ({
             src={backgroundImage}
             alt="Background"
             width={1920}
-            height={708}
+            height={979}
           />
         </div>
       )}
@@ -163,7 +162,9 @@ const BenefitWalletsSection: React.FC<BenefitWalletsSectionProps> = ({
           </div>
         </div>
       </div>
-      <div className="d-flex justify-content-center w-100 mt-4 mt-md-3">
+      <div
+        className={`${styles.buttonWrapper} d-flex justify-content-center w-100`}
+      >
         <CommanButton
           title="Talk to Employee Benefits Expert"
           url={buttonUrl}
