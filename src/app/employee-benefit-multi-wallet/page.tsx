@@ -275,6 +275,7 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
         description={multiWalletComparisonData.description}
         ourColumnLabel={multiWalletComparisonData.ourColumnLabel}
         competitorColumnLabel={multiWalletComparisonData.competitorColumnLabel}
+        featureColumnLabel={multiWalletComparisonData.featureColumnLabel}
         rows={multiWalletComparisonData.rows}
         hideIcons={true}
         highlightFeatureColumn={true}

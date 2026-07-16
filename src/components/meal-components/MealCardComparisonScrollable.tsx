@@ -39,6 +39,7 @@ export interface MealCardComparisonProps {
   hideIcons?: boolean
   highlightFeatureColumn?: boolean
   description?: string
+  featureColumnLabel?: string
 }
 
 const defaultHeading = {
@@ -115,6 +116,7 @@ const MealCardComparisonScrollable: React.FC<MealCardComparisonProps> = ({
   hideIcons = false,
   highlightFeatureColumn = false,
   description,
+  featureColumnLabel = "Feature",
 }) => {
   return (
     <section className={`${styles.comparisonSection} max-w-auto`}>
@@ -135,9 +137,9 @@ const MealCardComparisonScrollable: React.FC<MealCardComparisonProps> = ({
                 className={`${styles.featureCol} fw-bold ${highlightFeatureColumn ? styles.ourCol : ""}`}
               >
                 {highlightFeatureColumn ? (
-                  <span className={styles.ourLabel}>Feature</span>
+                  <span className={styles.ourLabel}>{featureColumnLabel}</span>
                 ) : (
-                  "Feature"
+                  featureColumnLabel
                 )}
               </th>
               {swapColumns ? (

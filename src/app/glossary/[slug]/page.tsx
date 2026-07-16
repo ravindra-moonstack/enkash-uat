@@ -334,7 +334,15 @@ export default async function GlossarySlugPage({ params }: PageProps) {
 
                 <div
                   className={styles.sectionContent + " " + "ql-editor"}
-                  dangerouslySetInnerHTML={{ __html: term.content }}
+                  dangerouslySetInnerHTML={{
+                    __html: (term.content || "")
+                      .replace(
+                        /<table([\s\S]*?)>/gi,
+                        (match: any) =>
+                          `<div class="${styles.tableWrapper}">${match}`
+                      )
+                      .replace(/<\/table>/gi, "</table></div>"),
+                  }}
                 />
               </div>
             </div>

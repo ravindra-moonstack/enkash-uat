@@ -414,21 +414,27 @@ const multiWalletComparisonData = {
     "Compare EnKash, Pluxee and Zaggle across UPI payments, employee benefit wallets, RBI PPI licensing and spend management capabilities.",
   ourColumnLabel: "EnKash",
   competitorColumnLabel: ["Pluxee, formerly Sodexo", "Zaggle"],
+  featureColumnLabel: "What to compare",
   rows: [
     {
       feature: "UPI payments",
       ourValue:
-        "Native UPI-on-PPI experience for payments at eligible UPI QR codes across India",
+        "Native UPI experience for payments at eligible UPI QR codes across India",
       competitorValue: [
         "QR payments through supported Pluxee acceptance channels, along with card payments",
         "UPI availability may vary by card programme and issuing partner",
       ],
     },
     {
+      feature: "Virtual and Physical Cards",
+      ourValue: "Both Instant Virtual Card and Physical Cards",
+      competitorValue: ["Only Physical Cards", "Only Physical Cards"],
+    },
+    {
       feature: "RBI PPI licence",
-      ourValue: "Direct RBI-authorised PPI issuer with in-house issuance",
+      ourValue: "Direct RBI-authorised PPI issuer with in-house tech stack",
       competitorValue: [
-        "Direct RBI-authorised PPI issuer",
+        "Direct RBI-authorised PPI issuer, 3rd party tech stack",
         "Cards are issued through banking or authorised issuing partners",
       ],
     },
@@ -464,8 +470,8 @@ const multiWalletComparisonData = {
       ourValue:
         "PPI issuance and platform management handled within the EnKash ecosystem",
       competitorValue: [
-        "Operates employee benefit programmes through its licensed Indian entity",
-        "Platform services may involve Zaggle and its issuing partners",
+        "Outsourced",
+        "Platform services may involve Zaggle and its issuing bank partners",
       ],
     },
     {
@@ -474,16 +480,15 @@ const multiWalletComparisonData = {
         "Built for Indian tax rules, UPI payments and business spend requirements",
       competitorValue: [
         "Indian operations supported by a global employee benefits group",
-        "India-focused spend management company listed on the NSE",
+        "India-focused spend management company.",
       ],
     },
     {
       feature: "Fund safety",
-      ourValue:
-        "Funds managed under RBI requirements applicable to authorised PPI issuers",
+      ourValue: "Funds managed under an RBI-monitored escrow account.",
       competitorValue: [
-        "Funds managed under RBI requirements applicable to authorised PPI issuers",
-        "Funds managed under the regulatory framework of the issuing bank or PPI partner",
+        "Funds managed under an RBI-monitored escrow account.",
+        "Funds managed by issuing bank or PPI partner",
       ],
     },
     {
