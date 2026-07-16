@@ -279,6 +279,10 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
         rows={multiWalletComparisonData.rows}
         hideIcons={true}
         highlightFeatureColumn={true}
+        ctaButton={{
+          label: "Book a Demo to See the Difference",
+          href: salesUrl,
+        }}
       />
 
       <StatisticsSection
@@ -308,9 +312,9 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
           },
         ]}
         links={[
-          "prepaid-cards-for-meals",
           "flexi-benefits-for-employees-in-india",
           "multi-wallet-prepaid-card",
+          "how-employee-tax-benefit-wallet-works",
         ]}
       />
       <div className={styles.other_products}>

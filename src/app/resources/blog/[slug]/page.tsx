@@ -25,10 +25,6 @@ import {
 } from "@/src/services/resource-service"
 import { generateBreadcrumbSchema } from "@/src/utils/metaData"
 
-export const revalidate = 600
-export async function generateStaticParams() {
-  return []
-}
 const calculateReadTime = (htmlContent: string): string => {
   const wordsPerMinute = 200
   const cleanText = htmlContent ? htmlContent.replace(/<[^>]*>/g, "") : ""
