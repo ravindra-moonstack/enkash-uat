@@ -7,11 +7,11 @@ export const getImageSrc = (post: any) => {
     return post.image
   }
 
-  return "/resources/placeholder.png"
+  return "/images/placeholder.svg"
 }
 
 export const getImageUrl = (url?: string): string => {
-  if (!url) return "/resources/placeholder.png"
+  if (!url) return "/images/placeholder.svg"
 
   const trimmed = url.trim()
 
@@ -98,15 +98,15 @@ export function addPTags(html: string) {
 
       if (!trimmed) return ""
 
-      // Check if this line opens a raw block
-      if (/^<(script|style|pre|iframe|video|audio|object|embed|blockquote|figure|picture)(\s|>)/i.test(trimmed)) {
+      // Check if this line opens a raw block (script/style/pre)
+      if (/^<(script|style|pre)(\s|>)/i.test(trimmed)) {
         insideRawBlock = true
       }
 
       // If we're inside a raw block, don't touch the line at all
       if (insideRawBlock) {
         // Check if this same line also closes the block (single-line script)
-        if (/<\/(script|style|pre|iframe|video|audio|object|embed|blockquote|figure|picture)>/i.test(trimmed)) {
+        if (/<\/(script|style|pre)>/i.test(trimmed)) {
           insideRawBlock = false
         }
         return trimmed

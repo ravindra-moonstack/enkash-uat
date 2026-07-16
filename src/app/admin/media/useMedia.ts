@@ -234,7 +234,7 @@ export const useMedia = (
 
   const getFileUrl = (filePath: string) => {
 
-    if (!filePath) return "/images/placeholder.png"
+    if (!filePath) return "/images/placeholder.svg"
     if (filePath.startsWith("http://") || filePath.startsWith("https://")) {
       return filePath
     }

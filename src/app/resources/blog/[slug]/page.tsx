@@ -2,16 +2,21 @@ import React from "react"
 import type { Metadata } from "next"
 import styles from "./styles.module.scss"
 import Link from "next/link"
-import { draftMode, cookies } from "next/headers"
 import { addPTags } from "@/src/utils/common"
 import blogStyles from "@/src/components/blog-components/singleBlog.module.scss"
 import dynamic from "next/dynamic"
 import BlogBanner from "@/src/components/blog-components/BlogBanner"
 import BlogBody from "@/src/components/blog-components/BlogBody"
 
-import AuthorSection from "@/src/components/blog-components/AuthorSection"
-import RelatedBlogs from "@/src/components/blog-components/RelatedBlogs"
-import NewsletterSection from "@/src/components/blog-components/NewsletterSection"
+const AuthorSection = dynamic(
+  () => import("@/src/components/blog-components/AuthorSection")
+)
+const RelatedBlogs = dynamic(
+  () => import("@/src/components/blog-components/RelatedBlogs")
+)
+const NewsletterSection = dynamic(
+  () => import("@/src/components/blog-components/NewsletterSection")
+)
 import { notFound, permanentRedirect } from "next/navigation"
 
 import {
@@ -90,17 +95,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-
-  const draft = await draftMode()
-  let token = undefined
-  if (draft.isEnabled) {
-    try {
-      const cookieStore = await cookies()
-      token = cookieStore.get("token")?.value
-    } catch (e) {}
-  }
-
-  const json = await getPostBySlug(slug, token)
+  const json = await getPostBySlug(slug)
 
   if (json?.redirect) {
     permanentRedirect(`/resources/blog/${json.redirect}`)
@@ -157,17 +152,7 @@ export async function generateMetadata({
 }
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
-
-  const draft = await draftMode()
-  let token = undefined
-  if (draft.isEnabled) {
-    try {
-      const cookieStore = await cookies()
-      token = cookieStore.get("token")?.value
-    } catch (e) {}
-  }
-
-  const json = await getPostBySlug(slug, token)
+  const json = await getPostBySlug(slug)
 
   if (json?.redirect) {
     permanentRedirect(`/resources/blog/${json.redirect}`)
@@ -282,8 +267,10 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         : `${process.env.URL || "https://www.enkash.com"}/uploads/${result[0].featured_image_url}`
       : "",
     author: {
-      "@type": "Organization",
-      name: result[0].author || "EnKash",
+      "@type": result[0].first_name ? "Person" : "Organization",
+      name: result[0].first_name
+        ? `${result[0].first_name} ${result[0].last_name || ""}`.trim()
+        : result[0].author || "EnKash",
     },
     publisher: {
       "@type": "Organization",
