@@ -12,6 +12,7 @@ import CustomBreadcrumb from "@/src/components/breadcrumb"
 import DynamicHeading from "@/src/components/dynamic-heading"
 import BlogSection from "@/src/components/sections/blog-section"
 import styles from "./page.module.scss"
+import blogStyles from "@/src/components/blog-components/singleBlog.module.scss"
 import AlphabetBar from "@/src/components/glossary/AlphabetBar"
 import GlossarySearch from "@/src/components/glossary/GlossarySearch"
 import LetterPageClient from "../../../components/glossary/LetterPageClient"
@@ -333,13 +334,13 @@ export default async function GlossarySlugPage({ params }: PageProps) {
                 </div>
 
                 <div
-                  className={styles.sectionContent + " " + "ql-editor"}
+                  className={styles.sectionContent + " " + blogStyles.blogContent + " " + "ql-editor"}
                   dangerouslySetInnerHTML={{
                     __html: (term.content || "")
                       .replace(
                         /<table([\s\S]*?)>/gi,
                         (match: any) =>
-                          `<div class="${styles.tableWrapper}">${match}`
+                          `<div class="${blogStyles.tableWrapper}">${match}`
                       )
                       .replace(/<\/table>/gi, "</table></div>"),
                   }}
