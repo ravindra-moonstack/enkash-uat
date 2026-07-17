@@ -5,14 +5,8 @@ import styles from "./header.module.scss"
 // components
 import navBarTopTtitle from "./data/nav-bar"
 import { enkashBlueLogo, arrowDownBlack, arrowDownWhite } from "."
-import dynamic from "next/dynamic"
-
-const PaymentModal = dynamic(() => import("./modal/payment-modal"), {
-  ssr: false,
-})
-const CommonModal = dynamic(() => import("./modal/common-modal"), {
-  ssr: false,
-})
+import PaymentModal from "./modal/payment-modal"
+import CommonModal from "./modal/common-modal"
 
 // helpers
 import { useHeaderHover } from "@/src/hooks/useHeaderHover"

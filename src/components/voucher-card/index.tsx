@@ -12,7 +12,6 @@ export interface CardProps {
   buttonUrl?: string
   discount?: number | string
   brandName?: string
-  priority?: boolean
 }
 
 const VoucherCard = ({
@@ -21,7 +20,6 @@ const VoucherCard = ({
   cardImage,
   discount,
   buttonUrl,
-  priority = false,
 }: CardProps): React.JSX.Element => {
   //
 
@@ -35,9 +33,6 @@ const VoucherCard = ({
                 src={cardImage}
                 alt="card visual"
                 className={styles.card_image}
-                priority={priority}
-                fetchPriority={priority ? "high" : "auto"}
-                sizes="(max-width: 768px) 100vw, 300px"
               />
             </div>
           )}
