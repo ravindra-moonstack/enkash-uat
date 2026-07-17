@@ -90,8 +90,6 @@ function ContentShowcase({
                   alt={imageAlt}
                   className={`position-relative w-100 object-fit-contain ${imgHeightStyle}`}
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={85}
-                   
                 />
               </div>
             </div>
