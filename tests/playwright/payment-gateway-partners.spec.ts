@@ -10,7 +10,7 @@ test("fills and submits Payment Gateway Partnership form", async ({ page }) => {
   await page.locator('input[name="SingleLine1"]').fill("Doe Enterprises")
   await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210")
 
-  const singleSelect = page.getByRole("button", { name: "Dropdown5" })
+  const singleSelect = page.getByRole("button", { name: "Monthly Merchant Volume" })
   await singleSelect.click()
 
   await page.getByRole("menuitem", { name: "0 to 5" }).click()
@@ -19,7 +19,7 @@ test("fills and submits Payment Gateway Partnership form", async ({ page }) => {
 
   await expect(page.locator('input[name="Dropdown5"]')).toHaveValue("5 to 10")
 
-  const singleSelectSecond = page.getByRole("button", { name: "Dropdown6" })
+  const singleSelectSecond = page.getByRole("button", { name: "Line of Business" })
   await singleSelectSecond.click()
 
   await page.getByRole("menuitem", { name: "Developers" }).click()

@@ -18,7 +18,7 @@ test("has main heading", async ({ page }) => {
 test("Talk to Us button navigates to Sales page with source param", async ({
   page,
 }) => {
-  await page.goto("https://www.enkash.com/products/corporate-cards")
+  await page.goto("/products/corporate-cards")
   const talkToUsButton = page.locator("text=Talk to Us").first()
 
   await expect(talkToUsButton).toBeVisible({ timeout: 10000 })
@@ -31,10 +31,10 @@ test("Talk to Us button navigates to Sales page with source param", async ({
   await expect(page).toHaveURL(/\/sales\?source=corporate-cards/)
 })
 
-test("Explore More button navigates to Prepaid Card page", async ({ page }) => {
-  await page.goto("https://www.enkash.com/products/corporate-cards")
+test("Explore Prepaid Cards button navigates to Prepaid Card page", async ({ page }) => {
+  await page.goto("/products/corporate-cards")
 
-  const exploreMoreButton = page.getByRole("button", { name: /Explore More/i })
+  const exploreMoreButton = page.getByRole("button", { name: /Explore Prepaid Cards/i })
 
   await expect(exploreMoreButton).toBeVisible({ timeout: 10000 })
 
@@ -49,7 +49,7 @@ test("Explore More button navigates to Prepaid Card page", async ({ page }) => {
 test("Explore Our Expense Management Suite button navigates to Expense Management Suite page", async ({
   page,
 }) => {
-  await page.goto("https://www.enkash.com/products/corporate-cards")
+  await page.goto("/products/corporate-cards")
 
   const expenseManagementButton = page.getByRole("button", {
     name: /Expense Management Suite/i,

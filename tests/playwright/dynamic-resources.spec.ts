@@ -5,7 +5,7 @@ test.describe("Dynamic Pages & Resources", () => {
   test.describe("Glossary (/glossary)", () => {
     test("GLO-01: Alphabet bar loads", async ({ page }) => {
       await page.goto("/glossary")
-      const alphabetBar = page.locator("a").filter({ hasText: /^A$/ })
+      const alphabetBar = page.locator("a").filter({ hasText: /^A$/ }).first()
       await expect(alphabetBar).toBeVisible()
     })
 

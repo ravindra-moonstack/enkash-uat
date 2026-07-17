@@ -12,7 +12,7 @@ test("has main heading", async ({ page }) => {
   await page.goto("/fuel-card")
 
   const heading = page.getByRole("heading", {
-    name: /Transforming Fuel Expense Management with Fuel Cards/i,
+    name: /Transform Fuel Expense with Most Flexible Fuel Card Solution/i,
   })
   await expect(heading).toBeVisible()
 })
@@ -22,7 +22,7 @@ test("has main heading", async ({ page }) => {
 test("Get Started button navigates to Sales page with source param", async ({
   page,
 }) => {
-  await page.goto("https://www.enkash.com/fuel-card")
+  await page.goto("/fuel-card")
   const getStartedButton = page.locator("text=Get Started").first()
 
   await expect(getStartedButton).toBeVisible({ timeout: 10000 })

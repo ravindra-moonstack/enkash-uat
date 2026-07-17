@@ -12,7 +12,7 @@ test("fills and submits Bank and Affiliate Partnerships form", async ({ page }) 
   await page.locator('input[name="PhoneNumber_countrycode"]').fill("9876543210")
 
   // ✅ Open MultiChoice custom select
-  const multiSelect = page.getByRole("button", { name: "MultipleChoice" })
+  const multiSelect = page.getByRole("button", { name: "I am looking for *" })
   await multiSelect.click()
 
   // ✅ Select options from dropdown
@@ -51,7 +51,7 @@ test("fills and submits Bank and Affiliate Partnerships form", async ({ page }) 
   })
 
   // Submit form
-  await page.getByRole("button", { name: "Submit" }).click()
+  await page.getByRole("button", { name: /Submit/i }).click()
 
   // Assert confirmation
   await expect(page).toHaveURL(/bank-partnerships/i)

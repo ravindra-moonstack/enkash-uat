@@ -1,34 +1,35 @@
 import { test, expect } from "@playwright/test"
 
-test("Website loads properly", async ({ page }) => {
+test("Website loads properly and redirects", async ({ page }) => {
   await page.goto("/virtual-card")
+  
+  // It should redirect to corporate-cards
+  await expect(page).toHaveURL(/\/products\/corporate-cards/i)
 
-  await expect(page).toHaveTitle(
-    /Virtual Corporate Card for Secure and Instant Payments/i
-  )
+  await expect(page).toHaveTitle(/EnKash/i)
 })
 
-test("has main heading", async ({ page }) => {
+test("has main heading from corporate cards", async ({ page }) => {
   await page.goto("/virtual-card")
 
   const heading = page.getByRole("heading", {
-    name: /Secure and Efficient Payments with Virtual Prepaid Card/i,
+    name: /Corporate cards that move at the speed of your business./i,
   })
   await expect(heading).toBeVisible()
 })
 
-test("Get Started button navigates to Sales page with source param", async ({
+test("Talk to Us button navigates to Sales page with source param", async ({
   page,
 }) => {
-  await page.goto("https://www.enkash.com/virtual-card")
-  const getStartedButton = page.locator("text=Get Started").first()
+  await page.goto("/virtual-card") // relative url
+  const getStartedButton = page.locator("text=Talk to Us").first()
 
   await expect(getStartedButton).toBeVisible({ timeout: 10000 })
 
   await Promise.all([
-    page.waitForURL(/\/sales\?source=virtual-card/),
+    page.waitForURL(/\/sales\?source=corporate-cards/),
     getStartedButton.click(),
   ])
 
-  await expect(page).toHaveURL(/\/sales\?source=virtual-card/)
+  await expect(page).toHaveURL(/\/sales\?source=corporate-cards/)
 })

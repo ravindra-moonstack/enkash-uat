@@ -24,7 +24,7 @@ test("fills and submits Sales form", async ({ page }) => {
 
   await page.locator('input[name="Website"]').fill("https://www.enkash.com/")
 
-  const selectBox = page.getByRole("button", { name: "Dropdown5" })
+  const selectBox = page.getByRole("button", { name: "How you heard about us" })
   await selectBox.click()
 
  
@@ -56,7 +56,7 @@ test("fills and submits Sales form", async ({ page }) => {
 
   await page.waitForTimeout(1000)
 
-  const submitButton = page.getByRole("button", { name: "submit" })
+  const submitButton = page.getByRole("button", { name: /submit/i })
 
   await submitButton.click({ timeout: 10000 })
 

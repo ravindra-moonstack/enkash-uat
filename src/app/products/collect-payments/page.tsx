@@ -9,7 +9,9 @@ import faqData from "./faq-data"
 
 import dynamic from "next/dynamic"
 
-const AllInOnePolicy = dynamic(() => import("@/src/components/all-in-one-policy"))
+const AllInOnePolicy = dynamic(
+  () => import("@/src/components/all-in-one-policy")
+)
 import DynamicHeading from "@/src/components/dynamic-heading"
 const FaqSection = dynamic(() => import("@/src/components/faq-section"))
 const HowDoesItWork = dynamic(() => import("@/src/components/how-does-it-work"))
@@ -52,7 +54,7 @@ const CollectPayment = (): React.JSX.Element => {
         subtitle="No more chasing, no more delays – Payment Collection Solutions for Merchants Who Want to Make Money"
         animationName="CollectPaymentAnimation"
         buttonTitle="Talk to Us"
-        buttonUrl={process.env.SALES_URL}
+        buttonUrl={salesUrl}
         buttonTheme="blue"
         linkColor="white"
       />
