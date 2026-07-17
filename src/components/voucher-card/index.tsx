@@ -12,6 +12,7 @@ export interface CardProps {
   buttonUrl?: string
   discount?: number | string
   brandName?: string
+  priority?: boolean
 }
 
 const VoucherCard = ({
@@ -20,6 +21,7 @@ const VoucherCard = ({
   cardImage,
   discount,
   buttonUrl,
+  priority,
 }: CardProps): React.JSX.Element => {
   //
 
@@ -33,6 +35,7 @@ const VoucherCard = ({
                 src={cardImage}
                 alt="card visual"
                 className={styles.card_image}
+                priority={priority}
               />
             </div>
           )}
