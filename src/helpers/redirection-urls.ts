@@ -710,6 +710,7 @@ const url: {
   {
     source: "/resources/blog/category/undefined",
     destination: "/resources/blogs",
+    permanent: true,
   },
   {
     source: "/glossary/NBFCs",
@@ -719,6 +720,16 @@ const url: {
   {
     source: "/glossary/Prepaid%20Payment%20Instruments%20\\(PPI\\)",
     destination: "/glossary/prepaid-payment-instruments-ppi",
+    permanent: true,
+  },
+  {
+    source: "/resources/blog/GST",
+    destination: "/resources/blog/gst",
+    permanent: true,
+  },
+  {
+    source: "/resources/blog/EBITDA",
+    destination: "/resources/blog/ebitda",
     permanent: true,
   },
 ]
