@@ -230,9 +230,9 @@ const statsData = [
     animate: true,
   },
   {
-    value: 500000,
+    value: 2,
     label: "Merchant Outlets Across India",
-    suffix: "+",
+    suffix: " Cr+",
     animate: true,
   },
 ]
@@ -460,4 +460,16 @@ const customCategories = [
     icon: categoryIcon8,
   },
 ]
-export { dataSets, intantActionData, cardType, stackcardData, statsData, allProductSections, mealBenefitUpgradeData, mealCardComparisonData, acceptedEverywhereData, benefitsCardsData, customCategories }
+export {
+  dataSets,
+  intantActionData,
+  cardType,
+  stackcardData,
+  statsData,
+  allProductSections,
+  mealBenefitUpgradeData,
+  mealCardComparisonData,
+  acceptedEverywhereData,
+  benefitsCardsData,
+  customCategories,
+}
