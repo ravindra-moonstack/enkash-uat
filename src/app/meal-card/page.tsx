@@ -3,24 +3,29 @@ import { Metadata } from "next"
 import styles from "./page.module.scss"
 
 //data
-import { acceptedEverywhereData, allProductSections, benefitsCardsData, cardType, customCategories, dataSets, intantActionData, mealBenefitUpgradeData, mealCardComparisonData, stackcardData, statsData } from "./data"
+import {
+  acceptedEverywhereData,
+  allProductSections,
+  benefitsCardsData,
+  cardType,
+  customCategories,
+  dataSets,
+  intantActionData,
+  mealBenefitUpgradeData,
+  mealCardComparisonData,
+  statsData,
+} from "./data"
 import faqData from "./faq-data"
 
 //components
-import AllInOnePolicy from "@/src/components/all-in-one-policy"
 import DynamicHeading from "@/src/components/dynamic-heading"
-import dynamic from "next/dynamic"
-const LogoSlider = dynamic(() => import("@/src/components/logo-slider"))
-const CardStacking = dynamic(() => import("@/src/components/card-stacking"))
 import FaqSection from "@/src/components/faq-section"
-import StepsSection from "@/src/components/steps-section"
 import HowDoesItWork from "@/src/components/how-does-it-work"
 import HeroSection from "@/src/components/sections/hero-section"
-import CtaSection from "@/src/components/sections/cta-section"
 import OtherProducts from "@/src/components/sections/other-products"
 
 //helpers
-import { circles, mealCardImage, cardRotatingImage, heroCardImg, heroImage, statsBg, bulletPointSectionImg } from "./img"
+import { circles, heroImage, statsBg, bulletPointSectionImg } from "./img"
 import { ctaSideImg } from "../employee-benefit-multi-wallet/img"
 
 //utils
@@ -28,7 +33,11 @@ import { getSalesUrl } from "@/src/utils/getSalesUrl"
 import generateMetaData from "@/src/utils/metaData"
 import BlogSection from "@/src/components/sections/blog-section"
 
-import { FeatureCard, StatsSection, EmployeeBenefitSteps, CtaBanner } from "@/src/components"
+import {
+  FeatureCard,
+  StatsSection,
+  EmployeeBenefitSteps,
+} from "@/src/components"
 import BulletPointSection from "@/src/components/sections/bullet-point-section"
 import AcceptedEverywhere from "@/src/components/meal-components/AcceptedEverywhere"
 import MealCardComparison from "@/src/components/meal-components/MealCardComparison"
@@ -68,28 +77,24 @@ const MealCards = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "Give Every Employee a ",
+            text: "India’s First ",
             color: "color-black d-block",
           },
           {
-            text: "Tax-Free Meal Benefit ",
+            text: "Meal Card ",
             color: "color-equity-blue f-7",
           },
           {
-            text: "Worth ",
+            text: "with ",
             color: "color-black",
           },
           {
-            text: "₹1,05,600",
+            text: "UPI Payments",
             color: "color-equity-blue f-7",
-          },
-          {
-            text: ", Without Changing Their CTC",
-            color: "color-black",
           },
         ]}
         description={{
-          text: "Your employees work hard. They deserve to keep more of what they earn. EnKash Meal Cards restructure your existing meal allowance into a tax-free benefit worth up to ₹1,05,600 per employee annually, more in-hand for them, zero extra cost for you.",
+          text: "Bringing together the power of RuPay, the familiarity of UPI, and the tax efficiency of meal benefits.",
         }}
         button={{ title: "Start Saving", url: salesUrl, theme: "blue" }}
         rightImage={heroImage}
@@ -136,8 +141,8 @@ const MealCards = (): React.JSX.Element => {
                 color: "color-black f-5",
               },
             ]}
-            headingTag={'h2'}
-            className={'f-6'}
+            headingTag={"h2"}
+            className={"f-6"}
           />
         </div>
 
@@ -189,11 +194,16 @@ const MealCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.features_section} ${styles.steps_container} bg-white`}>
+      <div
+        className={`${styles.features_section} ${styles.steps_container} bg-white`}
+      >
         <EmployeeBenefitSteps
           heading={{
             content: [
-              { title: "How To Get Started with EnKash Meal Cards", color: "color-black text-center f-5" },
+              {
+                title: "How To Get Started with EnKash Meal Cards",
+                color: "color-black text-center f-5",
+              },
             ],
           }}
           description={{
@@ -216,7 +226,6 @@ const MealCards = (): React.JSX.Element => {
         rows={mealCardComparisonData.rows}
         ctaButton={mealCardComparisonData.ctaButton}
       />
-
 
       <AcceptedEverywhere
         heading={acceptedEverywhereData.heading}

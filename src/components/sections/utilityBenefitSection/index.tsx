@@ -49,7 +49,7 @@ const UtilityBeefitSection: React.FC<UtilityBeefitSectionProps> = ({
                   <DynamicHeading
                     content={[{ title: card.desc, color: "color-white" }]}
                     headingTag="p"
-                    className="mb-0"
+                    className="mb-0 text-center"
                   />
                 </div>
               </div>
