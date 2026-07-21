@@ -52,13 +52,16 @@
   }
 
   .campaignBenefit {
-    padding: 0px 20px 60px !important;
+    padding: 0px 20px 20px !important;
     div[class*="section"] {
       div[class*="card"] {
         @media (max-width: 767px) {
           width: 100% !important;
         }
       }
+    }
+    @include for-laptops{
+      padding-bottom: 60px !important;
     }
   }
 
@@ -268,13 +271,33 @@
 
     .logoSlider {
       position: relative;
-      z-index: 6;
-      padding: 16px 20px 20px;
+      z-index: 6; 
       background-color: #ffffff !important;
 
       @include for-laptops {
         padding: 24px 20px 20px;
       }
+    }
+
+    .mobileLogoSliderWrap {
+      position: relative;
+      width: 100vw;
+      margin-left: -20px;
+      margin-top: 20px;
+      margin-bottom: 0px;
+      z-index: 5;
+    }
+
+    .mobileSliderOverlay {
+      position: absolute;
+      top: 0;
+      bottom: -1000px;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      z-index: -1;
+      pointer-events: none;
+      box-shadow: 0px -10px 50px 47px #ffffff;
     }
 
     .heroTrust {
@@ -332,9 +355,24 @@
       min-height: 570px;
       display: flex;
       flex-direction: column;
+      position: relative;
+      z-index: 10;
       @media (max-width: 960px) {
         min-height: 500px;
       }
+    }
+  }
+
+  .showOnlyOnMobile {
+    display: none !important;
+    @media (max-width: 767px) {
+      display: block !important;
+    }
+  }
+
+  .hideOnMobile {
+    @media (max-width: 767px) {
+      display: none !important;
     }
   }
 
@@ -1135,7 +1173,7 @@
   .hideOnMobile {
     display: none !important;
     @include for-laptops {
-      display: flex !important;
+      display: block !important;
     }
   }
 

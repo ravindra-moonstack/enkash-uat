@@ -98,6 +98,16 @@ const MealCardClient = () => {
                 />
               </div>
             </div>
+
+            <div
+              className={`${styles.mobileLogoSliderWrap} ${styles.showOnlyOnMobile}`}
+            >
+              <div className={styles.mobileSliderOverlay}></div>
+              <div className={styles.logoSlider}>
+                <LogoSlider />
+              </div>
+            </div>
+
             <div id="form-section" className={styles.formSection}>
               <div className="contactFormWrapper m-0">
                 <div className={styles.formHead}>
@@ -119,7 +129,7 @@ const MealCardClient = () => {
         </div>
 
         {/* Spacer to maintain hero height since LogoSlider was moved out */}
-        <div style={{ height: "70px" }}></div>
+        <div style={{ height: "70px" }} className="d-none d-md-block"></div>
 
         {/* Fade gradient inside the hero to handle transition */}
         <div
@@ -146,8 +156,10 @@ const MealCardClient = () => {
         />
       </div>
 
-      {/* Logo Slider */}
-      <div className={styles.logoSliderWrap} style={{ marginTop: 0 }}>
+      <div
+        className={`${styles.logoSliderWrap} ${styles.hideOnMobile}`}
+        style={{ marginTop: 0 }}
+      >
         <div className={styles.logoSlider}>
           <LogoSlider />
         </div>
