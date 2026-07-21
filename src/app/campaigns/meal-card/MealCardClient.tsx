@@ -28,7 +28,7 @@ const CommanButton = dynamic(
 )
 
 import { benifitsData } from "../enterprise-bill-payments/data"
-import { HeroBg } from "./img"
+import { HeroBg, HeroBgMobile } from "./img"
 
 const MealCardClient = () => {
   const [isMobile, setIsMobile] = React.useState(false)
@@ -43,9 +43,9 @@ const MealCardClient = () => {
   return (
     <div className={styles.enterpriseBillPayments}>
       <section className={`${styles.hero}`}>
-        {HeroBg && (
+        {(HeroBg || HeroBgMobile) && (
           <Image
-            src={HeroBg}
+            src={isMobile ? HeroBgMobile : HeroBg}
             alt="Hero Background"
             fill
             priority={true}
@@ -53,7 +53,7 @@ const MealCardClient = () => {
             className={styles.heroBg}
             sizes="100vw"
             decoding="async"
-            quality={80}
+            quality={100}
           />
         )}
         <header className={styles.customHeader}>
@@ -82,17 +82,11 @@ const MealCardClient = () => {
                 headingTag="h1"
                 className={"mb-0"}
               />
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "Bringing together the power of RuPay, the familiarity of UPI, and the tax efficiency of meal benefits.",
-                    color: "color-white f-3",
-                  },
-                ]}
-                headingTag="p"
-                className={"mb-3"}
-              />
+              <p className={styles.heroDesc}>
+                Bringing together the power of RuPay, the familiarity of
+                {!isMobile && <br />}
+                UPI, and the tax efficiency of meal benefits.
+              </p>
               <div className={styles.heroCtas}>
                 <Image
                   src="/images/LicenseGroupIcon.png"
@@ -102,21 +96,10 @@ const MealCardClient = () => {
                   priority={true}
                   className={styles.groupIcon}
                 />
-                {isMobile && (
-                  <CommanButton
-                    title="Get Started"
-                    arrow
-                    url="#form-section-mobile"
-                    className="mt-5"
-                  />
-                )}
               </div>
             </div>
-            <div
-              id="form-section"
-              className={`${styles.formSection} ${styles.hideOnMobile}`}
-            >
-              <div className="contactFormWrapper">
+            <div id="form-section" className={styles.formSection}>
+              <div className="contactFormWrapper m-0">
                 <div className={styles.formHead}>
                   <DynamicHeading
                     content={[
@@ -170,22 +153,20 @@ const MealCardClient = () => {
         </div>
       </div>
 
-      {isMobile && (
-        <div id="form-section-mobile" className={styles.showOnlyOnMobile}>
-          <div className="contactFormWrapper">
-            <div className={styles.formHead}>
-              <DynamicHeading
-                content={[
-                  { title: "We just need a few quick details", color: "f-4" },
-                ]}
-                headingTag="h2"
-                className={`formH2 mb-2 text-center`}
-              />
-            </div>
-            <MealCardCampaignForm />
+      <footer className={styles.customFooter}>
+        <div className={"max-w-auto"}>
+          <div className={styles.copyrightBar}>
+            <p>
+              Copyright © 2026 | Nehat Tech Solutions Pvt. Ltd. All rights
+              reserved.
+            </p>
+            <p>
+              Copyright © 2026 | Nehat Business Services Pvt. Ltd. All rights
+              reserved.
+            </p>
           </div>
         </div>
-      )}
+      </footer>
     </div>
   )
 }

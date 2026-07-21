@@ -135,7 +135,7 @@ const MealCardCampaignForm: React.FC = () => {
 
       <div>
         <textarea
-          placeholder="How are you planning to use EnKash business bill payments? What are your timelines, and how can we help you to go-live faster?"
+          placeholder="Feel free to provide more details."
           aria-label="Requirement details"
           maxLength={500}
           {...getFieldProps("MultiLine")}
