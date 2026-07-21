@@ -6,7 +6,6 @@ import Image from "next/image"
 import dynamic from "next/dynamic"
 import DynamicHeading from "@/components/dynamic-heading"
 import styles from "./page.module.scss"
-import { HeroBg } from "../enterprise-bill-payments/img"
 
 const MealCardCampaignForm = dynamic(
   () => import("@/src/components/forms/meal-card-campaign-form/index"),
@@ -29,6 +28,7 @@ const CommanButton = dynamic(
 )
 
 import { benifitsData } from "../enterprise-bill-payments/data"
+import { HeroBg } from "./img"
 
 const MealCardClient = () => {
   const [isMobile, setIsMobile] = React.useState(false)
