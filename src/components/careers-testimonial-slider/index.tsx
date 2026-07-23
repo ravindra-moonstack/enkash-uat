@@ -4,7 +4,7 @@ import Slider from "react-slick"
 import Image from "next/image"
 
 import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import "@/src/styles/slick-theme.css"
 import styles from "./CareersTestimonialSlider.module.scss"
 
 import { testimonials } from "./data"

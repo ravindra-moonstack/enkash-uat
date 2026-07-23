@@ -276,13 +276,13 @@ export async function POST(request: Request) {
     let candidate = fileName
     const parsed = path.parse(candidate)
     let counter = 1
-    while (fs.existsSync(path.join(uploadDir, candidate))) {
+    while (fs.existsSync(path.join(/*turbopackIgnore: true*/ uploadDir, candidate))) {
       candidate = `${parsed.name}-${counter}${parsed.ext}`
       counter += 1
     }
     fileName = candidate
 
-    const filePath = path.join(uploadDir, fileName)
+    const filePath = path.join(/*turbopackIgnore: true*/ uploadDir, fileName)
     fs.writeFileSync(filePath, fileData)
 
     const relativePath = dateDir + "/" + fileName
