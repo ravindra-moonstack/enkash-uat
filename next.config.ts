@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   compress: true,
 
+  // @ts-ignore - eslint is valid but might be missing in some NextConfig type definitions
   eslint: {
     ignoreDuringBuilds: true,
   },
