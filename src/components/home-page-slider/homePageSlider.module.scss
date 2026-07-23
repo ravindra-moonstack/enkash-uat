@@ -14,81 +14,85 @@
     }
   }
 
-  :global {
-    .slick-slider {
-      position: relative;
-      z-index: 2;
-    }
+  :global(.slick-slider) {
+    position: relative;
+    z-index: 2;
+  }
 
-    .slick-slide {
-      opacity: 0;
-      transition: all 0.3s ease;
-      pointer-events: none;
-      margin: 0 !important;
-    }
+  :global(.slick-slide) {
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    margin: 0 !important;
+  }
 
-    .slick-current,
-    .slick-active {
-      opacity: 1;
-      pointer-events: auto;
-    }
+  :global(.slick-current) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  :global(.slick-active) {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-    /* Custom dots */
-    .slick-dots {
-      text-align: center;
-      margin-top: 30px;
-      bottom: -45px;
+  /* Custom dots */
+  :global(.slick-dots) {
+    text-align: center;
+    margin-top: 30px;
+    bottom: -45px;
 
-      li {
-        margin: 0 5px;
+    li {
+      margin: 0 5px;
+      transition: all 0.5s ease;
+
+      button {
+        width: 13px;
+        height: 13px;
+        background: #454545;
+        opacity: 0.2;
+        border-radius: 20px;
+        padding: 0;
         transition: all 0.5s ease;
+      }
 
-        button {
-          width: 13px;
-          height: 13px;
-          background: #454545;
-          opacity: 0.2;
-          border-radius: 20px;
-          padding: 0;
-          transition: all 0.5s ease;
-        }
+      &.slick-active button {
+        opacity: 1;
+        background: $color-equity-blue;
+        width: 50px; // stretched active dot
+      }
 
-        &.slick-active button {
-          opacity: 1;
-          background: $color-equity-blue;
-          width: 50px; // stretched active dot
-        }
-
-        button:before {
-          content: none !important; // remove default slick dot style
-        }
+      button:before {
+        content: none !important; // remove default slick dot style
       }
     }
+  }
 
-    /* Arrows (if you enable them later) */
-    .slick-prev,
-    .slick-next {
-      width: 27px;
-      height: 44px;
-      z-index: 10;
-      background-size: 27px 44px;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+  /* Arrows (if you enable them later) */
+  :global(.slick-prev) {
+    width: 27px;
+    height: 44px;
+    z-index: 10;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+    left: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M0,22L22,0l2.1,2.1L4.2,22l19.9,19.9L22,44L0,22z' fill='%23ffffff'/%3E%3C/svg%3E");
+  }
+  :global(.slick-next) {
+    width: 27px;
+    height: 44px;
+    z-index: 10;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+    right: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22z' fill='%23ffffff'/%3E%3C/svg%3E");
+  }
 
-    .slick-prev {
-      left: 10px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M0,22L22,0l2.1,2.1L4.2,22l19.9,19.9L22,44L0,22z' fill='%23ffffff'/%3E%3C/svg%3E");
-    }
-
-    .slick-next {
-      right: 10px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'%3E%3Cpath d='M27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22z' fill='%23ffffff'/%3E%3C/svg%3E");
-    }
-
-    .slick-prev:before,
-    .slick-next:before {
-      content: none;
-    }
+  :global(.slick-prev):before {
+    content: none;
+  }
+  :global(.slick-next):before {
+    content: none;
   }
 }

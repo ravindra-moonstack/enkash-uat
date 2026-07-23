@@ -1,7 +1,7 @@
 "use client"
 import Slider, { Settings } from "react-slick"
 import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import "@/src/styles/slick-theme.css"
 import styles from "./sliderComponent.module.scss"
 import CustomBreadcrumb from "../breadcrumb"
 import DynamicHeading from "../dynamic-heading"

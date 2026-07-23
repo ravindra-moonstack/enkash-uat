@@ -6,7 +6,7 @@ import Slider, { Settings } from "react-slick"
 
 import styles from "./banking-slider.module.scss"
 import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import "@/src/styles/slick-theme.css"
 
 import DynamicHeading from "../dynamic-heading"
 import { logos } from "./data"

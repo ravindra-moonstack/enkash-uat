@@ -132,29 +132,38 @@
         }
     }
 
-    :global {
-        .slick-dots {
-            position: absolute;
-            bottom: -18px;
-            left: 50%;
-            transform: translateX(-50%);
+    :global(.slick-dots) {
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        display: flex !important;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
             width: auto;
-            display: flex !important;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 8px;
+            height: auto;
             margin: 0;
-            padding: 0;
-            list-style: none;
 
-            li {
-                width: auto;
-                height: auto;
-                margin: 0;
+            button {
+                font-size: 0;
+                padding: 0;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: $color-dark-grey;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
 
-                button {
-                    font-size: 0;
-                    padding: 0;
+                &::before {
+                    display: none;
                     width: 8px;
                     height: 8px;
                     border-radius: 50%;
@@ -162,28 +171,17 @@
                     border: none;
                     cursor: pointer;
                     transition: all 0.3s ease;
-
-                    &::before {
-                        display: none;
-                        width: 8px;
-                        height: 8px;
-                        border-radius: 50%;
-                        background: $color-dark-grey;
-                        border: none;
-                        cursor: pointer;
-                        transition: all 0.3s ease;
-                    }
-
-                    &:hover {
-                        background: $color-alternate-grey;
-                    }
                 }
 
-                &.slick-active button {
-                    width: 28px;
-                    border-radius: 20px;
+                &:hover {
                     background: $color-alternate-grey;
                 }
+            }
+
+            &.slick-active button {
+                width: 28px;
+                border-radius: 20px;
+                background: $color-alternate-grey;
             }
         }
     }

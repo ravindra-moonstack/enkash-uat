@@ -3,7 +3,7 @@ import pool from "@/src/lib/dbConnect"
 import fs from "fs"
 import path from "path"
 
-const USED_LIST_PATH = path.resolve(process.cwd(), "used_files.txt")
+const USED_LIST_PATH = path.resolve(/*turbopackIgnore: true*/ process.cwd(), "used_files.txt")
 const CODE_DIRS = ["src", "public"]
 const ALLOWED_EXTENSIONS = new Set([
   ".ts",
@@ -57,7 +57,7 @@ async function getFilesRecursive(dir: string): Promise<string[]> {
   try {
     const list = await fs.promises.readdir(dir, { withFileTypes: true })
     for (const file of list) {
-      const filePath = path.resolve(dir, file.name)
+      const filePath = path.resolve(/*turbopackIgnore: true*/ dir, file.name)
       if (file.isDirectory()) {
         if (
           file.name === "uploads" ||
@@ -150,7 +150,7 @@ export async function GET() {
     // 2. Scan codebase content
     const codeFiles: { path: string; content: string; isAdmin: boolean }[] = []
     for (const dirName of CODE_DIRS) {
-      const dirPath = path.resolve(process.cwd(), dirName)
+      const dirPath = path.resolve(/*turbopackIgnore: true*/ process.cwd(), dirName)
       if (!fs.existsSync(dirPath)) continue
       const allFiles = await getFilesRecursive(dirPath)
       for (const f of allFiles) {

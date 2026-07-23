@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+
   experimental: {
     optimizeCss: true,
     optimizePackageImports: [
@@ -48,14 +49,10 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  turbopack: {},
+
   webpack(config, { dev, isServer }) {
     config.infrastructureLogging = { level: "error" }
-
-    // Alias the third-party slick theme to our performance optimized local version
-    config.resolve.alias["slick-carousel/slick/slick-theme.css"] = path.resolve(
-      __dirname,
-      "src/styles/slick-theme.css"
-    )
 
     if (!dev && !isServer) {
       config.optimization.splitChunks.cacheGroups = {
@@ -105,15 +102,7 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      {
-        source: "/_next/static/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
+
       {
         source: "/((?!_next/static|_next/image|.*\\..*).*)",
         headers: [
