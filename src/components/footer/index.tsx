@@ -34,7 +34,7 @@ const FooterV2 = (): React.JSX.Element => {
           {/* 1st col */}
           <div className="d-flex flex-column flex-md-row ">
             <div className={`order-2 order-md-1 ${styles.logo_container}`}>
-              <Link href="/" className={`${styles.logo_img} d-none d-md-block`}>
+              <Link prefetch={false} href="/" className={`${styles.logo_img} d-none d-md-block`}>
                 <Image
                   src={enkashBlueLogo}
                   alt="Enkash"
@@ -137,7 +137,7 @@ const FooterV2 = (): React.JSX.Element => {
                       <div className={` ${styles.info_body_two}`}>
                         <ul>
                           <li>
-                            <Link
+                            <Link prefetch={false}
                               href="tel:8530490475"
                               target="_blank"
                               rel="noreferrer noopener"
@@ -150,7 +150,7 @@ const FooterV2 = (): React.JSX.Element => {
                             </Link>
                           </li>
                           <li>
-                            <Link
+                            <Link prefetch={false}
                               href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                               target="_blank"
                               rel="noreferrer noopener"
@@ -180,7 +180,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div
                           className={`d-flex justify-content-between  ${styles.social_icons_row}`}
                         >
-                          <Link
+                          <Link prefetch={false}
                             href="https://www.linkedin.com/company/enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
@@ -188,7 +188,7 @@ const FooterV2 = (): React.JSX.Element => {
                           >
                             <FaLinkedinIn />
                           </Link>
-                          <Link
+                          <Link prefetch={false}
                             href="https://youtube.com/@enkash"
                             target="_blank"
                             rel="noreferrer noopener"
@@ -196,7 +196,7 @@ const FooterV2 = (): React.JSX.Element => {
                           >
                             <FaYoutube />
                           </Link>
-                          <Link
+                          <Link prefetch={false}
                             href="https://www.instagram.com/Enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
@@ -204,7 +204,7 @@ const FooterV2 = (): React.JSX.Element => {
                           >
                             <FaInstagram />
                           </Link>
-                          <Link
+                          <Link prefetch={false}
                             href="https://twitter.com/EnkashBusiness"
                             target="_blank"
                             rel="noreferrer noopener"
@@ -212,7 +212,7 @@ const FooterV2 = (): React.JSX.Element => {
                           >
                             <FaXTwitter />
                           </Link>
-                          <Link
+                          <Link prefetch={false}
                             href="https://www.facebook.com/Enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
@@ -259,7 +259,7 @@ const FooterV2 = (): React.JSX.Element => {
                         <div className={` ${styles.info_body_two}`}>
                           <ul>
                             <li>
-                              <Link
+                              <Link prefetch={false}
                                 href="tel:8530490475"
                                 target="_blank"
                                 rel="noreferrer noopener"
@@ -274,7 +274,7 @@ const FooterV2 = (): React.JSX.Element => {
                               </Link>
                             </li>
                             <li>
-                              <Link
+                              <Link prefetch={false}
                                 href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                                 target="_blank"
                                 rel="noreferrer noopener"
@@ -305,7 +305,7 @@ const FooterV2 = (): React.JSX.Element => {
                           <div
                             className={`d-flex justify-content-between  ${styles.social_icons_row}`}
                           >
-                            <Link
+                            <Link prefetch={false}
                               href="https://www.linkedin.com/company/enkashbusiness"
                               target="_blank"
                               rel="noreferrer noopener"
@@ -313,7 +313,7 @@ const FooterV2 = (): React.JSX.Element => {
                             >
                               <FaLinkedinIn />
                             </Link>
-                            <Link
+                            <Link prefetch={false}
                               href="https://www.youtube.com/@enkashbusiness"
                               target="_blank"
                               rel="noreferrer noopener"
@@ -321,7 +321,7 @@ const FooterV2 = (): React.JSX.Element => {
                             >
                               <FaYoutube />
                             </Link>
-                            <Link
+                            <Link prefetch={false}
                               href="https://www.instagram.com/Enkashbusiness"
                               target="_blank"
                               rel="noreferrer noopener"
@@ -329,7 +329,7 @@ const FooterV2 = (): React.JSX.Element => {
                             >
                               <FaInstagram />
                             </Link>
-                            <Link
+                            <Link prefetch={false}
                               href="https://twitter.com/EnkashBusiness"
                               target="_blank"
                               rel="noreferrer noopener"
@@ -337,7 +337,7 @@ const FooterV2 = (): React.JSX.Element => {
                             >
                               <FaXTwitter />
                             </Link>
-                            <Link
+                            <Link prefetch={false}
                               href="https://www.facebook.com/Enkashbusiness"
                               target="_blank"
                               rel="noreferrer noopener"
@@ -432,7 +432,7 @@ const FooterV2 = (): React.JSX.Element => {
               </div>
             </div>
             <div className="w-100 order-1 order-md-2 position-relative">
-              <Link href="/" className={`${styles.logo_img} d-block d-md-none`}>
+              <Link prefetch={false} href="/" className={`${styles.logo_img} d-block d-md-none`}>
                 <Image
                   src={enkashBlueLogo}
                   alt="Enkash"
@@ -443,7 +443,7 @@ const FooterV2 = (): React.JSX.Element => {
               <div className={`row gap-3 flex-md-nowrap ${styles.light_bg}`}>
                 {/* 1st col */}
                 <div className={`${styles.footer_links_col} col-md-3 col-6`}>
-                  <Link href="/products/collect-payments">
+                  <Link prefetch={false} href="/products/collect-payments">
                     <h4 className={` ${styles.title}`}>Collect Payments</h4>
                   </Link>
 
@@ -451,39 +451,39 @@ const FooterV2 = (): React.JSX.Element => {
                     <div className={`col-6`}>
                       <ul>
                         <li className="d-flex">
-                          <Link href="/payment-gateway">Payment Gateway</Link>
+                          <Link prefetch={false} href="/payment-gateway">Payment Gateway</Link>
                         </li>
                         <li>
-                          <Link href="/payment-links/">Payment Links</Link>
+                          <Link prefetch={false} href="/payment-links/">Payment Links</Link>
                         </li>
                         <li>
-                          <Link href="/payment-button/">Payment Button</Link>
+                          <Link prefetch={false} href="/payment-button/">Payment Button</Link>
                         </li>
                         <li>
-                          <Link href="/payment-page/">Payment Page</Link>
-                        </li>
-
-                        <li>
-                          <Link href="/upi-payments">UPI Payments</Link>
-                        </li>
-                        <li>
-                          <Link href="/qr-code">QR Code</Link>
-                        </li>
-                        <li>
-                          <Link href="/auto-collect/">Auto Collect</Link>
-                        </li>
-                        <li>
-                          <Link href="/e-nach/">e-NACH</Link>
+                          <Link prefetch={false} href="/payment-page/">Payment Page</Link>
                         </li>
 
                         <li>
-                          <Link href="/instant-settlement/">
+                          <Link prefetch={false} href="/upi-payments">UPI Payments</Link>
+                        </li>
+                        <li>
+                          <Link prefetch={false} href="/qr-code">QR Code</Link>
+                        </li>
+                        <li>
+                          <Link prefetch={false} href="/auto-collect/">Auto Collect</Link>
+                        </li>
+                        <li>
+                          <Link prefetch={false} href="/e-nach/">e-NACH</Link>
+                        </li>
+
+                        <li>
+                          <Link prefetch={false} href="/instant-settlement/">
                             Instant Settlements
                           </Link>
                         </li>
 
                         <li>
-                          <Link href="/affordability-suite/">
+                          <Link prefetch={false} href="/affordability-suite/">
                             Affordability Suite
                           </Link>
                         </li>
@@ -492,36 +492,36 @@ const FooterV2 = (): React.JSX.Element => {
                   </div>
 
                   <div>
-                    <Link href="/products/expense-management">
+                    <Link prefetch={false} href="/products/expense-management">
                       <h4 className={`col-12 ${styles.title}`}>Expenses</h4>
                     </Link>
                     <ul>
                       <li>
-                        <Link href="/budget-and-advances/">
+                        <Link prefetch={false} href="/budget-and-advances/">
                           Budget & Advances
                         </Link>
                       </li>
                       <li>
-                        <Link href="/hierarchy-and-controls/">
+                        <Link prefetch={false} href="/hierarchy-and-controls/">
                           Hierarchy & Controls
                         </Link>
                       </li>
                       <li>
-                        <Link href="/reimbursements/">Reimbursements</Link>
+                        <Link prefetch={false} href="/reimbursements/">Reimbursements</Link>
                       </li>
                       <li>
-                        <Link href="/receipts/">Scan and Drop Receipts</Link>
+                        <Link prefetch={false} href="/receipts/">Scan and Drop Receipts</Link>
                       </li>
                       <li>
-                        <Link href="/petty-cash/">Petty Cash</Link>
+                        <Link prefetch={false} href="/petty-cash/">Petty Cash</Link>
                       </li>
                       <li>
-                        <Link href="/expense-analytics-and-insights/">
+                        <Link prefetch={false} href="/expense-analytics-and-insights/">
                           Insights
                         </Link>
                       </li>
                       <li>
-                        <Link href="/approval-flows/" className="text-wrap">
+                        <Link prefetch={false} href="/approval-flows/" className="text-wrap">
                           Policy and Approval Flows
                         </Link>
                       </li>
@@ -535,46 +535,46 @@ const FooterV2 = (): React.JSX.Element => {
                     <div className="">
                       <ul className="mb-0">
                         <li>
-                          <Link href="/products/make-payments">
+                          <Link prefetch={false} href="/products/make-payments">
                             <h4 className={` ${styles.title}`}>
                               Make Payments
                             </h4>
                           </Link>
                         </li>
                         <li>
-                          <Link href="/utility-bill-payment/">
+                          <Link prefetch={false} href="/utility-bill-payment/">
                             Business Bill Payments
                           </Link>
                         </li>
                         <li>
-                          <Link href="/vendor-payment/">Vendor Payment</Link>
+                          <Link prefetch={false} href="/vendor-payment/">Vendor Payment</Link>
                         </li>
                         <li>
-                          <Link href="/rent-payment/">Rental Payment</Link>
+                          <Link prefetch={false} href="/rent-payment/">Rental Payment</Link>
                         </li>
                         <li>
-                          <Link href="/invoice-management/">
+                          <Link prefetch={false} href="/invoice-management/">
                             Invoice Management
                           </Link>
                         </li>
                         <li>
-                          <Link href="/payroll/">Payroll Processing</Link>
+                          <Link prefetch={false} href="/payroll/">Payroll Processing</Link>
                         </li>
                         <li>
-                          <Link href="/bulk-pay/"> Bulk Pay</Link>
+                          <Link prefetch={false} href="/bulk-pay/"> Bulk Pay</Link>
                         </li>
 
                         <li>
-                          <Link href="/vendor-management/">
+                          <Link prefetch={false} href="/vendor-management/">
                             Vendor Management
                           </Link>
                         </li>
                         <li>
-                          <Link href="/gst-payment/">GST Payment</Link>
+                          <Link prefetch={false} href="/gst-payment/">GST Payment</Link>
                         </li>
 
                         <li>
-                          <Link href="/payable-analytics/">
+                          <Link prefetch={false} href="/payable-analytics/">
                             Payable Analytics
                           </Link>
                         </li>
@@ -583,51 +583,51 @@ const FooterV2 = (): React.JSX.Element => {
                     <div className="">
                       <ul className="my-3">
                         <li>
-                          <Link href="/products/vouchers">
+                          <Link prefetch={false} href="/products/vouchers">
                             <h4 className={` ${styles.title}`}>Vouchers</h4>
                           </Link>
                         </li>
                         <li>
-                          <Link href="/e-commerce-vouchers">E-commerce</Link>
+                          <Link prefetch={false} href="/e-commerce-vouchers">E-commerce</Link>
                         </li>
                         <li>
-                          <Link href="/movie-and-music-vouchers">
+                          <Link prefetch={false} href="/movie-and-music-vouchers">
                             Movies & Music
                           </Link>
                         </li>
                         <li>
-                          <Link href="/apparels-vouchers">Apparels</Link>
+                          <Link prefetch={false} href="/apparels-vouchers">Apparels</Link>
                         </li>
                         <li>
-                          <Link href="/food-and-beverages-vouchers">
+                          <Link prefetch={false} href="/food-and-beverages-vouchers">
                             Food & Beverages
                           </Link>
                         </li>
                         <li>
-                          <Link href="/health-and-wellness-vouchers">
+                          <Link prefetch={false} href="/health-and-wellness-vouchers">
                             Health & Wellness
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div className="mt-3">
-                      <Link href="/products/rewards">
+                      <Link prefetch={false} href="/products/rewards">
                         <h4 className={`col-12 ${styles.title}`}>Rewards</h4>
                       </Link>
                       <ul>
                         <li>
-                          <Link href="/employee-rewards/">
+                          <Link prefetch={false} href="/employee-rewards/">
                             Employee Rewards
                           </Link>
                         </li>
                         <li>
-                          <Link href="/channel-incentives/">
+                          <Link prefetch={false} href="/channel-incentives/">
                             Channel Incentives
                           </Link>
                         </li>
 
                         <li>
-                          <Link href="/offers/">Offers</Link>
+                          <Link prefetch={false} href="/offers/">Offers</Link>
                         </li>
                       </ul>
                     </div>
@@ -639,43 +639,43 @@ const FooterV2 = (): React.JSX.Element => {
                   <div>
                     <div>
                       <div className={styles.freedom_card_box}>
-                        <Link href="/products/corporate-cards">
+                        <Link prefetch={false} href="/products/corporate-cards">
                           <h4 className={`${styles.title}`}>Corporate Cards</h4>
                         </Link>
                       </div>
                       <ul>
                         <li>
-                          <Link href="/employee-benefit-multi-wallet">
+                          <Link prefetch={false} href="/employee-benefit-multi-wallet">
                             Multi-wallet Card
                           </Link>
                         </li>
                         <li>
-                          <Link href="/prepaid-card/">Prepaid Cards</Link>
+                          <Link prefetch={false} href="/prepaid-card/">Prepaid Cards</Link>
                         </li>
                         <li>
-                          <Link href="/meal-card/">Meal Cards</Link>
+                          <Link prefetch={false} href="/meal-card/">Meal Cards</Link>
                         </li>
                         <li>
-                          <Link href="/fuel-card/">Fuel Cards</Link>
+                          <Link prefetch={false} href="/fuel-card/">Fuel Cards</Link>
                         </li>
                         <li>
-                          <Link href="/digital-marketing-card/">
+                          <Link prefetch={false} href="/digital-marketing-card/">
                             Digital Marketing Cards
                           </Link>
                         </li>
                         <li>
-                          <Link href="/saas-card/">SaaS Cards</Link>
+                          <Link prefetch={false} href="/saas-card/">SaaS Cards</Link>
                         </li>
                         <li>
-                          <Link href="/travel-and-expense-card">
+                          <Link prefetch={false} href="/travel-and-expense-card">
                             T & E Cards
                           </Link>
                         </li>
                         <li>
-                          <Link href="/purchase-card/">Purchase Cards</Link>
+                          <Link prefetch={false} href="/purchase-card/">Purchase Cards</Link>
                         </li>
                         <li>
-                          <Link href="/gift-cards/">Gift Cards</Link>
+                          <Link prefetch={false} href="/gift-cards/">Gift Cards</Link>
                         </li>
                       </ul>
                     </div>
@@ -685,37 +685,37 @@ const FooterV2 = (): React.JSX.Element => {
                       </div>
                       <ul>
                         <li>
-                          <Link href="/bank-partnerships">For Banks</Link>
+                          <Link prefetch={false} href="/bank-partnerships">For Banks</Link>
                         </li>
                         <li>
-                          <Link href="/affiliate-programs">
+                          <Link prefetch={false} href="/affiliate-programs">
                             Affiliate Program
                           </Link>
                         </li>
                         <li>
-                          <Link href="/co-branded-card-partners">
+                          <Link prefetch={false} href="/co-branded-card-partners">
                             Co-branded Cards
                           </Link>
                         </li>
                         <li>
-                          <Link href="/co-branded-digital-wallet">
+                          <Link prefetch={false} href="/co-branded-digital-wallet">
                             Co-branded Digital Wallet
                           </Link>
                         </li>
                         <li>
-                          <Link href="/payment-gateway-partners">
+                          <Link prefetch={false} href="/payment-gateway-partners">
                             Payment Gateway
                           </Link>
                         </li>
                         <li>
-                          <Link href="/bharat-connect-partnership">
+                          <Link prefetch={false} href="/bharat-connect-partnership">
                             Bharat Connect
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div className="">
-                      <Link
+                      <Link prefetch={false}
                         href={`${process.env.NEXT_PUBLIC_URL}/resources`}
                         rel="noopener noreferrer"
                       >
@@ -724,7 +724,7 @@ const FooterV2 = (): React.JSX.Element => {
 
                       <ul>
                         <li>
-                          <Link
+                          <Link prefetch={false}
                             href={`${process.env.NEXT_PUBLIC_URL}/resources/blogs`}
                             rel="noopener noreferrer"
                           >
@@ -732,7 +732,7 @@ const FooterV2 = (): React.JSX.Element => {
                           </Link>
                         </li>
                         <li>
-                          <Link
+                          <Link prefetch={false}
                             href={`${process.env.NEXT_PUBLIC_URL}/resources/customer-stories`}
                             rel="noopener noreferrer"
                           >
@@ -741,7 +741,7 @@ const FooterV2 = (): React.JSX.Element => {
                         </li>
 
                         <li>
-                          <Link
+                          <Link prefetch={false}
                             href={`${process.env.NEXT_PUBLIC_URL}/resources/videos`}
                             rel="noopener noreferrer"
                           >
@@ -749,10 +749,10 @@ const FooterV2 = (): React.JSX.Element => {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/gst-calculator/">GST Calculator</Link>
+                          <Link prefetch={false} href="/gst-calculator/">GST Calculator</Link>
                         </li>
                         <li>
-                          <Link
+                          <Link prefetch={false}
                             href={`${process.env.NEXT_PUBLIC_URL}/glossary`}
                             rel="noopener noreferrer"
                           >
@@ -773,13 +773,13 @@ const FooterV2 = (): React.JSX.Element => {
                     </div>
                     <ul>
                       <li>
-                        <Link href="/about-us">About Us</Link>
+                        <Link prefetch={false} href="/about-us">About Us</Link>
                       </li>
                       <li>
-                        <Link href="/careers">Careers</Link>
+                        <Link prefetch={false} href="/careers">Careers</Link>
                       </li>
                       <li>
-                        <Link
+                        <Link prefetch={false}
                           href={`/resources/media-coverage`}
                           rel="noopener noreferrer"
                         >
@@ -787,17 +787,17 @@ const FooterV2 = (): React.JSX.Element => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/contact-us">Contact Us</Link>
+                        <Link prefetch={false} href="/contact-us">Contact Us</Link>
                       </li>
                       <li>
-                        <Link href="/corporate-information">
+                        <Link prefetch={false} href="/corporate-information">
                           Corporate Information
                         </Link>
                       </li>
                     </ul>
                   </div>
                   <div className="mt-3">
-                    <Link href="/policies">
+                    <Link prefetch={false} href="/policies">
                       <h4 className={`col-12 ${styles.title} text-wrap`}>
                         Policies And Compliance
                       </h4>
@@ -805,37 +805,37 @@ const FooterV2 = (): React.JSX.Element => {
 
                     <ul>
                       <li>
-                        <Link href="/policies/grievance-policy">
+                        <Link prefetch={false} href="/policies/grievance-policy">
                           Grievance & Redressal
                         </Link>
                       </li>
                       <li>
-                        <Link href="/policies/merchant-onboarding">
+                        <Link prefetch={false} href="/policies/merchant-onboarding">
                           Merchant Onboarding
                         </Link>
                       </li>
                       <li>
-                        <Link href="/policies/customer-onboarding">
+                        <Link prefetch={false} href="/policies/customer-onboarding">
                           Customer Onboarding
                         </Link>
                       </li>
                       <li>
-                        <Link href="/policies/tnc">Terms and Conditions</Link>
+                        <Link prefetch={false} href="/policies/tnc">Terms and Conditions</Link>
                       </li>
                       <li>
-                        <Link href="/policies/privacy-policy">
+                        <Link prefetch={false} href="/policies/privacy-policy">
                           Privacy Policy
                         </Link>
                       </li>
                       <li>
-                        <Link href="/policies/prepaid-program/faq">
+                        <Link prefetch={false} href="/policies/prepaid-program/faq">
                           FAQs for PPI
                         </Link>
                       </li>
                     </ul>
                   </div>
                   <div className="mt-3">
-                    <Link href="https://docs.enkash.com/" target="_blank">
+                    <Link prefetch={false} href="https://docs.enkash.com/" target="_blank">
                       <h4 className={`col-12 ${styles.title}`}>
                         For Developers
                       </h4>
