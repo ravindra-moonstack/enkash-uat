@@ -246,8 +246,39 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     )
 
   const schemaMarkup = result[0].post_schema_markup
-  const cleanedSchema =
-    typeof schemaMarkup === "string" ? cleanSchemaMarkup(schemaMarkup) : ""
+  let cleanedSchema = typeof schemaMarkup === "string" ? cleanSchemaMarkup(schemaMarkup) : ""
+
+  const authorUrl = `${process.env.URL || "https://www.enkash.com"}/resources/blog/author/${
+    result[0].user_login || result[0].author_slug || "enkash"
+  }`
+
+  if (cleanedSchema) {
+    try {
+      const parsed = JSON.parse(cleanedSchema)
+      if (parsed["@graph"] && Array.isArray(parsed["@graph"])) {
+        const article = parsed["@graph"].find(
+          (node: any) => node["@type"] === "Article" || node["@type"] === "BlogPosting"
+        )
+        if (article && article.author) {
+          if (Array.isArray(article.author)) {
+             article.author.forEach((a: any) => {
+                if (!a.url) a.url = authorUrl
+             })
+          } else if (!article.author.url) {
+            article.author.url = authorUrl
+          }
+        }
+      } else if (parsed["@type"] === "Article" || parsed["@type"] === "BlogPosting") {
+        if (parsed.author && !parsed.author.url) {
+          parsed.author.url = authorUrl
+        }
+      }
+      cleanedSchema = JSON.stringify(parsed)
+    } catch (e) {
+      // Ignore parsing errors, keep original cleanedSchema
+    }
+  }
+
   const isJsonSchema =
     cleanedSchema.startsWith("{") || cleanedSchema.startsWith("[")
   const hasScriptTag =
@@ -267,6 +298,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       name: result[0].first_name
         ? `${result[0].first_name} ${result[0].last_name || ""}`.trim()
         : result[0].author || "EnKash",
+      url: authorUrl,
     },
     publisher: {
       "@type": "Organization",
@@ -282,8 +314,8 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   return (
     <>
-      {schemaMarkup &&
-        (isJsonSchema ? (
+      {schemaMarkup ? (
+        isJsonSchema ? (
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: cleanedSchema }}
@@ -298,15 +330,19 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: schemaMarkup }}
           />
-        ))}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
-      />
+        )
+      ) : (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+          />
+        </>
+      )}
       <div className={`${styles.mainPage}`}>
         <section className={styles.blog_nav_section}>
           <div className="max-w-auto">

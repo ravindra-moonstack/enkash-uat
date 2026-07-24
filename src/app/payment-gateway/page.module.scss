@@ -453,3 +453,9 @@
     }
   }
 }
+.integration_subheading{
+  max-width: 100%;
+  @include for-laptops{
+    max-width: 60%;
+  }
+}

@@ -44,7 +44,9 @@ import HeroSection from "@/src/components/sections/hero-section"
 const FaqSection = dynamic(() => import("@/src/components/faq-section"), {
   ssr: true,
 })
-const SecondFaqHtml = dynamic(() => import("@/src/components/second-faq/secondFaqHtml"))
+const SecondFaqHtml = dynamic(
+  () => import("@/src/components/second-faq/secondFaqHtml")
+)
 const OtherProducts = dynamic(
   () => import("@/src/components/sections/other-products"),
   { ssr: true }
@@ -223,12 +225,24 @@ const PaymentGateway = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "When Payments Need Attention, Reach Someone Who Understands Them",
+                    title:
+                      "When Payments Need Attention, Reach Someone Who Understands Them",
                     color: "color-black",
                   },
                 ]}
                 headingTag="h2"
                 className="f-6"
+              />
+              <DynamicHeading
+                content={[
+                  {
+                    title:
+                      "Payment issues rarely arrive with complete context. EnKash gives merchants access to support teams that understand payment flows, integrations, settlements, and business operations.",
+                    color: "color-main-grey",
+                  },
+                ]}
+                headingTag="p"
+                className={styles.integration_subheading}
               />
             </div>
             <div className="row">

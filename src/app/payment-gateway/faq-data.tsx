@@ -3,11 +3,11 @@ import Link from "next/link"
 
 const faqData: TFAQProps[] = [
   {
-    question: "What is Payment Gateway?",
+    question: "What is a payment gateway?",
     answer: [
       {
         heading:
-          "A payment gateway is a secure technology platform that facilitates online payment transactions between customers and merchants. It encrypts sensitive payment information, communicates with issuing banks for authorization, and ensures secure fund transfers. The gateway acts as the critical link between your business and the financial infrastructure that processes payments.",
+          "A payment gateway is a secure payment technology that authorizes, encrypts, and processes online payments between customers, merchants, banks, and payment networks. It securely transfers payment information, verifies transaction details, obtains approval from the customer's issuing bank, and enables the safe transfer of funds. Payment gateways support multiple payment methods, including UPI, credit cards, debit cards, net banking, digital wallets, and Buy Now, Pay Later (BNPL), making them an essential component of modern digital commerce.",
       },
     ],
   },
@@ -26,7 +26,7 @@ const faqData: TFAQProps[] = [
           </li>
           <li>
             <p>
-              <b> Net Banking:</b> Access to over 90 public and private banks across India.
+              <b>Net Banking:</b> Access to over 90 public and private banks across India.
             </p>
           </li>
           <li>
@@ -45,16 +45,14 @@ const faqData: TFAQProps[] = [
             </p>
           </li>
         </ul>
-        <p> EnKash ensures customers can choose their preferred payment mode, enhancing their overall payment experience.
-
+        <p>
+          EnKash ensures customers can choose their preferred payment mode, enhancing their overall payment experience.
         </p>
       </div>
     ),
-
   },
   {
-    question:
-      "What types of platforms and payment gateway integration are supported by EnKash?",
+    question: "What types of platforms and payment gateway integrations are supported by EnKash?",
     answerHTML: (
       <div>
         <p>
@@ -73,11 +71,12 @@ const faqData: TFAQProps[] = [
           </li>
           <li>
             <p>
-              <b>Custom Solutions: </b> For <span className="color-equity-blue">merchants</span> with unique requirements, EnKash <span className="color-equity-blue">provides</span> tailored integrations to <span className="color-equity-blue">meet</span> specific needs, ensuring smooth payment acceptance across websites, mobile apps, and other digital channels.
+              <b>Custom Solutions: </b> For merchants with unique requirements, EnKash provides tailored integrations to meet specific needs, ensuring smooth payment acceptance across websites, mobile apps, and other digital channels.
             </p>
           </li>
         </ul>
-        <p>With EnKash, <span className="color-equity-blue">merchants</span> can quickly integrate payments across channels, streamlining their operations and enhancing customer convenience.
+        <p>
+          With EnKash, merchants can quickly integrate payments across channels, streamlining their operations and enhancing customer convenience.
         </p>
       </div>
     ),
@@ -93,12 +92,9 @@ const faqData: TFAQProps[] = [
   },
   {
     question: "What is the price of a payment gateway?",
-
     answerHTML: (
       <div>
-        <p>
-          EnKash provides transparent pricing.
-        </p>
+        <p>EnKash provides transparent pricing.</p>
         <p>
           <Link
             className="mx-1"
@@ -133,7 +129,25 @@ const faqData: TFAQProps[] = [
           </li>
           <li>
             <p>
-              <b>EnKash Plugins: </b> Perfect for third-party platforms like WooCommerce, Shopify, and more
+              <b>EnKash Plugins: </b> Perfect for third-party platforms like{" "}
+              <Link
+                href="https://www.enkash.com/resources/blog/best-payment-gateway-for-woocommerce-store"
+                style={{ color: "#1c5af4" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WooCommerce
+              </Link>
+              {", "}
+              <Link
+                href="https://www.enkash.com/resources/blog/shopify-payment-gateway-india"
+                style={{ color: "#1c5af4" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Shopify
+              </Link>
+              {", and more"}
             </p>
           </li>
         </ul>
@@ -142,21 +156,43 @@ const faqData: TFAQProps[] = [
   },
   {
     question: "Do you provide payment analytics and reports?",
-    answer: [
-      {
-        heading:
-          "Yes, EnKash provides comprehensive analytics and reporting through your dashboard. Track transaction volumes, success rates, settlement timelines, and business metrics across daily, weekly, monthly, and yearly timeframes. Export data for accounting and reconciliation purposes.",
-      },
-    ],
-  }, {
+    answerHTML: (
+      <div>
+        <p>
+          Yes, EnKash provides comprehensive analytics and reporting through your dashboard. Track transaction volumes,{" "}
+          <Link
+            href="https://www.enkash.com/resources/blog/what-is-payment-success-rate"
+            style={{ color: "#1c5af4" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            success rates
+          </Link>
+          {", settlement timelines, and business metrics across daily, weekly, monthly, and yearly timeframes. Export data for accounting and reconciliation purposes."}
+        </p>
+      </div>
+    ),
+  },
+  {
     question: "How do I handle chargebacks and disputes?",
-    answer: [
-      {
-        heading:
-          "EnKash provides a dedicated dispute management system through your dashboard. When a chargeback occurs, you're notified immediately and can submit evidence to contest it. Our support team assists throughout the dispute resolution process.",
-      },
-    ],
-  }, {
+    answerHTML: (
+      <div>
+        <p>
+          EnKash provides a dedicated dispute management system through your dashboard. When a{" "}
+          <Link
+            href="https://www.enkash.com/resources/blog/all-you-need-to-know-about-chargeback"
+            style={{ color: "#1c5af4" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            chargeback
+          </Link>
+          {" occurs, you're notified immediately and can submit evidence to contest it. Our support team assists throughout the dispute resolution process."}
+        </p>
+      </div>
+    ),
+  },
+  {
     question: "How does EnKash prevent fraudulent transactions?",
     answer: [
       {
@@ -164,12 +200,13 @@ const faqData: TFAQProps[] = [
           "EnKash employs multi-layered fraud prevention, including real-time transaction monitoring, velocity checks, pattern recognition, risk scoring, and integration with industry fraud databases. Suspicious transactions are flagged for review before processing.",
       },
     ],
-  }, {
+  },
+  {
     question: "What makes EnKash different from other payment gateways?",
     answer: [
       {
         heading:
-          "EnKash delivers enterprise-level capabilities with a merchant-first approach. We offer transparent pricing with no hidden fees, 24/7 dedicated support that actually responds, same-day onboarding without bureaucratic delays, and robust technical infrastructure that scales as you grow. Unlike gateways that prioritize enterprise clients, we provide every merchant, regardless of size, with the same level of attention, service quality, and technical excellence.",
+          "EnKash delivers enterprise-level capabilities with a merchant-first approach. We offer transparent pricing with no hidden fees, 24/7 dedicated support that actually responds, same-day onboarding without bureaucratic delays, and robust technical infrastructure that scales as you grow. Unlike other payment gateways that prioritize enterprise clients, we provide every merchant, regardless of their size, with the same level of attention, service quality, and technical excellence.",
       },
     ],
   },

@@ -14,12 +14,17 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList" as const,
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem" as const,
-      position: index + 1,
-      name: item.name,
-      item: item.url === "/" ? cleanDomain : `${cleanDomain}${item.url}`,
-    })),
+    itemListElement: items.map((item, index) => {
+      const element: any = {
+        "@type": "ListItem" as const,
+        position: index + 1,
+        name: item.name || `Item ${index + 1}`,
+      }
+      if (item.url) {
+        element.item = item.url === "/" ? cleanDomain : `${cleanDomain}${item.url}`
+      }
+      return element
+    }),
   } satisfies {
     "@context": "https://schema.org"
     "@type": "BreadcrumbList"
@@ -27,7 +32,7 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
       "@type": "ListItem"
       position: number
       name: string
-      item: string
+      item?: string
     }>
   }
 
