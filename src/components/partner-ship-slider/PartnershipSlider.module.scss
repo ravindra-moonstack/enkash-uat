@@ -9,21 +9,21 @@
     overflow: hidden;
 
     :global(.slick-slider) {
-        .slick-slide {
-            height: inherit !important;
-        }
-
         .slick-list {
-            height: 100%;
+            height: auto !important;
+            overflow: hidden;
         }
 
         .slick-track {
-            display: flex;
+            display: flex !important;
+            flex-direction: row !important;
+            height: auto !important;
             align-items: stretch;
         }
 
         .slick-slide {
-            height: 100%;
+            float: left;
+            height: inherit !important;
             margin-left: 0px;
             /* Adjust as needed */
 

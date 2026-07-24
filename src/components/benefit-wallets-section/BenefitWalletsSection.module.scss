@@ -62,7 +62,7 @@
     }
     .walletCard {
         background: #F5FEFF1A;
-        backdrop-filter: blur(55px);
+        backdrop-filter: blur(55px) !important;
         -webkit-backdrop-filter: blur(55px); 
         border-radius: 8px;
         padding: 30px;
@@ -74,6 +74,7 @@
         flex-direction: column;
         transition: all 0.3s ease;
         position: relative;
+        z-index: 1;
         overflow: hidden;
 
         @include for-laptops { 

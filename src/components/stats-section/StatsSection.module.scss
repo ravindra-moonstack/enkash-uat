@@ -54,12 +54,14 @@
     padding: 40px 45px;
     border-radius: 10px;
     gap: 20px;
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
 
     @include for-laptops {
         padding: 70px 75px;
         gap: 27px;
-        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
     }
 }
 
@@ -67,6 +69,7 @@
     .statsGrid {
     background: $color-white-c4;
         @include for-laptops {
+            -webkit-backdrop-filter: blur(11px);
             backdrop-filter: blur(11px);
         }
     }

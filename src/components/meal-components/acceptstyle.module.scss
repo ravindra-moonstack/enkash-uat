@@ -2,12 +2,12 @@
 @use "@/src/styles/mixin" as *;
 
 .acceptedSection {
-  padding: 48px 0 56px;
+  padding: 0px 0 56px;
   background: $color-white;
   overflow: hidden;
 
   @include for-laptops {
-    padding: 72px 0 80px;
+    padding: 0px 0 80px;
   }
 }
 

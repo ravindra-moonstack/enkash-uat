@@ -84,7 +84,7 @@ const MealCardClient = () => {
               />
               <p className={styles.heroDesc}>
                 Bringing together the power of RuPay, the familiarity of
-                {!isMobile && <br />}
+                {isMobile ? " " : <br />}
                 UPI, and the tax efficiency of meal benefits.
               </p>
               <div className={styles.heroCtas}>

@@ -65,8 +65,8 @@ const VoucherCard = ({
         </div>
       </div>
       <div className="pt-4">
-        <div className="row">
-          <div className="col-6">
+        <div className="row align-items-center">
+          <div className="col">
             <DynamicHeading
               content={[
                 {
@@ -88,13 +88,14 @@ const VoucherCard = ({
               className="f-4 pb-0"
             />
           </div>
-          <div className="col-6 text-end">
+          <div className="col-auto text-end">
             <CommanButton
               title={"Buy Now"}
               url={buttonUrl}
               arrow
               iconSize={9}
               theme="small-blue"
+              className="text-nowrap"
             />
           </div>
         </div>
