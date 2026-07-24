@@ -366,6 +366,7 @@ const PaymentGateway = (): React.JSX.Element => {
         buttonTitle="Get Started Today"
         buttonUrl={salesUrl}
         image={acceleratedGrowthImg}
+        imageAlt="pg-guy"
       />
 
       <SuspenseLoading>

@@ -18,6 +18,7 @@ interface BulletPointSectionProps {
     buttonTitle: string
     buttonUrl: string
     image: string | StaticImageData
+    imageAlt?: string
     className?: string
 }
 
@@ -28,6 +29,7 @@ const BulletPointSection: React.FC<BulletPointSectionProps> = ({
     buttonTitle,
     buttonUrl,
     image,
+    imageAlt,
     className = "",
 }) => {
     return (
@@ -84,7 +86,7 @@ const BulletPointSection: React.FC<BulletPointSectionProps> = ({
                         <div className={styles.faq_bg}>
                             <Image
                                 src={image}
-                                alt="Section background image"
+                                alt={imageAlt || "Section background image"}
                                 className="w-100 mh-550 object-fit-contain"
                                 sizes="(max-width: 768px) 100vw, 50vw"
                             />
