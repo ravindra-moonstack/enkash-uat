@@ -11,9 +11,6 @@ import LayoutClientWrapper from "@/src/components/layout-wrapper"
 import { WebVitals } from "@/src/components/web-vitals"
 import { ToastProvider } from "@/src/context/ToastContext"
 import DeferredScripts from "@/src/components/deferred-scripts"
-import Header from "@/src/components/header/header"
-import Footer from "@/src/components/footer"
-import TalkToSales from "@/src/components/mobile-talks-to-sales"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -70,13 +67,7 @@ export default function RootLayout({
         <DeferredScripts />
         <WebVitals />
         <ToastProvider>
-          <LayoutClientWrapper
-            header={<Header />}
-            footer={<Footer />}
-            talkToSales={<TalkToSales />}
-          >
-            {children}
-          </LayoutClientWrapper>
+          <LayoutClientWrapper>{children}</LayoutClientWrapper>
         </ToastProvider>
       </body>
     </html>

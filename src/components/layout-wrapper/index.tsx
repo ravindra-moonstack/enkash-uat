@@ -2,17 +2,16 @@
 
 import { usePathname } from "next/navigation"
 import React from "react"
+import dynamic from "next/dynamic"
+
+const Header = dynamic(() => import("../header/header"), { ssr: true })
+const Footer = dynamic(() => import("../footer"), { ssr: true })
+const TalkToSales = dynamic(() => import("../mobile-talks-to-sales"), { ssr: true })
 
 export default function LayoutClientWrapper({
   children,
-  header,
-  footer,
-  talkToSales,
 }: {
   children: React.ReactNode
-  header: React.ReactNode
-  footer: React.ReactNode
-  talkToSales: React.ReactNode
 }) {
   const pathname = usePathname()
 
@@ -24,12 +23,12 @@ export default function LayoutClientWrapper({
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {!shouldHide && header}
-      {!shouldHide && talkToSales}
+      {!shouldHide && <Header />}
+      {!shouldHide && <TalkToSales />}
       <main id="main" className="flex-grow-1">
         {children}
       </main>
-      {!shouldHide && footer}
+      {!shouldHide && <Footer />}
     </div>
   )
 }
