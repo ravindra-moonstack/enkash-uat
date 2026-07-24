@@ -1,4 +1,4 @@
-import { JSX, memo } from "react"
+import { JSX, memo, ReactNode } from "react"
 import Image, { StaticImageData } from "next/image"
 
 import styles from "./contentShowcase.module.scss"
@@ -15,7 +15,7 @@ interface ContentShowcaseProps {
   data: {
     icon: string
     title: string
-    description: string
+    description: string | ReactNode
     headingTag?: keyof JSX.IntrinsicElements
     headingClassName?: string
   }[]

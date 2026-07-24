@@ -7,7 +7,7 @@ import DynamicHeading from "../dynamic-heading"
 interface CardProps {
   icon: string | StaticImageData
   title: string
-  description?: string
+  description?: string | React.ReactNode
   className?: string
   url?: string
   hoverClass?: string
@@ -49,13 +49,16 @@ const PolicyCard: React.FC<CardProps> = ({
           className={`${headingClassName} f-5`}
         />
 
-        {description && (
-          <DynamicHeading
-            content={[{ title: description, color: "color-grey-200" }]}
-            headingTag="p"
-            className="f-4 mb-0 mt-2"
-          />
-        )}
+        {description &&
+          (typeof description === "string" ? (
+            <DynamicHeading
+              content={[{ title: description, color: "color-grey-200" }]}
+              headingTag="p"
+              className="f-4 mb-0 mt-2"
+            />
+          ) : (
+            <p className="color-grey-200 f-4 mb-0 mt-2">{description}</p>
+          ))}
       </div>
     </>
   )

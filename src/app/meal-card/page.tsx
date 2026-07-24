@@ -254,7 +254,11 @@ const MealCards = (): React.JSX.Element => {
             color: "color-black f-4",
           },
         ]}
-        cards={[1155, 1037, 1628]}
+        links={[
+          "tax-free-meal-cards",
+          "best-food-cards-in-india",
+          "employee-meal-programs-for-modern-workplaces",
+        ]}
       />
 
       <OtherProducts

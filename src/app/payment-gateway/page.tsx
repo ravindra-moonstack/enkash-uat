@@ -1,4 +1,5 @@
 import React from "react"
+import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 
@@ -9,6 +10,7 @@ import {
   categories,
   customFeatures,
   dashboardData,
+  dashboardFaqData,
   integrationData,
   managementCardData,
   paymentMethodData,
@@ -42,6 +44,7 @@ import HeroSection from "@/src/components/sections/hero-section"
 const FaqSection = dynamic(() => import("@/src/components/faq-section"), {
   ssr: true,
 })
+const SecondFaqHtml = dynamic(() => import("@/src/components/second-faq/secondFaqHtml"))
 const OtherProducts = dynamic(
   () => import("@/src/components/sections/other-products"),
   { ssr: true }
@@ -143,12 +146,12 @@ const PaymentGateway = (): React.JSX.Element => {
         }}
         title={[
           {
-            text: "India's Best Payment Gateway Truly Built for SMBs",
+            text: "Best Payment Gateway in India for Merchants That Can't Afford to Lose a Sale",
             color: "color-black",
           },
         ]}
         description={{
-          text: " Accept online payments instantly with a RBI-authorised, merchant payment gateway designed for MSMEs, D2C brands, SaaS platforms, marketplaces, and enterprises.",
+          text: " Accept online payments through UPI, cards, net banking, wallets, and more, backed by reliable payment infrastructure, developer-grade integrations, and real human support when it matters.",
         }}
         button={{
           title: "Get Started",
@@ -162,8 +165,8 @@ const PaymentGateway = (): React.JSX.Element => {
       />
 
       <StatsSection
-        title="Payment Gateway That Delivers"
-        description="Built for businesses that demand more than just payment processing. EnKash combines enterprise-grade infrastructure with SMB-focused solutions."
+        title="Online Payment Gateway Built for Moments That Cannot Fail"
+        description="A Gateway built for businesses that demand more than just payment processing. EnKash combines enterprise-grade infrastructure with SMB-focused solutions."
         backgroundImage={stateBg}
         className="darkTheme"
       />
@@ -187,15 +190,15 @@ const PaymentGateway = (): React.JSX.Element => {
           mainDescription={[
             {
               title:
-                "A complete payments setup that supports growth, complexity, and volume.",
+                "A scalable online payment gateway setup for modern businesses that supports growth, complexity, and volume.",
               color: "color-black",
             },
           ]}
-          heading="Accept Every Payment Method That Matters"
+          heading="100+ Payment Method That Matters"
           subheading="Offer your customers complete payment flexibility with 100+ integrated payment options that work seamlessly across all channels."
           data={integrationData}
           imageSrc={integration}
-          imageAlt="Supported payment methods and integrations overview"
+          imageAlt="multiple-payment-methods"
           buttonUrl={salesUrl}
           buttonTitle="Get Started Today"
           bgColor="bg-color-black-30"
@@ -206,33 +209,52 @@ const PaymentGateway = (): React.JSX.Element => {
         />
         <ContentShowcase
           heading="Built for Developers Who Demand Excellence"
-          subheading="Enterprise-grade APIs and SDKs designed for rapid integration. Comprehensive documentation that eliminates guesswork."
+          subheading="Integrate faster with enterprise-grade payment gateway APIs, SDKs, and e-commerce plugins, with clear technical documentation. Give your development team the tools required to build, test, and launch payment experiences with confidence."
           data={paymentMethodData}
           imageSrc={paymenyMethod}
-          imageAlt="Developer API and SDK documentation"
+          imageAlt="enkash-payment-gateway-integrations"
           buttonTitle="Get Started Today"
           buttonUrl={salesUrl}
           buttonArrow
         />
-        <ContentShowcase
-          heading="Support That Drives Your Success"
-          subheading="EnKash provides dedicated technical and merchant support teams that understand your business and respond when you need them."
-          data={dashboardData}
-          imageSrc={dashboard}
-          imageAlt="Merchant support and technical dashboard"
-          bgColor="bg-color-black-30"
-          buttonUrl={salesUrl}
-          buttonTitle="Get Started Today"
-          buttonArrow
-          reverse
-          imgHeightStyle={"mh-650"}
-        />
+        <div className={`${styles.integration_section} `}>
+          <div className={`${styles.faqSection} text-start  max-w-auto`}>
+            <div className={`${styles.title} text-start pb-md-5 pb-4`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "When Payments Need Attention, Reach Someone Who Understands Them",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
+            <div className="row">
+              <div className="col-md-6 ">
+                <div>
+                  <SecondFaqHtml SecondfaqData={dashboardFaqData} />
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className={styles.faq_bg}>
+                  <Image
+                    src={dashboard}
+                    alt="our-support"
+                    className="w-100 mh-550 object-fit-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <ContentShowcase
           heading="Complete Visibility Into Your Payments"
           subheading="Access comprehensive analytics and reporting tools that provide deep insights into transaction performance, settlement status, and business metrics."
           data={rankData}
           imageSrc={rank}
-          imageAlt="Transaction performance and analytics overview"
+          imageAlt="payment-analytics"
           buttonUrl={salesUrl}
           buttonTitle="Get Started Today"
           buttonArrow
@@ -241,7 +263,7 @@ const PaymentGateway = (): React.JSX.Element => {
       <IndustrySlider
         heading={"Designed for How Businesses Collect Payments"}
         subheading={
-          "Whether you're scaling an e-commerce store or launching a subscription service, EnKash adapts to your unique needs."
+          "Whether you're scaling an e-commerce store or launching a subscription service, EnKash payment gateway adapts to your unique needs."
         }
         categories={categories}
         slides={slides}
@@ -255,7 +277,7 @@ const PaymentGateway = (): React.JSX.Element => {
             color: "color-white",
           },
         ]}
-        description="Beyond standard payment processing, EnKash handles sophisticated business scenarios."
+        description="Beyond standard payment processing, EnKash payment gateway handles complex business scenarios."
         slideData={slideData}
         className={styles.partnerSectionOverlap}
       />
@@ -263,10 +285,10 @@ const PaymentGateway = (): React.JSX.Element => {
         preTitle="Bank-Grade "
         highlightedTitle="Security "
         titleAfterHighlightedTitle="Standards"
-        subtitle="Every transaction is protected by the same security standards used by major financial institutions."
+        subtitle="Protect online payments with enterprise-grade security controls. Our payment gateway is designed to safeguard sensitive payment data, reduce exposure to fraud, and support secure transaction processing from checkout to settlement."
         features={customFeatures}
         imageSrc={vaultSecurity.src}
-        imageAlt="Bank vault lock representing payment security"
+        imageAlt="secure-payment-gateway"
         className={styles.securitySectionOverlap}
       />
       <div className={`${styles.slider_row} relative bg-white`}>

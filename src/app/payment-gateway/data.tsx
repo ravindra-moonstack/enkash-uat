@@ -1,3 +1,4 @@
+import { TFAQProps } from "@/src/types/faq"
 import policyIcon from "./img/policyIcon.svg"
 import sandbox from "./img/sandbox-logo.svg"
 import documentation from "./img/documentation-logo.svg"
@@ -48,12 +49,11 @@ const introductionCards = [
   { value: "100%", label: "Faster" },
 ]
 
-
 const integrationData = [
   {
     title: "Debit and Credit Cards",
     description:
-      "Process transactions across all major card networks. Complete card coverage in a single integration.",
+      "Process transactions across all major card networks like Visa, RuPay, Mastercard, and Amex. Complete card coverage in a single integration.",
     icon: policyIcon,
   },
   {
@@ -77,7 +77,7 @@ const integrationData = [
   {
     title: "EMI & Buy Now Pay Later",
     description:
-      "Offer No Cost EMI, cardless EMI, and Buy Now Pay Later options to increase conversion rates and average order values. Make purchases more affordable for customers.",
+      "Offer No Cost EMI, cardless EMI, and Buy Now Pay Later options that help to improve conversion rates and average order values. Make purchases more affordable for customers.",
     icon: emi,
   },
 ]
@@ -85,7 +85,8 @@ const integrationData = [
 const paymentMethodData = [
   {
     title: "Pre-Built Platform Integrations",
-    description: "Production-ready plugins for Shopify, WooCommerce, Magento, and other major e-commerce platforms. Deploy in minutes, not weeks.",
+    description:
+      "Production-ready plugins for Shopify, WooCommerce, Magento, and other major e-commerce platforms. Deploy in minutes, not weeks, and accelerate deployment without building every integration from the ground up.",
     icon: cards,
   },
   {
@@ -96,8 +97,21 @@ const paymentMethodData = [
   },
   {
     title: "Complete API Documentation",
-    description:
-      "Step-by-step integration guides with working code samples. Comprehensive webhook documentation for real-time event handling.",
+    description: (
+      <>
+        Follow step-by-step{" "}
+        <a
+          href="https://docs.enkash.com/payment-gateway/sign-up"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#1c5af4" }}
+        >
+          payment gateway integration guides
+        </a>{" "}
+        with working code samples. Use detailed API and webhook documentation to
+        manage payment statuses and other real-time events.
+      </>
+    ),
     icon: netBanking,
   },
   {
@@ -110,30 +124,41 @@ const paymentMethodData = [
 
 const dashboardData = [
   {
-    title: "Round-the-Clock Technical Support",
+    title: "Technical Payment Gateway Integration Support",
     description:
-      "Direct access to technical support for integration, troubleshooting, and scaling. Available 24/7 via chat, email, or call for instant help and resolution.",
+      "Get assistance during integration, testing, implementation, and production troubleshooting.",
     icon: financial,
   },
   {
-    title: "Expert Merchant Support",
+    title: "Merchant Operations Support",
     description:
-      "Reach our support team anytime, any day for guidance on payments, settlements, and business operations. Instant help when you need it most.",
+      "Receive guidance on transactions, refunds, settlements, reconciliation, and other payment operations.",
     icon: transation,
   },
   {
-    title: "Proactive Issue Resolution",
+    title: "Context-Aware Issue Handling",
     description:
-      "We don't wait for you to raise tickets. Our team actively monitors and preempts potential issues to ensure your business continuity.",
+      "Avoid restarting the same conversation at every stage. Our teams work with the available transaction and integration context to understand the issue.",
     icon: settlement,
   },
   {
-    title: "Intuitive Interface Design",
+    title: "Structured Escalation",
     description:
-      "Consistent support quality from Day 1 through Year 5 and beyond. We guide you at every milestone of your payment journey.",
+      "Critical payment issues can be directed to the relevant technical or operational team for further investigation.",
     icon: userFriendly,
   },
+  {
+    title: "Ongoing Assistance",
+    description:
+      "Continue to receive support as payment volumes, integration requirements, and business use cases evolve.",
+    icon: userFriendly, // this icon needs to be change
+  },
 ]
+
+export const dashboardFaqData: TFAQProps[] = dashboardData.map((item) => ({
+  question: item.title,
+  answer: [{ heading: item.description as string }],
+}))
 
 const rankData = [
   {
@@ -161,7 +186,6 @@ const rankData = [
     icon: monitorizing,
   },
 ]
-
 
 const acceleratedGrowthData = [
   {
@@ -207,7 +231,7 @@ const managementCardData = [
   {
     titleHtml: "QR Codes",
     description:
-      "Secure, contactless payment with QR codes to enable businesses to accept instant transactions.",
+      "Secure, contactless payment with QR codes to allow merchants to accept instant transactions.",
     cardImage: qrCodes,
     linkUrl: "qr-code",
   },
@@ -347,12 +371,14 @@ const allProductSections = [
     items: [
       {
         title: "High-Performance Loading ",
-        description: "Checkout optimized to load in under 300ms. Every millisecond matters, faster checkouts directly translate to higher conversion rates.",
+        description:
+          "Checkout optimized to load in under 300ms. Every millisecond matters, faster checkouts directly translate to higher conversion rates.",
         image: carouselIcon1,
       },
       {
         title: "Secure Card Storage ",
-        description: "Tokenized card saving for one-click repeat purchases. Customers complete future transactions instantly while maintaining complete security.",
+        description:
+          "Tokenized card saving for one-click repeat purchases. Customers complete future transactions instantly while maintaining complete security.",
         image: carouselIcon2,
       },
       {
@@ -363,7 +389,8 @@ const allProductSections = [
       },
       {
         title: "Mobile-First Design",
-        description: "Fully responsive checkout optimized for mobile devices. Touch-friendly interfaces and native performance across all screen sizes.",
+        description:
+          "Fully responsive checkout optimized for mobile devices. Touch-friendly interfaces and native performance across all screen sizes.",
         image: carouselIcon4,
       },
     ],
@@ -372,19 +399,23 @@ const allProductSections = [
 const customFeatures = [
   {
     title: "PCI DSS Level 1 Compliance",
-    description: "Certified to the highest level of payment card industry security standards. Your transaction data is protected with the same protocols used by major financial institutions.",
+    description:
+      "Certified to the highest level of payment card industry security standards. Your transaction data is protected with the same protocols used by major financial institutions.",
   },
   {
     title: "End-to-End Encryption",
-    description: "256-bit SSL encryption from initial data capture through final settlement. Payment information is encrypted at every stage of processing.",
+    description:
+      "256-bit SSL encryption from initial data capture through final settlement. Payment information is encrypted at every stage of payment processing.",
   },
   {
     title: "Advanced Tokenization",
-    description: "Sensitive card data is replaced with secure tokens. Original card information is never stored, eliminating data breach risks while enabling saved card functionality.",
+    description:
+      "Sensitive card data is replaced with secure tokens. Original card information is never stored, eliminating data breach risks while enabling saved card functionality.",
   },
   {
     title: "Continuous Monitoring",
-    description: "24/7 security operations center with real-time threat detection, automated response protocols, and regular third-party security audits.",
+    description:
+      "24/7 security operations center with real-time threat detection, automated response protocols, and regular third-party security audits.",
   },
 ]
 export {
