@@ -18,7 +18,13 @@ const inter = Inter({
   display: "swap",
 })
 
+const isUat = process.env.NEXT_PUBLIC_URL?.includes("uat")
+
 export const metadata: Metadata = {
+  robots: {
+    index: !isUat,
+    follow: !isUat,
+  },
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_URL || "https://www.enkash.com"
   ),
@@ -49,14 +55,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <meta
-          name="robots"
-          content={
-            process.env.NEXT_PUBLIC_URL?.includes("uat")
-              ? "noindex, nofollow"
-              : "index, follow"
-          }
-        />
         <meta
           name="google-site-verification"
           content="RWOqrBamBY0cC_WQwIz55vCzZRBv97CtZYwlpUCIjY4"
