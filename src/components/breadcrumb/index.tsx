@@ -38,12 +38,10 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
 
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schemaMarkup, null, 2),
+          __html: JSON.stringify(schemaMarkup),
         }}
       />
 

@@ -1,4 +1,5 @@
 import React from "react"
+import Script from "next/script"
 import { TFAQProps } from "@/src/types/faq"
 
 interface FAQSchemaProps {
@@ -49,7 +50,8 @@ const FAQSchema = ({ faqData }: FAQSchemaProps) => {
   }
 
   return (
-    <script
+    <Script
+      id="faq-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />

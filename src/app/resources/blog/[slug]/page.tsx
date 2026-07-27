@@ -314,6 +314,10 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {schemaMarkup ? (
         isJsonSchema ? (
           <script
@@ -332,16 +336,10 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           />
         )
       ) : (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
-          />
-        </>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+        />
       )}
       <div className={`${styles.mainPage}`}>
         <section className={styles.blog_nav_section}>
