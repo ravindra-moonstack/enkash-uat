@@ -291,7 +291,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   const blogPostingSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
     headline: result[0].title,
     image: result[0].featured_image_url
       ? result[0].featured_image_url.startsWith("http")
