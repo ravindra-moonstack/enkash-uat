@@ -195,6 +195,7 @@ const url: {
   {
     source: "/olympus/receivables/collection-analytics",
     destination: "/collection-analytics",
+    permanent: true,
   },
   {
     source: "/olympus/receivables/customized-payment",
@@ -723,13 +724,13 @@ const url: {
     permanent: true,
   },
   {
-    source: "/resources/blog/GST",
-    destination: "/resources/blog/gst",
+    source: "/glossary/GST",
+    destination: "/glossary/gst",
     permanent: true,
   },
   {
-    source: "/resources/blog/EBITDA",
-    destination: "/resources/blog/ebitda",
+    source: "/glossary/EBITDA",
+    destination: "/glossary/ebitda",
     permanent: true,
   },
 ]
