@@ -4,6 +4,20 @@ import { jwtVerify } from "jose"
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
+
+  // Case-insensitivity enforcement for SEO (exclude internal Next.js assets/API routes)
+  if (
+    !pathname.startsWith('/_next') && 
+    !pathname.startsWith('/api') && 
+    !pathname.includes('.')
+  ) {
+    if (pathname !== pathname.toLowerCase()) {
+      const url = request.nextUrl.clone();
+      url.pathname = pathname.toLowerCase();
+      return NextResponse.redirect(url, 301);
+    }
+  }
+
   const token = request.cookies.get("token")?.value
 
   const isProtectedAdminPath =
@@ -27,7 +41,6 @@ export async function proxy(request: NextRequest) {
     try {
       const secret = new TextEncoder().encode(process.env.JWT_SECRET)
       await jwtVerify(token, secret)
-      return NextResponse.next()
     } catch (error) {
       console.error("Middleware Auth Error:", error)
       if (isProtectedAdminApi) {
@@ -54,8 +67,4 @@ export async function proxy(request: NextRequest) {
   }
 
   return NextResponse.next()
-}
-
-export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
 }
