@@ -2,22 +2,20 @@
 @use "@/src/styles/mixin" as *;
 
 .modal_overlay_custom {
-  :global {
-    .modal-backdrop {
-      background-color: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(8px);
-    }
+  :global(.modal-backdrop) {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+  }
 
-    .modal-content {
-      border: none;
-      overflow: hidden;
-      background: transparent;
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
-    }
+  :global(.modal-content) {
+    border: none;
+    overflow: hidden;
+    background: transparent;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.15);
+  }
 
-    .modal-dialog {
-      max-width: 700px;
-    }
+  :global(.modal-dialog) {
+    max-width: 700px;
   }
 }
 
