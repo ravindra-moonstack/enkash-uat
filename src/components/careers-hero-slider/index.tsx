@@ -4,7 +4,7 @@ import Slider, { Settings } from "react-slick"
 import Image from "next/image"
 
 import "slick-carousel/slick/slick.css"
-import "@/src/styles/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css"
 import styles from "./CareersHeroSlider.module.scss"
 
 import {

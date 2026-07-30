@@ -12,11 +12,9 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   compress: true,
 
-  // @ts-ignore - eslint is valid but might be missing in some NextConfig type definitions
   eslint: {
     ignoreDuringBuilds: true,
   },
-
   experimental: {
     optimizeCss: true,
     optimizePackageImports: [
@@ -54,6 +52,12 @@ const nextConfig: NextConfig = {
 
   webpack(config, { dev, isServer }) {
     config.infrastructureLogging = { level: "error" }
+
+    // Alias the third-party slick theme to our performance optimized local version
+    config.resolve.alias["slick-carousel/slick/slick-theme.css"] = path.resolve(
+      __dirname,
+      "src/styles/slick-theme.css"
+    )
 
     if (!dev && !isServer) {
       config.optimization.splitChunks.cacheGroups = {

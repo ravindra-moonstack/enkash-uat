@@ -3,8 +3,7 @@ import type React from "react"
 import { useRef, useMemo } from "react"
 import Image from "next/image"
 import Slider, { Settings } from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+
 import styles from "./PartnershipSlider.module.scss"
 
 interface SlideData {

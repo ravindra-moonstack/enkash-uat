@@ -4,7 +4,7 @@ import React, { useMemo, useState, useEffect, useRef } from "react"
 import Slider, { Settings } from "react-slick"
 import styles from "./homePageSlider.module.scss"
 import "slick-carousel/slick/slick.css"
-import "@/src/styles/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css"
 
 import { StaticImageData } from "next/image"
 import AdidasCard from "../adidas-card"

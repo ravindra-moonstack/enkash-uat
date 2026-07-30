@@ -3,7 +3,7 @@ import React, { useMemo } from "react"
 import Slider, { Settings } from "react-slick"
 import styles from "./testimonialSlider.module.scss"
 import "slick-carousel/slick/slick.css"
-import "@/src/styles/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css"
 
 import TestimonialCard from "../testimonial-card"
 import { StaticImageData } from "next/image"

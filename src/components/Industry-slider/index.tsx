@@ -5,7 +5,7 @@ import Slider from "react-slick"
 import Image from "next/image"
 import styles from "./Industryslider.module.scss"
 import "slick-carousel/slick/slick.css"
-import "@/src/styles/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css"
 import { DynamicHeading } from ".."
 
 interface CategoryButton {

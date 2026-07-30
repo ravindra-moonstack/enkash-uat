@@ -10,7 +10,7 @@ import { getImageUrl } from "@/src/utils/common"
 
 // Import Slick Carousel stylesheets to render slider layouts and arrow icons
 import "slick-carousel/slick/slick.css"
-import "@/src/styles/slick-theme.css"
+import "slick-carousel/slick/slick-theme.css"
 
 export default function RecentBlogs({ posts }: { posts: BlogPost[] }) {
   const settings = {
