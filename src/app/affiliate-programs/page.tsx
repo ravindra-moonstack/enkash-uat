@@ -26,7 +26,9 @@ import generateMetaData from "@/src/utils/metaData"
 import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper"
 import dynamic from "next/dynamic"
 
-const PartnershipSection = dynamic(() => import("@/src/components/partner-ship-slider/PartnershipSection"))
+const PartnershipSection = dynamic(
+  () => import("@/src/components/partner-ship-slider/PartnershipSection")
+)
 
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",
@@ -101,8 +103,6 @@ export default function PartnershipsPage() {
         />
       </div>
 
-      <FaqSection faqData={faqData} />
-
       <div id="partnership-form">
         <PartnerShipForm
           heading={[
@@ -118,6 +118,7 @@ export default function PartnershipsPage() {
           formComponent={<AffiliateFormClient />}
         />
       </div>
+      <FaqSection faqData={faqData} />
     </div>
   )
 }
