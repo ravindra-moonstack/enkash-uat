@@ -5,20 +5,16 @@ import { CommanButton, DynamicHeading } from "@/src/components"
 import { getImageUrl } from "@/src/utils/common"
 
 async function getData() {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/api/resources/blogs/getFeaturedLeftBlog`,
-      {
-        next: { revalidate: 600 },
-      }
-    )
+  const res = await fetch(
+    "http://localhost:3000/api/resources/blogs/getFeaturedLeftBlog",
+    {
+      cache: "no-store",
+    }
+  )
 
-    if (!res.ok) return { posts: [] }
-    return res.json()
-  } catch (error) {
-    console.error("Failed to fetch featured left blog during prerender:", error)
-    return { posts: [] }
-  }
+  if (!res.ok) throw new Error("Failed to fetch")
+
+  return res.json()
 }
 
 export default async function FeaturedLeftBlog() {
@@ -36,7 +32,6 @@ export default async function FeaturedLeftBlog() {
             alt={post.image_alt || post.title}
             width={600}
             height={350}
-            priority
           />
         </Link>
         <div className={styles.overlay}>
@@ -54,20 +49,13 @@ export default async function FeaturedLeftBlog() {
         <DynamicHeading
           content={[
             {
-              title: (post.excerpt || post.content || "")
-                .replace(/<[^>]+>/g, "")
-                .slice(0, 120),
+              title: (post.excerpt || post.content || "").replace(/<[^>]+>/g, "").slice(0, 120),
               color: "color-black",
             },
           ]}
           headingTag="p"
         />
-        <CommanButton
-          theme="outline-blue"
-          title="Read Now"
-          arrow
-          url={`/resources/blog/${post.slug}`}
-        />
+        <CommanButton theme="outline-blue" title="Read Now" arrow url={`/resources/blog/${post.slug}`} />
       </div>
     </div>
   )

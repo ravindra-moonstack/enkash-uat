@@ -1,7 +1,7 @@
 "use client"
 
-import React from "react"
-import { BlogPost } from "@/src/hooks/useBlog"
+import React, { useEffect, useState } from "react"
+import { useBlog, BlogPost } from "@/src/hooks/useBlog"
 import Slider from "react-slick"
 import styles from "./featured_top.module.scss"
 import Image from "next/image"
@@ -12,7 +12,14 @@ import { getImageUrl } from "@/src/utils/common"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-export default function RecentBlogs({ posts }: { posts: BlogPost[] }) {
+export default function RecentBlogs() {
+  const [posts, setPosts] = useState<BlogPost[]>([])
+  const { fetchRecentBlogs, loading } = useBlog()
+
+  useEffect(() => {
+    fetchRecentBlogs().then((data) => setPosts(data))
+  }, [fetchRecentBlogs])
+
   const settings = {
     dots: false,
     infinite: true,

@@ -21,23 +21,6 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-export const revalidate = 600 // Enable ISR for 1 hour
-
-async function getRecentBlogs() {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_URL || "http://localhost:3000"}/api/resources/blogs/getRecentBlogs`,
-      { next: { revalidate: 600 } }
-    )
-    if (!res.ok) return []
-    const data = await res.json()
-    return data.posts || []
-  } catch (error) {
-    console.error("Failed to fetch recent blogs during prerender:", error)
-    return []
-  }
-}
-
 export default async function BlogPageData() {
   const navData = await getBlogCategories()
 
@@ -49,8 +32,6 @@ export default async function BlogPageData() {
       return data ? { ...data, categoryLabel: cat.label } : null
     })
   )
-
-  const recentBlogs = await getRecentBlogs()
 
   return (
     <div className={`${styles.blog_page}`}>
@@ -80,7 +61,7 @@ export default async function BlogPageData() {
         <div className={styles.container}>
           <div className={styles.row}>
             <div className={styles.col_12}>
-              <RecentBlogs posts={recentBlogs} />
+              <RecentBlogs />
             </div>
           </div>
         </div>
