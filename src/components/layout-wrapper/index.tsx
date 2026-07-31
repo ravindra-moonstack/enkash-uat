@@ -1,12 +1,9 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import React from "react"
-import dynamic from "next/dynamic"
-
-const Header = dynamic(() => import("../header/header"), { ssr: true })
-const Footer = dynamic(() => import("../footer"), { ssr: true })
-const TalkToSales = dynamic(() => import("../mobile-talks-to-sales"), { ssr: true })
+import TalkToSales from "../mobile-talks-to-sales"
+import Header from "../header/header"
+import Footer from "../footer"
 
 export default function LayoutClientWrapper({
   children,
@@ -20,6 +17,33 @@ export default function LayoutClientWrapper({
     hideLayout.includes(pathname) ||
     pathname.startsWith("/admin") ||
     pathname.startsWith("/campaigns")
+
+  // // ⭐ Remove tracking parameters on client-side load
+  // useEffect(() => {
+  //   const url = new URL(window.location.href)
+  //   const paramsToRemove = [
+  //     "utm_source",
+  //     "utm_medium",
+  //     "utm_campaign",
+  //     "_gl",
+  //     "_ga",
+  //     "_gcl_au",
+  //   ]
+
+  //   let changed = false
+
+  //   paramsToRemove.forEach((param) => {
+  //     if (url.searchParams.has(param)) {
+  //       url.searchParams.delete(param)
+  //       changed = true
+  //     }
+  //   })
+
+  //   if (changed) {
+  //     // Replace the URL WITHOUT reloading the page
+  //     window.history.replaceState({}, document.title, url.pathname)
+  //   }
+  // }, [])
 
   return (
     <div className="d-flex flex-column min-vh-100">
