@@ -43,7 +43,6 @@ import {
   BenefitGridSection,
   CtaBanner,
   DynamicHeading,
-  CareersCard,
   TaxBenefitDetailsCard,
   BenefitWalletsSection,
   StatisticsSection,
@@ -53,6 +52,7 @@ import UseCaseSection from "@/src/components/sections/use-case-section"
 import ProductsSection from "@/src/components/our-products-section"
 import MealCardComparisonScrollable from "@/src/components/meal-components/MealCardComparisonScrollable"
 import Image from "next/image"
+import { LoadingUI } from "@/src/components/loading"
 
 export const metadata: Metadata = generateMetaData({
   title: "Tax Benefit Multi-Wallet Card India | Tax Saving Card for Employees",
@@ -357,7 +357,7 @@ const EmployeeBenefitMultiWalletContent = (): React.JSX.Element => {
 
 export default function EmployeeBenefitMultiWallet() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<LoadingUI />}>
       <EmployeeBenefitMultiWalletContent />
     </Suspense>
   )

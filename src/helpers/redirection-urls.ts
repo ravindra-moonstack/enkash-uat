@@ -723,7 +723,16 @@ const url: {
     destination: "/glossary/prepaid-payment-instruments-ppi",
     permanent: true,
   },
-
+  {
+    source: "/glossary/EBITDA",
+    destination: "/glossary/ebitda",
+    permanent: true,
+  },
+  {
+    source: "/glossary/GST",
+    destination: "/glossary/gst",
+    permanent: true,
+  },
 ]
 
 const mappedUrls = url.map((item) => {
