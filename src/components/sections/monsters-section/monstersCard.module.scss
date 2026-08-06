@@ -26,7 +26,7 @@
 
   @media (max-width: 1023px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 85px;
+    row-gap: 100px;
   }
   @media (max-width: 599px) {
     grid-template-columns: 1fr;
@@ -45,7 +45,7 @@
   position: relative;
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 265 / 426;
+  aspect-ratio: 265 / 330;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0px 0px 42.7676px #0000001c;
   border-radius: 12px;
@@ -247,6 +247,11 @@
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
+
+  @media (max-width: 767px) {
+    position: relative;
+    inset: auto;
+  }
 }
 
 .expanded_card {
@@ -256,7 +261,7 @@
   border-radius: 24px;
   border: 1px solid var(--accent, #56cfff);
   background: var(--expanded-bg, #14161a) center / cover no-repeat;
-  padding: 48px 56px 48px 240px;
+  padding: 48px 56px 48px 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -267,6 +272,10 @@
   @media (max-width: 767px) {
     padding: 140px 24px 32px;
     border-radius: 18px;
+    gap: 0;
+    outline: 1px solid var(--accent, #56cfff);
+    border: 10px solid transparent;
+    background: var(--expanded-mobile-gradient) padding-box;
   }
 }
 
@@ -274,9 +283,6 @@
   position: absolute;
   left: 24px;
   bottom: 0;
-  width: 200px;
-
-  transform: translateY(6%);
 
   img {
     width: 100%;
@@ -286,10 +292,9 @@
 
   @media (max-width: 767px) {
     position: absolute;
-    top: 16px;
+    top: 30px;
     left: 50%;
     bottom: auto;
-    width: 130px;
     transform: translate(-50%, -55%);
   }
 }

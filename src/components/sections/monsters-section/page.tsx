@@ -27,7 +27,7 @@ function hexToRgba(hex: string, alpha: number) {
 
 const expandedBackgrounds = [
   "linear-gradient(180deg, #67AB45 0%, #69A944 100%)",
-  "linear-gradient(180deg, #BEA489 0%, #FBEEE3 100%)",
+  "linear-gradient(180deg, #C2A98F 0%, #C4B09B 100%)",
   "linear-gradient(180deg, #C68B13 0%, #ECB634 100%)",
   "linear-gradient(180deg, #FF6806 0%, #EC5200 100%)",
 ]
@@ -68,6 +68,20 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
     setSelectedId(null)
   }
 
+  const stageRef = useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (selectedId !== null && stageRef.current) {
+      setTimeout(() => {
+        if (stageRef.current) {
+          const y =
+            stageRef.current.getBoundingClientRect().top + window.scrollY - 100
+          window.scrollTo({ top: y, behavior: "smooth" })
+        }
+      }, 50)
+    }
+  }, [selectedId])
+
   return (
     <div className={styles.monsters_wrapper}>
       <div style={{ display: "none" }} aria-hidden="true">
@@ -79,7 +93,7 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
           ) : null
         })}
       </div>
-      <div className={styles.stage}>
+      <div className={styles.stage} ref={stageRef}>
         <div
           className={`${styles.grid} ${
             selectedMonster ? styles.grid_hidden : ""
@@ -158,6 +172,10 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
                   "--accent": selectedMonster.accent,
                   "--accent-soft": hexToRgba(selectedMonster.accent, 0.35),
                   "--expanded-bg": selectedMonster.expandedBg,
+                  "--expanded-mobile-gradient":
+                    expandedBackgrounds[
+                      monsters.findIndex((m) => m.id === selectedMonster.id)
+                    ],
                 } as React.CSSProperties
               }
             >

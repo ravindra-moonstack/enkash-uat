@@ -51,7 +51,7 @@ const MonstersSliderSection = () => {
     },
     {
       id: 4,
-      image: "/images/lending.webp",
+      image: "/images/Lending.webp",
       title: "NBFC & Lending",
       description:
         "eNACH and UPI AutoPay mandates with real failure reasons, presentation-date retries, part-payment collection, and borrower-level virtual accounts for reconciliation.",
@@ -115,6 +115,7 @@ const MonstersSliderSection = () => {
                     alt={slide.title}
                     width={1100}
                     height={400}
+                    sizes="(max-width: 1200px) 100vw, 1200px"
                     className={styles.industry_image}
                     style={
                       {
