@@ -1,0 +1,175 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixin" as *;
+
+.monsters_page_wrapper {
+  background-color: #010000;
+  overflow: clip;
+}
+.monsters_form {
+  background-color: $color-white;
+  padding: 50px 20px;
+
+  @include for-laptops {
+    padding: 70px 20px;
+  }
+}
+.cta_section {
+  background-color: $color-white;
+  padding: 50px 20px 0;
+  @include for-laptops {
+    padding: 90px 20px 0;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.04em;
+    color: $color-grey-200;
+    text-align: center;
+    span {
+      background: linear-gradient(30deg, #1c5af4 0%, #56cfff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @include for-laptops {
+      font-size: 46px;
+      line-height: 60px;
+    }
+  }
+  p {
+    font-family: Inter;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -4%;
+    text-align: center;
+    margin-bottom: 28px;
+    color: $color-grey-200;
+
+    @include for-laptops {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}
+
+.secondary_cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  background: #fff;
+  color: #1c5af4;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  z-index: 1;
+  text-decoration: none;
+  background-clip: padding-box;
+}
+
+.secondary_cta::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 9px;
+  z-index: -1;
+  padding: 1px;
+
+  background: conic-gradient(
+    from var(--angle),
+    rgba(28, 90, 244, 0.18) 0deg,
+    rgba(28, 90, 244, 0.18) 25deg,
+    #56cfff 75deg,
+    #1c5af4 115deg,
+    rgba(28, 90, 244, 0.18) 160deg,
+    rgba(28, 90, 244, 0.18) 360deg
+  );
+  animation: rotateBorderHighlight 4.5s linear infinite;
+
+  /* Mask to only show the border */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.secondary_cta:hover {
+  background: #fff;
+  color: #1c5af4;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes rotateBorderHighlight {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.monster_section {
+  background-color: $color-black-0d;
+  padding: 50px 20px 50px;
+
+  @include for-laptops {
+    padding: 90px 20px 0;
+  }
+  .section_header {
+    padding: 10px 20px;
+    margin-bottom: 114px;
+
+    @include for-laptops {
+      padding: 10px 92px 10px 76px;
+    }
+    span {
+      font-family: Inter;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -4%;
+      color: $color-white;
+    }
+    h2 {
+      font-family: Times New Roman;
+      font-weight: 400;
+      font-style: Italic;
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: -4%;
+      color: $color-white;
+      @include for-laptops {
+        font-size: 72px;
+        line-height: 72px;
+      }
+    }
+    p {
+      font-family: Inter;
+      font-weight: 300;
+      font-style: Light;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -4%;
+      color: $color-white;
+
+      @include for-laptops {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+}

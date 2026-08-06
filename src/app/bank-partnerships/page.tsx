@@ -28,7 +28,9 @@ import { containerScreen, participantBg } from "./img"
 import generateMetaData from "@/src/utils/metaData"
 import AffiliateFormClient from "@/src/components/form-wrapper/BankAffiliatePartnershipFormWrapper"
 
-const PartnershipSection = dynamic(() => import("@/src/components/partner-ship-slider/PartnershipSection"))
+const PartnershipSection = dynamic(
+  () => import("@/src/components/partner-ship-slider/PartnershipSection")
+)
 
 export const metadata: Metadata = generateMetaData({
   title: "Partner with Us: Bank Partnerships",

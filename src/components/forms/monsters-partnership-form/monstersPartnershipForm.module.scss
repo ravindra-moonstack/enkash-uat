@@ -1,0 +1,107 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.partnerform {
+  .content {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .leftSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    gap: 20px;
+    text-align: center;
+
+    h2 {
+      font-size: 28px;
+      line-height: 32px;
+      letter-spacing: -0.04em;
+      color: $color-grey-200;
+      span {
+        background: linear-gradient(30deg, #1c5af4 0%, #56cfff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 16px;
+        font-weight: 500;
+        color: #4b5157;
+        line-height: 24px;
+        font-family: "Inter", sans-serif;
+        letter-spacing: -0.33px;
+        text-align: left;
+      }
+
+      .checkmark {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  @include for-laptops {
+    .content {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .leftSection {
+      gap: 26.7px;
+      text-align: left;
+
+      h2 {
+        font-size: 46px;
+        line-height: 60px;
+      }
+    }
+
+    .features {
+      gap: 16px;
+      align-items: flex-start;
+
+      .feature {
+        gap: 8px;
+
+        span {
+          font-size: 20px;
+          line-height: 13.35px;
+        }
+
+        .checkmark {
+          width: 24px;
+          height: 24px;
+        }
+
+        .checkmark svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

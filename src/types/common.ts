@@ -78,4 +78,18 @@ export type TCardTypeItem = {
   linkUrl?: string
 }
 
+export type Monster = {
+  id: number
+  name: string
+  tagline: string
+  image: string
+  accent: string
+  btnGradient: string
+  expandedBg: string
+  description: string
+  quote: string
+  subtext: string
+  audio: string
+}
+
 export type TCardTypes = TCardTypeItem[]

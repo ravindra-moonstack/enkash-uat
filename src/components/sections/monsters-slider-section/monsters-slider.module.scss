@@ -1,0 +1,216 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.slider_section {
+  background-color: $color-white;
+  padding: 50px 0px 0;
+  @include for-laptops {
+    padding: 90px 0px 0;
+  }
+
+  .section_content {
+    margin-bottom: 40px;
+    padding: 0 20px;
+    @include for-laptops {
+      margin-bottom: 50px;
+    }
+  }
+  h2 {
+    color: $color-grey-200;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  p {
+    font-family: Inter;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -4%;
+    text-align: center;
+    color: $color-grey-200;
+  }
+  // slider css starts
+  .industry_card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: $color-white;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    margin: 0px 20px;
+
+    @include for-laptops {
+      border-radius: 12px;
+      margin: 0px 10px;
+      box-shadow: unset;
+    }
+  }
+
+  .industry_card_image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+
+    @include for-laptops {
+      aspect-ratio: 21 / 7;
+    }
+  }
+
+  .industry_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: var(--obj-pos-mobile, 90%);
+    @include for-laptops {
+      object-position: var(--obj-pos-desktop, unset);
+    }
+  }
+
+  .industry_heading_overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 70px 20px 20px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+
+    h3 {
+      font-family: Inter;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 34px;
+      color: $color-white;
+      text-align: left;
+      margin: 0;
+    }
+
+    @include for-laptops {
+      display: none;
+    }
+  }
+
+  .industry_card_content {
+    padding: 24px 20px 28px;
+
+    @include for-laptops {
+      display: none;
+    }
+  }
+
+  .industry_description {
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: left;
+    color: $color-grey-200;
+    border-left: 3px solid #2ec4b6;
+    padding-left: 14px;
+    margin-bottom: 16px;
+  }
+
+  .industry_highlight {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+    text-align: left;
+    color: $color-grey-200;
+    margin: 0;
+  }
+
+  .industry_desktop_overlay {
+    display: none;
+
+    @include for-laptops {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      inset: 0;
+      margin: 51px 0px 50px 52px;
+      padding: 50px 40px;
+      max-width: 740px;
+      background: linear-gradient(
+        90.08deg,
+        rgba(0, 0, 0, 0.33) 1.01%,
+        rgba(0, 0, 0, 0) 74.81%
+      );
+      box-shadow: 0px 0px 77px 0px #0000001a;
+      border-width: 1px 0px 1px 1px;
+      border-style: solid;
+      border-image-source: linear-gradient(
+        90deg,
+        #ffffff 2.75%,
+        rgba(153, 153, 153, 0) 56.15%
+      );
+      border-radius: 12px 0 0 12px;
+    }
+  }
+
+  .desktop_heading {
+    @include for-laptops {
+      font-family: Inter;
+      font-weight: 600;
+      font-size: 38px;
+      line-height: 110%;
+      letter-spacing: -0.03em;
+      color: $color-white;
+      text-align: left;
+      margin: 0 0 17px;
+    }
+  }
+
+  .desktop_description_wrap {
+    @include for-laptops {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 27px;
+    }
+  }
+
+  .desktop_description_line {
+    @include for-laptops {
+      display: block;
+      flex-shrink: 0;
+      width: 1.5px;
+      height: 52px;
+      background-color: #00bf9e;
+    }
+  }
+
+  .desktop_description {
+    @include for-laptops {
+      font-family: Inter;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 160%;
+      letter-spacing: -0.04em;
+      color: $color-white;
+      text-align: left;
+      max-width: 507px;
+      margin: 0;
+    }
+  }
+
+  .desktop_highlight {
+    @include for-laptops {
+      font-family: Inter;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 160%;
+      letter-spacing: -0.04em;
+      color: $color-white;
+      text-align: left;
+      margin: 0;
+      max-width: 287px;
+    }
+  }
+}
