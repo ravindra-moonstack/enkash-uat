@@ -25,7 +25,7 @@ const MonstersSliderSection = () => {
       description:
         "Offer engine at scale, COD reconciliation, return-linked refunds, and split payments for marketplace models — surge-tested for 10× spikes.",
       highlight: "Turn payment failures into confirmed orders.",
-      objectPositionMobile: "80%",
+      objectPositionMobile: "82%",
       objectPositionDesktop: "center",
     },
     {
@@ -35,7 +35,7 @@ const MonstersSliderSection = () => {
       description:
         "AutoPay & eNACH with clear failure codes and built-in retry, configurable dunning, and virtual accounts per student for auto-reconciliation.",
       highlight: "Higher collection efficiency, less collection effort.",
-      objectPositionMobile: "60%",
+      objectPositionMobile: "89%",
       objectPositionDesktop: "center",
     },
     {
@@ -45,7 +45,7 @@ const MonstersSliderSection = () => {
       description:
         "Pre-auth with partial capture and void, balance-at-check-in flows, dynamic pricing, and multi-currency for high-value bookings.",
       highlight: "High-value payments that don’t fail on the last screen.",
-      objectPositionMobile: "90%",
+      objectPositionMobile: "88%",
       objectPositionDesktop: "center",
     },
     {
@@ -55,7 +55,7 @@ const MonstersSliderSection = () => {
       description:
         "eNACH and UPI AutoPay mandates with real failure reasons, presentation-date retries, part-payment collection, and borrower-level virtual accounts for reconciliation.",
       highlight: "Higher collection efficiency without more collection effort.",
-      objectPositionMobile: "70%",
+      objectPositionMobile: "90%",
       objectPositionDesktop: "center",
     },
     {
@@ -65,7 +65,7 @@ const MonstersSliderSection = () => {
       description:
         "Split payments across sellers, hold-and-release settlements, partner onboarding, and commission logic that reconciles itself — no month-end spreadsheet.",
       highlight: "Every partner paid on time, every time.",
-      objectPositionMobile: "85%",
+      objectPositionMobile: "87%",
       objectPositionDesktop: "center",
     },
     {
@@ -75,7 +75,7 @@ const MonstersSliderSection = () => {
       description:
         "Appointment deposits and part-payments, pre-auth for procedures, insurance co-pay splits, instant refunds on cancellation, and per-branch reconciliation across locations.",
       highlight: "Fewer no-shows, cleaner books across every branch.",
-      objectPositionMobile: "75%",
+      objectPositionMobile: "84%",
       objectPositionDesktop: "center",
     },
   ]
@@ -115,10 +115,13 @@ const MonstersSliderSection = () => {
                     width={1100}
                     height={400}
                     className={styles.industry_image}
-                    style={{
-                      "--obj-pos-mobile": slide.objectPositionMobile || "90%",
-                      "--obj-pos-desktop": slide.objectPositionDesktop || "unset"
-                    } as React.CSSProperties}
+                    style={
+                      {
+                        "--obj-pos-mobile": slide.objectPositionMobile || "90%",
+                        "--obj-pos-desktop":
+                          slide.objectPositionDesktop || "unset",
+                      } as React.CSSProperties
+                    }
                   />
 
                   <div className={styles.industry_heading_overlay}>

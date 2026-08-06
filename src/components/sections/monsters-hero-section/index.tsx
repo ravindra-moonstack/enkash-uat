@@ -9,6 +9,7 @@ import {
   useSpring,
   useMotionValueEvent,
   useReducedMotion,
+  Variants,
 } from "framer-motion"
 import CommonButton from "../../buttons"
 import styles from "./monsters-hero.module.scss"
@@ -132,7 +133,7 @@ const MonstersHeroSection = () => {
     if (!imagesLoaded) return
     drawFrame(latest)
   })
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -140,7 +141,7 @@ const MonstersHeroSection = () => {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
