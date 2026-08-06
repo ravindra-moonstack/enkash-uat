@@ -164,12 +164,13 @@
     padding: 0 1rem;
   }
   .cta_group {
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     padding: 0 2rem;
   }
   .secondary_cta {
-    width: 100%;
+    font-size: 14px;
+    padding: 0.5rem 1rem;
   }
   .sequence_container {
     margin-top: 2rem;

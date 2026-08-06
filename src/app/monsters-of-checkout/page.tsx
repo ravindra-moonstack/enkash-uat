@@ -57,6 +57,7 @@ const MonstersOfCheckout = () => {
           </div>
           <MonstersCardsSection monsters={monsters} />
         </div>
+        <div className={styles.monster_section_overlay} />
       </div>
 
       <MonstersSliderSection />

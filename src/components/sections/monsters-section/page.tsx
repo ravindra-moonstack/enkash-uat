@@ -70,6 +70,15 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
 
   return (
     <div className={styles.monsters_wrapper}>
+      <div style={{ display: "none" }} aria-hidden="true">
+        {monsters.map((monster) => {
+          const bgUrlMatch = monster.expandedBg.match(/url\(['"]?(.*?)['"]?\)/)
+          const bgUrl = bgUrlMatch ? bgUrlMatch[1] : ""
+          return bgUrl ? (
+            <img key={`preload-bg-${monster.id}`} src={bgUrl} alt="" />
+          ) : null
+        })}
+      </div>
       <div className={styles.stage}>
         <div
           className={`${styles.grid} ${

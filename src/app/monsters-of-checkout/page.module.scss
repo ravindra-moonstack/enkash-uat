@@ -15,7 +15,7 @@
 }
 .cta_section {
   background-color: $color-white;
-  padding: 50px 20px 0;
+  padding: 80px 20px 0;
   @include for-laptops {
     padding: 90px 20px 0;
   }
@@ -122,11 +122,12 @@
 }
 
 .monster_section {
+  position: relative;
   background-color: $color-black-0d;
-  padding: 50px 20px 50px;
+  padding: 50px 20px 70px;
 
   @include for-laptops {
-    padding: 90px 20px 50px;
+    padding: 90px 20px 100px;
   }
   .section_header {
     padding: 10px 20px;
@@ -171,5 +172,19 @@
         line-height: 24px;
       }
     }
+  }
+}
+
+.monster_section_overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 10px 30px 60px #fff;
+
+  @include for-laptops {
+    box-shadow: 0 20px 40px 70px #fff;
   }
 }
