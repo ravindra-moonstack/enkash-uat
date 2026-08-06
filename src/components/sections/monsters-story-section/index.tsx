@@ -8,7 +8,7 @@ const Word = ({
   progress,
   range,
 }: {
-  children: string
+  children: React.ReactNode
   progress: any
   range: [number, number]
 }) => {

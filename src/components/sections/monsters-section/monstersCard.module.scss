@@ -44,7 +44,7 @@
 .monster_card {
   position: relative;
   width: 100%;
-  max-width: 265px;
+  max-width: 100%;
   aspect-ratio: 265 / 426;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0px 0px 42.7676px #0000001c;
@@ -64,6 +64,9 @@
     border-color: var(--accent, rgba(255, 255, 255, 0.3));
     box-shadow: 0 0 40px var(--accent-soft, rgba(255, 255, 255, 0.1));
     outline: none;
+  }
+  @include for-laptops {
+    max-width: 265px;
   }
 }
 
