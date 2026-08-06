@@ -85,6 +85,8 @@ export type Monster = {
   image: string
   accent: string
   btnGradient: string
+  btnColor1?: string
+  btnColor2?: string
   expandedBg: string
   description: string
   quote: string

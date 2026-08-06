@@ -155,7 +155,13 @@
     border-radius: inherit;
     padding: 1px;
     z-index: -1;
-    background: var(--btn-gradient);
+    background: conic-gradient(
+      from var(--angle),
+      transparent 0deg,
+      var(--btn-color-1) 120deg,
+      var(--btn-color-2) 180deg,
+      transparent 360deg
+    );
     animation: rotateCardBorderHighlight 4.5s linear infinite;
 
     /* Mask to only show the border */

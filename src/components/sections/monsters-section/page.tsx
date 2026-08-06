@@ -85,6 +85,8 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
                   "--accent": monster.accent,
                   "--accent-soft": hexToRgba(monster.accent, 0.35),
                   "--btn-gradient": monster.btnGradient,
+                  "--btn-color-1": monster.btnColor1,
+                  "--btn-color-2": monster.btnColor2,
                 } as React.CSSProperties
               }
               onClick={() => handleSelect(monster.id)}
