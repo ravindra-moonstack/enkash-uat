@@ -196,9 +196,6 @@ const MonstersFormClient: React.FC = () => {
           </Link>
         </p>
 
-        <button type="submit" disabled={loading} className={"submitBtn"}>
-          {loading ? "..." : "Submit"}
-        </button>
       </form>
     </div>
   )

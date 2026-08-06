@@ -51,7 +51,6 @@ const MonstersOfCheckout = () => {
       <div className={styles.monster_section}>
         <div className="max-w-auto">
           <div className={styles.section_header}>
-            <span>The Monsters</span>
             <h2>The Wanted List</h2>
             <p>
               Every failure in checkout has a face, a voice, and a rap sheet.
@@ -65,27 +64,8 @@ const MonstersOfCheckout = () => {
 
       <MonstersSliderSection />
 
-      <div className={styles.cta_section}>
-        <div className="max-w-auto">
-          <div className="d-flex flex-column align-items-center">
-            <h2>
-              Four monsters.One gateway. <span>Every moment protected.</span>
-            </h2>
-            <p>Your customer is ready to pay.Don’t let a monster stop them.</p>
-            <Link href="/sales" className={styles.secondary_cta}>
-              Book your Demo
-            </Link>
-          </div>
-        </div>
-      </div>
-
       <div id="monsters-form" className={styles.monsters_form}>
         <MonstersPartnerShipForm
-          features={[
-            { id: 1, text: "Industry-best earnings" },
-            { id: 2, text: "Fast activation for your clients" },
-            { id: 3, text: "Support for accelerated growth" },
-          ]}
           formComponent={<MonstersFormClient />}
         />
       </div>

@@ -16,7 +16,8 @@ import styles from "./monsters-hero.module.scss"
 
 // Total frame count on disk: WebPage_scroll_animation_00000.png ... 00149.png
 const TOTAL_FRAMES = 150
-const LAST_FRAME_INDEX = TOTAL_FRAMES - 1
+const START_FRAME_INDEX = 12
+const LAST_FRAME_INDEX = 100
 
 const SEQUENCE_VH = 350
 
@@ -35,7 +36,7 @@ const MonstersHeroSection = () => {
   const imagesRef = useRef<HTMLImageElement[]>([])
   // Highest frame index that is loaded *and* decoded, contiguously from 0.
   // Used to clamp playback so we never try to draw a frame that isn't ready.
-  const maxLoadedFrameRef = useRef(0)
+  const maxLoadedFrameRef = useRef(START_FRAME_INDEX)
   const [firstFrameLoaded, setFirstFrameLoaded] = useState(false)
   const prefersReducedMotion = useReducedMotion()
 
@@ -66,9 +67,9 @@ const MonstersHeroSection = () => {
 
     // Frame 0 loads on its own, immediately, so the canvas has something to
     // paint before the rest of the sequence arrives.
-    loadFrame(0).then(() => {
+    loadFrame(START_FRAME_INDEX).then(() => {
       if (!cancelled) {
-        maxLoadedFrameRef.current = 0
+        maxLoadedFrameRef.current = START_FRAME_INDEX
         setFirstFrameLoaded(true)
       }
     })
@@ -78,7 +79,7 @@ const MonstersHeroSection = () => {
     // early frames in the sequence are guaranteed to be ready before later
     // ones.
     const timer = setTimeout(() => {
-      let nextIndex = 1
+      let nextIndex = START_FRAME_INDEX + 1
 
       const worker = async () => {
         while (!cancelled) {
@@ -116,7 +117,7 @@ const MonstersHeroSection = () => {
   const rawFrameIndex = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, LAST_FRAME_INDEX]
+    [START_FRAME_INDEX, LAST_FRAME_INDEX]
   )
 
   // Tightened from the original (damping: 30, stiffness: 90, mass: 0.5).
@@ -149,7 +150,7 @@ const MonstersHeroSection = () => {
     if (!firstFrameLoaded || !canvasRef.current) return
     const canvas = canvasRef.current
     const context = canvas.getContext("2d")
-    const firstFrame = imagesRef.current[0]
+    const firstFrame = imagesRef.current[START_FRAME_INDEX]
 
     if (firstFrame && context && isImageReady(firstFrame)) {
       canvas.width = firstFrame.naturalWidth || 1920
@@ -170,7 +171,10 @@ const MonstersHeroSection = () => {
     // Clamp to whatever has actually finished loading so scrubbing ahead of
     // the network never skips to an unready frame — it holds on the last
     // good one and catches up smoothly once more frames land.
-    const clamped = Math.max(0, Math.min(maxLoadedFrameRef.current, progress))
+    const clamped = Math.max(
+      START_FRAME_INDEX,
+      Math.min(maxLoadedFrameRef.current, progress)
+    )
     const lowerIndex = Math.floor(clamped)
     const upperIndex = Math.min(maxLoadedFrameRef.current, lowerIndex + 1)
     const blend = clamped - lowerIndex
@@ -249,7 +253,7 @@ const MonstersHeroSection = () => {
                 className={styles.primary_cta}
               />
 
-              <Link href="/sales" className={styles.secondary_cta}>
+              <Link href="#monsters-form" className={styles.secondary_cta}>
                 Book your Demo
               </Link>
             </motion.div>
