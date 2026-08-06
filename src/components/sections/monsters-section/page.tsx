@@ -83,6 +83,7 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
               style={
                 {
                   "--accent": monster.accent,
+                  "--accent-soft": hexToRgba(monster.accent, 0.35),
                   "--btn-gradient": monster.btnGradient,
                 } as React.CSSProperties
               }

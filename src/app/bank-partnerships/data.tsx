@@ -1,7 +1,5 @@
 import ItemIcon from "./img/itemIcon.svg"
 
-
-
 const bankSolutions = [
   {
     title: "Expense Management System",
@@ -125,10 +123,4 @@ const BankSolutionHeading = {
   className: "f-5 mb-4 mb-md-5",
 }
 
-export {
-  BankSolutionHeading,
-   bankSolutions,
-   headingData,
-   slideData,
-   stepsData,
-}
+export { BankSolutionHeading, bankSolutions, headingData, slideData, stepsData }

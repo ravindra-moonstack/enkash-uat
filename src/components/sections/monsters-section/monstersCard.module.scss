@@ -62,6 +62,7 @@
     transform: translateY(-6px);
     background: rgba(255, 255, 255, 0.16);
     border-color: var(--accent, rgba(255, 255, 255, 0.3));
+    box-shadow: 0 0 40px var(--accent-soft, rgba(255, 255, 255, 0.1));
     outline: none;
   }
 }
