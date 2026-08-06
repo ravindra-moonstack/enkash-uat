@@ -14,41 +14,93 @@ import {
 import CommonButton from "../../buttons"
 import styles from "./monsters-hero.module.scss"
 
-const TOTAL_FRAMES = 149
+// Total frame count on disk: WebPage_scroll_animation_00000.png ... 00149.png
+const TOTAL_FRAMES = 150
+const LAST_FRAME_INDEX = TOTAL_FRAMES - 1
 
-const SEQUENCE_VH = 500
+const SEQUENCE_VH = 350
+
+const LOAD_CONCURRENCY = 12
+
+const LOAD_DELAY_MS = 200
+
+const frameUrl = (index: number) =>
+  `/images/monsters-of-checkout/desktop/WebPage_scroll_animation_${index
+    .toString()
+    .padStart(5, "0")}.png`
 
 const MonstersHeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const imagesRef = useRef<HTMLImageElement[]>([])
+  // Highest frame index that is loaded *and* decoded, contiguously from 0.
+  // Used to clamp playback so we never try to draw a frame that isn't ready.
+  const maxLoadedFrameRef = useRef(0)
   const [firstFrameLoaded, setFirstFrameLoaded] = useState(false)
   const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
     let cancelled = false
     const images: HTMLImageElement[] = []
-
-    // Load first frame immediately for initial render
-    const firstImg = new Image()
-    firstImg.onload = () => {
-      if (!cancelled) setFirstFrameLoaded(true)
-    }
-    firstImg.src = `/images/monsters-of-checkout/desktop/WebPage_scroll_animation_00000.png`
-    images[0] = firstImg
-
-    // Delay loading the rest of the sequence to unblock critical page assets
-    const timer = setTimeout(() => {
-      for (let i = 1; i <= TOTAL_FRAMES; i++) {
-        if (cancelled) break;
-        const img = new Image()
-        const frameNumber = i.toString().padStart(3, "0")
-        img.src = `/images/monsters-of-checkout/desktop/WebPage_scroll_animation_00${frameNumber}.png`
-        images[i] = img
-      }
-    }, 1500)
-
     imagesRef.current = images
+
+    const loadFrame = (index: number): Promise<void> => {
+      return new Promise((resolve) => {
+        const img = new Image()
+        img.src = frameUrl(index)
+        images[index] = img
+
+        const done = () => resolve()
+
+        // decode() confirms the frame is actually paintable, not just
+        // downloaded — avoids a flash/stutter on the first draw of a
+        // freshly-arrived frame.
+        if (typeof img.decode === "function") {
+          img.decode().then(done).catch(done)
+        } else {
+          img.onload = done
+          img.onerror = done
+        }
+      })
+    }
+
+    // Frame 0 loads on its own, immediately, so the canvas has something to
+    // paint before the rest of the sequence arrives.
+    loadFrame(0).then(() => {
+      if (!cancelled) {
+        maxLoadedFrameRef.current = 0
+        setFirstFrameLoaded(true)
+      }
+    })
+
+    // Load the rest after a short delay (so it doesn't compete with
+    // critical page assets), then in-order with limited concurrency so
+    // early frames in the sequence are guaranteed to be ready before later
+    // ones.
+    const timer = setTimeout(() => {
+      let nextIndex = 1
+
+      const worker = async () => {
+        while (!cancelled) {
+          const index = nextIndex++
+          if (index > LAST_FRAME_INDEX) return
+          await loadFrame(index)
+          if (cancelled) return
+          // Only advance the "max loaded" watermark contiguously — if frame
+          // 7 loads before frame 5 (workers can finish out of order), we
+          // still only allow playback up to whatever's loaded without gaps.
+          while (
+            maxLoadedFrameRef.current + 1 <= LAST_FRAME_INDEX &&
+            images[maxLoadedFrameRef.current + 1]
+          ) {
+            maxLoadedFrameRef.current += 1
+          }
+        }
+      }
+
+      const workers = Array.from({ length: LOAD_CONCURRENCY }, () => worker())
+      Promise.all(workers)
+    }, LOAD_DELAY_MS)
 
     return () => {
       cancelled = true
@@ -64,14 +116,18 @@ const MonstersHeroSection = () => {
   const rawFrameIndex = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, TOTAL_FRAMES - 1]
+    [0, LAST_FRAME_INDEX]
   )
 
+  // Tightened from the original (damping: 30, stiffness: 90, mass: 0.5).
+  // That spring was tuned for a slow 500vh track and visibly trails fast
+  // scrolling on a short track. This still smooths steppy wheel/trackpad
+  // input but converges close to instantly, so it doesn't read as lag.
   const smoothFrameIndex = useSpring(rawFrameIndex, {
-    damping: 30,
-    stiffness: 90,
-    mass: 0.5,
-    restDelta: 0.0005,
+    damping: 40,
+    stiffness: 320,
+    mass: 0.1,
+    restDelta: 0.001,
   })
 
   const frameIndexSource = prefersReducedMotion
@@ -111,9 +167,12 @@ const MonstersHeroSection = () => {
     const context = canvas.getContext("2d")
     if (!context) return
 
-    const clamped = Math.max(0, Math.min(TOTAL_FRAMES - 1, progress))
+    // Clamp to whatever has actually finished loading so scrubbing ahead of
+    // the network never skips to an unready frame — it holds on the last
+    // good one and catches up smoothly once more frames land.
+    const clamped = Math.max(0, Math.min(maxLoadedFrameRef.current, progress))
     const lowerIndex = Math.floor(clamped)
-    const upperIndex = Math.min(TOTAL_FRAMES - 1, lowerIndex + 1)
+    const upperIndex = Math.min(maxLoadedFrameRef.current, lowerIndex + 1)
     const blend = clamped - lowerIndex
 
     const lowerFrame = imagesRef.current[lowerIndex]

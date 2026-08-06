@@ -25,7 +25,7 @@ const MonstersStorySection = () => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 65%", "end 50%"],
+    offset: ["start 50%", "end 50%"],
   })
 
   const paragraph1 = "Every merchant is being watched."
@@ -56,10 +56,6 @@ const MonstersStorySection = () => {
         isBold = true
         cleanWord = word.replace(/\*\*/g, "")
       }
-      // If we want bolding to span multiple words, a simple replace is fine if we marked each word,
-      // but since the string has "**payments aren't a feature.**", splitting by space means:
-      // "**payments" (has **), "aren't", "a", "feature.**" (has **).
-      // A better way is to pass a boolean if the word is inside bold tags.
 
       return (
         <React.Fragment key={i}>
@@ -109,9 +105,10 @@ const MonstersStorySection = () => {
     })
   }
 
-  const allText = `${paragraph2} ${paragraph3} ${paragraph4} ${paragraph5} ${paragraph6}`
+  const allText = `${paragraph1} ${paragraph2} ${paragraph3} ${paragraph4} ${paragraph5} ${paragraph6}`
   const totalWords = processText(allText).length
 
+  const p1Count = processText(paragraph1).length
   const p2Count = processText(paragraph2).length
   const p3Count = processText(paragraph3).length
   const p4Count = processText(paragraph4).length
@@ -126,25 +123,33 @@ const MonstersStorySection = () => {
         </div>
 
         <div className={styles.content}>
-          <p className={styles.subtitle}>{paragraph1}</p>
           <div className={styles.main_text}>
-            <p>{renderProcessedWords(paragraph2, 0, totalWords)}</p>
-            <p>{renderProcessedWords(paragraph3, p2Count, totalWords)}</p>
+            <p className={styles.subtitle}>
+              {renderProcessedWords(paragraph1, 0, totalWords)}
+            </p>
+            <p>{renderProcessedWords(paragraph2, p1Count, totalWords)}</p>
             <p>
-              {renderProcessedWords(paragraph4, p2Count + p3Count, totalWords)}
+              {renderProcessedWords(paragraph3, p1Count + p2Count, totalWords)}
+            </p>
+            <p>
+              {renderProcessedWords(
+                paragraph4,
+                p1Count + p2Count + p3Count,
+                totalWords
+              )}
             </p>
             <br />
             <p>
               {renderProcessedWords(
                 paragraph5,
-                p2Count + p3Count + p4Count,
+                p1Count + p2Count + p3Count + p4Count,
                 totalWords
               )}
             </p>
             <p>
               {renderProcessedWords(
                 paragraph6,
-                p2Count + p3Count + p4Count + p5Count,
+                p1Count + p2Count + p3Count + p4Count + p5Count,
                 totalWords
               )}
             </p>

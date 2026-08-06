@@ -3,15 +3,9 @@
 
 .hero_section {
   position: relative;
-  background-color: $color-black-0d;
+  background-color: #010000;
   color: #fff;
   text-align: center;
-  /*
-   * This height is the scroll "runway": the sticky child below stays pinned
-   * for the full duration the user scrolls through this element. It's set
-   * inline from SEQUENCE_VH in index.tsx (default 500vh) so the two values
-   * never drift out of sync - don't hardcode a height here.
-   */
   display: flex;
   flex-direction: column;
 }
