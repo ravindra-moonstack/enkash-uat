@@ -22,33 +22,37 @@ const MonstersHeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const imagesRef = useRef<HTMLImageElement[]>([])
-  const [imagesLoaded, setImagesLoaded] = useState(false)
+  const [firstFrameLoaded, setFirstFrameLoaded] = useState(false)
   const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
-    let settledCount = 0
     let cancelled = false
     const images: HTMLImageElement[] = []
-    const handleSettled = () => {
-      settledCount++
-      if (!cancelled && settledCount === TOTAL_FRAMES) {
-        setImagesLoaded(true)
-      }
-    }
 
-    for (let i = 0; i <= TOTAL_FRAMES; i++) {
-      const img = new Image()
-      const frameNumber = i.toString().padStart(3, "0")
-      img.onload = handleSettled
-      img.onerror = handleSettled
-      img.src = `/images/monsters-of-checkout/desktop/WebPage_scroll_animation_00${frameNumber}.png`
-      images.push(img)
+    // Load first frame immediately for initial render
+    const firstImg = new Image()
+    firstImg.onload = () => {
+      if (!cancelled) setFirstFrameLoaded(true)
     }
+    firstImg.src = `/images/monsters-of-checkout/desktop/WebPage_scroll_animation_00000.png`
+    images[0] = firstImg
+
+    // Delay loading the rest of the sequence to unblock critical page assets
+    const timer = setTimeout(() => {
+      for (let i = 1; i <= TOTAL_FRAMES; i++) {
+        if (cancelled) break;
+        const img = new Image()
+        const frameNumber = i.toString().padStart(3, "0")
+        img.src = `/images/monsters-of-checkout/desktop/WebPage_scroll_animation_00${frameNumber}.png`
+        images[i] = img
+      }
+    }, 1500)
 
     imagesRef.current = images
 
     return () => {
       cancelled = true
+      clearTimeout(timer)
     }
   }, [])
 
@@ -86,7 +90,7 @@ const MonstersHeroSection = () => {
 
   // Initial setup for canvas
   useEffect(() => {
-    if (!imagesLoaded || !canvasRef.current) return
+    if (!firstFrameLoaded || !canvasRef.current) return
     const canvas = canvasRef.current
     const context = canvas.getContext("2d")
     const firstFrame = imagesRef.current[0]
@@ -99,7 +103,7 @@ const MonstersHeroSection = () => {
       canvas.width = 1920
       canvas.height = 1080
     }
-  }, [imagesLoaded])
+  }, [firstFrameLoaded])
 
   const drawFrame = (progress: number) => {
     if (!canvasRef.current) return
@@ -130,7 +134,6 @@ const MonstersHeroSection = () => {
   }
 
   useMotionValueEvent(frameIndexSource, "change", (latest) => {
-    if (!imagesLoaded) return
     drawFrame(latest)
   })
   const containerVariants: Variants = {

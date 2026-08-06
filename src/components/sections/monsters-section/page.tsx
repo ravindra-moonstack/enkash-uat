@@ -109,7 +109,12 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
               }}
             >
               <div className={styles.monster_image_wrapper}>
-                <Image src={monster.image} alt={monster.name} fill />
+                <Image
+                  src={monster.image}
+                  alt={monster.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                />
               </div>
               <div className={styles.monster_card_content}>
                 <p className={styles.eyebrow}>{monster.tagline}</p>

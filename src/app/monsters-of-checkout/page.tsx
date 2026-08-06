@@ -1,5 +1,6 @@
 import React from "react"
 import MonstersHeroSection from "../../components/sections/monsters-hero-section"
+import MonstersStorySection from "../../components/sections/monsters-story-section"
 import BodyOverflowClip from "./BodyOverflowClip"
 import styles from "./page.module.scss"
 import MonstersPartnerShipForm from "../../components/forms/monsters-partnership-form"
@@ -44,6 +45,8 @@ const MonstersOfCheckout = () => {
     <main className={styles.monsters_page_wrapper}>
       <BodyOverflowClip />
       <MonstersHeroSection />
+
+      <MonstersStorySection />
 
       <div className={styles.monster_section}>
         <div className="max-w-auto">
