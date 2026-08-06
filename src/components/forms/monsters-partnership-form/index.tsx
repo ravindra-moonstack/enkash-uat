@@ -21,7 +21,8 @@ const MonstersPartnerShipForm: React.FC<MonstersPartnerShipFormProps> = ({
         <div className="col-md-5 col-12">
           <div className={styles.leftSection}>
             <h2>
-              Four monsters.One gateway. <br/><span>Every moment protected.</span>
+              Four monsters.One gateway. <br />
+              <span>Every moment protected.</span>
             </h2>
             <p>Your customer is ready to pay.Don’t let a monster stop them.</p>
           </div>
