@@ -9,6 +9,11 @@
   position: relative;
   width: 100%;
   min-height: 360px;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 // ---------- Grid of cards ----------
@@ -39,13 +44,21 @@
   opacity: 0;
   transform: scale(0.96);
   pointer-events: none;
+
+  @media (max-width: 767px) {
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
 }
 
 .monster_card {
   position: relative;
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 265 / 330;
+  aspect-ratio: 265 / 310;
 
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0px 0px 42.7676px #0000001c;
@@ -102,7 +115,6 @@
 .eyebrow {
   font-family: Inter;
   font-weight: 300;
-  font-style: Light;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: -4%;
@@ -111,6 +123,7 @@
   color: #ffffff;
   margin: 0;
   flex: 1;
+  max-width: 190px;
 }
 
 .monster_name {
@@ -253,6 +266,8 @@
   @media (max-width: 767px) {
     position: relative;
     inset: auto;
+    order: -1;
+    margin-bottom: 80px;
   }
 }
 

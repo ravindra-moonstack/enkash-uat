@@ -2,24 +2,25 @@
 
 import React, { useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import {
   motion,
   useScroll,
   useTransform,
   useSpring,
   useMotionValueEvent,
-  useReducedMotion,
-  Variants,
 } from "framer-motion"
 import CommonButton from "../../buttons"
 import styles from "./monsters-hero.module.scss"
+import VideoModal from "@/src/components/vedio-modal"
+import RightArrowFill from "../../../../public/images/rightArrowFill.svg"
 
 // Total frame count on disk: WebPage_scroll_animation_00000.png ... 00149.png
 const TOTAL_FRAMES = 150
 const START_FRAME_INDEX = 12
 const LAST_FRAME_INDEX = 100
 
-const SEQUENCE_VH = 350
+const SEQUENCE_VH = 200
 
 const LOAD_CONCURRENCY = 12
 
@@ -38,7 +39,7 @@ const MonstersHeroSection = () => {
   // Used to clamp playback so we never try to draw a frame that isn't ready.
   const maxLoadedFrameRef = useRef(START_FRAME_INDEX)
   const [firstFrameLoaded, setFirstFrameLoaded] = useState(false)
-  const prefersReducedMotion = useReducedMotion()
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -47,7 +48,7 @@ const MonstersHeroSection = () => {
 
     const loadFrame = (index: number): Promise<void> => {
       return new Promise((resolve) => {
-        const img = new Image()
+        const img = new window.Image()
         img.src = frameUrl(index)
         images[index] = img
 
@@ -131,16 +132,7 @@ const MonstersHeroSection = () => {
     restDelta: 0.001,
   })
 
-  const frameIndexSource = prefersReducedMotion
-    ? rawFrameIndex
-    : smoothFrameIndex
-
-  const textOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0])
-  const textY = useTransform(scrollYProgress, [0, 0.15], [0, -24])
-  const canvasScale = useSpring(
-    useTransform(scrollYProgress, [0, 1], [1, prefersReducedMotion ? 1 : 1.05]),
-    { damping: 30, stiffness: 90 }
-  )
+  const frameIndexSource = smoothFrameIndex
 
   const isImageReady = (img?: HTMLImageElement) =>
     !!img && img.complete && img.naturalWidth > 0
@@ -199,22 +191,6 @@ const MonstersHeroSection = () => {
   useMotionValueEvent(frameIndexSource, "change", (latest) => {
     drawFrame(latest)
   })
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
-    },
-  }
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  }
 
   return (
     <section
@@ -223,52 +199,51 @@ const MonstersHeroSection = () => {
       ref={containerRef}
     >
       <div className={styles.hero_content_wrapper}>
-        <motion.div
-          className={styles.hero_text_scroll_layer}
-          style={
-            prefersReducedMotion
-              ? undefined
-              : { opacity: textOpacity, y: textY }
-          }
-        >
-          <motion.div
-            className={styles.hero_text_layer}
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.h1 variants={itemVariants} className={styles.title}>
-              Monsters of the Checkout
-            </motion.h1>
-            <motion.p variants={itemVariants} className={styles.subtitle}>
+        <div className={styles.hero_text_scroll_layer}>
+          <div className={styles.hero_text_layer}>
+            <h1 className={styles.title}>Monsters of the Checkout</h1>
+            <p className={styles.subtitle}>
               Four monsters haunt every transaction. One gateway ends them.
-            </motion.p>
+            </p>
 
-            <motion.div variants={itemVariants} className={styles.cta_group}>
+            <div className={styles.cta_group}>
               <CommonButton
                 title="Watch the Story"
                 theme="blue"
-                icon={<span style={{ marginRight: "8px" }}>▶</span>}
+                icon={
+                  <Image
+                    src={RightArrowFill}
+                    alt="Play"
+                    width={16}
+                    height={16}
+                    className="me-1 me-md-2"
+                  />
+                }
                 iconPosition="start"
                 className={styles.primary_cta}
+                url={() => setIsVideoModalOpen(true)}
               />
 
               <Link href="#monsters-form" className={styles.secondary_cta}>
                 Book your Demo
               </Link>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </div>
+          </div>
+        </div>
 
         <div className={styles.sequence_container}>
-          <motion.canvas
+          <canvas
             ref={canvasRef}
             className={styles.sequence_canvas}
             aria-label="Monsters of the checkout scroll sequence"
-            style={prefersReducedMotion ? undefined : { scale: canvasScale }}
           />
         </div>
       </div>
+      <VideoModal
+        open={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        videoUrl="https://www.youtube.com/watch?v=oApuECjnRIU"
+      />
     </section>
   )
 }

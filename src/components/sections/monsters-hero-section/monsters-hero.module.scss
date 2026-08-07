@@ -13,15 +13,31 @@
 .hero_content_wrapper {
   position: sticky;
   top: 0;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 15vh;
+  padding-top: 58vh;
   z-index: 2;
   overflow: hidden;
   margin-top: 30px;
+
+  @include for-laptops {
+    padding-top: 27vh;
+  }
+}
+.hero_text_scroll_layer {
+  position: absolute;
+  top: 130px;
+  z-index: 2;
+  @include for-laptops {
+    top: 120px;
+    left: 50%;
+    /* right: 400px; */
+    z-index: 2;
+    transform: translateX(-50%);
+  }
 }
 
 .hero_text_layer {
@@ -51,7 +67,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
   z-index: 10;
 }
 
@@ -128,7 +143,7 @@
 
 .sequence_container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   flex: 1;
   position: relative;
@@ -136,14 +151,12 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-  /* pull up under buttons slightly */
-  margin-top: -2rem;
 }
 
 .sequence_canvas {
   width: 100%;
   height: auto;
-  max-height: 70vh;
+  max-height: 100vh;
   object-fit: contain;
   will-change: transform;
   backface-visibility: hidden;
@@ -165,8 +178,5 @@
   .secondary_cta {
     font-size: 14px;
     padding: 0.5rem 1rem;
-  }
-  .sequence_container {
-    margin-top: 2rem;
   }
 }

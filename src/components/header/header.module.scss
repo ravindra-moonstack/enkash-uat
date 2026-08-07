@@ -92,7 +92,7 @@
     max-width: 1200px;
     margin: auto;
     width: -webkit-fill-available;
-    box-shadow: 0 0px 40px -4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0px 40px -4px rgba(0, 0, 0, 0.08) !important;
 
     @include for-tablet {
       max-width: 1120px;

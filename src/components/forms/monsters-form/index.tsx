@@ -41,7 +41,7 @@ const MonstersFormClient: React.FC = () => {
     setFieldValue("SingleLine3", utmMedium)
     setFieldValue("SingleLine4", utmCampaign)
     setFieldValue("SingleLine5", referringPage)
-    setFieldValue("SingleLine6", "PPC: Payment Gateway")
+    setFieldValue("SingleLine6", "Payment Monster Campaign")
   }, [params, referringPage, setFieldValue])
 
   const onSubmitForm = async (values: TMonstersFormInitialValueProp) => {
@@ -149,7 +149,8 @@ const MonstersFormClient: React.FC = () => {
             <input
               type="text"
               className=""
-              placeholder="GSTIN"
+              required
+              placeholder="GSTIN*"
               {...getFieldProps("SingleLine7")}
             />
             <ErrorText<TMonstersFormInitialValueProp>
@@ -195,7 +196,9 @@ const MonstersFormClient: React.FC = () => {
             privacy policy
           </Link>
         </p>
-
+        <button type="submit" disabled={loading} className={"submitBtn"}>
+          {loading ? "..." : "Submit"}
+        </button>
       </form>
     </div>
   )

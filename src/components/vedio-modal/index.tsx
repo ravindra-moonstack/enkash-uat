@@ -55,7 +55,10 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoUrl, open, onClose }) => {
           <button
             onClick={onClose}
             className="position-absolute top-0 end-0 btn-close btn-close-white m-3 z-10"
-            style={{ filter: "drop-shadow(0 0 8px rgba(0,0,0,0.8))", zIndex: 1000 }}
+            style={{
+              filter: "drop-shadow(0 0 8px rgba(0,0,0,0.8))",
+              zIndex: 1000,
+            }}
             aria-label="Close"
           />
 
@@ -64,9 +67,11 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoUrl, open, onClose }) => {
               <div
                 className="w-100 h-100 rounded-3 overflow-hidden shadow-lg"
                 dangerouslySetInnerHTML={{ __html: videoUrl }}
-                style={{
-                  // Ensure the iframe inside matches the container
-                }}
+                style={
+                  {
+                    // Ensure the iframe inside matches the container
+                  }
+                }
               />
             ) : (
               <iframe
@@ -76,7 +81,6 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoUrl, open, onClose }) => {
                 allowFullScreen
                 className="rounded-3 shadow-lg"
                 referrerPolicy="strict-origin-when-cross-origin"
-                sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
               />
             )}
           </div>

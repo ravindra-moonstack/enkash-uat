@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react"
 import Image from "next/image"
 import styles from "./monstersCard.module.scss"
 import { Monster } from "@/src/types"
+import VideoModal from "@/src/components/vedio-modal"
 
 const CloseIcon = () => (
   <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,29 +35,15 @@ const expandedBackgrounds = [
 
 const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
   const [selectedId, setSelectedId] = useState<number | null>(null)
-  const audioRefs = useRef<Record<number, HTMLAudioElement | null>>({})
+  const [videoModalOpen, setVideoModalOpen] = useState(false)
+  const [videoUrl, setVideoUrl] = useState("")
 
   const selectedMonster = monsters.find((m) => m.id === selectedId) || null
 
-  const stopAllExcept = (id: number | null) => {
-    Object.entries(audioRefs.current).forEach(([key, el]) => {
-      if (el && Number(key) !== id) {
-        el.pause()
-        el.currentTime = 0
-      }
-    })
-  }
-
   const handlePlay = (id: number, e: React.MouseEvent) => {
     e.stopPropagation()
-    stopAllExcept(id)
-    const el = audioRefs.current[id]
-    if (!el) return
-    if (el.paused) {
-      el.play().catch(() => {})
-    } else {
-      el.pause()
-    }
+    setVideoUrl("https://www.youtube.com/watch?v=oApuECjnRIU")
+    setVideoModalOpen(true)
   }
 
   const handleSelect = (id: number) => {
@@ -64,7 +51,6 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
   }
 
   const handleClose = () => {
-    stopAllExcept(null)
     setSelectedId(null)
   }
 
@@ -138,7 +124,7 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
                   className={styles.listen_btn}
                   onClick={(e) => handlePlay(monster.id, e)}
                 >
-                  <span>Listen Lazlo </span>
+                  <span>Listen {monster.name}</span>
                   <Image
                     src={"/svgs/musicIcon.svg"}
                     width={18}
@@ -147,13 +133,6 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
                   />
                 </button>
               </div>
-              <audio
-                ref={(el) => {
-                  audioRefs.current[monster.id] = el
-                }}
-                src={monster.audio}
-                preload="none"
-              />
             </div>
           ))}
         </div>
@@ -216,7 +195,7 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
                   className={styles.listen_btn}
                   onClick={(e) => handlePlay(selectedMonster.id, e)}
                 >
-                  <span> Listen Lazlo </span>
+                  <span> Listen {selectedMonster.name} </span>
                   <Image
                     src={"/svgs/musicIcon.svg"}
                     width={18}
@@ -229,6 +208,11 @@ const MonstersCardsSection = ({ monsters = [] }: { monsters: Monster[] }) => {
           )}
         </div>
       </div>
+      <VideoModal
+        open={videoModalOpen}
+        onClose={() => setVideoModalOpen(false)}
+        videoUrl={videoUrl}
+      />
     </div>
   )
 }

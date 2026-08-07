@@ -42,34 +42,52 @@ const generateMetaData = () => {
 
 const MonstersOfCheckout = () => {
   return (
-    <main className={styles.monsters_page_wrapper}>
-      <BodyOverflowClip />
-      <MonstersHeroSection />
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+        html, body {
+          scroll-behavior: smooth !important;
+          -ms-overflow-style: none !important;
+          scrollbar-width: none !important;
+        }
+        ::-webkit-scrollbar {
+          display: none !important;
+          width: 0 !important;
+          background: transparent !important;
+        }
+      `,
+        }}
+      />
+      <main className={styles.monsters_page_wrapper}>
+        <BodyOverflowClip />
+        <MonstersHeroSection />
 
-      <MonstersStorySection />
+        <MonstersStorySection />
 
-      <div className={styles.monster_section}>
-        <div className="max-w-auto">
-          <div className={styles.section_header}>
-            <h2>The Wanted List</h2>
-            <p>
-              Every failure in checkout has a face, a voice, and a rap sheet.
-              These four are responsible for the revenue you never got.
-            </p>
+        <div className={styles.monster_section}>
+          <div className="max-w-auto">
+            <div className={styles.section_header}>
+              <h2>The Wanted List</h2>
+              <p>
+                Every failure in checkout has a face, a voice, and a rap sheet.
+                These four are responsible for the revenue you never got.
+              </p>
+            </div>
+            <MonstersCardsSection monsters={monsters} />
           </div>
-          <MonstersCardsSection monsters={monsters} />
+          <div className={styles.monster_section_overlay} />
         </div>
-        <div className={styles.monster_section_overlay} />
-      </div>
 
-      <MonstersSliderSection />
+        <div className="bg-white">
+          <MonstersSliderSection />
 
-      <div id="monsters-form" className={styles.monsters_form}>
-        <MonstersPartnerShipForm
-          formComponent={<MonstersFormClient />}
-        />
-      </div>
-    </main>
+          <div id="monsters-form" className={styles.monsters_form}>
+            <MonstersPartnerShipForm formComponent={<MonstersFormClient />} />
+          </div>
+        </div>
+      </main>
+    </>
   )
 }
 

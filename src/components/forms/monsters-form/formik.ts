@@ -46,7 +46,7 @@ const monstersFormValidation = Yup.object({
     .max(13, "Please enter a valid mobile number"),
   Dropdown6: Yup.string().required("Please select type of business"),
   Website: Yup.string().url("Please enter a valid URL").notRequired(),
-  SingleLine7: Yup.string().notRequired(),
+  SingleLine7: Yup.string().required("Please enter GSTIN"),
   MultiLine: Yup.string().max(500, "Text exceeds").notRequired(),
 })
 

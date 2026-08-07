@@ -5,7 +5,7 @@ const monsters: Monster[] = [
     id: 1,
     name: "Complica",
     tagline: "As The Integration Nightmare",
-    image: "/images/monsters-of-checkout/monsters/spiky_hair.png",
+    image: "/images/monsters-of-checkout/monsters/green_monster2.png",
     accent: "#8BC53F",
     btnGradient:
       "rgba(0,0,0,0) 0deg, #CFDA0B 120deg, #00BF9E 180deg, rgba(0,0,0,0) 360deg",
