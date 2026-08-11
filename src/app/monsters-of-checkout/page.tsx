@@ -5,7 +5,9 @@ import BodyOverflowClip from "./BodyOverflowClip"
 import styles from "./page.module.scss"
 import MonstersPartnerShipForm from "../../components/forms/monsters-partnership-form"
 import MonstersFormClient from "@/src/components/form-wrapper/MonstersFormWrapper"
+import MonstersSecondParallaxSection from "@/src/components/sections/monsters-second-parallax-section"
 import MonstersSliderSection from "../../components/sections/monsters-slider-section"
+import MonstersShowdownSection from "../../components/sections/monsters-showdown-section"
 import Link from "next/link"
 import Image from "next/image"
 import MonstersCardsSection from "@/src/components/sections/monsters-section/page"
@@ -79,7 +81,9 @@ const MonstersOfCheckout = () => {
           <div className={styles.monster_section_overlay} />
         </div>
 
-        <div className="bg-white">
+        <div className={styles.monsters_second_section}>
+          <MonstersSecondParallaxSection />
+          <MonstersShowdownSection />
           <MonstersSliderSection />
 
           <div id="monsters-form" className={styles.monsters_form}>

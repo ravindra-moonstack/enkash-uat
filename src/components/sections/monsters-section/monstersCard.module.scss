@@ -9,11 +9,6 @@
   position: relative;
   width: 100%;
   min-height: 360px;
-
-  @media (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 // ---------- Grid of cards ----------
@@ -44,14 +39,6 @@
   opacity: 0;
   transform: scale(0.96);
   pointer-events: none;
-
-  @media (max-width: 767px) {
-    position: relative;
-    inset: auto;
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
 }
 
 .monster_card {
@@ -266,8 +253,6 @@
   @media (max-width: 767px) {
     position: relative;
     inset: auto;
-    order: -1;
-    margin-bottom: 80px;
   }
 }
 

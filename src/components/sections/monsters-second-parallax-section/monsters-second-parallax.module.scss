@@ -1,0 +1,64 @@
+@use "@/src/styles/variables" as *;
+@use "@/src/styles/mixin" as *;
+
+.second_parallax_section {
+  position: relative;
+  width: 100%;
+  // background-color: $color-white;
+  padding-top: 80px;
+}
+
+.section_content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  z-index: 10;
+  position: relative;
+
+  .subtitle {
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #4a4a4a;
+  }
+}
+
+.sequence_container_outer {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+  @include for-laptops {
+    // margin-top: 150px;
+  }
+  // height is set dynamically in component via style tag (SEQUENCE_VH)
+}
+
+.sequence_sticky_wrapper {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sequence_container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sequence_canvas {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  will-change: transform;
+  backface-visibility: hidden;
+
+  @include for-laptops {
+    max-height: 100vh;
+  }
+}
