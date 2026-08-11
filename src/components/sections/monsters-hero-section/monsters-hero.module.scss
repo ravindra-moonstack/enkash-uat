@@ -18,7 +18,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 58vh;
+  padding-top: 47vh;
   z-index: 2;
   overflow: hidden;
   margin-top: 30px;
@@ -143,7 +143,6 @@
 
 .sequence_container {
   width: 100%;
-  max-width: 1600px;
   margin: 0 auto;
   flex: 1;
   position: relative;
@@ -178,5 +177,8 @@
   .secondary_cta {
     font-size: 14px;
     padding: 0.5rem 1rem;
+  }
+  .sequence_canvas {
+    width: 160%;
   }
 }

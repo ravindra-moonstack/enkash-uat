@@ -35,9 +35,8 @@ const MonstersHeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const imagesRef = useRef<HTMLImageElement[]>([])
-  // Highest frame index that is loaded *and* decoded, contiguously from 0.
-  // Used to clamp playback so we never try to draw a frame that isn't ready.
-  const maxLoadedFrameRef = useRef(START_FRAME_INDEX)
+  const drawFrameRef = useRef<((progress: number) => void) | null>(null)
+  const frameIndexSourceRef = useRef<any>(null)
   const [firstFrameLoaded, setFirstFrameLoaded] = useState(false)
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
 
@@ -54,13 +53,31 @@ const MonstersHeroSection = () => {
 
         const done = () => resolve()
 
-        // decode() confirms the frame is actually paintable, not just
-        // downloaded — avoids a flash/stutter on the first draw of a
-        // freshly-arrived frame.
         if (typeof img.decode === "function") {
-          img.decode().then(done).catch(done)
+          img
+            .decode()
+            .then(() => {
+              done()
+              if (drawFrameRef.current && frameIndexSourceRef.current) {
+                requestAnimationFrame(() => {
+                  if (drawFrameRef.current && frameIndexSourceRef.current) {
+                    drawFrameRef.current(frameIndexSourceRef.current.get())
+                  }
+                })
+              }
+            })
+            .catch(done)
         } else {
-          img.onload = done
+          img.onload = () => {
+            done()
+            if (drawFrameRef.current && frameIndexSourceRef.current) {
+              requestAnimationFrame(() => {
+                if (drawFrameRef.current && frameIndexSourceRef.current) {
+                  drawFrameRef.current(frameIndexSourceRef.current.get())
+                }
+              })
+            }
+          }
           img.onerror = done
         }
       })
@@ -70,7 +87,6 @@ const MonstersHeroSection = () => {
     // paint before the rest of the sequence arrives.
     loadFrame(START_FRAME_INDEX).then(() => {
       if (!cancelled) {
-        maxLoadedFrameRef.current = START_FRAME_INDEX
         setFirstFrameLoaded(true)
       }
     })
@@ -88,15 +104,6 @@ const MonstersHeroSection = () => {
           if (index > LAST_FRAME_INDEX) return
           await loadFrame(index)
           if (cancelled) return
-          // Only advance the "max loaded" watermark contiguously — if frame
-          // 7 loads before frame 5 (workers can finish out of order), we
-          // still only allow playback up to whatever's loaded without gaps.
-          while (
-            maxLoadedFrameRef.current + 1 <= LAST_FRAME_INDEX &&
-            images[maxLoadedFrameRef.current + 1]
-          ) {
-            maxLoadedFrameRef.current += 1
-          }
         }
       }
 
@@ -134,6 +141,10 @@ const MonstersHeroSection = () => {
 
   const frameIndexSource = smoothFrameIndex
 
+  useEffect(() => {
+    frameIndexSourceRef.current = frameIndexSource
+  }, [frameIndexSource])
+
   const isImageReady = (img?: HTMLImageElement) =>
     !!img && img.complete && img.naturalWidth > 0
 
@@ -160,23 +171,29 @@ const MonstersHeroSection = () => {
     const context = canvas.getContext("2d")
     if (!context) return
 
-    // Clamp to whatever has actually finished loading so scrubbing ahead of
-    // the network never skips to an unready frame — it holds on the last
-    // good one and catches up smoothly once more frames land.
     const clamped = Math.max(
       START_FRAME_INDEX,
-      Math.min(maxLoadedFrameRef.current, progress)
+      Math.min(LAST_FRAME_INDEX, progress)
     )
-    const lowerIndex = Math.floor(clamped)
-    const upperIndex = Math.min(maxLoadedFrameRef.current, lowerIndex + 1)
-    const blend = clamped - lowerIndex
+
+    let lowerIndex = Math.floor(clamped)
+
+    // Find closest loaded frame if the targeted one is not ready
+    while (
+      lowerIndex > START_FRAME_INDEX &&
+      !isImageReady(imagesRef.current[lowerIndex])
+    ) {
+      lowerIndex--
+    }
+
+    const upperIndex = Math.min(LAST_FRAME_INDEX, lowerIndex + 1)
+    const blend = lowerIndex === Math.floor(clamped) ? clamped - lowerIndex : 0
 
     const lowerFrame = imagesRef.current[lowerIndex]
     const upperFrame = imagesRef.current[upperIndex]
 
-    context.clearRect(0, 0, canvas.width, canvas.height)
-
     if (isImageReady(lowerFrame)) {
+      context.clearRect(0, 0, canvas.width, canvas.height)
       context.globalAlpha = 1
       context.drawImage(lowerFrame, 0, 0, canvas.width, canvas.height)
     }
@@ -187,6 +204,10 @@ const MonstersHeroSection = () => {
       context.globalAlpha = 1
     }
   }
+
+  useEffect(() => {
+    drawFrameRef.current = drawFrame
+  }, [drawFrame])
 
   useMotionValueEvent(frameIndexSource, "change", (latest) => {
     drawFrame(latest)
@@ -224,7 +245,18 @@ const MonstersHeroSection = () => {
                 url={() => setIsVideoModalOpen(true)}
               />
 
-              <Link href="#monsters-form" className={styles.secondary_cta}>
+              <Link
+                href="#monsters-form"
+                className={styles.secondary_cta}
+                onClick={(e) => {
+                  const target = document.getElementById("monsters-form")
+                  if (target) {
+                    e.preventDefault()
+                    target.scrollIntoView({ behavior: "smooth" })
+                    window.history.pushState(null, "", "#monsters-form")
+                  }
+                }}
+              >
                 Book your Demo
               </Link>
             </div>
@@ -242,7 +274,7 @@ const MonstersHeroSection = () => {
       <VideoModal
         open={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
-        videoUrl="https://www.youtube.com/watch?v=oApuECjnRIU"
+        videoUrl="https://youtu.be/FSY1_gFMDOM"
       />
     </section>
   )

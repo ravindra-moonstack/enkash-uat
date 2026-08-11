@@ -149,9 +149,11 @@
   transition: all 0.3s ease;
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     flex-shrink: 0;
+    color: var(--accent);
+    transition: color 0.3s ease;
   }
 
   &::before {
@@ -203,16 +205,20 @@
 
 /* Continuous animation in expanded card */
 .expanded_card .listen_btn {
+  svg {
+    color: #ffffff;
+  }
+
   &::before {
     opacity: 1;
     background: conic-gradient(
       from var(--angle),
-      rgba(28, 90, 244, 0.18) 0deg,
-      rgba(28, 90, 244, 0.18) 25deg,
-      #56cfff 75deg,
-      #1c5af4 115deg,
-      rgba(28, 90, 244, 0.18) 160deg,
-      rgba(28, 90, 244, 0.18) 360deg
+      rgba(255, 255, 255, 0) 0deg,
+      rgba(255, 255, 255, 0) 25deg,
+      rgba(255, 255, 255, 1) 75deg,
+      rgba(255, 255, 255, 1) 115deg,
+      rgba(255, 255, 255, 0) 160deg,
+      rgba(255, 255, 255, 0) 360deg
     );
   }
 }

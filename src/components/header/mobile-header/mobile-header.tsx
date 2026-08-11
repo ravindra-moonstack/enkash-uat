@@ -1,6 +1,8 @@
 "use client"
 import { Fragment, useEffect, useMemo, useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import styles from "./mobile-header.module.scss"
 import { arrowDown } from ".."
@@ -27,7 +29,10 @@ interface Props {
 }
 
 const MobileHeader = ({ utmSource }: Props) => {
-  //
+  const pathname = usePathname()
+  const isMonsterPage = pathname === "/monsters-of-checkout"
+  const [isBannerDismissed, setIsBannerDismissed] = useState(false)
+  const isBannerVisible = !isMonsterPage && !isBannerDismissed
 
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(
     null
@@ -136,6 +141,62 @@ const MobileHeader = ({ utmSource }: Props) => {
 
   return (
     <div className={styles.mobile_header_container}>
+      {isBannerVisible && (
+        <div
+          style={{
+            background: "linear-gradient(30deg, #1C5AF4 0%, #56CFFF 100%)",
+            padding: "10px 32px 10px 16px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
+            width: "100%",
+            color: "#fff",
+            fontWeight: "600",
+            fontSize: "12px",
+            zIndex: 20,
+            textAlign: "center"
+          }}
+        >
+          <Link
+            href="/monsters-of-checkout"
+            style={{
+              color: "#fff",
+              textDecoration: "none",
+              letterSpacing: "0.5px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "4px",
+            }}
+          >
+            <span>FOUR MONSTERS. ONE GATEWAY. ZERO EXCUSES.</span>
+            <span style={{ textDecoration: "underline" }}>
+              Enter the Monsterverse &rarr;
+            </span>
+          </Link>
+          <button
+            onClick={() => setIsBannerDismissed(true)}
+            style={{
+              position: "absolute",
+              right: "12px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "none",
+              border: "none",
+              color: "#fff",
+              cursor: "pointer",
+              padding: "4px",
+              display: "flex",
+            }}
+            aria-label="Close banner"
+          >
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L13 13M1 13L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
+      )}
       <div className={styles.mobile_header}>
         <div className={`w-100 fixed z-10 ${styles.mobile_header_box}`}>
           <Hamburger setCurrentStep={setCurrentStep} currentStep={currentStep} />

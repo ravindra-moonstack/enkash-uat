@@ -118,7 +118,6 @@ const MonstersStorySection = () => {
     <div className={styles.story_section} ref={containerRef}>
       <div className="max-w-auto">
         <div className={styles.header}>
-          <span>The Monsters</span>
           <h2>The Story</h2>
         </div>
 

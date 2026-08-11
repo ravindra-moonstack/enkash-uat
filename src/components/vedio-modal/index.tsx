@@ -39,7 +39,8 @@ const VideoModal: React.FC<VideoModalProps> = ({ videoUrl, open, onClose }) => {
   if (!isEmbedCode && !embedUrl) {
     return null
   }
-
+  console.log("embedUrl", embedUrl)
+  console.log("videoUrl", videoUrl)
   return (
     <Modal
       show={open}

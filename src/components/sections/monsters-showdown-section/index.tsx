@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./monsters-showdown.module.scss"
 import { FeatureCard } from "@/src/components"
+import DynamicHeading from "../../dynamic-heading"
 
 const featuresList = [
   {
@@ -52,20 +53,16 @@ const MonstersShowdownSection = () => {
   return (
     <section className={styles.showdown_section}>
       <div className="max-w-auto">
-        <div className={styles.features_grid}>
-          {featuresList.map((feature, index) => (
-            <div key={index} className={styles.feature_item}>
-              <div className={styles.feature_line}></div>
-              <div className={styles.feature_content}>
-                <h4>{feature.title}</h4>
-                <p>{feature.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
         <div className={styles.showdown_header}>
-          <h2>The Showdown</h2>
+          <DynamicHeading
+            content={[
+              {
+                title: "The Showdown",
+                color: "color-grey-200",
+              },
+            ]}
+            headingTag="h2"
+          />
         </div>
 
         <div className={styles.showdown_cards}>

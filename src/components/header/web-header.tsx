@@ -1,4 +1,6 @@
 "use client"
+import React, { useState } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import styles from "./header.module.scss"
@@ -26,6 +28,11 @@ interface props {
 }
 
 const WebHeader = ({}: props) => {
+  const pathname = usePathname()
+  const isMonsterPage = pathname === "/monsters-of-checkout"
+  const [isBannerDismissed, setIsBannerDismissed] = useState(false)
+  const isBannerVisible = !isMonsterPage && !isBannerDismissed
+
   const {
     hoveredIndex,
     isHeaderBgWhite,
@@ -54,9 +61,76 @@ const WebHeader = ({}: props) => {
         className={`w-full absolute z-10 ${styles.header} ${
           isHeaderBgWhite ? styles.bg_white : styles.bg_blue
         }`}
+        style={{ paddingTop: isBannerVisible ? "64px" : "" }}
         onMouseLeave={closeAllModals}
         aria-label="Primary"
       >
+        {isBannerVisible && (
+          <div
+            style={{
+              background: "linear-gradient(30deg, #1C5AF4 0%, #56CFFF 100%)",
+              padding: "10px 16px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              color: "#fff",
+              fontWeight: "600",
+              fontSize: "14px",
+              zIndex: 20,
+            }}
+          >
+            <Link
+              href="/monsters-of-checkout"
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                letterSpacing: "0.5px",
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+              }}
+            >
+              <span>FOUR MONSTERS. ONE GATEWAY. ZERO EXCUSES.</span>
+              <span style={{ textDecoration: "underline" }}>
+                Enter the Monsterverse &rarr;
+              </span>
+            </Link>
+            <button
+              onClick={() => setIsBannerDismissed(true)}
+              style={{
+                position: "absolute",
+                right: "16px",
+                background: "none",
+                border: "none",
+                color: "#fff",
+                cursor: "pointer",
+                padding: "4px",
+                display: "flex",
+              }}
+              aria-label="Close banner"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1L13 13M1 13L13 1"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
         <div className="container">
           <nav className="position-relative mb-0" aria-label="Main navigation">
             <div className="row align-items-center">

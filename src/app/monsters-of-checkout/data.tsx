@@ -17,6 +17,7 @@ const monsters: Monster[] = [
     quote: "“It depends… it's a little complicated.”",
     subtext: "She never gives a direct answer.",
     audio: "/monsters/audio/complica-1.mp3",
+    videoUrl: "https://youtu.be/Av_dTsT1Koc",
   },
   {
     id: 2,
@@ -34,6 +35,7 @@ const monsters: Monster[] = [
     quote: "“One second…”",
     subtext: "That second becomes forever.",
     audio: "/monsters/audio/complica-2.mp3",
+    videoUrl: "https://youtu.be/uhhrgiTW9yE",
   },
   {
     id: 3,
@@ -51,10 +53,11 @@ const monsters: Monster[] = [
     quote: "“Transaction failed.”",
     subtext: "He says it proudly.",
     audio: "/monsters/audio/complica-3.mp3",
+    videoUrl: "https://www.youtube.com/watch?v=vDtS3EyavHQ",
   },
   {
     id: 4,
-    name: "Botzila",
+    name: "Botzilla",
     tagline: "As The Human-Support Destroyer",
     image: "/images/monsters-of-checkout/monsters/orange_monster.png",
     accent: "#F2793A",
@@ -68,6 +71,7 @@ const monsters: Monster[] = [
     quote: "“I understand your concern.”",
     subtext: "He never actually understands.",
     audio: "/monsters/audio/complica-4.mp3",
+    videoUrl: "https://youtu.be/3Svyu0aAqe8",
   },
 ]
 export { monsters }

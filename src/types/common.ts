@@ -92,6 +92,7 @@ export type Monster = {
   quote: string
   subtext: string
   audio: string
+  videoUrl?: string
 }
 
 export type TCardTypes = TCardTypeItem[]
